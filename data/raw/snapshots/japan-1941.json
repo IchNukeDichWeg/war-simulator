@@ -1,0 +1,813 @@
+{
+ "id": "japan-1941",
+ "nationId": "japan",
+ "includes": [],
+ "name": "Empire of Japan",
+ "year": 1941,
+ "era": "worldwars",
+ "region": "east_asia",
+ "phase": "peak",
+ "tags": [
+  "great power",
+  "Axis",
+  "empire",
+  "naval power",
+  "carrier power",
+  "island"
+ ],
+ "capital": {
+  "name": "Tokyo",
+  "lat": 35.69,
+  "lon": 139.692,
+  "kind": "capital",
+  "population": 6779000
+ },
+ "places": [
+  {
+   "name": "Osaka",
+   "lat": 34.694,
+   "lon": 135.502,
+   "kind": "city"
+  },
+  {
+   "name": "Nagoya",
+   "lat": 35.181,
+   "lon": 136.906,
+   "kind": "city"
+  },
+  {
+   "name": "Yokohama",
+   "lat": 35.444,
+   "lon": 139.638,
+   "kind": "port"
+  },
+  {
+   "name": "Kobe",
+   "lat": 34.69,
+   "lon": 135.196,
+   "kind": "port"
+  },
+  {
+   "name": "Kure",
+   "lat": 34.249,
+   "lon": 132.566,
+   "kind": "port"
+  },
+  {
+   "name": "Yokosuka",
+   "lat": 35.281,
+   "lon": 139.672,
+   "kind": "port"
+  },
+  {
+   "name": "Sasebo",
+   "lat": 33.18,
+   "lon": 129.715,
+   "kind": "port"
+  },
+  {
+   "name": "Keijo (Seoul)",
+   "lat": 37.566,
+   "lon": 126.978,
+   "kind": "city"
+  },
+  {
+   "name": "Fusan (Busan)",
+   "lat": 35.18,
+   "lon": 129.075,
+   "kind": "port"
+  },
+  {
+   "name": "Taihoku (Taipei)",
+   "lat": 25.033,
+   "lon": 121.565,
+   "kind": "city"
+  },
+  {
+   "name": "Shimonoseki Strait",
+   "lat": 33.96,
+   "lon": 130.94,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Tsushima Strait",
+   "lat": 34.4,
+   "lon": 129.5,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:1938:Empire of Japan",
+  "areaKm2": {
+   "low": 675000,
+   "mid": 675000,
+   "high": 681000,
+   "grade": "A",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 2: Japan proper 382, Korea 221, Formosa 36, Karafuto 36 thousand km2 = 675k. NOTE: the world_1938 'Empire of Japan' feature (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) merges Korea with Manchukuo and computes to ~1.79M km2; the area here does NOT follow the polygon. High adds the Kwantung lease (~3,500) and the South Seas Mandate (~2,100)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 101500000,
+   "mid": 102900000,
+   "high": 104000000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "Japan proper 72,218k (COW NMC v7 tpop 1941, https://correlatesofwar.org/wp-content/uploads/NMCv7.zip) + Korea (Chosen) 23,640k and Formosa 5,446k (Nov 1937) and Karafuto 338k (LoN Year-Book 1938/39 Table 2) grown to 1941 (~24.3M and ~6.0M at the 1940 censuses, general literature) = ~102.9M. Low = 1937 colonial figures unchanged. Manchukuo and the Kwantung lease excluded."
+  },
+  "urbanization": {
+   "low": 0.207,
+   "mid": 0.27,
+   "high": 0.33,
+   "grade": "C",
+   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "HYDE via OWID 1940: Japan 30.0%, Korea ~19.5-24.5%, Taiwan 19.5% urban; population-weighted ~0.27. Low = COW upop 1941 (21,290k, Japan proper cities over 100,000) / 102.9M = 0.207."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 2000000,
+   "mid": 2420000,
+   "high": 2600000,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-5: Japanese armed forces 2,420k in 1941 (rounded average of two alternative series), 2,840k in 1942. Low = IJA ~1.7M in 1941 (Jowett 2002, via https://en.wikipedia.org/wiki/Imperial_Japanese_Army) + IJN ~0.3M."
+  },
+  "trainedReserves": {
+   "low": 500000,
+   "mid": 1000000,
+   "high": 1500000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: conscription since 1873 created a large pool of first and second reservists; many were already recalled for China. Strength grew by ~0.4M to 2,840k in 1942 (Harrison Table 1-5). (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "supportPersonnel": {
+   "low": 1400000,
+   "mid": 1775000,
+   "high": 1950000,
+   "grade": "C",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "active minus P roles: IJN (~300k incl. naval air), IJA air service, artillery, engineers, transport and the large garrison and lines-of-communication establishment in China and Manchuria."
+  },
+  "mobilizationRatio": {
+   "low": 0.07,
+   "mid": 0.085,
+   "high": 0.11,
+   "grade": "C",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-5: Japanese armed forces 7,730k in 1945 = 0.075 of the 102.9M empire (0.107 of Japan proper, high). Koreans and Taiwanese were conscripted only from 1944, so the ratio on the empire population is low."
+  },
+  "mobilizable": {
+   "low": 7105000,
+   "mid": 8746000,
+   "high": 11440000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 500000,
+     "mid": 600000,
+     "high": 750000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Imperial_Japanese_Army",
+     "note": "Reconstruction: 51 divisions in 1941 (Jowett via cited page; 27 in China, 13 on the Manchurian border) at ~9,000-11,000 infantry each (3-4 infantry regiments), plus independent mixed brigades and garrison units in China."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: Arisaka rifle, good light MGs and knee mortars; weak AT and artillery support"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: long, harsh training; four years of combat experience in China; excellent night and infiltration tactics"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 8000,
+     "mid": 15000,
+     "high": 25000,
+     "grade": "C",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Special Naval Landing Forces (rikusentai) attached to the fleet task forces (Roskill, War at Sea II App. L lists the Dec 1941 task-force organisation); plus army raiding units. Educated count."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: light infantry kit"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: naval volunteers trained for amphibious assault"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 20000,
+     "mid": 30000,
+     "high": 45000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Imperial_Japanese_Army",
+     "note": "Educated reconstruction: 4 cavalry brigades (Manchuria/Mongolia, ~3,500 each) plus divisional cavalry/reconnaissance regiments of ~51 divisions (~400 each)."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: horsed cavalry, light tanks attached"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: regular cavalry with China experience"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 1500,
+     "mid": 2000,
+     "high": 2500,
+     "grade": "C",
+     "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+     "note": "Educated reconstruction from Harrison 1998 Table 1-6 production (0.2k in Sep-Dec 1939, 1.0k in 1940, 1.0k in 1941) plus 1930s production, minus losses in China and Nomonhan. Mostly Type 95 Ha-Go light and Type 97 Chi-Ha medium tanks and tankettes."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: Type 97 Chi-Ha (57 mm low-velocity, 25 mm armour) and Type 95 light tanks; outclassed by Soviet tanks at Nomonhan"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: infantry-support doctrine, combat experience in China"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 5000,
+     "mid": 7000,
+     "high": 10000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess: field, mountain and heavy guns for 51 divisions (~36-48 pieces each) plus independent artillery and fortress guns; Harrison Table 1-6 shows only 1k-7k guns produced per year 1939-41. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: Type 38/90 75 mm, Type 91 105 mm; light by 1941 standards"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: experienced but little massed fire control"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 100,
+     "mid": 200,
+     "high": 300,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Batteries. Educated guess: army and navy AA units around naval bases and cities, Type 88 75 mm and 20/25 mm guns. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.45,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: Type 88 75 mm AA weak at altitude, no radar fire control"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: limited air-defence experience"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 1000,
+     "mid": 1210,
+     "high": 1400,
+     "grade": "B",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Roskill, War at Sea II App. L: established front-line strength of the Japanese naval air forces ~1,750 aircraft, of which 660 fighters. Army fighters (Ki-27, Ki-43) ~550 of the army's 1,375 tactical aircraft deployed (USSBS Pacific War summary, http://www.ibiblio.org/hyperwar/AAF/USSBS/PTO-Summary.html); army split is educated."
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75-1.0. Evidence: A6M Zero the best carrier fighter of 1941 in range and manoeuvrability; Ki-43 nimble but lightly armed"
+    },
+    "training": {
+     "low": 0.85,
+     "mid": 0.9,
+     "high": 0.95,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 1.0. Evidence: navy pilots averaged ~700+ flight hours and China combat experience in Dec 1941"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 1000,
+     "mid": 1300,
+     "high": 1600,
+     "grade": "B",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Roskill App. L: 330 shipborne torpedo-bombers and bombers and 240 shore-based bombers in the naval front line (520 flying boats and floatplanes excluded); plus ~700-800 army bombers and reconnaissance aircraft of the 1,375 deployed (USSBS summary; split educated)."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75. Evidence: B5N, D3A, G3M, G4M with superb Type 91 aerial torpedoes; army bombers average"
+    },
+    "training": {
+     "low": 0.8,
+     "mid": 0.85,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75-1.0. Evidence: highly trained carrier and land-based naval air groups; army air units less so"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 55,
+     "mid": 56,
+     "high": 58,
+     "grade": "A",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Roskill App. L, 7 Dec 1941: 10 battleships (11 by year end with Yamato), 6 fleet carriers, 4 light fleet carriers, 18 heavy cruisers, 18 light cruisers. Comparative-fleet table (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan) gives 10 BB, 10 CV, 18 CA, 17 CL."
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75-1.0. Evidence: carrier force the strongest in the world, Long Lance torpedoes, Yamato completing; no radar until 1942"
+    },
+    "training": {
+     "low": 0.85,
+     "mid": 0.9,
+     "high": 0.95,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 1.0. Evidence: intensive night-fighting and long-range training"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 111,
+     "mid": 113,
+     "high": 113,
+     "grade": "A",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Roskill App. L: 113 destroyers on 7 Dec 1941 (111 in the comparative-fleet table)."
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75. Evidence: Fubuki/Kagero classes with 24-in Long Lance torpedoes and reloads; weak ASW"
+    },
+    "training": {
+     "low": 0.85,
+     "mid": 0.9,
+     "high": 0.95,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 1.0. Evidence: night torpedo-attack training"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 63,
+     "mid": 63,
+     "high": 65,
+     "grade": "A",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+     "note": "Roskill App. L: 63 submarines (64 in the comparative-fleet table)."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: large long-range I-boats, noisy, good torpedoes"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: doctrine aimed at warships rather than commerce"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.7,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: commandQuality 0.5-0.75. Evidence: excellent operational planning of the December 1941 offensives; weak army-navy coordination and strategic judgement; rigid plans"
+  },
+  "cohesion": {
+   "low": 0.75,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: cohesion 0.75-1.0. Evidence: units fought on when surrounded and rarely surrendered; strong regimental and imperial identity"
+  },
+  "morale": {
+   "low": 0.8,
+   "mid": 0.85,
+   "high": 0.95,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: morale 0.75-1.0. Evidence: victorious in China, indoctrinated (Senjinkun 1941), near-fanatical"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.3,
+   "mid": 7.5,
+   "high": 7.7,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: Long Lance torpedo and A6M world class; artillery, tanks and AT weapons a generation behind"
+  },
+  "armor": {
+   "low": 7.0,
+   "mid": 7.2,
+   "high": 7.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: riveted light/medium tanks with 12-25 mm armour"
+  },
+  "ships": {
+   "low": 7.7,
+   "mid": 7.9,
+   "high": 8.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: close to 8 (carriers, radar, submarines). Evidence: 10 carriers with trained air groups, Yamato, but no ship radar until mid-1942"
+  },
+  "fortification": {
+   "low": 7.1,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: fortified Pacific islands mostly not yet built; Tsushima and Tokyo Bay coastal forts"
+  },
+  "logistics": {
+   "low": 7.0,
+   "mid": 7.2,
+   "high": 7.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (railways) and 8 (motor transport). Evidence: army largely horse-drawn; merchant marine of ~6M GRT carried everything overseas"
+  },
+  "communications": {
+   "low": 7.1,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 7 (telegraph, telephone). Evidence: naval radio good, army radio scarce; codes later broken"
+  },
+  "isr": {
+   "low": 7.1,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (aerial recon) and 8 (radar). Evidence: excellent long-range floatplanes and flying boats, no operational radar in Dec 1941"
+  },
+  "air": {
+   "low": 7.7,
+   "mid": 7.9,
+   "high": 8.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: air 8 = 1943. Evidence: A6M Zero, G4M, B5N, Ki-43 modern for 1941; no armour or self-sealing tanks"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 3900,
+   "mid": 4130,
+   "high": 4350,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Maddison Project 2023 (OWID CSV), 2011 int$: Japan 1941 = 4,986; Korea (South Korea series) 1941 = 2,107; Taiwan 1940 = 1,992. Population-weighted over 72.6M / 24.3M / 6.0M = ~4,130."
+  },
+  "gdp": {
+   "low": 395800000000,
+   "mid": 425000000000,
+   "high": 452400000000,
+   "grade": "B",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+  },
+  "milSpendShare": {
+   "low": 0.22,
+   "mid": 0.27,
+   "high": 0.33,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-8 (Japan, % of GDP at current prices): 22% (1939, 1940), 27% (1941), 33% (1942). Japan had been at war in China since 1937, so there is no true peacetime level."
+  },
+  "industrialShare": {
+   "low": 0.32,
+   "mid": 0.37,
+   "high": 0.42,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: industry ~40% of output in Japan proper after the 1930s heavy-industry drive; Korea and Taiwan were mainly agrarian, lowering the empire share. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "foodSurplus": {
+   "low": 0.0,
+   "mid": 0.03,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: Japan proper depended on rice from Korea and Taiwan; counting them, the empire was roughly self-sufficient in staples with little surplus. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "annualCohort": {
+   "low": 620000,
+   "mid": 670000,
+   "high": 720000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 3(a): Japan census 1 Oct 1935, males 15-19 = 3,351k, i.e. ~670k per year reaching conscription age 20 in 1940-44. Korean and Taiwanese men were not conscripted until 1944 and are excluded."
+  },
+  "production": {
+   "armor": {
+    "low": 400,
+    "mid": 1000,
+    "high": 1200,
+    "grade": "B",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison 1998 Table 1-6: tanks and SPG 1.0k (1941), 1.2k (1942), 0.8k (1943), 0.4k (1944)."
+   },
+   "aircraft_fighter": {
+    "low": 3000,
+    "mid": 6700,
+    "high": 11000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: combat aircraft 6.3k (1942), 13.4k (1943), 21.0k (1944); fighters ~50% (33,405 of 64,484 Japanese aircraft per https://en.wikipedia.org/wiki/Military_production_during_World_War_II)."
+   },
+   "aircraft_strike": {
+    "low": 3000,
+    "mid": 6700,
+    "high": 10000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 combat aircraft minus fighters."
+   },
+   "artillery": {
+    "low": 7000,
+    "mid": 20000,
+    "high": 40000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: guns 7k (1941), 13k (1942), 28k (1943), 84k (1944, much of it naval AA)."
+   },
+   "ships_major": {
+    "low": 3,
+    "mid": 5,
+    "high": 8,
+    "grade": "C",
+    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+    "note": "14 carriers, 2 battleships and 12 cruisers completed 1939-45 (cited page), ~5 per year."
+   },
+   "ships_minor": {
+    "low": 25,
+    "mid": 60,
+    "high": 200,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: major naval vessels 49 (1941), 68 (1942), 122 (1943), 248 (1944) incl. destroyers, escorts (kaibokan) and submarines; 63 destroyers 1939-45 (https://en.wikipedia.org/wiki/Military_production_during_World_War_II)."
+   },
+   "submarines": {
+    "low": 15,
+    "mid": 30,
+    "high": 40,
+    "grade": "D",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Educated split of Harrison's naval series: ~120 submarines completed 1941-45."
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 100000,
+   "mid": 150000,
+   "high": 250000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: national and prefectural roads of Japan proper (mostly unpaved outside cities) plus main roads in Korea and Taiwan; Japan relied on rail and coastal shipping. (context page: https://en.wikipedia.org/wiki/Japanese_Government_Railways)"
+  },
+  "railKm": {
+   "low": 28000,
+   "mid": 31000,
+   "high": 34000,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Japanese_Government_Railways",
+   "note": "Japanese Government Railways 18,400 km on 31 March 1941 (Ishino et al. 1998 via cited page) plus private railways in Japan proper (~6,000-7,000 km), the Chosen Government Railway and Korean private lines (~5,000-6,000 km) and Taiwan (~1,500 km incl. sugar lines); the additions are educated."
+  },
+  "majorPorts": {
+   "low": 10,
+   "mid": 12,
+   "high": 14,
+   "grade": "C",
+   "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
+   "note": "Yokohama, Kobe, Osaka, Moji/Shimonoseki, Nagasaki, Niigata, Busan, Keelung, Takao, plus the naval bases Kure, Yokosuka, Sasebo, Maizuru."
+  },
+  "merchantTonnage": {
+   "low": 6500000,
+   "mid": 9000000,
+   "high": 9600000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf",
+   "note": "LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938): Japan 5,007k gross tons; ~6.0M GRT by December 1941 (general literature). x1.5 to deadweight (x1.3-1.6)."
+  },
+  "supplyRangeKm": {
+   "low": 200,
+   "mid": 300,
+   "high": 400,
+   "grade": "C",
+   "source": "isbn:0-521-21730-X",
+   "note": "van Creveld, Supplying War (general argument on motor transport radius from railheads); the IJA was mostly horse-drawn and supplied overseas by sea, so effective range depended on shipping rather than trucks."
+  },
+  "draftAnimals": {
+   "low": 1500000,
+   "mid": 2500000,
+   "high": 3500000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: ~1.5M horses in Japan proper plus Korean draft cattle (~1.7M); the cited page gives only ~100,000 horses employed by the military. (context page: https://en.wikipedia.org/wiki/Horses_in_World_War_II)"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before July 1945."
+  },
+  "basesAbroad": [
+   {
+    "name": "Truk (Chuuk)",
+    "lat": 7.42,
+    "lon": 151.78,
+    "kind": "port"
+   },
+   {
+    "name": "Palau (Koror)",
+    "lat": 7.34,
+    "lon": 134.48,
+    "kind": "port"
+   },
+   {
+    "name": "Saipan",
+    "lat": 15.18,
+    "lon": 145.75,
+    "kind": "port"
+   },
+   {
+    "name": "Kwajalein",
+    "lat": 8.72,
+    "lon": 167.73,
+    "kind": "port"
+   },
+   {
+    "name": "Port Arthur (Kwantung)",
+    "lat": 38.81,
+    "lon": 121.26,
+    "kind": "port"
+   },
+   {
+    "name": "Dairen (Kwantung)",
+    "lat": 38.91,
+    "lon": 121.6,
+    "kind": "port"
+   },
+   {
+    "name": "Mukden (Manchukuo)",
+    "lat": 41.8,
+    "lon": 123.43,
+    "kind": "city"
+   },
+   {
+    "name": "Shanghai",
+    "lat": 31.23,
+    "lon": 121.47,
+    "kind": "port"
+   },
+   {
+    "name": "Sanya (Hainan)",
+    "lat": 18.25,
+    "lon": 109.51,
+    "kind": "port"
+   },
+   {
+    "name": "Cam Ranh Bay (French Indochina, from July 1941)",
+    "lat": 11.9,
+    "lon": 109.2,
+    "kind": "port"
+   },
+   {
+    "name": "Saigon (French Indochina)",
+    "lat": 10.82,
+    "lon": 106.63,
+    "kind": "port"
+   }
+  ]
+ },
+ "doctrineId": "japanese-ww2",
+ "geography": {
+  "climate": "Cfa",
+  "chokepoints": [
+   "Tsushima / Korea Strait",
+   "Shimonoseki Strait",
+   "Tsugaru Strait",
+   "La Perouse (Soya) Strait",
+   "Luzon Strait (Bashi Channel)",
+   "Taiwan Strait"
+  ],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "1.2 row: islands with mountainous terrain, fortified naval bases and total population support (high 1.3 for the sea moat); no continental strategic depth."
+  }
+ },
+ "notes": "Snapshot date 7-8 December 1941 (Pearl Harbor, Malaya, Philippines). COUNTED as integral parts: Japan proper, Korea (Chosen), Taiwan (Formosa) and Karafuto (population ~102.9M, area 675,000 km2). NOT counted: Manchukuo (separate puppet state, Kwantung Army forces stationed there ARE counted as Japanese forces), the Kwantung lease, the South Seas Mandate, occupied China, French Indochina. includes is empty because Korea and Taiwan had no separate state in 1941. The hb:1938:Empire of Japan polygon merges Korea and Manchukuo (~1.79M km2), so the polygon is larger than the counted territory. Forces are the whole armed forces (~27 divisions in China, 13 in Manchuria at the start of the war per Jowett). Weakest values: artillery, AA, tank inventory, army aircraft split, roads and draft animals. Ship convention: battleships, carriers, cruisers = ships_major; destroyers = ships_minor. Merchant tonnage converted to deadweight at x1.5."
+}

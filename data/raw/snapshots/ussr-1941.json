@@ -1,0 +1,758 @@
+{
+ "id": "ussr-1941",
+ "nationId": "ussr",
+ "includes": [],
+ "name": "Union of Soviet Socialist Republics",
+ "year": 1941,
+ "era": "worldwars",
+ "region": "europe",
+ "phase": "key",
+ "tags": [
+  "great power",
+  "Allies",
+  "communist",
+  "Red Army",
+  "deep battle"
+ ],
+ "capital": {
+  "name": "Moscow",
+  "lat": 55.756,
+  "lon": 37.617,
+  "kind": "capital",
+  "population": 4137000
+ },
+ "places": [
+  {
+   "name": "Leningrad",
+   "lat": 59.939,
+   "lon": 30.316,
+   "kind": "port"
+  },
+  {
+   "name": "Kiev",
+   "lat": 50.45,
+   "lon": 30.523,
+   "kind": "city"
+  },
+  {
+   "name": "Kharkov",
+   "lat": 49.993,
+   "lon": 36.231,
+   "kind": "city"
+  },
+  {
+   "name": "Stalingrad",
+   "lat": 48.708,
+   "lon": 44.513,
+   "kind": "city"
+  },
+  {
+   "name": "Gorky",
+   "lat": 56.327,
+   "lon": 44.006,
+   "kind": "city"
+  },
+  {
+   "name": "Baku (oil)",
+   "lat": 40.409,
+   "lon": 49.867,
+   "kind": "city"
+  },
+  {
+   "name": "Sevastopol",
+   "lat": 44.616,
+   "lon": 33.525,
+   "kind": "port"
+  },
+  {
+   "name": "Murmansk",
+   "lat": 68.97,
+   "lon": 33.075,
+   "kind": "port"
+  },
+  {
+   "name": "Vladivostok",
+   "lat": 43.116,
+   "lon": 131.882,
+   "kind": "port"
+  },
+  {
+   "name": "Brest-Litovsk fortress",
+   "lat": 52.083,
+   "lon": 23.655,
+   "kind": "fortress"
+  },
+  {
+   "name": "Smolensk land bridge",
+   "lat": 54.782,
+   "lon": 32.045,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Pripet Marshes",
+   "lat": 52.0,
+   "lon": 27.5,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:1938:USSR",
+  "areaKm2": {
+   "low": 21126000,
+   "mid": 21176000,
+   "high": 21650000,
+   "grade": "A",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 2: USSR in Europe and Asia 21,176 thousand km2 (pre-1939 frontier). The world_1938 USSR polygon (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) computes to ~21.13M km2. The 1939-40 annexations (Baltic states, eastern Poland, Bessarabia/N. Bukovina, Karelian Isthmus, ~0.45-0.5M km2) were Soviet in June 1941 but lie outside the polygon; high includes them (educated)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 191800000,
+   "mid": 196700000,
+   "high": 200100000,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/World_War_II_casualties_of_the_Soviet_Union",
+   "note": "Andreev, Darski and Kharkova demographic balance: 196.7M in June 1941 (incl. territories annexed 1939-40); Rybakovsky's review range 191.8-200.1M (both via the cited page). COW NMC v7 tpop 1941 = 196,659k agrees. The 17 Jan 1939 census (old frontier) gave 170,467k (LoN Year-Book 1938/39 Table 2)."
+  },
+  "urbanization": {
+   "low": 0.165,
+   "mid": 0.33,
+   "high": 0.353,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "HYDE via OWID: Russia 1940 = 35.3% urban (high; the USSR as a whole was less urban). Mid ~0.33 matches the 1939 census urban share (~33%, general literature, not fetched). Low = COW upop/tpop 1941 = 32,546/196,659 = 0.165 (cities over 100,000)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 4900000,
+   "mid": 5373000,
+   "high": 5710000,
+   "grade": "B",
+   "source": "https://www.operationbarbarossa.net/?p=1102",
+   "note": "Askey (operationbarbarossa.net) total 22 June 1941: 5,448k = Red Army/NKVD/PVO 4,553k + air force 476k + navy 344k + 74,945 construction and civil-department personnel (excluded here). Krivosheev's reconciliation gives 4,902k (low, via https://en.wikipedia.org/wiki/World_War_II_casualties_of_the_Soviet_Union); some Russian sources give 5.71M (high)."
+  },
+  "trainedReserves": {
+   "low": 3500000,
+   "mid": 5000000,
+   "high": 6500000,
+   "grade": "C",
+   "source": "isbn:1-85367-280-7",
+   "note": "Krivosheev 1997 (Soviet Casualties and Combat Losses, mobilisation section; page not verified): mobilisation decreed 22 June 1941 called the 1905-1918 classes and brought in ~5.3M reservists by 1 July. Harrison 1998 Table 1-5 average 1941 strength 7,100k is consistent. Grade C."
+  },
+  "supportPersonnel": {
+   "low": 3600000,
+   "mid": 4038000,
+   "high": 4300000,
+   "grade": "C",
+   "source": "https://www.operationbarbarossa.net/?p=1102",
+   "note": "active minus P roles: air force 476k, navy 344k, plus the army's tank, artillery, engineer, signals, rear services, PVO, fortified-region garrisons and NKVD troops."
+  },
+  "mobilizationRatio": {
+   "low": 0.12,
+   "mid": 0.16,
+   "high": 0.18,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/World_War_II_casualties_of_the_Soviet_Union",
+   "note": "Krivosheev (via cited page): 4,902k under arms in June 1941 plus 29,575k drafted during the war = ~34.5M served, 0.175 of 196.7M (high). Peak simultaneous strength ~12.2M (Harrison 1998 Table 1-5) on a population reduced by occupation gives the low."
+  },
+  "mobilizable": {
+   "low": 23016000,
+   "mid": 31472000,
+   "high": 36018000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 900000,
+     "mid": 1100000,
+     "high": 1400000,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Reconstruction from Askey's 304 divisions (179 rifle): rifle divisions at an average ~8,000-10,000 of the 14,483 wartime establishment, of which ~60-65% in the rifle regiments -> ~5,000-7,500 riflemen x 179. Plus rifle troops of fortified regions excluded (support)."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: Mosin rifle, DP LMG, SVT-40 partly issued; shortages of radios, trucks and AT guns"
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: army tripled since 1939, many recent conscripts; post-purge junior officers inexperienced"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 100000,
+     "mid": 150000,
+     "high": 200000,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "19 mountain rifle divisions (Askey) at ~5,000-6,000 infantry each plus 16 airborne brigades (5 airborne corps) at ~3,000."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: as rifle troops, lighter equipment"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: airborne volunteers better trained"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 70000,
+     "mid": 85000,
+     "high": 110000,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "9 cavalry and 4 mountain cavalry divisions (Askey) at ~6,000-7,000 men each (1941 establishment ~9,200)."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: horsed cavalry with light tank and artillery support"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: long-service cavalry tradition, good in forests and marshes"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 19000,
+     "mid": 23295,
+     "high": 25000,
+     "grade": "B",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Askey: 23,295 tanks in the whole USSR on 22 June 1941; 12,842 in the five western districts (sum of district figures). Only ~1,800 T-34/KV; a large share of older T-26/BT needed repair (low ~80% serviceable, educated). Barbarossa article gives ~11,000 frontline (Mercatante; Clark)."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: T-34 and KV best tanks of 1941 but ~8% of the fleet; T-26 and BT light tanks obsolescent"
+    },
+    "training": {
+     "low": 0.25,
+     "mid": 0.35,
+     "high": 0.45,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: 29 mechanised corps forming, drivers with a few hours of training, few radios"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 45000,
+     "mid": 48247,
+     "high": 67000,
+     "grade": "B",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Askey: 48,247 artillery pieces 45-305 mm (excl. coastal and railway guns) plus 56,100 mortars 50-120 mm (not counted here). High allows broader counts of guns incl. lighter calibres."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: 76 mm ZiS-3/F-22, 122 mm M-30, 152 mm ML-20 modern and good"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: shortage of tractors, communications and trained FOs"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 1700,
+     "mid": 2150,
+     "high": 2900,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Batteries. Askey: 8,600 AA guns 25-85 mm; at ~4 heavy guns per battery (light batteries larger) ~2,150 batteries."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: 85 mm 52-K good; light AA scarce"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: PVO crews thinly trained"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 10000,
+     "mid": 11700,
+     "high": 13000,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Askey: 20,474 combat aircraft in total; fighters ~55-62% of Soviet combat aircraft in 1941 (I-16, I-153, new MiG-3/Yak-1/LaGG-3) - split is an educated reconstruction. Western districts 7,133-9,100 aircraft (Barbarossa article; Glantz)."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: mostly I-16 and I-153; ~1,500 modern fighters, few radios"
+    },
+    "training": {
+     "low": 0.25,
+     "mid": 0.3,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25. Evidence: pilots averaged few hours in new types; post-purge leadership"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 7500,
+     "mid": 8800,
+     "high": 10000,
+     "grade": "C",
+     "source": "https://www.operationbarbarossa.net/?p=1102",
+     "note": "Remainder of Askey's 20,474 combat aircraft: SB, DB-3, TB-3, Su-2, early Il-2 and naval aviation bombers. Educated split."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: SB obsolete; Il-2 and Pe-2 just entering service"
+    },
+    "training": {
+     "low": 0.25,
+     "mid": 0.3,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25. Evidence: poor navigation and night training"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 10,
+     "mid": 10,
+     "high": 11,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+     "note": "Soviet fleets 1941: 3 battleships and 7 cruisers (cited page, note 25). Convention: battleships, carriers and cruisers = ships_major."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: 3 Tsarist-era battleships; Kirov-class cruisers modern"
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: limited sea time, purged command"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 59,
+     "mid": 81,
+     "high": 110,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+     "note": "59 destroyers (46 modern Gnevny/Soobrazitelny class) and 22 patrol vessels (cited page); 269 torpedo boats and 88 minesweepers excluded as coastal craft."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: modern destroyers, weak AA and ASW"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: limited sea time"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 212,
+     "mid": 218,
+     "high": 218,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+     "note": "218 submarines in 1941 (cited page); other counts 212. The largest submarine force in the world, but many small coastal boats and low operational readiness."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: many small M-class; poor torpedoes and sonar"
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.45,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: low readiness; e.g. only ~35 of 75 Baltic boats operational"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.3,
+   "mid": 0.4,
+   "high": 0.5,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: commandQuality 0.25-0.5. Evidence: 1937-38 purges removed most senior commanders; deep-battle doctrine on paper but ad hoc command in June 1941, poor coordination"
+  },
+  "cohesion": {
+   "low": 0.35,
+   "mid": 0.45,
+   "high": 0.55,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: cohesion 0.25-0.5. Evidence: national conscript army mid-expansion; mass surrenders in 1941 encirclements, but many units fought on when surrounded (Brest)"
+  },
+  "morale": {
+   "low": 0.45,
+   "mid": 0.55,
+   "high": 0.75,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: morale 0.5-0.75. Evidence: surprise and collapse in summer 1941; existential defence of the homeland raised morale later (high)"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.6,
+   "mid": 7.8,
+   "high": 8.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: T-34/KV, ZiS-3, M-30, Katyusha prototypes, SVT-40; most equipment 1930s"
+  },
+  "armor": {
+   "low": 7.6,
+   "mid": 7.8,
+   "high": 8.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: close to 8 (rolled homogeneous armour). Evidence: T-34 sloped armour and KV 75 mm armour best in the world, but only ~1,800 of 23,000 tanks"
+  },
+  "ships": {
+   "low": 7.0,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: no carriers, Tsarist battleships, large but low-quality submarine force"
+  },
+  "fortification": {
+   "low": 7.4,
+   "mid": 7.6,
+   "high": 7.8,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8 (Maginot). Evidence: Stalin Line partly disarmed, Molotov Line incomplete in June 1941"
+  },
+  "logistics": {
+   "low": 7.1,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (railways) and 8 (motor transport). Evidence: rail-bound army; 272,600 motor vehicles (Askey) for 304 divisions; broad gauge"
+  },
+  "communications": {
+   "low": 7.0,
+   "mid": 7.2,
+   "high": 7.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 7 (telegraph, telephone). Evidence: radios scarce below army level, tanks mostly without radios, reliance on landlines"
+  },
+  "isr": {
+   "low": 7.2,
+   "mid": 7.4,
+   "high": 7.6,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (aerial recon) and 8 (radar). Evidence: a few RUS-1/RUS-2 early-warning radars; aerial reconnaissance weak"
+  },
+  "air": {
+   "low": 7.3,
+   "mid": 7.5,
+   "high": 7.7,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: I-16/I-153 obsolete; MiG-3, Yak-1, LaGG-3, Il-2, Pe-2 entering service"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 3100,
+   "mid": 3417,
+   "high": 3566,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Maddison Project 2023 (OWID CSV), 'USSR' series: 1939 = 3,566, 1940 = 3,417 (2011 int$); 1941 not reported. Low allows for the poorer annexed western lands."
+  },
+  "gdp": {
+   "low": 594600000000,
+   "mid": 672100000000,
+   "high": 713600000000,
+   "grade": "B",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+  },
+  "milSpendShare": {
+   "low": 0.15,
+   "mid": 0.17,
+   "high": 0.28,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-8 (USSR, % of GNP at 1937 factor cost): 17% in 1940, 28% in 1941, 61% in 1942."
+  },
+  "industrialShare": {
+   "low": 0.3,
+   "mid": 0.35,
+   "high": 0.4,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: after the Five-Year Plans industry was ~30-40% of GNP; Harrison 1998 stresses the USSR's low-productivity agriculture still employing most workers. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "foodSurplus": {
+   "low": 0.03,
+   "mid": 0.08,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: collectivised agriculture fed the country with little margin (grain exports small after 1933); loss of Ukraine in 1941 turned it into deficit. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "annualCohort": {
+   "low": 1500000,
+   "mid": 1700000,
+   "high": 2000000,
+   "grade": "C",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 3(a), 1926 census: males 20-24 = 6,712k (pop 147M), ~0.91% of population per one-year male cohort; applied to 196.7M gives ~1.8M, reduced because the 1921-23 birth cohorts were thinned by civil war and famine. Reconstruction, grade C."
+  },
+  "production": {
+   "armor": {
+    "low": 9600,
+    "mid": 24400,
+    "high": 29000,
+    "grade": "B",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison 1998 Table 1-6 (IVMV): tanks and SPG 4.8k in the last 6 months of 1941 (9.6k annualised, low), 24.4k (1942), 24.1k (1943), 29.0k (1944)."
+   },
+   "aircraft_fighter": {
+    "low": 8000,
+    "mid": 14000,
+    "high": 18000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: combat aircraft 21.7k (1942), 29.9k (1943), 33.2k (1944); fighters ~50-55% of Soviet output (educated split)."
+   },
+   "aircraft_strike": {
+    "low": 7000,
+    "mid": 11000,
+    "high": 15000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 combat aircraft minus fighters: Il-2 (the most produced aircraft), Pe-2, Il-4, Tu-2."
+   },
+   "artillery": {
+    "low": 60000,
+    "mid": 125000,
+    "high": 130000,
+    "grade": "B",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: guns 30k in the last 6 months of 1941 (60k annualised), 127k (1942), 130k (1943), 122k (1944); mortars (230k in 1942) excluded."
+   },
+   "ships_major": {
+    "low": 0,
+    "mid": 0.3,
+    "high": 1,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 major naval vessels 62 (1941) falling to 13-23 per year; essentially no capital ships or cruisers were completed after June 1941."
+   },
+   "ships_minor": {
+    "low": 8,
+    "mid": 15,
+    "high": 45,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: major naval vessels 62 (1941), 19 (1942), 13 (1943), 23 (1944), minus submarines."
+   },
+   "submarines": {
+    "low": 5,
+    "mid": 10,
+    "high": 20,
+    "grade": "D",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Educated split of Harrison's major naval vessels; ~50 submarines completed 1941-45."
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 80000,
+   "mid": 110000,
+   "high": 150000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess of hard-surfaced roads; the overwhelming majority of Soviet roads were unsurfaced dirt tracks that dissolved in rasputitsa (van Creveld, Supplying War ch. 5)."
+  },
+  "railKm": {
+   "low": 100000,
+   "mid": 106100,
+   "high": 110000,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/Rail_transport_in_the_Soviet_Union",
+   "note": "106,100 km of railway by 1940 (cited page, incl. annexed lines), up from 81,000 km in 1917; broad 1,524 mm gauge."
+  },
+  "majorPorts": {
+   "low": 6,
+   "mid": 8,
+   "high": 10,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+   "note": "Leningrad/Kronstadt, Tallinn, Riga, Murmansk, Arkhangelsk, Sevastopol, Odessa, Novorossiysk, Vladivostok; split between four separated fleet areas."
+  },
+  "merchantTonnage": {
+   "low": 1660000,
+   "mid": 1920000,
+   "high": 2300000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf",
+   "note": "LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938): U.S.S.R. 1,281k gross tons (excl. Caspian). x1.5 to deadweight (x1.3-1.6); high adds the Baltic states' fleets seized in 1940 (~0.25M GRT, educated)."
+  },
+  "supplyRangeKm": {
+   "low": 200,
+   "mid": 250,
+   "high": 350,
+   "grade": "C",
+   "source": "isbn:0-521-21730-X",
+   "note": "van Creveld ch. 5 (Barbarossa logistics): forces beyond ~300 km from railheads could not be supplied by the motor transport of 1941; the Red Army had only 272,600 vehicles (Askey) and depended on rail."
+  },
+  "draftAnimals": {
+   "low": 17000000,
+   "mid": 21000000,
+   "high": 21500000,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+   "note": "USSR horse stock 21M in 1940 (Dunn 2005 p. 231, via cited page), down from 34M in 1929; ~11M lost to the German advance 1941-42; the Red Army used 3.5M during the war."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before July 1945."
+  },
+  "basesAbroad": [
+   {
+    "name": "Hanko naval base (leased from Finland 1940-41)",
+    "lat": 59.82,
+    "lon": 22.97,
+    "kind": "port"
+   },
+   {
+    "name": "Ulan Bator (Soviet forces in Mongolia)",
+    "lat": 47.92,
+    "lon": 106.92,
+    "kind": "city"
+   }
+  ]
+ },
+ "doctrineId": "soviet-deep-operations",
+ "geography": {
+  "climate": "Dfb",
+  "chokepoints": [
+   "Pripet Marshes",
+   "Smolensk land bridge (Orsha gate)",
+   "Karelian Isthmus",
+   "Gulf of Finland",
+   "Kerch Strait",
+   "Turkish Straits (external)"
+  ],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.3,
+   "high": 1.3,
+   "grade": "B",
+   "source": "derived:home-defense",
+   "note": "1.3 row: familiar terrain, fortified cities, population support, deep strategic depth and a harsh winter and rasputitsa invaders were not adapted to."
+  }
+ },
+ "notes": "Snapshot date 22 June 1941 (Operation Barbarossa). Population (196.7M), forces, rail and GDP are for the June 1941 USSR INCLUDING the 1939-40 annexations (Baltic states, eastern Poland, Bessarabia, Karelian Isthmus, ~20-23M people), but the requested border hb:1938:USSR is the pre-1939 frontier, so these lands lie outside the polygon; a world_1945 polygon would match better. Mongolia (MPR) not included. Force counts are for the whole USSR (Askey, operationbarbarossa.net); the five western districts held 2,691,674 men, 12,842 tanks, 8,336 combat aircraft and 23,633 guns (sum of Askey's district figures), which a battle agent should use for the frontier battles. P-role personnel are reconstructions from division counts (grade C). Ship convention as in other WWII snapshots: battleships/carriers/cruisers = ships_major, destroyers and patrol ships = ships_minor. Merchant tonnage converted to deadweight at x1.5."
+}

@@ -1,0 +1,771 @@
+{
+ "id": "usa-1941",
+ "nationId": "usa",
+ "includes": [],
+ "name": "United States of America",
+ "year": 1941,
+ "era": "worldwars",
+ "region": "north_america",
+ "phase": "rise",
+ "tags": [
+  "great power",
+  "Allies",
+  "arsenal of democracy",
+  "naval power",
+  "industrial giant"
+ ],
+ "capital": {
+  "name": "Washington, D.C.",
+  "lat": 38.895,
+  "lon": -77.037,
+  "kind": "capital",
+  "population": 663000
+ },
+ "places": [
+  {
+   "name": "New York",
+   "lat": 40.713,
+   "lon": -74.006,
+   "kind": "port",
+   "population": 7455000
+  },
+  {
+   "name": "Chicago",
+   "lat": 41.878,
+   "lon": -87.63,
+   "kind": "city"
+  },
+  {
+   "name": "Philadelphia",
+   "lat": 39.953,
+   "lon": -75.165,
+   "kind": "port"
+  },
+  {
+   "name": "Detroit",
+   "lat": 42.331,
+   "lon": -83.046,
+   "kind": "city"
+  },
+  {
+   "name": "Los Angeles",
+   "lat": 34.052,
+   "lon": -118.244,
+   "kind": "city"
+  },
+  {
+   "name": "San Francisco",
+   "lat": 37.775,
+   "lon": -122.419,
+   "kind": "port"
+  },
+  {
+   "name": "Norfolk (Hampton Roads)",
+   "lat": 36.851,
+   "lon": -76.286,
+   "kind": "port"
+  },
+  {
+   "name": "San Diego",
+   "lat": 32.716,
+   "lon": -117.161,
+   "kind": "port"
+  },
+  {
+   "name": "Seattle (Puget Sound)",
+   "lat": 47.606,
+   "lon": -122.332,
+   "kind": "port"
+  },
+  {
+   "name": "Pearl Harbor",
+   "lat": 21.35,
+   "lon": -157.95,
+   "kind": "port"
+  },
+  {
+   "name": "Dutch Harbor",
+   "lat": 53.889,
+   "lon": -166.542,
+   "kind": "port"
+  }
+ ],
+ "territory": {
+  "border": "hb:1938:United States",
+  "areaKm2": {
+   "low": 9250000,
+   "mid": 9370000,
+   "high": 9400000,
+   "grade": "A",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 2: United States 7,839 thousand km2 incl. 137k inland water, Alaska ~1,519k (printed '519' in the OCR, the leading 1 is lost), plus Hawaii ~16.6k = ~9.37M. The world_1938 polygon (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) computes to ~9.25M (low)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 132122000,
+   "mid": 133402000,
+   "high": 133900000,
+   "grade": "A",
+   "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+   "note": "COW NMC v7 tpop 1941 = 133,402k (1940 = 132,122k, the census year). States plus Alaska and Hawaii; the Philippines, Puerto Rico and other dependencies are not counted."
+  },
+  "urbanization": {
+   "low": 0.286,
+   "mid": 0.57,
+   "high": 0.6,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "HYDE via OWID: United States 1940 = 60.0% urban (high); 1940 census urban definition ~56.5% (general literature) for the mid. Low = COW upop/tpop 1941 = 38,183/133,402 = 0.286 (cities over 100,000)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1800000,
+   "mid": 2080000,
+   "high": 2200000,
+   "grade": "B",
+   "source": "http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html",
+   "note": "Army (incl. Army Air Forces) 1,686,403 on 31 Dec 1941 (Matloff and Snell, Strategic Planning 1941-42 ch. XVI). Navy 284,427 and Marines 54,359 at mid-1941 (National WWII Museum table, whose 1941 total 1,801,101 is the low) grew to roughly 325k and 66k by December (educated). Coast Guard (~25k) included in high."
+  },
+  "trainedReserves": {
+   "low": 100000,
+   "mid": 250000,
+   "high": 400000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: the National Guard was already federalised (1940-41) and inside the active figure; recallable trained men were draftees released over age 28 in 1941, Organized Reserve officers and Navy/Marine reservists. (context page: http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html)"
+  },
+  "supportPersonnel": {
+   "low": 1500000,
+   "mid": 1760000,
+   "high": 1900000,
+   "grade": "C",
+   "source": "http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html",
+   "note": "active minus P roles: Army Air Forces (~350k), Navy, the Army's artillery, armored, engineer, signal and service troops, replacement-training centres and overseas garrisons (~192k overseas in Dec 1941 per the cited chapter)."
+  },
+  "mobilizationRatio": {
+   "low": 0.085,
+   "mid": 0.11,
+   "high": 0.125,
+   "grade": "B",
+   "source": "https://www.nationalww2museum.org/students-teachers/student-resources/research-starters/research-starters-us-military-numbers",
+   "note": "Peak strength 12,209,238 in 1945 (National WWII Museum table) = 0.088 of ~139M. About 16M served in total during the war (general literature, not in the fetched table) = 0.12 of the 1941 population."
+  },
+  "mobilizable": {
+   "low": 11230000,
+   "mid": 14674000,
+   "high": 16738000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 230000,
+     "mid": 300000,
+     "high": 360000,
+     "grade": "C",
+     "source": "http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html",
+     "note": "Reconstruction: 37 active divisions on 31 Dec 1941 (cited chapter), ~29 of them infantry; infantry regiments of a triangular division ~9,000-10,000 at full strength, plus separate infantry regiments and the Marine Corps' two forming divisions (~30k)."
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: M1 Garand semi-automatic rifle standard, BAR; AT weapons weak (37 mm)"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: mostly 1940-41 draftees and Guardsmen with a year of training; Louisiana and Carolina manoeuvres 1941"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 15000,
+     "mid": 20000,
+     "high": 28000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+     "note": "12 horse regiments of 790 horses each in Dec 1939 (Hoffmann p. 260, via the cited page): 1st and 2nd Cavalry Divisions and the 26th Cavalry (Philippine Scouts), ~1,500-1,800 men per regiment."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: horsed cavalry, obsolete for mechanised war"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: regular long-service troopers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 2500,
+     "mid": 3300,
+     "high": 4000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/American_armored_fighting_vehicle_production_during_World_War_II",
+     "note": "Production 365 tanks in 1940 and 4,021 in 1941 (2,591 light, 1,430 medium; Ness, Jane's WWII Tanks p. 13 via cited page) plus a few hundred pre-1940 vehicles; more than half of M3 output went to the UK and USSR. Educated net inventory."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: M3 Stuart light and M3 Lee medium (sponson 75 mm); comparable to Pz III"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: Armored Force created July 1940, 5 armored divisions forming"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 4000,
+     "mid": 6000,
+     "high": 9000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess: WWI-stock 75 mm and 155 mm guns plus new 105 mm M2 howitzers (in production from 1941) and 37 mm AT guns for 37 divisions and corps units. (context page: http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html)"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75. Evidence: 105 mm M2 and fire-direction-centre method among the era's best"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: new units, but Fort Sill gunnery school strong"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 200,
+     "mid": 300,
+     "high": 500,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Batteries. Educated guess: Coast Artillery Corps anti-aircraft regiments (3-in and new 90 mm guns, 37 mm automatic weapons) expanded in 1940-41. (context page: http://www.ibiblio.org/hyperwar/USA/USA-WD-Strategic1/USA-WD-Strategic1-16.html)"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: 90 mm M1 entering service, SCR-268 gun-laying radar"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: newly raised regiments"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 2100,
+     "mid": 2400,
+     "high": 2900,
+     "grade": "B",
+     "source": "http://www.ibiblio.org/hyperwar/AAF/StatDigest/aafsd-3.html",
+     "note": "AAF Statistical Digest Table 83: fighters on hand 1,618 (end Nov 1941) and 2,170 (end Dec 1941); plus Navy and Marine fighters (F4F, F2A) ~400-700 of the Navy's ~3,400 aircraft (Underwood via https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II; split educated)."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: P-40, P-39, F4F Wildcat: inferior in climb and turn to the A6M Zero, rugged"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: pilot pool expanding fast; peacetime-trained cadre good"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 2400,
+     "mid": 3000,
+     "high": 3500,
+     "grade": "B",
+     "source": "http://www.ibiblio.org/hyperwar/AAF/StatDigest/aafsd-3.html",
+     "note": "AAF Statistical Digest Table 83: heavy/medium/light bombers 157/685/350 (Nov 1941) and 288/745/799 (Dec 1941); plus Navy SBD, TBD, SB2U and PBY strike/patrol aircraft (~1,200-1,500 of ~3,400 Navy aircraft, educated split)."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: B-17, SBD Dauntless good; TBD Devastator obsolete"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: expanding pilot and crew pool"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 61,
+     "mid": 62,
+     "high": 62,
+     "grade": "A",
+     "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
+     "note": "NHHC ship force levels on 7 Dec 1941 (via cited page): 17 battleships, 7 fleet carriers + 1 escort carrier (Long Island), 37 cruisers. Pacific and Asiatic Fleets alone: 9 BB, 3 CV, 13 CA, 11 CL (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan)."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75. Evidence: new North Carolina-class battleships and Yorktown-class carriers, CXAM radar on several ships; old battleships slow"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: long-service fleet with realistic Fleet Problems; night fighting weaker than the IJN"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 171,
+     "mid": 171,
+     "high": 190,
+     "grade": "A",
+     "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
+     "note": "171 destroyers of all types on 7 Dec 1941 (NHHC table via cited page); Pacific and Asiatic Fleets 80. High adds Coast Guard cutters and patrol vessels used as escorts."
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.75. Evidence: modern Benson/Gleaves class plus old flush-deckers; torpedo (Mk 15) defects"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: professional crews"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 112,
+     "mid": 112,
+     "high": 112,
+     "grade": "A",
+     "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
+     "note": "112 submarines on 7 Dec 1941 (NHHC via cited page); 55 in the Pacific and Asiatic Fleets."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: long-range fleet boats, but Mk 14 torpedo defective until 1943"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.75. Evidence: professional but over-cautious peacetime doctrine"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.7,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Marshall's General Staff and Naval War College system competent; senior commanders unproven, Pearl Harbor and Philippines failures"
+  },
+  "cohesion": {
+   "low": 0.5,
+   "mid": 0.55,
+   "high": 0.65,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: cohesion 0.5. Evidence: national conscript army just expanded; regular cadre thin; Navy and Marines stronger identity"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.65,
+   "high": 0.75,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: morale 0.5-0.75. Evidence: isolationism before 7 Dec 1941 replaced by national outrage and unity after Pearl Harbor"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.6,
+   "mid": 7.8,
+   "high": 8.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: M1 Garand, 105 mm M2, 90 mm AA, B-17; tanks and torpedoes behind"
+  },
+  "armor": {
+   "low": 7.4,
+   "mid": 7.6,
+   "high": 7.8,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: M3 Lee/Stuart riveted armour; M4 Sherman only in 1942"
+  },
+  "ships": {
+   "low": 7.8,
+   "mid": 8.0,
+   "high": 8.2,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 8 (carriers, radar, submarines). Evidence: 7 fleet carriers, CXAM/SC radar, fleet submarines, fast new battleships"
+  },
+  "fortification": {
+   "low": 7.2,
+   "mid": 7.4,
+   "high": 7.6,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: coast defences of harbours and the Panama Canal; Corregidor"
+  },
+  "logistics": {
+   "low": 8.0,
+   "mid": 8.2,
+   "high": 8.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 8 (motor transport, rail). Evidence: largest truck industry in the world, dense rail and road networks, ocean shipping"
+  },
+  "communications": {
+   "low": 7.8,
+   "mid": 8.0,
+   "high": 8.2,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 8 (radio at company level). Evidence: SCR-536 handie-talkie and SCR-300 coming, FM tank radios; Navy radio good"
+  },
+  "isr": {
+   "low": 7.8,
+   "mid": 8.0,
+   "high": 8.2,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: ISR 8 = radar. Evidence: SCR-270 radar detected the Pearl Harbor strike; signals intelligence (MAGIC)"
+  },
+  "air": {
+   "low": 7.7,
+   "mid": 7.9,
+   "high": 8.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: air 8 = 1943. Evidence: B-17, P-38 entering service, P-40, SBD; four-engine bomber force small"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 13000,
+   "mid": 13553,
+   "high": 14000,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Maddison Project 2023 (OWID CSV): United States 1940 = 12,005, 1941 = 13,553, 1942 = 14,870 (2011 int$). Range around the 1941 value."
+  },
+  "gdp": {
+   "low": 1717600000000,
+   "mid": 1808000000000,
+   "high": 1874600000000,
+   "grade": "B",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+  },
+  "milSpendShare": {
+   "low": 0.02,
+   "mid": 0.11,
+   "high": 0.15,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-8: US military outlays 1% (1939), 2% (1940), 11% (1941), 31% (1942) of GNP. High = December 1941 run rate (educated)."
+  },
+  "industrialShare": {
+   "low": 0.3,
+   "mid": 0.34,
+   "high": 0.38,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: manufacturing, mining and construction ~30-38% of US output around 1940. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: the US was a large net food exporter and supplied the UK and USSR with food under Lend-Lease. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "annualCohort": {
+   "low": 1050000,
+   "mid": 1140000,
+   "high": 1250000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 3(a): United States estimate 1935, age 20-24 both sexes = 11,382k; males ~5.7M / 5 = ~1.14M per year reaching 20."
+  },
+  "production": {
+   "armor": {
+    "low": 20500,
+    "mid": 29000,
+    "high": 38500,
+    "grade": "B",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison 1998 Table 1-6: US tanks and SPG 27.0k (1942), 38.5k (1943), 20.5k (1944)."
+   },
+   "aircraft_fighter": {
+    "low": 10000,
+    "mid": 22000,
+    "high": 38000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: combat aircraft 24.9k (1942), 54.1k (1943), 74.1k (1944); fighters ~40-50% (US fighters 99,465 of ~296k aircraft 1939-45 incl. trainers, https://en.wikipedia.org/wiki/Military_production_during_World_War_II)."
+   },
+   "aircraft_strike": {
+    "low": 13000,
+    "mid": 28000,
+    "high": 36000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 combat aircraft minus fighters."
+   },
+   "artillery": {
+    "low": 50000,
+    "mid": 100000,
+    "high": 110000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: 'guns' 188k (1942), 221k (1943), 103k (1944); note (a): roughly half were small-calibre naval and aviation weapons, so about half is taken for ground and AA artillery."
+   },
+   "ships_major": {
+    "low": 20,
+    "mid": 30,
+    "high": 57,
+    "grade": "C",
+    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+    "note": "1941-45 output: 29 fleet carriers, 121 escort carriers, 10 battleships, 52 cruisers (cited page) over ~3.7 war years: ~25/yr without escort carriers, ~57/yr with them."
+   },
+   "ships_minor": {
+    "low": 150,
+    "mid": 250,
+    "high": 400,
+    "grade": "C",
+    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+    "note": "396 destroyers 1941-45 (cited page) plus several hundred destroyer escorts; Harrison Table 1-6 counts 1,854-2,654 'major naval vessels' per year including small combatants."
+   },
+   "submarines": {
+    "low": 50,
+    "mid": 63,
+    "high": 80,
+    "grade": "B",
+    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+    "note": "234 submarines 1941-45 (cited page), ~63 per year."
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 900000,
+   "mid": 964000,
+   "high": 2000000,
+   "grade": "B",
+   "source": "https://www.fhwa.dot.gov/ohim/summary95/hm212.pdf",
+   "note": "FHWA Highway Statistics Summary to 1995, Table HM-212, 1941: paved (low/intermediate and high type) rural 451,567 + urban 147,183 miles = 598,750 miles = 963,600 km. Total public roads 3,309,678 miles; high adds gravel- and stone-surfaced roads within the 'unpaved' category (educated)."
+  },
+  "railKm": {
+   "low": 370000,
+   "mid": 376000,
+   "high": 385000,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/History_of_rail_transport_in_the_United_States",
+   "note": "Route mileage peaked at 254,251 miles (409,177 km) in 1916 (cited page) and had declined to roughly 233,000 miles (~376,000 km) by 1940 through abandonments (Historical Statistics figure, not fetched)."
+  },
+  "majorPorts": {
+   "low": 12,
+   "mid": 14,
+   "high": 18,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
+   "note": "New York, Boston, Philadelphia, Baltimore, Hampton Roads, Charleston, New Orleans, Houston/Galveston, Los Angeles/San Pedro, San Francisco Bay, Puget Sound, Portland, San Diego, Pearl Harbor."
+  },
+  "merchantTonnage": {
+   "low": 15000000,
+   "mid": 17900000,
+   "high": 19500000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf",
+   "note": "LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938): United States 11,939k gross tons incl. Great Lakes vessels (and much laid-up WWI tonnage). x1.5 to deadweight (x1.3-1.6)."
+  },
+  "supplyRangeKm": {
+   "low": 400,
+   "mid": 450,
+   "high": 600,
+   "grade": "C",
+   "source": "isbn:0-521-21730-X",
+   "note": "van Creveld, Supplying War ch. 7 (1944 Allied advance): the fully motorised US Army sustained ~400-500 km beyond railheads/ports with truck convoys; 1941 capacity lower but structurally similar."
+  },
+  "draftAnimals": {
+   "low": 12000000,
+   "mid": 14000000,
+   "high": 14500000,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+   "note": "US horse stock 14M in 1940, down from 25M in 1920 (Gudmundsson 2004 p. 55, via cited page); the Army itself used ~52,000."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before July 1945."
+  },
+  "basesAbroad": [
+   {
+    "name": "Cavite / Manila Bay (Philippines)",
+    "lat": 14.48,
+    "lon": 120.9,
+    "kind": "port"
+   },
+   {
+    "name": "Clark Field (Philippines)",
+    "lat": 15.19,
+    "lon": 120.56
+   },
+   {
+    "name": "Guam",
+    "lat": 13.44,
+    "lon": 144.79,
+    "kind": "port"
+   },
+   {
+    "name": "Wake Island",
+    "lat": 19.28,
+    "lon": 166.65
+   },
+   {
+    "name": "Midway",
+    "lat": 28.21,
+    "lon": -177.38
+   },
+   {
+    "name": "Panama Canal Zone (Balboa)",
+    "lat": 8.95,
+    "lon": -79.56,
+    "kind": "chokepoint"
+   },
+   {
+    "name": "San Juan, Puerto Rico",
+    "lat": 18.47,
+    "lon": -66.11,
+    "kind": "port"
+   },
+   {
+    "name": "Reykjavik, Iceland (from July 1941)",
+    "lat": 64.15,
+    "lon": -21.94,
+    "kind": "port"
+   },
+   {
+    "name": "Argentia, Newfoundland (leased 1940)",
+    "lat": 47.3,
+    "lon": -53.99,
+    "kind": "port"
+   },
+   {
+    "name": "Bermuda (leased 1940)",
+    "lat": 32.36,
+    "lon": -64.7,
+    "kind": "port"
+   }
+  ]
+ },
+ "doctrineId": "us-ww2",
+ "geography": {
+  "climate": "Cfa",
+  "chokepoints": [
+   "Panama Canal",
+   "Hawaii (Pearl Harbor) mid-Pacific",
+   "Aleutian Islands",
+   "Florida Straits",
+   "Chesapeake Bay entrance"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "1.2 row: familiar terrain, fortified harbours, total population support; two oceans give strategic depth an invader could not cross (high 1.3), but no harsh-climate factor."
+  }
+ },
+ "notes": "Snapshot date 7 December 1941 (Pearl Harbor). United States incl. Alaska and Hawaii; the Philippine Commonwealth (Philippine Army, ~100k mobilised) is NOT included, but US forces in the Philippines (USAFFE American units, Philippine Scouts) are. Pacific Fleet share: 9 BB, 3 CV, 24 cruisers, 80 DD, 55 SS (comparative fleet strengths 1 Dec 1941). Weakest values: artillery, AA batteries and tank inventory (Lend-Lease outflow unknown), the infantry share of the Army, and trainedReserves. Production rates are 1942-44 full war economy (Harrison 1998). Ship convention: battleships, carriers, cruisers = ships_major; destroyers = ships_minor. Merchant tonnage converted to deadweight at x1.5."
+}

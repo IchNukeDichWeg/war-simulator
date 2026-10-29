@@ -1,0 +1,793 @@
+{
+ "id": "italy-1940",
+ "nationId": "italy",
+ "includes": [],
+ "name": "Kingdom of Italy",
+ "year": 1940,
+ "era": "worldwars",
+ "region": "europe",
+ "phase": "key",
+ "tags": [
+  "great power",
+  "Axis",
+  "fascist",
+  "Mediterranean",
+  "naval power"
+ ],
+ "capital": {
+  "name": "Rome",
+  "lat": 41.903,
+  "lon": 12.496,
+  "kind": "capital",
+  "population": 1156000
+ },
+ "places": [
+  {
+   "name": "Milan",
+   "lat": 45.464,
+   "lon": 9.19,
+   "kind": "city"
+  },
+  {
+   "name": "Turin",
+   "lat": 45.07,
+   "lon": 7.687,
+   "kind": "city"
+  },
+  {
+   "name": "Genoa",
+   "lat": 44.405,
+   "lon": 8.946,
+   "kind": "port"
+  },
+  {
+   "name": "Naples",
+   "lat": 40.852,
+   "lon": 14.268,
+   "kind": "port"
+  },
+  {
+   "name": "Taranto",
+   "lat": 40.464,
+   "lon": 17.247,
+   "kind": "port"
+  },
+  {
+   "name": "La Spezia",
+   "lat": 44.102,
+   "lon": 9.824,
+   "kind": "port"
+  },
+  {
+   "name": "Venice",
+   "lat": 45.44,
+   "lon": 12.316,
+   "kind": "port"
+  },
+  {
+   "name": "Trieste",
+   "lat": 45.65,
+   "lon": 13.777,
+   "kind": "port"
+  },
+  {
+   "name": "Palermo",
+   "lat": 38.116,
+   "lon": 13.361,
+   "kind": "port"
+  },
+  {
+   "name": "Strait of Messina",
+   "lat": 38.25,
+   "lon": 15.63,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Brenner Pass",
+   "lat": 47.003,
+   "lon": 11.505,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:1938:Italy",
+  "areaKm2": {
+   "low": 306500,
+   "mid": 310000,
+   "high": 312000,
+   "grade": "A",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 2: Italy 310 thousand km2. The world_1938 'Italy' feature (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) computes to ~306,500 km2 (low); a second 'Italy' feature is the Dodecanese (~1,950 km2 on the polygon, ~2,700 km2 actual), included in high only."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 43800000,
+   "mid": 44470000,
+   "high": 44830000,
+   "grade": "A",
+   "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+   "note": "COW NMC v7 tpop 1940 = 44,470k (1941 = 44,830k, high). LoN Year-Book 1938/39 Table 2: 43,509k present population March 1939; 43.8M quoted for 1940 in the cited Italian military history page (low). Metropolitan Italy incl. Sicily, Sardinia, Zara and Fiume; colonies, Albania and the Dodecanese population excluded."
+  },
+  "urbanization": {
+   "low": 0.187,
+   "mid": 0.45,
+   "high": 0.5,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "HYDE via OWID: Italy 1940 = 49.6% urban (high; HYDE counts large agro-towns as urban). Mid 0.45 discounts this. Low = COW upop/tpop 1940 = 8,304/44,470 = 0.187 (cities over 100,000)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1634000,
+   "mid": 2000000,
+   "high": 2340000,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-5 (Zamagni): Italian armed forces 2,340k average for 1940 (high, includes the post-June mobilisation); COW NMC v7 milper 1940 = 1,634k (low). June 1940 mid ~2.0M Italian nationals in army, navy, air force and MVSN, incl. Italian troops in Libya and East Africa; colonial native troops excluded."
+  },
+  "trainedReserves": {
+   "low": 600000,
+   "mid": 1000000,
+   "high": 1500000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: universal conscription since unification left many trained classes; strength rose from 2,340k (1940 average) to 3,227k (1941) per Harrison Table 1-5, but equipment, not men, was the limit. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "supportPersonnel": {
+   "low": 1200000,
+   "mid": 1425000,
+   "high": 1700000,
+   "grade": "C",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "active minus P roles: navy (~170k), air force (~100k), artillery, engineers, Guardia alla Frontiera fortress troops, services and depots."
+  },
+  "mobilizationRatio": {
+   "low": 0.08,
+   "mid": 0.09,
+   "high": 0.11,
+   "grade": "C",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-5: Italian armed forces 3,810k (1942) and 3,815k (1943) = 0.085 of ~45M. High allows for total mobilised over the war (~5M, educated)."
+  },
+  "mobilizable": {
+   "low": 3504000,
+   "mid": 4002000,
+   "high": 4931000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 400000,
+     "mid": 500000,
+     "high": 600000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II",
+     "note": "Reconstruction: on 10 June 1940 59 infantry and 3 Blackshirt divisions (Mollo p. 83 via cited page), binary divisions of 2 regiments (~6,000-7,000 infantry each, many under strength), plus ~9 divisions' equivalent of frontier guards (counted as support). Libyan colonial divisions excluded."
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: Carcano rifle, unreliable Breda 30 LMG, few AT guns and trucks; artillery largely WWI"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: short-service conscripts; most divisions below full complement of men and materials"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 40000,
+     "mid": 60000,
+     "high": 80000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II",
+     "note": "5 Alpine divisions (cited page) at ~9,000-10,000 alpini each, plus Bersaglieri regiments of the celere and armoured divisions."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: light mountain kit, mule-borne artillery"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: regionally recruited elite mountain troops"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 10000,
+     "mid": 15000,
+     "high": 20000,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II",
+     "note": "3 celere (mobile) divisions (cited page), each with 2 horsed cavalry regiments (~800-900 sabres) plus divisional cavalry squadrons."
+    },
+    "quality": {
+     "low": 0.25,
+     "mid": 0.35,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: horsed cavalry with L3 tankette support"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: traditional regular cavalry"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 1300,
+     "mid": 1500,
+     "high": 1700,
+     "grade": "C",
+     "source": "https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II",
+     "note": "3 armoured divisions filled with L3 tankettes; ~100 M11/39 'medium' tanks available in June 1940 (Mollo p. 87 via cited page); plus Fiat 3000 relics. Total ~1,300-1,500 L3 tankettes is an educated reconstruction. 1940 AFV production only ~250 (cited Italian military history page)."
+    },
+    "quality": {
+     "low": 0.15,
+     "mid": 0.25,
+     "high": 0.3,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25. Evidence: L3/35 two-man tankettes with machine guns; M11/39 with hull 37 mm gun"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.25-0.5. Evidence: little combined-arms training"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 6000,
+     "mid": 8000,
+     "high": 12000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess: 73 divisions with 24-36 field pieces each (divisional regiment establishment 36, Mollo p. 84 via cited page) plus corps, army and frontier (Vallo Alpino) artillery; much of it WWI-era and ex-Austrian. (context page: https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II)"
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.45,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: WWI and ex-Austro-Hungarian guns, horse-drawn; good 75/18 and 149/40 only in small numbers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: competent gunners"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 150,
+     "mid": 250,
+     "high": 400,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Batteries. Educated guess: 75 mm and 20 mm Breda AA in Milizia DICAT batteries around cities and ports. (context page: https://en.wikipedia.org/wiki/Royal_Italian_Army_during_World_War_II)"
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: 20 mm Breda good, heavy AA obsolete, no radar"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: militia-manned"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 450,
+     "mid": 542,
+     "high": 650,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II",
+     "note": "542 fully operational fighters in June 1940, ~70% of them biplanes such as the CR.42 (cited page). Neulen p. 30 (via https://en.wikipedia.org/wiki/Regia_Aeronautica): only 166 modern monoplane fighters (G.50, MC.200)."
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: CR.42/CR.32 biplanes; G.50 and MC.200 underpowered and lightly armed"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: experienced pilots from Spain, good aerobatics, poor radio and gunnery"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 800,
+     "mid": 990,
+     "high": 1200,
+     "grade": "B",
+     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RAF-I/UK-RAF-I-V.html",
+     "note": "Richards, RAF 1939-45 vol. I Appendix V: Italian first-line strength June 1940 = 1,529 aircraft; minus 542 fighters = ~990 bombers and reconnaissance aircraft. Of 3,269-3,296 aircraft on paper ~55% were combat ineffective (cited Italian pages)."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5. Evidence: SM.79 a good medium bomber and torpedo bomber; BR.20 and Cant Z.1007 average; no dive bombers until 1940 Ju 87"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5-0.75. Evidence: Spanish Civil War experience, weak in navigation and anti-shipping bombing accuracy"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 23,
+     "mid": 25,
+     "high": 25,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Regia_Marina",
+     "note": "6 battleships (only 2 operational on 10 June 1940: Cesare and Cavour; Littorio and Vittorio Veneto working up; Doria and Duilio in reconstruction) and 19 cruisers (cited page; 7 heavy, 12 light by standard references). Low = without the 2 battleships in reconstruction."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: fast modern ships, Littorio class excellent; no radar, no carriers, poor night-fighting kit"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: little night training; fuel shortage limited sea time"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 120,
+     "mid": 126,
+     "high": 126,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Regia_Marina",
+     "note": "59 destroyers and 67 torpedo boats (cited page)."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.5-0.75. Evidence: fast but short-ranged, no sonar or radar initially"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: limited by fuel"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 115,
+     "mid": 116,
+     "high": 117,
+     "grade": "B",
+     "source": "https://en.wikipedia.org/wiki/Regia_Marina",
+     "note": "116 submarines in June 1940 (cited page), the second-largest submarine force after the USSR; 8 in the Red Sea flotilla."
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: quality 0.25-0.5. Evidence: large, slow-diving boats with toxic air-conditioning leaks"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric row: training 0.5. Evidence: peacetime training; heavy early losses"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.3,
+   "mid": 0.4,
+   "high": 0.5,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Comando Supremo weak, services poorly coordinated, Mussolini interfering; good individual commanders but ad hoc planning (Greece 1940)"
+  },
+  "cohesion": {
+   "low": 0.35,
+   "mid": 0.45,
+   "high": 0.55,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: cohesion 0.25-0.5. Evidence: national conscript army with regional splits; alpini and some units strong, mass surrenders in 1940-41 (Beda Fomm)"
+  },
+  "morale": {
+   "low": 0.3,
+   "mid": 0.4,
+   "high": 0.5,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric row: morale 0.25-0.5. Evidence: the war was unpopular; troops poorly equipped and supplied, though some units fought well"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.1,
+   "mid": 7.3,
+   "high": 7.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: WWI-era artillery, weak LMG; 47/32 AT gun; SM.79 torpedo bomber"
+  },
+  "armor": {
+   "low": 6.9,
+   "mid": 7.1,
+   "high": 7.3,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: close to 7. Evidence: L3 tankettes and riveted M11/39 (30 mm); no tanks comparable to Pz III"
+  },
+  "ships": {
+   "low": 7.3,
+   "mid": 7.5,
+   "high": 7.7,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: fast modern battleships and cruisers, but no carriers, no radar, no sonar of note"
+  },
+  "fortification": {
+   "low": 7.3,
+   "mid": 7.5,
+   "high": 7.7,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8 (Maginot). Evidence: Vallo Alpino along the Alps, Taranto and Sicily coastal defences"
+  },
+  "logistics": {
+   "low": 7.0,
+   "mid": 7.2,
+   "high": 7.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 (railways) and 8 (motor transport). Evidence: few trucks, horse- and mule-drawn artillery; electrified rail mainlines; long sea lines to Libya"
+  },
+  "communications": {
+   "low": 7.0,
+   "mid": 7.2,
+   "high": 7.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 7 (telegraph, telephone). Evidence: few radios in tanks and aircraft"
+  },
+  "isr": {
+   "low": 6.9,
+   "mid": 7.1,
+   "high": 7.3,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: 7 (aerial recon). Evidence: no operational radar in 1940; aerial and naval reconnaissance only"
+  },
+  "air": {
+   "low": 7.2,
+   "mid": 7.4,
+   "high": 7.6,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor: between 7 and 8. Evidence: 70% of operational fighters biplanes; SM.79 good; engines weak"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 4967,
+   "mid": 5099,
+   "high": 5246,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Maddison Project 2023 (OWID CSV): Italy 1939 = 5,246, 1940 = 5,099, 1941 = 4,967 (2011 int$)."
+  },
+  "gdp": {
+   "low": 217600000000,
+   "mid": 226800000000,
+   "high": 235200000000,
+   "grade": "B",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+  },
+  "milSpendShare": {
+   "low": 0.08,
+   "mid": 0.12,
+   "high": 0.23,
+   "grade": "B",
+   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+   "note": "Harrison 1998 Table 1-8 (Italy, % of GDP at current prices): 8% (1939), 12% (1940), 23% (1941)."
+  },
+  "industrialShare": {
+   "low": 0.28,
+   "mid": 0.32,
+   "high": 0.36,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: industry ~30% of Italian output in the late 1930s; agriculture still ~40% of employment. 1940 steel output 2.1Mt vs Britain's 13Mt (https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II). (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "foodSurplus": {
+   "low": 0.0,
+   "mid": 0.03,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: the 'battle for grain' made Italy near self-sufficient in wheat, but fats and feed were imported; little surplus. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+  },
+  "annualCohort": {
+   "low": 360000,
+   "mid": 396000,
+   "high": 420000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+   "note": "LoN Year-Book 1938/39 Table 3(a): Italy census 21 April 1936, males 20-24 = 1,979k / 5 = ~396k per year."
+  },
+  "production": {
+   "armor": {
+    "low": 250,
+    "mid": 900,
+    "high": 1300,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison 1998 Table 1-6 (Zamagni): 3.0k tanks and SPG in the 38 months June 1940-Aug 1943 (~950/yr); 1940 output only ~250 AFVs (https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II)."
+   },
+   "aircraft_fighter": {
+    "low": 1200,
+    "mid": 1900,
+    "high": 2400,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: Italian combat aircraft 3.3k (1940), 3.5k (1941), 2.8k (1942), 2.0k (1943, 8 months); fighters ~65% (9,157 of 13,402 Italian aircraft per https://en.wikipedia.org/wiki/Military_production_during_World_War_II)."
+   },
+   "aircraft_strike": {
+    "low": 700,
+    "mid": 1100,
+    "high": 1400,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 combat aircraft minus fighters."
+   },
+   "artillery": {
+    "low": 2000,
+    "mid": 3200,
+    "high": 4000,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6: 10k guns in the 38 months of war (~3,200/yr)."
+   },
+   "ships_major": {
+    "low": 0.5,
+    "mid": 1.5,
+    "high": 2.5,
+    "grade": "C",
+    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+    "note": "3 battleships and 3 cruisers completed 1940-43 (cited page; column mapping flagged as uncertain there), ~1.5-2 per year."
+   },
+   "ships_minor": {
+    "low": 10,
+    "mid": 20,
+    "high": 30,
+    "grade": "C",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Harrison Table 1-6 (Zamagni): 'major naval vessels' 12 (1940, 6 months), 41 (1941), 86 (1942), 148 (1943, 8 months), mostly small escorts and MAS; destroyers and torpedo boats ~20/yr (educated)."
+   },
+   "submarines": {
+    "low": 5,
+    "mid": 10,
+    "high": 15,
+    "grade": "D",
+    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+    "note": "Educated split of Harrison's naval series: ~30 submarines completed 1940-43."
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 120000,
+   "mid": 170000,
+   "high": 200000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: national (ANAS ~20,000 km), provincial and municipal engineered roads; many southern and mountain roads unsurfaced. (context page: https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II)"
+  },
+  "railKm": {
+   "low": 21000,
+   "mid": 22500,
+   "high": 24000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: state railways (FS) ~16,500-17,000 km plus ~5,000-6,000 km of concession lines; major lines electrified at 3 kV DC in 1922-39. (context page: https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II)"
+  },
+  "majorPorts": {
+   "low": 7,
+   "mid": 9,
+   "high": 12,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Regia_Marina",
+   "note": "Genoa, La Spezia, Naples, Taranto, Brindisi, Bari, Venice, Trieste, Palermo, Messina, Cagliari, Livorno."
+  },
+  "merchantTonnage": {
+   "low": 3300000,
+   "mid": 4900000,
+   "high": 5400000,
+   "grade": "B",
+   "source": "https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf",
+   "note": "LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938): Italy 3,290k gross tons, x1.5 to deadweight (mid). ~27% of Italian merchant ships were caught in Allied ports and impounded on 10 June 1940 (https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II), so low = 73% x 3.4M GRT x 1.3."
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 200,
+   "high": 300,
+   "grade": "C",
+   "source": "isbn:0-521-21730-X",
+   "note": "van Creveld, Supplying War ch. 6 (North Africa): Axis forces could not be sustained much beyond ~300 miles from Tripoli/Benghazi; the Italian army was short of trucks, so mid 200 km."
+  },
+  "draftAnimals": {
+   "low": 1600000,
+   "mid": 2200000,
+   "high": 2600000,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+   "note": "Italy's horse stock 942,000 in 1930 (Rich and Wilson p. 653, table 59, via the cited page); with mules and donkeys (~1.2M, educated) ~2.2M equids. The army was largely mule- and horse-drawn."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before July 1945."
+  },
+  "basesAbroad": [
+   {
+    "name": "Tripoli (Libya)",
+    "lat": 32.887,
+    "lon": 13.191,
+    "kind": "port"
+   },
+   {
+    "name": "Benghazi (Libya)",
+    "lat": 32.117,
+    "lon": 20.068,
+    "kind": "port"
+   },
+   {
+    "name": "Tobruk (Libya)",
+    "lat": 32.076,
+    "lon": 23.961,
+    "kind": "port"
+   },
+   {
+    "name": "Rhodes (Dodecanese)",
+    "lat": 36.434,
+    "lon": 28.217,
+    "kind": "port"
+   },
+   {
+    "name": "Leros (Dodecanese)",
+    "lat": 37.13,
+    "lon": 26.85,
+    "kind": "port"
+   },
+   {
+    "name": "Valona (Albania)",
+    "lat": 40.466,
+    "lon": 19.489,
+    "kind": "port"
+   },
+   {
+    "name": "Durazzo (Albania)",
+    "lat": 41.323,
+    "lon": 19.441,
+    "kind": "port"
+   },
+   {
+    "name": "Massawa (Eritrea)",
+    "lat": 15.609,
+    "lon": 39.45,
+    "kind": "port"
+   },
+   {
+    "name": "Mogadishu (Italian Somaliland)",
+    "lat": 2.046,
+    "lon": 45.318,
+    "kind": "port"
+   }
+  ]
+ },
+ "doctrineId": "italian-ww2",
+ "geography": {
+  "climate": "Csa",
+  "chokepoints": [
+   "Strait of Sicily",
+   "Strait of Messina",
+   "Strait of Otranto",
+   "Alpine passes (Brenner, Mont Cenis, Little St Bernard)",
+   "Ljubljana Gap"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "1.2 row: familiar mountainous terrain (Alps, Apennines), Vallo Alpino fortifications and fortified ports; population support lukewarm, no deep strategic depth."
+  }
+ },
+ "notes": "Snapshot date 10 June 1940 (declaration of war on France and Britain). METROPOLITAN Italy: population, GDP, area and cohort exclude Libya, Italian East Africa, the Dodecanese and Albania (in personal union since April 1939). Forces COUNT Italian national troops wherever stationed (Libya ~200,000 incl. Libyan divisions, East Africa ~256,000 incl. ~200,000 native ascari, both per the cited Italian military history page) but EXCLUDE colonial native units. Colonial bases are listed in basesAbroad. Weakest values: artillery and AA counts (educated), L3 tankette count, railKm and roadKm (no fetched source). Ship convention: battleships and cruisers = ships_major, destroyers and torpedo boats = ships_minor; only 2 of 6 battleships were battle-ready on 10 June. Merchant tonnage converted to deadweight at x1.5."
+}
