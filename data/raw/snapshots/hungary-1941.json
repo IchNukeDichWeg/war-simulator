@@ -1,0 +1,643 @@
+{
+  "id": "hungary-1941",
+  "nationId": "hungary",
+  "includes": [],
+  "name": "Kingdom of Hungary",
+  "year": 1941,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "Axis",
+    "Horthy regime",
+    "Second World War"
+  ],
+  "capital": {
+    "name": "Budapest",
+    "lat": 47.498,
+    "lon": 19.04,
+    "kind": "capital",
+    "population": 1164000
+  },
+  "places": [
+    {
+      "name": "Szeged",
+      "lat": 46.25,
+      "lon": 20.15,
+      "kind": "city",
+      "population": 136000
+    },
+    {
+      "name": "Debrecen",
+      "lat": 47.53,
+      "lon": 21.63,
+      "kind": "city",
+      "population": 125000
+    },
+    {
+      "name": "Kolozsvar",
+      "lat": 46.77,
+      "lon": 23.6,
+      "kind": "city",
+      "population": 110000
+    },
+    {
+      "name": "Kassa",
+      "lat": 48.72,
+      "lon": 21.26,
+      "kind": "city"
+    },
+    {
+      "name": "Munkacs",
+      "lat": 48.44,
+      "lon": 22.72,
+      "kind": "city"
+    },
+    {
+      "name": "Ujvidek",
+      "lat": 45.26,
+      "lon": 19.83,
+      "kind": "city"
+    },
+    {
+      "name": "Verecke Pass",
+      "lat": 48.81,
+      "lon": 23.14,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Tatar Pass",
+      "lat": 48.27,
+      "lon": 24.53,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:Hungary",
+    "areaKm2": {
+      "low": 108600,
+      "mid": 172069,
+      "high": 172069,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Hungary_in_World_War_II",
+      "note": "Hungary in WWII page: 117,160 km2 in 1939 (League of Nations, incl. First Vienna Award 11,927 and Carpatho-Ukraine) + N. Transylvania 43,492 + returned Yugoslav areas 11,417 = 172,069 km2 (mid). The world_1938 polygon covers only ~108,600 km2 (low)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 13900000,
+      "mid": 14680000,
+      "high": 14700000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "League of Nations Year-Book 1939/40 (https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf): 10.316M (1939, incl. First Vienna Award and Carpatho-Ukraine) + N. Transylvania 2,578,100 + returned Yugoslav areas 1,025,508 (Hungary in WWII page) = ~13.9M (low); 1941 census ~14.68M (mid). COW tpop 1941 = 9,344k refers to Trianon Hungary and is not used."
+    },
+    "urbanization": {
+      "low": 0.1,
+      "mid": 0.38,
+      "high": 0.44,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Hungary (present-day borders) 1940 = 44.2% (high); the annexed territories were more rural (mid ~0.38). Low = COW upop/tpop 1941 = 1,357/9,344 = 0.15 for Trianon Hungary, ~0.1 for the enlarged state (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 300000,
+      "mid": 400000,
+      "high": 500000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+      "note": "Reconstruction: peace army ~250,000 in 27 light divisions (brigades) plus partial mobilisation in spring 1941 (Yugoslav campaign); the cited page lists 730,000 personnel at the wartime peak (above the high bound). Snapshot date: 27 June 1941. Check: COW NMC v7 milper 1939 = 33k (1941 missing) (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Trained reservists not under arms in June 1941; rearmament only began in 1938 (Gyor programme), so the trained pool was small."
+    },
+    "supportPersonnel": {
+      "low": 140000,
+      "mid": 170000,
+      "high": 185000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+      "note": "Artillery, engineers, trains, air force (~20,000), river forces, depots."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+      "note": "Cited page: 730,000 personnel peak / 14.7M = 0.05 (low); ~1.5M men served over the war (~0.1, high)."
+    },
+    "mobilizable": {
+      "low": 695000,
+      "mid": 1174000,
+      "high": 1470000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 140000,
+          "mid": 180000,
+          "high": 230000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Hungary_in_World_War_II",
+          "note": "27 light (two-regiment) divisions of ~10,000 men; the Carpathian Group of 1 July 1941 (VIII Corps and Mobile Corps, cited page) had ~45,000 men."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Mannlicher-pattern rifles, Solothurn MGs; few AT guns"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: army expanded rapidly from 1938"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Hungary_in_World_War_II",
+          "note": "Mountain brigades and border guard battalions in the Carpathians."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 18000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Hungary_in_World_War_II",
+          "note": "1st and 2nd Cavalry Brigades of the Mobile (Rapid) Corps."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mounted and bicycle troops with armoured cars"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 150,
+          "mid": 190,
+          "high": 260,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Toldi I light tanks (~80 by mid-1941), Fiat L3/35 tankettes (~120) and Csaba armoured cars of the Mobile Corps."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: Toldi (20 mm) and tankettes"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1100,
+          "mid": 1500,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Field and mountain guns, howitzers (Bofors 80 mm and WWI pieces)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 90,
+          "mid": 120,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Fiat CR.32 and CR.42 biplanes, first Reggiane Re.2000 Heja."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: biplanes"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 100,
+          "mid": 130,
+          "high": 160,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ju 86K, Ca.135, He 70 and WM-21 bombers and reconnaissance aircraft; bombed Stanislau after Kassa (27 June)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Danube river patrol boats (no sea-going warships)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: river craft"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 30,
+          "mid": 60,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. AA batteries (Bofors 40 mm, 80 mm Bofors 29/38M)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Carpathian Group reached the Dniester in a week; Mobile Corps worn out by November"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: national army; minorities in the annexed territories less reliable"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: revisionist gains popular; war with the USSR less so"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.2,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: Solothurn and Gebauer MGs, 36M 40 mm AA, few AT guns"
+    },
+    "armor": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars). Evidence: Toldi light tank, Csaba armoured car"
+    },
+    "ships": {
+      "low": 6.4,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: river flotilla only"
+    },
+    "fortification": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: Arpad Line in the Carpathians begun 1940"
+    },
+    "logistics": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: dense rail network centred on Budapest"
+    },
+    "communications": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telephone, radio). Evidence: no specific evidence beyond the era-typical row"
+    },
+    "isr": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: air reconnaissance"
+    },
+    "air": {
+      "low": 7.2,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1914) and 8 (1943). Evidence: Italian biplanes and bombers, Re.2000"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3400,
+      "mid": 3800,
+      "high": 4186,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Maddison Project 2023 (OWID CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv): Hungary (present-day borders) 1941 = 4,186 (2011 int$, high); the annexed territories (N. Transylvania, Carpatho-Ukraine, Backa) were poorer, ~2,000-2,500, giving a population-weighted ~3,800."
+    },
+    "gdp": {
+      "low": 47300000000,
+      "mid": 55800000000,
+      "high": 61500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.08,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Gyor rearmament programme (1938) and war from 1941."
+    },
+    "industrialShare": {
+      "low": 0.28,
+      "mid": 0.32,
+      "high": 0.36,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Budapest engineering (Weiss Manfred, Ganz, MAVAG), bauxite, oil from 1937."
+    },
+    "foodSurplus": {
+      "low": 0.4,
+      "mid": 0.48,
+      "high": 0.55,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Formula: foodSurplus = 1 - agricultural share of employment. Agricultural share of employment assumed ~0.52 for the enlarged 1941 state (no fetched census figure; the annexed territories were more rural than Trianon Hungary). Grain and meat exporter."
+    },
+    "annualCohort": {
+      "low": 100000,
+      "mid": 115000,
+      "high": 130000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 21 per year in a population of ~14.7M."
+    },
+    "production": {
+      "armor": {
+        "low": 150,
+        "mid": 240,
+        "high": 350,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Hungary: 973 tanks and SPGs (Toldi, Turan, Zrinyi, Nimrod) and 530 other armoured vehicles."
+      },
+      "artillery": {
+        "low": 60,
+        "mid": 110,
+        "high": 200,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Hungary: 447 artillery pieces."
+      },
+      "aircraft_fighter": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fighters per year 1942-44 (Re.2000 Heja ~200, Bf 109G ~600 by Weiss Manfred over the war)."
+      },
+      "aircraft_strike": {
+        "low": 20,
+        "mid": 60,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Bombers and heavy fighters per year 1942-44 (Me 210Ca ~270)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 30000,
+      "mid": 38000,
+      "high": 45000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. State and county roads in the enlarged territory."
+    },
+    "railKm": {
+      "low": 9799,
+      "mid": 11500,
+      "high": 13000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CHAT railline Hungary 1938 = 9,799 km (Trianon Hungary, read from https://data.nber.org/chat/chat.dta, low); lines in the territories annexed 1938-41 guessed."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 1,
+      "high": 2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Budapest (Csepel free port on the Danube); no sea port."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 60000,
+      "high": 90000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Deadweight tons. Small Hungarian sea-going fleet (Danube-sea ships) of ~20 vessels."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mobile Corps outran its supply in the Ukraine in July-August 1941."
+    },
+    "draftAnimals": {
+      "low": 800000,
+      "mid": 900000,
+      "high": 1100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. ~900,000 horses in the enlarged territory."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-ww-infantry",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Carpathian passes (Verecke, Tatar)",
+      "Danube bridges at Budapest",
+      "Great Hungarian Plain"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: Carpathian barrier (Arpad Line) and population support in the core."
+    }
+  },
+  "notes": "Snapshot date 27 June 1941 (declaration of war on the USSR after the Kassa bombing; the Carpathian Group attacked on 1 July). Territory = Hungary after the two Vienna Awards and the 1941 annexation of Backa and Baranya; the world_1938 basemap (nearest at or before 1941) shows only the 1938 extent, so areaKm2 mid is the real 1941 area. Most force counts are educated guesses or reconstructions: no Hungarian order-of-battle source was fetched. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}

@@ -1,0 +1,681 @@
+{
+  "id": "germany-1914",
+  "nationId": "germany",
+  "includes": [],
+  "name": "German Empire",
+  "year": 1914,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Central Powers",
+    "Kaiserreich",
+    "First World War"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 2071000
+  },
+  "places": [
+    {
+      "name": "Hamburg",
+      "lat": 53.551,
+      "lon": 9.994,
+      "kind": "port",
+      "population": 931000
+    },
+    {
+      "name": "Munich",
+      "lat": 48.137,
+      "lon": 11.576,
+      "kind": "city",
+      "population": 596000
+    },
+    {
+      "name": "Leipzig",
+      "lat": 51.34,
+      "lon": 12.375,
+      "kind": "city",
+      "population": 590000
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.938,
+      "lon": 6.96,
+      "kind": "city",
+      "population": 516000
+    },
+    {
+      "name": "Essen (Ruhr)",
+      "lat": 51.456,
+      "lon": 7.012,
+      "kind": "city",
+      "population": 295000
+    },
+    {
+      "name": "Breslau",
+      "lat": 51.11,
+      "lon": 17.03,
+      "kind": "city",
+      "population": 512000
+    },
+    {
+      "name": "Metz",
+      "lat": 49.12,
+      "lon": 6.18,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.573,
+      "lon": 7.752,
+      "kind": "fortress"
+    },
+    {
+      "name": "Koenigsberg",
+      "lat": 54.71,
+      "lon": 20.51,
+      "kind": "fortress"
+    },
+    {
+      "name": "Wilhelmshaven",
+      "lat": 53.531,
+      "lon": 8.106,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel",
+      "lat": 54.323,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Thorn",
+      "lat": 53.01,
+      "lon": 18.6,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1914:German Empire",
+    "areaKm2": {
+      "low": 520000,
+      "mid": 540858,
+      "high": 541000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson",
+      "note": "world_1914 German Empire polygon = ~520,000 km2 computed on the sphere (low); published area of the Reich 540,858 km2 (B&H Table 2: 0.5M km2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 64000000,
+      "mid": 67400000,
+      "high": 67800000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww1overview2005.pdf",
+      "note": "Broadberry and Harrison 2005 Table 2: Germany 1913 = 67.0M (League of Nations 1927). COW NMC v7 tpop 1914 = 67,790k (high). Low = OWID/HYDE Germany 1914 within present-day borders 64.0M, which leaves out Alsace-Lorraine, Posen, West Prussia and Silesia."
+    },
+    "urbanization": {
+      "low": 0.21,
+      "mid": 0.4,
+      "high": 0.6,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Germany 1910 = 27%, 1920 = 34% (present-day borders). The 1910 census counted 60% in communes of 2,000+ (high) and ~40% in towns of 5,000+ (mid). Low = COW upop/tpop 1914 = 14,279/67,790 = 0.21 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 3500000,
+      "mid": 3820000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. Herwig 1997 ch. 2: after mobilisation (2-18 Aug 1914) the army stood at ~3.82M (peace strength ~761,000 plus reservists), the Feldheer in 7 western and 1 eastern army; plus the navy (~80,000 peace, mobilised higher). The British Army page cites 1.85M and 87 infantry divisions for the field armies alone (https://en.wikipedia.org/wiki/British_Army_during_World_War_I), the low bound of the deployable force. Snapshot month: August 1914. Check: COW NMC v7 milper 1914 = 862k, 1915 = 3,823k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. Trained men not called up in August: older Landwehr II and Landsturm I classes and partly trained Ersatz reservists. Prewar Germany trained only ~half of each class (Strachan, To Arms ch. 3), so the residual trained pool was smaller than the 5M+ of France proportionally."
+    },
+    "supportPersonnel": {
+      "low": 1700000,
+      "mid": 2000000,
+      "high": 2300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. Everything outside the P roles: field and foot artillery (~100 artillery regiments), pioneers, signals, trains, staffs, the Ersatz (replacement) units in Germany and the navy (~80,000 peace, ~120,000 mobilised)."
+    },
+    "mobilizationRatio": {
+      "low": 0.16,
+      "mid": 0.19,
+      "high": 0.2,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/World_War_I_casualties",
+      "note": "Total mobilised over the war: 13,250,000 (German government reply to the ILO, 1924) or 11,000,000 (US War Dept) on the cited page; divided by ~67M gives 0.16-0.20."
+    },
+    "mobilizable": {
+      "low": 10240000,
+      "mid": 12806000,
+      "high": 13560000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1200000,
+          "mid": 1500000,
+          "high": 1800000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. Infantry of 87 first-line infantry divisions (50 active, 32 reserve, plus Ersatz and Landwehr formations) at ~12,000 rifles each, plus Landwehr brigades and fortress infantry. Reconstruction from the division count (Herwig ch. 2; Strachan ch. 3)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era's best). Evidence: Gewehr 98, ~4,500 MG 08 (Strachan); field-grey uniform; reserve divisions short of artillery"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75 (professional standing army). Evidence: two-year conscripts with a strong NCO corps; reserve divisions used in the front line from day one"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 35000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. 18 active Jaeger battalions plus reserve Jaeger battalions (~1,000-1,100 each), attached to cavalry divisions."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: same rifles and MGs, cyclist companies"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: elite rifle battalions recruited from foresters and hunters"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 80000,
+          "mid": 100000,
+          "high": 120000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. 11 cavalry divisions in 4 Hoeherer Kavallerie-Kommandos (~5,200 sabres each) plus divisional cavalry squadrons. All German cavalry carried lances and carbines; screening and reconnaissance role, so cavalry_light."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: lance and carbine; obsolescent against MGs and QF artillery"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service regular cavalry"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 6500,
+          "mid": 7700,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Herwig, The First World War: Germany and Austria-Hungary (isbn:0-340-57348-1), not read from a fetched source. Field army ~5,000 77 mm FK 96 n.A., ~1,250 10.5 cm leFH 98/09 and ~1,400 heavy pieces of the Fussartillerie (15 cm sFH 02, 21 cm Moerser, a few 42 cm). Fortress guns excluded. Reconstruction from Herwig ch. 2 and Strachan ch. 3."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: the only army with mobile heavy howitzers at corps level; 77 mm inferior to the French 75"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: indirect fire practised, but poor infantry-artillery liaison in 1914"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 180,
+          "mid": 230,
+          "high": 250,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Aviation_in_World_War_I",
+          "note": "Cited page: army paper strength ~230 aircraft in August 1914, ~180 usable; plus 12 seaplanes and 1 landplane of the navy (https://en.wikipedia.org/wiki/Imperial_German_Navy). Unarmed observation two-seaters: no fighters existed in 1914, so all are counted here. Army and navy Zeppelins (~10) not counted."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Taube and Albatros B-types, unarmed"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Feldflieger-Abteilungen, one per corps, little doctrine for co-operation"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 75,
+          "mid": 85,
+          "high": 90,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Dreadnought, battlecruiser and pre-dreadnought counts read from the cited Imperial German Navy page; cruiser counts recalled from Conway's, not read from a fetched source. Cited page: 14 dreadnoughts, 4 battlecruisers and 22 pre-dreadnoughts at the outbreak; plus ~9 armoured and ~40 protected/light cruisers (Conway's 1906-1921, isbn 0-85177-245-5). Low drops old cruisers and pre-dreadnoughts in reserve. Convention as other world-war snapshots: battleships and cruisers = ships_major."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: excellent armour subdivision and shells; 28-30.5 cm guns smaller than British 34.3 cm"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service petty officers, good gunnery and night-fighting training"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 110,
+          "mid": 140,
+          "high": 155,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. High-seas torpedo boats (destroyer equivalents) in service in August 1914: ~90 modern plus ~50 older boats (Conway's 1906-1921; Halpern ch. 1). Coastal torpedo boats and minesweepers excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: small, torpedo-heavy boats, weaker gun armament than British destroyers"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: intensive night torpedo training"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 24,
+          "mid": 28,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. U-1 to U-28 commissioned by August 1914, ~24 operational (Conway's 1906-1921; Halpern ch. 1)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era's best). Evidence: diesel U-19 class onwards, early boats paraffin-engined"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: U-9 sank three British cruisers on 22 Sep 1914"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75 (trained staff system, proven commanders). Evidence: Great General Staff, mission-type orders; Tannenberg a model encirclement, but Moltke's loss of control at the Marne"
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: corps recruited by district, strong NCO corps; reserve divisions held together under heavy losses"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated). Evidence: August 1914 'spirit of 1914' and Burgfrieden; belief in a short defensive war against Russia"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905: magazine rifle, MG, QF artillery). Evidence: Gew 98, MG 08, 21 cm and 42 cm siege mortars; heavy field howitzers ahead of every rival"
+    },
+    "armor": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars, steel helmet 1915). Evidence: no steel helmet until 1916, no armoured vehicles in service in 1914"
+    },
+    "ships": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (dreadnoughts, steam). Evidence: dreadnoughts with turbines (from Kaiser class), diesel U-boats"
+    },
+    "fortification": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts, trenches). Evidence: Feste-group forts at Metz, Strasbourg, Thorn and Koenigsberg"
+    },
+    "logistics": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: mobilisation timetable moved 3.8M men by rail in 17 days; horse-drawn beyond railheads"
+    },
+    "communications": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (electric telegraph, telephone). Evidence: telephone and telegraph to corps; wireless at army level only; OHL lost touch with the right wing at the Marne"
+    },
+    "isr": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial reconnaissance (1914). Evidence: Feldflieger-Abteilungen and Zeppelins; aerial reports decisive at Tannenberg"
+    },
+    "air": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914 aircraft. Evidence: Taube, Albatros B.I, Aviatik; ~230 aircraft"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 4876,
+      "mid": 5600,
+      "high": 5815,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Germany 1913 = 5,815, 1914 = 4,876 (2011 int$). The August snapshot sits between the prewar level and the wartime 1914 average; mid 5,600. B&H Table 2 gives 3,648 in 1990 int$ for the 1913 Reich."
+    },
+    "gdp": {
+      "low": 312100000000,
+      "mid": 377400000000,
+      "high": 394300000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.035,
+      "mid": 0.2,
+      "high": 0.44,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mid read from Broadberry and Harrison Table 5; low recalled from Ferguson, not read from a fetched source. Low: peacetime defence spending ~3.5% of NNP in 1913 (Ferguson, Pity of War table 6, isbn 0-7139-9246-8). Mid: B&H Table 5 government spending 23.9% of GDP in 1914 (9.8% in 1913) less civil spending, so ~20% military. High: 43.8% government share in 1915."
+    },
+    "industrialShare": {
+      "low": 0.38,
+      "mid": 0.42,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Strachan, The First World War vol. 1 (isbn:0-19-820877-4), not read from a fetched source. Industry, mining and crafts ~40-45% of NNP in 1913 (Hoffmann series as summarised by Ritschl in Broadberry and Harrison 2005, ch. 2)."
+    },
+    "foodSurplus": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.68,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Formula: foodSurplus = 1 - agricultural share of employment. Agricultural share of employment c. 1913 assumed ~0.35 (0.32-0.40). Fetched brackets only: agriculture was 32% of net domestic product already in 1895 (Deutsches Kaiserreich, https://de.wikipedia.org/wiki/Deutsches_Kaiserreich) and 29% of employment in 1937 (https://de.wikipedia.org/wiki/Agrarwirtschaft_und_Agrarpolitik_im_Deutschen_Reich_(1933%E2%80%931945)). Germany imported ~1/5 of its food before 1914 (B&H overview, qualitative)."
+    },
+    "annualCohort": {
+      "low": 550000,
+      "mid": 600000,
+      "high": 650000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Strachan, The First World War vol. 1 (isbn:0-19-820877-4), not read from a fetched source. Men reaching 20 per year: ~1.9M births per year in the 1890s, half male, ~65% survival to 20 gives ~0.6M; only ~half were trained before 1913 (Strachan ch. 3)."
+    },
+    "production": {
+      "aircraft_fighter": {
+        "low": 500,
+        "mid": 2500,
+        "high": 6000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Single-seat fighters per year 1915-1917, a share of total German aircraft output recalled as ~4,500 (1915), ~8,200 (1916), ~19,700 (1917) from Morrow, The Great War in the Air (not fetched); fighter share is a split by judgement."
+      },
+      "aircraft_strike": {
+        "low": 4000,
+        "mid": 5500,
+        "high": 13000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Two-seat reconnaissance, ground-attack and bomber aircraft per year 1915-1917, the remainder of the totals recalled from Morrow (see fighters)."
+      },
+      "artillery": {
+        "low": 4000,
+        "mid": 10000,
+        "high": 20000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field and heavy guns per year 1915-1918; the 1916 Hindenburg Programme aimed at ~3,000 guns per month."
+      },
+      "ships_major": {
+        "low": 3,
+        "mid": 5,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Capital ships and cruisers completed per year 1914-1916: 3 Koenig class and Derfflinger in late 1914, 2 Bayern and Luetzow 1916, ~6 light cruisers per year."
+      },
+      "ships_minor": {
+        "low": 30,
+        "mid": 45,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Torpedo boats (destroyers) completed per year 1915-1918 (Conway's 1906-1921)."
+      },
+      "submarines": {
+        "low": 52,
+        "mid": 85,
+        "high": 108,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. U-boats commissioned per year: ~52 (1915), 108 (1916), ~87 (1917) (Conway's 1906-1921; Halpern)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 200000,
+      "mid": 250000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chausseen (metalled highways) and lesser engineered roads of the Reich."
+    },
+    "railKm": {
+      "low": 63537,
+      "mid": 64077,
+      "high": 64077,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Germany: 1913 = 63,537 km, 1914 = 64,077 km."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Hamburg, Bremen/Bremerhaven, Wilhelmshaven, Kiel, Danzig, Stettin, Koenigsberg, Luebeck, Emden."
+    },
+    "merchantTonnage": {
+      "low": 6166000,
+      "mid": 7623000,
+      "high": 8734000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "Lloyd's Register returns 1914 (steam and sail vessels of 100 tons gross and over owned, Register Book 1913-14): Germany 5,082,061 GRT, of which steam 4,743,046. High = published 1914 total of ~5.46M GRT. Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from van Creveld, Supplying War (isbn:0-521-21730-X), not read from a fetched source. van Creveld, Supplying War ch. 4: the right wing outran its railheads by ~150-300 km by the Marne; horse transport sustained ~25 km/day for a few weeks."
+    },
+    "draftAnimals": {
+      "low": 4000000,
+      "mid": 4500000,
+      "high": 4600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Strachan, The First World War vol. 1 (isbn:0-19-820877-4), not read from a fetched source. Reich horse census ~4.5M in 1913; ~715,000 horses requisitioned on mobilisation (Strachan ch. 3)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Tsingtao (Kiautschou)",
+        "lat": 36.07,
+        "lon": 120.38,
+        "kind": "port"
+      },
+      {
+        "name": "Dar es Salaam (German East Africa)",
+        "lat": -6.8,
+        "lon": 39.28,
+        "kind": "port"
+      },
+      {
+        "name": "Constantinople (Goeben and Breslau, from Aug 1914)",
+        "lat": 41.01,
+        "lon": 28.98,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Kiel Canal and Danish straits",
+      "Belgian Meuse crossings (Liege)",
+      "Vosges and Belfort gap",
+      "Masurian Lakes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified cities (Metz, Strasbourg, Koenigsberg), population support; no climate depth."
+    }
+  },
+  "notes": "Snapshot date August 1914 after mobilisation (order of 1 Aug; Feldheer concentrated by 17-18 Aug). Territory and population = the German Empire in Europe incl. Alsace-Lorraine; colonies (10.7M people, B&H Table 2) excluded and not listed in includes. Forces are the whole army; the western deployment was ~1.6M men in 7 armies and the eastern 8th Army ~150,000-200,000. Aircraft are all counted as aircraft_strike because no fighters existed in 1914. Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, torpedo boats/destroyers = ships_minor. Book figures (Herwig, Strachan, Conway's) are from standard works not fetched online, graded at most B."
+}

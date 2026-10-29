@@ -1,0 +1,669 @@
+{
+  "id": "russian-empire-1914",
+  "nationId": "russian-empire",
+  "includes": [],
+  "name": "Russian Empire",
+  "year": 1914,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Entente",
+    "Tsarist Russia",
+    "First World War"
+  ],
+  "capital": {
+    "name": "Saint Petersburg",
+    "lat": 59.939,
+    "lon": 30.316,
+    "kind": "capital",
+    "population": 2118000
+  },
+  "places": [
+    {
+      "name": "Moscow",
+      "lat": 55.756,
+      "lon": 37.617,
+      "kind": "city",
+      "population": 1762000
+    },
+    {
+      "name": "Warsaw",
+      "lat": 52.23,
+      "lon": 21.01,
+      "kind": "city",
+      "population": 885000
+    },
+    {
+      "name": "Kiev",
+      "lat": 50.45,
+      "lon": 30.523,
+      "kind": "city",
+      "population": 610000
+    },
+    {
+      "name": "Odessa",
+      "lat": 46.48,
+      "lon": 30.73,
+      "kind": "port",
+      "population": 631000
+    },
+    {
+      "name": "Riga",
+      "lat": 56.95,
+      "lon": 24.11,
+      "kind": "port",
+      "population": 520000
+    },
+    {
+      "name": "Kronstadt",
+      "lat": 59.99,
+      "lon": 29.77,
+      "kind": "port"
+    },
+    {
+      "name": "Sevastopol",
+      "lat": 44.6,
+      "lon": 33.52,
+      "kind": "port"
+    },
+    {
+      "name": "Novogeorgievsk (Modlin)",
+      "lat": 52.43,
+      "lon": 20.71,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kovno",
+      "lat": 54.9,
+      "lon": 23.9,
+      "kind": "fortress"
+    },
+    {
+      "name": "Brest-Litovsk",
+      "lat": 52.09,
+      "lon": 23.66,
+      "kind": "fortress"
+    },
+    {
+      "name": "Vladivostok",
+      "lat": 43.12,
+      "lon": 131.89,
+      "kind": "port"
+    },
+    {
+      "name": "Helsingfors",
+      "lat": 60.17,
+      "lon": 24.94,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1914:Russian Empire + hb:1914:Finland",
+    "areaKm2": {
+      "low": 21400000,
+      "mid": 21800000,
+      "high": 22100000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson",
+      "note": "world_1914 Russian Empire polygons (21.31M + 0.18M km2) plus Finland (0.33M) = ~21.8M km2 computed on the sphere; B&H Table 1: 21.7M km2 exc. Finland plus 0.4M Finland."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 167000000,
+      "mid": 175000000,
+      "high": 176400000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww1overview2005.pdf",
+      "note": "Broadberry and Harrison 2005 Table 1: Russian Empire exc. Finland 173.2M plus Finland 3.2M = 176.4M (1913, League of Nations 1927) (high); COW NMC v7 tpop 1914 = 175,100k (mid); B&H Table 9 (Urlanis) 167.0M (low)."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.15,
+      "high": 0.18,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Russia 1910 = 18.1% (present-day Russia, more urban than the empire). 1897 census 13.4% urban; ~15% by 1914 (mid). Low = COW upop/tpop 1914 = 10,479/175,100 = 0.06 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 4000000,
+      "mid": 4500000,
+      "high": 5300000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Russian_Army",
+      "note": "Cited page: peacetime strength ~1.3M in 1913 (811,000 infantry, 133,000 cavalry, 209,000 artillery, 59,000 engineers, 88,000 support); wartime mobilisation in 1914 increased this to 4.5M. High is a judgement bound below the cited page's 5,962,396 active and reserve troops. Navy (~55,000) included. Snapshot month: August 1914. Check: COW NMC v7 milper 1914 = 1,321k, 1915 = 5,500k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 1500000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Russian_Army",
+      "note": "Cited page: total active and reserve troops estimated at 5,962,396 in 1913, incl. first and second line reservists; after 4.5M were called the residual trained pool (older reserve classes, opolchenie 1st class with prior service) was ~1.5-3M. Reconstruction, grade C."
+    },
+    "supportPersonnel": {
+      "low": 1500000,
+      "mid": 1750000,
+      "high": 2000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Russian_Army",
+      "note": "Artillery (209,000 in peace on the cited page), engineers, support and auxiliary troops, depots, navy, staffs, scaled to the mobilised army."
+    },
+    "mobilizationRatio": {
+      "low": 0.07,
+      "mid": 0.08,
+      "high": 0.09,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/World_War_I_casualties",
+      "note": "Total mobilised: 15,378,000 (Krivosheev) or 12,000,000 (US War Dept) on the cited page; divided by ~175M = 0.07-0.09. Low because of exemptions, illiteracy and the peasant economy, not lack of men."
+    },
+    "mobilizable": {
+      "low": 11690000,
+      "mid": 14000000,
+      "high": 15876000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1900000,
+          "mid": 2300000,
+          "high": 2600000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Stone, The Eastern Front 1914-1917 (isbn:0-14-026725-5), not read from a fetched source. ~114 infantry divisions after mobilisation (70 first-line, 35 reserve) at ~16 battalions and ~16,000 rifles each, plus fortress infantry (Stone, The Eastern Front ch. 2). Peacetime infantry 811,000 (cited army page)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: Mosin-Nagant rifle and Maxim MG adequate; rifle and shell shortages from autumn 1914"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5 (conscripts with basic training). Evidence: four-year conscription but low literacy; reservists poorly trained"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 90000,
+          "mid": 120000,
+          "high": 160000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Stone, The Eastern Front 1914-1917 (isbn:0-14-026725-5), not read from a fetched source. Rifle brigades (Finnish, Siberian, Caucasian, Turkestan, ~16-20 brigades of 8 battalions)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: same weapons"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Siberian rifle units rated the best Russian infantry"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 150000,
+          "mid": 200000,
+          "high": 250000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Peace strength read from the Imperial Russian Army page; wartime count recalled from Stone, not read from a fetched source. Cited page: 133,000 cavalrymen in peace; ~36 cavalry divisions after mobilisation incl. Cossack second- and third-line regiments (Stone ch. 2)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: lance, sabre and carbine; large but used poorly for reconnaissance"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Cossack hosts and regular cavalry, horsemanship strong"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 6000,
+          "mid": 7000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Stone, The Eastern Front 1914-1917 (isbn:0-14-026725-5), not read from a fetched source. ~6,300 76.2 mm M1902 field guns, ~500 122 mm howitzers and ~240 heavy pieces with the field army (Stone ch. 2); peace establishment 3,904 guns (cited army page). Fortress guns excluded."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: 76 mm M1902 as good as the French 75; almost no modern heavy artillery; shell crisis from late 1914"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: poor infantry-artillery co-ordination"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 190,
+          "mid": 244,
+          "high": 263,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Imperial_Russian_Air_Service",
+          "note": "Cited page: Russia had the largest Entente air fleet at the outbreak, 263 aeroplanes; ~244 with the army in the field. Reconnaissance types; Ilya Muromets bomber squadron formed December 1914."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mostly French designs, engine shortages"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: few trained pilots and mechanics"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 20,
+          "mid": 24,
+          "high": 28,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: ~9 pre-dreadnoughts (4 Baltic, 5 Black Sea) and ~14 armoured and protected cruisers (Rurik, Bayan class, Bogatyr class, Aurora, Pamiat Merkuria...). The 4 Gangut-class dreadnoughts commissioned in late 1914 (high)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: pre-dreadnought fleet rebuilt after Tsushima; dreadnoughts not yet ready"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Baltic Fleet excellent at mine warfare (cited navy page)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 85,
+          "mid": 100,
+          "high": 115,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~100 destroyers (Baltic, Black Sea and Pacific), incl. the modern Novik."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Novik the fastest destroyer of 1914; many older boats"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mine-laying and coastal operations"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 24,
+          "mid": 28,
+          "high": 36,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~28 submarines, mostly small Holland and Lake types (Conway's)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: old small boats; Bars class completing 1915-16"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: limited sea time"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Samsonov and Rennenkampf failed to co-ordinate (Tannenberg, Masurian Lakes); Ivanov and Brusilov beat the Austrians in Galicia; faction-ridden high command"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5 (national conscript army). Evidence: peasant conscripts, many non-Russian; mass surrenders at Tannenberg (~92,000 prisoners)"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: patriotic rally of August 1914 (cited economic-history page); faded by 1915"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.7,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: Mosin-Nagant, Maxim MG, 76 mm M1902 QF; few heavy guns, chronic shell shortage"
+    },
+    "armor": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars, steel helmet 1915). Evidence: no helmets or armoured vehicles in 1914; Austin armoured cars from 1915"
+    },
+    "ships": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (dreadnoughts). Evidence: Gangut dreadnoughts completing late 1914, Novik destroyer; mostly pre-dreadnoughts"
+    },
+    "fortification": {
+      "low": 6.7,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: Novogeorgievsk, Kovno, Brest-Litovsk, Przemysl-type fortresses (Kovno and Novogeorgievsk fell in 1915)"
+    },
+    "logistics": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (magazines) and 7 (railways). Evidence: rail network ~1/10 the density of Germany's; armies outran railheads in East Prussia"
+    },
+    "communications": {
+      "low": 6.3,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (telegraph, telephone). Evidence: uncoded wireless orders intercepted before Tannenberg; telephone wire shortages"
+    },
+    "isr": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial reconnaissance. Evidence: 263 aircraft but poor use of reconnaissance and cavalry"
+    },
+    "air": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914. Evidence: Sikorsky Ilya Muromets four-engine bomber, unique in 1914"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1900,
+      "mid": 2200,
+      "high": 2300,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): USSR-territory 1913 = 2,254 (2011 int$), the series that matches B&H Table 1 (1,488 in 1990 int$ for the Russian Empire). The separate 'Russia' series in the same file gives 1,163 for 1913, inconsistent with the USSR aggregate and not used. Finland (1,140 in 1990 int$, B&H) pulls the average down slightly."
+    },
+    "gdp": {
+      "low": 317300000000,
+      "mid": 385000000000,
+      "high": 405700000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.045,
+      "mid": 0.15,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Ferguson, The Pity of War (isbn:0-7139-9246-8), not read from a fetched source. Low: defence ~4.5-5% of NNP in 1913 (Ferguson, Pity of War table 6, the highest burden of the powers relative to income). Mid/high: wartime share rising towards ~30% of national income by 1916; reconstruction, grade C."
+    },
+    "industrialShare": {
+      "low": 0.18,
+      "mid": 0.22,
+      "high": 0.28,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Industry and mining ~20-25% of national income in 1913; agriculture ~half."
+    },
+    "foodSurplus": {
+      "low": 0.18,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Economy_of_Tsarist_Russia",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: the peasantry was 80% of the population at the turn of the 20th century; Collectivization in the Soviet Union page: 82% peasants in 1928. Population share used as a proxy for the agricultural employment share: 1 - 0.80 = 0.20 (mid). Russia was Europe's largest grain exporter in 1913."
+    },
+    "annualCohort": {
+      "low": 1000000,
+      "mid": 1300000,
+      "high": 1600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. 1911 intake read from the Imperial Russian Army page; class size recalled from Stone, not read from a fetched source. Cited page: ~455,000 called up in 1911 out of a much larger liable class; the yearly class of men reaching 21 was ~1.3M (Stone ch. 2)."
+    },
+    "production": {
+      "artillery": {
+        "low": 500,
+        "mid": 1500,
+        "high": 4000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field and heavy guns per year 1915-1916; Russian output of 76 mm guns rose from ~40 per month in 1914 to several hundred per month by 1916."
+      },
+      "aircraft_fighter": {
+        "low": 100,
+        "mid": 400,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fighters per year 1915-1916 (domestic Nieuport, Morane and Sikorsky types); total Russian aircraft output ~1,500-1,900 per year by 1916."
+      },
+      "aircraft_strike": {
+        "low": 300,
+        "mid": 800,
+        "high": 1200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Reconnaissance and bomber aircraft per year 1915-1916."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Dreadnoughts and cruisers completed per year 1914-1917 (4 Gangut 1914-15, 3 Imperatritsa Mariya 1915-17)."
+      },
+      "ships_minor": {
+        "low": 5,
+        "mid": 12,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Novik-type destroyers completed per year."
+      },
+      "submarines": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Bars-class and AG-class submarines per year 1915-1917."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 40000,
+      "mid": 60000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Metalled chaussees of the Russian Empire; most roads were unpaved tracks impassable in the rasputitsa."
+    },
+    "railKm": {
+      "low": 58500,
+      "mid": 62060,
+      "high": 62060,
+      "grade": "C",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Russia 1913 = 58,500 km plus Finland 1913 = 3,560 km = 62,060 km (mid). CHAT coverage of the Asiatic lines is not stated (Russia 1920 = 71,600 km in the same series), hence grade C."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. St Petersburg/Kronstadt, Reval, Riga, Libau, Helsingfors, Odessa, Sevastopol, Nikolaev, Archangel, Vladivostok."
+    },
+    "merchantTonnage": {
+      "low": 1266000,
+      "mid": 1461000,
+      "high": 1760000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "Lloyd's Register returns 1914: Russian flag 974,178 GRT (steam and sail, 100 tons and over, Register Book 1913-14). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Russian armies in East Prussia outran their supply within ~100-150 km of the frontier railheads (break of gauge at the border)."
+    },
+    "draftAnimals": {
+      "low": 25000000,
+      "mid": 32000000,
+      "high": 36000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses of the Russian Empire (~30-35M, the largest stock in the world); ~0.8-1.0M requisitioned in 1914."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Port Arthur lease lost 1905; Harbin (CER zone)",
+        "lat": 45.75,
+        "lon": 126.65,
+        "kind": "city"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Polish salient (Vistula line)",
+      "Masurian Lakes",
+      "Carpathian passes",
+      "Turkish Straits (Allied supply route closed)",
+      "Gulf of Finland"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: familiar terrain, fortresses, deep strategic depth and a continental winter that invaders were not adapted to."
+    }
+  },
+  "notes": "Snapshot date August 1914 after mobilisation (general mobilisation 30-31 July). Territory and population = the Russian Empire in Europe and Asia including the Grand Duchy of Finland and Congress Poland (neither a separate state in 1914, so includes is empty; the finland and poland nationIds are later states). Bukhara and Khiva protectorates excluded. Forces are the whole army; on the German front in August the 1st and 2nd Armies had ~30 divisions, the four armies against Austria-Hungary ~53. Aircraft in aircraft_strike (no fighters in 1914). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Stone, Conway's, Ferguson) not fetched online, graded at most B."
+}

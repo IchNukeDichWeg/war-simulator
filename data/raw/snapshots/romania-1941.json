@@ -1,0 +1,685 @@
+{
+  "id": "romania-1941",
+  "nationId": "romania",
+  "includes": [],
+  "name": "Kingdom of Romania",
+  "year": 1941,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "Axis",
+    "Antonescu regime",
+    "Second World War"
+  ],
+  "capital": {
+    "name": "Bucharest",
+    "lat": 44.43,
+    "lon": 26.1,
+    "kind": "capital",
+    "population": 990000
+  },
+  "places": [
+    {
+      "name": "Iasi",
+      "lat": 47.16,
+      "lon": 27.59,
+      "kind": "city",
+      "population": 100000
+    },
+    {
+      "name": "Constanta",
+      "lat": 44.18,
+      "lon": 28.65,
+      "kind": "port"
+    },
+    {
+      "name": "Ploiesti oilfields",
+      "lat": 44.94,
+      "lon": 26.02,
+      "kind": "city"
+    },
+    {
+      "name": "Galati",
+      "lat": 45.44,
+      "lon": 28.05,
+      "kind": "port"
+    },
+    {
+      "name": "Brasov",
+      "lat": 45.66,
+      "lon": 25.61,
+      "kind": "city"
+    },
+    {
+      "name": "Timisoara",
+      "lat": 45.76,
+      "lon": 21.23,
+      "kind": "city"
+    },
+    {
+      "name": "Cernavoda bridge",
+      "lat": 44.34,
+      "lon": 28.03,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Prut crossings (Ungheni)",
+      "lat": 47.21,
+      "lon": 27.8,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:Romania",
+    "areaKm2": {
+      "low": 195000,
+      "mid": 195000,
+      "high": 297000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 Romania polygon (Greater Romania) = ~297,000 km2 computed on the sphere (high); minus Bessarabia and N. Bukovina (~50,800 km2), N. Transylvania (43,492 km2, Hungary in WWII page) and S. Dobruja (~7,400 km2) = ~195,000 km2 actually held on 22 June 1941 (mid)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 13300000,
+      "mid": 13550000,
+      "high": 14000000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1941 = 13,550k (after the 1940 cessions of Bessarabia and N. Bukovina, N. Transylvania and S. Dobruja); League of Nations: 19.85M for Greater Romania (Dec 1938) before the losses."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.21,
+      "high": 0.24,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Romania 1940 = 20.6% (mid). Low = COW upop/tpop 1941 = 1,103/13,550 = 0.08 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 650000,
+      "mid": 686258,
+      "high": 815000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Romania_in_World_War_II",
+      "note": "Cited page: the Romanian Army had 686,258 men under arms in the summer of 1941 (1,224,691 in summer 1944). COW milper 1940 = 815k (high). Snapshot date: 22 June 1941."
+    },
+    "trainedReserves": {
+      "low": 300000,
+      "mid": 500000,
+      "high": 700000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Trained reservists not under arms in June 1941; the army reached 1.22M by 1944 (cited page)."
+    },
+    "supportPersonnel": {
+      "low": 280000,
+      "mid": 320000,
+      "high": 340000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. Artillery, engineers, trains, gendarmerie with the army, air force (~25,000), navy (~10,000), depots (Axworthy, Third Axis Fourth Ally ch. 2)."
+    },
+    "mobilizationRatio": {
+      "low": 0.09,
+      "mid": 0.1,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Romania_in_World_War_II",
+      "note": "Cited page: 1,224,691 under arms in summer 1944 / 13.6M = 0.09; total called up over the war somewhat higher."
+    },
+    "mobilizable": {
+      "low": 1197000,
+      "mid": 1355000,
+      "high": 1680000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 230000,
+          "mid": 280000,
+          "high": 330000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. 21 infantry divisions (~17,500 men, ~10,000 riflemen each) plus Guard, border and fortress units. Cited Barbarossa page: 14 Romanian divisions committed on 22 June."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: ZB vz. 24 rifles and ZB 30 LMGs; very few AT guns (37 mm), mostly WWI artillery"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: poorly trained conscripts, NCO shortage"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 35000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. Mountain Corps: 4 mountain (Vanatori de munte) brigades."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mountain equipment"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: elite of the army"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 36000,
+          "high": 42000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. 6 cavalry brigades (Rosiori and Calarasi) of ~6,000 men."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mounted rifles with some motorised elements"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: good reconnaissance"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 200,
+          "mid": 240,
+          "high": 300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. 1st Armoured Division: 126 R-2 (Pz 35(t)), plus ~75 R35, Renault FT and R-1 tankettes (Axworthy ch. 2)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: R-2 light tanks outclassed by the T-34"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: German-trained armoured division"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. Field and heavy guns and howitzers, ~48 per division plus corps and army artillery."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mostly WWI-era pieces"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 120,
+          "mid": 160,
+          "high": 200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. ARR fighters June 1941: IAR 80, He 112, Bf 109E, Hurricane, PZL P.11/P.24 (Axworthy ch. 2)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: IAR 80 and Bf 109E modern; PZLs obsolete"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 150,
+          "mid": 200,
+          "high": 250,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Axworthy, Third Axis Fourth Ally (isbn:1-85409-267-7), not read from a fetched source. Bombers and reconnaissance: IAR 37/38/39, Blenheim, SM.79, He 111, PZL.37, Potez 63."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mixed types"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 7,
+          "mid": 7,
+          "high": 14,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 4 destroyers read from the Romanian Navy page; torpedo boats and monitors recalled from Conway's, not read from a fetched source. 4 destroyers (2 Regele Ferdinand, 2 Marasti class) and 3 torpedo boats; 7 Danube monitors in the high bound only (Conway's 1922-1946)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Regele Ferdinand class modern"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Black Sea convoy escort"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 1,
+          "mid": 1,
+          "high": 1,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Romanian_Navy_during_World_War_II",
+          "note": "Delfinul (Marsuinul and Rechinul commissioned 1943; 4 operational by end of 1943 per the cited page)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 40,
+          "mid": 70,
+          "high": 120,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. AA batteries; the Ploiesti oilfields were defended mainly by German Flak."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Vickers 75 mm and Oerlikon/Rheinmetall guns"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Antonescu's direction; slow costly siege of Odessa (Aug-Oct 1941)"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: conscript army with a large officer-soldier gulf; held well in 1941"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: recovery of Bessarabia and N. Bukovina popular; enthusiasm faded beyond the Dniester"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.2,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: Czech small arms, WWI artillery, few AT guns"
+    },
+    "armor": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8 (rolled homogeneous armour). Evidence: Pz 35(t) and R35 light tanks"
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: modern destroyers, one submarine"
+    },
+    "fortification": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: Focsani-Namoloasa-Braila (FNB) line under construction"
+    },
+    "logistics": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: horse-drawn army, break of gauge at the Soviet border"
+    },
+    "communications": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telephone, some radio). Evidence: few radios"
+    },
+    "isr": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: air reconnaissance"
+    },
+    "air": {
+      "low": 7.3,
+      "mid": 7.4,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1914) and 8 (1943). Evidence: IAR 80 indigenous fighter, Bf 109E"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1500,
+      "mid": 1626,
+      "high": 1800,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Romania 1941 = 1,626 (2011 int$)."
+    },
+    "gdp": {
+      "low": 20000000000,
+      "mid": 22000000000,
+      "high": 25200000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Military spending in 1941 under Antonescu, financed partly by oil exports to Germany."
+    },
+    "industrialShare": {
+      "low": 0.18,
+      "mid": 0.22,
+      "high": 0.28,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oil (Ploiesti), metallurgy (Resita) and food processing; ~75% of the labour force in agriculture."
+    },
+    "foodSurplus": {
+      "low": 0.18,
+      "mid": 0.2,
+      "high": 0.28,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Kingdom_of_Romania",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: about 80% of Romanians were still employed in agriculture in the mid-1930s (72% in 1919). 1 - 0.80 = 0.20 (mid), 1 - 0.72 = 0.28 (high). Grain exporter to Germany."
+    },
+    "annualCohort": {
+      "low": 110000,
+      "mid": 130000,
+      "high": 160000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 21 per year in the 1941 territory (~13.5M)."
+    },
+    "production": {
+      "armor": {
+        "low": 30,
+        "mid": 55,
+        "high": 100,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Romania: 214 tanks and SPGs (mostly TACAM tank destroyers 1943-44)."
+      },
+      "artillery": {
+        "low": 200,
+        "mid": 450,
+        "high": 700,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Romania: 1,800 artillery pieces (Resita 75 mm from 1943)."
+      },
+      "aircraft_fighter": {
+        "low": 80,
+        "mid": 130,
+        "high": 200,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Romania: 513 fighters (IAR 80/81, Bf 109G licence)."
+      },
+      "aircraft_strike": {
+        "low": 60,
+        "mid": 100,
+        "high": 150,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
+        "note": "War-total production (1939/41-45) from the cited page's land and air tables, divided by ~4 war years. Romania: 272 attack aircraft and 128 bombers (IAR 37/39, JRS-79B)."
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Torpedo boats and minelayers per year (Galati yard)."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Marsuinul and Rechinul built at Galati, commissioned 1943."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 50000,
+      "mid": 60000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. National and county roads in the 1941 territory, mostly unsurfaced."
+    },
+    "railKm": {
+      "low": 6500,
+      "mid": 7500,
+      "high": 9990,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CHAT railline Romania 1938 = 9,990 km for Greater Romania (read from https://data.nber.org/chat/chat.dta, high); the 1941 rump lost the lines of Bessarabia, N. Bukovina, N. Transylvania and S. Dobruja (share guessed)."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 4,
+      "high": 4,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Navy_during_World_War_II",
+      "note": "Constanta, Galati, Braila, Sulina."
+    },
+    "merchantTonnage": {
+      "low": 131000,
+      "mid": 165000,
+      "high": 208000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "League of Nations Year-Book 1939/40 table: Romanian merchant fleet ~101,000 GRT (June 1938). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horse-drawn divisions behind German motorised spearheads; Odessa siege supplied by rail and road."
+    },
+    "draftAnimals": {
+      "low": 2500000,
+      "mid": 3500000,
+      "high": 4500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. ~2M horses plus oxen and buffalo in the 1941 territory."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-ww-infantry",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Prut river",
+      "Danube delta and Cernavoda bridge",
+      "Focsani gap",
+      "Carpathian passes (Predeal)",
+      "Ploiesti oilfields"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: Carpathian barrier and population support."
+    }
+  },
+  "notes": "Snapshot date 22 June 1941 (Romania joined Operation Barbarossa; Romanian 3rd and 4th Armies attacked across the Prut on 2 July). Territory = rump Romania after the 1940 cessions; the border uses the world_1938 basemap (nearest at or before 1941), which still shows Greater Romania, so areaKm2 mid is the real 1941 area. Production rates are war totals from the Military production during WWII page spread over ~4 years. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}

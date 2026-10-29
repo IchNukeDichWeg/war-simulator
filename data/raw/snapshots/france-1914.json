@@ -1,0 +1,688 @@
+{
+  "id": "france-1914",
+  "nationId": "france",
+  "includes": [],
+  "name": "French Third Republic",
+  "year": 1914,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Entente",
+    "Third Republic",
+    "First World War"
+  ],
+  "capital": {
+    "name": "Paris",
+    "lat": 48.857,
+    "lon": 2.352,
+    "kind": "capital",
+    "population": 2888000
+  },
+  "places": [
+    {
+      "name": "Marseille",
+      "lat": 43.296,
+      "lon": 5.37,
+      "kind": "port",
+      "population": 551000
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lon": 4.836,
+      "kind": "city",
+      "population": 524000
+    },
+    {
+      "name": "Lille",
+      "lat": 50.63,
+      "lon": 3.06,
+      "kind": "city",
+      "population": 218000
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.838,
+      "lon": -0.579,
+      "kind": "port",
+      "population": 262000
+    },
+    {
+      "name": "Verdun",
+      "lat": 49.16,
+      "lon": 5.38,
+      "kind": "fortress"
+    },
+    {
+      "name": "Toul",
+      "lat": 48.68,
+      "lon": 5.89,
+      "kind": "fortress"
+    },
+    {
+      "name": "Belfort",
+      "lat": 47.64,
+      "lon": 6.86,
+      "kind": "fortress"
+    },
+    {
+      "name": "Toulon",
+      "lat": 43.12,
+      "lon": 5.93,
+      "kind": "port"
+    },
+    {
+      "name": "Brest",
+      "lat": 48.39,
+      "lon": -4.49,
+      "kind": "port"
+    },
+    {
+      "name": "Le Havre",
+      "lat": 49.49,
+      "lon": 0.11,
+      "kind": "port"
+    },
+    {
+      "name": "Charmes Gap",
+      "lat": 48.37,
+      "lon": 6.29,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1914:France",
+    "areaKm2": {
+      "low": 530000,
+      "mid": 536000,
+      "high": 540000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson",
+      "note": "world_1914 France polygon = ~530,000 km2 computed on the sphere; published metropolitan area 536,464 km2 (B&H Table 1: 0.5M km2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 39400000,
+      "mid": 39700000,
+      "high": 39800000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww1overview2005.pdf",
+      "note": "Broadberry and Harrison 2005 Table 1: France 1913 = 39.8M (League of Nations 1927); B&H Table 9 (Urlanis) 39.6M; OWID/HYDE 1914 = 39.58M (low). COW tpop 1914 = 33.2M reflects the occupied departments and is not used. Metropolitan France only; colonies (48.3M) excluded."
+    },
+    "urbanization": {
+      "low": 0.38,
+      "mid": 0.45,
+      "high": 0.47,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share France 1910 = 47.5%. 1911 census: 44% urban (communes of 2,000+ agglomerated). Low ~38% in towns of 5,000+."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 3500000,
+      "mid": 3700000,
+      "high": 3900000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+      "note": "Cited page: mobilisation ordered 1 Aug 1914 called the classes of 1896-1910, almost three million reservists, on top of the ~0.8M serving conscripts (three-year law); Mid = ~0.8M + ~3M from the cited page, rounded down for exemptions; bounds are a judgement band. Field armies of the north-east ~1.65M in 62 infantry divisions (British Army page). Navy ~60,000 included. Snapshot month: August 1914. Check: COW NMC v7 milper 1914 = 789k, 1915 = 4,997k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 500000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+      "note": "Older territorial reserve classes (ages 42-48, Reserve of the Territorial Army) not yet called in August, plus colonial reservists. France trained ~85% of each class, so almost every adult man had service. Reconstruction, grade C."
+    },
+    "supportPersonnel": {
+      "low": 1700000,
+      "mid": 2000000,
+      "high": 2200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Doughty, Pyrrhic Victory (isbn:0-674-01880-X), not read from a fetched source. Artillery (87 regiments, 40% of the army by 1918), engineers, trains, depots of 201 reserve and 145 territorial regiments in training, staffs, navy."
+    },
+    "mobilizationRatio": {
+      "low": 0.19,
+      "mid": 0.2,
+      "high": 0.22,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/World_War_I_casualties",
+      "note": "Total mobilised: 7,935,000 (French reply to the ILO, 1924) or 8,410,000 (US War Dept) on the cited page, incl. ~0.5-0.9M colonial troops; metropolitan ~7.9M / 39.7M = 0.20."
+    },
+    "mobilizable": {
+      "low": 7486000,
+      "mid": 7940000,
+      "high": 8756000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1200000,
+          "mid": 1500000,
+          "high": 1800000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+          "note": "Cited page: 1.5 million infantry in 1915 (850,000 in 1918). August 1914: 47 active and 25 reserve infantry divisions plus territorial divisions and regiments."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Lebel 1886 rifle, few MGs (St Etienne unreliable), red trousers, no steel helmet until 1915"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: three-year conscripts; offensive a outrance doctrine cost 300,000 casualties by mid-September"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 90000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Doughty, Pyrrhic Victory (isbn:0-674-01880-X), not read from a fetched source. 31 active battalions of chasseurs a pied/alpins plus their reserve battalions (~1,700 each)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: same weapons, mountain equipment"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: elite chasseurs alpins"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 80000,
+          "high": 100000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+          "note": "79 cavalry regiments on the cited page (~700 sabres each), 10 cavalry divisions plus divisional squadrons; cuirassiers rode with the light cavalry in the screening role."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: carbine and sabre/lance, cuirasses; horses broke down in August"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: regular cavalry"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 5100,
+          "mid": 5500,
+          "high": 6000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+          "note": "Cited page: 4,986 75 mm Mle 1897 (3,680 with the field corps), 128 65 mm mountain guns, 210 120 mm C 1890 and 104 155 mm Rimailho howitzers, plus a few hundred heavy pieces drawn from fortresses."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: the 75 the best field gun of 1914 (12-18 rounds/min), but almost no modern heavy artillery"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: excellent direct-fire gunnery"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 130,
+          "mid": 156,
+          "high": 160,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Imperial_Russian_Air_Service",
+          "note": "Cited page: France had 156 aeroplanes at the outbreak (against Russia's 263); the Aviation in WWI page gives ~184 Allied aircraft in the west incl. ~30 British. Unarmed reconnaissance types; no fighters existed. Airships excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Bleriot, Farman, Caudron, Voisin; French engine industry the best in 1914"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: 1911-13 exercises pioneered artillery spotting (Aviation in WWI page)"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 42,
+          "mid": 48,
+          "high": 52,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: 2 Courbet dreadnoughts in service (France and Paris commissioned Aug-Oct 1914), 6 Danton semi-dreadnoughts, ~13 older pre-dreadnoughts, ~19 armoured and ~8 protected cruisers. Most of the fleet in the Mediterranean (Halpern ch. 1)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mixed pre-dreadnought fleet, few dreadnoughts"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: long-service crews, weak fleet tactics"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 80,
+          "mid": 84,
+          "high": 90,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~84 torpilleurs d'escadre (destroyers); 135 smaller torpedo boats excluded."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: small 300-800 t destroyers"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Mediterranean blockade duty"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 50,
+          "mid": 67,
+          "high": 76,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~67 submarines in service, many small early boats (Conway's)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: many steam or petrol boats"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: pioneer submarine service"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Joffre's Plan XVII failed in the Battle of the Frontiers, but the general staff re-deployed by rail and won the Marne; ~40% of generals sacked by year end"
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: regionally recruited conscript army that held after losing 260,000 men in August-September"
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0 (motivated, defence of the homeland). Evidence: Union sacree; invaded homeland, recovery of Alsace-Lorraine"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.9,
+      "mid": 7.1,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: 75 mm Mle 1897 QF gun, Lebel rifle; few heavy howitzers and MGs"
+    },
+    "armor": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars, steel helmet 1915). Evidence: no helmets (Adrian from Sep 1915, cited page); a few armoured cars"
+    },
+    "ships": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (dreadnoughts, steam). Evidence: first dreadnoughts just commissioned; largely pre-dreadnought fleet"
+    },
+    "fortification": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: Sere de Rivieres fortress belt reinforced in concrete (Verdun, Toul, Epinal, Belfort)"
+    },
+    "logistics": {
+      "low": 7.0,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: dense rail network; Joffre shifted armies by rail before the Marne; Paris taxis"
+    },
+    "communications": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telegraph, telephone). Evidence: telephone and telegraph, radio intercepts of German traffic at the Marne"
+    },
+    "isr": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial reconnaissance. Evidence: aircraft spotted von Kluck's turn east before the Marne"
+    },
+    "air": {
+      "low": 6.9,
+      "mid": 7.1,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914. Evidence: leading aero-engine industry (Gnome, Renault)"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 5158,
+      "mid": 5450,
+      "high": 5555,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): France 1913 = 5,555, 1914 = 5,158 (2011 int$). August snapshot near the prewar level. B&H Table 1: 3,485 in 1990 int$."
+    },
+    "gdp": {
+      "low": 203200000000,
+      "mid": 216400000000,
+      "high": 221100000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.039,
+      "mid": 0.18,
+      "high": 0.46,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mid read from Broadberry and Harrison Table 5; low recalled from Ferguson, not read from a fetched source. Low: ~3.9% of NNP in 1913 (Ferguson table 6). Mid: B&H Table 5 government spending 22.3% of GDP in 1914 (10.0% in 1913), less civil spending. High: 46.4% in 1915."
+    },
+    "industrialShare": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.38,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Doughty, Pyrrhic Victory (isbn:0-674-01880-X), not read from a fetched source. Industry ~35% of output in 1913 with ~40% of the labour force still in agriculture (Hautcoeur in Broadberry and Harrison 2005, ch. 6)."
+    },
+    "foodSurplus": {
+      "low": 0.57,
+      "mid": 0.59,
+      "high": 0.6,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Herrendorf, Rogerson and Valentinyi data via OWID: France agriculture share of employment 1906 = 42.7%, 1911 = 41.0%, 1921 = 41.5%. 1 - 0.41 = 0.59 (mid). Near self-sufficient in food before 1914."
+    },
+    "annualCohort": {
+      "low": 300000,
+      "mid": 320000,
+      "high": 340000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Doughty, Pyrrhic Victory (isbn:0-674-01880-X), not read from a fetched source. ~850,000 births per year in the 1890s, half male, ~75% survival to 20 gives ~320,000; the stagnant population was the motive for the 1913 three-year law."
+    },
+    "production": {
+      "aircraft_fighter": {
+        "low": 1000,
+        "mid": 3000,
+        "high": 8000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. French aircraft output recalled as ~4,500 (1915), ~7,500 (1916), ~14,900 (1917), ~24,600 (1918) from Morrow, The Great War in the Air (not fetched); fighter share (Nieuport, SPAD) a split by judgement."
+      },
+      "aircraft_strike": {
+        "low": 3000,
+        "mid": 4500,
+        "high": 12000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Reconnaissance and bomber share of the totals recalled from Morrow (see fighters)."
+      },
+      "artillery": {
+        "low": 2000,
+        "mid": 6000,
+        "high": 12000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field and heavy guns per year 1915-1918; 75 mm output reached several hundred per month by 1916."
+      },
+      "armor": {
+        "low": 0,
+        "mid": 1500,
+        "high": 3000,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/French_Army_in_World_War_I",
+        "note": "Tanks per year once in production: cited page records 1,000 Renault FT ordered in April 1917; ~3,000 FT built in 1918. No tanks in 1914 (low 0)."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Bretagne class completed 1915-16; capital-ship building stopped in 1914."
+      },
+      "ships_minor": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Destroyers and sloops per year 1915-1918."
+      },
+      "submarines": {
+        "low": 5,
+        "mid": 10,
+        "high": 15,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Submarines completed per year 1915-1918."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 500000,
+      "mid": 550000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Routes nationales and departmentales plus chemins vicinaux; France had the densest metalled road network of the powers."
+    },
+    "railKm": {
+      "low": 37400,
+      "mid": 40770,
+      "high": 40770,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline France: 1913 = 40,770 km (mid), 1914 = 37,400 km (low; appears to exclude lines in the occupied departments). Local lines not included."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Halpern, A Naval History of World War I (isbn:1-55750-352-4), not read from a fetched source. Marseille, Toulon, Brest, Cherbourg, Le Havre, Rouen, Bordeaux, Saint-Nazaire, Dunkirk, Calais, Boulogne."
+    },
+    "merchantTonnage": {
+      "low": 2862000,
+      "mid": 3302000,
+      "high": 3840000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "Lloyd's Register returns 1914: France 2,201,164 GRT of steam and sail vessels of 100 tons and over (Register Book 1913-14). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from van Creveld, Supplying War (isbn:0-521-21730-X), not read from a fetched source. van Creveld ch. 4: rail-fed armies operating close to their own network."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 3200000,
+      "high": 3300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Doughty, Pyrrhic Victory (isbn:0-674-01880-X), not read from a fetched source. ~3.2M horses in 1913; ~730,000 requisitioned in August 1914."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Algiers",
+        "lat": 36.75,
+        "lon": 3.06,
+        "kind": "port"
+      },
+      {
+        "name": "Bizerte",
+        "lat": 37.27,
+        "lon": 9.87,
+        "kind": "port"
+      },
+      {
+        "name": "Dakar",
+        "lat": 14.69,
+        "lon": -17.44,
+        "kind": "port"
+      },
+      {
+        "name": "Saigon",
+        "lat": 10.78,
+        "lon": 106.7,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Belgian frontier and Meuse",
+      "Charmes Gap",
+      "Belfort Gap",
+      "Strait of Dover",
+      "Strait of Gibraltar"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortress belt (Verdun-Toul-Epinal-Belfort), population support."
+    }
+  },
+  "notes": "Snapshot date August 1914 after mobilisation (ordered 1 Aug). Metropolitan France only; North and West African colonial troops (~600,000 raised over the war) and colonial populations excluded, includes empty. Forces are the whole French army; ~1.65M in 62 infantry divisions faced Germany in the north-east. Aircraft all in aircraft_strike (no fighters in 1914). Ship convention: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Doughty, Conway's, Morrow) not fetched online, graded at most B."
+}

@@ -1,0 +1,782 @@
+{
+  "id": "germany-1944",
+  "nationId": "germany",
+  "includes": [],
+  "name": "Greater German Reich",
+  "year": 1944,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "great power",
+    "Axis",
+    "Wehrmacht",
+    "Third Reich",
+    "Second World War"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 4300000
+  },
+  "places": [
+    {
+      "name": "Hamburg",
+      "lat": 53.55,
+      "lon": 9.99,
+      "kind": "port",
+      "population": 1700000
+    },
+    {
+      "name": "Vienna",
+      "lat": 48.21,
+      "lon": 16.37,
+      "kind": "city",
+      "population": 1900000
+    },
+    {
+      "name": "Munich",
+      "lat": 48.14,
+      "lon": 11.58,
+      "kind": "city",
+      "population": 830000
+    },
+    {
+      "name": "Essen (Ruhr)",
+      "lat": 51.46,
+      "lon": 7.01,
+      "kind": "city",
+      "population": 660000
+    },
+    {
+      "name": "Breslau",
+      "lat": 51.11,
+      "lon": 17.03,
+      "kind": "city",
+      "population": 630000
+    },
+    {
+      "name": "Koenigsberg",
+      "lat": 54.71,
+      "lon": 20.51,
+      "kind": "port",
+      "population": 370000
+    },
+    {
+      "name": "Kiel",
+      "lat": 54.32,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Wilhelmshaven",
+      "lat": 53.52,
+      "lon": 8.13,
+      "kind": "port"
+    },
+    {
+      "name": "Leuna synthetic fuel works",
+      "lat": 51.32,
+      "lon": 12.02,
+      "kind": "city"
+    },
+    {
+      "name": "Peenemuende",
+      "lat": 54.14,
+      "lon": 13.77,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:Germany",
+    "areaKm2": {
+      "low": 560000,
+      "mid": 700000,
+      "high": 750000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 Germany polygon (incl. Austria and Sudetenland) = ~560,000 km2 computed on the sphere (low); plus annexed Polish territories (~92,000), Danzig, Memel and de facto Alsace-Lorraine and Luxembourg = ~700,000 km2 (mid). Protectorate (48,900) in the high bound."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 80000000,
+      "mid": 90238000,
+      "high": 95000000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1944 = 90,238k (Greater German Reich incl. Austria, Sudetenland and annexed Polish and western territories, mid); Harrison 1998 Table 1-1: Germany 68.6M + Austria 6.8M in 1938 (low ~80M after Sudetenland). Protectorate of Bohemia-Moravia and General Government excluded."
+    },
+    "urbanization": {
+      "low": 0.28,
+      "mid": 0.53,
+      "high": 0.6,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Germany 1940 = 53.2% (mid). Low = COW upop/tpop 1944 = 25,412/90,238 = 0.28 (cities over 100,000); evacuation of bombed cities lowered the 1944 figure."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 9000000,
+      "mid": 9420000,
+      "high": 9900000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+      "note": "Harrison 1998 Table 1-5: German armed forces 9,420,000 in 1944 (Heer, Waffen-SS, Luftwaffe, Kriegsmarine). Snapshot: June 1944. Check: COW NMC v7 milper 1944 = 6,128k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 500000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Almost every trained man was already in uniform; reserves = convalescents and the untrained Volkssturm (from October 1944)."
+    },
+    "supportPersonnel": {
+      "low": 6500000,
+      "mid": 7000000,
+      "high": 7300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Luftwaffe",
+      "note": "Cited page: Luftwaffe ~3M (Nov 1943-Jun 1944) incl. 1.7M male soldiers, anti-aircraft units 600,000 soldiers; plus Kriegsmarine (~0.8M), Replacement Army (~2.5M) and the field army's artillery, panzer, engineer and service troops. Derived as active minus infantry and cavalry."
+    },
+    "mobilizationRatio": {
+      "low": 0.18,
+      "mid": 0.2,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Ellis, World War II: The Statistical Survey (isbn:0-8160-2971-7), not read from a fetched source. ~17.9M men served in the Wehrmacht 1939-45 (Ellis, Statistical Survey) / ~90M = 0.2."
+    },
+    "mobilizable": {
+      "low": 14400000,
+      "mid": 18048000,
+      "high": 20900000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1500000,
+          "mid": 1800000,
+          "high": 2100000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Zaloga, Bagration 1944 (isbn:1-85532-478-4), not read from a fetched source. ~250 infantry, Volksgrenadier and SS divisions at 2,000-6,000 riflemen each by mid-1944. Bagration infobox: Army Group Centre 486,493 combat personnel of ~849,000 total."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: MG 42, StG 44 (from 1944), Panzerfaust and Panzerschreck"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: veteran cadres, shortened training for new drafts"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 200000,
+          "mid": 250000,
+          "high": 300000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Zaloga, Bagration 1944 (isbn:1-85532-478-4), not read from a fetched source. Mountain (Gebirgs), Jaeger and Fallschirmjaeger divisions."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: same weapons, mountain equipment"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: elite units"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Cavalry brigades and SS cavalry divisions (Florian Geyer) on the Eastern Front."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: anti-partisan duty"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 6500,
+          "mid": 8500,
+          "high": 10500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Tanks, assault guns and tank destroyers in June 1944 (Pz IV, Panther, Tiger, StuG III/IV, Jagdpanzer); Bagration infobox: 118 tanks and 452 assault guns in Army Group Centre."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0 (best of era). Evidence: Panther and Tiger outclassed Allied tanks; StuG the most numerous"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: experienced crews, fuel short for training"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 28000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Field and heavy guns and howitzers (excl. AT, AA and mortars); Bagration infobox (Soviet sources): 7,760 field guns in Army Group Centre."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: leFH 18, sFH 18, Nebelwerfer"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: flexible fire direction, ammunition short"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 1800,
+          "mid": 2300,
+          "high": 2800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Ellis, World War II: The Statistical Survey (isbn:0-8160-2971-7), not read from a fetched source. Single- and twin-engine day and night fighters in June 1944 (Ellis, Statistical Survey); most in Reich air defence."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Bf 109G, Fw 190A; Me 262 not yet operational"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: pilot crisis: new pilots with ~110 hours, veterans lost over the Reich"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 1500,
+          "mid": 1900,
+          "high": 2300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Ellis, World War II: The Statistical Survey (isbn:0-8160-2971-7), not read from a fetched source. Bombers, ground-attack and reconnaissance aircraft in June 1944; Bagration infobox: 920 aircraft with Luftflotte 6."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Ju 88, He 177, Fw 190F/G, Ju 87G"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: fuel shortage"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 9,
+          "mid": 11,
+          "high": 11,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. Tirpitz, Luetzow, Admiral Scheer, Prinz Eugen, Admiral Hipper, Nuernberg, Leipzig, Emden, Koeln; old battleships Schlesien and Schleswig-Holstein (high). Scharnhorst sunk December 1943."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Tirpitz the most powerful ship in European waters"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: little sea time"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 35,
+          "high": 45,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. ~15-20 destroyers and ~20 fleet torpedo boats in commission in mid-1944."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: large destroyers with 15 cm guns"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 160,
+          "mid": 430,
+          "high": 450,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. U-boats in commission in June 1944 (~430 incl. training boats, mid); ~160-190 front boats (low)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Type VIIC with schnorkel; Type XXI not yet operational"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Kriegsmarine page: 28,000 of 40,000 U-boat crewmen killed in the war"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 3500,
+          "mid": 4000,
+          "high": 4500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Westermann, Flak (isbn:0-7006-1136-3), not read from a fetched source. Flak batteries in mid-1944, ~2,600 heavy (8.8-12.8 cm) and ~1,600 light (Westermann, Flak). Luftwaffe page: 600,000 soldiers and 530,000 auxiliaries in the anti-aircraft units in Oct 1944. Bagration infobox (Soviet sources): 2,320 AA guns with Army Group Centre."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0. Evidence: 8.8 and 12.8 cm guns, Wuerzburg radar fire control"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: many crews were Luftwaffenhelfer schoolboys and auxiliaries"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: excellent tactical and operational commanders hamstrung by Hitler's no-retreat orders (Bagration, Normandy)"
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: units fought on after catastrophic losses; Kampfgruppen; 20 July plot"
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5. Evidence: two-front war being lost; ideological units fanatical"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.9,
+      "mid": 8.1,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: MG 42, StG 44, Panzerfaust, 8.8 cm Pak 43, V-1 (from 13 June 1944)"
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943, rolled homogeneous armour). Evidence: Panther, Tiger I, King Tiger entering service"
+    },
+    "ships": {
+      "low": 7.6,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: Type XXI electro-boat building, schnorkel; surface fleet small"
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: Atlantic Wall, U-boat pens, flak towers"
+    },
+    "logistics": {
+      "low": 7.2,
+      "mid": 7.4,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (railways) and 8. Evidence: rail-dependent, ~1.2M horses with the army, fuel crisis after May 1944"
+    },
+    "communications": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: radio nets, Enigma (read by the Allies)"
+    },
+    "isr": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: air reconnaissance lost over the West; radar network"
+    },
+    "air": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: Me 262 jet and Me 163 rocket fighter entering service mid-1944, V-1"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 8800,
+      "mid": 9400,
+      "high": 9698,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Germany 1944 = 9,698, Austria 1944 = 6,618 (2011 int$); annexed eastern territories poorer; Greater Reich ~9,400."
+    },
+    "gdp": {
+      "low": 704000000000,
+      "mid": 848200000000,
+      "high": 921300000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+      "note": "Harrison 1998 Table 1-8: German military burden 70% of national income in 1943 (23% in 1939); 1944 similar."
+    },
+    "industrialShare": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Industry incl. war production ~50% of output."
+    },
+    "foodSurplus": {
+      "low": 0.66,
+      "mid": 0.71,
+      "high": 0.73,
+      "grade": "C",
+      "source": "https://de.wikipedia.org/wiki/Agrarwirtschaft_und_Agrarpolitik_im_Deutschen_Reich_(1933%E2%80%931945)",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: in 1937, 29% of the employed in Germany (9,388,000 people) worked in agriculture. 1 - 0.29 = 0.71 (mid); low allows for the more agrarian annexed eastern territories; by early 1945 foreigners were a third of the agricultural labour force (cited page). Germany fed itself partly by extraction from occupied Europe."
+    },
+    "annualCohort": {
+      "low": 550000,
+      "mid": 600000,
+      "high": 650000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 18 per year in the Greater Reich (births ~1.3M c. 1926)."
+    },
+    "production": {
+      "armor": {
+        "low": 17000,
+        "mid": 18300,
+        "high": 19000,
+        "grade": "B",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: tanks and SPGs 18,300 in 1944 (Germany)."
+      },
+      "aircraft_fighter": {
+        "low": 22000,
+        "mid": 25000,
+        "high": 27000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Total combat aircraft read from Harrison 1998 Table 1-6; fighter share recalled, not read from a fetched source. Harrison 1998 Table 1-6: 34,100 combat aircraft in 1944 (Luftwaffe page: ~36,000); ~25,000 were fighters under the Jaegernotprogramm (split)."
+      },
+      "aircraft_strike": {
+        "low": 7000,
+        "mid": 9000,
+        "high": 11000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Total combat aircraft read from Harrison 1998 Table 1-6; fighter share recalled, not read from a fetched source. Harrison 1998 Table 1-6: 34,100 combat aircraft in 1944 less ~25,000 fighters."
+      },
+      "artillery": {
+        "low": 70000,
+        "mid": 148000,
+        "high": 148000,
+        "grade": "B",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: 148,000 guns in 1944 (all calibres incl. AT and AA, as in the ussr-1941 snapshot); field artillery alone ~40,000-70,000 (low)."
+      },
+      "submarines": {
+        "low": 180,
+        "mid": 189,
+        "high": 230,
+        "grade": "B",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: 189 submarines in 1944."
+      },
+      "ships_minor": {
+        "low": 3,
+        "mid": 8,
+        "high": 15,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Destroyers and fleet torpedo boats per year 1943-44."
+      },
+      "air_defense": {
+        "low": 500,
+        "mid": 1000,
+        "high": 1500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Flak batteries' worth of guns per year (8.8 cm ~5,000+ per year in 1944, plus light guns)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 250000,
+      "mid": 280000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Roads of the Greater Reich incl. ~3,800 km of Autobahn."
+    },
+    "railKm": {
+      "low": 61940,
+      "mid": 70000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CHAT railline Germany 1940 = 61,940 km (read from https://data.nber.org/chat/chat.dta, low); lines in the annexed Polish and western territories guessed."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 9,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. Hamburg, Bremen, Kiel, Wilhelmshaven, Stettin, Koenigsberg, Gotenhafen, Danzig."
+    },
+    "merchantTonnage": {
+      "low": 2600000,
+      "mid": 3750000,
+      "high": 6790000,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "League of Nations Year-Book 1939/40 table: German merchant fleet 4,244,000 GRT (June 1938, high); by 1944 ~1/3 lost, trapped abroad or seized (mid ~2.5M GRT, educated guess). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rail and horse-drawn supply in the East; Allied air attack crippled French railways before Normandy."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 3500000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses in the Reich (~3.5M) of which ~1.2M with the army."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Paris (OB West)",
+        "lat": 48.86,
+        "lon": 2.35,
+        "kind": "city"
+      },
+      {
+        "name": "Lorient U-boat base",
+        "lat": 47.73,
+        "lon": -3.37,
+        "kind": "port"
+      },
+      {
+        "name": "Brest U-boat base",
+        "lat": 48.38,
+        "lon": -4.49,
+        "kind": "port"
+      },
+      {
+        "name": "Trondheim",
+        "lat": 63.43,
+        "lon": 10.39,
+        "kind": "port"
+      },
+      {
+        "name": "Minsk (Army Group Centre)",
+        "lat": 53.9,
+        "lon": 27.56,
+        "kind": "city"
+      },
+      {
+        "name": "Rome (abandoned 4 June 1944)",
+        "lat": 41.9,
+        "lon": 12.5,
+        "kind": "city"
+      },
+      {
+        "name": "Budapest (occupied March 1944)",
+        "lat": 47.5,
+        "lon": 19.04,
+        "kind": "city"
+      }
+    ]
+  },
+  "doctrineId": "german-blitzkrieg-1939",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Normandy coast (Atlantic Wall)",
+      "Vistula",
+      "Rhine",
+      "Danish straits",
+      "Brenner Pass",
+      "Romanian oil (Ploiesti)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: fortified cities and rivers, population support; no climate depth."
+    }
+  },
+  "notes": "Snapshot date June 1944 (Normandy landings 6 June; Operation Bagration 22 June). Territory = the Greater German Reich (Germany, Austria, Sudetenland, annexed Polish and western territories); occupied Europe (France, the Low Countries, Norway, the General Government, the occupied USSR, Italy, Hungary from March 1944) not counted as territory; basesAbroad lists key positions. The border uses world_1938 (nearest at or before 1944). Forces are the whole Wehrmacht incl. Waffen-SS. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}

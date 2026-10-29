@@ -1,0 +1,589 @@
+{
+  "id": "ottoman-empire-1914",
+  "nationId": "ottoman-empire",
+  "includes": [],
+  "name": "Ottoman Empire",
+  "year": 1914,
+  "era": "worldwars",
+  "region": "mena",
+  "phase": "decline",
+  "tags": [
+    "great power",
+    "Central Powers",
+    "empire",
+    "First World War"
+  ],
+  "capital": {
+    "name": "Constantinople",
+    "lat": 41.01,
+    "lon": 28.98,
+    "kind": "capital",
+    "population": 1125000
+  },
+  "places": [
+    {
+      "name": "Smyrna",
+      "lat": 38.42,
+      "lon": 27.14,
+      "kind": "port",
+      "population": 300000
+    },
+    {
+      "name": "Damascus",
+      "lat": 33.51,
+      "lon": 36.29,
+      "kind": "city",
+      "population": 250000
+    },
+    {
+      "name": "Baghdad",
+      "lat": 33.31,
+      "lon": 44.36,
+      "kind": "city",
+      "population": 200000
+    },
+    {
+      "name": "Aleppo",
+      "lat": 36.2,
+      "lon": 37.16,
+      "kind": "city",
+      "population": 200000
+    },
+    {
+      "name": "Beirut",
+      "lat": 33.89,
+      "lon": 35.5,
+      "kind": "port"
+    },
+    {
+      "name": "Erzurum",
+      "lat": 39.9,
+      "lon": 41.27,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dardanelles (Chanak)",
+      "lat": 40.15,
+      "lon": 26.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bosphorus",
+      "lat": 41.12,
+      "lon": 29.07,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Basra",
+      "lat": 30.51,
+      "lon": 47.81,
+      "kind": "port"
+    },
+    {
+      "name": "Jerusalem",
+      "lat": 31.78,
+      "lon": 35.22,
+      "kind": "city"
+    },
+    {
+      "name": "Medina",
+      "lat": 24.47,
+      "lon": 39.61,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1914:Ottoman Empire",
+    "areaKm2": {
+      "low": 1700000,
+      "mid": 1800000,
+      "high": 1800000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson",
+      "note": "world_1914 Ottoman Empire polygon = ~1.80M km2 computed on the sphere; B&H Table 2: 1.8M km2 (Turkey within present borders plus Syria, Palestine, Iraq and parts of Arabia)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 18500000,
+      "mid": 21500000,
+      "high": 23000000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww1overview2005.pdf",
+      "note": "Broadberry and Harrison 2005 Table 2: Ottoman Empire (present-day Turkey plus Syria, Palestine, Iraq and parts of Arabia) 1913 = 23.0M (high); B&H Table 9 (Urlanis) 21.7M; COW tpop 1913 = 21,331k, 1914 = 18,520k (low; the COW 1914 figure drops after the Balkan War losses were counted)."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Turkey 1910 = 17.3% (present-day Turkey). Mid 0.15 for the empire. Low = COW upop/tpop 1914 = 997/18,520 = 0.05 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 600000,
+      "mid": 750000,
+      "high": 850000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Erickson, Ordered to Die (isbn:0-313-31516-7), not read from a fetched source. Erickson, Ordered to Die ch. 1-2: mobilisation from 2 August 1914 raised the army from ~200,000 (COW milper 1914 = 249k) to ~800,000 by the time the empire entered the war (29 Oct-2 Nov 1914); many units were under strength. Navy ~10,000 and German Mittelmeerdivision crews (Goeben, Breslau) included. Snapshot month: November 1914."
+    },
+    "trainedReserves": {
+      "low": 150000,
+      "mid": 300000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Older mustahfiz reservists and Balkan War veterans not yet called; the army had lost many trained men in 1912-13."
+    },
+    "supportPersonnel": {
+      "low": 250000,
+      "mid": 300000,
+      "high": 350000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Erickson, Ordered to Die (isbn:0-313-31516-7), not read from a fetched source. Artillery, depots, lines-of-communication troops (menzil), gendarmerie attached to the army, fortress artillery of the Straits, navy."
+    },
+    "mobilizationRatio": {
+      "low": 0.12,
+      "mid": 0.13,
+      "high": 0.15,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/World_War_I_casualties",
+      "note": "Ottoman official figure (1922) and US War Dept on the cited page: 2,850,000 total mobilised; / ~21.5M = 0.13."
+    },
+    "mobilizable": {
+      "low": 2220000,
+      "mid": 2795000,
+      "high": 3450000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 300000,
+          "mid": 380000,
+          "high": 450000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Erickson, Ordered to Die (isbn:0-313-31516-7), not read from a fetched source. ~36-38 infantry divisions in four armies by November 1914 (Erickson ch. 2), ~8,000-10,000 rifles each, plus frontier and jandarma battalions."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Mauser rifles, few MGs, chronic shortages of boots and transport"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Balkan War veterans and German-trained cadres; reservists poorly trained"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 20000,
+          "high": 40000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Irregulars of the Teskilat-i Mahsusa and Arab tribal levies used as light infantry in late 1914."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mixed rifles, no MGs or artillery"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: irregulars and tribal levies"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 45000,
+          "high": 60000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Erickson, Ordered to Die (isbn:0-313-31516-7), not read from a fetched source. Regular cavalry brigades plus Kurdish tribal (former Hamidiye) cavalry regiments on the Caucasus front."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: poorly mounted, tribal regiments unreliable"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: irregular cavalry"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1500,
+          "mid": 1800,
+          "high": 2300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Erickson, Ordered to Die (isbn:0-313-31516-7), not read from a fetched source. Krupp and Schneider field and mountain guns of ~36 divisions plus corps heavy artillery; Straits fortress guns excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: modern Krupp QF guns, little heavy artillery outside the Dardanelles"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: German advisers trained the gunners"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 2,
+          "mid": 5,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ottoman aviation had only a handful of serviceable aircraft in late 1914; German-supplied machines arrived from 1915."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: a few Bleriot and Deperdussin types"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: a handful of pilots"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 7,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Yavuz Sultan Selim (ex-Goeben, battlecruiser), Midilli (ex-Breslau), 2 old Brandenburg-class battleships (Barbaros Hayreddin, Turgut Reis), the old Mesudiye, and cruisers Hamidiye and Mecidiye (Conway's; Ottoman Navy page). The two British-built dreadnoughts were seized by Britain in August 1914 (cited navy page)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Yavuz modern and the strongest ship in the Black Sea; the rest obsolete"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: German crews on Yavuz and Midilli, Ottoman crews weak"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 8,
+          "mid": 10,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. 4 Muavenet-class and 4 Samsun-class destroyers plus a few large torpedo boats."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: small, old destroyers"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: German-led after Aug 1914"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: German advisers (Liman von Sanders) and capable officers (Mustafa Kemal) but Enver's Sarikamish offensive lost ~60,000-75,000 men in the winter of 1914-15"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: Anatolian Turkish infantry tenacious in defence (Gallipoli); Arab and Kurdish units less reliable"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: jihad proclamation and defence of the homeland; desertion grew from 1916"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.5,
+      "mid": 6.7,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: Mauser rifles and Krupp QF guns, but few MGs and little heavy artillery"
+    },
+    "armor": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: no helmets or armoured vehicles"
+    },
+    "ships": {
+      "low": 6.2,
+      "mid": 6.5,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (dreadnoughts). Evidence: one modern battlecruiser (Yavuz), the rest pre-1890s ships"
+    },
+    "fortification": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: Dardanelles forts and minefields, Erzurum and Chatalja lines"
+    },
+    "logistics": {
+      "low": 5.6,
+      "mid": 5.8,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 5 and 6 (magazines and requisition). Evidence: ~5,800 km of rail with gaps at the Taurus and Amanus tunnels; no rail to the Caucasus front; camel and porter transport"
+    },
+    "communications": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (telegraph). Evidence: telegraph network to the provinces; few telephones and radios"
+    },
+    "isr": {
+      "low": 5.8,
+      "mid": 6.0,
+      "high": 6.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (aerial reconnaissance). Evidence: almost no aircraft in 1914"
+    },
+    "air": {
+      "low": 6.0,
+      "mid": 6.3,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (1914 aircraft). Evidence: a handful of aircraft"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1150,
+      "mid": 1350,
+      "high": 1473,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "B&H Table 2: 1,100 in 1990 int$. Maddison 2023 (OWID CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv) Turkey 1913 = 1,473 (2011 int$, present-day Turkey, high); the Arab provinces were poorer; scaling 1,100 by the Turkish 2011/1990 ratio (~1.2) gives ~1,350."
+    },
+    "gdp": {
+      "low": 21300000000,
+      "mid": 29000000000,
+      "high": 33900000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Defence absorbed roughly a third of the state budget before 1914 (~4% of GDP); wartime share constrained by a tiny tax base and German loans."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Industry and crafts ~10-15% of output; ~80% of the population in agriculture."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Formula: foodSurplus = 1 - agricultural share of employment. Agricultural share of employment assumed ~0.8 (no fetched occupational data for the empire)."
+    },
+    "annualCohort": {
+      "low": 180000,
+      "mid": 220000,
+      "high": 260000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 20 per year in an empire of ~21M with high child mortality; Muslims only were conscripted in practice."
+    },
+    "production": {
+      "artillery": {
+        "low": 0,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field guns per year from the Tophane and Zeytinburnu works; almost all artillery came from Germany and Austria."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 15000,
+      "mid": 25000,
+      "high": 35000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Engineered roads of Anatolia and the Arab provinces; most routes were tracks."
+    },
+    "railKm": {
+      "low": 5438,
+      "mid": 5800,
+      "high": 6500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CHAT railline Turkey 1913 = 5,438 km (present-day Turkey, read from https://data.nber.org/chat/chat.dta, low); Syrian, Hejaz and Iraqi lines added from recollection."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 7,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Halpern, A Naval History of World War I (isbn:1-55750-352-4), not read from a fetched source. Constantinople, Smyrna, Beirut, Trebizond, Basra, Jaffa, Alexandretta."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Deadweight tons. The Ottoman steam fleet is not listed separately in Lloyd's 1914 returns; ~130,000 GRT (~200,000 dwt) assumed, comparable to the Turkish flag of 1929 (172,000 GRT, League of Nations table, https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf)."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ottoman armies operated at the end of very long animal-drawn lines (Sarikamish, Suez 1915); ~100 km beyond railheads."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules, camels and oxen of Anatolia and the Arab provinces."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Dardanelles",
+      "Bosphorus",
+      "Taurus and Amanus passes",
+      "Suez Canal (target)",
+      "Caucasus passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: Straits fortifications, Anatolian plateau and population support; the 1.3 row applies on the Caucasus winter front (high)."
+    }
+  },
+  "notes": "Snapshot date November 1914 (entry into the war 29 Oct-2 Nov 1914; mobilisation began 2 Aug). Territory = the empire after the Balkan Wars: Anatolia, Constantinople and eastern Thrace, Syria, Palestine, Iraq, Hejaz and Yemen (nominal); Egypt and Cyprus (British-occupied) and Libya excluded. Forces are the whole army; the Third Army in the Caucasus had ~100,000-150,000 men. Aircraft in aircraft_strike (no fighters). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Many values are reconstructions or educated guesses because Ottoman statistics are thin (Erickson is the main modern source, not fetched online)."
+}

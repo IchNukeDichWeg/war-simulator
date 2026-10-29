@@ -1,0 +1,651 @@
+{
+  "id": "china-1937",
+  "nationId": "china",
+  "includes": [],
+  "name": "Republic of China (Nanjing government)",
+  "year": 1937,
+  "era": "worldwars",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "Allies",
+    "Kuomintang",
+    "Nationalist China",
+    "Second Sino-Japanese War"
+  ],
+  "capital": {
+    "name": "Nanjing",
+    "lat": 32.06,
+    "lon": 118.8,
+    "kind": "capital",
+    "population": 1019000
+  },
+  "places": [
+    {
+      "name": "Shanghai",
+      "lat": 31.23,
+      "lon": 121.47,
+      "kind": "port",
+      "population": 3480000
+    },
+    {
+      "name": "Beiping",
+      "lat": 39.9,
+      "lon": 116.4,
+      "kind": "city",
+      "population": 1550000
+    },
+    {
+      "name": "Tianjin",
+      "lat": 39.13,
+      "lon": 117.2,
+      "kind": "port",
+      "population": 1290000
+    },
+    {
+      "name": "Wuhan (Hankou)",
+      "lat": 30.59,
+      "lon": 114.3,
+      "kind": "city",
+      "population": 1240000
+    },
+    {
+      "name": "Canton",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port",
+      "population": 1120000
+    },
+    {
+      "name": "Chongqing",
+      "lat": 29.56,
+      "lon": 106.55,
+      "kind": "city",
+      "population": 470000
+    },
+    {
+      "name": "Xi'an",
+      "lat": 34.27,
+      "lon": 108.95,
+      "kind": "city"
+    },
+    {
+      "name": "Taiyuan",
+      "lat": 37.87,
+      "lon": 112.55,
+      "kind": "city"
+    },
+    {
+      "name": "Marco Polo Bridge",
+      "lat": 39.85,
+      "lon": 116.21,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Xuzhou",
+      "lat": 34.26,
+      "lon": 117.18,
+      "kind": "city"
+    },
+    {
+      "name": "Jiangyin (Yangtze barrier)",
+      "lat": 31.92,
+      "lon": 120.27,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1930:Chinese Warlords",
+    "areaKm2": {
+      "low": 5450000,
+      "mid": 5450000,
+      "high": 9800000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1930.geojson",
+      "note": "world_1930 'Chinese Warlords' polygon (China proper under the Nanjing government and allied warlords; Manchuria, Xinjiang and Tibet are separate polygons) = ~5.45M km2 computed on the sphere; Harrison 1998 Table 1-1: 9.8M km2 for China exc. Manchuria incl. Tibet and Xinjiang (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 411700000,
+      "mid": 455000000,
+      "high": 512523000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+      "note": "Harrison 1998 Table 1-1: China exc. Manchuria 411.7M (1938, Maddison 1995) (low); League of Nations round figure ~450M; COW NMC v7 tpop 1937 = 512,523k incl. Manchukuo (high). The polygon excludes Manchuria, so mid ~455M."
+    },
+    "urbanization": {
+      "low": 0.04,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share China 1940 = 8.0% (mid). Low = COW upop/tpop 1937 = 18,408/512,523 = 0.04 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1700000,
+      "mid": 1900000,
+      "high": 2340000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War",
+      "note": "Cited page (infobox, Hsiung 1992): Nationalists 1.7 million in 1937 (low); with provincial armies nominally under Nanjing (mid); plus the Communists' 640,000 (1937, Hsiung p. 79) (high). Navy and air force (~20,000) included. Snapshot: July 1937. Check: COW NMC v7 milper 1937 = 2,000k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 300000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. China had no functioning reserve system in 1937; the 1936 conscription law had only begun. Discharged soldiers of warlord armies."
+    },
+    "supportPersonnel": {
+      "low": 300000,
+      "mid": 400000,
+      "high": 450000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Peattie, Drea and van de Ven, The Battle for China (isbn:978-0-8047-6206-9), not read from a fetched source. Artillery, engineers, transport (porters and pack animals), garrison and depot troops, navy, air force (Peattie, Drea and van de Ven ch. 3)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/National_Revolutionary_Army",
+      "note": "Cited page: ~14 million men conscripted into the NRA 1937-45 / ~455M = 0.03; low reflects the 1937 capacity, high includes the Communist forces."
+    },
+    "mobilizable": {
+      "low": 8234000,
+      "mid": 13650000,
+      "high": 20501000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1200000,
+          "mid": 1400000,
+          "high": 1800000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Peattie, Drea and van de Ven, The Battle for China (isbn:978-0-8047-6206-9), not read from a fetched source. ~180 divisions of very uneven strength (6,000-11,000 men; Battle of Shanghai page: 70 divisions there), plus brigades and provincial and Communist units."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: ~30 German-trained divisions with Mausers and ZB vz. 26 LMGs; most divisions short of rifles, MGs and artillery"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: German-trained central divisions good; provincial armies poorly trained"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 70000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Peattie, Drea and van de Ven, The Battle for China (isbn:978-0-8047-6206-9), not read from a fetched source. Cavalry divisions of the north-west (Ma clique) and Inner Mongolia."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: rifles and swords"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: irregular horsemen"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 70,
+          "mid": 100,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Shanghai",
+          "note": "Cited page infobox: 70 tanks at Shanghai; total ~100 incl. Vickers 6-ton, Pz I, CV33 tankettes and Vickers amphibians."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light tanks and tankettes"
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: cited page: insufficiently trained in infantry-tank tactics"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 800,
+          "mid": 1500,
+          "high": 2500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Field, mountain and heavy guns of the NRA; divisional artillery largely existed only on paper (NRA page) and was centralised in 1938."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: a few modern German 15 cm sFH 18 and Bofors 75 mm pieces; mostly old mixed types"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little indirect fire capability"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 90,
+          "mid": 120,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Development_of_the_Chinese_Nationalist_air_force_(1937%E2%80%931945)",
+          "note": "Cited page: 230 combat-ready aircraft at the onset of full-scale hostilities; ~half fighters (Curtiss Hawk II/III, Boeing P-26, Fiat CR.32). Battle of Shanghai infobox: 180 aircraft there."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: biplanes and the P-26, roughly equal to Japanese types of 1937"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: American- and Italian-trained pilots; 14 August 1937 victories"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 90,
+          "mid": 110,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Development_of_the_Chinese_Nationalist_air_force_(1937%E2%80%931945)",
+          "note": "Cited page: 230 combat-ready aircraft; ~half bombers and attack aircraft (Northrop Gamma, A-12 Shrike, He 111A, Douglas O-2)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: few modern types"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Black Saturday bombs fell on the Shanghai settlement"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 5,
+          "mid": 8,
+          "high": 9,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. Light cruisers Ning Hai, Ping Hai, Yat Sen, Hai Chi, Hai Chen, Hai Chou, Chao Ho, Ying Swei (Conway's 1922-1946); Republic of China Navy page: Qing-era cruisers remained the main ships."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: small or 1890s cruisers"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: scuttled as Yangtze blockships in 1937"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 30,
+          "high": 60,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. Torpedo boats and river gunboats (Conway's 1922-1946)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: old small craft"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: river operations"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 80,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. AA batteries around Nanjing, Shanghai and Hankou."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: German and Italian guns"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: few trained crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Chiang threw his best divisions into Shanghai and lost them; warlord commanders guarded their own forces; some able generals (Li Zongren, Bai Chongxi, Xue Yue)"
+    },
+    "cohesion": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: coalition of central, provincial and Communist armies under the Second United Front"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: national resistance after Marco Polo Bridge; heavy losses at Shanghai"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: Mauser rifles, ZB vz. 26 LMGs, Maxim MGs; very little artillery; the German-trained divisions near 7.3"
+    },
+    "armor": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: ~100 light tanks and tankettes; no helmets for many units"
+    },
+    "ships": {
+      "low": 6.3,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (dreadnoughts). Evidence: no battleships or destroyers; old cruisers and gunboats"
+    },
+    "fortification": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: German-designed Wufu and Xicheng lines between Shanghai and Nanjing (concrete pillboxes, poorly sited and keys missing)"
+    },
+    "logistics": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (magazines) and 7 (railways). Evidence: ~13,000 km of rail in China proper, porters and pack animals"
+    },
+    "communications": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph and telephone; radios rare, codes read by the Japanese"
+    },
+    "isr": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7 (aerial reconnaissance). Evidence: small air force"
+    },
+    "air": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1914) and 8 (1943). Evidence: Hawk III and P-26 fighters, Northrop Gamma bombers"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 950,
+      "mid": 1034,
+      "high": 1100,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): China 1937 = 1,034 (2011 int$). Harrison 1998 Table 1-1: 778 (1990 int$)."
+    },
+    "gdp": {
+      "low": 391100000000,
+      "mid": 470500000000,
+      "high": 563800000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nanjing government spending ~5% of GDP with military the largest item (~2-3% of GDP prewar); war spending from 1937 financed by printing money."
+    },
+    "industrialShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Modern industry ~3-5% of output and handicrafts ~7-10%; concentrated in Shanghai and Wuhan, lost in 1937-38."
+    },
+    "foodSurplus": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/History_of_agriculture_in_China",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: in the pre-1949 era 90% of the population lived by agriculture. 1 - 0.90 = 0.10 (mid); high allows for a lower labour share than population share."
+    },
+    "annualCohort": {
+      "low": 3500000,
+      "mid": 4000000,
+      "high": 4500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 20 per year in a population of ~455M with high child mortality."
+    },
+    "production": {
+      "artillery": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Guns and mortars per year from the Hanyang, Shanghai, Jinling and Taiyuan arsenals."
+      },
+      "aircraft_fighter": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hawk III assembled by CAMCO at Jianqiao; essentially all aircraft were imported."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 80000,
+      "mid": 110000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Motor roads ~110,000 km by 1937, mostly unsurfaced."
+    },
+    "railKm": {
+      "low": 11000,
+      "mid": 13000,
+      "high": 13441,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CHAT railline China 1930 = 13,441 km (read from https://data.nber.org/chat/chat.dta, high; whether Manchurian lines are included is not stated). China proper excl. Manchuria in 1937 guessed lower."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1922-1946 (isbn:0-85177-146-7), not read from a fetched source. Shanghai, Tianjin, Qingdao, Canton, Xiamen, Fuzhou, Ningbo, Shantou."
+    },
+    "merchantTonnage": {
+      "low": 615000,
+      "mid": 900000,
+      "high": 1040000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "League of Nations Year-Book 1939/40 table: Chinese merchant fleet 600,000 GRT (1937, mid) and 473,000 GRT (June 1938, low, after wartime losses). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Foot and pack-animal supply off the railways and Yangtze."
+    },
+    "draftAnimals": {
+      "low": 20000000,
+      "mid": 30000000,
+      "high": 40000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen, water buffalo, mules, donkeys and horses of China proper."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-ww-infantry",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Marco Polo Bridge and the North China plain",
+      "Yangtze (Jiangyin barrier, Three Gorges)",
+      "Xuzhou rail junction",
+      "Yellow River",
+      "Shanghai-Nanjing corridor"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: vast strategic depth, mountains of the interior (Sichuan), population support; China traded space for time to Chongqing."
+    }
+  },
+  "notes": "Snapshot date July 1937 (Marco Polo Bridge incident, 7 July; full-scale fighting at Shanghai from 13 August). Forces are the National Revolutionary Army plus provincial armies under the Nanjing government; the Communist Eighth Route Army (formed August 1937) is counted only in the high bounds. Manchukuo (since 1931-32) and Japanese-held Hebei/Chahar zones excluded; includes empty. The world_1930 basemap is the nearest file at or before 1937. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}

@@ -1,0 +1,753 @@
+{
+  "id": "ussr-1944",
+  "nationId": "ussr",
+  "includes": [],
+  "name": "Union of Soviet Socialist Republics",
+  "year": 1944,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "peak",
+  "tags": [
+    "great power",
+    "Allies",
+    "communist",
+    "Red Army",
+    "deep battle",
+    "Second World War"
+  ],
+  "capital": {
+    "name": "Moscow",
+    "lat": 55.756,
+    "lon": 37.617,
+    "kind": "capital",
+    "population": 4000000
+  },
+  "places": [
+    {
+      "name": "Leningrad",
+      "lat": 59.939,
+      "lon": 30.316,
+      "kind": "port",
+      "population": 600000
+    },
+    {
+      "name": "Kuibyshev",
+      "lat": 53.2,
+      "lon": 50.15,
+      "kind": "city"
+    },
+    {
+      "name": "Sverdlovsk",
+      "lat": 56.84,
+      "lon": 60.6,
+      "kind": "city"
+    },
+    {
+      "name": "Chelyabinsk (Tankograd)",
+      "lat": 55.16,
+      "lon": 61.4,
+      "kind": "city"
+    },
+    {
+      "name": "Gorky",
+      "lat": 56.33,
+      "lon": 44.0,
+      "kind": "city"
+    },
+    {
+      "name": "Stalingrad",
+      "lat": 48.71,
+      "lon": 44.51,
+      "kind": "city"
+    },
+    {
+      "name": "Kiev (liberated Nov 1943)",
+      "lat": 50.45,
+      "lon": 30.523,
+      "kind": "city"
+    },
+    {
+      "name": "Murmansk",
+      "lat": 68.97,
+      "lon": 33.08,
+      "kind": "port"
+    },
+    {
+      "name": "Arkhangelsk",
+      "lat": 64.54,
+      "lon": 40.54,
+      "kind": "port"
+    },
+    {
+      "name": "Vladivostok",
+      "lat": 43.12,
+      "lon": 131.89,
+      "kind": "port"
+    },
+    {
+      "name": "Sevastopol (liberated May 1944)",
+      "lat": 44.6,
+      "lon": 33.52,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:USSR",
+    "areaKm2": {
+      "low": 21130000,
+      "mid": 22100000,
+      "high": 22400000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 USSR polygon = ~21.13M km2 computed on the sphere (low); plus the 1939-40 annexations (eastern Poland, Baltic states, Bessarabia, Karelian Isthmus, ~0.7M km2) and Tuva (Oct 1944) = ~22.1-22.4M km2 (mid/high). In June 1944 Belorussia, the Baltic and part of Ukraine were still German-occupied."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 165000000,
+      "mid": 175000000,
+      "high": 182500000,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1944 = 182,500k (high); 194M in June 1941 less ~27M war dead and losses by the end of the war; ~170-175M in mid-1944 within the 1941 borders (mid, reconstruction)."
+    },
+    "urbanization": {
+      "low": 0.16,
+      "mid": 0.33,
+      "high": 0.36,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Russia 1940 = 35.3% (present-day Russia, high); 1939 Soviet census 32.9% (mid). Low = COW upop/tpop 1944 = 29,862/182,500 = 0.16 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 11858000,
+      "mid": 12225000,
+      "high": 12225000,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+      "note": "Harrison 1998 Table 1-5: Soviet armed forces 11,858,000 in 1943 (low) and 12,225,000 in 1944 (mid, high), incl. hospitals, PVO, navy and NKVD troops. Snapshot: June 1944. Check: COW NMC v7 milper 1944 = 6,100k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recovering wounded, men in liberated territories being re-conscripted (1944 call-ups in Ukraine and Belorussia)."
+    },
+    "supportPersonnel": {
+      "low": 7000000,
+      "mid": 8000000,
+      "high": 8400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Artillery, tank, engineer, signal and rear-service troops, PVO, VVS (~1M), navy (~0.5M), hospitals (~1M), reserve units (Glantz and House, appendix tables). Derived as active minus infantry and cavalry."
+    },
+    "mobilizationRatio": {
+      "low": 0.16,
+      "mid": 0.17,
+      "high": 0.18,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "note": "Cited page: 34 million mobilised 1941-45 / ~194M (1941) = 0.175."
+    },
+    "mobilizable": {
+      "low": 26400000,
+      "mid": 29750000,
+      "high": 32850000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2600000,
+          "mid": 3000000,
+          "high": 3400000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. ~500 rifle divisions at 5,000-7,000 men, ~40-45% riflemen, plus rifle brigades and fortified regions."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: PPSh-41 SMG, DP LMG, abundant mortars and artillery support"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: short training, veteran cadres, conscripted liberated-area men"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 100000,
+          "high": 150000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Guards airborne divisions used as infantry, ski and mountain units."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: no specific evidence beyond the era-typical row"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 120000,
+          "mid": 150000,
+          "high": 180000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. 7-8 cavalry corps (~20,000 each) used in cavalry-mechanised groups (Pliev in Bagration)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: mounted infantry with tanks and artillery"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: excellent in marshes and forests"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 9000,
+          "mid": 12000,
+          "high": 14500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Tanks and SP guns in the field forces in June 1944 (Glantz and House); Bagration infobox: 3,841 tanks and 1,977 assault guns committed in Belorussia alone."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: T-34/85, IS-2, ISU-152, SU-100 soon"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: tank armies experienced in deep operations"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 40000,
+          "mid": 55000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Field guns and howitzers (excl. mortars and AT); Bagration infobox: 32,718 guns, rocket launchers and mortars in Belorussia; high incl. mortars."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: ZiS-3, M-30, ML-20, B-4, Katyusha"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: massed breakthrough artillery corps"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 5000,
+          "mid": 6500,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Fighters in the operating air armies June 1944 (Glantz and House); Bagration infobox: 7,799 aircraft supported the offensive."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Yak-3, Yak-9, La-5FN, La-7, P-39"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: air superiority won in 1943"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 5500,
+          "mid": 7000,
+          "high": 8500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Glantz and House, When Titans Clashed (isbn:0-7006-0717-X), not read from a fetched source. Il-2 ground-attack, Pe-2 and Tu-2 bombers, long-range Il-4 and B-25 (ADD) in June 1944."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Il-2 heavily armoured"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: heavy losses"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 11,
+          "mid": 13,
+          "high": 15,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 1941 totals read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Cited page: 3 battleships and 7 cruisers in 1941; by June 1944 2 Gangut-class battleships (Marat a floating battery), ~9 cruisers incl. 2 new in the Pacific; Royal Sovereign and USS Milwaukee transferred in spring 1944 (high) (Conway's 1922-1946)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: old battleships, modern Kirov-class cruisers"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: little open-sea action"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 38,
+          "mid": 45,
+          "high": 55,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 1941 total read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Cited page: 59 destroyers in 1941; ~34 lost, ~10 added by 1944 (Conway's 1922-1946)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Gnevny and Soobrazitelny classes"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 130,
+          "mid": 150,
+          "high": 190,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 1941 total read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Cited page: 218 submarines in 1941; ~100 lost by 1944, new construction mostly in the Pacific (Conway's 1922-1946)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: S-class and Shch-class"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Baltic boats bottled up by nets until autumn 1944"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2500,
+          "mid": 3000,
+          "high": 3800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. PVO and army AA batteries in 1944 (ussr-1941 snapshot: 2,150 in 1941)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: 85 mm 52-K and 37 mm 61-K"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: no specific evidence beyond the era-typical row"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Stavka (Zhukov, Vasilevsky) and front commanders (Rokossovsky, Konev) mastered deep operations: Bagration destroyed Army Group Centre"
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: Guards units, political control and penal battalions"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated). Evidence: liberation of the homeland, revenge"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.9,
+      "mid": 8.0,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: PPSh-41, ZiS-3, 152 mm guns, Katyusha"
+    },
+    "armor": {
+      "low": 7.9,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943, rolled homogeneous armour). Evidence: T-34/85, IS-2"
+    },
+    "ships": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: pre-war fleet, little new construction"
+    },
+    "fortification": {
+      "low": 7.5,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: Kursk-style defensive belts; field fortification"
+    },
+    "logistics": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: ~400,000 Lend-Lease trucks (Studebaker), railway troops relaying track; Bagration advanced ~500 km"
+    },
+    "communications": {
+      "low": 7.4,
+      "mid": 7.5,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: Lend-Lease radios and telephone wire; front-level radio nets"
+    },
+    "isr": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: partisan, air and radio reconnaissance; maskirovka hid the Bagration build-up"
+    },
+    "air": {
+      "low": 7.7,
+      "mid": 7.9,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: Yak-3, La-7, Il-2, Tu-2; no jets"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2400,
+      "mid": 3100,
+      "high": 3417,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Maddison Project 2023 (OWID CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv): USSR 1940 = 3,417 (high); the 'Russia' series 1944 = 2,392 (low). Harrison 1998 (https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf) Soviet GDP 1944 = 362 vs 417 (bn 1990 int$) in 1940, with ~10% fewer people: 3,417 x 0.87 / 0.9 = ~3,300; mid 3,100."
+    },
+    "gdp": {
+      "low": 396000000000,
+      "mid": 542500000000,
+      "high": 623600000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.5,
+      "mid": 0.53,
+      "high": 0.61,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+      "note": "Harrison 1998 Table 1-8: Soviet military burden 53% in 1944 (61% in 1942-43, high)."
+    },
+    "industrialShare": {
+      "low": 0.35,
+      "mid": 0.4,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Industry incl. war production ~40% of output after evacuation to the Urals."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.33,
+      "high": 0.45,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/1939_Soviet_census",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: 1939 census population 170.5M of which 55.9M urban, so 67% rural; rural share used as an upper bound for the agricultural employment share: 1 - 0.67 = 0.33 (mid). Low reflects the loss of Ukraine's farmland in 1941-43; severe food shortage, Lend-Lease food."
+    },
+    "annualCohort": {
+      "low": 1500000,
+      "mid": 1800000,
+      "high": 2200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 18 per year (1926 class)."
+    },
+    "production": {
+      "armor": {
+        "low": 28000,
+        "mid": 29000,
+        "high": 29000,
+        "grade": "B",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: Soviet tanks and SPGs 29,000 in 1944."
+      },
+      "aircraft_fighter": {
+        "low": 15000,
+        "mid": 17000,
+        "high": 19000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Total combat aircraft read from Harrison 1998 Table 1-6; fighter share recalled, not read from a fetched source. Harrison 1998 Table 1-6: 33,200 combat aircraft in 1944 (Soviet Air Forces page: 40,241 aircraft of all types); ~17,000 fighters (split)."
+      },
+      "aircraft_strike": {
+        "low": 14000,
+        "mid": 16000,
+        "high": 18000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Total combat aircraft read from Harrison 1998 Table 1-6; fighter share recalled, not read from a fetched source. Harrison 1998 Table 1-6: 33,200 combat aircraft less ~17,000 fighters (Il-2 ~11,000 in 1944)."
+      },
+      "artillery": {
+        "low": 60000,
+        "mid": 122000,
+        "high": 122000,
+        "grade": "B",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: 122,000 guns in 1944 (all calibres, as in the ussr-1941 snapshot)."
+      },
+      "ships_minor": {
+        "low": 5,
+        "mid": 15,
+        "high": 23,
+        "grade": "C",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Harrison 1998 Table 1-6: 23 major naval vessels in 1944 (destroyers, submarines and larger); split guessed."
+      },
+      "submarines": {
+        "low": 2,
+        "mid": 6,
+        "high": 15,
+        "grade": "C",
+        "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
+        "note": "Part of the 23 major naval vessels of 1944."
+      },
+      "air_defense": {
+        "low": 500,
+        "mid": 1000,
+        "high": 1500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. AA batteries' worth of guns per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 90000,
+      "mid": 110000,
+      "high": 130000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hard-surfaced roads; most of the occupied network destroyed."
+    },
+    "railKm": {
+      "low": 81700,
+      "mid": 110700,
+      "high": 112900,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Russia (USSR series): 1940 = 106,100, 1943 = 81,700 (low), 1944 = 110,700 (mid), 1945 = 112,900 km (high)."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 7,
+      "high": 8,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+      "note": "Murmansk, Arkhangelsk, Vladivostok, Leningrad, Kronstadt, Batumi, Poti; Sevastopol and Odessa liberated April-May 1944."
+    },
+    "merchantTonnage": {
+      "low": 1300000,
+      "mid": 1950000,
+      "high": 2880000,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "League of Nations Year-Book 1939/40 table: Soviet merchant fleet 1,281,000 GRT (June 1938); war losses offset by ~40 Lend-Lease Liberty ships in the Pacific (high, educated guess). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 250,
+      "mid": 350,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Bagration advanced ~500 km in five weeks on Lend-Lease trucks and rebuilt railways."
+    },
+    "draftAnimals": {
+      "low": 7000000,
+      "mid": 9000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horse stock fell from ~21M in 1941 to ~8-10M; the Red Army still used ~1M horses."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Ulan Bator (Soviet forces in Mongolia)",
+        "lat": 47.92,
+        "lon": 106.92,
+        "kind": "city"
+      },
+      {
+        "name": "Tabriz (northern Iran occupation)",
+        "lat": 38.08,
+        "lon": 46.29,
+        "kind": "city"
+      }
+    ]
+  },
+  "doctrineId": "soviet-deep-operations",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Pripet Marshes",
+      "Berezina and Dnieper crossings",
+      "Vistula bridgeheads",
+      "Murmansk and Persian Corridor supply routes",
+      "Turkish Straits (closed)"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: strategic depth, winter, partisan support behind German lines."
+    }
+  },
+  "notes": "Snapshot date June 1944 (Operation Bagration, 22 June). Territory = the USSR in its 1941 borders as claimed; Belorussia, the Baltic states and western Ukraine were still being liberated. The border uses world_1938 (nearest at or before 1944) and excludes the 1939-40 annexations, so areaKm2 mid is the claimed area. Forces are the whole Red Army, VVS, PVO and Navy incl. the Far East. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}

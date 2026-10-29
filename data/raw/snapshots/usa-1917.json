@@ -1,0 +1,662 @@
+{
+  "id": "usa-1917",
+  "nationId": "usa",
+  "includes": [],
+  "name": "United States",
+  "year": 1917,
+  "era": "worldwars",
+  "region": "north_america",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Associated Power",
+    "Entente",
+    "First World War"
+  ],
+  "capital": {
+    "name": "Washington, D.C.",
+    "lat": 38.895,
+    "lon": -77.036,
+    "kind": "capital",
+    "population": 400000
+  },
+  "places": [
+    {
+      "name": "New York",
+      "lat": 40.713,
+      "lon": -74.006,
+      "kind": "port",
+      "population": 5600000
+    },
+    {
+      "name": "Chicago",
+      "lat": 41.878,
+      "lon": -87.63,
+      "kind": "city",
+      "population": 2500000
+    },
+    {
+      "name": "Philadelphia",
+      "lat": 39.953,
+      "lon": -75.165,
+      "kind": "port",
+      "population": 1800000
+    },
+    {
+      "name": "Detroit",
+      "lat": 42.331,
+      "lon": -83.046,
+      "kind": "city",
+      "population": 900000
+    },
+    {
+      "name": "Pittsburgh",
+      "lat": 40.44,
+      "lon": -79.996,
+      "kind": "city",
+      "population": 580000
+    },
+    {
+      "name": "Boston",
+      "lat": 42.36,
+      "lon": -71.06,
+      "kind": "port",
+      "population": 750000
+    },
+    {
+      "name": "Hampton Roads (Norfolk)",
+      "lat": 36.95,
+      "lon": -76.33,
+      "kind": "port"
+    },
+    {
+      "name": "San Francisco",
+      "lat": 37.77,
+      "lon": -122.42,
+      "kind": "port"
+    },
+    {
+      "name": "Panama Canal",
+      "lat": 9.08,
+      "lon": -79.68,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hoboken (AEF embarkation)",
+      "lat": 40.74,
+      "lon": -74.03,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1914:United States",
+    "areaKm2": {
+      "low": 7800000,
+      "mid": 7840000,
+      "high": 9250000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1914.geojson",
+      "note": "Contiguous United States ~7.84M km2 (B&H Table 1: 7.8M); the world_1914 United States polygon (incl. Alaska) computes to ~9.25M km2 (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 99550000,
+      "mid": 103000000,
+      "high": 103300000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1917 = 103,268k (high); OWID/HYDE 1917 = 99.55M (low); US Census Bureau estimate for 1917 ~103M (mid). Continental United States; territories (Philippines, Hawaii, Puerto Rico, 9.8M per B&H Table 1) excluded."
+    },
+    "urbanization": {
+      "low": 0.24,
+      "mid": 0.49,
+      "high": 0.51,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share USA 1910 = 45.6%, 1920 = 51.2%; interpolated 1917 ~0.49. Low = COW upop/tpop 1917 = 25,310/103,268 = 0.25 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 280000,
+      "mid": 300000,
+      "high": 330000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. Coffman, The War to End All Wars ch. 1: on 1 April 1917 the Regular Army had ~127,500-133,000 men and ~80,000 National Guardsmen were in federal service; Navy ~65,000-69,000 and Marine Corps ~13,700. COW milper 1917 = 644k is a wartime annual average. Snapshot date: 6 April 1917 (declaration of war)."
+    },
+    "trainedReserves": {
+      "low": 90000,
+      "mid": 110000,
+      "high": 130000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. National Guard not in federal service (total Guard ~180,000) plus Naval Militia and reserves; draft (Selective Service Act, 18 May 1917) registered 24M men later."
+    },
+    "supportPersonnel": {
+      "low": 160000,
+      "mid": 180000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. Navy (~69,000), Coast Artillery Corps (~20,000), field artillery, engineers, Signal Corps (incl. the Aviation Section), quartermaster and medical troops."
+    },
+    "mobilizationRatio": {
+      "low": 0.042,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/World_War_I_casualties",
+      "note": "Cited page: 4,355,000 mobilised (US War Dept 1924) by November 1918 = 0.042 of the population (low, war ended early); high 0.12 from the 1941-45 mobilisation of ~16M of ~132M (WWII production article). Mid is the potential with a longer war."
+    },
+    "mobilizable": {
+      "low": 4181000,
+      "mid": 8240000,
+      "high": 12396000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 70000,
+          "mid": 95000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. Regular infantry regiments (~1,000-1,500 men each in April 1917) and federalised Guard infantry; Marines (~13,700) included."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M1903 Springfield excellent, very few MGs (Lewis/Benet-Mercie)"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: small regular army with Mexican border experience; Guard part-time"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. 17 regular cavalry regiments (Punitive Expedition 1916) plus Guard cavalry."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: rifle-armed mounted infantry"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: regulars with Mexican campaign experience"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 550,
+          "mid": 900,
+          "high": 1000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Coffman, The War to End All Wars (isbn:0-8131-0955-8), not read from a fetched source. ~900 field guns and howitzers (3-inch M1902, 4.7-inch, 6-inch howitzers) in April 1917; the AEF later used French 75s and 155s. Coast-defence guns excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: 3-inch gun adequate, no heavy field artillery in quantity"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no indirect-fire experience at scale"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 55,
+          "mid": 100,
+          "high": 250,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Qualitative statement read from the Aviation in WWI page; counts recalled from Coffman, not read from a fetched source. Cited page: US air services were far behind in 1917 and almost totally dependent on French and British combat aircraft. The Aviation Section had ~55 serviceable aircraft and fewer than 250 machines including trainers (Coffman ch. 8). Trainers and observation types; no combat aircraft."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25 (a generation behind). Evidence: Curtiss JN-4 trainers"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: ~130 officers in aviation"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 60,
+          "mid": 68,
+          "high": 75,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: 14 dreadnoughts (South Carolina to Pennsylvania class), ~22 pre-dreadnoughts, ~10 armoured and ~20 protected/scout cruisers."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Nevada and Pennsylvania classes with all-or-nothing armour, 14-in guns"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional navy, little war experience"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 45,
+          "mid": 51,
+          "high": 56,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~51 destroyers in commission (Conway's); the flush-deck programme added ~270 from 1918."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: modern oil-fired destroyers"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Queenstown escort force from May 1917"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 36,
+          "mid": 44,
+          "high": 50,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~44 submarines, mostly coastal (Conway's)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: unreliable coastal boats"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: limited operations"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Leavenworth-trained staff officers but no corps or army staffs in April 1917; Pershing built the AEF staff from scratch"
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: small regular army with unit identity; Guard regiments state-based"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated). Evidence: Zimmermann telegram and unrestricted U-boat war; volunteer and draft enthusiasm"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: M1903 Springfield, M1917 Browning designs coming; few MGs and guns in April 1917"
+    },
+    "armor": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars, steel helmet 1915). Evidence: M1917 helmet (Brodie copy) and Renault-licence tanks only from 1918"
+    },
+    "ships": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (dreadnoughts). Evidence: Nevada/Pennsylvania dreadnoughts with oil firing and all-or-nothing armour"
+    },
+    "fortification": {
+      "low": 6.7,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts). Evidence: Endicott-Taft coastal fortifications, Panama Canal defences"
+    },
+    "logistics": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: the world's largest rail and motor-vehicle industry; AEF supply crossed the Atlantic"
+    },
+    "communications": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telegraph, telephone). Evidence: national telephone network (AT&T), naval radio"
+    },
+    "isr": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial reconnaissance. Evidence: little military aviation in April 1917"
+    },
+    "air": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914. Evidence: no combat aircraft in service in April 1917; Liberty engine from 1918"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 9769,
+      "mid": 9900,
+      "high": 10222,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): USA 1916 = 10,222, 1917 = 9,769 (2011 int$). B&H Table 1: 5,301 (1913, 1990 int$)."
+    },
+    "gdp": {
+      "low": 972500000000,
+      "mid": 1019700000000,
+      "high": 1055900000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.006,
+      "mid": 0.03,
+      "high": 0.166,
+      "grade": "B",
+      "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww1overview2005.pdf",
+      "note": "B&H Table 5: government spending 1.5% of GDP in 1916 (military well under 1%, low), 3.2% in 1917 (mid), 16.6% in 1918 (high)."
+    },
+    "industrialShare": {
+      "low": 0.28,
+      "mid": 0.33,
+      "high": 0.38,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Manufacturing, mining and construction ~30-35% of national income in 1917."
+    },
+    "foodSurplus": {
+      "low": 0.69,
+      "mid": 0.72,
+      "high": 0.74,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Herrendorf et al. via OWID: United States agriculture share of employment 1910 = 31.4%, 1920 = 25.9%; linear interpolation to 1917 = ~27.5%. 1 - 0.275 = 0.72 (mid). Large net food exporter."
+    },
+    "annualCohort": {
+      "low": 950000,
+      "mid": 1050000,
+      "high": 1150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 21 per year (the 1917-18 drafts registered ~1M new 21-year-olds each June)."
+    },
+    "production": {
+      "aircraft_fighter": {
+        "low": 0,
+        "mid": 100,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. US industry built almost no fighters in 1917-18 (a few SE-5 copies); AEF pursuit squadrons used SPAD and Nieuport machines."
+      },
+      "aircraft_strike": {
+        "low": 1000,
+        "mid": 3500,
+        "high": 5000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. DH-4 observation/day bombers (~4,800 built 1918) and other service types per year; ~14,000 aircraft incl. trainers built by November 1918."
+      },
+      "artillery": {
+        "low": 800,
+        "mid": 2500,
+        "high": 4000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field and heavy guns per year in 1918; US artillery production only reached volume at the Armistice."
+      },
+      "armor": {
+        "low": 0,
+        "mid": 100,
+        "high": 900,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. M1917 (Renault FT licence): only a few delivered by November 1918, ~950 by 1919."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 3,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships completed per year 1917-1921 (Mississippi, New Mexico, Idaho, Tennessee...)."
+      },
+      "ships_minor": {
+        "low": 20,
+        "mid": 60,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Destroyers commissioned per year 1918-1919 (Wickes and Clemson flush-deckers)."
+      },
+      "submarines": {
+        "low": 10,
+        "mid": 25,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Submarines per year 1917-1919."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 350000,
+      "mid": 420000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Surfaced roads (~257,000 miles surfaced out of ~2.4M miles of rural roads around 1914)."
+    },
+    "railKm": {
+      "low": 409397,
+      "mid": 409397,
+      "high": 410399,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline United States: 1916 = 410,399 km, 1917 = 409,397 km."
+    },
+    "majorPorts": {
+      "low": 10,
+      "mid": 12,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. New York, Boston, Philadelphia, Baltimore, Hampton Roads, Charleston, New Orleans, Galveston, San Francisco, Seattle, San Diego, Puget Sound navy yard."
+    },
+    "merchantTonnage": {
+      "low": 3898000,
+      "mid": 6000000,
+      "high": 10400000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "Lloyd's Register returns 1914: United States 2,998,457 GRT of sea-going ships (Great Lakes excluded) (low). By April 1917 ~0.6M GRT of seized German ships and wartime building raised this to ~4M GRT (mid); high adds ~2.5M GRT of Great Lakes steamers. Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Motorised supply in France was rail-fed; Punitive Expedition of 1916 operated ~600 km into Mexico with lorries."
+    },
+    "draftAnimals": {
+      "low": 24000000,
+      "mid": 26000000,
+      "high": 27000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. ~21.5M horses and ~4.7M mules on US farms in 1917 (USDA figures as commonly cited)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Pearl Harbor",
+        "lat": 21.35,
+        "lon": -157.97,
+        "kind": "port"
+      },
+      {
+        "name": "Manila / Cavite",
+        "lat": 14.48,
+        "lon": 120.91,
+        "kind": "port"
+      },
+      {
+        "name": "Guantanamo Bay",
+        "lat": 19.9,
+        "lon": -75.15,
+        "kind": "port"
+      },
+      {
+        "name": "Panama Canal Zone (Balboa)",
+        "lat": 8.95,
+        "lon": -79.57,
+        "kind": "port"
+      },
+      {
+        "name": "Guam",
+        "lat": 13.44,
+        "lon": 144.79,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Panama Canal",
+      "North Atlantic convoy routes",
+      "Hampton Roads and New York harbour"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: oceans, coastal fortifications and population support; no invader could reach the homeland in 1917."
+    }
+  },
+  "notes": "Snapshot date 6 April 1917 (declaration of war on Germany), when the US was formally at war but not yet mobilised: forces are the peacetime-sized Regular Army, federalised Guard, Navy and Marines. The AEF grew to ~2M in France by November 1918 (World War I casualties page: 4,355,000 mobilised in total). Continental United States; territories excluded, includes empty. Aircraft in aircraft_strike (no fighters or combat types). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Coffman, Conway's) not fetched online, graded at most B."
+}

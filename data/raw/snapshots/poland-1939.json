@@ -1,0 +1,700 @@
+{
+  "id": "poland-1939",
+  "nationId": "poland",
+  "includes": [],
+  "name": "Second Polish Republic",
+  "year": 1939,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "Allies",
+    "Second Republic",
+    "Second World War"
+  ],
+  "capital": {
+    "name": "Warsaw",
+    "lat": 52.23,
+    "lon": 21.012,
+    "kind": "capital",
+    "population": 1289000
+  },
+  "places": [
+    {
+      "name": "Lodz",
+      "lat": 51.76,
+      "lon": 19.46,
+      "kind": "city",
+      "population": 672000
+    },
+    {
+      "name": "Lwow",
+      "lat": 49.84,
+      "lon": 24.03,
+      "kind": "city",
+      "population": 318000
+    },
+    {
+      "name": "Krakow",
+      "lat": 50.06,
+      "lon": 19.94,
+      "kind": "city",
+      "population": 259000
+    },
+    {
+      "name": "Poznan",
+      "lat": 52.41,
+      "lon": 16.93,
+      "kind": "city",
+      "population": 272000
+    },
+    {
+      "name": "Wilno",
+      "lat": 54.69,
+      "lon": 25.28,
+      "kind": "city",
+      "population": 209000
+    },
+    {
+      "name": "Gdynia",
+      "lat": 54.52,
+      "lon": 18.53,
+      "kind": "port",
+      "population": 120000
+    },
+    {
+      "name": "Westerplatte",
+      "lat": 54.41,
+      "lon": 18.67,
+      "kind": "fortress"
+    },
+    {
+      "name": "Hel",
+      "lat": 54.6,
+      "lon": 18.8,
+      "kind": "fortress"
+    },
+    {
+      "name": "Modlin",
+      "lat": 52.43,
+      "lon": 20.71,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mlawa",
+      "lat": 53.11,
+      "lon": 20.38,
+      "kind": "fortress"
+    },
+    {
+      "name": "Polish Corridor",
+      "lat": 53.6,
+      "lon": 18.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:Poland",
+    "areaKm2": {
+      "low": 388000,
+      "mid": 389000,
+      "high": 392000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 Poland polygon = ~392,000 km2 computed on the sphere (high); League of Nations: 388,634 km2 (low); Harrison 1998 Table 1-1: 389,000 (mid). Includes the Zaolzie area taken in October 1938."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 34800000,
+      "mid": 35090000,
+      "high": 35486000,
+      "grade": "B",
+      "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
+      "note": "League of Nations Statistical Year-Book 1939/40: Poland 35.09M (31 Dec 1938, mid); Harrison 1998 Table 1-1: 35.1M (1938); COW NMC v7 tpop 1939 = 35,486k (high)."
+    },
+    "urbanization": {
+      "low": 0.11,
+      "mid": 0.3,
+      "high": 0.36,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Poland (present-day borders) 1940 = 36.1% (high); the 1931 census counted 27% urban in the interwar borders (mid ~0.30 by 1939). Low = COW upop/tpop 1939 = 3,914/35,486 = 0.11 (cities over 100,000)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 900000,
+      "mid": 1000000,
+      "high": 1490900,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+      "note": "Cited page: Polish strength ~1,000,000 men in 39 divisions and 16 brigades on 1 September 1939 (mobilisation incomplete: general mobilisation only ordered 31 August); the Polish MFA figure of 1,490,900 counts all men called up during the campaign (high). Navy (~8,000) included. Snapshot date: 1 September 1939. Check: COW NMC v7 milper 1939 = 275k (annual averages, not the snapshot-date strength)."
+    },
+    "trainedReserves": {
+      "low": 800000,
+      "mid": 1300000,
+      "high": 1800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Trained reservists not yet with their units on 1 September (many reached depots after the German advance overran them)."
+    },
+    "supportPersonnel": {
+      "low": 330000,
+      "mid": 420000,
+      "high": 470000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recalled from Zaloga, Poland 1939 (isbn:1-84176-408-6), not read from a fetched source. Artillery, engineers, signals, trains, depots, air force (~15,000), navy and staffs; reconstruction from Zaloga, Poland 1939 ch. 1."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Call-up figure read from the Invasion of Poland page; plan figures recalled from Zaloga, not read from a fetched source. Up to ~1.5M called (cited page) / 35.1M = 0.04 in a five-week campaign; the 1939 plan aimed at ~2.5M of ~3.5M trained men if time allowed (Zaloga ch. 1), = 0.07-0.1."
+    },
+    "mobilizable": {
+      "low": 2784000,
+      "mid": 3509000,
+      "high": 4258000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 330000,
+          "mid": 400000,
+          "high": 470000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Zaloga, Poland 1939 (isbn:1-84176-408-6), not read from a fetched source. 39 infantry divisions (30 active, 9 reserve) at ~16,000 men with ~9,000-10,000 riflemen each, plus National Defence (ON) and border battalions."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Mauser wz. 29, Browning wz. 28 BAR and wz. 30 MG, wz. 35 anti-tank rifle; ~27 37 mm AT guns per division"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscripts with 2 years' service; reservists partly trained"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 80000,
+          "high": 100000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Recalled from Zaloga, Poland 1939 (isbn:1-84176-408-6), not read from a fetched source. Border Protection Corps (KOP), mountain brigades and Highland Rifle (Strzelcy Podhalanscy) units."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: same weapons"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: KOP professional border troops"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 70000,
+          "high": 80000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+          "note": "11 cavalry brigades (cited page lists 16 brigades incl. 2 motorised) of ~6,000-7,000 men, mounted rifles fighting dismounted."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: carbines, MGs, 37 mm AT guns and TKS tankettes; no lance charges against tanks"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: elite of the army"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 210,
+          "mid": 880,
+          "high": 880,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+          "note": "Cited page: 210 tanks and 670 tankettes (TK-3/TKS) = 880 (mid and high); low = tanks only (7TP, Vickers E, R35, Renault FT)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: 7TP comparable to Pz III in firepower, but three quarters were MG tankettes"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: dispersed in infantry support; one motorised brigade"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 3500,
+          "mid": 4300,
+          "high": 4300,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Invasion_of_Poland",
+          "note": "Cited page: 4,300 guns (field, mountain and heavy). 37 mm AT guns excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: 75 mm wz. 1897 and 100 mm wz. 14/19 howitzers; little heavy artillery"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: competent gunners, horse-drawn"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 130,
+          "mid": 160,
+          "high": 280,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "Cited page: ~185 PZL P.11 and ~95 P.7 in the inventory (high); ~160 with the Pursuit Brigade and army air units on 1 September (mid)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: P.11c gull-wing fighter ~100 km/h slower than the Bf 109E"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: well trained pilots, dispersed to secret airfields"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 160,
+          "mid": 210,
+          "high": 260,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "Cited page: ~175 PZL.23 Karas light bombers and 36 PZL.37 Los medium bombers operational; plus observation aircraft (high). Infobox total 800 aircraft incl. trainers."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Los modern, Karas obsolescent"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Bomber Brigade attacked German columns"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 4,
+          "mid": 5,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "Cited page: 4 destroyers (Burza, Wicher, Blyskawica, Grom; three left for Britain on 30 August under the Peking Plan) plus the minelayer Gryf."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Grom-class among the most powerful destroyers of 1939"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional navy"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 5,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "Cited page: 5 submarines (Orzel, Sep, Wilk, Rys, Zbik)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Orzel class modern"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Orzel escaped to Britain"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 50,
+          "mid": 80,
+          "high": 120,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. AA batteries: ~350 Bofors 40 mm and ~50 75 mm AA guns in ~4-gun batteries."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Bofors 40 mm modern"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: too few to cover the army"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Rydz-Smigly's forward deployment along the whole frontier; corps-level leadership sound (Bzura counter-offensive) but no reserve and command broke down after a week"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: units fought on when encircled (Warsaw, Modlin, Hel until 2 October); minority conscripts less reliable"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated). Evidence: national defence against invasion"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.3,
+      "mid": 7.4,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: Bofors 40 mm, wz. 35 AT rifle, 37 mm Bofors AT gun; little modern heavy artillery"
+    },
+    "armor": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8 (rolled homogeneous armour). Evidence: 7TP light tank, but mostly tankettes"
+    },
+    "ships": {
+      "low": 7.4,
+      "mid": 7.5,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (dreadnoughts) and 8. Evidence: modern destroyers and submarines, no large ships"
+    },
+    "fortification": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (concrete forts) and 8. Evidence: Westerplatte, Hel, Mlawa and Wizna bunkers; no continuous line"
+    },
+    "logistics": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways). Evidence: horse-drawn army on a modest rail network"
+    },
+    "communications": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telegraph, telephone); radio scarce. Evidence: few radios, telephone lines cut early; Polish Cipher Bureau had broken Enigma"
+    },
+    "isr": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: aerial reconnaissance and signals intelligence"
+    },
+    "air": {
+      "low": 7.2,
+      "mid": 7.3,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1914) and 8 (1943). Evidence: P.11 fighters obsolescent; PZL.37 Los modern"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990 (cyber anchor 9 = 1990)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3300,
+      "mid": 3478,
+      "high": 3600,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Poland 1938 = 3,478 (2011 int$). Harrison 1998 Table 1-1: 2,182 (1990 int$)."
+    },
+    "gdp": {
+      "low": 114800000000,
+      "mid": 122000000000,
+      "high": 127700000000,
+      "grade": "B",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Defence ~1/3 of the state budget before 1939 (~5-8% of GDP); the 1939 mobilisation would have raised it far higher had the war lasted."
+    },
+    "industrialShare": {
+      "low": 0.22,
+      "mid": 0.27,
+      "high": 0.32,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Industry and mining ~25-30% (Silesian coal, Central Industrial Region from 1936); ~60% of the labour force in agriculture."
+    },
+    "foodSurplus": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.4,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Second_Polish_Republic",
+      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Cited page: farmers made up 65% of the population (75% lived in the countryside in 1921). Population share used as a proxy: 1 - 0.65 = 0.35 (mid). Grain and meat exporter."
+    },
+    "annualCohort": {
+      "low": 280000,
+      "mid": 320000,
+      "high": 360000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Men reaching 21 per year (births ~900,000 per year c. 1918-20, half male, ~75% survival)."
+    },
+    "production": {
+      "armor": {
+        "low": 50,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Tanks and tankettes per year 1936-39 (7TP ~50 per year; TKS ~200 per year until 1936)."
+      },
+      "aircraft_fighter": {
+        "low": 0,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fighters per year 1937-39 (P.11 production ended 1936; P.50 not ready)."
+      },
+      "aircraft_strike": {
+        "low": 80,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Bombers per year 1937-39 (PZL.23 ~250 total, PZL.37 ~120 total)."
+      },
+      "artillery": {
+        "low": 200,
+        "mid": 400,
+        "high": 700,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Field guns, howitzers and Bofors guns per year (Starachowice, Stalowa Wola)."
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Destroyers per year (Grom class built in Britain)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 55000,
+      "mid": 65000,
+      "high": 75000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hard-surfaced roads ~60,000 km in 1938."
+    },
+    "railKm": {
+      "low": 20245,
+      "mid": 20438,
+      "high": 20438,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Poland: 1937 = 20,245 km, 1938 = 20,438 km."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 2,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+      "note": "Gdynia (Polish), Danzig (Free City, used by Poland); Hel naval base."
+    },
+    "merchantTonnage": {
+      "low": 131000,
+      "mid": 152000,
+      "high": 224000,
+      "grade": "B",
+      "source": "derived:grt-to-dwt",
+      "note": "League of Nations Year-Book 1939/40 table: Polish merchant fleet 101,000 GRT (June 1938); new liners (Batory, Sobieski) added ~0.04M GRT by 1939 (high). Converted to deadweight at x1.5 (low x1.3 of the low GRT, high x1.6 of the high GRT)."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horse-drawn divisions supplied from railheads; little motor transport."
+    },
+    "draftAnimals": {
+      "low": 3500000,
+      "mid": 3900000,
+      "high": 4200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. ~3.9M horses in Poland in 1938; ~0.5M requisitioned for mobilisation."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before July 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-ww-infantry",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Polish Corridor",
+      "Vistula and Narew lines",
+      "Carpathian passes",
+      "Danzig Bay (Hel)",
+      "Romanian bridgehead"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: population support and river lines, but open plains enveloped on three sides after March 1939."
+    }
+  },
+  "notes": "Snapshot date 1 September 1939 (German invasion). Mobilisation was incomplete: secret partial call-up from 23 August, general mobilisation ordered 30-31 August. Forces are the whole army in the field; the Soviet invasion of 17 September is outside this snapshot. The navy's three destroyers that sailed to Britain on 30 August are still counted. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+}
