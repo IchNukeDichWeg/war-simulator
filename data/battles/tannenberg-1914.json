@@ -1,0 +1,57 @@
+{
+  "id": "tannenberg-1914",
+  "name": "Battle of Tannenberg",
+  "year": 1914,
+  "kind": "battle",
+  "location": { "lat": 53.6, "lon": 20.3, "radiusKm": 50 },
+  "terrain": "forest",
+  "season": "summer",
+  "sides": [
+    {
+      "name": "German 8th Army",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": { "low": 95000, "mid": 115000, "high": 135000 },
+        "cavalry_light": { "low": 2000, "mid": 3500, "high": 6000 },
+        "artillery": { "low": 650, "mid": 728, "high": 750 }
+      },
+      "tech": { "weapons": 7, "armor": 6.5, "ships": 7, "fortification": 7, "logistics": 7.2, "communications": 7, "isr": 7.2, "air": 7, "cyber": 0 },
+      "commandQuality": 0.8,
+      "morale": 0.7,
+      "training": 0.65,
+      "doctrineId": "archetype-ww-infantry",
+      "note": "Strength: 150,000 men committed, 728 guns and howitzers, 294 MGs (Hastings 2013 p.281 via Wikipedia infobox). infantry_line = 150,000 minus artillery crews, cavalry, staff and trains (~20-25%), educated split. Divisional cavalry only; 1st Cavalry Division screened Rennenkampf. Tech (derived:tech-anchor): weapons 7 = 1905 anchor (magazine rifle, MG, QF artillery); armor 6.5 (no steel helmet yet, below the 1915 part of anchor 7); logistics 7.2 (interior railways moved I Corps and XVII Corps to the flanks); ISR 7.2 (aerial reconnaissance located Russian columns) plus uncoded Russian radio intercepts; cyber 0 absent-in-era. Ratings (derived:rating-rubric): command 0.8 = trained staff system, proven commanders (Hindenburg, Ludendorff, Hoffmann, Francois); morale 0.7 defending homeland territory; training 0.65 conscripts + reservists of a long-service cadre army."
+    },
+    {
+      "name": "Russian 2nd Army",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": { "low": 95000, "mid": 125000, "high": 160000 },
+        "cavalry_light": { "low": 8000, "mid": 12000, "high": 15000 },
+        "artillery": { "low": 560, "mid": 612, "high": 650 }
+      },
+      "tech": { "weapons": 6.8, "armor": 6.5, "ships": 7, "fortification": 6.8, "logistics": 6.3, "communications": 6.5, "isr": 6.5, "air": 6.8, "cyber": 0 },
+      "commandQuality": 0.3,
+      "morale": 0.45,
+      "training": 0.5,
+      "doctrineId": "archetype-ww-infantry",
+      "note": "Strength 123,000 (Golovin 1926) to 180,000 (Hastings 2013) per Wikipedia infobox, 612 guns, 384 MGs. infantry_line spans the two figures minus ~20% gunners/support; cavalry = three cavalry divisions, mostly on the flanks and little engaged. Russian 2nd Army was the invader but was encircled; posture 'defend' describes the battle itself. Tech: weapons 6.8 (short of heavy howitzers and shells), logistics 6.3 (railheads ended at the gauge break on the border, troops marched unfed through sand roads), communications 6.5 (orders sent by uncoded radio). Ratings: command 0.3 near 'ad hoc, poor coordination' (Samsonov and Rennenkampf uncoordinated, Zhilinsky remote); morale 0.45 exhausted and hungry after forced marches; training 0.5 conscripts."
+    }
+  ],
+  "outcome": {
+    "winner": 0,
+    "durationDays": { "low": 4, "mid": 5, "high": 8 },
+    "losses": [
+      { "low": 12000, "mid": 15000, "high": 30000 },
+      { "low": 70000, "mid": 120000, "high": 145000 }
+    ],
+    "note": "Main battle 26-30 Aug 1914 (5 days); 8 days counting the 23-25 Aug approach fighting. German losses: Sanitaetsbericht 13,873 for 21-30 Aug (1,726 killed, 7,461 wounded, 4,686 missing), Nelipovich ~12,000, West/Elder ~30,000. Russian losses: 70,000 (Russian MoD gwar) to ~120,000 (Nelipovich; 1914-1918-online: 120,000 incl. 95,000 prisoners); high 145,000 = Reichsarchiv 92,000 POW plus ~50,000 killed and wounded, which later Russian work considers inflated. Two corps (XIII, XV) and part of XXIII surrendered; Samsonov committed suicide."
+  },
+  "sources": [
+    { "title": "Wikipedia: Battle of Tannenberg (infobox and Casualties section, citing Hastings 2013, Golovin 1926, Sanitaetsbericht 1934, Nelipovich 2023)", "url": "https://en.wikipedia.org/wiki/Battle_of_Tannenberg" },
+    { "title": "1914-1918-online International Encyclopedia: Tannenberg, Battle of", "url": "https://encyclopedia.1914-1918-online.net/article/tannenberg_battle_of" },
+    { "title": "Showalter, Tannenberg: Clash of Empires 1914 (order of battle, ch. 6-8)", "url": "isbn:978-1-57488-781-5" },
+    { "title": "Hastings, Catastrophe 1914, p.281 (150,000 German strength)", "url": "isbn:978-0307597052" }
+  ],
+  "grade": "B"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "iraq-2003",
+  "name": "2003 invasion of Iraq (Operation Iraqi Freedom, major combat)",
+  "year": 2003,
+  "kind": "campaign",
+  "location": { "lat": 32.0, "lon": 45.5, "radiusKm": 400 },
+  "bbox": [42.0, 29.0, 48.6, 35.0],
+  "terrain": "desert",
+  "season": "spring",
+  "sides": [
+    {
+      "name": "Coalition (US, UK, Australia, Poland)",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": { "low": 45000, "mid": 60000, "high": 80000 },
+        "armor": { "low": 450, "mid": 550, "high": 650 },
+        "ifv_apc": { "low": 1200, "mid": 1500, "high": 1900 },
+        "artillery": { "low": 400, "mid": 500, "high": 650 },
+        "helicopters": { "low": 700, "mid": 900, "high": 1100 },
+        "aircraft_fighter": { "low": 500, "mid": 650, "high": 800 },
+        "aircraft_strike": { "low": 600, "mid": 750, "high": 900 }
+      },
+      "tech": { "weapons": 9.6, "armor": 9.4, "ships": 9.6, "fortification": 9, "logistics": 9.4, "communications": 9.5, "isr": 9.5, "air": 9.6, "cyber": 9.4 },
+      "commandQuality": 0.85,
+      "morale": 0.75,
+      "training": 0.9,
+      "doctrineId": "us-joint-2026",
+      "surprise": true,
+      "startPositions": [
+        { "lat": 29.6, "lon": 47.0, "share": 0.55 },
+        { "lat": 29.8, "lon": 47.7, "share": 0.4 },
+        { "lat": 32.5, "lon": 42.3, "share": 0.05 }
+      ],
+      "objective": { "name": "Baghdad", "lat": 33.315, "lon": 44.366 },
+      "reinforcements": [
+        { "day": 23, "forces": { "infantry_line": { "low": 6000, "mid": 8000, "high": 10000 }, "armor": { "low": 200, "mid": 250, "high": 300 }, "ifv_apc": { "low": 200, "mid": 250, "high": 300 } } }
+      ],
+      "note": "Strength: 589,799 coalition personnel total incl. naval/air and 70,000 Peshmerga (Wikipedia infobox); ~250,000 soldiers massed on the Kuwait border (On Point); 1,800 coalition aircraft (On Point); 101st Airborne alone self-deployed >250 helicopters (On Point). Ground manoeuvre: 3rd Infantry Division, 101st Airborne, 82nd Airborne elements, 1st Marine Division, Task Force Tarawa, UK 1st Armoured Division, 3 Commando and 16 Air Assault Brigades. infantry_line (dismounts), armour, ifv_apc, artillery and helicopter counts are educated reconstructions from that order of battle (no fetched source gives the totals; grade D for these). Fighter/strike split of the 1,800 aircraft (which include tankers and support) educated. Kurdish Peshmerga and northern SOF are outside the theatre and excluded. Reinforcement day 23: 4th Infantry Division entering from Kuwait mid-April, educated. Starts: V Corps in western Kuwait, I MEF and UK in eastern Kuwait, SOF in the western desert. Doctrine us-joint-2026 is the closest available id (networked joint precision warfare), not a claim of 2026 capability. Tech (derived:tech-anchor, 2003 between 9 and 10): JDAM, Javelin, Blue Force Tracker, Predator. Ratings: command 0.85; morale 0.75; training 0.9 (long-service volunteers). Surprise: G-day preceded the air campaign (On Point)."
+    },
+    {
+      "name": "Iraq (Regular Army, Republican Guard, Fedayeen Saddam)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": { "low": 200000, "mid": 250000, "high": 300000 },
+        "infantry_light": { "low": 20000, "mid": 40000, "high": 60000 },
+        "armor": { "low": 1500, "mid": 2200, "high": 2600 },
+        "ifv_apc": { "low": 1800, "mid": 2400, "high": 2600 },
+        "artillery": { "low": 2500, "mid": 4000, "high": 4200 }
+      },
+      "tech": { "weapons": 8.2, "armor": 8.2, "ships": 7.8, "fortification": 8, "logistics": 7.6, "communications": 7.8, "isr": 7, "air": 8, "cyber": 7 },
+      "commandQuality": 0.2,
+      "morale": 0.3,
+      "training": 0.35,
+      "doctrineId": "archetype-modern-regional",
+      "startPositions": [
+        { "lat": 30.5, "lon": 47.8, "share": 0.12 },
+        { "lat": 31.05, "lon": 46.26, "share": 0.08 },
+        { "lat": 31.84, "lon": 47.15, "share": 0.1 },
+        { "lat": 32.5, "lon": 45.82, "share": 0.1 },
+        { "lat": 32.5, "lon": 44.3, "share": 0.12 },
+        { "lat": 33.3, "lon": 44.4, "share": 0.28 },
+        { "lat": 31.99, "lon": 44.33, "share": 0.08 },
+        { "lat": 34.6, "lon": 43.68, "share": 0.12 }
+      ],
+      "objective": { "name": "Baghdad (hold)", "lat": 33.315, "lon": 44.366 },
+      "note": "Strength: Army 280,000-350,000 in 17 divisions, Republican Guard 50,000-80,000, >2,200 tanks, 2,400 APCs, 4,000 artillery pieces (On Point Figure 45); IISS: ground forces 350,000, Fedayeen Saddam 44,000; other estimate Fedayeen 20,000-40,000 (Wikipedia). infantry_line excludes crews and the northern corps facing the Kurds only partly (educated ~65-75% of army + RG); infantry_light = Fedayeen and Ba'ath militia. Air force did not fly, so no aircraft listed. Starts: III Corps at Basra, 11th Division at Nasiriyah, IV Corps at Amarah, RG Baghdad Division at Kut, Medina/Nebuchadnezzar at Karbala-Hillah, Baghdad, militia at Najaf/Samawah, Tikrit. Tech: 1970s-80s Soviet kit degraded by sanctions; ISR 7 (no air reconnaissance); cyber 7 educated (outside the anchor table). Ratings: command 0.2 (Saddam's interference, RG mispositioned); morale 0.3 (regular army melted away; Fedayeen fanatical); training 0.35. Not fortified: no prepared defence of Baghdad."
+    }
+  ],
+  "outcome": {
+    "winner": 0,
+    "durationDays": { "low": 20, "mid": 21, "high": 27 },
+    "losses": [
+      { "low": 720, "mid": 760, "high": 900 },
+      { "low": 20000, "mid": 35000, "high": 70000 }
+    ],
+    "note": "20 March - 9 April 2003 (Baghdad, day 21); Tikrit taken 15 April (day 27). Coalition: 172 killed (139 US, 33 UK), 551 US wounded, Peshmerga 24+ killed (Wikipedia), a handful captured. Iraq: combatant fatalities 7,600-10,800, best estimate ~9,200 (Project on Defense Alternatives); Wikipedia range 11,000-45,000; >7,300 EPWs in coalition custody on 9 April (On Point); wounded unknown (educated ~1.5-2.5x killed). Many soldiers simply went home and are not counted as losses. Grade C on losses."
+  },
+  "sources": [
+    { "title": "Fontenot, Degen and Tohn, On Point: The United States Army in Operation Iraqi Freedom, CSI (DTIC ADA524388)", "url": "https://archive.org/details/DTIC_ADA524388" },
+    { "title": "Conetta, The Wages of War: Iraqi Combatant and Noncombatant Fatalities in the 2003 Conflict, Project on Defense Alternatives Research Monograph 8", "url": "https://www.comw.org/pda/0310rm8.html" },
+    { "title": "Wikipedia: 2003 invasion of Iraq (infobox strengths and casualties; IISS force estimates)", "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq" }
+  ],
+  "grade": "C"
+}

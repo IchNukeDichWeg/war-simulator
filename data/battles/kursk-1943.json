@@ -1,0 +1,66 @@
+{
+  "id": "kursk-1943",
+  "name": "Battle of Kursk (Operation Citadel)",
+  "year": 1943,
+  "kind": "battle",
+  "location": { "lat": 51.7, "lon": 36.4, "radiusKm": 150 },
+  "terrain": "cropland",
+  "season": "summer",
+  "sides": [
+    {
+      "name": "Germany (9th Army, 4th Panzer Army, Army Detachment Kempf)",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": { "low": 300000, "mid": 370000, "high": 430000 },
+        "armor": { "low": 2450, "mid": 2928, "high": 3000 },
+        "artillery": { "low": 7000, "mid": 9966, "high": 10000 },
+        "aircraft_fighter": { "low": 500, "mid": 600, "high": 700 },
+        "aircraft_strike": { "low": 1300, "mid": 1500, "high": 1610 }
+      },
+      "tech": { "weapons": 8.1, "armor": 8.2, "ships": 8, "fortification": 7.8, "logistics": 7.6, "communications": 8.1, "isr": 7.9, "air": 8.1, "cyber": 0 },
+      "commandQuality": 0.75,
+      "morale": 0.65,
+      "training": 0.7,
+      "doctrineId": "german-blitzkrieg-1939",
+      "note": "Strength (Wikipedia infobox citing Frieser and Zetterling/Frankson): 780,900 men, 2,928 tanks and assault guns (low ~2,450 = tanks only), 9,966 guns and mortars (low excludes light mortars, educated), 2,110 aircraft. infantry_line ~45-50% of strength across ~50 divisions (17 panzer/panzergrenadier), educated split. Fighter/strike split of Luftflotte 4 and 6 is educated. Tech (derived:tech-anchor, 1943 = anchor 8): weapons/armor 8.1-8.2 (Tiger, Panther, Ferdinand debut); logistics 7.6 (horse-drawn infantry divisions, rail-fed). Ratings: command 0.75 (trained staff, Manstein/Model, but a delayed and predictable offensive); morale 0.65; training 0.7. No surprise: the Soviets knew the plan and timing."
+    },
+    {
+      "name": "Soviet Union (Central and Voronezh Fronts; Steppe Front as reinforcement)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": { "low": 600000, "mid": 750000, "high": 900000 },
+        "armor": { "low": 3400, "mid": 3600, "high": 3700 },
+        "artillery": { "low": 18000, "mid": 20000, "high": 20500 },
+        "aircraft_fighter": { "low": 1100, "mid": 1300, "high": 1500 },
+        "aircraft_strike": { "low": 1300, "mid": 1500, "high": 1800 }
+      },
+      "tech": { "weapons": 7.9, "armor": 7.9, "ships": 7.7, "fortification": 8.3, "logistics": 7.7, "communications": 7.6, "isr": 7.9, "air": 7.8, "cyber": 0 },
+      "commandQuality": 0.75,
+      "morale": 0.8,
+      "training": 0.55,
+      "doctrineId": "soviet-deep-operations",
+      "fortified": true,
+      "reinforcements": [
+        { "day": 6, "forces": { "infantry_line": { "low": 150000, "mid": 250000, "high": 330000 }, "armor": { "low": 650, "mid": 900, "high": 1550 } } }
+      ],
+      "note": "Strength (Wikipedia citing Glantz/House, Zetterling/Frankson, Healy): Central Front 711,575 men (510,983 combat), Voronezh Front 625,591 (446,236 combat); together ~1,300,000 men, 3,600 tanks (1,061 light T-60/T-70), ~20,000 guns and mortars, 2,792 aircraft (Bergstrom). infantry_line ~55-65% of the 957,219 'combat soldiers' plus rifle troops counted elsewhere, educated. Reinforcement day 6 (11-12 July): Steppe Front had 573,195 men (449,133 combat) and ~1,600 tanks in reserve; 5th Guards Tank Army (~650-850 tanks) and 5th Guards Army were committed at Prokhorovka; mid assumes about half the front engaged, high = all of it (Steppe Front's 70,085 casualties in the defensive operation show heavy commitment). Tech: fortification 8.3 (eight defensive belts, e.g. 6th Guards Army: 69,688 AT + 64,430 AP mines in its first belt alone); ISR 7.9 (strategic warning of timing and axes). Ratings: command 0.75 (Zhukov, Vasilevsky, Rokossovsky, Vatutin; proven staff system by 1943); morale 0.8 after Stalingrad; training 0.55."
+    }
+  ],
+  "outcome": {
+    "winner": 1,
+    "durationDays": { "low": 10, "mid": 12, "high": 19 },
+    "losses": [
+      { "low": 50000, "mid": 54182, "high": 70000 },
+      { "low": 170000, "mid": 177847, "high": 250000 }
+    ],
+    "note": "Citadel 5-16 July 1943 (northern face stalled by 14 July; Soviet defensive operation officially 5-23 July). German: 54,182 casualties during Citadel (Frieser, from German archive records); high allows later counts to 23 July. Soviet: 177,847 for the Kursk defensive operation (Krivosheev: Central 33,897, Voronezh 73,892, Steppe 70,085); high allows for later authors who judge Krivosheev low (unfetched, educated margin). Material: German 252-323 AFVs destroyed; Soviet 1,614-1,956 tanks/SPGs destroyed."
+  },
+  "sources": [
+    { "title": "Wikipedia: Battle of Kursk (infobox; Opposing forces; Casualties citing Krivosheev, Frieser, Zetterling and Frankson, Glantz and House)", "url": "https://en.wikipedia.org/wiki/Battle_of_Kursk" },
+    { "title": "Glantz and House, The Battle of Kursk (front strengths, App.)", "url": "isbn:978-0-7006-1335-9" },
+    { "title": "Zetterling and Frankson, Kursk 1943: A Statistical Analysis", "url": "isbn:0-7146-5052-8" },
+    { "title": "Frieser et al., Germany and the Second World War vol. VIII (Citadel losses 54,182)", "url": "isbn:978-0-19-872346-2" },
+    { "title": "Krivosheev, Soviet Casualties and Combat Losses in the Twentieth Century (Kursk defensive operation)", "url": "isbn:978-1-85367-280-4" }
+  ],
+  "grade": "B"
+}
