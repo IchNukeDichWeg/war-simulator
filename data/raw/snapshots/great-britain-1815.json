@@ -1,0 +1,641 @@
+{
+  "id": "great-britain-1815",
+  "nationId": "great-britain",
+  "includes": [],
+  "name": "United Kingdom",
+  "year": 1815,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "peak",
+  "tags": [
+    "kingdom",
+    "Napoleonic",
+    "naval power",
+    "Hundred Days",
+    "volunteer army"
+  ],
+  "capital": {
+    "name": "London",
+    "lat": 51.507,
+    "lon": -0.128,
+    "kind": "capital",
+    "population": 1400000
+  },
+  "places": [
+    {
+      "name": "Manchester",
+      "lat": 53.48,
+      "lon": -2.24,
+      "kind": "city",
+      "population": 120000
+    },
+    {
+      "name": "Liverpool",
+      "lat": 53.41,
+      "lon": -2.98,
+      "kind": "port",
+      "population": 110000
+    },
+    {
+      "name": "Glasgow",
+      "lat": 55.86,
+      "lon": -4.25,
+      "kind": "city",
+      "population": 110000
+    },
+    {
+      "name": "Edinburgh",
+      "lat": 55.95,
+      "lon": -3.19,
+      "kind": "city",
+      "population": 100000
+    },
+    {
+      "name": "Dublin",
+      "lat": 53.35,
+      "lon": -6.26,
+      "kind": "city",
+      "population": 180000
+    },
+    {
+      "name": "Cork",
+      "lat": 51.9,
+      "lon": -8.47,
+      "kind": "port"
+    },
+    {
+      "name": "Portsmouth",
+      "lat": 50.8,
+      "lon": -1.09,
+      "kind": "port"
+    },
+    {
+      "name": "Plymouth",
+      "lat": 50.37,
+      "lon": -4.14,
+      "kind": "port"
+    },
+    {
+      "name": "Chatham",
+      "lat": 51.38,
+      "lon": 0.52,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Dover",
+      "lat": 51.0,
+      "lon": 1.4,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1815:United Kingdom of Great Britain and Ireland",
+    "areaKm2": {
+      "low": 288000,
+      "mid": 314000,
+      "high": 316000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson",
+      "note": "world_1815 polygon \"United Kingdom of Great Britain and Ireland\" = 288,100 km2 on the sphere; Great Britain ~229,000 + Ireland ~84,000 = ~314,000 km2. The 1815 file also has a \"United Kingdom\" feature that is only the Caribbean colonies."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 18800000,
+      "mid": 19300000,
+      "high": 19600000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1816 = 19,520k (UK of Great Britain and Ireland). 1815 taken slightly lower. GB 1811 census ~12.6M civilians plus Ireland ~6M."
+    },
+    "urbanization": {
+      "low": 0.18,
+      "mid": 0.25,
+      "high": 0.34,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share, United Kingdom (modern borders, mostly GB): 32.1% (1810), 35.4% (1820) = high end. Ireland ~7-8% urban pulls the UK-with-Ireland figure down; towns of 5,000+ in England ~25-30%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 330000,
+      "mid": 380000,
+      "high": 450000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/British_Army_during_the_French_Revolutionary_and_Napoleonic_Wars",
+      "note": "Regular army peaked at over 250,000 in 1813 (page); by June 1815 ~220,000-230,000 after the 1814 reductions and Hundred Days re-expansion, plus Ordnance corps (Royal Artillery, engineers) ~25,000 and Royal Navy with marines ~100,000-140,000. COW NMC v7 milper 1816 = 255,000 after demobilisation had begun. East India Company armies (~200,000, mostly sepoys) excluded."
+    },
+    "trainedReserves": {
+      "low": 80000,
+      "mid": 150000,
+      "high": 250000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/British_Army_during_the_French_Revolutionary_and_Napoleonic_Wars",
+      "note": "Militia (ballot-raised, embodiable), local militia and yeomanry. Volunteers reached ~329,000 in 1806 (page) but were largely disbanded by 1814-15; the regular militia was partly disembodied in 1814. Range spans 1815 militia plus surviving local forces."
+    },
+    "supportPersonnel": {
+      "low": 110000,
+      "mid": 130000,
+      "high": 160000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Royal Navy seamen and Royal Marines ~100,000 in mid-1815 (down from ~140,000 voted in 1813-14), Royal Artillery and Royal Engineers ~22,000, commissariat, staff and drivers ~8,000. Reconstruction from the British Army page and Rodger (isbn:978-0-14-102690-9, ch. on 1815 manning)."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.05,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Peak 1809-1813: regular army ~250,000 (British Army page) + navy ~140,000 + militia ~100,000 + local militia/volunteers ~300,000 = ~790,000 of ~18M = 4.4%. Voluntary enlistment, no conscription for the regulars."
+    },
+    "mobilizable": {
+      "low": 752000.0,
+      "mid": 965000.0,
+      "high": 1176000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 130000,
+          "mid": 150000,
+          "high": 175000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/British_Army_during_the_French_Revolutionary_and_Napoleonic_Wars",
+          "note": "Line and Guards battalions incl. the King's German Legion. Whole infantry was 126,677 in 1803 (page); 1813-15 peak army >250,000 with roughly 60% infantry. Includes colonial garrisons (West Indies, Canada, Gibraltar, Malta, Cape, Ceylon)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Brown Bess India pattern musket, era-standard; superior musketry practice"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: long-service volunteers, Peninsular veterans; many second battalions and 1815 units green"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 20000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "95th Rifles (3 bns), KGL light battalions and the light infantry regiments (43rd, 51st, 52nd, 68th, 71st, 85th) ~1,000 each; flank companies stay in line. Reconstruction."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Baker rifle in the 95th, the best skirmish weapon of the era"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Shorncliffe light-infantry system, Light Division record"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 7000,
+          "mid": 10000,
+          "high": 13000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Household Cavalry (3 regts), Dragoon Guards (7) and heavy Dragoons (6) at ~500-650 present."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: big horses, 1796 heavy sword; no cuirass outside the Household"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: brave but poorly controlled in the charge (Union Brigade at Waterloo)"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 14000,
+          "high": 18000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Light Dragoons and Hussars (~20 regts) at ~500-650 present; dragoons of the light pattern counted here."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: good horses, 1796 light cavalry sabre"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: outpost work weaker than the KGL hussars"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 250,
+          "mid": 350,
+          "high": 450,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Waterloo_campaign",
+          "note": "Field guns of RA foot brigades and RHA troops in service across all theatres. Waterloo campaign Anglo-allied army ~150 guns (page gives Wellington 107,000 men); British share ~100. Fortress and coast guns excluded."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: 9-pdrs, Shrapnel spherical case shot (unique to Britain), Congreve rockets"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: RHA the equal of the French horse artillery"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 100,
+          "grade": "C",
+          "source": "isbn:978-0-14-102690-9",
+          "note": "Ships of the line in commission, mid-1815. Rodger, Command of the Ocean (2004) app.: ~100 of the line in sea service at the 1813-14 peak, many paid off after April 1814 and only partly recommissioned in the Hundred Days; frigates counted as minor, as in france-1805."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: 74s and three-deckers, coppered hulls, carronades"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: two decades of sea-keeping and gunnery; Trafalgar and blockade record"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 300,
+          "mid": 400,
+          "high": 500,
+          "grade": "C",
+          "source": "isbn:978-0-14-102690-9",
+          "note": "Frigates, sloops, brigs and cutters in commission 1814-15 (Rodger appendix: ~600 vessels of all classes at the peak, reduced in 1814-15)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: large frigate force; the US 44s outgunned single British frigates in 1812"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: professional crews, impressment notwithstanding"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Wellington (Peninsula 1808-14, Waterloo), but a thin staff and a Horse Guards / Ordnance split"
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: regimental system, long-service volunteers held squares at Waterloo"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: Peninsular victories 1812-14, Napoleon's return opposed by a coalition"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.9,
+      "mid": 6.05,
+      "high": 6.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: Brown Bess, Baker rifle, Shrapnel shell and Congreve rockets slightly ahead of the 1805 anchor"
+    },
+    "armor": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: no cuirassiers outside the Household Cavalry"
+    },
+    "ships": {
+      "low": 6.0,
+      "mid": 6.2,
+      "high": 6.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (74-gun ships of the line). Evidence: the largest coppered battle fleet; still all sail"
+    },
+    "fortification": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (Vauban-type forts). Evidence: Gibraltar, Portsmouth and Plymouth lines, Martello towers"
+    },
+    "logistics": {
+      "low": 6.0,
+      "mid": 6.2,
+      "high": 6.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (magazines + requisition). Evidence: commissariat paid for supplies and sea lift kept Wellington supplied in Iberia"
+    },
+    "communications": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (semaphore telegraph). Evidence: Admiralty shutter telegraph London-Deal/Portsmouth/Plymouth"
+    },
+    "isr": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: exploring officers, naval scouting, captured correspondence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2700,
+      "mid": 2950,
+      "high": 3489,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID), United Kingdom 1815 = 3,489 (2011 int$), a Great Britain-weighted series. Ireland was much poorer (roughly half), so the UK-with-Ireland mean is put near 2,950; high = the GB value."
+    },
+    "gdp": {
+      "low": 50760000000,
+      "mid": 56935000000,
+      "high": 68384000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: at war in June 1815; army, navy and ordnance took ~£60-70M of ~£110M public spending at the 1814 peak against a national income of ~£350-400M. Low = 1790s peacetime share; COW milex 1816 = £16.9M (post-war)."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.33,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Deane and Cole style national accounts put manufacturing, mining and building near 30% of British income around 1811-1821; Ireland lowers the UK share."
+    },
+    "foodSurplus": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: only about a third of the British labour force in farming feeds the towns; grain imports small but growing; Ireland exports food."
+    },
+    "annualCohort": {
+      "low": 179000.0,
+      "mid": 203000.0,
+      "high": 225000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. "
+    },
+    "production": {
+      "ships_major": {
+        "low": 4,
+        "mid": 8,
+        "high": 12,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ships of the line launched or captured per year 1803-1815 in Royal and merchant yards."
+      },
+      "artillery": {
+        "low": 300,
+        "mid": 600,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field-gun output of the Woolwich foundry and contractors (Carron, Walker) per year; naval guns far more numerous."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 25000,
+      "mid": 35000,
+      "high": 45000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: turnpike trusts managed ~20,000 miles (~32,000 km) of improved road in Britain by the 1820s; Irish mail roads added."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 10,
+      "mid": 12,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: London, Liverpool, Bristol, Glasgow, Hull, Leith, Newcastle, Portsmouth, Plymouth, Chatham, Cork, Dublin."
+    },
+    "merchantTonnage": {
+      "low": 3020000.0,
+      "mid": 3484000.0,
+      "high": 3717000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 2,323k tons (United Kingdom 1815, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Peninsular armies operated 150-400 km from sea depots with mule trains; Britain's reach is by sea."
+    },
+    "draftAnimals": {
+      "low": 1300000,
+      "mid": 1800000,
+      "high": 2300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: roughly 1.2-1.5M horses in Britain plus Irish horses and oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Gibraltar",
+        "lat": 36.14,
+        "lon": -5.35,
+        "kind": "fortress"
+      },
+      {
+        "name": "Valletta, Malta",
+        "lat": 35.9,
+        "lon": 14.51,
+        "kind": "port"
+      },
+      {
+        "name": "Cape Town",
+        "lat": -33.92,
+        "lon": 18.42,
+        "kind": "port"
+      },
+      {
+        "name": "Halifax, Nova Scotia",
+        "lat": 44.65,
+        "lon": -63.57,
+        "kind": "port"
+      },
+      {
+        "name": "Bermuda Dockyard",
+        "lat": 32.32,
+        "lon": -64.83,
+        "kind": "port"
+      },
+      {
+        "name": "Kingston, Jamaica",
+        "lat": 17.97,
+        "lon": -76.79,
+        "kind": "port"
+      },
+      {
+        "name": "Trincomalee, Ceylon",
+        "lat": 8.57,
+        "lon": 81.23,
+        "kind": "port"
+      },
+      {
+        "name": "Calcutta (East India Company)",
+        "lat": 22.57,
+        "lon": 88.36,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Strait of Dover",
+      "Strait of Gibraltar",
+      "Western Approaches",
+      "The Sound (Oresund)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified dockyards and population support; insular, no harsh-climate depth."
+    }
+  },
+  "notes": "Snapshot = United Kingdom of Great Britain and Ireland in June 1815 (Hundred Days, Waterloo campaign). Population and territory = Great Britain and Ireland; colonies and the East India Company (its presidency armies of ~200,000) are excluded and includes is empty. Personnel: regular army, Ordnance corps and navy = active; militia, local militia and yeomanry = trainedReserves. Waterloo campaign: Wellington 107,000 (Anglo-allied, of whom ~31,000 British), Bluecher 123,000 (https://en.wikipedia.org/wiki/Waterloo_campaign). COW data start in 1816, so 1816 values are used as anchors. Branch counts are reconstructions, grade C. Frigates are counted as ships_minor to match france-1805."
+}

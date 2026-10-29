@@ -1,0 +1,415 @@
+{
+  "id": "zulu-kingdom-1879",
+  "nationId": "zulu-kingdom",
+  "includes": [],
+  "name": "Zulu Kingdom",
+  "year": 1879,
+  "era": "industrial",
+  "region": "subsaharan_africa",
+  "phase": "key",
+  "tags": [
+    "kingdom",
+    "Anglo-Zulu War",
+    "amabutho",
+    "Isandlwana",
+    "pre-industrial"
+  ],
+  "capital": {
+    "name": "oNdini (Ulundi)",
+    "lat": -28.31,
+    "lon": 31.42,
+    "kind": "capital",
+    "population": 3000
+  },
+  "places": [
+    {
+      "name": "Isandlwana",
+      "lat": -28.36,
+      "lon": 30.65,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Rorke's Drift (Buffalo River)",
+      "lat": -28.35,
+      "lon": 30.53,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Lower Drift of the Thukela",
+      "lat": -29.22,
+      "lon": 31.42,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Eshowe",
+      "lat": -28.89,
+      "lon": 31.47,
+      "kind": "fortress"
+    },
+    {
+      "name": "kwaGingindlovu",
+      "lat": -29.02,
+      "lon": 31.59,
+      "kind": "city"
+    },
+    {
+      "name": "Hlobane",
+      "lat": -27.71,
+      "lon": 31.03,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1878:Zululand",
+    "areaKm2": {
+      "low": 25000,
+      "mid": 27000,
+      "high": 32000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1878.geojson",
+      "note": "world_1878 polygon \"Zululand\" = 25,400 km2 on the sphere (Thukela to Phongolo); kingdom with its northern marches ~27,000-32,000 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 250000,
+      "mid": 300000,
+      "high": 400000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Zulu_Kingdom",
+      "note": "Page infobox: 250,000 in 1828. Estimates for Cetshwayo's kingdom in 1879 run ~250,000-400,000 (Laband, Kingdom in Crisis ch. 1); no census."
+    },
+    "urbanization": {
+      "low": 0.0,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no towns; royal amakhanda (military homesteads) of a few thousand people each."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 35000,
+      "mid": 40000,
+      "high": 50000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Anglo-Zulu_War",
+      "note": "Page infobox: 35,000-60,000 Zulu (Colenso 1880 p. 318: army 35,000, 4,000 kept with Cetshwayo). The amabutho were assembled at oNdini in January 1879, so the army counts as under arms. About 20,000-25,000 at Isandlwana (battle page)."
+    },
+    "trainedReserves": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: older married amabutho and local levies not called to oNdini."
+    },
+    "supportPersonnel": {
+      "low": 500,
+      "mid": 1000,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: izindibi carrier boys and royal attendants."
+    },
+    "mobilizationRatio": {
+      "low": 0.14,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Every man was enrolled in an age-set ibutho; 35,000-60,000 warriors (Anglo-Zulu War page) of 250,000-400,000 people = 14-20%."
+    },
+    "mobilizable": {
+      "low": 35000.0,
+      "mid": 45000.0,
+      "high": 80000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 34000,
+          "high": 42000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Anglo-Zulu_War",
+          "note": "Close-order amabutho fighting in the horns-of-the-buffalo formation with isijula/iklwa spears and cowhide shields; total army less skirmishers."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25 or below. Evidence: stabbing spears and shields against Martini-Henry rifles and artillery, several generations behind"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: lifelong age-set regiments, fast cross-country movement"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3000,
+          "mid": 5000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: warriors with firearms (~20,000 old muskets and some rifles in the kingdom) used as skirmishers."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: obsolete trade muskets, little ammunition"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: poor marksmanship"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Ntshingwayo kaMahole's envelopment at Isandlwana; Cetshwayo's defensive strategy"
+    },
+    "cohesion": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: age-set regimental identity; charged into rifle and Gatling fire at Kambula and Ulundi"
+    },
+    "morale": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: defence of the homeland against invasion"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.0,
+      "mid": 3.3,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (iron weapons). Evidence: iron stabbing spears and throwing spears, a few muskets"
+    },
+    "armor": {
+      "low": 0.5,
+      "mid": 1.0,
+      "high": 1.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 1 (leather). Evidence: cowhide isihlangu shields, no armour"
+    },
+    "ships": {
+      "low": 0,
+      "mid": 0,
+      "high": 0.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0 (rafts, canoes). Evidence: no watercraft of military use"
+    },
+    "fortification": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0 (palisade). Evidence: stockaded homesteads, caves and the Hlobane strongholds"
+    },
+    "logistics": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0 (porters). Evidence: boy carriers and cattle driven with the impi, 3-4 days' food"
+    },
+    "communications": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0 (runners). Evidence: runners"
+    },
+    "isr": {
+      "low": 0.5,
+      "mid": 1.0,
+      "high": 1.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0-1 (runners). Evidence: excellent scouts and spies, but foot messengers only"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 550,
+      "mid": 700,
+      "high": 900,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: cattle-keeping and hoe-agriculture society near subsistence; Maddison has no estimate (South Africa 1879 = 1,985 reflects the colonial economy and is not comparable)."
+    },
+    "gdp": {
+      "low": 138000000,
+      "mid": 210000000,
+      "high": 360000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: amabutho served the king as unpaid labour and soldiers; not a monetary budget."
+    },
+    "industrialShare": {
+      "low": 0.01,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: iron smelting and smithing only."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: cattle herds and royal grain stores fed the assembled army for days only."
+    },
+    "annualCohort": {
+      "low": 2000.0,
+      "mid": 3000.0,
+      "high": 5000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. A new ibutho was formed every few years from youths of the same age."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 100,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no engineered roads; wagon tracks made by traders and the British."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no railway in Zululand (Natal had ~110 km in 1879)."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no port; the coast was open beach."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no merchant shipping."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 80,
+      "high": 120,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: impis carried a few days' food and drove cattle."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 0,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no wheeled transport; cattle were food, not draught animals."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-classical-infantry",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Buffalo River drifts (Rorke's Drift)",
+      "Lower Thukela Drift",
+      "Middle Drift"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row plus full population support; no fortified cities, so below the full 1.2 row."
+    }
+  },
+  "notes": "Snapshot = Zulu Kingdom in January 1879 when the British invasion began. Territory and population = Cetshwayo's kingdom between the Thukela and the Phongolo; includes is empty. Personnel: the whole assembled amabutho = active (they were mustered at oNdini for the first-fruits ceremony and the war); older regiments not called = trainedReserves. Army size from the Anglo-Zulu War page (Colenso 1880; 35,000-60,000) and Isandlwana page (20,000-25,000 engaged). Economy and logistics values are educated guesses: no statistics exist for the kingdom. Tech levels sit far below the industrial anchors by design."
+}

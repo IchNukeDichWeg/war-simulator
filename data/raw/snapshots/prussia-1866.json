@@ -1,0 +1,590 @@
+{
+  "id": "prussia-1866",
+  "nationId": "prussia",
+  "includes": [],
+  "name": "Kingdom of Prussia",
+  "year": 1866,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "rise",
+  "tags": [
+    "kingdom",
+    "Seven Weeks War",
+    "general staff",
+    "needle gun",
+    "railway mobilisation"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 650000
+  },
+  "places": [
+    {
+      "name": "Breslau",
+      "lat": 51.11,
+      "lon": 17.03,
+      "kind": "city",
+      "population": 172000
+    },
+    {
+      "name": "Koenigsberg",
+      "lat": 54.71,
+      "lon": 20.51,
+      "kind": "port",
+      "population": 106000
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.94,
+      "lon": 6.96,
+      "kind": "city",
+      "population": 125000
+    },
+    {
+      "name": "Danzig",
+      "lat": 54.35,
+      "lon": 18.65,
+      "kind": "port"
+    },
+    {
+      "name": "Stettin",
+      "lat": 53.43,
+      "lon": 14.55,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel",
+      "lat": 54.32,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Magdeburg",
+      "lat": 52.13,
+      "lon": 11.63,
+      "kind": "fortress"
+    },
+    {
+      "name": "Koblenz (Ehrenbreitstein)",
+      "lat": 50.36,
+      "lon": 7.6,
+      "kind": "fortress"
+    },
+    {
+      "name": "Posen",
+      "lat": 52.41,
+      "lon": 16.93,
+      "kind": "fortress"
+    },
+    {
+      "name": "Goerlitz",
+      "lat": 51.15,
+      "lon": 14.99,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1815:Prussia",
+    "areaKm2": {
+      "low": 257000,
+      "mid": 280000,
+      "high": 290000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson",
+      "note": "world_1815 \"Prussia\" polygons = 215,200 + 41,000 km2 plus slivers (~256,700) on the sphere; Prussia in 1866 was ~280,000 km2, plus Schleswig (~9,000) under Prussian administration."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 19300000,
+      "mid": 20000000,
+      "high": 20500000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1865 = 20,421k (1866 annual value 24,342k includes the annexations of late 1866). Plus Schleswig under Prussian administration (~0.4M) from 1865."
+    },
+    "urbanization": {
+      "low": 0.12,
+      "mid": 0.16,
+      "high": 0.22,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Germany 1860 = 14.5%, 1870 = 14.8% (towns 5,000+ convention lower than national definitions). COW upop 1865 = 1,020k (cities 100k+) = 5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 300000,
+      "mid": 335000,
+      "high": 360000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Austro-Prussian_War",
+      "note": "Mobilised line army incl. recalled reservists, June 1866. Austro-Prussian War page: Prussia 437,262 deployed (Clodfelter 2017 p. 182) incl. Landwehr; Moltke's field army of 285,000 moved over five railway lines; Koeniggraetz 220,984 (Prussian General Staff via battle page). COW milper 1865 = 216,000 (peace)."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 130000,
+      "high": 200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Austro-Prussian_War",
+      "note": "Landwehr and Ersatz formations: the difference between the 437,262 deployed and the ~300,000-335,000 line army, plus Landwehr II not called."
+    },
+    "supportPersonnel": {
+      "low": 45000,
+      "mid": 55000,
+      "high": 65000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery ~30,000, pioneers ~5,000, train ~15,000, navy ~4,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.07,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Franco-Prussian War infobox: Germany deployed 1,494,412 in 1870-71 (Clodfelter p. 184) from ~40M (3.7%) within months; 1866 Prussia deployed 437,262 of 20M (2.2%) in weeks. Total-war ceiling ~6%."
+    },
+    "mobilizable": {
+      "low": 772000.0,
+      "mid": 1200000.0,
+      "high": 1435000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 210000,
+          "mid": 230000,
+          "high": 250000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "9 corps and the Guard at war strength (~25 battalions of ~1,000 per corps) plus fortress and depot infantry of the line army."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Dreyse needle gun, the only breech-loader of the war; three to five rounds a minute prone"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: 3-year conscripts and recent reservists, company-column tactics"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 10000,
+          "high": 12000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Jaeger and Schuetzen battalions."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Dreyse rifles"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: forester-recruited marksmen"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 5000,
+          "mid": 6000,
+          "high": 7000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "10 cuirassier regiments at ~600 each."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: heavy horses"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: held back in 1866"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 17000,
+          "mid": 20000,
+          "high": 23000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Dragoons, hussars and uhlans (~32 regiments) at ~600 each."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: lances and sabres"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: reconnaissance weak in 1866, reformed for 1870"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 850,
+          "mid": 1000,
+          "high": 1200,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Austro-Prussian_War",
+          "note": "Field guns of the field army and depots; the page says Prussia had replaced up to 60% of its smoothbores with the C64 rifled breech-loader by 1866."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mixed C64 Krupp breech-loaders and smoothbore 12-pdrs"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: artillery held too far back at Koeniggraetz (battle page: 66 guns of the corps artillery too far to the rear)"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 5,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: two small ironclads (Arminius, Prinz Adalbert) and the Arcona-class screw frigates; most of the navy was overseas or laid up."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: small modern ships"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: young navy, few trained officers"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: screw gunboats and corvettes."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: gunboats"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: young navy"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75-1.0. Evidence: Moltke and the General Staff; railway concentration and converging armies at Koeniggraetz"
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: territorial corps with regimental identity; conscript army"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: victory over Denmark in 1864; war unpopular at home until the first victories"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: breech-loading Dreyse and C64 breech-loading Krupp guns"
+    },
+    "armor": {
+      "low": 6.1,
+      "mid": 6.2,
+      "high": 6.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: cuirassiers; no land armour"
+    },
+    "ships": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: two small turret/broadside ironclads"
+    },
+    "fortification": {
+      "low": 6.3,
+      "mid": 6.5,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: polygonal Prussian fortresses on the Rhine (Koblenz, Cologne)"
+    },
+    "logistics": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: five railway lines to the front, field army concentrated in 25 days (Austro-Prussian War page)"
+    },
+    "communications": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph links from Berlin to army headquarters"
+    },
+    "isr": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: cavalry lost contact with the Austrian army before Koeniggraetz"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2600,
+      "mid": 2800,
+      "high": 2900,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) Germany 1865 = 2,821, 1866 = 2,823. Prussia (Rhineland and Silesian industry, poor eastern provinces) close to the German mean."
+    },
+    "gdp": {
+      "low": 50180000000,
+      "mid": 56000000000,
+      "high": 59450000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.025,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds) 1865 = 5,950, 1866 = 6,268; against a national product of ~250-280M pounds that is ~2.5% in peace; the war was financed partly from the 1865-66 reserves, mid includes mobilisation costs."
+    },
+    "industrialShare": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Rhineland-Westphalia and Silesia coal and iron; industry and crafts ~25% of output."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: grain exports from the eastern provinces."
+    },
+    "annualCohort": {
+      "low": 183000.0,
+      "mid": 210000.0,
+      "high": 236000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. Prussia called ~63,000 conscripts a year, a fraction of the class."
+    },
+    "production": {
+      "artillery": {
+        "low": 200,
+        "mid": 400,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Krupp and state arsenal field-gun output per year."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Prussia bought its ironclads abroad."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 30000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Prussian state and provincial chaussees."
+    },
+    "railKm": {
+      "low": 6900,
+      "mid": 7800,
+      "high": 8500,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "CHAT (https://data.nber.org/chat/chat.dta) railline Germany 1866 = 14,861 km for the whole of Germany; Prussia's share by population (20/38M) and area ~0.5-0.57."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 6,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Koenigsberg, Danzig, Stettin, Swinemuende, Memel, Kiel (administered)."
+    },
+    "merchantTonnage": {
+      "low": 400000,
+      "mid": 520000,
+      "high": 700000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about a third of the German registered fleet (CHAT Germany 1866 = 930k tons, https://data.nber.org/chat/chat.dta) sailed from Prussian Baltic ports; x1.5 to deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: railheads plus requisition."
+    },
+    "draftAnimals": {
+      "low": 1800000,
+      "mid": 2300000,
+      "high": 2800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses of the Prussian provinces."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Bohemian mountain passes",
+      "Elbe crossings",
+      "Rhine crossings (Cologne, Koblenz)",
+      "Danish straits"
+    ],
+    "homeDefense": {
+      "low": 1.05,
+      "mid": 1.1,
+      "high": 1.15,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row: familiar terrain, Rhine fortresses; open plains."
+    }
+  },
+  "notes": "Snapshot = Kingdom of Prussia in mid-June 1866 after mobilisation. Territory and population = Prussia plus Schleswig under Prussian administration; North German allies and Italy (200,000) excluded; includes is empty. Personnel: line army incl. recalled reservists = active (the mobilisation was complete by the snapshot date); Landwehr and Ersatz = trainedReserves. Strengths from the Austro-Prussian War page (Clodfelter 2017 p. 182: 437,262) and the Koeniggraetz page (220,984 at the battle); branch split is a reconstruction (grade C)."
+}

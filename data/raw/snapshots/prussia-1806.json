@@ -1,0 +1,531 @@
+{
+  "id": "prussia-1806",
+  "nationId": "prussia",
+  "includes": [],
+  "name": "Kingdom of Prussia",
+  "year": 1806,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "kingdom",
+    "Napoleonic",
+    "Fourth Coalition",
+    "Frederician army",
+    "canton system"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 155000
+  },
+  "places": [
+    {
+      "name": "Koenigsberg",
+      "lat": 54.71,
+      "lon": 20.51,
+      "kind": "port",
+      "population": 60000
+    },
+    {
+      "name": "Breslau",
+      "lat": 51.11,
+      "lon": 17.03,
+      "kind": "city",
+      "population": 63000
+    },
+    {
+      "name": "Warsaw",
+      "lat": 52.23,
+      "lon": 21.01,
+      "kind": "city",
+      "population": 70000
+    },
+    {
+      "name": "Danzig",
+      "lat": 54.35,
+      "lon": 18.65,
+      "kind": "port",
+      "population": 45000
+    },
+    {
+      "name": "Stettin",
+      "lat": 53.43,
+      "lon": 14.55,
+      "kind": "port"
+    },
+    {
+      "name": "Magdeburg",
+      "lat": 52.13,
+      "lon": 11.63,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kuestrin",
+      "lat": 52.58,
+      "lon": 14.63,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kolberg",
+      "lat": 54.18,
+      "lon": 15.57,
+      "kind": "fortress"
+    },
+    {
+      "name": "Erfurt",
+      "lat": 50.98,
+      "lon": 11.03,
+      "kind": "fortress"
+    },
+    {
+      "name": "Halle",
+      "lat": 51.48,
+      "lon": 11.97,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1800:Prussia",
+    "areaKm2": {
+      "low": 300000,
+      "mid": 330000,
+      "high": 345000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1800.geojson",
+      "note": "world_1800 \"Prussia\" polygons = 287,200 + 41,000 km2 (eastern block and Westphalian lands) on the sphere."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9500000,
+      "mid": 10000000,
+      "high": 10700000,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1816 = 10,349k for post-1815 Prussia. Pre-Tilsit Prussia (with South and New East Prussia, Ansbach, Westphalian lands) ~9.7-10.7M; Tilsit roughly halved it."
+    },
+    "urbanization": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Germany 1800 = 12.5%, Poland 1800 = 4.8%; Prussia with its Polish provinces ~10%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 220000,
+      "mid": 245000,
+      "high": 254000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/War_of_the_Fourth_Coalition",
+      "note": "Page infobox: Prussia 254,000 engaged (Clodfelter 2017 p. 150). Peacetime establishment ~240,000 incl. ~1/3 foreign enlisted men and cantonists on furlough 10 months a year; lower bound allows for paper strength."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 20000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: no Landwehr before 1813; only depot and invalid companies and the Saxon ally (18,000, excluded)."
+    },
+    "supportPersonnel": {
+      "low": 15000,
+      "mid": 20000,
+      "high": 25000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Four foot artillery regiments and horse artillery ~13,000, pontonniers, train and staff. No navy. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Prussia mobilised ~280,000 from ~4.9M in 1813 (5.7%) under an emergency Landwehr system the 1806 state lacked."
+    },
+    "mobilizable": {
+      "low": 285000.0,
+      "mid": 400000.0,
+      "high": 642000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 120000,
+          "mid": 140000,
+          "high": 155000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "58-60 line regiments of 2 musketeer battalions plus grenadier battalions at ~600-700 present."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: M1782 musket, one of the worst of the era"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: superb parade-ground drill in obsolete linear tactics"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 12000,
+          "mid": 16000,
+          "high": 20000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "24 fusilier battalions and the Feldjaeger regiment."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: jaeger rifles"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: too few light troops for the French skirmish swarm"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 9000,
+          "mid": 11000,
+          "high": 13000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "13 cuirassier regiments (incl. Gens d'armes, Garde du Corps)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: big horses, no cuirass worn in 1806"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Frederician cavalry tradition"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 24000,
+          "mid": 29000,
+          "high": 33000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "14 dragoon and 10 hussar regiments plus Towarczys."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: good horses"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: well drilled, poorly used for reconnaissance"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 500,
+          "mid": 700,
+          "high": 900,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field and battalion guns of the field army; the War of the Fourth Coalition page says over 4,000 artillery pieces were lost in all, mostly fortress guns."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: heavy obsolescent pieces, battalion guns"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: guns dispersed, horse teams hired"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: aged Brunswick and Hohenlohe, divided councils, Jena-Auerstedt on 14 October"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: a third foreign mercenaries, harsh discipline; collapsed after Jena, but some fortresses held (Kolberg)"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: Frederician prestige and overconfidence"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.6,
+      "mid": 5.75,
+      "high": 5.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: M1782 musket below the anchor; heavy field artillery"
+    },
+    "armor": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: cuirassiers without cuirass"
+    },
+    "ships": {
+      "low": 5.2,
+      "mid": 5.5,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (74-gun ships of the line). Evidence: Prussia had no navy in 1806; level reflects Baltic merchant shipbuilding at Stettin and Danzig"
+    },
+    "fortification": {
+      "low": 5.7,
+      "mid": 5.9,
+      "high": 6.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (Vauban-type forts). Evidence: Magdeburg, Kuestrin, Stettin, Kolberg, Danzig, Graudenz"
+    },
+    "logistics": {
+      "low": 5.3,
+      "mid": 5.5,
+      "high": 5.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (magazines + requisition). Evidence: tents and magazine trains made the army slow (van Creveld ch. 2)"
+    },
+    "communications": {
+      "low": 5.4,
+      "mid": 5.6,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (semaphore telegraph). Evidence: no optical telegraph until 1832"
+    },
+    "isr": {
+      "low": 5.4,
+      "mid": 5.6,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: lost track of Napoleon's advance through the Thuringian Forest"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1300,
+      "mid": 1500,
+      "high": 1725,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) Germany 1805 = 1,725; Poland 1800 = 902. Prussia with its Polish provinces ~1,500."
+    },
+    "gdp": {
+      "low": 12350000000,
+      "mid": 15000000000,
+      "high": 18458000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the army took about two-thirds of Prussian state spending; mobilised from August 1806."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Silesian linen and mining, Berlin manufactures."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: grain exporter via Danzig and Koenigsberg."
+    },
+    "annualCohort": {
+      "low": 90000.0,
+      "mid": 105000.0,
+      "high": 123000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. "
+    },
+    "production": {
+      "artillery": {
+        "low": 100,
+        "mid": 200,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field-gun output of the Berlin foundry per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1000,
+      "mid": 2000,
+      "high": 4000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Prussia had few paved chaussees in 1806 (~2,000 km), mostly unpaved post roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Koenigsberg, Danzig, Stettin, Kolberg, Memel, Emden."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 150000,
+      "high": 220000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Baltic grain and timber fleet."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: magazine-bound operations."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Saale crossings (Jena, Naumburg)",
+      "Elbe at Magdeburg",
+      "Oder at Kuestrin",
+      "Vistula at Danzig and Thorn"
+    ],
+    "homeDefense": {
+      "low": 1.05,
+      "mid": 1.1,
+      "high": 1.15,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row: familiar terrain and fortresses; open North German plain, population support passive."
+    }
+  },
+  "notes": "Snapshot = Kingdom of Prussia in early October 1806, before Jena-Auerstedt. Territory and population = pre-Tilsit Prussia incl. the Polish partition provinces (South Prussia with Warsaw, New East Prussia) and the western enclaves; includes is empty (Saxony, an ally with 18,000 men, is excluded). Personnel: the whole standing army = active (cantonists on furlough counted, as they were on the establishment); no Landwehr existed. Page figures: Prussia 254,000 (Clodfelter via the War of the Fourth Coalition page); casualties 40,000+ and 165,000 captured. Branch split, artillery and the 1806 population are reconstructions (grade C/D)."
+}

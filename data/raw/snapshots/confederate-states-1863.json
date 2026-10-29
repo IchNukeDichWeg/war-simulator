@@ -1,0 +1,557 @@
+{
+  "id": "confederate-states-1863",
+  "nationId": "confederate-states",
+  "includes": [],
+  "name": "Confederate States",
+  "year": 1863,
+  "era": "industrial",
+  "region": "north_america",
+  "phase": "key",
+  "tags": [
+    "republic",
+    "American Civil War",
+    "Confederacy",
+    "slave state",
+    "conscription"
+  ],
+  "capital": {
+    "name": "Richmond",
+    "lat": 37.541,
+    "lon": -77.436,
+    "kind": "capital",
+    "population": 100000
+  },
+  "places": [
+    {
+      "name": "Charleston",
+      "lat": 32.78,
+      "lon": -79.93,
+      "kind": "port",
+      "population": 41000
+    },
+    {
+      "name": "Wilmington, North Carolina",
+      "lat": 34.21,
+      "lon": -77.89,
+      "kind": "port"
+    },
+    {
+      "name": "Mobile",
+      "lat": 30.69,
+      "lon": -88.04,
+      "kind": "port",
+      "population": 29000
+    },
+    {
+      "name": "Savannah",
+      "lat": 32.08,
+      "lon": -81.09,
+      "kind": "port",
+      "population": 22000
+    },
+    {
+      "name": "Atlanta",
+      "lat": 33.75,
+      "lon": -84.39,
+      "kind": "city"
+    },
+    {
+      "name": "Chattanooga",
+      "lat": 35.05,
+      "lon": -85.31,
+      "kind": "city"
+    },
+    {
+      "name": "Vicksburg",
+      "lat": 32.35,
+      "lon": -90.88,
+      "kind": "fortress"
+    },
+    {
+      "name": "Petersburg",
+      "lat": 37.23,
+      "lon": -77.4,
+      "kind": "city"
+    },
+    {
+      "name": "Augusta (powder works)",
+      "lat": 33.47,
+      "lon": -81.97,
+      "kind": "city"
+    },
+    {
+      "name": "Selma (arsenal)",
+      "lat": 32.41,
+      "lon": -87.02,
+      "kind": "city"
+    },
+    {
+      "name": "Galveston",
+      "lat": 29.3,
+      "lon": -94.8,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "none",
+    "areaKm2": {
+      "low": 1300000,
+      "mid": 1600000,
+      "high": 1980000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "The 11 seceded states cover ~1.95M km2; Confederate-controlled territory in mid-1863 was smaller after Union gains in Tennessee, Louisiana and Arkansas. No historical-basemaps file has a Confederate polygon."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 7000000,
+      "mid": 8000000,
+      "high": 9100000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "1860 census, 11 seceded states: ~9.1M incl. ~3.5M enslaved (McPherson, isbn:0-19-503863-0, ch. 10). By mid-1863 Union armies held much of Tennessee, Louisiana, northern Arkansas, coastal enclaves and West Virginia, leaving ~7.5-8.5M under Confederate control."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) United States 1860 = 19.8% for the whole country; the South was far less urban (~7-10%; New Orleans, the largest southern city, fell in 1862)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 260000,
+      "mid": 310000,
+      "high": 465000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Confederate_States_Army",
+      "note": "Page: C.S. War Department reports 449,439 (1862) and 464,646 (1863) on the rolls; Livermore p. 47: 446,622 on Confederate returns 1 January 1863. Present for duty ran at ~55-65% of the rolls, so mid = ~300,000 present plus the navy."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 80000,
+      "high": 150000,
+      "grade": "C",
+      "source": "https://archive.org/download/numberslossesinc00live/numberslossesinc00live_djvu.txt",
+      "note": "State troops, home guards and irregulars: Livermore estimates ~98,720 irregular troops not always carried on the returns."
+    },
+    "supportPersonnel": {
+      "low": 22000,
+      "mid": 28000,
+      "high": 35000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery ~18,000, engineers, ordnance and quartermaster ~6,000, navy and marines ~4,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Confederate_States_Army",
+      "note": "Page: enlistment estimates range from ~750,000 to 1,227,890-1,406,180 over the war, from ~5.5M free inhabitants, i.e. 8-15% of the total population incl. the enslaved."
+    },
+    "mobilizable": {
+      "low": 560000.0,
+      "mid": 800000.0,
+      "high": 1183000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 200000,
+          "mid": 235000,
+          "high": 270000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Infantry present, all departments, mid-1863. Army of Northern Virginia ~75,000 at Gettysburg, Army of Tennessee ~45,000, Vicksburg garrison ~30,000."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: imported Enfields and captured Springfields, shortages of shoes and kit"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: veteran regiments by 1863"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 40000,
+          "high": 50000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Confederate cavalry present (Stuart, Forrest, Wheeler, Morgan)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: own horses, muzzle-loading carbines and shotguns"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: skilled riders and raiders"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 900,
+          "mid": 1200,
+          "high": 1500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns; the Army of Northern Virginia had ~280 guns at Gettysburg."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mixed calibres, unreliable fuses, captured pieces"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: battalion organisation good"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 5,
+          "mid": 8,
+          "high": 12,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Confederate_States_Navy",
+          "note": "Ironclad rams and cruisers in service, mid-1863 (page: at least twenty ironclads commissioned over the whole war; commerce raiders Alabama and Florida at sea)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: slow casemate ironclads with weak engines"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: ex-US Navy officers, scratch crews"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 35,
+          "high": 50,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: gunboats, rams, torpedo boats (David) and river craft."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: improvised"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: scratch crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Lee and Longstreet in Virginia; weaker western command (Bragg, Pemberton)"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: state regiments with strong identity; desertion rising after July 1863"
+    },
+    "morale": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: defence of the homeland after Chancellorsville, shaken by Gettysburg and Vicksburg"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.4,
+      "mid": 6.5,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: rifle-muskets, imported Whitworths, fewer breech-loaders"
+    },
+    "armor": {
+      "low": 6.0,
+      "mid": 6.1,
+      "high": 6.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: casemate ironclads"
+    },
+    "ships": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: improvised ironclads, first successful submarine attack (Hunley, 1864) still ahead"
+    },
+    "fortification": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Charleston and Vicksburg earthworks, naval mines (torpedoes)"
+    },
+    "logistics": {
+      "low": 6.0,
+      "mid": 6.2,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: decaying railways, gauge breaks, Tredegar the only big iron works"
+    },
+    "communications": {
+      "low": 6.3,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph, signal corps"
+    },
+    "isr": {
+      "low": 6.0,
+      "mid": 6.2,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: cavalry scouting, Stuart absent before Gettysburg"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3200,
+      "mid": 3700,
+      "high": 4200,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison Project 2023 (OWID) United States 1863 = 4,734; southern income per head incl. the enslaved was ~80% of the national mean in 1860 (Engerman), less after blockade and war damage."
+    },
+    "gdp": {
+      "low": 22400000000,
+      "mid": 29600000000,
+      "high": 38220000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.01,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Confederate war spending, financed largely by paper money and inflation, absorbed roughly a quarter or more of output in 1863; low = US antebellum peacetime share."
+    },
+    "industrialShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the South had ~10% of US manufacturing capacity in 1860."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: cotton economy; food shortages and Richmond bread riot (April 1863)."
+    },
+    "annualCohort": {
+      "low": 50000,
+      "mid": 60000,
+      "high": 75000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue ratio of the France 1805 snapshot (males reaching military age ~1.05% per year) applied to the ~5.5M free population only, as the enslaved were not conscripted."
+    },
+    "production": {
+      "artillery": {
+        "low": 200,
+        "mid": 400,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field guns per year, mostly from Tredegar (Richmond) and Selma."
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 4,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ironclads completed per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: few engineered roads; dirt roads impassable in rain."
+    },
+    "railKm": {
+      "low": 9500,
+      "mid": 11500,
+      "high": 14500,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "About 9,000 miles (14,500 km) in the 11 states in 1861 (McPherson ch. 10; CHAT US total 1861 = 49,412 km, https://data.nber.org/chat/chat.dta); lines lost in Tennessee, Louisiana and Virginia by mid-1863."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 5,
+      "high": 6,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Charleston, Wilmington, Mobile, Savannah, Galveston (blockaded)."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: blockade runners and coastal craft."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 120,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: thin wagon and rail supply."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 2000000,
+      "high": 2500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and mules under Confederate control; heavy losses by 1863."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Nassau, Bahamas (neutral, blockade running)",
+        "lat": 25.06,
+        "lon": -77.35,
+        "kind": "port"
+      },
+      {
+        "name": "St. George's, Bermuda (neutral, blockade running)",
+        "lat": 32.38,
+        "lon": -64.68,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Mississippi River (Vicksburg, Port Hudson)",
+      "Rappahannock and Rapidan crossings",
+      "Cumberland Gap",
+      "Chattanooga gateway"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified ports and cities, white population support."
+    }
+  },
+  "notes": "Snapshot = Confederate States in July 1863. Territory and population = the area under Confederate control (1860 census base of the 11 seceded states, less Union-held areas); includes is empty. Border: no historical-basemaps polygon exists for the Confederacy at any year, so border is none. Personnel: troops present and navy = active; state troops, home guards and irregulars = trainedReserves. Of the ~8M inhabitants ~3.5M were enslaved and not armed; mobilizable is computed on the total population, so the ratio is set against the total. Strengths from the Confederate States Army page (War Department reports), Livermore (1900) and McPherson; branch split is a reconstruction (grade C/D)."
+}

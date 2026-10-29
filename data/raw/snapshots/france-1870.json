@@ -1,0 +1,641 @@
+{
+  "id": "france-1870",
+  "nationId": "france",
+  "includes": [],
+  "name": "French Empire",
+  "year": 1870,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "empire",
+    "Second Empire",
+    "Franco-Prussian War",
+    "Chassepot",
+    "long-service army"
+  ],
+  "capital": {
+    "name": "Paris",
+    "lat": 48.857,
+    "lon": 2.352,
+    "kind": "capital",
+    "population": 1850000
+  },
+  "places": [
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lon": 4.836,
+      "kind": "city",
+      "population": 324000
+    },
+    {
+      "name": "Marseille",
+      "lat": 43.296,
+      "lon": 5.37,
+      "kind": "port",
+      "population": 300000
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.838,
+      "lon": -0.579,
+      "kind": "port",
+      "population": 194000
+    },
+    {
+      "name": "Lille",
+      "lat": 50.63,
+      "lon": 3.06,
+      "kind": "city",
+      "population": 155000
+    },
+    {
+      "name": "Metz",
+      "lat": 49.12,
+      "lon": 6.18,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.57,
+      "lon": 7.75,
+      "kind": "fortress"
+    },
+    {
+      "name": "Belfort",
+      "lat": 47.64,
+      "lon": 6.86,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sedan",
+      "lat": 49.7,
+      "lon": 4.94,
+      "kind": "fortress"
+    },
+    {
+      "name": "Toulon",
+      "lat": 43.124,
+      "lon": 5.928,
+      "kind": "port"
+    },
+    {
+      "name": "Brest",
+      "lat": 48.39,
+      "lon": -4.486,
+      "kind": "port"
+    },
+    {
+      "name": "Cherbourg",
+      "lat": 49.64,
+      "lon": -1.62,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1815:France",
+    "areaKm2": {
+      "low": 539000,
+      "mid": 543000,
+      "high": 545000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson",
+      "note": "world_1815 polygon \"France\" = 539,100 km2 on the sphere; metropolitan France in 1870 incl. Savoy and Nice (1860) ~543,000 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 38000000,
+      "mid": 38400000,
+      "high": 38500000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1870 = 38,440k; 1866 census 38.07M (incl. Savoy and Nice, excl. Algeria)."
+    },
+    "urbanization": {
+      "low": 0.22,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) France 1870 = 39.7% (high); 1872 census urban (communes with 2,000+ agglomerated) 31%; towns of 5,000+ ~22-25%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 380000,
+      "mid": 430000,
+      "high": 492585,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Franco-Prussian War infobox: 492,585 active including 300,000 reservists (Howard 1991 p. 39; Clodfelter). COW milper 1869 = 474,000, 1870 = 452,000. Mid = army present with the colours in late July 1870 as reservists straggled in, plus navy."
+    },
+    "trainedReserves": {
+      "low": 300000,
+      "mid": 450000,
+      "high": 600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Garde Mobile 417,366 (page, Howard p. 39; nominal 400,000, largely untrained) plus reservists not yet joined. The Government of National Defence later raised far more (total deployment 2,000,740)."
+    },
+    "supportPersonnel": {
+      "low": 75000,
+      "mid": 90000,
+      "high": 110000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery and train ~40,000, engineers ~7,000, gendarmerie ~20,000, navy and marine infantry ~30,000 effective. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.055,
+      "high": 0.07,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Total French deployment 2,000,740 (Clodfelter via page) of 38.4M = 5.2% over the war."
+    },
+    "mobilizable": {
+      "low": 1520000.0,
+      "mid": 2112000.0,
+      "high": 2695000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 220000,
+          "mid": 250000,
+          "high": 280000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "100 line regiments and the Imperial Guard; Army of the Rhine ~200,000 infantry at the outbreak, plus depots, Algeria and the Rome garrison."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Chassepot breech-loader, 1,037,555 in inventory, range ~1,500 m (page, Wawro 2002 p. 102)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service veterans of Crimea, Italy and Mexico; reservists poorly integrated"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 28000,
+          "mid": 35000,
+          "high": 42000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "20 chasseur a pied battalions, Zouaves and Tirailleurs algeriens."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Chassepot"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Armee d'Afrique veterans"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 6000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "10 cuirassier and 2 carabinier regiments plus Guard cuirassiers."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: cuirasses useless against rifles (Reichshoffen charges)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: brave, tactically obsolete"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 28000,
+          "mid": 35000,
+          "high": 42000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Dragoons, lancers, chasseurs, hussars, Chasseurs d'Afrique and Spahis."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: good horses"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: neglected reconnaissance"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1100,
+          "mid": 1300,
+          "high": 1600,
+          "grade": "C",
+          "source": "isbn:0-521-58436-1",
+          "note": "Wawro, The Franco-Prussian War (2003) ch. 3: the Army of the Rhine had ~924 field guns and ~190 mitrailleuses; with depots and other commands ~1,300 field pieces."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: bronze rifled muzzle-loading La Hitte guns with time fuses, outranged by Krupp steel breech-loaders (page)"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: slow, ammunition-sparing doctrine (page)"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 40,
+          "mid": 50,
+          "high": 60,
+          "grade": "C",
+          "source": "isbn:0-85177-133-5",
+          "note": "Conway's 1860-1905: ~16-17 seagoing ironclad frigates, ~7 ironclad corvettes, ~20 coast-defence ironclads and floating batteries, plus wooden screw frigates. Second-largest fleet in the world."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Gloire lineage, armoured frigates"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: naval reservists sent ashore to Paris and the Garde Mobile (page)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 80,
+          "mid": 120,
+          "high": 160,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: avisos, gunboats and transports."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: large colonial gunboat force"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: professional"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Napoleon III, Bazaine and MacMahon; chaotic mobilisation (page: reservists choked the railway stations)"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: long-service regiments with strong identity; Garde Mobile mutinous"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: confident after Crimea and Italy, war fever in Paris in July 1870"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: Chassepot and the mitrailleuse ahead of Prussia; artillery behind"
+    },
+    "armor": {
+      "low": 6.1,
+      "mid": 6.25,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: cuirassiers"
+    },
+    "ships": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: large ironclad fleet"
+    },
+    "fortification": {
+      "low": 6.4,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Metz detached forts, Paris enceinte and forts, Belfort"
+    },
+    "logistics": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: dense rail net but chaotic mobilisation (page; Howard p. 68)"
+    },
+    "communications": {
+      "low": 6.5,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph; balloons out of besieged Paris"
+    },
+    "isr": {
+      "low": 6.0,
+      "mid": 6.2,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: cavalry did not scout; balloons in Paris"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2900,
+      "mid": 2990,
+      "high": 3067,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) France 1865 = 3,067, 1870 = 2,990."
+    },
+    "gdp": {
+      "low": 110200000000,
+      "mid": 114816000000,
+      "high": 118080000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.027,
+      "mid": 0.065,
+      "high": 0.08,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds): 1869 = 23,912, 1870 = 59,066. Against a national product of ~900M pounds: 2.7% in peace, ~6.5% in the war year."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Toutain/Marczewski accounts put industry near 30% of French product around 1870."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about half the workforce in farming; near self-sufficient in grain."
+    },
+    "annualCohort": {
+      "low": 361000.0,
+      "mid": 403000.0,
+      "high": 443000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. French conscription classes of the 1860s numbered ~320,000 men."
+    },
+    "production": {
+      "artillery": {
+        "low": 300,
+        "mid": 600,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field-gun output per year; the Government of National Defence improvised much more in 1870-71."
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 4,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ironclads launched per year at Toulon, Brest, Cherbourg, Lorient and La Seyne."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 85000,
+      "mid": 120000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: routes nationales ~38,000 km and departementales ~47,000 km, plus chemins vicinaux."
+    },
+    "railKm": {
+      "low": 15544,
+      "mid": 16900,
+      "high": 17500,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline France: 1869 = 16,465 km, 1870 = 15,544 km (the 1870 value appears to exclude the lines lost with Alsace-Lorraine). Mid includes them."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Brest, Toulon, Cherbourg, Lorient, Rochefort, Marseille, Le Havre, Bordeaux, Saint-Nazaire, Dunkirk."
+    },
+    "merchantTonnage": {
+      "low": 1394000.0,
+      "mid": 1608000.0,
+      "high": 1715000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 1,072k tons (France 1870, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 120,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: army tied to rail depots; supply breakdown at Metz in August 1870."
+    },
+    "draftAnimals": {
+      "low": 2800000,
+      "mid": 3500000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about 3M horses plus mules and donkeys."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Algiers",
+        "lat": 36.75,
+        "lon": 3.06,
+        "kind": "port"
+      },
+      {
+        "name": "Oran",
+        "lat": 35.7,
+        "lon": -0.63,
+        "kind": "port"
+      },
+      {
+        "name": "Saigon",
+        "lat": 10.78,
+        "lon": 106.7,
+        "kind": "port"
+      },
+      {
+        "name": "Dakar",
+        "lat": 14.69,
+        "lon": -17.44,
+        "kind": "port"
+      },
+      {
+        "name": "Fort-de-France, Martinique",
+        "lat": 14.6,
+        "lon": -61.07,
+        "kind": "port"
+      },
+      {
+        "name": "Noumea",
+        "lat": -22.27,
+        "lon": 166.44,
+        "kind": "port"
+      },
+      {
+        "name": "Papeete",
+        "lat": -17.53,
+        "lon": -149.57,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Moselle crossings (Metz)",
+      "Vosges passes",
+      "Belfort Gap",
+      "Strait of Dover",
+      "Strait of Gibraltar"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: fortress belt (Metz, Strasbourg, Belfort, Paris) and population support; no harsh-climate depth."
+    }
+  },
+  "notes": "Snapshot = French Empire at the outbreak of the Franco-Prussian War (declared 19 July 1870), forces as mobilisation was under way. Population and territory = metropolitan France incl. Savoy and Nice; Algeria and colonies excluded; includes is empty. Personnel: regular army with reservists who had joined and the navy = active; Garde Mobile and reservists not yet joined = trainedReserves. Strengths from the Franco-Prussian War page (Howard 1991 p. 39; Clodfelter 2017 p. 184; Wawro). Branch split is a reconstruction (grade C)."
+}

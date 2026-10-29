@@ -1,0 +1,636 @@
+{
+  "id": "russian-empire-1904",
+  "nationId": "russian-empire",
+  "includes": [],
+  "name": "Russian Empire",
+  "year": 1904,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "empire",
+    "Russo-Japanese War",
+    "Trans-Siberian Railway",
+    "conscription",
+    "autocracy"
+  ],
+  "capital": {
+    "name": "Saint Petersburg",
+    "lat": 59.94,
+    "lon": 30.31,
+    "kind": "capital",
+    "population": 1400000
+  },
+  "places": [
+    {
+      "name": "Moscow",
+      "lat": 55.756,
+      "lon": 37.617,
+      "kind": "city",
+      "population": 1100000
+    },
+    {
+      "name": "Warsaw",
+      "lat": 52.23,
+      "lon": 21.01,
+      "kind": "city",
+      "population": 700000
+    },
+    {
+      "name": "Odessa",
+      "lat": 46.48,
+      "lon": 30.72,
+      "kind": "port",
+      "population": 450000
+    },
+    {
+      "name": "Kiev",
+      "lat": 50.45,
+      "lon": 30.52,
+      "kind": "city",
+      "population": 250000
+    },
+    {
+      "name": "Kronstadt",
+      "lat": 59.99,
+      "lon": 29.77,
+      "kind": "port"
+    },
+    {
+      "name": "Sevastopol",
+      "lat": 44.62,
+      "lon": 33.53,
+      "kind": "port"
+    },
+    {
+      "name": "Riga",
+      "lat": 56.95,
+      "lon": 24.11,
+      "kind": "port"
+    },
+    {
+      "name": "Libau",
+      "lat": 56.51,
+      "lon": 21.01,
+      "kind": "port"
+    },
+    {
+      "name": "Vladivostok",
+      "lat": 43.12,
+      "lon": 131.89,
+      "kind": "port"
+    },
+    {
+      "name": "Lake Baikal rail gap",
+      "lat": 51.85,
+      "lon": 104.85,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1900:Russian Empire",
+    "areaKm2": {
+      "low": 21500000,
+      "mid": 22000000,
+      "high": 22800000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1900.geojson",
+      "note": "world_1900 polygon \"Russian Empire\" = 21.54M km2 on the sphere; the Empire incl. Finland and Central Asia ~22.4M km2. Kwantung lease and the Chinese Eastern Railway zone excluded."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 138000000,
+      "mid": 141000000,
+      "high": 143000000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1904 = 141,600k (Empire incl. Finland). 1897 census 125.6M plus Finland ~2.6M, grown ~1.5% a year."
+    },
+    "urbanization": {
+      "low": 0.12,
+      "mid": 0.14,
+      "high": 0.16,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Russia 1900 = 14.5%; 1897 census urban 13.4%. COW upop 1904 = 8,064k (cities 100k+) = 5.7%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1100000,
+      "mid": 1180000,
+      "high": 1250000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "note": "Russo-Japanese War page: the entire Russian army in 1904 amounted to 1,200,000 men in 29 corps (Olender); in the Far East only ~95,000-100,000 at the outbreak. COW NMC v7 milper 1904 = 1,160,000. Plus navy ~65,000."
+    },
+    "trainedReserves": {
+      "low": 2400000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "C",
+      "source": "isbn:0-253-33745-3",
+      "note": "Menning, Bayonets before Bullets (1992) ch. 6: reserve (zapas) of ~2.5-3M trained men, plus trained opolchenie of the first category. The war mobilised 1,365,000 in all (Russo-Japanese War page)."
+    },
+    "supportPersonnel": {
+      "low": 240000,
+      "mid": 280000,
+      "high": 320000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Field and fortress artillery ~150,000, engineers ~30,000, navy ~65,000, train, staff and fortress services ~35,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.09,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Russia mobilised ~15M of ~170M (~9%) in 1914-17; the 1904 system and transport limits put the practical ceiling lower."
+    },
+    "mobilizable": {
+      "low": 6900000.0,
+      "mid": 9870000.0,
+      "high": 12870000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 620000,
+          "mid": 700000,
+          "high": 760000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Line, grenadier, Guard, Siberian and fortress infantry; European corps 28,000 men with 112 guns, Siberian divisions only 3,400 men (Russo-Japanese War page)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Mosin M1891 rifle, few machine guns"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscripts with 4-5 year service; older reservists filled the Far East units"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 50000,
+          "high": 60000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Rifle brigades (strelki), incl. Finnish and East Siberian rifles."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Mosin rifle"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: better marksmanship than the line"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Guard cuirassier regiments only; the 1882 reform turned the line cavalry into dragoons."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: ceremonial heavy cavalry"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Guard"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 90000,
+          "mid": 110000,
+          "high": 130000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Dragoon regiments (~50,000) and Cossacks on active service (~60,000)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: dragoon rifles, Cossack lances"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Mishchenko's raid on Yingkou (Jan 1905) failed"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 4500,
+          "mid": 5500,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns of ~29 corps (European corps 112 guns each per the Russo-Japanese War page) plus reserve and Siberian batteries; M1900/1902 76 mm QF guns being issued."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: M1902 76 mm quick-firer superior to the Japanese Type 31"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: direct fire from exposed positions early in the war"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 35,
+          "mid": 45,
+          "high": 55,
+          "grade": "C",
+          "source": "isbn:0-85177-133-5",
+          "note": "Conway's 1860-1905: ~20-22 battleships in service (7 at Port Arthur, Baltic and Black Sea squadrons, 4 Borodinos completing), 3 coast-defence battleships, ~8 armoured and ~15 protected cruisers. Destroyers counted as minor (germany-1939 convention)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mixed designs, Tsesarevich and Retvizan modern"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little gunnery practice; Second Pacific Squadron raw crews"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 140,
+          "mid": 180,
+          "high": 250,
+          "grade": "C",
+          "source": "isbn:0-85177-133-5",
+          "note": "Destroyers (~70), torpedo boats (~100) and gunboats. Port Arthur sortie of 10 August 1904: 6 battleships, 4 cruisers, 14 destroyers (page)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mixed destroyer classes"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: poor night-fighting"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 3,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Delfin (1903) and one or two experimental boats at the outbreak; more shipped to Vladivostok in 1904-05."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: experimental"
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: experimental"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Kuropatkin and Alekseyev, divided authority, plan based on wrong estimates of Japanese strength (page)"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: stubborn in defence (Port Arthur), reservists unwilling"
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: distant, unpopular war; 1905 revolution brewing"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: Mosin magazine rifle, QF field gun, few Maxims"
+    },
+    "armor": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: no armoured cars or helmets in service"
+    },
+    "ships": {
+      "low": 6.7,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: pre-dreadnought battleships"
+    },
+    "fortification": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: Port Arthur concrete forts, held until January 1905"
+    },
+    "logistics": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: single-track Trans-Siberian, incomplete round Lake Baikal (page)"
+    },
+    "communications": {
+      "low": 6.7,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: telegraph and field telephones, early naval wireless"
+    },
+    "isr": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: balloon detachments, weak cavalry reconnaissance"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1152,
+      "mid": 1500,
+      "high": 2185,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID): Russia 1904 = 1,152; USSR-area series 1904 = 2,185. The two series disagree; mid between."
+    },
+    "gdp": {
+      "low": 158976000000,
+      "mid": 211500000000,
+      "high": 312455000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.035,
+      "mid": 0.045,
+      "high": 0.06,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds): 1903 = 48,301, 1904 = 50,305; against a national product of ~1.3-1.4bn pounds (~13bn rubles) that is 3.5-4%; war costs mostly fell in 1905."
+    },
+    "industrialShare": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry ~20% of national product on the eve of 1914 (Gregory)."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: major grain exporter."
+    },
+    "annualCohort": {
+      "low": 1050000,
+      "mid": 1300000,
+      "high": 1500000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue ratio of the France 1805 snapshot (males reaching military age ~0.75-1.05% per year) applied to ~141M; about 1.0-1.1M men were liable each year and ~450,000 taken."
+    },
+    "production": {
+      "artillery": {
+        "low": 500,
+        "mid": 900,
+        "high": 1400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Putilov, Obukhov and state arsenal field-gun output per year."
+      },
+      "ships_major": {
+        "low": 3,
+        "mid": 5,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: battleships and cruisers completed per year at Petersburg and Nikolaev yards."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 15000,
+      "mid": 25000,
+      "high": 35000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: macadamised chaussees of European Russia."
+    },
+    "railKm": {
+      "low": 49711,
+      "mid": 55000,
+      "high": 60000,
+      "grade": "B",
+      "source": "derived:snapshot-composite",
+      "note": "CHAT (https://data.nber.org/chat/chat.dta) railline Russia 1904 = 49,711 km; add Finnish railways (~3,000 km) and the Chinese Eastern Railway (~2,400 km), which CHAT appears to exclude."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Petersburg/Kronstadt, Riga, Libau, Reval, Odessa, Sevastopol, Nikolaev, Vladivostok, Arkhangelsk."
+    },
+    "merchantTonnage": {
+      "low": 867000.0,
+      "mid": 1000000.0,
+      "high": 1067000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 667k tons (Russia 1904, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: armies tied to the railway in Manchuria."
+    },
+    "draftAnimals": {
+      "low": 24000000,
+      "mid": 30000000,
+      "high": 35000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses of the Empire."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Port Arthur (Kwantung lease)",
+        "lat": 38.8,
+        "lon": 121.26,
+        "kind": "port"
+      },
+      {
+        "name": "Dalny (Kwantung lease)",
+        "lat": 38.91,
+        "lon": 121.6,
+        "kind": "port"
+      },
+      {
+        "name": "Harbin (Chinese Eastern Railway)",
+        "lat": 45.8,
+        "lon": 126.53,
+        "kind": "city"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Danish straits",
+      "Bosporus and Dardanelles (closed to Russian warships)",
+      "Tsushima Strait",
+      "Lake Baikal rail gap"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: depth and climate at home; Manchuria (where the war was fought) is not home soil."
+    }
+  },
+  "notes": "Snapshot = Russian Empire on 8 February 1904 (Japanese attack on Port Arthur), peacetime army. Population and territory = the Empire incl. Finland; Kwantung lease and the Chinese Eastern Railway zone listed as bases abroad; includes is empty. Personnel: standing army, Cossacks on active service and navy = active; zapas reserves = trainedReserves. Strength figures from the Russo-Japanese War page (Olender; Connaughton) and COW. Branch split, artillery count and naval totals are reconstructions (grade C/D)."
+}

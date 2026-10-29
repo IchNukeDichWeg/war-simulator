@@ -1,0 +1,575 @@
+{
+  "id": "usa-1863",
+  "nationId": "usa",
+  "includes": [],
+  "name": "United States (Union)",
+  "year": 1863,
+  "era": "industrial",
+  "region": "north_america",
+  "phase": "key",
+  "tags": [
+    "republic",
+    "American Civil War",
+    "Union",
+    "volunteer army",
+    "blockade"
+  ],
+  "capital": {
+    "name": "Washington",
+    "lat": 38.895,
+    "lon": -77.036,
+    "kind": "capital",
+    "population": 75000
+  },
+  "places": [
+    {
+      "name": "New York (with Brooklyn)",
+      "lat": 40.713,
+      "lon": -74.006,
+      "kind": "port",
+      "population": 1080000
+    },
+    {
+      "name": "Philadelphia",
+      "lat": 39.952,
+      "lon": -75.165,
+      "kind": "city",
+      "population": 565000
+    },
+    {
+      "name": "Baltimore",
+      "lat": 39.29,
+      "lon": -76.61,
+      "kind": "port",
+      "population": 212000
+    },
+    {
+      "name": "Boston",
+      "lat": 42.36,
+      "lon": -71.058,
+      "kind": "port",
+      "population": 178000
+    },
+    {
+      "name": "Cincinnati",
+      "lat": 39.1,
+      "lon": -84.51,
+      "kind": "city",
+      "population": 161000
+    },
+    {
+      "name": "St. Louis",
+      "lat": 38.63,
+      "lon": -90.2,
+      "kind": "city",
+      "population": 160000
+    },
+    {
+      "name": "Chicago",
+      "lat": 41.88,
+      "lon": -87.63,
+      "kind": "city",
+      "population": 112000
+    },
+    {
+      "name": "Pittsburgh",
+      "lat": 40.44,
+      "lon": -80.0,
+      "kind": "city"
+    },
+    {
+      "name": "Fort Monroe",
+      "lat": 37.0,
+      "lon": -76.31,
+      "kind": "fortress"
+    },
+    {
+      "name": "Cairo, Illinois",
+      "lat": 37.0,
+      "lon": -89.18,
+      "kind": "port"
+    },
+    {
+      "name": "New Orleans (occupied 1862)",
+      "lat": 29.95,
+      "lon": -90.07,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1815:United States",
+    "areaKm2": {
+      "low": 5500000,
+      "mid": 6100000,
+      "high": 6300000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "The world_1815 \"United States\" polygon (5.53M km2 on the sphere) spans the contiguous US incl. the South, so the map overstates the Union and overlaps the Confederacy. Union area 1863 = contiguous US ~8.0M km2 minus the 11 seceded states ~1.95M = ~6.1M km2 incl. western territories."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 22000000,
+      "mid": 23000000,
+      "high": 24000000,
+      "grade": "B",
+      "source": "derived:snapshot-composite",
+      "note": "COW NMC v7 tpop 1863 = 34,026k for the whole United States; 1860 census: free states ~18.9M, loyal slave states (MD, DE, KY, MO) ~2.6M, West Virginia ~0.38M, territories ~0.25M = ~22.1M in 1860, grown to ~23M by 1863. Excludes the 11 seceded states."
+    },
+    "urbanization": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.3,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) United States 1860 = 19.8% (places of 2,500+); the free states were more urban (~25%) than the South."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 650000,
+      "mid": 730000,
+      "high": 960000,
+      "grade": "B",
+      "source": "https://archive.org/download/numberslossesinc00live/numberslossesinc00live_djvu.txt",
+      "note": "Livermore, Numbers and Losses (1900) p. 47: 918,121 on the Union army rolls on 1 January 1863 (present and absent). Union army page: ~700,000 peak present. Mid = present army ~700,000 plus ~34,000 in the navy; high = rolls plus navy."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: state militia callable for emergencies (Pennsylvania and New York militia in June-July 1863) and the first draftees of the March 1863 Enrollment Act."
+    },
+    "supportPersonnel": {
+      "low": 85000,
+      "mid": 100000,
+      "high": 120000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Field and heavy artillery ~45,000, engineers, signal corps, quartermaster and medical ~20,000, navy ~34,000 in 1863 (84,415 served over the whole war, Union navy page). Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.045,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Union_army",
+      "note": "Union army page: 2,128,948 enlisted over the war (~9.6% of the Union population cumulatively); peak strength ~1.0M on the rolls in May 1865 (Livermore) = 4.4% at one time."
+    },
+    "mobilizable": {
+      "low": 990000.0,
+      "mid": 1380000.0,
+      "high": 2160000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 500000,
+          "mid": 560000,
+          "high": 640000,
+          "grade": "C",
+          "source": "https://archive.org/download/numberslossesinc00live/numberslossesinc00live_djvu.txt",
+          "note": "Infantry present, all departments, mid-1863: ~80% of the ~700,000 present (Livermore's returns). Army of the Potomac at Gettysburg ~94,000 present."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Springfield and Enfield rifle-muskets; first Spencer repeaters"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: volunteer regiments, veteran by 1863, new regiments raw"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 45000,
+          "mid": 60000,
+          "high": 75000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Union cavalry present, mid-1863 (all US cavalry fought as mounted infantry and light horse; Brandy Station June 1863)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: breech-loading carbines (Sharps, Burnside), Spencers from 1863"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: improving after 1863 reorganisation under Pleasonton"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 2000,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns in ~400 light batteries; the Army of the Potomac had ~370 guns at Gettysburg."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Parrott rifles, 3-inch Ordnance rifles, 12-pdr Napoleons"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Hunt's artillery reserve broke Pickett's Charge"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 30,
+          "mid": 50,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Union_navy",
+          "note": "Seagoing ironclads (Passaic-class monitors, New Ironsides, Roanoke) and screw frigates and sloops, mid-1863. The page: the fleet grew more than fifteen-fold to 671 vessels by 1865."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: turreted monitors with 15-inch Dahlgrens"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: expanded with merchant officers"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 400,
+          "mid": 500,
+          "high": 600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Union_navy",
+          "note": "Gunboats, converted steamers and river ironclads (Eads gunboats) of the blockading and Mississippi squadrons; the page gives 671 vessels at the end of the war; the mid-1863 count is interpolated."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: converted merchant steamers and purpose-built double-enders"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: blockade duty experience"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Meade at Gettysburg, Grant at Vicksburg; uneven corps commanders; no general staff"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: state volunteer regiments with local identity"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: Gettysburg and Vicksburg in July 1863 after Fredericksburg and Chancellorsville; draft riots"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.5,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: rifle-muskets, rifled artillery, early repeaters"
+    },
+    "armor": {
+      "low": 6.0,
+      "mid": 6.1,
+      "high": 6.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: no body armour; armoured trains and river ironclads"
+    },
+    "ships": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: turret monitors, the first fleet of them"
+    },
+    "fortification": {
+      "low": 6.4,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Washington defences (~68 forts), field entrenchment"
+    },
+    "logistics": {
+      "low": 6.7,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: US Military Railroad, river steamers, 590 ocean-going chartered vessels (Union army page)"
+    },
+    "communications": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: US Military Telegraph, signal corps flag and torch"
+    },
+    "isr": {
+      "low": 6.3,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Union Army Balloon Corps (to August 1863), cavalry, Bureau of Military Information"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 4734,
+      "mid": 5200,
+      "high": 5600,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) United States 1863 = 4,734 for the whole country; the free states had ~10-15% higher income per head than the national mean (Engerman), so the Union is put at ~5,200."
+    },
+    "gdp": {
+      "low": 104148000000,
+      "mid": 119600000000,
+      "high": 134400000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.008,
+      "mid": 0.14,
+      "high": 0.18,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds): 1860 = 7,060 (~0.8% of GNP, low), 1863 = 119,662 (~$580M). Against a Union GNP of ~$4.5bn that is ~13-15%."
+    },
+    "industrialShare": {
+      "low": 0.2,
+      "mid": 0.24,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: manufacturing about a fifth to a quarter of northern output in 1860."
+    },
+    "foodSurplus": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: large grain exporter (wheat to Britain during the war)."
+    },
+    "annualCohort": {
+      "low": 209000.0,
+      "mid": 242000.0,
+      "high": 276000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. Young population, the true share was probably at the high end."
+    },
+    "production": {
+      "artillery": {
+        "low": 1500,
+        "mid": 2500,
+        "high": 3500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field and siege guns per year from West Point Foundry, Fort Pitt, Watervliet and contractors."
+      },
+      "ships_major": {
+        "low": 8,
+        "mid": 15,
+        "high": 25,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: monitors and seagoing warships completed per year 1863-64."
+      },
+      "ships_minor": {
+        "low": 100,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: gunboats built or converted per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 15000,
+      "mid": 25000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: turnpikes, plank and macadam roads in the northern states."
+    },
+    "railKm": {
+      "low": 35000,
+      "mid": 38000,
+      "high": 40000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "CHAT (https://data.nber.org/chat/chat.dta) railline United States 1863 = 52,388 km; about 14,500 km (9,000 miles) lay in the Confederacy in 1861 (McPherson, isbn:0-19-503863-0, ch. 10), part of it Union-held by 1863."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: New York, Boston, Philadelphia, Baltimore, Portsmouth NH, Hampton Roads, New Orleans, San Francisco, Port Royal, Key West."
+    },
+    "merchantTonnage": {
+      "low": 5492000.0,
+      "mid": 6338000.0,
+      "high": 6760000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 4,225k tons (United States 1863, incl. coastal, lake and river tonnage; flight from the flag reduced it during the war, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: armies tied to railheads and rivers, wagon trains beyond."
+    },
+    "draftAnimals": {
+      "low": 4500000,
+      "mid": 5000000,
+      "high": 5800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about 70% of the 1860 US stock of ~6.2M horses and 1.1M mules."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Port Royal, South Carolina",
+        "lat": 32.38,
+        "lon": -80.69,
+        "kind": "port"
+      },
+      {
+        "name": "Key West",
+        "lat": 24.555,
+        "lon": -81.78,
+        "kind": "port"
+      },
+      {
+        "name": "Ship Island",
+        "lat": 30.21,
+        "lon": -88.97,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfa",
+    "chokepoints": [
+      "Mississippi River (Vicksburg, Port Hudson)",
+      "Chesapeake Bay and Hampton Roads",
+      "Potomac crossings",
+      "Cumberland Gap"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1-1.2 rows: familiar terrain and population support; Washington ringed with forts."
+    }
+  },
+  "notes": "Snapshot = the Union in July 1863 (Gettysburg, Vicksburg). Population = loyal states incl. Maryland, Delaware, Kentucky, Missouri, West Virginia and territories; the seceded states are the confederate-states snapshot; includes is empty. Border caveat: no basemap file separates the Union from the Confederacy; hb:1815:United States covers both and overlaps the confederate-states area. Personnel: army present and navy = active; militia and draftees = trainedReserves. Strengths from Livermore (1900, Internet Archive text) and the Union army and Union navy pages. Branch split and artillery count are reconstructions (grade C/D)."
+}

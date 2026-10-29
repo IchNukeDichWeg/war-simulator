@@ -1,0 +1,582 @@
+{
+  "id": "habsburg-austria-1805",
+  "nationId": "habsburg-austria",
+  "includes": [],
+  "name": "Austrian Empire",
+  "year": 1805,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "empire",
+    "Napoleonic",
+    "Third Coalition",
+    "multi-ethnic",
+    "Habsburg"
+  ],
+  "capital": {
+    "name": "Vienna",
+    "lat": 48.208,
+    "lon": 16.373,
+    "kind": "capital",
+    "population": 230000
+  },
+  "places": [
+    {
+      "name": "Prague",
+      "lat": 50.088,
+      "lon": 14.42,
+      "kind": "city",
+      "population": 75000
+    },
+    {
+      "name": "Pest-Buda",
+      "lat": 47.498,
+      "lon": 19.04,
+      "kind": "city",
+      "population": 60000
+    },
+    {
+      "name": "Venice",
+      "lat": 45.44,
+      "lon": 12.33,
+      "kind": "port",
+      "population": 140000
+    },
+    {
+      "name": "Trieste",
+      "lat": 45.65,
+      "lon": 13.78,
+      "kind": "port"
+    },
+    {
+      "name": "Lemberg",
+      "lat": 49.84,
+      "lon": 24.03,
+      "kind": "city"
+    },
+    {
+      "name": "Krakow",
+      "lat": 50.06,
+      "lon": 19.94,
+      "kind": "city"
+    },
+    {
+      "name": "Olmuetz",
+      "lat": 49.59,
+      "lon": 17.25,
+      "kind": "fortress"
+    },
+    {
+      "name": "Komarom",
+      "lat": 47.76,
+      "lon": 18.13,
+      "kind": "fortress"
+    },
+    {
+      "name": "Innsbruck",
+      "lat": 47.27,
+      "lon": 11.39,
+      "kind": "city"
+    },
+    {
+      "name": "Verona (Austrian bank of the Adige)",
+      "lat": 45.44,
+      "lon": 10.99,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1800:Austrian Empire",
+    "areaKm2": {
+      "low": 620000,
+      "mid": 660000,
+      "high": 700000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1800.geojson",
+      "note": "world_1800 polygon \"Austrian Empire\" = 619,500 km2 on the sphere; Habsburg lands in 1805 also held Venetia, Dalmatia, West Galicia and Further Austria."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 22000000,
+      "mid": 24000000,
+      "high": 26000000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Composite from HYDE/Gapminder (OWID) modern-border totals for 1800: Austria 3.0M, Czechia 5.5M, Hungary 3.25M, Slovakia 2.1M, Croatia 1.2M, Slovenia 0.5M, plus Galicia (~4.5M of Poland/Ukraine), Transylvania (~1.7M of Romania), Banat/Vojvodina (~0.8M), Venetia and Dalmatia (~2.3M), Tyrol/Trentino (~0.3M) = ~25M; low allows for overlap."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) 1800: Austria 10%, Czechia 7.9%, Hungary 7.9%. Habsburg average ~7%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 230000,
+      "mid": 280000,
+      "high": 330000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/War_of_the_Third_Coalition",
+      "note": "War footing Sept 1805: Archduke Charles 95,000 in Italy, Archduke John 23,000 in Tyrol, Ferdinand/Mack 72,000 in Bavaria (page, citing Chandler 1966 p. 382), plus the reserve in Bohemia and Inner Austria, Grenz cordon and garrisons. Mack's force at Ulm 74,000 (Ulm campaign page, Fisher and Fremont-Barnes p. 41)."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 90000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: furloughed men and the Hungarian noble insurrectio; the Landwehr did not exist until 1808."
+    },
+    "supportPersonnel": {
+      "low": 18000,
+      "mid": 25000,
+      "high": 32000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery corps ~13,000, pioneers, pontonniers, Fuhrwesen train ~8,000, small navy ~2,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Austria raised ~550,000-600,000 including Landwehr in 1809 from ~22M (2.5-2.7%)."
+    },
+    "mobilizable": {
+      "low": 440000.0,
+      "mid": 720000.0,
+      "high": 1040000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 140000,
+          "mid": 170000,
+          "high": 200000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "63 German and Hungarian line regiments at reduced war strength; Mack's reforms of 1805 changed company structure on the eve of war."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M1798 musket, era-typical"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: long-service but new Mack organisation confused units"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 35000,
+          "mid": 45000,
+          "high": 55000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "17 Grenz (Military Frontier) regiments and a jaeger regiment."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Grenzer muskets and some rifles"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Grenzer skirmish well but are part-time"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 9000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "8 cuirassier regiments."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: half-cuirass, good horses"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Austrian cavalry the best part of the army"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 22000,
+          "mid": 28000,
+          "high": 34000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Dragoons, chevaulegers, 12 hussar and 3 uhlan regiments."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Hungarian horses"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: hussars excellent at outposts"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 500,
+          "mid": 700,
+          "high": 900,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns with the three main armies and reserve parks; Austria lost ~200 guns at Ulm alone."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Liechtenstein system, light 3- and 6-pdrs"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: competent gunners, guns dispersed among infantry"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 0,
+          "mid": 2,
+          "high": 4,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: ex-Venetian ships of the line taken over in 1797, mostly laid up."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: old Venetian hulls"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: barely manned"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: brigs, gunboats and Danube flotilla."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: small craft"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: small cadre"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Aulic Council made Italy the main theatre; Mack trapped at Ulm (War of the Third Coalition page); Charles competent"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: long-service but multi-ethnic regiments, 60,000 captured in the Ulm campaign"
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5. Evidence: third war against France in 13 years; defeats of 1796-1800"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.8,
+      "mid": 5.9,
+      "high": 6.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: era-standard muskets and Liechtenstein artillery"
+    },
+    "armor": {
+      "low": 5.9,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: cuirassiers"
+    },
+    "ships": {
+      "low": 5.3,
+      "mid": 5.5,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (74-gun ships of the line). Evidence: no real battle fleet"
+    },
+    "fortification": {
+      "low": 5.8,
+      "mid": 6.0,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (Vauban-type forts). Evidence: Olmuetz, Komarom, Theresienstadt, Josefstadt"
+    },
+    "logistics": {
+      "low": 5.6,
+      "mid": 5.8,
+      "high": 6.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (magazines + requisition). Evidence: strict magazine system, slower than French requisition (van Creveld ch. 2)"
+    },
+    "communications": {
+      "low": 5.5,
+      "mid": 5.7,
+      "high": 5.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (semaphore telegraph). Evidence: no optical telegraph network"
+    },
+    "isr": {
+      "low": 5.6,
+      "mid": 5.8,
+      "high": 6.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: Mack misread the French march round his flank"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1200,
+      "mid": 1450,
+      "high": 1800,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogues (Maddison 2023 via OWID): Austria (modern) 1820 = 1,941, Hungary 1870 = 1,741 (lower earlier), Italy 1805 = 2,525 (Venetia), Poland 1800 = 902 (Galicia). Population-weighted Habsburg mean ~1,450."
+    },
+    "gdp": {
+      "low": 26400000000,
+      "mid": 34800000000,
+      "high": 46800000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.06,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: war year financed with paper Bancozettel; army took most of the state budget."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Bohemian textiles and glass, Styrian iron; overwhelmingly agrarian."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hungarian grain surplus."
+    },
+    "annualCohort": {
+      "low": 209000.0,
+      "mid": 252000.0,
+      "high": 299000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. "
+    },
+    "production": {
+      "artillery": {
+        "low": 200,
+        "mid": 400,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: field-gun output of the Vienna arsenal and Bohemian foundries per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 6000,
+      "mid": 10000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Kunststrassen (engineered state roads) in the hereditary lands; Hungary poorly served."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 4,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Venice, Trieste, Fiume, Zara."
+    },
+    "merchantTonnage": {
+      "low": 80000,
+      "mid": 150000,
+      "high": 250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Venetian and Triestine merchant marine."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: five-march magazine rule; armies tied to depots."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and oxen of the Habsburg lands."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Danube valley (Linz-Vienna)",
+      "Brenner Pass",
+      "Moravian Gate",
+      "Adige line"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row plus some fortresses (Olmuetz, Komarom); Alpine and Carpathian barriers, no harsh-climate depth."
+    }
+  },
+  "notes": "Snapshot = Austrian Empire in September 1805 at the opening of the War of the Third Coalition. Territory and population = Habsburg hereditary lands, Hungary, Galicia (incl. West Galicia), Venetia, Dalmatia and Tyrol; includes is empty. Personnel: line, Grenz and cavalry on war footing = active; furloughed men and Hungarian insurrectio = trainedReserves (no Landwehr before 1808). Theatre strengths from the War of the Third Coalition and Ulm campaign pages (Chandler, Fisher and Fremont-Barnes); branch split and artillery count are reconstructions or educated guesses. No COW data before 1816 and no Maddison series for the whole monarchy."
+}

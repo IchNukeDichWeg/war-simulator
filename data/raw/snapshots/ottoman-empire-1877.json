@@ -1,0 +1,568 @@
+{
+  "id": "ottoman-empire-1877",
+  "nationId": "ottoman-empire",
+  "includes": [],
+  "name": "Ottoman Empire",
+  "year": 1877,
+  "era": "industrial",
+  "region": "mena",
+  "phase": "decline",
+  "tags": [
+    "empire",
+    "Ottoman",
+    "Russo-Turkish War",
+    "Tanzimat",
+    "Plevna"
+  ],
+  "capital": {
+    "name": "Constantinople",
+    "lat": 41.008,
+    "lon": 28.978,
+    "kind": "capital",
+    "population": 900000
+  },
+  "places": [
+    {
+      "name": "Smyrna",
+      "lat": 38.42,
+      "lon": 27.14,
+      "kind": "port",
+      "population": 200000
+    },
+    {
+      "name": "Salonica",
+      "lat": 40.64,
+      "lon": 22.94,
+      "kind": "port",
+      "population": 100000
+    },
+    {
+      "name": "Adrianople",
+      "lat": 41.68,
+      "lon": 26.56,
+      "kind": "fortress"
+    },
+    {
+      "name": "Shumla",
+      "lat": 43.27,
+      "lon": 26.92,
+      "kind": "fortress"
+    },
+    {
+      "name": "Rustchuk",
+      "lat": 43.85,
+      "lon": 25.95,
+      "kind": "fortress"
+    },
+    {
+      "name": "Vidin",
+      "lat": 43.99,
+      "lon": 22.88,
+      "kind": "fortress"
+    },
+    {
+      "name": "Plevna",
+      "lat": 43.42,
+      "lon": 24.61,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kars",
+      "lat": 40.6,
+      "lon": 43.1,
+      "kind": "fortress"
+    },
+    {
+      "name": "Erzurum",
+      "lat": 39.9,
+      "lon": 41.27,
+      "kind": "fortress"
+    },
+    {
+      "name": "Batumi",
+      "lat": 41.64,
+      "lon": 41.64,
+      "kind": "port"
+    },
+    {
+      "name": "Baghdad",
+      "lat": 33.31,
+      "lon": 44.36,
+      "kind": "city"
+    },
+    {
+      "name": "Damascus",
+      "lat": 33.51,
+      "lon": 36.29,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1815:Ottoman Empire",
+    "areaKm2": {
+      "low": 2260000,
+      "mid": 2900000,
+      "high": 3300000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson",
+      "note": "world_1815 polygon \"Ottoman Empire\" = 2.26M km2 on the sphere; it includes the Danubian principalities and lacks parts of Arabia and Libya. Directly ruled lands in 1877 (Rumelia, Bosnia, Anatolia, Syria, Iraq, Hejaz, Yemen, Tripolitania) ~2.6-3.2M km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 24000000,
+      "mid": 26000000,
+      "high": 34300000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "COW NMC v7 tpop 1877 = 34,323k, which appears to include autonomous Egypt (~6-7M). Without Egypt, Romania and Serbia: Anatolia ~11-12M (OWID Turkey 1877 = 12.2M), Rumelia and Bosnia ~6M, Arab provinces and Libya ~7-8M = ~25-26M."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Turkey 1870 = 12.0%, 1880 = 13.2%. COW upop 1877 = 863k (cities 100k+)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 378000,
+      "mid": 400000,
+      "high": 490000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+      "note": "Russo-Turkish War page: Allen and Muratoff total 378,000 (168,000 under Abdulkerim at Shumla, 140,000 in Europe, 45,000 garrisons, 70,000 Caucasus); Olender: regular army 400,000 plus 90,000 irregular and Egyptian troops. COW milper 1877 = 461,000."
+    },
+    "trainedReserves": {
+      "low": 120000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+      "note": "Redif and mustahfiz still mobilising in spring 1877 (page: on paper 571 battalions, 441,954 infantry)."
+    },
+    "supportPersonnel": {
+      "low": 30000,
+      "mid": 38000,
+      "high": 45000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery ~20,000 (143 batteries, page), engineers and train, navy ~15,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.025,
+      "mid": 0.04,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Muslim men only were conscripted; ~700,000 served in 1877-78; the 1914-18 effort later reached ~2.8M of ~21M."
+    },
+    "mobilizable": {
+      "low": 600000.0,
+      "mid": 1040000.0,
+      "high": 2744000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 280000,
+          "mid": 310000,
+          "high": 340000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+          "note": "Page (Olender): 571 infantry battalions (181 nizam), 441,954 on paper incl. 140,094 nizam; regular field infantry ~300,000 after garrisons and mobilisation gaps."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: 75% armed with Peabody-Martini (accurate to 1,800 yards), 300,000 bought before the war; Winchester repeaters for some (page)"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: nizam solid, redif poorly trained; excellent entrenching"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 60000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+          "note": "Irregulars (bashi-bazouks, Circassians) and Egyptian contingents; page: 90,000 irregular and Egyptian troops."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mixed old rifles"
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: undisciplined irregulars"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 21000,
+          "high": 30000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+          "note": "Page (Olender): 147 squadrons = 21,021 regular cavalry on paper; Circassian irregular horse in addition."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Winchester carbines"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: squadrons ~100 men in practice (page)"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 700,
+          "mid": 858,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Russo-Turkish_War_(1877%E2%80%931878)",
+          "note": "Page (Olender): 143 batteries = 858 guns on paper, excluding fortress companies."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Krupp 8 cm and 9 cm C/73 field guns (page)"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: outnumbered and poorly concentrated"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 15,
+          "mid": 21,
+          "high": 26,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Ottoman_Navy",
+          "note": "Ottoman Navy page: in 1875 the navy had 21 battleships (ironclads) and 173 other warships, the third largest navy in the world. Turret ship Luetf-ue Celil lost on the Danube in May 1877 (Russo-Turkish War page)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: British- and French-built ironclads of the 1860s-70s"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: laid-up fleet after the 1875 bankruptcy, passive in 1877"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 120,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Ottoman_Navy",
+          "note": "Corvettes, gunboats and the Danube flotilla; many of the 173 other vessels of 1875 were transports or obsolete."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: river monitors and gunboats"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: sunk by Russian and Romanian torpedo boats and batteries on the Danube"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Osman Pasha at Plevna and Muhtar Pasha in the Caucasus able; Abdulkerim passive, Istanbul interference"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: tenacious Anatolian conscripts in defence, irregulars unreliable"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: defensive war, victories over Serbia in 1876, Plevna"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.7,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: Peabody-Martini and Krupp breech-loaders outranged the Russian Krnka (page)"
+    },
+    "armor": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: none on land"
+    },
+    "ships": {
+      "low": 6.5,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: large ironclad fleet"
+    },
+    "fortification": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Plevna earthworks, Danube quadrilateral fortresses, Kars"
+    },
+    "logistics": {
+      "low": 5.7,
+      "mid": 5.9,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: little railway, pack animals"
+    },
+    "communications": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph to the fortresses"
+    },
+    "isr": {
+      "low": 5.7,
+      "mid": 5.9,
+      "high": 6.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: irregular cavalry screens"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1000,
+      "mid": 1180,
+      "high": 1340,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID): Turkey (modern borders) 1870 = 1,165; analogues Bulgaria 1870 = 1,339, Egypt 1870 = 1,195."
+    },
+    "gdp": {
+      "low": 24000000000,
+      "mid": 30680000000,
+      "high": 45962000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: COW milex 1876 = 19,710 (thousands of pounds) for a bankrupt state (1875 default); war spending financed by paper money (kaime)."
+    },
+    "industrialShare": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: crafts and a few state factories."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: grain from Rumelia and Anatolia."
+    },
+    "annualCohort": {
+      "low": 130000,
+      "mid": 170000,
+      "high": 270000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue ratio of the France 1805 snapshot (~1.05% of population a year) applied to the ~60-65% Muslim share eligible for conscription; high = whole population."
+    },
+    "production": {
+      "artillery": {
+        "low": 50,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Tophane arsenal output per year; most guns imported from Krupp."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 8000,
+      "mid": 15000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: engineered roads in Rumelia and western Anatolia."
+    },
+    "railKm": {
+      "low": 1600,
+      "mid": 1950,
+      "high": 2100,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: reconstruction: Oriental Railways in Rumelia ~1,180 km by 1874, Varna-Rustchuk 224 km, Banja Luka line ~100 km, Izmir lines ~400 km, Haydarpasa-Izmit 91 km."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Constantinople, Smyrna, Salonica, Varna, Batumi, Trebizond, Beirut, Basra."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 350000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: mostly sailing craft owned by Greek and Muslim merchants."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: pack trains and few roads."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 4000000,
+      "high": 6000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses, mules, oxen and camels."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Bosporus",
+      "Dardanelles",
+      "Danube line",
+      "Shipka Pass",
+      "Kars plateau"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: fortress system and Muslim population support; Balkan Christians hostile."
+    }
+  },
+  "notes": "Snapshot = Ottoman Empire in April 1877 (Russian declaration of war). Territory and population = directly ruled provinces (Rumelia, Bosnia, Anatolia, Arab provinces, Tripolitania); Egypt, Romania, Serbia and Montenegro excluded; includes is empty. Border uses world_1815 (nearest file at or before 1877), which includes the Danubian principalities. Personnel: nizam and mobilised redif = active; remaining redif and mustahfiz = trainedReserves; irregulars as infantry_light. Strengths from the Russo-Turkish War page (Allen and Muratoff; Olender) and the Ottoman Navy page; rail, merchant fleet and population split are reconstructions (grade C/D)."
+}

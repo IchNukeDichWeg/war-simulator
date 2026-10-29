@@ -1,0 +1,564 @@
+{
+  "id": "qing-1894",
+  "nationId": "qing",
+  "includes": [],
+  "name": "Qing dynasty",
+  "year": 1894,
+  "era": "industrial",
+  "region": "east_asia",
+  "phase": "decline",
+  "tags": [
+    "empire",
+    "Qing",
+    "First Sino-Japanese War",
+    "Self-Strengthening",
+    "Beiyang Fleet"
+  ],
+  "capital": {
+    "name": "Beijing",
+    "lat": 39.904,
+    "lon": 116.407,
+    "kind": "capital",
+    "population": 1000000
+  },
+  "places": [
+    {
+      "name": "Tianjin",
+      "lat": 39.13,
+      "lon": 117.2,
+      "kind": "port",
+      "population": 500000
+    },
+    {
+      "name": "Shanghai",
+      "lat": 31.23,
+      "lon": 121.47,
+      "kind": "port",
+      "population": 400000
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port",
+      "population": 1000000
+    },
+    {
+      "name": "Nanjing",
+      "lat": 32.06,
+      "lon": 118.8,
+      "kind": "city"
+    },
+    {
+      "name": "Hankou",
+      "lat": 30.58,
+      "lon": 114.27,
+      "kind": "city"
+    },
+    {
+      "name": "Mukden",
+      "lat": 41.8,
+      "lon": 123.43,
+      "kind": "city"
+    },
+    {
+      "name": "Weihaiwei",
+      "lat": 37.51,
+      "lon": 122.11,
+      "kind": "port"
+    },
+    {
+      "name": "Port Arthur (Lushun)",
+      "lat": 38.8,
+      "lon": 121.26,
+      "kind": "port"
+    },
+    {
+      "name": "Fuzhou Arsenal",
+      "lat": 26.07,
+      "lon": 119.3,
+      "kind": "port"
+    },
+    {
+      "name": "Shanhaiguan",
+      "lat": 40.0,
+      "lon": 119.75,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1880:Manchu Empire",
+    "areaKm2": {
+      "low": 11000000,
+      "mid": 11400000,
+      "high": 11700000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1880.geojson",
+      "note": "world_1880 polygon \"Manchu Empire\" = 11.01M km2 on the sphere; Qing claims incl. Mongolia, Tibet, Xinjiang and Taiwan ~11.4M km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 380000000,
+      "mid": 400000000,
+      "high": 421000000,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1894 = 421,000k; HYDE/Gapminder (OWID) China 1894 = 384M (modern borders). Qing figures are uncertain."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.065,
+      "high": 0.08,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) China 1890 = 6.4%, 1900 = 6.5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 700000,
+      "mid": 950000,
+      "high": 1220000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/First_Sino-Japanese_War",
+      "note": "First Sino-Japanese War page, table of Qing army size by source (Olender 2014 p. 89): actual totals 375,000 (Gawlikowski) to 998,500-1,255,000; Olender 1,070,000-1,220,000; Green Standard 450,000-600,000 actual, Bannermen ~100,000 actual of 250,000. Japanese General Staff expected no more than 350,000 effectives. COW milper 1894 = 1,000,000."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/First_Sino-Japanese_War",
+      "note": "Provincial militia (tuanlian): Olender gives at most 300,000 (page table)."
+    },
+    "supportPersonnel": {
+      "low": 40000,
+      "mid": 60000,
+      "high": 80000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery and fortress gunners ~30,000, navies ~15,000, arsenals and transport. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.004,
+      "mid": 0.006,
+      "high": 0.01,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the Qing state could not raise more than a few million men in total; effective modern forces stayed in the hundreds of thousands."
+    },
+    "mobilizable": {
+      "low": 1520000.0,
+      "mid": 2400000.0,
+      "high": 4210000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 200000,
+          "mid": 300000,
+          "high": 400000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/First_Sino-Japanese_War",
+          "note": "Braves (yongying) and trained units incl. the Huai Army (~45,000, the best armed, page) and Bannermen with modern rifles; page: 357,100 in Zhili, Shandong and Manchuria (Du Boulay) of which 125,030 trained men."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mixed Mausers, Remingtons, Winchesters and older muzzle-loaders"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: limited Western drill in the Huai Army only"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 300000,
+          "mid": 450000,
+          "high": 600000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/First_Sino-Japanese_War",
+          "note": "Green Standard Army, a 600,000-strong gendarmerie-type force with no peacetime military training (page; actual 450,000-600,000)."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: spears, matchlocks and some old rifles"
+        },
+        "training": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: no peacetime training (page)"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 80000,
+          "high": 120000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Banner and Mongol cavalry with the field forces."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: traditional arms"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: horsemanship good, modern tactics absent"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 400,
+          "mid": 800,
+          "high": 1500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns, many Krupp, scattered among provincial armies; coastal fortress guns excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Krupp breech-loaders mixed with old pieces"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: ammunition mismatches, little practice"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 25,
+          "grade": "C",
+          "source": "isbn:0-521-81714-5",
+          "note": "Paine, The Sino-Japanese War of 1894-1895 (2003) ch. 4: Beiyang Fleet 2 battleships (Dingyuan, Zhenyuan) and ~8 cruisers incl. 2 armoured, plus Nanyang, Fujian and Guangdong cruisers. Beiyang Fleet page: 78 ships of 83,900 tons in 1888, no new construction after 1888."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Dingyuan-class battleships unmatched in Asia but ageing, slow-firing guns"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: budget diverted to the Summer Palace 1889-94 (Beiyang Fleet page)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Beiyang_Fleet",
+          "note": "Torpedo boats, Rendel gunboats and training ships of the four fleets (Beiyang alone had 78 vessels of all types in 1888, page)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: torpedo boats and gunboats"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: poorly maintained"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25. Evidence: Li Hongzhang's regional command, no general staff, armies uncoordinated"
+    },
+    "cohesion": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25. Evidence: regional and personal armies, mass flight at Pyongyang"
+    },
+    "morale": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: unpaid, poorly led troops"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: imported magazine rifles and Krupp guns alongside traditional arms"
+    },
+    "armor": {
+      "low": 5.9,
+      "mid": 6.1,
+      "high": 6.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: none"
+    },
+    "ships": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Dingyuan-class battleships of 1881-85"
+    },
+    "fortification": {
+      "low": 6.2,
+      "mid": 6.4,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Krupp-armed forts at Port Arthur, Weihaiwei and Dagu"
+    },
+    "logistics": {
+      "low": 5.4,
+      "mid": 5.6,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (magazines + requisition). Evidence: about 435 km of railway, Grand Canal, porters"
+    },
+    "communications": {
+      "low": 6.1,
+      "mid": 6.3,
+      "high": 6.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: telegraph network since the 1880s"
+    },
+    "isr": {
+      "low": 5.6,
+      "mid": 5.8,
+      "high": 6.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (1805). Evidence: mistook Japanese scouting cruisers for the main fleet (First Sino-Japanese War page)"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 912,
+      "mid": 964,
+      "high": 972,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) China 1887 = 912, 1890 = 964, 1900 = 972."
+    },
+    "gdp": {
+      "low": 346560000000,
+      "mid": 385600000000,
+      "high": 409212000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.012,
+      "mid": 0.02,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Qing revenue was ~3% of output and military and naval spending under half of it."
+    },
+    "industrialShare": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: handicrafts and a few arsenals and mills."
+    },
+    "foodSurplus": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: dense peasant agriculture near subsistence."
+    },
+    "annualCohort": {
+      "low": 3610000.0,
+      "mid": 4200000.0,
+      "high": 4842000.0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: France 1805 snapshot ratio, males reaching military age = 0.95-1.15% of population per year (Elting ch. 9), applied to this population. "
+    },
+    "production": {
+      "artillery": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Jiangnan, Tianjin and Hanyang arsenal output of field guns per year."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Fuzhou yard built only small cruisers; capital ships came from Europe."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: imperial post roads, mostly unimproved."
+    },
+    "railKm": {
+      "low": 400,
+      "mid": 435,
+      "high": 450,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline China 1894 = 435 km (Tianjin-Shanhaiguan and Kaiping lines)."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Tianjin/Dagu, Port Arthur, Weihaiwei, Shanghai, Fuzhou, Xiamen, Guangzhou, Ningbo."
+    },
+    "merchantTonnage": {
+      "low": 58000.0,
+      "mid": 68000.0,
+      "high": 72000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 45k tons (China 1894, modern steamers only; the large junk fleet is unregistered and excluded, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: porters and carts, rivers and canals."
+    },
+    "draftAnimals": {
+      "low": 15000000,
+      "mid": 25000000,
+      "high": 35000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses, mules, donkeys and draught oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Bohai Strait (Lushun-Penglai)",
+      "Shanhaiguan pass",
+      "Yalu River crossing",
+      "Taiwan Strait"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: depth, fortified ports and population; no harsh-climate factor against a neighbouring invader."
+    }
+  },
+  "notes": "Snapshot = Qing China in July 1894 at the outbreak of the First Sino-Japanese War. Territory and population = the Qing empire incl. Manchuria, Mongolia, Tibet, Xinjiang and Taiwan; Korea (tributary) excluded; includes is empty. Personnel: Bannermen, Green Standard, braves and trained units = active (Green Standard counted as infantry_light given its gendarmerie role); militia = trainedReserves. Army size is genuinely disputed (375,000 to over 1.2M, First Sino-Japanese War page table); the wide range is deliberate. Naval and artillery counts are reconstructions."
+}

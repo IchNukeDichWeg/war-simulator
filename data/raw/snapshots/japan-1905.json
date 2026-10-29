@@ -1,0 +1,575 @@
+{
+  "id": "japan-1905",
+  "nationId": "japan",
+  "includes": [],
+  "name": "Empire of Japan",
+  "year": 1905,
+  "era": "industrial",
+  "region": "east_asia",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "Meiji",
+    "Russo-Japanese War",
+    "Tsushima",
+    "conscription"
+  ],
+  "capital": {
+    "name": "Tokyo",
+    "lat": 35.68,
+    "lon": 139.69,
+    "kind": "capital",
+    "population": 1800000
+  },
+  "places": [
+    {
+      "name": "Osaka",
+      "lat": 34.69,
+      "lon": 135.5,
+      "kind": "city",
+      "population": 1000000
+    },
+    {
+      "name": "Kyoto",
+      "lat": 35.01,
+      "lon": 135.77,
+      "kind": "city",
+      "population": 380000
+    },
+    {
+      "name": "Nagoya",
+      "lat": 35.18,
+      "lon": 136.91,
+      "kind": "city",
+      "population": 290000
+    },
+    {
+      "name": "Yokosuka",
+      "lat": 35.28,
+      "lon": 139.67,
+      "kind": "port"
+    },
+    {
+      "name": "Kure",
+      "lat": 34.25,
+      "lon": 132.57,
+      "kind": "port"
+    },
+    {
+      "name": "Sasebo",
+      "lat": 33.16,
+      "lon": 129.72,
+      "kind": "port"
+    },
+    {
+      "name": "Maizuru",
+      "lat": 35.47,
+      "lon": 135.39,
+      "kind": "port"
+    },
+    {
+      "name": "Hiroshima (Ujina)",
+      "lat": 34.39,
+      "lon": 132.45,
+      "kind": "port"
+    },
+    {
+      "name": "Nagasaki",
+      "lat": 32.75,
+      "lon": 129.88,
+      "kind": "port"
+    },
+    {
+      "name": "Shimonoseki Strait",
+      "lat": 33.96,
+      "lon": 130.94,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1900:Imperial Japan",
+    "areaKm2": {
+      "low": 369000,
+      "mid": 382000,
+      "high": 382000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1900.geojson",
+      "note": "world_1900 polygon \"Imperial Japan\" = 369,100 km2 on the sphere (Japan proper and Kurils, without Taiwan); official area of Japan proper ~382,000 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 46600000,
+      "mid": 46800000,
+      "high": 47100000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1905 = 46,620k (Japan proper); HYDE/Gapminder (OWID) 47.0M. Taiwan and Korea excluded."
+    },
+    "urbanization": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Japan 1900 = 20.9%; COW upop 1905 = 4,833k (cities 100k+) = 10.4% (low)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 650000,
+      "mid": 750000,
+      "high": 900000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "note": "Russo-Japanese War infobox: Japan 1,200,000 total mobilised, 650,000 peak (in the field); plus depots at home and the navy (~45,000). Mukden (Feb-Mar 1905) ~270,000 Japanese."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 450000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "note": "Page: 850,000 trained men available at the outbreak (active + 1st reserve 380,000, 2nd reserve 200,000, conscript reserve 50,000, kokumin 220,000), most already called by 1905; remaining kokumin and replacement drafts."
+    },
+    "supportPersonnel": {
+      "low": 170000,
+      "mid": 200000,
+      "high": 240000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery ~60,000, engineers, transport (hojukohei) and medical ~95,000, navy ~45,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+      "note": "Page: 1,200,000 mobilised in 1904-05 of ~46.6M = 2.6%, with 4,250,000 untrained men in the reserve pool."
+    },
+    "mobilizable": {
+      "low": 1398000.0,
+      "mid": 1872000.0,
+      "high": 2826000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 440000,
+          "mid": 500000,
+          "high": 560000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+          "note": "Page: 257,000 infantry immediately available in 1904 (division 11,400 infantry); 4 new divisions and reserve brigades formed in 1904; ~65% of the field army infantry by 1905."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Arisaka Type 30 rifle, machine guns added during the war"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: 3-year conscripts; reserves had a full year of training, cut to 6 months as losses mounted (page)"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 11000,
+          "mid": 15000,
+          "high": 18000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+          "note": "Page: 11,000 cavalry at the outbreak (2 brigades plus divisional regiments, 430 per division), expanded in 1904."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: small horses"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: weakest arm, often dismounted"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1000,
+          "mid": 1300,
+          "high": 1600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Russo-Japanese_War",
+          "note": "Page: 894 guns immediately available (Connaughton) or 1,080 field guns plus 120-150 heavy (Olender) at the outbreak; more by 1905 incl. 28 cm siege howitzers at Port Arthur."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Type 31 75 mm, not a true quick-firer"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: indirect fire used well at the Yalu"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 33,
+          "mid": 35,
+          "high": 38,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Tsushima",
+          "note": "Tsushima order of battle (page): 4 battleships, 29 cruisers (incl. 8 armoured), plus the old ex-Chinese ironclad Chin'en; coast-defence ships at home."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: British-built Mikasa class, Shimose powder"
+        },
+        "training": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: crossed the T at Tsushima, lost 3 torpedo boats against 6 Russian battleships sunk (page)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 70,
+          "mid": 75,
+          "high": 90,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Tsushima",
+          "note": "Page: 21 destroyers, 45 torpedo boats and 4 gunboats at Tsushima."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: British- and Japanese-built destroyers"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: night torpedo attacks at Tsushima"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Oyama and Kodama on land, Togo at sea (best-in-era naval command)"
+    },
+    "cohesion": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: regional regiments, frontal assaults at Port Arthur pressed despite losses"
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: nationalist mobilisation, victories since 1894"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: magazine rifles, machine guns, field guns"
+    },
+    "armor": {
+      "low": 6.6,
+      "mid": 6.7,
+      "high": 6.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: no armoured cars or helmets"
+    },
+    "ships": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: modern pre-dreadnoughts, wireless"
+    },
+    "fortification": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: coastal forts, field trenches at Mukden"
+    },
+    "logistics": {
+      "low": 6.6,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: sea lift to Korea and Manchuria, light field railways"
+    },
+    "communications": {
+      "low": 6.9,
+      "mid": 7.0,
+      "high": 7.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: field telephones, naval wireless (Shinano Maru report at Tsushima)"
+    },
+    "isr": {
+      "low": 6.8,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (1905). Evidence: wireless-equipped scouting cruisers, balloons at Port Arthur"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2050,
+      "mid": 2111,
+      "high": 2179,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) Japan 1904 = 2,179, 1905 = 2,111."
+    },
+    "gdp": {
+      "low": 95530000000,
+      "mid": 98795000000,
+      "high": 102631000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.045,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds): 1904 = 67,273, 1905 = 73,031. Against a GNP of ~3bn yen (~300M pounds) that is ~20-25% in war; peacetime ~4-5%."
+    },
+    "industrialShare": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: mining and manufacturing about a fifth of output (Ohkawa estimates)."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: rice-based agriculture, small net rice imports."
+    },
+    "annualCohort": {
+      "low": 400000,
+      "mid": 440000,
+      "high": 480000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue ratio of the France 1805 snapshot (~0.95% of population reaching 20 each year) applied to 46.8M."
+    },
+    "production": {
+      "artillery": {
+        "low": 300,
+        "mid": 500,
+        "high": 800,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Osaka Arsenal field-gun output per year."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: cruisers and battleships completed per year in Japanese yards (Kure, Yokosuka); battleships still bought in Britain."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 25000,
+      "mid": 40000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: national and prefectural roads."
+    },
+    "railKm": {
+      "low": 5735,
+      "mid": 5843,
+      "high": 7000,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Japan 1904 = 5,735 km, 1905 = 5,843 km. High adds the Seoul-Busan line and military light railways in Korea and Manchuria."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 10,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Yokosuka, Kure, Sasebo, Maizuru, Yokohama, Kobe, Osaka, Nagasaki, Moji, Ujina."
+    },
+    "merchantTonnage": {
+      "low": 1222000.0,
+      "mid": 1410000.0,
+      "high": 1504000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 940k tons (Japan 1905, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: sea and light-rail supply in Manchuria."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 2500000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and cattle."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Keelung, Taiwan",
+        "lat": 25.13,
+        "lon": 121.74,
+        "kind": "port"
+      },
+      {
+        "name": "Busan, Korea",
+        "lat": 35.1,
+        "lon": 129.04,
+        "kind": "port"
+      },
+      {
+        "name": "Chemulpo (Incheon), Korea",
+        "lat": 37.47,
+        "lon": 126.62,
+        "kind": "port"
+      },
+      {
+        "name": "Masan / Chinhae Bay, Korea",
+        "lat": 35.2,
+        "lon": 128.57,
+        "kind": "port"
+      },
+      {
+        "name": "Dalny (captured 1904)",
+        "lat": 38.91,
+        "lon": 121.6,
+        "kind": "port"
+      },
+      {
+        "name": "Port Arthur (captured January 1905)",
+        "lat": 38.8,
+        "lon": 121.26,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Tsushima Strait",
+      "Shimonoseki Strait",
+      "Tsugaru Strait",
+      "Korea Strait"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: island home, coastal forts, strong population support."
+    }
+  },
+  "notes": "Snapshot = Empire of Japan in spring 1905 (Mukden, March; Tsushima, May), army on war footing. Population and territory = Japan proper; Taiwan (colony) and Korea are bases, not included; includes is empty. Personnel: mobilised army and navy = active; untapped kokumin and replacement drafts = trainedReserves. Strengths from the Russo-Japanese War page (Connaughton; Olender) and the Tsushima page. Branch split is a reconstruction (grade C)."
+}

@@ -1,0 +1,598 @@
+{
+  "id": "germany-1871",
+  "nationId": "germany",
+  "includes": [],
+  "name": "German Empire",
+  "year": 1871,
+  "era": "industrial",
+  "region": "europe",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "Franco-Prussian War",
+    "unification",
+    "general staff",
+    "conscription"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 826000
+  },
+  "places": [
+    {
+      "name": "Hamburg",
+      "lat": 53.55,
+      "lon": 10.0,
+      "kind": "port",
+      "population": 240000
+    },
+    {
+      "name": "Munich",
+      "lat": 48.14,
+      "lon": 11.58,
+      "kind": "city",
+      "population": 170000
+    },
+    {
+      "name": "Dresden",
+      "lat": 51.05,
+      "lon": 13.74,
+      "kind": "city",
+      "population": 177000
+    },
+    {
+      "name": "Breslau",
+      "lat": 51.11,
+      "lon": 17.03,
+      "kind": "city",
+      "population": 208000
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.94,
+      "lon": 6.96,
+      "kind": "city",
+      "population": 129000
+    },
+    {
+      "name": "Kiel",
+      "lat": 54.32,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Wilhelmshaven",
+      "lat": 53.52,
+      "lon": 8.13,
+      "kind": "port"
+    },
+    {
+      "name": "Danzig",
+      "lat": 54.35,
+      "lon": 18.65,
+      "kind": "port"
+    },
+    {
+      "name": "Metz",
+      "lat": 49.12,
+      "lon": 6.18,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.57,
+      "lon": 7.75,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mainz",
+      "lat": 49.99,
+      "lon": 8.25,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1878:Germany",
+    "areaKm2": {
+      "low": 502000,
+      "mid": 541000,
+      "high": 541000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1878.geojson",
+      "note": "No basemap file at or before 1871 contains the German Empire (world_1815 has only the separate states and no Alsace-Lorraine), so the world_1878 polygon is used; the frontier did not change 1871-1878. Polygon = 502,600 km2 on the sphere; official area 540,858 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 40000000,
+      "mid": 41000000,
+      "high": 41100000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1871 = 41,030k incl. Alsace-Lorraine; 1 December 1871 census 41.06M."
+    },
+    "urbanization": {
+      "low": 0.15,
+      "mid": 0.24,
+      "high": 0.36,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) Germany 1870 = 14.8% (low); 1871 census: 36% in places of 2,000+ (high); towns of 5,000+ ~24%. COW upop 1871 = 1,832k (cities 100k+)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 850000,
+      "mid": 950000,
+      "high": 1050000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Franco-Prussian War infobox (Clodfelter 2017 p. 184): German peak field army strength 949,337; 1,113,254 men and 33,101 officers went to France during the war, a further 348,057 stayed in Germany. COW NMC v7 milper 1871 = 1,000k. Snapshot January 1871, army on war footing."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Landwehr and Ersatz reserves still in Germany (part of the 348,057) not already counted, plus untapped trained classes."
+    },
+    "supportPersonnel": {
+      "low": 130000,
+      "mid": 150000,
+      "high": 180000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Field and siege artillery ~70,000, pioneers, railway troops, train and medical ~70,000, navy ~6,000. Reconstruction."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+      "note": "Total German deployment 1,494,412 (Clodfelter via page) of ~40M = 3.7% in 1870-71; the 1914 effort later reached ~10%."
+    },
+    "mobilizable": {
+      "low": 1600000.0,
+      "mid": 2050000.0,
+      "high": 2877000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 570000,
+          "mid": 640000,
+          "high": 700000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Line, Guard, Landwehr and reserve infantry in France and Germany, January 1871; infantry was ~75% of German strength."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Dreyse needle gun outranged by the Chassepot (550 vs 1,400 m, page); Bavarians partly with the Werder"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: conscripts with reserve training, veterans of 1866"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Jaeger and Schuetzen battalions of all German contingents."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Dreyse rifles"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: marksmen"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 8000,
+          "mid": 10000,
+          "high": 12000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Prussian, Saxon and Bavarian cuirassiers and heavy reiter regiments."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Bredow's death ride at Mars-la-Tour succeeded"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: well trained"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 50000,
+          "high": 60000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Dragoons, hussars, uhlans and chevaulegers (~75 regiments)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: lances, carbines"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: deep reconnaissance screens ahead of the armies"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1700,
+          "mid": 2100,
+          "high": 2500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field guns of the armies (~1,600 at the outbreak) plus the Paris siege train (~300 heavy guns) by January 1871."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0. Evidence: Krupp steel breech-loaders, the era's best (page: longer range, faster fire than French bronze muzzle-loaders)"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: massed batteries at Sedan after the 1866 reforms"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 5,
+          "mid": 10,
+          "high": 14,
+          "grade": "C",
+          "source": "isbn:0-85177-133-5",
+          "note": "Conway's All the World's Fighting Ships 1860-1905: 5 ironclads (Koenig Wilhelm, Kronprinz, Friedrich Carl, Arminius, Prinz Adalbert) plus screw frigates and large corvettes."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Koenig Wilhelm a powerful ironclad"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: fleet stayed in port under French blockade (page)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: gunboats and avisos."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: gunboats"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: young navy"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.85,
+      "mid": 0.9,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 1.0. Evidence: Moltke and the General Staff, Sedan and Metz envelopments"
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: territorial corps, national war"
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: unbroken victories, proclamation of the Empire at Versailles 18 January 1871"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 6.7,
+      "mid": 6.8,
+      "high": 6.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: Krupp breech-loading steel artillery ahead of the curve, needle gun behind the Chassepot"
+    },
+    "armor": {
+      "low": 6.1,
+      "mid": 6.25,
+      "high": 6.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 6 (none / cuirass). Evidence: cuirassiers only"
+    },
+    "ships": {
+      "low": 6.3,
+      "mid": 6.5,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: small ironclad fleet"
+    },
+    "fortification": {
+      "low": 6.4,
+      "mid": 6.6,
+      "high": 6.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: Rhine fortresses, Metz and Strasbourg taken over"
+    },
+    "logistics": {
+      "low": 6.7,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: railway mobilisation; armies outran railheads and lived by requisition (van Creveld ch. 3)"
+    },
+    "communications": {
+      "low": 6.7,
+      "mid": 6.9,
+      "high": 7.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: field telegraph detachments"
+    },
+    "isr": {
+      "low": 6.3,
+      "mid": 6.5,
+      "high": 6.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 6 and 7. Evidence: uhlan screens"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military aircraft before 1911; balloons, where used, are counted under ISR."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2700,
+      "mid": 2896,
+      "high": 2931,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID) Germany 1870 = 2,931, 1871 = 2,896."
+    },
+    "gdp": {
+      "low": 108000000000,
+      "mid": 118736000000,
+      "high": 120464000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.025,
+      "mid": 0.06,
+      "high": 0.08,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex (thousands of pounds): 1870 = 42,993 (GMY), 1871 = 27,404, 1872 = 13,570. Against a national product of ~700M pounds: ~6% in the war year, ~2.5% in peace."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.33,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hoffmann's accounts put industry and crafts near 30% of German product in 1870-74."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: east Elbian grain surplus."
+    },
+    "annualCohort": {
+      "low": 430000,
+      "mid": 500000,
+      "high": 520000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Imperial_German_Army",
+      "note": "Page infobox: manpower reaching military age 500,000 (1871 estimate, citing Hohorst, Kocka and Ritter 1975)."
+    },
+    "production": {
+      "artillery": {
+        "low": 400,
+        "mid": 800,
+        "high": 1200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Krupp Essen and state arsenals field-gun output per year."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: warships largely bought abroad until the 1870s."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 70000,
+      "mid": 100000,
+      "high": 130000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: chaussees of the German states."
+    },
+    "railKm": {
+      "low": 21000,
+      "mid": 21579,
+      "high": 22000,
+      "grade": "B",
+      "source": "https://data.nber.org/chat/chat.dta",
+      "note": "CHAT railline Germany 1871 = 21,579 km (1870 = 18,261, 1872 = 22,539)."
+    },
+    "majorPorts": {
+      "low": 7,
+      "mid": 9,
+      "high": 11,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hamburg, Bremen/Bremerhaven, Kiel, Wilhelmshaven, Luebeck, Stettin, Danzig, Koenigsberg, Emden."
+    },
+    "merchantTonnage": {
+      "low": 1217000.0,
+      "mid": 1404000.0,
+      "high": 1498000.0,
+      "grade": "C",
+      "source": "derived:grt-to-dwt",
+      "note": "Registered merchant tonnage 936k tons (Germany 1871, CHAT dataset https://data.nber.org/chat/chat.dta, variable shipton_all) x 1.5 (range 1.3-1.6). CHAT tonnage is registered (largely net) tons, so this may understate deadweight."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War ch. 3: in 1870 the armies outran their railheads by 100-250 km and lived by requisition; trains jammed at the railheads."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 3400000,
+      "high": 3800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about 3.4M horses (1873 livestock count) plus oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-industrial-mass",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Rhine crossings",
+      "Belfort Gap",
+      "Kiel and the Danish straits",
+      "Vosges passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1-1.2 rows: Rhine fortress line and population support; no harsh-climate depth."
+    }
+  },
+  "notes": "Snapshot = German Empire on 18 January 1871 (proclamation at Versailles, siege of Paris). Border uses world_1878 because no earlier basemap contains the Empire; the frontier is identical. Population = Empire incl. Alsace-Lorraine (annexed formally May 1871); includes is empty because the south German states are part of the Empire, not separate nations. Personnel: the whole army on war footing = active (snapshot inside the war); Landwehr and Ersatz still at home = trainedReserves. Strengths from the Franco-Prussian War page (Clodfelter 2017 p. 184; Howard 1991). Branch split and artillery count are reconstructions (grade C/D)."
+}
