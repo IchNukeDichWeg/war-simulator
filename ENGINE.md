@@ -479,7 +479,9 @@ costing a pass, which was selection by outcome): `CASE_SUPPLY_RANGE_FROM_SNAPSHO
 logistics tech, then year; without it the AI distance scale is 1 km),
 `CASE_SUPPLY_RULE_ON` (campaign backtests run with the supply rule) and
 `CASE_CAPITAL_UNFORTIFIED` (a case side's main start position is not a
-fortress). Measured together: 19/16/24 -> 19/15/23. Stalingrad now ends on
+fortress). That start base is synthesized, not a capital, so losing it gives
+no `capitalLossShock` (`CAPITAL_SHOCK_REAL_ONLY`; the shock fires only for a
+real capital, and no case field marks one today). Measured together: 19/16/24 -> 19/15/23. Stalingrad now ends on
 day 6 by Axis morale collapse (out-of-supply pocket; ratio x0.18 and duration
 fail), Gulf War and France 1940 end by taking Kuwait City and Paris, Iraq
 2003 takes 25 days (ratio x0.50), Yom Kippur 70% -> 100%.

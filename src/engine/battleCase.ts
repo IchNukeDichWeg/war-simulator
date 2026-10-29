@@ -171,6 +171,7 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
     noProduction: true,
     voronoiControl: true,
     unfortifiedCapitals: CASE_CAPITAL_UNFORTIFIED,
+    syntheticCapitals: true,
   };
   return { data: { ...data, snapshots: [...data.snapshots, s0, s1] }, scenario, opts, warnings };
 }

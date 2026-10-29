@@ -46,6 +46,8 @@ export interface SimOptions {
   objectives?: [CaseObjective | null, CaseObjective | null];
   /** Capitals of synthesized backtest sides are ordinary places, not fortresses. */
   unfortifiedCapitals?: boolean;
+  /** Backtest cases: each side's 'capital' is its synthesized start base, not a real capital. */
+  syntheticCapitals?: boolean;
   noProduction?: boolean;
   /** Initial control by nearest start position instead of border polygons. */
   voronoiControl?: boolean;
@@ -104,6 +106,8 @@ export interface MemberRT {
   mobilizationDays: number; trainingDays: number;
   roadThroughput: number; railThroughput: number; portThroughput: number;
   capitalCell: number;
+  /** The capital is a real one (not a backtest case's synthesized start base). */
+  capitalReal: boolean;
   entryCell: number; entryBySea: boolean; entryCostKm: number; oneWayDays: number;
   /** Sea lift: troops per trip and round-trip days (0 when not overseas). */
   lift: number; roundTripDays: number;
@@ -492,7 +496,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       roadThroughput: byTech(m.logistics.throughputRoadTonsDay, tech.logistics),
       railThroughput: (snap.logistics?.railKm?.mid ?? 0) > 0 ? m.logistics.throughputRailTonsDay.mid : 0,
       portThroughput: byTech(m.logistics.throughputPortTonsDay, tech.logistics),
-      capitalCell: -1, entryCell: -1, entryBySea: false, entryCostKm: 0, oneWayDays: 0, lift: 0, roundTripDays: 0,
+      capitalCell: -1, capitalReal: !opts.syntheticCapitals, entryCell: -1, entryBySea: false, entryCostKm: 0, oneWayDays: 0, lift: 0, roundTripDays: 0,
       seaDependent: false, spawnCells: [], pMix, productionPerDay: prodDay,
       reserves: Math.max(0, snap.military.trainedReserves?.mid ?? 0),
       recruitsPerBatchDay: Math.max(0, (snap.economy.annualCohort?.mid ?? 0) * cohortFrac / 365),

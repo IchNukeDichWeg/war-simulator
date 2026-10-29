@@ -325,3 +325,9 @@ export const PURSUIT_AIR_SAME_UNITS = true;
  *  the whole campaign (QA round 3, C6). Measured (20 seeds, clean 69b3d1a): 20/15/20 unchanged;
  *  France 1940 95% -> 85%, Gulf War x2.29 -> x3.00 (at the edge), Yom Kippur 25% -> 45%. */
 export const SURPRISE_DAY_ONE_ONLY = true;
+/** morale.capitalLossShock fires only for a real capital, not for a backtest case's synthesized
+ *  start base (SimOptions.syntheticCapitals). No case field marks a real capital today, so the
+ *  shock does not fire in backtest cases (Stalingrad seed 1: -0.10 side morale on day 4 when the
+ *  Axis base fell). Decision logged in DECISIONS.md. Measured (20 seeds, clean a7049e7): 20/15/20
+ *  unchanged; Six-Day winner 55% -> 0% (ratio x0.39 -> x1.03), Iraq 2003 x0.13 -> x0.26. */
+export const CAPITAL_SHOCK_REAL_ONLY = true;

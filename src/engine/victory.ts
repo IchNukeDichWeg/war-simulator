@@ -8,7 +8,7 @@ import { lossFraction } from './formations';
 import { rule } from './mech';
 import { LC } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -68,6 +68,8 @@ export function controlPhase(ctx: Ctx): void {
       ms.capitalHeldDays++;
       if (!ms.capitalLost) {
         ms.capitalLost = true;
+        // a backtest case's synthesized start base is not a capital: no national morale shock
+        if (CAPITAL_SHOCK_REAL_ONLY && !mr.capitalReal) continue;
         for (let f = 0; f < F.n; f++) if (F.alive[f] && F.member[f] === mr.idx) F.morale[f] = Math.max(0, F.morale[f] - S.m.morale.capitalLossShock.mid);
         addEvent(ctx, (1 - mr.side) as 0 | 1, 'capture', `${mr.name} lost its capital ${mr.snap.capital?.name ?? ''}.`, `Morale shock ${S.m.morale.capitalLossShock.mid} on all its formations.`, mr.capitalCell);
       }
