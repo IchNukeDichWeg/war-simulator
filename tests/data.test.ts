@@ -12,7 +12,7 @@ describe('data validation', () => {
     expect(isbnValid('0-674-80930-0')).toBe(true);   // Brewer, The Sinews of Power
     expect(isbnValid('0-674-80930-6')).toBe(false);  // the same with a wrong check digit
     expect(isbnValid('978-0-674-80930-7')).toBe(true);
-    expect(isbnValid('0-8047-2399-X')).toBe(true);
+    expect(isbnValid('0-8044-2957-X')).toBe(true);   // X check digit
   });
 
   it('eras are half-open with historical year numbering', () => {
