@@ -93,6 +93,7 @@ async function main() {
     if (!pop) { console.log(`skip ${st.name}: no World Bank population (add a researched snapshot)`); continue; }
     const P = pop.mid;
     const urban = wbE('urbanPct', 'SP.URB.TOTL.IN.ZS', 0.05, 'A', 0.01) ?? est(ana((s) => s.demography.urbanization.mid), 0.3, 'D', 'derived:regional-analogy', anaNote);
+    clampFraction(urban);
     const border = await resolveBorder(`ne:${st.iso3}`);
     const area = wbE('landKm2', 'AG.LND.TOTL.K2', 0.02, 'A') ?? est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank land area; see border polygon');
 
@@ -155,6 +156,7 @@ async function main() {
       : est(P * ana((s) => s.economy.gdpPerCapita.mid), 0.5, 'D', 'derived:regional-analogy', `gdp per capita from ${anaNote}`);
     const gdppc = est(gdp.mid / P, 0.1, gdp.grade, gdp21 ? 'derived:ppp-rebase-2011' : 'derived:regional-analogy', 'gdp / population');
     const milShare = wbE('milexPctGdp', 'MS.MIL.XPND.GD.ZS', 0.15, 'A', 0.01) ?? est(noArmy ? 0 : ana((s) => s.economy.milSpendShare.mid), 0.5, 'D', 'derived:regional-analogy', anaNote);
+    clampFraction(milShare);
     const ind = wbE('industryPct', 'NV.IND.TOTL.ZS', 0.1, 'A', 0.01) ?? est(ana((s) => s.economy.industrialShare.mid), 0.3, 'D', 'derived:regional-analogy', anaNote);
     const m1519 = v('male1519Pct'), f1519 = v('female1519Pct'), mp = v('malePop'), fp = v('femalePop');
     const cohort = m1519 && f1519 && mp && fp
@@ -221,6 +223,8 @@ function hasCoast(mp: number[][][][], grid: Uint8Array): boolean {
   }
   return false;
 }
+/** Fractions cannot exceed 1 however wide the range is. */
+function clampFraction(e: Est) { e.high = Math.min(1, e.high); e.mid = Math.min(e.mid, e.high); e.low = Math.min(e.low, e.mid); }
 const round4 = (x: number) => Math.round(x * 1e4) / 1e4;
 
 main().catch((e) => { console.error(e); process.exit(1); });
