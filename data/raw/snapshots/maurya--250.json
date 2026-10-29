@@ -1,0 +1,536 @@
+{
+  "id": "maurya--250",
+  "nationId": "maurya",
+  "includes": [],
+  "name": "Maurya Empire",
+  "year": -250,
+  "era": "iron",
+  "region": "south_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "elephants",
+    "Ashoka",
+    "ancient India"
+  ],
+  "capital": {
+    "name": "Pataliputra",
+    "lat": 25.61,
+    "lon": 85.14,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Taxila",
+      "lat": 33.75,
+      "lon": 72.82,
+      "kind": "city"
+    },
+    {
+      "name": "Ujjain",
+      "lat": 23.18,
+      "lon": 75.78,
+      "kind": "city"
+    },
+    {
+      "name": "Mathura",
+      "lat": 27.49,
+      "lon": 77.67,
+      "kind": "city"
+    },
+    {
+      "name": "Tosali (Dhauli)",
+      "lat": 20.19,
+      "lon": 85.84,
+      "kind": "city"
+    },
+    {
+      "name": "Vidisha",
+      "lat": 23.52,
+      "lon": 77.81,
+      "kind": "city"
+    },
+    {
+      "name": "Kandahar",
+      "lat": 31.61,
+      "lon": 65.71,
+      "kind": "city"
+    },
+    {
+      "name": "Tamralipti",
+      "lat": 22.3,
+      "lon": 87.92,
+      "kind": "port"
+    },
+    {
+      "name": "Sopara",
+      "lat": 19.42,
+      "lon": 72.8,
+      "kind": "port"
+    },
+    {
+      "name": "Khyber Pass",
+      "lat": 34.08,
+      "lon": 71.1,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:bc300:Mauryan Empire",
+    "areaKm2": {
+      "low": 1950000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/87",
+      "note": "Seshat codes 4.0 million km2 (high). The historical-basemaps world_bc300 polygon (nearest file at or before -250 holding the polity) measures 1.95 million km2 on the sphere (computed from https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_bc300.geojson, low); it predates the Kalinga conquest (c. 261 BCE) and the southern extension. Mid 3.0M is between; older textbook figures of 5M include loosely held periphery."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 15000000,
+      "mid": 22000000,
+      "high": 35000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Maurya_Empire",
+      "note": "Dyson (2018, p. 24, quoted on the page): South Asia in Mauryan times (320-220 BCE) held 15-30 million; Sumit Guha treats 20 million as an upper limit. The empire covered most but not all of that (Tamil south and forest tribes outside), mid 22M; high 35M allows for older estimates (50-60M, e.g. HYDE India year 0 = 75M via OWID) that this file treats as too high. Seshat codes an unusable 15.5-181M range (https://seshat-db.com/core/polity/87)."
+    },
+    "urbanization": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pataliputra 50,000-270,000 (Seshat 87, uncertain), Taxila, Ujjain and other Ganges cities; overwhelmingly rural."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Megasthenes via Pliny gives Chandragupta 600,000 infantry, 30,000 cavalry, 8,000 chariots and 9,000 elephants (ancient claim, quoted on https://en.wikipedia.org/wiki/War_elephant); rejected as a mid. Kalinga alone is credited with 60,000 infantry, 1,000 cavalry and 700 elephants (same page). ~1% of a 22M population is the mid."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Guild (sreni) militias, allied and forest-tribe contingents reachable within a month."
+    },
+    "supportPersonnel": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mahouts and crews for ~2,500 elephants (2-3 each), chariot crews, the six war-office boards, commissariat and river transport."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Salaried standing army plus guild (sreni) and forest-tribe levies named in the Arthashastra; a few percent of the population is the ceiling for an agrarian empire of this kind."
+    },
+    "mobilizable": {
+      "low": 300000,
+      "mid": 660000,
+      "high": 1750000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 45000,
+          "mid": 90000,
+          "high": 180000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Spear and shield infantry of the salaried army; share of the active-force guess."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: iron spears and swords, little body armour"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: paid standing troops under the Arthashastra boards"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 25000,
+          "mid": 50000,
+          "high": 100000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers with the long bamboo bow described by Megasthenes/Arrian; share of the active-force guess."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: powerful but slow long bow"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: standing archers"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 10000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Hired (bhrta) light troops in state pay."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light weapons"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: paid troops"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 15000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horse; Pliny claims 30,000 (high). Indian cavalry was light and secondary to elephants."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 minus. Evidence: small horses, no stirrups"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: standing troops"
+        }
+      },
+      "chariots": {
+        "count": {
+          "low": 200,
+          "mid": 1000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Pliny/Megasthenes claim 8,000 (high); chariots were already declining in Indian warfare."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: heavy four-horse chariots, a generation behind"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: board of chariots in the war office"
+        }
+      },
+      "elephants": {
+        "count": {
+          "low": 1000,
+          "mid": 2500,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Platform count. Ancient claim 9,000 (Megasthenes/Pliny, high) and 500 ceded to Seleucus c. 303 BCE, called a small part of the Mauryan force (both on https://en.wikipedia.org/wiki/War_elephant)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era best). Evidence: largest elephant corps of the age, superintendent of elephants (gajadhyaksha)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: elephant sanctuaries and specialist trainers per the Arthashastra"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: centralised war office of 30 members in six boards (Megasthenes); Kalinga conquered c. 261"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: salaried standing army paid from the treasury (Arthashastra), allied contingents less cohesive"
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5. Evidence: Ashoka renounced conquest after Kalinga; no major war in progress"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 2.8,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (300 BCE iron weapons). Evidence: iron swords and spears, long bamboo bow; no torsion artillery attested in use"
+    },
+    "armor": {
+      "low": 2.3,
+      "mid": 2.6,
+      "high": 2.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 (bronze scale) and 3. Evidence: Arthashastra lists armour types, but Greek sources describe lightly armoured troops"
+    },
+    "ships": {
+      "low": 2.0,
+      "mid": 2.5,
+      "high": 3.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 and 3. Evidence: superintendent of ships; river and coastal craft on the Ganges and the Bay of Bengal"
+    },
+    "fortification": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (ashlar walls, siege towers). Evidence: Pataliputra timber wall with 64 gates and 570 towers (Megasthenes, on the Maurya page)"
+    },
+    "logistics": {
+      "low": 2.8,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (engineered roads, depots). Evidence: Uttarapatha road Bengal to Taxila, state granaries and storehouses"
+    },
+    "communications": {
+      "low": 2.6,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (mounted relay posts). Evidence: courier system and edicts posted across the empire"
+    },
+    "isr": {
+      "low": 2.8,
+      "mid": 3.1,
+      "high": 3.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: extensive spy network prescribed by the Arthashastra"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 800,
+      "mid": 950,
+      "high": 1150,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison 2023 (via OWID grapher CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) has no India value before 1600 (1,264); its year-1 values are Egypt 1,116, Iran 1,116, Belgium/France 956 (2011 int$). Ancient South Asia placed in that band."
+    },
+    "gdp": {
+      "low": 12000000000,
+      "mid": 20900000000,
+      "high": 40250000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large salaried army and elephant establishment paid from land revenue; no budget survives."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. State workshops, mining and guild crafts in a mostly agrarian economy."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Fertile Ganges plain with rice double-cropping; state granaries."
+    },
+    "annualCohort": {
+      "low": 142000,
+      "mid": 209000,
+      "high": 332000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3000,
+      "mid": 6000,
+      "high": 12000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The Uttarapatha ran ~2,500 km from Bengal to Taxila; other roads linked the Narmada basin and the south (Stein, on the Maurya page)."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tamralipti, Sopara, Bharukaccha."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 20000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Coastal and Bay of Bengal trade craft; no figures."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ox-cart and elephant trains; armies operated within the road network."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 5000000,
+      "high": 10000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen, buffalo and some horses across a 22M agrarian population."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-classical-infantry",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Khyber Pass",
+      "Bolan Pass",
+      "Vindhya passes",
+      "Ganges crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 (familiar terrain, local supply) to 1.2 (fortified cities like Pataliputra). Monsoon floods hamper invaders."
+    }
+  },
+  "notes": "Snapshot c. 250 BCE under Ashoka, after the Kalinga war (c. 261 BCE; Ashoka claims 100,000 killed and 150,000 deported, https://en.wikipedia.org/wiki/Kalinga_War). Population convention: everything inside the empire, Dyson's low modern range for South Asia; older figures of 50-60 million are treated as the high end only. All army figures from Megasthenes, Pliny and Plutarch (600,000 infantry, 30,000 cavalry, 8,000-9,000 elephants) are ancient claims and only bound the high side. Elephants and chariots are platforms; mahouts and crews are in supportPersonnel. Border: world_bc300 is the nearest file at or before the year that contains the polity; it understates the extent (no Kalinga, no Deccan), so areaKm2 mid is researched, not the polygon. GDP per capita is a regional analogy (grade D). Ratings use the rubric in data/SOURCES.md. Personnel: active = the hereditary (maula) and hired (bhrta) troops in state pay with the royal elephants and chariots; trainedReserves = guild (sreni), allied and forest-tribe (atavi) levies; mobilizable = population x ratio."
+}

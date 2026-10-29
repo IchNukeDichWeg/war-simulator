@@ -1,0 +1,561 @@
+{
+  "id": "gupta-400",
+  "nationId": "gupta",
+  "includes": [],
+  "name": "Gupta Empire",
+  "year": 400,
+  "era": "iron",
+  "region": "south_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "classical India",
+    "elephants",
+    "horse archers"
+  ],
+  "capital": {
+    "name": "Pataliputra",
+    "lat": 25.61,
+    "lon": 85.14,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Ujjain (second capital)",
+      "lat": 23.18,
+      "lon": 75.78,
+      "kind": "city"
+    },
+    {
+      "name": "Mathura",
+      "lat": 27.49,
+      "lon": 77.67,
+      "kind": "city"
+    },
+    {
+      "name": "Prayaga",
+      "lat": 25.44,
+      "lon": 81.85,
+      "kind": "city"
+    },
+    {
+      "name": "Vidisha (Udayagiri)",
+      "lat": 23.54,
+      "lon": 77.77,
+      "kind": "city"
+    },
+    {
+      "name": "Ayodhya (Saketa)",
+      "lat": 26.8,
+      "lon": 82.2,
+      "kind": "city"
+    },
+    {
+      "name": "Varanasi",
+      "lat": 25.32,
+      "lon": 83.01,
+      "kind": "city"
+    },
+    {
+      "name": "Tamralipti",
+      "lat": 22.3,
+      "lon": 87.92,
+      "kind": "port"
+    },
+    {
+      "name": "Bharukaccha (Bharuch)",
+      "lat": 21.7,
+      "lon": 72.98,
+      "kind": "port"
+    },
+    {
+      "name": "Junagadh",
+      "lat": 21.52,
+      "lon": 70.46,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:400:Gupta Empire",
+    "areaKm2": {
+      "low": 1700000,
+      "mid": 2480000,
+      "high": 3500000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Gupta_Empire",
+      "note": "Infobox: 3.5 million km2 (high, Turchin et al.) and 1.7 million (low, Taagepera). The world_400 Gupta Empire polygon measures 2.48 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_400.geojson, mid). Seshat codes only 0.8-0.9 million for 320 CE, before Samudragupta's conquests."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 20000000,
+      "mid": 35000000,
+      "high": 75000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The Wikipedia Gupta Empire infobox (https://en.wikipedia.org/wiki/Gupta_Empire) gives 75,000,000 for the 5th century (high; a Maddison-type all-India figure). HYDE puts all of India at 90M in 400 (OWID https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true); Dyson's 15-30M for Mauryan times implies far less. The Guptas held the Ganges plain, Malwa and Gujarat, perhaps 40-50% of the subcontinent; mid 35M is an educated split."
+    },
+    "urbanization": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pataliputra ~150,000 (Seshat 388); Faxian (405-411) describes populous towns in Magadha and Mathura."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 80000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No contemporary army figure survives (Wikipedia notes a paucity of sources). Scaled from population (~0.4%) and from the Maurya snapshot."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Feudatory (samanta) contingents and allied kings who paid tribute."
+    },
+    "supportPersonnel": {
+      "low": 5000,
+      "mid": 12000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mahouts (2-3 per elephant), siege engineers, river craft crews and commissariat."
+    },
+    "mobilizationRatio": {
+      "low": 0.015,
+      "mid": 0.025,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Royal army plus contingents of feudatory (samanta) rulers; an agrarian ceiling of a few percent."
+    },
+    "mobilizable": {
+      "low": 300000,
+      "mid": 875000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 60000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured horse archers and sword cavalry, the core of the army (Gupta Empire page; coins of Chandragupta II show mounted archers)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: heavy cavalry archers, a Gupta innovation in Indian warfare"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: royal household troops"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 12000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light horse and scouts."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 55000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal spear and sword infantry; feudatory contingents are in trainedReserves."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed royal and feudatory troops"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 60000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers with the Indian long bow."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: long bow"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 10000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry supporting cavalry and elephants (Gupta Empire page)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light kit"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: levies"
+        }
+      },
+      "elephants": {
+        "count": {
+          "low": 500,
+          "mid": 1000,
+          "high": 2500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Elephant corps under a mahapilupati; village patrol units of one elephant, one chariot, three horse and five foot (War elephant page)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: trained war elephants with dedicated officers"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: standing elephant establishment"
+        }
+      },
+      "chariots": {
+        "count": {
+          "low": 0,
+          "mid": 100,
+          "high": 500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Chariotry was still one of the five arms but obsolescent."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: obsolete"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: ceremonial"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Samudragupta's and Chandragupta II's campaigns; Western Satraps defeated by c. 395-409"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: royal core plus feudatory contingents"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (recent victories). Evidence: conquest of Malwa, Gujarat and Saurashtra"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.1,
+      "mid": 3.3,
+      "high": 3.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (300 BCE) plus. Evidence: iron and steel weapons, horse archery, siege engines (Gupta Empire page)"
+    },
+    "armor": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (mail, cuirass). Evidence: armoured cavalry archers"
+    },
+    "ships": {
+      "low": 2.3,
+      "mid": 2.6,
+      "high": 3.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 and 3. Evidence: ships named among the five arms (Gunaighar copper plate); coastal trade"
+    },
+    "fortification": {
+      "low": 2.8,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: walled cities and hill forts"
+    },
+    "logistics": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: roads and river transport of the Ganges basin"
+    },
+    "communications": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: courier system"
+    },
+    "isr": {
+      "low": 2.6,
+      "mid": 2.9,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: spies and scouts on the classical Indian model"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 850,
+      "mid": 1000,
+      "high": 1200,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison 2023 (via OWID grapher CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) has no India value before 1600 (1,264); its year-1 values are Egypt 1,116, Iran 1,116, Belgium/France 956 (2011 int$). Ancient South Asia placed in that band."
+    },
+    "gdp": {
+      "low": 17000000000,
+      "mid": 35000000000,
+      "high": 90000000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.07,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Feudatory system shifted part of the military burden off the treasury."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.13,
+      "high": 0.17,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Iron metallurgy (Delhi iron pillar of this reign), textiles, guild crafts."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ganges plain agriculture."
+    },
+    "annualCohort": {
+      "low": 190000,
+      "mid": 332000,
+      "high": 712000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3000,
+      "mid": 7000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Uttarapatha and Dakshinapatha trade roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tamralipti, Bharukaccha and Saurashtra ports after the Satrap conquest."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Indian Ocean trade to Southeast Asia and the west; no figures."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ox-cart and river logistics."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 6000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen and buffalo of an agrarian population of ~35M."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-classical-infantry",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Khyber Pass",
+      "Vindhya passes",
+      "Ganges crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1-1.2 row: familiar terrain, fortified cities, monsoon."
+    }
+  },
+  "notes": "Snapshot 400 CE under Chandragupta II, after the conquest of the Western Satraps. No contemporary army count survives; all force numbers are educated guesses scaled from population and from the Maurya snapshot, so the army block is the weakest part. Kalidasa's claim of 21 kingdoms conquered is poetry. Population convention: directly ruled lands; tributary kings and frontier republics are excluded. Era is iron (classical, before 476) per the schema spans. Personnel: active = the royal army and elephant corps; trainedReserves = feudatory (samanta) and allied contingents; mobilizable = population x ratio."
+}

@@ -1,0 +1,601 @@
+{
+  "id": "ming-1420",
+  "nationId": "ming",
+  "includes": [],
+  "name": "Ming dynasty",
+  "year": 1420,
+  "era": "medieval",
+  "region": "east_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Yongle",
+    "treasure fleet",
+    "early firearms"
+  ],
+  "capital": {
+    "name": "Beijing",
+    "lat": 39.91,
+    "lon": 116.39,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Nanjing",
+      "lat": 32.06,
+      "lon": 118.8,
+      "kind": "city"
+    },
+    {
+      "name": "Xuanfu",
+      "lat": 40.61,
+      "lon": 115.04,
+      "kind": "fortress"
+    },
+    {
+      "name": "Datong",
+      "lat": 40.08,
+      "lon": 113.3,
+      "kind": "fortress"
+    },
+    {
+      "name": "Liaoyang",
+      "lat": 41.27,
+      "lon": 123.17,
+      "kind": "fortress"
+    },
+    {
+      "name": "Jiayu Pass",
+      "lat": 39.8,
+      "lon": 98.21,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Shanhai Pass",
+      "lat": 40.01,
+      "lon": 119.75,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Liujiagang (treasure fleet anchorage)",
+      "lat": 31.61,
+      "lon": 121.17,
+      "kind": "port"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port"
+    },
+    {
+      "name": "Jiaozhi (Hanoi, occupied)",
+      "lat": 21.03,
+      "lon": 105.85,
+      "kind": "city"
+    },
+    {
+      "name": "Hangzhou",
+      "lat": 30.27,
+      "lon": 120.16,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1492:Ming Empire",
+    "areaKm2": {
+      "low": 3800000,
+      "mid": 3900000,
+      "high": 4200000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/269",
+      "note": "Seshat codes 3,900,000 km2 for 1400 (mid). The world_1492 Ming Empire polygon measures 4.16 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1492.geojson, high). Occupied Jiaozhi (northern Vietnam, 1407-1427) adds ~0.1 million, not in the polygon."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 60500000,
+      "mid": 90000000,
+      "high": 100000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Ming_dynasty",
+      "note": "William Atwell estimates ~90 million around 1400, citing Heijdra and Mote (mid); the 1393 census gave 60,545,812 (low), revised by Ping-ti Ho to 65 million for areas not counted (Ming dynasty page). Seshat codes 60.5-66.6M for 1400 from the registers. Brook: post-1393 registers (51-62M) undercount a rising population."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nanjing and Beijing several hundred thousand each (Seshat largest settlement 150,000 for 1400 is low); HYDE China 1500 urban share ~6.5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1200000,
+      "mid": 1600000,
+      "high": 2000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Nominal 1393 establishment: 326 guards x 5,600 + 65 battalions x 1,120 = 1,898,400 (Dreyer 1988 p. 104 via https://en.wikipedia.org/wiki/Hongwu_Emperor; unit sizes from Wakeman via the Military of the Ming dynasty page). Yongle added guards for the Beijing move but abolished most princely guards. Real strength below nominal (by the 16th century 845,000 actual against 3 million registered, Swope 2009); early in the dynasty the gap was smaller, so mid ~85% of nominal."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 400000,
+      "high": 800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Military-household men not on rotation, garrison farm soldiers (tuntian) recallable within a month."
+    },
+    "supportPersonnel": {
+      "low": 150000,
+      "mid": 230000,
+      "high": 350000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Navy crews (nominally 5,000 seamen per naval wei), 160,000 soldiers on 15,000 Grand Canal grain ships (Ebrey 2006 via the Yongle Emperor page), staff and arsenal workers."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hereditary military households (weisuo) were a fixed share of registered households; total war above that drew on civilian levies."
+    },
+    "mobilizable": {
+      "low": 1210000,
+      "mid": 2700000,
+      "high": 5000000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 100000,
+          "mid": 150000,
+          "high": 220000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mounted archers, including Mongol and Jurchen units incorporated by Hongwu; Yongle favoured a cavalry army on the Yuan model (Military of the Ming page)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: good horses from tribute and Korea (thousands sent 1403-1407)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: campaigned yearly against the Mongols"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 30000,
+          "mid": 50000,
+          "high": 80000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured cavalry of the capital and northern garrisons."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: lamellar and brigandine"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: capital training divisions"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 450000,
+          "mid": 650000,
+          "high": 850000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Weisuo infantry, spear and sword plus early hand-gunners; gunpowder infantry counts here at tech 4-5."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: hand cannon and fire lances alongside polearms"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: hereditary soldier-farmers rotating into drill at the capital (Swope 2009 p. 19)"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 250000,
+          "mid": 400000,
+          "high": 550000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers and crossbowmen."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: composite bows and crossbows"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: hereditary soldiers"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 100000,
+          "high": 150000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Native auxiliaries (tusi troops) on garrison duty in the southwest and Jiaozhi."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 minus. Evidence: light"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: militia"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Bronze and iron cannon on walls and in field units; Ming troops used firearms against Viet elephants in 1406-07 (War elephant page)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: among the earliest mass-produced cannon"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: capital firearms units"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 200,
+          "mid": 400,
+          "high": 800,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Treasure-fleet ships and large warships. The first voyage (1405) had ~28,000 crew (Zheng He page); the Taizong Shilu records orders for at least 2,868 ships in 1403-1419 (Dreyer 2007 pp. 116-117 via the Ming treasure voyages page), most of them transports and smaller craft. Mid ~400 large hulls is roughly the treasure-fleet core plus coastal-guard flagships."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: largest wooden fleet of the age, gun-armed (Lo and Elleman call it the world's foremost navy)"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: six voyages of experience by 1420"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 1000,
+          "mid": 2000,
+          "high": 3000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Coastal guard warships: Hongwu ordered 56 naval wei of 50 warships each (2,800 nominal), most under strength (Military of the Ming page)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: era-typical junks"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: garrison crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75 (proven commanders). Evidence: Yongle led the 1410 and 1414 Mongol campaigns in person with 300,000-500,000 men (Chan 1988, Wang 2011 via the Yongle Emperor page); stalemate in Jiaozhi"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: hereditary weisuo units; desertion already noted; Jiaozhi garrisons under insurgency"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: victories over the Mongols, but Le Loi's revolt in Jiaozhi from 1418"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.3,
+      "mid": 4.6,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 4 (1250) and 5 (1600). Evidence: hand cannon, bombards, fire lances, crossbows; a firearms division in the capital"
+    },
+    "armor": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4. Evidence: lamellar and brigandine"
+    },
+    "ships": {
+      "low": 4.3,
+      "mid": 4.6,
+      "high": 4.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 4 and 5. Evidence: nine-masted treasure ships, gun-armed fleets on Indian Ocean voyages"
+    },
+    "fortification": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 4 and 5. Evidence: brick-faced city walls (Nanjing), rebuilt northern frontier forts"
+    },
+    "logistics": {
+      "low": 4.3,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 4 and 5 (canal transport). Evidence: Grand Canal reopened 1415; 5 million dan of rice moved in 1417 (Chan 1988 via the Yongle Emperor page)"
+    },
+    "communications": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 4 and 5. Evidence: courier relay stations inherited from the Yuan yam"
+    },
+    "isr": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4. Evidence: frontier beacons, Embroidered Uniform Guard intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1250,
+      "mid": 1412,
+      "high": 1550,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 China 1420 = 1,412 (mid); 1410 = 1,414, 1430 = 1,498, 1400 = 1,404."
+    },
+    "gdp": {
+      "low": 75625000000,
+      "mid": 127080000000,
+      "high": 155000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The weisuo were meant to be self-supporting on military farms, but the Mongol, Vietnam and naval efforts were state-funded."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.16,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ceramics, textiles, iron, shipbuilding."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Recovered agriculture; Jiangnan rice shipped north."
+    },
+    "annualCohort": {
+      "low": 575000,
+      "mid": 855000,
+      "high": 950000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 40000,
+      "mid": 60000,
+      "high": 90000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post roads across the empire; canals carried bulk."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Liujiagang, Quanzhou, Guangzhou, Ningbo, Tianjin, Changle."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Private sea trade banned (haijin); state fleet and canal shipping dominate."
+    },
+    "supplyRangeKm": {
+      "low": 400,
+      "mid": 700,
+      "high": 1200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Yongle's Mongol campaigns went ~800 km beyond the wall with carts and pre-positioned depots."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 6000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen, mules, horses; Korea sent thousands of horses and 10,000 oxen in 1403-1407 (Yongle Emperor page)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Malacca (treasure-fleet depot)",
+        "lat": 2.19,
+        "lon": 102.25,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Juyong Pass",
+      "Shanhai Pass",
+      "Jiayu Pass",
+      "Grand Canal"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: walled cities, rebuilt frontier fortifications, large loyal population."
+    }
+  },
+  "notes": "Snapshot 1420, the year Beijing became the capital and between the fifth and sixth treasure voyages. Border: world_1400 has no Ming polygon (it still shows the Yuan Great Khanate), so the nearest file containing the polity is world_1492. Army: nominal weisuo establishment from Dreyer, with an educated discount; registered strength and real strength diverged more as the century went on. Population convention: registered census is the low, modern reconstructions the mid; Jiaozhi's population is not counted. Malacca is listed as a supply depot of the fleet, not a colony. Personnel: active = registered hereditary weisuo soldiers on duty and the fleet; trainedReserves = military-household men on farm rotation; mobilizable = population x ratio."
+}

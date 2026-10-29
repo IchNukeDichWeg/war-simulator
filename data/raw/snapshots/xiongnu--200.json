@@ -1,0 +1,414 @@
+{
+  "id": "xiongnu--200",
+  "nationId": "xiongnu",
+  "includes": [],
+  "name": "Xiongnu Confederation",
+  "year": -200,
+  "era": "iron",
+  "region": "central_asia",
+  "phase": "rise",
+  "tags": [
+    "nomadic",
+    "steppe",
+    "confederation",
+    "horse archers"
+  ],
+  "capital": {
+    "name": "Chanyu's court (Longcheng, Orkhon valley, approximate)",
+    "lat": 47.5,
+    "lon": 102.6,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Ordos loop",
+      "lat": 40.0,
+      "lon": 108.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Baideng (Pingcheng)",
+      "lat": 40.08,
+      "lon": 113.3,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hexi Corridor",
+      "lat": 39.0,
+      "lon": 100.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Juyan oasis",
+      "lat": 41.9,
+      "lon": 101.0,
+      "kind": "city"
+    },
+    {
+      "name": "Selenga valley (later Ivolga fortress)",
+      "lat": 51.75,
+      "lon": 107.55,
+      "kind": "fortress"
+    },
+    {
+      "name": "Gobi crossing (Zamyn-Uud)",
+      "lat": 43.72,
+      "lon": 111.9,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:bc200:Xiongnu",
+    "areaKm2": {
+      "low": 3000000,
+      "mid": 3240000,
+      "high": 4200000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/272",
+      "note": "The world_bc200 Xiongnu polygon measures 3.24 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_bc200.geojson, mid); Seshat codes 4.0-4.2 million for 209 BCE (high); Seshat Late Xiongnu low is 3.0 million."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 800000,
+      "mid": 1200000,
+      "high": 1500000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/272",
+      "note": "Seshat codes 1,500,000 for the Xiongnu Imperial Confederation (209 BCE) and 1.0-1.5M for the Late Xiongnu; its narrative says the nomads north of China did not number more than 1,500,000 (Barfield 1993). Mid 1.2M for 200 BCE, early in Modu's reign."
+    },
+    "urbanization": {
+      "low": 0.0,
+      "mid": 0.005,
+      "high": 0.01,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Largest settlement 3,000-5,000 (Seshat 272); practically no towns."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 60000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Population 1.2M (Seshat 272) x ~1 warrior per 8 people = 150,000. Bounds from https://en.wikipedia.org/wiki/Battle_of_Baideng: the Book of Han claims over 300,000 Xiongnu at Baideng (200 BCE) and Shiji credits Modu with 300,000 bowmen; Chang 2007 p. 158 says 400,000; Gumilev argues 20,000-40,000 on pasture and population grounds. With ~1.2M people the whole confederation could field ~150,000-250,000; mid 150,000 standing."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 60000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Remaining adult males of subject tribes (Donghu, Yuezhi remnants) callable within a month."
+    },
+    "supportPersonnel": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Herders moving remount herds, smiths, Chinese defectors and craftsmen."
+    },
+    "mobilizationRatio": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nomadic adult males were all mounted archers; one warrior per four to six people is the usual steppe ratio."
+    },
+    "mobilizable": {
+      "low": 120000,
+      "mid": 240000,
+      "high": 375000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 55000,
+          "mid": 132000,
+          "high": 270000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horse archers, nearly the whole army; ~90% of the active total."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era best). Evidence: composite bows, several remounts each"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0 (elite long-service). Evidence: lifelong riders and hunters; Modu's whistling-arrow discipline"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 5000,
+          "mid": 12000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured noble retinues; the elite of the chanyu's guard."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: some iron and leather armour, lighter than Han lancers"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: same lifelong training"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75-1.0. Evidence: Modu trapped the Han emperor at Baideng and destroyed the Donghu and Yuezhi"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: decimal command under the chanyu, but a confederation of clans (left and right kings)"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (recent victories). Evidence: victories over Donghu, Yuezhi and Han in 209-200 BCE"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 2.6,
+      "mid": 2.8,
+      "high": 3.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 (composite bow) and 3. Evidence: composite bow, bronze and iron arrowheads, swords"
+    },
+    "armor": {
+      "low": 1.8,
+      "mid": 2.2,
+      "high": 2.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: about 2. Evidence: leather and some iron plates; most riders unarmoured"
+    },
+    "ships": {
+      "low": 0.0,
+      "mid": 0.3,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 0 (rafts). Evidence: no boats beyond river crossings"
+    },
+    "fortification": {
+      "low": 1.0,
+      "mid": 1.5,
+      "high": 2.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 1 and 2. Evidence: few walled sites; Ivolga-type fortresses are later"
+    },
+    "logistics": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (equivalent reach). Evidence: self-moving herds gave long reach on grassland"
+    },
+    "communications": {
+      "low": 2.2,
+      "mid": 2.5,
+      "high": 2.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 (couriers) and 3. Evidence: mounted messengers, whistling-arrow signals"
+    },
+    "isr": {
+      "low": 2.6,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: deep mounted scouting, Chinese defectors as informants"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 500,
+      "mid": 700,
+      "high": 900,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pastoral economy plus tribute and raiding; below the agrarian Maddison band (~950-1,100) for neighbours."
+    },
+    "gdp": {
+      "low": 400000000,
+      "mid": 840000000,
+      "high": 1350000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. A pastoral society in which every adult man was a soldier; no budget."
+    },
+    "industrialShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.07,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Some iron working and crafts; pastoral economy."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Herds plus some agriculture by captives and subject peoples; tribute grain from Han under heqin."
+    },
+    "annualCohort": {
+      "low": 8000,
+      "mid": 11000,
+      "high": 14000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No engineered roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Landlocked steppe polity; analogue Mongol Empire 1241 (no ports)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "No merchant marine; analogue Mongol Empire 1241."
+    },
+    "supplyRangeKm": {
+      "low": 800,
+      "mid": 1200,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Herds and remounts let armies roam far on pasture (analogue to the Mongols)."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, sheep-borne camps, camels and oxen; Mongolia carries ~4M horses today."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-steppe-nomad",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Ordos loop",
+      "Hexi Corridor",
+      "Gobi crossings",
+      "Yin Mountains passes"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep steppe and harsh continental climate; the 119 BCE Han expedition lost most of its 140,000 horses."
+    }
+  },
+  "notes": "Snapshot 200 BCE, the year of Baideng, eight years into Modu Chanyu's reign. All army figures are Chinese claims (Shiji, Book of Han: 300,000+); the mid follows the population ceiling (Seshat, Barfield). Population convention: the nomadic confederation inside the bc200 polygon; subject oasis states of the Western Regions (from ~176 BCE) are not counted. Production is empty: no documented figures. Personnel: active = the warriors of the chanyu's decimal units (every adult nomad man, a household force always under arms); trainedReserves = men of subject tribes; mobilizable = population x ratio."
+}

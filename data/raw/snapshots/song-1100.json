@@ -1,0 +1,595 @@
+{
+  "id": "song-1100",
+  "nationId": "song",
+  "includes": [],
+  "name": "Song dynasty (Northern Song)",
+  "year": 1100,
+  "era": "medieval",
+  "region": "east_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "crossbow",
+    "gunpowder",
+    "civil bureaucracy"
+  ],
+  "capital": {
+    "name": "Kaifeng",
+    "lat": 34.8,
+    "lon": 114.31,
+    "kind": "capital",
+    "population": 1000000
+  },
+  "places": [
+    {
+      "name": "Hangzhou",
+      "lat": 30.27,
+      "lon": 120.16,
+      "kind": "city"
+    },
+    {
+      "name": "Luoyang",
+      "lat": 34.62,
+      "lon": 112.45,
+      "kind": "city"
+    },
+    {
+      "name": "Daming (Northern Capital)",
+      "lat": 36.28,
+      "lon": 115.15,
+      "kind": "fortress"
+    },
+    {
+      "name": "Zhending",
+      "lat": 38.15,
+      "lon": 114.57,
+      "kind": "fortress"
+    },
+    {
+      "name": "Taiyuan",
+      "lat": 37.87,
+      "lon": 112.55,
+      "kind": "fortress"
+    },
+    {
+      "name": "Xiongzhou (Hebei water defences)",
+      "lat": 38.99,
+      "lon": 116.1,
+      "kind": "fortress"
+    },
+    {
+      "name": "Quanzhou",
+      "lat": 24.87,
+      "lon": 118.68,
+      "kind": "port"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port"
+    },
+    {
+      "name": "Mingzhou (Ningbo)",
+      "lat": 29.87,
+      "lon": 121.54,
+      "kind": "port"
+    },
+    {
+      "name": "Chengdu",
+      "lat": 30.66,
+      "lon": 104.07,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1100:Song Empire",
+    "areaKm2": {
+      "low": 2200000,
+      "mid": 2300000,
+      "high": 3000000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/425",
+      "note": "Seshat codes 2,233,000-2,367,000 km2 for 1100 (mid 2.3M); the world_1100 Song Empire polygon measures 3.0 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1100.geojson, high); the Song dynasty infobox gives 2.1 million for 1127."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 80000000,
+      "mid": 95000000,
+      "high": 110000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Song_dynasty",
+      "note": "The Northern Song census recorded 20 million households; an estimated 90 million people (Song dynasty page); infobox 80-110 million for the 1120s (Chaffee 2015). HYDE China 1100 = 90.2M (OWID). Seshat codes 60-100M. Mid 95M for 1100."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.11,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Kaifeng ~1,000,000 (Seshat 425); Hangzhou and many large commercial towns."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 650000,
+      "mid": 900000,
+      "high": 1250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The army had 378,000 men in 960, about 1,000,000 by 1022 and well over 1,250,000 by 1041 (Ebrey, Gernet via https://en.wikipedia.org/wiki/Military_history_of_the_Song_dynasty; high). Wang Anshi's reforms of the 1070s aimed to cut the standing army; the 1100 total is not documented in fetched sources, so mid 900,000 is a guess below the 1041 peak."
+    },
+    "trainedReserves": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Baojia militia: 19-30% of households in Kaifeng, Hebei, Hedong and Shaanxi were drilled (Smith 2006 via the New Policies page)."
+    },
+    "supportPersonnel": {
+      "low": 50000,
+      "mid": 80000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ship and trebuchet crews, armory and transport troops, staff. Prefectural (xiangjun) labour troops are partly here."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.035,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mercenary standing army recruited from the poor plus baojia militia; total war on the scale of 1126-1141 drew a few percent."
+    },
+    "mobilizable": {
+      "low": 1600000,
+      "mid": 3325000,
+      "high": 5500000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "missile_infantry": {
+        "count": {
+          "low": 350000,
+          "mid": 480000,
+          "high": 650000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Crossbowmen and archers: an infantry company had 8 swordsmen, 16 spearmen and 70+ crossbowmen (Smith 2015 via the Military history of the Song page), i.e. ~75% missile troops."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: mass-produced crossbows; a 1068 crossbow pierced a tree at 140 paces"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mercenary regulars of uneven quality"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 140000,
+          "mid": 200000,
+          "high": 280000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Sword and spear infantry, ~25% of companies."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: 32,000 suits of iron armour a year from the Kaifeng armories (Chaffee 2015)"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mercenary regulars"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 30000,
+          "high": 60000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Salaried tribal auxiliaries (fanbing) on the northwest frontier."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: militia"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 50000,
+          "high": 80000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horse archers; chronic horse shortage: 150,000 state horses under Shenzong against 700,000 at the Tang height (Military history of the Song page)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: few and poor horses"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: regulars"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 50000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured lancers; a cavalry company had 13 spear and flag men and 80+ archers (Smith 2015), so true shock cavalry was scarce."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: good armour, poor horses"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: regulars"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Traction trebuchets in sixteen known varieties (Gernet via the Military history of the Song page); city walls and arsenals held many."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: largest traction trebuchets of the era, incendiary and early gunpowder projectiles (100,000 and 250,000 gunpowder arrows sent to two garrisons in 1083, Andrade 2016)"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: specialist crews"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 50,
+          "mid": 150,
+          "high": 400,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. River war junks and paddle-wheel boats; the permanent navy came only in 1132."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: compass, watertight bulkheads"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no standing navy yet"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 300,
+          "mid": 800,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Patrol and transport craft on the rivers and canals; in 1090 the Mingzhou/Wenzhou yards were tasked with 600 ships a year and Liangzhe/Huainan with 300 (Schottenhammer 2015), mostly transports."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: civil control of generals by design, frequent rotation; costly defeats by the Xi Xia (1040s, 1081-82)"
+    },
+    "cohesion": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: mercenary recruits from the destitute, low social standing of soldiers"
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: long peace with the Liao since 1005, poor record against the Xi Xia"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (1250: crossbow, trebuchet). Evidence: mass crossbows, traction trebuchets, gunpowder arrows and bombs (Wujing Zongyao 1044)"
+    },
+    "armor": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: about 4. Evidence: mass-produced iron lamellar"
+    },
+    "ships": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: about 4 (galleys, cogs). Evidence: compass navigation, watertight bulkheads, paddle-wheel warships"
+    },
+    "fortification": {
+      "low": 3.7,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4. Evidence: Hebei water-and-polder defences, multi-wall cities"
+    },
+    "logistics": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (river transport, granaries). Evidence: Grand Canal, state granaries, camel/horse/porter ration tables (Chaffee 2015)"
+    },
+    "communications": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: about 4. Evidence: post-relay system, printed manuals"
+    },
+    "isr": {
+      "low": 3.2,
+      "mid": 3.5,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4. Evidence: frontier watch posts; little deep scouting for lack of cavalry"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1100,
+      "mid": 1222,
+      "high": 1350,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 China 1090 = 1,222 (mid) and 1150 = 1,181. Range is the usual uncertainty of the series."
+    },
+    "gdp": {
+      "low": 88000000000,
+      "mid": 116090000000,
+      "high": 148500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The military consumed three-quarters of state revenue (Ebrey via the Military history of the Song page); with state revenue at roughly 8-15% of GDP this is ~6-11%."
+    },
+    "industrialShare": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Iron, ceramics, silk, printing; the most commercialised economy of the era."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Champa rice and Yangtze delta agriculture."
+    },
+    "annualCohort": {
+      "low": 760000,
+      "mid": 902000,
+      "high": 1045000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 30000,
+      "mid": 50000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post roads; canals carried most bulk."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 5,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Guangzhou, Quanzhou, Mingzhou, Hangzhou, Mizhou."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large sea-going junk fleet trading to Southeast Asia; no tonnage figures."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 350,
+      "high": 600,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Infantry armies tied to canal and cart supply; one soldier with three porters could carry 31 days of food (Chaffee 2015)."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 4000000,
+      "high": 8000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen, mules and donkeys; horses scarce (10,000-40,000 bought a year, Chaffee 2015)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Yellow River crossings",
+      "Hebei water defences",
+      "Yanmen Pass",
+      "Grand Canal"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: walled cities and dense population; the open North China plain gives no depth against cavalry."
+    }
+  },
+  "notes": "Snapshot 1100, the first year of Huizong, 26 years before the Jin took Kaifeng. The largest standing army of its time on paper, weak in cavalry and command. Army size for 1100 is the weakest number: fetched sources give only the 960-1041 series (378,000 to over 1,250,000); the mid is a guess after Wang Anshi's reductions. Population convention: registered households x household size, Song dynasty page estimate. Doctrine archetype-feudal-host per the coverage plan, although the Song army was a salaried mercenary force. Personnel: active = salaried imperial (jinjun) and prefectural (xiangjun) troops; trainedReserves = baojia militia; mobilizable = population x ratio."
+}

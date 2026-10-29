@@ -1,0 +1,550 @@
+{
+  "id": "tang-750",
+  "nationId": "tang",
+  "includes": [],
+  "name": "Tang dynasty",
+  "year": 750,
+  "era": "medieval",
+  "region": "east_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Silk Road",
+    "jiedushi",
+    "Xuanzong"
+  ],
+  "capital": {
+    "name": "Chang'an",
+    "lat": 34.26,
+    "lon": 108.94,
+    "kind": "capital",
+    "population": 1000000
+  },
+  "places": [
+    {
+      "name": "Luoyang",
+      "lat": 34.62,
+      "lon": 112.45,
+      "kind": "city"
+    },
+    {
+      "name": "Yangzhou",
+      "lat": 32.39,
+      "lon": 119.42,
+      "kind": "port"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port"
+    },
+    {
+      "name": "Fanyang (Youzhou, Beijing)",
+      "lat": 39.9,
+      "lon": 116.4,
+      "kind": "fortress"
+    },
+    {
+      "name": "Taiyuan",
+      "lat": 37.87,
+      "lon": 112.55,
+      "kind": "fortress"
+    },
+    {
+      "name": "Liangzhou (Wuwei)",
+      "lat": 37.93,
+      "lon": 102.64,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kucha (Anxi Protectorate)",
+      "lat": 41.72,
+      "lon": 82.96,
+      "kind": "fortress"
+    },
+    {
+      "name": "Chengdu",
+      "lat": 30.66,
+      "lon": 104.07,
+      "kind": "city"
+    },
+    {
+      "name": "Tong Pass",
+      "lat": 34.6,
+      "lon": 110.3,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Yumen Pass",
+      "lat": 40.35,
+      "lon": 93.86,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:700:Sui Empire",
+    "areaKm2": {
+      "low": 3900000,
+      "mid": 4600000,
+      "high": 5400000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/261",
+      "note": "Seshat codes 4,600,000 km2 for 750 (mid) and 5.4 million for 720 (high; the Tang dynasty infobox also gives 5.4 million for 715). The world_700 polygon (labelled \"Sui Empire\" in that file, but it is the China of 700 CE) measures 3.88 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_700.geojson, low)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 52900000,
+      "mid": 60000000,
+      "high": 75000000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/261",
+      "note": "Seshat codes 48.0M (740) and 52.8M (754) from the registers; the 755 census counted 52,919,309 persons in 8,914,709 households (https://en.wikipedia.org/wiki/An_Lushan_rebellion, low). Registers missed untaxed and frontier people; Seshat codes 60-80M for 900 CE. Mid 60M allows for under-registration."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.09,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chang'an ~1,000,000 (Seshat 261), Luoyang, Yangzhou; overwhelmingly rural."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 450000,
+      "mid": 500000,
+      "high": 600000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Tang_dynasty",
+      "note": "By 742 the Tang armies numbered about 500,000 men (Benn 2002 p. 9, on the Tang dynasty page). High adds capital guards and the remaining fubing units (634 at the height, 800-1,200 men each, Fubing system page). An Lushan alone controlled garrisons about 164,000 strong after 751 (An Lushan rebellion page)."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Remaining fubing militia units and nomad allies (Uyghur cavalry)."
+    },
+    "supportPersonnel": {
+      "low": 30000,
+      "mid": 45000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ship crews, frontier supply and the herds of the state horse pastures, engineers, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Professional frontier armies plus remnant fubing militia (one man per six families, Fubing system page); the An Lushan war (755-763) showed armies of several hundred thousand on each side."
+    },
+    "mobilizable": {
+      "low": 1058000,
+      "mid": 1800000,
+      "high": 3750000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 75000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horse archers, many of them Turkic and other non-Han troops on the western and northern frontier. The Tongdian model army has 4,000 cavalry in 14,000 combat troops (~29%, Graff 2002 p. 193 via the Military history of the Tang page)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: steppe-style horse archers with Tang state horses"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service frontier professionals (jian'er)"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 25000,
+          "mid": 45000,
+          "high": 70000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured lancers; part of the ~29% cavalry share."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: iron lamellar and barding"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 150000,
+          "mid": 200000,
+          "high": 260000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured spear and sword infantry; ~60% of active soldiers had armour of some kind (Graff 2002 p. 193)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: era-best East Asian armour and weapons"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional frontier armies replacing militia"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 80000,
+          "mid": 110000,
+          "high": 150000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers and crossbowmen: 2,000 + 2,000 per 14,000 combat troops in the Tongdian model army, and 20% of infantry with crossbows per Li Jing (Military history of the Tang page)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: crossbows and composite bows"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 20000,
+          "high": 40000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Fubing militia units on rotational duty and frontier auxiliaries."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 minus. Evidence: light kit"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: militia"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 20,
+          "mid": 60,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Sea-going war junks and tower ships; 500 ships carried 43,000 men against Goguryeo in 645 (Graff 2002 p. 196), a mobilised peak."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: era-typical East Asian warships"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: no permanent navy"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: experienced frontier generals (Gao Xianzhi, Geshu Han); defeat at Talas 751 and in Nanzhao 751-754"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: professional armies loyal to their jiedushi rather than the throne, as 755 proved"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: long run of frontier success, first defeats in 751"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.5,
+      "mid": 3.7,
+      "high": 3.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4 (1250). Evidence: crossbows, composite bows, long lances, early traction trebuchets"
+    },
+    "armor": {
+      "low": 3.4,
+      "mid": 3.6,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4. Evidence: iron lamellar for ~60% of soldiers (Graff 2002)"
+    },
+    "ships": {
+      "low": 3.0,
+      "mid": 3.3,
+      "high": 3.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4. Evidence: sea-going junks to Korea and the south"
+    },
+    "fortification": {
+      "low": 3.2,
+      "mid": 3.4,
+      "high": 3.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4. Evidence: rammed-earth city walls, frontier forts in the Tarim"
+    },
+    "logistics": {
+      "low": 3.4,
+      "mid": 3.6,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4 (river transport, granaries). Evidence: Sui Grand Canal, state granaries, military farms"
+    },
+    "communications": {
+      "low": 3.4,
+      "mid": 3.6,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4 (relay horses). Evidence: state post-station relay network"
+    },
+    "isr": {
+      "low": 3.2,
+      "mid": 3.4,
+      "high": 3.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 and 4. Evidence: frontier watchtowers, nomad allies as scouts"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1000,
+      "mid": 1150,
+      "high": 1300,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison 2023 China 1000 = 1,225 (via OWID grapher CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true); Tang 750 placed slightly below the Song-era level."
+    },
+    "gdp": {
+      "low": 52900000000,
+      "mid": 69000000000,
+      "high": 97500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The defence budget rose sevenfold, from 2 million strings of cash in 712 to 12 million in 742 and 15 million by 755 (Graff 2002 p. 215 via the Military history of the Tang page); converted to a GDP share with no reliable revenue base."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.13,
+      "high": 0.17,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Silk, ceramics, metals; agrarian economy."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Yangtze rice shipped north on the Grand Canal."
+    },
+    "annualCohort": {
+      "low": 503000,
+      "mid": 570000,
+      "high": 712000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post roads linking the capital to all prefectures and the Tarim."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 4,
+      "high": 6,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Guangzhou, Yangzhou, Mingzhou, Dengzhou."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Grand Canal and coastal junks; no figures."
+    },
+    "supplyRangeKm": {
+      "low": 300,
+      "mid": 500,
+      "high": 900,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tarim garrisons ~2,500 km from Chang'an were supplied by military farms and oases, not by long lines."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 4000000,
+      "high": 8000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. State herds at the Tang height ~700,000 horses (Military history of the Song page) plus private oxen and horses."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Kucha (Anxi Protectorate)",
+        "lat": 41.72,
+        "lon": 82.96,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Tong Pass",
+      "Hexi Corridor",
+      "Yumen Pass",
+      "Grand Canal"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: fortified cities and dense population; frontier lands give less."
+    }
+  },
+  "notes": "Snapshot 750, five years before the An Lushan rebellion and one year before Talas. Census figures are registered persons; the mid allows for under-registration. Army: Benn's ~500,000 for 742 is the anchor; the frequently quoted 490,000 frontier troops and 80,000 horses of 742 could not be fetched and is not used. Border: world_700 is the nearest file at or before 750; its China polygon is mislabelled \"Sui Empire\" and is used as is. Population convention: registered Tang subjects plus the under-registration allowance; protectorates in the Tarim count in territory but add little population. Doctrine archetype-feudal-host per the coverage plan, although the Tang army was a professional standing force. Personnel: active = professional frontier armies, capital guards and fubing units on rotation; trainedReserves = fubing men off duty and nomad allies; mobilizable = population x ratio."
+}

@@ -1,0 +1,596 @@
+{
+  "id": "mongol-empire-1279",
+  "nationId": "mongol-empire",
+  "includes": [],
+  "name": "Yuan dynasty (Mongol Empire under Kublai)",
+  "year": 1279,
+  "era": "medieval",
+  "region": "east_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Yuan",
+    "Kublai Khan",
+    "steppe",
+    "naval expeditions"
+  ],
+  "capital": {
+    "name": "Khanbaliq (Dadu, Beijing)",
+    "lat": 39.95,
+    "lon": 116.39,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Shangdu (Xanadu)",
+      "lat": 42.36,
+      "lon": 116.18,
+      "kind": "city"
+    },
+    {
+      "name": "Karakorum",
+      "lat": 47.2,
+      "lon": 102.83,
+      "kind": "city"
+    },
+    {
+      "name": "Hangzhou (Lin'an)",
+      "lat": 30.27,
+      "lon": 120.16,
+      "kind": "city",
+      "population": 800000
+    },
+    {
+      "name": "Quanzhou",
+      "lat": 24.87,
+      "lon": 118.68,
+      "kind": "port"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.13,
+      "lon": 113.26,
+      "kind": "port"
+    },
+    {
+      "name": "Yangzhou",
+      "lat": 32.39,
+      "lon": 119.42,
+      "kind": "city"
+    },
+    {
+      "name": "Xiangyang",
+      "lat": 32.01,
+      "lon": 112.12,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dali",
+      "lat": 25.61,
+      "lon": 100.27,
+      "kind": "city"
+    },
+    {
+      "name": "Juyong Pass",
+      "lat": 40.29,
+      "lon": 116.07,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Yamen",
+      "lat": 22.3,
+      "lon": 113.08,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1279:Great Khanate",
+    "areaKm2": {
+      "low": 10000000,
+      "mid": 10490000,
+      "high": 11000000,
+      "grade": "C",
+      "source": "derived:area-from-border",
+      "note": "The world_1279 Great Khanate polygon measures 10.49 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1279.geojson, mid). The Yuan dynasty infobox gives 11,000,000 km2 for 1310 (high); Seshat codes 11-24 million (the high end counts the whole Mongol world)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 60000000,
+      "mid": 70000000,
+      "high": 85000000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/268",
+      "note": "Seshat: \"the population of Yuan China may have been between 60 and 85 million\" (coded 60,491,000-85,000,000 for 1300). HYDE China 1300 = 80.0M, Mongolia 0.85M (OWID https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true). Mid 70M at 1279, just after the Song conquest; the Yuan infobox gives 87.6M for 1351."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.11,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hangzhou ~800,000 (Seshat 268); urban share near the Song level, lower in the north."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 500000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No fetched source gives a Yuan total. Anchors: tumens of 10,000 nominal ran 3,000-7,000 in practice (Military of the Yuan page); 1281 Japan invasion force claimed at 140,000 (Turnbull, Mongol invasions of Japan page); the imperial guard (suwei) grew from 6,500 to 100,000 over the dynasty; tens of thousands of surrendered Song troops formed the Newly Adhered Army."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hereditary military households not on campaign, Mongol herders in the steppe, Goryeo levies."
+    },
+    "supportPersonnel": {
+      "low": 50000,
+      "mid": 80000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Navy crews, military artisan households, yam relay staff, engineers."
+    },
+    "mobilizationRatio": {
+      "low": 0.015,
+      "mid": 0.025,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hereditary military households (Mongol, Tammachi, Han, Newly Adhered) were a minority of households; by 1241 one in seven North China households was a military household (Military of the Yuan dynasty page)."
+    },
+    "mobilizable": {
+      "low": 900000,
+      "mid": 1750000,
+      "high": 3400000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 100000,
+          "mid": 150000,
+          "high": 220000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mongol and Tammachi horse archers in tumens and frontier tamma garrisons."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: composite bow, remounts"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: lifelong riders, but a generation removed from the steppe in China"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 40000,
+          "mid": 60000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured lancers of the Mongol and Han cavalry units."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: lamellar, lances"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: veterans of the Song war"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 150000,
+          "mid": 250000,
+          "high": 400000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Han Army and Newly Adhered (ex-Song) infantry; 95,000 extra Han soldiers were conscripted after the 1236/1241 censuses alone (Military of the Yuan page)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Song and Jin equipment"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: hereditary soldiers and surrendered regulars"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 120000,
+          "mid": 200000,
+          "high": 300000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Crossbowmen inherited from the Song and Jin armies."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Song-pattern crossbows"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 40000,
+          "high": 80000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Southern auxiliaries in garrison."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 minus. Evidence: light"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: militia"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 200,
+          "mid": 500,
+          "high": 1500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Counterweight trebuchets built by Muslim engineers (Xiangyang 1273), traction trebuchets, fire bombs (Andrade 2016 via the Military of the Yuan page)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0 (era best). Evidence: counterweight trebuchets and gunpowder bombs"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: specialist artisan households"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 500,
+          "mid": 1000,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. War junks. At Yamen/Guangzhou in 1279 the Yuan captured more than 800 Song warships (Military of the Yuan page); 900 ships went to Japan in 1274."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: ocean-going junks of Song design"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mostly ex-Song crews, a new navy"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Transports and river craft; 4,400 ships for Japan in 1281 (900 from Korea, 3,500 from south China), mostly requisitioned (Mongol invasions of Japan page)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: requisitioned river boats unfit for open sea (1281 typhoon losses)"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: pressed crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75-1.0. Evidence: Bayan, Aju and Zhang Hongfan took the Song in 1268-1279 with combined river, siege and cavalry operations; weaker at sea (1274 Japan)"
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: hereditary household armies of four ethnic segments; ex-Song troops of doubtful loyalty"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (recent victories). Evidence: Song conquest completed at Yamen, 19 March 1279"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (1250: crossbow, trebuchet) plus. Evidence: counterweight trebuchets, fire lances and iron bombs (siege of Xiangyang, Andrade 2016)"
+    },
+    "armor": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: about 4. Evidence: lamellar of iron and lacquered leather"
+    },
+    "ships": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (cogs, galleys) plus. Evidence: large ocean-going junks of Song design, fleets of hundreds"
+    },
+    "fortification": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4. Evidence: captured Song walled cities; Dadu newly walled"
+    },
+    "logistics": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (river transport, granaries). Evidence: Grand Canal and river fleets; sea grain transport began in 1282"
+    },
+    "communications": {
+      "low": 4.3,
+      "mid": 4.6,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 is defined by the yam. Evidence: yam relay network across the empire"
+    },
+    "isr": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4. Evidence: cavalry screens, merchant and envoy intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 950,
+      "mid": 1100,
+      "high": 1300,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison 2023 China 1150 = 1,181 and 1400 = 1,404 (via OWID grapher CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true). Lowered for the war damage of 1268-1279 in the Yangtze valley."
+    },
+    "gdp": {
+      "low": 57000000000,
+      "mid": 77000000000,
+      "high": 110500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Fresh from a 40-year war and preparing the 1281 Japan invasion; no budget survives."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.16,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Inherited Song crafts, artisan households, paper-money economy."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Yangtze rice; northern farmland still recovering."
+    },
+    "annualCohort": {
+      "low": 570000,
+      "mid": 665000,
+      "high": 808000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 40000,
+      "mid": 70000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Yam relay roads across China and Mongolia plus Song post roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 7,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Quanzhou, Guangzhou, Ganpu/Hangzhou, Mingzhou, Zhigu (Tianjin), Shanghai."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 250000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Song maritime trade fleet taken over intact at Quanzhou; no tonnage figures."
+    },
+    "supplyRangeKm": {
+      "low": 500,
+      "mid": 900,
+      "high": 1500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Steppe cavalry reach plus river fleets; poor at sea (1274, 1281)."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 10000000,
+      "high": 20000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mongolian horse herds plus Chinese oxen and mules."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "mongol-steppe",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Juyong Pass",
+      "Grand Canal",
+      "Yangtze crossings",
+      "Korea Strait"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 for the Mongolian homeland (steppe depth, harsh climate); 1.1-1.2 in China."
+    }
+  },
+  "notes": "Snapshot 1279, the year of Yamen, when Kublai's Yuan held all of China. Scope: the Yuan realm only (the Great Khanate polygon of world_1279: China, Mongolia, Manchuria, Tibet and Dali). The other khanates are excluded from population, forces and territory: after 1264 the Golden Horde, Chagatai Khanate and Ilkhanate were functionally autonomous (Rossabi 1988, Allsen 1994 via the Yuan dynasty page); only the Ilkhans truly recognised Kublai as Great Khan, and Kaidu with the Chagatayids was at war with him. None of them exists as a snapshot, so includes is empty. Goryeo was a vassal, not counted. Army totals are the weakest part: no fetched source gives a Yuan order of battle, so the active total and its split are educated guesses anchored on the 1274/1281 Japan expeditions and the Military of the Yuan dynasty page. Ship counts from Yuan records (900 in 1274, 4,400 in 1281) are claims; Conlan argues the 1274 landing force was only ~3,000. Personnel: active = hereditary military-household soldiers on service (Mongol, Tammachi, Han, Newly Adhered), guards and fleets; trainedReserves = household men not on service, steppe herders and Goryeo levies; mobilizable = population x ratio."
+}

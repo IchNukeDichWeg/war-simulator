@@ -1,0 +1,525 @@
+{
+  "id": "khmer-empire-1200",
+  "nationId": "khmer-empire",
+  "includes": [],
+  "name": "Khmer Empire",
+  "year": 1200,
+  "era": "medieval",
+  "region": "southeast_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Angkor",
+    "Jayavarman VII",
+    "elephants",
+    "hydraulic"
+  ],
+  "capital": {
+    "name": "Angkor (Yasodharapura, Angkor Thom)",
+    "lat": 13.44,
+    "lon": 103.86,
+    "kind": "capital",
+    "population": 800000
+  },
+  "places": [
+    {
+      "name": "Phimai",
+      "lat": 15.22,
+      "lon": 102.49,
+      "kind": "city"
+    },
+    {
+      "name": "Lopburi",
+      "lat": 14.8,
+      "lon": 100.62,
+      "kind": "city"
+    },
+    {
+      "name": "Banteay Chhmar",
+      "lat": 14.1,
+      "lon": 103.1,
+      "kind": "fortress"
+    },
+    {
+      "name": "Wat Phu",
+      "lat": 14.85,
+      "lon": 105.82,
+      "kind": "city"
+    },
+    {
+      "name": "Vijaya (Cham capital, occupied)",
+      "lat": 13.9,
+      "lon": 109.1,
+      "kind": "city"
+    },
+    {
+      "name": "Tonle Sap",
+      "lat": 12.9,
+      "lon": 104.1,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Mekong at Phnom Penh",
+      "lat": 11.56,
+      "lon": 104.92,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1200:Khmer Empire",
+    "areaKm2": {
+      "low": 520000,
+      "mid": 940000,
+      "high": 1000000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/41",
+      "note": "Seshat codes 939,245 km2 for Classical Angkor (1100, mid); the Khmer Empire infobox gives 1,000,000 km2 for 1290 (Turchin et al., high). The world_1200 Khmer Empire polygon measures 0.52 million km2 on the sphere (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1200.geojson, low) and omits occupied Champa."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 1500000,
+      "mid": 2500000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Seshat codes 1,500,000 for Classical Angkor in 1100 (https://seshat-db.com/core/polity/41, low) but says the empire total is unclear; Greater Angkor alone held 700,000-900,000 in the 13th century (Klassen et al., Khmer Empire page). HYDE 1200: Cambodia 1.2M, Thailand 1.4M, Laos 0.3M, Vietnam 1.3M (OWID https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true); the empire held Cambodia, much of Thailand and southern Laos, and occupied Champa (1190-1220)."
+    },
+    "urbanization": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Greater Angkor 700,000-1,000,000 (Klassen et al.; Seshat 750,000-1,000,000) against an empire of 1.5-4M, but at low density sprawled over 1,000+ km2 (Angkor page)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 8000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Standing force only: royal guard, palace and provincial retainers, royal elephants and war galleys; corvee levies are in trainedReserves. No count survives. Zhou Daguan (1296) describes soldiers fighting barefoot with lance and shield; an oral tradition told to Mouhot of 5-6 million soldiers is legend (Khmer Empire page). The Bayon reliefs show large armies on the Champa campaigns."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 70000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Corvee levies called up by provincial lords: the spear-and-shield mass of the Bayon reliefs; Zhou Daguan says commoners were ordered to fight without preparation."
+    },
+    "supportPersonnel": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mahouts (2 per elephant) and galley rowers (~30 per boat) of the royal establishment; carts and camp followers come with the levies."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Corvee-based society where temple inscriptions list tens of thousands of assigned people (Ta Prohm 80,000); Zhou Daguan says commoners were ordered to fight in emergencies."
+    },
+    "mobilizable": {
+      "low": 30000,
+      "mid": 100000,
+      "high": 240000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4000,
+          "mid": 8000,
+          "high": 16000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal guard and retainer spear-and-shield infantry; the levied mass of the Bayon reliefs is in trainedReserves."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: no armour according to Zhou Daguan"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: royal guard and lords' retainers"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 2000,
+          "mid": 4000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Standing archers and crossbowmen (bows shown on the Bayon reliefs)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 minus. Evidence: simple bows; double-bow crossbows on elephants"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: levies"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 500,
+          "mid": 1500,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Cham and Thai mercenaries in royal pay."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: professional mercenaries"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 300,
+          "mid": 1000,
+          "high": 2500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Small horse contingent; Southeast Asian horses were few."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: small horses"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: nobles and retainers"
+        }
+      },
+      "elephants": {
+        "count": {
+          "low": 200,
+          "mid": 500,
+          "high": 1000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. War elephants carried nobles and mounted double-bow crossbows, possibly Cham mercenaries in Jayavarman VII's army (Jacq-Hergoualc'h via the Khmer Empire page). Arab writers credited Khmer kings with tens of thousands of elephants (claim)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: elephants with mounted crossbows"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: royal elephant stables"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 150,
+          "high": 400,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Oared war galleys on the Tonle Sap and Mekong; the Bayon and Banteay Chhmar show a naval battle against the Cham (Jayavarman VII page)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: river galleys"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: experienced against Champa"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Jayavarman VII expelled the Cham (1177-81) and conquered Champa (1190-91)"
+    },
+    "cohesion": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: levies under provincial lords, mercenaries"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: recent victories, royal Buddhist kingship"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: iron spears, bows, elephant-mounted double crossbows"
+    },
+    "armor": {
+      "low": 1.5,
+      "mid": 1.8,
+      "high": 2.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 1 and 2. Evidence: soldiers fought without armour (Zhou Daguan); shields only"
+    },
+    "ships": {
+      "low": 2.2,
+      "mid": 2.5,
+      "high": 2.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 (oared war galleys) and 3. Evidence: river war galleys"
+    },
+    "fortification": {
+      "low": 2.9,
+      "mid": 3.2,
+      "high": 3.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (ashlar walls). Evidence: Angkor Thom laterite walls 6-7 m high with moat and five gates (Khmer Empire page)"
+    },
+    "logistics": {
+      "low": 3.0,
+      "mid": 3.3,
+      "high": 3.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3 (engineered roads, depots). Evidence: raised highways with 121 rest houses and barays for water"
+    },
+    "communications": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 3. Evidence: royal roads and rest-house network"
+    },
+    "isr": {
+      "low": 2.2,
+      "mid": 2.5,
+      "high": 2.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 2 and 3. Evidence: no evidence of a formal intelligence system"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 700,
+      "mid": 900,
+      "high": 1100,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No Maddison series for mainland Southeast Asia before 1500. Placed below China 1150 (1,181) and near Egypt 1150 (1,052) (https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true)."
+    },
+    "gdp": {
+      "low": 1050000000,
+      "mid": 2250000000,
+      "high": 4400000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Temple building absorbed much of the surplus; wars against Champa ongoing."
+    },
+    "industrialShare": {
+      "low": 0.06,
+      "mid": 0.09,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Stone construction, iron smelting at Preah Khan of Kompong Svay, crafts."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rice with hydraulic works (barays) feeding a large urban complex."
+    },
+    "annualCohort": {
+      "low": 14000,
+      "mid": 24000,
+      "high": 38000,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1200,
+      "mid": 1800,
+      "high": 2500,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Jayavarman VII built 121 rest houses roughly every 15 km along raised highways (Jayavarman VII page): 121 x 15 km = ~1,800 km."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 1,
+      "high": 2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. River ports; Cham coastal ports under occupation."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 5000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chinese merchants carried most foreign trade."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. River transport and ox carts; monsoon limits the campaigning season."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen, buffalo and elephants."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Tonle Sap",
+      "Mekong at Phnom Penh",
+      "Dangrek escarpment passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: walled capital and monsoon flooding the invader must cross; the Cham sack of 1177 shows the limits."
+    }
+  },
+  "notes": "Snapshot 1200 under Jayavarman VII, with Champa under Khmer occupation (1190-1220). No army count survives from any source; every force number is an educated guess, the weakest block in the file. Zhou Daguan (1296) is a century later. Population convention: Khmer-ruled lands including the Khorat plateau and central Thailand; occupied Champa partly counted in the high. Elephants and galleys are platforms; mahouts and rowers are supportPersonnel. Personnel: active = royal guard, retainers, mercenaries, royal elephants and galleys; trainedReserves = corvee levies; mobilizable = population x ratio."
+}
