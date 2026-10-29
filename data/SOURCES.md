@@ -76,6 +76,8 @@ Each `derived:<id>` used in the data must be listed here with its formula.
   spending. Grade D.
 - `derived:snapshot-composite` - a snapshot value combined from several cited figures; the note
   shows the arithmetic and names each source. Grade at most C.
+- `derived:educated-guess` - no source gives the number; the value is the researcher's informed
+  judgement, explained in the note. Always grade D.
 - `derived:mech-composite` - a mechanics constant combined from several cited figures; the note
   shows the arithmetic and names each source.
 

@@ -64,6 +64,7 @@ export function checkSnapshot(s: Snapshot, file: string, derived: Set<string>, i
     if (FRACTION_PATHS.includes(p) || /\.(quality|training)$/.test(p)) {
       if (high > 1) err(`${p}: fraction above 1 (${high})`);
     }
+    if (src === 'derived:educated-guess' && e.grade !== 'D') err(`${p}: an educated guess must be grade D`);
     if (p.startsWith('tech.') && high > 10) err(`${p}: tech level above 10`);
     if (e.grade === 'A' && src.startsWith('derived:') && src !== 'derived:absent-in-era' && !/from|sum|area/.test(src)) {
       warn(`${p}: grade A on a derived value (${src})`);
