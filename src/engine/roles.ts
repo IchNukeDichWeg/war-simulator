@@ -20,6 +20,10 @@ export const IS_LAND = new Uint8Array(NR);
 for (const r of ['infantry_line', 'infantry_light', 'missile_infantry', 'cavalry_heavy', 'cavalry_light',
   'chariots', 'elephants', 'artillery', 'armor', 'ifv_apc', 'missiles', 'air_defense'] as UnitRole[]) IS_LAND[RI[r]] = 1;
 
+/** Indirect-fire and support roles: fire, but do not manoeuvre or pursue. */
+export const IS_SUPPORT_FIRE = new Uint8Array(NR);
+for (const r of ['artillery', 'missiles', 'air_defense'] as UnitRole[]) IS_SUPPORT_FIRE[RI[r]] = 1;
+
 export const AIR_ROLES = [RI.aircraft_fighter, RI.aircraft_strike, RI.helicopters, RI.drones];
 export const STRIKE_ROLES = [RI.aircraft_strike, RI.helicopters, RI.drones];
 export const NAVAL_ROLES = [RI.ships_major, RI.ships_minor, RI.submarines];

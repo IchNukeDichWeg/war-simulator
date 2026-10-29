@@ -305,3 +305,12 @@ export const LEFTOVERS_FOLLOW_OBJECTIVE = true;
  *  6/28 -> 34/0, Gulf War Iraq day 6 4/5 -> 9/0, Falklands Argentina 0/1 -> 1/0; Iraq 2003 day 1
  *  0/15 -> 1/14: its attacks are now all against Coalition formations (Formation slots). */
 export const HOLD_SIDE_NO_PLACE_TARGETS = true;
+/** Pursuit mobile share counts manoeuvre roles only (cavalry, chariots, armour, IFV/APC, motorised
+ *  infantry), as ENGINE.md defines it ("cavalry, vehicles, air"). Before, every role with a mounted
+ *  mobility class counted, so wagon-drawn or towed artillery, which carries 70-88% of a WWII army's
+ *  TLI, made the share 0.86-0.97 (Stalingrad Soviets 0.95, of which armour and cavalry 0.07) and
+ *  pursuit took 41% of every beaten formation. Measured (20 seeds, clean bb46d5d): 20/18/21 ->
+ *  21/14/20. Stalingrad 7 -> 24 days (hist 75); France 1940 x2.62 -> x6.31, Yom Kippur winner
+ *  100% -> 25%, Falklands x0.41 -> x0.18 fail; Adrianople 45 -> 80% and Marathon 0 -> 60% pass;
+ *  Kursk x6.03 -> x3.35, Six-Day 45 -> 65% (ratio x0.27 fails). */
+export const PURSUIT_MANOEUVRE_ROLES_ONLY = true;

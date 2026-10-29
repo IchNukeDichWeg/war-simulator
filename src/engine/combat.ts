@@ -2,7 +2,7 @@
 import type { Battle, Ctx } from './ctx';
 import { addEvent, rebuildOccupancy } from './ctx';
 import { byTech, clamp, matrix, rule } from './mech';
-import { NR, RI, LC, IS_P } from './roles';
+import { NR, RI, LC, IS_P, IS_SUPPORT_FIRE } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
 import { FLAG_RIVER } from './terrainClasses';
@@ -10,7 +10,8 @@ import {
   BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
+  PURSUIT_MANOEUVRE_ROLES_ONLY } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -133,7 +134,9 @@ function profile(ctx: Ctx, list: number[]): SideProf {
       p.heads += c;
       const rr = RANGE_INTEGER_CLASS ? mr.rangeClass[r] : mr.range[r];
       if (rr > p.maxRange && mr.tli[r] > 0) p.maxRange = rr;
-      if (mr.mounted[r]) p.mountedW += c * mr.tli[r];
+      // pursuit is by mobile manoeuvre troops (cavalry, vehicles); horse-drawn or towed artillery,
+      // missile launchers and air defence do not chase a beaten enemy
+      if (mr.mounted[r] && !(PURSUIT_MANOEUVRE_ROLES_ONLY && IS_SUPPORT_FIRE[r])) p.mountedW += c * mr.tli[r];
     }
     p.w += F.curW[f];
   }
