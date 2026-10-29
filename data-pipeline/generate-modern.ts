@@ -36,11 +36,15 @@ function region(c: { iso3: string; region: string }): RegionId {
   if (CENTRAL_ASIA.has(c.iso3)) return 'central_asia';
   if (OCEANIA.has(c.iso3)) return 'oceania';
   if (EA_SE.has(c.iso3)) return 'southeast_asia';
-  return ({
+  // The World Bank API pads some region names with a trailing space ("Sub-Saharan Africa "),
+  // which once filed all of Africa and Latin America under europe: trim, and fail loudly.
+  const reg = ({
     'Europe & Central Asia': 'europe', 'Middle East & North Africa': 'mena', 'Middle East, North Africa, Afghanistan & Pakistan': 'mena',
     'Sub-Saharan Africa': 'subsaharan_africa', 'South Asia': 'south_asia', 'East Asia & Pacific': 'east_asia',
     'Latin America & Caribbean': 'latin_america', 'North America': 'north_america',
-  } as Record<string, RegionId>)[c.region] ?? 'europe';
+  } as Record<string, RegionId>)[c.region.trim()];
+  if (!reg) throw new Error(`${c.iso3}: unknown World Bank region "${c.region}"`);
+  return reg;
 }
 
 const est = (mid: number, spread: number, grade: Grade, source: string, note: string): Est => ({
@@ -98,9 +102,12 @@ async function main() {
     const area = wbE('landKm2', 'AG.LND.TOTL.K2', 0.02, 'A') ?? est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank land area; see border polygon');
 
     // Personnel
-    const noArmy = NO_ARMED_FORCES.has(st.iso3) && !v('armedForces');
+    // The list wins over the World Bank: its MS.MIL.TOTL.P1 counts these states' police
+    // (Costa Rica's 10,000 Fuerza Publica), which the engine would field as an army.
+    const noArmy = NO_ARMED_FORCES.has(st.iso3);
+    const wbAf = v('armedForces');
     const active = noArmy
-      ? est(0, 0, 'B', NO_ARMY, 'no standing armed forces (police/coast guard only)')
+      ? est(0, 0, 'B', NO_ARMY, `no standing armed forces (police/coast guard only)${wbAf ? `; the World Bank's ${wbAf.value.toLocaleString('en-US')} (MS.MIL.TOTL.P1, ${wbAf.year}) are police or paramilitary` : ''}`)
       : wbE('armedForces', 'MS.MIL.TOTL.P1', 0.15, 'B', 1, '; IISS figure republished by the World Bank, may include paramilitary')
         ?? est(P * ana((s) => s.military.activePersonnel.mid / s.demography.population.mid), 0.5, 'D', 'derived:regional-analogy', `active per capita from ${anaNote}`);
     const A = active.mid;
