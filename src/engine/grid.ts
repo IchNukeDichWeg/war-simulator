@@ -278,7 +278,10 @@ export function dijkstra(grid: Grid, heap: Heap, invSpeed: Float32Array, extra: 
   for (let s = 0; s < sources.length; s++) {
     const c = sources[s];
     if (c < 0) continue;
-    const k0 = initCost ? initCost[s] : 0;
+    // keys are rounded to float32 like the stored distances, so the stale-entry check below
+    // compares equal values (a Float64 key above its Float32 copy was skipped as stale and
+    // left 15-23% of reachable cells unreachable on the backtest campaign grids)
+    const k0 = Math.fround(initCost ? initCost[s] : 0);
     if (k0 < dist[c]) { dist[c] = k0; if (src) src[c] = s; heap.push(k0, c); }
   }
   const nb = grid.nb, nbKm = grid.nbKm;
@@ -293,7 +296,7 @@ export function dijkstra(grid: Grid, heap: Heap, invSpeed: Float32Array, extra: 
       if (b < 0) continue;
       const inv = invSpeed[b];
       if (inv === Infinity) continue;
-      const nd = da + nbKm[base + d] * inv + (extra ? extra[b] : 0);
+      const nd = Math.fround(da + nbKm[base + d] * inv + (extra ? extra[b] : 0));
       if (nd < dist[b]) {
         dist[b] = nd;
         if (src) src[b] = sa;
