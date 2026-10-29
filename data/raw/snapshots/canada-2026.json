@@ -1,0 +1,747 @@
+{
+  "id": "canada-2026",
+  "nationId": "canada",
+  "includes": [],
+  "name": "Canada",
+  "year": 2026,
+  "era": "modern",
+  "region": "north_america",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "NORAD",
+    "G7",
+    "federal parliamentary monarchy",
+    "all-volunteer force",
+    "Arctic",
+    "Atlantic",
+    "Pacific"
+  ],
+  "capital": {
+    "name": "Ottawa",
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Toronto",
+      "lat": 43.6532,
+      "lon": -79.3832,
+      "kind": "city"
+    },
+    {
+      "name": "Montreal",
+      "lat": 45.5019,
+      "lon": -73.5674,
+      "kind": "port"
+    },
+    {
+      "name": "Vancouver",
+      "lat": 49.2827,
+      "lon": -123.1207,
+      "kind": "port"
+    },
+    {
+      "name": "Calgary",
+      "lat": 51.0447,
+      "lon": -114.0719,
+      "kind": "city"
+    },
+    {
+      "name": "Quebec City",
+      "lat": 46.8139,
+      "lon": -71.208,
+      "kind": "city"
+    },
+    {
+      "name": "CFB Halifax",
+      "lat": 44.6488,
+      "lon": -63.5752,
+      "kind": "port"
+    },
+    {
+      "name": "CFB Esquimalt",
+      "lat": 48.4319,
+      "lon": -123.4194,
+      "kind": "port"
+    },
+    {
+      "name": "CFB Edmonton",
+      "lat": 53.67,
+      "lon": -113.47,
+      "kind": "fortress"
+    },
+    {
+      "name": "CFB Petawawa",
+      "lat": 45.9,
+      "lon": -77.28,
+      "kind": "fortress"
+    },
+    {
+      "name": "4 Wing Cold Lake",
+      "lat": 54.405,
+      "lon": -110.279,
+      "kind": "fortress"
+    },
+    {
+      "name": "Northwest Passage (Parry Channel)",
+      "lat": 74.5,
+      "lon": -95.0,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Strait of Belle Isle",
+      "lat": 51.5,
+      "lon": -56.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:CAN",
+    "areaKm2": {
+      "low": 8788700,
+      "mid": 9984670,
+      "high": 9984670,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/north-america/ca.json",
+      "note": "asOf 2024. Surface area 15,634,410 km2 (AG.SRF.TOTL.K2); low is land area 8,788,700 km2 (AG.LND.TOTL.K2). World Bank AG.SRF.TOTL.K2 for Canada reads 15,634,410 km2, inconsistent with every other source, so mid/high use the CIA Factbook total 9,984,670 km2 (land 9,093,507 + water 891,163); low is World Bank land area."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 41235136,
+      "mid": 41651653,
+      "high": 42068170,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 41,651,653). Low/high +/-1% for 2026 change and census revision. Everything inside ne:CAN."
+    },
+    "urbanization": {
+      "low": 0.8238,
+      "mid": 0.8288,
+      "high": 0.8338,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 82.88% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 58000,
+      "mid": 62300,
+      "high": 75000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.31 as quoted: 62,300 active. CIA Factbook 2025 gives ~75,000 (high); low allows for the trained-effective-strength shortfall DND has reported since 2022. World Bank MS.MIL.TOTL.P1 72,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 23000,
+      "mid": 29100,
+      "high": 36000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: 29,100 reserves (Primary Reserve plus Rangers etc.). Low is a Primary-Reserve-only paid-strength allowance; high an educated allowance for Supplementary Reserve recall."
+    },
+    "supportPersonnel": {
+      "low": 50000,
+      "mid": 55800,
+      "high": 64000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 62,300 (IISS 2025) minus infantry P roles (3,500 + 3,000). Covers RCN (~8,400), RCAF (~12,000), armour/artillery/engineer crews, logistics, staff and the special-operations support element."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Canada in WWII (about 1.1 million served from ~11.5 million people, ~9.5%); scaled down for an all-volunteer force with a small reserve and little stored equipment. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 1249550,
+      "mid": 2082583,
+      "high": 3332132,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 41,651,653 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2500,
+          "mid": 3500,
+          "high": 5000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry personnel: 6 Regular Force LAV 6.0 battalions (PPCLI, RCR, R22eR 1st and 3rd/2nd battalions) x ~550 riflemen. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: LAV 6.0 mechanized infantry, Spike LR and Carl Gustaf; light on organic air defence."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional standing force; NATO eFP framework nation in Latvia."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light battalions (3) plus CANSOFCOM (JTF2, CSOR) operators. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: special forces are elite long-service professionals; Afghanistan combat experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 70,
+          "mid": 74,
+          "high": 82,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army",
+          "note": "Equipment list: Leopard 2A6M/2A6M CAN 20 + Leopard 2A4/2A4M 54 = 74 after 8 donated to Ukraine (2023). 42 of the 2A4s are kept for training. High adds the Leopard 2-based ARV/AEV hulls not counted."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: Leopard 2A6M is a contemporary tank; 2A4 training fleet is dated; no active protection."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: single tank regiment (LdSH(RC)), limited live-fire time."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 850,
+          "mid": 1030,
+          "high": 1150,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army",
+          "note": "Equipment list: LAV 6.0 616 + TLAV/M113 73 + Bison 155 + Coyote 56 + LAV 6.0 ACSV 128 delivered by Oct 2025 = 1,028. TAPV (500 armoured patrol vehicles) excluded as light protected mobility. Low allows for Bison/Coyote/TLAV retirements as ACSVs arrive."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: LAV 6.0 is a modern wheeled IFV with 25 mm cannon; no tracked IFV."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional standing force; NATO eFP framework nation in Latvia."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 33,
+          "mid": 33,
+          "high": 61,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army",
+          "note": "M777 155 mm 33 (4 of 37 donated to Ukraine). High adds LG1 Mk II 105 mm 28; C3 105 mm (93) is a training/avalanche-control gun and excluded. HIMARS (26) contracted Jan 2026, production confirmed Apr 2026, none in service."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: M777 with Excalibur is good but there is no self-propelled or rocket artillery yet."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional standing force; NATO eFP framework nation in Latvia."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 80,
+          "mid": 85,
+          "high": 107,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Air_Force",
+          "note": "RCAF article: 85 CF-188 Hornets in service as of 2025 (103 in inventory: 72 CF-188A + 31 CF-188B). High adds the first 4 F-35A due in 2026 (88 ordered)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: upgraded legacy F/A-18 Hornet; F-35A only arriving."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: NORAD/NATO standard, but CBC (Mar 2025) reported only ~40% of the RCAF inventory ready for action and a pilot shortage."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 130,
+          "mid": 139,
+          "high": 142,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Air_Force",
+          "note": "RCAF article: CH-146 Griffon 85 (2024) + CH-147F Chinook 14 (2025) + CH-148 Cyclone 27 + CH-149 Cormorant 13 (2023) = 139. No attack helicopters."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Chinook F and Cyclone modern, Griffon is a 1990s utility type."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 5,
+          "high": 15,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Air_Force",
+          "note": "Group 2+ UAVs: the 11 MQ-9B ordered in 2024 enter service from 2028 (RCAF article). Mid/high is an educated allowance for leased/contracted ISR UAVs and Army tactical systems; Canada fields no Group 3+ fleet of its own in 2026."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: small, mostly contracted capability."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 11,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Navy",
+          "note": "RCN article: 12 Halifax-class frigates (backbone of the fleet). Convention: ships_major = carriers/LHD + cruisers + destroyers + frigates. River-class destroyers not yet in service. Low allows for one hull in long refit."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Halifax-class mid-life modernized (HCM) 1990s frigates with ESSM/Harpoon; no area air defence."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional standing force; NATO eFP framework nation in Latvia."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 9,
+          "mid": 9,
+          "high": 13,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Navy",
+          "note": "RCN article: Harry DeWolf-class Arctic/offshore patrol vessels 5 + Kingston-class coastal defence vessels 4 = 9. High adds the Orca-class training tenders (8, not combatants) partially."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: lightly armed patrol vessels."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional standing force; NATO eFP framework nation in Latvia."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 1,
+          "mid": 4,
+          "high": 4,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Canadian_Navy",
+          "note": "RCN article: 4 Victoria-class (ex-RN Upholder) submarines. Low reflects chronic availability: often only one boat operational (RCN commander, Jan 2026, BNN Bloomberg as cited)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1980s design, poor availability; replacement (CPSP) not yet selected."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: limited sea days."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 0,
+          "mid": 2,
+          "high": 4,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army",
+          "note": "Equipment list: only RBS 70 NG MANPADS (unspecified number, from 2024) and counter-UAS systems bought for the Latvia brigade; no medium-range SAM. Counted as ~2 batteries; educated conversion."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: MANPADS and C-UAS only."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: capability rebuilt from 2024."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 (trained staff system, proven commanders) slightly discounted: NATO-integrated staff, led Kandahar task force 2006-11 and leads the Latvia multinational brigade; no corps-level command since Korea."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: professional regiments with strong identity (PPCLI, R22eR, RCR); recruitment/retention crisis since 2022 discounts slightly."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average; higher for continental/Arctic defence alongside the US."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Excalibur, Spike LR, AMRAAM/ESSM; HIMARS and F-35 contracted but not fielded; few loitering munitions."
+    },
+    "armor": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 composite armour (Leopard 2A6M); no active protection."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: modernized Halifax frigates with Link 16; River-class (Type 26) not in service; aging submarines."
+    },
+    "fortification": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 hardened facilities; NORAD North Warning System radars; no layered ground air defence (anchor 10 not met)."
+    },
+    "logistics": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: strategic airlift (5 CC-177, 17 CC-130J, CC-330 tankers), but almost no sealift of its own."
+    },
+    "communications": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Link 16, NATO/NORAD C2, Five Eyes; military satcom via WGS partnership."
+    },
+    "isr": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: RADARSAT Constellation Mission, CP-140 Aurora, NORAD; persistent drone ISR (MQ-9B) only from 2028."
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 (1985 jets) and 10 (5th generation): CF-188 Hornet fleet; F-35A deliveries begin 2026."
+    },
+    "cyber": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 partly met: Communications Security Establishment (Five Eyes) with active cyber operations mandate since 2019."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 41779,
+      "mid": 46421,
+      "high": 51063,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 1,933,497,120,784 / population 41,651,653 = 46,421 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1740147408706,
+      "mid": 1933497120784,
+      "high": 2126846832863,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,415,361,799,855 x 0.8005 (US GDP deflator 2011/2021) = 1,933,497,120,784 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/CAN/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.0132,
+      "mid": 0.0163,
+      "high": 0.02,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.63% of GDP in 2025. Low is 2023 (CIA Factbook 1.3%); high 2.0% is the 2025 estimate after Canada declared the NATO 2% target met for FY2025-26 (CIA Factbook)."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.2735,
+      "high": 0.28,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2022: industry incl. construction 27.35% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.35,
+      "mid": 0.5,
+      "high": 0.65,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. One of the largest net exporters of wheat, canola, pulses and beef; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 209114,
+      "mid": 232349,
+      "high": 255584,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 20,681,413 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.617% (SP.POP.1519.MA.5Y) / 5 = 232,349. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 80,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. GDLS-Canada London (Ontario) builds LAV 6.0/ACSV and LAV for export (Saudi contract); wartime rate limited by components. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. River-class destroyer construction at Irving Halifax only started; first hull not before 2030. (context page: https://en.wikipedia.org/wiki/Royal_Canadian_Navy)"
+      },
+      "artillery": {
+        "low": 0,
+        "mid": 5,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. No domestic gun line; could assemble light guns or HIMARS kits only with US supply chain. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Canadian_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 415600,
+      "mid": 1042300,
+      "high": 1042300,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 1,042,300 km total (2020), of which 415,600 km paved and 626,700 km unpaved (mostly engineered gravel). Low is paved only."
+    },
+    "railKm": {
+      "low": 48150,
+      "mid": 48150,
+      "high": 49422,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CAN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 48,150 route-km (World Bank IS.RRS.TOTL.KM); CIA Factbook 49,422 km (2021, high). Standard gauge, two transcontinental systems (CN, CPKC)."
+    },
+    "majorPorts": {
+      "low": 14,
+      "mid": 18,
+      "high": 18,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/north-america/ca.json",
+      "note": "CIA Factbook 2024: 284 ports, 4 large + 14 medium = 18; key ports include Vancouver, Prince Rupert, Montreal, Halifax, Quebec, Saint John. Low counts only ports with naval/major container facilities."
+    },
+    "merchantTonnage": {
+      "low": 3305000,
+      "mid": 3305000,
+      "high": 6000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 3,305 thousand DWT under the Canadian flag (2,909 thousand GT), largely Great Lakes lakers. High is an educated allowance for Canadian-owned foreign-flag tonnage."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Analogy to NATO mechanized brigade sustainment; Canada sustains a brigade in Latvia through allied host-nation support and strategic airlift."
+    },
+    "draftAnimals": {
+      "low": 250000,
+      "mid": 400000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys (not from FAO data). Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Canada is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Hosts no nuclear weapons since 1984."
+    },
+    "basesAbroad": [
+      {
+        "name": "Camp Adazi (Latvia, NATO Multinational Brigade)",
+        "lat": 57.08,
+        "lon": 24.33,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfc",
+    "chokepoints": [
+      "Northwest Passage",
+      "Strait of Belle Isle",
+      "Cabot Strait",
+      "Strait of Juan de Fuca",
+      "St. Lawrence Seaway"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, local supply and population support; high 1.3 because the Arctic/sub-Arctic climate and continental depth punish an invader not adapted to it."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. doctrineId nato-european-2026: no Canada-specific profile exists; this is the closest NATO middle-power profile (expeditionary brigade inside allied formations). Population convention: everything inside ne:CAN (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from IISS Military Balance 2025 as quoted on Wikipedia and the Canadian Army equipment list, RCAF and RCN articles (Government of Canada fleet pages as cited there). ships_major = carriers/LHD + cruisers + destroyers + frigates; ships_minor = AOPV, coastal defence vessels; drones = Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). Readiness is the main caveat: DND reported large personnel shortfalls and low aircraft availability in 2025. ~2,000 troops deployed in Latvia (CIA Factbook 2025). Coast Guard is civilian and excluded."
+}

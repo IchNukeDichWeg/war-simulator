@@ -1,0 +1,744 @@
+{
+  "id": "chile-2026",
+  "nationId": "chile",
+  "includes": [],
+  "name": "Republic of Chile",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "unitary republic",
+    "selective conscription",
+    "Pacific",
+    "Andes",
+    "Strait of Magellan",
+    "Antarctic claim"
+  ],
+  "capital": {
+    "name": "Santiago",
+    "lat": -33.4489,
+    "lon": -70.6693,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Valparaiso naval base",
+      "lat": -33.0472,
+      "lon": -71.6127,
+      "kind": "port"
+    },
+    {
+      "name": "Concepcion / Talcahuano",
+      "lat": -36.7249,
+      "lon": -73.1168,
+      "kind": "port"
+    },
+    {
+      "name": "Antofagasta",
+      "lat": -23.6509,
+      "lon": -70.3975,
+      "kind": "port"
+    },
+    {
+      "name": "Iquique",
+      "lat": -20.2307,
+      "lon": -70.1357,
+      "kind": "port"
+    },
+    {
+      "name": "Arica",
+      "lat": -18.4783,
+      "lon": -70.3126,
+      "kind": "city"
+    },
+    {
+      "name": "Puerto Montt",
+      "lat": -41.4689,
+      "lon": -72.9411,
+      "kind": "port"
+    },
+    {
+      "name": "Punta Arenas",
+      "lat": -53.1638,
+      "lon": -70.9171,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Magellan",
+      "lat": -53.0,
+      "lon": -70.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Cristo Redentor pass",
+      "lat": -32.82,
+      "lon": -70.07,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Atacama corridor (Pozo Almonte)",
+      "lat": -20.26,
+      "lon": -69.79,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:CHL",
+    "areaKm2": {
+      "low": 742032,
+      "mid": 756556,
+      "high": 756556,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 756,556 km2 (AG.SRF.TOTL.K2); low is land area 742,032 km2 (AG.LND.TOTL.K2). Excludes the Antarctic claim; includes Easter Island and Juan Fernandez."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 19661322,
+      "mid": 19859921,
+      "high": 20058520,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 19,859,921). Low/high +/-1% for 2026 change and census revision. Everything inside ne:CHL."
+    },
+    "urbanization": {
+      "low": 0.8868,
+      "mid": 0.8918,
+      "high": 0.8968,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 89.18% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 68500,
+      "mid": 68500,
+      "high": 72000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.404 as quoted: 68,500 active (excludes 44,700 Carabineros). CIA Factbook 2025: ~70,000 (40,000 Army, 20,000 Navy, 10,000 Air Force)."
+    },
+    "trainedReserves": {
+      "low": 19100,
+      "mid": 19100,
+      "high": 40000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: 19,100 reserves. High is an educated allowance for recent conscript classes."
+    },
+    "supportPersonnel": {
+      "low": 45000,
+      "mid": 50500,
+      "high": 55000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 68,500 (IISS 2025) minus infantry P roles (6,000 + 12,000). Covers navy and air force, armour/artillery crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to conscription-backed small-to-middle powers; Chile keeps selective conscription and stored Leopard/Marder fleets. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 595798,
+      "mid": 992996,
+      "high": 1588794,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 19,859,921 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry of the northern armoured brigades on Marder 1A3 and M113/YPR-765. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Marder 1A3 IFV, Spike ATGMs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional cadre with selective conscription; NATO-standard equipment and exercises (UNITAS, RIMPAC, Red Flag)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 16000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mountain, motorized, airborne/special-forces infantry and ~3,500 marines. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: era-typical."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional cadre with selective conscription; NATO-standard equipment and exercises (UNITAS, RIMPAC, Red Flag)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 130,
+          "mid": 170,
+          "high": 186,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army",
+          "note": "Equipment list: Leopard 2A4CHL ~186 purchased (some for spares/storage); Leopard 1V (<200 purchased 1997) largely replaced and stored. Low ~130 reflects IISS-style active counts."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Leopard 2A4, rated by IISS as the only modern MBT fleet in South America."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional cadre with selective conscription; NATO-standard equipment and exercises (UNITAS, RIMPAC, Red Flag)."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 850,
+          "mid": 934,
+          "high": 1024,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army",
+          "note": "Equipment list: Marder 1A3 180-270 + YPR-765/AIFV-B 169 + M113 ~408 + Mowag Piranha ~177 = 934 with 180 Marders (1,024 with 270). HMMWVs excluded."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Marder and AIFV are 1970s-80s designs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional cadre with selective conscription; NATO-standard equipment and exercises (UNITAS, RIMPAC, Red Flag)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 200,
+          "mid": 228,
+          "high": 240,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army",
+          "note": "M109A3/A5 155 mm SP 48 + LAR-160 MLRS 8 + M101 105 mm 136 + Soltam M-71 155 mm 36 = 228."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional cadre with selective conscription; NATO-standard equipment and exercises (UNITAS, RIMPAC, Red Flag)."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 50,
+          "mid": 57,
+          "high": 57,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Chilean_Air_Force",
+          "note": "Chilean Air Force inventory: F-16C/D Block 50 10 + F-16AM/BM MLU 36 + F-5E/F Tiger III 8+3 = 57. Low allows for F-5 retirement."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: F-16 Block 50 with AIM-120, MLU fleet; E-3D AEW support."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Red Flag participation, NATO-standard flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 20,
+          "mid": 22,
+          "high": 22,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Chilean_Air_Force",
+          "note": "A-29B Super Tucano 22 (advanced trainer/attack)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 65,
+          "mid": 75,
+          "high": 85,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Chilean_Air_Force",
+          "note": "Air Force: UH-1H 13 + Bell 206 5 + S-70/UH-60 7 + Bell 412 16 = 41; Army: AS532 Cougar 8 + SA330 Puma 2 + MD530F 9 = 19 (Army equipment list); Navy ~15 (AS532SC, Bell 412, Dauphin; educated). Total ~75."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 5,
+          "mid": 6,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Chilean_Air_Force",
+          "note": "Hermes 900 3 + Mantis 2 = 5 Air Force; Navy ScanEagle (educated). Army Lascar/SpyLite minis excluded."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 7,
+          "mid": 8,
+          "high": 8,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Chilean_Navy_ships",
+          "note": "Active ships list: Type 22 (Almirante Williams) 1 + Type 23 3 + Adelaide class 2 + Karel Doorman class 2 = 8 frigates. Low allows for retirement of the oldest Type 22."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: ex-European/Australian frigates with SM-2/ESSM/Harpoon, upgraded."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: RIMPAC/UNITAS regular."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 30,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Chilean_Navy_ships",
+          "note": "Active ships list: OPV-80 4 + Taitao 4 + Sa'ar 4 FAC 3 + LPD Sargento Aldea 1 + BATRAL LST 2 + Elicura 1 = 15 (low); mid/high add Protector-class 16 and Ona/Alacalufe 3 coastal patrol craft."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 4,
+          "mid": 4,
+          "high": 4,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Chilean_Navy_ships",
+          "note": "Scorpene class 2 (O'Higgins, Carrera) + Type 209/1400 2 (Thomson, Simpson) = 4."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Scorpene modern."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 18,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army",
+          "note": "Army equipment list: Mistral 1 on Unimog with EL/M-2106 radars (quantity not given); Air Force ground air-defence units not itemised on the fetched pages. ~12 short-range batteries is an educated conversion."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: short range."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: Prussian-tradition professional staff system, NATO interoperability; no war since 1883 apart from 1978 Beagle crisis mobilization."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: professional with strong unit identity."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: high for northern/Andean defence; post-2019 domestic deployment fatigue."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Spike LR/ER, AIM-120, Harpoon, SM-2; no long-range land fires."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Leopard 2A4 composite armour; no active protection."
+    },
+    "ships": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Scorpene, upgraded Type 23/Adelaide frigates."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: northern defensive positions; limited air defence."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: KC-135 tankers, C-130, ASMAR shipyards; long narrow territory with single trunk highway."
+    },
+    "communications": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Link 16 on F-16, NATO-compatible C2."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: E-3D Sentry AEW (2), FASAT-Delta satellite, Hermes 900."
+    },
+    "air": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: F-16 Block 50 and MLU."
+    },
+    "cyber": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Joint Cyber Defence Command (2018)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 22236,
+      "mid": 24706,
+      "high": 27177,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 490,662,575,745 / population 19,859,921 = 24,706 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 441596318171,
+      "mid": 490662575745,
+      "high": 539728833320,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 612,945,128,976 x 0.8005 (US GDP deflator 2011/2021) = 490,662,575,745 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.014,
+      "mid": 0.0152,
+      "high": 0.016,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.52% of GDP in 2025. CIA Factbook 1.5% (2023-24), 2.0% (2020-21). Copper Law earmarking replaced in 2019 by a strategic contingency fund."
+    },
+    "industrialShare": {
+      "low": 0.29,
+      "mid": 0.3142,
+      "high": 0.34,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 31.42% of GDP (NV.IND.TOTL.ZS). Mining (copper, lithium) is the largest component."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.3,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large exporter of fruit, wine, salmon; imports cereals; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 112253,
+      "mid": 124726,
+      "high": 137198,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 9,871,188 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.318% (SP.POP.1519.MA.5Y) / 5 = 124,726. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. ASMAR Talcahuano builds OPV-80s and the Escotillon IV multipurpose ships. (context page: https://en.wikipedia.org/wiki/List_of_active_Chilean_Navy_ships)"
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 10,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. FAMAE assembles/upgrades Piranha and other vehicles in small numbers. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Chilean_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 21289,
+      "mid": 43637,
+      "high": 85983,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 85,983 km total (2020), 21,289 km paved, 64,695 unpaved, 3,347 km controlled-access. Mid is paved plus half the unpaved network (derived midpoint); high is the total."
+    },
+    "railKm": {
+      "low": 2396,
+      "mid": 3400,
+      "high": 7281,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CHL/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 2,396 km (2021, state EFE network) as low; CIA Factbook 7,281 km (2014) incl. private mining lines as high; mid an educated middle."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 6,
+      "high": 12,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/ci.json",
+      "note": "CIA Factbook 2024: 39 ports, 0 large + 2 medium + 10 small; 12 key ports named (Valparaiso, San Antonio, Talcahuano, Antofagasta, Iquique, Arica, Punta Arenas...). Mid counts the main container/naval ports."
+    },
+    "merchantTonnage": {
+      "low": 300000,
+      "mid": 700000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chile is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 249 merchant ships (66 general cargo, 14 tankers)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck and coastal-shipping sustainment along a 4,300 km north-south axis."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 450000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and mules; not from FAO data. Mountain units use mules."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Chile is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to Tlatelolco."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Csb",
+    "chokepoints": [
+      "Strait of Magellan",
+      "Beagle Channel",
+      "Drake Passage",
+      "Andes passes",
+      "Atacama coastal corridor"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Andes wall and Atacama desert, fortified northern frontier, population support; high 1.3 for the desert/Andean climate."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:CHL (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2025 (personnel) as quoted; Chilean Army equipment list, Chilean Air Force inventory and the active Chilean Navy ships list. ships_major = frigates; ships_minor = OPVs, patrol, FAC, LPD/LST; drones = Group 2+ UAVs. Infantry P-role splits are educated guesses (grade D). Carabineros (44,700) excluded."
+}

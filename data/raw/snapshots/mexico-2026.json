@@ -1,0 +1,679 @@
+{
+  "id": "mexico-2026",
+  "nationId": "mexico",
+  "includes": [],
+  "name": "United Mexican States",
+  "year": 2026,
+  "era": "modern",
+  "region": "north_america",
+  "phase": "current",
+  "tags": [
+    "federal republic",
+    "USMCA",
+    "internal security role",
+    "National Guard",
+    "Gulf of Mexico",
+    "Pacific"
+  ],
+  "capital": {
+    "name": "Mexico City",
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Guadalajara",
+      "lat": 20.6597,
+      "lon": -103.3496,
+      "kind": "city"
+    },
+    {
+      "name": "Monterrey",
+      "lat": 25.6866,
+      "lon": -100.3161,
+      "kind": "city"
+    },
+    {
+      "name": "Puebla",
+      "lat": 19.0414,
+      "lon": -98.2063,
+      "kind": "city"
+    },
+    {
+      "name": "Tijuana",
+      "lat": 32.5149,
+      "lon": -117.0382,
+      "kind": "city"
+    },
+    {
+      "name": "Ciudad Juarez",
+      "lat": 31.6904,
+      "lon": -106.4245,
+      "kind": "city"
+    },
+    {
+      "name": "Veracruz",
+      "lat": 19.1738,
+      "lon": -96.1342,
+      "kind": "port"
+    },
+    {
+      "name": "Manzanillo",
+      "lat": 19.0522,
+      "lon": -104.3158,
+      "kind": "port"
+    },
+    {
+      "name": "Lazaro Cardenas",
+      "lat": 17.958,
+      "lon": -102.2,
+      "kind": "port"
+    },
+    {
+      "name": "Tampico",
+      "lat": 22.2331,
+      "lon": -97.8611,
+      "kind": "port"
+    },
+    {
+      "name": "Isthmus of Tehuantepec",
+      "lat": 16.9,
+      "lon": -95.0,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Yucatan Channel",
+      "lat": 21.6,
+      "lon": -86.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:MEX",
+    "areaKm2": {
+      "low": 1943950,
+      "mid": 1957194,
+      "high": 1957194,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 1,957,194 km2 (AG.SRF.TOTL.K2); low is land area 1,943,950 km2 (AG.LND.TOTL.K2). Includes offshore islands."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 130627431,
+      "mid": 131946900,
+      "high": 133266369,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 131,946,900). Low/high +/-1% for 2026 change and census revision. Everything inside ne:MEX."
+    },
+    "urbanization": {
+      "low": 0.7954,
+      "mid": 0.8004,
+      "high": 0.8054,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 80.04% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 260000,
+      "mid": 301000,
+      "high": 340000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.433 as quoted: 301,000 active (excludes 136,900 paramilitary). CIA Factbook 2025: ~260,000 Armed Forces plus ~110,000 National Guard (low). World Bank MS.MIL.TOTL.P1 341,000 (2020, high, includes paramilitary). Navy 92,043 personnel (2025) per Mexican Navy article."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 81500,
+      "high": 120000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 81,500 reserves. Low/high educated allowance: SMN conscripts get only weekend training and are not a ready reserve."
+    },
+    "supportPersonnel": {
+      "low": 200000,
+      "mid": 237000,
+      "high": 260000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 301,000 (IISS 2026) minus infantry P roles (4,000 + 60,000). Covers navy and air force, armoured-cavalry crews, artillery, engineers, logistics, military police and the large garrison/zone-command structure."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.07,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Latin American mass-mobilization capacity with an annual conscript lottery (Servicio Militar Nacional, weekend training only) but little stored heavy equipment; well below WWII belligerents (8-15%). Educated judgement."
+    },
+    "mobilizable": {
+      "low": 2638938,
+      "mid": 5277876,
+      "high": 9236283,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 131,946,900 x ratio 0.02 / 0.04 / 0.07."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 4000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry of the four armoured brigades (two mechanized regiments each) using DNC-1/VCR/HWK APCs. (context page: https://en.wikipedia.org/wiki/Mexican_Army)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1970s-80s APCs."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer regulars, but training is oriented to internal security and counter-cartel operations, not combined-arms war."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 60000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motorized/light infantry battalions (100+ numbered battalions spread over military zones), airborne/special forces, and ~20,000 naval infantry. Many are tied to internal-security deployments. (context page: https://en.wikipedia.org/wiki/Mexican_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: modern small arms (FX-05), Humvee/Sand Cat/Holkan mobility."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer regulars, but training is oriented to internal security and counter-cartel operations, not combined-arms war."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1200,
+          "mid": 1500,
+          "high": 2000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Army",
+          "note": "Army article (IISS/Flight-based tables): ERC-90 120 + DN-V Toro 340 + Max Mex ~50 + HWK-11 52 + AMX-VCI/DNC-1 409 + VCR-TT 46 + VBL 40 + Sand Cat 245 = ~1,300 counted, plus DN-XI (1,000+ planned, quantity in service not given), DNC-2, Cimarron. Mid ~1,500; light armoured cars dominate. No main battle tanks (armor role omitted)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: no modern IFV, many 1970s-80s vehicles and light armoured trucks."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer regulars, but training is oriented to internal security and counter-cartel operations, not combined-arms war."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 130,
+          "high": 180,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army article lists towed 105 mm (M101, OTO Mod 56, Norinco M90, M-56) and 155 mm (M198, TRF1, M114) in service without quantities; mid reflects roughly 120-130 towed tubes in IISS-style counts. No MLRS. (context page: https://en.wikipedia.org/wiki/Mexican_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: towed only, old designs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 4,
+          "mid": 7,
+          "high": 7,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Air_Force",
+          "note": "Mexican Air Force inventory (World Air Forces as cited): F-5E/F 7 (5 F-5E + 2 F-5F, one used for training). Low for engine/availability problems; replacement sought (Janes, Apr 2026)."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1970s light fighter without BVR missiles."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: few flying hours on type."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 150,
+          "mid": 170,
+          "high": 185,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Air_Force",
+          "note": "Air Force: Bell 206 22 + 407 17 + 412 8 + UH-1H 1 + Mi-17 18 + UH-60M 20 + EC725 16 + MD 530F 13 = 115. Navy (Mexican Naval Aviation article, World Air Forces 2024): Mi-17 22 + MD Explorer 6 + UH-60M 9 + EC725 3 + AS565 14 + AS555 1 = 55. Total 170. Trainers excluded. Source for navy part: https://en.wikipedia.org/wiki/Mexican_Naval_Aviation"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: UH-60M and EC725 modern, many light utility types."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: high operational tempo in counter-narcotics."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 3,
+          "mid": 6,
+          "high": 15,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Air_Force",
+          "note": "Group 2+ UAVs: Air Force Hermes 450 3. Navy and Army hold some ScanEagle/S4 Ehecatl-class systems; mid/high educated allowance."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 1,
+          "mid": 1,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Navy",
+          "note": "Mexican Navy article: Reformador class (Damen SIGMA 10514) frigate Benito Juarez = 1. High allows for a second hull of the 8 planned."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: modern SIGMA frigate with RAM/Harpoon."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 60,
+          "mid": 71,
+          "high": 80,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Mexican_Navy",
+          "note": "Mexican Navy article: missile boats 2 + OPVs/corvettes 24 (Oaxaca 8, Durango 4, Sierra 3, Holzinger 4, Uribe 5) + coastal patrol 37 (Tenochtitlan 10, Azteca 20, Democrata 2, Cabo 3, Punta 2) + LSTs 2 + Banderas minesweepers 6 = 71. Polaris interceptors (50+) excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: constabulary OPVs, few missiles."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: busy maritime-security navy."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 3,
+          "mid": 6,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army article lists only Bofors L70 40 mm and Oerlikon 35 mm twin guns (quantities not given) and some MANPADS; no SAM batteries. Counted as a handful of gun batteries. (context page: https://en.wikipedia.org/wiki/Mexican_Army)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: guns only."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 (competent staff, average generalship): experienced at internal security and disaster relief; no interstate war since 1945 (Escuadron 201) and limited combined-arms exercise culture."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: volunteer force with strong institutional loyalty; desertion and corruption pressure from cartel environment."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average; high public trust in the armed forces, but no external threat narrative."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: no guided anti-tank/anti-air missile mass, towed artillery, F-5 with IR missiles only; modern small arms."
+    },
+    "armor": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: no MBTs, light armoured cars and 1970s APCs; MRAP-class vehicles."
+    },
+    "ships": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Near anchor 9: one modern SIGMA frigate with RAM/Harpoon, many OPVs; no submarines."
+    },
+    "fortification": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: no hardened air bases or layered air defence."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: road/rail transport, small airlift (C-130, C-27J, C-295), domestic industry base."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Mexsat military satellites (Morelos 3), digital radios; limited data links."
+    },
+    "isr": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: E-99 AEW, TPS-78 radars, Mexsat; small UAV fleet."
+    },
+    "air": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: 7 F-5E/F, no modern fighter."
+    },
+    "cyber": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 10: cyber units within SEDENA/SEMAR, mainly defensive and surveillance (Pegasus use documented)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 15786,
+      "mid": 17540,
+      "high": 19295,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 2,314,414,519,234 / population 131,946,900 = 17,540 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 2082973067311,
+      "mid": 2314414519234,
+      "high": 2545855971158,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,891,211,142,079 x 0.8005 (US GDP deflator 2011/2021) = 2,314,414,519,234 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.006,
+      "mid": 0.0074,
+      "high": 0.009,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.74% of GDP in 2025. Low 0.6% (2020), high 0.9% (2024 est., CIA Factbook); internal security spending on the National Guard largely outside this figure."
+    },
+    "industrialShare": {
+      "low": 0.29,
+      "mid": 0.3056,
+      "high": 0.32,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 30.56% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large exporter of fruit, vegetables and beef but the largest importer of US maize; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 1018541,
+      "mid": 1131713,
+      "high": 1244884,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MEX/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 63,982,817 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 8.844% (SP.POP.1519.MA.5Y) / 5 = 1,131,713. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 100,
+        "mid": 250,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. SEDENA DGIM builds DN-XI, Cimarron and Holkan light armoured vehicles (1,200 Holkan planned per Infodefensa 2026). (context page: https://en.wikipedia.org/wiki/Mexican_Army)"
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 3,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. SEMAR shipyards (ASTIMAR) build Tenochtitlan/Damen patrol vessels and OPVs. (context page: https://en.wikipedia.org/wiki/Mexican_Navy)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. SIGMA frigate modules built in Mexico with Damen; slow rate. (context page: https://en.wikipedia.org/wiki/Mexican_Navy)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 175526,
+      "mid": 409000,
+      "high": 836603,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 836,603 km total (2020), 175,526 km paved (2021), 11,094 km controlled-access. Mid is paved plus half of the unpaved network (derived midpoint) because much of the unpaved network is rural track; high is the total."
+    },
+    "railKm": {
+      "low": 20825,
+      "mid": 23389,
+      "high": 26727,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/north-america/mx.json",
+      "note": "CIA Factbook: 23,389 km standard gauge (2017). Range +/- for concession-network definitions; World Bank has no recent value."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 7,
+      "high": 7,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/north-america/mx.json",
+      "note": "CIA Factbook 2024: 35 ports, 0 large + 7 medium; key ports Veracruz, Manzanillo, Tampico, Lazaro Cardenas (listed), Ensenada, Mazatlan, Acapulco."
+    },
+    "merchantTonnage": {
+      "low": 2228000,
+      "mid": 2228000,
+      "high": 3000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 2,228 thousand DWT under the Mexican flag (1,715 thousand GT), mostly Pemex tankers and offshore vessels. High is an educated allowance for Mexican-owned foreign-flag tonnage."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based sustainment of motorized brigades; no expeditionary logistics."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 8000000,
+      "high": 10000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys (roughly 6 million horses plus mules/donkeys; not from FAO data). The Army still has mounted units."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Mexico is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Depositary state of the Treaty of Tlatelolco."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BSh",
+    "chokepoints": [
+      "Isthmus of Tehuantepec",
+      "Yucatan Channel",
+      "Sierra Madre passes",
+      "Rio Grande crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountainous and desert terrain, large population, strong national identity; no harsh-climate bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:MEX (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2026 as quoted for personnel; Mexican Army, Mexican Air Force, Mexican Navy and Mexican Naval Aviation articles (World Air Forces 2024-2026 tables) for equipment. Many Army equipment rows have no quantity, so ifv_apc and artillery are grade C/D. ships_major = frigates; ships_minor = missile boats, OPVs/corvettes, coastal patrol, LSTs, MCM. National Guard (paramilitary, 136,900 per IISS) excluded; a large share of active forces is committed to internal security, so few are available on day 1 for external war. No tanks: armor role omitted."
+}

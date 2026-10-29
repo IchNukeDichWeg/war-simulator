@@ -1,0 +1,788 @@
+{
+  "id": "australia-2026",
+  "nationId": "australia",
+  "includes": [],
+  "name": "Commonwealth of Australia",
+  "year": 2026,
+  "era": "modern",
+  "region": "oceania",
+  "phase": "current",
+  "tags": [
+    "federal parliamentary monarchy",
+    "ANZUS",
+    "AUKUS",
+    "Five Eyes",
+    "all-volunteer force",
+    "Indo-Pacific",
+    "island continent"
+  ],
+  "capital": {
+    "name": "Canberra",
+    "lat": -35.2809,
+    "lon": 149.13,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Sydney (Fleet Base East)",
+      "lat": -33.8688,
+      "lon": 151.2093,
+      "kind": "port"
+    },
+    {
+      "name": "Melbourne",
+      "lat": -37.8136,
+      "lon": 144.9631,
+      "kind": "port"
+    },
+    {
+      "name": "Brisbane",
+      "lat": -27.4698,
+      "lon": 153.0251,
+      "kind": "port"
+    },
+    {
+      "name": "Perth / Fremantle",
+      "lat": -32.0569,
+      "lon": 115.7439,
+      "kind": "port"
+    },
+    {
+      "name": "Adelaide (Osborne shipyard)",
+      "lat": -34.9285,
+      "lon": 138.6007,
+      "kind": "city"
+    },
+    {
+      "name": "Darwin",
+      "lat": -12.4634,
+      "lon": 130.8456,
+      "kind": "port"
+    },
+    {
+      "name": "HMAS Stirling (Fleet Base West)",
+      "lat": -32.2333,
+      "lon": 115.6833,
+      "kind": "port"
+    },
+    {
+      "name": "Townsville (3rd Brigade)",
+      "lat": -19.259,
+      "lon": 146.8169,
+      "kind": "fortress"
+    },
+    {
+      "name": "RAAF Base Tindal",
+      "lat": -14.5214,
+      "lon": 132.3778,
+      "kind": "fortress"
+    },
+    {
+      "name": "RAAF Base Amberley",
+      "lat": -27.6406,
+      "lon": 152.7117,
+      "kind": "fortress"
+    },
+    {
+      "name": "Torres Strait",
+      "lat": -10.5,
+      "lon": 142.2,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Lombok/Timor Sea approaches",
+      "lat": -11.0,
+      "lon": 125.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:AUS",
+    "areaKm2": {
+      "low": 7688287,
+      "mid": 7741220,
+      "high": 7741220,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 7,741,220 km2 (AG.SRF.TOTL.K2); low is land area 7,688,287 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 27338267,
+      "mid": 27614411,
+      "high": 27890555,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 27,614,411). Low/high +/-1% for 2026 change and census revision. Everything inside ne:AUS."
+    },
+    "urbanization": {
+      "low": 0.8722,
+      "mid": 0.8772,
+      "high": 0.8822,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 87.72% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 58000,
+      "mid": 58540,
+      "high": 62000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.246 as quoted: 58,540 active. CIA Factbook 2025: ~60,000 active ADF personnel; high allows for the recruitment surge reported in 2025-26."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 21450,
+      "high": 30000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024: 21,450 reserves. High is an educated allowance for the Standby/inactive Reserve."
+    },
+    "supportPersonnel": {
+      "low": 49000,
+      "mid": 51540,
+      "high": 55000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 58,540 (IISS 2024) minus infantry P roles (2,500 + 4,500). Covers RAN (~16,000), RAAF (~15,000), armoured/artillery crews, logistics, staff and SOCOMD support."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.06,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Australia in WWII (~1 million served from ~7 million, ~14%); scaled down for an all-volunteer force with a small reserve. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 828432,
+      "mid": 1656865,
+      "high": 2761441,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 27,614,411 x ratio 0.03 / 0.06 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized/motorized infantry of the 1st and 7th Brigades (RAR battalions on M113AS4/Bushmaster). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern kit, Javelin, but M113/Bushmaster until Redback IFVs arrive."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: long-service professionals, regular high-end exercises with the US (Talisman Sabre), Iraq/Afghanistan experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3500,
+          "mid": 4500,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light and amphibious RAR battalions (3rd Brigade, 2 RAR amphibious) plus SOCOMD (SASR, 2 Commando Regiment). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: SOF among the best equipped."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: SASR and commandos are elite long-service professionals."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 46,
+          "mid": 59,
+          "high": 75,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army",
+          "note": "Equipment list: M1A2 SEPv3 Abrams 46 delivered (+29 on order, all 75 due by end 2026 = high); remaining M1A1 being replaced (49 donated to Ukraine). Mid assumes deliveries continue through 2026."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: M1A2 SEPv3 is among the era's best tanks."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: long-service professionals, regular high-end exercises with the US (Talisman Sabre), Iraq/Afghanistan experience."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 600,
+          "mid": 700,
+          "high": 1450,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army",
+          "note": "Equipment list: ASLAV 257 + Boxer CRV 25 listed (+186 on order; mid assumes some further 2025-26 deliveries) + M113AS3/AS4 ~403 (431 minus 28 donated) = ~685-700. High adds 763 Bushmaster PMVs (protected mobility, counted separately by most sources). Redback IFV (129) first deliveries from 2026 not counted."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Boxer modern, ASLAV/M113 old."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: long-service professionals, regular high-end exercises with the US (Talisman Sabre), Iraq/Afghanistan experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 56,
+          "mid": 62,
+          "high": 75,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army",
+          "note": "Equipment list: M777A2 155 mm 48 + AS9 Huntsman (K9) 6 (+24 on order) + HIMARS 8 (+34 on order, first 8 delivered 2025; 20 more scheduled) = 62."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: modern but small; HIMARS with GMLRS/PrSM arriving."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: long-service professionals, regular high-end exercises with the US (Talisman Sabre), Iraq/Afghanistan experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 96,
+          "mid": 96,
+          "high": 108,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Australian_Air_Force",
+          "note": "RAAF inventory: F-35A 72 + F/A-18F Super Hornet 24 = 96. High adds 12 EA-18G Growler (electronic attack)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: full 5th-generation F-35A fleet plus Super Hornet, Growler and E-7A Wedgetail."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: high flying hours, Red Flag/Pitch Black."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 0,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Australian_Air_Force",
+          "note": "EA-18G Growler 12 (electronic attack/SEAD, no dedicated bomber). Low 0 if Growlers are treated as support aircraft; F-35A/Super Hornet strike role counted under fighters."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: only non-US Growler operator."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 75,
+          "mid": 85,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army",
+          "note": "Army: AH-64E 6 (+23 on order, May 2026) + CH-47F 14 + UH-60M 19 (+21, Apr 2026) + H135 5 (leased) = 44 (equipment list). Navy: MH-60R ~24 and EC135 training (RAN aviation, educated count). Tiger ARH and MRH-90 retired."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: AH-64E, UH-60M, CH-47F, MH-60R are current types."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: fleet in transition after Tiger/Taipan retirements."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 13,
+          "mid": 20,
+          "high": 35,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Australian_Air_Force",
+          "note": "RAAF: MQ-4C Triton 3 (+1 on order) + MQ-28A Ghost Bat 17 test/Block 1-2 airframes (mid counts ~half as operational) + Army RQ-7B Shadow 10 = 13 firm, ~20 mid."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Triton HALE and the MQ-28 collaborative combat aircraft are frontier systems."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 12,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Australian_Navy_ships",
+          "note": "Active RAN ships list: Canberra-class LHD 2 + Hobart-class (Aegis) destroyers 3 + Anzac-class frigates 7 = 12."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Hobart Aegis destroyers with SM-2/SM-6 and Tomahawk planned; Anzacs aging."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: RIMPAC, high sea time."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 8,
+          "mid": 10,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Australian_Navy_ships",
+          "note": "Active RAN ships list: Bay-class LSD Choules 1 + Arafura-class OPV 1 + Cape-class patrol boats 6 + Huon-class minehunters 2 = 10. High allows for further Arafura commissioning in 2026."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Australian_Navy_ships",
+          "note": "Active RAN ships list: Collins-class 6 (low reflects boats in life-of-type extension). AUKUS SSN-AUKUS/Virginia transfers not before the 2030s."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: large conventional boats with Mk 48 ADCAP and US combat system."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: crewing shortfalls limit availability."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 8,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army",
+          "note": "Equipment list: NASAMS-3 7 fire units delivered; two batteries of three fire units each by end 2026 (16th Regiment). Mid adds RBS 70 MANPADS batteries still being replaced."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: NASAMS with CEA AESA radars modern but small."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: trained joint staff (HQJOC), proven in East Timor (INTERFET lead 1999), Iraq and Afghanistan; deeply integrated with US command."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: strong regimental identity (RAR, SASR), ANZAC tradition."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: motivated, high public support for continental defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Near anchor 10: JASSM-ER, LRASM, NSM, SM-6, PrSM/GMLRS, Tomahawk on order; domestic GWEO missile enterprise."
+    },
+    "armor": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: M1A2 SEPv3 and Boxer with modern composite armour; no fielded active protection system confirmed on the fetched pages."
+    },
+    "ships": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Aegis destroyers, LHDs, Ghost Shark XL-AUV programme; Collins boats aging."
+    },
+    "fortification": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: hardened northern bases being upgraded, NASAMS layered defence emerging."
+    },
+    "logistics": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 partly met: C-17A, KC-30A, C-130J airlift and tankers; limited sealift."
+    },
+    "communications": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Five Eyes C4ISR, Link 16, WGS satcom share, JP 9102 satellite programme."
+    },
+    "isr": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: E-7A Wedgetail, MQ-4C, P-8A, JORN over-the-horizon radar."
+    },
+    "air": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: F-35A fleet of 72, Growler, Wedgetail."
+    },
+    "cyber": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Australian Signals Directorate (REDSPICE) and Defence Cyber Command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 43367,
+      "mid": 48185,
+      "high": 53004,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 1,330,609,995,994 / population 27,614,411 = 48,185 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1197548996395,
+      "mid": 1330609995994,
+      "high": 1463670995594,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,662,223,605,239 x 0.8005 (US GDP deflator 2011/2021) = 1,330,609,995,994 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/AUS/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.019,
+      "mid": 0.0192,
+      "high": 0.021,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.92% of GDP in 2025. CIA Factbook 2.0% (2020-24); planned rise to ~2.3-2.4% by the early 2030s."
+    },
+    "industrialShare": {
+      "low": 0.23,
+      "mid": 0.2389,
+      "high": 0.27,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 23.89% of GDP (NV.IND.TOTL.ZS). Mining (iron ore, coal, LNG) is the largest component."
+    },
+    "foodSurplus": {
+      "low": 0.4,
+      "mid": 0.55,
+      "high": 0.7,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exports roughly 70% of agricultural output (wheat, beef, wool, barley); not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 157152,
+      "mid": 174614,
+      "high": 192075,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/AUS/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 13,702,766 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.371% (SP.POP.1519.MA.5Y) / 5 = 174,614. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Rheinmetall MILVEHCOE Redbank builds Boxer (and export Boxers for Germany); Hanwha Geelong for Redback/AS9. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army)"
+      },
+      "artillery": {
+        "low": 5,
+        "mid": 12,
+        "high": 25,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hanwha Defense Australia Geelong builds AS9 Huntsman. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Australian_Army)"
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Arafura-class OPVs and Evolved Cape-class patrol boats (Luerssen/Austal). (context page: https://en.wikipedia.org/wiki/List_of_active_Royal_Australian_Navy_ships)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hunter-class (Type 26) frigates at Osborne not before ~2032; general purpose frigates (Mogami) initially built in Japan. (context page: https://en.wikipedia.org/wiki/List_of_active_Royal_Australian_Navy_ships)"
+      },
+      "drones": {
+        "low": 5,
+        "mid": 12,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Boeing Australia MQ-28 Ghost Bat line (Block 3 in production). (context page: https://en.wikipedia.org/wiki/Royal_Australian_Air_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 403214,
+      "mid": 977874,
+      "high": 977874,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook/BITRE as quoted: 977,874 km total (2023), 403,214 km paved, 574,660 km unpaved (largely engineered gravel), 1,716 km controlled-access. Low is paved only."
+    },
+    "railKm": {
+      "low": 32606,
+      "mid": 32606,
+      "high": 33500,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/australia-oceania/as.json",
+      "note": "CIA Factbook: 32,606 km (2022; 18,007 standard, 11,914 narrow, 2,685 broad gauge). World Bank has no value. Gauge breaks limit throughput."
+    },
+    "majorPorts": {
+      "low": 9,
+      "mid": 13,
+      "high": 13,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/australia-oceania/as.json",
+      "note": "CIA Factbook 2024: 66 ports, 5 large + 8 medium = 13 (Sydney, Melbourne, Brisbane, Fremantle, Darwin, Newcastle, Port Kembla, Dampier...)."
+    },
+    "merchantTonnage": {
+      "low": 2410000,
+      "mid": 2410000,
+      "high": 4000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 2,410 thousand DWT under the Australian flag (2,093 thousand GT). High is an educated allowance for Australian-owned foreign-flag tonnage; the coastal fleet is small, a recognised wartime vulnerability."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Analogy to US/NATO brigade sustainment plus the long northern lines of communication (Darwin-Adelaide rail, Stuart Highway)."
+    },
+    "draftAnimals": {
+      "low": 150000,
+      "mid": 250000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and donkeys (excluding ~200,000+ feral camels); not from FAO data. Militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Australia is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. AUKUS covers nuclear propulsion only; Treaty of Rarotonga party."
+    },
+    "basesAbroad": [
+      {
+        "name": "RMAF Butterworth (Malaysia, rotational RAAF presence)",
+        "lat": 5.466,
+        "lon": 100.391,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Torres Strait",
+      "Lombok Strait approaches",
+      "Timor Sea",
+      "Bass Strait",
+      "Sea-air gap to the north"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: sea-air gap, local supply and population support; high 1.3 because the arid/tropical north offers deep strategic depth and a climate an invader is not adapted to."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2024-25 data with 2026 order of battle. doctrineId archetype-modern-regional (archetype-coldwar-western is outdated for a 2026 force). Population convention: everything inside ne:AUS (World Bank; external territories such as Christmas Island are separate NE units). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2024 (personnel) as quoted; Australian Army equipment list (deliveries as of Apr-May 2026), RAAF inventory and the active RAN ships list. The force is mid-transition: Tiger/MRH-90 retired, Abrams/Apache/Black Hawk/HIMARS/AS9 deliveries running, so counts carry a delivery-timing range. ships_major = LHD + destroyers + frigates; ships_minor = LSD, OPV, patrol, MCM; drones = Group 2+ UAVs (MQ-28 test airframes counted at half). Infantry P-role splits are educated guesses (grade D). Tech note on armour: active protection on Australian Abrams is not confirmed, so armor stays below anchor 10."
+}

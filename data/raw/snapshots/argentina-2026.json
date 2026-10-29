@@ -1,0 +1,757 @@
+{
+  "id": "argentina-2026",
+  "nationId": "argentina",
+  "includes": [],
+  "name": "Argentine Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "federal republic",
+    "Mercosur",
+    "all-volunteer force",
+    "South Atlantic",
+    "Malvinas claim",
+    "Antarctic claim"
+  ],
+  "capital": {
+    "name": "Buenos Aires",
+    "lat": -34.6037,
+    "lon": -58.3816,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Cordoba",
+      "lat": -31.4201,
+      "lon": -64.1888,
+      "kind": "city"
+    },
+    {
+      "name": "Rosario",
+      "lat": -32.9442,
+      "lon": -60.6505,
+      "kind": "port"
+    },
+    {
+      "name": "Mendoza",
+      "lat": -32.8895,
+      "lon": -68.8458,
+      "kind": "city"
+    },
+    {
+      "name": "La Plata",
+      "lat": -34.9214,
+      "lon": -57.9545,
+      "kind": "city"
+    },
+    {
+      "name": "Mar del Plata",
+      "lat": -38.0055,
+      "lon": -57.5426,
+      "kind": "port"
+    },
+    {
+      "name": "Puerto Belgrano naval base",
+      "lat": -38.89,
+      "lon": -62.1,
+      "kind": "port"
+    },
+    {
+      "name": "Comodoro Rivadavia",
+      "lat": -45.8641,
+      "lon": -67.4966,
+      "kind": "port"
+    },
+    {
+      "name": "Rio Gallegos",
+      "lat": -51.623,
+      "lon": -69.2168,
+      "kind": "city"
+    },
+    {
+      "name": "Ushuaia",
+      "lat": -54.8019,
+      "lon": -68.303,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Magellan",
+      "lat": -52.6,
+      "lon": -69.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Cristo Redentor pass",
+      "lat": -32.82,
+      "lon": -70.07,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ARG",
+    "areaKm2": {
+      "low": 2736690,
+      "mid": 2780400,
+      "high": 2780400,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 2,780,400 km2 (AG.SRF.TOTL.K2); low is land area 2,736,690 km2 (AG.LND.TOTL.K2). Excludes the Antarctic claim and the Falkland Islands (not in ne:ARG)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 45392864,
+      "mid": 45851378,
+      "high": 46309892,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 45,851,378). Low/high +/-1% for 2026 change and census revision. Everything inside ne:ARG."
+    },
+    "urbanization": {
+      "low": 0.9185,
+      "mid": 0.9235,
+      "high": 0.9285,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 92.35% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 75000,
+      "mid": 83000,
+      "high": 85000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.409 as quoted: 83,000 active (excludes 31,250 paramilitary Gendarmeria/Prefectura). CIA Factbook 2025: ~75,000 (45,000 Army, 15,000 Navy incl. ~3,500 marines, 15,000 Air Force), low."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 20000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 as quoted lists no organized reserve (0). High is an educated allowance for recent volunteer leavers recallable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 60000,
+      "mid": 69000,
+      "high": 72000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 83,000 (IISS 2024) minus infantry P roles (2,500 + 11,500). Covers navy and air force, armour/artillery crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to 1982 Falklands/Malvinas mobilization (conscript classes recalled, ~0.5% of population) scaled up for total war; no conscription since 1994 and no organized reserve (IISS). Educated judgement."
+    },
+    "mobilizable": {
+      "low": 917028,
+      "mid": 1834055,
+      "high": 2751083,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 45,851,378 x ratio 0.02 / 0.04 / 0.06."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1500,
+          "mid": 2500,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry regiments of the armoured brigades on TAM VCTP and M113 (regiments are battalion-sized and understrength). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: TAM VCTP and M113 are 1970s-80s vehicles."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 7000,
+          "mid": 11500,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mountain, jungle, airborne and motorized infantry regiments plus ~2,500 marines of the Infanteria de Marina. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: dated personal equipment and night-vision."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mountain and commando units well trained; others limited by budget."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 200,
+          "mid": 362,
+          "high": 362,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army",
+          "note": "Equipment list (IISS as cited): TAM 250 incl. variants (being upgraded to TAM 2C-A2) + SK-105 Kurassier light tanks 112 = 362. Low reflects poor serviceability and the variants included in 250."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: TAM is a 1980s medium tank (105 mm); SK-105 light tank."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 500,
+          "mid": 615,
+          "high": 650,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army",
+          "note": "TAM VCTP 139 + M113 388 + M577 ~20 + Mowag Grenadier ~60 + Stryker M1126 8 (235 on order, Aug 2026) = 615."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: old fleet, Stryker only arriving."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 180,
+          "mid": 217,
+          "high": 230,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army",
+          "note": "TAM VCA 155 mm SP 20 + CITER 155 mm L33 108 + OTO Mod 56 105 mm 64 + CP-30 MLRS 20 + Pampero 5 = 217. Mortar carriers excluded."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly towed 1970s-80s designs."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 6,
+          "mid": 12,
+          "high": 18,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Argentine_Air_Force",
+          "note": "Argentine Air Force inventory: F-16A/B Block 15 MLU 12 (+12 on order) ex-Danish; first six delivered Dec 2025, second batch of six followed. Mirage family retired 2015; A-4AR no longer listed."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: F-16 MLU is a capable 4th-generation fighter but the fleet is small and new to the FAA."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conversion still under way, low flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 11,
+          "mid": 23,
+          "high": 27,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Argentine_Air_Force",
+          "note": "Pampa III 11 (4 on order) + EMB-312 Tucano 12 (attack/trainer) = 23. Pampa II trainers excluded."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: light jet trainers and turboprops."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 90,
+          "mid": 110,
+          "high": 120,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army",
+          "note": "Army: UH-1H 44 + Bell 212 1 + AS332 1 + SA315 5 + Bell 206 20 + Bell 407 3 = 74 (equipment list); Air Force: Bell 212/412 13 + Bell 407 1 + MD 500 8 + Lama 5 + S-70/S-76 3 = 30 (Argentine Air Force article); Navy ~10 (Sea King, Fennec), educated count. Total ~110."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly UH-1H generation."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 2,
+          "high": 6,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. No Group 2+ UAV in Army/Air Force lists beyond small Mavic/Tehuelche types; mid allows for Navy/FAA trials. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 3,
+          "mid": 3,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Argentine_Navy_ships",
+          "note": "Active ships list: Almirante Brown-class (MEKO 360H2, classed destroyers, frigate-sized) 3; Heroina retired 2024. Convention: ships_major = destroyers + frigates."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1983 ships with old Exocet MM38/Aspide."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: limited sea days."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 23,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Argentine_Navy_ships",
+          "note": "Espora-class corvettes 6 (Parker inactive mid-2025) + Gowind OPVs 4 + King 1 + Intrepida 2 + Baradero/Punta Mogotes/Zurubi patrol boats 7 = 20; amphibious support ship excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: Gowind OPVs modern but lightly armed."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 1,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Argentine_Navy_ships",
+          "note": "Active ships list: as of 2025 the entire submarine fleet is inactive (Santa Cruz and Salta in reserve). High allows for a reactivated boat."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: inactive 1970s-80s boats."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: no submarine sea time since 2017 (San Juan loss)."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 6,
+          "mid": 9,
+          "high": 12,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army",
+          "note": "Equipment list: Oerlikon GDF 35 mm 38 + Bofors 40 mm 24 guns with 5 Skyguard fire-control units, RBS 70 NG MANPADS (classified number); ~9 batteries (educated conversion, ~6 guns per battery)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: gun-based, short range."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band: all-volunteer force since 1994 but chronic underfunding (~0.5% of GDP) limits exercises, flying hours and sea days."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff schools; 1982 combat experience is now institutional memory only; joint command weak."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: volunteer professionals with strong Malvinas-era identity, but low pay and retention problems."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average; higher in a South Atlantic/sovereignty scenario."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: few modern guided weapons; F-16 brings AIM-9/AIM-120-class only if supplied."
+    },
+    "armor": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: TAM (1980s, 105 mm, no composite armour), Stryker arriving."
+    },
+    "ships": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: MEKO 360/140 1980s, no operational submarines; Gowind OPVs modern."
+    },
+    "fortification": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: no layered air defence."
+    },
+    "logistics": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: small airlift (5 C-130H, KC-130H), rail freight, limited sealift."
+    },
+    "communications": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Near anchor 9: ARSAT satellites (civil), limited tactical data links."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: SAOCOM radar satellites (civil/dual-use), P-3C Orion (ex-Norway), INVAP radars."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: F-16A/B MLU (1980s airframe, MLU avionics)."
+    },
+    "cyber": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 10: Joint Cyber Defence Command (2014), small."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 20062,
+      "mid": 22291,
+      "high": 24520,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 1,022,082,332,049 / population 45,851,378 = 22,291 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 919874098844,
+      "mid": 1022082332049,
+      "high": 1124290565254,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,276,804,911,991 x 0.8005 (US GDP deflator 2011/2021) = 1,022,082,332,049 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/ARG/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.005,
+      "mid": 0.0056,
+      "high": 0.0065,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.56% of GDP in 2025. CIA Factbook 0.5% (2023), 0.6% (2024); among the lowest in the region."
+    },
+    "industrialShare": {
+      "low": 0.21,
+      "mid": 0.2287,
+      "high": 0.25,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 22.87% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.5,
+      "mid": 0.65,
+      "high": 0.8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Among the largest net food exporters per capita (soy meal, maize, wheat, beef); not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 332522,
+      "mid": 369469,
+      "high": 406416,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 22,763,219 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 8.115% (SP.POP.1519.MA.5Y) / 5 = 369,469. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "aircraft_strike": {
+        "low": 0,
+        "mid": 3,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. FAdeA Cordoba builds the IA-63 Pampa III at a low rate. (context page: https://en.wikipedia.org/wiki/Argentine_Air_Force)"
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. TAM line (TAMSE) closed; upgrades only; small wheeled vehicle assembly. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Argentine_Army)"
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Tandanor/Rio Santiago shipyards; patrol boats only. (context page: https://en.wikipedia.org/wiki/List_of_active_Argentine_Navy_ships)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 81355,
+      "mid": 160000,
+      "high": 240000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 240,000 km total (2017), 81,355 km paved, 4,423 km controlled-access. Mid is paved plus half the unpaved network (derived midpoint); high is the total."
+    },
+    "railKm": {
+      "low": 17866,
+      "mid": 17866,
+      "high": 25000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ARG/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 17,866 km (2019; CIA Factbook same, 2018). High allows for the nominal network incl. lines out of service (educated)."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 6,
+      "high": 13,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/ar.json",
+      "note": "CIA Factbook 2024: 37 ports, 1 large + 2 medium + 10 small; 13 key ports named (Buenos Aires, Rosario, Bahia Blanca/Ingeniero White, Puerto Belgrano, Mar del Plata, Puerto Madryn, Ushuaia...). Mid adds the main river ports of the Parana (educated)."
+    },
+    "merchantTonnage": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Argentina is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 201 merchant ships (33 tankers, few cargo ships)."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based sustainment; long Patagonian distances with few roads."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses (~2.5 million) and mules; not from FAO data. Mountain units use mules."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Argentina is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to Tlatelolco and ABACC with Brazil; civilian nuclear industry (INVAP)."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Strait of Magellan",
+      "Beagle Channel",
+      "Andes passes (Cristo Redentor)",
+      "Rio de la Plata"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Andes and Patagonian depth, population support; Patagonia is harsh but sparsely defended."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:ARG (World Bank); the Falkland/Malvinas Islands and the Antarctic claim are not inside the border. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2024 (personnel) as quoted; Argentine Army equipment list, Argentine Air Force article (F-16 deliveries Dec 2025 onward) and the active Argentine Navy ships list. ships_major = destroyers/frigates; ships_minor = corvettes, OPVs, patrol boats; drones = Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). Gendarmeria and Prefectura (paramilitary) excluded. Serviceability is low across all services (budget ~0.5% of GDP)."
+}

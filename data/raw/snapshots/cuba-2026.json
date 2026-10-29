@@ -1,0 +1,680 @@
+{
+  "id": "cuba-2026",
+  "nationId": "cuba",
+  "includes": [],
+  "name": "Republic of Cuba",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "one-party socialist state",
+    "conscription",
+    "Territorial Troops Militia",
+    "island",
+    "Caribbean",
+    "Straits of Florida"
+  ],
+  "capital": {
+    "name": "Havana",
+    "lat": 23.1136,
+    "lon": -82.3666,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Santiago de Cuba",
+      "lat": 20.0247,
+      "lon": -75.8219,
+      "kind": "port"
+    },
+    {
+      "name": "Camaguey",
+      "lat": 21.3808,
+      "lon": -77.9169,
+      "kind": "city"
+    },
+    {
+      "name": "Holguin",
+      "lat": 20.8872,
+      "lon": -76.263,
+      "kind": "city"
+    },
+    {
+      "name": "Santa Clara",
+      "lat": 22.4064,
+      "lon": -79.9647,
+      "kind": "city"
+    },
+    {
+      "name": "Cienfuegos naval base",
+      "lat": 22.1461,
+      "lon": -80.4356,
+      "kind": "port"
+    },
+    {
+      "name": "Mariel",
+      "lat": 22.9925,
+      "lon": -82.7536,
+      "kind": "port"
+    },
+    {
+      "name": "Matanzas",
+      "lat": 23.0411,
+      "lon": -81.5775,
+      "kind": "port"
+    },
+    {
+      "name": "San Antonio de los Banos air base",
+      "lat": 22.8715,
+      "lon": -82.5093,
+      "kind": "fortress"
+    },
+    {
+      "name": "Straits of Florida",
+      "lat": 24.0,
+      "lon": -81.0,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Windward Passage",
+      "lat": 20.0,
+      "lon": -73.8,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Guantanamo Bay (US naval base)",
+      "lat": 19.9,
+      "lon": -75.15,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:CUB",
+    "areaKm2": {
+      "low": 103800,
+      "mid": 109884,
+      "high": 109884,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CUB/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 109,884 km2 (AG.SRF.TOTL.K2); low is land area 103,800 km2 (AG.LND.TOTL.K2). Includes Isla de la Juventud; the US Guantanamo Bay leased area is inside the island."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10609087,
+      "mid": 10937203,
+      "high": 11265319,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CUB/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 10,937,203). Low/high +/-3% for 2026 change and census revision. Everything inside ne:CUB. Official/UN figures may overstate the resident population after the 2021-2024 emigration wave."
+    },
+    "urbanization": {
+      "low": 0.7673,
+      "mid": 0.7723,
+      "high": 0.7773,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CUB/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 77.23% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 45000,
+      "mid": 49000,
+      "high": 50000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.427 as quoted: 49,000 active (excludes 26,500 paramilitary). CIA Factbook 2025: ~50,000 (limited information)."
+    },
+    "trainedReserves": {
+      "low": 39000,
+      "mid": 39000,
+      "high": 100000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024: 39,000 ready reserves (serve 45 days a year). The 1,120,000 reserve paramilitary (Territorial Troops Militia etc.) is not counted; high adds an educated share of its trained core."
+    },
+    "supportPersonnel": {
+      "low": 25000,
+      "mid": 29000,
+      "high": 32000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 49,000 (IISS 2024) minus infantry P roles (8,000 + 12,000). Covers navy (~3,000), air and air-defence force (~8,000), armour/artillery crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Cuba's own \"War of All the People\" doctrine: the Territorial Troops Militia, Youth Labour Army and Civil Defence reserve total ~1,120,000 (IISS as quoted), ~10% of population. Educated judgement on what could be armed."
+    },
+    "mobilizable": {
+      "low": 546860,
+      "mid": 874976,
+      "high": 1312464,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,937,203 x ratio 0.05 / 0.08 / 0.12."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry brigades (IISS 1999: nine mech brigades; now cadre-strength) on BTR-60/BMP-1. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: Soviet-era kit."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 16000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light/airborne/special troops and the Border Brigade at Guantanamo. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: AKM/Vz.58, RPG-7."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 300,
+          "mid": 500,
+          "high": 1300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "IISS Military Balance 2025 via the Cuban equipment list: T-62/T-55/T-54 ~400 (estimate) + PT-76 (n/a). The MBT-by-country list gives T-55 900 + T-62 400 + T-64 20 (high, incl. stored). Most are stored or immobile; mid ~500 incl. PT-76 light tanks."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: 1950s-60s tanks."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 400,
+          "mid": 550,
+          "high": 700,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "IISS 2025 via equipment list: BMP-1/1P ~50 + BTR-60/50/152 ~500 = ~550; BRDM-2 and BMD-1 n/a."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 300,
+          "mid": 600,
+          "high": 1200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Equipment list (IISS 2025) lists D-30, M-46, ML-20, D-1, 2S1, 2S3, BM-21, BM-14 and the locally built Jupiter SP conversions without quantities; ZIS-2 57 mm 600 excluded (AT gun). Older IISS editions credited Cuba with ~1,700 tubes incl. storage. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: Soviet 1950s-70s guns, many in storage."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 0,
+          "mid": 8,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "IISS 2025 via equipment list: MiG-29 2 + MiG-29UB 1 + MiG-21bis ~3 + MiG-21UM ~2 = ~8 airworthy; World Air Forces 2026 (DAAFAR article) lists no active combat jets (low). High allows for MiG-23s in reserve."
+        },
+        "quality": {
+          "low": 0.05,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: 1980s fighters, barely flyable."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: very low flying hours."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 9,
+          "mid": 13,
+          "high": 25,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Cuban_Revolutionary_Air_and_Air_Defense_Force",
+          "note": "DAAFAR inventory (World Air Forces 2026): Mi-8P 2 + Mi-17 7 + Mi-35 4 = 13 active; Navy Mi-14 2 (Cuban Navy article, possibly inactive). High allows for stored Mi-8/Mi-24."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 8,
+          "mid": 16,
+          "high": 18,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "IISS 2025 via equipment list: Rio Damuji-class patrol ships with Styx 2 + Pauk II 1 + Osa II 6 (missiles removed to coastal units) + Yevgenya MCM 5 + Sonya MCM 2 = 16; low counts only operational-looking hulls."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 1,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "Delfin-class midget submarine 1 (IISS 2025, reported)."
+        },
+        "quality": {
+          "low": 0.05,
+          "mid": 0.1,
+          "high": 0.15,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: domestic midget boat."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 8,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces",
+          "note": "Coastal anti-ship launchers: 4K51 Rubezh 4 (IISS 2025) plus reported Bandera IV (Styx-derived) launchers, quantity n/a (high)."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: Styx-generation missiles."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Equipment list (IISS 2025) names 2K12 Kub, 9K33 Osa, Strela-10, Strela-1/3, Igla-1 MANPADS and ZSU-23-4/ZSU-57-2/S-60/KS-19 guns, quantities mostly n/a; ~25 batteries is an educated conversion. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Cuban_Revolutionary_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1960s-70s Soviet systems."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript army (2 years), severe fuel and spares shortages since the 1990s; DIA (1998) judged units incapable above battalion level."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: experienced Soviet-trained officer corps (Angola, Ethiopia 1975-91), now aging; 32 Cuban military/intelligence personnel died guarding Maduro in Jan 2026, showing an active security role abroad."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: revolutionary identity and political control (MININT/FAR integration)."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.6,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75 for home defence against the US (\"War of All the People\"); economic crisis, blackouts and emigration depress the low bound."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 plus: Soviet 1970s guided weapons (Malyutka, Strela, Styx), no precision strike."
+    },
+    "armor": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55/T-62 rolled homogeneous armour."
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: converted trawlers, Osa/Pauk craft, midget submarine."
+    },
+    "fortification": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: extensive tunnel and shelter network built for the War of All the People, coastal defence sites; SAM belt around Havana."
+    },
+    "logistics": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: rail (8,367 km) and trucks, acute fuel shortage."
+    },
+    "communications": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Soviet-era radio, Chinese/Russian assistance (Bejucal SIGINT site)."
+    },
+    "isr": {
+      "low": 8.1,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: legacy radars, Chinese-linked SIGINT stations (reported); no satellites or UAV fleet."
+    },
+    "air": {
+      "low": 8.1,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: a handful of MiG-21/MiG-29."
+    },
+    "cyber": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9-10: state internet control (ETECSA), intelligence-led cyber activity."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 5232,
+      "mid": 6976,
+      "high": 8720,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "GDP below / population 10,937,203. The Factbook per-capita line ($23,700, 2024) is inconsistent with its own GDP and population and is not used."
+    },
+    "gdp": {
+      "low": 57222513513,
+      "mid": 76296684684,
+      "high": 95370855855,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "World Bank has no PPP GDP for Cuba and the IMF does not cover it. CIA Factbook real GDP PPP 2024 $81.165 bn (2015 dollars, https://raw.githubusercontent.com/factbook/factbook.json/master/central-america-n-caribbean/cu.json) x US GDP deflator 2011/2015 (FRED GDPDEF 91.478/97.315 = 0.940, https://fred.stlouisfed.org/graph/fredgraph.csv?id=GDPDEF&fq=Annual) = 76.3 bn 2011 int$. Range +/-25% (no PPP benchmark for Cuba; 2025 contraction during the energy crisis)."
+    },
+    "milSpendShare": {
+      "low": 0.0288,
+      "mid": 0.035,
+      "high": 0.042,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-america-n-caribbean/cu.json",
+      "note": "CIA Factbook: 4.2% of GDP (2020), 3.2% (2019); SIPRI via World Bank MS.MIL.XPND.GD.ZS 2.88% (2018, last value) low. Opaque budget; mid an educated middle."
+    },
+    "industrialShare": {
+      "low": 0.2,
+      "mid": 0.2385,
+      "high": 0.27,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CUB/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2024: industry incl. construction 23.85% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports most of its food (rice, wheat, chicken); rationing in place; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 50929,
+      "mid": 59916,
+      "high": 68904,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CUB/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,393,966 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.554% (SP.POP.1519.MA.5Y) / 5 = 59,916. Males only (conscript-pool convention); about double if women are counted. Range +/-15%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 61000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No road figure on the fetched Factbook record or the road-network table; older Factbook editions gave ~60,000 km total with roughly 20,000 km paved (2015). Mid is the derived midpoint."
+    },
+    "railKm": {
+      "low": 5076,
+      "mid": 8367,
+      "high": 8367,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-america-n-caribbean/cu.json",
+      "note": "CIA Factbook 8,367 km (2017; 8,195 km standard gauge, incl. sugar-industry lines); World Bank IS.RRS.TOTL.KM 5,076 km (2007) low."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 9,
+      "high": 9,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-america-n-caribbean/cu.json",
+      "note": "CIA Factbook 2024: 34 ports, 6 large + 3 medium = 9 (Havana, Mariel, Cienfuegos, Santiago de Cuba, Nuevitas, Matanzas...)."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 80000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Cuba is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 65 merchant ships (13 general cargo, 10 tankers)."
+    },
+    "supplyRangeKm": {
+      "low": 30,
+      "mid": 80,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Island defence on interior lines; fuel shortage limits motorized movement."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1300000,
+      "high": 1600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses (~900,000) and draught oxen widely used in agriculture since the 1990s Special Period; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Cuba is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to the NPT since 2002 and Tlatelolco; no Russian nuclear weapons stationed since 1962."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Straits of Florida",
+      "Windward Passage",
+      "Yucatan Channel",
+      "Old Bahama Channel"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: island fortified with tunnels and militia, population mobilization doctrine; high 1.3 for the tropical climate and dense organised resistance."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2024-25 data with 2026 order of battle. Most data are IISS estimates (Military Balance 2024 personnel, 2025 equipment via the List of equipment of the Cuban Revolutionary Armed Forces) with many \"n/a\" quantities, so counts are grade C/D and heavily storage-inflated; serviceability is very low. Population convention: everything inside ne:CUB (World Bank). GDP from CIA Factbook (World Bank/IMF give no PPP series), rebased to 2011 int$ via FRED GDPDEF; grade C. ships_minor = patrol ships, missile craft, MCM; missiles = coastal anti-ship launchers. Infantry P-role splits are educated guesses (grade D). Territorial Troops Militia and Youth Labour Army (~1.12 million reserve paramilitary) excluded from active and P roles; they feed mobilizable."
+}

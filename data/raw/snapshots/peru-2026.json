@@ -1,0 +1,741 @@
+{
+  "id": "peru-2026",
+  "nationId": "peru",
+  "includes": [],
+  "name": "Republic of Peru",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "unitary republic",
+    "Andes",
+    "Pacific",
+    "Amazon",
+    "voluntary service",
+    "counter-insurgency (VRAEM)"
+  ],
+  "capital": {
+    "name": "Lima",
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Callao naval base",
+      "lat": -12.0566,
+      "lon": -77.1181,
+      "kind": "port"
+    },
+    {
+      "name": "Arequipa",
+      "lat": -16.409,
+      "lon": -71.5375,
+      "kind": "city"
+    },
+    {
+      "name": "Trujillo",
+      "lat": -8.1116,
+      "lon": -79.0288,
+      "kind": "city"
+    },
+    {
+      "name": "Chiclayo",
+      "lat": -6.7714,
+      "lon": -79.8409,
+      "kind": "city"
+    },
+    {
+      "name": "Piura",
+      "lat": -5.1945,
+      "lon": -80.6328,
+      "kind": "city"
+    },
+    {
+      "name": "Iquitos",
+      "lat": -3.7437,
+      "lon": -73.2516,
+      "kind": "city"
+    },
+    {
+      "name": "Cusco",
+      "lat": -13.532,
+      "lon": -71.9675,
+      "kind": "city"
+    },
+    {
+      "name": "Tacna",
+      "lat": -18.0066,
+      "lon": -70.2463,
+      "kind": "fortress"
+    },
+    {
+      "name": "Paita",
+      "lat": -5.0892,
+      "lon": -81.1144,
+      "kind": "port"
+    },
+    {
+      "name": "Chancay megaport",
+      "lat": -11.58,
+      "lon": -77.27,
+      "kind": "port"
+    },
+    {
+      "name": "Cordillera del Condor",
+      "lat": -3.6,
+      "lon": -78.4,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:PER",
+    "areaKm2": {
+      "low": 1280000,
+      "mid": 1285216,
+      "high": 1285216,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 1,285,216 km2 (AG.SRF.TOTL.K2); low is land area 1,280,000 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 34230898,
+      "mid": 34576665,
+      "high": 34922432,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 34,576,665). Low/high +/-1% for 2026 change and census revision. Everything inside ne:PER."
+    },
+    "urbanization": {
+      "low": 0.851,
+      "mid": 0.856,
+      "high": 0.861,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 85.60% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 81000,
+      "mid": 81000,
+      "high": 86000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.439 as quoted: 81,000 active (excludes 77,000 paramilitary National Police). CIA Factbook 2025: ~85,000 (50,000 Army, 25,000 Navy, 10,000 Air Force)."
+    },
+    "trainedReserves": {
+      "low": 60000,
+      "mid": 188000,
+      "high": 188000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 188,000 reserves. Low is an educated figure for those realistically callable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 48000,
+      "mid": 53000,
+      "high": 58000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 81,000 (IISS 2026) minus infantry P roles (3,000 + 25,000). Covers navy (25,988 active per Peruvian Navy article, minus marines in P roles), air force, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Andean conscript armies (1995 Cenepa war mobilization was limited); large IISS reserve (188,000) but little stored modern equipment. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 691533,
+      "mid": 1383067,
+      "high": 2074600,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 34,576,665 x ratio 0.02 / 0.04 / 0.06."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 5000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry on M113, UR-416 and Fiat 6614. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1960s-70s APCs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: voluntary military service (conscription suspended 1999), counter-terror experience in VRAEM, aging equipment limits training."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 32000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jungle, mountain, airborne/commando battalions and ~4,000 marines. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: mixed small arms (Galil ACE, AKM, FAL), Spike/Kornet ATGMs."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: voluntary military service (conscription suspended 1999), counter-terror experience in VRAEM, aging equipment limits training."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 165,
+          "mid": 280,
+          "high": 388,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army",
+          "note": "Equipment list (IISS Military Balance 2024 p.448 as cited): T-55 ~280 incl. 75+ in store (low ~165-205 active) + AMX-13 ~108 light tanks (high). K2 Black Panther (54) contracted Nov 2024, none delivered; contract status uncertain (Oct 2026)."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: T-55 is obsolete."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: voluntary military service (conscription suspended 1999), counter-terror experience in VRAEM, aging equipment limits training."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 390,
+          "high": 420,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army",
+          "note": "IISS 2024 via equipment list: BRDM-2 ~30 + Fiat 6616 ~15 + M9A1 ~50 + UR-416 ~150 + Fiat 6614 ~25 + M113A1 ~120 = 390. K808 (141) contracted but may be cancelled."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: voluntary military service (conscription suspended 1999), counter-terror experience in VRAEM, aging equipment limits training."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 300,
+          "mid": 351,
+          "high": 351,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army",
+          "note": "IISS 2024 via equipment list: M109A2 ~12 + M101 ~44 + M2A1 ~24 + M-56 ~60 + Model 56 ~24 + D-30 ~36 + M-46 ~36 + M114 ~36 + Model 50 ~30 + BM-21 ~22 + Type-90B ~27 = 351 (mortars excluded)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly towed Cold War guns."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: voluntary military service (conscription suspended 1999), counter-terror experience in VRAEM, aging equipment limits training."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 12,
+          "mid": 17,
+          "high": 17,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Air_Force",
+          "note": "Peruvian Air Force inventory: Mirage 2000P 9 + 2000DP 2 + MiG-29SMP/UBP 6 = 17. F-16 Block 70 (12 ordered of 24 planned) not delivered; KC-135 part of the package halted by the president (Apr 2026)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1980s Mirage 2000P and MiG-29SMP upgraded."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 15,
+          "mid": 22,
+          "high": 22,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Air_Force",
+          "note": "Su-25K 2 + A-37B 20 = 22."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: obsolete."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 85,
+          "mid": 100,
+          "high": 110,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Air_Force",
+          "note": "Air Force: Bell 412 2 + Bell 212 1 + Mi-8 1 + Mi-17/171 10 + Mi-35 18 + Bo 105 2 + SH-2G 5 = 39 (FAP article); Army: Mi-8/17/171 ~43 + AW109 1 + Mi-2 1 + Enstrom/R44 4 = ~49 (Army equipment list, World Air Forces 2024); Navy ~12 (SH-3D, AB-212/412; educated). Total ~100."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Mi-17/Mi-35 workhorses."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: VRAEM operations."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 6,
+          "mid": 8,
+          "high": 12,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Air_Force",
+          "note": "Air Force: 6 domestically built reconnaissance UAVs (FAP article); Navy small systems (educated)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 7,
+          "high": 7,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Navy",
+          "note": "Peruvian Navy article: Carvajal-class 3 + Lupo-class 4 = 7 guided-missile frigates (Aguirre in sea trials after overhaul)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: 1970s-80s Lupo design, partly upgraded with local CMS and Kronos radar."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: best-trained Peruvian service."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 24,
+          "mid": 30,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Navy",
+          "note": "Peruvian Navy article: PR-72P/Pohang missile corvettes 8 + offshore patrol vessels 13 (incl. ex-Carvajal operated by Coast Guard) + Makassar LPD 2 + LST 1 = 24 (low); fleet box lists 34 patrol ships (high side)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 5,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Peruvian_Navy",
+          "note": "Peruvian Navy article: Type 209/1200 4 (Antofagasta in upgrade) + Type 209/1100 2 = 6 boats, 5 in service."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: upgraded Type 209."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: largest submarine force on the South American Pacific coast."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 12,
+          "mid": 20,
+          "high": 28,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Peruvian_Army",
+          "note": "IISS 2024 via equipment list: ZSU-23-4 ~35 + ZU-23-2 ~130 guns and Igla/Strela MANPADS; Air Force Pechora sites not itemised. ~20 batteries, educated conversion."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1970s systems."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff (CAEN, ESGE), Cenepa 1995 experience; political instability (frequent presidential changes) disrupts procurement."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: professional cadre, strong service identity (navy especially)."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Kornet/Spike ATGMs, Exocet/Otomat, R-27/Super 530D; few precision munitions."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55 without composite armour; K2 not delivered."
+    },
+    "ships": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: upgraded Lupo/Type 209, modern LPDs."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: southern frontier positions (Tacna), little air defence."
+    },
+    "logistics": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: C-27J, Twin Otter airlift; Andes and Amazon depend on air and river transport."
+    },
+    "communications": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: limited data links; no military satellite."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: PeruSAT-1 Earth-observation satellite, small UAV fleet."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: Mirage 2000P and MiG-29SMP; F-16 Block 70 not delivered."
+    },
+    "cyber": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9-10: Joint Command cyber defence unit, small."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 11584,
+      "mid": 12871,
+      "high": 14158,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 445,047,988,943 / population 34,576,665 = 12,871 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 400543190049,
+      "mid": 445047988943,
+      "high": 489552787837,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 555,962,509,610 x 0.8005 (US GDP deflator 2011/2021) = 445,047,988,943 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.0075,
+      "mid": 0.0081,
+      "high": 0.011,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.81% of GDP in 2025. CIA Factbook 0.8% (2024), 1.1% (2021-22)."
+    },
+    "industrialShare": {
+      "low": 0.31,
+      "mid": 0.3432,
+      "high": 0.36,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2024: industry incl. construction 34.32% of GDP (NV.IND.TOTL.ZS). Mining (copper, gold, zinc) dominant."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exports fruit/vegetables (avocados, blueberries, asparagus) and fishmeal but imports cereals; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 263835,
+      "mid": 293150,
+      "high": 322465,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 17,193,234 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 8.525% (SP.POP.1519.MA.5Y) / 5 = 293,150. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. SIMA Callao/Chimbote builds patrol vessels and LPDs (Makassar class under licence). (context page: https://en.wikipedia.org/wiki/Peruvian_Navy)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 29579,
+      "mid": 102584,
+      "high": 175589,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 175,589 km total (2021), 29,579 km paved, 146,010 km unpaved, 827 km controlled-access. Mid is paved plus half the unpaved network (derived midpoint); high is the total."
+    },
+    "railKm": {
+      "low": 1639,
+      "mid": 1854,
+      "high": 1854,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PER/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 1,639 km (1998, low); CIA Factbook 1,854 km (2017). Isolated lines (Central, Southern), little military value."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 4,
+      "high": 5,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/pe.json",
+      "note": "CIA Factbook 2024: 20 ports, 0 large + 1 medium + 3 small; key ports Callao, Matarani, Talara, Iquitos. The Chancay megaport (opened 2024) is not yet in the Factbook count (high)."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 250000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Peru is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 111 merchant ships (9 tankers)."
+    },
+    "supplyRangeKm": {
+      "low": 60,
+      "mid": 120,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Andean and Amazon terrain; sustainment by air and river."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, donkeys, mules and llamas (pack animals still used in the Andes); not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Peru is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to Tlatelolco."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Af",
+    "chokepoints": [
+      "Cordillera del Condor",
+      "Tacna-Arica coastal corridor",
+      "Andean passes (Ticlio)",
+      "Amazon river (Iquitos)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Andes, Amazon and coastal desert, population support; high 1.3 for altitude/jungle climates invaders are not adapted to."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:PER (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2026 (personnel) as quoted; IISS Military Balance 2024 via the List of equipment of the Peruvian Army; Peruvian Air Force inventory; Peruvian Navy fleet table. Pending procurement (K2 tanks, K808, F-16 Block 70) is NOT in the 2026 order of battle; several contracts were stalled by the 2026 political crisis. ships_major = frigates; ships_minor = corvettes, OPVs, LPD/LST; drones = Group 2+ UAVs. Infantry P-role splits are educated guesses (grade D). National Police (77,000) excluded."
+}

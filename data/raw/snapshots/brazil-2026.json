@@ -1,0 +1,782 @@
+{
+  "id": "brazil-2026",
+  "nationId": "brazil",
+  "includes": [],
+  "name": "Federative Republic of Brazil",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "federal republic",
+    "BRICS",
+    "Mercosur",
+    "conscription",
+    "regional power",
+    "Amazon",
+    "South Atlantic"
+  ],
+  "capital": {
+    "name": "Brasilia",
+    "lat": -15.7939,
+    "lon": -47.8828,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Sao Paulo",
+      "lat": -23.5505,
+      "lon": -46.6333,
+      "kind": "city"
+    },
+    {
+      "name": "Rio de Janeiro",
+      "lat": -22.9068,
+      "lon": -43.1729,
+      "kind": "port"
+    },
+    {
+      "name": "Santos",
+      "lat": -23.9608,
+      "lon": -46.3336,
+      "kind": "port"
+    },
+    {
+      "name": "Salvador",
+      "lat": -12.9777,
+      "lon": -38.5016,
+      "kind": "port"
+    },
+    {
+      "name": "Belo Horizonte",
+      "lat": -19.9167,
+      "lon": -43.9345,
+      "kind": "city"
+    },
+    {
+      "name": "Manaus",
+      "lat": -3.119,
+      "lon": -60.0217,
+      "kind": "city"
+    },
+    {
+      "name": "Recife",
+      "lat": -8.0476,
+      "lon": -34.877,
+      "kind": "port"
+    },
+    {
+      "name": "Porto Alegre",
+      "lat": -30.0346,
+      "lon": -51.2177,
+      "kind": "city"
+    },
+    {
+      "name": "Belem",
+      "lat": -1.4558,
+      "lon": -48.5039,
+      "kind": "port"
+    },
+    {
+      "name": "Itaguai naval base (submarines)",
+      "lat": -22.93,
+      "lon": -43.83,
+      "kind": "port"
+    },
+    {
+      "name": "Triple Frontier (Foz do Iguacu)",
+      "lat": -25.5469,
+      "lon": -54.5882,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:BRA",
+    "areaKm2": {
+      "low": 8358140,
+      "mid": 8510420,
+      "high": 8510420,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 8,510,420 km2 (AG.SRF.TOTL.K2); low is land area 8,358,140 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 210684281,
+      "mid": 212812405,
+      "high": 214940529,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 212,812,405). Low/high +/-1% for 2026 change and census revision. Everything inside ne:BRA."
+    },
+    "urbanization": {
+      "low": 0.8768,
+      "mid": 0.8818,
+      "high": 0.8868,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 88.18% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 360000,
+      "mid": 374500,
+      "high": 380000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 pp.409-410 as quoted: 374,500 active (excludes 395,000 Military Police/fire brigades paramilitary). CIA Factbook 2025: ~360,000 (220,000 Army, 70,000 Navy, 70,000 Air Force), low."
+    },
+    "trainedReserves": {
+      "low": 124600,
+      "mid": 124600,
+      "high": 400000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 as quoted: 124,600 reserves. High is an educated allowance for the last few discharged conscript classes (~80-90k a year), recallable but not organized in reserve units."
+    },
+    "supportPersonnel": {
+      "low": 300000,
+      "mid": 327500,
+      "high": 340000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 374,500 (IISS 2026) minus infantry P roles (7,000 + 40,000). Covers navy and air force (~140,000), armour/artillery crews, engineers, logistics, staff and conscripts in garrison duties."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to large conscript-based Latin American armies: Brazil drafts ~80-90k men a year and keeps a large paper reserve, but has little stored equipment; WWII Brazil mobilized only ~25,000 for Italy. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 4256248,
+      "mid": 8512496,
+      "high": 12768744,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 212,812,405 x ratio 0.02 / 0.04 / 0.06."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured and mechanized infantry battalions (M113 tracked, Guarani wheeled) of the armoured/mechanized cavalry and infantry brigades, ~12 battalions x ~550. (context page: https://en.wikipedia.org/wiki/Brazilian_Army)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: M113 and Guarani APCs, IISS counts only 13 Guaranis with 30 mm as IFVs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional cadre with one-year conscripts; strong jungle/airmobile schools, little combined-arms war experience (MINUSTAH peacekeeping)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 40000,
+          "high": 55000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jungle (CMA), light, mountain, motorized, parachute and airmobile infantry plus ~10,000 combat marines of the CFN. (context page: https://en.wikipedia.org/wiki/Brazilian_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: era-typical small arms (IA2), limited night vision."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: jungle brigades and parachute/SOF units are well trained; conscripts dilute line units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 250,
+          "mid": 296,
+          "high": 296,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Army",
+          "note": "Brazilian Army article (2023, IISS 2023 p.383 as cited): Leopard 1A5 BR 220 + Leopard 1A1 BE 41 + M60A3 TTS 35 = 296 MBTs. Low allows for 1A1 BE and M60 withdrawal as Centauro II arrives."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Leopard 1A5 is 1980s technology; IISS rates no Brazilian MBT as modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional cadre with one-year conscripts; strong jungle/airmobile schools, little combined-arms war experience (MINUSTAH peacekeeping)."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1500,
+          "mid": 1720,
+          "high": 1800,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Army",
+          "note": "Brazilian Army article (2023): M113/M577 660 + Guarani ~575 + EE-11 Urutu 46 + EE-9 Cascavel 408 + Guaicurus 32 = 1,721. Guarani deliveries continue (~60/yr) while Cascavel is retired."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: modern Guarani 6x6 but many 1970s M113/Cascavel/Urutu."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional cadre with one-year conscripts; strong jungle/airmobile schools, little combined-arms war experience (MINUSTAH peacekeeping)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 560,
+          "mid": 636,
+          "high": 700,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Army",
+          "note": "IISS (2023) as quoted in the Brazilian Army article: towed 431 (336 105 mm + 95 155 mm) + 155 mm SP (M109) 169 + MLRS 36 (ASTROS II) = 636; 1,245 mortars excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: ASTROS II is modern, most tubes are 1950s M101/M114."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional cadre with one-year conscripts; strong jungle/airmobile schools, little combined-arms war experience (MINUSTAH peacekeeping)."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 44,
+          "mid": 47,
+          "high": 51,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft",
+          "note": "Active Brazilian military aircraft list: F-39E/F Gripen 13 (+23 on order) + F-5EM 34 = 47. High adds F-5FM two-seaters (4, trainers) and further Gripen deliveries in 2026."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Gripen E is among the best 4.5-generation fighters, but most of the fleet is upgraded F-5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional FAB, CRUZEX exercise host."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 85,
+          "mid": 94,
+          "high": 94,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft",
+          "note": "A-1M AMX 10 + A-29 Super Tucano 81 + Navy A-4KU Skyhawk 3 = 94. AT-27/AT-29 trainers excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: turboprop COIN aircraft and aging AMX/Skyhawk."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 170,
+          "mid": 186,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft",
+          "note": "Air Force: H-36 Caracal 14 + VH-35 2 + H-60 16 + H-50 trainer 19 = 51; Army Aviation: HM-2 4 + HA-1 33 + HM-1 32 + HM-3 7 + HM-4 14 = 90; Navy: SH-16 6 + Lynx Mk21 5 + UH-15 15 + UH-12 17 + UH-35 (H135) 2 = 45. Total 186; no dedicated attack helicopters."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Caracal/Black Hawk modern, many Ecureuil light types."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 9,
+          "mid": 13,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft",
+          "note": "Hermes 450 4 + Hermes 900 1 (2 lost) + IAI Heron 2 = 7 Air Force; Navy ScanEagle (Brazilian Navy article) ~6, educated count."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: MALE ISR only."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 7,
+          "mid": 8,
+          "high": 9,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Navy",
+          "note": "Brazilian Navy article (IISS 2025 p.402 as cited): helicopter carrier Atlantico 1 + Niteroi-class frigates 5 + Greenhalgh (Type 22) 1 = 7; mid adds the first Tamandare-class frigate (launched 2024, entering service 2026). Inhauma and Barroso corvettes counted as minor."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: escorts are 1970s-80s designs with Exocet/Sea Wolf/Aspide; Tamandare (MEKO A-100) modern."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional navy, regular UNITAS exercises."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 45,
+          "mid": 51,
+          "high": 60,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Navy",
+          "note": "Brazilian Navy article (2025): LPD Bahia 1 + LST Almirante Saboia 1 + corvettes 2 (Inhauma, Barroso) + patrol vessels 44 + minesweepers 3 = 51; LPD Oiapoque (ex-HMS Bulwark) high."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 4,
+          "mid": 5,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Navy",
+          "note": "Brazilian Navy article: Tupi-class 1 + Tikuna 1 + Riachuelo-class (Scorpene) 3 = 5; high adds the fourth Riachuelo (Almirante Karam) due 2026. Nuclear Alvaro Alberto not before ~2034."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Scorpene-derived Riachuelo with SM39 Exocet; Type 209 older."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 10,
+          "mid": 14,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Brazilian_Army",
+          "note": "Army article: 34 Gepard SPAAGs in the armoured brigades (~4 per battery, ~9) plus RBS 70/RBS 70 NG and Igla-S MANPADS batteries (~5). No medium-range SAM."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: low-altitude only."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: well-developed staff college system (ECEME), led MINUSTAH 2004-17; no interstate war since 1945."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 national conscript army with strong professional units (paratroopers, jungle infantry, marines)."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average; no external threat perception, strong for Amazon/sovereignty defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: ASTROS II (AV-TM 300 cruise missile not yet operational), Meteor/IRIS-T on Gripen, Exocet; few precision munitions or loitering munitions."
+    },
+    "armor": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: Leopard 1A5/M60 without composite armour; Guarani modern; Centauro II only arriving."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Scorpene-type submarines, MEKO A-100 frigates entering service; most escorts 1970s."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: few hardened shelters, no layered air defence."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: KC-390 airlift/tankers, large domestic road network, limited sealift."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: SGDC military/civil geostationary satellite, Link-BR2 data link."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: E-99 AEW, R-99 SIGINT, SISFRON border sensors, Amazonia-1 satellite."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Gripen E (4.5 generation) partially fielded; F-5EM and AMX legacy."
+    },
+    "cyber": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Army Cyber Defence Command (ComDCiber) established 2016."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 14427,
+      "mid": 16030,
+      "high": 17633,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 3,411,333,864,642 / population 212,812,405 = 16,030 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 3070200478178,
+      "mid": 3411333864642,
+      "high": 3752467251106,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 4,261,503,890,871 x 0.8005 (US GDP deflator 2011/2021) = 3,411,333,864,642 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/BRA/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.01,
+      "mid": 0.0105,
+      "high": 0.012,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.05% of GDP in 2025. CIA Factbook 1.1% (2024), 1.3% (2021); mostly personnel and pensions."
+    },
+    "industrialShare": {
+      "low": 0.19,
+      "mid": 0.2015,
+      "high": 0.22,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 20.15% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.4,
+      "mid": 0.55,
+      "high": 0.7,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. World-leading net exporter of soy, beef, chicken, sugar and coffee; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 1346825,
+      "mid": 1496472,
+      "high": 1646119,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 104,657,408 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 7.149% (SP.POP.1519.MA.5Y) / 5 = 1,496,472. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 40,
+        "mid": 80,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Iveco Defence Vehicles Sete Lagoas builds the Guarani (~60/yr peacetime). (context page: https://en.wikipedia.org/wiki/Brazilian_Army)"
+      },
+      "aircraft_fighter": {
+        "low": 2,
+        "mid": 6,
+        "high": 12,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Embraer Gaviao Peixoto final assembly of Gripen E/F (15 of 36 built in Brazil), dependent on Swedish/US subsystems. (context page: https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft)"
+      },
+      "aircraft_strike": {
+        "low": 10,
+        "mid": 20,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Embraer A-29 Super Tucano line (export orders), surge feasible. (context page: https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft)"
+      },
+      "helicopters": {
+        "low": 5,
+        "mid": 12,
+        "high": 25,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Helibras (Airbus) Itajuba assembles H225M and AS350/H125. (context page: https://en.wikipedia.org/wiki/List_of_active_Brazilian_military_aircraft)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Tamandare-class frigates at Itajai (4 by 2029). (context page: https://en.wikipedia.org/wiki/Brazilian_Navy)"
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. ICN Itaguai builds Riachuelo-class boats. (context page: https://en.wikipedia.org/wiki/Brazilian_Navy)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 214000,
+      "mid": 1107000,
+      "high": 2000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA/CNT figures as quoted: 2,000,000 km total (2023), of which 214,000 km paved and 1,786,000 km unpaved, 17,000 km controlled-access. Mid is paved plus half the unpaved network (derived midpoint) because much of it is seasonal dirt road; high is the total."
+    },
+    "railKm": {
+      "low": 29850,
+      "mid": 29850,
+      "high": 32622,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BRA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 32,622 km (2007, high); CIA Factbook 29,850 km (2014, mid), mostly metre-gauge freight lines."
+    },
+    "majorPorts": {
+      "low": 9,
+      "mid": 11,
+      "high": 11,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/br.json",
+      "note": "CIA Factbook 2024: 45 ports, 4 large + 7 medium = 11 (Santos, Rio de Janeiro, Itajai, Rio Grande, Tubarao/Vitoria, Salvador, Recife, Belem...)."
+    },
+    "merchantTonnage": {
+      "low": 5922000,
+      "mid": 5922000,
+      "high": 9000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 5,922 thousand DWT under the Brazilian flag (4,210 thousand GT), largely Petrobras/Transpetro tankers and offshore vessels. High is an educated allowance for Brazilian-owned foreign-flag tonnage."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based sustainment; Amazon operations depend on river transport and airlift."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 7000000,
+      "high": 9000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses (~6 million), mules and donkeys; not from FAO data. Some Army cavalry and Amazon pack use."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Brazil is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to Tlatelolco and the ABACC safeguards agreement with Argentina; naval nuclear propulsion programme only."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Af",
+    "chokepoints": [
+      "Amazon river mouth",
+      "Triple Frontier (Parana)",
+      "Atlantic Narrows (Natal-Dakar)",
+      "Rio de la Plata approaches"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: vast territory and population support; high 1.3 because the Amazon offers deep strategic depth and a climate few invaders are adapted to."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:BRA (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2023-2026 as quoted in the Brazilian Army and Brazilian Navy articles and the personnel list; aircraft from the List of active Brazilian military aircraft (World Air Forces tables). Army vehicle counts are 2023 figures (Guarani deliveries since then raise ifv_apc slightly). ships_major = carriers/LHD + frigates; ships_minor = LPD/LST, corvettes, patrol, MCM; drones = Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). State Military Police (395,000, IISS paramilitary) excluded."
+}

@@ -1,0 +1,595 @@
+{
+  "id": "new-zealand-2026",
+  "nationId": "new-zealand",
+  "includes": [],
+  "name": "New Zealand",
+  "year": 2026,
+  "era": "modern",
+  "region": "oceania",
+  "phase": "current",
+  "tags": [
+    "parliamentary monarchy",
+    "Five Eyes",
+    "ANZAC",
+    "all-volunteer force",
+    "Pacific",
+    "island state"
+  ],
+  "capital": {
+    "name": "Wellington",
+    "lat": -41.2865,
+    "lon": 174.7762,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Auckland",
+      "lat": -36.8485,
+      "lon": 174.7633,
+      "kind": "port"
+    },
+    {
+      "name": "Devonport Naval Base",
+      "lat": -36.8285,
+      "lon": 174.7955,
+      "kind": "port"
+    },
+    {
+      "name": "Christchurch",
+      "lat": -43.5321,
+      "lon": 172.6362,
+      "kind": "city"
+    },
+    {
+      "name": "Hamilton",
+      "lat": -37.787,
+      "lon": 175.2793,
+      "kind": "city"
+    },
+    {
+      "name": "Tauranga",
+      "lat": -37.6878,
+      "lon": 176.1651,
+      "kind": "port"
+    },
+    {
+      "name": "Dunedin",
+      "lat": -45.8788,
+      "lon": 170.5028,
+      "kind": "port"
+    },
+    {
+      "name": "Linton Military Camp",
+      "lat": -40.3934,
+      "lon": 175.5866,
+      "kind": "fortress"
+    },
+    {
+      "name": "RNZAF Base Ohakea",
+      "lat": -40.2061,
+      "lon": 175.3881,
+      "kind": "fortress"
+    },
+    {
+      "name": "Burnham Military Camp",
+      "lat": -43.6122,
+      "lon": 172.3125,
+      "kind": "fortress"
+    },
+    {
+      "name": "Cook Strait",
+      "lat": -41.2,
+      "lon": 174.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:NZL",
+    "areaKm2": {
+      "low": 263310,
+      "mid": 267710,
+      "high": 267710,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 267,710 km2 (AG.SRF.TOTL.K2); low is land area 263,310 km2 (AG.LND.TOTL.K2). Excludes the Ross Dependency claim and the Realm states (Cook Islands, Niue, Tokelau)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 5271453,
+      "mid": 5324700,
+      "high": 5377947,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 5,324,700). Low/high +/-1% for 2026 change and census revision. Everything inside ne:NZL."
+    },
+    "urbanization": {
+      "low": 0.835,
+      "mid": 0.84,
+      "high": 0.845,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 84.00% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 8500,
+      "mid": 8700,
+      "high": 9200,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.285 as quoted: 8,700 active. CIA Factbook 2025: ~8,800 Regular Force (4,300 Army, 2,100 Navy, 2,400 Air Force)."
+    },
+    "trainedReserves": {
+      "low": 2500,
+      "mid": 3270,
+      "high": 3500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: 3,270 reserves."
+    },
+    "supportPersonnel": {
+      "low": 6800,
+      "mid": 7200,
+      "high": 7600,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 8,700 (IISS 2025) minus infantry P roles (600 + 900). Covers navy (2,100), air force (2,400), artillery, engineers, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.06,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to New Zealand in WWII (~200,000 served from ~1.6 million, over 10%); scaled down for a very small all-volunteer force. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 159741,
+      "mid": 319482,
+      "high": 532470,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 5,324,700 x ratio 0.03 / 0.06 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 400,
+          "mid": 600,
+          "high": 800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 1st Battalion RNZIR (motorised) on NZLAV and Bushmaster. (context page: https://en.wikipedia.org/wiki/New_Zealand_Army)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: NZLAV (LAV III), Javelin."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: small long-service professional force, Five Eyes/ANZAC interoperability."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 600,
+          "mid": 900,
+          "high": 1200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 2nd/1st Battalion RNZIR plus NZSAS. (context page: https://en.wikipedia.org/wiki/New_Zealand_Army)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: NZSAS elite."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 60,
+          "mid": 100,
+          "high": 120,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. NZLAV: 105 bought, 35 offered for sale in 2010 (~70 remaining) plus 43 Bushmaster PMVs; NZ Army article gives no current totals. (context page: https://en.wikipedia.org/wiki/New_Zealand_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: LAV III (2000s)."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: small long-service professional force, Five Eyes/ANZAC interoperability."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 16,
+          "mid": 24,
+          "high": 24,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. L119 105 mm light guns are the only artillery (NZ Army article, NZDF fact page); 24 is the commonly reported fleet. (context page: https://en.wikipedia.org/wiki/New_Zealand_Army)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: light towed guns only."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: small long-service professional force, Five Eyes/ANZAC interoperability."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 16,
+          "mid": 18,
+          "high": 18,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_New_Zealand_Air_Force",
+          "note": "RNZAF inventory: NH90 TTH 8 + A109LUH 5 + SH-2G(I) Seasprite 5 = 18. MH-60R (5) replace the Seasprites from 2027."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: NH90 modern."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: small long-service professional force, Five Eyes/ANZAC interoperability."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_New_Zealand_Navy_ships",
+          "note": "Active RNZN ships list: Anzac-class frigates Te Kaha and Te Mana = 2 (both upgraded with Sea Ceptor/CAMM)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: upgraded 1990s frigates."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: crew shortages laid up a third of the fleet (2022)."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 2,
+          "mid": 3,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_New_Zealand_Navy_ships",
+          "note": "Active list: Lake-class IPV Taupo 1 + multi-role vessel Canterbury 1 + OPV Otago (laid up 2022-2026, returning) = 3; high adds the laid-up Wellington and Hawea. Replenishment ship Aotearoa excluded."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: crewing shortfall."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 2,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Very short-range air defence only (Mistral MANPADS historically; no SAM batteries). (context page: https://en.wikipedia.org/wiki/New_Zealand_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: competent joint HQ (HQJFNZ), proven in coalition peacekeeping (East Timor, Solomons, Afghanistan PRT); no independent large-unit command."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: small professional force with strong ANZAC identity."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average; retention problems in the Navy and Air Force."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Javelin, Sea Ceptor (CAMM), P-8A with Harpoon/Mk 54; no strike fighters."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: no tanks, LAV III wheeled armour."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: upgraded Anzac frigates with CAMM and modern combat system."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: no layered air defence; geography is the defence."
+    },
+    "logistics": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: new C-130J-30 (2024), Aotearoa replenishment ship, Canterbury MRV."
+    },
+    "communications": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Five Eyes C4ISR, Link 16 on P-8A."
+    },
+    "isr": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: P-8A Poseidon (4), GCSB, Five Eyes intelligence; no drones."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: no combat jets since the 2001 Skyhawk retirement; P-8A only."
+    },
+    "cyber": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: GCSB (Five Eyes) national cyber security centre."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 34749,
+      "mid": 38610,
+      "high": 42471,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. Rebased GDP 205,587,990,146 / population 5,324,700 = 38,610 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 185029191132,
+      "mid": 205587990146,
+      "high": 226146789161,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 256,824,472,388 x 0.8005 (US GDP deflator 2011/2021) = 205,587,990,146 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Series: https://api.worldbank.org/v2/country/NZL/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.01,
+      "mid": 0.011,
+      "high": 0.015,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.10% of GDP in 2025. CIA Factbook 1.2% (2024), 1.3% (2021-23); 2025 Defence Capability Plan aims at ~2% within eight years (high)."
+    },
+    "industrialShare": {
+      "low": 0.18,
+      "mid": 0.1944,
+      "high": 0.21,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2023: industry incl. construction 19.44% of GDP (NV.IND.TOTL.ZS)."
+    },
+    "foodSurplus": {
+      "low": 0.6,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exports the large majority of its dairy, meat and fruit output; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 31718,
+      "mid": 35243,
+      "high": 38767,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 2,646,619 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.658% (SP.POP.1519.MA.5Y) / 5 = 35,243. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 64957,
+      "mid": 96817,
+      "high": 96817,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 96,817 km total (2020), 64,957 km paved, 31,860 km unpaved (engineered gravel), 232 km controlled-access. Low is paved only."
+    },
+    "railKm": {
+      "low": 3908,
+      "mid": 4128,
+      "high": 4128,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NZL/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 3,908 km (1998, low); CIA Factbook 4,128 km narrow gauge (2018)."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 3,
+      "high": 13,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/australia-oceania/nz.json",
+      "note": "CIA Factbook 2024: 22 ports, 2 large + 1 medium = 3 (Auckland, Tauranga, Wellington); 13 key ports named (high)."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. New Zealand is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 117 merchant ships (2 container, 12 general cargo, 3 tankers)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Small deployable logistics; operations abroad rely on Australian/US support."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 80000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses (not from FAO data). Militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "New Zealand is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Nuclear-free zone legislation (1987); Treaty of Rarotonga party."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Cook Strait",
+      "Foveaux Strait",
+      "Hauraki Gulf approaches"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: isolated mountainous islands, local supply, population support; no harsh-climate bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:NZL (World Bank; Realm states excluded). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2025 (personnel) as quoted; RNZAF inventory and active RNZN ships list; NZ Army article gives types but few quantities, so ifv_apc and artillery are grade D. No tanks, combat aircraft, submarines or drones: those roles are omitted. ships_major = frigates; ships_minor = OPV/IPV and the multi-role vessel. Infantry P-role splits are educated guesses (grade D)."
+}

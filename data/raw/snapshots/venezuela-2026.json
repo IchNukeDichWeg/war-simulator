@@ -1,0 +1,750 @@
+{
+  "id": "venezuela-2026",
+  "nationId": "venezuela",
+  "includes": [],
+  "name": "Bolivarian Republic of Venezuela",
+  "year": 2026,
+  "era": "modern",
+  "region": "latin_america",
+  "phase": "current",
+  "tags": [
+    "federal presidential republic",
+    "authoritarian",
+    "Bolivarian Militia",
+    "conscription",
+    "oil exporter",
+    "Caribbean",
+    "post-intervention 2026"
+  ],
+  "capital": {
+    "name": "Caracas",
+    "lat": 10.4806,
+    "lon": -66.9036,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Maracaibo",
+      "lat": 10.6427,
+      "lon": -71.6125,
+      "kind": "city"
+    },
+    {
+      "name": "Valencia",
+      "lat": 10.162,
+      "lon": -68.0077,
+      "kind": "city"
+    },
+    {
+      "name": "Barquisimeto",
+      "lat": 10.0678,
+      "lon": -69.3474,
+      "kind": "city"
+    },
+    {
+      "name": "Puerto Cabello naval base",
+      "lat": 10.4731,
+      "lon": -68.0125,
+      "kind": "port"
+    },
+    {
+      "name": "La Guaira",
+      "lat": 10.6012,
+      "lon": -66.9314,
+      "kind": "port"
+    },
+    {
+      "name": "Ciudad Guayana",
+      "lat": 8.3533,
+      "lon": -62.6528,
+      "kind": "city"
+    },
+    {
+      "name": "Punto Fijo / Amuay refinery",
+      "lat": 11.75,
+      "lon": -70.21,
+      "kind": "port"
+    },
+    {
+      "name": "Fuerte Tiuna (Caracas)",
+      "lat": 10.4467,
+      "lon": -66.9087,
+      "kind": "fortress"
+    },
+    {
+      "name": "El Libertador Air Base (Maracay)",
+      "lat": 10.2497,
+      "lon": -67.6492,
+      "kind": "fortress"
+    },
+    {
+      "name": "Lake Maracaibo strait",
+      "lat": 10.95,
+      "lon": -71.6,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dragon's Mouth (Gulf of Paria)",
+      "lat": 10.7,
+      "lon": -61.8,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:VEN",
+    "areaKm2": {
+      "low": 882050,
+      "mid": 912050,
+      "high": 912050,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/VEN/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 912,050 km2 (AG.SRF.TOTL.K2); low is land area 882,050 km2 (AG.LND.TOTL.K2). Excludes the claimed Guayana Esequiba (administered by Guyana, outside ne:VEN)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 27661389,
+      "mid": 28516896,
+      "high": 29372403,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/VEN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 28,516,896). Low/high +/-3% for 2026 change and census revision. Everything inside ne:VEN. World Bank/UN figures already reflect the 7+ million emigrants since 2015; uncertainty is large."
+    },
+    "urbanization": {
+      "low": 0.8882,
+      "mid": 0.8932,
+      "high": 0.8982,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/VEN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 89.32% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 110000,
+      "mid": 123000,
+      "high": 150000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.446 as quoted: 123,000 active (excludes 220,000 paramilitary, mainly the Bolivarian Militia). CIA Factbook 2025: 125,000-150,000 active (high). Losses in the 3 Jan 2026 US raid (at least 23 security personnel) are negligible at this scale."
+    },
+    "trainedReserves": {
+      "low": 8000,
+      "mid": 8000,
+      "high": 50000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 8,000 reserves. High is an educated allowance for the armed core of the Bolivarian Militia (CIA Factbook: ~200,000 militia)."
+    },
+    "supportPersonnel": {
+      "low": 70000,
+      "mid": 80000,
+      "high": 90000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 123,000 (IISS 2026) minus infantry P roles (5,000 + 38,000). Covers navy, air force, National Guard (GNB, counted by IISS in active), crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.07,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to regime-mobilized militia states: the Bolivarian Militia claims millions of members, but arming and sustaining them is doubtful; ratio kept near Latin American conscript-army levels. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 570338,
+      "mid": 1140676,
+      "high": 1996183,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 28,516,896 x ratio 0.02 / 0.04 / 0.07."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 3000,
+          "mid": 5000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry on BMP-3 and BTR-80A (123 + 114 vehicles, Venezuelan equipment list). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: BMP-3/BTR-80A are capable Russian vehicles; spares shortage."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 38000,
+          "high": 50000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jungle, ranger, airborne and motorized infantry plus ~8,000 naval infantry. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: AK-103 rifles, Igla-S MANPADS."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 150,
+          "mid": 291,
+          "high": 291,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "Equipment list (IISS Military Balance 2025): T-72B1 92 + AMX-30V 81 + Scorpion-90 light tanks 87 + AMX-13 31 = 291. Low reflects poor serviceability of the French and British types."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: T-72B1 is 1980s; AMX-30/AMX-13/Scorpion obsolete."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 350,
+          "mid": 480,
+          "high": 520,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025 via equipment list: Army BMP-3 123 + BTR-80A 114 + Dragoon 300 LFV2 42 + V-150/V-100 79 + Dragoon 300 36 + Fuchs 10 = 404; naval infantry VN-16 10 + VN-1 11 + VN-18 10 + EE-11 Urutu 37 + LVTP-7 11 = 79. Total ~483; National Guard vehicles (VN-4 121, UR-416, Fiat) excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 180,
+          "mid": 221,
+          "high": 221,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025 via equipment list: 2S19 Msta-S 48 + Mk F3 12 + M114 12 + M101 40 + Model 56 40 + 9A52 Smerch 12 + LAR-160 20 + BM-21 24 + 2S23 Nona-SVK 13 = 221 (mortars excluded)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Msta-S and Smerch modern; rest old."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 6,
+          "mid": 17,
+          "high": 20,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Venezuelan_Air_Force",
+          "note": "Venezuelan Air Force inventory: Su-30MK2 14 (of 24, accidents) + F-16A/B 3 (of 24; \"only a small quantity may remain in service or potentially none\"). Low reflects reported Su-30 availability problems."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Su-30MK2 capable but poorly supported; F-16A Block 15 unsupported since US embargo."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: low flying hours; offered no air opposition to the 3 Jan 2026 US raid."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 10,
+          "mid": 23,
+          "high": 23,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Venezuelan_Air_Force",
+          "note": "Hongdu K-8W 23 (jet trainer with light-attack role)."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 80,
+          "mid": 114,
+          "high": 120,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025 via equipment list: Army Mi-35M2 9 + Mi-17V-5 19 + Bell 412 12 + Mi-26T2 3 + AS-61D 2 + Bell 206 4 = 49; Air Force AS532 10 + Mi-17 6 = 16 (Venezuelan Air Force article); Navy AB-212 4 + Mi-17 6 + Bell 412 6 + others 2 = 18; National Guard 31 (counted, GNB is in IISS active). Total ~114; availability low."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 6,
+          "mid": 12,
+          "high": 20,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Venezuelan_Air_Force",
+          "note": "Air Force article: ANSU-100/Arpia (Iranian Mohajer-2 derived) 12; EANSA production of Mohajer-6-type reported (high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 1,
+          "mid": 1,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025 via equipment list: Lupo-class frigate Almirante Brion 1 operational (1 more non-operational, high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1980s frigate, Otomat missiles."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 14,
+          "mid": 20,
+          "high": 24,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "Guaiqueri-class OPV 3 + Constitucion-class 6 (3 with Otomat) + Peykaap III missile boats 4 + Capana LST 3 + Los Frailes patrol 4 = 20; Punta Brava survey and auxiliaries excluded."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Navantia OPVs modern, rest poorly maintained."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: conscript-heavy, politicized force with severe maintenance and fuel shortages; little live training since the 2010s economic collapse."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 1,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025: Type 209/1300 Sabalo 1 (in refit; 1 more non-operational)."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1976 boat in refit."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces",
+          "note": "IISS 2025 launcher counts via equipment list: S-300VM 12 launchers (~2 batteries), Buk-M2E 9 (~2; one system destroyed at Higuerote on 3 Jan 2026 per the US-strikes article), S-125 Pechora-2M 44 (~11), plus ZU-23-2 ~200, Bofors L70 114+, TCM-20 guns and Igla-S/RBS-70/Mistral MANPADS (~15 gun/MANPADS batteries). ~30 batteries; conversion at ~4-6 launchers per battery."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus: S-300VM/Buk-M2E modern on paper; network suppressed within minutes by US forces on 3 Jan 2026."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: failed to engage in Jan 2026."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: politicized high command (thousands of generals), no effective response to the Jan 2026 US raid; command now under acting president Delcy Rodriguez with US leverage over finances."
+    },
+    "cohesion": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: loyalty enforced by counter-intelligence (DGCIM) and patronage; desertions since 2019; regime shock after Maduro's capture."
+    },
+    "morale": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: unpaid/underpaid conscripts, economic collapse, decapitation of the regime in Jan 2026."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Near anchor 9: Kh-31/Kh-59 on Su-30, Smerch, Igla-S, Kornet; no reliable precision-strike chain."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: T-72B1 with Kontakt-1 ERA at best."
+    },
+    "ships": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: one operational 1980s frigate, Navantia OPVs, one submarine in refit."
+    },
+    "fortification": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Russian-built layered SAM network on paper (S-300VM, Buk, Pechora) proven ineffective in Jan 2026."
+    },
+    "logistics": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: road transport, Y-8/C-130 airlift with low availability, fuel shortages despite oil reserves."
+    },
+    "communications": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: VENESAT-1 failed 2020; Chinese/Russian radios."
+    },
+    "isr": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9: Chinese JYL-1 radars, small UAV fleet; no satellites in orbit after VRSS failures."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Su-30MK2 (1990s-2000s airframe) with very low availability."
+    },
+    "cyber": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Below anchor 9-10: internal surveillance capacity (CANTV, Cuban/Russian support), little offensive capability."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3657,
+      "mid": 6475,
+      "high": 7122,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "GDP below / population 28,516,896. World Bank has no PPP series for Venezuela."
+    },
+    "gdp": {
+      "low": 104288586076,
+      "mid": 184633173558,
+      "high": 203096490914,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "World Bank has no PPP GDP for Venezuela. Mid: IMF WEO PPPGDP 2025 $260.133 bn current int$ (https://www.imf.org/external/datamapper/api/v1/PPPGDP) x US GDP deflator 2011/2025 (FRED GDPDEF 91.478/128.885 = 0.710, https://fred.stlouisfed.org/graph/fredgraph.csv?id=GDPDEF&fq=Annual) = 184.6 bn 2011 int$. Low: CIA Factbook real GDP PPP 2023 $110.943 bn (2015 dollars, https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/ve.json) x 91.478/97.315 = 104.3 bn. High +10% over mid. The two sources disagree by ~45%; grade C."
+    },
+    "milSpendShare": {
+      "low": 0.005,
+      "mid": 0.008,
+      "high": 0.0223,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/ve.json",
+      "note": "CIA Factbook: 0.6% of GDP (2024), 0.5% (2023), 1.6% (2020); SIPRI via World Bank MS.MIL.XPND.GD.ZS 2.23% (2017, last value) as high. Opaque budget; mid an educated middle."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. World Bank NV.IND.TOTL.ZS has no usable value (reads 0 for 2011). Oil extraction and refining dominate output though production collapsed after 2015."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food importer since the 2000s; domestic agriculture collapsed; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 238847,
+      "mid": 280996,
+      "high": 323146,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/VEN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 14,082,985 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 9.976% (SP.POP.1519.MA.5Y) / 5 = 280,996. Males only (conscript-pool convention); about double if women are counted. Range +/-15%."
+    },
+    "production": {
+      "drones": {
+        "low": 0,
+        "mid": 5,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. EANSA (CAVIM) assembles Iranian-designed Mohajer-type UAVs. (context page: https://en.wikipedia.org/wiki/Venezuelan_Air_Force)"
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 0,
+        "high": 10,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. No significant armoured-vehicle line; CAVIM produces small arms (AK-103 licence, factory long delayed). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Venezuelan_Armed_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 30000,
+      "mid": 96189,
+      "high": 96189,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 96,189 km total (2014), paved share not reported. Low is an educated paved-only allowance (~1/3)."
+    },
+    "railKm": {
+      "low": 336,
+      "mid": 447,
+      "high": 447,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/VEN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 336 km (2006, low); CIA Factbook 447 km standard gauge (2014). Militarily negligible."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 5,
+      "high": 14,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-america/ve.json",
+      "note": "CIA Factbook 2024: 31 ports, 1 large + 2 medium + 11 small; 14 key ports named (La Guaira, Puerto Cabello, Maracaibo, Guanta, Puerto la Cruz, Amuay...). La Guaira port facilities were damaged in the Jan 2026 strikes."
+    },
+    "merchantTonnage": {
+      "low": 400000,
+      "mid": 1000000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Venezuela is below the 1 million GT threshold of the merchant-fleet table (https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country); CIA Factbook 2023 counts 272 merchant ships incl. 17 tankers (PDVSA fleet)."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 180,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based, chronic fuel and spare-parts shortages."
+    },
+    "draftAnimals": {
+      "low": 400000,
+      "mid": 700000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Venezuela is a non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. Party to Tlatelolco."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Lake Maracaibo strait",
+      "Gulf of Paria / Dragon's Mouth",
+      "Orinoco river",
+      "Andean passes (Tachira)"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain (Andes, llanos, Guayana jungle) and local supply; population support for the regime is low, so the 1.2 tier is only the high bound."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025-26. Situation at snapshot date: on 3 Jan 2026 the US (Operation Absolute Resolve) struck air-defence and military targets across northern Venezuela and captured President Nicolas Maduro; vice president Delcy Rodriguez was sworn in as acting president on 5 Jan 2026 and the government remains in place under heavy US leverage (2026 United States strikes in Venezuela article). Equipment counts are IISS Military Balance 2025 as tabulated in the List of equipment of the Venezuelan Armed Forces; only one destroyed Buk-M2E is documented from the raid, so other losses are not subtracted. Readiness is far below paper strength across all services. GDP: World Bank lacks PPP data; IMF and CIA Factbook disagree (grade C). Population convention: everything inside ne:VEN (Esequibo claim excluded). ships_major = frigates; ships_minor = OPVs, missile/patrol boats, LSTs; drones = Group 2+ UAVs. Infantry P-role split is an educated guess (grade D). Bolivarian Militia (paramilitary, 220,000 per IISS) excluded from P roles."
+}
