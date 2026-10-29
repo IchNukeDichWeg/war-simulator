@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { RECRUIT_BATCH_DAYS, RETURN_TO_DUTY_DAYS } from './constants';
+import { RECRUIT_BATCH_DAYS, RETURN_TO_DUTY_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { spawnFormation } from './formations';
 import { UnitStatus } from './protocol';
@@ -99,7 +99,9 @@ export function productionPhase(ctx: Ctx): void {
         }
         const cell = spawnCellFor(ctx, mi);
         if (cell < 0) continue;
-        spawnFormation(ctx, mi, cell, counts, true, day);
+        const nf = spawnFormation(ctx, mi, cell, counts, true, day);
+        const frac = r.day - Math.floor(r.day);
+        if (SUBDAY_REINFORCEMENTS && frac > 0) { F.joinDay[nf] = day; F.joinRound[nf] = Math.min(S.H - 1, Math.ceil(frac * S.H)); }
         st.arrivals[side] += p;
         addEvent(ctx, side, 'arrival', `${S.sideNames[side]} reinforcements arrived (${Math.round(p).toLocaleString('en-US')} troops).`, undefined, cell);
       }

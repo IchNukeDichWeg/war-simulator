@@ -9,7 +9,8 @@ import { FLAG_RIVER } from './terrainClasses';
 import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
-  DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL } from './constants';
+  DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -127,7 +128,8 @@ function profile(ctx: Ctx, list: number[]): SideProf {
       const c = F.counts[o + r];
       if (c < 0.5) continue;
       p.heads += c;
-      if (mr.range[r] > p.maxRange && mr.tli[r] > 0) p.maxRange = mr.range[r];
+      const rr = RANGE_INTEGER_CLASS ? mr.rangeClass[r] : mr.range[r];
+      if (rr > p.maxRange && mr.tli[r] > 0) p.maxRange = rr;
       if (mr.mounted[r]) p.mountedW += c * mr.tli[r];
     }
     p.w += F.curW[f];
@@ -146,7 +148,7 @@ function rawPower(ctx: Ctx, f: number, opening: boolean, enemyMaxRange: number, 
   for (let r = 0; r < NR; r++) {
     const c = F.counts[o + r];
     if (c <= 0) continue;
-    if (opening && mr.range[r] < enemyMaxRange) continue;
+    if (opening && (RANGE_INTEGER_CLASS ? mr.rangeClass[r] : mr.range[r]) < enemyMaxRange) continue;
     let v = c * mr.tli[r] * mr.qF[r] * mr.tF[r];
     if (mr.mounted[r]) v *= mountedF;
     if (r === RI.artillery) v *= massedArt;
@@ -229,7 +231,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       let posture = 1;
       if (s === att) {
         posture *= S.terrAttack[cls];
-        if (F.cell[f] !== cell && (g.flags[cell] & FLAG_RIVER)) posture *= m.combat.riverCrossingFactor.mid;
+        const river = S.battleMode && RIVER_FROM_CASE ? !!S.opts.riverCrossing : F.cell[f] !== cell && (g.flags[cell] & FLAG_RIVER) !== 0;
+        if (river) posture *= m.combat.riverCrossingFactor.mid;
         if (opening && S.opts.surprise?.[s]) posture *= m.combat.surpriseFactor.mid;
       } else {
         const prepared = S.battleMode && PREPARED_FROM_CASE ? !!S.opts.prepared?.[s] && F.mode[f] !== Mode.Rout
@@ -271,12 +274,14 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   // opening round out-ranged roles do not fire but still count as targets, so a side that
   // cannot reach the enemy inflicts nothing instead of making R infinite.
   const Pfull: [number, number] = [0, 0];
+  // a sub-day reinforcement is absent from the rounds before it arrives
+  const absent = (f: number, round: number) => SUBDAY_REINFORCEMENTS && F.joinDay[f] === st.day && round < F.joinRound[f];
   for (let round = 0; round < H && !ended; round++) {
     const open = opening && round === 0;
     for (const s of [0, 1] as const) {
       let sum = 0, full = 0;
       b.parts[s].forEach((f, i) => {
-        if (!active[s][i] || !F.alive[f]) return;
+        if (!active[s][i] || !F.alive[f] || absent(f, round)) return;
         const mr = S.members[F.member[f]];
         const k0 = fixMult[sideOff[s] + i] * (0.5 + F.morale[f]);
         // ammo/fuel shortage cuts the power a formation FIRES with, not its size as a target:
@@ -321,7 +326,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       if (l <= 0) continue;
       const lAir = l * airShare[1 - s], lGround = l - lAir;
       b.parts[s].forEach((f, i) => {
-        if (!active[s][i] || !F.alive[f]) return;
+        if (!active[s][i] || !F.alive[f] || absent(f, round)) return;
         const mr = S.members[F.member[f]];
         const before = F.personnel[f];
         lossFraction(ctx, f, lGround, LC.combat);
@@ -339,6 +344,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       b.parts[s].forEach((f, i) => {
         if (!active[s][i]) return;
         if (!F.alive[f]) { active[s][i] = 0; return; }
+        if (absent(f, round)) { any = true; return; }
         const mr = S.members[F.member[f]];
         if (F.engLoss[f] >= mr.breakpoint || F.morale[f] <= 0.001) {
           active[s][i] = 0;
@@ -352,7 +358,18 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       });
       if (!any) { ended = true; b.winner = e as 0 | 1; b.endRound = round + 1; }
     }
-    if (ended && active[0].every((x) => !x) && active[1].every((x) => !x)) { b.winner = -1; }
+    if (ended && active[0].every((x) => !x) && active[1].every((x) => !x)) {
+      b.winner = -1;
+      if (SIMULTANEOUS_BREAK_BY_SEVERITY) {
+        // both broke this round: the side further past its breakpoint lost the field
+        const sev = [0, 1].map((s) => {
+          let num = 0, den = 0;
+          for (const f of b.parts[s]) { const w = Math.max(F.startW[f], 1e-9); num += w * F.engLoss[f] / S.members[F.member[f]].breakpoint; den += w; }
+          return den > 0 ? num / den : 0;
+        });
+        if (sev[0] !== sev[1]) b.winner = sev[0] > sev[1] ? 1 : 0;
+      }
+    }
   }
   // ---- after the day
   const parts = b.parts;

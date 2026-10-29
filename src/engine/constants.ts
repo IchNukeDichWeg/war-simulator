@@ -91,6 +91,19 @@ export const BEATEN_LEAVE_CELL = true;
 /** AI reserve: skip formations that would overshoot reserveUse x strength, and never hold back a
  *  member's only available formation (the first formation was always taken, QA C3). */
 export const RESERVE_NO_OVERSHOOT = true;
+/** Opening-round range uses each role's range at the integer tech level reached (floor), not the
+ *  interpolated value: interpolation across steep steps made 0.05 tech levels decide whether a whole
+ *  army fired in round 0 (Waterloo French 1.16 km vs Coalition 1.41 km artillery; QA B4). */
+export const RANGE_INTEGER_CLASS = true;
+/** Battle mode: the attacker pays riverCrossingFactor only when the case says it crossed a river
+ *  (BattleCase.riverCrossing), not whenever a major river runs somewhere in the 25 km cell (QA B5). */
+export const RIVER_FROM_CASE = true;
+/** Both sides breaking in the same round: the side further past its breakpoint loses, instead of
+ *  a draw (Agincourt 10.6% vs 11.1% scored draws in half the seeds; QA B6). */
+export const SIMULTANEOUS_BREAK_BY_SEVERITY = true;
+/** Backtest reinforcements with a fractional day join that day's battle at round
+ *  ceil(fraction x battleHoursPerDay), not from round 0 (Waterloo Prussians at day 0.21). */
+export const SUBDAY_REINFORCEMENTS = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

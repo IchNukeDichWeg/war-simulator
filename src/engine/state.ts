@@ -24,6 +24,7 @@ const FIELDS: [string, Ctor, number][] = [
   ['heading', Float32Array, 1], ['movedKm', Float32Array, 1], ['fought', Uint8Array, 1], ['moved', Uint8Array, 1],
   ['stillDays', Uint16Array, 1], ['arriveDay', Int32Array, 1], ['onMap', Uint8Array, 1],
   ['feignUsed', Uint8Array, 1], ['routDays', Uint16Array, 1], ['battle', Int32Array, 1], ['spawnCell', Int32Array, 1],
+  ['joinDay', Int32Array, 1], ['joinRound', Uint8Array, 1],
 ];
 
 export interface Formations {
@@ -40,6 +41,8 @@ export interface Formations {
   heading: Float32Array; movedKm: Float32Array; fought: Uint8Array; moved: Uint8Array;
   stillDays: Uint16Array; arriveDay: Int32Array; onMap: Uint8Array;
   feignUsed: Uint8Array; routDays: Uint16Array; battle: Int32Array; spawnCell: Int32Array;
+  /** Joins the battle of day joinDay only from round joinRound (sub-day reinforcements). */
+  joinDay: Int32Array; joinRound: Uint8Array;
 }
 
 export function allocFormations(cap: number): Formations {

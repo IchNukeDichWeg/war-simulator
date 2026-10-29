@@ -122,6 +122,8 @@ export function spawnFormation(ctx: Ctx, member: number, cell: number, counts: A
   F.feignUsed[f] = 0;
   F.routDays[f] = 0;
   F.battle[f] = -1;
+  F.joinDay[f] = -1;
+  F.joinRound[f] = 0;
   if (onMap) ctx.sc.occ[mr.side][cell]++;
   st.addedW[mr.side] += F.curW[f];
   return f;

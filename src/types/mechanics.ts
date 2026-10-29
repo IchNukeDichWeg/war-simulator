@@ -214,6 +214,8 @@ export interface BattleCase {
   bbox?: [number, number, number, number];
   terrain: TerrainClass;
   season: Season;
+  /** The attacker had to cross a river to close (contested crossing). Default false. */
+  riverCrossing?: boolean;
   sides: [BattleSide, BattleSide];
   outcome: {
     winner: 0 | 1 | 'draw';

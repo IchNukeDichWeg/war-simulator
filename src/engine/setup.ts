@@ -28,6 +28,8 @@ export interface SimOptions {
   starts?: [Start[] | undefined, Start[] | undefined];
   postures?: ['attack' | 'defend', 'attack' | 'defend'];
   fortified?: [boolean, boolean];
+  /** Battle mode: the attacker crosses a river to attack (BattleCase.riverCrossing). */
+  riverCrossing?: boolean;
   /** Battle mode: defender in a prepared defence (BattleSide.prepared). */
   prepared?: [boolean, boolean];
   surprise?: [boolean, boolean];
@@ -65,6 +67,8 @@ export interface MemberRT {
   tech: Record<TechCategory, number>;
   commitment: number;
   tli: Float64Array; qF: Float64Array; tF: Float64Array; range: Float64Array; rate: Float64Array;
+  /** Range at the integer tech level reached (opening-round class, RANGE_INTEGER_CLASS). */
+  rangeClass: Float64Array;
   mob: MobilityClass[]; mounted: Uint8Array; vehicle: Uint8Array;
   dispersion: number;
   commandF: number; homeDefense: number; morale0: number; cohesion: number;
@@ -367,7 +371,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       warnings.push(`${snap.name}: no doctrine profiles loaded; using neutral weights (retreat at 75% of the breakpoint).`);
     }
     const w = doctrine.weights;
-    const tli = new Float64Array(NR), qF = new Float64Array(NR), tF = new Float64Array(NR), range = new Float64Array(NR), rate = new Float64Array(NR);
+    const tli = new Float64Array(NR), qF = new Float64Array(NR), tF = new Float64Array(NR), range = new Float64Array(NR), rate = new Float64Array(NR), rangeClass = new Float64Array(NR);
     const mounted = new Uint8Array(NR), vehicle = new Uint8Array(NR);
     const mob: MobilityClass[] = [];
     const logIdx = Math.round(tech.logistics);
@@ -375,6 +379,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       const role = ROLES[r];
       tli[r] = byTech(m.lethality.tli[role], roleTech(r));
       range[r] = byTech(m.lethality.rangeKm[role], roleTech(r));
+      rangeClass[r] = byTech(m.lethality.rangeKm[role], Math.floor(roleTech(r)));
       const fe = forces[role];
       qF[r] = factor(m.combat.qualityFactor, fe?.quality?.mid ?? 0.5);
       tF[r] = factor(m.combat.trainingFactor, fe?.training?.mid ?? 0.5);
@@ -405,7 +410,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     const mr: MemberRT = {
       idx, side, snapId: snap.id, nationId: snap.nationId, name: snap.name, snap, doctrine, w,
       specials: new Set(doctrine.specials), tech, commitment: 1,
-      tli, qF, tF, range, rate, mob, mounted, vehicle,
+      tli, qF, tF, range, rangeClass, rate, mob, mounted, vehicle,
       dispersion: byTech(m.lethality.dispersion, tech.weapons),
       commandF: factor(m.combat.commandFactor, snap.military.commandQuality?.mid ?? 0.5),
       homeDefense: Math.max(1, snap.geography?.homeDefense?.mid ?? 1),

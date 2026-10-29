@@ -198,6 +198,7 @@ export const battleSchema = {
     bbox: { type: 'array', items: { type: 'number' }, minItems: 4, maxItems: 4 },
     terrain: { enum: TERRAIN },
     season: { enum: ['spring', 'summer', 'autumn', 'winter'] },
+    riverCrossing: { type: 'boolean' },
     sides: { type: 'array', items: battleSide, minItems: 2, maxItems: 2 },
     outcome: obj({
       winner: { enum: [0, 1, 'draw'] },
@@ -206,7 +207,7 @@ export const battleSchema = {
       note: { type: 'string' },
     }),
     sources, grade,
-  }, ['bbox']),
+  }, ['bbox', 'riverCrossing']),
 };
 
 /** Every leaf constant in a mechanics file. */

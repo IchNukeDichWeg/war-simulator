@@ -141,6 +141,7 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
     postures: [bc.sides[0].posture, bc.sides[1].posture],
     fortified: [!!bc.sides[0].fortified, !!bc.sides[1].fortified],
     prepared: [!!bc.sides[0].prepared, !!bc.sides[1].prepared],
+    riverCrossing: !!bc.riverCrossing,
     surprise: [!!bc.sides[0].surprise, !!bc.sides[1].surprise],
     reinforcements: [0, 1].map((i) => (bc.sides[i].reinforcements ?? []).map((r) => ({ day: r.day, counts: toCounts(r.forces) }))) as SimOptions['reinforcements'],
     objectives: [bc.sides[0].objective ?? null, bc.sides[1].objective ?? null],

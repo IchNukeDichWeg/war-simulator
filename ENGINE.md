@@ -86,7 +86,8 @@ P_F = sum_r count_r x OLI_r
       x moraleFactor (= 0.5 + morale) x supplyFactor (ammo/fuel fraction for tech >= 6)
       x posture: max(defensePostureFactor if prepared, fortificationFactor in a fortified place,
                      fieldFortification for field_fortification doctrines)   (alternatives, not a product)
-      x surpriseFactor (if surprise) x riverCrossingFactor (attacking across a river)
+      x surpriseFactor (if surprise) x riverCrossingFactor (attacking across a river: in battle mode
+        only when the case sets riverCrossing, not from the 25 km grid river flag)
       x combinedArms (1 + combinedArmsBonus x doctrine.combinedArms x roleDiversity)
       x modern gaps: (1 + isrPerLevel x gapISR) (1 + ewPerLevel x gapComms) (1 + cyberPerLevel x gapCyber)
                       (1 + precisionStrikePerLevel x gapWeapons, only if weaponsTech >= 8)
@@ -97,7 +98,10 @@ P_F = sum_r count_r x OLI_r
 `factor(rating)` for the 0..1 ratings interpolates the MV: rating 0 -> `low`,
 0.5 -> `mid`, 1 -> `high`. Range (`rangeKm`) decides which side's roles fire in
 the first hour: roles out-ranged by the enemy contribute 0 in the opening round
-unless they close (melee roles close in round 2).
+unless they close (melee roles close in round 2). As built
+(`RANGE_INTEGER_CLASS`), the comparison uses each role's range at the integer
+tech level reached (floor), so a 0.05-level difference across a steep table
+step (artillery 0.9 km at 6, 6 km at 7) no longer silences a whole army.
 
 Tech index per quantity (as built): combat, breakpoint, formation size and
 training days by `weapons`; supply needs, forage dependence, disease and
@@ -176,6 +180,14 @@ round of losses at 2x if their doctrine initiative < 0.5), `field_fortification`
 (defender posture factor every night in camp), `massed_artillery`,
 `defense_in_depth` (+ posture, slower breakthrough), `human_wave` (+ power, +
 own losses). Each special's multiplier is a mechanics constant.
+
+Battle mode details (as built): when both sides break in the same round, the
+side further past its breakpoint (strength-weighted engLoss / breakpoint)
+loses instead of a draw (`SIMULTANEOUS_BREAK_BY_SEVERITY`). A reinforcement
+due at a fractional day joins that day's battle at round ceil(fraction x H)
+and is neither firing nor hit before then (`SUBDAY_REINFORCEMENTS`).
+Measured with the range and river rules: winner 18 -> 20, loss ratio 14 -> 15
+of 24.
 
 ## 5. Movement
 
