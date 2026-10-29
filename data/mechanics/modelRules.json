@@ -319,12 +319,12 @@
   },
   "collapse": {
     "armyCollapsePersonnelFraction": {
-      "low": 0.1,
-      "mid": 0.4,
-      "high": 0.7,
+      "low": 0.12,
+      "mid": 0.5,
+      "high": 0.83,
       "grade": "C",
       "source": "derived:mech-composite",
-      "note": "Remaining share of all personnel a side fielded at which the whole army stops resisting (engine: collapse when personnel < this x start). France 1940 (https://en.wikipedia.org/wiki/Battle_of_France, infobox): Allies 3,450,000; 73,000 killed, 240,000 wounded, 15,000 missing, 1,756,000 captured -> 0.40 left (captured includes post-armistice, so the true remainder at collapse was higher). Iraq 1991: no more than 350,000 in theater (https://gulflink.health.mil/histories/db/marines/usmcpersiangulfdoc1_108.html), 80,000-175,000 captured and 20,000-50,000 killed (https://en.wikipedia.org/wiki/Gulf_War) -> 0.36-0.71 left. Dupuy: forces quit at under 10% casualties per battle (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/). Low 0.1 (current value) for fight-to-the-end cases such as Germany 1945, not quantified here."
+      "note": "REMAINING share of all personnel a side fielded at which the whole army stops resisting (engine: collapse when personnel < this x (start + arrivals)); the share LOST at collapse is 1 minus this. Re-derived out of sample (no backtest war used). Lost share at collapse, per war, permanent losses (killed, missing, captured, deserted, disabled) over all fielded, final mass capitulation not counted: Manchuria 1945 ~0.03-0.13 (Kwantung Army 665,500, 21,389 dead per Japanese records to 83,737 Soviet claim; collapse by the surrender order, https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria); Yugoslavia 1941 ~0.05-0.1 (700,000; a few thousand killed, 254,000-375,000 captured mostly at the capitulation, rest dispersed home, disintegration not attrition, https://en.wikipedia.org/wiki/Invasion_of_Yugoslavia); East Pakistan 1971 0.17 (c. 91,000 regulars plus 10,000-12,000 militia; 5,866 killed, c. 10,000 wounded; 79,676 troops surrendered, https://en.wikipedia.org/wiki/Bangladesh_Liberation_War); Russia 1917 0.30-0.45 (12.0-15.07 M mobilized; 0.78-1.7 M dead and missing, 348,500 disabled, 3,343,900 POW; desertion before the collapse not quantified, https://en.wikipedia.org/wiki/World_War_I_casualties); France 1870-71 0.38 (2,000,740 deployed; 138,871 dead, 143,000 wounded, 474,414 captured or interned incl. Sedan, Metz and Bourbaki, https://en.wikipedia.org/wiki/Franco-Prussian_War); Germany 1945 >=0.55, ~0.6-0.7 inferred (18.2 M served, https://en.wikipedia.org/wiki/Wehrmacht; 5.318 M dead and 2.8 M captured in the west to 30 April 1945, https://en.wikipedia.org/wiki/German_casualties_in_World_War_II; 11 M POW in all, https://en.wikipedia.org/wiki/Disarmed_Enemy_Forces; Soviet-held POW before May not fetched); Poland 1939 0.68 on a 1.0 M base, 0.46 on the official 1.49 M (~874,700 total losses incl. capitulations, https://en.wikipedia.org/wiki/Invasion_of_Poland, less the final capitulations Warsaw 140,000 https://en.wikipedia.org/wiki/Siege_of_Warsaw_(1939), Modlin 35,000 https://en.wikipedia.org/wiki/Battle_of_Modlin, Kock 17,000 https://en.wikipedia.org/wiki/Battle_of_Kock_(1939)); KPA 1950 0.69-0.72 at the Inchon breakout, wounded excluded so a lower bound (58,000 lost by 5 Aug, 98,000 at the Perimeter -> base ~156,000; ~12,900 lost in August and 36,000-41,000 killed or captured 1-15 Sep, https://en.wikipedia.org/wiki/Battle_of_Pusan_Perimeter; very few got back north, https://en.wikipedia.org/wiki/UN_September_1950_counteroffensive); Confederacy 1865 0.87-0.89 (1,227,890-1,406,180 enlistments incl. re-enlistments, https://en.wikipedia.org/wiki/Confederate_States_Army; surrendered at the end: Appomattox ~28,000 https://en.wikipedia.org/wiki/Battle_of_Appomattox_Court_House, Bennett Place 89,270 https://en.wikipedia.org/wiki/Bennett_Place, Kirby Smith 43,000 https://en.wikipedia.org/wiki/Conclusion_of_the_American_Civil_War; Taylor's surrender not counted; a smaller enlistment base would lower the share); Paraguay 1870 ~0.99 (70,000-100,000 at the start plus 60,000 later conscripts; ~500 people with Lopez at Cerro Cora, https://en.wikipedia.org/wiki/Paraguayan_War, https://en.wikipedia.org/wiki/Battle_of_Cerro_Cor%C3%A1). Austria-Hungary 1918 left out: 9 M mobilized and 1,542,817 dead and missing (0.17), POW total not fetched. Median of the 10 lost shares 0.50 -> mid 0.5 remaining. Low = 1 - 0.88 (Confederacy, fight to the end), high = 1 - 0.17 (East Pakistan). The distribution is bimodal: political or maneuver collapses at 5-40% lost (Manchuria, Yugoslavia, East Pakistan, Russia, France 1870) and attrition collapses at 55-99% lost (Germany, Poland, KPA, Confederacy, Paraguay); the engine's morale trigger is meant for the first group, so a personnel-only trigger for attrition collapses would sit near 0.3 remaining. Previous value 0.4 came from France 1940 and Gulf 1991, both backtest cases."
     },
     "armyCollapseMorale": {
       "low": 0.1,
@@ -333,6 +333,156 @@
       "grade": "D",
       "source": "derived:educated-guess",
       "note": "UNSOURCED MODEL-DEFINITION CONSTANT: mid 0.15 is the engine's original definition (ENGINE.md 12), restored after QA round 2 found that 0.2 decided gate cases (Six-Day, Gulf War). Backtests are reported across 0.10-0.25 (scripts/backtest.ts --sweep). Earlier reasoning for 0.2: Engine-internal 0..1 side morale below which the army ceases resisting. No source measures this scale. Educated guess: morale in the engine falls with the share of starting strength lost, and the cases above collapse at 30-60% losses, which suggests a threshold somewhat above 0.15; Dupuy's finding that defeat is mostly caused by maneuver, not casualties (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/), argues for the morale trigger firing before the personnel trigger."
+    }
+  },
+  "breakpoint": {
+    "loserCasualtyShareAtBreak": {
+      "bronze": {
+        "low": 0.03,
+        "mid": 0.12,
+        "high": 0.3,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "Loser casualty share when its army broke. No casualty series before 500 BCE; copied from iron (Krentz hoplite battles) with a wider range. Educated analogy."
+      },
+      "iron": {
+        "low": 0.05,
+        "mid": 0.14,
+        "high": 0.25,
+        "grade": "C",
+        "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+        "note": "Krentz, Casualties in hoplite battles, GRBS 26 (1985) 13-20, table p.19: 14 Greek hoplite battles 472-371 BCE (none in the backtest; Marathon not in the table) give loser killed 3-25%, average ~14% (median 14.1%, IQR 10-17%), typical 10-20%. Killed only (wounded not counted) but including the short hoplite pursuit. Sabin, The Face of Roman Battle, JRS 90 (2000) 1-17 (https://gwern.net/doc/history/2000-sabin.pdf): Roman battles cost the loser far more, often over half killed or captured (Cynoscephalae 13,000 of 25,500), but that came after the break in pursuit and encirclement; losses before the break were light, comparable to the winners' ~5%. Low = Sabin's pre-break level, high = Krentz maximum (Syracuse 413)."
+      },
+      "medieval": {
+        "low": 0.08,
+        "mid": 0.2,
+        "high": 0.41,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess for the share at the break. Data: 13 battles 1176-1471 from Wikipedia infoboxes (modern estimates where given; none in the backtest): Crecy ~0.15 (French dead only), Poitiers 0.47, Courtrai 0.15, Falkirk 0.33, Verneuil 0.41, Formigny ~0.75, Castillon 0.53, Patay 0.65, Tewkesbury 0.33, Lewes 0.27, Evesham 0.8, Legnano 0.67, Sempach 0.375 (https://en.wikipedia.org/wiki/Battle_of_Poitiers etc.): median 0.41, IQR 0.33-0.65. Those totals are dominated by killing and capture in the rout (men-at-arms cut down or held for ransom), the same pattern Sabin documents for Roman battles, so they bound the break share from above (high). Mid set between the iron-era hoplite value (0.14) and the gunpowder dataset (0.26); low as for iron."
+      },
+      "gunpowder": {
+        "low": 0.167,
+        "mid": 0.26,
+        "high": 0.356,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=56 battles 1600-1788. CDB90 (CAA Database of Battles 1600-1973/82, Helmbold 1993; open copy https://github.com/jrnold/CDB90, files belligerents.csv, battles.csv, battle_durations.csv): loser = side beaten per wina, share = cas / str (cas = killed, wounded, missing and captured). Backtest battles and their campaigns removed (isqno 6 Breitenfeld I, 50 Blenheim, 117 Austerlitz, 143-145 Hundred Days, 198-199 Gettysburg campaign, 278-281 E Prussia 1914, 387-390 El Alamein II, 493-499 Kursk and its counteroffensive, 486/657-660 France 1940, 554-564 Sinai 1967, 569-584 Suez front 1973); draws and battles coded annihilated (reso AA) dropped. Low/high = interquartile range. Totals include losses in pursuit and prisoners, so the share at the moment of breaking is somewhat lower. Winner IQR in the same set 0.05-0.21."
+      },
+      "napoleonic": {
+        "low": 0.128,
+        "mid": 0.231,
+        "high": 0.333,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=36 battles 1789-1849 (Napoleonic, Revolutionary, 1812, Latin American, US-Mexican wars). CDB90 (CAA Database of Battles 1600-1973/82, Helmbold 1993; open copy https://github.com/jrnold/CDB90, files belligerents.csv, battles.csv, battle_durations.csv): loser = side beaten per wina, share = cas / str (cas = killed, wounded, missing and captured). Backtest battles and their campaigns removed (isqno 6 Breitenfeld I, 50 Blenheim, 117 Austerlitz, 143-145 Hundred Days, 198-199 Gettysburg campaign, 278-281 E Prussia 1914, 387-390 El Alamein II, 493-499 Kursk and its counteroffensive, 486/657-660 France 1940, 554-564 Sinai 1967, 569-584 Suez front 1973); draws and battles coded annihilated (reso AA) dropped. Low/high = interquartile range. Totals include losses in pursuit and prisoners, so the share at the moment of breaking is somewhat lower."
+      },
+      "industrial": {
+        "low": 0.127,
+        "mid": 0.2,
+        "high": 0.302,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=39 battles 1850-1913 (American Civil War dominant, Franco-Prussian, Russo-Japanese, Balkan wars). CDB90 (CAA Database of Battles 1600-1973/82, Helmbold 1993; open copy https://github.com/jrnold/CDB90, files belligerents.csv, battles.csv, battle_durations.csv): loser = side beaten per wina, share = cas / str (cas = killed, wounded, missing and captured). Backtest battles and their campaigns removed (isqno 6 Breitenfeld I, 50 Blenheim, 117 Austerlitz, 143-145 Hundred Days, 198-199 Gettysburg campaign, 278-281 E Prussia 1914, 387-390 El Alamein II, 493-499 Kursk and its counteroffensive, 486/657-660 France 1940, 554-564 Sinai 1967, 569-584 Suez front 1973); draws and battles coded annihilated (reso AA) dropped. Low/high = interquartile range. Totals include losses in pursuit and prisoners, so the share at the moment of breaking is somewhat lower."
+      },
+      "worldwars": {
+        "low": 0.059,
+        "mid": 0.152,
+        "high": 0.355,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=168 engagements 1914-1945, mostly division and corps level 1918 and 1943-45. CDB90 (CAA Database of Battles 1600-1973/82, Helmbold 1993; open copy https://github.com/jrnold/CDB90, files belligerents.csv, battles.csv, battle_durations.csv): loser = side beaten per wina, share = cas / str (cas = killed, wounded, missing and captured). Backtest battles and their campaigns removed (isqno 6 Breitenfeld I, 50 Blenheim, 117 Austerlitz, 143-145 Hundred Days, 198-199 Gettysburg campaign, 278-281 E Prussia 1914, 387-390 El Alamein II, 493-499 Kursk and its counteroffensive, 486/657-660 France 1940, 554-564 Sinai 1967, 569-584 Suez front 1973); draws and battles coded annihilated (reso AA) dropped. Low/high = interquartile range. Totals include losses in pursuit and prisoners, so the share at the moment of breaking is somewhat lower. Pacific island fights to the death (Okinawa, Iwo Jima, Tarawa) form the upper tail; without them median 0.149, IQR 0.058-0.337. Cross-check: McQuie (Army, Nov 1987) on 80 HERO engagements 1941-82 found most forces quit below 10% casualties and only 10% of attack or defence abandonments were due to losses (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/)."
+      },
+      "coldwar": {
+        "low": 0.045,
+        "mid": 0.083,
+        "high": 0.154,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=36 engagements 1948-1982 (Arab-Israeli 1948, 1956, 1967 West Bank and Golan, 1973 Golan, Korea 1950-51, Lebanon 1982). CDB90 (CAA Database of Battles 1600-1973/82, Helmbold 1993; open copy https://github.com/jrnold/CDB90, files belligerents.csv, battles.csv, battle_durations.csv): loser = side beaten per wina, share = cas / str (cas = killed, wounded, missing and captured). Backtest battles and their campaigns removed (isqno 6 Breitenfeld I, 50 Blenheim, 117 Austerlitz, 143-145 Hundred Days, 198-199 Gettysburg campaign, 278-281 E Prussia 1914, 387-390 El Alamein II, 493-499 Kursk and its counteroffensive, 486/657-660 France 1940, 554-564 Sinai 1967, 569-584 Suez front 1973); draws and battles coded annihilated (reso AA) dropped. Low/high = interquartile range. Totals include losses in pursuit and prisoners, so the share at the moment of breaking is somewhat lower. Consistent with McQuie's under-10% finding for 1941-82 (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/)."
+      },
+      "modern": {
+        "low": 0.04,
+        "mid": 0.1,
+        "high": 0.3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. No breakpoint dataset after 1991 and the Gulf 1991 and Iraq 2003 cases are backtest. Anchored on coldwar (0.083) and one partisan-sourced case: Debaltseve 2015, Ukrainian claim of 267 killed, 112-121 captured, 508-668 wounded of 2,500-5,000 before withdrawal = 0.18-0.42 (https://en.wikipedia.org/wiki/Battle_of_Debaltseve). Ilovaisk 2014 (an encirclement, ~1,000 of 1,600-1,800) left out as annihilation, not a break."
+      }
+    },
+    "winnerCasualtyShareAtEnd": {
+      "bronze": {
+        "low": 0.02,
+        "mid": 0.05,
+        "high": 0.12,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "Winner casualty share at battle end. No data before 500 BCE; copied from iron with a wider range. Educated analogy."
+      },
+      "iron": {
+        "low": 0.02,
+        "mid": 0.05,
+        "high": 0.1,
+        "grade": "B",
+        "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+        "note": "Krentz (GRBS 1985) table p.19: 11 hoplite battles with winner losses, killed 1.7-10%, average ~5%, typical 3-10%. Sabin (JRS 2000, https://gwern.net/doc/history/2000-sabin.pdf): Polybius' Punic War figures give victors ~5% dead, later Roman victors less (700 at Cynoscephalae, 230 at Pharsalus). Killed only."
+      },
+      "medieval": {
+        "low": 0.021,
+        "mid": 0.07,
+        "high": 0.18,
+        "grade": "C",
+        "source": "derived:mech-composite",
+        "note": "9 battles from Wikipedia infoboxes with winner figures (none in the backtest): Castillon 0.013, Crecy 0.018, Courtrai 0.021, Legnano 0.026, Patay 0.07, Falkirk 0.13, Formigny 0.18, Verneuil 0.19, Sempach 0.32 (e.g. https://en.wikipedia.org/wiki/Battle_of_Verneuil, https://en.wikipedia.org/wiki/Battle_of_Sempach). Median 0.07, IQR 0.021-0.18. Mostly killed only; chronicle-based figures."
+      },
+      "gunpowder": {
+        "low": 0.049,
+        "mid": 0.098,
+        "high": 0.211,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=56, same battle set as breakpoint.loserCasualtyShareAtBreak.gunpowder; winner cas / str, median and IQR."
+      },
+      "napoleonic": {
+        "low": 0.048,
+        "mid": 0.074,
+        "high": 0.127,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=36, same battle set as breakpoint.loserCasualtyShareAtBreak.napoleonic; winner cas / str, median and IQR."
+      },
+      "industrial": {
+        "low": 0.041,
+        "mid": 0.064,
+        "high": 0.126,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=39, same battle set as breakpoint.loserCasualtyShareAtBreak.industrial; winner cas / str, median and IQR."
+      },
+      "worldwars": {
+        "low": 0.018,
+        "mid": 0.037,
+        "high": 0.089,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=168, same engagement set as breakpoint.loserCasualtyShareAtBreak.worldwars; winner cas / str, median and IQR (without Pacific islands 0.044, IQR 0.021-0.099)."
+      },
+      "coldwar": {
+        "low": 0.009,
+        "mid": 0.023,
+        "high": 0.036,
+        "grade": "B",
+        "source": "https://raw.githubusercontent.com/jrnold/CDB90/master/data/belligerents.csv",
+        "note": "n=36, same engagement set as breakpoint.loserCasualtyShareAtBreak.coldwar; winner cas / str, median and IQR."
+      },
+      "modern": {
+        "low": 0.005,
+        "mid": 0.02,
+        "high": 0.06,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess anchored on coldwar (median 0.023); no post-1991 dataset outside the backtest. Partisan claims only, e.g. Debaltseve 2015 (https://en.wikipedia.org/wiki/Battle_of_Debaltseve)."
+      }
     }
   },
   "surrender": {
