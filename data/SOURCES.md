@@ -42,6 +42,14 @@ families, their licenses, and the derivation methods.
   convention) or the national statistical definition (modern, as reported by the World Bank).
 - `foodSurplus`: share of food production not consumed by the producing agricultural population
   (what can feed towns, armies and stores). Pre-modern values are rough (grade C/D).
+- Role boundaries: `ships_major` = carriers, amphibious assault ships, battleships, cruisers,
+  destroyers, frigates (pre-modern: the era's main line warships, e.g. triremes, ships of the line);
+  `ships_minor` = corvettes, patrol, missile and mine craft, small galleys; `drones` = reusable
+  military UAVs of NATO Group 2 and above (FPV and one-way attack munitions excluded);
+  `air_defense` = SAM/AAA batteries (sources that count launchers: about 4-6 launchers per
+  battery, conversion stated in the note); `missiles` = ballistic/cruise missile launchers.
+- `milSpendShare` for a state at war: mid is the current (wartime) share, low the last
+  peacetime share; the note says so.
 - Force accounting: see `military` in `src/types/schema.ts`. `forces` is the standing order of
   battle at the snapshot date, P-role counts exclude crews, navy/air personnel, logistics and
   staff (those are `supportPersonnel`).
