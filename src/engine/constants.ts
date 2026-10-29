@@ -331,3 +331,15 @@ export const SURPRISE_DAY_ONE_ONLY = true;
  *  Axis base fell). Decision logged in DECISIONS.md. Measured (20 seeds, clean a7049e7): 20/15/20
  *  unchanged; Six-Day winner 55% -> 0% (ratio x0.39 -> x1.03), Iraq 2003 x0.13 -> x0.26. */
 export const CAPITAL_SHOCK_REAL_ONLY = true;
+/** A side does not take an attack slot it cannot staff to its doctrine's required ratio: when the
+ *  side's whole remaining power (not yet ordered this cycle) is below the slot's need, the slot is
+ *  skipped, leftovers do not join it, and the formations it would have drawn defend the side's own
+ *  objective if it holds it, else the nearest own place (DECISIONS.md, round 3 item 8). Before, the
+ *  loop gave such a slot everything (Iraq 2003: 14 of 22 formations at an enemy group needing
+ *  2.7x their power). Measured (20 seeds, clean 0ca9c26): 20/15/20 -> 20/15/21. Iraq 2003 seed 1
+ *  day 1 Iraqi Defend/Attack 1/14 -> 15/0, winner 100% -> 90%; Yom Kippur 45% -> 0% (Israel, 1-3
+ *  formations, never attacks), ratio x0.17 -> x2.37 passes; Stalingrad 23 -> 31 days passes; Gulf
+ *  War ratio x3.00 -> x3.08 fails. Presets (12 x 2 seeds, invariants clean): 6 runs change winner,
+ *  allies-vs-axis-minus-two and mongols-vs-rome both seeds and usa-vs-china-2026 seed 1 to draws,
+ *  rome-vs-france-equalized seed 1 to Rome. */
+export const AI_SKIP_UNSTAFFABLE_ATTACKS = true;

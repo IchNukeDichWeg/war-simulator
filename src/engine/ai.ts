@@ -10,7 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  AI_DEFEND_CAP_BY_VALUE, HOLD_SIDE_NO_PLACE_TARGETS, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  AI_DEFEND_CAP_BY_VALUE, AI_SKIP_UNSTAFFABLE_ATTACKS, HOLD_SIDE_NO_PLACE_TARGETS, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
@@ -217,10 +217,9 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     st.objKind[side][k] = c.kind;
     computeField(ctx, side, k, c.cell);
   });
-  // ---- 6. assignment per member
-  for (const mi of S.sideMembers[side]) {
+  // ---- 6. availability per member (first pass, so the side's whole remaining power is known)
+  const pools = S.sideMembers[side].map((mi) => {
     const mr = S.members[mi];
-    const w = mr.w;
     const delay = Math.max(0, Math.round(mr.orderDelay * S.friction[side]));
     const avail: number[] = [];
     let totalW = 0;
@@ -238,6 +237,14 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       avail.push(f);
       totalW += F.curW[f];
     }
+    return { mi, delay, avail, totalW };
+  });
+  // power of the side not yet given an order this cycle
+  let sideLeft = pools.reduce((a, p) => a + p.totalW, 0);
+  // ---- 7. assignment per member
+  for (const { mi, delay, avail, totalW } of pools) {
+    const mr = S.members[mi];
+    const w = mr.w;
     if (!avail.length) continue;
     const slots = chosen.map((c, k) => ({ c, k, s: score(mi, c) })).sort((a, b) => b.s - a.s || a.k - b.k);
     const taken = new Uint8Array(avail.length);
@@ -254,9 +261,12 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
         if (RESERVE_NO_OVERSHOOT && acc + F.curW[avail[i]] > reserveW) continue;
         taken[i] = 1;
         acc += F.curW[avail[i]];
+        sideLeft -= F.curW[avail[i]];
         order(ctx, avail[i], defendSlot ? Mode.Defend : Mode.Hold, defendSlot ? defendSlot.c.cell : -1, delay);
       }
     }
+    // attack slots the side cannot staff to the doctrine's ratio with all it has left are skipped
+    const skipped = new Set<number>();
     const ratio = AI_MASS_RATIO_ATTRITION + (AI_MASS_RATIO_MANEUVER - AI_MASS_RATIO_ATTRITION) * w.maneuver;
     // a Defend slot absorbs at most its value's share of the member's army (QA C4: Defend slots near
     // the start won on distance and their need, the enemy power nearby, took the whole army)
@@ -272,12 +282,14 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       let need = sl.c.pow * (defend ? 1 : ratio);
       const capped = AI_DEFEND_CAP_BY_VALUE && sl.c.kind === OBJ.Defend && valSum > 0;
       if (capped) need = Math.min(need, totalW * value(mi, sl.c) / valSum);
+      if (AI_SKIP_UNSTAFFABLE_ATTACKS && !defend && sideLeft < need) { skipped.add(sl.k); continue; }
       let acc = 0;
       const mode = defend ? Mode.Defend : Mode.Attack;
       for (const i of idx) {
         if (capped && acc + F.curW[avail[i]] > need) continue;   // the cap is a ceiling, not a floor
         taken[i] = 1;
         acc += F.curW[avail[i]];
+        sideLeft -= F.curW[avail[i]];
         order(ctx, avail[i], mode, sl.c.cell, delay);
         if (acc >= need) break;
       }
@@ -297,13 +309,27 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       }
       if (w.aggression >= 0.5 || (AI_STRONGER_SIDE_ADVANCES && ownTotal > totalEnemy)) {
         for (const sl of slots) {
-          if (sl.c.kind === OBJ.Defend) continue;
+          if (sl.c.kind === OBJ.Defend || skipped.has(sl.k)) continue;
           const v = st.fields[side][sl.k * n + F.cell[f]];
           if (v < bv) { bv = v; bestK = sl.k; }
         }
       }
       if (bestK >= 0) order(ctx, f, Mode.Attack, st.objCells[side][bestK], delay);
-      else order(ctx, f, defendSlot ? Mode.Defend : Mode.Hold, defendSlot ? defendSlot.c.cell : -1, delay);
+      else if (skipped.size) {
+        // freed by a skipped attack: defend the side's own objective if it holds it, else the
+        // nearest own place (a place outside the chosen fields is defended where the formation stands)
+        const oc = S.objectiveCells[side];
+        let tgt = oc >= 0 && st.control[oc] === side ? oc : -1;
+        if (tgt < 0) {
+          let bd = Infinity;
+          for (const p of S.places) {
+            if (st.control[p.cell] !== side) continue;
+            const d = haversineKm(g.lat[F.cell[f]], g.lon[F.cell[f]], g.lat[p.cell], g.lon[p.cell]);
+            if (d < bd) { bd = d; tgt = p.cell; }
+          }
+        }
+        order(ctx, f, Mode.Defend, tgt, delay);
+      } else order(ctx, f, defendSlot ? Mode.Defend : Mode.Hold, defendSlot ? defendSlot.c.cell : -1, delay);
     }
   }
 }

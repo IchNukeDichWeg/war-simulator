@@ -397,6 +397,14 @@ tech)` (`mission_command` halves it). Each order cycle:
    (`AI_DEFEND_CAP_BY_VALUE`) at the member's army x that objective's
    doctrine-weighted value / the summed value of the chosen objectives, and
    the cap is a ceiling: formations that would overshoot it are skipped.
+   A side does not take an attack slot it cannot staff to its doctrine's
+   ratio (`AI_SKIP_UNSTAFFABLE_ATTACKS`): when the side's whole remaining
+   power (not yet ordered this cycle, all members) is below the slot's need,
+   the slot is skipped and leftovers do not join it; the formations left over
+   defend the side's own objective if it holds it, else the nearest own place
+   (in place when that place has no flow field this cycle). Before, such a slot
+   took everything left (Iraq 2003: 14 of 22 formations at an enemy group
+   needing 2.7x their power).
    Before, Defend slots near the start won on distance and their need took
    the whole army (89 of 92 German formations defending France 1940).
    Strengths are compared in battle units (`AI_CROSS_ERA_POWER`): enemy
