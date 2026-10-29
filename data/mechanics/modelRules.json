@@ -1,0 +1,716 @@
+{
+  "battle": {
+    "outcomeNoiseSigma": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.47,
+      "grade": "C",
+      "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+      "note": "Lognormal sigma of per-round combat effectiveness noise for one side. Helmbold, CAA-RP-95-1 (1995), Table 4-6 p.4-22: residual RMSE of ln(casualty exchange ratio) after regressing on both force sizes, duration and date, 131 PARCOMBO battles after 1500: 0.48 robust (Andrews sine), 0.67 Tukey, 0.94 OLS; Table 4-4 p.4-19 gives RMSE 0.73-0.92 for ln(casualties) per side. ln(CER) is a difference of two sides, so per-side sigma = RMSE/sqrt(2) = 0.34 (robust) or 0.47 (Tukey, high); the OLS 0.66 is distorted by erroneous data points per Helmbold and not used. That residual still contains unmodelled quality, terrain and posture (which the engine models explicitly), so pure chance is a part of it: mid 0.25 assumes about half the residual variance is chance (0.34 x sqrt(0.5) = 0.24). Low keeps the current engine value. The fit is per battle, not per round: a battle of n independent rounds averages noise down by sqrt(n), so a per-round sigma could be up to sqrt(n) higher; calibrate against the backtest spread before going above 0.34."
+    },
+    "pursuitDisengageShare": {
+      "bronze": {
+        "low": 0.03,
+        "mid": 0.7,
+        "high": 0.86,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "Share of a beaten force that gets away from the field (withdraws or flees without being cut down or taken), before the engine's mounted-pursuit term. No pre-500 BCE casualty series; copied from classical (Krentz hoplite data, Cannae). Educated analogy."
+      },
+      "iron": {
+        "low": 0.03,
+        "mid": 0.7,
+        "high": 0.86,
+        "grade": "C",
+        "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+        "note": "Krentz, GRBS 26 (1985) p.18-20 and table p.19: defeated hoplite armies lost 10-20% killed, average ~14%, 'rarely more than a fifth', because Greeks 'did not usually pursue far': 1 - 0.14 = 0.86 got away (high). With strong cavalry the share collapses: Cannae (https://en.wikipedia.org/wiki/Battle_of_Cannae, infobox) Livy 14,000+ escaped and Polybius 3,000 of 86,400 = 0.03-0.16 (low; ancient chronicler figures). Mid 0.7 for a mixed army; the engine's mounted-share pursuit should push it toward the low end, not this constant."
+      },
+      "medieval": {
+        "low": 0.3,
+        "mid": 0.6,
+        "high": 0.85,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no systematic medieval winner/loser series found. Between the hoplite pattern (0.86 escape, foot pursuit) and cavalry-decided routs; knights mounted to pursue more often than hoplites, so mid below classical."
+      },
+      "gunpowder": {
+        "low": 0.45,
+        "mid": 0.55,
+        "high": 0.75,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Blenheim",
+        "note": "Blenheim 1704 (infobox): Franco-Bavarian 56,000, lost 6,000 killed or drowned, 7,000 wounded, 14,190 captured = 27,190, so ~0.52 got away. High 0.75 for a battle without a trapped wing. One case plus judgement."
+      },
+      "napoleonic": {
+        "low": 0.35,
+        "mid": 0.55,
+        "high": 0.8,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+        "note": "Waterloo 1815 (infobox): French 72,000-73,000, 25,000 killed or wounded + 8,000 captured -> (73-33)/73 = 0.55 got away; a further 15,000 deserted after the battle, so only ~0.34 stayed formed (low 0.35). Koniggratz-type orderly retreat as high. Bodart's Napoleonic winner/loser data (Helmbold CAA-RP-95-1, BODASHIP base) were not readable as numbers."
+      },
+      "industrial": {
+        "low": 0.6,
+        "mid": 0.8,
+        "high": 0.9,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_K%C3%B6niggr%C3%A4tz",
+        "note": "Koniggratz 1866 (infobox): Austrians+Saxons 206,000-215,000; Austria lost 31,000-43,000 including 22,170 prisoners, Saxony 1,501 -> ~0.79 withdrew. Sedan-type encirclements are covered by encircledSurrenderShare, not here."
+      },
+      "worldwars": {
+        "low": 0.6,
+        "mid": 0.85,
+        "high": 0.95,
+        "grade": "D",
+        "source": "https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/",
+        "note": "Dupuy Institute (HERO data, 80 engagements 1941-1982): forces typically quit at under 10% casualties and 64% of decisions to abandon a battle were caused by enemy maneuver, not losses; disengaging units therefore usually leave with most of their strength. The escape share itself is not in the source: mid 0.85 is an educated reading of it; encirclements go to encircledSurrenderShare."
+      },
+      "coldwar": {
+        "low": 0.6,
+        "mid": 0.85,
+        "high": 0.95,
+        "grade": "D",
+        "source": "https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/",
+        "note": "As world_wars (the Dupuy set runs to 1982). Educated guess."
+      },
+      "modern": {
+        "low": 0.6,
+        "mid": 0.85,
+        "high": 0.95,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as cold_war; persistent ISR and precision fires could lower it, unmeasured."
+      }
+    },
+    "footPursuitLossFloor": {
+      "low": 0.01,
+      "mid": 0.09,
+      "high": 0.15,
+      "grade": "C",
+      "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+      "note": "Extra loss share (of the beaten force's engaged strength) inflicted by a foot-only pursuit. Krentz, GRBS 26 (1985) table p.19: hoplite battles, little cavalry, loser ~14% killed vs winner ~5% killed (ratio 1:2.9); taking the winner's rate as the pre-break exchange, the flight added ~9 points (mid). Range from the same table: Coronea 394 loser 3% vs winner 1.7% (~0.01, low; Krentz calls it and Syracuse 415, where cavalry blocked pursuit, atypical) up to Acragas 472 20% vs 10% and Olpae 16.7% vs 5% (0.10-0.12); high 0.15 allows wounded-left-behind. Engine conversion: pursuit = pursuitLossFraction x max(mobileShare, footPursuitFloor), so with tech-3 pursuitLossFraction 0.5 the engine floor is 0.09/0.5 = 0.18 (0.02-0.30)."
+    }
+  },
+  "river": {
+    "riverCrossingDelayDays": {
+      "bronze": {
+        "low": 1,
+        "mid": 3,
+        "high": 7,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Xerxes%27s_pontoon_bridges",
+        "note": "Extra days for an army to cross a major river without a standing bridge. Xerxes 480 BCE: the Hellespont crossing on two pontoon bridges took 'seven days and nights' (Herodotus, ancient figure; high). Hannibal's Rhone crossing 218 BCE (https://en.wikipedia.org/wiki/Battle_of_the_Rh%C3%B4ne_Crossing): two days building boats and rafts after three days' rest, about five days in all. Mid 3 days."
+      },
+      "iron": {
+        "low": 1,
+        "mid": 3,
+        "high": 10,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Caesar%27s_Rhine_bridges",
+        "note": "Caesar's first Rhine bridge (55 BCE) was built 'in only 10 days' with 40,000 men, the second 'in a few days' (high 10). Hannibal's Rhone crossing ~5 days including preparation (https://en.wikipedia.org/wiki/Battle_of_the_Rh%C3%B4ne_Crossing). Small forces swam or rafted in a night (low 1)."
+      },
+      "medieval": {
+        "low": 1,
+        "mid": 3,
+        "high": 7,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "No medieval series found; analogy to ancient/classical boat-and-raft crossings (Rhone 218 BCE ~5 days). Educated analogy."
+      },
+      "gunpowder": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess between classical (3) and Napoleonic (1.5): pontoon trains existed but were slow and scarce."
+      },
+      "napoleonic": {
+        "low": 0.5,
+        "mid": 1.5,
+        "high": 4,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Berezina",
+        "note": "Berezina 1812: bridge construction started 25 November, the first bridge was complete and Oudinot's 7,000 crossed on the 26th, the army crossed over the next days under attack (about 1 day to bridge, ~3-4 days for the whole army; high). Mid 1.5 days for an unopposed crossing with a pontoon train."
+      },
+      "industrial": {
+        "low": 0.5,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess between Napoleonic pontoon trains and WWII treadway bridges; rail-borne bridging equipment but horse transport at the river."
+      },
+      "worldwars": {
+        "low": 0.25,
+        "mid": 0.5,
+        "high": 1.5,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/Operation_Plunder",
+        "note": "Rhine 1945: US engineers laid 1,152 ft of M2 treadway on 93 pneumatic floats in 6 h 15 min; first truck crossed the same day (0.26 day, low). Mid keeps the engine's 0.5 day including approach, queueing and bridgehead; high for a contested assault crossing."
+      },
+      "coldwar": {
+        "low": 0.1,
+        "mid": 0.3,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: amphibious APCs and ribbon bridges cut WWII times; no fetched timing."
+      },
+      "modern": {
+        "low": 0.1,
+        "mid": 0.25,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as cold_war; contested crossings under drone ISR can take far longer (high)."
+      }
+    }
+  },
+  "attrition": {
+    "returnToDutyDays": {
+      "bronze": {
+        "low": 14,
+        "mid": 30,
+        "high": 90,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Mean days for a non-battle sick/injured soldier who recovers to return to duty. Educated guess: no admission/noneffective series found for this era. Pre-antiseptic camp fevers and dysentery ran for weeks; Walcheren 1809 still had almost 12,000 ill by February 1810, months after infection (https://en.wikipedia.org/wiki/Walcheren_Campaign)."
+      },
+      "iron": {
+        "low": 14,
+        "mid": 30,
+        "high": 90,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "As ancient. Educated guess: no admission/noneffective series found for this era. Pre-antiseptic camp fevers and dysentery ran for weeks; Walcheren 1809 still had almost 12,000 ill by February 1810, months after infection (https://en.wikipedia.org/wiki/Walcheren_Campaign)."
+      },
+      "medieval": {
+        "low": 14,
+        "mid": 30,
+        "high": 90,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "As ancient. Educated guess: no admission/noneffective series found for this era. Pre-antiseptic camp fevers and dysentery ran for weeks; Walcheren 1809 still had almost 12,000 ill by February 1810, months after infection (https://en.wikipedia.org/wiki/Walcheren_Campaign)."
+      },
+      "gunpowder": {
+        "low": 14,
+        "mid": 30,
+        "high": 90,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "As ancient. Educated guess: no admission/noneffective series found for this era. Pre-antiseptic camp fevers and dysentery ran for weeks; Walcheren 1809 still had almost 12,000 ill by February 1810, months after infection (https://en.wikipedia.org/wiki/Walcheren_Campaign)."
+      },
+      "napoleonic": {
+        "low": 20,
+        "mid": 40,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no admission/noneffective series found for this era. Pre-antiseptic camp fevers and dysentery ran for weeks; Walcheren 1809 still had almost 12,000 ill by February 1810, months after infection (https://en.wikipedia.org/wiki/Walcheren_Campaign). Mid 40 days, high for malarial theatres."
+      },
+      "industrial": {
+        "low": 15,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: between WWII (13-18 days per admission) and pre-modern; US Civil War tables (https://archive.org/details/MSHWRMedical1) give cases and deaths but no days lost."
+      },
+      "worldwars": {
+        "low": 10,
+        "mid": 15,
+        "high": 33,
+        "grade": "B",
+        "source": "https://www.generalstaff.org/BBOW/LOV-DUP/S7_Health_29-FEB-1944.pdf",
+        "note": "US Army Surgeon General, Health report 29 Feb 1944: overseas disease noneffective rate 31 per 1,000 per day (p.1) against 1943 overseas disease admissions 887 per 1,000 per year (p.8) -> 31 x 365 / 887 = 12.8 days per admission; Continental US all non-battle 40 per 1,000 per day vs 720 + 80 admissions per 1,000 per year -> 18.3 days. WWI US Army, Medical Department in the World War vol. IX (https://digirepo.nlm.nih.gov/ocr/nlm:nlmuid-14120390RX9-mvpart), venereal disease days lost per case 16 at home, 31 abroad (p.270), enterocolitis 5.5-14.7, diarrhea 3.3-20 (p.326-327). Mid 15, high 33 (WWI overseas)."
+      },
+      "coldwar": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: below WWII with antibiotics and air evacuation; no fetched series."
+      },
+      "modern": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as cold_war."
+      }
+    },
+    "diseaseDeathShareOfAdmissions": {
+      "bronze": {
+        "low": 0.08,
+        "mid": 0.2,
+        "high": 0.4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Share of disease/non-battle hospital admissions that die or are permanently discharged (the engine returns the rest after returnToDutyDays). Educated guess: above the Napoleonic level (no antisepsis, no hospital system); Walcheren 1809 (25-35%) as the high analogue."
+      },
+      "iron": {
+        "low": 0.08,
+        "mid": 0.15,
+        "high": 0.35,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Roman camp sanitation and valetudinaria may have kept it near the Napoleonic level."
+      },
+      "medieval": {
+        "low": 0.08,
+        "mid": 0.2,
+        "high": 0.4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as ancient (siege dysentery at the high end)."
+      },
+      "gunpowder": {
+        "low": 0.08,
+        "mid": 0.2,
+        "high": 0.4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as ancient."
+      },
+      "napoleonic": {
+        "low": 0.08,
+        "mid": 0.15,
+        "high": 0.35,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Walcheren_Campaign",
+        "note": "Walcheren 1809 (infobox, Burnham 2000 and Novitsky 1911): 11,513-14,000 sick, 3,500-4,066 died of disease -> 0.25-0.35 (high; malaria/typhus, an extreme theatre). Mid 0.15 is a judgement for ordinary campaigning, between this and the Civil War 0.07."
+      },
+      "industrial": {
+        "low": 0.04,
+        "mid": 0.07,
+        "high": 0.15,
+        "grade": "B",
+        "source": "https://archive.org/details/MSHWRMedical1",
+        "note": "Medical and Surgical History of the War of the Rebellion, Part I vol. 1 (1870). Table C pp.636-641 (white troops): zymotic diseases 3,864,070 cases, 100,088 deaths = 2.6%; all cases 5,825,480 incl. 400,933 wounds/injuries. Introduction p.XL-XLII: tables hold ~0.83 of non-battle deaths (so true death share ~3%), and 285,545 enlisted men were discharged for disability (4.9% of all cases, most for disease). Die or discharged ~0.07 (mid). Boer War: 14,210 British died of disease, 75,430 sent home sick or wounded (https://en.wikipedia.org/wiki/Second_Boer_War). High 0.15 for bad hospitals; Scutari's peak 42% hospital death rate (https://en.wikipedia.org/wiki/Florence_Nightingale) was evacuated serious cases in one winter, not all admissions, so it is not used as the bound."
+      },
+      "worldwars": {
+        "low": 0.005,
+        "mid": 0.03,
+        "high": 0.13,
+        "grade": "B",
+        "source": "https://www.generalstaff.org/BBOW/LOV-DUP/S7_Health_29-FEB-1944.pdf",
+        "note": "US Army Health report 29 Feb 1944: 1943 overseas disease deaths 0.50 per 1,000 per year (p.27) against 887 disease admissions per 1,000 per year (p.8) = 0.06% die. Fifth Army Italy Sep-Dec 1943 (all admissions, 69% disease): 1% died, 38% returned to duty, 43% evacuated to base areas, 13% to the Zone of the Interior (US), 5% still in hospital; the 13% sent home is the upper bound of permanent loss (high 0.13). Mid 0.03 = deaths plus a part of the ZI evacuees discharged; WWI influenza-pneumonia years sit above the WWII level. Low 0.005."
+      },
+      "coldwar": {
+        "low": 0.002,
+        "mid": 0.01,
+        "high": 0.03,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: at or below WWII (antibiotics general, air evacuation)."
+      },
+      "modern": {
+        "low": 0.002,
+        "mid": 0.01,
+        "high": 0.03,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as cold_war."
+      }
+    }
+  },
+  "collapse": {
+    "armyCollapsePersonnelFraction": {
+      "low": 0.1,
+      "mid": 0.4,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Remaining share of all personnel a side fielded at which the whole army stops resisting (engine: collapse when personnel < this x start). France 1940 (https://en.wikipedia.org/wiki/Battle_of_France, infobox): Allies 3,450,000; 73,000 killed, 240,000 wounded, 15,000 missing, 1,756,000 captured -> 0.40 left (captured includes post-armistice, so the true remainder at collapse was higher). Iraq 1991: no more than 350,000 in theater (https://gulflink.health.mil/histories/db/marines/usmcpersiangulfdoc1_108.html), 80,000-175,000 captured and 20,000-50,000 killed (https://en.wikipedia.org/wiki/Gulf_War) -> 0.36-0.71 left. Dupuy: forces quit at under 10% casualties per battle (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/). Low 0.1 (current value) for fight-to-the-end cases such as Germany 1945, not quantified here."
+    },
+    "armyCollapseMorale": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Engine-internal 0..1 side morale below which the army ceases resisting. No source measures this scale. Educated guess: morale in the engine falls with the share of starting strength lost, and the cases above collapse at 30-60% losses, which suggests a threshold somewhat above 0.15; Dupuy's finding that defeat is mostly caused by maneuver, not casualties (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/), argues for the morale trigger firing before the personnel trigger."
+    }
+  },
+  "surrender": {
+    "encircledSurrenderShare": {
+      "bronze": {
+        "low": 0.12,
+        "mid": 0.3,
+        "high": 0.9,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "Share of an encircled force's losses that are prisoners rather than dead. No pre-500 BCE data; copied from classical (Cannae, Alesia). Educated analogy."
+      },
+      "iron": {
+        "low": 0.12,
+        "mid": 0.3,
+        "high": 0.9,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Cannae",
+        "note": "Cannae 216 BCE (infobox, ancient figures): Livy 48,200 killed / 19,300 captured -> 0.29, Polybius 70,000 / 10,000 -> 0.125 (low). Alesia 52 BCE: the besieged army surrendered entire (https://en.wikipedia.org/wiki/Battle_of_Alesia; Caesar's 40,000 captured vs 250,000 killed is exaggerated) -> high 0.9. Field encirclements were massacres, siege capitulations surrendered."
+      },
+      "medieval": {
+        "low": 0.2,
+        "mid": 0.4,
+        "high": 0.9,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ransom made nobles' capture common, common foot were often killed; garrisons capitulated whole (high)."
+      },
+      "gunpowder": {
+        "low": 0.5,
+        "mid": 0.7,
+        "high": 0.94,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Siege_of_Yorktown",
+        "note": "Yorktown 1781: 7,416-7,685 captured vs 142-309 killed and 326-595 wounded -> 0.89-0.94 (high). Blenheim 1704 (https://en.wikipedia.org/wiki/Battle_of_Blenheim): 14,190 captured vs 6,000 killed and 7,000 wounded -> 0.52 (low; partly a field rout)."
+      },
+      "napoleonic": {
+        "low": 0.6,
+        "mid": 0.85,
+        "high": 0.92,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Ulm_campaign",
+        "note": "Ulm 1805 (infobox): Austrians 10,000 killed or wounded, 60,000 captured -> 0.86. Single case; range is judgement."
+      },
+      "industrial": {
+        "low": 0.75,
+        "mid": 0.85,
+        "high": 0.9,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+        "note": "Sedan 1870 (infobox): French 3,220 killed, 14,811 wounded, 104,000 captured -> 0.85."
+      },
+      "worldwars": {
+        "low": 0.6,
+        "mid": 0.8,
+        "high": 0.97,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad",
+        "note": "Stalingrad: of those trapped 105,000 surrendered, 35,000 were flown out, 60,000 died, 10,000 fought on -> 105/175 = 0.6 (low). Kiev 1941 (https://en.wikipedia.org/wiki/Battle_of_Kiev_(1941)): 616,304 killed or missing incl. 480,000 prisoners -> 0.78. Falaise (https://en.wikipedia.org/wiki/Falaise_pocket): ~10,000 killed, ~50,000 captured -> 0.83. Tunisia 1943 (https://en.wikipedia.org/wiki/Tunisian_campaign): 238,000-300,000 captured of 290,000-362,000 losses -> 0.82. Ruhr 1945 (https://en.wikipedia.org/wiki/Ruhr_pocket): 317,000 captured, ~10,000 killed -> 0.97 (high)."
+      },
+      "coldwar": {
+        "low": 0.6,
+        "mid": 0.75,
+        "high": 0.85,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu",
+        "note": "Dien Bien Phu 1954 (infobox): 11,721 captured vs 1,142-2,293 KIA, 429 died of wounds, 1,606 missing -> 0.73-0.79. One case; range widened by judgement."
+      },
+      "modern": {
+        "low": 0.48,
+        "mid": 0.65,
+        "high": 0.8,
+        "grade": "C",
+        "source": "https://en.wikipedia.org/wiki/Siege_of_Mariupol",
+        "note": "Mariupol 2022 (infobox): per Russia 4,200+ killed and 3,917 captured -> 0.48; per Ukraine 906+ killed and 3,500+ captured -> 0.79. One case with disputed figures."
+      }
+    }
+  },
+  "intel": {
+    "fogStrengthError": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 2.5,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Typical fractional error of an enemy strength estimate (engine draws +/- this). Cases: McClellan 1862 had 105,000 vs Johnston's 60,000 but believed himself outnumbered two to one (https://en.wikipedia.org/wiki/Peninsula_campaign) -> estimate ~3.5x actual, ln error +1.25; Halder 1941 reckoned 200 Soviet divisions, 360 were counted (https://en.wikipedia.org/wiki/Franz_Halder) -> 0.56x, ln error -0.59; Gulf 1991 Pentagon 540,000 vs no more than 350,000 in theater (https://gulflink.health.mil/histories/db/marines/usmcpersiangulfdoc1_108.html) -> 1.54x, ln error +0.43. Median |ln error| 0.59 ~ factor 1.8, i.e. +80%/-45%; mid 0.5 keeps the current symmetric value, high 2.5 = McClellan (+250%; a symmetric draw must be capped below -1). These are famous failures (selection bias toward large errors); errors are multiplicative, so a lognormal draw with sigma ~0.5 would fit better than a symmetric +/-."
+    }
+  },
+  "c2": {
+    "missionCommandDelayFactor": {
+      "low": 0.33,
+      "mid": 0.5,
+      "high": 0.75,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Multiplier on order-to-action delay for mission command vs detailed command. No fetched source gives a measured ratio (van Creveld, Command in War, and Dupuy on German staff practice argue the advantage qualitatively). Educated guess: mission orders skip one or two planning echelons out of three (0.33-0.67); mid keeps 0.5."
+    }
+  },
+  "naval": {
+    "blockadeSeaControlThreshold": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.75,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Sea-control share (own fleet power / both) above which the enemy is blockaded. No source states a threshold; Mahan and the WWI/WWII blockades show it as superiority sufficient to keep the weaker fleet in port. Educated guess: kept at 0.6, range 0.5 (parity contests sea lanes) to 0.75."
+    },
+    "navalAttritionPerDay": {
+      "bronze": {
+        "low": 0.0005,
+        "mid": 0.002,
+        "high": 0.01,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/First_Punic_War",
+        "note": "Fraction of warships lost per ship-day at sea in contested waters (battle + non-battle). Galleys were weather-limited: Rome lost 384 of 464 ships in one storm in 255 BCE and 150 more to a storm the next year (Polybius via this page; ancient figures). Catastrophic events, not a daily rate; the daily value is an educated guess."
+      },
+      "iron": {
+        "low": 0.0005,
+        "mid": 0.002,
+        "high": 0.01,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/First_Punic_War",
+        "note": "As ancient (same First Punic War storm losses). Educated guess."
+      },
+      "medieval": {
+        "low": 0.0003,
+        "mid": 0.001,
+        "high": 0.005,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess between galley and sailing-ship eras."
+      },
+      "gunpowder": {
+        "low": 0.0001,
+        "mid": 0.0005,
+        "high": 0.003,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/Spanish_Armada",
+        "note": "Armada 1588: about 44 of 137 ships lost (10 scuttled), mostly to weather on the return, over ~3 months; ~0.0035 per ship-day over the campaign as high. Educated guess for the mid."
+      },
+      "napoleonic": {
+        "low": 5e-05,
+        "mid": 0.0002,
+        "high": 0.001,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: sail warships rarely sank in battle; wreck and foundering dominated. No RN loss/ship-day series fetched."
+      },
+      "industrial": {
+        "low": 5e-05,
+        "mid": 0.0002,
+        "high": 0.001,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as napoleonic (steel steam warships, few fleet actions)."
+      },
+      "worldwars": {
+        "low": 0.0004,
+        "mid": 0.001,
+        "high": 0.003,
+        "grade": "C",
+        "source": "derived:mech-composite",
+        "note": "US submarines: 48 lost on patrol (https://en.wikipedia.org/wiki/Allied_submarines_in_the_Pacific_War); ~22% of 16,000 submariners killed (https://en.wikipedia.org/wiki/List_of_lost_United_States_submarines) over ~1,350 war days, about half at sea -> ~0.0004 per sea-day (low). U-boats: 783 lost, ~30,000 of 40,000 men killed (https://en.wikipedia.org/wiki/Battle_of_the_Atlantic) over ~2,070 days, assuming ~40% at sea -> ~0.0017 per sea-day. Mid 0.001; the at-sea fractions are assumptions, so grade C."
+      },
+      "coldwar": {
+        "low": 0.0002,
+        "mid": 0.001,
+        "high": 0.005,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: anti-ship missiles raise the battle term, few wars to measure."
+      },
+      "modern": {
+        "low": 0.0002,
+        "mid": 0.001,
+        "high": 0.005,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, as cold_war (Black Sea 2022-24 suggests the high end near hostile coasts)."
+      }
+    }
+  },
+  "transport": {
+    "seaLiftGrtPerSoldier": {
+      "bronze": {
+        "low": 1,
+        "mid": 1.5,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Ship tonnage per soldier moved with his equipment. Educated guess: no ancient/medieval tonnage-per-man figure found; analogue of the British Transport Board's 1.5 tons per man for short or coasting voyages (Sutcliffe 2013 p.27, https://gala.gre.ac.uk/id/eprint/11449/1/Robert_Keith_Sutcliffe_2013.pdf)."
+      },
+      "iron": {
+        "low": 1,
+        "mid": 1.5,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no ancient/medieval tonnage-per-man figure found; analogue of the British Transport Board's 1.5 tons per man for short or coasting voyages (Sutcliffe 2013 p.27, https://gala.gre.ac.uk/id/eprint/11449/1/Robert_Keith_Sutcliffe_2013.pdf)."
+      },
+      "medieval": {
+        "low": 1,
+        "mid": 1.5,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no ancient/medieval tonnage-per-man figure found; analogue of the British Transport Board's 1.5 tons per man for short or coasting voyages (Sutcliffe 2013 p.27, https://gala.gre.ac.uk/id/eprint/11449/1/Robert_Keith_Sutcliffe_2013.pdf)."
+      },
+      "gunpowder": {
+        "low": 1.25,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:regional-analogy",
+        "note": "Analogy to the British Transport Board rules of the 1790s (napoleonic entry). The Armada 1588 embarked 19,315 soldiers and 10,138 sailors in 141 ships (https://en.wikipedia.org/wiki/Spanish_Armada) but no tonnage was fetched."
+      },
+      "napoleonic": {
+        "low": 1.25,
+        "mid": 1.9,
+        "high": 2.5,
+        "grade": "B",
+        "source": "https://gala.gre.ac.uk/id/eprint/11449/1/Robert_Keith_Sutcliffe_2013.pdf",
+        "note": "Sutcliffe, PhD thesis Greenwich 2013: from 1794 'Two tons per man were prescribed' beyond Cape Finisterre and 1.5 tons for short or coasting voyages (p.27); Holland 1799: 71 infantry ships of 18,576 tons for 14,861 men at 1.25 tons per man, 56 cavalry ships of 12,245 tons for 1,628 horses and men (7.5 tons per horse), total 33,051 tons for ~17,500 men (1.9 per man all in, mid) (p.56). Tons burthen (builder's measurement), not GRT; read as roughly comparable."
+      },
+      "industrial": {
+        "low": 2,
+        "mid": 3,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess between the Napoleonic 1.9 tons and WWII 5 GRT per man; steamers carried more stores and guns per man."
+      },
+      "worldwars": {
+        "low": 3,
+        "mid": 5,
+        "high": 9,
+        "grade": "B",
+        "source": "https://lonesentry.com/manuals/handbook-japanese-military/sea-transportation.html",
+        "note": "US War Dept TM-E 30-480 (1944), ch. VIII sec. II para 1(b): 3 tons per man, 9 per horse, 18 per field gun for short moves; 'an estimated average of 5 gross tons per man' for long hauls; a division with army troops ~125,000 tons on a long haul; Rabaul-Guadalcanal movements 40,208 GRT for 4,431 men = 9.0 GRT per man (high). Cross-check: US Army shipped 132,119,533 measurement tons for 7,639,491 passengers 1941-45, ~17 MT per passenger including sustainment (https://usmm.ianewatts.org/armycargo.html)."
+      },
+      "coldwar": {
+        "low": 5,
+        "mid": 8,
+        "high": 15,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: heavier mechanised equipment per man than WWII (5-9 GRT)."
+      },
+      "modern": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess, above cold_war: more vehicles and containerised stores per soldier."
+      }
+    },
+    "seaLiftTonsPerVehicle": {
+      "tracked": {
+        "industrial": {
+          "low": 0,
+          "mid": 0,
+          "high": 0,
+          "grade": "A",
+          "source": "derived:absent-in-era",
+          "note": "No tracked fighting vehicles before 1914."
+        },
+        "worldwars": {
+          "low": 37,
+          "mid": 40,
+          "high": 49,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/M4_Sherman",
+          "note": "Measurement tons (40 cu ft, TM-E 30-480 definition) of cargo space per vehicle, cubed from overall dimensions: M4 Sherman 19 ft 2 in-20 ft 7 in x 8 ft 7 in-9 ft 10 in x 9 ft 0 in-9 ft 9 in = 1,480-1,970 cu ft = 37-49 MT. Excludes broken stowage (add 20-40%). GRT equivalent ~ MT x 0.4 / stowage efficiency."
+        },
+        "coldwar": {
+          "low": 73,
+          "mid": 85,
+          "high": 98,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/M60_tank",
+          "note": "M60: 6.946 m hull / 9.309 m gun forward x 3.631 m x 3.27 m = 2,910-3,900 cu ft = 73-98 MT (cubed from dimensions, no broken stowage)."
+        },
+        "modern": {
+          "low": 62,
+          "mid": 77,
+          "high": 77,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/M1_Abrams",
+          "note": "M1 Abrams: 26.02 ft hull / 32.04 ft gun forward x 12 ft x 8 ft = 2,500-3,080 cu ft = 62-77 MT (cubed from dimensions, no broken stowage)."
+        }
+      },
+      "wheeled": {
+        "industrial": {
+          "low": 5,
+          "mid": 7.5,
+          "high": 15,
+          "grade": "D",
+          "source": "https://gala.gre.ac.uk/id/eprint/11449/1/Robert_Keith_Sutcliffe_2013.pdf",
+          "note": "No motor vehicles in field armies before ~1910; proxy: a horse with its rider needed 7.5 tons burthen (Holland 1799: 12,245 tons for 1,628 horses and men, Sutcliffe p.56); a wagon or gun with its team several times that (high). Educated proxy."
+        },
+        "worldwars": {
+          "low": 6,
+          "mid": 8,
+          "high": 10,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Willys_MB",
+          "note": "Willys MB jeep: 132 x 62 x 69.75 in (top up) = 330 cu ft = 8.3 MT; top down 52 in = 6.2 MT. Trucks are 2-4x larger (no truck dimensions fetched); high 10 MT allows broken stowage."
+        },
+        "coldwar": {
+          "low": 12,
+          "mid": 16,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:regional-analogy",
+          "note": "Analogy to the Humvee (modern entry), the first such vehicle entering service in 1985; heavier trucks higher. Educated analogy."
+        },
+        "modern": {
+          "low": 12,
+          "mid": 16,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Humvee",
+          "note": "Humvee: 15 ft x 7 ft 1 in x 6 ft (4 ft 6 in reduced) = 480-640 cu ft = 12-16 MT; high 25 for medium trucks and broken stowage."
+        }
+      }
+    },
+    "airLiftTonsPerDayPerAircraft": {
+      "worldwars": {
+        "low": 0.2,
+        "mid": 1.7,
+        "high": 3.5,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/The_Hump",
+        "note": "Tons delivered per assigned transport aircraft per day. Hump: 650,000 tons in 42 months (~1,278 days) = 509 t/day with a fleet growing from 142 (end 1943) to 662 (July 1945), ~300 average (assumed) -> 1.7 (mid); July 1945: 662 aircraft delivered 71,042 tons = 3.5 t/aircraft/day (high). Stalingrad (https://en.wikipedia.org/wiki/Battle_of_Stalingrad): airlift delivered only 105 t/day and lost nearly 500 aircraft incl. 266 Ju 52, so with at least ~490 committed <= 0.2 (low; contested, winter)."
+      },
+      "coldwar": {
+        "low": 7,
+        "mid": 12,
+        "high": 24,
+        "grade": "B",
+        "source": "https://en.wikipedia.org/wiki/Berlin_Blockade",
+        "note": "Berlin 1948-49: 2,334,374 tons on 278,228 flights (8.4 t/flight); 234,476 tons in April 1949 = 7,816 t/day with ~330 aircraft of the main types -> 24 (high); whole airlift ~462 days -> ~15 per aircraft-day. Desert Shield/Storm 1990-91 (https://www.defensemedianetwork.com/stories/desert-shield-airlift-set-records/): 542,000 tons on 20,500 missions (26 t/mission) using 'virtually all' 265 C-141B and 85 C-5; over ~215 days -> ~7.2 per aircraft-day (low; intercontinental distance, duration assumed). Short theatre hauls sit at the Berlin end."
+      },
+      "modern": {
+        "low": 7,
+        "mid": 12,
+        "high": 21,
+        "grade": "C",
+        "source": "derived:mech-composite",
+        "note": "Desert Shield utilisation (0.27 missions per aircraft-day, https://www.defensemedianetwork.com/stories/desert-shield-airlift-set-records/) x C-17 loads of 26-77.5 t (max payload 170,900 lb, https://en.wikipedia.org/wiki/Boeing_C-17_Globemaster_III) -> 7-21; mid 12 assumes ~45 t average loads."
+      }
+    },
+    "strategicBombingProductionLossPer1000Tons": {
+      "worldwars": {
+        "low": 0.0001,
+        "mid": 0.0003,
+        "high": 0.0006,
+        "grade": "D",
+        "source": "https://www.ibiblio.org/hyperwar/AAF/USSBS/ETO-Summary.html",
+        "note": "Share of the target nation's annual war production lost per 1,000 tons of bombs on industrial/urban targets. USSBS Summary Report (European War, 1945): 150,700 tons on Germany in 1943 and RAF city attacks before autumn 1944 'did not substantially affect the course of German war production' (Ruhr output -10% during the 1943 attack); 481,400 tons in the second half of 1944, Ruhr steel -80% June-December and trucks at 35% of the first-half average by December, overall output well maintained through November then falling sharply. Inference (not a USSBS number): 1943 <= ~5% of annual output / 150.7 kt = <= 0.0003; H2 1944 10-25% of annual output / 481.4 kt = 0.0002-0.0005. Interacts with targeting (oil and transport far more effective per ton than area raids)."
+      },
+      "coldwar": {
+        "low": 0.0001,
+        "mid": 0.0005,
+        "high": 0.002,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: somewhat above WWII per ton (better accuracy, nuclear excluded)."
+      },
+      "modern": {
+        "low": 0.0005,
+        "mid": 0.002,
+        "high": 0.01,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: precision munitions put a far larger share of tonnage on aim points; no fetched production-loss figure."
+      }
+    }
+  }
+}
