@@ -37,3 +37,8 @@ Every open choice made while building, with a one-line reason. Newest at the bot
 - **Kept a single `region` per snapshot** (reviewer nit). Search filters by region; a multi-region empire is filed under its core region and its `places` show the rest.
 - **Historical borders (GPL-3.0):** the pipeline ships simplified geometry derived from aourednik/historical-basemaps with attribution; the data files stay under GPL-3.0, which allows redistribution, and are noted as such in SOURCES.md.
 - **Scenario edits are stored as `Override {snapshotId, path, value}`.** Small enough to put in a share URL and replayable on top of any data version.
+
+## Phase 1 integration
+- **Withdrawal threshold = min(doctrine retreatThreshold, 0.9 x effective breakpoint).** Ten doctrine profiles set retreatThreshold at or above the era's rout breakpoint (both researched independently); clamping keeps "withdraw before rout" true without overwriting either researched number.
+- **Snapshots without a border polygon get a circle around the capital sized to their researched area.** The basemaps lump Athens, Sparta and Macedon into one "Greek city-states" polygon; a circle is crude but never claims another state's land first.
+- **`siege.assaultFactor` multiplies the attacker's loss rate when storming** (researched from Badajoz 1812), not the attacker's power.
