@@ -9,7 +9,7 @@ import { FLAG_RIVER } from './terrainClasses';
 import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
-  DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE } from './constants';
+  DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -395,6 +395,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         }
         F.next[f] = -1;
         F.prog[f] = 0;
+        if (BEATEN_LEAVE_CELL && !S.battleMode && F.alive[f] && F.onMap[f] && F.cell[f] === cell) leaveCell(ctx, f, cell, b);
       }
       st.acc.battleWins[w]++;
     }
@@ -440,6 +441,30 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   const top = items.filter((x) => x[1] > 0.05).slice(0, 2);
   if (!top.length) return 'Evenly matched; decided by morale and chance.';
   return 'Winner\'s edge: ' + top.map(([k, v]) => `${k} x${Math.exp(v) >= 100 ? Math.exp(v).toExponential(1) : Math.exp(v).toFixed(1)}`).join(', ') + '.';
+}
+
+/** Beaten formation f gives up the contested cell: one cell toward own supply, else it surrenders. */
+function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
+  const { S, st, sc } = ctx;
+  const F = st.F, g = S.grid;
+  const side = F.side[f], enemy = 1 - side;
+  const sd = st.supplyDist[side];
+  let best = -1, bv = Infinity;
+  for (let d = 0; d < 8; d++) {
+    const j = g.nb[cell * 8 + d];
+    if (j < 0 || !g.land[j] || sc.occ[enemy][j] > 0 || st.control[j] === enemy) continue;
+    const v = sd[j] + (st.control[j] === side ? 0 : 1e-3);   // finite supply distance first, own ground on ties
+    if (best < 0 || v < bv) { best = j; bv = v; }
+  }
+  if (best < 0) {
+    const before = F.personnel[f];
+    lossFraction(ctx, f, 1, LC.captured);
+    b.casualties[side] += before - F.personnel[f];
+    return;
+  }
+  sc.occ[side][cell]--;
+  sc.occ[side][best]++;
+  F.cell[f] = best;
 }
 
 function maxRate(ctx: Ctx, list: number[]): number {

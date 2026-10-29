@@ -160,7 +160,13 @@ in good order; one reaching `breakpoint(tech)` (shifted by cohesion) routs: it
 suffers `pursuitLossFraction` x (winner mounted/mobile share) extra losses, of
 which `captureFraction` are prisoners, and flees toward supply. When every
 formation of one side has withdrawn or routed, the battle ends. Otherwise it
-continues the next day.
+continues the next day. In war mode a beaten formation standing in the battle
+cell gives it up: it falls back one cell toward its supply (lowest supply
+distance among neighbours not held or occupied by the enemy), or, when no such
+neighbour exists, surrenders and is booked as captured (`BEATEN_LEAVE_CELL`).
+Without this a beaten defender on a supply source never moved and the
+objective could not be entered. Measured: winner 14 -> 18 of 24, loss ratio
+16 -> 14 (Gulf War and Six-Day losers now lose more than history records).
 
 Specials: `phalanx` (+ frontal, - flank when the enemy has flanking > 0.6),
 `horse_archery` (out-ranges melee in round 1, retreats from melee at no cost
@@ -287,7 +293,9 @@ tech)` (`mission_command` halves it). Each order cycle:
 3. Assign formations greedily to the best objectives until each objective has
    the force ratio the doctrine wants (attrition doctrines mass, maneuver
    doctrines move fast with less); keep `reserveUse` x strength in reserve at
-   the most threatened own city.
+   the most threatened own city. As built (`RESERVE_NO_OVERSHOOT`): the reserve
+   skips formations that would overshoot that share and is empty when a member
+   has a single available formation (the first formation was always taken).
 4. Formations below `retreatThreshold` or out of supply for more than a few days
    fall back toward the supply network to recover.
    As built: the cycle runs every 5 days. A formation falls back for supply only

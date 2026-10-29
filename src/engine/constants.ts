@@ -83,6 +83,14 @@ export const ASSAULT_ONLY_REAL_FORTS = true;
 /** In battle mode a defender counts as a prepared defence only when the case says so
  *  (BattleSide.prepared); before, every battle-mode defender was 'prepared' because it spawned still. */
 export const PREPARED_FROM_CASE = true;
+/** War mode: a beaten formation in the battle cell gives the cell up, falling back one cell toward
+ *  its supply, or surrenders (all booked as captured) when every neighbour is enemy-held or
+ *  impassable. Before, a beaten defender sitting on a supply source never left (its retreat field
+ *  is 0 there), so an objective could be won in battle 31 times and never entered (QA C2). */
+export const BEATEN_LEAVE_CELL = true;
+/** AI reserve: skip formations that would overshoot reserveUse x strength, and never hold back a
+ *  member's only available formation (the first formation was always taken, QA C3). */
+export const RESERVE_NO_OVERSHOOT = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

@@ -10,8 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  FOG_STRENGTH_ERROR, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR,
-} from './constants';
+  FOG_STRENGTH_ERROR, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT } from './constants';
 import { NR } from './roles';
 
 export const OBJ = { Capital: 0, City: 1, Formation: 2, Defend: 3, Case: 4 } as const;
@@ -231,13 +230,14 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     // reserve at the most threatened own place (or hold in place)
     const defendSlot = slots.find((x) => x.c.kind === OBJ.Defend);
     const reserveW = w.reserveUse * totalW;
-    if (reserveW > 0) {
+    if (reserveW > 0 && !(RESERVE_NO_OVERSHOOT && avail.length < 2)) {
       const anchor = defendSlot ? defendSlot.c.cell : (mr.capitalCell >= 0 ? mr.capitalCell : mr.spawnCells[0] ?? -1);
       const idx = avail.map((f, i) => i);
       if (anchor >= 0) idx.sort((a, b) => haversineKm(g.lat[F.cell[avail[a]]], g.lon[F.cell[avail[a]]], g.lat[anchor], g.lon[anchor]) - haversineKm(g.lat[F.cell[avail[b]]], g.lon[F.cell[avail[b]]], g.lat[anchor], g.lon[anchor]) || a - b);
       let acc = 0;
       for (const i of idx) {
         if (acc >= reserveW) break;
+        if (RESERVE_NO_OVERSHOOT && acc + F.curW[avail[i]] > reserveW) continue;
         taken[i] = 1;
         acc += F.curW[avail[i]];
         order(ctx, avail[i], defendSlot ? Mode.Defend : Mode.Hold, defendSlot ? defendSlot.c.cell : -1, delay);
