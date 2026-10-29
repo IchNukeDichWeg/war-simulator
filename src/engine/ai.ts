@@ -10,7 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  AI_DEFEND_CAP_BY_VALUE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  AI_DEFEND_CAP_BY_VALUE, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
@@ -277,11 +277,19 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
         if (acc >= need) break;
       }
     }
-    // leftovers: aggressive commanders join the nearest attack, others hold
+    // leftovers: aggressive commanders join the nearest attack, others hold; a side whose case
+    // objective is to hold a place defends it instead (Iraq 2003: 9-15 of 22 Iraqi formations
+    // attacked as leftovers of an aggression-0.5 doctrine)
+    const holdSide = LEFTOVERS_FOLLOW_OBJECTIVE && S.objectiveKinds[side] === 'hold';
+    const holdSlot = holdSide ? slots.find((x) => x.c.cell === S.objectiveCells[side]) ?? defendSlot : undefined;
     for (let i = 0; i < avail.length; i++) {
       if (taken[i]) continue;
       const f = avail[i];
       let bestK = -1, bv = Infinity;
+      if (holdSide) {
+        order(ctx, f, holdSlot ? Mode.Defend : Mode.Hold, holdSlot ? holdSlot.c.cell : -1, delay);
+        continue;
+      }
       if (w.aggression >= 0.5 || (AI_STRONGER_SIDE_ADVANCES && ownTotal > totalEnemy)) {
         for (const sl of slots) {
           if (sl.c.kind === OBJ.Defend) continue;

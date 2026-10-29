@@ -290,4 +290,10 @@ export const COLLAPSE_SURRENDER = true;
  *  Kippur x0.44 -> x1.96 pass; El Alamein 4.9 -> 3.4 days fails; Kursk x3.96 -> x6.03. Fixed quantile:
  *  low 21/15/19, mid 20/17/20, high 21/16/23. */
 export const BREAKPOINT_FROM_MODEL_RULES = true;
-
+/** AI leftovers (formations not needed by any chosen objective) on a side whose case objective kind
+ *  is 'hold' defend that objective (or the most threatened own place, else hold) instead of joining
+ *  the nearest attack. The aggression >= 0.5 cutoff is unchanged. Measured (20 seeds): 20/17/21
+ *  unchanged, no case moved. Iraq 2003 trace unchanged (15/22 Iraqi formations in Attack on day 1):
+ *  its attacks are not leftovers but slot orders against the Coalition's case base, an 'enemy
+ *  capital' candidate. */
+export const LEFTOVERS_FOLLOW_OBJECTIVE = true;

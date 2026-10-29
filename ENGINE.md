@@ -397,7 +397,9 @@ tech)` (`mission_command` halves it). Each order cycle:
    reads a Roman legion's TLI as if both hit the same target. Formations left
    after the objectives are covered join the nearest attack when the commander
    is aggressive (aggression >= 0.5) or its side is the stronger one
-   (`AI_STRONGER_SIDE_ADVANCES`).
+   (`AI_STRONGER_SIDE_ADVANCES`), except on a side whose case objective kind
+   is `hold`: its leftovers defend that objective, or the most threatened own
+   place, else hold (`LEFTOVERS_FOLLOW_OBJECTIVE`).
 4. Formations below `retreatThreshold` or out of supply for more than a few days
    fall back toward the supply network to recover.
    As built: the cycle runs every 5 days. A formation falls back for supply only
