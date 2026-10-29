@@ -96,7 +96,7 @@ export function newAccum(): Accum {
 
 export interface MemberState {
   depot: Float64Array;          // NR counts waiting to form/join formations
-  returns: Float64Array;        // RETURN_TO_DUTY_DAYS ring of personnel returning
+  returns: Float64Array;        // RETURN_RING_DAYS ring of personnel returning, slot = return day % ring
   mobilizableLeft: number;
   reservesDue: number;          // personnel still to arrive from reserve call-up
   reservesDay: number;

@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_TO_DUTY_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { spawnFormation } from './formations';
 import { UnitStatus } from './protocol';
@@ -109,7 +109,7 @@ export function productionPhase(ctx: Ctx): void {
   }
   if (S.opts.noProduction || S.battleMode) return;
   // 3. members: reserves, recruits, returns, platforms
-  const slot = day % RETURN_TO_DUTY_DAYS;
+  const slot = day % RETURN_RING_DAYS;
   for (const mr of S.members) {
     const ms = st.members[mr.idx];
     if (mr.commitment <= 0) continue;

@@ -130,6 +130,12 @@ export const CASE_CAPITAL_UNFORTIFIED = false;
  *  with no enemy there (QA C6). Cases without kind keep the inferred rule. No case sets a kind
  *  yet, so it measures neutral (20/15/22). */
 export const OBJECTIVE_KIND_EXPLICIT = true;
+/** Hospital admissions from the sourced model rules (per era of the member): deaths and
+ *  discharges = attrition.diseaseDeathShareOfAdmissions (WWII 0.03, napoleonic 0.15), the rest
+ *  return after attrition.returnToDutyDays (WWII 15, napoleonic 40). OFF: loss share
+ *  1 - attrition.returnToDuty (0.3 in every era) and RETURN_TO_DUTY_DAYS. Measured: counts unchanged
+ *  (20/15/22); Gulf War loss ratio x9.3 -> x4.9, Iraq 2003 x1.21 -> x1.00, France 1940 x6.8 -> x6.2. */
+export const ATTRITION_FROM_MODEL_RULES = true;
 /** Non-battle attrition: diseaseDaily etc. are admission rates. The returnToDuty share goes to
  *  hospital (out of the formation, not a loss) and comes back after RETURN_TO_DUTY_DAYS; only the
  *  rest is booked as a loss. Before, every admission was booked as a loss and the returns came back
@@ -177,8 +183,10 @@ export const ENCIRCLED_FLIP_NEEDS_SUPPLY = true;
 export const BATTLE_NOISE_SIGMA = 0.15;
 /** Extra days to cross a major river cell without a bridge (ENGINE.md 5). */
 export const RIVER_DELAY_DAYS = 0.5;
-/** Days until non-battle losses return to duty (ENGINE.md 8). */
+/** Days until non-battle losses return to duty when ATTRITION_FROM_MODEL_RULES is OFF (ENGINE.md 8). */
 export const RETURN_TO_DUTY_DAYS = 30;
+/** Ring length for returns to duty: must exceed the longest returnToDutyDays (40, napoleonic). */
+export const RETURN_RING_DAYS = 64;
 /** Army collapse: personnel below this share of start, or side morale below the second (ENGINE.md 12). */
 export const COLLAPSE_PERSONNEL_FRACTION = 0.1;
 export const COLLAPSE_MORALE = 0.15;

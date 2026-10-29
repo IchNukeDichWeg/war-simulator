@@ -293,6 +293,12 @@ days; it is not a loss and its return is not an arrival. Only the rest
 (deaths, discharges) and all desertion are booked as losses. Booking every
 admission as a loss had Germany "lose" 805k to disease in 106 days of the 1940
 preset (264k in 133 days after the change, at the data's `diseaseDaily`).
+With `ATTRITION_FROM_MODEL_RULES` the lost share and the hospital stay come
+from the member's era: `modelRules.attrition.diseaseDeathShareOfAdmissions`
+(WWII 0.03, napoleonic 0.15, classical 0.15) and `returnToDutyDays` (WWII 15,
+napoleonic 40, before 1789 30), instead of 0.3 and 30 days everywhere.
+Measured: counts unchanged at 20/15/22; Gulf War loss ratio x9.3 -> x4.9,
+Iraq 2003 x1.21 -> x1.00, France 1940 x6.8 -> x6.2.
 Reported casualties are the sum of losses over every cause
 (`CASUALTIES_ALL_CAUSES`), so they equal the lossesByCause total; tested:
 start + arrivals = current + losses + in hospital, every day.

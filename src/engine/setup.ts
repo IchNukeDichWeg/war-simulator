@@ -8,9 +8,12 @@ import type { DoctrineProfile, Snapshot, TechCategory, UnitRole } from '../types
 import type { Mechanics, MobilityClass, NavalPropulsion, Season } from '../types/mechanics';
 import { GRID_H, GRID_RES, GRID_W, FLAG_COAST, T, cellIndex, cellCenter } from './terrainClasses';
 import { buildGrid, cellAt, globalTerrain, haversineKm, inBbox, nearestLand, rasterizeMultiPolygon, type GlobalTerrain, type Grid } from './grid';
-import { byTech, clamp, factor, techFromYear, validateMechanics, yearFromTech } from './mech';
+import { byTech, clamp, factor, rule, techFromYear, validateMechanics, yearFromTech } from './mech';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI, ROLES } from './roles';
-import { ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR } from './constants';
+import {
+  ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
+  RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS,
+} from './constants';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
 export const SEASONS: Season[] = ['spring', 'summer', 'autumn', 'winter'];
@@ -67,6 +70,8 @@ export interface MemberRT {
   snap: Snapshot;
   /** Year that selects per-era model rules: the snapshot year, or the year of the equalized tech level. */
   ruleYear: number;
+  /** Hospital admissions: share lost (deaths, discharges) and days until the rest return. */
+  admitLossShare: number; returnDays: number;
   doctrine: DoctrineProfile;
   w: DoctrineProfile['weights'];
   specials: Set<string>;
@@ -415,9 +420,12 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       : byTech(mobArr, tech.communications);
     const cohortFrac = levee ? m.production.cohortTrainableFraction.high : m.production.cohortTrainableFraction.mid;
     const delay = byTech(m.c2.orderDelayDays, tech.communications) * (doctrine.specials.includes('mission_command') ? MISSION_COMMAND_DELAY_FACTOR : 1);
+    const ruleYear = scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year;
     const mr: MemberRT = {
       idx, side, snapId: snap.id, nationId: snap.nationId, name: snap.name, snap, doctrine, w,
-      ruleYear: scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year,
+      ruleYear,
+      admitLossShare: ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.diseaseDeathShareOfAdmissions, ruleYear) : 1 - m.attrition.returnToDuty.mid,
+      returnDays: clamp(Math.round(ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.returnToDutyDays, ruleYear) : RETURN_TO_DUTY_DAYS), 1, RETURN_RING_DAYS - 1),
       specials: new Set(doctrine.specials), tech, commitment: 1,
       tli, qF, tF, range, rangeClass, rate, mob, mounted, vehicle,
       dispersion: byTech(m.lethality.dispersion, tech.weapons),

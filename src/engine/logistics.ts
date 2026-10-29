@@ -10,7 +10,7 @@ import { UnitStatus } from './protocol';
 import { isRoad } from './movement';
 import { lossPersonnel, withdrawPersonnel } from './formations';
 import { blockaded, seaFactor } from './naval';
-import { DESERTION_MORALE, HOSPITAL_ADMISSIONS_RETURN, RETURN_TO_DUTY_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
+import { DESERTION_MORALE, HOSPITAL_ADMISSIONS_RETURN, RETURN_RING_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
 
 /**
  * Supply network cost field per side over own and neutral land from active sources,
@@ -127,7 +127,6 @@ export function logisticsPhase(ctx: Ctx): void {
   const diseaseCause = LC.disease, expCause = LC.exposure, starvCause = LC.starvation, desCause = LC.desertion;
   const winterExp = m.attrition.winterExposure.mid, desertHeat = m.attrition.desertHeat.mid;
   const starvMult = m.attrition.starvationMultiplier.mid, rtd = m.attrition.returnToDuty.mid;
-  const slot = st.day % RETURN_TO_DUTY_DAYS;
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f]) continue;
     const side = F.side[f] as 0 | 1;
@@ -172,10 +171,10 @@ export function logisticsPhase(ctx: Ctx): void {
       for (const [amt, cause] of parts) {
         if (!(amt > 0) || !F.alive[f]) continue;
         if (HOSPITAL_ADMISSIONS_RETURN && cause !== desCause) {
-          // admissions: the returnToDuty share is in hospital, the rest are deaths and discharges
-          const lost = lossPersonnel(ctx, f, amt * (1 - rtd), cause);
+          // admissions: admitLossShare are deaths and discharges, the rest are in hospital
+          const lost = lossPersonnel(ctx, f, amt * mr.admitLossShare, cause);
           st.acc.nonBattle[side] += lost;
-          if (F.alive[f]) returning += withdrawPersonnel(ctx, f, amt * rtd, cause);
+          if (F.alive[f]) returning += withdrawPersonnel(ctx, f, amt * (1 - mr.admitLossShare), cause);
         } else {
           const lost = lossPersonnel(ctx, f, amt, cause);
           st.acc.nonBattle[side] += lost;
@@ -183,7 +182,7 @@ export function logisticsPhase(ctx: Ctx): void {
         }
       }
       if (returning > 0) {
-        st.members[mr.idx].returns[slot] += returning;
+        st.members[mr.idx].returns[(st.day + mr.returnDays) % RETURN_RING_DAYS] += returning;
         if (HOSPITAL_ADMISSIONS_RETURN) st.hospital[side] += returning;
       }
     }

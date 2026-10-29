@@ -11,7 +11,7 @@ import { Rng } from './rng';
 import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './ctx';
 import { spawnFormation } from './formations';
 import { NR } from './roles';
-import { AI_MAX_OBJECTIVES, RETURN_TO_DUTY_DAYS } from './constants';
+import { AI_MAX_OBJECTIVES, RETURN_RING_DAYS } from './constants';
 import { productionPhase } from './production';
 import { aiPhase } from './ai';
 import { movementPhase } from './movement';
@@ -68,7 +68,7 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
     weather: 0,
     members: S.members.map((mr) => ({
       depot: new Float64Array(NR),
-      returns: new Float64Array(RETURN_TO_DUTY_DAYS),
+      returns: new Float64Array(RETURN_RING_DAYS),
       mobilizableLeft: mr.mobilizable0 * mr.commitment,
       reservesDue: S.battleMode || S.opts.noProduction ? 0 : mr.reserves * mr.commitment,
       reservesDay: Math.ceil(mr.mobilizationDays + mr.oneWayDays),
