@@ -87,7 +87,7 @@ P_F = sum_r count_r x OLI_r
       x posture: max(defensePostureFactor if prepared, fortificationFactor in a fortified place,
                      fieldFortification for field_fortification doctrines, not for a side the case
                      marks prepared:false)   (alternatives, not a product)
-      x surpriseFactor (if surprise) x riverCrossingFactor (attacking across a river: in battle mode
+      x surpriseFactor (if the side has surprise, battles on day 1 only) x riverCrossingFactor (attacking across a river: in battle mode
         only when the case sets riverCrossing, not from the 25 km grid river flag)
       x combinedArms (1 + combinedArmsBonus x doctrine.combinedArms x roleDiversity)
       x modern gaps: (1 + isrPerLevel x gapISR) (1 + ewPerLevel x gapComms) (1 + cyberPerLevel x gapCyber)

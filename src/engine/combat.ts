@@ -11,7 +11,7 @@ import {
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
-  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS } from './constants';
+  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -197,6 +197,9 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   const att = b.att, def = (1 - att) as 0 | 1;
   const prof: [SideProf, SideProf] = [profile(ctx, b.parts[0]), profile(ctx, b.parts[1])];
   const opening = b.parts[att].every((f) => F.engagedDays[f] === 0);
+  // surprise belongs to the opening of the offensive, the side's day 1, not to every fresh
+  // formation's first battle all campaign (QA round 3, C6)
+  const surprised = (s: number) => !!S.opts.surprise?.[s] && (SURPRISE_DAY_ONE_ONLY ? ctx.st.day === 1 : opening);
   for (const s of [0, 1]) for (const f of b.parts[s]) if (F.engagedDays[f] === 0) { F.engLoss[f] = 0; F.feignUsed[f] = 0; }
   const cls = g.cls[cell];
   const place = S.placeAt[cell];
@@ -239,7 +242,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         posture *= S.terrAttack[cls];
         const river = S.battleMode && RIVER_FROM_CASE ? !!S.opts.riverCrossing : F.cell[f] !== cell && (g.flags[cell] & FLAG_RIVER) !== 0;
         if (river) posture *= m.combat.riverCrossingFactor.mid;
-        if (opening && S.opts.surprise?.[s]) posture *= m.combat.surpriseFactor.mid;
+        if (surprised(s)) posture *= m.combat.surpriseFactor.mid;
       } else {
         const prepared = S.battleMode && PREPARED_FROM_CASE ? !!S.opts.prepared?.[s] && F.mode[f] !== Mode.Rout
           : F.stillDays[f] >= 1 && F.mode[f] !== Mode.Rout;
@@ -251,7 +254,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         posture *= DEFENSE_ALTERNATIVES_MAX ? Math.max(...alt) : alt[0] * alt[1] * alt[2];
         if (mr.specials.has('defense_in_depth')) posture *= se('defenseInDepth');
         if (S.owner0[F.cell[f]] === mr.idx) posture *= mr.homeDefense;
-        if (opening && S.opts.surprise?.[s]) posture *= m.combat.surpriseFactor.mid;
+        if (surprised(s)) posture *= m.combat.surpriseFactor.mid;
       }
       if (mr.specials.has('phalanx')) posture *= e.flanking > PHALANX_FLANK_THRESHOLD ? se('phalanxFlank') : se('phalanxFront');
       if (mr.specials.has('human_wave')) posture *= se('humanWavePower');

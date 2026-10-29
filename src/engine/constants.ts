@@ -320,3 +320,8 @@ export const PURSUIT_MANOEUVRE_ROLES_ONLY = true;
  *  clean worktree at cab91ee): 21/14/20 -> 20/15/20. France 1940 x6.31 -> x3.42 and 43 -> 37 days,
  *  Gulf War x2.65 -> x2.29; Six-Day winner 65% -> 55% fails; Stalingrad 24 -> 21 days. */
 export const PURSUIT_AIR_SAME_UNITS = true;
+/** Surprise (BattleSide.surprise, combat.surpriseFactor) applies only to battles on day 1, the
+ *  opening of the offensive. Before, it multiplied the first battle of every fresh formation for
+ *  the whole campaign (QA round 3, C6). Measured (20 seeds, clean 69b3d1a): 20/15/20 unchanged;
+ *  France 1940 95% -> 85%, Gulf War x2.29 -> x3.00 (at the edge), Yom Kippur 25% -> 45%. */
+export const SURPRISE_DAY_ONE_ONLY = true;
