@@ -1,0 +1,809 @@
+{
+  "id": "pakistan-2026",
+  "nationId": "pakistan",
+  "includes": [],
+  "name": "Islamic Republic of Pakistan",
+  "year": 2026,
+  "era": "modern",
+  "region": "south_asia",
+  "phase": "current",
+  "tags": [
+    "nuclear power",
+    "regional power",
+    "volunteer army",
+    "military-dominated state",
+    "China-aligned"
+  ],
+  "capital": {
+    "name": "Islamabad",
+    "lat": 33.6844,
+    "lon": 73.0479,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Karachi",
+      "lat": 24.8607,
+      "lon": 67.0011,
+      "kind": "port"
+    },
+    {
+      "name": "Lahore",
+      "lat": 31.5204,
+      "lon": 74.3587,
+      "kind": "city"
+    },
+    {
+      "name": "Rawalpindi (GHQ)",
+      "lat": 33.5651,
+      "lon": 73.0169,
+      "kind": "fortress"
+    },
+    {
+      "name": "Faisalabad",
+      "lat": 31.418,
+      "lon": 73.079,
+      "kind": "city"
+    },
+    {
+      "name": "Peshawar",
+      "lat": 34.0151,
+      "lon": 71.5249,
+      "kind": "city"
+    },
+    {
+      "name": "Quetta",
+      "lat": 30.1798,
+      "lon": 66.975,
+      "kind": "city"
+    },
+    {
+      "name": "Gwadar",
+      "lat": 25.1216,
+      "lon": 62.3254,
+      "kind": "port"
+    },
+    {
+      "name": "Port Qasim",
+      "lat": 24.78,
+      "lon": 67.35,
+      "kind": "port"
+    },
+    {
+      "name": "Khyber Pass",
+      "lat": 34.08,
+      "lon": 71.15,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Sargodha (PAF Base Mushaf)",
+      "lat": 32.05,
+      "lon": 72.67,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:PAK",
+    "areaKm2": {
+      "low": 770880,
+      "mid": 770880,
+      "high": 794006,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 770,880 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 253943456,
+      "mid": 255219554,
+      "high": 257771750,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 255,219,554 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.3853,
+      "mid": 0.3953,
+      "high": 0.4053,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 39.53% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 650000,
+      "mid": 660000,
+      "high": 670000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.296 as quoted: 660,000 active (Army 560,000 per IISS 2025). CIA Factbook 2025 ~650,000. Paramilitary 291,000 (Frontier Corps, Rangers) and Strategic Plans Division force (~25,000) excluded."
+    },
+    "trainedReserves": {
+      "low": 500000,
+      "mid": 550000,
+      "high": 550000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 550,000 reserves."
+    },
+    "supportPersonnel": {
+      "low": 342000,
+      "mid": 380000,
+      "high": 380000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 660,000 minus infantry P roles 280,000 = 380,000. Air Force (~70,000), Navy (~30,000 incl. marines), armour/artillery crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Volunteer force; constraint is equipment and money, not manpower; 2% is ~5 million."
+    },
+    "mobilizable": {
+      "low": 2552196,
+      "mid": 5104391,
+      "high": 10208782,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 255,219,554 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 160000,
+          "mid": 200000,
+          "high": 250000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army 560,000 (IISS 2025 as quoted on Pakistan Army article) in 9 corps; ~250 infantry battalions. (context page: https://en.wikipedia.org/wiki/Pakistan_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer long-service, counter-insurgency in the north-west since 2001."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. SSG, light infantry and Northern Light Infantry units on the LoC. Frontier Corps/Rangers (paramilitary 291,000) excluded. (context page: https://en.wikipedia.org/wiki/Pakistan_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: SSG, light/mountain units on LoC."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 2500,
+          "mid": 2800,
+          "high": 3000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army",
+          "note": "Equipment list: Haider/VT-4 176+, Al-Khalid I 110, Al-Khalid 300, Al-Zarrar 500, T-80UD 350, Type 85-IIAP 268-300, Type 69 400, Type 59 600, T-55H 282 = ~3,000 (low/mid discount Type 59/69 in reserve). T-54/55 54 in reserve excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: many Type 59/69 and Al-Zarrar; Al-Khalid/Haider and T-80UD more modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 3500,
+          "mid": 5000,
+          "high": 8000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army",
+          "note": "Equipment list: Saad/Talha 2,000 + M113 2,300 + VCC-1/2 600 + BTR-70 120 + Type 63 100 = ~5,100 tracked/legacy APCs (mid). High adds wheeled protected vehicles (Akrep 1,800, Cobra 800, Dragoon 600). Low is the older IISS-type APC total (~3,500)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 3500,
+          "mid": 4090,
+          "high": 4400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army",
+          "note": "Equipment list: SP SH-1 ~90, M109 438, M110 60; towed 3,001 (incl. 1,000 25-pounders, excluded from low); MLRS A-100E 450+, Azar 52+ = ~4,090. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 300,
+          "mid": 323,
+          "high": 360,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Air_Force_aircraft",
+          "note": "PAF list (IISS figures as quoted): JF-17 175, F-16 75, J-10CE 20, F-7PG 53 = 323. J-35 expected 2026-27 not counted."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: J-10CE with PL-15, F-16 Block 52, JF-17 Block 3; F-7PG obsolete."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: combat in 2019 and May 2025."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 70,
+          "mid": 86,
+          "high": 170,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Air_Force_aircraft",
+          "note": "Mirage III 49 + Mirage 5 37 = 86 (IISS as quoted on the list); PAF article text gives 'more than 80' Mirage III and ~90 Mirage 5 (high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1960s-70s Mirage III/5 airframes (ROSE upgrade)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 300,
+          "mid": 345,
+          "high": 400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army",
+          "note": "Army Aviation ~265 (Mi-17 48, AH-1F 50, Z-10ME 4-8, Fennec 35, Puma 47, Bell 412 31, others) + PAF 55 (Mi-171 40, AW139 14) + Navy ~25 (educated)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 150,
+          "mid": 200,
+          "high": 300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Air_Force_aircraft",
+          "note": "Group 2+ on PAF list: Wing Loong II 50, CH-4 24, Anka-S 24, TB2 24, Akinci 7, Burraq 13, Falco 26, Jasoos II 46, Shahpar 6+12+, Uqab-II 40+ = ~270, mid discounts small tactical types. Songar quadcopters and loitering munitions excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 9,
+          "mid": 9,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Navy_vessels",
+          "note": "Frigates: Type 054A/P 4 + F-22P 4 + Alamgir 1 = 9. High adds Babur-class (MILGEM) corvettes, which are frigate-sized."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 21,
+          "mid": 23,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Navy_vessels",
+          "note": "Corvettes 6 (Babur 2, Yarmook 4) + missile boats/FAC 8 + MCM 5 + MRTP 2 + gunboats 2 = 23. 20 MABs and 40 RIBs excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 6,
+          "high": 9,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Pakistan_Navy_vessels",
+          "note": "Agosta-90B 3 + Agosta-70 2 + Hangor 1 (commissioned 2026) = 6; high adds 3 midget submarines."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 80,
+          "mid": 120,
+          "high": 170,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ballistic and cruise launchers: Shaheen I-III, Ghauri, Ghaznavi, Abdali, Nasr, Babur, Fatah series; launcher numbers not published. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Shaheen, Ghauri, Babur, Fatah guided rockets/cruise missiles."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 40,
+          "mid": 70,
+          "high": 110,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Batteries: HQ-9/P, HQ-16 (LY-80), HQ-11, FM-90, Spada 2000 (10 batteries per PAF article), plus GDF-35 mm and other AAA. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mostly Chinese and older US/Western kit, some modern (J-10CE, Type 054A/P, HQ-9)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, extensive counter-insurgency and May 2025 combat."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff system and recent operations (May 2025, Afghan border strikes 2025-26), politically dominant high command."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: long-service regiments with strong identity."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: high motivation against India, strained by insurgency in Khyber Pakhtunkhwa and Balochistan."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.55,
+      "mid": 8.8,
+      "high": 9.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: guided MLRS (Fatah), cruise missiles, PL-15 AAMs; mass of older guns."
+    },
+    "armor": {
+      "low": 8.05,
+      "mid": 8.3,
+      "high": 8.55,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Al-Khalid/Haider and T-80UD composite armour; Type 59/69 and Al-Zarrar older."
+    },
+    "ships": {
+      "low": 8.55,
+      "mid": 8.8,
+      "high": 9.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Type 054A/P frigates, AIP Agosta-90B, Hangor; no nuclear boats."
+    },
+    "fortification": {
+      "low": 8.45,
+      "mid": 8.7,
+      "high": 8.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: hardened air bases and ditch-cum-bund defences on the Indian border."
+    },
+    "logistics": {
+      "low": 8.05,
+      "mid": 8.3,
+      "high": 8.55,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: rail and motor transport, limited airlift (C-130 16)."
+    },
+    "communications": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: data links on JF-17/J-10, Chinese satellite links; integration partial."
+    },
+    "isr": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Erieye/ZDK-03 AEW&C, MALE UAVs, limited satellites."
+    },
+    "air": {
+      "low": 8.55,
+      "mid": 8.8,
+      "high": 9.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 (4th/4.5 generation J-10CE, F-16 Block 52); J-35 not yet delivered."
+    },
+    "cyber": {
+      "low": 8.25,
+      "mid": 8.5,
+      "high": 8.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: state cyber units, less capable than India/China."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3822,
+      "mid": 4497,
+      "high": 5171,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 1,147,622,607,200 / population 255,219,554 = 4,497. Range +/-15%."
+    },
+    "gdp": {
+      "low": 975479216120,
+      "mid": 1147622607200,
+      "high": 1319765998280,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,433,632,238,850 x 0.8005 (US GDP deflator 2011/2021) = 1,147,622,607,200 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/PAK/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.025,
+      "mid": 0.0291,
+      "high": 0.033,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.91% of GDP in 2025. Factbook: 2.5% (2024), 3% (2023), 4% (2021). High allows for the ~20% budget rise after the May 2025 conflict."
+    },
+    "industrialShare": {
+      "low": 0.1806,
+      "mid": 0.2006,
+      "high": 0.2206,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 20.1% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Wheat/rice producer, food-insecure population, rice exporter; 2022 floods showed fragility."
+    },
+    "annualCohort": {
+      "low": 2520163,
+      "mid": 2800181,
+      "high": 3080199,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 129,314,682 x share of males aged 15-19 10.827% (SP.POP.1519.MA.5Y) / 5 = 2,800,181. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Heavy Industries Taxila (Al-Khalid, Haider). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+      },
+      "ifv_apc": {
+        "low": 100,
+        "mid": 200,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. HIT Talha/Saad lines. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+      },
+      "artillery": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Limited gun production; rocket artillery assembly. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+      },
+      "aircraft_fighter": {
+        "low": 8,
+        "mid": 15,
+        "high": 25,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. PAC Kamra JF-17 line. (context page: https://en.wikipedia.org/wiki/List_of_active_Pakistan_Air_Force_aircraft)"
+      },
+      "drones": {
+        "low": 50,
+        "mid": 150,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. GIDS/NESCOM UAVs, Wing Loong II co-production. (context page: https://en.wikipedia.org/wiki/List_of_active_Pakistan_Air_Force_aircraft)"
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Karachi Shipyard. (context page: https://en.wikipedia.org/wiki/List_of_active_Pakistan_Navy_vessels)"
+      },
+      "missiles": {
+        "low": 10,
+        "mid": 25,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. NESCOM launchers per year. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Pakistan_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 185463,
+      "mid": 185463,
+      "high": 264175,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2025: 264,175 km total, 185,463 km paved (mid), 2,567 km expressway (list as quoted)."
+    },
+    "railKm": {
+      "low": 7791,
+      "mid": 7791,
+      "high": 11881,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2019: 7,791 route-km (World Bank). CIA Factbook 11,881 km (2021, incl. sidings) as high. Broad gauge 1,676 mm."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/pk.json",
+      "note": "CIA Factbook 2024: 3 ports (0 large, 2 medium, 1 small): Karachi, Port Qasim, Gwadar. All on one coast within ~500 km."
+    },
+    "merchantTonnage": {
+      "low": 400000,
+      "mid": 700000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Below the 1 million GT threshold of the merchant-capacity list; Factbook 2023 lists 60 ships (5 bulk, 9 tankers). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/pk.json)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rail-fed mechanised corps in Punjab/Sindh; little expeditionary capacity."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules, donkeys, camels (not from FAO data); Army mule units for the LoC."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 160,
+      "mid": 170,
+      "high": 180,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: military stockpile 170. Range +/-10."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Khyber Pass",
+      "Line of Control (Kashmir)",
+      "Lahore-Wagah corridor",
+      "Strait of Hormuz approaches (Gwadar)",
+      "Karakoram Highway / Khunjerab Pass"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: fortified border canals and cities, population support; 1.3 in the north-west mountains."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population convention: inside ne:PAK (World Bank), i.e. Pakistan-administered Kashmir as the World Bank counts it. Money in 2011 int$ via derived:ppp-rebase-2011. Pakistan fought a short conflict with India in May 2025 and border clashes with Taliban Afghanistan in October 2025 and February-March 2026 (PAF airstrikes on Kandahar, Bagram and Paktika per the PAF article); losses disputed and not modelled. Equipment counts from Wikipedia equipment/aircraft/vessel lists quoting IISS for many lines (grade B/C). ships_major = frigates only; drones = Group 2+. Infantry splits, missile launchers, air-defence batteries are educated guesses. Paramilitary 291,000 excluded."
+}

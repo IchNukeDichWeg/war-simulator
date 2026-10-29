@@ -1,0 +1,839 @@
+{
+  "id": "south-korea-2026",
+  "nationId": "south-korea",
+  "includes": [],
+  "name": "Republic of Korea",
+  "year": 2026,
+  "era": "modern",
+  "region": "east_asia",
+  "phase": "current",
+  "tags": [
+    "US ally",
+    "conscription",
+    "divided nation",
+    "arms exporter",
+    "high-tech"
+  ],
+  "capital": {
+    "name": "Seoul",
+    "lat": 37.5665,
+    "lon": 126.978,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Busan",
+      "lat": 35.1796,
+      "lon": 129.0756,
+      "kind": "port"
+    },
+    {
+      "name": "Incheon",
+      "lat": 37.4563,
+      "lon": 126.7052,
+      "kind": "port"
+    },
+    {
+      "name": "Daegu",
+      "lat": 35.8714,
+      "lon": 128.6014,
+      "kind": "city"
+    },
+    {
+      "name": "Daejeon (Gyeryongdae HQ)",
+      "lat": 36.3504,
+      "lon": 127.3845,
+      "kind": "fortress"
+    },
+    {
+      "name": "Pyeongtaek (Camp Humphreys)",
+      "lat": 36.9635,
+      "lon": 127.0313,
+      "kind": "fortress"
+    },
+    {
+      "name": "Jinhae naval base",
+      "lat": 35.14,
+      "lon": 128.66,
+      "kind": "port"
+    },
+    {
+      "name": "Ulsan",
+      "lat": 35.5384,
+      "lon": 129.3114,
+      "kind": "port"
+    },
+    {
+      "name": "Jeju naval base",
+      "lat": 33.23,
+      "lon": 126.48,
+      "kind": "port"
+    },
+    {
+      "name": "DMZ / Panmunjom",
+      "lat": 37.956,
+      "lon": 126.677,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Yeonpyeong Island (NLL)",
+      "lat": 37.665,
+      "lon": 125.7,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:KOR",
+    "areaKm2": {
+      "low": 97600,
+      "mid": 97600,
+      "high": 100528,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 97,600 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 51426141,
+      "mid": 51684564,
+      "high": 52201410,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 51,684,564 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.8017,
+      "mid": 0.8117,
+      "high": 0.8217,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 81.17% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 450000,
+      "mid": 450000,
+      "high": 500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.280 as quoted: 450,000 active (falling with conscript cohorts). CIA Factbook 2025 ~500,000 (Army 365,000, Navy 70,000 incl. ~30,000 marines, Air Force 65,000)."
+    },
+    "trainedReserves": {
+      "low": 1000000,
+      "mid": 3100000,
+      "high": 3100000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 3,100,000 reserves (all ex-conscripts with 8-year obligation). Low ~1 million = mobilisation-designated reservists who train annually (educated)."
+    },
+    "supportPersonnel": {
+      "low": 265500,
+      "mid": 295000,
+      "high": 295000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 450,000 minus infantry P roles 155,000 = 295,000. Navy, Air Force, artillery/armour crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Universal male conscription and a 3.1 million reserve make high mobilisation feasible; ROK planning assumes rapid call-up. 8% is ~4.1 million."
+    },
+    "mobilizable": {
+      "low": 2584228,
+      "mid": 4134765,
+      "high": 6202148,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 51,684,564 x ratio 0.05 / 0.08 / 0.12."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 100000,
+          "mid": 120000,
+          "high": 150000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army ~365,000 (CIA Factbook 2025) in corps/divisions undergoing consolidation. (context page: https://en.wikipedia.org/wiki/Republic_of_Korea_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: 18-month conscripts, shrinking intake."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 35000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Special Warfare Command and Marine Corps (~29,000 incl. in Navy 70,000 per Factbook). (context page: https://en.wikipedia.org/wiki/Republic_of_Korea_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Special Warfare Command, ROK Marine Corps (29,000)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1780,
+          "mid": 1830,
+          "high": 2150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army",
+          "note": "Equipment list: K1/K1E2 1,027 + K1A2 484 + K2 260 + T-80U/UK 35 + T-72/T-62 ~25 = ~1,830. High allows for M48 variants still held."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: K2 among the best; many K1/K1A2 older."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 3400,
+          "mid": 3650,
+          "high": 3900,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army",
+          "note": "K200/A1 1,700 + K200 variants ~800 + K21 466+ + BMP-3 70 + K806 100 + K808 500 + Barracuda 10 = ~3,650. Marine AAV-7 excluded."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 3800,
+          "mid": 4150,
+          "high": 8500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army",
+          "note": "Active: KH179 1,400 + K55/K55A1 1,040 + K9/K9A1 1,240 + MLRS (K136 40, M270 58, Chunmoo 367) = ~4,150. High adds 105 mm (3,000) and M114 (1,400) towed guns in reserve/storage."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: K9 (world-leading SPH), Chunmoo."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 320,
+          "mid": 327,
+          "high": 345,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force",
+          "note": "ROKAF article (World Air Forces 2025): F-35A 40, F-15K 59, KF-16C/D 167, KF-5E/F 61 = 327; KF-21 1 (+6 prototypes) in service 2026. F-4E retired 2024."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: F-35A, F-15K, upgraded KF-16; KF-5 obsolete."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 60,
+          "mid": 60,
+          "high": 82,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force",
+          "note": "FA-50 60 light attack; high adds TA-50 22."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 550,
+          "mid": 610,
+          "high": 680,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army",
+          "note": "Army ~514 (AH-64E 72, AH-1F/S 75, CH-47D/F 55, MD-500 300, Bo 105 12; Surion/LAH not itemised) + ROKAF 35 + Navy ~60 (educated)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 40,
+          "mid": 70,
+          "high": 120,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. RQ-4 4, Heron (3 on order), Searcher II and RQ-101 at corps level, KUS-FS MUAV; small battalion UAVs excluded. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 30,
+          "mid": 30,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships",
+          "note": "Active list: Dokdo LPH 2 + destroyers 13 (Sejong 3, Jeongjo 1, Chungmugong 6, Gwanggaeto 3) + frigates 15 (Incheon 6, Daegu 8, Chungnam 1) = 30."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Sejong the Great Aegis destroyers."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 55,
+          "mid": 59,
+          "high": 62,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships",
+          "note": "Pohang corvettes 3 + PKG 18 + PKMR 16 + LST 8 + mine warfare 14 = 59."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 21,
+          "mid": 21,
+          "high": 21,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships",
+          "note": "KSS-III 3 + KSS-II 9 + KSS-I 9 = 21."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 50,
+          "mid": 100,
+          "high": 200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Hyunmoo-2/3/4/5 ballistic and cruise launchers of the Army Missile Strategic Command; numbers classified. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 50,
+          "mid": 70,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force",
+          "note": "Patriot PAC-3 8 batteries + KM-SAM Block I 18 + Block II 1 (ROKAF article) = 27, plus Army Chunma 120 vehicles and Biho 176 (/~4-6 ~40 batteries) per the Army list."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern domestic (K2, K9, KF-21) and US equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (18 months) with professional cadre, high readiness."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: trained staff, Combined Forces Command with the US; no war since 1953; martial-law episode of December 2024 strained civil-military trust."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: national conscript army with professional cadre and clear existential mission."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: existential home defence against North Korea."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: precision fires (Chunmoo, Hyunmoo), K9, L-SAM in development."
+    },
+    "armor": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: K2 with active protection options; K1 older."
+    },
+    "ships": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Aegis KDX-III, KSS-III SLBM-capable submarines."
+    },
+    "fortification": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: dense DMZ fortifications, KAMD layered missile defence."
+    },
+    "logistics": {
+      "low": 8.95,
+      "mid": 9.2,
+      "high": 9.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: dense rail/road net, short interior lines."
+    },
+    "communications": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: ANASIS-II military satellite, Link-16 with US."
+    },
+    "isr": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: 425 Project reconnaissance satellites (2023-25), Global Hawk, E-737."
+    },
+    "air": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: F-35A (40), KF-21 entering service."
+    },
+    "cyber": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Cyber Operations Command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 37898,
+      "mid": 44586,
+      "high": 51273,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 2,304,382,975,296 / population 51,684,564 = 44,586. Range +/-15%."
+    },
+    "gdp": {
+      "low": 1958725529002,
+      "mid": 2304382975296,
+      "high": 2650040421591,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,878,679,544,405 x 0.8005 (US GDP deflator 2011/2021) = 2,304,382,975,296 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/KOR/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.023,
+      "mid": 0.026,
+      "high": 0.028,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.60% of GDP in 2025. Factbook: 2.3% (2025), 2.4% (2021-24)."
+    },
+    "industrialShare": {
+      "low": 0.3233,
+      "mid": 0.3433,
+      "high": 0.3633,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 34.3% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Food self-sufficiency ~45%; rice self-sufficient, imports grain/feed."
+    },
+    "annualCohort": {
+      "low": 214254,
+      "mid": 238060,
+      "high": 261866,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 25,783,559 x share of males aged 15-19 4.617% (SP.POP.1519.MA.5Y) / 5 = 238,060. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 40,
+        "mid": 80,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hyundai Rotem K2 line (export orders to Poland). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      },
+      "ifv_apc": {
+        "low": 100,
+        "mid": 200,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hanwha K21/Redback, Hyundai K808. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      },
+      "artillery": {
+        "low": 150,
+        "mid": 250,
+        "high": 450,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Hanwha K9 line, Chunmoo - large export output. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      },
+      "aircraft_fighter": {
+        "low": 15,
+        "mid": 30,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. KAI KF-21, FA-50. (context page: https://en.wikipedia.org/wiki/Republic_of_Korea_Air_Force)"
+      },
+      "helicopters": {
+        "low": 20,
+        "mid": 40,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. KAI Surion/LAH. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 3,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. HD HHI, Hanwha Ocean. (context page: https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships)"
+      },
+      "ships_minor": {
+        "low": 3,
+        "mid": 6,
+        "high": 10,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships)"
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. KSS-III Batch II. (context page: https://en.wikipedia.org/wiki/List_of_active_Republic_of_Korea_Navy_ships)"
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 40,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      },
+      "drones": {
+        "low": 20,
+        "mid": 100,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Republic_of_Korea_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 92795,
+      "mid": 92795,
+      "high": 110714,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2018: 110,714 km total, 92,795 km paved (mid), 4,767 km expressway (list as quoted)."
+    },
+    "railKm": {
+      "low": 3979,
+      "mid": 4308,
+      "high": 4400,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KOR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 4,308 route-km (World Bank). CIA Factbook 3,979 km (2016) as low; standard gauge."
+    },
+    "majorPorts": {
+      "low": 7,
+      "mid": 7,
+      "high": 15,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/ks.json",
+      "note": "CIA Factbook 2024: 15 ports, 2 large + 5 medium = 7 (Busan, Gwangyang, Incheon, Masan, Mokpo, Pyeongtaek, Ulsan)."
+    },
+    "merchantTonnage": {
+      "low": 19314900,
+      "mid": 21461000,
+      "high": 23607100,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 21,461 thousand DWT under the national flag. Range +/-10%. 2,149 ships (Factbook 2023)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Peninsula defence on short interior lines; US logistics support assumed."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 10000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses (Jeju), militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; South Korea is not one of them."
+    },
+    "basesAbroad": [
+      {
+        "name": "Akh Unit training detachment (Al Ain, UAE)",
+        "lat": 24.21,
+        "lon": 55.75,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Dwa",
+    "chokepoints": [
+      "Korea (Tsushima) Strait",
+      "DMZ invasion corridors (Kaesong-Munsan, Cheorwon, Chuncheon)",
+      "Han River crossings",
+      "Northern Limit Line islands"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: fortified DMZ and cities, full population support; mountainous terrain toward 1.3."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside ne:KOR. Money via derived:ppp-rebase-2011. Counts from the Wikipedia ROK Army equipment list, ROKN active-ship list and ROKAF article (World Air Forces 2025 as quoted); the ROK Defense White Paper 2024 was not fetched. USFK (~28,500) excluded. Active strength is falling (IISS 450,000 vs Factbook 500,000) as conscript cohorts shrink. Infantry splits, missile launchers and drones are educated guesses."
+}

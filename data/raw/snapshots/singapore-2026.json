@@ -1,0 +1,758 @@
+{
+  "id": "singapore-2026",
+  "nationId": "singapore",
+  "includes": [],
+  "name": "Republic of Singapore",
+  "year": 2026,
+  "era": "modern",
+  "region": "southeast_asia",
+  "phase": "current",
+  "tags": [
+    "city-state",
+    "conscription (National Service)",
+    "total defence",
+    "high-tech",
+    "Five Power Defence Arrangements"
+  ],
+  "capital": {
+    "name": "Singapore",
+    "lat": 1.2903,
+    "lon": 103.852,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Changi Naval Base",
+      "lat": 1.322,
+      "lon": 104.017,
+      "kind": "port"
+    },
+    {
+      "name": "Tuas Naval Base",
+      "lat": 1.287,
+      "lon": 103.637,
+      "kind": "port"
+    },
+    {
+      "name": "Tengah Air Base",
+      "lat": 1.387,
+      "lon": 103.709,
+      "kind": "fortress"
+    },
+    {
+      "name": "Paya Lebar Air Base",
+      "lat": 1.36,
+      "lon": 103.91,
+      "kind": "fortress"
+    },
+    {
+      "name": "Jurong Island",
+      "lat": 1.265,
+      "lon": 103.7,
+      "kind": "city"
+    },
+    {
+      "name": "Johor Causeway",
+      "lat": 1.4545,
+      "lon": 103.7699,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Singapore Strait",
+      "lat": 1.2,
+      "lon": 103.85,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SGP",
+    "areaKm2": {
+      "low": 725,
+      "mid": 725,
+      "high": 747,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 725 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 6080619,
+      "mid": 6111175,
+      "high": 6172287,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 6,111,175 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.99,
+      "mid": 1.0,
+      "high": 1,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 100.00% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 51000,
+      "mid": 51000,
+      "high": 72000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 as quoted: 51,000 active; CIA Factbook 2025 ~55,000. High counts ~20,000 more full-time NSmen in training at any time (educated)."
+    },
+    "trainedReserves": {
+      "low": 250000,
+      "mid": 252500,
+      "high": 312500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 252,500 reserves (Operationally Ready NSmen, trained annually); high adds MINDEF-cited ~312,500 total (educated)."
+    },
+    "supportPersonnel": {
+      "low": 28800,
+      "mid": 32000,
+      "high": 32000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 51,000 minus infantry P roles 19,000 = 32,000. Air Force (~13,500), Navy (~9,000), armour/artillery/signals, logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Universal male National Service (2 years) and reservist liability to age 40-50; a full call-up raises ~300,000 within days. 8% is ~490,000."
+    },
+    "mobilizable": {
+      "low": 366670,
+      "mid": 488894,
+      "high": 611118,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 6,111,175 x ratio 0.06 / 0.08 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 10000,
+          "mid": 14000,
+          "high": 18000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Active army ~37,000 (mostly full-time NSmen) with infantry battalions; NSmen battalions form the bulk on mobilisation. (context page: https://en.wikipedia.org/wiki/Singapore_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: 2-year National Servicemen."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3000,
+          "mid": 5000,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Guards, Commandos (1st Commando Battalion). (context page: https://en.wikipedia.org/wiki/Singapore_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 170,
+          "mid": 170,
+          "high": 300,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Singapore_Army",
+          "note": "Leopard 2SG 170+; high adds AMX-13 SM1 light tanks in storage."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1500,
+          "mid": 1775,
+          "high": 2000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Singapore_Army",
+          "note": "Hunter 140 + Bionix II ~800 + Terrex 435 + Bronco ~400 = ~1,775; BV206 300 excluded (unarmoured)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 130,
+          "mid": 149,
+          "high": 200,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Singapore_Army",
+          "note": "HIMARS 24 + SSPH Primus 48 + Pegasus 60 + FH-2000 17 = 149."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 95,
+          "mid": 99,
+          "high": 101,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Air_Force",
+          "note": "F-15SG 40 + F-16C/D Block 52 59 = 99; F-35B (12 ordered) and F-35A (8) from 2026-30."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: F-15SG, upgraded F-16V."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: training detachments in the US, France, Australia."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 69,
+          "high": 75,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Air_Force",
+          "note": "AH-64D 19 + CH-47F 16-26 + H225M 16 + S-70B 8 = ~69."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 10,
+          "mid": 15,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Air_Force",
+          "note": "Hermes 900 ~12 + Heron 1 + Navy ScanEagle; small types excluded."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Navy",
+          "note": "Formidable-class frigates 6 (Multi-Role Combat Vessels from 2028)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 22,
+          "high": 26,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Navy",
+          "note": "Independence LMV 8 + Victory corvettes 6 (being retired) + Endurance LPD 4 + Bedok MCM 4 = 22."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Navy",
+          "note": "Invincible (Type 218SG) 4 + Archer 2 (retiring) = 6."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 0,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Singapore_Armed_Forces",
+          "note": "No ballistic or coastal missile launchers; HIMARS counted under artillery."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 16,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Singapore_Air_Force",
+          "note": "Batteries: SPYDER 12 launchers (~3 batteries), Aster 30 SAMP/T (~4), I-HAWK retiring, RBS-70/Mistral (~5)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern Western/Israeli/domestic equipment."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: highly trained conscripts with annual reservist training; no combat experience."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: highly educated scholar-officer corps, 3rd-generation networked SAF; no combat."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: citizen force, untested."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus."
+    },
+    "armor": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Leopard 2SG, Hunter AFV."
+    },
+    "ships": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Type 218SG AIP submarines."
+    },
+    "fortification": {
+      "low": 9.05,
+      "mid": 9.3,
+      "high": 9.55,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: underground ammunition facility, hardened bases."
+    },
+    "logistics": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: compact city-state."
+    },
+    "communications": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10."
+    },
+    "isr": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: G550 CAEW."
+    },
+    "air": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: F-35 from 2026."
+    },
+    "cyber": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Digital and Intelligence Service (2022)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 94982,
+      "mid": 111744,
+      "high": 128505,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 682,886,442,983 / population 6,111,175 = 111,744. Range +/-15%."
+    },
+    "gdp": {
+      "low": 580453476535,
+      "mid": 682886442983,
+      "high": 785319409430,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 853,074,881,927 x 0.8005 (US GDP deflator 2011/2021) = 682,886,442,983 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/SGP/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.028,
+      "mid": 0.0305,
+      "high": 0.032,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 3.05% of GDP in 2025. Factbook: 3.0% (2024)."
+    },
+    "industrialShare": {
+      "low": 0.2067,
+      "mid": 0.2267,
+      "high": 0.2467,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 22.7% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Floored at 0 (field cannot be negative): Imports >90% of food; '30 by 30' local production goal."
+    },
+    "annualCohort": {
+      "low": 30096,
+      "mid": 33441,
+      "high": 36785,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SGP/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 3,156,466 x share of males aged 15-19 5.297% (SP.POP.1519.MA.5Y) / 5 = 33,441. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 60,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. ST Engineering Hunter, Terrex. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Singapore_Army)"
+      },
+      "artillery": {
+        "low": 0,
+        "mid": 5,
+        "high": 15,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. ST Engineering. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Singapore_Army)"
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. ST Marine (LMV, MRCV). (context page: https://en.wikipedia.org/wiki/Republic_of_Singapore_Navy)"
+      },
+      "drones": {
+        "low": 5,
+        "mid": 15,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/Republic_of_Singapore_Air_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3500,
+      "mid": 3500,
+      "high": 3500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2017: 3,500 km, all paved."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 250,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/sn.json",
+      "note": "No mainline railway (KTM line closed 2011; RTS Link to Johor 2026-27); high counts the ~250 km MRT/LRT urban network. Not in World Bank data."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 3,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/sn.json",
+      "note": "CIA Factbook 2024: 2 large + 1 medium = 3; world's 2nd-busiest container port."
+    },
+    "merchantTonnage": {
+      "low": 137109600,
+      "mid": 152344000,
+      "high": 167578400,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 152,344 thousand DWT under the national flag. Range +/-10%. World's 4th-largest flag registry; much is foreign-owned."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. City-state with a few overseas training detachments; no expeditionary logistics."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 0,
+      "high": 100,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: none of military relevance."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Singapore is not one of them."
+    },
+    "basesAbroad": [
+      {
+        "name": "RSAF Peace Carvin detachments (Mountain Home AFB, USA)",
+        "lat": 43.04,
+        "lon": -115.87,
+        "kind": "fortress"
+      },
+      {
+        "name": "RSAF detachment Cazaux (France)",
+        "lat": 44.53,
+        "lon": -1.13,
+        "kind": "fortress"
+      },
+      {
+        "name": "SAF training area Shoalwater Bay (Australia)",
+        "lat": -22.5,
+        "lon": 150.4,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Af",
+    "chokepoints": [
+      "Singapore Strait",
+      "Johor Causeway and Second Link",
+      "Strait of Malacca"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: dense urban terrain, Total Defence society; no strategic depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside the ne: border (World Bank 2025). Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Wikipedia Singapore Army equipment list, RSN and RSAF articles; MINDEF does not publish counts, so lines are IISS-quoted. Active strength includes full-time National Servicemen. Overseas training detachments (US, France, Australia, Taiwan's Starlight historically) are in basesAbroad. Rail is not in World Bank data."
+}

@@ -1,0 +1,539 @@
+{
+  "id": "afghanistan-2026",
+  "nationId": "afghanistan",
+  "includes": [],
+  "name": "Islamic Emirate of Afghanistan (Taliban)",
+  "year": 2026,
+  "era": "modern",
+  "region": "central_asia",
+  "phase": "current",
+  "tags": [
+    "Taliban",
+    "insurgent-turned-government",
+    "landlocked",
+    "unrecognised government (except Russia 2025)",
+    "mountain warfare"
+  ],
+  "capital": {
+    "name": "Kabul",
+    "lat": 34.5553,
+    "lon": 69.2075,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Kandahar",
+      "lat": 31.6289,
+      "lon": 65.7372,
+      "kind": "city"
+    },
+    {
+      "name": "Herat",
+      "lat": 34.3529,
+      "lon": 62.204,
+      "kind": "city"
+    },
+    {
+      "name": "Mazar-i-Sharif",
+      "lat": 36.709,
+      "lon": 67.1109,
+      "kind": "city"
+    },
+    {
+      "name": "Jalalabad",
+      "lat": 34.4265,
+      "lon": 70.4515,
+      "kind": "city"
+    },
+    {
+      "name": "Bagram Airfield",
+      "lat": 34.9461,
+      "lon": 69.265,
+      "kind": "fortress"
+    },
+    {
+      "name": "Salang Pass/Tunnel",
+      "lat": 35.32,
+      "lon": 69.03,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Torkham (Khyber crossing)",
+      "lat": 34.0989,
+      "lon": 71.0958,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hairatan (Termez bridge, rail)",
+      "lat": 37.22,
+      "lon": 67.42,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Panjshir Valley",
+      "lat": 35.3,
+      "lon": 69.7,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:AFG",
+    "areaKm2": {
+      "low": 652230,
+      "mid": 652230,
+      "high": 671797,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 652,230 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 43624890,
+      "mid": 43844111,
+      "high": 44282552,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 43,844,111 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.2494,
+      "mid": 0.2594,
+      "high": 0.2694,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 25.94% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 120000,
+      "mid": 150000,
+      "high": 190000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.240 (as quoted on the Afghan Armed Forces article): 150,000, down from 165,000-170,000 in 2022-23 (75,000 full-time + 90,000 local militia, IISS 2022). The personnel list still shows IISS 2025: 172,000. Taliban claim 190,000 under the Ministry of Defense (CIA Factbook 2025) = high. World Bank 165,000 (2020) refers to the former republic."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 50000,
+      "high": 90000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS: no formal reserve. Mid/high are educated allowances for callable local militias (IISS 2022 counted 90,000 local militia)."
+    },
+    "supportPersonnel": {
+      "low": 27000,
+      "mid": 30000,
+      "high": 30000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 150,000 minus infantry P roles 120,000 = 30,000. Small air arm, border and logistics units, staff; Taliban forces are mostly infantry."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Insurgent-style mobilisation of tribal/religious networks; 2% is ~0.9 million men, comparable to total Taliban mobilisation claims; equipment and pay are the limits."
+    },
+    "mobilizable": {
+      "low": 438441,
+      "mid": 876882,
+      "high": 1753764,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 43,844,111 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 10000,
+          "mid": 20000,
+          "high": 40000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Taliban 'regular' formations (corps such as 205 Al-Badr, Badri 313 battalion) operating as organised infantry. (context page: https://en.wikipedia.org/wiki/Afghan_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: captured M4/M16, HMMWVs; few heavy weapons."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Badri 313 and similar 'regular' units trained since 2021."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 80000,
+          "mid": 100000,
+          "high": 140000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Bulk of the Islamic Emirate Army: dispersed light infantry/irregulars. Ministry of Interior forces (Taliban claim 215,000) excluded. (context page: https://en.wikipedia.org/wiki/Afghan_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: small arms, RPGs, technicals."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: battle-hardened insurgent veterans, decentralised, irregular."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 20,
+          "mid": 60,
+          "high": 210,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Afghan_Armed_Forces",
+          "note": "List: T-55 110+ and T-62M 100 (IISS 2024 as quoted) = 210 on paper (high); serviceable number is an educated guess (mid 60, low 20) - few seen beyond parades and the 2025 border clashes."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: T-55/T-62, few serviceable."
+        },
+        "training": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: few trained crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 100,
+          "mid": 400,
+          "high": 1500,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Afghan_Armed_Forces",
+          "note": "List: BMP-1 350, BMP-2 150, BTR-70 360, BTR-50 100, M113A2 173, M1117 636 (IISS 2024), MaxxPro 70 = ~1,840 on paper; serviceable share is an educated guess."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 30,
+          "mid": 100,
+          "high": 280,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Afghan_Armed_Forces",
+          "note": "List: M-30 232, D-30 41 (IISS 2024), BM-21 3 = 276 on paper (high); serviceable share an educated guess."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 5,
+          "mid": 20,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ex-Afghan Air Force Mi-17, UH-60 and MD-530 left in 2021 and flown in small numbers; many flown to Uzbekistan in 2021 or disabled. (context page: https://en.wikipedia.org/wiki/Afghan_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: ex-ANA Mi-17/UH-60/MD-530 without OEM support."
+        },
+        "training": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: few pilots."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: decentralised, patrimonial command (Giustozzi 2016 as cited on the article); effective at insurgent warfare, untested at combined arms."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: strong ideological and network cohesion, but loose, factional (Haqqani vs Kandahari) structure."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.75,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: ideologically motivated victors of 2021; fanatical in home defence; lower for conventional offensives (2025-26 border clashes with Pakistan)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: captured US small arms, night vision and vehicles; no precision fires."
+    },
+    "armor": {
+      "low": 6.25,
+      "mid": 6.5,
+      "high": 6.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: few T-55/T-62; mostly unarmoured technicals and HMMWVs."
+    },
+    "ships": {
+      "low": 0,
+      "mid": 0.0,
+      "high": 0.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Landlocked; no naval forces (not absent-in-era, simply none)."
+    },
+    "fortification": {
+      "low": 6.25,
+      "mid": 6.5,
+      "high": 6.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7: field fortifications, cave/tunnel complexes; former US/ANA bases."
+    },
+    "logistics": {
+      "low": 6.25,
+      "mid": 6.5,
+      "high": 6.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7: pickup trucks, captured trucks, porters; very limited sustainment."
+    },
+    "communications": {
+      "low": 7.25,
+      "mid": 7.5,
+      "high": 7.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: radios, mobile phones, commercial internet."
+    },
+    "isr": {
+      "low": 6.25,
+      "mid": 6.5,
+      "high": 6.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7: no aircraft-based ISR beyond a few helicopters and commercial drones."
+    },
+    "air": {
+      "low": 5.75,
+      "mid": 6.0,
+      "high": 6.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: a few ex-ANA helicopters flown without support; no combat jets."
+    },
+    "cyber": {
+      "low": 4.75,
+      "mid": 5.0,
+      "high": 5.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 category exists but capability negligible."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1300,
+      "mid": 1530,
+      "high": 1759,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2024. GDP (2011 int$) 67,065,060,104 / population 43,844,111 = 1,530. Range +/-15%."
+    },
+    "gdp": {
+      "low": 57005301088,
+      "mid": 67065060104,
+      "high": 77124819119,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2024. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 83,778,963,278 x 0.8005 (US GDP deflator 2011/2021) = 67,065,060,104 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/AFG/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.035,
+      "grade": "C",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.83% in 2021 (last republic year); Factbook 3.3% (2019). Taliban-era spending unpublished; range is an educated band."
+    },
+    "industrialShare": {
+      "low": 0.1252,
+      "mid": 0.1452,
+      "high": 0.1652,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2024: industry incl. construction 14.5% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chronic food deficit; dependent on aid and imports after the 2021 aid cut-off."
+    },
+    "annualCohort": {
+      "low": 449350,
+      "mid": 499278,
+      "high": 549205,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/AFG/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 22,142,579 x share of males aged 15-19 11.274% (SP.POP.1519.MA.5Y) / 5 = 499,278. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 17903,
+      "mid": 17903,
+      "high": 34903,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2021: 34,903 km total, 17,903 km paved (mid) (list as quoted)."
+    },
+    "railKm": {
+      "low": 75,
+      "mid": 185,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No World Bank or Factbook rail figure. Known lines: Hairatan-Mazar (75 km), Khaf-Herat (Afghan section ~60 km), Turkmen lines at Torghundi/Aqina (~50 km). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/af.json)"
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/af.json",
+      "note": "Landlocked; CIA Factbook lists no ports. Imports via Karachi, Bandar Abbas/Chabahar and Central Asian rail."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/af.json",
+      "note": "Landlocked; no merchant marine listed by the CIA Factbook."
+    },
+    "supplyRangeKm": {
+      "low": 30,
+      "mid": 60,
+      "high": 120,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Light infantry living off the land and local networks; no vehicle-based sustainment for distant operations."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, horses, camels widely used in rural transport (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Afghanistan is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Salang Pass",
+      "Khyber Pass (Torkham)",
+      "Wakhan Corridor",
+      "Panjshir Valley",
+      "Kandahar-Spin Boldak road (Chaman)",
+      "Amu Darya crossings (Hairatan)"
+    ],
+    "homeDefense": {
+      "low": 1.3,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: the rubric's own example - mountains, harsh climate, deep strategic depth, population support for resistance to invaders."
+    }
+  },
+  "notes": "Modern snapshot asOf 2025-26. The armed forces are the Taliban's 'Islamic Emirate Army' since August 2021: a former insurgency organised into nominal corps, with captured US/ANA equipment (much unserviceable). Doctrine archetype-insurgent: they would fight any invader as dispersed light infantry. Conventional counts from the Wikipedia equipment list (IISS 2024 as quoted) are paper holdings; serviceable mids are educated guesses (grade D). Population inside ne:AFG (World Bank 2025). Money via derived:ppp-rebase-2011 (World Bank GDP 2024). Border clashes with Pakistan in October 2025 and February-March 2026 (Pakistani airstrikes on Kandahar, Bagram, Paktika). Ministry of Interior forces excluded. The Taliban government is recognised only by Russia (2025)."
+}

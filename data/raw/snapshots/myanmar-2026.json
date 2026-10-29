@@ -1,0 +1,779 @@
+{
+  "id": "myanmar-2026",
+  "nationId": "myanmar",
+  "includes": [],
+  "name": "Republic of the Union of Myanmar",
+  "year": 2026,
+  "era": "modern",
+  "region": "southeast_asia",
+  "phase": "current",
+  "tags": [
+    "military junta",
+    "civil war",
+    "conscription (2024 law)",
+    "China/Russia-supplied",
+    "sanctioned"
+  ],
+  "capital": {
+    "name": "Naypyidaw",
+    "lat": 19.7633,
+    "lon": 96.0785,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Yangon",
+      "lat": 16.8409,
+      "lon": 96.1735,
+      "kind": "port"
+    },
+    {
+      "name": "Mandalay",
+      "lat": 21.9588,
+      "lon": 96.0891,
+      "kind": "city"
+    },
+    {
+      "name": "Lashio",
+      "lat": 22.9359,
+      "lon": 97.7498,
+      "kind": "city"
+    },
+    {
+      "name": "Myitkyina",
+      "lat": 25.3833,
+      "lon": 97.4,
+      "kind": "city"
+    },
+    {
+      "name": "Sittwe",
+      "lat": 20.1528,
+      "lon": 92.8977,
+      "kind": "port"
+    },
+    {
+      "name": "Kyaukphyu",
+      "lat": 19.4296,
+      "lon": 93.5491,
+      "kind": "port"
+    },
+    {
+      "name": "Pyin Oo Lwin (Defence Services Academy)",
+      "lat": 22.0331,
+      "lon": 96.4569,
+      "kind": "fortress"
+    },
+    {
+      "name": "Myawaddy (Thai border)",
+      "lat": 16.6878,
+      "lon": 98.5085,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Muse (China border)",
+      "lat": 23.9958,
+      "lon": 97.9025,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:MMR",
+    "areaKm2": {
+      "low": 652670,
+      "mid": 652670,
+      "high": 672250,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 652,670 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 54576395,
+      "mid": 54850648,
+      "high": 55399154,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 54,850,648 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.2958,
+      "mid": 0.3058,
+      "high": 0.3158,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 30.58% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 150000,
+      "high": 200000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/bm.json",
+      "note": "CIA Factbook 2025: ~150,000 (estimates vary widely after 2021 defections and losses). IISS Military Balance 2025 (personnel list): 134,000. World Bank 463,000 (2020) is a pre-war figure including police. Range is wide by design."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 30000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. IISS lists no reserve; the 2024 People's Military Service Law has called up ~5,000 per month (reports), counted here as partly trained reserve flow."
+    },
+    "supportPersonnel": {
+      "low": 52200,
+      "mid": 58000,
+      "high": 58000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/bm.json",
+      "note": "Active 150,000 minus infantry P roles 92,000 = 58,000. Navy (~16,000), Air Force (~15,000), artillery/armour, logistics; heavy desertion makes this soft."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Conscription activated February 2024 (men 18-35, women 18-27; 2 years) but widely evaded and territory lost; 2% is ~1.1 million."
+    },
+    "mobilizable": {
+      "low": 548506,
+      "mid": 1097013,
+      "high": 1645519,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 54,850,648 x ratio 0.01 / 0.02 / 0.03."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 50000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry divisions and regional commands' battalions, many at 30-50% strength (Tatmadaw article). (context page: https://en.wikipedia.org/wiki/Tatmadaw)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: forced conscripts, low-quality training."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 12000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light Infantry Divisions' elite elements and directorate special units; militia (Pyusawhti, BGFs) excluded. (context page: https://en.wikipedia.org/wiki/Tatmadaw)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 500,
+          "mid": 700,
+          "high": 1100,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army",
+          "note": "Educated composite. Paper strength (equipment list): T-72S 300 + Type 59D 250 + Type 69-II 100 + Type 90-II/MBT-2000 200 = 850 MBT; light tanks 255 (high). Combat losses/captures since 2021 lower the mid."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1200,
+          "mid": 2000,
+          "high": 3300,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army",
+          "note": "Educated composite: ~3,300 APC/armoured cars on paper (BTR-3U, MAV-1, Type 85/92, Naung Yoe), many lost or unserviceable."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3100,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army",
+          "note": "Educated composite: MLRS ~1,400 (mostly 107/122 mm) + SP SH1 150 + Nora 40 + towed ~1,500 on paper."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 80,
+          "mid": 91,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Air_Force",
+          "note": "Su-30SME 6 + JF-17 11+ (grounded issues) + MiG-29 38 + F-7 36 = 91."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 40,
+          "mid": 50,
+          "high": 65,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Air_Force",
+          "note": "A-5C 24 + Yak-130 ~16 + K-8W ~10 in strike use (60+ K-8 total); used daily against resistance areas."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: constant combat sorties (no air opposition)."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 65,
+          "mid": 76,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Air_Force",
+          "note": "Mi-35 24 + Mi-17 25+ + Mi-2 22 + Bell 206 5 = 76 (several lost to resistance fire)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 50,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Air_Force",
+          "note": "Yellow Cat A2 22 + CH-3A + Chinese/locally built Group 2+ drones; small FPV drones excluded."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 4,
+          "mid": 5,
+          "high": 6,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Navy",
+          "note": "Frigates ~5 (Aung Zeya, Kyan Sittha class 3, Mahar Bandula Type 053H1 2)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 70,
+          "high": 90,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Navy",
+          "note": "Educated: corvettes ~4, fast attack/patrol craft ~60, LPD 1 (Moattama), landing craft."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Myanmar_Navy",
+          "note": "Kilo (UMS Minye Thein Kha Thu, ex-India) 1 + Ming (Type 035, ex-China) 1 = 2."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 6,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Hwasong-5/6-type launchers reportedly acquired from North Korea (unconfirmed); coastal C-802 batteries."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army",
+          "note": "Educated composite batteries: Kub, Pechora-2M, KS-1A, Igla; mostly static around Naypyidaw."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Chinese/Russian 1980s-2000s designs, poor maintenance."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: five years of civil war, but conscripts poorly trained and losses heavy."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: centralised, purged leadership; repeated defeats in 2023-24 (Operation 1027), partial recovery 2025-26 with Chinese backing."
+    },
+    "cohesion": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: mass desertion and surrenders (Laukkai 2024), forced conscription."
+    },
+    "morale": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: low morale reported; better after 2025-26 recaptures."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.75,
+      "mid": 8.0,
+      "high": 8.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Chinese/Russian 1980s-2000s weapons."
+    },
+    "armor": {
+      "low": 7.65,
+      "mid": 7.9,
+      "high": 8.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Type 59/69, T-72S."
+    },
+    "ships": {
+      "low": 7.65,
+      "mid": 7.9,
+      "high": 8.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "fortification": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: hardened capital (Naypyidaw)."
+    },
+    "logistics": {
+      "low": 7.15,
+      "mid": 7.4,
+      "high": 7.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: cut road links, fuel shortages."
+    },
+    "communications": {
+      "low": 7.65,
+      "mid": 7.9,
+      "high": 8.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "isr": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Chinese-assisted drone and signals intelligence."
+    },
+    "air": {
+      "low": 7.95,
+      "mid": 8.2,
+      "high": 8.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: MiG-29, Su-30SME few."
+    },
+    "cyber": {
+      "low": 7.35,
+      "mid": 7.6,
+      "high": 7.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus: internet shutdowns, surveillance."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 3495,
+      "mid": 4112,
+      "high": 4729,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 225,559,519,143 / population 54,850,648 = 4,112. Range +/-15%."
+    },
+    "gdp": {
+      "low": 191725591271,
+      "mid": 225559519143,
+      "high": 259393447014,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 281,773,290,622 x 0.8005 (US GDP deflator 2011/2021) = 225,559,519,143 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/MMR/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.066,
+      "high": 0.08,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 6.60% of GDP in 2024. Factbook: 3.9% (2023), 3.0% (2020). Low is the peacetime share; the World Bank 2024 figure reflects war spending and a shrinking GDP."
+    },
+    "industrialShare": {
+      "low": 0.342,
+      "mid": 0.362,
+      "high": 0.382,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 36.2% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.03,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Traditionally a rice exporter; war, displacement and the 2025 Sagaing earthquake reduced output."
+    },
+    "annualCohort": {
+      "low": 402367,
+      "mid": 447074,
+      "high": 491781,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 27,293,547 x share of males aged 15-19 8.190% (SP.POP.1519.MA.5Y) / 5 = 447,074. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "artillery": {
+        "low": 20,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Directorate of Defence Industries (KaPaSa) factories, Chinese/Russian licences. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army)"
+      },
+      "ifv_apc": {
+        "low": 5,
+        "mid": 20,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Myanmar_Army)"
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 2,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Naval dockyard Yangon. (context page: https://en.wikipedia.org/wiki/Myanmar_Navy)"
+      },
+      "drones": {
+        "low": 20,
+        "mid": 100,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Group 2+ incl. Chinese-assisted assembly. (context page: https://en.wikipedia.org/wiki/Myanmar_Air_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 34700,
+      "mid": 34700,
+      "high": 157000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2013: 157,000 km total, 34,700 km paved (mid); many routes contested."
+    },
+    "railKm": {
+      "low": 3000,
+      "mid": 4746,
+      "high": 5031,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MMR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 1999: 4,746 route-km (World Bank). World Bank value from 1999; CIA Factbook 5,031 km (2008, high); low reflects lines cut by fighting."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 2,
+      "high": 5,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/bm.json",
+      "note": "CIA Factbook 2024: 5 ports, none large or medium (Yangon, Sittwe, Kyaukphyu, Mawlamyine, Pathein); mid counts Yangon and Kyaukphyu as militarily significant."
+    },
+    "merchantTonnage": {
+      "low": 150000,
+      "mid": 300000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Below the merchant-capacity list threshold; Factbook 2023: 101 ships, mostly general cargo/coastal. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/bm.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Road-bound logistics along contested routes; air resupply to besieged garrisons."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1500000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Draught oxen and buffalo widely used (~2 million buffalo, not from FAO data); porterage and mules used by both sides in the hills."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Myanmar is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Am",
+    "chokepoints": [
+      "Mandalay-Lashio-Muse road (Burma Road)",
+      "Yangon-Mandalay corridor",
+      "Myawaddy-Kawkareik (Asian Highway 1)",
+      "Rakhine coast / Ann pass",
+      "Irrawaddy crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: jungle and mountain periphery, but a hostile population in much of the country cuts the bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside the ne: border (World Bank 2025). Money in 2011 int$ via derived:ppp-rebase-2011. CIVIL WAR: the junta (State Administration Council, rebranded after the December 2025-January 2026 elections) is fighting the NUG's People's Defence Force and ethnic armed organisations (Arakan Army, KIA, MNDAA, TNLA). After Operation 1027 (October 2023) it lost much of the north and Rakhine; China-brokered deals returned Lashio (2025) and the junta retook Kyaukme (October 2025) and Mogok/Momeik (January 2026). Territory under firm junta control is well under half (estimates under 40% in 2024). This snapshot covers the Tatmadaw only; ne:MMR border overstates its reach, and population is the whole country. Equipment is paper strength discounted for losses (grade D). Doctrine: archetype-modern-regional (conventional force fighting a counter-insurgency). Militia (Pyusawhti) and police excluded."
+}

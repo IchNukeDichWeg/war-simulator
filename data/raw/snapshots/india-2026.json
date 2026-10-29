@@ -1,0 +1,847 @@
+{
+  "id": "india-2026",
+  "nationId": "india",
+  "includes": [],
+  "name": "Republic of India",
+  "year": 2026,
+  "era": "modern",
+  "region": "south_asia",
+  "phase": "current",
+  "tags": [
+    "nuclear power",
+    "regional power",
+    "volunteer army",
+    "Quad",
+    "blue-water navy",
+    "large paramilitary"
+  ],
+  "capital": {
+    "name": "New Delhi",
+    "lat": 28.6139,
+    "lon": 77.209,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Mumbai",
+      "lat": 19.076,
+      "lon": 72.8777,
+      "kind": "port"
+    },
+    {
+      "name": "Kolkata",
+      "lat": 22.5726,
+      "lon": 88.3639,
+      "kind": "port"
+    },
+    {
+      "name": "Chennai",
+      "lat": 13.0827,
+      "lon": 80.2707,
+      "kind": "port"
+    },
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lon": 77.5946,
+      "kind": "city"
+    },
+    {
+      "name": "Visakhapatnam (Eastern Naval Command)",
+      "lat": 17.6868,
+      "lon": 83.2185,
+      "kind": "port"
+    },
+    {
+      "name": "Karwar (INS Kadamba)",
+      "lat": 14.81,
+      "lon": 74.13,
+      "kind": "port"
+    },
+    {
+      "name": "Srinagar",
+      "lat": 34.0837,
+      "lon": 74.7973,
+      "kind": "city"
+    },
+    {
+      "name": "Leh (Ladakh, LAC)",
+      "lat": 34.1526,
+      "lon": 77.5771,
+      "kind": "fortress"
+    },
+    {
+      "name": "Siliguri Corridor",
+      "lat": 26.7,
+      "lon": 88.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Ambala Air Force Station",
+      "lat": 30.37,
+      "lon": 76.82,
+      "kind": "fortress"
+    },
+    {
+      "name": "Port Blair (Andaman and Nicobar Command)",
+      "lat": 11.6234,
+      "lon": 92.7265,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "ne:IND",
+    "areaKm2": {
+      "low": 2973190,
+      "mid": 2973190,
+      "high": 3062386,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 2,973,190 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 1456546197,
+      "mid": 1463865525,
+      "high": 1478504180,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 1,463,865,525 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.3469,
+      "mid": 0.3569,
+      "high": 0.3669,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 35.69% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1450000,
+      "mid": 1500700,
+      "high": 1550000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.260 as quoted: 1,500,700 active. CIA Factbook 2025 ~1.5 million (Army ~1.25 million). Paramilitary (2,532,050 incl. CAPF, Assam Rifles) excluded."
+    },
+    "trainedReserves": {
+      "low": 1155000,
+      "mid": 1155000,
+      "high": 1300000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 1,155,000 reserves (Army 960,000-class Territorial Army and ex-servicemen liability). High allows for Territorial Army expansion."
+    },
+    "supportPersonnel": {
+      "low": 900630,
+      "mid": 1000700,
+      "high": 1000700,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 1,500,700 minus infantry P roles 500,000 = 1,000,700. Air Force (~149,000 per IISS 2025 on the IAF article), Navy (~74,000), armour/artillery/air-defence crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. India has no conscription and the binding constraint is equipment and training cadres; 2% is still ~29 million people. WWII British India raised ~2.5 million volunteers from ~390 million (0.6%)."
+    },
+    "mobilizable": {
+      "low": 14638655,
+      "mid": 29277310,
+      "high": 58554621,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 1,463,865,525 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 280000,
+          "mid": 350000,
+          "high": 420000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. About 380 regular infantry battalions (~900 men) plus mechanised infantry; Army ~1.24 million (Indian Army article). (context page: https://en.wikipedia.org/wiki/Indian_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: era-typical small arms, F-INSAS modernisation incomplete."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer long-service infantry, extensive LoC/LAC and counter-insurgency experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 100000,
+          "mid": 150000,
+          "high": 200000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Rashtriya Rifles (65 battalions), Parachute/SF, mountain-role brigades on the LAC. Assam Rifles and CAPF (paramilitary) excluded. (context page: https://en.wikipedia.org/wiki/Indian_Army)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Rashtriya Rifles, para/SF and mountain-trained units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 3700,
+          "mid": 3850,
+          "high": 3900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army",
+          "note": "Equipment list (IISS Military Balance 2024 as quoted for T-72): T-72M1/Ajeya 2,418 + T-90S 1,300 + T-90 Mk3 10 + Arjun Mk1 124 + Mk1A 2 = 3,854. Zorawar light tanks on order excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: T-72M1 (2,418) dominates; T-90S modern, Arjun few."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2500,
+          "mid": 2650,
+          "high": 4500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army",
+          "note": "BMP-2/2K 2,400 (IISS 2023 as quoted) + Kestrel 15 + Kalyani M4 126 + QRFV 36 + Casspir 200 = ~2,780 tracked/protected; mid ~2,650 excludes types in limited use. High adds OFB Aditya 1,600 mine-protected vehicles."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 3800,
+          "mid": 4160,
+          "high": 4500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army",
+          "note": "Equipment list: SP K9 Vajra 100; towed M777 145, Dhanush 36+, FH77B ~300, D-30 520 (IISS 2024 as quoted), M-46 Soltam 180, Sharang 159, 105 mm IFG 2,400; MLRS Grad/Agnibaan 150, Pinaka 126+, Smerch 42 = ~4,160. Mortars and static tank-turret guns excluded."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 420,
+          "mid": 459,
+          "high": 500,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft",
+          "note": "List of active Indian military aircraft (IISS 2024 as quoted for several types): Su-30MKI 258, MiG-29 59, Rafale 36, Mirage 2000 36, Tejas Mk1 30, naval MiG-29K/KUB 40 = 459. MiG-21 retired 2025."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Su-30MKI, Rafale with Meteor; no 5th-generation type."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: combat experience 2019 and May 2025."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 80,
+          "mid": 86,
+          "high": 120,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft",
+          "note": "SEPECAT Jaguar IS/IM 86 (IISS 2024 as quoted). High allows for Su-30MKI squadrons tasked with BrahMos strike."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Jaguar airframes from the 1980s, upgraded."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 900,
+          "mid": 974,
+          "high": 1050,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft",
+          "note": "Sum of list: IAF 495 (Mi-17 222, Dhruv 95, Chetak/Cheetah 115, Apache 22, Prachand 10, Rudra 16, Mi-35 15), Army Aviation 338, Navy 141 (MH-60R 22, Sea King 25, Ka-28/31 28, Dhruv/Chetak 66)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 45,
+          "mid": 60,
+          "high": 120,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft",
+          "note": "Group 2+: IAF Heron 9 + Searcher (few); Army Nishant 13, Heron 4, Searcher 12, Hermes 900 1; Navy Heron 10, SeaGuardian 2, Hermes 900 1 = ~55-60. Army swarm/small drones (Switch 200, Beluga) excluded as Group 1. MQ-9B (31) on order."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 31,
+          "mid": 32,
+          "high": 33,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Indian_Navy",
+          "note": "Indian Navy article (as of 2025): carriers 2 (Vikramaditya, Vikrant) + destroyers 13 + frigates 17 = 32."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 40,
+          "mid": 64,
+          "high": 140,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Indian_Navy",
+          "note": "Corvettes 18 + OPV 10 + LPD 1 + LST 4 + MCM 1 = 34 (low ~40 with fast attack craft); mid adds ~30 larger patrol vessels; infobox total of 115 patrol vessels (many small) is the high."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 19,
+          "mid": 20,
+          "high": 21,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Indian_Navy",
+          "note": "Indian Navy article (2025): 17 conventional + 2-3 nuclear (Arihant-class SSBN; infobox and body disagree)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mix of modern (T-90S, Su-30MKI, Rafale) and ageing Soviet-era kit."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: long-service volunteers, large counter-insurgency experience, combat in May 2025 (Operation Sindoor)."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 100,
+          "mid": 150,
+          "high": 220,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Launchers: Strategic Forces Command Agni-I to -V and Prithvi-II (roughly 100 launchers by the usual FAS-notebook breakdown, not fetched) plus Army BrahMos regiments (~4-6 launchers each) and Pralay on order. (context page: https://en.wikipedia.org/wiki/Strategic_Forces_Command)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Agni-V MIRV-capable, BrahMos supersonic cruise missile used in May 2025."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 180,
+          "mid": 250,
+          "high": 350,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Batteries: Army MR-SAM 5 regiments + Akash 2 regiments (48 launchers) + QRSAM 5-6 regiments (~50 batteries), Osa 80 + Kub 180 + Strela-10 200 launchers (/~5 ~90), Tunguska/Shilka 155 (/~4 ~40) per equipment list; IAF S-400 (3+ squadrons), Akash, MR-SAM, S-125 (25 squadrons) ~80-100. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: S-400, MR-SAM, Akash; credited with intercepts in May 2025."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: trained staff system and recent joint operations (Balakot 2019, Operation Sindoor May 2025), but theatre commands still not created and procurement slow."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: long-service volunteer regiments with strong regimental identity."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: motivated, recent claimed success against Pakistan (May 2025); home defence on two contested borders."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.95,
+      "mid": 9.2,
+      "high": 9.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: BrahMos, Agni-V, precision munitions (SCALP, Hammer), large but older artillery park."
+    },
+    "armor": {
+      "low": 8.55,
+      "mid": 8.8,
+      "high": 9.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 composite armour (T-90S, Arjun) with many T-72M1 (anchor 8-9)."
+    },
+    "ships": {
+      "low": 8.95,
+      "mid": 9.2,
+      "high": 9.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: two carriers, Kolkata/Visakhapatnam destroyers, SSBNs; no SSN in service."
+    },
+    "fortification": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: hardened shelters, layered air defence (S-400, MR-SAM) around key bases; LAC infrastructure building."
+    },
+    "logistics": {
+      "low": 8.55,
+      "mid": 8.8,
+      "high": 9.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: rail-centred, limited strategic airlift (C-17 11, Il-76 17)."
+    },
+    "communications": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: GSAT-7/7A military satellites, data links; network-centric integration incomplete."
+    },
+    "isr": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: RISAT/Cartosat satellites, Netra AEW&C, P-8I; MALE fleet small."
+    },
+    "air": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 (4.5 generation Rafale, Su-30MKI); no 5th-generation aircraft (AMCA in development)."
+    },
+    "cyber": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Defence Cyber Agency (2019), state-linked operations reported."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 6831,
+      "mid": 8036,
+      "high": 9242,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 11,764,027,749,252 / population 1,463,865,525 = 8,036. Range +/-15%."
+    },
+    "gdp": {
+      "low": 9999423586864,
+      "mid": 11764027749252,
+      "high": 13528631911640,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 14,695,849,780,452 x 0.8005 (US GDP deflator 2011/2021) = 11,764,027,749,252 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.023,
+      "high": 0.025,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.30% of GDP in 2025. Factbook: 2.0% (2024), 2.3% (2023). High allows for post-May-2025 supplementary procurement."
+    },
+    "industrialShare": {
+      "low": 0.232,
+      "mid": 0.252,
+      "high": 0.272,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 25.2% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food exporter (rice, wheat, sugar) with large buffer stocks; per-capita intake still low."
+    },
+    "annualCohort": {
+      "low": 11946573,
+      "mid": 13273970,
+      "high": 14601367,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 754,775,449 x share of males aged 15-19 8.793% (SP.POP.1519.MA.5Y) / 5 = 13,273,970. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 60,
+        "mid": 120,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Heavy Vehicles Factory Avadi (T-90, Arjun). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army)"
+      },
+      "ifv_apc": {
+        "low": 150,
+        "mid": 300,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. OFB Medak BMP-2, Tata/Kalyani wheeled vehicles. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army)"
+      },
+      "artillery": {
+        "low": 100,
+        "mid": 200,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Dhanush, ATAGS, K9 Vajra (L&T), Pinaka. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army)"
+      },
+      "aircraft_fighter": {
+        "low": 15,
+        "mid": 25,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. HAL Su-30MKI and Tejas lines (Tejas Mk1A target ~16-24/yr). (context page: https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft)"
+      },
+      "helicopters": {
+        "low": 20,
+        "mid": 40,
+        "high": 70,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. HAL Dhruv/Prachand/LUH. (context page: https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft)"
+      },
+      "drones": {
+        "low": 50,
+        "mid": 200,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Group 2+ UAVs; growing private drone industry. (context page: https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft)"
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 4,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Mazagon, GRSE, Cochin yards. (context page: https://en.wikipedia.org/wiki/Indian_Navy)"
+      },
+      "ships_minor": {
+        "low": 6,
+        "mid": 10,
+        "high": 18,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/Indian_Navy)"
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Mazagon (Scorpene), SBC Visakhapatnam (SSBN). (context page: https://en.wikipedia.org/wiki/Indian_Navy)"
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Launchers per year. (context page: https://en.wikipedia.org/wiki/Strategic_Forces_Command)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 4500000,
+      "mid": 4500000,
+      "high": 6700000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2025: 6,700,000 km total, 4,500,000 km paved (mid), 6,900 km expressway (list as quoted)."
+    },
+    "railKm": {
+      "low": 65554,
+      "mid": 68103,
+      "high": 69000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IND/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 68,103 route-km (World Bank). CIA Factbook 65,554 km (2014) as low. Broad gauge 1,676 mm dominant."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 8,
+      "high": 13,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/in.json",
+      "note": "CIA Factbook 2024: 56 ports, 4 large + 4 medium = 8; key ports Kolkata, Chennai, JNPT, Kattupalli, Kochi, Mumbai, New Mangalore, Visakhapatnam. High adds Paradip, Kandla, Tuticorin, Mundra-class ports the classification understates."
+    },
+    "merchantTonnage": {
+      "low": 16218900,
+      "mid": 18021000,
+      "high": 19823100,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 18,021 thousand DWT under the national flag. Range +/-10%. 1,859 ships (Factbook 2023)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rail-based mechanised logistics on the western front; high-altitude LAC supply is road/air limited."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules, ponies, donkeys (not from FAO data); Army still keeps mule/pony units for mountain logistics."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 180,
+      "mid": 190,
+      "high": 200,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: military stockpile 190 (178 reserve/non-deployed as tabulated). Range +/-10."
+    },
+    "basesAbroad": [
+      {
+        "name": "Agalega Island airstrip and jetty (Mauritius, Indian-built)",
+        "lat": -10.43,
+        "lon": 56.65,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Siliguri Corridor",
+      "Line of Control (Kashmir)",
+      "Line of Actual Control passes (Ladakh, Arunachal)",
+      "Strait of Malacca approaches (Andaman Sea)",
+      "Palk Strait"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: fortified cities, population support; 1.3 for high-altitude Himalayan fronts (harsh climate, altitude)."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population convention: everything inside ne:IND (World Bank), i.e. India-administered Kashmir included, Pakistan/China-administered parts excluded. Money in 2011 int$ via derived:ppp-rebase-2011. Equipment counts from Wikipedia equipment/aircraft lists that quote IISS Military Balance 2023-2024 for many lines; others are national or press figures (grade C). India fought a short air/missile conflict with Pakistan in May 2025 (Operation Sindoor); losses are disputed and not modelled. ships_major = carriers + destroyers + frigates; ships_minor = corvettes, OPV, amphibious, MCM, large patrol; drones = Group 2+ only. Infantry P-role splits, missiles and air_defense batteries are educated guesses (grade D). Paramilitary (CAPF, Assam Rifles, Coast Guard; IISS 2,532,050) excluded. Cross-check: Global Firepower ranks India 4th (not used as a source)."
+}

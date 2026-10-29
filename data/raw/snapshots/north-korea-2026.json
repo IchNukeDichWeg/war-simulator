@@ -1,0 +1,817 @@
+{
+  "id": "north-korea-2026",
+  "nationId": "north-korea",
+  "includes": [],
+  "name": "Democratic People's Republic of Korea",
+  "year": 2026,
+  "era": "modern",
+  "region": "east_asia",
+  "phase": "current",
+  "tags": [
+    "nuclear power",
+    "garrison state",
+    "conscription (10 years)",
+    "Russia-aligned",
+    "sanctioned",
+    "one-party state"
+  ],
+  "capital": {
+    "name": "Pyongyang",
+    "lat": 39.0392,
+    "lon": 125.7625,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Hamhung",
+      "lat": 39.9183,
+      "lon": 127.5364,
+      "kind": "city"
+    },
+    {
+      "name": "Chongjin",
+      "lat": 41.7956,
+      "lon": 129.7758,
+      "kind": "port"
+    },
+    {
+      "name": "Nampo",
+      "lat": 38.7375,
+      "lon": 125.4078,
+      "kind": "port"
+    },
+    {
+      "name": "Wonsan",
+      "lat": 39.1528,
+      "lon": 127.4436,
+      "kind": "port"
+    },
+    {
+      "name": "Sinuiju (Yalu bridge to China)",
+      "lat": 40.1006,
+      "lon": 124.3981,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Kaesong",
+      "lat": 37.9708,
+      "lon": 126.5544,
+      "kind": "city"
+    },
+    {
+      "name": "Sinpo (submarine base)",
+      "lat": 40.03,
+      "lon": 128.18,
+      "kind": "port"
+    },
+    {
+      "name": "Yongbyon nuclear complex",
+      "lat": 39.797,
+      "lon": 125.755,
+      "kind": "fortress"
+    },
+    {
+      "name": "Rason (Najin)",
+      "lat": 42.25,
+      "lon": 130.3,
+      "kind": "port"
+    },
+    {
+      "name": "DMZ / Panmunjom",
+      "lat": 37.956,
+      "lon": 126.677,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:PRK",
+    "areaKm2": {
+      "low": 120410,
+      "mid": 120410,
+      "high": 124022,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRK/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 120,410 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 26491323,
+      "mid": 26571036,
+      "high": 26703891,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRK/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 26,571,036 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.6319,
+      "mid": 0.6419,
+      "high": 0.6519,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRK/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 64.19% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1200000,
+      "mid": 1280000,
+      "high": 1300000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.277 as quoted: 1,280,000 active. CIA Factbook 2025: up to 1.3 million. World Bank 1,469,000 (2020) includes paramilitary. ~11,000-15,000 troops deployed to Russia (Kursk) 2024-25 are counted."
+    },
+    "trainedReserves": {
+      "low": 600000,
+      "mid": 600000,
+      "high": 1500000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 600,000 reserves. High is an educated allowance for the better-trained part of the Worker-Peasant Red Guards (5.7 million, paramilitary) and Reserve Military Training Units (ROK MND: 7.62 million reserves of all kinds)."
+    },
+    "supportPersonnel": {
+      "low": 567000,
+      "mid": 630000,
+      "high": 630000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 1,280,000 minus infantry P roles 650,000 = 630,000. Navy (~60,000 per US DoD 2014), Air and Anti-Air Force, Strategic Force, artillery and armour crews, construction/logistics units."
+    },
+    "mobilizationRatio": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Total-war garrison state: 1.28 million active (4.8% of population) plus militias claimed at ~7.6 million; 20% (~5.3 million) is a sustained full mobilisation comparable to WWII peaks."
+    },
+    "mobilizable": {
+      "low": 3985655,
+      "mid": 5314207,
+      "high": 6642759,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 26,571,036 x ratio 0.15 / 0.2 / 0.25."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 400000,
+          "mid": 450000,
+          "high": 550000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ground force ~1.1 million (ROK/US estimates as quoted); ~80 infantry divisions/brigades plus mechanised corps. (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Army_Ground_Force)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: older small arms; some modern kit seen in Russia."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: very long conscription, drill-heavy, limited live-fire."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 150000,
+          "mid": 200000,
+          "high": 250000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Special operations forces and light infantry brigades (often cited ~200,000). Worker-Peasant Red Guards (5.7 million) excluded. (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Army)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: ~200,000 special operations/light infantry, intensively trained."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 3500,
+          "mid": 4300,
+          "high": 4860,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Ground_Force",
+          "note": "ROK Ministry of National Defense 2018 report as quoted: 4,300 tanks (US DoD 2014: 4,200). Low ~3,500 MBT (T-54/55, Type 59, T-62, Chonma-ho, Pokpung-ho per IISS-cited list); high adds 560 PT-76/M1985 light tanks."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: T-55/T-62/Chonma-ho; few Pokpung-ho/Chonma-20."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2100,
+          "mid": 2500,
+          "high": 2600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Ground_Force",
+          "note": "ROK MND 2018: 2,500 armoured vehicles; US DoD 2014: 2,200; KPA article: 2,100."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 13000,
+          "mid": 14100,
+          "high": 14300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Ground_Force",
+          "note": "ROK MND 2018: 8,600 artillery pieces + 5,500 multiple rocket launchers = 14,100. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: huge, mostly old tube and rocket artillery; 240 mm/300 mm/600 mm MRLs newer."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 250,
+          "mid": 294,
+          "high": 330,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Air_Force",
+          "note": "KPAF inventory table: MiG-21 26 + MiG-29 35 + F-5 (MiG-17) 106 + J-6 97 + J-7 30 = 294; many not airworthy."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: MiG-17/19/21 copies, 35 MiG-29."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: very few flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 130,
+          "mid": 170,
+          "high": 180,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Air_Force",
+          "note": "MiG-23 56 + Su-25 34 + Il-28/H-5 80 = 170 (KPA article: 180 bombers)."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: Il-28/H-5, Su-25, MiG-23."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 150,
+          "mid": 205,
+          "high": 290,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Army_Air_Force",
+          "note": "KPAF table: Mi-2 48, Mi-8/17 41, Mi-14 8, Mi-24 20, Mi-26 4, MD 500 84 = 205; ~290 in ROK MND reports (high); KPAF article 2024: ~200."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 50,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Saetbyol-4/-9 (Global Hawk/Reaper look-alikes unveiled 2023) and older types; Russian assistance reported. Small and one-way drones excluded. (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Army_Air_Force)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 5,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Navy",
+          "note": "Najin-class frigates 2 + Choe Hyon-class destroyers (Choe Hyon commissioned 2025; Kang Kon relaunched after its May 2025 launch accident) = ~4."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 300,
+          "mid": 380,
+          "high": 430,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Navy",
+          "note": "ROK MND 2018: 430 combat ships, mostly small patrol/missile/torpedo boats (US DoD 2014: 420 gunboats); ~43 missile boats, Amnok corvette. Mid discounts unserviceable hulls. 250 landing craft and 20 minelayers excluded."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 64,
+          "mid": 70,
+          "high": 73,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Korean_People%27s_Navy",
+          "note": "ROK MND 2018 and US DoD 2014: 70 submarines (incl. ~20 Romeo, Sang-O and Yono midgets, one Sinpo SSB, 'Hero Kim Kun Ok' SSB launched 2023)."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: Romeo/Sang-O/Yono; one SSB."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 200,
+          "mid": 300,
+          "high": 500,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "US DoD 2012 (KPA article): fewer than 200 missile launchers; Hwasong-11 family TELs delivered 2024 (250 per the equipment list, IISS 2024 as quoted), plus ICBM TELs (Hwasong-17/18/19) and 600 mm KN-25 launchers. Composite, launchers not missiles."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: solid-fuel ICBMs (Hwasong-18/19), hypersonic IRBM, KN-23/24 used by Russia in Ukraine."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: frequent test launches."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 120,
+          "mid": 200,
+          "high": 300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Batteries: dense IADS of SA-2/3/5 sites, KN-06 (Pongae-5), mobile SAMs and ~11,000 AA guns (KPA article). (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: mostly 1950s-1980s Soviet/Chinese designs, fuel and spare-part shortages."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 10-year conscripts, little live-fire training (fuel shortages); some combat experience from troops sent to Russia (Kursk 2024-25)."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: rigid, politicised command; some modern combat experience gained in Russia 2024-25."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: indoctrinated long-service conscripts, harsh discipline."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.7,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: regime-driven fanatical home defence; hunger and desertion lower it in a long war."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.15,
+      "mid": 8.4,
+      "high": 8.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9 mix: ICBMs/hypersonic IRBM and KN-23 are anchor-10-class; bulk of guns and small arms anchor 8."
+    },
+    "armor": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55/T-62 derivatives; few Chonma-20 with modern features."
+    },
+    "ships": {
+      "low": 7.35,
+      "mid": 7.6,
+      "high": 7.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: small craft, Romeo submarines; new Choe Hyon destroyers anchor 9."
+    },
+    "fortification": {
+      "low": 8.75,
+      "mid": 9.0,
+      "high": 9.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: massive hardened artillery sites (HARTS), tunnels, underground air bases."
+    },
+    "logistics": {
+      "low": 7.15,
+      "mid": 7.4,
+      "high": 7.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: rail-dependent, chronic fuel shortage."
+    },
+    "communications": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: wire/radio, limited data links."
+    },
+    "isr": {
+      "low": 7.35,
+      "mid": 7.6,
+      "high": 7.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 plus: first reconnaissance satellite (Malligyong-1, 2023), few drones."
+    },
+    "air": {
+      "low": 7.15,
+      "mid": 7.4,
+      "high": 7.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: MiG-17/19/21 copies; MiG-29 anchor 9."
+    },
+    "cyber": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Lazarus/Reconnaissance General Bureau - among the most active state cyber forces."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 600,
+      "mid": 1300,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No World Bank GDP. CIA Factbook 2023: real GDP $15.4 billion and $600 per capita in 2015 dollars (market-exchange-rate-like; used as low). Bank of Korea estimates (not fetched) imply ~$1,200-1,400 nominal per capita; PPP 2011 int$ higher. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/kn.json)"
+    },
+    "gdp": {
+      "low": 15942621600,
+      "mid": 34542346800,
+      "high": 53142072000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "Population 26,571,036 x GDP per capita 600 / 1,300 / 2,000 (educated guess)."
+    },
+    "milSpendShare": {
+      "low": 0.15,
+      "mid": 0.22,
+      "high": 0.3,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/kn.json",
+      "note": "CIA Factbook: military expenditures estimated at 20-30% of GDP annually 2010-2020; 2024 state budget ~16% on defence. Mid is an educated point."
+    },
+    "industrialShare": {
+      "low": 0.3,
+      "mid": 0.36,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No World Bank data; Bank of Korea sectoral estimates (not fetched) put mining, manufacturing and construction at roughly a third of output. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/kn.json)"
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.02,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Floored at 0 (field cannot be negative): chronic food deficit (FAO/WFP gap of ~1 million tonnes in many years); no surplus."
+    },
+    "annualCohort": {
+      "low": 150036,
+      "mid": 166707,
+      "high": 183377,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PRK/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 13,154,539 x share of males aged 15-19 6.336% (SP.POP.1519.MA.5Y) / 5 = 166,707. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 20,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Ryu Kyong-su tank factory (Chonma-20). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Korean_People%27s_Army_Ground_Force)"
+      },
+      "ifv_apc": {
+        "low": 30,
+        "mid": 80,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Korean_People%27s_Army_Ground_Force)"
+      },
+      "artillery": {
+        "low": 200,
+        "mid": 500,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Large gun/MRL and shell output (shells exported to Russia). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Korean_People%27s_Army_Ground_Force)"
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 50,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. TELs per year; Hwasong-11 launchers 250 delivered in 2024. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Korean_People%27s_Army_Ground_Force)"
+      },
+      "ships_minor": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Navy)"
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Sinpo yard. (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Navy)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Choe Hyon-class at Nampo/Chongjin. (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Navy)"
+      },
+      "drones": {
+        "low": 50,
+        "mid": 200,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Group 2+ incl. Russian-assisted lines (reported). (context page: https://en.wikipedia.org/wiki/Korean_People%27s_Army_Air_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 724,
+      "mid": 724,
+      "high": 25554,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2006: 25,554 km total, only 724 km paved (mid). Engineered unpaved military roads make the high relevant."
+    },
+    "railKm": {
+      "low": 5214,
+      "mid": 5214,
+      "high": 7435,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PRK/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 1999: 5,214 route-km (World Bank). World Bank value from 1999; CIA Factbook 7,435 km (2014, ~5,400 electrified) as high. Rail is the backbone of military logistics."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 7,
+      "high": 10,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/kn.json",
+      "note": "CIA Factbook 2024: 10 ports, none large or medium, 7 small (Chongjin, Haeju, Hungnam, Najin, Nampo, Sonbong, Wonsan) = mid."
+    },
+    "merchantTonnage": {
+      "low": 300000,
+      "mid": 800000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Below the merchant-capacity list threshold; Factbook 2023: 264 ships, mostly general cargo; sanctions evasion uses foreign flags. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/kn.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rail-dependent, fuel-short logistics; planned to sustain offensive operations only ~100 km into South Korea."
+    },
+    "draftAnimals": {
+      "low": 30000,
+      "mid": 60000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen and horses used in agriculture (not from FAO data); KPA has some pack units."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 50,
+      "mid": 60,
+      "high": 90,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: ~60 assembled warheads (stockpile); fissile material may suffice for up to ~90 (high)."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "Dwa",
+    "chokepoints": [
+      "DMZ invasion corridors (Kaesong-Munsan, Cheorwon, Chuncheon)",
+      "Yalu and Tumen river crossings",
+      "Pyongyang-Wonsan waist",
+      "Northern Limit Line (Yellow Sea)"
+    ],
+    "homeDefense": {
+      "low": 1.3,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: mountainous, extensively tunnelled and fortified, harsh winters, total regime-enforced population mobilisation."
+    }
+  },
+  "notes": "Modern snapshot asOf 2025-26. All figures for the DPRK are estimates: personnel from IISS 2026, equipment from ROK MND 2018 and US DoD 2014 reports as quoted on Wikipedia, air force types from the KPAF article's inventory table (grade C). GDP: no World Bank data; educated range (grade D). Population: World Bank 2025 (UN-based). Doctrine archetype-coldwar-soviet: Soviet-model mass army with huge artillery park. ~11,000-15,000 KPA troops fought for Russia in Kursk 2024-25 and North Korean shells and KN-23/24 missiles are used in Ukraine. Worker-Peasant Red Guards and other paramilitary (IISS 5,889,000) excluded."
+}

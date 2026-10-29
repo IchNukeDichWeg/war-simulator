@@ -1,0 +1,848 @@
+{
+  "id": "japan-2026",
+  "nationId": "japan",
+  "includes": [],
+  "name": "Japan",
+  "year": 2026,
+  "era": "modern",
+  "region": "east_asia",
+  "phase": "current",
+  "tags": [
+    "US ally",
+    "island state",
+    "Self-Defense Forces",
+    "Aegis BMD",
+    "high-tech",
+    "volunteer force",
+    "Quad"
+  ],
+  "capital": {
+    "name": "Tokyo",
+    "lat": 35.6762,
+    "lon": 139.6503,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Osaka",
+      "lat": 34.6937,
+      "lon": 135.5023,
+      "kind": "city"
+    },
+    {
+      "name": "Nagoya",
+      "lat": 35.1815,
+      "lon": 136.9066,
+      "kind": "city"
+    },
+    {
+      "name": "Yokosuka (MSDF/US 7th Fleet)",
+      "lat": 35.2834,
+      "lon": 139.6672,
+      "kind": "port"
+    },
+    {
+      "name": "Sasebo",
+      "lat": 33.1599,
+      "lon": 129.7228,
+      "kind": "port"
+    },
+    {
+      "name": "Kure",
+      "lat": 34.2492,
+      "lon": 132.5658,
+      "kind": "port"
+    },
+    {
+      "name": "Maizuru",
+      "lat": 35.4744,
+      "lon": 135.3858,
+      "kind": "port"
+    },
+    {
+      "name": "Naha (Okinawa)",
+      "lat": 26.2124,
+      "lon": 127.6809,
+      "kind": "fortress"
+    },
+    {
+      "name": "Yonaguni",
+      "lat": 24.4675,
+      "lon": 123.004,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sapporo (Hokkaido)",
+      "lat": 43.0618,
+      "lon": 141.3545,
+      "kind": "city"
+    },
+    {
+      "name": "Tsushima Strait",
+      "lat": 34.4,
+      "lon": 129.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Miyako Strait",
+      "lat": 24.9,
+      "lon": 125.8,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:JPN",
+    "areaKm2": {
+      "low": 364500,
+      "mid": 364500,
+      "high": 375435,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 364,500 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 122749900,
+      "mid": 123366734,
+      "high": 124600401,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 123,366,734 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.913,
+      "mid": 0.923,
+      "high": 0.933,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 92.30% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 230000,
+      "mid": 247150,
+      "high": 250000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.272 as quoted: 247,150 active. CIA Factbook 2025 230-240,000. Japan Coast Guard (14,800 paramilitary per IISS) excluded."
+    },
+    "trainedReserves": {
+      "low": 47900,
+      "mid": 55900,
+      "high": 55900,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 55,900 reserves (Ready Reserve and Reserve Personnel); low allows for the chronic Ready Reserve shortfall (educated)."
+    },
+    "supportPersonnel": {
+      "low": 180135,
+      "mid": 200150,
+      "high": 200150,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 247,150 minus infantry P roles 47,000 = 200,150. Maritime SDF (~45,000), Air SDF (~47,000), GSDF artillery, armour, air-defence and logistics personnel, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No conscription since 1945; constitutional and demographic limits (median age ~49); 1% is ~1.2 million."
+    },
+    "mobilizable": {
+      "low": 616834,
+      "mid": 1233667,
+      "high": 3701002,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 123,366,734 x ratio 0.005 / 0.01 / 0.03."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 38000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. GSDF ~150,000 in 9 divisions/6 brigades; infantry regiments ~800-1,000 each. (context page: https://en.wikipedia.org/wiki/Japan_Ground_Self-Defense_Force)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: modern small arms, Type 16 MCV support."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: professional but no combat experience; recruitment shortfalls."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 6000,
+          "mid": 9000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 1st Airborne Brigade, Amphibious Rapid Deployment Brigade, Special Forces Group. (context page: https://en.wikipedia.org/wiki/Japan_Ground_Self-Defense_Force)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: 1st Airborne Brigade, Amphibious Rapid Deployment Brigade."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 300,
+          "mid": 420,
+          "high": 480,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force",
+          "note": "Equipment list: Type 10 139 (ordered as of 2025) + Type 90 340 built = 479 (high); Type 90 being withdrawn toward the 2022 NDS ceiling of ~300 tanks (low). Type 16 MCV (255) excluded as wheeled assault guns."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Type 10 and Type 90 with modern FCS."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 900,
+          "mid": 1180,
+          "high": 3000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force",
+          "note": "Type 89 IFV 70 + Type 87 RCV 111 + AAV-7 46 + Type 96 381 + Type 73 338 + Type 82 231 = ~1,180. High adds Komatsu LAV 1,818 armoured cars."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 450,
+          "mid": 600,
+          "high": 770,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force",
+          "note": "Type 99 SPH 135 + Type 19 58 + M270 99 + FH-70 (480 built, being retired; ~200-480) = ~600 mid. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 230,
+          "mid": 246,
+          "high": 260,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force",
+          "note": "JASDF inventory table: F-15J 155 + F-15DJ 44 + F-35A/B 47 = 246."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: F-35A, upgraded F-15J."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: high flying hours, constant intercepts."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 80,
+          "mid": 85,
+          "high": 85,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force",
+          "note": "F-2A 62 + F-2B 23 = 85 (anti-ship/strike role)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 450,
+          "mid": 515,
+          "high": 560,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force",
+          "note": "GSDF ~365 (AH-1S 71, AH-64D 12, OH-1 36, UH-1J 126, UH-60JA 39, CH-47J/JA 66, EC225 3) + JASDF 78 (UH-60J 61, CH-47J 17) + MSDF ~70-90 SH/UH-60 (educated)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 15,
+          "mid": 30,
+          "high": 50,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. RQ-4B 1 (+2), MQ-9B SeaGuardian (Coast Guard/MSDF leased), ScanEagle; small types excluded. (context page: https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 52,
+          "mid": 54,
+          "high": 54,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships",
+          "note": "Active list: Izumo 2 + Hyuga 2 + DDG 8 (Kongo 4, Atago 2, Maya 2) + DD 26 + FFM Mogami 10 + DE Abukuma 6 = 54."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Aegis destroyers (Kongo/Atago/Maya), Izumo-class F-35B carriers, Mogami FFM."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: high-tempo, alliance-integrated fleet."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 24,
+          "mid": 27,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships",
+          "note": "MCM 18 + Hayabusa patrol 6 + Osumi LST 3 = 27. Landing craft and training ships excluded."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 21,
+          "mid": 21,
+          "high": 23,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships",
+          "note": "Taigei 5 + Soryu 10 + Oyashio 6 = 21; high adds 2 training boats."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 class: Taigei with lithium-ion batteries, Soryu."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 60,
+          "mid": 90,
+          "high": 120,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Coastal Type 12/Type 88 anti-ship missile launchers (GSDF surface-to-ship regiments); upgraded Type 12 standoff missile entering service 2025-26. Ship-launched Tomahawk excluded. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 70,
+          "mid": 100,
+          "high": 130,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force",
+          "note": "Educated estimate in batteries: JASDF 24 air-defence missile squadrons (Patriot PAC-2/3, JASDF article) + GSDF Type 03 Chu-SAM (~25 fire units) + Type 81/93/11 short-range launchers 196 (/~4 ~50) per the GSDF equipment list."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: modern domestic and US equipment."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: all-volunteer professional force with intensive training, no combat experience."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: trained staff system, Joint Operations Command (2025), tight US integration; no war experience since 1945."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: professional volunteer force with strong unit identity."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: average peacetime morale; strong for defence of the home islands, weaker for remote missions."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: precision munitions, Type 12 upgraded standoff missiles, Tomahawk acquisition, SM-3/SM-6."
+    },
+    "armor": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Type 10 with modular armour and C4I."
+    },
+    "ships": {
+      "low": 9.45,
+      "mid": 9.7,
+      "high": 9.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Aegis/BMD fleet, Taigei lithium-ion submarines, F-35B-capable Izumo."
+    },
+    "fortification": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: layered BMD (SM-3, PAC-3), hardened southwest-island bases being built."
+    },
+    "logistics": {
+      "low": 8.95,
+      "mid": 9.2,
+      "high": 9.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: C-2, KC-46, sealift; dependent on ports and civilian RO-RO."
+    },
+    "communications": {
+      "low": 9.35,
+      "mid": 9.6,
+      "high": 9.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: X-band DSN satellites, data links with US forces."
+    },
+    "isr": {
+      "low": 9.25,
+      "mid": 9.5,
+      "high": 9.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: IGS reconnaissance satellites, E-2D/E-767, P-1, Global Hawk."
+    },
+    "air": {
+      "low": 9.45,
+      "mid": 9.7,
+      "high": 9.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: 5th-generation F-35A/B (47), F-15J upgrades."
+    },
+    "cyber": {
+      "low": 9.15,
+      "mid": 9.4,
+      "high": 9.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 minus: Cyber Defense Command (2022), active cyber defence law 2025."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 32853,
+      "mid": 38651,
+      "high": 44448,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 4,768,227,848,174 / population 123,366,734 = 38,651. Range +/-15%."
+    },
+    "gdp": {
+      "low": 4052993670948,
+      "mid": 4768227848174,
+      "high": 5483462025401,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 5,956,561,958,994 x 0.8005 (US GDP deflator 2011/2021) = 4,768,227,848,174 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/JPN/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.012,
+      "mid": 0.0141,
+      "high": 0.018,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.41% of GDP in 2025. Factbook: 1.4% (2024), 1% (2021). High allows for the 2% (incl. related spending) target for FY2027."
+    },
+    "industrialShare": {
+      "low": 0.2478,
+      "mid": 0.2678,
+      "high": 0.2878,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2024: industry incl. construction 26.8% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Food self-sufficiency ~38% on a calorie basis; no surplus, heavily import-dependent."
+    },
+    "annualCohort": {
+      "low": 524221,
+      "mid": 582468,
+      "high": 640715,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 60,151,475 x share of males aged 15-19 4.842% (SP.POP.1519.MA.5Y) / 5 = 582,468. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 5,
+        "mid": 15,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. MHI Type 10 low-rate line. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+      },
+      "ifv_apc": {
+        "low": 20,
+        "mid": 50,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Komatsu exit; Patria AMV licence production (Japan Steel Works). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+      },
+      "artillery": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Type 19 SPH. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+      },
+      "aircraft_fighter": {
+        "low": 5,
+        "mid": 15,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. F-35A FACO (MHI Nagoya). (context page: https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force)"
+      },
+      "helicopters": {
+        "low": 15,
+        "mid": 25,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Subaru UH-2, Kawasaki CH-47. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 4,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. MHI, JMU shipyards: FFM 2/yr, ASEV. (context page: https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships)"
+      },
+      "ships_minor": {
+        "low": 2,
+        "mid": 4,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships)"
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. One Taigei per year (MHI/KHI). (context page: https://en.wikipedia.org/wiki/List_of_active_Japan_Maritime_Self-Defense_Force_ships)"
+      },
+      "missiles": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Type 12 launchers per year. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Japan_Ground_Self-Defense_Force)"
+      },
+      "drones": {
+        "low": 10,
+        "mid": 50,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess.  (context page: https://en.wikipedia.org/wiki/Japan_Air_Self-Defense_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 992835,
+      "mid": 992835,
+      "high": 1218772,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2021: 1,218,772 km total, 992,835 km paved (mid), 30,469 km 4-lane+ (MLIT as quoted)."
+    },
+    "railKm": {
+      "low": 20087,
+      "mid": 20087,
+      "high": 27311,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/JPN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2011: 20,087 route-km (World Bank). World Bank value is from 2011 (JR network); CIA Factbook 27,311 km (2015, incl. private lines) as high."
+    },
+    "majorPorts": {
+      "low": 37,
+      "mid": 37,
+      "high": 60,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/ja.json",
+      "note": "CIA Factbook 2024: 163 ports, 11 large + 26 medium = 37."
+    },
+    "merchantTonnage": {
+      "low": 39445200,
+      "mid": 43828000,
+      "high": 48210800,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 43,828 thousand DWT under the national flag. Range +/-10%. Japanese-owned fleet is far larger under flags of convenience (Panama)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Home-island defence with sea-lift to the southwest islands; little overseas sustainment experience."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 10000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses (racing/agriculture), militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Japan is not one of them."
+    },
+    "basesAbroad": [
+      {
+        "name": "JSDF Base Djibouti",
+        "lat": 11.55,
+        "lon": 43.15,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Tsushima (Korea) Strait",
+      "Tsugaru Strait",
+      "Soya (La Perouse) Strait",
+      "Miyako Strait",
+      "Yonaguni-Taiwan gap"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: island geography, fortified bases and full population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside ne:JPN (World Bank 2025). Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Wikipedia JGSDF equipment list, JMSDF active-ship list and JASDF inventory table (grade B/C); the Japanese MoD Defense of Japan white paper was not fetched. ships_major includes the Izumo/Hyuga helicopter/F-35B carriers. US Forces Japan (~55,000) not included. Infantry splits, missile launchers and air-defence batteries are educated estimates. Japan Coast Guard excluded."
+}

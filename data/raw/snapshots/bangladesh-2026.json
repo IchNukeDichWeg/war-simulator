@@ -1,0 +1,730 @@
+{
+  "id": "bangladesh-2026",
+  "nationId": "bangladesh",
+  "includes": [],
+  "name": "People's Republic of Bangladesh",
+  "year": 2026,
+  "era": "modern",
+  "region": "south_asia",
+  "phase": "current",
+  "tags": [
+    "regional power",
+    "volunteer army",
+    "UN peacekeeping contributor",
+    "riverine delta",
+    "interim government 2024-26"
+  ],
+  "capital": {
+    "name": "Dhaka",
+    "lat": 23.8103,
+    "lon": 90.4125,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Chittagong",
+      "lat": 22.3569,
+      "lon": 91.7832,
+      "kind": "port"
+    },
+    {
+      "name": "Mongla",
+      "lat": 22.4925,
+      "lon": 89.6,
+      "kind": "port"
+    },
+    {
+      "name": "Khulna",
+      "lat": 22.8456,
+      "lon": 89.5403,
+      "kind": "city"
+    },
+    {
+      "name": "Sylhet",
+      "lat": 24.8949,
+      "lon": 91.8687,
+      "kind": "city"
+    },
+    {
+      "name": "Rajshahi",
+      "lat": 24.3745,
+      "lon": 88.6042,
+      "kind": "city"
+    },
+    {
+      "name": "Cox's Bazar",
+      "lat": 21.4272,
+      "lon": 92.0058,
+      "kind": "city"
+    },
+    {
+      "name": "Jamuna (Bangabandhu) Bridge",
+      "lat": 24.4,
+      "lon": 89.77,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bhola / Payra naval area",
+      "lat": 22.0,
+      "lon": 90.35,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "ne:BGD",
+    "areaKm2": {
+      "low": 130170,
+      "mid": 130170,
+      "high": 134075,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 130,170 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 174808465,
+      "mid": 175686899,
+      "high": 177443768,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 175,686,899 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.3224,
+      "mid": 0.3324,
+      "high": 0.3424,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 33.24% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 160000,
+      "mid": 171250,
+      "high": 180000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.248 as quoted: 171,250 active; CIA Factbook 2025 ~170,000. World Bank MS.MIL.TOTL.P1 227,000 (2020) includes paramilitary. Paramilitary 63,900 (BGB etc.) excluded."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 50000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS: no organised reserve (0). High is an educated allowance for recalled ex-servicemen."
+    },
+    "supportPersonnel": {
+      "low": 91125,
+      "mid": 101250,
+      "high": 101250,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 171,250 minus infantry P roles 70,000 = 101,250. Navy (~25,000), Air Force (~14,000), crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.02,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No conscription, no reserve system; equipment-limited. 1% is ~1.8 million."
+    },
+    "mobilizable": {
+      "low": 878434,
+      "mid": 1756869,
+      "high": 3513738,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 175,686,899 x ratio 0.005 / 0.01 / 0.02."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 45000,
+          "mid": 55000,
+          "high": 65000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army ~132,000 in 10 infantry divisions. (context page: https://en.wikipedia.org/wiki/Bangladesh_Army)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: volunteer long-service, UN peacekeeping."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Para-commando brigade, hill-tracts and riverine units. BGB and Ansar (paramilitary) excluded. (context page: https://en.wikipedia.org/wiki/Bangladesh_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: para-commando, hill-tracts units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 276,
+          "mid": 276,
+          "high": 320,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army",
+          "note": "Equipment list: T-59G Durjoy 174 + T-69IIG 58 + MBT-2000 44 = 276; high adds 44 VT-5 light tanks."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: upgraded Type 59G/69IIG, 44 MBT-2000."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 700,
+          "mid": 1000,
+          "high": 1200,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army",
+          "note": "BTR-80 ~645 + Type 85 50 + Cobra/Cobra II 190-260 + MaxxPro 81-141 + BOV 8 (list ranges 'sources vary')."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 500,
+          "mid": 620,
+          "high": 760,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army",
+          "note": "List ranges: MLRS WS-22 49-162, TRG-300 18-36, TRG-230 18; SP Nora B-52 18-72; towed Mod 56 85-170, M-56 56, Type 59-1 62, Type 54 57, Type 96 54, Boran 18, M101 50, Type 83 20. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 36,
+          "mid": 40,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Bangladesh_Air_Force",
+          "note": "BAF article inventory: F-7 family 32 + MiG-29 8 = 40."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: F-7BG and 8 MiG-29."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 12,
+          "mid": 26,
+          "high": 26,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Bangladesh_Air_Force",
+          "note": "Yak-130 12 (used as attack aircraft) + K-8W 14 (light attack/trainer)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 70,
+          "high": 85,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Bangladesh_Air_Force",
+          "note": "BAF 53 (Mi-17 35, Bell 212 14, AW139 4) + Army ~12 (Mi-171Sh 5-6, AS365 2, Bell 407 2, Bell 206 1) + Navy ~4 (educated)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 8,
+          "mid": 10,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army",
+          "note": "Army TB2 6 + BAF Falco 4 = 10 Group 2+; Bramor (36) Group 1 excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 7,
+          "mid": 7,
+          "high": 7,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Bangladesh_Navy_ships",
+          "note": "Active frigates 7 (list header)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 35,
+          "mid": 42,
+          "high": 50,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Bangladesh_Navy_ships",
+          "note": "Corvettes 6 + OPV 5 + large patrol 4 + coastal patrol 12 + FAC 10 + MCM 5 = 42. Landing craft (19) excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Bangladesh_Navy_ships",
+          "note": "2 Ming-class (Type 035G) submarines."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 6,
+          "mid": 12,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army",
+          "note": "Army FM-90 6 systems (18-36 launchers) + AAA batteries; BAF FM-90 not separately counted."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Chinese export kit, some modern (MBT-2000, Type 053H3 frigates)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer force, UN peacekeeping experience, no conventional war since 1971."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff, no war since 1971; politically central after the 2024 uprising."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: volunteer national army."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: average; strong for home defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.75,
+      "mid": 8.0,
+      "high": 8.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Chinese export systems (FM-90, C-802A, WS-22)."
+    },
+    "armor": {
+      "low": 7.65,
+      "mid": 7.9,
+      "high": 8.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: upgraded Type 59/69, few MBT-2000."
+    },
+    "ships": {
+      "low": 7.95,
+      "mid": 8.2,
+      "high": 8.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: ex-Chinese frigates, 2 Ming-class submarines."
+    },
+    "fortification": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: limited hardened infrastructure."
+    },
+    "logistics": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: riverine and road, limited airlift (C-130J 5)."
+    },
+    "communications": {
+      "low": 7.75,
+      "mid": 8.0,
+      "high": 8.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Bangabandhu-1 satellite (civil), limited data links."
+    },
+    "isr": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: few UAVs, no AEW."
+    },
+    "air": {
+      "low": 7.55,
+      "mid": 7.8,
+      "high": 8.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: F-7BG and MiG-29, no 4.5-generation aircraft."
+    },
+    "cyber": {
+      "low": 7.25,
+      "mid": 7.5,
+      "high": 7.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: limited state cyber capability."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 5904,
+      "mid": 6946,
+      "high": 7988,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 1,220,276,046,757 / population 175,686,899 = 6,946. Range +/-15%."
+    },
+    "gdp": {
+      "low": 1037234639743,
+      "mid": 1220276046757,
+      "high": 1403317453770,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,524,392,313,250 x 0.8005 (US GDP deflator 2011/2021) = 1,220,276,046,757 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/BGD/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.008,
+      "mid": 0.0081,
+      "high": 0.011,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.81% of GDP in 2025. Factbook: 0.9% (2024), 1.1% (2022)."
+    },
+    "industrialShare": {
+      "low": 0.3203,
+      "mid": 0.3403,
+      "high": 0.3603,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 34.0% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Near self-sufficient in rice, imports wheat; dense population leaves little surplus."
+    },
+    "annualCohort": {
+      "low": 1560235,
+      "mid": 1733594,
+      "high": 1906954,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 86,366,729 x share of males aged 15-19 10.036% (SP.POP.1519.MA.5Y) / 5 = 1,733,594. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "ships_minor": {
+        "low": 1,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Khulna Shipyard and Chittagong Dry Dock build patrol craft. (context page: https://en.wikipedia.org/wiki/List_of_active_Bangladesh_Navy_ships)"
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 10,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Assembly only. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Bangladesh_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 110311,
+      "mid": 110311,
+      "high": 369105,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2018: 369,105 km total, 110,311 km paved (mid) (list as quoted)."
+    },
+    "railKm": {
+      "low": 2460,
+      "mid": 2877,
+      "high": 3100,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BGD/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2019: 2,877 route-km (World Bank). CIA Factbook 2,460 km (2014) as low. Mixed metre and broad gauge."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/south-asia/bg.json",
+      "note": "CIA Factbook 2024: 2 ports (1 medium Chittagong, 1 small Mongla); high adds Payra."
+    },
+    "merchantTonnage": {
+      "low": 5417100,
+      "mid": 6019000,
+      "high": 6620900,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 6,019 thousand DWT under the national flag. Range +/-10%. 558 ships (Factbook 2023)."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 120,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short interior lines; river crossings constrain movement."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 300000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mostly cattle/buffalo used for draught (not from FAO data); militarily marginal."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Bangladesh is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Siliguri Corridor (adjacent, Indian)",
+      "Padma and Jamuna river crossings",
+      "Chittagong port approaches",
+      "Teknaf (Myanmar border)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: familiar riverine terrain (monsoon floods, river lines), population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside ne:BGD; ~1 million Rohingya refugees in Cox's Bazar counted by the World Bank population. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Wikipedia Bangladesh Army equipment list (many 'sources vary' ranges), BAF article and Bangladesh Navy ship list (grade B/C). Politics: interim government after the August 2024 uprising; elections held February 2026. Infantry splits are educated guesses. Paramilitary (BGB, Ansar/VDP) excluded."
+}

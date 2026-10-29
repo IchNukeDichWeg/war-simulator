@@ -1,0 +1,770 @@
+{
+  "id": "malaysia-2026",
+  "nationId": "malaysia",
+  "includes": [],
+  "name": "Malaysia",
+  "year": 2026,
+  "era": "modern",
+  "region": "southeast_asia",
+  "phase": "current",
+  "tags": [
+    "volunteer force",
+    "Five Power Defence Arrangements",
+    "South China Sea claimant",
+    "Malacca Strait"
+  ],
+  "capital": {
+    "name": "Kuala Lumpur",
+    "lat": 3.139,
+    "lon": 101.6869,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Port Klang",
+      "lat": 3.0,
+      "lon": 101.39,
+      "kind": "port"
+    },
+    {
+      "name": "Lumut (naval base)",
+      "lat": 4.23,
+      "lon": 100.63,
+      "kind": "port"
+    },
+    {
+      "name": "Johor Bahru",
+      "lat": 1.4927,
+      "lon": 103.7414,
+      "kind": "city"
+    },
+    {
+      "name": "Kota Kinabalu (Sabah)",
+      "lat": 5.9804,
+      "lon": 116.0735,
+      "kind": "city"
+    },
+    {
+      "name": "Kuching (Sarawak)",
+      "lat": 1.5535,
+      "lon": 110.3593,
+      "kind": "city"
+    },
+    {
+      "name": "Penang (Butterworth air base)",
+      "lat": 5.4655,
+      "lon": 100.3912,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kuantan air base",
+      "lat": 3.775,
+      "lon": 103.209,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strait of Malacca",
+      "lat": 2.5,
+      "lon": 101.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:MYS",
+    "areaKm2": {
+      "low": 328550,
+      "mid": 328550,
+      "high": 338406,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 328,550 km2 (World Bank AG.LND.TOTL.K2); high adds ~3% for inland water."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 35797949,
+      "mid": 35977838,
+      "high": 36337616,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: 35,977,838 (World Bank). Range allows for 2026 change."
+    },
+    "urbanization": {
+      "low": 0.7639,
+      "mid": 0.7739,
+      "high": 0.7839,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 77.39% urban (national definition, World Bank)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 110000,
+      "mid": 113000,
+      "high": 115000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 as quoted: 113,000 active; CIA Factbook 2025 ~110,000."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 53600,
+      "high": 53600,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 53,600 reserves (Territorial Army)."
+    },
+    "supportPersonnel": {
+      "low": 54000,
+      "mid": 60000,
+      "high": 60000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 113,000 minus infantry P roles 53,000 = 60,000. Navy (~18,000), Air Force (15,000), artillery/armour/aviation, logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No conscription (National Service programme relaunched 2025 is not military training); 2% is ~720,000."
+    },
+    "mobilizable": {
+      "low": 359778,
+      "mid": 719557,
+      "high": 1079335,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 35,977,838 x ratio 0.01 / 0.02 / 0.03."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 35000,
+          "mid": 42000,
+          "high": 50000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army ~80,000: Royal Malay Regiment and Royal Ranger Regiment battalions. (context page: https://en.wikipedia.org/wiki/Malaysian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 11000,
+          "high": 14000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 10th Parachute Brigade, Grup Gerak Khas, PASKAL. (context page: https://en.wikipedia.org/wiki/Malaysian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Grup Gerak Khas, PASKAL."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 48,
+          "mid": 48,
+          "high": 70,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "PT-91M Pendekar 48; high adds Scorpion light tanks (largely retired)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 500,
+          "mid": 544,
+          "high": 600,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "ACV-300 Adnan 267 + AV8 Gempita 257 + Lipanbara 20 = 544."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 170,
+          "mid": 192,
+          "high": 210,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "Astros II 36 + G5 28 + Mod 56 110 + LG1 18 = 192."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 20,
+          "mid": 26,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Malaysian_Air_Force",
+          "note": "Su-30MKM 18 + F/A-18D 8 = 26 (Kuwaiti Hornet transfer cancelled February 2026)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Su-30MKM with serviceability problems."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 5,
+          "mid": 10,
+          "high": 18,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Malaysian_Air_Force",
+          "note": "Hawk 108/208 remnant ~10; FA-50M (18 ordered) deliveries from October 2026 (high)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 70,
+          "high": 85,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "Army AW109 10 + MD530G 6 + UH-60A 4 + AW149 4 (leased) + Air Force EC725 12 + AW139 ~4 + S-61 legacy + Navy 11 (Super Lynx, AS555, AW139)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 3,
+          "mid": 5,
+          "high": 10,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Malaysian_Air_Force",
+          "note": "Anka-S 3 (delivered 2025-26) + ScanEagle (Group 2) for the Navy."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Malaysian_Navy_ships",
+          "note": "Lekiu-class frigates 2 (Maharaja Lela LCS still not commissioned in 2026)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 34,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Malaysian_Navy_ships",
+          "note": "Kasturi corvettes 2 + Laksamana 2 + Keris LMS 4 + fast attack craft 12 + Kedah OPV 6 + Kris patrol 4 + mine warfare 4 = 34."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Malaysian_Navy_ships",
+          "note": "Scorpene (Tunku Abdul Rahman class) 2."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 4,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "No ballistic or coastal missile launchers (NSM coastal batteries planned); Astros counted under artillery."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army",
+          "note": "Rapier 15 launchers, ForceSHIELD (Starstreak) 28, Dzhigit (Igla) 40 -> ~20 batteries-equivalent, all short range."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FPDA exercises with Australia, UK, NZ, Singapore."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: British-model professional staff; Lahad Datu 2013 operation."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "armor": {
+      "low": 8.25,
+      "mid": 8.5,
+      "high": 8.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: PT-91M, Gempita."
+    },
+    "ships": {
+      "low": 8.15,
+      "mid": 8.4,
+      "high": 8.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: LCS programme delays."
+    },
+    "fortification": {
+      "low": 7.95,
+      "mid": 8.2,
+      "high": 8.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "logistics": {
+      "low": 8.25,
+      "mid": 8.5,
+      "high": 8.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus; split between peninsula and Borneo."
+    },
+    "communications": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "isr": {
+      "low": 8.15,
+      "mid": 8.4,
+      "high": 8.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "air": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Su-30MKM."
+    },
+    "cyber": {
+      "low": 8.35,
+      "mid": 8.6,
+      "high": 8.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 24129,
+      "mid": 28387,
+      "high": 32645,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP (2011 int$) 1,021,298,857,348 / population 35,977,838 = 28,387. Range +/-15%."
+    },
+    "gdp": {
+      "low": 868104028746,
+      "mid": 1021298857348,
+      "high": 1174493685950,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,275,826,180,322 x 0.8005 (US GDP deflator 2011/2021) = 1,021,298,857,348 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. https://api.worldbank.org/v2/country/MYS/indicator/NY.GDP.MKTP.PP.KD?format=json"
+    },
+    "milSpendShare": {
+      "low": 0.009,
+      "mid": 0.0104,
+      "high": 0.013,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.04% of GDP in 2025. Factbook: ~1.0% (2021-24)."
+    },
+    "industrialShare": {
+      "low": 0.3367,
+      "mid": 0.3567,
+      "high": 0.3767,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 35.7% of GDP (World Bank)."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Floored at 0 (field cannot be negative): Net food importer (rice self-sufficiency ~60%); large palm-oil exports not counted as food surplus."
+    },
+    "annualCohort": {
+      "low": 260438,
+      "mid": 289375,
+      "high": 318313,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 18,821,069 x share of males aged 15-19 7.688% (SP.POP.1519.MA.5Y) / 5 = 289,375. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. DefTech AV8 Gempita. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Malaysian_Army)"
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Boustead / LMS Batch 2 abroad. (context page: https://en.wikipedia.org/wiki/List_of_active_Royal_Malaysian_Navy_ships)"
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Lumut LCS (delayed). (context page: https://en.wikipedia.org/wiki/List_of_active_Royal_Malaysian_Navy_ships)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 418901,
+      "mid": 418901,
+      "high": 589320,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2025: 589,320 km total, 418,901 km paved (mid)."
+    },
+    "railKm": {
+      "low": 1655,
+      "mid": 1655,
+      "high": 1851,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MYS/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 1,655 route-km (World Bank). CIA Factbook 1,851 km (2014) as high; ECRL due 2027."
+    },
+    "majorPorts": {
+      "low": 7,
+      "mid": 7,
+      "high": 12,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/my.json",
+      "note": "CIA Factbook 2024: 3 large + 4 medium = 7 (Port Klang, Tanjung Pelepas, Penang...)."
+    },
+    "merchantTonnage": {
+      "low": 8795700,
+      "mid": 9773000,
+      "high": 10750300,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 9,773 thousand DWT under the national flag. Range +/-10%. "
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Peninsula plus Borneo, separated by 600 km of sea."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Buffalo and cattle (not from FAO data); militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026 lists nine nuclear-armed states; Malaysia is not one of them."
+    },
+    "basesAbroad": [
+      {
+        "name": "Swallow Reef (Layang-Layang) station, Spratlys",
+        "lat": 7.372,
+        "lon": 113.84,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Af",
+    "chokepoints": [
+      "Strait of Malacca",
+      "Singapore Strait (Johor)",
+      "Kra Isthmus approaches",
+      "Sulu Sea (Sabah)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: jungle terrain, divided territory."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with a 2026 order of battle. Population inside the ne: border (World Bank 2025). Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Wikipedia Malaysian Army equipment list, RMN active-ship list and RMAF article. Doctrine archetype-modern-small-state: small professional force with FPDA backing. Kuwaiti Hornet transfer cancelled (February 2026); FA-50M deliveries start late 2026. Paramilitary (People's Volunteer Corps, 267,200 per IISS) excluded."
+}
