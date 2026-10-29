@@ -157,6 +157,12 @@ export const AI_STRONGER_SIDE_ADVANCES = true;
  *  x293 but power x2.2; germany-vs-france-1940 personnel x0.69, power x2.0 for Germany.
  *  Presentation only: no backtest effect. */
 export const EXPLAIN_LOCAL_POWER = true;
+/** A cut-off cell (no supply path for its holder) passes to the enemy only from an adjacent
+ *  enemy cell that the enemy itself supplies. Without it, where neither side had supply both
+ *  flipped each other's cells every day and a front oscillated into a checkerboard: the striped
+ *  control overlay (rome-117-vs-spain-2026 before fix round 1, seed 1 day 119: 76 isolated
+ *  cells, rows of alternating R/s across northern Spain). */
+export const ENCIRCLED_FLIP_NEEDS_SUPPLY = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

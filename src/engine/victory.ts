@@ -5,7 +5,7 @@ import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_MORALE, OBJECTIVE_KIND_EXPLICIT, COLLAPSE_PERSONNEL_FRACTION, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_MORALE, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, COLLAPSE_PERSONNEL_FRACTION, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -43,7 +43,10 @@ export function controlPhase(ctx: Ctx): void {
         if (t === 0 || t === 1) {
           const s = 1 - t;
           if (st.supplyDist[t][c] === Infinity) {
-            for (let d = 0; d < 8; d++) { const j = g.nb[c * 8 + d]; if (j >= 0 && prev[j] === s) { to = s; break; } }
+            for (let d = 0; d < 8; d++) {
+              const j = g.nb[c * 8 + d];
+              if (j >= 0 && prev[j] === s && (!ENCIRCLED_FLIP_NEEDS_SUPPLY || st.supplyDist[s][j] !== Infinity)) { to = s; break; }
+            }
           }
         }
       }

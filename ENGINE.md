@@ -349,6 +349,15 @@ ladder, not a prediction of nuclear decision-making.
 
 ## 12. Ending and explanation
 
+Control (daily, after logistics): a cell occupied by one side only goes to
+that side; an empty cell next to formations of one side only goes to it; a
+cell whose holder has no supply path to it passes to the enemy from an
+adjacent enemy cell. With `ENCIRCLED_FLIP_NEEDS_SUPPLY` that adjacent cell
+must be supplied by the enemy: without it, where neither side had supply the
+two flipped each other's cells every day and the front became a checkerboard
+(the striped control overlay; Rome 117 vs Spain 2026 on the engine before
+fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
+
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
 `daysToReduce` or stormed), territory share, army collapse (personnel below 10%
