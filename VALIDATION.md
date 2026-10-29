@@ -314,3 +314,50 @@ Still open: the Iraqi army attacks in 2003 because its leftover formations follo
 0.5 rule (doctrine aggression is exactly 0.5); the Yom Kippur Egyptian objective (Mitla Pass) may
 start in Egyptian control; doctrine withdraw thresholds still decide Adrianople, Carrhae and Marathon
 (B2), and the engine does not yet read the CDB90 era breakpoints committed in `39490b0`.
+
+### QA round 3: are the Run 3 passes right for the right reasons?
+
+**Gate NOT CONFIRMED.** Independent QA (it wrote none of the fixes) reproduced Run 3 exactly in a
+worktree pinned at `65493a9`, and traced every winner pass with the round-2 definitions. The data
+and engine changes committed after `65493a9` are not covered; Run 4 gets its own QA.
+
+| Verdict | Count | Cases |
+| --- | --- | --- |
+| RIGHT | 7 | Blenheim (thin), Breitenfeld, El Alamein, Gettysburg, Hastings, Mohi, Waterloo |
+| PARTLY | 11 | Agincourt, Austerlitz, Cannae, Gaugamela, Zama, Kursk, Tannenberg, Falklands, France 1940, Gulf War, Iraq 2003 |
+| WRONG (counted strictly) | 2 | Stalingrad (the Axis attacks a much stronger enemy and collapses on day 6; no encirclement, 6 of 75 days; the capture objective cell starts Soviet-held and never counts), Yom Kippur (the Mitla objective starts Egyptian-held, so Egypt reaching it counts for nothing; Israel wins by taking Deversoir with no decided battle) |
+
+Right or partly right winners: **18/24**, exactly the gate, if Stalingrad counts as WRONG; 19 if it
+counts as PARTLY. I count it as WRONG: the result comes from a mechanism history does not record.
+
+The gate is still not confirmed because three of those 18 passes each hang on one grade-D constant.
+In a one-at-a-time screen of all 615 grade-D constants over their own ranges (5 seeds, so a screen
+and not a measurement):
+- Blenheim fails at cropland attack 0.85 instead of 0.95.
+- The Gulf War fails at desert movement 0.25 instead of 0.5, or at a winter season factor of 0.4
+  instead of 0.7.
+- France 1940 fails at urban movement 0.5 instead of 0.7.
+
+Under the rule that no grade-D constant may decide a gate case, the robust count is 15. Six-Day passes
+at `armyCollapseMorale` 0.25 or `capitalLossShock` 0.4; moving either for that would be fitting
+one case, so it stays a fail.
+
+Specific findings (measured, 20 seeds):
+- **Gulf War:** a real fall now. The Coalition takes Kuwait City in 20/20 seeds (days 7 / 9 / 10,
+  min / median / max). Iraqi morale only falls 0.20 -> 0.15 and never collapses. Iraqi losses are
+  22.5k against 110k historical.
+- **Iraq 2003:** the leftover-rule explanation in Run 3 is refuted. Aggression 0.3 or 0.49, no
+  stronger-side-advance rule, or a forced leftover test all give identical results. The Iraqi
+  attacks come from normal attack slots.
+- **Six-Day:** an honest fail. Israel advances 73 of 193 km and wins one battle; Egyptian morale
+  ends at 0.20.
+
+Root causes: B2 not fixed (Carrhae still decided by the withdraw-threshold term); C4 better
+(Germans attack in 70-75 of 92 slots in France); C5 partly (case fortified positions still sit on
+objectives, Six-Day cell 9, Gulf cell 248); C6 open (surprise multiplies every fresh formation's
+first battle by 1.8 for the whole campaign; limiting it to day 1 moves no gate number); C7 open (one
+Berlin weather table everywhere, so the February Gulf gets 22% snow days; clear weather flips no
+winner but shortens the Gulf from 10 to 8 median days and France from 42 to 37).
+
+Invariants: all 48 case runs and 24 preset runs are clean. Land battles on sea cells: 0. Wins by a
+side with no personnel: 0. Formations with no crew in battle: 0.
