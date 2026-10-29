@@ -588,12 +588,12 @@
       "note": "asOf 2025: industry incl. construction 17.7% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
     },
     "foodSurplus": {
-      "low": 0.2,
-      "mid": 0.3,
-      "high": 0.45,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. World second-largest agri-food exporter by value; imports much feed."
+      "low": 0.94,
+      "mid": 0.96,
+      "high": 0.96,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.3 -> 0.96. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/NLD/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 1.70% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.42 (mean 2021-2023, range 0.41-0.42). Mid 1 - 0.017/0.42 = 0.96. Low: a x 1.5 (farm households larger than the employed count), s 0.41 = 0.94. High: s 0.42 = 0.96. Import dependence: domestic production covers about 42% of domestic calorie supply. s is depressed by imported feed and by imports processed for re-export (cocoa, soy, palm oil); the result is insensitive to s because a is small. Earlier net-trade reading: Educated guess. World second-largest agri-food exporter by value; imports much feed."
     },
     "annualCohort": {
       "low": 91669,

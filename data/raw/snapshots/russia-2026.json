@@ -659,12 +659,12 @@
       "note": "asOf 2025: industry incl. construction 29.7% of GDP; 32.2% in 2022."
     },
     "foodSurplus": {
-      "low": 0.2,
-      "mid": 0.3,
-      "high": 0.4,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess: world's largest wheat exporter and self-sufficient in most staples; not computed from FAO balance sheets."
+      "low": 0.95,
+      "mid": 0.96,
+      "high": 0.96,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.3 -> 0.96. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/RUS/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 5.11% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 1.30 (mean 2021-2023, range 1.23-1.35). Mid 1 - 0.051/1.30 = 0.96. Low: a x 1.3 (farm households larger than the employed count), s 1.23 = 0.95. High: s 1.35 = 0.96. Net exporter: production is about 130% of domestic calorie supply. Earlier net-trade reading: Educated guess: world's largest wheat exporter and self-sufficient in most staples; not computed from FAO balance sheets."
     },
     "annualCohort": {
       "low": 749879,

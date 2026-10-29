@@ -651,12 +651,12 @@
       "note": "asOf 2025: industry incl. construction 20.1% of GDP (World Bank)."
     },
     "foodSurplus": {
-      "low": 0.05,
-      "mid": 0.15,
-      "high": 0.25,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Wheat/rice producer, food-insecure population, rice exporter; 2022 floods showed fragility."
+      "low": 0.53,
+      "mid": 0.62,
+      "high": 0.63,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.15 -> 0.62. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/PAK/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 36.23% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.95 (mean 2021-2023, range 0.93-0.98). Mid 1 - 0.362/0.95 = 0.62. Low: a x 1.2 (farm households larger than the employed count), s 0.93 = 0.53. High: s 0.98 = 0.63. Import dependence: domestic production covers about 95% of domestic calorie supply. Earlier net-trade reading: Educated guess. Wheat/rice producer, food-insecure population, rice exporter; 2022 floods showed fragility."
     },
     "annualCohort": {
       "low": 2520163,

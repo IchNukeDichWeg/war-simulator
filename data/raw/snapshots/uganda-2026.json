@@ -516,12 +516,12 @@
       "note": "asOf 2025: industry incl. construction (and mining/oil where present) 24.3% of GDP (NV.IND.TOTL.ZS). +/-2 points."
     },
     "foodSurplus": {
-      "low": 0.1,
-      "mid": 0.15,
-      "high": 0.25,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Fertile; net food exporter to South Sudan, Kenya, DRC. Not from FAO balance sheets."
+      "low": 0.15,
+      "mid": 0.31,
+      "high": 0.32,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.15 -> 0.31. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/UGA/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 64.85% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.93 (mean 2021-2023, range 0.91-0.95). Mid 1 - 0.649/0.93 = 0.31. Low: a x 1.2 (farm households larger than the employed count), s 0.91 = 0.15. High: s 0.95 = 0.32. Import dependence: domestic production covers about 93% of domestic calorie supply. Earlier net-trade reading: Educated guess. Fertile; net food exporter to South Sudan, Kenya, DRC. Not from FAO balance sheets."
     },
     "annualCohort": {
       "low": 533553,

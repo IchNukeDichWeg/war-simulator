@@ -523,12 +523,12 @@
       "note": "asOf 2025: industry incl. construction (and mining/oil where present) 18.6% of GDP (NV.IND.TOTL.ZS). +/-2 points."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.05,
-      "high": 0.1,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Imports most wheat; exports wine, hazelnuts. Not from FAO balance sheets."
+      "low": 0.06,
+      "mid": 0.26,
+      "high": 0.32,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.05 -> 0.26. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/GEO/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 33.95% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.46 (mean 2021-2023, range 0.43-0.50). Mid 1 - 0.340/0.46 = 0.26. Low: a x 1.2 (farm households larger than the employed count), s 0.43 = 0.06. High: s 0.50 = 0.32. Import dependence: domestic production covers about 46% of domestic calorie supply. Earlier net-trade reading: Educated guess. Imports most wheat; exports wine, hazelnuts. Not from FAO balance sheets."
     },
     "annualCohort": {
       "low": 23266,

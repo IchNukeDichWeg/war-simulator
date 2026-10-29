@@ -543,12 +543,12 @@
       "note": "asOf 2025: industry incl. construction (and mining/oil where present) 16.3% of GDP (NV.IND.TOTL.ZS). +/-2 points."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.05,
-      "high": 0.12,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Net importer of maize/wheat/rice in dry years; exporter of tea and horticulture. Not from FAO balance sheets."
+      "low": 0.13,
+      "mid": 0.3,
+      "high": 0.35,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.05 -> 0.3. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/KEN/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 45.79% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.66 (mean 2021-2023, range 0.63-0.70). Mid 1 - 0.458/0.66 = 0.3. Low: a x 1.2 (farm households larger than the employed count), s 0.63 = 0.13. High: s 0.70 = 0.35. Import dependence: domestic production covers about 66% of domestic calorie supply. Earlier net-trade reading: Educated guess. Net importer of maize/wheat/rice in dry years; exporter of tea and horticulture. Not from FAO balance sheets."
     },
     "annualCohort": {
       "low": 598893,

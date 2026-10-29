@@ -627,12 +627,12 @@
       "note": "asOf 2025: industry incl. construction (and hydrocarbons) 43.0% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.02,
-      "high": 0.05,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Imports ~80% of food; some dates/dairy/poultry self-sufficiency."
+      "low": 0.8,
+      "mid": 0.88,
+      "high": 0.91,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.02 -> 0.88. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/SAU/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 2.50% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.21 (mean 2021-2023, range 0.18-0.26). Mid 1 - 0.025/0.21 = 0.88. Low: a x 1.5 (farm households larger than the employed count), s 0.18 = 0.8. High: s 0.26 = 0.91. Import dependence: domestic production covers about 21% of domestic calorie supply. Earlier net-trade reading: Educated guess. Imports ~80% of food; some dates/dairy/poultry self-sufficiency."
     },
     "annualCohort": {
       "low": 246417,

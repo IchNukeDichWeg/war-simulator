@@ -634,12 +634,12 @@
       "note": "asOf 2025: industry incl. construction 16.8% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
     },
     "foodSurplus": {
-      "low": 0.25,
-      "mid": 0.35,
-      "high": 0.5,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Large net exporter of cereals, dairy and wine; not computed from FAO balance sheets."
+      "low": 0.97,
+      "mid": 0.98,
+      "high": 0.98,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.35 -> 0.98. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/FRA/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 2.33% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 1.31 (mean 2021-2023, range 1.30-1.33). Mid 1 - 0.023/1.31 = 0.98. Low: a x 1.5 (farm households larger than the employed count), s 1.30 = 0.97. High: s 1.33 = 0.98. Net exporter: production is about 131% of domestic calorie supply. Earlier net-trade reading: Educated guess. Large net exporter of cereals, dairy and wine; not computed from FAO balance sheets."
     },
     "annualCohort": {
       "low": 395178,

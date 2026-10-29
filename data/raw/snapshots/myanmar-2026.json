@@ -645,12 +645,12 @@
       "note": "asOf 2025: industry incl. construction 36.2% of GDP (World Bank)."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.03,
-      "high": 0.08,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Traditionally a rice exporter; war, displacement and the 2025 Sagaing earthquake reduced output."
+      "low": 0.52,
+      "mid": 0.61,
+      "high": 0.63,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.03 -> 0.61. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/MMR/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 44.95% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 1.15 (mean 2021-2023, range 1.12-1.22). Mid 1 - 0.450/1.15 = 0.61. Low: a x 1.2 (farm households larger than the employed count), s 1.12 = 0.52. High: s 1.22 = 0.63. Net exporter: production is about 115% of domestic calorie supply. Earlier net-trade reading: Educated guess. Traditionally a rice exporter; war, displacement and the 2025 Sagaing earthquake reduced output."
     },
     "annualCohort": {
       "low": 402367,

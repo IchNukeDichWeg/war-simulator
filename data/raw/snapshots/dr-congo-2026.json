@@ -549,12 +549,12 @@
       "note": "asOf 2025: industry incl. construction (and mining/oil where present) 39.7% of GDP (NV.IND.TOTL.ZS). +/-2 points."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.0,
-      "high": 0.05,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Chronic food insecurity (over 20 million people acutely food insecure) despite vast arable land; subsistence farming."
+      "low": 0.22,
+      "mid": 0.36,
+      "high": 0.38,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.0 -> 0.36. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/COD/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 58.52% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.92 (mean 2021-2023, range 0.90-0.94). Mid 1 - 0.585/0.92 = 0.36. Low: a x 1.2 (farm households larger than the employed count), s 0.90 = 0.22. High: s 0.94 = 0.38. Import dependence: domestic production covers about 92% of domestic calorie supply. Earlier net-trade reading: Educated guess. Chronic food insecurity (over 20 million people acutely food insecure) despite vast arable land; subsistence farming."
     },
     "annualCohort": {
       "low": 1061404,

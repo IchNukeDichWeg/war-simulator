@@ -547,12 +547,12 @@
       "note": "asOf 2022: industry incl. construction (and hydrocarbons) 11.9% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings. asOf 2022, wartime economy; very uncertain."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.03,
-      "high": 0.1,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Wheat output collapsed by drought (2025) and war; WFP food aid ongoing."
+      "low": 0.6,
+      "mid": 0.73,
+      "high": 0.76,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.03 -> 0.73. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/SYR/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 16.30% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.59 (mean 2021-2023, range 0.53-0.69). Mid 1 - 0.163/0.59 = 0.73. Low: a x 1.3 (farm households larger than the employed count), s 0.53 = 0.6. High: s 0.69 = 0.76. Import dependence: domestic production covers about 59% of domestic calorie supply. Earlier net-trade reading: Educated guess. Wheat output collapsed by drought (2025) and war; WFP food aid ongoing."
     },
     "annualCohort": {
       "low": 272391,

@@ -568,12 +568,12 @@
       "note": "asOf 2025: industry incl. construction 21.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.05,
-      "high": 0.15,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Roughly self-sufficient in cereals and dairy; imports fruit/vegetables."
+      "low": 0.96,
+      "mid": 0.98,
+      "high": 0.98,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Recomputed 2026-10-29 under the definition: 0.05 -> 0.98. Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/SWE/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 1.77% (2025). s from FAOSTAT Food Balance Sheets (https://bulks-faostat.fao.org/production/FoodBalanceSheets_E_All_Data.zip): production / domestic supply summed over all FBS items, each weighted by kcal per tonne (world median of food kcal / food tonnes per item); feed, processing and non-food uses stay in domestic supply. s = 0.76 (mean 2021-2023, range 0.70-0.80). Mid 1 - 0.018/0.76 = 0.98. Low: a x 1.5 (farm households larger than the employed count), s 0.70 = 0.96. High: s 0.80 = 0.98. Import dependence: domestic production covers about 76% of domestic calorie supply. Earlier net-trade reading: Educated guess. Roughly self-sufficient in cereals and dairy; imports fruit/vegetables."
     },
     "annualCohort": {
       "low": 58536,
