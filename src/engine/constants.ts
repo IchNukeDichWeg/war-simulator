@@ -212,6 +212,14 @@ export const EMBARKED_NAVAL_ONLY = true;
  *  0.10-0.25 range), Falklands loss ratio x3.86 -> x0.86 passes, Gulf War Iraq collapses on day 9
  *  instead of 5. */
 export const COLLAPSE_NEEDS_REAL_FALL = true;
+/** A Defend objective takes at most its value's share of a member's army: min(enemy power near it,
+ *  army x its doctrine-weighted value / the summed value of the chosen objectives). QA C4: Defend
+ *  slots near the start won on distance and their need (all enemy power nearby) absorbed the army,
+ *  so 89 of 92 German formations defended France 1940 on days 20-40. Measured (seed 1 trace):
+ *  Germany d20/30/40 Defend/Attack 89/3 -> 21/71, 16/76, 9/39; Six-Day Israel 2/1 -> 1/2.
+ *  20 seeds: counts unchanged 19/15/23; France 1940 winner 100% -> 95%. Iraq 2003 unchanged: its
+ *  attacks are leftovers (archetype-modern-regional aggression 0.5 meets the >= 0.5 rule). */
+export const AI_DEFEND_CAP_BY_VALUE = true;
 
 /** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
  *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),

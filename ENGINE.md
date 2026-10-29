@@ -372,6 +372,12 @@ tech)` (`mission_command` halves it). Each order cycle:
    the most threatened own city. As built (`RESERVE_NO_OVERSHOOT`): the reserve
    skips formations that would overshoot that share and is empty when a member
    has a single available formation (the first formation was always taken).
+   A Defend objective's need is its nearby enemy power, capped
+   (`AI_DEFEND_CAP_BY_VALUE`) at the member's army x that objective's
+   doctrine-weighted value / the summed value of the chosen objectives, and
+   the cap is a ceiling: formations that would overshoot it are skipped.
+   Before, Defend slots near the start won on distance and their need took
+   the whole army (89 of 92 German formations defending France 1940).
    Strengths are compared in battle units (`AI_CROSS_ERA_POWER`): enemy
    strength x enemy dispersion / own dispersion, so a 2026 army no longer
    reads a Roman legion's TLI as if both hit the same target. Formations left

@@ -10,7 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  AI_DEFEND_CAP_BY_VALUE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
@@ -178,7 +178,8 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     if (k) centroid.set(mi, [la / k, lo / k]);
     else if (mr.spawnCells.length) centroid.set(mi, [g.lat[mr.spawnCells[0]], g.lon[mr.spawnCells[0]]]);
   }
-  const score = (mi: number, c: Cand): number => {
+  // value of an objective to a member (doctrine-weighted, before distance)
+  const value = (mi: number, c: Cand): number => {
     const mr = S.members[mi];
     const w = mr.w;
     const ce = centroid.get(mi);
@@ -193,7 +194,13 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       else v *= 0.5 + w.siegePreference;
       if (dist > range) v *= 1 - w.logisticsDiscipline;
     }
-    return v / (1 + dist / range);
+    return v;
+  };
+  const score = (mi: number, c: Cand): number => {
+    const mr = S.members[mi];
+    const ce = centroid.get(mi);
+    const dist = ce ? haversineKm(ce[0], ce[1], g.lat[c.cell], g.lon[c.cell]) : 0;
+    return value(mi, c) / (1 + dist / Math.max(1, mr.supplyRangeKm));
   };
   const best = uniq.map((c) => ({ c, s: Math.max(...S.sideMembers[side].map((mi) => score(mi, c))) }));
   best.sort((a, b) => b.s - a.s || a.c.cell - b.c.cell);
@@ -247,6 +254,9 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       }
     }
     const ratio = AI_MASS_RATIO_ATTRITION + (AI_MASS_RATIO_MANEUVER - AI_MASS_RATIO_ATTRITION) * w.maneuver;
+    // a Defend slot absorbs at most its value's share of the member's army (QA C4: Defend slots near
+    // the start won on distance and their need, the enemy power nearby, took the whole army)
+    const valSum = slots.reduce((a, x) => a + (x.s > 0 ? value(mi, x.c) : 0), 0);
     for (const sl of slots) {
       if (sl.s <= 0) continue;
       const field = st.fields[side].subarray(sl.k * n, (sl.k + 1) * n);
@@ -254,10 +264,13 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       for (let i = 0; i < avail.length; i++) if (!taken[i] && field[F.cell[avail[i]]] < Infinity) idx.push(i);
       if (!idx.length) continue;
       idx.sort((a, b) => field[F.cell[avail[a]]] - field[F.cell[avail[b]]] || a - b);
-      const need = sl.c.pow * (sl.c.kind === OBJ.Defend ? 1 : ratio);
+      let need = sl.c.pow * (sl.c.kind === OBJ.Defend ? 1 : ratio);
+      const capped = AI_DEFEND_CAP_BY_VALUE && sl.c.kind === OBJ.Defend && valSum > 0;
+      if (capped) need = Math.min(need, totalW * value(mi, sl.c) / valSum);
       let acc = 0;
       const mode = sl.c.kind === OBJ.Defend ? Mode.Defend : Mode.Attack;
       for (const i of idx) {
+        if (capped && acc + F.curW[avail[i]] > need) continue;   // the cap is a ceiling, not a floor
         taken[i] = 1;
         acc += F.curW[avail[i]];
         order(ctx, avail[i], mode, sl.c.cell, delay);
