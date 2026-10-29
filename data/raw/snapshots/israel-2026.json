@@ -1,0 +1,774 @@
+{
+  "id": "israel-2026",
+  "nationId": "israel",
+  "includes": [],
+  "name": "State of Israel",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "nuclear power (undeclared)",
+    "conscription",
+    "reserve army",
+    "US ally",
+    "Mediterranean",
+    "Red Sea"
+  ],
+  "capital": {
+    "name": "Jerusalem",
+    "lat": 31.7683,
+    "lon": 35.2137,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Tel Aviv",
+      "lat": 32.0853,
+      "lon": 34.7818,
+      "kind": "city"
+    },
+    {
+      "name": "Haifa (naval base)",
+      "lat": 32.8191,
+      "lon": 34.9983,
+      "kind": "port"
+    },
+    {
+      "name": "Ashdod",
+      "lat": 31.8014,
+      "lon": 34.6435,
+      "kind": "port"
+    },
+    {
+      "name": "Eilat",
+      "lat": 29.5577,
+      "lon": 34.9519,
+      "kind": "port"
+    },
+    {
+      "name": "Beersheba",
+      "lat": 31.2518,
+      "lon": 34.7913,
+      "kind": "city"
+    },
+    {
+      "name": "Nevatim Airbase",
+      "lat": 31.208,
+      "lon": 35.012,
+      "kind": "fortress"
+    },
+    {
+      "name": "Negev Nuclear Research Center (Dimona)",
+      "lat": 31.0014,
+      "lon": 35.1447,
+      "kind": "fortress"
+    },
+    {
+      "name": "Golan Heights (Quneitra crossing)",
+      "lat": 33.125,
+      "lon": 35.824,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Gaza border (Kerem Shalom)",
+      "lat": 31.2236,
+      "lon": 34.2853,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Rosh HaNikra (Lebanese border)",
+      "lat": 33.0931,
+      "lon": 35.1047,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ISR",
+    "areaKm2": {
+      "low": 21640,
+      "mid": 22070,
+      "high": 22070,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 22,070 km2 (AG.SRF.TOTL.K2); low is land area 21,640 km2 (AG.LND.TOTL.K2). Internationally recognised territory; West Bank, Gaza, Golan and occupied Lebanese/Syrian buffer zones excluded."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10021572,
+      "mid": 10122800,
+      "high": 10274642,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 10,122,800). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. Includes Israeli citizens in East Jerusalem and Golan as the national statistics do; West Bank/Gaza Palestinians excluded."
+    },
+    "urbanization": {
+      "low": 0.9058,
+      "mid": 0.9158,
+      "high": 0.9258,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 91.58% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 160000,
+      "mid": 169500,
+      "high": 250000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.355 as quoted: 169,500 active (CIA Factbook 2025 ~170,000). High allows for reservists on extended wartime duty (2023-26 call-ups reached ~300,000)."
+    },
+    "trainedReserves": {
+      "low": 400000,
+      "mid": 465000,
+      "high": 465000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 465,000 reserves; CIA Factbook 2025 \"more than 400,000\". Large share already mobilised in rotations since Oct 2023."
+    },
+    "supportPersonnel": {
+      "low": 121125,
+      "mid": 142500,
+      "high": 149625,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 169,500 minus infantry P roles (27,000). Covers armour/artillery crews, air force (~30,000 per CIA), navy (~10,000), intelligence (Unit 8200), logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.14,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Israel's own 1973 mobilisation (~375,000 of ~3.3 million, ~11%) and the 2023 call-up (~360,000 reservists + 170,000 active, ~5% of 10 million); total war with universal reserve service could approach the 1973 share."
+    },
+    "mobilizable": {
+      "low": 708596,
+      "mid": 1012280,
+      "high": 1417192,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,122,800 x ratio 0.07 / 0.1 / 0.14."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 12000,
+          "mid": 15000,
+          "high": 22000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised/heavy infantry of the regular brigades (Golani, Givati, Nahal on Namer/Eitan) ~3 brigades x ~4,000 infantry; reservist brigades called up for the war are excluded (they sit in trainedReserves). (context page: https://en.wikipedia.org/wiki/Israel_Defense_Forces)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75-1.0: Tavor X95, Namer/Eitan with Trophy/Iron Fist APS, Spike ATGMs, networked fire control."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75-1.0: conscript-heavy (32-month service) but with continuous combat since Oct 2023 in Gaza, Lebanon and Syria."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 16000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Paratroopers, Kfir, Commando brigade and light border battalions (Caracal, Bardelas) ~3 brigades + battalions. (context page: https://en.wikipedia.org/wiki/Israel_Defense_Forces)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: light kit but top-tier night/ISR support."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75-1.0: elite paratroop/commando units, continuous combat."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 330,
+          "mid": 400,
+          "high": 600,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces",
+          "note": "IISS Military Balance 2024 as quoted on the equipment list: ~400 Merkava Mk4/4M active, ~200 Mk4 and ~700 Mk3 stored. Low allows for Gaza/Lebanon war losses; high adds stored Mk4s reactivated for the war."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: Merkava Mk4M with Trophy active protection is among the best-protected tanks in service."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 800,
+          "mid": 1000,
+          "high": 1400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces",
+          "note": "Equipment list: Namer ~290 + Achzarit ~100 + M113 500 active (IISS 2020 as cited; 5,000 stored) + Eitan entering service (count N/A) = ~890; the list header gives 1,360 APCs. Mid splits the two."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: Namer/Eitan with APS are world-class, but the M113 fleet is obsolete."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 250,
+          "mid": 300,
+          "high": 450,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces",
+          "note": "Equipment list: M109 Doher 250 + M270 MLRS 30 + PULS (count N/A, a few dozen entering service) + SIGMA 155 (entering service). Many towed guns and M107/M110 only in store (excluded)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: precision rockets (PULS, EXTRA) but ageing M109 tubes."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 270,
+          "mid": 287,
+          "high": 357,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Israeli_Air_Force",
+          "note": "IAF inventory table: F-35I 48 + F-16C/I 173 + F-15A/C 66 = 287. High adds 70 two-seat conversion trainers (F-15B/D 21, F-16D 49) that are combat-capable. 50 F-15IA and 52 more F-35I on order."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: F-35I Adir (5th generation, first F-35 air-to-air kill vs a crewed jet, 2026) plus upgraded F-15/F-16."
+        },
+        "training": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: elite long-service aircrews; long-range strike campaigns over Iran in 2025 and 2026."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 24,
+          "mid": 25,
+          "high": 25,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces",
+          "note": "F-15I Ra'am 25 (IISS as quoted on the equipment list air table; the IAF article leaves the F-15I count blank)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: F-15I long-range strike fighter."
+        },
+        "training": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: elite crews."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 115,
+          "mid": 126,
+          "high": 140,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Israeli_Air_Force",
+          "note": "IAF inventory: AH-64A/D 48 + UH-60A/L 49 (1 lost 2026) + CH-53 21 + AW119 8 = 126; navy AS565 Panther (~7) not separately confirmed. 30 AH-64E (+12 ordered Oct 2026) and 12 CH-53K on order."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: AH-64D Saraf and UH-60 are capable but ageing; CH-53D old."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 80,
+          "mid": 150,
+          "high": 250,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Large MALE fleet (Heron, Eitan/Heron TP, Hermes 450/900) whose counts the IAF article leaves blank; educated guess from the number of IAF UAV squadrons. (context page: https://en.wikipedia.org/wiki/Israeli_Air_Force)"
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: Israel is a leading UAV designer/exporter."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: persistent combat ISR over Gaza, Lebanon, Iran."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 45,
+          "mid": 53,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Israeli_Navy",
+          "note": "Navy article: Sa'ar 5 corvettes 3 + Sa'ar 6 corvettes 4 + Sa'ar 4.5 missile boats (~8, count not in the fetched table) + patrol boats Dvora 9, Super Dvora Mk II 2, Mk III 13, Shaldag 5, Defender 9 = ~53. Israel has no ships_major under the convention (Sa'ar 6 at 1,900 t is a corvette)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Sa'ar 6 with Barak-8 and C-Dome is a heavily armed corvette."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 5,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Israeli_Navy",
+          "note": "Navy article: Dolphin (Dolphin I) and AIP Dolphin 2 classes; 5 boats active, a 6th (Drakon) delivered/working up. Dakar class ordered."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: AIP Dolphin 2; reportedly cruise-missile capable."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jericho II/III launchers are undisclosed; FAS assigns part of ~90 warheads to land-based Jericho missiles. LORA quasi-ballistic launchers add a few. (context page: https://fas.org/initiative/status-world-nuclear-forces/)"
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: Jericho III IRBM."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: professional cadre plus conscripts, intense recent combat experience."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces",
+          "note": "Batteries: Iron Dome 9+ (equipment list; ~10-15 reported), David's Sling ~2-4, Arrow 2/3 ~4-5, Iron Beam laser entering service. Patriot retired 2024. Naval Barak/C-Dome excluded. Counts beyond Iron Dome are not on the page (composite judgement)."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: the only fully layered BMD system in combat use (Arrow 3 exo-atmospheric intercepts, 2024-26)."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 band: thousands of combat intercepts since 2023."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: trained staff system with proven commanders and outstanding intelligence/air campaigns (Iran 2025-26, Hezbollah 2024); discounted for the 7 Oct 2023 surprise and protracted Gaza operations."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: professional/conscript force with strong unit identity; strain from reservist fatigue and Haredi conscription disputes."
+    },
+    "morale": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 (motivated) to 1.0 (existential defence): home-front attacked by Iran and Hezbollah; war-weariness after three years."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: precision munitions, loitering munitions (Harop), Jericho III, Rampage/Rocks air-launched ballistic missiles."
+    },
+    "armor": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 (active protection): Trophy on Merkava Mk4 and Namer, Iron Fist on Eitan."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Sa'ar 6 with Barak-8 and C-Dome, AIP Dolphin 2; small coastal navy."
+    },
+    "fortification": {
+      "low": 9.7,
+      "mid": 9.9,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 layered air defence: Iron Dome, David's Sling, Arrow 2/3, Iron Beam laser."
+    },
+    "logistics": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: short interior lines, US airlift/sealift resupply; limited own strategic lift."
+    },
+    "communications": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 networked C4ISR (Tzayad digital army program)."
+    },
+    "isr": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Ofek reconnaissance satellites, persistent MALE drone ISR, G550 CAEW/SEMA aircraft."
+    },
+    "air": {
+      "low": 9.7,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: 48 F-35I in service."
+    },
+    "cyber": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 9.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 state cyber forces: Unit 8200 among the world's leading."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 34723,
+      "mid": 38581,
+      "high": 42440,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 390,551,855,962 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 10,122,800 = 38,581 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 351496670366,
+      "mid": 390551855962,
+      "high": 429607041558,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 487,884,891,895 x 0.8005 (US GDP deflator 2011/2021) = 390,551,855,962 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0434,
+      "mid": 0.0781,
+      "high": 0.0847,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 7.81% of GDP in 2025 (wartime, mid), 8.47% in 2024, 4.34% in 2022 (last pre-war year, low). The field is defined as peacetime share; mid is the current wartime value."
+    },
+    "industrialShare": {
+      "low": 0.1602,
+      "mid": 0.1723,
+      "high": 0.1844,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2024: industry incl. construction (and hydrocarbons) 17.2% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food importer (grain, feed) but exports fruit/vegetables; small surplus at most."
+    },
+    "annualCohort": {
+      "low": 75182,
+      "mid": 83536,
+      "high": 91890,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,042,250 x share of males aged 15-19 8.284% (SP.POP.1519.MA.5Y) / 5 = 83,536. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation. Women are also conscripted (12-24 months); counting them roughly doubles the pool, less Haredi and Arab-citizen exemptions."
+    },
+    "production": {
+      "armor": {
+        "low": 20,
+        "mid": 60,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. MANTAK/Merkava line at Tel HaShomer (~30-60 Mk4/Namer hulls per year in peacetime). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces)"
+      },
+      "ifv_apc": {
+        "low": 60,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Namer and Eitan production (531 Namer planned by 2027). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Israel_Defense_Forces)"
+      },
+      "drones": {
+        "low": 100,
+        "mid": 300,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. IAI, Elbit and Aeronautics produce MALE/tactical UAVs for export and domestic use."
+      },
+      "missiles": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. IMI/Elbit PULS/LORA and Rafael launchers; Jericho production rate unknown."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 90000,
+      "mid": 95992,
+      "high": 95992,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2025: 95,992 km, all paved, incl. 449 km controlled-access."
+    },
+    "railKm": {
+      "low": 1634,
+      "mid": 1720,
+      "high": 1720,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ISR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 1,720 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 1,497 km (2021)."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 5,
+      "high": 5,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/is.json",
+      "note": "CIA Factbook 2024: 5 ports (0 large, 1 medium); key ports Ashdod, Ashqelon, Eilat, Hadera, Haifa. Mid counts all 5 key ports (Haifa and Ashdod are large container/naval ports by regional standards)."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 300000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: Israel is not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT (x1.6 dwt/gt). Mid is an educated guess; ZIM operates mostly foreign-flagged chartered tonnage."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short interior lines; IDF demonstrated operations ~1,500-2,000 km away only by air."
+    },
+    "draftAnimals": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses/donkeys; militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 80,
+      "mid": 90,
+      "high": 200,
+      "grade": "C",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: 90 warheads (stockpile), never declared; FAS notes enough plutonium for 100-200 warheads, so high = 200. Undeclared programme, hence grade C."
+    },
+    "basesAbroad": [
+      {
+        "name": "IDF positions in the Syrian buffer zone (Mount Hermon)",
+        "lat": 33.416,
+        "lon": 35.857,
+        "kind": "fortress"
+      },
+      {
+        "name": "IDF positions in southern Lebanon",
+        "lat": 33.15,
+        "lon": 35.45,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Golan Heights",
+      "Gaza border",
+      "Strait of Tiran / Gulf of Aqaba",
+      "Lebanese border (Litani)",
+      "Jordan Valley"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: fortified borders, mobilised population support and local supply; tiny strategic depth rules out 1.3."
+    }
+  },
+  "notes": "WARTIME snapshot: Gaza war since Oct 2023, Hezbollah war resumed March 2026 with occupation of southern Lebanon, and the 2026 Iran war (since 28 Feb 2026, with the US) after the June 2025 Twelve-Day War. asOf 2025 economic data, 2026 order of battle. Population and area: internationally recognised Israel per World Bank (East Jerusalem and Golan residents included in population as national statistics do). Money in 2011 int$ via derived:ppp-rebase-2011. Equipment counts from the IDF equipment list (IISS 2020/2024 as quoted), IAF and Navy inventory tables; ships_major = 0 because all surface combatants are corvettes; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Paramilitary (Border Police ~8,000) excluded. Wartime losses (24 aircraft lost or damaged per the 2026 war infobox) not subtracted beyond the stated ranges."
+}

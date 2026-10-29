@@ -1,0 +1,637 @@
+{
+  "id": "kuwait-2026",
+  "nationId": "kuwait",
+  "includes": [],
+  "name": "State of Kuwait",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "constitutional emirate",
+    "GCC",
+    "oil exporter",
+    "conscription",
+    "Persian Gulf",
+    "US base host"
+  ],
+  "capital": {
+    "name": "Kuwait City",
+    "lat": 29.3759,
+    "lon": 47.9774,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Shuwaikh Port",
+      "lat": 29.35,
+      "lon": 47.93,
+      "kind": "port"
+    },
+    {
+      "name": "Shuaiba Port",
+      "lat": 29.04,
+      "lon": 48.16,
+      "kind": "port"
+    },
+    {
+      "name": "Mina al-Ahmadi",
+      "lat": 29.0769,
+      "lon": 48.1607,
+      "kind": "port"
+    },
+    {
+      "name": "Camp Arifjan",
+      "lat": 28.88,
+      "lon": 48.15,
+      "kind": "fortress"
+    },
+    {
+      "name": "Ali Al Salem Air Base",
+      "lat": 29.3467,
+      "lon": 47.5208,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mutla Ridge",
+      "lat": 29.43,
+      "lon": 47.63,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bubiyan Island",
+      "lat": 29.8,
+      "lon": 48.3,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Abdali crossing",
+      "lat": 30.0889,
+      "lon": 47.7186,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:KWT",
+    "areaKm2": {
+      "low": 17820,
+      "mid": 17820,
+      "high": 17820,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 17,820 km2 (AG.SRF.TOTL.K2); low is land area 17,820 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 4816645,
+      "mid": 4865298,
+      "high": 4938277,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 4,865,298). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. All residents; ~70% foreign nationals."
+    },
+    "urbanization": {
+      "low": 0.99,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 100% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 17000,
+      "mid": 17500,
+      "high": 25000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.350 as quoted: 17,500 active (CIA Factbook 2025 ~17,000). High allows for conscripts in training. National Guard (7,100) excluded as paramilitary."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 23700,
+      "high": 23700,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: 23,700 reserves."
+    },
+    "supportPersonnel": {
+      "low": 8500,
+      "mid": 10000,
+      "high": 10500,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 17,500 minus infantry P roles (7,500). Covers air force, navy, air defence, crews and logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.03,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Citizens are ~30% of residents; 3-10% of citizens (Gulf analogue, Kuwait 1990 mobilised ~16,000 of ~600,000 citizens plus volunteers) gives 1-3% of total residents."
+    },
+    "mobilizable": {
+      "low": 48653,
+      "mid": 97306,
+      "high": 145959,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 4,865,298 x ratio 0.01 / 0.02 / 0.03."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 3000,
+          "mid": 5000,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised infantry of the armoured/mechanised brigades (BMP-3, Desert Warrior). (context page: https://en.wikipedia.org/wiki/Kuwait_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 1500,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Commando brigade, Amiri Guard. National Guard (7,100, paramilitary) excluded. (context page: https://en.wikipedia.org/wiki/Kuwait_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 280,
+          "mid": 367,
+          "high": 367,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Land_Forces",
+          "note": "Land Forces article: M1A2 218 + M-84AB 149 = 367; many M-84AB stored (low)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: M1A2 (upgrading to M1A2K)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 550,
+          "mid": 650,
+          "high": 900,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Land_Forces",
+          "note": "Land Forces article: BMP-3 ~200 + BMP-2 76 + M113A2 260 + M577 30 + Fahd 60 = ~626; Desert Warrior (~250, not itemised in the fetched rows) gives the high."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 80,
+          "mid": 100,
+          "high": 130,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Land_Forces",
+          "note": "Land Forces article: Smerch 27 + PLZ-45 51 = 78; plus M109A3 and Mk F3 remnants (not itemised) = ~100."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Smerch, PLZ-45."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 47,
+          "mid": 70,
+          "high": 75,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Air_Force",
+          "note": "KAF inventory: F/A-18C/D 27 + Typhoon 20 + F/A-18E/F (28 ordered, count blank on the page, deliveries from 2021) = 47-75."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Super Hornet and Typhoon Tranche 3."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 35,
+          "mid": 50,
+          "high": 65,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Air_Force",
+          "note": "KAF inventory: AH-64D 16 + SA342 13 = 29 itemised; AS332/AS532, EC725 and H225M (30 ordered) not fully itemised."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 6,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Bayraktar TB2 listed on the KAF page without a count. (context page: https://en.wikipedia.org/wiki/Kuwait_Air_Force)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 27,
+          "high": 35,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Naval_Force",
+          "note": "Navy article: Istiqlal 1 + Al Sanbouk 1 + Um Al Maradim 8 + Intisar OPV 4 + Al-Shaheed 3 + Subahi 10 = 27; small craft excluded (high)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers with conscription (12 months) reinstated in 2017; regular US exercises."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 22,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kuwait_Air_Force",
+          "note": "KAF page: Patriot 14 fire units (8 PAC-3) + Hawk 5 + NASAMS (~3, educated) = ~22; Skyguard/Aspide SHORAD add to the high."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Patriot PAC-3."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: intercepted Iranian missiles in 2026."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 band minus: small staff; 1990 collapse in two days, close US integration since."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: struck by Iran in 2026 (4 soldiers killed per the war article)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: precision munitions, Javelin, Patriot PAC-3."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: M1A2."
+    },
+    "ships": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: FAC and patrol only."
+    },
+    "fortification": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Patriot plus NASAMS."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: C-17, KC-130J; US pre-positioned stocks nearby."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Link 16."
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    },
+    "air": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: F/A-18E/F, Typhoon T3."
+    },
+    "cyber": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 34765,
+      "mid": 38627,
+      "high": 42490,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 187,933,316,143 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 4,865,298 = 38,627 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 169139984529,
+      "mid": 187933316143,
+      "high": 206726647757,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 234,769,913,982 x 0.8005 (US GDP deflator 2011/2021) = 187,933,316,143 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0428,
+      "mid": 0.0469,
+      "high": 0.055,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 4.69% of GDP in 2025, 4.44% 2024, 4.28% 2023 (low). High allows for 2026 wartime spending."
+    },
+    "industrialShare": {
+      "low": 0.5033,
+      "mid": 0.5412,
+      "high": 0.5791,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 54.1% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.02,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports nearly all food."
+    },
+    "annualCohort": {
+      "low": 25616,
+      "mid": 28462,
+      "high": 31308,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/KWT/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 2,971,432 x share of males aged 15-19 4.789% (SP.POP.1519.MA.5Y) / 5 = 28,462. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation. Includes expatriate youths."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5749,
+      "mid": 5749,
+      "high": 7000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2018: 5,749 km (85% paved)."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/ku.json",
+      "note": "CIA Factbook lists no railways; the GCC railway link is unbuilt."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/ku.json",
+      "note": "CIA Factbook 2024: 6 ports, 0 large, 2 medium; key ports Ash Shuaybah, Ash Shuwaykh, Mina al Ahmadi, Mina Abd Allah, Mina Su'ud, Doha."
+    },
+    "merchantTonnage": {
+      "low": 4000000,
+      "mid": 4739000,
+      "high": 4739000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 4,739 thousand DWT under the Kuwaiti flag (2,708 thousand GT), mostly KOTC tankers."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Small country; little expeditionary logistics."
+    },
+    "draftAnimals": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Kuwait is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Abdali/Safwan crossing",
+      "Mutla Ridge",
+      "Bubiyan and Warbah islands",
+      "Khor Abdullah"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.0,
+      "high": 1.1,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.0-1.1: flat desert with no depth (overrun in 1990 in two days)."
+    }
+  },
+  "notes": "WARTIME snapshot: struck by Iran during the 2026 Iran war (4 soldiers killed, war article). asOf 2025 economic data, 2026 order of battle. Population: all residents inside ne:KWT, ~70% expatriates; the mobilization ratio is set low for that reason. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Kuwait Land Forces, Air Force and Navy articles; several Air Force counts are blank on the page and bracketed. Infantry P-role splits are educated guesses (grade D). National Guard (7,100) excluded as paramilitary; US forces at Camp Arifjan not counted."
+}

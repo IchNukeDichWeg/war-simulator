@@ -1,0 +1,648 @@
+{
+  "id": "syria-2026",
+  "nationId": "syria",
+  "includes": [],
+  "name": "Syrian Arab Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "post-civil war",
+    "transitional government",
+    "Israeli occupation of the Golan buffer",
+    "Arab League",
+    "Mediterranean"
+  ],
+  "capital": {
+    "name": "Damascus",
+    "lat": 33.5138,
+    "lon": 36.2765,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Aleppo",
+      "lat": 36.2021,
+      "lon": 37.1343,
+      "kind": "city"
+    },
+    {
+      "name": "Homs",
+      "lat": 34.7324,
+      "lon": 36.7137,
+      "kind": "city"
+    },
+    {
+      "name": "Latakia",
+      "lat": 35.5317,
+      "lon": 35.7915,
+      "kind": "port"
+    },
+    {
+      "name": "Tartus",
+      "lat": 34.889,
+      "lon": 35.8866,
+      "kind": "port"
+    },
+    {
+      "name": "Hama",
+      "lat": 35.1318,
+      "lon": 36.7578,
+      "kind": "city"
+    },
+    {
+      "name": "Deir ez-Zor",
+      "lat": 35.3359,
+      "lon": 40.1408,
+      "kind": "city"
+    },
+    {
+      "name": "Raqqa",
+      "lat": 35.9594,
+      "lon": 39.0079,
+      "kind": "city"
+    },
+    {
+      "name": "Qamishli",
+      "lat": 37.0522,
+      "lon": 41.2202,
+      "kind": "city"
+    },
+    {
+      "name": "Golan Heights (Quneitra)",
+      "lat": 33.1257,
+      "lon": 35.8243,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Abu Kamal crossing",
+      "lat": 34.4533,
+      "lon": 40.9186,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SYR",
+    "areaKm2": {
+      "low": 183630,
+      "mid": 185180,
+      "high": 185180,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 185,180 km2 (AG.SRF.TOTL.K2); low is land area 183,630 km2 (AG.LND.TOTL.K2). Includes the Israeli-occupied Golan Heights as in the World Bank figure."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 23058384,
+      "mid": 25620427,
+      "high": 26901448,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 25,620,427). Grade B and a wide range: refugee returns since Dec 2024 (UNHCR ~1 million+) and no census since 2004."
+    },
+    "urbanization": {
+      "low": 0.7108,
+      "mid": 0.7208,
+      "high": 0.7308,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 72.08% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 181000,
+      "high": 200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Syrian_Armed_Forces",
+      "note": "Syrian Armed Forces infobox: ~180,000-182,000 active after the SDF integrated on 25 Aug 2026 (citing ACLED, 27 Aug 2026; link marked dead). Low 100,000 reflects how many integrated units answer to Damascus in practice."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Conscription abolished (CIA Factbook 2025); no organised reserve. High allows for demobilised fighters and tribal/Druze/Alawite local forces that could be called up."
+    },
+    "supportPersonnel": {
+      "low": 26350,
+      "mid": 31000,
+      "high": 32550,
+      "grade": "D",
+      "source": "https://en.wikipedia.org/wiki/Syrian_Armed_Forces",
+      "note": "Active 181,000 minus infantry P roles (150,000). Covers the residual air force, navy, logistics and staff; mostly undefined after the 2025-26 reorganisation."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.025,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogy: Syrian civil-war factions jointly fielded ~400,000-500,000 fighters of ~21 million (~2%); new volunteer state army, so 1-5%."
+    },
+    "mobilizable": {
+      "low": 256204,
+      "mid": 640511,
+      "high": 1281021,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 25,620,427 x ratio 0.01 / 0.025 / 0.05."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 60000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Organised divisions formed since 2025 from ex-HTS, ex-SNA and (Aug 2026) SDF units. (context page: https://en.wikipedia.org/wiki/Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: pickups, captured ex-regime vehicles, small arms."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 90000,
+          "high": 120000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry and ex-militia battalions. (context page: https://en.wikipedia.org/wiki/Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: long civil-war combat experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 50,
+          "mid": 200,
+          "high": 600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ex-regime T-55/T-62/T-72 seen in the 2026 north-eastern offensive (equipment list), but Israeli strikes (Dec 2024) destroyed much heavy equipment; no inventory published. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: obsolete, poorly maintained."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 100,
+          "mid": 400,
+          "high": 900,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. BMP-1/BTR-50 remnants (list: BTR-50 450 pre-war) plus SDF/Turkish-supplied vehicles. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 300,
+          "high": 700,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ex-regime tubes and MRLs (list: 2S1 50) plus improvised rocket launchers. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 0,
+          "mid": 5,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Israel destroyed most of the air force in Dec 2024 (Syrian Armed Forces article); a handful of airframes may be restored, Turkish support discussed. (context page: https://en.wikipedia.org/wiki/Syrian_Air_Force)"
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: few trained pilots."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 0,
+          "mid": 15,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Surviving Mi-8/17 and Gazelle airframes. (context page: https://en.wikipedia.org/wiki/Syrian_Air_Force)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 10,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. HTS-era reconnaissance drones (Shaheen unit, mostly FPV/OWA, excluded) and Turkish-supplied types. (context page: https://en.wikipedia.org/wiki/Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 0,
+          "mid": 2,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Israel sank most of the navy at Latakia and Minet el-Beida (Dec 2024). (context page: https://en.wikipedia.org/wiki/Syrian_Arab_Navy)"
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 0,
+          "mid": 5,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. The 2024 Israeli strikes targeted SAM sites; remaining Pantsir/S-125 remnants and AAA. (context page: https://en.wikipedia.org/wiki/Syrian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: former HTS/SNA/SDF fighters, combat-experienced but untrained as a conventional army."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: new command system built from rebel commanders, little staff training; coastal (Mar 2025) and Suwayda (Jul 2025) operations showed poor control."
+    },
+    "cohesion": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: merged factions with different loyalties (ex-HTS, SNA, SDF)."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: victorious after 2024, but war-weary population."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.8,
+      "mid": 8.2,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: ex-Soviet guided missiles largely destroyed; small arms, ATGMs, drones."
+    },
+    "armor": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55/T-62 rolled armour."
+    },
+    "ships": {
+      "low": 6.5,
+      "mid": 7.5,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: navy largely destroyed."
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: field works, tunnels; no air defence network."
+    },
+    "logistics": {
+      "low": 7.6,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: motor transport, weak."
+    },
+    "communications": {
+      "low": 8.0,
+      "mid": 8.4,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: commercial radios, mobile networks."
+    },
+    "isr": {
+      "low": 7.8,
+      "mid": 8.3,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: small drones; no satellites or AEW."
+    },
+    "air": {
+      "low": 7.0,
+      "mid": 7.8,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: few surviving MiG/Su airframes."
+    },
+    "cyber": {
+      "low": 7.5,
+      "mid": 8.0,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2410,
+      "mid": 3214,
+      "high": 4017,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2022. GDP 82,342,766,164 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 25,620,427 = 3,214 2011 int$. Range +/-25%. Last World Bank value is 2022; GDP since then is very uncertain (sanctions lifted 2025, reconstruction), hence +/-25%."
+    },
+    "gdp": {
+      "low": 61757074623,
+      "mid": 82342766164,
+      "high": 102928457705,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2022. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 102,864,167,601 x 0.8005 (US GDP deflator 2011/2021) = 82,342,766,164 2011 int$. Range +/-25% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Last World Bank value is 2022; GDP since then is very uncertain (sanctions lifted 2025, reconstruction), hence +/-25%."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.035,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No SIPRI series since 2010 (4.06% then, World Bank MS.MIL.XPND.GD.ZS); post-transition budget not published."
+    },
+    "industrialShare": {
+      "low": 0.111,
+      "mid": 0.1194,
+      "high": 0.1278,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2022: industry incl. construction (and hydrocarbons) 11.9% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings. asOf 2022, wartime economy; very uncertain."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.03,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Wheat output collapsed by drought (2025) and war; WFP food aid ongoing."
+    },
+    "annualCohort": {
+      "low": 272391,
+      "mid": 302657,
+      "high": 332923,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 12,825,612 x share of males aged 15-19 11.799% (SP.POP.1519.MA.5Y) / 5 = 302,657. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 55000,
+      "mid": 68157,
+      "high": 69000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Transport_in_Syria",
+      "note": "asOf 2006: 68,157 km (61,514 paved incl. 1,103 km expressways). War damage since 2011 not quantified, hence low."
+    },
+    "railKm": {
+      "low": 1000,
+      "mid": 2139,
+      "high": 2139,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SYR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2010: 2,139 route-km (World Bank IS.RRS.TOTL.KM); much track out of service since the war (low, educated)."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 2,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/sy.json",
+      "note": "CIA Factbook 2024: 3 ports, 1 large + 1 medium = 2 (Latakia, Tartus); Baniyas oil terminal."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 50000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 120,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pickup-truck logistics."
+    },
+    "draftAnimals": {
+      "low": 200000,
+      "mid": 400000,
+      "high": 700000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, mules, horses; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Syria is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table. Al-Kibar reactor destroyed by Israel in 2007."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "BSh",
+    "chokepoints": [
+      "Golan Heights",
+      "Homs gap",
+      "Euphrates crossings",
+      "Orontes valley",
+      "Anti-Lebanon passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, urban strongholds, population support for the post-Assad state uneven (Alawite coast, Druze south, Kurdish north-east)."
+    }
+  },
+  "notes": "Transitional snapshot: the Assad regime fell on 8 Dec 2024; the new Syrian Armed Forces were built from former HTS, SNA and other rebel factions, absorbed the SDF on 25 Aug 2026 (Syrian Armed Forces article), and Israel holds the Golan buffer zone and struck most heavy equipment, aircraft, ships and SAMs in Dec 2024. No order of battle has been published: every equipment count is an educated guess (grade D) with deliberately wide ranges. Population and area from World Bank (incl. the Golan); GDP last published 2022. Doctrine archetype-insurgent because the force is still organised and equipped as ex-rebel light infantry."
+}

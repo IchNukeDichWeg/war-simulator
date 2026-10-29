@@ -1,0 +1,761 @@
+{
+  "id": "algeria-2026",
+  "nationId": "algeria",
+  "includes": [],
+  "name": "People's Democratic Republic of Algeria",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "conscription",
+    "gas exporter",
+    "Russian arms client",
+    "African Union",
+    "Mediterranean",
+    "Sahara"
+  ],
+  "capital": {
+    "name": "Algiers",
+    "lat": 36.7538,
+    "lon": 3.0588,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Oran",
+      "lat": 35.6971,
+      "lon": -0.6308,
+      "kind": "port"
+    },
+    {
+      "name": "Mers El Kebir naval base",
+      "lat": 35.7333,
+      "lon": -0.7,
+      "kind": "port"
+    },
+    {
+      "name": "Constantine",
+      "lat": 36.365,
+      "lon": 6.6147,
+      "kind": "city"
+    },
+    {
+      "name": "Annaba",
+      "lat": 36.9,
+      "lon": 7.7667,
+      "kind": "port"
+    },
+    {
+      "name": "Skikda",
+      "lat": 36.8762,
+      "lon": 6.9092,
+      "kind": "port"
+    },
+    {
+      "name": "Hassi Messaoud oil field",
+      "lat": 31.68,
+      "lon": 6.07,
+      "kind": "city"
+    },
+    {
+      "name": "Tamanrasset",
+      "lat": 22.785,
+      "lon": 5.5228,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bechar",
+      "lat": 31.6167,
+      "lon": -2.2167,
+      "kind": "fortress"
+    },
+    {
+      "name": "Tindouf",
+      "lat": 27.6711,
+      "lon": -8.1474,
+      "kind": "fortress"
+    },
+    {
+      "name": "In Amenas gas plant",
+      "lat": 27.89,
+      "lon": 9.55,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:DZA",
+    "areaKm2": {
+      "low": 2381740,
+      "mid": 2381740,
+      "high": 2381740,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 2,381,740 km2 (AG.SRF.TOTL.K2); low is land area 2,381,740 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 46960959,
+      "mid": 47435312,
+      "high": 48146842,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 47,435,312). Low -1% / high +1.5% for 2026 growth and estimate uncertainty."
+    },
+    "urbanization": {
+      "low": 0.7482,
+      "mid": 0.7582,
+      "high": 0.7682,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 75.82% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 130000,
+      "mid": 139000,
+      "high": 150000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.338 as quoted: 139,000 active. Paramilitary 187,200 (Gendarmerie, Republican Guard) excluded; CIA Factbook 2025 \"estimated 200,000 active ANP incl. the National Gendarmerie\"."
+    },
+    "trainedReserves": {
+      "low": 150000,
+      "mid": 150000,
+      "high": 400000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 150,000 reserves. High allows for the much larger pool of ex-conscripts."
+    },
+    "supportPersonnel": {
+      "low": 67150,
+      "mid": 79000,
+      "high": 82950,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 139,000 minus infantry P roles (60,000). Covers air force, territorial air defence forces, navy, crews and logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Egypt/Morocco-type conscript mobilisation (3-8%); universal 12-month male service gives a large trained pool."
+    },
+    "mobilizable": {
+      "low": 1423059,
+      "mid": 2371766,
+      "high": 3794825,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 47,435,312 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 40000,
+          "high": 50000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised infantry of the armoured/mechanised divisions (BMP-2, Fuchs 2). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 12000,
+          "mid": 20000,
+          "high": 28000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motorised/airborne/special forces brigades used against jihadists. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: counter-insurgency experience since the 1990s."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 925,
+          "mid": 1200,
+          "high": 1632,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces",
+          "note": "Equipment list: T-90SA 600 + T-72M1 325 = 925 modern-ish; older T-62/T-55 remain (IISS 2020 total 1,632 per the level-of-equipment list, high)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: T-90SA modern export tank."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1700,
+          "mid": 1900,
+          "high": 2500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces",
+          "note": "Equipment list: BMP-2 220 + BMPT-72 26 + BRDM-2 26 + Fuchs 2 1,034 + Panhard M3 55 + BTR-80 150 + BTR-60 250 = 1,761; older BMP-1s (not itemised) add to the high."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 700,
+          "mid": 800,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces",
+          "note": "Equipment list: SP 224 (PLZ-45 54, 2S1 140, 2S3 30) + towed 393 + MRL 188 (TOS-1A 52, SR-5 70, Smerch 18, BM-21 48) = 805; anti-tank guns and mortars excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Smerch, TOS-1A."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 120,
+          "mid": 145,
+          "high": 150,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Algerian_Air_Force",
+          "note": "Air Force table: MiG-29C 46 + MiG-29M/M2 25 + Su-30MKA 72 + Su-57E 2 = 145."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Su-30MKA 4+ generation, first export Su-57E."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 40,
+          "mid": 53,
+          "high": 53,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Algerian_Air_Force",
+          "note": "Su-24MK2 39 + Su-34M 14 = 53."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Su-34 modern."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 180,
+          "mid": 220,
+          "high": 260,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Algerian_Air_Force",
+          "note": "Air Force table: Mi-24 Super Hind 32 + Mi-28NE 42 + AW101 11 + Bell 412 3 + AS355 14 + Ka-32 3 + utility 22 + trainers 16 + navy Super Lynx 10, AW101 5, AW139 3 = ~161 itemised; the large Mi-17/Mi-171 transport fleet (not itemised in the fetched rows) brings the estimate to ~220."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Mi-28NE modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 40,
+          "mid": 58,
+          "high": 70,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces",
+          "note": "Wing Loong II 24 + CH-4 10 + WJ-700 4 + CH-3 10 (Land Forces list) + Seeker 10 (Air Force) = 58; Black Hornet nano UAVs excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 7,
+          "mid": 8,
+          "high": 8,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Algerian_National_Navy",
+          "note": "Navy table \"Frigates (8)\": MEKO A200 2 + C28A 3 + Koni 3. The amphibious transport dock Kalaat Beni Abbes counted in ships_minor (LPD convention)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: MEKO A200 modern, Koni obsolete."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 75,
+          "mid": 89,
+          "high": 89,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Algerian_National_Navy",
+          "note": "Navy table: corvettes 8 + MCM 3 + patrol boats 75 (incl. 8 Osa II missile boats) + LPD 1 + landing ships 2 = 89."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 6,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Algerian_National_Navy",
+          "note": "Navy table: Project 636.1 (Improved Kilo) 4 + Project 877EKM 2 = 6, the largest submarine force in Africa."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Improved Kilo with Kalibr capability."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 8,
+          "high": 24,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Iskander-E reportedly acquired (shown 2017); numbers unconfirmed. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 55,
+          "mid": 75,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Algerian_Land_Forces",
+          "note": "Equipment list (odd units): S-300PMU2/S-300 \"8 regiments\" (~16 batteries), S-400 (several regiments claimed, ~4-8 batteries), Buk-M2 48 launchers (~12), Pantsir-S1/SM 108 (~18), Tor-M2 48 (~12), S-125 36 (~9) = ~75 batteries."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: dense modern Russian network (S-300PMU2, S-400, Pantsir)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: conscripts (12 months) with a professional cadre; Sahel border operations."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent, Soviet-style staff; army is the core of state power."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: national conscript army with strong institutional identity."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: average; strong for home defence (independence-war legacy)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Russian guided weapons, Kalibr on submarines, Kornet."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: T-90SA with Shtora; no APS."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: MEKO A200, Improved Kilo."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: dense S-300/S-400/Pantsir network."
+    },
+    "logistics": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: long desert distances, rail limited to the north."
+    },
+    "communications": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Alsat satellites, Chinese MALE drones."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 plus: Su-30MKA, Su-34, first Su-57E."
+    },
+    "cyber": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 11443,
+      "mid": 12714,
+      "high": 13986,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 603,097,891,526 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 47,435,312 = 12,714 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 542788102373,
+      "mid": 603097891526,
+      "high": 663407680678,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 753,401,488,477 x 0.8005 (US GDP deflator 2011/2021) = 603,097,891,526 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0406,
+      "mid": 0.0883,
+      "high": 0.0883,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 8.83% of GDP in 2025 (record budget), 7.97% 2024, 4.06% 2022 (low)."
+    },
+    "industrialShare": {
+      "low": 0.3236,
+      "mid": 0.348,
+      "high": 0.3724,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 34.8% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.03,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Major cereal importer."
+    },
+    "annualCohort": {
+      "low": 353884,
+      "mid": 393204,
+      "high": 432524,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 24,186,841 x share of males aged 15-19 8.128% (SP.POP.1519.MA.5Y) / 5 = 393,204. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fuchs 2 licence assembly (Rheinmetall Algeria, Khenchela)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 127000,
+      "mid": 145615,
+      "high": 145615,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2026: 145,615 km total (117,000 paved of 127,000 in the breakdown)."
+    },
+    "railKm": {
+      "low": 3800,
+      "mid": 4000,
+      "high": 4000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DZA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 4,000 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 4,020 km (2019)."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 9,
+      "high": 17,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ag.json",
+      "note": "CIA Factbook 2024: 17 ports, 2 large + 1 medium = 3; 9 key ports named (Algiers, Annaba, Arzew, Bejaia, Mers El Kebir, Oran, Skikda...)."
+    },
+    "merchantTonnage": {
+      "low": 300000,
+      "mid": 700000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess (Sonatrach LNG carriers, CNAN)."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 350,
+      "high": 600,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Long internal desert lines to the Sahel border."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels, donkeys, horses, mules; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Algeria is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Tell Atlas passes",
+      "Moroccan border (closed since 1994)",
+      "Sahara oases (In Salah, Tamanrasset)",
+      "Sahel border (Mali/Niger)"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountains, Sahara depth and strong population support; high 1.3 for the deep desert an invader is not adapted to."
+    }
+  },
+  "notes": "Peacetime snapshot (hostile relations with Morocco, Polisario host at Tindouf, Sahel instability). asOf 2025 economic data, 2026 order of battle. Population: everything inside ne:DZA (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Land Forces equipment list, Air Force and Navy tables (IISS-based); some unit wording on the list (S-300/S-400 \"brigades\") is ambiguous and converted with stated assumptions. ships_major = frigates. Infantry P-role splits are educated guesses (grade D). Paramilitary (187,200) excluded."
+}

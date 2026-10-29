@@ -1,0 +1,667 @@
+{
+  "id": "iraq-2026",
+  "nationId": "iraq",
+  "includes": [],
+  "name": "Republic of Iraq",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "federal republic",
+    "oil exporter",
+    "militias",
+    "Arab League",
+    "Persian Gulf"
+  ],
+  "capital": {
+    "name": "Baghdad",
+    "lat": 33.3152,
+    "lon": 44.3661,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Basra",
+      "lat": 30.5085,
+      "lon": 47.7804,
+      "kind": "city"
+    },
+    {
+      "name": "Umm Qasr",
+      "lat": 30.0346,
+      "lon": 47.9533,
+      "kind": "port"
+    },
+    {
+      "name": "Mosul",
+      "lat": 36.34,
+      "lon": 43.13,
+      "kind": "city"
+    },
+    {
+      "name": "Erbil",
+      "lat": 36.1911,
+      "lon": 44.0092,
+      "kind": "city"
+    },
+    {
+      "name": "Kirkuk",
+      "lat": 35.4681,
+      "lon": 44.3922,
+      "kind": "city"
+    },
+    {
+      "name": "Al Asad Air Base",
+      "lat": 33.7856,
+      "lon": 42.4412,
+      "kind": "fortress"
+    },
+    {
+      "name": "Fallujah",
+      "lat": 33.3486,
+      "lon": 43.7754,
+      "kind": "city"
+    },
+    {
+      "name": "Shatt al-Arab",
+      "lat": 30.4,
+      "lon": 48.1,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Al-Qaim border crossing",
+      "lat": 34.38,
+      "lon": 41.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:IRQ",
+    "areaKm2": {
+      "low": 434130,
+      "mid": 435050,
+      "high": 435050,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 435,050 km2 (AG.SRF.TOTL.K2); low is land area 434,130 km2 (AG.LND.TOTL.K2). Includes the Kurdistan Region."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 46550566,
+      "mid": 47020774,
+      "high": 47726086,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 47,020,774). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. Includes the Kurdistan Region."
+    },
+    "urbanization": {
+      "low": 0.6894,
+      "mid": 0.6994,
+      "high": 0.7094,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 69.94% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 180000,
+      "mid": 193000,
+      "high": 205000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.352 as quoted: 193,000 active (CIA Factbook 2025: ~200,000 under the MoD). Paramilitary 266,000 (IISS) excluded: Popular Mobilization Forces (~200,000, Iran-aligned, partly fighting in the 2026 war) and federal police; KRG Peshmerga (~150,000) also excluded."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: no reserves. High counts the PMF as a callable pool (CIA Factbook ~200,000), not under MoD command."
+    },
+    "supportPersonnel": {
+      "low": 100300,
+      "mid": 118000,
+      "high": 123900,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 193,000 minus infantry P roles (75,000). Covers air force, army aviation, air defence, navy, crews and logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.07,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Iraq's 1980s total-war mobilisation (~1 million of ~17 million, ~6%) scaled down for a volunteer army and divided loyalties (PMF, Peshmerga)."
+    },
+    "mobilizable": {
+      "low": 940415,
+      "mid": 1880831,
+      "high": 3291454,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 47,020,774 x ratio 0.02 / 0.04 / 0.07."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 35000,
+          "mid": 50000,
+          "high": 70000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Iraqi Army infantry/mechanised divisions (14 divisions, many under strength). (context page: https://en.wikipedia.org/wiki/Iraqi_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: US/Russian small arms, MRAP mobility."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 35000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Counter-Terrorism Service (~10-15,000) plus light/commando brigades. PMF and Peshmerga excluded. (context page: https://en.wikipedia.org/wiki/Iraqi_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: CTS combat-hardened vs ISIS (Mosul 2016-17)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 350,
+          "mid": 600,
+          "high": 1325,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_equipment_of_the_Iraqi_Ground_Forces",
+          "note": "Equipment list header \"Tanks (1325)\": M1A1 487, T-90S 210 (SIPRI: 73 delivered), T-72M/Lion of Babylon 478+, T-55 150. The list total is inflated by unserviceable/stored hulls; mid is a judgement of the operational park."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: M1A1M/T-90S modern, T-72M/T-55 old; maintenance weak."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1200,
+          "mid": 2000,
+          "high": 2800,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_equipment_of_the_Iraqi_Ground_Forces",
+          "note": "BMP-3 300 + BMP-1 600 + BTR-4 270 + VN22 200 + BTR-80 100 + M113 500 + MT-LB ~400 + Talha 44 + M1117 324 = ~2,740 listed; Cougar/ILAV MRAPs (1,243) excluded. Serviceability discount gives mid 2,000."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 400,
+          "mid": 800,
+          "high": 1600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_equipment_of_the_Iraqi_Ground_Forces",
+          "note": "Listed: SP ~434 (M109 220, AMX-GCT 86, 2S1 90, Type-83 38) + towed ~610 + MRL ~570 (BM-21 300, Type 63 200, Sajil-60 66) = ~1,600; operational share judged ~half."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 20,
+          "mid": 34,
+          "high": 34,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iraqi_Air_Force",
+          "note": "IqAF inventory: F-16C/D/IQ 34; low reflects reported serviceability problems after contractor withdrawals. T-50IQ (24) counted as trainers."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: F-16 Block 52."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 20,
+          "mid": 33,
+          "high": 33,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iraqi_Air_Force",
+          "note": "IqAF inventory: Su-25 19 + L-159A 14 = 33."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: COIN experience vs ISIS."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 80,
+          "mid": 120,
+          "high": 160,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army Aviation: Mi-35M 23 and Mi-28 17 (equipment list), EC725 2, plus Mi-17, Bell 407/IA-407, EC635, Bell 206 without reliable totals. (context page: https://en.wikipedia.org/wiki/Iraqi_Air_Force)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 5,
+          "mid": 12,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. CH-4B MALE drones and ScanEagle. (context page: https://en.wikipedia.org/wiki/Iraqi_Air_Force)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Iraqi Navy patrol ships (Al Basrah, Fatah/Al-Nasr classes) and Swiftships patrol boats around Umm Qasr; Italian-built corvettes/OPVs on order. (context page: https://en.wikipedia.org/wiki/Iraqi_Navy)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 band minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_equipment_of_the_Iraqi_Ground_Forces",
+          "note": "Pantsir-S1 24 vehicles (~4 batteries) + MIM-23 Hawk 50 launchers (~8) + Avenger 100 (~8 platoons); KM-SAM ordered 2024 not delivered."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: no long-range SAM; airspace routinely violated (Israel, Turkey, Iran)."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, uneven training; CTS elite, regular divisions weaker."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: improved since the 2014 Mosul collapse, but politicised appointments and parallel PMF command."
+    },
+    "cohesion": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: sectarian and Kurdish splits; PMF loyalties to Tehran."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Hellfire, Kornet, some precision bombs; no long-range strike."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: M1A1M/T-90S plus older Soviet tanks."
+    },
+    "ships": {
+      "low": 7.6,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: patrol craft only."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: hardened bases, weak air defence."
+    },
+    "logistics": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: weak maintenance, contractor dependence."
+    },
+    "communications": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Cessna ISR, few drones; coalition support reduced."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: F-16 Block 52."
+    },
+    "cyber": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 8588,
+      "mid": 9759,
+      "high": 10930,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 458,891,765,241 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 47,020,774 = 9,759 2011 int$. Range +/-12%."
+    },
+    "gdp": {
+      "low": 403824753412,
+      "mid": 458891765241,
+      "high": 513958777070,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 573,256,421,288 x 0.8005 (US GDP deflator 2011/2021) = 458,891,765,241 2011 int$. Range +/-12% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0164,
+      "mid": 0.0245,
+      "high": 0.0324,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.45% of GDP in 2025, 1.64% 2022 (low), 3.24% 2019 (high). PMF salaries partly outside the defence budget."
+    },
+    "industrialShare": {
+      "low": 0.4221,
+      "mid": 0.4539,
+      "high": 0.4857,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 45.4% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net importer; Tigris-Euphrates water decline."
+    },
+    "annualCohort": {
+      "low": 453620,
+      "mid": 504022,
+      "high": 554424,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 23,613,299 x share of males aged 15-19 10.672% (SP.POP.1519.MA.5Y) / 5 = 504,022. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 50000,
+      "mid": 55100,
+      "high": 60000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Transport_in_Iraq",
+      "note": "asOf 2025: total 55,100 km (40,362 paved) per the Transport in Iraq article (CIA Factbook figures)."
+    },
+    "railKm": {
+      "low": 2272,
+      "mid": 2370,
+      "high": 2370,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRQ/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2014: 2,370 route-km (World Bank); CIA Factbook 2,272 km. Much track damaged since 2014."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 5,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/iz.json",
+      "note": "CIA Factbook 2024: 6 ports, 0 large, 1 medium; key ports Al Basrah, Basra Oil Terminal, Khawr al Amaya, Khawr al Zubair, Umm Qasr. Grand Faw port under construction."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 200000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based, weak maintenance."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, horses, camels; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Iraq is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Shatt al-Arab",
+      "Kurdish mountain passes",
+      "Euphrates corridor (Al-Qaim)",
+      "Tigris corridor (Mosul)"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain and local supply; population support divided along sectarian lines."
+    }
+  },
+  "notes": "Peacetime-adjacent snapshot: Iraq stayed formally out of the 2026 Iran war but Iran-aligned PMF factions fought (war infobox: PMF casualties April/July 2026) and Gulf states skirmished with them. asOf 2025 economic data, 2026 order of battle. Population and area include the Kurdistan Region (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Ground equipment list totals are inflated by unserviceable vehicles; mids are discounted judgements (grade C). PMF (~200,000) and Peshmerga (~150,000) excluded from forces (they are not under MoD command). Infantry P-role splits are educated guesses (grade D)."
+}

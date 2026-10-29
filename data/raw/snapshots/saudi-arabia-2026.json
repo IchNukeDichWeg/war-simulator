@@ -1,0 +1,744 @@
+{
+  "id": "saudi-arabia-2026",
+  "nationId": "saudi-arabia",
+  "includes": [],
+  "name": "Kingdom of Saudi Arabia",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "absolute monarchy",
+    "GCC",
+    "oil exporter",
+    "all-volunteer force",
+    "Red Sea",
+    "Persian Gulf"
+  ],
+  "capital": {
+    "name": "Riyadh",
+    "lat": 24.7136,
+    "lon": 46.6753,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Jeddah",
+      "lat": 21.4858,
+      "lon": 39.1925,
+      "kind": "port"
+    },
+    {
+      "name": "Mecca",
+      "lat": 21.3891,
+      "lon": 39.8579,
+      "kind": "city"
+    },
+    {
+      "name": "Dammam",
+      "lat": 26.4207,
+      "lon": 50.0888,
+      "kind": "port"
+    },
+    {
+      "name": "Ras Tanura oil terminal",
+      "lat": 26.643,
+      "lon": 50.159,
+      "kind": "port"
+    },
+    {
+      "name": "Abqaiq processing plant",
+      "lat": 25.9396,
+      "lon": 49.6776,
+      "kind": "city"
+    },
+    {
+      "name": "Jizan",
+      "lat": 16.8892,
+      "lon": 42.5511,
+      "kind": "port"
+    },
+    {
+      "name": "King Faisal Air Base (Tabuk)",
+      "lat": 28.3654,
+      "lon": 36.6189,
+      "kind": "fortress"
+    },
+    {
+      "name": "King Khalid Military City",
+      "lat": 27.9,
+      "lon": 45.53,
+      "kind": "fortress"
+    },
+    {
+      "name": "Yanbu",
+      "lat": 24.0889,
+      "lon": 38.0637,
+      "kind": "port"
+    },
+    {
+      "name": "Saudi-Yemeni border (Najran)",
+      "lat": 17.4924,
+      "lon": 44.1277,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SAU",
+    "areaKm2": {
+      "low": 2149690,
+      "mid": 2149690,
+      "high": 2149690,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 2,149,690 km2 (AG.SRF.TOTL.K2); low is land area 2,149,690 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 36603819,
+      "mid": 36973555,
+      "high": 37528158,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 36,973,555). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. All residents incl. ~40% foreign nationals."
+    },
+    "urbanization": {
+      "low": 0.8361,
+      "mid": 0.8461,
+      "high": 0.8561,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 84.61% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 250000,
+      "mid": 257000,
+      "high": 260000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.377 as quoted: 257,000 active incl. the National Guard (paramilitary 24,500 excluded). CIA Factbook 2025: ~250,000 (125,000 MoD + 125,000 National Guard)."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: no organised reserve. High is an educated allowance for recalled retirees and tribal levies."
+    },
+    "supportPersonnel": {
+      "low": 146200,
+      "mid": 172000,
+      "high": 180600,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 257,000 minus infantry P roles (85,000). Covers air force, air defence force, navy, Strategic Missile Force, crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.035,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "About 58% of residents are citizens (World Bank male population 22.3 m vs female 14.6 m reflects the expatriate workforce); ratio applies to the total population but represents roughly 3-6% of citizens, comparable to other volunteer Gulf militaries; analogue: Kuwait 1990-91 (educated judgement)."
+    },
+    "mobilizable": {
+      "low": 369736,
+      "mid": 739471,
+      "high": 1294074,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 36,973,555 x ratio 0.01 / 0.02 / 0.035."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 30000,
+          "mid": 40000,
+          "high": 55000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised infantry of the Army (4 armoured + 5 mechanised brigades) and SANG mechanised brigades on Bradley/LAV. (context page: https://en.wikipedia.org/wiki/Saudi_Arabian_National_Guard)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band: modern Western kit (M2 Bradley, LAV 6.0)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 45000,
+          "high": 60000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. SANG light/tribal infantry battalions, airborne brigade, Royal Guard, special forces. (context page: https://en.wikipedia.org/wiki/Saudi_Arabian_National_Guard)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 850,
+          "mid": 945,
+          "high": 1085,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Saudi_Arabian_Army",
+          "note": "Equipment list: M1A2S 575 + M60A3 370 = 945 active; high adds 140 AMX-30 in reserve (list total 1,085). Low allows for Yemen-war losses."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: M1A2S is a top-tier tank; M60A3 dated."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2300,
+          "mid": 2800,
+          "high": 3500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Saudi_Arabian_Army",
+          "note": "Army: M2A2 380 + AMX-10P 380 (mostly stored) + M113 1,190; SANG: LAV II 724 + LAV III 19 + AMX-10P 90+ (SANG article) = ~2,780; 900 LAV 6.0 on order."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Bradley/LAV modern, M113/AMX-10P old."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 800,
+          "mid": 1000,
+          "high": 1400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Saudi_Arabian_Army",
+          "note": "Equipment list: SP howitzers 380 (M109 110, CAESAR 156 with SANG, AMX-30 AuF1 60, PLZ-45 54) + towed 557 + Astros II 77 + M270 (listed 180, likely includes pods) = ~1,200; many towed 105 mm guns stored, hence mid 1,000."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: CAESAR, PLZ-45, Astros modern; towed park old."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 250,
+          "mid": 282,
+          "high": 290,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Saudi_Air_Force",
+          "note": "RSAF inventory: Typhoon 72 + F-15 family 210 (C/D MSIP II, F-15SR/SA; 21 used for training, 1 lost 2026) = 282. Up to 48 F-35A in a proposed sale approved Sept 2026 (none delivered)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: F-15SA and Typhoon among the best 4.5-generation types."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: decade of combat sorties over Yemen, Western training."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 60,
+          "mid": 81,
+          "high": 81,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Saudi_Air_Force",
+          "note": "RSAF inventory: Tornado IDS 81 (MLU TS3 2018). Low allows for retirement as F-15SA/Typhoon take over."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: upgraded but 1980s airframe."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 220,
+          "mid": 270,
+          "high": 330,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Saudi_Arabian_Army",
+          "note": "Composite of listed inventories (some figures include on-order): Army AH-64D/E 47, UH-60L/M 100, CH-47F 48, OH-58D 15; SANG AH-64 12, UH-60M 24; RSAF Bell 212 22, Bell 412 14; Navy MH-60R 10, AS332 20, AS565 26 = ~338 incl. orders."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band: AH-64E, UH-60M, CH-47F modern."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 30,
+          "mid": 60,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Wing Loong/CH-4 class MALE drones; the Army equipment list gives 300 Wing Loong II under a local-production partnership, far above confirmed deliveries. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Saudi_Arabian_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Chinese MALE types."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 9,
+          "mid": 11,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Saudi_Naval_Forces",
+          "note": "Navy article: Al Riyadh class (La Fayette mod.) 3 + Al Madinah class 4 + Multi-Mission Surface Combatant (Freedom-derived) 4 named = 11; low if the last MMSC hulls are still working up."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Al Riyadh and MMSC modern, Al Madinah 1980s."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 55,
+          "mid": 60,
+          "high": 80,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Saudi_Naval_Forces",
+          "note": "Navy article: Al Jubail (Avante 2200) corvettes 5 + Badr corvettes 4 + Al Siddiq FAC 9 + Al Jawf (Sandown) MCM 3 + HSI32 interceptors 39 = 60; small craft excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals; Yemen war (2015-) exposed weak combined-arms skills."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 8,
+          "mid": 20,
+          "high": 60,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal Saudi Strategic Missile Force: Chinese DF-3 (retired?) and reported DF-21 launchers; numbers secret. (context page: https://en.wikipedia.org/wiki/Royal_Saudi_Air_Defence_Force)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 60,
+          "mid": 90,
+          "high": 110,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Saudi_Air_Defence_Force",
+          "note": "Launcher counts on the RSADF article converted at ~4-6 launchers per battery: Shahine 141 (~30), I-HAWK 128 (~21), Crotale 40 (~8), AMX-30SA SPAAG 50 (~8); Patriot PAC-2/3 ~20 batteries and THAAD 1-2 (educated, not on the page) = ~90."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Patriot/THAAD intercepted many Houthi and Iranian missiles 2017-26; Shahine/Hawk old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: extensive real-world intercept experience."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff with Western support, but the Yemen campaign (2015-) showed poor joint coordination."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: split between MoD army and the tribal-loyalty National Guard."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: homeland under Iranian (2026) and Houthi (Oct 2026) missile/drone attack; limited appetite for ground war."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Western precision munitions (Paveway, Storm Shadow), JDAM; few indigenous systems."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: M1A2S composite armour; no APS."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Aster-armed Al Riyadh, Aegis-lite MMSC."
+    },
+    "fortification": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Patriot plus THAAD layered missile defence, hardened bases."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: large airlift (C-130, A330 MRTT), dependent on foreign contractors."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Link 16, E-3 AWACS."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: AWACS, commercial/partner satellite imagery, MALE drones."
+    },
+    "air": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: F-15SA and Typhoon 4.5 generation, no 5th generation yet."
+    },
+    "cyber": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: developing national cyber command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 45425,
+      "mid": 50472,
+      "high": 55520,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 1,866,142,685,811 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 36,973,555 = 50,472 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1679528417230,
+      "mid": 1866142685811,
+      "high": 2052756954392,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,331,221,343,924 x 0.8005 (US GDP deflator 2011/2021) = 1,866,142,685,811 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0572,
+      "mid": 0.0648,
+      "high": 0.0648,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 6.48% of GDP in 2025, 6.41% 2024, 5.72% 2022 (low). Among the highest shares worldwide."
+    },
+    "industrialShare": {
+      "low": 0.3996,
+      "mid": 0.4297,
+      "high": 0.4598,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 43.0% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.02,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports ~80% of food; some dates/dairy/poultry self-sufficiency."
+    },
+    "annualCohort": {
+      "low": 246417,
+      "mid": 273797,
+      "high": 301177,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SAU/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 22,341,396 x share of males aged 15-19 6.128% (SP.POP.1519.MA.5Y) / 5 = 273,797. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation. Includes expatriate youths; Saudi citizens are roughly 60-70% of the 15-19 cohort."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 0,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. SAMI/local assembly of LAV and Al-Masmak vehicles."
+      },
+      "drones": {
+        "low": 10,
+        "mid": 40,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Local Wing Loong assembly partnership (KACST)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 200000,
+      "mid": 221372,
+      "high": 240000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2006: 221,372 km (47,529 paved); dated figure, network has grown (high)."
+    },
+    "railKm": {
+      "low": 4000,
+      "mid": 5410,
+      "high": 5600,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/sa.json",
+      "note": "CIA Factbook: 5,410 km (2016) incl. Haramain HSR and North-South line; World Bank 2,939 km (2018) counts only part. Mid follows the Factbook."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 8,
+      "high": 16,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/sa.json",
+      "note": "CIA Factbook 2024: 16 ports, 0 large, 1 medium; 8 key ports named (Dammam, Duba, Jiddah, Jizan, Ju Aymah, Ras Tanura, Ras al Khafji, Ras al Mishab)."
+    },
+    "merchantTonnage": {
+      "low": 15000000,
+      "mid": 17445000,
+      "high": 17445000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 17,445 thousand DWT under the Saudi flag (9,609 thousand GT), mostly Bahri tankers."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 400,
+      "high": 700,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large truck fleet and HETs; sustained operations in Yemen ~1,000 km from Riyadh."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 1800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mainly camels; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Saudi Arabia is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table. Pakistan defence pact (Sept 2025) and stated intent to match any Iranian bomb are not warheads."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Bab al-Mandab (approaches)",
+      "Strait of Hormuz (approaches)",
+      "Saudi-Yemeni border mountains",
+      "Gulf of Aqaba"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: vast desert depth and local supply; population support for a dynastic state uncertain (no 1.2)."
+    }
+  },
+  "notes": "WARTIME-adjacent snapshot: attacked by Iran in the 2026 Iran war and retaliated (war article), and hit by Houthi missile/drone waves since the Bab al-Mandab crisis (Sept-Oct 2026). asOf 2025 economic data, 2026 order of battle. Population: everything inside ne:SAU incl. ~40% expatriates; the mobilization ratio is set low for that reason. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from Wikipedia inventory tables (Army equipment list, RSAF, Navy, RSADF, SANG); some figures include equipment on order and are flagged. ships_major = frigates (11); corvettes and FAC in ships_minor. Infantry P-role splits are educated guesses (grade D). Paramilitary (24,500, IISS) excluded."
+}

@@ -1,0 +1,642 @@
+{
+  "id": "oman-2026",
+  "nationId": "oman",
+  "includes": [],
+  "name": "Sultanate of Oman",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "absolute monarchy",
+    "GCC",
+    "oil exporter",
+    "neutral mediator",
+    "Strait of Hormuz",
+    "Arabian Sea"
+  ],
+  "capital": {
+    "name": "Muscat",
+    "lat": 23.588,
+    "lon": 58.3829,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Duqm",
+      "lat": 19.6623,
+      "lon": 57.7039,
+      "kind": "port"
+    },
+    {
+      "name": "Salalah",
+      "lat": 17.0151,
+      "lon": 54.0924,
+      "kind": "port"
+    },
+    {
+      "name": "Sohar",
+      "lat": 24.3643,
+      "lon": 56.7468,
+      "kind": "port"
+    },
+    {
+      "name": "Khasab (Musandam)",
+      "lat": 26.1797,
+      "lon": 56.2486,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Hormuz",
+      "lat": 26.5667,
+      "lon": 56.25,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Thumrait Air Base",
+      "lat": 17.6667,
+      "lon": 54.0247,
+      "kind": "fortress"
+    },
+    {
+      "name": "Masirah Island",
+      "lat": 20.6754,
+      "lon": 58.8905,
+      "kind": "fortress"
+    },
+    {
+      "name": "Nizwa",
+      "lat": 22.9333,
+      "lon": 57.5333,
+      "kind": "city"
+    },
+    {
+      "name": "Dhofar mountains",
+      "lat": 17.15,
+      "lon": 53.9,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:OMN",
+    "areaKm2": {
+      "low": 309500,
+      "mid": 309500,
+      "high": 309500,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 309,500 km2 (AG.SRF.TOTL.K2); low is land area 309,500 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 5439744,
+      "mid": 5494691,
+      "high": 5577111,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 5,494,691). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. All residents; ~43% foreign nationals."
+    },
+    "urbanization": {
+      "low": 0.7848,
+      "mid": 0.7948,
+      "high": 0.8048,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 79.48% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 40000,
+      "mid": 42600,
+      "high": 47000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.376 as quoted: 42,600 active (CIA Factbook 2025 ~40,000). High allows for the Royal Guard and Royal Household troops counted separately in some sources. Paramilitary 4,400 excluded."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 10000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024: no reserves. High is an educated allowance for recalled ex-servicemen."
+    },
+    "supportPersonnel": {
+      "low": 18360,
+      "mid": 21600,
+      "high": 22680,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 42,600 minus infantry P roles (21,000). Covers air force, navy, crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Citizens are ~57% of residents; 4-8% of citizens (regional volunteer-state analogue) gives 2-5% of total residents."
+    },
+    "mobilizable": {
+      "low": 109894,
+      "mid": 164841,
+      "high": 274735,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 5,494,691 x ratio 0.02 / 0.03 / 0.05."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 6000,
+          "mid": 9000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured/mechanised infantry brigades on Pars and Piranha. (context page: https://en.wikipedia.org/wiki/Royal_Army_of_Oman)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 16000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry brigades, Frontier Force, parachute regiment and Royal Guard of Oman. (context page: https://en.wikipedia.org/wiki/Sultan_of_Oman%27s_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 117,
+          "high": 144,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Army_of_Oman",
+          "note": "Royal Army article: Challenger 2 38 + M60A3 79 = 117 (IISS 2020 also 117 per the level-of-equipment list); high adds 27 Chieftains likely retired. Scorpion light tanks excluded."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Challenger 2."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 450,
+          "mid": 600,
+          "high": 680,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Army_of_Oman",
+          "note": "Pars 172 + Piranha 174 + VBL 124 + V-100 15 + Fahd 31 + Saxon 15 + VAB 56 + WZ551 50 + Spartan 34 = 671; mid discounts older V-100/Saxon/Spartan."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Pars 8x8 modern."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 183,
+          "high": 190,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Army_of_Oman",
+          "note": "M109 15 + G6 24 + M-46 24 + L118 42 + D-30 30 + FH70 12 + M102 36 = 183."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 25,
+          "mid": 29,
+          "high": 35,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Air_Force_of_Oman",
+          "note": "RAFO inventory: Typhoon 12 + F-16C/D 17 listed = 29 (Oman ordered 23 F-16 Block 50 + 12 earlier; high)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Typhoon, F-16 Block 50."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 6,
+          "mid": 10,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Air_Force_of_Oman",
+          "note": "RAFO inventory: Hawk 203 light multirole 10 (some retired, low)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 40,
+          "mid": 45,
+          "high": 50,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Air_Force_of_Oman",
+          "note": "RAFO inventory: NH90 18 + Super Lynx 13 + Bell 429 5 + Bell 206 4 + AW139 5 = 45."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 14,
+          "mid": 18,
+          "high": 24,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Navy_of_Oman",
+          "note": "Navy article: patrol vessels \"8 in service\" (Khareef 3 corvettes counted within the fleet figures, Qahir 2 corvettes) + amphibious ships 2 + FAC/survey; small craft excluded. Khareef-class (~2,700 t) treated as corvettes, so ships_major is omitted."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Khareef modern."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 10,
+          "mid": 14,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Royal_Army_of_Oman",
+          "note": "Converted from launchers: Pantsir-S1 12 (~2-3 batteries) + Rapier 28 (~5) + Mistral 54 (~6) + Stormer HVM 4 (~1) = ~14; NASAMS (ordered 2014) adds to the high."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: all-volunteer professionals, long British training tradition (Dhofar war legacy)."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: British-style staff system, small but competent; no war since Dhofar (1975)."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: professional force with strong regimental tradition."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: neutral mediator, not attacked in 2026."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: AMRAAM, Brimstone, Javelin."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Challenger 2."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Khareef corvettes with MICA VL."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: no long-range SAM."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: A400M, C-130J."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 plus: Typhoon, F-16 Block 50."
+    },
+    "cyber": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 26039,
+      "mid": 28932,
+      "high": 31826,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 158,974,744,354 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 5,494,691 = 28,932 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 143077269918,
+      "mid": 158974744354,
+      "high": 174872218789,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 198,594,308,999 x 0.8005 (US GDP deflator 2011/2021) = 158,974,744,354 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.0568,
+      "high": 0.065,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 5.68% of GDP in 2025, 5.59% 2024. Range reflects oil-price-driven GDP swings."
+    },
+    "industrialShare": {
+      "low": 0.4905,
+      "mid": 0.5274,
+      "high": 0.5643,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 52.7% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.03,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports most cereals; fish and dates exported."
+    },
+    "annualCohort": {
+      "low": 29030,
+      "mid": 32256,
+      "high": 35482,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/OMN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 3,428,967 x share of males aged 15-19 4.704% (SP.POP.1519.MA.5Y) / 5 = 32,256. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation. Includes expatriate youths."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 60000,
+      "mid": 62240,
+      "high": 70000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Transport_in_Oman",
+      "note": "asOf 2012: 62,240 km (Transport in Oman article, CIA figure); network grown since (high), incl. the 725-km Rub al-Khali highway to Saudi Arabia."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/mu.json",
+      "note": "CIA Factbook lists no railways; the Hafeet Rail Sohar-Abu Dhabi line is under construction."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 4,
+      "high": 7,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/mu.json",
+      "note": "CIA Factbook 2024: 7 ports, 0 large, 1 medium; key ports Mina Qabus, Salalah, Sohar, Duqm, Mina al Fahl."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 50000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 450,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Long internal roads to Dhofar; A400M airlift."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 250000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels, donkeys; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Oman is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Strait of Hormuz (Musandam)",
+      "Hajar mountain passes",
+      "Dhofar mountains",
+      "Arabian Sea coast"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Hajar and Dhofar mountains, desert depth, strong population support for the sultanate."
+    }
+  },
+  "notes": "Peacetime snapshot: Oman mediated US-Iran talks and was not a belligerent in the 2026 Iran war, but its Hormuz waters were contested. asOf 2025 economic data, 2026 order of battle (IISS 2024 personnel, latest edition quoted). Population: all residents inside ne:OMN incl. ~43% expatriates. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Royal Army of Oman, RAFO and Royal Navy of Oman articles. Infantry P-role splits are educated guesses (grade D). Paramilitary (4,400) excluded."
+}

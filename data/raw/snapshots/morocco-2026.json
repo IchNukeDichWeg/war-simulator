@@ -1,0 +1,684 @@
+{
+  "id": "morocco-2026",
+  "nationId": "morocco",
+  "includes": [],
+  "name": "Kingdom of Morocco",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "constitutional monarchy",
+    "conscription",
+    "Western Sahara conflict",
+    "Abraham Accords",
+    "Atlantic",
+    "Mediterranean",
+    "Strait of Gibraltar"
+  ],
+  "capital": {
+    "name": "Rabat",
+    "lat": 34.0209,
+    "lon": -6.8416,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Casablanca",
+      "lat": 33.5731,
+      "lon": -7.5898,
+      "kind": "port"
+    },
+    {
+      "name": "Tanger Med",
+      "lat": 35.885,
+      "lon": -5.5,
+      "kind": "port"
+    },
+    {
+      "name": "Marrakesh",
+      "lat": 31.6295,
+      "lon": -7.9811,
+      "kind": "city"
+    },
+    {
+      "name": "Fes",
+      "lat": 34.0181,
+      "lon": -5.0078,
+      "kind": "city"
+    },
+    {
+      "name": "Agadir",
+      "lat": 30.4278,
+      "lon": -9.5981,
+      "kind": "port"
+    },
+    {
+      "name": "Ksar es-Seghir naval base",
+      "lat": 35.85,
+      "lon": -5.55,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Gibraltar",
+      "lat": 35.95,
+      "lon": -5.6,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Laayoune (Western Sahara)",
+      "lat": 27.1253,
+      "lon": -13.1625,
+      "kind": "city"
+    },
+    {
+      "name": "Western Sahara berm (Mahbes sector)",
+      "lat": 27.43,
+      "lon": -9.05,
+      "kind": "fortress"
+    },
+    {
+      "name": "Oujda (Algerian border)",
+      "lat": 34.6814,
+      "lon": -1.9086,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:MAR",
+    "areaKm2": {
+      "low": 446300,
+      "mid": 446550,
+      "high": 446550,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 446,550 km2 (AG.SRF.TOTL.K2); low is land area 446,300 km2 (AG.LND.TOTL.K2). Morocco proper as in ne:MAR; Western Sahara (~266,000 km2, mostly Moroccan-administered) excluded."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 38046462,
+      "mid": 38430770,
+      "high": 39007232,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 38,430,770). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. World Bank figure follows the national census, which includes residents of the Moroccan-administered \"southern provinces\"; Natural Earth MAR polygon excludes Western Sahara."
+    },
+    "urbanization": {
+      "low": 0.6213,
+      "mid": 0.6313,
+      "high": 0.6413,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 63.13% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 190000,
+      "mid": 195800,
+      "high": 220000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.369 as quoted: 195,800 active. CIA Factbook 2025: ~220,000 incl. 20,000 Gendarmerie (high). Paramilitary 50,000 excluded."
+    },
+    "trainedReserves": {
+      "low": 150000,
+      "mid": 150000,
+      "high": 150000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 150,000 reserves."
+    },
+    "supportPersonnel": {
+      "low": 64430,
+      "mid": 75800,
+      "high": 79590,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 195,800 minus infantry P roles (120,000). Covers air force, navy, Royal Guard support, crews and logistics."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to the 1975 Green March / berm-era mobilisation and regional conscript states (3-7%)."
+    },
+    "mobilizable": {
+      "low": 1152923,
+      "mid": 1921538,
+      "high": 2690154,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 38,430,770 x ratio 0.03 / 0.05 / 0.07."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 35000,
+          "mid": 50000,
+          "high": 65000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised/armoured infantry (M113, VAB). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 70000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry and security battalions manning the Western Sahara berm, paratroop brigades, special forces. Army ~175,000 per CIA Factbook. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 900,
+          "mid": 1100,
+          "high": 1350,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army",
+          "note": "Equipment list: M1A1/M1A2 384 + M60 535 + M48 225 + Al-Khalid 54 + T-72B/EA 148 = 1,346; IISS 2020 counted 916 (level-of-equipment list, low). SK-105 light tanks and AMX-10RC excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: M1A1SA modern, M48/M60 dated."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1500,
+          "mid": 1900,
+          "high": 2300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army",
+          "note": "M113 ~1,172 + AIFV 123 + AMX-10P 10 + Ratel 60 + OT-64 95 + VAB 405 + UR-416 70 = ~1,935; MRAPs (Cobra II 220, M-ATV 150+) and armoured cars excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly M113/VAB."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 650,
+          "mid": 800,
+          "high": 900,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army",
+          "note": "M109 >300 + Mk F3 100 + CAESAR 36 + ATMOS 36 + M110 60 + towed ~190 + BM-21 35 + PHL-03 36 + PULS/Lynx 12 + HIMARS 18 (under delivery) = ~820."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: HIMARS, PULS, PHL-03 add long-range precision."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 65,
+          "mid": 70,
+          "high": 70,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Moroccan_Air_Force",
+          "note": "RMAF table: F-16C/D 23 + Mirage F1 25 + F-5E/F 22 = 70; 25 F-16 Block 72 ordered."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: F-16 Block 52 plus old F1/F-5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 100,
+          "mid": 110,
+          "high": 125,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Moroccan_Air_Force",
+          "note": "RMAF table: AH-64E 19 + Gazelle 19 + H135M 6 + Bell 205 24 + Bell 212 3 + Bell 429 4 + Puma 24 + CH-47D 10 = 109."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: AH-64E new."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 30,
+          "mid": 40,
+          "high": 60,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Moroccan_Air_Force",
+          "note": "RMAF table: Bayraktar TB2 \"13 or 19 or +20\", Heron 3, Hermes 900 4, Harfang 3, Wing Loong 3, MQ-9/SeaGuardian 4, SkyEye 6; Akinci (count N/A)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: TB2 strikes against Polisario since 2021."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Moroccan_Navy",
+          "note": "Navy table \"Frigates (6)\": FREMM Mohammed VI 1 + SIGMA 3 + Floreal 2."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FREMM and SIGMA modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 27,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Moroccan_Navy",
+          "note": "Navy table: corvette 1 + missile boats 4 + patrol boats 18 + landing ships (BATRAL etc.) ~4 = 27."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 28,
+          "mid": 40,
+          "high": 50,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Moroccan_Army",
+          "note": "Equipment list: Barak MX 6 batteries + Sky Dragon 50 6 + VL MICA 4 + Type 90 >12 batteries = 28; M163 115 and towed AAA add ~10-15 gun batteries."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Barak MX, Sky Dragon 50 new."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional/volunteer core with reinstated 12-month conscription; decades of berm garrison duty."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent staff, close US/Israeli/French cooperation (African Lion exercises)."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: royal army with strong institutional loyalty."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: national cause in Western Sahara."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: HIMARS, PULS, Javelin, loitering munitions."
+    },
+    "armor": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: M1A1SA plus large M60/M48 fleet."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: FREMM, SIGMA."
+    },
+    "fortification": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: 2,700 km Western Sahara berm, new layered SAMs."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Mohammed VI-A/B imaging satellites, MALE drones."
+    },
+    "air": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: F-16 Block 52, F-16V upgrades pending."
+    },
+    "cyber": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 6948,
+      "mid": 7720,
+      "high": 8492,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 296,682,560,556 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 38,430,770 = 7,720 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 267014304501,
+      "mid": 296682560556,
+      "high": 326350816612,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 370,621,562,219 x 0.8005 (US GDP deflator 2011/2021) = 296,682,560,556 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0287,
+      "mid": 0.0354,
+      "high": 0.038,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 3.54% of GDP in 2025, 3.81% 2022, 2.87% 2019 (low)."
+    },
+    "industrialShare": {
+      "low": 0.2348,
+      "mid": 0.2525,
+      "high": 0.2702,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 25.2% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exports fruit, vegetables and fish; imports cereals in drought years."
+    },
+    "annualCohort": {
+      "low": 299655,
+      "mid": 332950,
+      "high": 366245,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 19,372,079 x share of males aged 15-19 8.594% (SP.POP.1519.MA.5Y) / 5 = 332,950. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "drones": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Israeli-licensed drone plant (BlueBird) announced 2022."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 57334,
+      "mid": 57334,
+      "high": 60000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2022: 57,334 km (45,240 paved)."
+    },
+    "railKm": {
+      "low": 2180,
+      "mid": 2295,
+      "high": 2295,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/MAR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 2,295 route-km (World Bank IS.RRS.TOTL.KM). Includes the Al Boraq high-speed line; CIA Factbook 2,067 km (2014)."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 4,
+      "high": 12,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/mo.json",
+      "note": "CIA Factbook 2024: 12 ports, 3 large + 1 medium = 4; key ports Agadir, Casablanca, Tanger, Tanger-Med."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Berm logistics over long desert roads."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, mules, horses, camels in agriculture; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Morocco is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Strait of Gibraltar",
+      "Atlas passes",
+      "Taza gap",
+      "Western Sahara berm"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Atlas mountains, fortified berm, strong population support."
+    }
+  },
+  "notes": "Peacetime snapshot (low-intensity Western Sahara conflict with the Polisario since 2020; tension with Algeria). asOf 2025 economic data, 2026 order of battle. Border ne:MAR excludes Western Sahara; World Bank population follows the national census (includes the southern provinces), area excludes it - a known mismatch. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Royal Moroccan Army equipment list, RMAF and Navy tables. Infantry P-role splits are educated guesses (grade D). Paramilitary (50,000) excluded."
+}

@@ -1,0 +1,752 @@
+{
+  "id": "egypt-2026",
+  "nationId": "egypt",
+  "includes": [],
+  "name": "Arab Republic of Egypt",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "conscription",
+    "Suez Canal",
+    "Arab League",
+    "US aid recipient",
+    "Mediterranean",
+    "Red Sea"
+  ],
+  "capital": {
+    "name": "Cairo",
+    "lat": 30.0444,
+    "lon": 31.2357,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Alexandria",
+      "lat": 31.2001,
+      "lon": 29.9187,
+      "kind": "port"
+    },
+    {
+      "name": "Giza",
+      "lat": 30.0131,
+      "lon": 31.2089,
+      "kind": "city"
+    },
+    {
+      "name": "Port Said",
+      "lat": 31.2653,
+      "lon": 32.3019,
+      "kind": "port"
+    },
+    {
+      "name": "Suez",
+      "lat": 29.9668,
+      "lon": 32.5498,
+      "kind": "port"
+    },
+    {
+      "name": "Suez Canal (Ismailia)",
+      "lat": 30.5965,
+      "lon": 32.2715,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Aswan High Dam",
+      "lat": 23.9709,
+      "lon": 32.8775,
+      "kind": "fortress"
+    },
+    {
+      "name": "Berenice military base",
+      "lat": 23.95,
+      "lon": 35.47,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mohamed Naguib military base",
+      "lat": 30.95,
+      "lon": 29.25,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mersa Matruh",
+      "lat": 31.3543,
+      "lon": 27.2373,
+      "kind": "port"
+    },
+    {
+      "name": "Rafah crossing",
+      "lat": 31.2737,
+      "lon": 34.2482,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:EGY",
+    "areaKm2": {
+      "low": 995450,
+      "mid": 1001450,
+      "high": 1001450,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 1,001,450 km2 (AG.SRF.TOTL.K2); low is land area 995,450 km2 (AG.LND.TOTL.K2). Includes the Halaib triangle as administered."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 117182335,
+      "mid": 118365995,
+      "high": 120141485,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 118,365,995). Low -1% / high +1.5% for 2026 growth and estimate uncertainty."
+    },
+    "urbanization": {
+      "low": 0.419,
+      "mid": 0.429,
+      "high": 0.439,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 42.90% urban (SP.URB.TOTL.IN.ZS, national definition). Egypt's narrow administrative definition understates urban settlement in the Nile delta."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 430000,
+      "mid": 438500,
+      "high": 450000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.343 as quoted: 438,500 active (CIA Factbook 2025 ~450,000). Paramilitary 397,000 (Central Security Forces, National Guard) excluded."
+    },
+    "trainedReserves": {
+      "low": 400000,
+      "mid": 479000,
+      "high": 479000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 479,000 reserves; conscripts carry a 9-year reserve obligation (CIA Factbook), so the pool is larger than the organised reserve."
+    },
+    "supportPersonnel": {
+      "low": 185725,
+      "mid": 218500,
+      "high": 229425,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 438,500 minus infantry P roles (220,000). Covers air force, air defence force (a separate service, ~80,000), navy, crews, logistics and staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Egypt's 1973 mobilisation (~800,000-1,000,000 of ~36 million, ~2.5%) scaled for total war with universal male conscription and a young population."
+    },
+    "mobilizable": {
+      "low": 3550980,
+      "mid": 5918300,
+      "high": 9469280,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 118,365,995 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 100000,
+          "mid": 140000,
+          "high": 180000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised/armoured divisions' infantry (Egypt fields 4 armoured + 8 mechanised divisions in IISS listings); share of 438,500 active. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mix of M113/Fahd and modern Western/Soviet small arms."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry divisions, Republican Guard light units, paratroop and Sa'ka commando brigades. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1800,
+          "mid": 2030,
+          "high": 3000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army",
+          "note": "Equipment list: M1A1 1,300 + M60A3 500 + T-62 100 + T-54/55 100 + T-80 34 = 2,034 (table header ~2,000). High allows for older stored types that IISS also counts (IISS 2020 total ~5,300 incl. store per the level-of-equipment list)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: locally co-produced M1A1 (SA upgrade under way), many old types."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 3500,
+          "mid": 4500,
+          "high": 5500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army",
+          "note": "Equipment list: YPR-765 390 + BMP-1 300 + M113 family 2,000 + BTR-50 500 (250 active) + OT-62 200 + BMR-600 250 + Fahd 410 + BTR-60 250 + Walid 650 = ~4,950; MRAPs (Caiman 535, RG-33 449) excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly 1960s-80s designs."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1200,
+          "mid": 1450,
+          "high": 1900,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army",
+          "note": "Equipment list: M109A5 325 + M110 50 + SP-122 38 + SP M-46 100 + towed D-30 100, M-30 122, M-46 320, GH52 16 + MLRS BM-21 family 256, K136 36, M270 26, others ~40 = ~1,430; K9A1EGY (216 planned, local production) partly delivered."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 280,
+          "mid": 329,
+          "high": 340,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Egyptian_Air_Force",
+          "note": "EAF inventory header \"Fighter jets (329)\": Rafale 46 (8 more by end-2026) + F-16C/D 220 + MiG-29M/M2 45 + Mirage 2000 18. Low allows for F-16 serviceability."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Rafale modern; F-16 Block 40 without AMRAAM; MiG-29M."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Sinai/Libya strike experience."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 250,
+          "mid": 285,
+          "high": 300,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Egyptian_Air_Force",
+          "note": "EAF header \"Helicopters (285)\": incl. AH-64E 45, Ka-52 46, Mi-24V 13, Gazelle 48, CH-47 23, Mi-8/17 43, SH-2G 7, AW139/189 12."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: AH-64E and Ka-52 modern."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Egyptian_Air_Force",
+          "note": "EAF table: WJ-700 10 confirmed; Wing Loong I/II and CH-4 also operated (counts not given). Mid is a judgement."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 11,
+          "mid": 13,
+          "high": 15,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Egyptian_Navy",
+          "note": "Navy article: Mistral LHDs 2 (Gamal Abdel Nasser, Anwar El Sadat), FREMM 3 (Tahya Misr, Al-Galala, Bernees), MEKO A200 ~4, Oliver Hazard Perry ~4; IISS 2020 listed 2 LHD + 13 frigates (level-of-equipment list). Older Knox/Descubierta units likely retired."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: FREMM and MEKO A200 modern."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 70,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Gowind corvettes 4, Pohang/Descubierta corvettes (IISS 2020: 7 corvettes), Ambassador Mk III and Osa/Hegu missile boats, MCM and patrol craft. (context page: https://en.wikipedia.org/wiki/Egyptian_Navy)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 6,
+          "mid": 8,
+          "high": 8,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_countries_by_level_of_military_equipment",
+          "note": "IISS Military Balance 2020 as quoted: 8 SSK (Type 209/1400mod 4 + Romeo 4; Romeos may be non-operational, hence low 6)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: modern Type 209 + obsolete Romeo."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 20,
+          "mid": 33,
+          "high": 50,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Egyptian_Army",
+          "note": "Equipment list: Sakr-80 24 + 9K52 Luna-M 9; Scud-B launchers (IISS ~9) not itemised."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: obsolete short-range systems."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 80,
+          "mid": 110,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Egyptian_Air_Defense_Forces",
+          "note": "ADF table converted to batteries: S-300VM 4 battalions (~8), NASAMS-3 4, IRIS-T SLM 7 + SLX 10 + SLS 6 systems (~15), Buk M1-2/M2 (~6), Hawk 62 launchers (~10), Kub 56 (~14), Pechora-2M 70 (~17), S-75 100 (~15), Tor 16 (~4), Crotale 36 (~9), Avenger 75 (~8) = ~110."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: dense mixed Soviet/Western/German network; IRIS-T and S-300VM modern."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscripts (14-36 months) with professional cadre; Sinai counter-insurgency experience."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent but centralised, conscript-heavy staff system; Sinai insurgency campaign mixed."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: national conscript army with strong institutional identity (military dominates the state)."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: average; strong for defence of the Nile valley and Suez."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: guided missiles, Rafale/MICA, Hellfire; few precision long-range munitions."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: M1A1 composite armour; most AFVs older."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: FREMM, MEKO A200, Mistral LHDs."
+    },
+    "fortification": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: hardened air bases, dense SAM belts."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: large conscript logistics, C-130/C-295 airlift."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: E-2C, EgyptSat imaging satellites, MALE drones."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 plus: Rafale 4.5 generation; bulk F-16 Block 40."
+    },
+    "cyber": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 12439,
+      "mid": 13821,
+      "high": 15203,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 1,635,907,022,215 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 118,365,995 = 13,821 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1472316319994,
+      "mid": 1635907022215,
+      "high": 1799497724437,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,043,606,523,692 x 0.8005 (US GDP deflator 2011/2021) = 1,635,907,022,215 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0061,
+      "mid": 0.0061,
+      "high": 0.015,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.61% of GDP in 2025 (1.12% 2021). SIPRI excludes off-budget military business revenues and US FMF (~$1.3 bn/yr), hence high 1.5% (educated)."
+    },
+    "industrialShare": {
+      "low": 0.2982,
+      "mid": 0.3206,
+      "high": 0.343,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 32.1% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.03,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. World's largest wheat importer; Nile agriculture feeds most of the rest."
+    },
+    "annualCohort": {
+      "low": 1015964,
+      "mid": 1128849,
+      "high": 1241734,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 59,760,496 x share of males aged 15-19 9.445% (SP.POP.1519.MA.5Y) / 5 = 1,128,849. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Factory 200 M1A1 co-production line (assembly ended; SA upgrades continue)."
+      },
+      "artillery": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. K9A1EGY licence production at Factory 200; D-30 licence."
+      },
+      "ifv_apc": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Kader Factory (Fahd, Sinai 200, Temsah)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 300000,
+      "mid": 325250,
+      "high": 325250,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2024: 325,250 km (240,000 paved), 1,034 km controlled-access."
+    },
+    "railKm": {
+      "low": 5085,
+      "mid": 5153,
+      "high": 5153,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/EGY/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2016: 5,153 route-km (World Bank); CIA Factbook 5,085 km (2014)."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 6,
+      "high": 31,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/eg.json",
+      "note": "CIA Factbook 2024: 31 ports, 5 large + 1 medium = 6; key ports Ain Sukhna, Alexandria, Suez, Port Said, Damietta, Ras Shukhier."
+    },
+    "merchantTonnage": {
+      "low": 1500000,
+      "mid": 1935000,
+      "high": 1935000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 1,935 thousand DWT under the Egyptian flag (1,289 thousand GT)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-based; demonstrated air strikes in Libya, limited expeditionary land logistics."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3500000,
+      "high": 5000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, horses, camels, buffalo used in agriculture; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Egypt is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Suez Canal",
+      "Sinai passes (Mitla, Giddi)",
+      "Nile valley",
+      "Libyan border (Sallum)",
+      "Bab al-Mandab (Red Sea approaches)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Suez Canal barrier, desert approaches, dense population support in the Nile valley."
+    }
+  },
+  "notes": "Peacetime snapshot (Gaza border tension, Red Sea traffic loss to Houthi attacks cut Suez revenue). asOf 2025 economic data, 2026 order of battle. Population: everything inside ne:EGY (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Counts from the Army equipment list, EAF and ADF inventory tables and the IISS 2020-based level-of-equipment list; ships_major = LHD + frigates. Infantry P-role splits are educated guesses (grade D). Paramilitary (397,000) excluded. SIPRI military spending badly understates the real effort (note on milSpendShare)."
+}

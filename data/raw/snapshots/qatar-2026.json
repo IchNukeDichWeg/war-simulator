@@ -1,0 +1,630 @@
+{
+  "id": "qatar-2026",
+  "nationId": "qatar",
+  "includes": [],
+  "name": "State of Qatar",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "absolute monarchy",
+    "GCC",
+    "LNG exporter",
+    "national service",
+    "Persian Gulf",
+    "host of Al Udeid"
+  ],
+  "capital": {
+    "name": "Doha",
+    "lat": 25.2854,
+    "lon": 51.531,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Ras Laffan LNG complex",
+      "lat": 25.9047,
+      "lon": 51.5432,
+      "kind": "port"
+    },
+    {
+      "name": "Hamad Port",
+      "lat": 25.016,
+      "lon": 51.611,
+      "kind": "port"
+    },
+    {
+      "name": "Al Udeid Air Base",
+      "lat": 25.1174,
+      "lon": 51.315,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mesaieed",
+      "lat": 24.99,
+      "lon": 51.548,
+      "kind": "port"
+    },
+    {
+      "name": "Al Khor",
+      "lat": 25.6839,
+      "lon": 51.5058,
+      "kind": "city"
+    },
+    {
+      "name": "Dukhan",
+      "lat": 25.4241,
+      "lon": 50.7837,
+      "kind": "city"
+    },
+    {
+      "name": "Abu Samra crossing",
+      "lat": 24.75,
+      "lon": 50.82,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:QAT",
+    "areaKm2": {
+      "low": 11490,
+      "mid": 11637,
+      "high": 11637,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 11,637 km2 (AG.SRF.TOTL.K2); low is land area 11,490 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 2942493,
+      "mid": 2972215,
+      "high": 3016798,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 2,972,215). Low -1% / high +1.5% for 2026 growth and estimate uncertainty. All residents; ~88-90% foreign nationals."
+    },
+    "urbanization": {
+      "low": 0.9836,
+      "mid": 0.9936,
+      "high": 1,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 99.36% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 15000,
+      "mid": 16500,
+      "high": 22000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.364 as quoted: 16,500 active (CIA Factbook 2025 ~15,000). High allows for national-service conscripts in training. Paramilitary 5,000 excluded."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 15000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: no reserves listed. High is an educated allowance for men who completed national service (since 2014)."
+    },
+    "supportPersonnel": {
+      "low": 8075,
+      "mid": 9500,
+      "high": 9975,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 16,500 minus infantry P roles (7,000). Covers air force, navy, air defence, crews and logistics (many contract foreigners)."
+    },
+    "mobilizationRatio": {
+      "low": 0.004,
+      "mid": 0.008,
+      "high": 0.015,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Qatari citizens are only ~10-12% of ~3 million residents; 3-12% of citizens mobilised (Gulf analogue) gives ~0.4-1.5% of total residents."
+    },
+    "mobilizable": {
+      "low": 11889,
+      "mid": 23778,
+      "high": 44583,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 2,972,215 x ratio 0.004 / 0.008 / 0.015."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2500,
+          "mid": 4000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised infantry (VBCI/Piranha) of the Land Forces. (context page: https://en.wikipedia.org/wiki/Qatar_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: new VBCI, Leopard 2A7."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Emiri Guard and special forces. (context page: https://en.wikipedia.org/wiki/Qatar_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 50,
+          "mid": 62,
+          "high": 62,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Qatar_Armed_Forces",
+          "note": "Qatar Armed Forces article: 62 Leopard 2A7+ (delivered 2015-16); AMX-30 retired."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Leopard 2A7 is among the best MBTs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 450,
+          "high": 600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. VBCI (490 ordered 2018, deliveries unclear), Piranha II, AMX-10P remnants, Ejder Yalcin and BMC Kirpi (Turkish). (context page: https://en.wikipedia.org/wiki/Qatar_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Qatar_Armed_Forces",
+          "note": "Qatar Armed Forces article: 24 PzH 2000; plus Astros II MLRS, G5 and M109 remnants (not itemised; educated) = ~60."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: PzH 2000 is top-tier."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 95,
+          "mid": 104,
+          "high": 110,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Qatar_Emiri_Air_Force",
+          "note": "QEAF inventory: Rafale 36 + F-15QA 48 + Typhoon 20 delivered (of 24) = 104; Mirage 2000-5 sold to Indonesia."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: F-15QA and Rafale among the most capable 4.5-generation fighters."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: young air force; few Qatari pilots per airframe."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 50,
+          "mid": 65,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Qatar_Emiri_Air_Force",
+          "note": "QEAF inventory: AH-64E 24 + SA342 13 + NH90 NFH 12 = 49 itemised; NH90 TTH, AW139, Commando and Sea King additions (not counted in the fetched rows) give the high."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Qatar_Emiri_Air_Force",
+          "note": "QEAF inventory: Bayraktar TB2 6."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 14,
+          "mid": 20,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Qatari_Emiri_Navy",
+          "note": "Navy article: Al Zubarah-class corvettes 4 + Musherib OPVs 2 + Ares OPVs 2 + Barzan/Damsah FAC ~7 + MRTP fast attack craft ~5 = ~20; LPD Al Fulk counted here (LPD convention). No frigates, so ships_major is omitted."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: new Fincantieri corvettes with Aster 30."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professionals and national-service conscripts, heavy reliance on foreign contract personnel and trainers."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 14,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Patriot PAC-3 MSE (Qatar Armed Forces article; ~10 fire units ordered 2014), NASAMS and Rapier/Mistral SHORAD; counts unconfirmed. (context page: https://en.wikipedia.org/wiki/Qatar_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Patriot PAC-3 MSE, AN/FPS-132 early warning radar."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: intercepted Iranian salvos in 2025-26."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 band minus: small staff dependent on foreign advisers (Turkey, France, US)."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: homeland struck by Iran (2025 Al Udeid strike, 2026 Ras Laffan attacks); shot down 2 Iranian Su-24s."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Meteor, AIM-120D, precision munitions."
+    },
+    "armor": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Leopard 2A7."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Aster-armed corvettes."
+    },
+    "fortification": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Patriot PAC-3 MSE, FPS-132 early warning."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: C-17 fleet, dependence on contractors."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Link 16, Es'hailSat."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: partner (US CENTCOM CAOC at Al Udeid) ISR."
+    },
+    "air": {
+      "low": 9.4,
+      "mid": 9.5,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: F-15QA, Rafale, Typhoon."
+    },
+    "cyber": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 79347,
+      "mid": 88164,
+      "high": 96980,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 262,041,248,341 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 2,972,215 = 88,164 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 235837123507,
+      "mid": 262041248341,
+      "high": 288245373176,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 327,346,968,571 x 0.8005 (US GDP deflator 2011/2021) = 262,041,248,341 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.065,
+      "high": 0.08,
+      "grade": "C",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 6.5% of GDP (2022, last published value). Range 4-8% (educated) because the series is stale and wartime 2026 spending unknown."
+    },
+    "industrialShare": {
+      "low": 0.5305,
+      "mid": 0.5704,
+      "high": 0.6103,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 57.0% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports ~90% of food despite post-2017 dairy self-sufficiency push."
+    },
+    "annualCohort": {
+      "low": 12090,
+      "mid": 13433,
+      "high": 14776,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/QAT/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 2,112,996 x share of males aged 15-19 3.179% (SP.POP.1519.MA.5Y) / 5 = 13,433. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation. Includes expatriate youths; Qatari males are ~15% of the cohort."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 7039,
+      "mid": 7039,
+      "high": 9800,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2016: 7,039 km. High allows for the World Cup era expansion."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 76,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/qa.json",
+      "note": "CIA Factbook lists no railways. Doha Metro (~76 km, urban passenger) and Lusail tram excluded; high includes the metro."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 3,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/qa.json",
+      "note": "CIA Factbook 2024: 6 ports, 0 large, 1 medium (Hamad); key ports also Ras Laffan, Mesaieed, Doha."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 50000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess. Nakilat's LNG fleet is largely foreign-flagged."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Small country; C-17 airlift."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Qatar is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Abu Samra land border",
+      "Strait of Hormuz (export route)",
+      "Ras Laffan LNG complex"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.0,
+      "high": 1.1,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.0-1.1: flat peninsula with no depth; local supply only."
+    }
+  },
+  "notes": "WARTIME snapshot: struck by Iran (Al Udeid, June 2025; Ras Laffan, 2026) and shot down two Iranian Su-24s in the 2026 Iran war (war article). asOf 2025 economic data, 2026 order of battle. Population: all residents inside ne:QAT, ~90% expatriates; the mobilization ratio is set very low for that reason. Money in 2011 int$ via derived:ppp-rebase-2011. Counts from QEAF, Qatar Armed Forces and Navy articles; land-vehicle and air-defence counts are educated guesses (grade D). No ships_major (corvettes only). Turkish troops at Tariq bin Ziyad base and US forces at Al Udeid are foreign forces and not counted."
+}

@@ -1,0 +1,642 @@
+{
+  "id": "libya-2026",
+  "nationId": "libya",
+  "includes": [],
+  "name": "Libya (divided: GNU Tripoli and LNA/HoR east)",
+  "year": 2026,
+  "era": "modern",
+  "region": "mena",
+  "phase": "current",
+  "tags": [
+    "divided state",
+    "frozen civil war",
+    "oil exporter",
+    "foreign forces present",
+    "Mediterranean",
+    "Sahara"
+  ],
+  "capital": {
+    "name": "Tripoli",
+    "lat": 32.8872,
+    "lon": 13.1913,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Benghazi",
+      "lat": 32.1167,
+      "lon": 20.0667,
+      "kind": "city"
+    },
+    {
+      "name": "Misrata",
+      "lat": 32.3754,
+      "lon": 15.0925,
+      "kind": "port"
+    },
+    {
+      "name": "Sirte",
+      "lat": 31.2089,
+      "lon": 16.5887,
+      "kind": "city"
+    },
+    {
+      "name": "Tobruk",
+      "lat": 32.0836,
+      "lon": 23.9764,
+      "kind": "port"
+    },
+    {
+      "name": "Al Jufra Air Base",
+      "lat": 29.198,
+      "lon": 16.0,
+      "kind": "fortress"
+    },
+    {
+      "name": "Al-Watiya Air Base",
+      "lat": 32.4746,
+      "lon": 11.8975,
+      "kind": "fortress"
+    },
+    {
+      "name": "Es Sider oil terminal",
+      "lat": 30.63,
+      "lon": 18.35,
+      "kind": "port"
+    },
+    {
+      "name": "Sabha",
+      "lat": 27.0377,
+      "lon": 14.4283,
+      "kind": "city"
+    },
+    {
+      "name": "Sirte-Jufra line",
+      "lat": 31.0,
+      "lon": 16.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:LBY",
+    "areaKm2": {
+      "low": 1759540,
+      "mid": 1759540,
+      "high": 1759540,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 1,759,540 km2 (AG.SRF.TOTL.K2); low is land area 1,759,540 km2 (AG.LND.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 7383969,
+      "mid": 7458555,
+      "high": 7570433,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 7,458,555). Low -1% / high +1.5% for 2026 growth and estimate uncertainty."
+    },
+    "urbanization": {
+      "low": 0.8691,
+      "mid": 0.8791,
+      "high": 0.8891,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 87.91% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 80000,
+      "mid": 122000,
+      "high": 150000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_of_Libya",
+      "note": "Military of Libya infobox: ~32,000 Libyan Armed Forces (GNU, Tripoli) + ~90,000 Libyan Arab Armed Forces (LNA, Haftar) = 122,000 combined; the two are rival forces. LNA article gives 85,000+ (2020). Low reflects militias counted loosely."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No organised reserve on either side; high allows for tribal and militia call-ups."
+    },
+    "supportPersonnel": {
+      "low": 27200,
+      "mid": 32000,
+      "high": 33600,
+      "grade": "D",
+      "source": "https://en.wikipedia.org/wiki/Military_of_Libya",
+      "note": "Active 122,000 minus infantry P roles (90,000). Covers air arms, navies, logistics and staff of both sides."
+    },
+    "mobilizationRatio": {
+      "low": 0.015,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to 2011 and 2019-20 civil-war peaks (~100,000-150,000 combatants of ~6.5 million, ~2%); scaled to 1.5-5%."
+    },
+    "mobilizable": {
+      "low": 111878,
+      "mid": 223757,
+      "high": 372928,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 7,458,555 x ratio 0.015 / 0.03 / 0.05."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Organised brigades of the LNA (e.g. Tariq bin Ziyad, 106th) and GNU-aligned regular units. (context page: https://en.wikipedia.org/wiki/Libyan_National_Army)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 60000,
+          "high": 90000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Militias aligned with Tripoli (Misrata, Zintan, Tripoli brigades) and LNA auxiliaries on technicals. (context page: https://en.wikipedia.org/wiki/Military_of_Libya)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: civil-war combat experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 250,
+          "high": 500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_countries_by_level_of_military_equipment",
+          "note": "IISS Military Balance 2020 as quoted: 300 MBT (level-of-equipment list); LNA operates T-55/T-62/T-72 (LNA article), GNU some T-72; serviceability unknown."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 600,
+          "high": 1200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. BMP-1, BTR-60 remnants plus Emirati/Turkish-supplied MRAPs and Kirpi vehicles. (context page: https://en.wikipedia.org/wiki/Libyan_National_Army)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 300,
+          "high": 600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Grad MRLs, D-30 and 2S1 remnants on both sides; T-155 Firtina (Turkey) seen with GNU forces. (context page: https://en.wikipedia.org/wiki/Military_of_Libya)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 8,
+          "mid": 20,
+          "high": 35,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_countries_by_level_of_military_equipment",
+          "note": "IISS 2020 / World Air Forces 2023 as quoted: 20 combat aircraft (level-of-equipment list); split between LNA (MiG-21/23/29, Su-24 reportedly from Russia) and GNU (MiG-23 remnants). Libyan Air Force article: size \"Unknown (2025)\" per IISS 2025."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 10,
+          "mid": 25,
+          "high": 45,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mi-8/17 and Mi-24/35 on both sides. (context page: https://en.wikipedia.org/wiki/Libyan_Air_Force)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 5,
+          "mid": 15,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Bayraktar TB2 and Akinci (Turkish, GNU side) and Wing Loong II (Emirati, LNA side). (context page: https://en.wikipedia.org/wiki/Military_of_Libya)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: partly operated by foreign crews."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 4,
+          "mid": 10,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Coast guard and navy patrol boats split between Tripoli and Benghazi. (context page: https://en.wikipedia.org/wiki/Military_of_Libya)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2,
+          "mid": 6,
+          "high": 15,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Pantsir-S1 (Emirati, LNA) and Turkish HAWK/Korkut (GNU) batteries; old S-125/S-200 inoperable. (context page: https://en.wikipedia.org/wiki/Military_of_Libya)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: militia-based units on both sides; LNA core brigades better trained (Russian/Emirati support)."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: two rival command systems; foreign advisers (Turkey; Russia Africa Corps, UAE) fill gaps."
+    },
+    "cohesion": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: militia coalitions, divided state."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: frozen conflict since the 2020 ceasefire."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: ATGMs, MANPADS, imported drones; little else modern."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55/T-62/T-72."
+    },
+    "ships": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus: patrol craft."
+    },
+    "fortification": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: field fortifications on the Sirte-Jufra line, imported SAMs."
+    },
+    "logistics": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: motor transport."
+    },
+    "communications": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "isr": {
+      "low": 8.2,
+      "mid": 8.6,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 via foreign-operated MALE drones."
+    },
+    "air": {
+      "low": 7.8,
+      "mid": 8.2,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: 1970s-80s MiGs/Su-24."
+    },
+    "cyber": {
+      "low": 7.5,
+      "mid": 8.0,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 9606,
+      "mid": 11302,
+      "high": 12997,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 84,293,786,108 2011 int$ (World Bank NY.GDP.MKTP.PP.KD rebased x 0.8005) / population 7,458,555 = 11,302 2011 int$. Range +/-15%. Oil output swings with blockades."
+    },
+    "gdp": {
+      "low": 71649718192,
+      "mid": 84293786108,
+      "high": 96937854024,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 105,301,419,248 x 0.8005 (US GDP deflator 2011/2021) = 84,293,786,108 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Oil output swings with blockades."
+    },
+    "milSpendShare": {
+      "low": 0.028,
+      "mid": 0.0357,
+      "high": 0.05,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 3.57% of GDP in 2023, 2.80% 2022. Two parallel administrations; foreign-funded equipment not counted (high)."
+    },
+    "industrialShare": {
+      "low": 0.6812,
+      "mid": 0.7325,
+      "high": 0.7838,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and hydrocarbons) 73.2% of GDP (NV.IND.TOTL.ZS). Range +/-7% for oil-price swings. Oil and gas dominate."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.02,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports ~75% of food."
+    },
+    "annualCohort": {
+      "low": 63552,
+      "mid": 70613,
+      "high": 77674,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/LBY/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 3,791,703 x share of males aged 15-19 9.311% (SP.POP.1519.MA.5Y) / 5 = 70,613. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention). Range +/-10% for single-year cohort variation."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 37000,
+      "mid": 50000,
+      "high": 83200,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "asOf 2010: 37,000 km in the road network list; World Bank IS.ROD.TOTL.KM gave 83,200 km (2000) on a broader definition (high). Mid is between them."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ly.json",
+      "note": "CIA Factbook lists no railways; Libyan rail projects stalled in 2011."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 5,
+      "high": 14,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ly.json",
+      "note": "CIA Factbook 2024: 14 ports, 0 large, 2 medium; key ports Tripoli, Benghazi, Misrata, Tobruk, Marsa el Brega."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 50000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: not in the list of flags over 1,000,000 GT, so under ~1.6 million DWT; mid is an educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 250,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Coastal road logistics, long desert lines to the Fezzan."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels, donkeys; not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Libya is not listed among the nine nuclear-armed states in the FAS Status of World Nuclear Forces 2026 table. Weapons programme abandoned in 2003."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Sirte-Jufra line",
+      "Gulf of Sidra oil crescent",
+      "Nafusa mountains",
+      "Fezzan oases"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: vast desert and urban militias; 1.3 high for the Sahara depth."
+    }
+  },
+  "notes": "DIVIDED-STATE snapshot: Libya has two rival armed forces since 2014: the UN-recognised Government of National Unity in Tripoli with its Libyan Armed Forces and allied militias (~32,000 regulars, Turkish-backed), and Khalifa Haftar's Libyan Arab Armed Forces / LNA in the east and south (~90,000, backed by Russia's Africa Corps, the UAE and Egypt), per the Military of Libya article. Forces here are the SUM of both sides (one ne:LBY polygon) and so overstate what either government can use against an outsider; cohesion and command are rated accordingly. Equipment counts are educated guesses (grade D) except the IISS 2020 tank and combat-aircraft totals. Turkish, Russian and other foreign forces are not counted. asOf 2025 economic data."
+}
