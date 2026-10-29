@@ -1,0 +1,510 @@
+{
+  "id": "mongol-empire-1241",
+  "nationId": "mongol-empire",
+  "includes": [],
+  "name": "Mongol Empire",
+  "year": 1241,
+  "era": "medieval",
+  "region": "central_asia",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "nomadic",
+    "steppe",
+    "horse archers"
+  ],
+  "capital": {
+    "name": "Karakorum",
+    "lat": 47.2,
+    "lon": 102.83,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Zhongdu (Yanjing, Beijing)",
+      "lat": 39.9,
+      "lon": 116.4,
+      "kind": "city"
+    },
+    {
+      "name": "Kaifeng",
+      "lat": 34.8,
+      "lon": 114.31,
+      "kind": "city"
+    },
+    {
+      "name": "Samarkand",
+      "lat": 39.65,
+      "lon": 66.96,
+      "kind": "city"
+    },
+    {
+      "name": "Bukhara",
+      "lat": 39.77,
+      "lon": 64.42,
+      "kind": "city"
+    },
+    {
+      "name": "Otrar",
+      "lat": 42.85,
+      "lon": 68.3,
+      "kind": "city"
+    },
+    {
+      "name": "Urgench",
+      "lat": 42.33,
+      "lon": 59.15,
+      "kind": "city"
+    },
+    {
+      "name": "Bolghar",
+      "lat": 54.98,
+      "lon": 49.05,
+      "kind": "city"
+    },
+    {
+      "name": "Dzungarian Gate",
+      "lat": 45.2,
+      "lon": 82.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Kiev (taken 1240, tributary)",
+      "lat": 50.45,
+      "lon": 30.52,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1279:Great Khanate",
+    "areaKm2": {
+      "low": 15000000,
+      "mid": 18500000,
+      "high": 21000000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1279.geojson",
+      "note": "No single 1241 polygon exists. Computed on the sphere from world_1279 polygons: Great Khanate 10.49M (minus Song China ~2-2.5M and Dali, not yet conquered), Golden Horde 5.25M, Chagatai Khanate 3.32M, plus ~2M of the Ilkhanate (northern Iran, Caucasus)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 25000000,
+      "mid": 36000000,
+      "high": 50000000,
+      "grade": "D",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Educated guess, no modern estimate for the empire at 1241 found. Built from HYDE/Gapminder country series (OWID) for 1200-1300: Mongolia 0.8M, Kazakhstan 0.96M, Uzbekistan 1.04M, Turkmenistan 0.19M, Iran 5.0M (1200, ~half under Mongol rule by 1241), China 103M (1200, of which the former Jin/Xi Xia north after the 1211-34 wars plausibly 20-30M; the 1236 Mongol census registered far fewer households). Adds Uyghur, Qipchaq steppe and Volga Bulgar lands ~2-3M. Excludes tributary vassals (Rus principalities ~6M, Georgia/Armenia, Goryeo) and Song China."
+    },
+    "urbanization": {
+      "low": 0.03,
+      "mid": 0.06,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: HYDE urban share for China 1500 = 6.5% (OWID urbanization-last-500-years); steppe near 0, Transoxiana oases higher. Educated guess."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 450000,
+      "grade": "D",
+      "source": "isbn:978-1-59416-046-2",
+      "note": "Educated guess. Anchors: Chinggis Khan left ~129,000 men at his death in 1227 (Rashid al-Din, accepted as order of magnitude by May, Mongol Art of War ch. 2, and Morgan); by 1241 the army had absorbed Turkic (Qipchaq) contingents and Han/Khitan/Jurchen armies in North China. Field forces at once: Batu's western army (40,000-150,000), the Chinese front, Chormaqan/Baiju in Iran and the Caucasus, garrisons."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "isbn:978-1-59416-046-2",
+      "note": "Educated guess: adult nomad males outside active tumens (all trained by lifelong riding and the nerge hunt, May ch. 2) plus subject levies callable within a month."
+    },
+    "supportPersonnel": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "isbn:978-1-59416-046-2",
+      "note": "Educated guess: Chinese and Muslim siege engineers, artisans, yam relay staff and baggage handlers attached to the armies (May ch. 4 on siege specialists)."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Mongol nomads mobilised nearly every adult male (decimal levy, ~1 soldier per 4-5 people of the nomadic population, cf. May, Mongol Art of War ch. 2), but the sedentary majority supplied only levies and auxiliaries. Applied to the whole subject population this gives a few percent. Educated guess."
+    },
+    "mobilizable": {
+      "low": 250000,
+      "mid": 720000,
+      "high": 2000000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 110000,
+          "mid": 150000,
+          "high": 230000,
+          "grade": "D",
+          "source": "isbn:978-1-59416-046-2",
+          "note": "Horse archers, the majority of every tumen (May ch. 3 puts light horse at roughly 60% of a Mongol army). Share of the active-force guess; western army alone 40,000 (Rashid al-Din via Sverdrup 2010 p. 115) to 120,000-150,000 (older modern estimates), see notes."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0 (among the era's best). Evidence: composite bow outranging European crossbows in the field; 3-5 remounts per man (May ch. 3)"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0 (elite long-service). Evidence: lifelong riders, decimal units drilled by the nerge battue hunt (May ch. 2)"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 45000,
+          "mid": 70000,
+          "high": 110000,
+          "grade": "D",
+          "source": "isbn:978-1-59416-046-2",
+          "note": "Lancers in lamellar armour, roughly 40% of tumens per May ch. 3 (disputed; some put it nearer 30%). Educated split of the active-force guess."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era's best) minus. Evidence: lamellar and leather-iron armour lighter than Latin knights' mail; horses smaller"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: same decimal system and campaign experience as the light horse"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 60000,
+          "grade": "D",
+          "source": "isbn:978-1-59416-046-2",
+          "note": "Han, Khitan and Jurchen foot in North China under Mongol command (May ch. 4 on incorporated sedentary troops). Educated guess."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "D",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: Jin-era equipment"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "D",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mix of ex-Jin regulars and levies"
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 5000,
+          "mid": 10000,
+          "high": 20000,
+          "grade": "D",
+          "source": "isbn:978-1-59416-046-2",
+          "note": "Chinese crossbowmen and siege archers attached to the North China armies. Educated guess."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "D",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Chinese crossbows, era-typical to good"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "D",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: levies and ex-Jin regulars"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 300,
+          "high": 800,
+          "grade": "D",
+          "source": "isbn:978-1-59416-046-2",
+          "note": "Siege engines (traction and counterweight trebuchets, ballistae) built on site by Chinese and Muslim engineers (May ch. 4). At the Sajo bridge (Mohi 1241) the Mongols used seven stone throwers (Wikipedia pointer to Sverdrup/Jackson). Empire-wide count is an educated guess."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (among the era's best). Evidence: Chinese and Persian siege technology, best available in Eurasia"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: specialist engineer corps (May ch. 4)"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.9,
+      "mid": 0.95,
+      "high": 1.0,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 1.0 (best-in-era: \"Mongols 1241\" is the rubric example). Evidence: Subotai and Batu coordinated five columns across Poland and Hungary, winning Legnica and Mohi within two days (Jackson, Mongols and the West ch. 3)"
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: decimal units with collective responsibility; tumens mixed Mongol cores with Turkic recruits (May ch. 2)"
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated, recent victories). Evidence: unbroken run of victories 1219-1240 (Khwarazm, Jin, Rus)"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (1250: crossbow, trebuchet). Evidence: composite bow, Chinese crossbows, counterweight trebuchets and incendiaries in the siege train (May ch. 4)"
+    },
+    "armor": {
+      "low": 3.4,
+      "mid": 3.7,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 (mail) and 4 (plate-and-mail). Evidence: lamellar of iron and lacquered leather, lighter than contemporary Latin armour"
+    },
+    "ships": {
+      "low": 0.5,
+      "mid": 1.0,
+      "high": 2.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 1 (oared riverboats). Evidence: no navy in 1241; river craft captured from the Jin. Naval warfare only under the later Yuan"
+    },
+    "fortification": {
+      "low": 3.0,
+      "mid": 3.5,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 3 (ashlar walls, siege towers) and 4. Evidence: held walled Jin and Khwarazmian cities but built little; Karakorum walled c. 1235"
+    },
+    "logistics": {
+      "low": 3.8,
+      "mid": 4.2,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 (1250: river transport, granaries). Evidence: self-moving herds and remounts gave unmatched operational reach on grassland (May ch. 4)"
+    },
+    "communications": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4 is defined by the yam relay itself. Evidence: the yam relay network founded under Ogedei (1234) was the era's best; arrow and flag signals in battle"
+    },
+    "isr": {
+      "low": 4.0,
+      "mid": 4.5,
+      "high": 5.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years: 1250 -> 4. Evidence: deep cavalry screens and spies; intelligence on Hungary gathered years before 1241 (Jackson ch. 3)"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 650,
+      "mid": 900,
+      "high": 1200,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Maddison 2023 China 1090 = 1,222 and 1150 = 1,181 (2011 int$, via OWID grapher CSV). Scaled down for the war-ravaged north and the large pastoral share (steppe output per head assumed well below the Chinese level). Educated guess, grade D."
+    },
+    "gdp": {
+      "low": 16250000000,
+      "mid": 32400000000,
+      "high": 60000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$. Grade D inputs."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess. The nomadic core was an army; tribute from sedentary subjects largely fed it. No documented budget."
+    },
+    "industrialShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: crafts in North China and Transoxiana cities, much reduced by the conquest; pastoral and farm output dominant."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: pastoral herds fed the army on the march; North China agriculture disrupted by the 1211-34 wars."
+    },
+    "annualCohort": {
+      "low": 25000,
+      "mid": 100000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess. Low = 15-year-old males of the ~1.5-2M nomadic Mongol-Turkic population that fed the tumens; high = all males reaching 15 across the 36M subjects (~1.1%/yr x 1/2)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: engineered roads only in former Jin North China and Khwarazmian oases; steppe movement was cross-country along yam routes."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "No sea-going fleet or naval port in 1241; Jin river harbours only."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "No Mongol merchant marine in 1241 (maritime trade came with the Yuan after 1279). Educated guess."
+    },
+    "supplyRangeKm": {
+      "low": 800,
+      "mid": 1200,
+      "high": 2500,
+      "grade": "D",
+      "source": "isbn:978-1-59416-046-2",
+      "note": "Herds and remounts let armies operate far from base where pasture existed (May ch. 4); the western army campaigned >3,000 km from Mongolia but on steppe pasture, and pasture limits in Hungary are one argument for the 1242 withdrawal. Educated guess for range beyond a base."
+    },
+    "draftAnimals": {
+      "low": 4000000,
+      "mid": 8000000,
+      "high": 15000000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: Mongolia carries ~4M horses for ~3M people today; 13th-c. nomads kept 3-5 remounts per warrior plus oxen and camels; Qipchaq steppe and North China added more."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "mongol-steppe",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Dzungarian Gate",
+      "Volga crossings",
+      "Carpathian passes (Verecke Pass)",
+      "Juyong Pass (Great Wall)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.25,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row for the Mongolian homeland (deep steppe depth, harsh continental climate invaders are not adapted to); conquered sedentary lands give little home advantage, so mid 1.25."
+    }
+  },
+  "notes": "Border: hb:1279:Great Khanate chosen over hb:1200:Mongol Empire. The 1200 polygon (5.4M km2) is the pre-1206 Mongol homeland only and misses North China, Central Asia and the western steppe; 1279 is also the closer file in years (38 vs 41). The Great Khanate polygon holds Karakorum, Mongolia and North China but wrongly includes Song South China and Dali (conquered 1253-79) and omits the western ulus (Golden Horde polygon) from which the 1241 invasion came. A union of world_1279 features with SUBJECTO = \"Mongol Empire\" minus Song and Tibet would be the honest border. Army sizes are the weakest part. Western (Batu/Subotai) army: Rashid al-Din gives ~40,000 horsemen for the 1241 invasion of Central Europe, read by Sverdrup (J. Medieval Military History 8, 2010, p. 115) as a nominal force of at least 30,000; Khrustalev puts the 1237-40 Rus campaign at ~60,000; older modern estimates run 120,000-150,000 (all via the Battle of Mohi and Kievan Rus' invasion articles as pointers, https://en.wikipedia.org/wiki/Battle_of_Mohi). Medieval chroniclers' 200,000-500,000 are rejected. Empire-wide totals are educated guesses. Population convention: directly ruled lands only; tributary Rus principalities, Georgia, Armenia and Goryeo excluded (includes is empty). All ratings use the rubric in data/SOURCES.md."
+}

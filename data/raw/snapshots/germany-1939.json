@@ -1,0 +1,742 @@
+{
+  "id": "germany-1939",
+  "nationId": "germany",
+  "includes": [],
+  "name": "German Reich",
+  "year": 1939,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Axis",
+    "Wehrmacht",
+    "blitzkrieg"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 4339000
+  },
+  "places": [
+    {
+      "name": "Vienna",
+      "lat": 48.208,
+      "lon": 16.373,
+      "kind": "city",
+      "population": 1930000
+    },
+    {
+      "name": "Hamburg",
+      "lat": 53.551,
+      "lon": 9.994,
+      "kind": "port",
+      "population": 1712000
+    },
+    {
+      "name": "Munich",
+      "lat": 48.137,
+      "lon": 11.576,
+      "kind": "city",
+      "population": 829000
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.938,
+      "lon": 6.96,
+      "kind": "city",
+      "population": 772000
+    },
+    {
+      "name": "Essen (Ruhr)",
+      "lat": 51.456,
+      "lon": 7.012,
+      "kind": "city",
+      "population": 667000
+    },
+    {
+      "name": "Prague",
+      "lat": 50.076,
+      "lon": 14.438,
+      "kind": "city"
+    },
+    {
+      "name": "Wilhelmshaven",
+      "lat": 53.531,
+      "lon": 8.106,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel",
+      "lat": 54.323,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Koenigsberg",
+      "lat": 54.71,
+      "lon": 20.51,
+      "kind": "city",
+      "population": 372000
+    },
+    {
+      "name": "Saarbruecken (Westwall)",
+      "lat": 49.234,
+      "lon": 6.997,
+      "kind": "fortress"
+    },
+    {
+      "name": "Moravian Gate",
+      "lat": 49.6,
+      "lon": 17.9,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:Germany",
+    "areaKm2": {
+      "low": 610000,
+      "mid": 633000,
+      "high": 640000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 Germany polygon (already includes Austria and the Sudetenland) = ~560,000 km2 computed on the sphere; plus the Protectorate ~48,900 km2. Published Greater Germany + Protectorate 1939 is ~633,000-635,000 km2, used as mid; the polygon is low."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 86000000,
+      "mid": 87200000,
+      "high": 88000000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1939 = 79,798k, which matches Greater Germany without the Protectorate (Altreich, Austria, Sudetenland, Memel; 1938 value 68,424k). Plus the Protectorate of Bohemia and Moravia ~7.4M: HYDE/Gapminder Czechia 1939 = 11.1M (OWID population CSV) minus ~3.6M ceded with the Sudetenland. Excludes the annexed Polish territories (Oct 1939)."
+    },
+    "urbanization": {
+      "low": 0.3,
+      "mid": 0.53,
+      "high": 0.6,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share Germany 1940 = 53.2%, Austria 60.0%, Czechia 42%. Low = COW upop/tpop 1939 = 23,627/79,798 = 0.30 (cities over 100,000 only)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 4200000,
+      "mid": 4500000,
+      "high": 4750000,
+      "grade": "C",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Wehrmacht after mobilisation (26 Aug 1939): Feldheer ~2.75M, Ersatzheer ~1.0M, Luftwaffe ~0.4M, Kriegsmarine 78,000 on 1 Sep 1939 (Kriegsmarine article), SS-Verfuegungstruppe small. COW milper 1939 = 2,750k is an annual average including peacetime months, so it is not used. By May 1940 Heer 4.2M, Luftwaffe 1.0M, navy 180,000, Waffen-SS 100,000 (Frieser p. 35-37 via Battle of France article)."
+    },
+    "trainedReserves": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "isbn:978-1-59114-294-2",
+      "note": "Educated guess: conscription only from 1935, so trained reserve classes were thin; Frieser p. 29 notes half of all soldiers in 1939-40 had only weeks of training. Army grew from ~3.7M to 4.2M by May 1940."
+    },
+    "supportPersonnel": {
+      "low": 2400000,
+      "mid": 2800000,
+      "high": 3100000,
+      "grade": "C",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Everything outside the P roles: Luftwaffe incl. flak (~0.4M), navy (78,000), artillery, panzer, engineer, signals and supply troops, staffs and the Ersatzheer."
+    },
+    "mobilizationRatio": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.24,
+      "grade": "B",
+      "source": "isbn:3-486-56531-1",
+      "note": "17.3M served in Heer, Luftwaffe and navy, 18.2M with the Waffen-SS, over the whole war (Overmans 1999, via https://de.wikipedia.org/wiki/Wehrmacht); ~13M at peak strength. Divided by ~87-90M gives ~0.15-0.21."
+    },
+    "mobilizable": {
+      "low": 12900000,
+      "mid": 17440000,
+      "high": 21120000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1250000,
+          "mid": 1500000,
+          "high": 1800000,
+          "grade": "C",
+          "source": "isbn:978-0-19-873834-3",
+          "note": "Infantry of ~98 infantry divisions (Poland: 66 divisions incl. reserves; West: ~43) at ~9,000-12,000 infantry each, plus fortress and frontier units. Reconstruction from division counts (Maier et al., GSWW vol. II); grade C."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Kar98k, MG34 (best GPMG of the era), but 1st-wave divisions only fully equipped; reserve waves used Czech and WWI stocks"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: active divisions well trained; Frieser p. 29: 50% of soldiers had only weeks of training, 45% of the army over 40 by 1940"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 45000,
+          "high": 60000,
+          "grade": "C",
+          "source": "isbn:978-0-19-873834-3",
+          "note": "3 Gebirgs divisions (~13,000 each) plus SS-Verfuegungstruppe regiments."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: specialist mountain equipment"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional mountain troops"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 40000,
+          "grade": "D",
+          "source": "isbn:978-0-19-873834-3",
+          "note": "1. Kavallerie-Brigade (~6,700) plus mounted squadrons of divisional reconnaissance battalions. Educated reconstruction."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: horsed reconnaissance, obsolescent role"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service cavalry cadres"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 2859,
+          "mid": 3267,
+          "high": 3472,
+          "grade": "B",
+          "source": "isbn:978-0887409158",
+          "note": "Heer tank inventory 3,472, of which 2,859 with the Field Army and 408 with the Replacement Army (Jentz, Panzertruppen vol. 1 p. 88, via https://en.wikipedia.org/wiki/Invasion_of_Poland); mostly Pz I and Pz II, ~300 Pz III/IV, plus Czech 35(t)/38(t)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: Pz I/II are machine-gun and 20 mm light tanks; but all had radios"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: panzer divisions trained in combined-arms exercises since 1935"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 7378,
+          "mid": 9000,
+          "high": 11000,
+          "grade": "C",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "May 1940 western force 7,378 guns (Frieser p. 35-37) is the floor; ~9,000 guns committed against Poland (Invasion of Poland infobox, pointer). Field and heavy pieces; excludes flak."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: leFH 18 and sFH 18 modern, but horse-drawn"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional artillery arm"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 1000,
+          "mid": 1180,
+          "high": 1300,
+          "grade": "B",
+          "source": "https://www.ibiblio.org/hyperwar/AAF/AAF-Luftwaffe/AAF-Luftwaffe-3.html",
+          "note": "~1,180 fighters (Bf 109, Bf 110) on 1 Sep 1939 (Invasion of Poland article). Murray, Strategy for Defeat Table XXI: 2,916 combat aircraft actual (98.9% of authorised) in Sep 1939."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Bf 109E the best fighter in service in 1939 with the Spitfire"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Condor Legion veterans, finger-four tactics"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 1300,
+          "mid": 1450,
+          "high": 1750,
+          "grade": "B",
+          "source": "https://www.ibiblio.org/hyperwar/AAF/AAF-Luftwaffe/AAF-Luftwaffe-3.html",
+          "note": "~1,100 bombers (He 111, Do 17, Ju 86) and 290-366 Ju 87 dive bombers (Invasion of Poland article); within Murray's 2,916 combat aircraft (Table XXI)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: modern medium bombers, Stuka precise but vulnerable"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: blind-flying and close-support training; Spain experience"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 12,
+          "mid": 14,
+          "high": 15,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "Conway's All the World's Fighting Ships 1922-1946: Scharnhorst, Gneisenau, 3 Deutschland-class Panzerschiffe, 2 old Schlesien-class, Admiral Hipper (Bluecher commissioned 20 Sep 1939), 6 light cruisers."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: modern fast ships, Seetakt radar on some; no carrier"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: small navy, limited fleet-action practice"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 33,
+          "high": 40,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "21-22 destroyers (Z1-Z22) and 11-12 torpedo boats in service (Conway's 1922-1946). Minesweepers and S-boats excluded."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Z-class destroyers had unreliable high-pressure boilers"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: see above"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 46,
+          "mid": 57,
+          "high": 57,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "57 U-boats commissioned on 1 Sep 1939, ~46 operational, many Type II coastal boats."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Type VII the best attack submarine design; torpedo defects in 1939-40"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Doenitz's intensive pre-war training"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 750,
+          "mid": 950,
+          "high": 1200,
+          "grade": "C",
+          "source": "doi:10.1177/002200949002500404",
+          "note": "Batteries. Harvey 1990 p. 449: 2,600 88 mm and 6,700 20/37 mm guns in all German forces by May 1940; at 4 heavy or ~12 light guns per battery that is ~1,200 batteries. Sep 1939 somewhat fewer."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: 8.8 cm Flak 18/36 the best heavy AA gun of 1939"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Luftwaffe flak arm, professional"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75 (trained staff system, proven commanders). Evidence: general-staff system and Auftragstaktik; Poland won in five weeks"
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: Wehrkreis-based regional recruitment gave unit identity; reserve divisions weaker"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: no war enthusiasm in Sep 1939 (unlike 1914); confidence rose after Poland"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.5,
+      "mid": 7.7,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: MG34, leFH 18, Ju 87 in service; most tanks light; 1943 types not yet"
+    },
+    "armor": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8 (rolled homogeneous armour, 1943). Evidence: Pz III/IV only ~300 of 3,472 tanks (Jentz p. 88)"
+    },
+    "ships": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (dreadnoughts) and 8 (carriers, radar, submarines). Evidence: modern battlecruisers, Seetakt radar, Type VII U-boats; no carrier"
+    },
+    "fortification": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (concrete forts) and 8 (Maginot). Evidence: Westwall bunkers, lighter than the Maginot Line"
+    },
+    "logistics": {
+      "low": 7.2,
+      "mid": 7.4,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (railways) and 8 (motor transport). Evidence: only ~10% of the army motorised, 120,000 vehicles vs 300,000 French; horse-drawn supply (Frieser p. 29)"
+    },
+    "communications": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (radio at company level). Evidence: radio in every tank and command vehicle; Enigma for higher echelons"
+    },
+    "isr": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial recon, 8 = radar. Evidence: Hs 126 / Do 17 reconnaissance; Freya early-warning radar in service"
+    },
+    "air": {
+      "low": 7.6,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914, 8 = 1943. Evidence: Bf 109E, He 111, Ju 87, Ju 88 entering service"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 7500,
+      "mid": 8000,
+      "high": 8617,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 (OWID CSV): Germany 1939 = 8,617, Austria 1939 = 6,529, Czechoslovakia 1937 = 4,594 (2011 int$). Population-weighted Greater Germany + Protectorate ~8,000."
+    },
+    "gdp": {
+      "low": 645000000000,
+      "mid": 697600000000,
+      "high": 758296000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$. "
+    },
+    "milSpendShare": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.23,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW milex 1938 = 7,415,163 (thousand current US$) and 1939 = 12,000,000; against German GNP of ~RM 100-130bn (~US$40-52bn at 2.49 RM/$) that is ~15-19% in 1938 and ~23% in 1939. Tooze (Wages of Destruction ch. 7-9) gives ~17-20% for 1938-39."
+    },
+    "industrialShare": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "isbn:978-0-670-03826-8",
+      "note": "Industry and crafts roughly 45% of output in the late-1930s Reich (Tooze, Wages of Destruction ch. 4, economy overview). Grade C."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "isbn:978-0-670-03826-8",
+      "note": "Germany ~83% self-sufficient in food in 1939 (Tooze ch. 6, Backe's food ministry); surplus above producers' subsistence low. Educated guess."
+    },
+    "annualCohort": {
+      "low": 550000,
+      "mid": 700000,
+      "high": 850000,
+      "grade": "C",
+      "source": "isbn:978-0-670-03826-8",
+      "note": "Males reaching 19-20 in 1939: the 1919-20 birth cohorts (~1.26M and ~1.6M births in the Reich, WWI dip) halved for males, minus mortality, plus Austria and the Czech lands."
+    },
+    "production": {
+      "armor": {
+        "low": 1643,
+        "mid": 2200,
+        "high": 3790,
+        "grade": "C",
+        "source": "isbn:978-0-521-78503-7",
+        "note": "Tanks per year: 1940 = 1,643, 1941 = 3,790 (plus ~500 assault guns) as commonly cited from Harrison/Overy; 1944 peak ~19,000 AFVs is outside the 1939 snapshot. Grade C (from memory of the tables)."
+      },
+      "aircraft_fighter": {
+        "low": 1856,
+        "mid": 3106,
+        "high": 3732,
+        "grade": "A",
+        "source": "https://www.ibiblio.org/hyperwar/AAF/AAF-Luftwaffe/AAF-Luftwaffe-3.html",
+        "note": "Murray, Strategy for Defeat Table XX: fighters 1939 = 1,856, 1940 = 3,106, 1941 = 3,732."
+      },
+      "aircraft_strike": {
+        "low": 2877,
+        "mid": 3997,
+        "high": 4350,
+        "grade": "A",
+        "source": "https://www.ibiblio.org/hyperwar/AAF/AAF-Luftwaffe/AAF-Luftwaffe-3.html",
+        "note": "Murray Table XX: bombers 1939 = 2,877, 1940 = 3,997, 1941 = 4,350."
+      },
+      "submarines": {
+        "low": 50,
+        "mid": 80,
+        "high": 200,
+        "grade": "C",
+        "source": "isbn:0-85177-146-7",
+        "note": "U-boats commissioned per year: ~50 in 1940, ~200 in 1941 (Conway's). Grade C."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 1.5,
+        "high": 3,
+        "grade": "D",
+        "source": "isbn:0-85177-146-7",
+        "note": "Bismarck, Tirpitz, Prinz Eugen, Bluecher completed 1939-41. Educated per-year rate."
+      },
+      "artillery": {
+        "low": 4000,
+        "mid": 6000,
+        "high": 7500,
+        "grade": "D",
+        "source": "isbn:978-0-521-78503-7",
+        "note": "Educated guess: field and heavy guns per year 1940-41."
+      },
+      "air_defense": {
+        "low": 150,
+        "mid": 300,
+        "high": 500,
+        "grade": "D",
+        "source": "isbn:978-0-521-78503-7",
+        "note": "Educated guess: new flak batteries equipped per year 1940-41."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 200000,
+      "mid": 250000,
+      "high": 300000,
+      "grade": "D",
+      "source": "isbn:978-0-670-03826-8",
+      "note": "Educated guess: ~215,000 km of classified roads in the Altreich plus Austria and the Czech lands; Reichsautobahn ~3,300 km by 1939."
+    },
+    "railKm": {
+      "low": 60000,
+      "mid": 66000,
+      "high": 70000,
+      "grade": "C",
+      "source": "isbn:978-0-670-03826-8",
+      "note": "Reichsbahn ~54,000-58,000 km (Altreich) plus Austrian (~5,900 km) and Czech-lands lines; reconstruction, grade C."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "C",
+      "source": "isbn:0-85177-146-7",
+      "note": "Hamburg, Bremen/Bremerhaven, Wilhelmshaven, Kiel, Luebeck, Stettin, Koenigsberg/Pillau, Emden, Swinemuende."
+    },
+    "merchantTonnage": {
+      "low": 5830000,
+      "mid": 6720000,
+      "high": 7170000,
+      "grade": "C",
+      "source": "https://archive.org/download/HECCR1890/1939.pdf",
+      "note": "Lloyd's Register 1939-40: Germany 2,459 steamers and motorships, 4,482,662 gross tons. Converted to deadweight at x1.5 (x1.3-1.6) for mixed cargo fleets."
+    },
+    "supplyRangeKm": {
+      "low": 250,
+      "mid": 400,
+      "high": 600,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War ch. 5: motor transport could sustain operations ~300-500 km beyond railheads in 1939-41; the infantry mass depended on horses and rail."
+    },
+    "draftAnimals": {
+      "low": 3500000,
+      "mid": 4000000,
+      "high": 4500000,
+      "grade": "D",
+      "source": "isbn:978-1-59114-294-2",
+      "note": "Educated guess: ~3.4M horses in the Altreich plus Austria and the Czech lands; the army mobilised ~0.5-0.6M horses and remained largely horse-drawn (Frieser p. 29)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "german-blitzkrieg-1939",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Danish straits and Kiel Canal",
+      "Moravian Gate",
+      "Ardennes",
+      "Rhine crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, Westwall and fortified cities, population support; no climate depth."
+    }
+  },
+  "notes": "Snapshot date 1 September 1939 (invasion of Poland). Territory and population = Greater Germany (Altreich incl. Saar, Austria annexed March 1938, Sudetenland Oct 1938, Memel March 1939) plus the Protectorate of Bohemia and Moravia (March 1939). The hb:1938:Germany polygon contains Austria and the Sudetenland but not the Protectorate. includes is empty: Austria and the Czech lands are not separate nations in 1939, so they are folded in rather than listed. Annexed Polish lands (Oct 1939) and Slovakia (client state) excluded. May 1940 reference figures for the battle agent (Frieser, Blitzkrieg Legend p. 35-37 via https://en.wikipedia.org/wiki/Battle_of_France): Heer 4.2M, Luftwaffe 1.0M, navy 180,000, Waffen-SS 100,000; 3.0M men in 135 divisions for the offensive; 2,439 tanks and 7,378 guns in the west; Murray Table XII: 4,782 aircraft on 11 May 1940 (1,356 single-engine fighters, 354 twin-engine, 1,711 bombers, 414 dive bombers). COW NMC v6 was not downloadable from correlatesofwar.org; v7 (2025 release) was used. Not sourced line by line: Wehrmacht total on 1 Sep 1939 (no fetched page; cited to Dear & Foot and widely reported ~4.5M)."
+}

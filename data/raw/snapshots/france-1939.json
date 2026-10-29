@@ -1,0 +1,776 @@
+{
+  "id": "france-1939",
+  "nationId": "france",
+  "includes": [],
+  "name": "French Republic",
+  "year": 1939,
+  "era": "worldwars",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "Allies",
+    "Maginot Line",
+    "colonial empire"
+  ],
+  "capital": {
+    "name": "Paris",
+    "lat": 48.857,
+    "lon": 2.352,
+    "kind": "capital",
+    "population": 2830000
+  },
+  "places": [
+    {
+      "name": "Marseille",
+      "lat": 43.296,
+      "lon": 5.37,
+      "kind": "port",
+      "population": 914000
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lon": 4.836,
+      "kind": "city",
+      "population": 570000
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.838,
+      "lon": -0.579,
+      "kind": "port",
+      "population": 258000
+    },
+    {
+      "name": "Lille",
+      "lat": 50.629,
+      "lon": 3.057,
+      "kind": "city",
+      "population": 200000
+    },
+    {
+      "name": "Brest",
+      "lat": 48.39,
+      "lon": -4.486,
+      "kind": "port"
+    },
+    {
+      "name": "Toulon",
+      "lat": 43.124,
+      "lon": 5.928,
+      "kind": "port"
+    },
+    {
+      "name": "Dunkirk",
+      "lat": 51.034,
+      "lon": 2.377,
+      "kind": "port"
+    },
+    {
+      "name": "Metz (Maginot Line)",
+      "lat": 49.119,
+      "lon": 6.176,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.573,
+      "lon": 7.752,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sedan (Meuse crossing)",
+      "lat": 49.702,
+      "lon": 4.94,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Belfort Gap",
+      "lat": 47.638,
+      "lon": 6.863,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1938:France",
+    "areaKm2": {
+      "low": 545000,
+      "mid": 551000,
+      "high": 552000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson",
+      "note": "world_1938 France polygon = 550,890 km2 computed on the sphere; metropolitan France ~551,500 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 41000000,
+      "mid": 41900000,
+      "high": 42000000,
+      "grade": "A",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1939 = 41,900k (metropolitan France). HYDE/Gapminder (OWID) gives 40.3M; low spans it."
+    },
+    "urbanization": {
+      "low": 0.15,
+      "mid": 0.53,
+      "high": 0.55,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share France 1940 = 53.2%. Low = COW upop/tpop 1939 = 6,397/41,900 = 0.15 (cities over 100,000 only)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 3900000,
+      "mid": 4300000,
+      "high": 4800000,
+      "grade": "C",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Armed forces 5,000,000 after mobilisation (Dear & Foot p. 316, via https://en.wikipedia.org/wiki/Battle_of_France), minus ~0.5M in North Africa, the Levant and other colonies and ~0.15M colonial-recruited soldiers serving in France (excluded, see notes). COW milper 1940 = 5,000k agrees with the total."
+    },
+    "trainedReserves": {
+      "low": 400000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Educated guess: after general mobilisation most trained reservists were already called; remainder = affectes speciaux in war industry and older classes."
+    },
+    "supportPersonnel": {
+      "low": 2400000,
+      "mid": 2850000,
+      "high": 3200000,
+      "grade": "C",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Everything outside the P roles: artillery and tank crews, engineers, signals, train, regional depots and interior, Armee de l'Air (~0.1M) and Marine (~0.16M)."
+    },
+    "mobilizationRatio": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.21,
+      "grade": "B",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Sep 1939: about one-third of men aged 20-45 mobilised, armed forces 5,000,000 (Dear & Foot, Oxford Companion to WWII p. 316) = 0.12 of population. WWI precedent 8.4M mobilised of 39.6M = 0.21 is the ceiling."
+    },
+    "mobilizable": {
+      "low": 4920000,
+      "mid": 7123000,
+      "high": 8820000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1100000,
+          "mid": 1350000,
+          "high": 1600000,
+          "grade": "C",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "Infantry of 117 divisions (104 for the north-east incl. 11 in reserve; Frieser p. 35-37), ~13 of them fortress divisions, plus Maginot sector and regional infantry. 2,240,000 men in army units in the north-east (Dear & Foot / Frieser) include all arms. Reconstruction; grade C."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: MAS 36 only partly issued, many Lebel/Berthier; good FM 24/29 LMG; 25 mm AT gun adequate"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5 (conscripts). Evidence: series B reserve divisions (e.g. 55e and 71e DI at Sedan) poorly trained and aged (Doughty, Breaking Point)"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 40000,
+          "high": 60000,
+          "grade": "D",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "Chasseurs alpins and pyreneens of the Armee des Alpes and mountain divisions; educated count."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: specialist mountain kit"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: held the Alpine front against Italy in June 1940"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 30000,
+          "high": 50000,
+          "grade": "D",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "Horse elements of the 5 Divisions Legeres de Cavalerie and 3 spahi/cavalry brigades plus horsed squadrons of the GRDI reconnaissance groups. Educated reconstruction."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: horse cavalry in a mechanised war"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: active cavalry regiments"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 3254,
+          "mid": 3400,
+          "high": 4071,
+          "grade": "B",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "French tanks: 3,254 (Frieser p. 36-37) to 3,383-4,071 (Umbreit in GSWW II p. 279; Zaloga 2011 p. 73), via the Battle of France article. Excludes FT-17s in depots."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Char B1 bis and SOMUA S35 out-armoured every German tank; one-man turrets, few radios, short range"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: DCR armoured divisions formed only Jan-May 1940; doctrine of infantry support"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 10700,
+          "mid": 11000,
+          "high": 13000,
+          "grade": "B",
+          "source": "isbn:978-1-59114-294-2",
+          "note": "France 10,700 guns in the Allied ~14,000 (Frieser p. 35-37 via Battle of France article); high adds the Alpine front and fortress artillery."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: excellent 75/105/155 mm, much of it WWI vintage, more motorised than German artillery"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: methodical, accurate but slow fire planning"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 764,
+          "mid": 1000,
+          "high": 1500,
+          "grade": "B",
+          "source": "doi:10.1177/002200949002500404",
+          "note": "764 French fighters with front-line units on 10 May 1940 (Harvey 1990 p. 448, via Battle of France article); Armee de l'Air had 1,562 aircraft in the north-east (Hooton 2007 p. 47) and a reserve of ~2,000 aircraft in depots, mostly unserviceable. High counts depot fighters."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: MS.406 and MB.152 inferior to the Bf 109E; only 36 D.520 delivered by 10 May; Hawk 75 good"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: pilots claimed 2.35:1 air-to-air (Battle of France article, Facon 1996)"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 600,
+          "mid": 800,
+          "high": 1300,
+          "grade": "C",
+          "source": "doi:10.1177/002200949002500404",
+          "note": "Bombers and reconnaissance: 1,562 front-line aircraft minus 764 fighters = ~800; Germans had about six times as many medium bombers (Harvey p. 448)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mostly obsolete types; LeO 451 and Breguet 693 arriving in small numbers"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: little ground-support doctrine"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 25,
+          "mid": 27,
+          "high": 28,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "Conway's 1922-1946: 7 battleships (Dunkerque, Strasbourg, 3 Bretagne, Courbet, Paris; Richelieu completing June 1940), carrier Bearn, 7 heavy and ~12 light cruisers."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: modern fast battleships and cruisers; no radar"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional long-service navy"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 60,
+          "mid": 70,
+          "high": 78,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "32 contre-torpilleurs, ~26 torpilleurs and 12 torpilleurs legers (Conway's)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: very fast large destroyers"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional navy"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 70,
+          "mid": 77,
+          "high": 80,
+          "grade": "B",
+          "source": "isbn:0-85177-146-7",
+          "note": "~77 submarines in service Sep 1939 (Conway's)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: large but mechanically mediocre boats"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: professional crews"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 250,
+          "mid": 400,
+          "high": 700,
+          "grade": "D",
+          "source": "doi:10.1177/002200949002500404",
+          "note": "Batteries. Educated guess: French AA was notoriously weak in 1940 (Harvey 1990), mostly 75 mm guns of WWI design and too few 25 mm Hotchkiss."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: obsolescent guns, little fire control"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: reservist crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: competent but methodical staff; Gamelin's Dyle-Breda plan left no strategic reserve; slow telephone/courier command (May, Strange Victory; Doughty)"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5 (national conscript army). Evidence: many units fought hard (Gembloux, Stonne, Lille) while some reserve divisions broke at Sedan"
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: eight months of drole de guerre, political division, memory of 1914-18 losses"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: Char B1 bis 75+47 mm, 25 and 47 mm AT guns; infantry weapons partly WWI"
+    },
+    "armor": {
+      "low": 7.6,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (rolled homogeneous armour, 1943). Evidence: cast and rolled armour 40-60 mm on S35 and B1 bis, thicker than German tanks of 1940"
+    },
+    "ships": {
+      "low": 7.5,
+      "mid": 7.7,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 and 8. Evidence: modern fast fleet, a carrier (Bearn, obsolete), no radar"
+    },
+    "fortification": {
+      "low": 7.9,
+      "mid": 8.0,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (concrete lines: Maginot is the anchor). Evidence: Maginot Line"
+    },
+    "logistics": {
+      "low": 7.3,
+      "mid": 7.5,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (railways) and 8 (motor transport). Evidence: about 300,000 army vehicles vs 120,000 German (Frieser p. 29), but rail-based methodical supply"
+    },
+    "communications": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (telegraph, telephone) and 8 (radio at company level). Evidence: command relied on telephone and dispatch riders; few tanks had radios"
+    },
+    "isr": {
+      "low": 7.1,
+      "mid": 7.3,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 = aerial recon, 8 = radar. Evidence: aerial reconnaissance spotted the Ardennes columns but warnings were discounted; little radar"
+    },
+    "air": {
+      "low": 7.3,
+      "mid": 7.5,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 = 1914, 8 = 1943. Evidence: D.520 and Hawk 75 modern but few; most bombers obsolete"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 7100,
+      "mid": 7640,
+      "high": 7700,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 (OWID CSV): France 1938 = 7,119, 1939 = 7,640, 1940 = 6,443 (2011 int$)."
+    },
+    "gdp": {
+      "low": 291100000000,
+      "mid": 320116000000,
+      "high": 323400000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$. "
+    },
+    "milSpendShare": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW milex 1938 = 919,284 (thousand current US$), 1939 = 1,023,651; against French national income of roughly US$10-12bn this is ~8% in 1938. Grade C (GDP conversion approximate)."
+    },
+    "industrialShare": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: industry ~35% of French output in the late 1930s, agriculture ~25% of output with ~35% of labour. Grade C."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: France was close to self-sufficient in food in 1939, with North African imports."
+    },
+    "annualCohort": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 420000,
+      "grade": "C",
+      "source": "isbn:978-0-19-280666-6",
+      "note": "Males reaching 20 in 1939-40 come from the WWI \"hollow classes\": French births ~0.40M in 1919 and ~0.83M in 1920, halved for males. Educated reconstruction."
+    },
+    "production": {
+      "armor": {
+        "low": 1000,
+        "mid": 1600,
+        "high": 2000,
+        "grade": "D",
+        "source": "isbn:978-0-521-78503-7",
+        "note": "Educated guess: French tank output reached ~100-150 per month by spring 1940."
+      },
+      "aircraft_fighter": {
+        "low": 1500,
+        "mid": 2500,
+        "high": 3500,
+        "grade": "D",
+        "source": "doi:10.1177/002200949002500404",
+        "note": "Educated guess: deliveries rose sharply in spring 1940 (Hooton 2007 p. 81 reserve of ~2,000 by June); MS.406 1,077 and MB.151/152 636 built in total."
+      },
+      "aircraft_strike": {
+        "low": 500,
+        "mid": 1000,
+        "high": 1500,
+        "grade": "D",
+        "source": "doi:10.1177/002200949002500404",
+        "note": "Educated guess: LeO 451, Breguet 691/693 and Amiot 351 in small series."
+      },
+      "artillery": {
+        "low": 1500,
+        "mid": 2500,
+        "high": 4000,
+        "grade": "D",
+        "source": "isbn:978-0-521-78503-7",
+        "note": "Educated guess."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "isbn:0-85177-146-7",
+        "note": "Richelieu and Jean Bart completing, La Galissonniere-class cruisers completed 1936-37. Educated per-year rate."
+      },
+      "submarines": {
+        "low": 3,
+        "mid": 5,
+        "high": 8,
+        "grade": "D",
+        "source": "isbn:0-85177-146-7",
+        "note": "Educated guess."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 250000,
+      "mid": 340000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: ~80,000 km routes nationales plus ~250,000 km departmental roads; the much larger network of chemins vicinaux excluded."
+    },
+    "railKm": {
+      "low": 40000,
+      "mid": 42600,
+      "high": 53000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "SNCF main network ~42,600 km at its 1938 creation; high adds local and secondary lines. Grade C."
+    },
+    "majorPorts": {
+      "low": 9,
+      "mid": 12,
+      "high": 14,
+      "grade": "C",
+      "source": "isbn:0-85177-146-7",
+      "note": "Marseille, Le Havre, Cherbourg, Brest, Toulon, Bordeaux, Saint-Nazaire, Nantes, Dunkirk, Lorient, Rouen, Calais, La Pallice."
+    },
+    "merchantTonnage": {
+      "low": 3810000,
+      "mid": 4400000,
+      "high": 4690000,
+      "grade": "C",
+      "source": "https://archive.org/download/HECCR1890/1939.pdf",
+      "note": "Lloyd's Register 1939-40: France 1,231 steamers and motorships, 2,933,933 gross tons. Converted to deadweight at x1.5 (x1.3-1.6)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "isbn:0-521-54657-5",
+      "note": "Educated guess: methodical, rail-based supply doctrine; better motorised than the Germans but organised for positional war."
+    },
+    "draftAnimals": {
+      "low": 2200000,
+      "mid": 2700000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: ~2.7M horses in France in the late 1930s; the army requisitioned ~0.5M."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Mers-el-Kebir / Oran",
+        "lat": 35.73,
+        "lon": -0.7,
+        "kind": "port"
+      },
+      {
+        "name": "Bizerte",
+        "lat": 37.27,
+        "lon": 9.87,
+        "kind": "port"
+      },
+      {
+        "name": "Dakar",
+        "lat": 14.69,
+        "lon": -17.44,
+        "kind": "port"
+      },
+      {
+        "name": "Beirut",
+        "lat": 33.9,
+        "lon": 35.5,
+        "kind": "port"
+      },
+      {
+        "name": "Djibouti",
+        "lat": 11.59,
+        "lon": 43.15,
+        "kind": "port"
+      },
+      {
+        "name": "Diego-Suarez",
+        "lat": -12.27,
+        "lon": 49.29,
+        "kind": "port"
+      },
+      {
+        "name": "Saigon / Cam Ranh",
+        "lat": 10.78,
+        "lon": 106.7,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "french-methodical-1940",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Ardennes and Meuse at Sedan",
+      "Gembloux Gap",
+      "Belfort Gap",
+      "Strait of Dover",
+      "Strait of Gibraltar"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, Maginot Line and fortified cities, population support; no climate depth."
+    }
+  },
+  "notes": "Order of battle = 10 May 1940 (start of the Western campaign); demographic and economic values are 1939. Metropolitan France only: includes is empty, colonial populations are not counted, and the ~150,000 North African and Senegalese soldiers in French divisions in France (DINA, DIC, spahi brigades) are NOT in the P-role counts or activePersonnel; the colonial Army of Africa and Levant (~0.5M) is excluded too. Add them via a colonial snapshot if a scenario needs them. Army and air figures come via https://en.wikipedia.org/wiki/Battle_of_France as pointer to Frieser (Blitzkrieg Legend, pp. 29, 35-37), Dear & Foot (p. 316), Hooton (2007 p. 47) and Harvey (1990). Sep 1939 differences: 98 divisions mobilised for the Saar offensive with ~2,500 tanks (same article). Navy counts are from Conway's (not fetched, grade B)."
+}
