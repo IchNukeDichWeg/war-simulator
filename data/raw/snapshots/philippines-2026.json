@@ -645,12 +645,12 @@
       "note": "asOf 2025: industry incl. construction 27.0% of GDP (World Bank)."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.0,
-      "high": 0.02,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Floored at 0 (field cannot be negative): World's largest rice importer; net food importer."
+      "low": 0.63,
+      "mid": 0.73,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/PHL/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 20.5% (2025). s proxied by the rice self-sufficiency ratio 0.77 (2022, PSA via https://businessmirror.com.ph/2023/10/10/rice-sufficiency-level-falls-to-24-year-low/), rice being the main calorie source. Mid 1 - 0.205/0.77 = 0.73. Low: a x 1.3 (larger rural households), s 0.72 = 0.63. High: s 0.815 (2021) = 0.75. Import dependence: world's largest rice importer; wheat fully imported. Audit follow-up 2026-10-29: 0.0 -> 0.73, rule changed: value is the share of production not eaten by the farm population, import dependence goes in the note."
     },
     "annualCohort": {
       "low": 1041929,

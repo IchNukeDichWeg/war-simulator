@@ -522,12 +522,12 @@
       "note": "asOf 2025: industry incl. construction 25.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.0,
-      "high": 0.05,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Floored at 0 (field cannot be negative): net food importer (~50% self-sufficiency in calories), with mandatory compulsory stockpiles."
+      "low": 0.92,
+      "mid": 0.95,
+      "high": 0.96,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/CHE/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 2.24% (2025). s = 0.46 (net self-sufficiency 2022, https://www.srf.ch/news/schweiz/lebensmittelproduktion-so-steht-es-um-die-selbstversorgung-der-schweiz). Mid 1 - 0.0224/0.46 = 0.95. Low: a x 1.5, s 0.42 = 0.92. High: s 0.50 (gross rate is higher than net) = 0.96. Import dependence: about half of calories imported; compulsory stockpiles. Audit follow-up 2026-10-29: 0.0 -> 0.95, rule changed: value is the share of production not eaten by the farm population, import dependence goes in the note."
     },
     "annualCohort": {
       "low": 41733,

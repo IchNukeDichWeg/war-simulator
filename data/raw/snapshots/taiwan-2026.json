@@ -632,12 +632,12 @@
       "note": "Educated guess. DGBAS industry share (not fetched) is ~35-40% and rose with the 2024-25 AI/semiconductor export boom. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/tw.json)"
     },
     "foodSurplus": {
-      "low": 0.0,
-      "mid": 0.0,
-      "high": 0.03,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Floored at 0 (field cannot be negative): calorie self-sufficiency ~30-35%; dependent on grain imports - blockade vulnerability."
+      "low": 0.78,
+      "mid": 0.86,
+      "high": 0.87,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Formula: surplus = 1 - a/s, a = farm population share (proxy: agricultural employment share), s = calorie self-sufficiency. World Bank has no Taiwan series: a = 515k / 11,528k = 4.46% (2023; CBC report: agriculture shed 21k or 3.92%, https://www.cbc.gov.tw/dl-206076-3ea3de2b660442998014d4cdb284b9d3.html). s = 0.313 (2021 calorie basis, https://topics.amcham.com.tw/2023/10/if-push-comes-to-shove-would-taiwan-starve/). Mid 1 - 0.0446/0.313 = 0.86. Low: a x 1.5, s 0.30 = 0.78. High: s 0.35 = 0.87. Import dependence: ~69% of calories imported; blockade vulnerability. Audit follow-up 2026-10-29: 0.0 -> 0.86, rule changed: value is the share of production not eaten by the farm population, import dependence goes in the note."
     },
     "annualCohort": {
       "low": 95000,
