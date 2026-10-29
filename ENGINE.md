@@ -416,9 +416,8 @@ fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
 `daysToReduce` or stormed), territory share, army collapse (personnel below
-`armyCollapsePersonnelFraction` 0.4 of all fielded, derived from France 1940
-and Iraq 1991, so in-sample for those two cases until re-derived from wars
-outside the backtest set), or side morale collapse, time limit (draw unless
+`armyCollapsePersonnelFraction` 0.5 of all fielded, re-derived from ten wars
+outside the backtest set, grade C), or side morale collapse, time limit (draw unless
 one side holds clearly more of the other's territory and strength).
 Morale collapse: side morale below min(`armyCollapseMorale`, start morale -
 `morale.defeatShock`) (`COLLAPSE_NEEDS_REAL_FALL`): the army must have

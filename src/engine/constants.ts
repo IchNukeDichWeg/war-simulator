@@ -223,7 +223,7 @@ export const AI_DEFEND_CAP_BY_VALUE = true;
 
 /** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
  *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),
- *  collapse.armyCollapsePersonnelFraction 0.4 (was 0.1), collapse.armyCollapseMorale (0.2 at first,
+ *  collapse.armyCollapsePersonnelFraction 0.5 (0.4 until re-derived out of sample; was 0.1), collapse.armyCollapseMorale (0.2 at first,
  *  back to the model definition 0.15 after QA round 2), intel.fogStrengthError, c2.missionCommandDelayFactor, naval.blockadeSeaControlThreshold
  *  (all three unchanged at 0.5, 0.5, 0.6). OFF: the constants below. Measured: 20/15/22 -> 21/15/23
  *  (Six-Day War winner 0% -> 95% and 6 days, Tannenberg duration passes, Iraq 2003 46 -> 26 days;
