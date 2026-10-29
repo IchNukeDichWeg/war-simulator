@@ -5,7 +5,7 @@ import { seasonName } from './ctx';
 import type { Frame, SideStats } from './protocol';
 import { UNIT_STRIDE, U, UnitStatus, type LossCause } from './protocol';
 import { LOSS_CAUSES, NR, IS_P, AIR_ROLES, NAVAL_ROLES } from './roles';
-import { CONTROL_FRAME_DAYS, MAX_SUPPLY_LINES } from './constants';
+import { CONTROL_FRAME_DAYS, MAX_SUPPLY_LINES, CASUALTIES_ALL_CAUSES } from './constants';
 import { depotPersonnel, depotPlatforms } from './production';
 
 export function sideStats(ctx: Ctx, side: 0 | 1): SideStats {
@@ -28,11 +28,11 @@ export function sideStats(ctx: Ctx, side: 0 | 1): SideStats {
   for (const r of NAVAL_ROLES) platforms += st.fleet[side][r];
   const lossesByCause = {} as Record<LossCause, number>;
   let casualties = 0;
-  // casualties = killed + wounded + captured (battle, pursuit, air, naval, nuclear); disease,
-  // exposure, starvation and desertion are in lossesByCause only
+  // CASUALTIES_ALL_CAUSES: casualties = every permanent loss, the sum of lossesByCause.
+  // Otherwise killed + wounded + captured only (battle, pursuit, air, naval, nuclear).
   LOSS_CAUSES.forEach((c, i) => {
     lossesByCause[c] = st.losses[side][i];
-    if (c === 'combat' || c === 'pursuit' || c === 'captured' || c === 'air' || c === 'naval' || c === 'nuclear') casualties += st.losses[side][i];
+    if (CASUALTIES_ALL_CAUSES || c === 'combat' || c === 'pursuit' || c === 'captured' || c === 'air' || c === 'naval' || c === 'nuclear') casualties += st.losses[side][i];
   });
   let held = 0;
   for (let c = 0; c < S.grid.n; c++) if (st.control[c] === side) held++;

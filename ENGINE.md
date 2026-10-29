@@ -271,9 +271,15 @@ modern forces, reduces ammo/fuel and hence combat power and movement.
 Non-battle losses per day: `diseaseDaily(tech)` x (`winterExposure` in winter
 outside towns, `desertHeat` in desert in summer) + `desertionDaily` when morale
 <= 0.5. A fraction `returnToDuty` of non-battle losses returns after 30 days.
-Reported casualties are combat + pursuit + captured + air + naval + nuclear;
-disease, exposure, starvation and desertion are listed by cause but not
-counted as casualties.
+As built (`HOSPITAL_ADMISSIONS_RETURN`): these rates are admissions. The
+`returnToDuty` share leaves the formation for hospital and comes back after 30
+days; it is not a loss and its return is not an arrival. Only the rest
+(deaths, discharges) and all desertion are booked as losses. Booking every
+admission as a loss had Germany "lose" 805k to disease in 106 days of the 1940
+preset (264k in 133 days after the change, at the data's `diseaseDaily`).
+Reported casualties are the sum of losses over every cause
+(`CASUALTIES_ALL_CAUSES`), so they equal the lossesByCause total; tested:
+start + arrivals = current + losses + in hospital, every day.
 
 ## 9. Production and mobilization
 

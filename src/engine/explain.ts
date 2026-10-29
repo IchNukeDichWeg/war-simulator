@@ -2,6 +2,7 @@
 // factors and rank them. Each factor is a signed log-ratio (positive favours
 // side 0); weights are the shares of the absolute values. The scales are
 // presentation choices, not model physics.
+import { HOSPITAL_ADMISSIONS_RETURN } from './constants';
 import type { Ctx } from './ctx';
 import type { Reason } from './protocol';
 import { sideNow } from './victory';
@@ -24,7 +25,8 @@ export function explain(ctx: Ctx): Reason[] {
     if (Math.abs(air) > 1e-6) items.push({ factor: 'Air support', v: air, detail: (f) => `${names[f]} gained x${x(air)} combat power from air support in battle.` });
   }
   // fielded = start + new arrivals (returns to duty are the same people coming back)
-  const n0 = st.startPersonnel[0] + st.arrivals[0] - st.returned[0], n1 = st.startPersonnel[1] + st.arrivals[1] - st.returned[1];
+  const back = (s: 0 | 1) => (HOSPITAL_ADMISSIONS_RETURN ? 0 : st.returned[s]);
+  const n0 = st.startPersonnel[0] + st.arrivals[0] - back(0), n1 = st.startPersonnel[1] + st.arrivals[1] - back(1);
   const w0 = st.startW[0] + st.addedW[0], w1 = st.startW[1] + st.addedW[1];
   const num = a.battles > 0 ? mean(a.numbers) : Math.log(Math.max(1, n0) / Math.max(1, n1));
   items.push({ factor: 'Numbers', v: num, detail: (f) => `${names[f]} fielded ${Math.round(f === 0 ? n0 : n1).toLocaleString('en-US')} personnel vs ${Math.round(f === 0 ? n1 : n0).toLocaleString('en-US')}${a.battles > 0 ? `, and on average x${x(num)} more strength (personnel + platforms) at the point of battle` : ''}.` });

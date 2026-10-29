@@ -132,8 +132,9 @@ export interface SimState {
   members: MemberState[];
   losses: [Float64Array, Float64Array]; // personnel losses by LOSS_CAUSES index
   platformLosses: [number, number];
-  arrivals: [number, number];           // personnel that entered the theater after day 0 (incl. returns to duty)
-  returned: [number, number];           // of which returned to duty after non-battle losses
+  arrivals: [number, number];           // personnel that entered the theater after day 0 (not returns to duty)
+  returned: [number, number];           // returned to duty from hospital
+  hospital: [number, number];           // in hospital now (non-battle admissions due back to duty)
   nextLiftDay: number[];                // per member: next day a sea-lift wave can carry depot troops
   startPersonnel: [number, number];
   startW: [number, number];

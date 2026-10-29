@@ -34,11 +34,20 @@ describe.each(scenarios)('invariants (%s)', (_name, scenario) => {
           worstMove = Math.max(worstMove, F.movedKm[f] / lim);
         }
       }
-      // start + arrivals = current + losses by cause (returns to duty re-enter as arrivals)
+      // start + arrivals = current + losses by cause + in hospital (due back to duty)
       for (const s of [0, 1] as const) {
         const lhs = st.startPersonnel[s] + st.arrivals[s];
-        const rhs = personnelNow(sim, s) + totalLosses(sim, s);
+        const rhs = personnelNow(sim, s) + totalLosses(sim, s) + st.hospital[s];
         expect(Math.abs(lhs - rhs)).toBeLessThan(1e-6 * Math.max(1, lhs));
+        expect(st.hospital[s]).toBeGreaterThanOrEqual(-1e-6 * Math.max(1, lhs));
+      }
+      // reported casualties are exactly the sum of losses by cause
+      if (d % 25 === 0) {
+        const fr = sim.frame(false);
+        for (const s of [0, 1] as const) {
+          const byCause = Object.values(fr.stats[s].lossesByCause).reduce((a, b) => a + b, 0);
+          expect(Math.abs(fr.stats[s].casualties - byCause)).toBeLessThan(1e-6 * Math.max(1, byCause));
+        }
       }
       for (const s of [0, 1] as const) for (const v of st.losses[s]) expect(v).toBeGreaterThanOrEqual(0);
     }

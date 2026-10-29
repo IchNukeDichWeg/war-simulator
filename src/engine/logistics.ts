@@ -8,9 +8,9 @@ import { IS_P, LC, NR } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
 import { isRoad } from './movement';
-import { lossPersonnel } from './formations';
+import { lossPersonnel, withdrawPersonnel } from './formations';
 import { blockaded, seaFactor } from './naval';
-import { DESERTION_MORALE, RETURN_TO_DUTY_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
+import { DESERTION_MORALE, HOSPITAL_ADMISSIONS_RETURN, RETURN_TO_DUTY_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
 
 /**
  * Supply network cost field per side over own and neutral land from active sources,
@@ -171,11 +171,21 @@ export function logisticsPhase(ctx: Ctx): void {
       let returning = 0;
       for (const [amt, cause] of parts) {
         if (!(amt > 0) || !F.alive[f]) continue;
-        const lost = lossPersonnel(ctx, f, amt, cause);
-        st.acc.nonBattle[side] += lost;
-        if (cause !== desCause) returning += lost * rtd;
+        if (HOSPITAL_ADMISSIONS_RETURN && cause !== desCause) {
+          // admissions: the returnToDuty share is in hospital, the rest are deaths and discharges
+          const lost = lossPersonnel(ctx, f, amt * (1 - rtd), cause);
+          st.acc.nonBattle[side] += lost;
+          if (F.alive[f]) returning += withdrawPersonnel(ctx, f, amt * rtd, cause);
+        } else {
+          const lost = lossPersonnel(ctx, f, amt, cause);
+          st.acc.nonBattle[side] += lost;
+          if (cause !== desCause) returning += lost * rtd;
+        }
       }
-      if (returning > 0) st.members[mr.idx].returns[slot] += returning;
+      if (returning > 0) {
+        st.members[mr.idx].returns[slot] += returning;
+        if (HOSPITAL_ADMISSIONS_RETURN) st.hospital[side] += returning;
+      }
     }
     if (!F.alive[f]) continue;
     // morale

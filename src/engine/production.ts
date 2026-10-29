@@ -1,10 +1,10 @@
 // Production, mobilization and arrivals (ENGINE.md sections 2.6 and 9).
 // Personnel entering the theater after day 0 pass through a per-member depot and
-// are counted in state.arrivals, so start + arrivals = current + losses holds.
+// are counted in state.arrivals, so start + arrivals = current + losses + hospital holds.
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { RECRUIT_BATCH_DAYS, RETURN_TO_DUTY_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_TO_DUTY_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { spawnFormation } from './formations';
 import { UnitStatus } from './protocol';
@@ -133,7 +133,15 @@ export function productionPhase(ctx: Ctx): void {
       }
     }
     const ret = ms.returns[slot];
-    if (ret > 0) { addPersonnelToDepot(ctx, mr.idx, ret); st.returned[mr.side] += ret; ms.returns[slot] = 0; }
+    if (ret > 0) {
+      if (HOSPITAL_ADMISSIONS_RETURN) {
+        // back from hospital: the same people, not new arrivals
+        for (let r = 0; r < NR; r++) if (IS_P[r]) ms.depot[r] += ret * mr.pMix[r];
+        st.hospital[mr.side] -= ret;
+      } else addPersonnelToDepot(ctx, mr.idx, ret);
+      st.returned[mr.side] += ret;
+      ms.returns[slot] = 0;
+    }
     if (day % 30 === 0) {
       const mult = (mr.seaDependent && blockaded(ctx, mr.side) ? S.m.production.blockadeProductionFactor.mid : 1) * ms.productionDamage;
       for (let r = 0; r < NR; r++) {

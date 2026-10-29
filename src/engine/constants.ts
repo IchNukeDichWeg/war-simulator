@@ -124,6 +124,13 @@ export const CASE_CAPITAL_UNFORTIFIED = false;
  *  with no enemy there (QA C6). Cases without kind keep the inferred rule. No case sets a kind
  *  yet, so it measures neutral (20/15/22). */
 export const OBJECTIVE_KIND_EXPLICIT = true;
+/** Non-battle attrition: diseaseDaily etc. are admission rates. The returnToDuty share goes to
+ *  hospital (out of the formation, not a loss) and comes back after RETURN_TO_DUTY_DAYS; only the
+ *  rest is booked as a loss. Before, every admission was booked as a loss and the returns came back
+ *  as 'arrivals': Germany 'lost' 805k to disease in 106 days of germany-vs-france-1940. */
+export const HOSPITAL_ADMISSIONS_RETURN = true;
+/** SideStats.casualties = the sum of lossesByCause (every permanent loss), so the two agree. */
+export const CASUALTIES_ALL_CAUSES = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

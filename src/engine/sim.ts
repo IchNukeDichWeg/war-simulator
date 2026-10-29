@@ -83,6 +83,7 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
     platformLosses: [0, 0],
     arrivals: [0, 0],
     returned: [0, 0],
+    hospital: [0, 0],
     nextLiftDay: S.members.map(() => 0),
     startPersonnel: [0, 0],
     startW: [0, 0],

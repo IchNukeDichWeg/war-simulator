@@ -71,6 +71,27 @@ export function lossFraction(ctx: Ctx, f: number, frac: number, cause: number, p
   return lp;
 }
 
+/** Take `amount` personnel out of f without booking a loss (hospital admissions). Returns the number
+ *  removed; a remnant below half a man is booked under `cause` as the formation dissolves. */
+export function withdrawPersonnel(ctx: Ctx, f: number, amount: number, cause: number): number {
+  const F = ctx.st.F;
+  const p = F.personnel[f];
+  if (!F.alive[f] || amount <= 0 || p <= 0) return 0;
+  const k = Math.min(1, amount / p);
+  const o = f * NR;
+  let out = 0;
+  for (let r = 0; r < NR; r++) {
+    if (!IS_P[r]) continue;
+    const c = F.counts[o + r];
+    if (c <= 0) continue;
+    F.counts[o + r] = c - c * k;
+    out += c * k;
+  }
+  refreshFormation(ctx, f);
+  destroyIfEmpty(ctx, f, cause);
+  return out;
+}
+
 /** Remove `amount` personnel spread over the P roles in proportion to their counts. */
 export function lossPersonnel(ctx: Ctx, f: number, amount: number, cause: number): number {
   const F = ctx.st.F;
