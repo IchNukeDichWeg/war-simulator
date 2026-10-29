@@ -380,6 +380,10 @@ tech)` (`mission_command` halves it). Each order cycle:
    `aggression` raises attack scores, `logisticsDiscipline` penalises targets
    beyond supply range, `maneuver` prefers weak enemy formations and
    encirclement over frontal attacks, `flanking` offsets approach paths.
+   A side whose case objective kind is `hold` takes no enemy capital or city
+   as an objective and moves to its hold objective in Defend mode; enemy
+   formations remain targets (`HOLD_SIDE_NO_PLACE_TARGETS`). In a case the
+   enemy "capital" is the synthesized start base.
 3. Assign formations greedily to the best objectives until each objective has
    the force ratio the doctrine wants (attrition doctrines mass, maneuver
    doctrines move fast with less); keep `reserveUse` x strength in reserve at

@@ -10,7 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  AI_DEFEND_CAP_BY_VALUE, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  AI_DEFEND_CAP_BY_VALUE, HOLD_SIDE_NO_PLACE_TARGETS, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
@@ -148,11 +148,15 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
   let ownTotal = 0;
   for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && F.side[f] === side) ownTotal += F.curW[f];
   if (S.objectiveCells[side] >= 0) cands.push({ cell: S.objectiveCells[side], kind: OBJ.Case, base: 10 * AI_VALUE_CAPITAL, pow: near(S.objectiveCells[side]) });
+  // a side whose case objective is to hold a place defends it and fights enemy formations, but
+  // does not march on enemy places (Iraq 2003 sent 14 of 22 formations at the Coalition's base)
+  const holdTargets = HOLD_SIDE_NO_PLACE_TARGETS && S.objectiveKinds[side] === 'hold';
   let popMax = 1;
   for (const p of S.places) popMax = Math.max(popMax, p.pop);
   for (const p of S.places) {
     const ctl = st.control[p.cell];
     if (ctl === enemy) {
+      if (holdTargets) continue;
       cands.push({ cell: p.cell, kind: p.capital ? OBJ.Capital : OBJ.City, base: p.capital ? AI_VALUE_CAPITAL : AI_VALUE_CITY * (1 + p.pop / popMax), pow: near(p.cell) });
     } else if (ctl === side) {
       const threat = near(p.cell);
@@ -264,11 +268,12 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       for (let i = 0; i < avail.length; i++) if (!taken[i] && field[F.cell[avail[i]]] < Infinity) idx.push(i);
       if (!idx.length) continue;
       idx.sort((a, b) => field[F.cell[avail[a]]] - field[F.cell[avail[b]]] || a - b);
-      let need = sl.c.pow * (sl.c.kind === OBJ.Defend ? 1 : ratio);
+      const defend = sl.c.kind === OBJ.Defend || (holdTargets && sl.c.kind === OBJ.Case);
+      let need = sl.c.pow * (defend ? 1 : ratio);
       const capped = AI_DEFEND_CAP_BY_VALUE && sl.c.kind === OBJ.Defend && valSum > 0;
       if (capped) need = Math.min(need, totalW * value(mi, sl.c) / valSum);
       let acc = 0;
-      const mode = sl.c.kind === OBJ.Defend ? Mode.Defend : Mode.Attack;
+      const mode = defend ? Mode.Defend : Mode.Attack;
       for (const i of idx) {
         if (capped && acc + F.curW[avail[i]] > need) continue;   // the cap is a ceiling, not a floor
         taken[i] = 1;

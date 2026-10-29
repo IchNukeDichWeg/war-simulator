@@ -297,3 +297,11 @@ export const BREAKPOINT_FROM_MODEL_RULES = true;
  *  its attacks are not leftovers but slot orders against the Coalition's case base, an 'enemy
  *  capital' candidate. */
 export const LEFTOVERS_FOLLOW_OBJECTIVE = true;
+/** A side whose case objective kind is 'hold' takes no enemy capital or city as an objective and
+ *  moves to its own hold objective in Defend mode; enemy formations stay targets (counterattacks).
+ *  In a case the enemy 'capital' is the synthesized start base, so Iraq 2003 sent 14 of 22
+ *  formations at the Coalition's base. Measured (20 seeds): 20/17/21 -> 20/18/21; France 1940 ratio
+ *  x3.03 -> x2.62 passes, winner 90% -> 85%. Seed 1 traces (Defend/Attack): Stalingrad Axis day 1
+ *  6/28 -> 34/0, Gulf War Iraq day 6 4/5 -> 9/0, Falklands Argentina 0/1 -> 1/0; Iraq 2003 day 1
+ *  0/15 -> 1/14: its attacks are now all against Coalition formations (Formation slots). */
+export const HOLD_SIDE_NO_PLACE_TARGETS = true;
