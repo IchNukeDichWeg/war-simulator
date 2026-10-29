@@ -148,13 +148,20 @@ with effective breakpoint = `breakpoint(tech)` + `cohesionBreakpointShift` x
 (cohesion - 0.5), so withdrawal always comes before the rout. Morale falls by
 the round's loss as a share of STARTING strength (l x (1 - engLoss)), the
 basis engLoss accumulates on, so morale reaches 0 exactly at the breakpoint
-(`MORALE_ON_ENGAGED_BASIS`). Pursuit losses are `pursuitLossFraction` x
-max(winner mobile share, `footPursuitFloor`), and when a battle is decided
-they fall on the beaten side's withdrawing formations as well as its routed
-ones (`PURSUE_WITHDRAWING`), unless the withdrawing formation has the
-horse-archer mobility edge. Measured: loss ratio passes 10 -> 13 of 24.
-`footPursuitFloor` is a placeholder at 0 until sourced. The share of losses
-caused by air support is booked as cause `air`.
+(`MORALE_ON_ENGAGED_BASIS`). Pursuit losses are max(mounted, foot) x
+exploitation specials, where mounted = `pursuitLossFraction` x winner mobile
+share (cavalry, vehicles, air) and, with `PURSUIT_FROM_MODEL_RULES`, foot =
+`modelRules.battle.footPursuitLossFloor` (0.09, Krentz hoplite data) capped
+at 1 - `pursuitDisengageShare`(loser era) - the loser's battle loss share, so
+a foot-only winner never takes more than the share that historically failed
+to get away; the mounted term is not capped. When a battle is decided they
+fall on the beaten side's withdrawing formations as well as its routed ones
+(`PURSUE_WITHDRAWING`), unless the withdrawing formation has the
+horse-archer mobility edge. Measured: loss ratio passes 10 -> 13 of 24
+(pursuit of withdrawing formations); the sourced foot term leaves the counts
+at 20/15/22 and moves Agincourt x0.15 -> x0.26, Marathon x9 -> x17 (the
+model's Persian winners now pursue). The share of losses caused by air
+support is booked as cause `air`.
 
 Losses are capped at 50% of engaged strength per round, spread over roles in
 proportion to their exposure. A seeded noise factor (lognormal, sigma 0.15 per

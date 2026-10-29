@@ -1,7 +1,7 @@
 // Combat power and tactical resolution (ENGINE.md sections 3 and 4).
 import type { Battle, Ctx } from './ctx';
 import { addEvent, rebuildOccupancy } from './ctx';
-import { byTech, clamp, matrix } from './mech';
+import { byTech, clamp, matrix, rule } from './mech';
 import { NR, RI, LC, IS_P } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
@@ -10,7 +10,7 @@ import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -390,13 +390,20 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       let exploit = 1;
       if (wp.specials.has('blitzkrieg')) exploit *= se('blitzExploitation');
       if (wp.specials.has('deep_battle')) exploit *= se('deepBattleBreakthrough');
-      // foot pursuit: infantry winners also cut down a broken enemy (placeholder floor, see contract)
-      const pursuers = Math.max(mobileShare, m.combat.footPursuitFloor.mid);
-      const pursuit = clamp(wp.pursuit * pursuers * exploit, 0, 1);
+      const mounted = wp.pursuit * mobileShare;
+      const MR = m.modelRules;
+      // foot pursuit (sourced): a foot-only winner still takes footPursuitLossFloor of a broken
+      // enemy, but no more than leaves pursuitDisengageShare of the loser's start strength
+      // standing (the share that gets away); the mounted/air term is not capped by it
+      const lostShare = startPers[l] > 0 ? clamp(b.casualties[l] / startPers[l], 0, 1) : 0;
+      const footFor = (year: number) => Math.min(rule(MR.battle.footPursuitLossFloor, year),
+        Math.max(0, 1 - rule(MR.battle.pursuitDisengageShare, year) - lostShare));
+      const pursuitFor = (year: number) => clamp((PURSUIT_FROM_MODEL_RULES ? Math.max(mounted, footFor(year)) : mounted) * exploit, 0, 1);
       const loserEscapes = maxRate(ctx, parts[l]) > maxRate(ctx, parts[w]);
       for (const f of parts[l]) {
         if (!F.alive[f]) continue;
         const mr = S.members[F.member[f]];
+        const pursuit = pursuitFor(mr.ruleYear);
         F.morale[f] = Math.max(0, F.morale[f] - m.morale.defeatShock.mid);
         const mobEdge = mr.specials.has('horse_archery') && loserEscapes;
         const pursued = F.mode[f] === Mode.Rout || (PURSUE_WITHDRAWING && F.mode[f] === Mode.Retreat && !mobEdge);

@@ -72,6 +72,12 @@ export const MORALE_ON_ENGAGED_BASIS = true;
  *  they have the horse-archer mobility edge. Without it every pre-gunpowder loser withdrew intact
  *  (0 routs in 77-209 losing formations per case) and lost 10-20% of its historical losses. */
 export const PURSUE_WITHDRAWING = true;
+/** Pursuit from the sourced model rules: a foot-only winner inflicts battle.footPursuitLossFloor
+ *  (Krentz hoplite data, 0.09), capped so that battle.pursuitDisengageShare (per era) of the
+ *  loser's start strength gets away; the mounted/air term pursuitLossFraction x mobile share is
+ *  not capped. OFF: mounted term only (the old placeholder floor was 0). Measured: counts unchanged
+ *  (20/15/22); Agincourt loss ratio x0.15 -> x0.26, Marathon x9 -> x17 (model's Persians win). */
+export const PURSUIT_FROM_MODEL_RULES = true;
 /** Defender posture takes the MAX of the alternatives QJM gives (prepared defence, hasty field
  *  fortification, fortified place) instead of their product: 1.5 x 1.3 = 1.95 exceeded QJM's own
  *  fortified 1.6 for every defender of a field_fortification doctrine (QA B3). */

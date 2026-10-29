@@ -116,7 +116,7 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
   need('org.formationSize', 'bt');
   need('roleRemap', 'obj');
   for (const k of ['baseDailyCasualtyRate', 'powerRatioExponent', 'fortificationFactor', 'pursuitLossFraction', 'captureFraction']) need(`combat.${k}`, 'bt');
-  for (const k of ['defensePostureFactor', 'surpriseFactor', 'riverCrossingFactor', 'combinedArmsBonus', 'battleHoursPerDay', 'qualityFactor', 'trainingFactor', 'commandFactor', 'cohesionBreakpointShift', 'footPursuitFloor']) need(`combat.${k}`, 'mv');
+  for (const k of ['defensePostureFactor', 'surpriseFactor', 'riverCrossingFactor', 'combinedArmsBonus', 'battleHoursPerDay', 'qualityFactor', 'trainingFactor', 'commandFactor', 'cohesionBreakpointShift']) need(`combat.${k}`, 'mv');
   need('combat.specialEffects', 'obj');
   for (const t of TERRAIN_CLASSES) {
     need(`combat.terrainAttackFactor.${t}`, 'mv');

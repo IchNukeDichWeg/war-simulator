@@ -8,7 +8,7 @@ import type { DoctrineProfile, Snapshot, TechCategory, UnitRole } from '../types
 import type { Mechanics, MobilityClass, NavalPropulsion, Season } from '../types/mechanics';
 import { GRID_H, GRID_RES, GRID_W, FLAG_COAST, T, cellIndex, cellCenter } from './terrainClasses';
 import { buildGrid, cellAt, globalTerrain, haversineKm, inBbox, nearestLand, rasterizeMultiPolygon, type GlobalTerrain, type Grid } from './grid';
-import { byTech, clamp, factor, techFromYear, validateMechanics } from './mech';
+import { byTech, clamp, factor, techFromYear, validateMechanics, yearFromTech } from './mech';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI, ROLES } from './roles';
 import { ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR } from './constants';
 
@@ -65,6 +65,8 @@ export interface MemberRT {
   nationId: string;
   name: string;
   snap: Snapshot;
+  /** Year that selects per-era model rules: the snapshot year, or the year of the equalized tech level. */
+  ruleYear: number;
   doctrine: DoctrineProfile;
   w: DoctrineProfile['weights'];
   specials: Set<string>;
@@ -415,6 +417,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     const delay = byTech(m.c2.orderDelayDays, tech.communications) * (doctrine.specials.includes('mission_command') ? MISSION_COMMAND_DELAY_FACTOR : 1);
     const mr: MemberRT = {
       idx, side, snapId: snap.id, nationId: snap.nationId, name: snap.name, snap, doctrine, w,
+      ruleYear: scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year,
       specials: new Set(doctrine.specials), tech, commitment: 1,
       tli, qF, tF, range, rangeClass, rate, mob, mounted, vehicle,
       dispersion: byTech(m.lethality.dispersion, tech.weapons),

@@ -103,9 +103,6 @@ export interface Mechanics {
     fortificationFactor: ByTech;   // per fortification tech level, for a fortified city
     surpriseFactor: MV;
     pursuitLossFraction: ByTech;   // casualty fraction of a routed force during pursuit
-    /** Minimum pursuer share for a winner without cavalry or vehicles: pursuit = pursuitLossFraction
-     *  x max(winner mobile share, footPursuitFloor). PLACEHOLDER until sourced (0 = mounted only). */
-    footPursuitFloor: MV;
     captureFraction: ByTech;       // fraction of a beaten force's losses that are prisoners
     terrainAttackFactor: Record<TerrainClass, MV>;
     terrainMountedFactor: Record<TerrainClass, MV>;
