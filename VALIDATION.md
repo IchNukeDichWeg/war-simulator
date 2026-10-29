@@ -243,3 +243,74 @@ exactly, deterministic per seed, no teleports). New preset defects: crewless pla
 battles (Japan vs USA: 18 wins, 849k of 1.09M battle casualties) and land battles are fought on sea
 cells (allies-vs-axis 15, usa-vs-china 173).
 
+### Run 3: engine fix round 2 (engine `18cc5b2`, data `1b234fc`), 20 seeds
+
+On the numbers: winner 20/24, loss ratio 14/24, duration 22/24. I reproduced this myself in a clean
+worktree at `1b234fc` after a rebuild. The per-fix progression below was measured by the engine
+agent, one commit at a time, and I did not re-run it. Whether the passes are right for the right
+reasons is QA round 3's job; until then the gate stays NOT CONFIRMED.
+
+| # | Fix (commit) | winner / ratio / duration after |
+| --- | --- | --- |
+| | Run 2 data, rebuilt | 19 / 15 / 22 |
+| 1 | Capture needs enemy control at start; `destroy` objective kind (`77516ca`) | 20 / 15 / 24 |
+| 2 | Crewless formations cannot win or claim cells (`556207e`) | 20 / 15 / 24 |
+| 3 | Naval interception only for embarked troops (`a5edea8`) | 20 / 15 / 24 |
+| 4 | Collapse needs morale below min(0.15, start - one defeat shock) (`ecfeb87`) | 19 / 16 / 24 |
+| 5 | Supply range, supply rule, unfortified case capitals ON (`7d92bb9`) | 19 / 15 / 23 |
+| 6 | A Defend objective takes at most its value's share of the army (`d6ea628`) | 19 / 15 / 23 |
+| | Rebuild for the out-of-sample collapse fraction 0.5 (`a270a09`) | 19 / 15 / 23 |
+| 7 | Mass surrender at the sourced `encircledSurrenderShare` (`9149fcf`) | 19 / 14 / 23 |
+| 8 | No field fortification for a side marked unprepared (`1d418be`) | 20 / 15 / 22 |
+| 9 | No daily attrition inside a battle shorter than a day (`e63593d`) | 20 / 14 / 22 |
+| 10 | Test: public/data battles and mechanics must match data/ (`18cc5b2`) | tooling |
+
+Every fix is ON, including the ones that cost a pass (4, 5, 7, 9): each was decided on what history
+records, not on the score.
+
+| case | hist winner wins | loss ratio vs hist | days model / hist | fails |
+| --- | --- | --- | --- | --- |
+| adrianople-378 | 40% | x0.11 | 1.3 / 0.25 | winner, ratio |
+| agincourt-1415 | 95% | x0.37 | 0.7 / 0.13 | |
+| austerlitz-1805 | 100% | x1.42 | 0.8 / 0.35 | |
+| blenheim-1704 | 90% | x1.12 | 1.2 / 0.35 | |
+| breitenfeld-1631 | 100% | x0.98 | 0.9 / 0.37 | |
+| cannae--216 | 100% | x1.19 | 0.7 / 0.4 | |
+| carrhae--53 | 15% | x20.36 | 0.8 / 1 | winner, ratio |
+| el-alamein-1942 | 100% | x1.13 | 4.9 / 13 | |
+| falklands-1982 | 100% | x0.86 | 14 / 25 | |
+| france-1940 | 90% | x4.63 | 42 / 43 | ratio |
+| gaugamela--331 | 100% | x1.69 | 0.7 / 0.4 | |
+| gettysburg-1863 | 100% | x2.11 | 2.4 / 2.4 | |
+| gulf-war-1991 | 100% | x4.87 | 9 / 4.17 | ratio |
+| hastings-1066 | 100% | x0.47 | 1 / 0.35 | |
+| iraq-2003 | 100% | x0.24 | 25 / 21 | ratio |
+| kursk-1943 | 100% | x3.96 | 10.3 / 12 | ratio |
+| marathon--490 | 0% | x19.58 | 0.6 / 0.15 | winner, ratio |
+| mohi-1241 | 100% | x0.52 | 0.7 / 0.35 | |
+| six-day-war-1967 | 0% | x3.33 | 10 / 4 | winner, ratio |
+| stalingrad-1942 | 100% | x0.09 | 6 / 75 | ratio, duration |
+| tannenberg-1914 | 100% | x1.84 | 1.5 / 5 | duration |
+| waterloo-1815 | 100% | x3.08 | 0.9 / 0.4 | ratio |
+| yom-kippur-sinai-1973 | 100% | x0.44 | 9 / 18 | |
+| zama--202 | 100% | x1.98 | 0.9 / 0.35 | |
+
+What moved against Run 2:
+- **Six-Day** now fails (95% -> 0%). Its Run 2 pass was the WRONG-reason collapse at a guessed
+  threshold. Collapse-morale sweep at fix 4: 0.10 and 0.15 give 19/16/24, 0.20 and 0.25 give
+  20/15/24. Six-Day passes only from 0.20, so it is reported as unresolved, not as a pass.
+- **Stalingrad** no longer wins on day 1 (fix 1 ran it to day 36), but since fix 5 the Axis collapses
+  by morale on day 6 with 439k losses against 600k historical over 75 days. The winner pass is
+  still suspect.
+- **Blenheim** passes again (30% -> 90%, ratio x4.00 -> x1.12) once the unprepared Franco-Bavarian
+  line gets no field fortification.
+- **Falklands** ratio now passes: Argentine losses 1.4k -> 8.1k with mass surrender.
+- **Iraq 2003** ratio fails (x0.24): mass surrender at the sourced share hands over 209k against
+  35k historical casualties. Kept, because the share is sourced.
+- **Tannenberg** duration (1.5 vs 5 days) and **Waterloo** ratio (x3.08) now fail, the costs of
+  fixes 8 and 9.
+
+Still open: the Iraqi army attacks in 2003 because its leftover formations follow the aggression >=
+0.5 rule (doctrine aggression is exactly 0.5); the Yom Kippur Egyptian objective (Mitla Pass) may
+start in Egyptian control; doctrine withdraw thresholds still decide Adrianople, Carrhae and Marathon
+(B2), and the engine does not yet read the CDB90 era breakpoints committed in `39490b0`.
