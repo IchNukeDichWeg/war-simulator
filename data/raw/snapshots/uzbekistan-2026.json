@@ -1,0 +1,657 @@
+{
+  "id": "uzbekistan-2026",
+  "nationId": "uzbekistan",
+  "includes": [],
+  "name": "Republic of Uzbekistan",
+  "year": 2026,
+  "era": "modern",
+  "region": "central_asia",
+  "phase": "current",
+  "tags": [
+    "SCO",
+    "non-aligned (left CSTO 2012)",
+    "presidential republic",
+    "conscription",
+    "doubly landlocked",
+    "Fergana Valley"
+  ],
+  "capital": {
+    "name": "Tashkent",
+    "lat": 41.2995,
+    "lon": 69.2401,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Samarkand",
+      "lat": 39.627,
+      "lon": 66.975,
+      "kind": "city"
+    },
+    {
+      "name": "Bukhara",
+      "lat": 39.7681,
+      "lon": 64.4556,
+      "kind": "city"
+    },
+    {
+      "name": "Namangan",
+      "lat": 40.9983,
+      "lon": 71.6726,
+      "kind": "city"
+    },
+    {
+      "name": "Andijan",
+      "lat": 40.7821,
+      "lon": 72.3442,
+      "kind": "city"
+    },
+    {
+      "name": "Fergana",
+      "lat": 40.3864,
+      "lon": 71.7864,
+      "kind": "city"
+    },
+    {
+      "name": "Nukus",
+      "lat": 42.46,
+      "lon": 59.61,
+      "kind": "city"
+    },
+    {
+      "name": "Termez",
+      "lat": 37.2242,
+      "lon": 67.2783,
+      "kind": "fortress"
+    },
+    {
+      "name": "Karshi-Khanabad air base",
+      "lat": 38.8336,
+      "lon": 65.9215,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kamchik Pass",
+      "lat": 41.08,
+      "lon": 70.52,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hairatan-Termez Friendship Bridge",
+      "lat": 37.23,
+      "lon": 67.42,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:UZB",
+    "areaKm2": {
+      "low": 438510,
+      "mid": 438510,
+      "high": 448923,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 438,510 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 448,923 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 36497627,
+      "mid": 37053428,
+      "high": 37794497,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 37,053,428). Low allows for census uncertainty; high adds one year of growth to 2026 (~2.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.5,
+      "mid": 0.51,
+      "high": 0.52,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 51.02% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 48000,
+      "mid": 48000,
+      "high": 68000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.204 as quoted: 48,000 active (20,000 paramilitary excluded). CIA Factbook 2025 ~50,000; World Bank 68,000 (2020) incl. National Guard (high)."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 80000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No IISS reserve figure; 12-month conscription (with paid one-month option) produces a reserve to age 27."
+    },
+    "supportPersonnel": {
+      "low": 17600,
+      "mid": 22000,
+      "high": 22000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 48,000 minus infantry P roles (14,000 + 12,000) = 22,000: Air and Air Defence Forces, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: post-Soviet conscript state, young population, limited stocks. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 741069,
+      "mid": 1111603,
+      "high": 1852671,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 37,053,428 x ratio 0.02 / 0.03 / 0.05."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 10000,
+          "mid": 14000,
+          "high": 18000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motor-rifle/mechanised brigade infantry. (context page: https://en.wikipedia.org/wiki/Uzbek_Ground_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: BMP-1/2, BTR-80/82A, M-ATV."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: 12-month conscripts plus contract soldiers."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Air-assault (BMD/BTR-D units), mountain and special forces."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: contract units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 300,
+          "mid": 340,
+          "high": 420,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uzbek_Ground_Forces",
+          "note": "Ground Forces list: T-72 70 + T-64B 100 + T-62M/MV 170 = 340; MBT list adds T-55 80 (high)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: T-62/T-64 dated."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1000,
+          "mid": 1415,
+          "high": 1415,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uzbek_Ground_Forces",
+          "note": "BMP-1 180 + BMP-2 270 + BMD-1 120 + BMD-2 9 + M-ATV 308 + MaxxPro 50 + Typhoon-K 45 + Ejder 24 + BTR-60 24 + BTR-70 25 + BTR-80 210 + BTR-82A 100 + BTR-D 50 = 1,415. Low for serviceability of Soviet stock."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 180,
+          "mid": 198,
+          "high": 450,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Uzbek_Ground_Forces",
+          "note": "BM-21 50 + BM-27 48 + 2S1 18 + 2S3 17 + 2S5 17 + 2S7 48 = 198 self-propelled/MRL listed (mid); towed guns (D-30, 2A36, 2A65) not listed, high allows for them."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 20,
+          "mid": 32,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uzbekistan_Air_and_Air_Defence_Forces",
+          "note": "J-10CE 6+ (shown Aug 2025) + MiG-29A 26 (to be phased out) = 32; MiG-29UB 5 excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: J-10CE modern 4.5-gen, MiG-29A dated."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 10,
+          "mid": 13,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Uzbekistan_Air_and_Air_Defence_Forces",
+          "note": "Su-25/Su-25BM 13 (mid); the Armed Forces article cites 31 Su-24 from an older inventory, likely retired (high). https://en.wikipedia.org/wiki/Armed_Forces_of_the_Republic_of_Uzbekistan"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 110,
+          "mid": 137,
+          "high": 145,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uzbekistan_Air_and_Air_Defence_Forces",
+          "note": "AS532 16 + AS550 20 + Mi-8/17 60+ + Mi-35M 41+ = 137; 4 Mi-35M on order."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Mi-35M and Airbus helicopters."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Uzbekistan_Air_and_Air_Defence_Forces",
+          "note": "Bayraktar TB2 4+ (on order/delivering); local Uzbek UAV production for small types. Mid is an estimate."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 5,
+          "mid": 12,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. HQ-9 1 battery (Ground Forces list) plus legacy S-75/S-125/S-200 sites and short-range systems of unknown number. (context page: https://en.wikipedia.org/wiki/Uzbek_Ground_Forces)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: HQ-9 modern, rest Soviet."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: Soviet-pattern staff, reforms since 2017; no major combat since independence (border clashes, Andijan 2005)."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Soviet systems, J-10CE PL-15, HQ-9."
+    },
+    "armor": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-62/T-64/T-72."
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Nominal: doubly landlocked, no navy (river patrol on the Amu Darya only)."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: HQ-9 plus Soviet SAM network."
+    },
+    "logistics": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: rail, C-295/C-390/Il-76."
+    },
+    "communications": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: few UCAVs."
+    },
+    "air": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: J-10CE (4.5 gen)."
+    },
+    "cyber": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 8374,
+      "mid": 9304,
+      "high": 10235,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 344,748,648,547 2011 int$ / population 37,053,428 = 9,304. Range +/-10%."
+    },
+    "gdp": {
+      "low": 310273783692,
+      "mid": 344748648547,
+      "high": 379223513402,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 430,666,644,031 x 0.8005 = 344,748,648,547 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.015,
+      "mid": 0.0249,
+      "high": 0.03,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.49% of GDP in 2018, the last published value. Range 1.5-3.0% for the unpublished years since."
+    },
+    "industrialShare": {
+      "low": 0.305,
+      "mid": 0.325,
+      "high": 0.345,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 32.5% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Irrigated wheat self-sufficiency, cotton and horticulture exports; dependent on Amu/Syr Darya water. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 267588,
+      "mid": 297320,
+      "high": 327052,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 18,694,130 (SP.POP.TOTL.MA.IN) x share aged 15-19 7.952% / 5 = 297,320. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 10,
+        "mid": 40,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Local production of light armoured vehicles (Ejder licence plans: 1,000 on order) and UAVs. (context page: https://en.wikipedia.org/wiki/Uzbek_Ground_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 120289,
+      "mid": 120289,
+      "high": 209496,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2021): 209,496 km total (high), 120,289 km paved (mid)."
+    },
+    "railKm": {
+      "low": 4642,
+      "mid": 4732,
+      "high": 4732,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UZB/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 4,732 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 4,642 km (2018) spans the range. 1,520 mm gauge, 1,684 km electrified; links to Afghanistan (Termez-Mazar)."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/uz.json",
+      "note": "Doubly landlocked (one of two in the world); no seaports."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/uz.json",
+      "note": "Doubly landlocked; no merchant marine listed in the CIA Factbook."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Soviet-pattern rail/road sustainment."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 500000,
+      "high": 800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and donkeys (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWk",
+    "chokepoints": [
+      "Kamchik Pass (Tashkent-Fergana)",
+      "Termez / Amu Darya crossings",
+      "Fergana Valley enclaves",
+      "Zeravshan valley"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, dense irrigated population centres, mountain passes; desert approaches."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia Uzbek Ground Forces and Uzbekistan Air and Air Defence Forces articles (grade B where listed); towed artillery and SAM holdings are not published (grade C/D). Population convention: everything inside ne:UZB. Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). National Guard and Interior troops excluded. Military spending data stop in 2018."
+}

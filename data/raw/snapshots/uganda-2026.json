@@ -1,0 +1,625 @@
+{
+  "id": "uganda-2026",
+  "nationId": "uganda",
+  "includes": [],
+  "name": "Republic of Uganda",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "EAC",
+    "African Union",
+    "landlocked",
+    "presidential republic",
+    "expeditionary peacekeeper",
+    "Great Lakes"
+  ],
+  "capital": {
+    "name": "Kampala",
+    "lat": 0.3476,
+    "lon": 32.5825,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Entebbe (air base)",
+      "lat": 0.0512,
+      "lon": 32.4637,
+      "kind": "fortress"
+    },
+    {
+      "name": "Gulu",
+      "lat": 2.7724,
+      "lon": 32.2881,
+      "kind": "city"
+    },
+    {
+      "name": "Mbarara",
+      "lat": -0.6072,
+      "lon": 30.6545,
+      "kind": "city"
+    },
+    {
+      "name": "Jinja (Owen Falls/Nile source)",
+      "lat": 0.4244,
+      "lon": 33.2042,
+      "kind": "city"
+    },
+    {
+      "name": "Mbale",
+      "lat": 1.0821,
+      "lon": 34.175,
+      "kind": "city"
+    },
+    {
+      "name": "Arua",
+      "lat": 3.0303,
+      "lon": 30.9073,
+      "kind": "city"
+    },
+    {
+      "name": "Kasese",
+      "lat": 0.1867,
+      "lon": 30.088,
+      "kind": "city"
+    },
+    {
+      "name": "Bunagana (DRC border crossing)",
+      "lat": -1.2833,
+      "lon": 29.6,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Malaba (Kenya border, Northern Corridor)",
+      "lat": 0.6333,
+      "lon": 34.2667,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:UGA",
+    "areaKm2": {
+      "low": 200520,
+      "mid": 200520,
+      "high": 241551,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 200,520 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 241,551 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 50614121,
+      "mid": 51384894,
+      "high": 52926441,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 51,384,894). Low allows for census uncertainty; high adds one year of growth to 2026 (~3.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.309,
+      "mid": 0.319,
+      "high": 0.329,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 31.94% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 45000,
+      "mid": 45000,
+      "high": 46000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.505 as quoted: 45,000 active. CIA Factbook 2025 ~45,000; World Bank 46,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS 2025 as quoted: 10,000 reserves; Local Defence Units (created 2018) add a militia pool (high)."
+    },
+    "supportPersonnel": {
+      "low": 9600,
+      "mid": 12000,
+      "high": 12000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 45,000 minus infantry P roles (8,000 + 25,000) = 12,000: air force, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.03,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: NRA guerrilla heritage and LDU militias; equipment limits mass mobilization. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 513849,
+      "mid": 1027698,
+      "high": 1541547,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 51,384,894 x ratio 0.01 / 0.02 / 0.03."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of the armoured/mechanised brigades; T-90S-equipped units. (context page: https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: BMP-2/BVP-2 IFVs."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: combat-experienced (Somalia since 2007, DRC Operation Shujaa since 2021)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry divisions and Special Forces Command; up to 4,500 in Somalia, ~3,000+ in the DRC (CIA Factbook 2025), deployment to South Sudan (2025)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: among the most experienced infantry in East Africa (AMISOM/ATMIS)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 64,
+          "mid": 239,
+          "high": 259,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force",
+          "note": "UPDF article (IISS-cited): T-90S 44 + T-72A/B1 50 + T-55 140 + Type 85-IIM 5 = 239 MBT (mid); high adds PT-76 20. MBT list gives only T-55 20 + T-90 44 (low)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: T-90S modern, T-55 obsolete."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 140,
+          "mid": 180,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force",
+          "note": "BVP-2 41 + BMP-2 31 + BTR-60 12 + OT-64 4 + Mamba 15 + RG-31 15 + Buffel 20 + Casspir 42 = 180. Recce (Eland 40, Saladin 36, BRDM-2 100) excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 40,
+          "mid": 44,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force",
+          "note": "ATMOS 2000 6 + BM-21 6 + RM-70 6 + M-46 8 + M-30 18 = 44 listed; high allows for unlisted D-30/122 mm guns."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: ATMOS modern."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 5,
+          "mid": 6,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uganda_Air_Force",
+          "note": "Air Force inventory: Su-30MK2 6 (UPDF article lists 5; plus MiG-21bis 5, likely stored, in high)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Su-30MK2."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 24,
+          "mid": 29,
+          "high": 35,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Uganda_Air_Force",
+          "note": "Bell 206 5 + Mi-17 10 + Mi-28 4 + UH-1H 5 + Mi-24/35 5 (UPDF article) = 29; 2 more Mi-28 on order."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Mi-28 modern attack helicopters."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Small numbers of ISR UAVs reported; no published inventory. (context page: https://en.wikipedia.org/wiki/Uganda_Air_Force)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 3,
+          "mid": 5,
+          "high": 8,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force",
+          "note": "ZU-23-2 5 + 61-K 20 guns ~4 batteries + S-125 Neva 4 launchers ~1 battery = 5."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: experienced expeditionary commanders (Somalia, DRC, South Sudan); highly politicised top command."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: strong NRA/UPDF identity; regime-loyal."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: recent successful operations against the ADF."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Soviet bulk, ATMOS, Mi-28/Su-30 weapons."
+    },
+    "armor": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: T-90S."
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Nominal: landlocked, marine unit on Lake Victoria only."
+    },
+    "fortification": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: minimal air defence."
+    },
+    "logistics": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: depends on the Kenyan Northern Corridor."
+    },
+    "communications": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "isr": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "air": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Su-30MK2."
+    },
+    "cyber": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2147,
+      "mid": 2386,
+      "high": 2624,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 122,593,757,757 2011 int$ / population 51,384,894 = 2,386. Range +/-10%."
+    },
+    "gdp": {
+      "low": 110334381981,
+      "mid": 122593757757,
+      "high": 134853133533,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 153,146,480,646 x 0.8005 = 122,593,757,757 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0166,
+      "mid": 0.0196,
+      "high": 0.0235,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.96% of GDP in 2025. "
+    },
+    "industrialShare": {
+      "low": 0.223,
+      "mid": 0.243,
+      "high": 0.263,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 24.3% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Fertile; net food exporter to South Sudan, Kenya, DRC. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 533553,
+      "mid": 592837,
+      "high": 652121,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 25,495,638 (SP.POP.TOTL.MA.IN) x share aged 15-19 11.626% / 5 = 592,837. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 0,
+        "mid": 10,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Luwero Industries and the UPDF assemble light armoured vehicles (Chui, Nyoka). (context page: https://en.wikipedia.org/wiki/Uganda_People's_Defence_Force)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 4257,
+      "mid": 4257,
+      "high": 146000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2019): 146,000 km total (high), 4,257 km paved (mid). World Bank IS.ROD.TOTL.KM 70,746 km (2003)."
+    },
+    "railKm": {
+      "low": 259,
+      "mid": 259,
+      "high": 1244,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UGA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2002: 259 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 1,244 km (2014) spans the range. Metre-gauge, partly rehabilitated (Malaba-Kampala)."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ug.json",
+      "note": "Landlocked; trade via Mombasa (Kenya) and Dar es Salaam. Lake Victoria ports (Port Bell, Jinja) not counted."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ug.json",
+      "note": "Landlocked; no ocean-going merchant fleet in the CIA Factbook."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Proven expeditionary sustainment (Somalia by air/sea via Mombasa; DRC operations ~100-200 km across the border)."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen and donkeys (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Northern Corridor via Kenya (Malaba)",
+      "Rwenzori mountains (DRC border)",
+      "Lake Victoria",
+      "Nile crossings (Karuma, Jinja)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, guerrilla tradition, population support in the south."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia UPDF article (equipment table with IISS citations) and Uganda Air Force inventory (World Air Forces). Population convention: everything inside ne:UGA. Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). Forces deployed abroad (Somalia AUSSOM, DRC Operation Shujaa, South Sudan) are counted."
+}

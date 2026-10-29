@@ -1,0 +1,669 @@
+{
+  "id": "angola-2026",
+  "nationId": "angola",
+  "includes": [],
+  "name": "Republic of Angola",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "SADC",
+    "African Union",
+    "OPEC (left 2024)",
+    "presidential republic",
+    "conscription",
+    "oil economy",
+    "Atlantic"
+  ],
+  "capital": {
+    "name": "Luanda",
+    "lat": -8.839,
+    "lon": 13.2894,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Lobito",
+      "lat": -12.3644,
+      "lon": 13.5364,
+      "kind": "port"
+    },
+    {
+      "name": "Huambo",
+      "lat": -12.7761,
+      "lon": 15.7392,
+      "kind": "city"
+    },
+    {
+      "name": "Benguela",
+      "lat": -12.5763,
+      "lon": 13.4055,
+      "kind": "city"
+    },
+    {
+      "name": "Lubango",
+      "lat": -14.9177,
+      "lon": 13.4925,
+      "kind": "city"
+    },
+    {
+      "name": "Cabinda",
+      "lat": -5.55,
+      "lon": 12.2,
+      "kind": "port"
+    },
+    {
+      "name": "Namibe",
+      "lat": -15.1961,
+      "lon": 12.1522,
+      "kind": "port"
+    },
+    {
+      "name": "Saurimo",
+      "lat": -9.6608,
+      "lon": 20.3916,
+      "kind": "city"
+    },
+    {
+      "name": "Cuito Cuanavale",
+      "lat": -15.1639,
+      "lon": 19.1731,
+      "kind": "fortress"
+    },
+    {
+      "name": "Lobito Corridor (Benguela railway)",
+      "lat": -12.36,
+      "lon": 16.93,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:AGO",
+    "areaKm2": {
+      "low": 1246700,
+      "mid": 1246700,
+      "high": 1246700,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 1,246,700 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 1,246,700 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 38454438,
+      "mid": 39040039,
+      "high": 40211240,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 39,040,039). Low allows for census uncertainty; high adds one year of growth to 2026 (~3.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.705,
+      "mid": 0.715,
+      "high": 0.725,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 71.46% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 107000,
+      "high": 117000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.471 as quoted: 107,000 active (Army 100,000, Navy 1,000, Air 6,000). CIA Factbook 2025 ~100,000 (low); World Bank 117,000 (2020, high)."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 30000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "IISS lists no organised reserve; 24-month conscription yields ex-conscripts liable to 45 (CIA Factbook). Educated guess of a callable pool."
+    },
+    "supportPersonnel": {
+      "low": 29600,
+      "mid": 37000,
+      "high": 37000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 107,000 minus infantry P roles (25,000 + 45,000) = 37,000: navy, air force, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: conscript system (20-45) and civil-war mobilization precedent, limited by equipment. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 390400,
+      "mid": 780801,
+      "high": 1561602,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 39,040,039 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 35000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of motorised/mechanised brigades; Army ~100,000 of 107,000 (IISS 2024 as quoted). (context page: https://en.wikipedia.org/wiki/Angolan_Army)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: BMP-1/BTR-152, serviceability doubtful (IISS 2024)."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: conscripts (24 months) with civil-war veteran cadre."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 45000,
+          "high": 55000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry brigades and border units."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 300,
+          "high": 310,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Angolan_Army",
+          "note": "IISS Military Balance 2024 p.471 as quoted: T-55AM2 200 + T-62 50 + T-72M1 50 = 300, all \"serviceability doubtful\" (low ~1/3); PT-76 10 light tanks (high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: obsolete and poorly maintained."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 200,
+          "mid": 526,
+          "high": 1130,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Angolan_Army",
+          "note": "IISS 2024 as quoted: BMP-1 250 + MT-LB 31 + BTR-152 200 + Casspir NG2000 45 = 526 (mid); high adds BRDM-2 600 scout cars. Serviceability doubtful (low)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 350,
+          "mid": 713,
+          "high": 713,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Angolan_Army",
+          "note": "IISS 2024 as quoted: 2S1 9 + 2S3 4 + 2S7 12 + BM-21 70 + RM-70 40 + BM-27 3 + D-30 523 + M-46 48 + D-20 4 = 713. Low assumes half serviceable."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: towed Soviet guns."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 20,
+          "mid": 57,
+          "high": 57,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/National_Air_Force_of_Angola",
+          "note": "NAF inventory: MiG-21bis 23 + MiG-23 22 + Su-30K 12 = 57. Low ~20 flyable (Su-30K and a few MiGs)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Su-30K modern, MiG-21/23 obsolete."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: low flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 8,
+          "mid": 16,
+          "high": 16,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/National_Air_Force_of_Angola",
+          "note": "Su-22 10 + EMB 314 Super Tucano 6 = 16."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 115,
+          "high": 115,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/National_Air_Force_of_Angola",
+          "note": "AW109 2 + AW139 4 + Alouette III 21 + Bell 212 9 + Mi-17 65 + Mi-35 14 = 115. Low for serviceability."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 12,
+          "mid": 18,
+          "high": 20,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Angolan_Navy",
+          "note": "IISS Military Balance 2025 pp.453-454 as quoted: HSI 32 3 + PVC-170 5 + Super Dvora Mk III 4 + Mandume 4 + Ocean Eagle 43 1 + 4 de Abril 1 = 18 (fisheries-ministry vessels excluded)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: patrol craft, no missiles."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 12,
+          "mid": 25,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/National_Air_Force_of_Angola",
+          "note": "Launcher conversion at 4-6 per battery (SOURCES.md): S-75M 40, 2K12 Kub 16, S-125 12, Strela-10 10, Osa 15, Strela-1 20 = 113 launchers ~25 batteries. ZPU-4 (450+) and ZSU-23-4 guns excluded. Serviceability doubtful (low)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1960s-70s Soviet SAMs."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Utyos coastal launchers based at Luanda (IISS 2025 as quoted on the Navy article); number not given. (context page: https://en.wikipedia.org/wiki/Angolan_Navy)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: civil-war experienced senior officers ageing; little recent large-scale operations."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: integrated MPLA/UNITA army since 1991-2002."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Soviet 1960s-80s inventory."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-55AM2/T-62/T-72M1."
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: patrol craft only."
+    },
+    "fortification": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: S-75/S-125 era air defence."
+    },
+    "logistics": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Il-76/An-12 airlift, Lobito Corridor railway."
+    },
+    "communications": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: AngoSat-2 (2022) civil-military satellite."
+    },
+    "isr": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: C-295 MSA maritime patrol, AngoSat-2."
+    },
+    "air": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Su-30K plus obsolete MiGs."
+    },
+    "cyber": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 6311,
+      "mid": 7013,
+      "high": 7714,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 273,769,552,092 2011 int$ / population 39,040,039 = 7,013. Range +/-10%."
+    },
+    "gdp": {
+      "low": 246392596883,
+      "mid": 273769552092,
+      "high": 301146507302,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 341,998,191,246 x 0.8005 = 273,769,552,092 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0119,
+      "mid": 0.014,
+      "high": 0.0168,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.40% of GDP in 2025. "
+    },
+    "industrialShare": {
+      "low": 0.251,
+      "mid": 0.271,
+      "high": 0.291,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 27.1% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": -0.0,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food importer despite large arable potential. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 376942,
+      "mid": 418824,
+      "high": 460707,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/AGO/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 19,322,247 (SP.POP.TOTL.MA.IN) x share aged 15-19 10.838% / 5 = 418,824. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 13680,
+      "mid": 13680,
+      "high": 76000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2020): 76,000 km total (high), 13,680 km paved (mid). World Bank IS.ROD.TOTL.KM 51,429 km (2000)."
+    },
+    "railKm": {
+      "low": 2209,
+      "mid": 2761,
+      "high": 2761,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ao.json",
+      "note": "CIA Factbook: 2,761 km (2022); no World Bank value. Low allows for disused track. Three unconnected lines from Luanda, Lobito (Benguela railway, Lobito Corridor) and Namibe."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 8,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ao.json",
+      "note": "CIA Factbook 2024: 21 ports, none large/medium, 8 small (Luanda, Lobito, Namibe, Cabinda + oil terminals). Mid counts Luanda, Lobito, Namibe."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 80000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 64 ships under the Angolan flag (2023); not in the DWT list. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ao.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck sustainment over poor roads; Soviet-pattern logistics."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Few draft animals outside the southern cattle zone (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Cabinda exclave (separated by DRC corridor)",
+      "Lobito Corridor",
+      "Cuando Cubango (Caprivi approaches)",
+      "Cunene River border"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: vast territory, familiar terrain, civil-war experience, population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Ground and naval counts are IISS Military Balance 2024/2025 figures as quoted (sfn page cites) on the Wikipedia Angolan Army equipment list and Angolan Navy article; IISS itself flags most army equipment as \"serviceability doubtful\", so lows are set at about a third to a half. Population convention: everything inside ne:AGO including Cabinda. Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). 10,000 paramilitary (Rapid Reaction Police) excluded."
+}

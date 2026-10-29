@@ -1,0 +1,624 @@
+{
+  "id": "georgia-2026",
+  "nationId": "georgia",
+  "includes": [],
+  "name": "Georgia",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO aspirant",
+    "EU candidate (frozen)",
+    "parliamentary republic",
+    "conscription",
+    "Black Sea",
+    "South Caucasus",
+    "occupied territories"
+  ],
+  "capital": {
+    "name": "Tbilisi",
+    "lat": 41.7151,
+    "lon": 44.8271,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Batumi",
+      "lat": 41.6168,
+      "lon": 41.6367,
+      "kind": "port"
+    },
+    {
+      "name": "Kutaisi",
+      "lat": 42.2679,
+      "lon": 42.6946,
+      "kind": "city"
+    },
+    {
+      "name": "Poti",
+      "lat": 42.1462,
+      "lon": 41.6719,
+      "kind": "port"
+    },
+    {
+      "name": "Rustavi",
+      "lat": 41.5495,
+      "lon": 44.9932,
+      "kind": "city"
+    },
+    {
+      "name": "Gori",
+      "lat": 41.9842,
+      "lon": 44.1158,
+      "kind": "city"
+    },
+    {
+      "name": "Zugdidi",
+      "lat": 42.5088,
+      "lon": 41.8709,
+      "kind": "city"
+    },
+    {
+      "name": "Senaki base",
+      "lat": 42.27,
+      "lon": 42.07,
+      "kind": "fortress"
+    },
+    {
+      "name": "Rikoti Pass",
+      "lat": 42.0,
+      "lon": 43.47,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Roki Tunnel (South Ossetia)",
+      "lat": 42.55,
+      "lon": 44.1,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Upper Lars / Darial Gorge",
+      "lat": 42.74,
+      "lon": 44.63,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:GEO",
+    "areaKm2": {
+      "low": 69490,
+      "mid": 69490,
+      "high": 69700,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 69,490 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 69,700 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 3876730,
+      "mid": 3935766,
+      "high": 3935766,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 3,935,766). Low allows for census uncertainty; high adds one year of growth to 2026 (~0.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.602,
+      "mid": 0.612,
+      "high": 0.622,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 61.18% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 20650,
+      "mid": 20650,
+      "high": 37000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.174 as quoted: 20,650 active (5,400 paramilitary excluded). CIA Factbook 2025: authorised up to 37,000 (high); World Bank 26,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 5000,
+      "mid": 20000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. IISS gives no figure; a reserve/National Guard system and 11-month conscription (reinstated 2017) exist, but the trained callable pool is uncertain."
+    },
+    "supportPersonnel": {
+      "low": 6920,
+      "mid": 8650,
+      "high": 8650,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 20,650 minus infantry P roles (6,000 + 6,000) = 8,650: air force, artillery/armour crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: small conscript state; 2008 war mobilised reserves in days. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 78715,
+      "mid": 157431,
+      "high": 236146,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 3,935,766 x ratio 0.02 / 0.04 / 0.06."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry battalions of the mechanised/infantry brigades. Land Forces ~15,000 of 20,650 (IISS 2025). (context page: https://en.wikipedia.org/wiki/Georgian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: BMP-1U/BMP-2, MT-LB, Vuran MRAP; Javelin ATGMs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: NATO-trained contract battalions, Afghanistan/Iraq rotations."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry, mountain, special operations forces and National Guard active elements."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: experienced professional infantry (ISAF/Resolute Support)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 120,
+          "mid": 132,
+          "high": 243,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Defense_Forces_of_Georgia",
+          "note": "Equipment list: T-72SIM1/T-72B 132 active (~200 total). MBT list gives T-72M1 SIM-1 143 + T-55 100 (high, largely stored)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: Elbit-upgraded T-72 SIM-1."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 200,
+          "mid": 255,
+          "high": 400,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Defense_Forces_of_Georgia",
+          "note": "BMP-1/1U 25+ + BMP-2 46+ + BTR-80 19+ + BTR-70 25+ + MT-LB 66+ + Wolf 28 + BMC Vuran 46 = 255+; high adds Ejder 72 in reserve and the ~140 BMP-1 total."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 199,
+          "high": 210,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Defense_Forces_of_Georgia",
+          "note": "LAR-160 12 + RM-70 18 + BM-21 13 + RS-122 8+ + DANA 32 + 2S3 13 + 2S1 20 + D-20 12 + D-30 58 + 2A36 3 + Msta-B 10 = 199 (MT-12 AT guns and mortars excluded)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 6,
+          "mid": 9,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Georgian_Air_Force",
+          "note": "Su-25 (restored/modernised) 9 (IISS 2024 p.185 as quoted) + 2 Su-25UB trainers (high). Georgia has no fighters."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 28,
+          "mid": 34,
+          "high": 37,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Georgian_Air_Force",
+          "note": "Mi-8/171 15 + Mi-24 11 + UH-1H 6 + Mi-14 2 = 34 (EC145 of the Border Police excluded)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Aerostar 2 (2005) plus small numbers of Hermes/Georgian-made UAVs; no published inventory. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Defense_Forces_of_Georgia)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 11,
+          "high": 16,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Defense_Forces_of_Georgia",
+          "note": "Buk-M1 3 batteries (IISS 2024 as quoted on the Air Force article) + SPYDER-MR 1 + SPYDER-SR 1 + Osa-AKM 8 systems ~2 + Mistral ATLAS 6 ~1 + ZSU-23-4 12 ~3 = ~11. Grom/Piorun MANPADS excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: SPYDER, French GM-403 radar."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: NATO-standard training and staff procedures; lost the 2008 war to Russia within five days."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: professional core with strong unit identity."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5; high for defence of the homeland, political polarisation since 2024."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Javelin, SPYDER, DANA; mostly Soviet artillery."
+    },
+    "armor": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-72 SIM-1."
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Nominal: navy merged into the Coast Guard (Ministry of Internal Affairs) in 2009."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: SPYDER/Buk, GM-403 radar."
+    },
+    "logistics": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: NATO-compatible logistics, Black Sea ports."
+    },
+    "communications": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: NATO-interoperable."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: limited UAVs."
+    },
+    "air": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Su-25 only."
+    },
+    "cyber": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: cyber defence after 2008 attacks."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 18109,
+      "mid": 20121,
+      "high": 22133,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 79,192,309,996 2011 int$ / population 3,935,766 = 20,121. Range +/-10%."
+    },
+    "gdp": {
+      "low": 71273078996,
+      "mid": 79192309996,
+      "high": 87111540995,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 98,928,557,146 x 0.8005 = 79,192,309,996 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0148,
+      "mid": 0.0175,
+      "high": 0.0209,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.75% of GDP in 2025. "
+    },
+    "industrialShare": {
+      "low": 0.166,
+      "mid": 0.186,
+      "high": 0.206,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 18.6% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports most wheat; exports wine, hazelnuts. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 23266,
+      "mid": 25851,
+      "high": 28436,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 1,835,197 (SP.POP.TOTL.MA.IN) x share aged 15-19 7.043% / 5 = 25,851. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 15000,
+      "mid": 20295,
+      "high": 20295,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2018): 20,295 km total (mid/high); paved share not given there (low is an allowance for unpaved local roads)."
+    },
+    "railKm": {
+      "low": 1363,
+      "mid": 1387,
+      "high": 1387,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GEO/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 1,387 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 1,363 km (2014) spans the range. Broad gauge, almost fully electrified; Baku-Tbilisi-Kars link."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 2,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/gg.json",
+      "note": "CIA Factbook 2024: 3 ports (Batumi small; Supsa terminal; Sokhumi in occupied Abkhazia). Poti is the main container port."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 26 ships under the Georgian flag (2023). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/gg.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Small country, short interior lines."
+    },
+    "draftAnimals": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses in mountain regions (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Rikoti Pass (east-west highway)",
+      "Darial Gorge / Upper Lars",
+      "Roki Tunnel",
+      "Poti-Batumi coast",
+      "Inguri River (Abkhazia line)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountains and narrow east-west corridor favour the defender; population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia Defense Forces of Georgia equipment list (many \"as of 2022\" figures) and Georgian Air Force article (IISS 2024 as quoted). Population convention: World Bank/Geostat population (3.94 million) excludes Russian-occupied Abkhazia and South Ossetia, although the ne:GEO polygon may include them; Russian forces there are not counted. No naval roles: the navy was merged into the MIA Coast Guard (2009). Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). Paramilitary (Interior Ministry, Border Police) excluded."
+}

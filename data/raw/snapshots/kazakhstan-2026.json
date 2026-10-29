@@ -1,0 +1,717 @@
+{
+  "id": "kazakhstan-2026",
+  "nationId": "kazakhstan",
+  "includes": [],
+  "name": "Republic of Kazakhstan",
+  "year": 2026,
+  "era": "modern",
+  "region": "central_asia",
+  "phase": "current",
+  "tags": [
+    "CSTO",
+    "SCO",
+    "EAEU",
+    "presidential republic",
+    "conscription",
+    "landlocked (Caspian coast)",
+    "steppe"
+  ],
+  "capital": {
+    "name": "Astana",
+    "lat": 51.1694,
+    "lon": 71.4491,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Almaty",
+      "lat": 43.222,
+      "lon": 76.8512,
+      "kind": "city"
+    },
+    {
+      "name": "Shymkent",
+      "lat": 42.3417,
+      "lon": 69.5901,
+      "kind": "city"
+    },
+    {
+      "name": "Karaganda",
+      "lat": 49.8047,
+      "lon": 73.1094,
+      "kind": "city"
+    },
+    {
+      "name": "Aktobe",
+      "lat": 50.2839,
+      "lon": 57.167,
+      "kind": "city"
+    },
+    {
+      "name": "Aktau",
+      "lat": 43.6532,
+      "lon": 51.1975,
+      "kind": "port"
+    },
+    {
+      "name": "Kuryk",
+      "lat": 43.17,
+      "lon": 51.67,
+      "kind": "port"
+    },
+    {
+      "name": "Oskemen",
+      "lat": 49.9483,
+      "lon": 82.6275,
+      "kind": "city"
+    },
+    {
+      "name": "Pavlodar",
+      "lat": 52.2873,
+      "lon": 76.9674,
+      "kind": "city"
+    },
+    {
+      "name": "Baikonur",
+      "lat": 45.9646,
+      "lon": 63.3052,
+      "kind": "city"
+    },
+    {
+      "name": "Khorgos (China border gateway)",
+      "lat": 44.21,
+      "lon": 80.42,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dzungarian Gate",
+      "lat": 45.2,
+      "lon": 82.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:KAZ",
+    "areaKm2": {
+      "low": 2699700,
+      "mid": 2699700,
+      "high": 2724902,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 2,699,700 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 2,724,902 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 20531098,
+      "mid": 20843754,
+      "high": 21093879,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 20,843,754). Low allows for census uncertainty; high adds one year of growth to 2026 (~1.2%/yr)."
+    },
+    "urbanization": {
+      "low": 0.614,
+      "mid": 0.624,
+      "high": 0.634,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 62.39% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 39000,
+      "mid": 39000,
+      "high": 71000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.175 as quoted: 39,000 active (31,500 paramilitary excluded). CIA Factbook 2025 ~50,000; World Bank 71,000 (2020) includes the National Guard (high)."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. IISS gives no reserve figure; 12-month conscription since 1991 produces a large pool of ex-conscripts, but no organised reserve formations are reported."
+    },
+    "supportPersonnel": {
+      "low": 15200,
+      "mid": 19000,
+      "high": 19000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 39,000 minus infantry P roles (12,000 + 8,000) = 19,000: Air and Air Defence Forces, Navy, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: post-Soviet conscript state with Soviet-era stocks in storage; well below Russia (~10% in total war). Educated judgement."
+    },
+    "mobilizable": {
+      "low": 416875,
+      "mid": 833750,
+      "high": 1250625,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 20,843,754 x ratio 0.02 / 0.04 / 0.06."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 9000,
+          "mid": 12000,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motor-rifle/mechanised brigade infantry; Ground Forces ~20,000 of 39,000 (IISS 2025 as quoted). (context page: https://en.wikipedia.org/wiki/Kazakh_Ground_Forces)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: BMP-2/BTR-82A, Arlan MRAPs."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: mixed conscripts (12 months) and contract soldiers."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Airmobile Forces (air-assault brigades) and special forces."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: contract airmobile units; CSTO deployment Jan 2022."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 300,
+          "mid": 350,
+          "high": 650,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan",
+          "note": "Equipment list: T-72BA 350 (modernised). MBT list (older IISS-derived) gives T-72 650 + T-62 75 + T-55 540, mostly stored (high = active T-72 fleet incl. storage)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: T-72BA era-typical for the region."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 600,
+          "mid": 790,
+          "high": 950,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan",
+          "note": "Equipment list: BMP-2 280 + BMP-1 60 (Ground Forces article) + BTR-80/80A ~220 + BTR-82A 63 + MT-LB 50 + Arlan 138 + BPM-97 18 + Cobra 17 + Taimas 5 = ~850; mid 790 discounts double-counted BTR-80/80A rows. Recce BRM-1/BRDM-2 100 excluded."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 400,
+          "mid": 420,
+          "high": 600,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan",
+          "note": "2S1 60 + 2S3 60 + D-30 100 + Msta-B 70 + D-20 24 + BM-21 80 + TOS-1A 3 + Smerch 6 + PULS 18 = 421 (mid); high adds 9P140 Uragan 180 of unknown status (2024)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Soviet systems plus Israeli PULS."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 45,
+          "mid": 56,
+          "high": 87,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kazakh_Air_Defense_Forces",
+          "note": "Su-27 20 + Su-30SM 36 = 56 (Su-27UB 4 excluded). High adds 31 MiG-31 stored for sale (equipment list)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Su-30SM modern Flanker."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: moderate flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 12,
+          "mid": 12,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kazakh_Air_Defense_Forces",
+          "note": "Su-25SM 12 (+2 UBM)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 65,
+          "mid": 76,
+          "high": 88,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kazakh_Air_Defense_Forces",
+          "note": "UH-1H 4 + Mi-8T/TV 10 + Mi-17V-5/171Sh 26 + Mi-24V 20 + Mi-35SM 12 + Mi-26 4 = 76; high adds Navy Mi-24 12 if separate (https://en.wikipedia.org/wiki/Kazakh_Naval_Forces)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 6,
+          "mid": 7,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kazakh_Air_Defense_Forces",
+          "note": "Wing Loong I 3-4 + Anka 3-4 = 7 (Ground Forces article lists 4 + 3)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 19,
+          "high": 25,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kazakh_Naval_Forces",
+          "note": "Kazakhstan-class missile boats 4 + Mangistau 1 + Sea Dolphin 3 + Turk 2 + Archangel 3 + Dauntless 1 + Lashyn 1 + OPV-62 2 + Project 10750E MCM 2 = 19; Shaldag go-fast boats 6 excluded (high)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan",
+          "note": "9K79 Tochka launchers 12; serviceability of Tochka missiles is doubtful (low)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: 1970s SRBM."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 20,
+          "mid": 34,
+          "high": 45,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan",
+          "note": "Battery conversion (SOURCES.md, ~4-6 launchers per battery): S-300PS 40+ launchers ~10, S-200 3, S-75 12 launchers ~3, Buk-M2E 3 batteries, S-125 3, Strela-10 50 ~12 = ~34."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: S-300PS and Buk-M2E."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: Soviet-pattern staff, NATO PfP and KAZBRIG peacekeeping experience; no combat since independence."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: national conscript army."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Soviet late-Cold-War systems, PULS, Anka/Wing Loong UCAVs."
+    },
+    "armor": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: T-72BA."
+    },
+    "ships": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Caspian missile/patrol boats."
+    },
+    "fortification": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: S-300PS integrated into the CIS joint air defence system."
+    },
+    "logistics": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: broad-gauge rail, C-295/A400M airlift."
+    },
+    "communications": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: KazSat satellites."
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: KazEOSat imaging satellites, MALE UCAVs."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.1,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Su-30SM."
+    },
+    "cyber": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: state cyber programmes (Cyber Shield)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 27269,
+      "mid": 30299,
+      "high": 33329,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 631,553,001,766 2011 int$ / population 20,843,754 = 30,299. Range +/-10%."
+    },
+    "gdp": {
+      "low": 568397701589,
+      "mid": 631553001766,
+      "high": 694708301942,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 788,948,159,608 x 0.8005 = 631,553,001,766 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0037,
+      "mid": 0.0043,
+      "high": 0.0052,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.43% of GDP in 2025. One of the lowest shares in the region."
+    },
+    "industrialShare": {
+      "low": 0.303,
+      "mid": 0.323,
+      "high": 0.343,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 32.3% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Major wheat and flour exporter. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 154925,
+      "mid": 172139,
+      "high": 189353,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 10,156,785 (SP.POP.TOTL.MA.IN) x share aged 15-19 8.474% / 5 = 172,139. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 80,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Kazakhstan Paramount Engineering builds Arlan MRAPs and Barys 8x8; Semey plant overhauls armour. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_the_Republic_of_Kazakhstan)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 13787,
+      "mid": 95409,
+      "high": 95409,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2017): 95,409 km public roads (mid/high). The paved/unpaved split in that row is internally inconsistent (13,787 paved); low uses it. World Bank has no IS.ROD value."
+    },
+    "railKm": {
+      "low": 16005.6,
+      "mid": 16005.6,
+      "high": 16636,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KAZ/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 16,006 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 16,636 km (2021) spans the range. 1,520 mm gauge, 4,237 km electrified; key Eurasian land bridge."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caspian ports Aktau and Kuryk (CIA Factbook lists no Ports field for Kazakhstan). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/kz.json)"
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 300000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 122 ships under the Kazakh flag (2023), Caspian tankers and service vessels. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/kz.json)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Soviet-pattern rail-dependent logistics; vast distances."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large horse herds (steppe pastoralism). Not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Dzungarian Gate",
+      "Khorgos/China border",
+      "Caspian ports (Aktau)",
+      "Turgai corridor",
+      "Russian border rail junctions (Petropavl)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: vast steppe depth and harsh continental winters (1.3 band for depth), but sparse, mixed population support in the north."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia Kazakh equipment list, Ground Forces, Air Defence Forces and Naval Forces articles (several IISS-derived), grade B; large Soviet-era stocks in storage are only in the highs. Population convention: everything inside ne:KAZ incl. leased Baikonur. Money in 2011 int$ via derived:ppp-rebase-2011. ships_minor = Caspian missile/patrol boats and MCM. Infantry P-role splits are educated guesses (grade D). National Guard (~30,000) and Border Service excluded. Kazakhstan gave up the inherited Soviet nuclear arsenal (1,410 warheads) by 1995."
+}

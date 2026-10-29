@@ -1,0 +1,719 @@
+{
+  "id": "azerbaijan-2026",
+  "nationId": "azerbaijan",
+  "includes": [],
+  "name": "Republic of Azerbaijan",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "Turkey ally (Shusha Declaration)",
+    "presidential republic",
+    "conscription",
+    "Caspian",
+    "oil and gas",
+    "drone warfare",
+    "South Caucasus"
+  ],
+  "capital": {
+    "name": "Baku",
+    "lat": 40.4093,
+    "lon": 49.8671,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Ganja",
+      "lat": 40.6828,
+      "lon": 46.3606,
+      "kind": "city"
+    },
+    {
+      "name": "Sumgait",
+      "lat": 40.5855,
+      "lon": 49.6317,
+      "kind": "city"
+    },
+    {
+      "name": "Mingachevir",
+      "lat": 40.77,
+      "lon": 47.0489,
+      "kind": "city"
+    },
+    {
+      "name": "Nakhchivan (exclave)",
+      "lat": 39.2089,
+      "lon": 45.4122,
+      "kind": "city"
+    },
+    {
+      "name": "Shusha",
+      "lat": 39.7583,
+      "lon": 46.7486,
+      "kind": "fortress"
+    },
+    {
+      "name": "Khankendi (Stepanakert)",
+      "lat": 39.8153,
+      "lon": 46.7519,
+      "kind": "city"
+    },
+    {
+      "name": "Lankaran",
+      "lat": 38.7529,
+      "lon": 48.8475,
+      "kind": "city"
+    },
+    {
+      "name": "Alat port (Baku International Sea Trade Port)",
+      "lat": 39.9411,
+      "lon": 49.4072,
+      "kind": "port"
+    },
+    {
+      "name": "Lachin corridor",
+      "lat": 39.64,
+      "lon": 46.55,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Ganja Gap (Georgia border)",
+      "lat": 41.2,
+      "lon": 45.6,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:AZE",
+    "areaKm2": {
+      "low": 82650,
+      "mid": 82650,
+      "high": 86600,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 82,650 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 86,600 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10093291,
+      "mid": 10246996,
+      "high": 10298231,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 10,246,996). Low allows for census uncertainty; high adds one year of growth to 2026 (~0.5%/yr)."
+    },
+    "urbanization": {
+      "low": 0.576,
+      "mid": 0.586,
+      "high": 0.596,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 58.64% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 64000,
+      "mid": 68200,
+      "high": 100000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 pp.177-178 as quoted: 68,200 active (15,000 paramilitary excluded). CIA Factbook 2025 ~100,000 (high); World Bank 82,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 150000,
+      "mid": 300000,
+      "high": 300000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS 2026 as quoted: 300,000 reserves (ex-conscripts with service in the last 15 years). 2020 partial mobilisation called a fraction (low)."
+    },
+    "supportPersonnel": {
+      "low": 22560,
+      "mid": 28200,
+      "high": 28200,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 68,200 minus infantry P roles (25,000 + 15,000) = 28,200: Air Forces, Navy, armour/artillery crews (very artillery-heavy army), logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: conscript society with 300,000 reserves and mobilisation experience (1990s war, 2020); comparable to Armenia/Israel-style ratios but not total war. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 307410,
+      "mid": 512350,
+      "high": 819760,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,246,996 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 18000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motor-rifle brigade infantry (5 army corps). Land Forces ~56,000 of 68,200 (IISS 2026 as quoted). (context page: https://en.wikipedia.org/wiki/Azerbaijani_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: BMP-3, BTR-82A, Israeli/Turkish MRAPs and Spike ATGMs."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: 18-month conscripts with contract cadre; 2020 and 2023 war experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Special forces (Turkish-trained commandos, decisive at Shusha 2020) and mountain infantry."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: professional commandos with recent combat."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 450,
+          "mid": 500,
+          "high": 620,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Azerbaijani_Land_Forces",
+          "note": "Land Forces list: T-90S 93 + T-72 (Aslan/Ural/B) 405 = 498 (mid ~500). MBT list adds T-55 100 and gives T-90S 100 / T-72 Aslan 420 (high)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: T-90S and Elbit-upgraded T-72 Aslan."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1500,
+          "mid": 2000,
+          "high": 2800,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Azerbaijani_Land_Forces",
+          "note": "Land Forces list: BMP-3 118 + BMP-2 300+ + BMP-1 160+ + BTR-82A 230 + BTR-80A 187 + BTR-80 210 + MT-LB 400+ + BTR-70 132 in use + Cobra 350 + Cobra II 70 + APV 200 + Marauder 110 + Matador 110 + SandCat 230 = ~2,800 (high). Mid excludes part of the MT-LB/BTR-70 and border-service vehicles."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 900,
+          "mid": 1100,
+          "high": 1300,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Azerbaijani_Land_Forces",
+          "note": "D-30 ~423 + M-46 36 + 2A36 49 + D-20 43 + ATMOS 6 + DANA 36 + 2S19 18 + 2S7 15 + PULS 75+ + Extra 30 + LAR-160 30 + Lynx 30 + Kasirga 36 + Sakarya 44 + TRLG-230 20+ + TOS-1A 36 + Smerch 50 + RM-70 30 + KRL-122 55 + RAK-12 10 + BM-21 140+ = ~1,240 (D-44 85 mm and on-order DITA/Nora excluded)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: guided long-range MRLs (Extra, Kasirga, TRLG-230 CEP 2 m)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 11,
+          "mid": 14,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces",
+          "note": "MiG-29 9.13 11 + MiG-29UB 3 = 14. JF-17C Block III ordered from Pakistan in 2024 (high allows for first deliveries; numbers unconfirmed)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: unmodernised MiG-29s."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 21,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces",
+          "note": "Su-25ML 20 (+1 Su-25UB)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: combat use in 2020."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 55,
+          "mid": 68,
+          "high": 75,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces",
+          "note": "Bell 407 1 + AB-412 3 + Mi-17-1V 33 + Mi-8MTV 8 + Mi-24V/Mi-35M 16 + Ka-32 3 + MD-530F 1 = 65, plus Navy AS365 2 + AS332 1 (https://en.wikipedia.org/wiki/Azerbaijani_Navy) = 68."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Mi-17s armed with Spike-NLOS/LAHAT."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 30,
+          "mid": 50,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces",
+          "note": "Air Forces list: Hermes 450/900 12 + Heron 5 + Searcher 5 + Orbiter 10 + Aerostar 4 = 36 ISR; plus Bayraktar TB2 (decisive in 2020, number unpublished, est. 10-20) and Akinci (from 2022, few). Orbiter is Group 2. Loitering munitions (Harop, SkyStriker) excluded."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: TB2/Akinci/Hermes 900, combat-proven 2020."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: the most experienced drone force in the region."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 26,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Navy",
+          "note": "Navy list: Kusar (ex-Petya, corvette) 1 + Luga 1 + Petrushka 2 + Shelon 1 + Araz 1 + Bryza 1 + Poluchat 1 + Stenka 3 + Polnocny 2 + Project 1175 LCT 2 + Vydra 1 + Sonya MCM 2 + Yevgenya MCM 2 = 20 (tugs excluded). High adds the State Border Service Sa'ar 62 OPVs."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly ex-Soviet hulls."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 10,
+          "mid": 14,
+          "high": 22,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Azerbaijani_Land_Forces",
+          "note": "LORA 4 launchers + Polonez 10 = 14 (Extra 306 mm counted under artillery). High allows for Tochka-U/Iskander-E reported earlier."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: LORA quasi-ballistic missile CEP 10 m."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces",
+          "note": "Listed: S-300PMU2 2 units, S-125 Pechora-2TM 3, Buk-M1 2 = 7 battalions; plus Barak-8, SPYDER, Tor-M2E, Osa, Strela-10 and S-200 of unpublished numbers. Mid ~25 batteries is an estimate."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Barak-8, S-300PMU2."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: Turkish-trained staff, well-executed 44-day war (2020) and one-day 2023 offensive with drone-artillery integration."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: national army with strong identity after 2020 victory."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: recent victories."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: precision MRLs, LORA, loitering munitions, Spike-NLOS."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: T-90S/T-72 Aslan, no APS."
+    },
+    "ships": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: ex-Soviet Caspian hulls."
+    },
+    "fortification": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Barak-8/S-300 layered defence of Baku."
+    },
+    "logistics": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: rail and road to the front, Il-76/C-27J."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9+: Azerspace satellites, Turkish/Israeli data links."
+    },
+    "isr": {
+      "low": 9.1,
+      "mid": 9.4,
+      "high": 9.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: persistent drone ISR (Hermes 900, TB2, Akinci), Azersky satellite."
+    },
+    "air": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: MiG-29/Su-25; JF-17C arriving."
+    },
+    "cyber": {
+      "low": 8.9,
+      "mid": 9.2,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9+."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 16076,
+      "mid": 17863,
+      "high": 19649,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 183,037,279,865 2011 int$ / population 10,246,996 = 17,863. Range +/-10%."
+    },
+    "gdp": {
+      "low": 164733551878,
+      "mid": 183037279865,
+      "high": 201341007851,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 228,653,691,274 x 0.8005 = 183,037,279,865 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.038,
+      "mid": 0.0647,
+      "high": 0.0776,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 6.47% of GDP in 2025. Low is the 2022 share (3.8%); spending surged in 2025."
+    },
+    "industrialShare": {
+      "low": 0.375,
+      "mid": 0.395,
+      "high": 0.415,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 39.5% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Imports most wheat; exports fruit and vegetables. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 74081,
+      "mid": 82313,
+      "high": 90544,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,024,622 (SP.POP.TOTL.MA.IN) x share aged 15-19 8.191% / 5 = 82,313. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 10,
+        "mid": 40,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Ministry of Defence Industry assembles Marauder/Matador, Cobra and Gurza. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Azerbaijani_Land_Forces)"
+      },
+      "drones": {
+        "low": 20,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Local assembly of Orbiter and Aerostar (Azad Systems) and loitering munitions with Israeli partners. (context page: https://en.wikipedia.org/wiki/Azerbaijani_Air_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20524,
+      "mid": 20524,
+      "high": 77824,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2021): 77,824 km total (high), 20,524 km paved (mid)."
+    },
+    "railKm": {
+      "low": 2138.85,
+      "mid": 2138.85,
+      "high": 2944,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/AZE/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 2,139 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 2,944 km (2017) spans the range. Baku-Tbilisi-Kars line links to Turkey; Horadiz-Aghband line being built toward the Zangezur route."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Baku/Alat international sea port and Baku naval base on the Caspian; CIA Factbook lists no Ports field. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/aj.json)"
+    },
+    "merchantTonnage": {
+      "low": 1000000,
+      "mid": 1215000,
+      "high": 1215000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "Azerbaijani-flag fleet 1,215 thousand DWT (1,074 thousand GT), Caspian tankers and ferries."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short theatre (Karabakh within ~250 km of Baku); 2020 offensive advanced ~100 km."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and donkeys (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Lachin corridor",
+      "Zangezur (Syunik) gap to Nakhchivan",
+      "Ganja Gap",
+      "Absheron peninsula",
+      "Murovdag ridge"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar mountain terrain, fortified approaches, strong population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia Azerbaijani Land Forces equipment list, Air Forces and Navy articles (IISS 2026 personnel as quoted), grade B where listed, C for drones and SAMs (unpublished). Azerbaijan won the 2020 war and took all of Karabakh in September 2023; an Armenia-Azerbaijan peace agreement was initialled in Washington in August 2025. Population convention: everything inside ne:AZE incl. Karabakh and Nakhchivan (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). State Border Service, National Guard and Interior Troops excluded. The Turkish military presence is not counted as Azerbaijani forces."
+}

@@ -1,0 +1,618 @@
+{
+  "id": "tanzania-2026",
+  "nationId": "tanzania",
+  "includes": [],
+  "name": "United Republic of Tanzania",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "SADC",
+    "EAC",
+    "African Union",
+    "presidential republic",
+    "national service (JKT)",
+    "Indian Ocean",
+    "Great Lakes"
+  ],
+  "capital": {
+    "name": "Dodoma",
+    "lat": -6.163,
+    "lon": 35.7516,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Dar es Salaam",
+      "lat": -6.7924,
+      "lon": 39.2083,
+      "kind": "port"
+    },
+    {
+      "name": "Mwanza",
+      "lat": -2.5164,
+      "lon": 32.9175,
+      "kind": "port"
+    },
+    {
+      "name": "Arusha",
+      "lat": -3.3869,
+      "lon": 36.683,
+      "kind": "city"
+    },
+    {
+      "name": "Zanzibar City",
+      "lat": -6.1659,
+      "lon": 39.2026,
+      "kind": "port"
+    },
+    {
+      "name": "Tanga",
+      "lat": -5.0689,
+      "lon": 39.0988,
+      "kind": "port"
+    },
+    {
+      "name": "Mbeya",
+      "lat": -8.9094,
+      "lon": 33.4608,
+      "kind": "city"
+    },
+    {
+      "name": "Kigoma",
+      "lat": -4.8769,
+      "lon": 29.6267,
+      "kind": "port"
+    },
+    {
+      "name": "Mtwara",
+      "lat": -10.2736,
+      "lon": 40.1828,
+      "kind": "port"
+    },
+    {
+      "name": "Ruvuma River (Mozambique border)",
+      "lat": -10.65,
+      "lon": 39.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:TZA",
+    "areaKm2": {
+      "low": 884000,
+      "mid": 884000,
+      "high": 945500,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 884,000 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 945,500 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 69487677,
+      "mid": 70545865,
+      "high": 72662241,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 70,545,865). Low allows for census uncertainty; high adds one year of growth to 2026 (~3.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.359,
+      "mid": 0.369,
+      "high": 0.379,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 36.88% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 25000,
+      "mid": 27000,
+      "high": 28000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.503 as quoted: 27,000 active. CIA Factbook 2025 ~25,000; World Bank 28,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 80000,
+      "high": 80000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS 2025 as quoted: 80,000 reserves, mostly graduates of the JKT national service (6 months military training); readiness uncertain (low)."
+    },
+    "supportPersonnel": {
+      "low": 7200,
+      "mid": 9000,
+      "high": 9000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 27,000 minus infantry P roles (3,000 + 15,000) = 9,000: navy, air force, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: JKT national service gives a trained pool (Uganda war 1978-79 mobilised ~100,000), limited by equipment. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 705459,
+      "mid": 1410917,
+      "high": 2821835,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 70,545,865 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of the tank brigade and mechanised elements. (context page: https://en.wikipedia.org/wiki/Tanzania_People's_Defence_Force)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: BTR-152/Type 55 carriers."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteers, peacekeeping experience (MONUSCO FIB, Mozambique)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 12000,
+          "mid": 15000,
+          "high": 18000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry brigades; ~1,000 in the DRC, ~520 CAR, ~300 Mozambique (CIA Factbook 2025)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: FIB combat vs M23 (2013)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 52,
+          "mid": 160,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Tanzanian_Army",
+          "note": "Army list: MBT VT-2 5 + Type 59G 15 + T-54 32 = 52 (low); mid adds tracked light tanks Type 62 66 + Type 63/63A 42 = 160; high adds FV101 Scorpion 40. MBT list gives Type 59 30."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: 1950s-70s designs; few VT-2/Type 63A modern."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 70,
+          "mid": 92,
+          "high": 102,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Tanzanian_Army",
+          "note": "Type 07P 12 + BTR-152 55 + Type 55 10 + WZ-551 10 + Casspir 5 = 92 (high adds BRDM-2 10)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 180,
+          "mid": 275,
+          "high": 275,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Tanzanian_Army",
+          "note": "BM-21 58 + A-100 12 + Type 54-1 80 + Type 56 75 + Type 59-I 30 + D-30 20 = 275 (towed 85-130 mm and MRLs). Low for serviceability."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: A-100 MRL modern."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 6,
+          "mid": 11,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Tanzania_Air_Force_Command",
+          "note": "Chengdu F-7 B/N/TN 11 (FT-7 2 trainers excluded); low for serviceability."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: MiG-21 derivatives."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 10,
+          "mid": 15,
+          "high": 17,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Tanzania_Air_Force_Command",
+          "note": "Bell 412 2 + H155 2 + H225M 2 + H215M 4 + H125M 5 = 15."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: new Airbus utility helicopters, no attack helicopters."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 8,
+          "mid": 15,
+          "high": 21,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Tanzania_People's_Defence_Force",
+          "note": "TPDF article (2014 estimate): 9 fast attack craft + 12 patrol boats = 21 (high); ageing Chinese Shanghai/Huchuan craft, mid assumes ~15 operational."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Tanzanian_Army",
+          "note": "Battery conversion at ~6 guns per battery (SOURCES.md): ZPU 21 + ZU-23-2 40 + 61-K 37 mm 120 = 181 guns ~30 batteries (high); MANPADS excluded."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: guns only."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: competent, stable force; last major war 1978-79 (Uganda), FIB success in 2013."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: politically stable, national (not ethnic) army."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Chinese/Soviet 1950s-80s artillery and small arms."
+    },
+    "armor": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Type 59/62/63 tanks."
+    },
+    "ships": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Chinese fast attack craft."
+    },
+    "fortification": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus: guns-only air defence."
+    },
+    "logistics": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: SGR and TAZARA railways, small airlift."
+    },
+    "communications": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "isr": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "air": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: F-7."
+    },
+    "cyber": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2667,
+      "mid": 2963,
+      "high": 3260,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 209,046,739,334 2011 int$ / population 70,545,865 = 2,963. Range +/-10%."
+    },
+    "gdp": {
+      "low": 188142065400,
+      "mid": 209046739334,
+      "high": 229951413267,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 261,145,208,412 x 0.8005 = 209,046,739,334 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0098,
+      "mid": 0.0116,
+      "high": 0.0139,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.16% of GDP in 2025. "
+    },
+    "industrialShare": {
+      "low": 0.278,
+      "mid": 0.298,
+      "high": 0.318,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 29.8% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Self-sufficient in maize and rice in most years; exports to neighbours. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 689287,
+      "mid": 765875,
+      "high": 842462,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 34,977,375 (SP.POP.TOTL.MA.IN) x share aged 15-19 10.948% / 5 = 765,875. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 11201,
+      "mid": 11201,
+      "high": 145203,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2022): 145,203 km total (high), 11,201 km paved (mid). World Bank IS.ROD.TOTL.KM 90,807 km (2009)."
+    },
+    "railKm": {
+      "low": 2701,
+      "mid": 2701,
+      "high": 4097,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TZA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2017: 2,701 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 4,097 km (2022) spans the range. Includes TAZARA (Tanzania-Zambia) and the new standard-gauge Dar es Salaam-Dodoma line (2024)."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 4,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/tz.json",
+      "note": "CIA Factbook 2024: 8 ports, 1 medium (Dar es Salaam) + 3 small (Tanga, Zanzibar, Chake Chake). Mid adds Tanga."
+    },
+    "merchantTonnage": {
+      "low": 2000000,
+      "mid": 2758000,
+      "high": 2758000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "Tanzanian-flag fleet 2,758 thousand DWT (1,827 thousand GT), largely Zanzibar open-registry ships not under national control (low)."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck sustainment; 1979 Uganda campaign advanced ~500 km over months."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys and oxen (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Dar es Salaam port",
+      "Central Corridor (Dar-Kigoma)",
+      "Lake Victoria",
+      "Ruvuma River border",
+      "Kagera salient (Uganda border)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, population support, national service tradition."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia Tanzanian Army equipment list (delivery-based) and Tanzania Air Force Command inventory; naval figures are a 2014 estimate (grade C). Population convention: everything inside ne:TZA incl. Zanzibar. Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). armor mid includes tracked light tanks (Type 62/63). Post-election unrest (Oct 2025) not reflected in the force data."
+}

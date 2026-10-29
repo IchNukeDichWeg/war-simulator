@@ -1,0 +1,711 @@
+{
+  "id": "nigeria-2026",
+  "nationId": "nigeria",
+  "includes": [],
+  "name": "Federal Republic of Nigeria",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "ECOWAS",
+    "African Union",
+    "federal republic",
+    "all-volunteer force",
+    "counter-insurgency",
+    "Gulf of Guinea",
+    "West Africa"
+  ],
+  "capital": {
+    "name": "Abuja",
+    "lat": 9.0765,
+    "lon": 7.3986,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Lagos",
+      "lat": 6.5244,
+      "lon": 3.3792,
+      "kind": "port"
+    },
+    {
+      "name": "Kano",
+      "lat": 12.0022,
+      "lon": 8.592,
+      "kind": "city"
+    },
+    {
+      "name": "Ibadan",
+      "lat": 7.3775,
+      "lon": 3.947,
+      "kind": "city"
+    },
+    {
+      "name": "Port Harcourt",
+      "lat": 4.8156,
+      "lon": 7.0498,
+      "kind": "port"
+    },
+    {
+      "name": "Kaduna",
+      "lat": 10.5105,
+      "lon": 7.4165,
+      "kind": "city"
+    },
+    {
+      "name": "Maiduguri",
+      "lat": 11.8311,
+      "lon": 13.151,
+      "kind": "fortress"
+    },
+    {
+      "name": "Calabar",
+      "lat": 4.9757,
+      "lon": 8.3417,
+      "kind": "port"
+    },
+    {
+      "name": "Jos",
+      "lat": 9.8965,
+      "lon": 8.8583,
+      "kind": "city"
+    },
+    {
+      "name": "Bonny Island",
+      "lat": 4.4333,
+      "lon": 7.1667,
+      "kind": "port"
+    },
+    {
+      "name": "Lake Chad basin",
+      "lat": 13.0,
+      "lon": 14.0,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:NGA",
+    "areaKm2": {
+      "low": 910770,
+      "mid": 910770,
+      "high": 923768,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 910,770 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 923,768 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 233964865,
+      "mid": 237527782,
+      "high": 243465977,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 237,527,782). Low allows for census uncertainty; high adds one year of growth to 2026 (~2.5%/yr)."
+    },
+    "urbanization": {
+      "low": 0.628,
+      "mid": 0.638,
+      "high": 0.648,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 63.78% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 140000,
+      "mid": 143000,
+      "high": 223000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 p.509 as quoted: 143,000 active (Army ~100,000, Navy ~25,000, Air Force ~18,000 in earlier editions). CIA Factbook 2025 ~140,000 (low). High is World Bank MS.MIL.TOTL.P1 223,000 (2020), which adds the 80,000 paramilitary."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 20000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2024 as quoted lists no organised reserve (0). High is an allowance for recallable ex-servicemen (educated judgement). Paramilitary (80,000, NSCDC etc.) excluded."
+    },
+    "supportPersonnel": {
+      "low": 50400,
+      "mid": 63000,
+      "high": 63000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 143,000 (IISS 2024) minus infantry P roles (25,000 + 55,000) = 63,000: Navy ~25,000, Air Force ~18,000, armour/artillery crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: very large youthful population but no conscription, no reserve system and no stocks to equip mass levies; scaled well below 20th-century total-war ratios (8-15%). Educated judgement."
+    },
+    "mobilizable": {
+      "low": 2375278,
+      "mid": 4750556,
+      "high": 9501111,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 237,527,782 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 35000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of the mechanised and armoured brigades (1 Mech, 3 Armd, 81 Div elements); Army ~100,000 (IISS as quoted on the personnel list). (context page: https://en.wikipedia.org/wiki/Nigerian_Army)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mixed BMP/Saurer/MRAP fleet, poor maintenance (Nigerian Army article: \"exceptionally poor standard of maintenance\")."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: volunteer regulars with long COIN experience (Boko Haram/ISWAP since 2009) but weak combined-arms training."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 55000,
+          "high": 70000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motorised/light infantry and COIN brigades (Operation Hadin Kai deployed up to ~70,000 troops in the northeast at times, CIA Factbook 2025). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ni.json)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: small arms, Hilux technicals, some MRAPs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: combat-experienced in COIN, uneven training."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 140,
+          "mid": 164,
+          "high": 330,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_main_battle_tanks_by_country",
+          "note": "MBT list (IISS-derived): T-55 24 + T-72 16 + Vickers Mk3 108 + AMX-30 16 = 164 (mid). High is the Army equipment list total (VT-4 17 + T-72 ~41 + T-55 ~100 + Vickers ~172 = 330), which includes unserviceable hulls."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: Vickers Mk3/T-55 a generation behind; 17 VT-4 are modern."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: low readiness of armoured units."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 900,
+          "mid": 1300,
+          "high": 1560,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Army",
+          "note": "Army equipment list: BMP-1/2 62 + ZSD-85 60 + Saurer 4K 250 + MT-LB 67 + Piranha I 110 + BTR-3U 47 + BTR-60/70 24 + Phantom II 24 + Streit MRAPs 237 + CS/VP3 310 + Ezugwu 80 + PF ARA 40 + Reva 40 + Cobra 204 ~ 1,555 (high). Mid discounts ~15% for unserviceable legacy vehicles. Recce cars (~514 Scorpion/AML/ERC/VBL/Cascavel) excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly wheeled MRAP/APC, few IFVs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 250,
+          "mid": 330,
+          "high": 416,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Army",
+          "note": "Army list: SH-5/SH-2 15 + Palmaria 25 + APR-40 25 + BM-21 5 + RM-70 7 + D-30 90 + D-74 90 + M46 7 + D-20 4 + FH77 24 (in storage) + OTO Mod 56 124 = 416 (high). Mid drops stored FH77 and assumes ~80% of the rest serviceable."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: towed Cold War guns, very few MLRS."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 6,
+          "mid": 8,
+          "high": 9,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Air_Force",
+          "note": "Air Force list: JF-17 Block II 3 + F-7Ni 5 = 8 (FT-7Ni trainer excluded; one F-7 lost Oct 2025)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: JF-17 is a light 4th-generation fighter, F-7 obsolete."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: very small fighter force."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 18,
+          "mid": 25,
+          "high": 25,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Air_Force",
+          "note": "A-29 Super Tucano 12 + Alpha Jet 13 (8 of the original 24 active plus 12 newly delivered, 6 operational) = 25. Low counts 12 + ~6 serviceable Alpha Jets. 24 M-346FA on order."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: COIN aircraft with PGMs, no survivable strike jets."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: high COIN sortie experience."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 83,
+          "high": 90,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Air_Force",
+          "note": "Air Force 62 (AW109 18, H125 2, Bell 412 2, AS332 5, EC135 3, Mi-171 6, Mi-35 15, T129 6, AW139 3, AW189 2) + Navy 19 (Lynx 3, AW109 14, AW139 2; https://en.wikipedia.org/wiki/Nigerian_Navy) + Army UH-1 2 = 83. Attack: Mi-35 15 + T129 6; 12 AH-1Z on order."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 32,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Air_Force",
+          "note": "Group 2+ only: Air Force Wing Loong II 5 + CH-3A 3 + CH-4B 3 + Yabhon Flash-20 2 = 13; Army TB2 6 (https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Army); Navy Aerostar 9 + AR-500B 4 (https://en.wikipedia.org/wiki/Nigerian_Navy) = 32. 12 Aksungur on order."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Chinese/Turkish MALE UCAVs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Nigerian_Navy",
+          "note": "Nigerian Navy fleet table: Thunder-class (ex-USCG Hamilton cutters, F90/F93) 2 counted as frigates; MEKO 360 Aradu (F89) refitting (high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: ex-coastguard cutters with guns only, no AAW/ASW."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 36,
+          "high": 45,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Nigerian_Navy",
+          "note": "Centenary (P18N) OPV 2 + 31 active patrol vessels + Lerici MCM 2 + LST-100 1 = 36. Inshore craft (Manta, RHIBs, gunboats ~90) excluded; missile boats inactive."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: patrol craft, no missiles."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: constant anti-piracy/oil-theft patrols."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 30,
+          "mid": 50,
+          "high": 71,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Army",
+          "note": "Battery conversion (SOURCES.md): Roland 16 launchers ~4, ZSU-23-4 30 ~7, ZU-23-2 350 towed guns at ~6 per battery ~58, Bofors L/60 12 ~2 = 71 (high). Mid assumes ~2/3 serviceable. MANPADS (Blowpipe 48, Strela 100) excluded."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: mostly 23 mm guns; Roland obsolete; no modern SAM."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: functioning joint staff and long operational experience (MNJTF, ECOMOG history), but corruption and inter-service coordination problems limit effectiveness."
+    },
+    "cohesion": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: national volunteer army; desertion and morale problems reported in the northeast campaign."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: long attritional COIN war; higher for defence of the homeland."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchors 8 (1943) and 9 (1985): mostly Cold War small arms and artillery; some PGMs (Chinese guided bombs, Cirit) and UCAVs."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Vickers Mk3/T-55 (1960s), few VT-4; MRAP-heavy fleet."
+    },
+    "ships": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: ex-USCG cutters and Chinese OPVs, no missile-armed combatants in service."
+    },
+    "fortification": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: field fortifications and super-camps in the northeast; no layered air defence."
+    },
+    "logistics": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: motor transport, 3 C-130H; weak sustainment."
+    },
+    "communications": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: satellite comms (NigComSat), limited data links."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: King Air/DA62 ISR, MALE UCAVs; no military satellites beyond NigeriaSat imaging."
+    },
+    "air": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: JF-17 Block II and A-29; no air-superiority fleet."
+    },
+    "cyber": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Defence Space/cyber commands nascent."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 5868,
+      "mid": 6520,
+      "high": 7172,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 1,548,726,516,219 2011 int$ / population 237,527,782 = 6,520. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1393853864597,
+      "mid": 1548726516219,
+      "high": 1703599167841,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,934,698,958,424 x 0.8005 = 1,548,726,516,219 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0077,
+      "mid": 0.0091,
+      "high": 0.0109,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.91% of GDP in 2025. Low/high +/-15-20%; security spending outside the defence budget (police, NSCDC) excluded."
+    },
+    "industrialShare": {
+      "low": 0.144,
+      "mid": 0.164,
+      "high": 0.184,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 16.4% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": -0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food importer (rice, wheat) with large subsistence agriculture; most surplus feeds the cities. Not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 2463336,
+      "mid": 2737040,
+      "high": 3010744,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 120,177,737 (SP.POP.TOTL.MA.IN) x share aged 15-19 11.387% / 5 = 2,737,040. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 20,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Defence Industries Corporation and Proforce assemble Ezugwu, ARA and Viper MRAPs/light armour (80+ Ezugwu delivered). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Nigerian_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 57626,
+      "mid": 60000,
+      "high": 195000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2017): 195,000 km total (high), ~60,000 km paved (mid). Low is World Bank IS.ROD.TOTL.KM 57,626 km (2005)."
+    },
+    "railKm": {
+      "low": 3528,
+      "mid": 3528,
+      "high": 3798,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NGA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2015: 3,528 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 3,798 km (2014) spans the range. Only a few lines operational; the standard-gauge Lagos-Ibadan and Abuja-Kaduna lines are new."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 3,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ni.json",
+      "note": "CIA Factbook 2024: 28 ports, 2 large + 1 medium = 3 (Lagos/Apapa, Port Harcourt/Onne); high adds Calabar, Warri, Lekki deep-sea port (2023)."
+    },
+    "merchantTonnage": {
+      "low": 5000000,
+      "mid": 7156000,
+      "high": 7156000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "Nigerian-flag fleet 7,156 thousand DWT (4,467 thousand GT). Low allows for registry ships not trading for Nigeria."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck-borne sustainment along few paved roads; COIN brigades operate from super-camps."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, camels and horses in the north (not from FAO data); militarily marginal."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Niger Delta creeks",
+      "Lagos lagoon / Apapa",
+      "Lake Chad basin",
+      "Mandara Mountains (Cameroon border)",
+      "Bight of Bonny"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain and local supply; large population support; no fortified depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Equipment counts from Wikipedia equipment lists (Army, Air Force, Navy; many Army entries from deliveries, not IISS active figures) cross-checked with the IISS-derived main battle tank list; serviceability is poor and counts are grade C. Population convention: everything inside ne:NGA (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. ships_major = frigates (incl. ex-Hamilton cutters); drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Internal wars: Boko Haram/ISWAP (northeast), banditry (northwest), Niger Delta militancy. Paramilitary (NSCDC, police mobile force) excluded. Global Firepower used only as a cross-check."
+}

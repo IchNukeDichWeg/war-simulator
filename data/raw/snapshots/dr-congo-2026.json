@@ -1,0 +1,649 @@
+{
+  "id": "dr-congo-2026",
+  "nationId": "dr-congo",
+  "includes": [],
+  "name": "Democratic Republic of the Congo",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "SADC",
+    "EAC",
+    "African Union",
+    "internal conflict",
+    "semi-presidential republic",
+    "Great Lakes",
+    "mercenaries/contractors"
+  ],
+  "capital": {
+    "name": "Kinshasa",
+    "lat": -4.4419,
+    "lon": 15.2663,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Lubumbashi",
+      "lat": -11.6876,
+      "lon": 27.5026,
+      "kind": "city"
+    },
+    {
+      "name": "Mbuji-Mayi",
+      "lat": -6.136,
+      "lon": 23.5898,
+      "kind": "city"
+    },
+    {
+      "name": "Kisangani",
+      "lat": 0.5153,
+      "lon": 25.191,
+      "kind": "city"
+    },
+    {
+      "name": "Goma (M23-held since Jan 2025)",
+      "lat": -1.6585,
+      "lon": 29.2205,
+      "kind": "city"
+    },
+    {
+      "name": "Bukavu (M23-held since Feb 2025)",
+      "lat": -2.5083,
+      "lon": 28.8608,
+      "kind": "city"
+    },
+    {
+      "name": "Matadi",
+      "lat": -5.8167,
+      "lon": 13.45,
+      "kind": "port"
+    },
+    {
+      "name": "Kananga",
+      "lat": -5.8962,
+      "lon": 22.4166,
+      "kind": "city"
+    },
+    {
+      "name": "Bunia",
+      "lat": 1.5594,
+      "lon": 30.2524,
+      "kind": "city"
+    },
+    {
+      "name": "Kindu",
+      "lat": -2.9437,
+      "lon": 25.9224,
+      "kind": "city"
+    },
+    {
+      "name": "Congo River mouth (Banana)",
+      "lat": -6.0089,
+      "lon": 12.3967,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:COD",
+    "areaKm2": {
+      "low": 2267050,
+      "mid": 2267050,
+      "high": 2345410,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 2,267,050 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 2,345,410 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 111139986,
+      "mid": 112832473,
+      "high": 116443112,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 112,832,473). Low allows for census uncertainty; high adds one year of growth to 2026 (~3.2%/yr)."
+    },
+    "urbanization": {
+      "low": 0.441,
+      "mid": 0.451,
+      "high": 0.461,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 45.11% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 128350,
+      "high": 150000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.467 as quoted: 128,350 active FARDC. CIA Factbook 2025 100-150,000; World Bank 134,000 (2020). Real effective strength is lower (ghost soldiers)."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 20000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No organised reserve; Wazalendo militias (tens of thousands) fight alongside the FARDC but are not trained reserves."
+    },
+    "supportPersonnel": {
+      "low": 26680,
+      "mid": 33350,
+      "high": 33350,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 128,350 minus infantry P roles (15,000 + 80,000) = 33,350: air force, navy, crews, logistics, administration."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.02,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: weak state capacity; mobilization goes through militias rather than the army. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 564162,
+      "mid": 1128325,
+      "high": 2256649,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 112,832,473 x ratio 0.005 / 0.01 / 0.02."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 8000,
+          "mid": 15000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Republican Guard and the few motorised/armoured brigades. (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_the_Democratic_Republic_of_the_Congo)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Republican Guard better trained."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 50000,
+          "mid": 80000,
+          "high": 100000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. FARDC infantry brigades/regiments in the east (Kivus, Ituri) and garrisons. Many units understrength; ghost soldiers."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: integrated ex-rebels, poor training."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 60,
+          "mid": 150,
+          "high": 212,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Land_Forces_of_the_Democratic_Republic_of_the_Congo",
+          "note": "Land Forces list: T-55 32 + Type 59 12-17 + T-64BV1 25 + T-72AV 100 = ~172 MBT, plus PT-76 10 and Type 62 30 light tanks = 212 (high). Mid ~150, low for serviceability. MBT list (IISS-derived, older) gives only 20 T-55."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 100,
+          "mid": 187,
+          "high": 230,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Land_Forces_of_the_Democratic_Republic_of_the_Congo",
+          "note": "BMP-1 20 + BTR-50 3 + MT-LB 6 + BTR-60PB 30-70 + Mbombe 4 20 + Panhard M3 58 + Calidus MCAV-20 30 = ~187 (mid, BTR-60 at 50). Armoured cars (AML, Cascavel ~50) excluded."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 198,
+          "high": 220,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Land_Forces_of_the_Democratic_Republic_of_the_Congo",
+          "note": "M-30 77 + Type 59 42 + D-20 6 + 2S1 6 + 2S3 10 + Type 63 12 + BM-21 24 + RM-51 6 + Type 82 3 + Katyusha 12 = 198 (mortars excluded)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 6,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Su-25 (ex-Georgian, ~2-4 airworthy) are not in the current inventory table; AHRLAC Mwari 6 on order. (context page: https://en.wikipedia.org/wiki/Air_Force_of_the_Democratic_Republic_of_the_Congo)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: contractor-flown."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 39,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Air_Force_of_the_Democratic_Republic_of_the_Congo",
+          "note": "SA330 10 + Gazelle 3 + Alouette III 2 + UH-1H 3 + Bell 206 2 + Mi-2 2 + Mi-8/17 6 + Mi-35 9 + Mi-26 1 + IAR 330 1 = 39 (high); mid for serviceability."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: many flown by foreign contractors."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 2,
+          "mid": 6,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. CH-4B UCAVs from China (delivered 2023, several lost) and reported TB2/Turkish drones; counts unpublished. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/cg.json)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 1,
+          "mid": 3,
+          "high": 6,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. National Navy has a handful of patrol boats on Lake Tanganyika, Lake Kivu and the Congo River; Atlantic coastline 37 km. (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_the_Democratic_Republic_of_the_Congo)"
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2,
+          "mid": 5,
+          "high": 10,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Land_Forces_of_the_Democratic_Republic_of_the_Congo",
+          "note": "ZPU-4 12 + M-1939 37 mm 52 guns at ~6 per battery ~10 (high); MANPADS excluded. Mid for serviceability."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25 minus: repeated collapses (Goma 2012 and 2025), corruption, reliance on foreign contractors and allies (Burundi, SADC until 2025)."
+    },
+    "cohesion": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25 minus: integrated ex-rebel factions, unpaid units, desertion and abuses."
+    },
+    "morale": {
+      "low": 0.2,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: unpaid troops, occupied eastern provinces."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.6,
+      "mid": 7.9,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus: WWII-to-1970s Soviet/Chinese artillery and small arms."
+    },
+    "armor": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-55/T-64/T-72 with poor upkeep."
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: riverine and lake craft."
+    },
+    "fortification": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: field positions; negligible air defence."
+    },
+    "logistics": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: few roads; river and air transport dominate."
+    },
+    "communications": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "isr": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: few CH-4 UCAVs."
+    },
+    "air": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Mi-35, Su-25 remnants."
+    },
+    "cyber": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1051,
+      "mid": 1313,
+      "high": 1576,
+      "grade": "C",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 148,179,869,391 2011 int$ / population 112,832,473 = 1,313. Range +/-20%."
+    },
+    "gdp": {
+      "low": 118543895513,
+      "mid": 148179869391,
+      "high": 177815843270,
+      "grade": "C",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 185,109,143,525 x 0.8005 = 148,179,869,391 2011 int$. Range +/-20%."
+    },
+    "milSpendShare": {
+      "low": 0.0117,
+      "mid": 0.0138,
+      "high": 0.025,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.38% of GDP in 2025. Much security spending is off-budget or channelled through the presidency (high is an allowance)."
+    },
+    "industrialShare": {
+      "low": 0.377,
+      "mid": 0.397,
+      "high": 0.417,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 39.7% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chronic food insecurity (over 20 million people acutely food insecure) despite vast arable land; subsistence farming."
+    },
+    "annualCohort": {
+      "low": 1061404,
+      "mid": 1179338,
+      "high": 1297272,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 55,984,510 (SP.POP.TOTL.MA.IN) x share aged 15-19 10.533% / 5 = 1,179,338. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3047,
+      "mid": 3047,
+      "high": 152373,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2015): 152,373 km total (high, mostly unusable in rainy season), 3,047 km paved (mid). World Bank IS.ROD.TOTL.KM 153,497 km (2004)."
+    },
+    "railKm": {
+      "low": 3641,
+      "mid": 3641,
+      "high": 4007,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/COD/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 3,641 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 4,007 km (2014) spans the range. Disconnected networks (Katanga, Matadi-Kinshasa), largely dilapidated."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/cg.json",
+      "note": "CIA Factbook 2024: 3 ports (Matadi, Boma small; Banana very small)."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 20000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 24 ships under the DRC flag (2023). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/cg.json)"
+    },
+    "supplyRangeKm": {
+      "low": 20,
+      "mid": 50,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Road network almost non-existent in the east; sustainment by air and river."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Few draft animals (tsetse zone); porters used instead."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Congo River (Kinshasa-Matadi rapids)",
+      "Kivu lakes / Rwanda border (Goma)",
+      "Ituri forest",
+      "Katanga copper belt roads"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: vast, forested terrain hard for any invader; little population support for the FARDC in the east."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. War in the east: the Rwanda-backed M23/AFC took Goma (January 2025) and Bukavu (February 2025); US- and Qatar-brokered peace frameworks were signed in 2025 but fighting continued. ADF (ISIS-DRC), CODECO and 100+ other armed groups are active. FARDC strength figures are inflated by ghost soldiers; counts from the Wikipedia Land Forces equipment list and Air Force inventory (grade C) with educated guesses where nothing is published. Population convention: everything inside ne:COD including M23-held territory. Money in 2011 int$ via derived:ppp-rebase-2011 (+/-20%). Wazalendo militias, Burundian troops and foreign contractors excluded. Doctrine archetype-insurgent: the war is fought largely by irregulars on both sides."
+}

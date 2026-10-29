@@ -1,0 +1,693 @@
+{
+  "id": "ethiopia-2026",
+  "nationId": "ethiopia",
+  "includes": [],
+  "name": "Federal Democratic Republic of Ethiopia",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "African Union",
+    "IGAD",
+    "landlocked",
+    "federal republic",
+    "internal conflict",
+    "Horn of Africa",
+    "drone warfare"
+  ],
+  "capital": {
+    "name": "Addis Ababa",
+    "lat": 9.03,
+    "lon": 38.74,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Dire Dawa",
+      "lat": 9.6009,
+      "lon": 41.8501,
+      "kind": "city"
+    },
+    {
+      "name": "Mekelle",
+      "lat": 13.4967,
+      "lon": 39.4753,
+      "kind": "city"
+    },
+    {
+      "name": "Gondar",
+      "lat": 12.603,
+      "lon": 37.4521,
+      "kind": "city"
+    },
+    {
+      "name": "Bahir Dar",
+      "lat": 11.5742,
+      "lon": 37.3614,
+      "kind": "city"
+    },
+    {
+      "name": "Hawassa",
+      "lat": 7.0621,
+      "lon": 38.4764,
+      "kind": "city"
+    },
+    {
+      "name": "Jijiga",
+      "lat": 9.35,
+      "lon": 42.8,
+      "kind": "city"
+    },
+    {
+      "name": "Bishoftu (Harar Meda air base)",
+      "lat": 8.7525,
+      "lon": 38.98,
+      "kind": "fortress"
+    },
+    {
+      "name": "Badme / Eritrean border",
+      "lat": 14.73,
+      "lon": 37.8,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Humera (Sudan-Eritrea tri-border)",
+      "lat": 14.3,
+      "lon": 36.62,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Addis-Djibouti corridor (Dewele)",
+      "lat": 11.07,
+      "lon": 42.6,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ETH",
+    "areaKm2": {
+      "low": 1122135,
+      "mid": 1122135,
+      "high": 1129818.8,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 1,122,135 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 1,129,819 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 133439970,
+      "mid": 135472051,
+      "high": 138994324,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 135,472,051). Low allows for census uncertainty; high adds one year of growth to 2026 (~2.6%/yr)."
+    },
+    "urbanization": {
+      "low": 0.231,
+      "mid": 0.241,
+      "high": 0.251,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 24.11% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 150000,
+      "mid": 503000,
+      "high": 503000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.485 as quoted: 503,000 active (mid; reflects the post-2023 integration of regional special forces and wartime recruitment). CIA Factbook 2025: \"150-300,000\"; World Bank MS.MIL.TOTL.P1 138,000 (2020). Range spans all; grade C because estimates differ by a factor of three."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 50000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. IISS lists no organised reserve; former regional special forces, demobilised Tigray-war veterans and militias are a large informal pool. Callups are legal and compulsory (CIA Factbook 2025)."
+    },
+    "supportPersonnel": {
+      "low": 106400,
+      "mid": 133000,
+      "high": 133000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 503,000 (IISS 2026) minus infantry P roles (90,000 + 280,000) = 133,000: armour/artillery crews, air force, logistics, staff, Defence Cyber directorate."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: callups are compulsory when ordered and the 2021 national call raised hundreds of thousands, but arms and logistics limit mass mobilization. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 1354721,
+      "mid": 2709441,
+      "high": 5418882,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 135,472,051 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 50000,
+          "mid": 90000,
+          "high": 120000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of the mechanised divisions (~one per regional command in IISS 2009-era structure) after Tigray-war expansion. (context page: https://en.wikipedia.org/wiki/Ethiopian_Army)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: BMP-1/BTR-60/Type 92 carriers, T-55/T-72 tanks."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: conscript-like volunteers with extensive combat experience (Tigray 2020-22, Fano, OLA)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 150000,
+          "mid": 280000,
+          "high": 340000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry divisions and integrated former regional special forces; bulk of the 503,000 (IISS 2026)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: light weapons, trucks."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: rapid wartime expansion diluted training."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 300,
+          "mid": 470,
+          "high": 1000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_main_battle_tanks_by_country",
+          "note": "MBT list: T-55 170 + T-62 50 + T-72 ~250 = ~470 (mid). Army equipment list totals 1,879 (T-72 569, T-54/55 1,190, T-62 120) are cumulative deliveries; high ~1,000 allows for stored hulls. Low reflects Tigray-war losses (2020-22)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: T-55/T-62 obsolete; T-72UA1/T-72B era-typical for the region."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 600,
+          "mid": 1000,
+          "high": 2400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army",
+          "note": "Army list: BMP-1 337 + BTR-60 560 + Type 92 420 + WZ-523 270 + ZSD-89 10 + Bastion 12 + Gaia Thunder 400+ + Calidus MCAV-20 400+ = ~2,400 (high, cumulative deliveries). IISS Military Balance 2012 as quoted on the Ethiopian Army article: ~450 BRDM/BMP/BTR/Type 89 in service. Mid ~1,000 allows for the 2020s IMV deliveries."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 500,
+          "mid": 900,
+          "high": 3500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army",
+          "note": "Army list tubes/launchers: 2S1 82 + 2S19 160 + PLZ-45 158 + SH-15 342 + BM-21 500 + Type 63 500+ + PHL-03 40 + M-46 600 + M-30 464 + D-30 309 = ~3,150 (high ~3,500 with mortars excluded). These are cumulative and partly inflated; mid ~900 is an educated judgement after war losses (grade C)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: SH-15/PLZ-45/2S19 modern, rest towed Soviet guns."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 22,
+          "mid": 28,
+          "high": 34,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Ethiopian_Air_Force",
+          "note": "Air Force inventory: Su-27SK 16 + Su-30K 6 + Su-35 12 (Bloomberg-reported delivery; unconfirmed by World Air Forces) = 34 (high). Mid assumes ~half of the Su-35 report is real or serviceable."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Flanker family incl. Su-30/Su-35."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: limited flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Ethiopian_Air_Force",
+          "note": "MiG-23BN 9 + Su-25 3 = 12. Yak-130 (6) trainers not counted."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: obsolete."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 25,
+          "mid": 33,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Ethiopian_Air_Force",
+          "note": "World Air Forces 2026 as quoted: Mi-8/17 15 + Mi-35 7 + Alouette III 3, plus Army UH-1 8 = 33."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 8,
+          "mid": 15,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Ethiopian_Air_Force",
+          "note": "TB2 4 + Wing Loong II 2 + Akinci (few, 2024) + Mohajer-6 (unknown) + Orion-E (2026, unknown). Counts largely unpublished; mid is an estimate. Drones were decisive in the 2021 counter-offensive (Al Jazeera via the EAF article)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Akinci/TB2 class."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: combat-proven since 2021."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army",
+          "note": "Launcher counts converted at ~4-6 per battery (SOURCES.md): S-75M3 89 ~15, S-125 40 ~8, Pantsir-S1 61 ~10, HQ-64 12 ~2, SPYDER 26 ~4, ZSU-23-4 60 ~10 = ~49 (S-400 4 batteries on order not counted). List figures may be cumulative; range 20-60."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: Pantsir/SPYDER modern, S-75/S-125 obsolete."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. DF-12/M20 tactical ballistic missiles reported purchased (Army list says quantity unknown); launcher count unknown. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: modern Chinese SRBM."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: new capability."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: experienced general staff (Tigray war 2020-22 counter-offensive, drone integration), politicised command."
+    },
+    "cohesion": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: national army with ethnic fault lines (Tigrayan purge 2020, Amhara Fano defections 2023)."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: war-weariness from multiple internal conflicts."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Soviet-era bulk with modern pieces (Pantsir, SH-15, UCAVs, DF-12)."
+    },
+    "armor": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-55/T-62/T-72."
+    },
+    "ships": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Nominal: navy re-established 2019 on Lake Tana with no operational sea-going fleet; value not used in naval combat."
+    },
+    "fortification": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: field works; partial SAM cover of Addis Ababa."
+    },
+    "logistics": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: motor transport, Addis-Djibouti railway, 3 Il-76."
+    },
+    "communications": {
+      "low": 8.2,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: MALE UCAV ISR (Akinci, Wing Loong II), no military satellites (ET-RSS-1 is civil)."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Su-27/Su-30/Su-35 class."
+    },
+    "cyber": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: Defence Cyber Main Directorate, INSA."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 2106,
+      "mid": 2477,
+      "high": 2849,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 335,624,139,356 2011 int$ / population 135,472,051 = 2,477. Range +/-15%."
+    },
+    "gdp": {
+      "low": 285280518452,
+      "mid": 335624139356,
+      "high": 385967760259,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 419,268,131,613 x 0.8005 = 335,624,139,356 2011 int$. Range +/-15%."
+    },
+    "milSpendShare": {
+      "low": 0.0042,
+      "mid": 0.0049,
+      "high": 0.015,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.49% of GDP in 2025. The official figure likely understates wartime spending (Tigray war, Fano/OLA COIN); high 1.5% is an educated allowance."
+    },
+    "industrialShare": {
+      "low": 0.258,
+      "mid": 0.278,
+      "high": 0.298,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 27.8% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large subsistence agriculture, recurring food aid needs; small marketable surplus. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 1351190,
+      "mid": 1501322,
+      "high": 1651455,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 67,876,104 (SP.POP.TOTL.MA.IN) x share aged 15-19 11.059% / 5 = 1,501,322. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "artillery": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Gafat Armament Engineering Complex and Bishoftu Automotive overhaul and assemble guns, MRLs and armoured vehicles. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army)"
+      },
+      "ifv_apc": {
+        "low": 20,
+        "mid": 60,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Bishoftu Automotive licence assembly. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Ethiopian_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 30000,
+      "mid": 44359,
+      "high": 120171,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/IS.ROD.TOTL.KM?format=json",
+      "note": "World Bank IS.ROD.TOTL.KM 44,359 km (2007; federal/regional engineered roads) as mid. High is the road list total 120,171 km (2018, incl. rural roads; https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size). Low allows for unusable sections; paved length unknown (~16,000 km asphalt)."
+    },
+    "railKm": {
+      "low": 659,
+      "mid": 754,
+      "high": 754,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ETH/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2018: 754 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 659 km (2017) spans the range. Addis Ababa-Djibouti standard-gauge electric line is the only railway."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/et.json",
+      "note": "Landlocked; trade goes through Djibouti (about 90%), Berbera and Lamu."
+    },
+    "merchantTonnage": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 450000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 12 ships (10 general cargo, 2 tankers) under Ethiopian Shipping and Logistics Services, 2023; tonnage not in the merchant list. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/et.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck sustainment over long mountain roads; demonstrated deep advances in 2021-22."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 8000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ethiopia has Africa's largest equine herd (donkeys, mules, horses); pack animals used in highland operations. Not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Cwb",
+    "chokepoints": [
+      "Ethiopian Highlands passes",
+      "Addis Ababa-Djibouti corridor",
+      "Badme-Zalambessa border",
+      "Afar depression",
+      "Blue Nile gorge"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: mountainous highland plateau, harsh terrain and climate for invaders, strategic depth and strong national defence tradition (Adwa 1896)."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Thin and contradictory data: IISS 2026 (as quoted) puts active strength at 503,000 versus 150-300,000 (CIA) and 138,000 (World Bank 2020); equipment lists on Wikipedia mix cumulative deliveries with holdings and are grade C. Internal conflicts ongoing (Fano in Amhara, OLA in Oromia; Pretoria agreement with TPLF 2022 fragile) and tension with Eritrea over sea access. Population convention: everything inside ne:ETH. Money in 2011 int$ via derived:ppp-rebase-2011 (+/-15%). No sea-going navy. Infantry P-role splits are educated guesses (grade D). Regional police special forces excluded."
+}

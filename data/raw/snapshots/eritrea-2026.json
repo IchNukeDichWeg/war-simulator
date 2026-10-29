@@ -1,0 +1,616 @@
+{
+  "id": "eritrea-2026",
+  "nationId": "eritrea",
+  "includes": [],
+  "name": "State of Eritrea",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "one-party state",
+    "indefinite national service",
+    "garrison state",
+    "Red Sea",
+    "Horn of Africa",
+    "sanctioned"
+  ],
+  "capital": {
+    "name": "Asmara",
+    "lat": 15.3229,
+    "lon": 38.9251,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Massawa",
+      "lat": 15.6097,
+      "lon": 39.45,
+      "kind": "port"
+    },
+    {
+      "name": "Assab",
+      "lat": 13.0092,
+      "lon": 42.7394,
+      "kind": "port"
+    },
+    {
+      "name": "Keren",
+      "lat": 15.7778,
+      "lon": 38.4581,
+      "kind": "city"
+    },
+    {
+      "name": "Mendefera",
+      "lat": 14.8872,
+      "lon": 38.8153,
+      "kind": "city"
+    },
+    {
+      "name": "Barentu",
+      "lat": 15.1139,
+      "lon": 37.5925,
+      "kind": "city"
+    },
+    {
+      "name": "Tesseney",
+      "lat": 15.11,
+      "lon": 36.6575,
+      "kind": "city"
+    },
+    {
+      "name": "Badme",
+      "lat": 14.73,
+      "lon": 37.8,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Zalambessa",
+      "lat": 14.52,
+      "lon": 39.38,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bab-el-Mandeb approaches",
+      "lat": 12.6,
+      "lon": 43.3,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ERI",
+    "areaKm2": {
+      "low": 120800,
+      "mid": 120800,
+      "high": 121630,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ERI/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 120,800 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 121,630 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 3552898,
+      "mid": 3607003,
+      "high": 3671929,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ERI/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 3,607,003). Low allows for census uncertainty; high adds one year of growth to 2026 (~1.8%/yr)."
+    },
+    "urbanization": {
+      "low": 0.335,
+      "mid": 0.345,
+      "high": 0.355,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ERI/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 34.54% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 150000,
+      "mid": 201750,
+      "high": 301750,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Mid 201,750: the long-standing IISS figure, matched by World Bank MS.MIL.TOTL.P1 202,000 (2020). The personnel list quotes IISS Military Balance 2026 p.484 at 301,750 (high, possibly a mobilisation update). CIA Factbook 2025: 150,000-200,000 (low). Even mid is ~5.6% of the population."
+    },
+    "trainedReserves": {
+      "low": 120000,
+      "mid": 250000,
+      "high": 350000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Citizens up to age 59 are recallable (CIA Factbook 2025); decades of universal national service give a very large trained pool. IISS gives no figure."
+    },
+    "supportPersonnel": {
+      "low": 21400,
+      "mid": 26750,
+      "high": 26750,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 201,750 minus infantry P roles (15,000 + 160,000) = 26,750: crews, navy, air force, logistics; many conscripts work in national-service economic roles."
+    },
+    "mobilizationRatio": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy with near-total mobilization states: universal service 18-40 with recall to 59 (CIA Factbook 2025); in the 1998-2000 war Eritrea fielded ~300,000 of ~3.5 million. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 360700,
+      "mid": 541050,
+      "high": 721401,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 3,607,003 x ratio 0.1 / 0.15 / 0.2."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 8000,
+          "mid": 15000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry with the mechanised brigade(s). (context page: https://en.wikipedia.org/wiki/Eritrean_Defence_Forces)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: BMP-1/BTR-60/MT-LB."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: long-serving conscripts."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 120000,
+          "mid": 160000,
+          "high": 220000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Conscript infantry divisions of the national-service army; the dominant arm (CIA Factbook 2025: \"conscript-based Army is the dominant service\")."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: light weapons."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: indefinite service gives long experience; Tigray war 2020-22."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 120,
+          "mid": 150,
+          "high": 300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_main_battle_tanks_by_country",
+          "note": "MBT list: T-55A/AM2 300 (150 in service = mid, 150 in storage) plus some T-62 captured from Ethiopia; Army list gives 270 T-55A."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 40,
+          "mid": 50,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Eritrean_Army",
+          "note": "BMP-1 15 + BTR-60PB 25 + MT-LB 10 = 50; high adds BRDM-1 40 and captured Ethiopian vehicles."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 128,
+          "high": 250,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Eritrean_Army",
+          "note": "BM-21 35 + BM-27 9 + 2S1 32 + 2S5 13 + M-46 39 = 128 listed; high allows for unlisted towed guns (IISS has long credited ~250)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 1,
+          "mid": 2,
+          "high": 8,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Eritrean_Air_Force",
+          "note": "Inventory: Su-27SK 1 + Su-27UB 1; high allows for MiG-29s of uncertain status."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 8,
+          "mid": 13,
+          "high": 13,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Eritrean_Air_Force",
+          "note": "Bell 412 1 + Mi-17/171 6 + Mi-35 6 = 13."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 1,
+          "mid": 4,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. A few patrol craft and landing craft at Massawa and Assab; sanctioned navy (2017), no published inventory. (context page: https://en.wikipedia.org/wiki/Eritrean_Defence_Forces)"
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 3,
+          "mid": 5,
+          "high": 15,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Eritrean_Army",
+          "note": "ZU-23-2 6 + S-60 12 + ZSU-23-4 3 guns ~4 batteries; high allows for unlisted SA-series SAMs."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.2,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: EPLF guerrilla-war heritage, effective in Tigray 2020-22; highly centralised under the president."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: strong nationalism but mass desertion/emigration of conscripts."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5; high for existential defence against Ethiopia."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8 minus: Soviet 1960s-80s weapons."
+    },
+    "armor": {
+      "low": 7.6,
+      "mid": 7.9,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: T-55."
+    },
+    "ships": {
+      "low": 7.3,
+      "mid": 7.6,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: patrol craft."
+    },
+    "fortification": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: extensive trench lines and mountain fortifications on the Ethiopian border."
+    },
+    "logistics": {
+      "low": 7.3,
+      "mid": 7.6,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: few roads, 306 km narrow-gauge railway."
+    },
+    "communications": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8."
+    },
+    "isr": {
+      "low": 7.3,
+      "mid": 7.6,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8: UAE used Assab as a drone base until 2021."
+    },
+    "air": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: a couple of Su-27s."
+    },
+    "cyber": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 7-8."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1243,
+      "mid": 1554,
+      "high": 1942,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "GDP 5,603,494,898 2011 int$ / population 3,607,003 (World Bank 2025) = 1,554. Population estimates for Eritrea are themselves uncertain (no census since independence)."
+    },
+    "gdp": {
+      "low": 4482795918,
+      "mid": 5603494898,
+      "high": 7004368622,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "No World Bank PPP GDP for Eritrea. IMF WEO PPP GDP 2019 (last value) 6.369 bn current int$ (https://www.imf.org/external/datamapper/api/v1/PPPGDP/ERI) x FRED GDPDEF 2011/2019 = 91.478/103.975 (https://fred.stlouisfed.org/series/GDPDEF) = 5,603,494,898 2011 int$. Range -20%/+25% for growth since 2019 and PPP uncertainty."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.08,
+      "high": 0.21,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Last SIPRI/World Bank value 20.9% of GDP (2003, high; https://api.worldbank.org/v2/country/ERI/indicator/MS.MIL.XPND.GD.ZS?format=json). No figure since; mid is an educated guess for a garrison state with 200,000 under arms."
+    },
+    "industrialShare": {
+      "low": 0.198,
+      "mid": 0.218,
+      "high": 0.238,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ERI/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2009: industry incl. construction (and mining/oil where present) 21.8% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chronic food deficit; cereal yield 638 kg/ha (World Bank 2024). No surplus."
+    },
+    "annualCohort": {
+      "low": 38908,
+      "mid": 43231,
+      "high": 47554,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ERI/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 1,781,275 (SP.POP.TOTL.MA.IN) x share aged 15-19 12.135% / 5 = 43,231. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1600,
+      "mid": 1600,
+      "high": 16000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2018): 16,000 km total (high), 1,600 km paved (mid). World Bank IS.ROD.TOTL.KM 4,010 km (2000)."
+    },
+    "railKm": {
+      "low": 245,
+      "mid": 306,
+      "high": 306,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/er.json",
+      "note": "CIA Factbook: 306 km (2018); no World Bank value. Low allows for disused track. Italian-era 950 mm Massawa-Asmara line, mostly heritage use."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 2,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/er.json",
+      "note": "CIA Factbook 2024: 2 small ports (Massawa, Assab)."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 9 ships under the Eritrean flag (2023). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/er.json)"
+    },
+    "supplyRangeKm": {
+      "low": 30,
+      "mid": 80,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short interior lines; little motor transport."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels and donkeys widely used (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Bab-el-Mandeb approaches (Assab)",
+      "Badme-Shiraro border",
+      "Zalambessa-Adigrat road",
+      "Massawa-Asmara escarpment road"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: mountainous escarpment, fortified border lines, harsh climate and total-defence society."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data (population; no PPP GDP), 2026 order of battle. Eritrea publishes nothing: active strength is the IISS/World Bank ~200,000 with a 2026 IISS figure of 301,750 as quoted (high); equipment is from Wikipedia lists based on old deliveries (grade C/D). Population convention: World Bank figure for everything inside ne:ERI (3.6 million; other estimates run higher; no census). GDP is a composite from IMF 2019 (derived:snapshot-composite). Infantry P-role splits are educated guesses (grade D). Tension with Ethiopia over sea access (2024-26) and Eritrea's role in the Tigray war (2020-22) make it a likely belligerent. People's Militia excluded from active."
+}

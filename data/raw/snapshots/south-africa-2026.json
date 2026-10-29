@@ -1,0 +1,744 @@
+{
+  "id": "south-africa-2026",
+  "nationId": "south-africa",
+  "includes": [],
+  "name": "Republic of South Africa",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "SADC",
+    "African Union",
+    "BRICS",
+    "parliamentary republic",
+    "all-volunteer force",
+    "defence industry",
+    "Cape route"
+  ],
+  "capital": {
+    "name": "Pretoria",
+    "lat": -25.7479,
+    "lon": 28.2293,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Johannesburg",
+      "lat": -26.2041,
+      "lon": 28.0473,
+      "kind": "city"
+    },
+    {
+      "name": "Cape Town",
+      "lat": -33.9249,
+      "lon": 18.4241,
+      "kind": "port"
+    },
+    {
+      "name": "Durban",
+      "lat": -29.8587,
+      "lon": 31.0218,
+      "kind": "port"
+    },
+    {
+      "name": "Simon's Town naval base",
+      "lat": -34.192,
+      "lon": 18.433,
+      "kind": "port"
+    },
+    {
+      "name": "Gqeberha (Port Elizabeth)",
+      "lat": -33.9608,
+      "lon": 25.6022,
+      "kind": "port"
+    },
+    {
+      "name": "Bloemfontein",
+      "lat": -29.0852,
+      "lon": 26.1596,
+      "kind": "city"
+    },
+    {
+      "name": "Richards Bay",
+      "lat": -28.783,
+      "lon": 32.038,
+      "kind": "port"
+    },
+    {
+      "name": "Saldanha Bay",
+      "lat": -33.0117,
+      "lon": 17.9442,
+      "kind": "port"
+    },
+    {
+      "name": "Beitbridge (Limpopo crossing)",
+      "lat": -22.2167,
+      "lon": 30.0,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Cape of Good Hope",
+      "lat": -34.3568,
+      "lon": 18.474,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ZAF",
+    "areaKm2": {
+      "low": 1213090,
+      "mid": 1213090,
+      "high": 1219602,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 1,213,090 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 1,219,602 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 63776109,
+      "mid": 64747319,
+      "high": 65524287,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 64,747,319). Low allows for census uncertainty; high adds one year of growth to 2026 (~1.2%/yr)."
+    },
+    "urbanization": {
+      "low": 0.628,
+      "mid": 0.638,
+      "high": 0.648,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 63.82% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 65000,
+      "mid": 69200,
+      "high": 74000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.490 as quoted: 69,200 active. CIA Factbook 2025 65-70,000 (low). World Bank MS.MIL.TOTL.P1 89,000 (2020) includes reserves on call-up."
+    },
+    "trainedReserves": {
+      "low": 12000,
+      "mid": 15050,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 as quoted: 15,050 reserves (Army Reserve regiments). Training levels uneven."
+    },
+    "supportPersonnel": {
+      "low": 39360,
+      "mid": 49200,
+      "high": 49200,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 69,200 (IISS 2025) minus infantry P roles (6,000 + 14,000) = 49,200: Navy ~7,000, Air Force ~10,000, Military Health Service ~8,000, armour/artillery crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.02,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: no conscription since 1994 and a hollowed-out reserve; small volunteer expansion only. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 323737,
+      "mid": 647473,
+      "high": 1294946,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 64,747,319 x ratio 0.005 / 0.01 / 0.02."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanised infantry (Ratel/Badger battalions, 7 SA Infantry Bn, 8 SAI) ~ 3-4 battalions plus reserve regiments. (context page: https://en.wikipedia.org/wiki/South_African_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Ratel IFV (1970s) with first Badger IFVs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers, but budget-limited exercises."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 14000,
+          "high": 18000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motorised, parachute (44 Para) and light infantry battalions; ~2,000 deployed to the DRC until 2025."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: peacekeeping experience; SAMIDRC losses (Goma, Jan 2025)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 24,
+          "mid": 44,
+          "high": 167,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army",
+          "note": "Army equipment list: Olifant Mk1B 44 active (mid), Olifant Mk1A 133 mostly in storage; MBT list gives 167 Olifant 1A/1B (high). Low: IISS-type estimates of ~24 operational. Rooikat (242 acquired) excluded as wheeled recce."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: upgraded Centurion design."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 900,
+          "mid": 1330,
+          "high": 1900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army",
+          "note": "Army list: Ratel ~500 active (+~600 stored, parliamentary report Aug 2025) + Badger 22 + Mamba 440+ + Casspir 370+ (Project Sepula note) = ~1,330 active. High adds stored Ratels."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: ageing Ratel, mine-protected Mamba/Casspir (excellent MRAP lineage)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 70,
+          "mid": 140,
+          "high": 420,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army",
+          "note": "Army list (acquired): G6 ~153 + G5 ~75 + G4 ~32 + G2 ~75 + G1 ~30 + Bateleur ~25 + Valkiri ~26 = ~416 (high). Mid ~140 assumes about a third active (most G6/G5 in storage per the list)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: G5/G6 155 mm 45-cal were world-class designs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 6,
+          "mid": 26,
+          "high": 26,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/South_African_Air_Force",
+          "note": "Gripen C 17 + D 9 = 26 (2 Squadron, AFB Makhado). Low: reports of only a handful airworthy for lack of maintenance contracts."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: Gripen C/D modern 4th-gen with IRIS-T/A-Darter."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: very low flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 6,
+          "mid": 24,
+          "high": 24,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/South_African_Air_Force",
+          "note": "85 Combat Flying School Hawk Mk.120 24 (lead-in fighter trainers with a light attack role). Low reflects serviceability."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 40,
+          "mid": 70,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/South_African_Air_Force",
+          "note": "Squadron table: Rooivalk 11 + A109 ~18 (4+5+9) + Oryx (~39 in inventory, number per squadron not given) + BK117 + Super Lynx 4 = ~75; mid 70, low for serviceability."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Rooivalk attack helicopter, Oryx (Puma derivative)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 8,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army",
+          "note": "ATE Vulture 4+ (artillery target acquisition, Group 2); SAAF Seeker II retired. Milkor 380 MALE in development."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 4,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_South_African_Navy_ships",
+          "note": "Valour-class (MEKO A-200SAN) frigates 4; availability reduced (low)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: MEKO frigates with Umkhonto and Exocet, ageing."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: limited sea days."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 5,
+          "mid": 8,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_South_African_Navy_ships",
+          "note": "Warrior-class MMIPV 3 + Warrior strike craft 1 active (2 in reserve) + River-class MCM up to 4 (status unclear) + Drakensberg replenishment 1 = ~8."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 1,
+          "mid": 2,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_South_African_Navy_ships",
+          "note": "Heroine-class (Type 209/1400) 3 boats; phased refits, typically one or two available."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: modern diesel-electric boats (2005-08)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army",
+          "note": "Battery conversion (SOURCES.md): Oerlikon GDF 35 mm ~169 acquired at ~6 guns per battery ~28, ZU-23-2 Zumlac 36 ~6, Starstreak LML and Umkhonto-GBADS small numbers. Mid ~20 active."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: point defence only, no medium/long-range SAM."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: trained staff system and doctrine heritage (SADF), but budget cuts and the costly 2025 DRC (SAMIDRC) deployment exposed weaknesses."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: professional volunteers; ageing force and integration legacy."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: average; underfunding and equipment grounding hurt morale."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: G5/G6, Umkhonto, A-Darter, Mokopa, Rooivalk; domestic industry (Denel, Rheinmetall Denel Munition)."
+    },
+    "armor": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Olifant (Centurion), mine-protected vehicles world-class."
+    },
+    "ships": {
+      "low": 8.7,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: MEKO A-200 frigates, Type 209 submarines."
+    },
+    "fortification": {
+      "low": 8.4,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: no layered air defence."
+    },
+    "logistics": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: 1960s C-130BZ, no A400M; decent rail/road network."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.1,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: data links, satellite comms leased."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: no military satellites; small UAV fleet."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.1,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Gripen C/D (4th gen)."
+    },
+    "cyber": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Defence Cyber Command being established."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 9792,
+      "mid": 10880,
+      "high": 11968,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 704,478,979,350 2011 int$ / population 64,747,319 = 10,880. Range +/-10%."
+    },
+    "gdp": {
+      "low": 634031081415,
+      "mid": 704478979350,
+      "high": 774926877285,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 880,048,693,754 x 0.8005 = 704,478,979,350 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0063,
+      "mid": 0.0074,
+      "high": 0.0088,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 0.74% of GDP in 2025. Lowest share in decades; budget concentrated on personnel."
+    },
+    "industrialShare": {
+      "low": 0.221,
+      "mid": 0.241,
+      "high": 0.261,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 24.1% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net exporter of maize, fruit and wine; commercial farming sector. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 491633,
+      "mid": 546259,
+      "high": 600885,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 31,504,125 (SP.POP.TOTL.MA.IN) x share aged 15-19 8.670% / 5 = 546,259. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 100,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Denel Land Systems (Badger), Paramount, OTT, DCD Protected Mobility build MRAPs/IFVs mainly for export. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army)"
+      },
+      "artillery": {
+        "low": 5,
+        "mid": 15,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. G6/T5 production lines dormant but restartable; Rheinmetall Denel Munition produces shells. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_South_African_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 150000,
+      "mid": 158124,
+      "high": 750000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2016): 750,000 km total incl. unproclaimed rural roads (high), 158,124 km paved (mid), 1,927 km controlled-access. World Bank IS.ROD.TOTL.KM 39,477 km (2006) covers national/provincial only."
+    },
+    "railKm": {
+      "low": 20953,
+      "mid": 20953,
+      "high": 30400,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ZAF/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 20,953 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 30,400 km (2021) spans the range. Mostly Cape gauge (1,067 mm), heavily electrified; Transnet freight network in decline."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 6,
+      "high": 8,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/sf.json",
+      "note": "CIA Factbook 2024: 8 ports, 2 large + 4 medium = 6 (Durban, Cape Town, Richards Bay, Saldanha, Gqeberha, Mossel Bay)."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 110 ships under the South African flag (2023), mostly small; not in the DWT list. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/sf.json)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Long-range wheeled doctrine inherited from the SADF Border War (operations 250+ km into Angola); current sustainment capacity reduced."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 500000,
+      "high": 900000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, donkeys and mules (not from FAO data); militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Cape of Good Hope sea route",
+      "Limpopo crossings (Beitbridge)",
+      "Drakensberg escarpment",
+      "Mozambique Channel approaches"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, local supply, large cities and population support; no harsh-climate bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Wikipedia South African Army equipment list (largely \"acquired\" totals with notes on storage and a 2025 parliamentary report on active Ratels), the SAAF squadron table and the SAN active-ships list; serviceability is the main uncertainty (Gripens and Hawks largely grounded in 2023-24 for lack of support contracts). Population convention: everything inside ne:ZAF. Money in 2011 int$ via derived:ppp-rebase-2011. ships_major = frigates. Infantry P-role splits are educated guesses (grade D). SAMIDRC deployment to the DRC ended with withdrawal in 2025."
+}

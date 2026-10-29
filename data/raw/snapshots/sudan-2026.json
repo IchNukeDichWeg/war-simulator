@@ -1,0 +1,685 @@
+{
+  "id": "sudan-2026",
+  "nationId": "sudan",
+  "includes": [],
+  "name": "Republic of the Sudan",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "civil war",
+    "Arab League",
+    "African Union (suspended)",
+    "military government",
+    "Red Sea",
+    "drone warfare"
+  ],
+  "capital": {
+    "name": "Khartoum",
+    "lat": 15.5007,
+    "lon": 32.5599,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Port Sudan (wartime seat of government)",
+      "lat": 19.6158,
+      "lon": 37.2164,
+      "kind": "port"
+    },
+    {
+      "name": "Omdurman",
+      "lat": 15.6445,
+      "lon": 32.4777,
+      "kind": "city"
+    },
+    {
+      "name": "Wad Madani",
+      "lat": 14.4012,
+      "lon": 33.5199,
+      "kind": "city"
+    },
+    {
+      "name": "El Obeid",
+      "lat": 13.1843,
+      "lon": 30.2167,
+      "kind": "fortress"
+    },
+    {
+      "name": "El Fasher (RSF-held since Oct 2025)",
+      "lat": 13.6279,
+      "lon": 25.3494,
+      "kind": "city"
+    },
+    {
+      "name": "Nyala (RSF hub)",
+      "lat": 12.0489,
+      "lon": 24.8807,
+      "kind": "city"
+    },
+    {
+      "name": "Kassala",
+      "lat": 15.451,
+      "lon": 36.4,
+      "kind": "city"
+    },
+    {
+      "name": "Atbara",
+      "lat": 17.7022,
+      "lon": 33.9864,
+      "kind": "city"
+    },
+    {
+      "name": "Suakin",
+      "lat": 19.1059,
+      "lon": 37.3321,
+      "kind": "port"
+    },
+    {
+      "name": "Sixth Cataract / Sabaloka gorge",
+      "lat": 16.33,
+      "lon": 32.67,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SDN",
+    "areaKm2": {
+      "low": 1868000,
+      "mid": 1868000,
+      "high": 1878000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 1,868,000 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 1,878,000 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 50887215,
+      "mid": 51662147,
+      "high": 52695390,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 51,662,147). Low allows for census uncertainty; high adds one year of growth to 2026 (~2.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.339,
+      "mid": 0.349,
+      "high": 0.359,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 34.93% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 104300,
+      "mid": 150000,
+      "high": 300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.501 as quoted: SAF 104,300 active (low, pre-war structure) plus 60,000 paramilitary. CIA Factbook 2025: up to 200,000 SAF before 2023. Mid 150,000 and high 300,000 are educated allowances for wartime mobilization and allied forces under SAF command. RSF (up to 100,000 pre-war per CIA; ~100,000+ per Reuters 2023 as quoted on the RSF article) is the enemy and is NOT counted."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ongoing general mobilization (Popular Resistance) and allied armed movements; no organised trained reserve."
+    },
+    "supportPersonnel": {
+      "low": 7000,
+      "mid": 10000,
+      "high": 10000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Mid active 150,000 minus infantry P roles (30,000 + 110,000) = 10,000: air force (~3,000 pre-war), navy, armour/artillery crews, logistics. Wartime manpower is overwhelmingly infantry."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.02,
+      "high": 0.04,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: civil-war mobilization of volunteers and militias, constrained by arms supply and the RSF holding Darfur/Kordofan population. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 516621,
+      "mid": 1033243,
+      "high": 2066486,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 51,662,147 x ratio 0.01 / 0.02 / 0.04."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 30000,
+          "high": 45000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. SAF infantry with armour/mechanised units (BMP, Mohafiz, Ajban). Pre-war SAF 104,300 (IISS 2025) has expanded through mobilization. (context page: https://en.wikipedia.org/wiki/Sudanese_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: three years of urban warfare (Khartoum, Omdurman, Wad Madani, El Obeid)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 110000,
+          "high": 160000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. SAF light infantry plus allied forces fighting under SAF command: mobilised \"Popular Resistance\" volunteers, Darfur Joint Forces (SLA-Minnawi, JEM), Islamist brigades (al-Baraa ibn Malik), Beja/eastern militias. Size highly uncertain."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: small arms and technicals."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: hastily trained volunteers, forced recruitment reported (CIA Factbook)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 200,
+          "mid": 400,
+          "high": 670,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_main_battle_tanks_by_country",
+          "note": "MBT list (pre-war, IISS-derived): T-55 & mods 400 + T-72 230 + Type 96 40 = 670 (high). War losses since April 2023 and RSF captures unknown; mid ~400 is an educated discount. Equipment list details deliveries (T-72M1 130 from Ukraine, Type 85-IIM 50 Al-Bashier)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 400,
+          "mid": 700,
+          "high": 1000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Sudanese_Armed_Forces",
+          "note": "Equipment list: Caiman ~70 + BMP-1 200+ + BMP-2 100+ + BTR-3 50+ + WZ-523 150+ + Mohafiz-V 100-200+ + NIMR Ajban 70+ + YW531A ~50 = ~840 (BRDM-2 200+ and ~300 M-ATV / 500 Humvee excluded). Mid discounts for war losses."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 250,
+          "mid": 450,
+          "high": 600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Sudanese_Armed_Forces",
+          "note": "Equipment list: D-30 300+ + M-46 50 + 2S1 70 + BM-21 120+ + Khalifa SPH (locally produced, few) = ~540+. Mid discounts for war losses and captures."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: in constant use since 2023."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 38,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Sudanese_Air_Force",
+          "note": "Inventory (World Air Forces 2026 as quoted): MiG-29SE 10 + MiG-23MS 4 + MiG-21M 4 + F-7M 12 + F-6C 8 = 38 (high). Mid assumes about two thirds serviceable; several lost to RSF MANPADS and drone strikes on bases."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: MiG-29SE best type."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 39,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Sudanese_Air_Force",
+          "note": "Su-25K 12 + Su-24M 7 + A-5C 20 = 39 (high); An-26/An-12 crude bombers excluded."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: unguided bombing."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: heavy wartime use."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 50,
+          "mid": 90,
+          "high": 109,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Sudanese_Air_Force",
+          "note": "Mi-24/35 35 + Mi-8/17/171 24 + Bo-105 20 + IAR-330 16 + Mi-2 6 + Bell 205/212 5 + others 3 = ~109 (World Air Forces 2026 as quoted). Mid for serviceability."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 10,
+          "mid": 25,
+          "high": 50,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Sudanese_Air_Force",
+          "note": "SAF operates Mohajer-6, Wing Loong II, Bayraktar TB2 (deployed in Khartoum, Nov 2024, Sudan Tribune via the article) and Akinci; counts unpublished. Mid is an estimate."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 4,
+          "mid": 7,
+          "high": 10,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Sudanese_Navy",
+          "note": "Kurmuk-class (Project 22460) 2 + Swiftships 35 m 2 + Al-Marat 1 + Safeya 2 = 7, plus locally built interceptors."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 5,
+          "mid": 12,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Equipment list names ZU-23-2 (very many, on technicals), ZPU (4,000+), S-60 (200+) guns; SAM holdings (S-75/S-125 remnants, Pantsir rumoured) unknown. Battery count is an educated guess. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Sudanese_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.2,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: SAF regained Khartoum (March 2025) and the centre but lost Darfur (El Fasher, Oct 2025); command fragmented across allied militias."
+    },
+    "cohesion": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: coalition of army, Islamist brigades and ethnic militias."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: existential defence of the state core; recent victories in Khartoum/Gezira."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Soviet/Chinese bulk, Iranian and Turkish UCAVs."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: T-55/T-72/Type 85."
+    },
+    "ships": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: patrol craft."
+    },
+    "fortification": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: urban fortification; weak air defence (RSF drone strikes on Port Sudan, May 2025)."
+    },
+    "logistics": {
+      "low": 7.4,
+      "mid": 7.7,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: war-damaged roads and rail."
+    },
+    "communications": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: UCAV ISR."
+    },
+    "air": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: MiG-29SE, Su-24/25."
+    },
+    "cyber": {
+      "low": 7.7,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1125,
+      "mid": 1500,
+      "high": 1875,
+      "grade": "C",
+      "source": "derived:ppp-rebase-2011",
+      "note": "GDP 77,474,891,940 2011 int$ / population 51,662,147 = 1,500. +/-25% (wartime)."
+    },
+    "gdp": {
+      "low": 58106168205,
+      "mid": 77474890940,
+      "high": 96843613676,
+      "grade": "C",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025 (estimate). World Bank NY.GDP.MKTP.PP.KD 96,783,124,223 x 0.8005 = 77,474,891,940 2011 int$. Wartime collapse (IMF PPP GDP fell from 171 bn 2021 to 120 bn 2025) makes this +/-25%."
+    },
+    "milSpendShare": {
+      "low": 0.0093,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "WARTIME. Last SIPRI/World Bank value 0.93% (2021, low; https://api.worldbank.org/v2/country/SDN/indicator/MS.MIL.XPND.GD.ZS?format=json). No published wartime figure; mid/high are educated guesses for a state at full civil war."
+    },
+    "industrialShare": {
+      "low": 0.316,
+      "mid": 0.336,
+      "high": 0.356,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 33.6% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Famine declared in parts of Darfur/Kordofan (2024-25); Gezira scheme disrupted. Effectively no surplus."
+    },
+    "annualCohort": {
+      "low": 502174,
+      "mid": 557971,
+      "high": 613768,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 25,605,038 (SP.POP.TOTL.MA.IN) x share aged 15-19 10.896% / 5 = 557,971. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 0,
+        "mid": 10,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Military Industry Corporation (Yarmouk, Al-Shajara) produced Khalifa SPH, Sarsar APC and munitions; plants damaged in the war. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Sudanese_Armed_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 8000,
+      "mid": 8000,
+      "high": 31000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2019): 31,000 km total (high), 8,000 km paved (mid). War damage to bridges (Shambat, Jebel Aulia) not reflected."
+    },
+    "railKm": {
+      "low": 2747,
+      "mid": 2747,
+      "high": 7251,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SDN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2020: 2,747 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 7,251 km (2014) spans the range. Mostly 1,067 mm gauge; largely inoperable during the war."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 4,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/su.json",
+      "note": "CIA Factbook 2024: 4 ports, 2 medium (Port Sudan, Sawakin) plus 2 oil terminals."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 14 ships under the Sudanese flag (2023). (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/su.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck and technical columns; long desert lines to Darfur."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 8000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Very large camel and donkey herds; animals are used for transport by both sides. Not from FAO data."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Nile valley (Khartoum confluence)",
+      "Port Sudan / Red Sea coast",
+      "Kordofan corridor (El Obeid)",
+      "Darfur-Chad border (Adre crossing)",
+      "Gezira plain"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain and local supply; civil war means the \"home\" advantage is contested."
+    }
+  },
+  "notes": "WARTIME snapshot (civil war since 15 April 2023), asOf 2025 World Bank data with a 2026 order of battle. This snapshot represents the internationally recognised state and the Sudanese Armed Forces (SAF, led by Gen. al-Burhan) with the forces fighting under it. The Rapid Support Forces (RSF, Gen. Hemedti), a paramilitary created in 2013 that turned on the SAF, hold most of Darfur (El Fasher fell Oct 2025) and parts of Kordofan and declared a rival \"Government of Peace and Unity\" (2025); RSF manpower (100,000+ pre-war) and equipment are excluded and would need their own snapshot. The SAF retook Khartoum in March 2025. Population convention: whole internationally recognised territory (World Bank), although roughly a third is RSF-held; displacement exceeds 10 million. All equipment counts are pre-war IISS-derived or delivery-based figures discounted for unknown losses (grade C/D). Money in 2011 int$ via derived:ppp-rebase-2011 (+/-25%). milSpendShare low = last peacetime figure, mid = wartime educated guess. Doctrine archetype-insurgent because irregular and militia forces dominate both sides of the fighting. UN arms embargo on Darfur since 2005."
+}

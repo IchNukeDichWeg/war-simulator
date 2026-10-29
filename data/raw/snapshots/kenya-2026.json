@@ -1,0 +1,643 @@
+{
+  "id": "kenya-2026",
+  "nationId": "kenya",
+  "includes": [],
+  "name": "Republic of Kenya",
+  "year": 2026,
+  "era": "modern",
+  "region": "subsaharan_africa",
+  "phase": "current",
+  "tags": [
+    "East African Community",
+    "African Union",
+    "presidential republic",
+    "all-volunteer force",
+    "Indian Ocean",
+    "Horn of Africa",
+    "major non-NATO ally"
+  ],
+  "capital": {
+    "name": "Nairobi",
+    "lat": -1.2921,
+    "lon": 36.8219,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Mombasa",
+      "lat": -4.0435,
+      "lon": 39.6682,
+      "kind": "port"
+    },
+    {
+      "name": "Kisumu",
+      "lat": -0.0917,
+      "lon": 34.768,
+      "kind": "port"
+    },
+    {
+      "name": "Nakuru",
+      "lat": -0.3031,
+      "lon": 36.08,
+      "kind": "city"
+    },
+    {
+      "name": "Eldoret",
+      "lat": 0.5143,
+      "lon": 35.2698,
+      "kind": "city"
+    },
+    {
+      "name": "Lamu",
+      "lat": -2.2717,
+      "lon": 40.902,
+      "kind": "port"
+    },
+    {
+      "name": "Garissa",
+      "lat": -0.4532,
+      "lon": 39.6461,
+      "kind": "city"
+    },
+    {
+      "name": "Laikipia Air Base (Nanyuki)",
+      "lat": 0.0167,
+      "lon": 37.0667,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mandera (Somalia-Ethiopia tri-border)",
+      "lat": 3.9373,
+      "lon": 41.8569,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Namanga border crossing",
+      "lat": -2.545,
+      "lon": 36.79,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:KEN",
+    "areaKm2": {
+      "low": 580880,
+      "mid": 580880,
+      "high": 591970,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024. Land area 580,880 km2 (AG.LND.TOTL.K2, mid); high is surface area incl. inland water 591,970 km2 (AG.SRF.TOTL.K2)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 56669506,
+      "mid": 57532493,
+      "high": 58683143,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 57,532,493). Low allows for census uncertainty; high adds one year of growth to 2026 (~2.0%/yr)."
+    },
+    "urbanization": {
+      "low": 0.312,
+      "mid": 0.322,
+      "high": 0.332,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 32.21% urban (SP.URB.TOTL.IN.ZS, national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 22000,
+      "mid": 24100,
+      "high": 25000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.479 as quoted: 24,100 active (Army ~20,000, Navy ~1,600, Air Force ~2,500). CIA Factbook 2025 ~25,000; World Bank 24,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 5000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS lists no organised reserve; high allows for recallable ex-servicemen (educated judgement). 5,000 paramilitary (GSU) excluded."
+    },
+    "supportPersonnel": {
+      "low": 8080,
+      "mid": 10100,
+      "high": 10100,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 24,100 minus infantry P roles (3,000 + 11,000) = 10,100: navy, air force, crews, logistics, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.02,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: volunteer force without reserve system; small expansion only. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 287662,
+      "mid": 575325,
+      "high": 1150650,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 57,532,493 x ratio 0.005 / 0.01 / 0.02."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry of the armoured/mechanised brigade elements. Army ~20,000 of 24,100 (IISS 2025). (context page: https://en.wikipedia.org/wiki/Kenya_Army)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: wheeled APCs and MRAPs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: professional volunteers, Somalia combat since 2011."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 11000,
+          "high": 13000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry battalions, Rangers, airborne and special operations; ~1,400 in Somalia (AUSSOM) and 400 in the DRC (CIA Factbook 2025)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: UK/US-trained (BATUK), counter-insurgency experience vs al-Shabaab."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 150,
+          "mid": 188,
+          "high": 188,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Army",
+          "note": "Kenya Army article: Vickers Mk3 78 + T-72AV 110 (77 delivered 2007 + 33 in 2009; MBT list gives 76 T-72AV, low). Many T-72s reportedly re-exported to South Sudan; low allows for that."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 377,
+          "high": 420,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Army",
+          "note": "UR-416 52 + Panhard M3 10 + ACMAT Bastion 12 + WZ-551 35 + Puma M26-15 150 + Katmerciler Hizir 118 = 377. Recce cars (AML, Saladin, Ferret, BOV, BRDM-3 ~130) excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: modern MRAPs (Hizir, Puma), old UR-416."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 60,
+          "mid": 71,
+          "high": 80,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Army",
+          "note": "Nora B-52 18 + L118 40 + M119 6 + OTO Mod 56 7 = 71 tubes >=105 mm."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Nora B-52 modern 155 mm."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 14,
+          "mid": 18,
+          "high": 23,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Air_Force",
+          "note": "F-5EM 18 + F-5FM 5 = 23 (Laikipia Air Base); mid counts single-seat F-5EM."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: F-5 a generation behind."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 55,
+          "mid": 71,
+          "high": 80,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Air_Force",
+          "note": "UH-1H 5 + AH-1F 2 + Mi-171 2 + Z-9 6 + MD 530F 45 (Army aviation; Kenya Army article lists 39 MD 500 + 3 Z-9) + AS350 8 + AW139 3 = 71."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: armed MD 530F light scouts dominate."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 2,
+          "mid": 4,
+          "high": 10,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Army",
+          "note": "ScanEagle 4 (Group 2); RQ-11 Raven 8 excluded (Group 1). 2023 five-year plan adds surveillance drones (CIA Factbook)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 7,
+          "mid": 10,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Navy",
+          "note": "Navy article: Jasiri OPV 1 + Harambee II (P400) 1 + Shujaa/Shupavu 2 + Nyayo missile boats 2 + Mamba 1 + Galana-class LSM 2 + P101 IPVs ~1-3 = ~10. RHIBs excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: Nyayo-class Otomat launchers likely inactive."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2,
+          "mid": 3,
+          "high": 5,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Kenya_Army",
+          "note": "Bofors L/70 13 guns at ~4-6 per battery ~3 batteries. 2023 plan funds new air defence (CIA Factbook)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: guns only."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: competent British-pattern staff system; Somalia operations since 2011 (Linda Nchi) with setbacks (El Adde 2016)."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: professional volunteers."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Western/Chinese mix, Nora B-52, MILAN."
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: Vickers Mk3/T-72AV."
+    },
+    "ships": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: patrol vessels."
+    },
+    "fortification": {
+      "low": 7.9,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: border camps; guns-only air defence."
+    },
+    "logistics": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: C-27J, standard-gauge railway Mombasa-Naivasha."
+    },
+    "communications": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Western-standard tactical comms."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus: ScanEagle, US-supported ISR."
+    },
+    "air": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8-9: F-5E."
+    },
+    "cyber": {
+      "low": 8.3,
+      "mid": 8.6,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 minus."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 4319,
+      "mid": 4799,
+      "high": 5279,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 276,116,793,909 2011 int$ / population 57,532,493 = 4,799. Range +/-10%."
+    },
+    "gdp": {
+      "low": 248505114518,
+      "mid": 276116793909,
+      "high": 303728473300,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 344,930,410,880 x 0.8005 = 276,116,793,909 2011 int$. Range +/-10%."
+    },
+    "milSpendShare": {
+      "low": 0.0091,
+      "mid": 0.0107,
+      "high": 0.0128,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.07% of GDP in 2025. "
+    },
+    "industrialShare": {
+      "low": 0.143,
+      "mid": 0.163,
+      "high": 0.183,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction (and mining/oil where present) 16.3% of GDP (NV.IND.TOTL.ZS). +/-2 points."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net importer of maize/wheat/rice in dry years; exporter of tea and horticulture. Not from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 598893,
+      "mid": 665436,
+      "high": 731980,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 28,596,556 (SP.POP.TOTL.MA.IN) x share aged 15-19 11.635% / 5 = 665,436. Males only (conscript-pool convention). Range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 14420,
+      "mid": 14420,
+      "high": 177800,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Road list (2018): 177,800 km total (high), 14,420 km paved (mid and low). World Bank IS.ROD.TOTL.KM 61,947 km (2010) is the classified network."
+    },
+    "railKm": {
+      "low": 1917,
+      "mid": 1917,
+      "high": 3819,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/KEN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2004: 1,917 route-km (World Bank IS.RRS.TOTL.KM). CIA Factbook 3,819 km (2018) spans the range. Includes the 485 km standard-gauge Mombasa-Nairobi-Naivasha railway."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 4,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ke.json",
+      "note": "CIA Factbook 2024: 4 ports (0 large, 1 medium = Mombasa; Lamu new deep-water port, Kilifi, Malindi). Mid counts Mombasa + Lamu."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. CIA Factbook: 26 ships under the Kenyan flag (2023), mostly small; not in the DWT list. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/africa/ke.json)"
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Truck sustainment; Somalia operations run 100-300 km from bases."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys and camels in the arid north (not from FAO data)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); not listed by FAS Status of World Nuclear Forces. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "BSh",
+    "chokepoints": [
+      "Mombasa port",
+      "Northern Corridor (Mombasa-Nairobi-Malaba)",
+      "Somalia border (Mandera-Lamu)",
+      "Rift Valley escarpments"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain and local supply; arid north hard for invaders."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data, 2026 order of battle. Counts from the Kenya Army, Kenya Air Force and Kenya Navy Wikipedia articles (World Air Forces 2026 as quoted for aircraft); grade B where the table is explicit. Population convention: everything inside ne:KEN. Money in 2011 int$ via derived:ppp-rebase-2011. Infantry P-role splits are educated guesses (grade D). GSU and Kenya Coast Guard (Ministry of Interior) excluded."
+}
