@@ -61,5 +61,18 @@ for (const l of lines) console.log(l);
 const ok = rows.filter((r) => !r.error);
 const hit = ok.filter((r) => (r.winPct as number) > 0.5).length;
 console.log(`\n${hit}/${ok.length} cases: historical winner wins the majority of ${seeds} seeds.`);
+// VALIDATION.md tolerance: winner >= 60% of seeds (historical draw: no side above 60%), median loss
+// ratio and median duration within x3 of the historical mid (durations under 1 day count as 1 day)
+const within3 = (x: number) => isFinite(x) && x >= 1 / 3 && x <= 3;
+const passW = (r: typeof rows[number]) => (r.histWinner === 'draw'
+  ? Math.max((r.wins as number[])[0], (r.wins as number[])[1]) / seeds <= 0.6
+  : (r.winPct as number) >= 0.6);
+const passR = (r: typeof rows[number]) => within3(r.lossRatioFactor as number);
+const passD = (r: typeof rows[number]) => within3(Math.max(1, r.durationModel as number) / Math.max(1, r.durationHist as number));
+const fails = (f: (r: typeof rows[number]) => boolean) => ok.filter((r) => !f(r)).map((r) => r.id).join(', ') || 'none';
+console.log(`VALIDATION criteria: winner ${ok.filter(passW).length}/${ok.length}, loss ratio ${ok.filter(passR).length}/${ok.length}, duration ${ok.filter(passD).length}/${ok.length}`);
+console.log(`  winner fails:   ${fails(passW)}`);
+console.log(`  ratio fails:    ${fails(passR)}`);
+console.log(`  duration fails: ${fails(passD)}`);
 const out = arg(argv, 'json');
 if (out) { writeFileSync(out, JSON.stringify(rows, null, 1)); console.log(`wrote ${out}`); }
