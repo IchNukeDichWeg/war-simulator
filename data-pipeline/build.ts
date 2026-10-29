@@ -77,6 +77,27 @@ function readAll<T>(dir: string, bad: Set<string>): T[] {
   return listJson(dir).filter((f) => !bad.has(f)).map((f) => JSON.parse(readFileSync(f, 'utf8')) as T);
 }
 
+/** public/data/mechanics.json content: one section per data/mechanics file (version = build date). */
+export function buildMechanics(bad: Set<string>): Record<string, unknown> {
+  const mechanics: Record<string, unknown> = { version: new Date().toISOString().slice(0, 10) };
+  for (const f of listJson('mechanics')) {
+    if (bad.has(f)) continue;
+    const key = f.split('/').pop()!.replace('.json', '');
+    mechanics[key] = JSON.parse(readFileSync(f, 'utf8'));
+  }
+  return mechanics;
+}
+
+/** public/data/battles.json content. */
+export function buildBattles(bad: Set<string>): unknown[] {
+  return readAll('battles', bad);
+}
+
+/** Files that fail validation (skipped by the build). */
+export function invalidFiles(): Set<string> {
+  return new Set(validateAll().issues.filter((i) => i.level === 'error').map((i) => i.file));
+}
+
 async function main() {
   const { issues, counts } = validateAll();
   const bad = new Set(issues.filter((i) => i.level === 'error').map((i) => i.file));
@@ -115,12 +136,7 @@ async function main() {
     n.snapshotIds.sort((a, b) => snapshots.find((s) => s.id === a)!.year - snapshots.find((s) => s.id === b)!.year);
   }
 
-  const mechanics: Record<string, unknown> = { version: new Date().toISOString().slice(0, 10) };
-  for (const f of listJson('mechanics')) {
-    if (bad.has(f)) continue;
-    const key = f.split('/').pop()!.replace('.json', '');
-    mechanics[key] = JSON.parse(readFileSync(f, 'utf8'));
-  }
+  const mechanics = buildMechanics(bad);
 
   const write = (name: string, v: unknown) => writeFileSync(join(PUB, name), JSON.stringify(v));
   write('snapshots.json', snapshots);
@@ -129,7 +145,7 @@ async function main() {
   write('borders.json', borders);
   write('doctrines.json', readAll('doctrine', bad));
   write('mechanics.json', mechanics);
-  write('battles.json', readAll('battles', bad));
+  write('battles.json', buildBattles(bad));
   for (const name of ['coalitions.json', 'presets.json']) {
     const src = join(DATA, name);
     write(name, existsSync(src) && !bad.has(src) ? JSON.parse(readFileSync(src, 'utf8')) : []);

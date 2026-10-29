@@ -464,6 +464,10 @@ fortress). Measured together: 19/16/24 -> 19/15/23. Stalingrad now ends on
 day 6 by Axis morale collapse (out-of-supply pocket; ratio x0.18 and duration
 fail), Gulf War and France 1940 end by taking Kuwait City and Paris, Iraq
 2003 takes 25 days (ratio x0.50), Yom Kippur 70% -> 100%.
+The backtest reads `public/data`; `tests/buildFresh.test.ts` rebuilds
+`battles.json` and `mechanics.json` from `data/` in memory and fails when the
+shipped copies differ, so a data edit without a rebuild cannot silently change
+the backtest.
 
 Explanation: the engine compares the sides on the accumulated factors and ranks
 them: tech gap (mean power multiplier from TLI/dispersion/armor), numbers
