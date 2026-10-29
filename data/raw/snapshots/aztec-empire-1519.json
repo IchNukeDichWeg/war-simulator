@@ -1,0 +1,472 @@
+{
+  "id": "aztec-empire-1519",
+  "nationId": "aztec-empire",
+  "includes": [],
+  "name": "Aztec Empire",
+  "year": 1519,
+  "era": "gunpowder",
+  "region": "latin_america",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Triple Alliance",
+    "Mexica",
+    "Mesoamerica",
+    "tributary",
+    "Moctezuma II"
+  ],
+  "capital": {
+    "name": "Tenochtitlan",
+    "lat": 19.43,
+    "lon": -99.13,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Tlatelolco",
+      "lat": 19.45,
+      "lon": -99.14,
+      "kind": "city"
+    },
+    {
+      "name": "Texcoco",
+      "lat": 19.51,
+      "lon": -98.88,
+      "kind": "city"
+    },
+    {
+      "name": "Tlacopan",
+      "lat": 19.46,
+      "lon": -99.19,
+      "kind": "city"
+    },
+    {
+      "name": "Cholula",
+      "lat": 19.06,
+      "lon": -98.3,
+      "kind": "city"
+    },
+    {
+      "name": "Tepeaca",
+      "lat": 18.96,
+      "lon": -97.9,
+      "kind": "city"
+    },
+    {
+      "name": "Cempoala",
+      "lat": 19.44,
+      "lon": -96.4,
+      "kind": "city"
+    },
+    {
+      "name": "Coixtlahuacan",
+      "lat": 17.71,
+      "lon": -97.33,
+      "kind": "city"
+    },
+    {
+      "name": "Oztuma",
+      "lat": 18.28,
+      "lon": -99.83,
+      "kind": "fortress"
+    },
+    {
+      "name": "Xoconochco",
+      "lat": 14.9,
+      "lon": -92.3,
+      "kind": "city"
+    },
+    {
+      "name": "Iztapalapa causeway",
+      "lat": 19.36,
+      "lon": -99.09,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Paso de Cortes",
+      "lat": 19.08,
+      "lon": -98.65,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1500:Aztec Empire",
+    "areaKm2": {
+      "low": 150000,
+      "mid": 220000,
+      "high": 345000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Aztec_Empire",
+      "note": "Infobox ~220,000 km2 (mid). The world_1500 polygon measures ~345,000 km2 (high). Seshat codes only 28,070 km2 (https://seshat-db.com/core/polity/16), apparently the Basin of Mexico core, so low is set at 150,000 for the directly tributary provinces."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 3000000,
+      "mid": 6000000,
+      "high": 16000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Population_history_of_the_Indigenous_peoples_of_the_Americas",
+      "note": "Pre-contact estimates vary widely. ~6 million in the Aztec Empire (population history article, also the Aztec Empire infobox) (mid); Seshat 3-4 million (https://seshat-db.com/core/polity/16) (low); high counts (Cook and Borah ~25 million for central Mexico; OWID/HYDE Mexico 1500 = 24.5M, https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true) scaled to the empire's share (~2/3) give the high 16M. Denevan: Mexico 17.2M."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tenochtitlan 200,000-400,000 (Fall of Tenochtitlan article; Smith 212,500 via https://en.wikipedia.org/wiki/Tenochtitlan) and dense Basin of Mexico towns; most provinces rural."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No standing army (https://en.wikipedia.org/wiki/Aztec_warfare); counted are noble warrior-society members (eagle and jaguar), professional veterans and garrisons at frontier fortresses (Oztuma, Tepeaca)."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Aztec_warfare",
+      "note": "Every commoner boy trained in the telpochcalli and was drafted by calpolli units in war. Chronicles give 200,000 warriors and 100,000 porters against Coixtlahuacan and 400,000 against Tututepec in 1506 (via the article); Hassig (Aztec Warfare, 1988) reads campaign armies in xiquipilli of 8,000. High capped at 300,000."
+    },
+    "supportPersonnel": {
+      "low": 1000,
+      "mid": 2000,
+      "high": 4000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. War-canoe crews of the lake fleets and priests; porters (tlamemes) were drafted civilians."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.05,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Universal male warrior training; campaigns drew warriors and porters by tribute obligation."
+    },
+    "mobilizable": {
+      "low": 120000,
+      "mid": 300000,
+      "high": 960000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 8000,
+          "mid": 12000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Elite shock warriors (cuauhpipiltin, eagle and jaguar orders) with macuahuitl and shield."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: obsidian-edged clubs and quilted cotton against a steel and gunpowder era best."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: lifelong training of warrior-society nobles."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 2000,
+          "mid": 5000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Atlatl dart throwers, archers and slingers among the professional core."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 500,
+          "mid": 1500,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Lake Texcoco war canoes; 300 were sunk in the 1521 siege (https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan)."
+        },
+        "quality": {
+          "low": 0.1,
+          "mid": 0.15,
+          "high": 0.25,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25 minus: dugout canoes."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: Hassig describes planned campaigns, march routes and tribute-fed logistics; aim was capture rather than annihilation."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: Mexica warrior core cohesive; tributary provinces resentful (Totonacs and Tlaxcala joined Cortes)."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: warrior ethos and religious motivation."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 1.0,
+      "mid": 1.2,
+      "high": 1.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0-1: obsidian macuahuitl, atlatl, bow and sling; little metal. No horses in the Americas before 1519 and no gunpowder; role absent."
+    },
+    "armor": {
+      "low": 0.8,
+      "mid": 1.0,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1: quilted cotton ichcahuipilli and hide shields, about the leather level."
+    },
+    "ships": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0-1: dugout canoes; no sails."
+    },
+    "fortification": {
+      "low": 1.5,
+      "mid": 2.0,
+      "high": 2.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2: stone temple precincts, causeway cuts and drawbridges, frontier fortresses (Oztuma)."
+    },
+    "logistics": {
+      "low": 0.8,
+      "mid": 1.2,
+      "high": 1.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0-1: porters (tlamemes) and tributary stores; no draft animals or wheeled transport."
+    },
+    "communications": {
+      "low": 0.8,
+      "mid": 1.0,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0-1: relay runners."
+    },
+    "isr": {
+      "low": 1.0,
+      "mid": 1.5,
+      "high": 1.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2: pochteca merchants as spies."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 500,
+      "mid": 650,
+      "high": 850,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Maddison Project 2023 Mexico 1550 = 574, 1600 = 799 (2011 int$, via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true), both after the conquest and epidemics; pre-contact set near the colonial level."
+    },
+    "gdp": {
+      "low": 1500000000,
+      "mid": 3900000000,
+      "high": 13600000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tribute in goods and labour sustained annual campaigning."
+    },
+    "industrialShare": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.14,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Craft production: textiles, obsidian, featherwork."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chinampa agriculture and maize tribute fed the Basin cities."
+    },
+    "annualCohort": {
+      "low": 28500,
+      "mid": 57000,
+      "high": 152000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 0,
+      "mid": 1000,
+      "high": 3000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Causeways and maintained footpaths; no engineered road network."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No seagoing navy or ports."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 500,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Lake canoes only."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Porters carried a few days of food; tributary towns on the route had to provision the army (Hassig)."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No draft animals in Mesoamerica before the Spanish (no horses, oxen or llamas)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-classical-infantry",
+  "geography": {
+    "climate": "Cwb",
+    "chokepoints": [
+      "Causeways of Tenochtitlan",
+      "Paso de Cortes",
+      "Tlaxcala frontier",
+      "Lake Texcoco"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: lake-island capital reachable only by causeways; hostile tributaries and Tlaxcala reduce population support."
+    }
+  },
+  "notes": "Snapshot = November 1519, Cortes entering Tenochtitlan under Moctezuma II. Personnel convention: there was no standing army, so activePersonnel is only the noble warrior orders and frontier garrisons; the trained commoner levy of the calpolli is trainedReserves. No horses and no gunpowder: cavalry, artillery and draft animals are absent. Population is disputed: estimates for central Mexico run from ~3 million to 25 million; the 6 million mid follows the population history article. Chronicle army sizes (200,000-400,000) are rejected as mid values per the brief; Hassig (Aztec Warfare, 1988) not consulted directly. Population convention: the Triple Alliance core and tributary provinces; independent Tlaxcala, Metztitlan, Yopitzinco and the Tarascan state excluded."
+}

@@ -1,0 +1,557 @@
+{
+  "id": "tokugawa-japan-1600",
+  "nationId": "tokugawa-japan",
+  "includes": [],
+  "name": "Tokugawa Japan",
+  "year": 1600,
+  "era": "gunpowder",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "Sekigahara",
+    "Tokugawa Ieyasu",
+    "samurai",
+    "ashigaru",
+    "arquebus",
+    "unification"
+  ],
+  "capital": {
+    "name": "Edo",
+    "lat": 35.69,
+    "lon": 139.75,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Kyoto",
+      "lat": 35.01,
+      "lon": 135.77,
+      "kind": "city"
+    },
+    {
+      "name": "Osaka Castle",
+      "lat": 34.69,
+      "lon": 135.53,
+      "kind": "fortress"
+    },
+    {
+      "name": "Fushimi Castle",
+      "lat": 34.94,
+      "lon": 135.78,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sakai",
+      "lat": 34.57,
+      "lon": 135.48,
+      "kind": "port"
+    },
+    {
+      "name": "Nagasaki",
+      "lat": 32.75,
+      "lon": 129.88,
+      "kind": "port"
+    },
+    {
+      "name": "Hakata",
+      "lat": 33.59,
+      "lon": 130.4,
+      "kind": "port"
+    },
+    {
+      "name": "Kiyosu",
+      "lat": 35.21,
+      "lon": 136.84,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kagoshima",
+      "lat": 31.6,
+      "lon": 130.56,
+      "kind": "city"
+    },
+    {
+      "name": "Sendai",
+      "lat": 38.27,
+      "lon": 140.87,
+      "kind": "city"
+    },
+    {
+      "name": "Sekigahara",
+      "lat": 35.37,
+      "lon": 136.47,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hakone Pass",
+      "lat": 35.19,
+      "lon": 139.02,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Kanmon Strait",
+      "lat": 33.96,
+      "lon": 130.94,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1600:Japan (Warring States)",
+    "areaKm2": {
+      "low": 280000,
+      "mid": 295000,
+      "high": 300000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/152",
+      "note": "Seshat codes 295,000 km2 for 1603-1868 (Honshu, Shikoku, Kyushu; Ezo excluded). The world_1600 polygon measures ~280,000 km2."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 14000000,
+      "mid": 17000000,
+      "high": 22000000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID/HYDE Japan 1600 = 17.0M (mid); Seshat codes 22M for 1603 (https://seshat-db.com/core/polity/152) (high). Farris argues for lower 1600 totals (~15-17M); low 14M allows for that."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Kyoto, Osaka, Sakai and castle towns; Edo still small in 1600 (Seshat: 570,000 only by 1678)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 200000,
+      "mid": 280000,
+      "high": 350000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Sekigahara",
+      "note": "Sekigahara (21 Oct 1600): Eastern Army 75,000-89,000, Western Army 82,000-120,000 (Davis 1999, Bryant 1995, via the article), plus 38,000 under Hidetada at Ueda, 15,000 Western troops at Otsu and the Tohoku and Kyushu campaigns. The Korea invasions used 158,800 men in 1592 and ~320,000 over the war (Hawley, Strauss via https://en.wikipedia.org/wiki/Imjin_War). Counts samurai retainers and ashigaru, hereditary and stipended."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rural jizamurai and temple forces partly disarmed by the 1588 sword hunt; retainers of daimyo not under arms."
+    },
+    "supportPersonnel": {
+      "low": 30000,
+      "mid": 50000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Porters, labourers, sailors and engineers; the 1592 total of 158,800 included labourers and sailors (https://en.wikipedia.org/wiki/Imjin_War)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.025,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Hideyoshi's quotas set men per 100 koku of assessed land; Shimazu's quota is preserved (https://en.wikipedia.org/wiki/Imjin_War)."
+    },
+    "mobilizable": {
+      "low": 280000,
+      "mid": 425000,
+      "high": 660000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 130000,
+          "mid": 170000,
+          "high": 200000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ashigaru arquebusiers and pikemen plus samurai on foot, the bulk of the 1600 armies."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: mass-produced tanegashima arquebuses, long pikes; one of the most firearm-heavy armies of the era."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: veterans of the Sengoku wars and Korea."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 10000,
+          "mid": 20000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ashigaru archers screening the arquebus lines."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 35000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mounted samurai with spear and bow, a minority of each army."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: lacquered plate armour, small horses."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 minus: lifelong warrior class."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 30,
+          "mid": 100,
+          "high": 300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Spanish accounts say 19 guns from the Dutch ship De Liefde served the Tokugawa at Sekigahara (via https://en.wikipedia.org/wiki/Battle_of_Sekigahara); field artillery was rare in Japan."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 30,
+          "mid": 80,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Atakebune (large armoured warships) of the daimyo fleets after the Korean war losses."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: few cannon; outclassed by Korean panokseon."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 200,
+          "mid": 400,
+          "high": 700,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imjin_War",
+          "note": "300 warships in 1592 and 1,000 ships (some with cannon) in 1597 (Hawley 2005 pp. 116, 446 via the article); 450 lost in the war (Turnbull 2002 p. 227). Sekibune and kobaya counted here."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: Ieyasu and veteran Sengoku generals, massed arquebus tactics since Nagashino (1575)."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus: daimyo coalitions; Kobayakawa's 15,000 changed sides at Sekigahara."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: hardened warrior society."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5 (1600): mass-produced matchlock arquebuses and pikes; little artillery."
+    },
+    "armor": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5: tosei gusoku plate armour, some bullet-tested."
+    },
+    "ships": {
+      "low": 3.7,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: atakebune and sekibune, few cannon."
+    },
+    "fortification": {
+      "low": 4.6,
+      "mid": 4.8,
+      "high": 5.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5 minus: Azuchi-Momoyama castles on high stone bases (Osaka, Fushimi), no bastioned trace."
+    },
+    "logistics": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: Hideyoshi's supply organisation for Kyushu and Korea, coastal shipping."
+    },
+    "communications": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: couriers and relay horses."
+    },
+    "isr": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: scouts and shinobi."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 950,
+      "mid": 1061,
+      "high": 1150,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 Japan 1600 = 1,061 (2011 int$)."
+    },
+    "gdp": {
+      "low": 13300000000,
+      "mid": 18037000000,
+      "high": 25300000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. A fully militarised society after a century of war; samurai stipends were most of daimyo revenue."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Silver mining (Iwami), swords and guns (Sakai, Kunitomo), textiles."
+    },
+    "foodSurplus": {
+      "low": 0.12,
+      "mid": 0.18,
+      "high": 0.24,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rice tax in kind of ~40-50% of the crop."
+    },
+    "annualCohort": {
+      "low": 133000,
+      "mid": 161500,
+      "high": 209000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3000,
+      "mid": 5000,
+      "high": 8000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tokaido, Nakasendo and other trunk roads (formalised as the Five Routes from 1601)."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Sakai, Osaka, Hakata, Nagasaki, Hirado, Kagoshima."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 60000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Coastal shipping of the Inland Sea; red-seal ships to Southeast Asia from 1600."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short campaigns along trunk roads; sea transport for Kyushu and Korea."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Sekigahara",
+      "Hakone Pass",
+      "Kanmon Strait",
+      "Seto Inland Sea",
+      "Tsushima Strait"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.25,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: island position, mountains, castles and an armed population against any landing."
+    }
+  },
+  "notes": "Snapshot = autumn 1600, the Sekigahara campaign (21 October 1600) that made Tokugawa Ieyasu master of Japan; the shogunate was formally founded in 1603. The snapshot counts all of Japan (both Sekigahara coalitions), as the polity Ieyasu ruled after the battle. Personnel convention: samurai retainers and ashigaru of the daimyo are activePersonnel (hereditary and stipended); disarmed rural fighters are trainedReserves. Battle figures via the Battle of Sekigahara article (Davis, Bryant, Turnbull); Farris and Berry not consulted directly. Population convention: Honshu, Shikoku, Kyushu and islands; Ezo (Hokkaido) and Ryukyu excluded."
+}

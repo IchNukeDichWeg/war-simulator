@@ -1,0 +1,582 @@
+{
+  "id": "maratha-confederacy-1760",
+  "nationId": "maratha-confederacy",
+  "includes": [],
+  "name": "Maratha Confederacy",
+  "year": 1760,
+  "era": "gunpowder",
+  "region": "south_asia",
+  "phase": "peak",
+  "tags": [
+    "confederacy",
+    "Peshwa",
+    "light cavalry",
+    "Panipat",
+    "chauth",
+    "Gardi infantry"
+  ],
+  "capital": {
+    "name": "Pune",
+    "lat": 18.52,
+    "lon": 73.86,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Satara",
+      "lat": 17.68,
+      "lon": 74.0,
+      "kind": "city"
+    },
+    {
+      "name": "Nagpur",
+      "lat": 21.15,
+      "lon": 79.09,
+      "kind": "city"
+    },
+    {
+      "name": "Indore",
+      "lat": 22.72,
+      "lon": 75.86,
+      "kind": "city"
+    },
+    {
+      "name": "Gwalior Fort",
+      "lat": 26.22,
+      "lon": 78.18,
+      "kind": "fortress"
+    },
+    {
+      "name": "Baroda",
+      "lat": 22.31,
+      "lon": 73.18,
+      "kind": "city"
+    },
+    {
+      "name": "Delhi",
+      "lat": 28.65,
+      "lon": 77.23,
+      "kind": "city"
+    },
+    {
+      "name": "Ahmednagar Fort",
+      "lat": 19.09,
+      "lon": 74.74,
+      "kind": "fortress"
+    },
+    {
+      "name": "Raigad",
+      "lat": 18.23,
+      "lon": 73.44,
+      "kind": "fortress"
+    },
+    {
+      "name": "Vijaydurg",
+      "lat": 16.56,
+      "lon": 73.33,
+      "kind": "port"
+    },
+    {
+      "name": "Cuttack",
+      "lat": 20.46,
+      "lon": 85.88,
+      "kind": "city"
+    },
+    {
+      "name": "Panipat",
+      "lat": 29.39,
+      "lon": 76.97,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bhor Ghat",
+      "lat": 18.78,
+      "lon": 73.36,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1715:Maratha",
+    "areaKm2": {
+      "low": 1500000,
+      "mid": 2200000,
+      "high": 2500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Maratha_Empire",
+      "note": "Over 2.5 million km2 at the 1760 zenith, about a third of the subcontinent (Turchin, Adams and Hall 2006 p. 223, via the article) (high, includes chauth-paying tributaries); low for the directly ruled swarajya and sardar domains. The world_1715 Maratha polygon (~87,000 km2) is the Shahu-era homeland and badly understates 1760; world_1783 has a \"Maratha Confederacy\" polygon (~1.05 million km2) but postdates the snapshot."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 45000000,
+      "mid": 60000000,
+      "high": 80000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "About a third of the subcontinent by area (https://en.wikipedia.org/wiki/Maratha_Empire); OWID/HYDE India 1750 = 183M, Pakistan 14.9M, Bangladesh 17.1M (~215M, https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true). One third = ~72M; the Deccan was less dense than the Ganges plain, so mid 60M. High includes tributaries paying chauth."
+    },
+    "urbanization": {
+      "low": 0.07,
+      "mid": 0.09,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pune, Nagpur, Indore, Baroda, Ahmedabad (shared), garrison towns."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 140000,
+      "high": 180000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+      "note": "The Panipat field army (1760-61) had 55,000 cavalry (11,000 regular) and 9,000 Gardi infantry, while the bulk of the Maratha army stayed in the Deccan with the Peshwa (via the article); over 50,000 regular troops took Delhi in August 1760 (https://en.wikipedia.org/wiki/Maratha_Empire). Total standing household and silladar horse, infantry and fort garrisons doubled from Panipat."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pindari irregular horse, local militia, sardar contingents not under arms."
+    },
+    "supportPersonnel": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Gunners, artillery train and fleet crews (gallivats and grabs)."
+    },
+    "mobilizationRatio": {
+      "low": 0.004,
+      "mid": 0.006,
+      "high": 0.008,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Silladar cavalry raised by contract from Deccan peasant-soldiers."
+    },
+    "mobilizable": {
+      "low": 180000,
+      "mid": 360000,
+      "high": 640000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+          "note": "Silladar and bargir light horse: 44,000 irregular cavalry at Panipat (55,000 minus 11,000 regular, via the article) plus the Deccan, Nagpur and Gujarat armies."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: sword, spear, few firearms; hardy Deccani ponies."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: long-service raiders."
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 11000,
+          "mid": 15000,
+          "high": 25000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+          "note": "Paga household regular cavalry: 11,000 at Panipat (via the article) (low)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 9000,
+          "mid": 15000,
+          "high": 25000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+          "note": "9,000 Gardi infantry of Ibrahim Khan Gardi, trained in the French manner under Bussy (via the article) (low); plus Arab, Sindhi and Purbiya mercenary musketeers."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: French-style muskets and drill."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mavala hill infantry and fort garrisons of the Western Ghats."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 300,
+          "high": 500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Third_Battle_of_Panipat",
+          "note": "Almost 150 pieces of modern long-range French-made artillery went north with the Panipat army (via the article) (low); Deccan and fort guns added (educated)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: French-made guns outranging the Afghans."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: Gardi gunners."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 5,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Grabs of the Peshwa's fleet after the Angre fleet was destroyed at Vijaydurg (1756)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 80,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Gallivats under Anandrao Dhulap (https://en.wikipedia.org/wiki/Maratha_Navy)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: Sadashivrao Bhau and Peshwa Balaji Bajirao; brilliant raiding but a confederacy of rival sardars with friction over tactics at Panipat."
+    },
+    "cohesion": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: confederacy of Holkar, Scindia, Bhonsle and Gaekwad; Holkar left the field at Panipat."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: Attock reached 1758, Delhi retaken August 1760."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.3,
+      "mid": 5.6,
+      "high": 5.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5-6: French-pattern muskets and long-range guns with the Gardis; most cavalry with sword and spear."
+    },
+    "armor": {
+      "low": 4.3,
+      "mid": 4.6,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: quilted and mail armour, little in use."
+    },
+    "ships": {
+      "low": 4.3,
+      "mid": 4.6,
+      "high": 4.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: grabs and gallivats, outclassed by East India Company ships."
+    },
+    "fortification": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5: hill forts and sea forts (Sindhudurg, Vijaydurg)."
+    },
+    "logistics": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: banjara grain carriers and foraging; the Panipat army starved when cut off."
+    },
+    "communications": {
+      "low": 4.5,
+      "mid": 4.8,
+      "high": 5.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5 minus: harkara couriers and newsletters."
+    },
+    "isr": {
+      "low": 4.5,
+      "mid": 4.8,
+      "high": 5.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5 minus: superb light-cavalry scouting."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 950,
+      "mid": 1050,
+      "high": 1150,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 India 1750 = 1,068, 1801 = 1,033 (2011 int$)."
+    },
+    "gdp": {
+      "low": 42750000000,
+      "mid": 63000000000,
+      "high": 92000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Chauth and sardeshmukhi were collected by armies; the Peshwa state ran on military debt."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.15,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Textiles and crafts; Mughal-era structure (Moosvi's 18% for the 16th century) assumed slightly lower."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Dry Deccan farming; famine-prone."
+    },
+    "annualCohort": {
+      "low": 427500,
+      "mid": 570000,
+      "high": 760000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mughal highways through Malwa and the Deccan; ghat passes."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 5,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Bassein, Kalyan, Kolaba, Vijaydurg, Ratnagiri."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Konkan coastal shipping."
+    },
+    "supplyRangeKm": {
+      "low": 300,
+      "mid": 500,
+      "high": 800,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Light horse living off the land raided to Attock and Bengal; heavy armies were tied to supply (Panipat)."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 4000000,
+      "high": 8000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, bullocks of banjara carriers, camels."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Aw",
+    "chokepoints": [
+      "Western Ghats passes",
+      "Narmada crossings",
+      "Delhi-Panipat corridor",
+      "Bhor Ghat"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.25,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: hill forts of the Western Ghats, guerrilla tradition that wore down Aurangzeb, local supply."
+    }
+  },
+  "notes": "Snapshot = autumn 1760, Maratha zenith after the recapture of Delhi, before the Third Battle of Panipat (14 January 1761). Personnel convention: household (paga) and contracted silladar cavalry, Gardi and mercenary infantry and fort garrisons under arms are activePersonnel; pindaris and uncalled sardar contingents are trainedReserves. Panipat figures via the Third Battle of Panipat article (Gordon, Roy); Gommans and Roy on Maratha warfare not consulted directly. Border: the nearest file at or before 1760 is world_1715, whose Maratha polygon is the early homeland only. Population convention: Peshwa domains and the great sardar states (Holkar, Scindia, Bhonsle, Gaekwad) plus chauth-paying tracts in the high value."
+}

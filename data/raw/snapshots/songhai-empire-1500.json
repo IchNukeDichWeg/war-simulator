@@ -1,0 +1,512 @@
+{
+  "id": "songhai-empire-1500",
+  "nationId": "songhai-empire",
+  "includes": [],
+  "name": "Songhai Empire",
+  "year": 1500,
+  "era": "gunpowder",
+  "region": "subsaharan_africa",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "Sahel",
+    "Askia Muhammad",
+    "Niger river",
+    "Islamic",
+    "cavalry"
+  ],
+  "capital": {
+    "name": "Gao",
+    "lat": 16.27,
+    "lon": -0.04,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Timbuktu",
+      "lat": 16.77,
+      "lon": -3.01,
+      "kind": "city"
+    },
+    {
+      "name": "Djenne",
+      "lat": 13.91,
+      "lon": -4.55,
+      "kind": "city"
+    },
+    {
+      "name": "Kabara",
+      "lat": 16.72,
+      "lon": -3.0,
+      "kind": "port"
+    },
+    {
+      "name": "Tendirma",
+      "lat": 16.15,
+      "lon": -3.71,
+      "kind": "city"
+    },
+    {
+      "name": "Kukiya",
+      "lat": 15.33,
+      "lon": 0.8,
+      "kind": "city"
+    },
+    {
+      "name": "Walata",
+      "lat": 17.27,
+      "lon": -7.0,
+      "kind": "city"
+    },
+    {
+      "name": "Ayorou",
+      "lat": 14.73,
+      "lon": 0.92,
+      "kind": "port"
+    },
+    {
+      "name": "Tosaye gorge",
+      "lat": 16.95,
+      "lon": -0.6,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Lake Debo",
+      "lat": 15.3,
+      "lon": -4.1,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1500:Songhai",
+    "areaKm2": {
+      "low": 600000,
+      "mid": 650000,
+      "high": 700000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/242",
+      "note": "Seshat codes 600,000-700,000 km2 for the Askiya dynasty (1493-1591); the world_1500 polygon measures ~609,000 km2. Later expansion (infobox 1.4 million km2 in 1528) is after this snapshot."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 2500000,
+      "mid": 4000000,
+      "high": 5000000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/242",
+      "note": "Seshat codes 4-5 million for 1493-1591 (suspected). Low: OWID/HYDE Mali + Niger 1500 = 1.9 million in modern borders (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true) plus the Inland Delta share; 1500 is early in the Askiya expansion."
+    },
+    "urbanization": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Gao ~60,000 in 1512 (Seshat largest settlement), Timbuktu and Djenne."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 15000,
+      "mid": 25000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Askia Muhammad replaced the general levy with a professional army of slave soldiers (Levtzion 1977 via https://en.wikipedia.org/wiki/Askia_Muhammad_I); no count survives for 1500. At Tondibi (1591) the Songhai fielded 12,500-18,000 cavalry and 9,700-30,000 infantry (https://en.wikipedia.org/wiki/Battle_of_Tondibi), a larger later state."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Provincial levies of the Kurmina, Dendi and central provinces, Sorko boatmen and Tuareg contingents."
+    },
+    "supportPersonnel": {
+      "low": 2000,
+      "mid": 3000,
+      "high": 5000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Crews of the river fleet under the hi-koy (admiral)."
+    },
+    "mobilizationRatio": {
+      "low": 0.015,
+      "mid": 0.02,
+      "high": 0.025,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Sahelian state with slave soldiers and tributary levies."
+    },
+    "mobilizable": {
+      "low": 37500,
+      "mid": 80000,
+      "high": 125000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 2000,
+          "mid": 4000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mailed lancers of the askiya's household and provincial governors."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: mail and quilted horse armour, lance and sword, no firearms."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: professional slave cavalry."
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 4000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mounted archers and Tuareg camel and horse riders."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers with poisoned arrows."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: bows against an arquebus-era best."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 3000,
+          "mid": 5000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Spear and sword infantry of the standing army."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 500,
+          "mid": 1000,
+          "high": 2000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Songhai_Empire",
+          "note": "The hi-koy at Gao commanded more than a thousand boats (the article); further flotillas at Kabara and Ayorou. Dugout war and transport canoes."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25: river canoes."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Sorko hereditary boatmen."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: Askia Muhammad built on Sonni Ali's conquests (Timbuktu 1468, Djenne 1473) with a professional army."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: slave soldiers bound to the askiya; Sonni-Askiya succession conflict recent (1493)."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: expansion and jihad against the Mossi after the 1496-98 hajj."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3-4: iron lances, swords, bows; no firearms until the Moroccan invasion of 1591."
+    },
+    "armor": {
+      "low": 3.2,
+      "mid": 3.5,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3-4: mail for elite cavalry, quilted horse armour."
+    },
+    "ships": {
+      "low": 1.2,
+      "mid": 1.5,
+      "high": 1.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2: river war canoes."
+    },
+    "fortification": {
+      "low": 1.7,
+      "mid": 2.0,
+      "high": 2.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2: mudbrick town walls (tata)."
+    },
+    "logistics": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3: Niger river transport and granaries."
+    },
+    "communications": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3: mounted couriers."
+    },
+    "isr": {
+      "low": 2.5,
+      "mid": 2.8,
+      "high": 3.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3 minus."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 500,
+      "mid": 650,
+      "high": 850,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No Maddison estimate for West Africa before 1950; Egypt 1500 = 1,084 (https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) is an upper reference. Subsistence farming lifted by gold, salt and trans-Saharan trade; same basis as mali-empire-1330."
+    },
+    "gdp": {
+      "low": 1250000000,
+      "mid": 2600000000,
+      "high": 4250000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Standing slave army fed from royal estates."
+    },
+    "industrialShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.11,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Crafts, textiles, metalwork."
+    },
+    "foodSurplus": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Inland Niger Delta rice and millet; royal slave estates."
+    },
+    "annualCohort": {
+      "low": 23750,
+      "mid": 38000,
+      "high": 47500,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 0,
+      "mid": 500,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caravan tracks only."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 4,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. River ports: Gao, Kabara (Timbuktu), Djenne, Ayorou."
+    },
+    "merchantTonnage": {
+      "low": 1000,
+      "mid": 3000,
+      "high": 8000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Niger river boats."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. River-borne supply along the Niger; seasonal limits in the rains."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 300000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, camels, oxen and donkeys."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "BSh",
+    "chokepoints": [
+      "Niger bend",
+      "Tosaye gorge",
+      "Inland Niger Delta",
+      "Taghaza caravan route"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: Sahara crossing and heat for northern invaders, river mobility; open terrain."
+    }
+  },
+  "notes": "Snapshot = 1500, Askia Muhammad I (r. 1493-1528) after his hajj, early in the Askiya expansion. Personnel convention: the askiya's professional slave army and fleet are activePersonnel; provincial and tributary levies are trainedReserves. No contemporary count exists for 1500: the Tarikh al-Sudan and Leo Africanus give impressions, and the Tondibi (1591) figures describe the later, larger state; force numbers are educated guesses (grade D). Hunwick (Timbuktu and the Songhay Empire) and Thornton not consulted directly. Population convention: Gao, the Niger bend, Timbuktu and the Inland Delta (Djenne); Hausa and Air tributaries of later years excluded."
+}

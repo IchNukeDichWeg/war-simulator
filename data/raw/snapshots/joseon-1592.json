@@ -1,0 +1,578 @@
+{
+  "id": "joseon-1592",
+  "nationId": "joseon",
+  "includes": [],
+  "name": "Joseon Korea",
+  "year": 1592,
+  "era": "gunpowder",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "kingdom",
+    "Imjin War",
+    "Yi Sun-sin",
+    "panokseon",
+    "turtle ship",
+    "Ming tributary"
+  ],
+  "capital": {
+    "name": "Hanseong (Seoul)",
+    "lat": 37.57,
+    "lon": 126.98,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Busan",
+      "lat": 35.1,
+      "lon": 129.04,
+      "kind": "port"
+    },
+    {
+      "name": "Pyongyang",
+      "lat": 39.03,
+      "lon": 125.75,
+      "kind": "city"
+    },
+    {
+      "name": "Kaesong",
+      "lat": 37.97,
+      "lon": 126.55,
+      "kind": "city"
+    },
+    {
+      "name": "Chungju",
+      "lat": 36.99,
+      "lon": 127.93,
+      "kind": "city"
+    },
+    {
+      "name": "Jinju Fortress",
+      "lat": 35.19,
+      "lon": 128.08,
+      "kind": "fortress"
+    },
+    {
+      "name": "Yeosu (Jeolla Left Navy)",
+      "lat": 34.74,
+      "lon": 127.74,
+      "kind": "port"
+    },
+    {
+      "name": "Daegu",
+      "lat": 35.87,
+      "lon": 128.6,
+      "kind": "city"
+    },
+    {
+      "name": "Hamhung",
+      "lat": 39.92,
+      "lon": 127.54,
+      "kind": "city"
+    },
+    {
+      "name": "Uiju",
+      "lat": 40.2,
+      "lon": 124.53,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Joryeong Pass",
+      "lat": 36.78,
+      "lon": 128.06,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Myeongnyang Strait",
+      "lat": 34.57,
+      "lon": 126.31,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1500:Korea",
+    "areaKm2": {
+      "low": 200000,
+      "mid": 220000,
+      "high": 224000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Korea",
+      "note": "Joseon held the whole peninsula to the Yalu and Tumen; the Korea article gives 223,915 km2 (high). The world_1530 Korea polygon covers only the north (Seoul and Busan fall in an unnamed feature), so the world_1500 polygon (~158,000 km2) is used."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 4500000,
+      "mid": 7000000,
+      "high": 12000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Disputed: registers are unreliable (https://en.wikipedia.org/wiki/Joseon). The 1519 register counted 3.3 million (Joseon infobox), an undercount of perhaps half (~6.6M); OWID/HYDE gives 5.0 million for 1600, after the war losses (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true). Some Korean estimates run above 10 million. Mid 7M."
+    },
+    "urbanization": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "C",
+      "source": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%9D%B8%EA%B5%AC",
+      "note": "Korean Wikipedia (Population of South Korea): Seoul only ~190,000 in the 18th-19th centuries and urban share under 3% until late Joseon."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 70000,
+      "mid": 95000,
+      "high": 130000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Imjin_War",
+      "note": "Rolls of the Five Commands and the regular army (jeongbyeong) were inflated by draft evasion; Joseon deployed 84,500 regular troops during the first invasion (Turnbull 2002 p. 109, Hawley 2005 p. 269, via the article). Navy crews added (the Gyeongguk daejeon quota was 48,800 personnel, https://en.wikipedia.org/wiki/Joseon_Navy, well under strength in 1592)."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 80000,
+      "high": 120000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Imjin_War",
+      "note": "Rotational conscripts not on duty and the righteous armies: 22,000 irregular volunteers in 1592 (Turnbull) and ~170,000 mobilised in total by early 1593 (Veritable Records of Seonjo, via the article), minus the active force."
+    },
+    "supportPersonnel": {
+      "low": 15000,
+      "mid": 22000,
+      "high": 35000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Fleet crews: ~150 warships at 50-60 oarsmen and up to 125 marines per panokseon (https://en.wikipedia.org/wiki/Panokseon)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.025,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Universal male liability on paper (yangin commoners); ~170,000 raised by 1593."
+    },
+    "mobilizable": {
+      "low": 90000,
+      "mid": 175000,
+      "high": 360000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "missile_infantry": {
+        "count": {
+          "low": 20000,
+          "mid": 30000,
+          "high": 40000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers, the main Korean infantry arm (Turnbull 2008 p. 21 via https://en.wikipedia.org/wiki/Imjin_War)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: excellent composite bows but almost no arquebuses in 1592."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: long peace, rolls padded."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 25000,
+          "high": 35000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Paengbaesu shield infantry and spearmen."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus: mail and brigandine for some, swords and flails."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 14000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imjin_War",
+          "note": "Kapsa elite cavalry of noble origin, 14,000 by 1475 (via the article) (high); fewer actually under arms in 1592."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: brigandine (tujeong-gap), bow and lance."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: self-funded elite; wiped out at Chungju."
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 4000,
+          "mid": 7000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mounted archers of the northern border commands."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Jurchen frontier experience."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 300,
+          "high": 600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Land-based chongtong (cheonja, jija, hyeonja) and hwacha in fortresses."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 80,
+          "mid": 150,
+          "high": 250,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imjin_War",
+          "note": "Joseon fleet 300 ships (Hawley 2005 p. 148 via the infobox) including small craft; Yi Sun-sin sailed with 24 panokseon, 15 small warships and 46 fishing boats in July 1592 (Turnbull 2002 pp. 90-91). Panokseon plus the first turtle ships (three by August 1592 per a Japanese chronicle, https://en.wikipedia.org/wiki/Turtle_ship)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: thick-hulled panokseon with 20+ heavy cannon, faster and better armed than Japanese ships (Turnbull 2008 p. 22)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: Yi's Jeolla fleet well drilled; the Gyeongsang fleets scuttled themselves in April 1592."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 120,
+          "high": 200,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imjin_War",
+          "note": "Small warships (hyeopseon) of the provincial fleets; 300-ship total (Hawley) minus panokseon."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.45,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.75: land command poor (Shin Rip's cavalry charge at Chungju, Seoul abandoned in three weeks); naval command under Yi Sun-sin best in era."
+    },
+    "cohesion": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: falsified rolls, draft evasion by payment, many units dissolved on contact."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 minus at the invasion; rose with the righteous armies (existential defence)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.4,
+      "mid": 4.6,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: cannon, hwacha and rockets, but arquebuses only adopted after 1592."
+    },
+    "armor": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: brigandine, scale and mail; leather for most."
+    },
+    "ships": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5: cannon-armed panokseon and the turtle ship, superior to Japanese ships."
+    },
+    "fortification": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: mountain fortresses (sanseong) and town walls."
+    },
+    "logistics": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: state granaries, river transport."
+    },
+    "communications": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: bongsu beacon network and horse relays."
+    },
+    "isr": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus: the 1590 embassy misjudged Hideyoshi's intent."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 700,
+      "mid": 850,
+      "high": 1050,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "No Maddison value before 1820 (Korea 816). Analogues: Japan 1600 = 1,061, China 1600 = 1,217 (Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true). Korea set between its 1820 level and Japan."
+    },
+    "gdp": {
+      "low": 3150000000,
+      "mid": 5950000000,
+      "high": 12600000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Peacetime neglect: military cloth tax collected in lieu of service."
+    },
+    "industrialShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.11,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Crafts, ceramics, cotton."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rice agriculture; arable land fell to 66% of prewar after the war (https://en.wikipedia.org/wiki/Imjin_War)."
+    },
+    "annualCohort": {
+      "low": 42750,
+      "mid": 66500,
+      "high": 114000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 2000,
+      "mid": 4000,
+      "high": 6000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post roads from Seoul to Busan, Uiju and Hamgyong."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 5,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Naval bases of the Gyeongsang and Jeolla left and right fleets, Busan."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Coastal grain-tax ships."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Defensive war on interior lines."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oxen and small horses."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dwa",
+    "chokepoints": [
+      "Korea Strait (Busan)",
+      "Joryeong Pass",
+      "Imjin River",
+      "Yalu crossing at Uiju",
+      "Myeongnyang Strait",
+      "Noryang Strait"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountainous, mountain fortresses, guerrilla righteous armies and population support; no strategic depth beyond the Yalu."
+    }
+  },
+  "notes": "Snapshot = 23 May 1592 (13th day of the 4th lunar month), the Japanese landing at Busan. Personnel convention: regular troops actually under arms and the provincial fleets are activePersonnel; rotational conscripts not on duty and the righteous armies (raised from the summer) are trainedReserves. Joseon figures via the Imjin War article (Turnbull, Hawley, Swope, Veritable Records); Hawley's The Imjin War not consulted directly. Population is the weakest number: registers undercount, estimates span 4.5-12M. Border: world_1500 Korea polygon used because the world_1530 one omits southern Korea."
+}

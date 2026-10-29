@@ -1,0 +1,473 @@
+{
+  "id": "safavid-empire-1600",
+  "nationId": "safavid-empire",
+  "includes": [],
+  "name": "Safavid Empire",
+  "year": 1600,
+  "era": "gunpowder",
+  "region": "mena",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "gunpowder empire",
+    "Shah Abbas I",
+    "ghulams",
+    "Qizilbash",
+    "Shia"
+  ],
+  "capital": {
+    "name": "Isfahan",
+    "lat": 32.65,
+    "lon": 51.67,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Qazvin",
+      "lat": 36.27,
+      "lon": 50.0,
+      "kind": "city"
+    },
+    {
+      "name": "Mashhad",
+      "lat": 36.3,
+      "lon": 59.6,
+      "kind": "city"
+    },
+    {
+      "name": "Herat",
+      "lat": 34.35,
+      "lon": 62.2,
+      "kind": "city"
+    },
+    {
+      "name": "Shiraz",
+      "lat": 29.61,
+      "lon": 52.54,
+      "kind": "city"
+    },
+    {
+      "name": "Kerman",
+      "lat": 30.28,
+      "lon": 57.08,
+      "kind": "city"
+    },
+    {
+      "name": "Yazd",
+      "lat": 31.9,
+      "lon": 54.37,
+      "kind": "city"
+    },
+    {
+      "name": "Kashan",
+      "lat": 33.98,
+      "lon": 51.43,
+      "kind": "city"
+    },
+    {
+      "name": "Ardabil",
+      "lat": 38.25,
+      "lon": 48.3,
+      "kind": "city"
+    },
+    {
+      "name": "Rasht",
+      "lat": 37.28,
+      "lon": 49.58,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Hormuz",
+      "lat": 26.6,
+      "lon": 56.3,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Zagros passes (Kermanshah)",
+      "lat": 34.31,
+      "lon": 47.07,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1600:Safavid Empire",
+    "areaKm2": {
+      "low": 1600000,
+      "mid": 1800000,
+      "high": 2900000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Safavid_Iran",
+      "note": "Infobox 2.9 million km2 for 1630 (high; Seshat 2.7M for 1501-1722, https://seshat-db.com/core/polity/374). In 1600 Tabriz, Shirvan and Georgia were still Ottoman (1590 treaty) and Kandahar Mughal; the world_1600 polygon measures ~1.61 million km2 (low)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 6000000,
+      "mid": 8000000,
+      "high": 10000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Safavid_Iran",
+      "note": "Infobox 8-10 million for 1650 (Blake 2013); Seshat codes 9 million (https://seshat-db.com/core/polity/374); OWID/HYDE Iran 1600 = 5.0M plus western Afghanistan (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true). Lower in 1600 with Azerbaijan under Ottoman rule."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Isfahan up to ~200,000 (Seshat largest settlement), Qazvin, Tabriz (Ottoman in 1600), Mashhad, Shiraz."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 30000,
+      "mid": 40000,
+      "high": 50000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Abbas_the_Great",
+      "note": "Abbas's crown-paid army: 10,000-15,000 ghulam cavalry, 12,000 musketeers, 12,000 artillerymen and a 3,000 bodyguard, ~37,000-40,000 in all (Roemer 1986 p. 265, Savory 1980, via the article), plus ~12,000 qurchis/Shahsevans (Blow via https://en.wikipedia.org/wiki/Safavid_Iran). In 1600 the reforms (Allahverdi Khan from 1600) were still in progress, hence low 30,000."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 60000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Qizilbash tribal cavalry raised by the provincial amirs from tuyul land grants, plus Kurdish, Lur and Georgian contingents."
+    },
+    "supportPersonnel": {
+      "low": 3000,
+      "mid": 6000,
+      "high": 12000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Abbas_the_Great",
+      "note": "Tupchi artillery corps: 12,000 at full strength (Roemer via the article); smaller in 1600, low/mid educated."
+    },
+    "mobilizationRatio": {
+      "low": 0.012,
+      "mid": 0.016,
+      "high": 0.02,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Tribal cavalry society plus the new crown army."
+    },
+    "mobilizable": {
+      "low": 72000,
+      "mid": 128000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 27000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Abbas_the_Great",
+          "note": "10,000-15,000 ghulam cavalry (Caucasian slave soldiers) and the 3,000 bodyguard (Roemer, Savory via the article), plus part of the ~12,000 qurchis (https://en.wikipedia.org/wiki/Safavid_Iran)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: mail, lance, bow and some muskets."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: palace-trained ghulams."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 6000,
+          "mid": 10000,
+          "high": 12000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Abbas_the_Great",
+          "note": "Tufangchi musketeer corps, 12,000 at full strength (Roemer 1986 p. 265 via the article); still forming in 1600."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: matchlocks."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: recruited from Iranian peasants, drilled with English help (Shirley brothers)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 250,
+          "high": 500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Abbas_the_Great",
+          "note": "Abbas increased his cannon so that he could field 500 in a single battle (Nahavandi and Bomati 1998 via the article) (high, later in the reign); mid for 1600."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: new corps."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: Abbas I and Allahverdi Khan retook Herat (1598) and would take Tabriz (1603) and Yerevan (1604)."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: ghulams loyal to the shah; Qizilbash factionalism (civil wars of the 1580s) only recently curbed."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: recovery after the losses of 1578-90."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5 (1600): matchlocks and cannon alongside composite bows."
+    },
+    "armor": {
+      "low": 4.4,
+      "mid": 4.6,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: mail and plate-and-mail (chahar aina), helmets."
+    },
+    "ships": {
+      "low": 2.0,
+      "mid": 2.5,
+      "high": 3.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 2-3: no navy; Caspian and Gulf boats only; Hormuz was taken in 1622 with English ships."
+    },
+    "fortification": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: mudbrick and stone citadels, no bastioned trace."
+    },
+    "logistics": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: caravanserai network and Abbas's road building."
+    },
+    "communications": {
+      "low": 4.2,
+      "mid": 4.5,
+      "high": 4.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: chapar courier posts."
+    },
+    "isr": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: tribal scouts and spies."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 750,
+      "mid": 850,
+      "high": 1000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "No Maddison value for Iran before 1820 (877). Analogues: Turkey 1500 = 768, 1650 = 832 (Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true). Silk exports lift Iran slightly."
+    },
+    "gdp": {
+      "low": 4500000000,
+      "mid": 6800000000,
+      "high": 10000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Crown army paid from khassa (crown) lands converted from Qizilbash provinces; low = peacetime."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.14,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Silk, carpets, textiles, metalwork."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Qanat-irrigated oases and Caspian rice."
+    },
+    "annualCohort": {
+      "low": 57000,
+      "mid": 76000,
+      "high": 95000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the other pre-modern snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 2000,
+      "mid": 4000,
+      "high": 7000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caravan routes with caravanserais; Abbas's paved causeway in Mazandaran."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 1,
+      "high": 2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No Gulf port in Safavid hands in 1600 (Hormuz Portuguese, Gombroon taken 1614); Caspian landings only."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 2000,
+      "high": 5000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caspian craft; Gulf trade in Portuguese hands."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Cavalry armies foraging across the plateau; scorched-earth defence against the Ottomans."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels, horses, mules."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Zagros passes",
+      "Caspian Gates",
+      "Strait of Hormuz",
+      "Araxes crossings",
+      "Herat corridor"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: high arid plateau, long Ottoman supply lines and Safavid scorched-earth defence (Tahmasp vs Suleiman)."
+    }
+  },
+  "notes": "Snapshot = 1600, Shah Abbas I in the middle of his military reforms, capital newly moved to Isfahan (1598), Herat retaken, Tabriz still Ottoman. Personnel convention: the crown-paid ghulam, musketeer and artillery corps and the qurchi guard are activePersonnel; Qizilbash tribal cavalry raised by provincial amirs are trainedReserves. Corps sizes are end-of-reign establishment figures (Roemer, Savory, Blow via the Abbas the Great and Safavid Iran articles); Matthee and Floor (Safavid Government Institutions) not consulted directly. Population convention: lands under Safavid rule in 1600 (without Ottoman-held Azerbaijan, Shirvan and Georgia)."
+}
