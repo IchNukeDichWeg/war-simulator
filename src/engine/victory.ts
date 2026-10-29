@@ -4,8 +4,11 @@ import { addEvent } from './ctx';
 import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
+import { lossFraction } from './formations';
+import { rule } from './mech';
+import { LC } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_NEEDS_REAL_FALL, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -113,6 +116,19 @@ function end(ctx: Ctx, winner: 0 | 1 | 'draw', reason: string, fraction = 1): vo
   addEvent(ctx, winner === 'draw' ? -1 : winner, 'end', winner === 'draw' ? `The war ended in a draw: ${reason}.` : `${S.sideNames[winner]} won: ${reason}.`);
 }
 
+/** The collapsed side's army surrenders: encircledSurrenderShare (era of each formation's member) of
+ *  every formation still on the map (personnel and equipment) is booked as captured. Formations in depots or not yet
+ *  arrived are left out (they were not with the army that broke). */
+function surrenderArmy(ctx: Ctx, side: number): void {
+  const { S, st } = ctx;
+  const F = st.F;
+  for (let f = 0; f < F.n; f++) {
+    if (!F.alive[f] || !F.onMap[f] || F.side[f] !== side) continue;
+    const share = Math.min(1, Math.max(0, rule(S.m.modelRules.surrender.encircledSurrenderShare, S.members[F.member[f]].ruleYear)));
+    lossFraction(ctx, f, share, LC.captured);
+  }
+}
+
 export function victoryPhase(ctx: Ctx): void {
   const { S, st, sc } = ctx;
   const V = S.scenario.victory;
@@ -143,20 +159,22 @@ export function victoryPhase(ctx: Ctx): void {
     return;
   }
   const wins: [string | null, string | null] = [null, null];
+  const collapsed: [boolean, boolean] = [false, false];
   for (const s of [0, 1] as const) {
     const o = (1 - s) as 0 | 1;
     const no = now[o];
     if (V.armyCollapse) {
       const base = st.startPersonnel[o] + st.arrivals[o];
       const baseW = st.startW[o] + st.addedW[o];
-      const collapsed = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
-      if (collapsed && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
+      const fell = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
+      if (fell && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
       // morale collapse needs a real fall: below the threshold AND at least one lost battle's morale
       // shock below where the side started (Iraq 1991 starts at 0.20; a side starting at the
       // threshold must not "collapse" after a trivial dip)
       else if (no.formations > 0 && no.morale < (COLLAPSE_NEEDS_REAL_FALL
         ? Math.min(S.rules.collapseMorale, st.startMorale[o] - S.m.morale.defeatShock.mid)
         : Math.min(S.rules.collapseMorale, st.startMorale[o]))) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
+      collapsed[s] = wins[s] !== null;
     }
     if (!wins[s] && V.capitalCaptured) {
       const lead = S.members[S.lead[o]];
@@ -179,7 +197,11 @@ export function victoryPhase(ctx: Ctx): void {
     }
   }
   if (wins[0] && wins[1]) { end(ctx, 'draw', `both sides met a victory condition (${wins[0]}; ${wins[1]})`); return; }
-  for (const s of [0, 1] as const) if (wins[s]) { end(ctx, s, wins[s]!); return; }
+  for (const s of [0, 1] as const) if (wins[s]) {
+    if (COLLAPSE_SURRENDER && collapsed[s]) surrenderArmy(ctx, 1 - s);
+    end(ctx, s, wins[s]!);
+    return;
+  }
   if (now[0].formations + now[0].pending === 0 && now[1].formations + now[1].pending === 0) {
     end(ctx, 'draw', 'neither side can field forces in the theater');
     return;

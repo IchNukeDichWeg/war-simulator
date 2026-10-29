@@ -260,3 +260,12 @@ export const AIR_MIN_TECH = 7;
 export const SUPPLY_FACTOR_MIN_TECH = 6;
 export const ROAD_MIN_TECH = 3;
 export const PRECISION_MIN_TECH = 8;
+/** Mass surrender: when an army collapses (personnel or morale), modelRules.surrender.
+ *  encircledSurrenderShare (per era of each member) of its personnel still on the map is booked as
+ *  captured. Pocket destruction (leaveCell, SURRENDER_SHARE_FROM_MODEL_RULES) already books the same
+ *  share. QA round 2: Falklands prisoners 1.4k vs 12.6k, France 1940 Allied captured 67-99k vs 1.76M.
+ *  Measured (20 seeds): 19/15/23 -> 19/14/23. France 1940 ratio x8.12 -> x4.08 (Allied losses 495k ->
+ *  969k, hist 2.08M); Iraq 2003 x0.50 -> x0.24 fails (Iraqi 99k -> 209k vs hist 35k); Stalingrad
+ *  x0.18 -> x0.09; Falklands morale-collapse seeds 1.6k -> 6.5k Argentine (median unchanged 8.1k, set
+ *  by personnel-collapse seeds that have nothing left on the map). Kept ON: the share is sourced. */
+export const COLLAPSE_SURRENDER = true;

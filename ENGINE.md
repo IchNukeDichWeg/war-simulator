@@ -423,7 +423,10 @@ Morale collapse: side morale below min(`armyCollapseMorale`, start morale -
 `morale.defeatShock`) (`COLLAPSE_NEEDS_REAL_FALL`): the army must have
 fallen at least one lost battle's morale shock below where it began, so a
 side that starts near the threshold (Iraq 1991 at 0.20) does not collapse on
-a trivial dip. `armyCollapseMorale` = 0.15 is an UNSOURCED MODEL-DEFINITION
+a trivial dip. When an army collapses (personnel or morale), the era's
+`encircledSurrenderShare` of every formation it still has on the map is
+booked as captured (`COLLAPSE_SURRENDER`), the same share a destroyed pocket
+surrenders. `armyCollapseMorale` = 0.15 is an UNSOURCED MODEL-DEFINITION
 CONSTANT (the engine's original definition; no source measures this
 engine-internal scale). Backtest at its range (`scripts/backtest.ts --sweep
 modelRules.collapse.armyCollapseMorale 0.10,0.15,0.20,0.25`): 19/16/24,
