@@ -1,0 +1,631 @@
+{
+  "id": "switzerland-2026",
+  "nationId": "switzerland",
+  "includes": [],
+  "name": "Swiss Confederation",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "neutral",
+    "militia army",
+    "universal male conscription",
+    "federal directorial republic",
+    "landlocked",
+    "Alpine"
+  ],
+  "capital": {
+    "name": "Bern",
+    "lat": 46.948,
+    "lon": 7.4474,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Zurich",
+      "lat": 47.3769,
+      "lon": 8.5417,
+      "kind": "city"
+    },
+    {
+      "name": "Geneva",
+      "lat": 46.2044,
+      "lon": 6.1432,
+      "kind": "city"
+    },
+    {
+      "name": "Basel (Rhine port)",
+      "lat": 47.5596,
+      "lon": 7.5886,
+      "kind": "port"
+    },
+    {
+      "name": "Lausanne",
+      "lat": 46.5197,
+      "lon": 6.6323,
+      "kind": "city"
+    },
+    {
+      "name": "Payerne Air Base",
+      "lat": 46.8432,
+      "lon": 6.9151,
+      "kind": "fortress"
+    },
+    {
+      "name": "Gotthard fortress",
+      "lat": 46.556,
+      "lon": 8.565,
+      "kind": "fortress"
+    },
+    {
+      "name": "St. Maurice fortress",
+      "lat": 46.216,
+      "lon": 7.0,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sargans fortress",
+      "lat": 47.05,
+      "lon": 9.44,
+      "kind": "fortress"
+    },
+    {
+      "name": "Gotthard Pass",
+      "lat": 46.559,
+      "lon": 8.561,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Simplon Pass",
+      "lat": 46.25,
+      "lon": 8.03,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:CHE",
+    "areaKm2": {
+      "low": 39312,
+      "mid": 39510,
+      "high": 40695,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 39,510 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9001512,
+      "mid": 9092436,
+      "high": 9183360,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 9,092,436. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.8523,
+      "mid": 0.8573,
+      "high": 0.8623,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 85.73% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 20000,
+      "mid": 21300,
+      "high": 25000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 21,300 active (professional cadre plus recruits in service at any time). CIA Factbook 2024: ~145,000 Swiss Armed Forces incl. ~20,000 professional cadre; the rest is the militia, counted under reserves."
+    },
+    "trainedReserves": {
+      "low": 120000,
+      "mid": 145000,
+      "high": 196450,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/sz.json",
+      "note": "CIA Factbook 2024: ~145,000 Swiss Armed Forces strength (militia; mid). High: IISS as quoted 196,450 reserves."
+    },
+    "supportPersonnel": {
+      "low": 13855,
+      "mid": 16300,
+      "high": 17930,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 21,300 minus infantry P roles (5,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to 1939-45 Swiss mobilization (~450,000 + ~200,000 auxiliaries from ~4.2 million, ~15%) scaled down for today's 140,000-strong militia and limited equipment."
+    },
+    "mobilizable": {
+      "low": 272773,
+      "mid": 454622,
+      "high": 727395,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 9,092,436 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1500,
+          "mid": 2000,
+          "high": 3000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry of the in-service militia on CV90/Piranha at any one time. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): CV9030CH, Piranha."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia: short repeated refresher courses."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry battalions of the territorial divisions, grenadiers, recruits in training. (context page: https://en.wikipedia.org/wiki/Swiss_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Modern small arms."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 96,
+          "mid": 134,
+          "high": 134,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces",
+          "note": "Pz 87 Leopard WE 134 in service (stored Pz 87 excluded); low allows for units in storage/refurbishment."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Leopard 2A4 WE upgrade."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 800,
+          "mid": 1000,
+          "high": 1300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces",
+          "note": "CV9030CH 186 + Piranha IIC ~515 + Piranha I ~306 + M113 ~178 = ~1,185; mid ~1,000 allowing for retirements."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): CV90 modern; Piranha I and M113 old."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 133,
+          "high": 133,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces",
+          "note": "M109 KAWEST 133 (replacement wheeled howitzer selected)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M109 upgraded but old."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 30,
+          "mid": 30,
+          "high": 50,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swiss_military_aircraft",
+          "note": "F/A-18C/D 25 + 5 = 30; high adds 20 F-5E/F used for aggressor/training. F-35A (36) ordered."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): F/A-18C/D."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional pilots."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 40,
+          "mid": 44,
+          "high": 46,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swiss_military_aircraft",
+          "note": "AS332 Super Puma 15 + AS532 Cougar 10 + EC635/H135 19 = 44."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 3,
+          "mid": 3,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swiss_military_aircraft",
+          "note": "Hermes 900 HFE (ADS 15) 3 in service of 6 ordered."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Hermes 900."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 15,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Medium-calibre 35 mm Skyguard/Oerlikon batteries and Stinger; Rapier retired 2022; Patriot and IRIS-T SLM ordered but not delivered. No reliable battery count. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Old guns and MANPADS only."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Militia."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): Competent militia staff system; no combat since 1847."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Militia with strong civic identity."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated for national defence (armed neutrality ethos)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Precision munitions limited; Patriot/IRIS-T ordered."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Pz 87 WE."
+    },
+    "ships": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0: Landlocked: no navy."
+    },
+    "fortification": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Extensive Alpine fortress network (National Redoubt), civil-defence shelters for the whole population."
+    },
+    "logistics": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Short interior lines, rail."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National secure networks."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Florako radar, Hermes 900."
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F/A-18C/D; F-35A from 2028."
+    },
+    "cyber": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Cyber Command (2024)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 61766,
+      "mid": 68629,
+      "high": 75491,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 624,000,733,724 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 9,092,436 = 68,629. Range +/-10%."
+    },
+    "gdp": {
+      "low": 561600660351,
+      "mid": 624000733724,
+      "high": 686400807096,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 779,513,721,079 x 0.8005 (US GDP deflator 2011/2021) = 624,000,733,724 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0067,
+      "mid": 0.0076,
+      "high": 0.008,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 0.76% of GDP in 2025 (mid), 0.70% in 2024, 0.67% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.235,
+      "mid": 0.25,
+      "high": 0.265,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 25.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Floored at 0 (field cannot be negative): net food importer (~50% self-sufficiency in calories), with mandatory compulsory stockpiles."
+    },
+    "annualCohort": {
+      "low": 41733,
+      "mid": 46370,
+      "high": 51007,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 4,518,296 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.131% (SP.POP.1519.MA.5Y) / 5 = 46,370. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 50,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. GDELS-Mowag Kreuzlingen Piranha (exports). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swiss_Armed_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 83000,
+      "mid": 84114,
+      "high": 84114,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 84,114 km (2021)."
+    },
+    "railKm": {
+      "low": 3999,
+      "mid": 4122,
+      "high": 4205,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHE/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 4,122 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/sz.json",
+      "note": "Landlocked; Rhine port of Basel only (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 200000,
+      "mid": 500000,
+      "high": 900000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Not in the quoted UNCTAD table; CIA Factbook lists 17 Swiss-flag vessels (2023) of which 14 bulk carriers (~30-60,000 DWT each)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short interior lines, militia logistics."
+    },
+    "draftAnimals": {
+      "low": 50000,
+      "mid": 80000,
+      "high": 110000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Gotthard Pass",
+      "Simplon Pass",
+      "Great St Bernard Pass",
+      "Rhine crossings (Basel)"
+    ],
+    "homeDefense": {
+      "low": 1.25,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: Alpine terrain, fortress network, total population support and harsh mountain winter."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:CHE (Liechtenstein excluded). Money in 2011 int$ via derived:ppp-rebase-2011. Militia army: active is professional cadre plus recruits in service; the ~145,000 militia is trainedReserves. Force counts from the Wikipedia Swiss Armed Forces equipment list and active Swiss military aircraft list; drones = Group 2+ only. Infantry P-role splits and air defence are educated guesses (grade D). Landlocked: ships tech 0 (lake patrol boats only)."
+}

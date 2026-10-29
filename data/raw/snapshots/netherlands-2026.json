@@ -1,0 +1,711 @@
+{
+  "id": "netherlands-2026",
+  "nationId": "netherlands",
+  "includes": [],
+  "name": "Kingdom of the Netherlands",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary monarchy",
+    "all-volunteer force",
+    "NATO nuclear sharing",
+    "North Sea"
+  ],
+  "capital": {
+    "name": "Amsterdam",
+    "lat": 52.3676,
+    "lon": 4.9041,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "The Hague (seat of government)",
+      "lat": 52.0705,
+      "lon": 4.3007,
+      "kind": "city"
+    },
+    {
+      "name": "Rotterdam (Europoort)",
+      "lat": 51.9244,
+      "lon": 4.4777,
+      "kind": "port"
+    },
+    {
+      "name": "Utrecht",
+      "lat": 52.0907,
+      "lon": 5.1214,
+      "kind": "city"
+    },
+    {
+      "name": "Eindhoven",
+      "lat": 51.4416,
+      "lon": 5.4697,
+      "kind": "city"
+    },
+    {
+      "name": "Den Helder naval base",
+      "lat": 52.9563,
+      "lon": 4.7601,
+      "kind": "port"
+    },
+    {
+      "name": "Volkel Air Base (nuclear sharing)",
+      "lat": 51.6563,
+      "lon": 5.7086,
+      "kind": "fortress"
+    },
+    {
+      "name": "Western Scheldt (Vlissingen)",
+      "lat": 51.44,
+      "lon": 3.57,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Groningen",
+      "lat": 53.2194,
+      "lon": 6.5665,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:NLD",
+    "areaKm2": {
+      "low": 33502,
+      "mid": 33670,
+      "high": 34680,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 33,670 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 17906757,
+      "mid": 18087633,
+      "high": 18268509,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 18,087,633. European Netherlands inside ne:NLD; Caribbean constituent countries excluded."
+    },
+    "urbanization": {
+      "low": 0.9544,
+      "mid": 0.9594,
+      "high": 0.9644,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 95.94% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 33650,
+      "mid": 33650,
+      "high": 43000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 33,650 active (Royal Marechaussee 6,800 paramilitary excluded). High: CIA Factbook 2025 ~43,000 active-duty professional personnel (counting definition differs)."
+    },
+    "trainedReserves": {
+      "low": 6350,
+      "mid": 6350,
+      "high": 10000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 6,350 reserves; high allows for the planned expansion of the national reserve."
+    },
+    "supportPersonnel": {
+      "low": 23928,
+      "mid": 28150,
+      "high": 30965,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 33,650 minus infantry P roles (5,500). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Small all-volunteer force with dormant conscription law and no stored equipment; analogy to 1940 Netherlands (~280,000 from 8.8 million, ~3%) at the low end."
+    },
+    "mobilizable": {
+      "low": 542629,
+      "mid": 904382,
+      "high": 1447011,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 18,087,633 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 13 Light Brigade/43 Mechanized Brigade infantry battalions on CV90/Boxer. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): CV90 Mk III, Boxer."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2200,
+          "mid": 3000,
+          "high": 3800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 11 Airmobile Brigade and Korps Mariniers (~2,500 marines in total, partly counted). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern light kit, Bushmaster."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Marines and air assault infantry well trained."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 18,
+          "mid": 18,
+          "high": 18,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army",
+          "note": "Leopard 2A6MA2 18, serving in the German-Dutch 414 Panzer Battalion; 46 Leopard 2A8 ordered for delivery 2028-31."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Leopard 2A6."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional, integrated with German Panzer battalion."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 600,
+          "mid": 791,
+          "high": 800,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army",
+          "note": "CV9035NL 128 + Boxer 200 + Bushmaster 102 + Fennek 345 + Fuchs 16 = 791 (Fennek is a light armoured recce vehicle)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): CV90 and Boxer modern; Fennek light."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 25,
+          "mid": 39,
+          "high": 45,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. PzH 2000 count not given on the fetched equipment page (some donated to Ukraine; ~35 assumed) + PULS 4 delivered (20 on order). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): PzH 2000 with Excalibur; PULS arriving."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 48,
+          "mid": 52,
+          "high": 52,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Netherlands_Air_and_Space_Force",
+          "note": "Inventory: F-35A 52 (5 more on order); F-16 retired 2024 (transferred to Ukraine/Romania)."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0 (the era's best) (slightly below): All-F-35 fighter force."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 70,
+          "mid": 79,
+          "high": 80,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Netherlands_Air_and_Space_Force",
+          "note": "AH-64E 28 + CH-47F 20 + NH90 19 + AS532 Cougar 12 = 79 (H225M on order)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): AH-64E, CH-47F modern."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 23,
+          "mid": 35,
+          "high": 35,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Netherlands_Air_and_Space_Force",
+          "note": "MQ-9A 8 (Air Force) + RQ-21 Blackjack 15 + ScanEagle 12 (Army list) = 35. Raven/Puma/Wasp minis excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): MQ-9A modern."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Netherlands_Navy_ships",
+          "note": "Frigates 6 (4 De Zeven Provincien air-defence frigates + 2 Karel Doorman)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): LCF frigates with SM-2/ESSM and APAR."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 9,
+          "mid": 10,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Netherlands_Navy_ships",
+          "note": "OPV 4 (Holland class) + amphibious ships 3 (2 LPD + JSS) + mine warfare 3 = 10."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Modern OPVs and LPDs."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 3,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Netherlands_Navy_ships",
+          "note": "3 Walrus-class (replacement Orka class ordered 2024)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Walrus is a 1990s design near end of life."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 7,
+          "mid": 9,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Royal_Netherlands_Army",
+          "note": "Patriot 4 fire units + NASAMS II 2 fire units + Fennek Stinger 18 (~3 batteries) = 9; NASAMS-3 (21) and Skyranger 30 on order."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Patriot PAC-3 MSE."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): NATO-integrated staff (1 German-Netherlands Corps), Afghanistan/Mali operations."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional; Korps Mariniers strong identity."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: JASSM, Tomahawk ordered, ESSM/SM-2, PULS."
+    },
+    "armor": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: No national tank force beyond 18 Leopard 2A6."
+    },
+    "ships": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: LCF air-defence frigates."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Patriot/NASAMS layered GBAD."
+    },
+    "logistics": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: A330 MRTT pool, JSS Karel Doorman."
+    },
+    "communications": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Link 16, Thales C2 systems."
+    },
+    "isr": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: MQ-9A, F-35 sensors."
+    },
+    "air": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: All-F-35 fleet."
+    },
+    "cyber": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Defence Cyber Command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 51425,
+      "mid": 57138,
+      "high": 62852,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 1,033,499,815,708 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 18,087,633 = 57,138. Range +/-10%."
+    },
+    "gdp": {
+      "low": 930149834137,
+      "mid": 1033499815708,
+      "high": 1136849797279,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,291,067,852,227 x 0.8005 (US GDP deflator 2011/2021) = 1,033,499,815,708 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0137,
+      "mid": 0.0219,
+      "high": 0.023,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.19% of GDP in 2025 (mid), 1.94% in 2024, 1.37% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1618,
+      "mid": 0.1768,
+      "high": 0.1918,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 17.7% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.45,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. World second-largest agri-food exporter by value; imports much feed."
+    },
+    "annualCohort": {
+      "low": 91669,
+      "mid": 101854,
+      "high": 112040,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 8,987,375 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.667% (SP.POP.1519.MA.5Y) / 5 = 101,854. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Damen Naval Vlissingen builds ASWF frigates with Belgium."
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 20,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Small national assembly share."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 140000,
+      "mid": 141820,
+      "high": 141820,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 141,820 km (2022), 3,530 km motorway."
+    },
+    "railKm": {
+      "low": 2950,
+      "mid": 3041,
+      "high": 3102,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NLD/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 3,041 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 6,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/nl.json",
+      "note": "CIA Factbook 2024: 18 ports, 2 large + 4 medium = 6 (Rotterdam is Europe's largest port)."
+    },
+    "merchantTonnage": {
+      "low": 6777000,
+      "mid": 6777000,
+      "high": 9000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 6,777 thousand DWT under the Dutch flag."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 450000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. The Netherlands hosts US B61 bombs at Volkel under NATO nuclear sharing (FAS); not counted."
+    },
+    "basesAbroad": [
+      {
+        "name": "Netherlands naval base Parera, Curacao",
+        "lat": 12.1,
+        "lon": -68.93,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Western Scheldt",
+      "Rhine/IJssel crossings",
+      "IJsselmeer dikes"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.1,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar polder terrain with water obstacles, local supply; no depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: European Netherlands inside ne:NLD. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Royal Netherlands Army equipment list, the Air and Space Force inventory and the active navy ship list; drones = Group 2+ only. PzH 2000 count is an educated guess (grade D). Infantry P-role splits are educated guesses (grade D). Royal Marechaussee excluded."
+}

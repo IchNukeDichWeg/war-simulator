@@ -1,0 +1,685 @@
+{
+  "id": "belarus-2026",
+  "nationId": "belarus",
+  "includes": [],
+  "name": "Republic of Belarus",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "CSTO",
+    "Union State with Russia",
+    "presidential authoritarian",
+    "conscript army",
+    "Russian nuclear weapons stationed",
+    "landlocked"
+  ],
+  "capital": {
+    "name": "Minsk",
+    "lat": 53.9006,
+    "lon": 27.559,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Gomel",
+      "lat": 52.4345,
+      "lon": 30.9754,
+      "kind": "city"
+    },
+    {
+      "name": "Brest",
+      "lat": 52.0976,
+      "lon": 23.7341,
+      "kind": "fortress"
+    },
+    {
+      "name": "Grodno",
+      "lat": 53.6694,
+      "lon": 23.8131,
+      "kind": "city"
+    },
+    {
+      "name": "Vitebsk",
+      "lat": 55.1904,
+      "lon": 30.2049,
+      "kind": "city"
+    },
+    {
+      "name": "Mogilev",
+      "lat": 53.9007,
+      "lon": 30.3314,
+      "kind": "city"
+    },
+    {
+      "name": "Baranovichi Air Base",
+      "lat": 53.1,
+      "lon": 26.05,
+      "kind": "fortress"
+    },
+    {
+      "name": "Pripyat Marshes",
+      "lat": 52.0,
+      "lon": 27.5,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Suwalki Gap (Polish-Lithuanian side)",
+      "lat": 54.1,
+      "lon": 23.35,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Asipovichy (Iskander/Oreshnik area)",
+      "lat": 53.3,
+      "lon": 28.64,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:BLR",
+    "areaKm2": {
+      "low": 201961,
+      "mid": 202976,
+      "high": 209065,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 202,976 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 8995131,
+      "mid": 9085991,
+      "high": 9176851,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 9,085,991. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.7899,
+      "mid": 0.7949,
+      "high": 0.7999,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 79.49% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 45000,
+      "mid": 48600,
+      "high": 60000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Armed_Forces_of_Belarus",
+      "note": "Armed Forces of Belarus article quoting IISS 2025: 48,600 active and 289,500 reserves (IISS 2026 p.180 on the personnel list gives the same active). High: CIA Factbook 2025 50-60,000."
+    },
+    "trainedReserves": {
+      "low": 150000,
+      "mid": 289500,
+      "high": 289500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Armed_Forces_of_Belarus",
+      "note": "IISS as quoted: 289,500 reserves (men with conscript service within five years). Low for the share callable with equipment."
+    },
+    "supportPersonnel": {
+      "low": 28560,
+      "mid": 33600,
+      "high": 36960,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Armed_Forces_of_Belarus",
+      "note": "Active 48,600 minus infantry P roles (15,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Soviet-model mobilization scaled for a small conscript state with large Soviet-era equipment stocks."
+    },
+    "mobilizable": {
+      "low": 363440,
+      "mid": 636019,
+      "high": 908599,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 9,085,991 x ratio 0.04 / 0.07 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 6000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 4 mechanized brigades (BMP-2/BTR-82A) x ~1,500 dismounts plus conscripts. (context page: https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Soviet-era BMP-2/BTR-80."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Conscripts (18 months), little combat experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Special Operations Forces (2 air-assault brigades, special forces brigade), territorial defence. (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_Belarus)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Era-typical light kit."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): SOF better trained."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 400,
+          "mid": 497,
+          "high": 520,
+          "grade": "C",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8",
+          "note": "Russian Wikipedia ground forces article citing IISS Military Balance 2022: T-72B 477 + T-72B3 20 = 497; T-72BM2 deliveries from April 2026. Storage stocks excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): T-72B/B3."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Conscripts."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1100,
+          "mid": 1280,
+          "high": 1400,
+          "grade": "C",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8",
+          "note": "IISS 2022 via ru.wikipedia: BMP-2 906 + BRM-1K 132 + MT-LB 58 + BTR-82A 31 + BTR-80 153 = 1,280."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Soviet-era."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Conscripts."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 550,
+          "mid": 687,
+          "high": 750,
+          "grade": "C",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8",
+          "note": "IISS 2022 via ru.wikipedia: 2S1 125 + 2S3 125 + 2S5 107 + 2S19 12 + 2A65 108 + BM-21 128 + Uragan 36 + Smerch 36 + Polonez 10 = 687."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Soviet-era SP/MLRS, domestic Polonez."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Conscripts."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 36,
+          "mid": 40,
+          "high": 60,
+          "grade": "C",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8",
+          "note": "Tochka-U 36 launchers (IISS 2022) + Polonez-M counted under artillery + Iskander-M (number unknown, a few launchers delivered 2022-23); Russian Oreshnik deployment announced 2025 is Russian-controlled and excluded."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Tochka-U obsolete, Iskander modern."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Professional missile brigade."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 35,
+          "mid": 49,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Belarusian_military_aircraft",
+          "note": "MiG-29 33 + Su-30SM 8 + Su-30SM2 8 (6 + 2 delivered Jan 2026) = 49; many MiG-29 of doubtful serviceability."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): MiG-29BM and Su-30SM."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Limited flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Belarusian_military_aircraft",
+          "note": "Su-25 attack aircraft largely retired or stored; high allows for any still flying. Yak-130 (11) are trainers, excluded."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Su-25."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly below): Limited."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 80,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Belarusian_military_aircraft",
+          "note": "Mi-35M 25 + Mi-8/17 ~30 + Mi-24 remnants = ~60."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Soviet-era."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Limited."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 5,
+          "mid": 15,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Domestic Burevestnik-MB and Russian-supplied UAVs; no reliable count. (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_Belarus)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Domestic small MALE drones."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly below): Limited."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Belarusian_military_aircraft",
+          "note": "S-300PS/S-400 regiments (~8 batteries), Tor-M2 25 systems (21+4, ~4 per battery, ~6), Osa 6 divisions, Buk ~4 battalions; Russian S-400s in Belarus excluded. ~30."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Tor-M2, S-400, but much S-300PS."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Integrated into a joint regional air defence with Russia."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly below): Soviet-model staff, dependent on Russian command integration; no combat experience."
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.5 (national conscript army): Conscript army of an authoritarian state."
+    },
+    "morale": {
+      "low": 0.25,
+      "mid": 0.4,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly below): Low willingness to fight Ukraine or NATO (Belarus stayed out of the 2022 ground war)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Polonez MLRS, Iskander, Tor-M2; Soviet-era core."
+    },
+    "armor": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: T-72B/B3."
+    },
+    "ships": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0: Landlocked: no navy."
+    },
+    "fortification": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Soviet-era fortified areas, S-400."
+    },
+    "logistics": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Rail-based, Russian supply."
+    },
+    "communications": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Russian-integrated C2."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited UAVs, Russian ISR."
+    },
+    "air": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Su-30SM (4+ generation)."
+    },
+    "cyber": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: State cyber units (KGB/GUBOPiK)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 21373,
+      "mid": 23748,
+      "high": 26123,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 215,772,318,543 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 9,085,991 = 23,748. Range +/-10%."
+    },
+    "gdp": {
+      "low": 194195086689,
+      "mid": 215772318543,
+      "high": 237349550397,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 269,546,931,346 x 0.8005 (US GDP deflator 2011/2021) = 215,772,318,543 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0175,
+      "mid": 0.024,
+      "high": 0.0252,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.40% of GDP in 2025 (mid), 1.98% in 2024, 1.75% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.3008,
+      "mid": 0.3158,
+      "high": 0.3308,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 31.6% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exporter of dairy and meat to Russia."
+    },
+    "annualCohort": {
+      "low": 47401,
+      "mid": 52667,
+      "high": 57934,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 4,233,066 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.221% (SP.POP.1519.MA.5Y) / 5 = 52,667. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "missiles": {
+        "low": 2,
+        "mid": 6,
+        "high": 12,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Polonez-M launchers built domestically on MZKT chassis. (context page: https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%BE%D0%BF%D1%83%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%B9%D1%81%D0%BA%D0%B0_%D0%91%D0%B5%D0%BB%D0%BE%D1%80%D1%83%D1%81%D1%81%D0%B8%D0%B8)"
+      },
+      "ifv_apc": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Overhaul plants (BTRZ); Kaiman light vehicles."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 70000,
+      "mid": 90000,
+      "high": 105000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Belarus is not in the fetched road-network table; ~86,000 km of public roads is the commonly cited order of magnitude. (context page: https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size)"
+    },
+    "railKm": {
+      "low": 5310,
+      "mid": 5474,
+      "high": 5583,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BLR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 5,474 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/bo.json",
+      "note": "Landlocked; no sea ports (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 10000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Landlocked; CIA Factbook lists 4 Belarus-flag vessels (2023, \"other\")."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Soviet-model rail-based logistics, depot-dependent."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Russia stationed non-strategic nuclear weapons in Belarus from 2023 (FAS); they are under Russian control and counted for Russia, not here."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Pripyat Marshes",
+      "Smolensk Gate",
+      "Brest corridor",
+      "Suwalki Gap"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar forested and marsh terrain; limited population support for a regime war."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:BLR. Money in 2011 int$ via derived:ppp-rebase-2011. Ground equipment from the Russian Wikipedia ground forces article quoting IISS Military Balance 2022, so counts are four years old (grade C); personnel from IISS 2025/2026 as quoted. Infantry P-role splits are educated guesses (grade D). Large Soviet-era equipment parks in storage, partly transferred to Russia since 2022, are excluded. Landlocked: ships tech is 0 with grade B (no navy)."
+}

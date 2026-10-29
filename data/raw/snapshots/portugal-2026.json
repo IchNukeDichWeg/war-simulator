@@ -1,0 +1,701 @@
+{
+  "id": "portugal-2026",
+  "nationId": "portugal",
+  "includes": [],
+  "name": "Portuguese Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "semi-presidential republic",
+    "all-volunteer force",
+    "Atlantic"
+  ],
+  "capital": {
+    "name": "Lisbon",
+    "lat": 38.7223,
+    "lon": -9.1393,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Porto",
+      "lat": 41.1579,
+      "lon": -8.6291,
+      "kind": "port"
+    },
+    {
+      "name": "Braga",
+      "lat": 41.5454,
+      "lon": -8.4265,
+      "kind": "city"
+    },
+    {
+      "name": "Coimbra",
+      "lat": 40.2033,
+      "lon": -8.4103,
+      "kind": "city"
+    },
+    {
+      "name": "Alfeite naval base",
+      "lat": 38.6697,
+      "lon": -9.1567,
+      "kind": "port"
+    },
+    {
+      "name": "Sines",
+      "lat": 37.9561,
+      "lon": -8.8698,
+      "kind": "port"
+    },
+    {
+      "name": "Funchal (Madeira)",
+      "lat": 32.6669,
+      "lon": -16.9241,
+      "kind": "port"
+    },
+    {
+      "name": "Ponta Delgada (Azores)",
+      "lat": 37.7412,
+      "lon": -25.6756,
+      "kind": "port"
+    },
+    {
+      "name": "Lajes Field (Azores)",
+      "lat": 38.7613,
+      "lon": -27.0908,
+      "kind": "fortress"
+    },
+    {
+      "name": "Tagus estuary",
+      "lat": 38.68,
+      "lon": -9.3,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:PRT",
+    "areaKm2": {
+      "low": 91148,
+      "mid": 91606,
+      "high": 94354,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 91,606 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10696822,
+      "mid": 10804871,
+      "high": 10912920,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 10,804,871. Includes the Azores and Madeira inside ne:PRT."
+    },
+    "urbanization": {
+      "low": 0.61,
+      "mid": 0.615,
+      "high": 0.62,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 61.50% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 25000,
+      "mid": 26050,
+      "high": 26050,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 26,050 active (GNR 22,820 paramilitary excluded). CIA Factbook 2025 ~25,000 (low)."
+    },
+    "trainedReserves": {
+      "low": 15000,
+      "mid": 23500,
+      "high": 23500,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 23,500 reserves; low allows for the share actually callable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 17468,
+      "mid": 20550,
+      "high": 22605,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 26,050 minus infantry P roles (5,500). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Portugal's colonial wars (~150,000 under arms from ~9 million, ~1.7%, sustained for 13 years) scaled up for total war."
+    },
+    "mobilizable": {
+      "low": 324146,
+      "mid": 540244,
+      "high": 864390,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,804,871 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1000,
+          "mid": 1500,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized brigade infantry on Pandur/M113. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Pandur II and old M113."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3000,
+          "mid": 4000,
+          "high": 5000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Rapid reaction brigade (paratroopers, commandos), intervention brigade, ~1,500 marines (Fuzileiros). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Light kit."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Commandos/paratroopers well trained, CAR/Mali deployments."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 30,
+          "mid": 34,
+          "high": 37,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army",
+          "note": "Leopard 2A6 (ex-Dutch) 34 (+1 driver training vehicle). Several donated to Ukraine."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Leopard 2A6."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 349,
+          "high": 400,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army",
+          "note": "M113A1/A2 163 + Pandur II (IFV 30, ICV 113, ATGM 5, recce 4, comms 6, medevac 8) 166 + M577A2 16 + M901 ITV 4 = 349."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M113 dominates."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 51,
+          "mid": 63,
+          "high": 63,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army",
+          "note": "M109A5 18 + L119 21 + M114A1 12 + 25-pounder 12 = 63 (25-pounders ceremonial/training; low excludes them)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Old guns."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 24,
+          "mid": 28,
+          "high": 28,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Portuguese_Air_Force",
+          "note": "F-16AM 24 + F-16BM 4 = 28."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): F-16 MLU."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 20,
+          "mid": 26,
+          "high": 33,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Portuguese_Air_Force",
+          "note": "AW119 7 + UH-60 7 (13 planned) listed; AW101 (12 delivered) and navy Lynx (5) not itemised on the fetched page."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Tekever AR5 in service (number unknown), 8 ARX ordered 2025. (context page: https://en.wikipedia.org/wiki/Portuguese_Air_Force)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Small national UAVs."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 3,
+          "mid": 5,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Portuguese_Navy_ships",
+          "note": "Frigates 5 (3 Vasco da Gama, 2 Bartolomeu Dias); low allows for retirements."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): 1990s frigates."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 24,
+          "high": 24,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Portuguese_Navy_ships",
+          "note": "OPV 4 + patrol vessels 20 = 24."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Patrol vessels."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Portuguese_Navy_ships",
+          "note": "2 Tridente-class (Type 214 AIP)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Type 214 AIP modern."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 1,
+          "mid": 2,
+          "high": 4,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Army Stinger and Chaparral air-defence battery; no medium-range SAM. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Portuguese_Army)"
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Obsolete Chaparral."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): NATO-integrated staff; small expeditionary missions (CAR, Mali, Baltics)."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional; commandos and paratroopers strong identity."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited precision munitions."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Leopard 2A6, M113."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Type 214 AIP submarines, old frigates."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Minimal GBAD."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: C-390, C-130H."
+    },
+    "communications": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO C2."
+    },
+    "isr": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: P-3C, small UAVs."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: F-16 MLU only."
+    },
+    "cyber": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Cyber Defence Centre."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 30674,
+      "mid": 34083,
+      "high": 37491,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 368,259,604,498 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 10,804,871 = 34,083. Range +/-10%."
+    },
+    "gdp": {
+      "low": 331433644048,
+      "mid": 368259604498,
+      "high": 405085564948,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 460,036,982,508 x 0.8005 (US GDP deflator 2011/2021) = 368,259,604,498 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0144,
+      "mid": 0.0171,
+      "high": 0.018,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 1.71% of GDP in 2025 (mid), 1.44% in 2024, 1.52% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1675,
+      "mid": 0.1825,
+      "high": 0.1975,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 18.3% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net food importer (cereals), exporter of wine, fish products."
+    },
+    "annualCohort": {
+      "low": 49094,
+      "mid": 54549,
+      "high": 60004,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,145,857 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.300% (SP.POP.1519.MA.5Y) / 5 = 54,549. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ships_minor": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. West Sea Viana do Castelo builds OPVs."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 80000,
+      "mid": 120000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Portugal is not in the fetched road-network table; analogy to Spain's road density scaled by area. (context page: https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size)"
+    },
+    "railKm": {
+      "low": 2451,
+      "mid": 2527,
+      "high": 2578,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PRT/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 2,527 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 5,
+      "high": 5,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/po.json",
+      "note": "CIA Factbook 2024: 18 ports, 3 large + 2 medium = 5."
+    },
+    "merchantTonnage": {
+      "low": 35943000,
+      "mid": 35943000,
+      "high": 35943000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 35,943 thousand DWT, inflated by the Madeira international open register (MAR, a flag of convenience); Portuguese-owned tonnage is a small fraction."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 80000,
+      "mid": 150000,
+      "high": 250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. "
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Csb",
+    "chokepoints": [
+      "Tagus estuary",
+      "Azores Atlantic gap",
+      "Minho/Douro valleys"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar hilly terrain and local supply; small depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: mainland Portugal plus Azores and Madeira inside ne:PRT. Money in 2011 int$ via derived:ppp-rebase-2011. Merchant tonnage is flag-of-registry (MAR open register). Road length not in the fetched table (grade D). Infantry P-role splits are educated guesses (grade D). GNR excluded."
+}

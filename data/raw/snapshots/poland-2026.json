@@ -1,0 +1,773 @@
+{
+  "id": "poland-2026",
+  "nationId": "poland",
+  "includes": [],
+  "name": "Republic of Poland",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "frontline state",
+    "rapid rearmament",
+    "Baltic"
+  ],
+  "capital": {
+    "name": "Warsaw",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Krakow",
+      "lat": 50.0647,
+      "lon": 19.945,
+      "kind": "city"
+    },
+    {
+      "name": "Lodz",
+      "lat": 51.7592,
+      "lon": 19.456,
+      "kind": "city"
+    },
+    {
+      "name": "Wroclaw",
+      "lat": 51.1079,
+      "lon": 17.0385,
+      "kind": "city"
+    },
+    {
+      "name": "Poznan",
+      "lat": 52.4064,
+      "lon": 16.9252,
+      "kind": "city"
+    },
+    {
+      "name": "Gdansk",
+      "lat": 54.352,
+      "lon": 18.6466,
+      "kind": "port"
+    },
+    {
+      "name": "Gdynia naval base",
+      "lat": 54.5189,
+      "lon": 18.5305,
+      "kind": "port"
+    },
+    {
+      "name": "Szczecin-Swinoujscie",
+      "lat": 53.9105,
+      "lon": 14.2474,
+      "kind": "port"
+    },
+    {
+      "name": "Rzeszow-Jasionka (Ukraine aid hub)",
+      "lat": 50.11,
+      "lon": 22.019,
+      "kind": "fortress"
+    },
+    {
+      "name": "Suwalki Gap",
+      "lat": 54.1,
+      "lon": 23.35,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Vistula crossings (Deblin)",
+      "lat": 51.56,
+      "lon": 21.85,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bialystok",
+      "lat": 53.1325,
+      "lon": 23.1688,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:POL",
+    "areaKm2": {
+      "low": 304540,
+      "mid": 306070,
+      "high": 315252,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 306,070 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 36071502,
+      "mid": 36435861,
+      "high": 36800220,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 36,435,861. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.5959,
+      "mid": 0.6009,
+      "high": 0.6059,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 60.09% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 173000,
+      "mid": 200000,
+      "high": 235000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 173,000 active (Territorial Defence Force mostly outside this count). CIA Factbook 2025: ~235,000 active incl. professional territorials (high). Mid ~200,000 between the two; target 300,000 by 2035."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 37500,
+      "high": 80000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 37,500 reserves. High is an educated allowance for former conscripts/voluntary basic service graduates callable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 137700,
+      "mid": 162000,
+      "high": 178200,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 200,000 minus infantry P roles (38,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Poland 1939 (~1.3 million mobilized from ~35 million, ~4%, partial and interrupted) raised for a frontline state with renewed voluntary service, training law of 2025 and high public support."
+    },
+    "mobilizable": {
+      "low": 1821793,
+      "mid": 2914869,
+      "high": 4372303,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 36,435,861 x ratio 0.05 / 0.08 / 0.12."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 14000,
+          "mid": 18000,
+          "high": 22000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry of 4-5 divisions (Rosomak/BWP-1/Borsuk battalions x ~500). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mix of modern Rosomak/Borsuk and Soviet BWP-1."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional, rapidly expanding."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 28000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Airmobile/air-assault brigades, mountain brigade, Territorial Defence Force full-time cadre (~20,000 rotating). (context page: https://en.wikipedia.org/wiki/Polish_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Modern light kit, Piorun MANPADS, Javelin/Spike."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Mix of professionals and territorials."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 800,
+          "mid": 926,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces",
+          "note": "K2 208 + M1A1 116 + M1A2 SEPv3 217 + Leopard 2A4 13 + 2A5 105 + 2PL 115 + PT-91 152 (12+27+113) = 926; most T-72 donated to Ukraine."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): K2, Abrams SEPv3, Leopard 2PL; PT-91 dated."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional crews, new fleets still being absorbed."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1300,
+          "mid": 1500,
+          "high": 1800,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces",
+          "note": "Rosomak IFV ~395 (360+35), Borsuk 20, BWP-1 ~850, Rosomak APC/variants ~230 (133 APC, 38 BWR, 61 command) = ~1,500. BWP-1 count is the least certain line."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Rosomak/Borsuk modern; BWP-1 is 1960s."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 750,
+          "mid": 875,
+          "high": 950,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces",
+          "note": "K9 218 + Krab 60 + DANA 111 + 2S1 206 + Chunmoo 156 + HIMARS 20 + Langusta 75 + RM-70 29 = 875."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): K9/Krab/Chunmoo modern; 2S1 and DANA old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 85,
+          "mid": 89,
+          "high": 95,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "F-35A 20 delivered (mostly training in the US) + F-16C/D 47 + FA-50GF 12 + MiG-29 10 = 89."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): F-16 Block 52+, F-35A arriving."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 18,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "Su-22 retired 2024-25; high allows for any still flying."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Su-22 obsolete."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 100,
+          "mid": 128,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "Mi-24 18 + AH-64D 8 (leased) + AW149 14 + Mi-8/17 27 + W-3 Sokol 36 + navy/SAR types = ~128 (sum of fetched lines plus allowance)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mi-24/Mi-8 old; AW149/AH-64 arriving."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 24,
+          "mid": 30,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Air_Force",
+          "note": "Bayraktar TB2 24 + MQ-9A leased/ordered (~6) = ~30. FlyEye/Warmate excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): TB2, MQ-9."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 1,
+          "mid": 2,
+          "high": 2,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "2 Oliver Hazard Perry frigates (1980s, one may be laid up); Miecznik frigates under construction."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Old OHP frigates."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "Kormoran II minehunters, Kaszub/Slazak corvettes, Orkan missile boats, mine countermeasure and landing ships: ~20."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mixed, Kormoran II new."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 1,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "1 Kilo-class (ORP Orzel), barely operational; Orka programme selected Saab A26 2025."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Old Kilo."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Limited sea time."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 35,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces",
+          "note": "Patriot (Wisla) 2 batteries + CAMM (Mala Narew) 2 batteries + 77 Poprad SHORAD launchers (~6 per battery, ~13 batteries) + Pilica+ batteries = ~25."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Patriot PAC-3, CAMM modern; old S-125/Kub/Osa remnants."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Competent NATO-integrated staff, expanding fast; no recent large-unit combat command."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): National army with strong historical identity, professionalised."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated: Russian threat broadly perceived, very high public support for defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: HIMARS/Chunmoo, Piorun, JASSM-ER, loitering munitions (Warmate)."
+    },
+    "armor": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: K2/Abrams SEPv3 composite armour, no APS."
+    },
+    "ships": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Small old navy; Miecznik frigates coming."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: East Shield fortification line, Patriot/CAMM GBAD."
+    },
+    "logistics": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Rail-heavy logistics, NATO hub (Rzeszow)."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO Link 16, national C2 modernising."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: TB2/MQ-9, Aerostat (Barbara) radars."
+    },
+    "air": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F-35A arriving, F-16 Block 52+."
+    },
+    "cyber": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Cyberspace Defence Forces component."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 33807,
+      "mid": 37563,
+      "high": 41319,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 1,368,645,104,598 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 36,435,861 = 37,563. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1231780594138,
+      "mid": 1368645104598,
+      "high": 1505509615057,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 1,709,737,794,625 x 0.8005 (US GDP deflator 2011/2021) = 1,368,645,104,598 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0222,
+      "mid": 0.045,
+      "high": 0.0473,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 4.50% of GDP in 2025 (mid), 3.75% in 2024, 2.22% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2434,
+      "mid": 0.2584,
+      "high": 0.2734,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 25.8% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large net exporter of grain, meat and dairy."
+    },
+    "annualCohort": {
+      "low": 180440,
+      "mid": 200488,
+      "high": 220537,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 17,645,223 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.681% (SP.POP.1519.MA.5Y) / 5 = 200,488. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "artillery": {
+        "low": 50,
+        "mid": 80,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. HSW Stalowa Wola Krab/Borsuk and Chunmoo/K9PL localisation. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Polish_Land_Forces)"
+      },
+      "ifv_apc": {
+        "low": 150,
+        "mid": 300,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Rosomak (Siemianowice) and Borsuk lines."
+      },
+      "armor": {
+        "low": 0,
+        "mid": 20,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. K2PL local production starting 2026."
+      },
+      "drones": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. WB Group FlyEye/Gladius; Group 2+ share only."
+      },
+      "helicopters": {
+        "low": 10,
+        "mid": 20,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. PZL Swidnik AW149, PZL Mielec Black Hawk."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 420000,
+      "mid": 429800,
+      "high": 429800,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 429,800 km of which 293,800 paved (2026 row)."
+    },
+    "railKm": {
+      "low": 18061,
+      "mid": 18620,
+      "high": 18992,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/POL/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 18,620 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 4,
+      "high": 4,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/pl.json",
+      "note": "CIA Factbook 2024: 2 large + 2 medium = 4."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Not in the UNCTAD table quoted on the merchant navy list; CIA Factbook lists 152 Polish-flag vessels (2023), mostly small \"other\". Polish-owned bulk fleet (PZM) sails under foreign flags. (context page: https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 150000,
+      "mid": 250000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Suwalki Gap",
+      "Vistula line",
+      "Oder line",
+      "Brest-Warsaw corridor"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, East Shield fortifications, strong population support; North European Plain offers little natural obstacle."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:POL. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Polish Land Forces equipment list (dated Oct 2025), Polish Air Force and Navy articles; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Poland is mid-rearmament: K2, K9, Chunmoo, Abrams, Apache and F-35 deliveries continue through 2030, so 2026 counts change fast."
+}

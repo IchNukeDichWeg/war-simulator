@@ -1,0 +1,683 @@
+{
+  "id": "romania-2026",
+  "nationId": "romania",
+  "includes": [],
+  "name": "Romania",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "semi-presidential republic",
+    "all-volunteer force",
+    "frontline state",
+    "Black Sea"
+  ],
+  "capital": {
+    "name": "Bucharest",
+    "lat": 44.4268,
+    "lon": 26.1025,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Cluj-Napoca",
+      "lat": 46.7712,
+      "lon": 23.6236,
+      "kind": "city"
+    },
+    {
+      "name": "Iasi",
+      "lat": 47.1585,
+      "lon": 27.6014,
+      "kind": "city"
+    },
+    {
+      "name": "Timisoara",
+      "lat": 45.7489,
+      "lon": 21.2087,
+      "kind": "city"
+    },
+    {
+      "name": "Constanta",
+      "lat": 44.1598,
+      "lon": 28.6348,
+      "kind": "port"
+    },
+    {
+      "name": "Mihail Kogalniceanu Air Base",
+      "lat": 44.3622,
+      "lon": 28.4883,
+      "kind": "fortress"
+    },
+    {
+      "name": "Galati",
+      "lat": 45.4353,
+      "lon": 28.008,
+      "kind": "port"
+    },
+    {
+      "name": "Deveselu Aegis Ashore",
+      "lat": 44.08,
+      "lon": 24.41,
+      "kind": "fortress"
+    },
+    {
+      "name": "Focsani Gate",
+      "lat": 45.7,
+      "lon": 27.19,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Danube crossings (Giurgiu-Ruse)",
+      "lat": 43.88,
+      "lon": 25.96,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Brasov",
+      "lat": 45.6427,
+      "lon": 25.5887,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:ROU",
+    "areaKm2": {
+      "low": 228930,
+      "mid": 230080,
+      "high": 236982,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 230,080 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 18830068,
+      "mid": 19020271,
+      "high": 19210474,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 19,020,271. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.5167,
+      "mid": 0.5217,
+      "high": 0.5267,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 52.17% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 69900,
+      "mid": 75000,
+      "high": 90000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Armed_Forces",
+      "note": "IISS as quoted: 69,900 active; CIA Factbook 2025 ~70,000; Romanian Armed Forces article: ~90,000 active and 55,000 reserves (2025, Euronews) (high). Mid ~75,000."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 55000,
+      "high": 60000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Armed_Forces",
+      "note": "IISS as quoted and Romanian Armed Forces article: 55,000 reserves."
+    },
+    "supportPersonnel": {
+      "low": 50150,
+      "mid": 59000,
+      "high": 64900,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Armed_Forces",
+      "note": "Active 75,000 minus infantry P roles (16,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Romania 1941-44 (~1.2 million mobilized from ~16 million, ~7.5%) for a state that ended conscription in 2007 but legislated voluntary service in 2025."
+    },
+    "mobilizable": {
+      "low": 760811,
+      "mid": 1331419,
+      "high": 1902027,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 19,020,271 x ratio 0.04 / 0.07 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry on Piranha/MLI-84/TAB. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Piranha V modern, TAB old."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 7000,
+          "mid": 9000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mountain troops (2 brigades), paratroopers, light infantry. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Era-typical."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional; Afghanistan experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 250,
+          "mid": 380,
+          "high": 450,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces",
+          "note": "T-55 ~162 + TR-85 103-226 + TR-85M1 54 = ~380 (range reflects the source spread); Abrams (54) ordered."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): T-55/TR-85 obsolete."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1000,
+          "mid": 1300,
+          "high": 1500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces",
+          "note": "MLI-84 ~140 + Piranha V 227 + Piranha III 43 + TABC-79 402 + TAB-71 211 + TAB-77 155 + B33 69 + MLVM 76 = ~1,320."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Mostly old TAB family."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 800,
+          "mid": 963,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces",
+          "note": "Towed guns 82 + M30M 202 + M1981 320 + M1985 116 + APR-40 135 + LAROM 54 + HIMARS 54 = 963."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Old towed guns; HIMARS modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 55,
+          "mid": 64,
+          "high": 70,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Romanian_military_aircraft",
+          "note": "F-16 64 (incl. ex-Dutch training-centre aircraft); MiG-21 retired 2023; F-35 ordered."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): F-16 MLU."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 57,
+          "mid": 70,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Romanian_military_aircraft",
+          "note": "IAR 330 Puma 57 + Navy IAR 330/Alouette and others; H215M deliveries."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Puma SOCAT upgrade."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Romanian_military_aircraft",
+          "note": "Bayraktar TB2 18 + Shadow 200 (few)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): TB2."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 3,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Romanian_Naval_Forces",
+          "note": "3 frigates (2 ex-Type 22, 1 Marasesti)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Old frigates."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 12,
+          "mid": 18,
+          "high": 24,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Corvettes, missile boats, minesweepers and Danube river monitors. (context page: https://en.wikipedia.org/wiki/Romanian_Naval_Forces)"
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Old."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 16,
+          "mid": 22,
+          "high": 28,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Romanian_Land_Forces",
+          "note": "Hawk XXI 8 batteries + Patriot 3 (one donated to Ukraine) + Kub 8 batteries + Osa 4 batteries + Gepard 36 (~6 per battery, ~6) = ~22 (several old systems retiring)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Patriot plus old Kub/Osa."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): Competent NATO-integrated staff; peacekeeping/Afghanistan only."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.5 (national conscript army) (slightly above): National army."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly above): Average, rising with the threat next door."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: HIMARS, Patriot, NSM coastal batteries."
+    },
+    "armor": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: T-55/TR-85; Abrams ordered."
+    },
+    "ships": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Old frigates."
+    },
+    "fortification": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Aegis Ashore (US) and Patriot."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Rail-based."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: NATO C2."
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: TB2, NATO AWACS."
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F-16 MLU, F-35 ordered."
+    },
+    "cyber": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Cyber Defence Command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 29427,
+      "mid": 32697,
+      "high": 35967,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 621,909,804,034 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 19,020,271 = 32,697. Range +/-10%."
+    },
+    "gdp": {
+      "low": 559718823630,
+      "mid": 621909804034,
+      "high": 684100784437,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 776,901,691,485 x 0.8005 (US GDP deflator 2011/2021) = 621,909,804,034 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0186,
+      "mid": 0.0228,
+      "high": 0.0239,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.28% of GDP in 2025 (mid), 2.17% in 2024, 1.86% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2384,
+      "mid": 0.2534,
+      "high": 0.2684,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 25.3% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large grain exporter."
+    },
+    "annualCohort": {
+      "low": 101065,
+      "mid": 112295,
+      "high": 123524,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 9,211,812 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.095% (SP.POP.1519.MA.5Y) / 5 = 112,295. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 30,
+        "mid": 80,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Moreni plant assembles Piranha V; Lynx deal planned."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 85000,
+      "mid": 86847,
+      "high": 86847,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 86,847 km of which 65,315 paved (2026 row)."
+    },
+    "railKm": {
+      "low": 10446,
+      "mid": 10769,
+      "high": 10984,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ROU/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 10,769 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 2,
+      "high": 2,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/ro.json",
+      "note": "CIA Factbook 2024: 0 large + 2 medium (Constanta is the largest Black Sea port)."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 100000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Not in the quoted UNCTAD table; CIA Factbook lists 127 Romanian-flag vessels (2023), mostly small. (context page: https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 400000,
+      "mid": 550000,
+      "high": 700000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Focsani Gate",
+      "Danube crossings",
+      "Carpathian passes",
+      "Danube Delta"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Carpathian arc, familiar terrain, population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:ROU. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Romanian Land Forces equipment list, active Romanian military aircraft list and naval forces article; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Personnel figures disagree (70,000-90,000)."
+}

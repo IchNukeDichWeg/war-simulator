@@ -1,0 +1,657 @@
+{
+  "id": "finland-2026",
+  "nationId": "finland",
+  "includes": [],
+  "name": "Republic of Finland",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "universal male conscription",
+    "total defence",
+    "Baltic"
+  ],
+  "capital": {
+    "name": "Helsinki",
+    "lat": 60.1699,
+    "lon": 24.9384,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Turku",
+      "lat": 60.4518,
+      "lon": 22.2666,
+      "kind": "port"
+    },
+    {
+      "name": "Tampere",
+      "lat": 61.4978,
+      "lon": 23.761,
+      "kind": "city"
+    },
+    {
+      "name": "Oulu",
+      "lat": 65.0121,
+      "lon": 25.4651,
+      "kind": "port"
+    },
+    {
+      "name": "Kotka-Hamina",
+      "lat": 60.47,
+      "lon": 26.95,
+      "kind": "port"
+    },
+    {
+      "name": "Upinniemi naval base",
+      "lat": 60.03,
+      "lon": 24.33,
+      "kind": "port"
+    },
+    {
+      "name": "Rovaniemi (Lapland Air Command)",
+      "lat": 66.5039,
+      "lon": 25.7294,
+      "kind": "fortress"
+    },
+    {
+      "name": "Karelian Isthmus approaches (Vaalimaa)",
+      "lat": 60.58,
+      "lon": 27.82,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Salla gap",
+      "lat": 66.83,
+      "lon": 28.67,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Aland Islands",
+      "lat": 60.1,
+      "lon": 19.95,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Kuopio",
+      "lat": 62.8924,
+      "lon": 27.677,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:FIN",
+    "areaKm2": {
+      "low": 302480,
+      "mid": 304000,
+      "high": 313120,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 304,000 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 5589972,
+      "mid": 5646436,
+      "high": 5702900,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 5,646,436. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.7402,
+      "mid": 0.7452,
+      "high": 0.7502,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 74.52% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 23850,
+      "mid": 23850,
+      "high": 31000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 23,850 active incl. conscripts in service. CIA Factbook 2025: ~31,000 incl. ~21,000 conscripts (high)."
+    },
+    "trainedReserves": {
+      "low": 233000,
+      "mid": 280000,
+      "high": 870000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Finnish_Defence_Forces",
+      "note": "IISS as quoted: 233,000 reserves (low). Finnish Defence Forces article: wartime strength 280,000 (mid); total trained reserve ~870,000 (high)."
+    },
+    "supportPersonnel": {
+      "low": 13472,
+      "mid": 15850,
+      "high": 17435,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 23,850 minus infantry P roles (8,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.09,
+      "high": 0.15,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to the Winter and Continuation Wars (~530,000 mobilized from ~3.7 million in 1944, ~14%); today universal conscription keeps a 280,000 wartime army and ~870,000 trained reservists from ~5.6 million."
+    },
+    "mobilizable": {
+      "low": 282322,
+      "mid": 508179,
+      "high": 846965,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 5,646,436 x ratio 0.05 / 0.09 / 0.15."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Peacetime mechanized/armoured infantry (Armoured Brigade, Karelia Brigade conscript battalions on CV90/BMP-2/XA). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): CV9030, BMP-2MD, Patria XA."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Conscripts (6-12 months), excellent reservist refresher training."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3500,
+          "mid": 5000,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jaeger and local defence infantry, Utti Jaeger Regiment, coastal Nyland Brigade marines. (context page: https://en.wikipedia.org/wiki/Finnish_Defence_Forces)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Modern light kit, NLAW, domestic RK 95."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Conscripts with strong forest/winter warfare training."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 200,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army",
+          "note": "Leopard 2A6 100 + Leopard 2A4 100 (some 2A4 converted to engineer/bridge vehicles; low counts 2A6 only)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Leopard 2A6."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Conscript crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 800,
+          "mid": 906,
+          "high": 950,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army",
+          "note": "BMP-2MD 110 + CV9030 102 + XA-360 62 + XA-180/185 464 + XA-202 101 + XA-203 48 + XA-300 19 = 906."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mix of CV90, Patria AMV and older XA/BMP-2."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Conscripts."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 700,
+          "mid": 857,
+          "high": 900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army",
+          "note": "155 K 83-97 113 + K98 56 + 122 H 63 474 + 152 K 89 24 + K9 96 + RAKH 89 35 + M270 41 + AMOS 18 = 857; Western Europe's largest artillery park."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): K9 and M270 modern; Soviet 122 mm towed old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Very strong artillery tradition, reservist refreshers."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 55,
+          "mid": 60,
+          "high": 63,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Finnish_military_aircraft",
+          "note": "F/A-18C 53 + F/A-18D 7 = 60; F-35A 12 delivered (9 still training in the US) from 2026 (high)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): F/A-18C/D MLU, F-35A arriving."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional pilots, dispersed road bases."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 20,
+          "mid": 26,
+          "high": 32,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. NH90 20 + MD 500 trainers/scouts; exact total not tabulated on the fetched page. (context page: https://en.wikipedia.org/wiki/List_of_active_Finnish_military_aircraft)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): NH90."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 8,
+          "mid": 11,
+          "high": 20,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army",
+          "note": "Ranger UAV 11 (Group 2); 250 Orbiter minis excluded per role rules."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Small fleet."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 14,
+          "mid": 18,
+          "high": 22,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Hamina missile boats 4, Katanpaa MCM 3, Hameenmaa/Pansio minelayers, Jehu-class assault craft excluded; Pohjanmaa corvettes not yet commissioned. (context page: https://en.wikipedia.org/wiki/Finnish_Navy)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Coastal navy."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional/conscript."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 20,
+          "high": 25,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army",
+          "note": "NASAMS 8 batteries + ITO 90M (Crotale) 20 launchers (~4 per battery, ~5) + ASRAD-R (ITO 05) and Marksman SPAAG ~7 = ~20; David's Sling ordered."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): NASAMS II."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders): Trained staff, comprehensive national defence planning that never demobilised after the Cold War."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity): Reservist units train together; strong national identity."
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly above): Highly motivated: ~80% of Finns would take part in national defence (MoD surveys); existential framing."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: JASSM-ER, NASAMS, K9, M270."
+    },
+    "armor": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Leopard 2A6."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Coastal navy; Pohjanmaa corvettes coming."
+    },
+    "fortification": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Extensive civil-defence shelters and border fortifications."
+    },
+    "logistics": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Dispersed depots, road bases."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO-integrated."
+    },
+    "isr": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Limited UAVs; ICEYE radar satellite constellation."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F/A-18C/D, F-35A arriving."
+    },
+    "cyber": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Strong cyber."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 40154,
+      "mid": 44616,
+      "high": 49078,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 251,921,623,482 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 5,646,436 = 44,616. Range +/-10%."
+    },
+    "gdp": {
+      "low": 226729461133,
+      "mid": 251921623482,
+      "high": 277113785830,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 314,705,338,515 x 0.8005 (US GDP deflator 2011/2021) = 251,921,623,482 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.013,
+      "mid": 0.0257,
+      "high": 0.027,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.57% of GDP in 2025 (mid), 2.18% in 2024, 1.30% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2102,
+      "mid": 0.2252,
+      "high": 0.2402,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 22.5% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Roughly self-sufficient in cereals and dairy; mandatory strategic stockpiles."
+    },
+    "annualCohort": {
+      "low": 29802,
+      "mid": 33114,
+      "high": 36425,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 2,792,143 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.930% (SP.POP.1519.MA.5Y) / 5 = 33,114. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 100,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Patria Hameenlinna AMV/6x6 (CAVS programme with Latvia, Sweden, Germany). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Finnish_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 440000,
+      "mid": 454000,
+      "high": 454000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 454,000 km incl. private/forest roads, 78,000 paved (2019)."
+    },
+    "railKm": {
+      "low": 5740,
+      "mid": 5918,
+      "high": 6036,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FIN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 5,918 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 12,
+      "high": 12,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/fi.json",
+      "note": "CIA Factbook 2024: 5 large + 7 medium = 12."
+    },
+    "merchantTonnage": {
+      "low": 1005000,
+      "mid": 1005000,
+      "high": 1500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 1,005 thousand DWT under the Finnish flag."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 60000,
+      "mid": 75000,
+      "high": 90000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfc",
+    "chokepoints": [
+      "Karelian Isthmus",
+      "Salla gap",
+      "Aland Islands",
+      "Gulf of Finland"
+    ],
+    "homeDefense": {
+      "low": 1.25,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: forests and lakes, deep wilderness, harsh winter the invader is not adapted to, total-defence population support (Winter War precedent)."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:FIN incl. Aland. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Finnish Army equipment list, active Finnish military aircraft list and Finnish Defence Forces article; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Finland's real strength is the 280,000 wartime army, captured by trainedReserves and mobilizationRatio, not by peacetime active."
+}

@@ -1,0 +1,383 @@
+{
+  "id": "vatican-city-2026",
+  "nationId": "vatican-city",
+  "includes": [],
+  "name": "Vatican City State",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "microstate",
+    "absolute elective monarchy",
+    "Holy See",
+    "no armed forces",
+    "enclave in Rome",
+    "neutral"
+  ],
+  "capital": {
+    "name": "Vatican City",
+    "lat": 41.9029,
+    "lon": 12.4534,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "St Peter's Basilica",
+      "lat": 41.9022,
+      "lon": 12.4539,
+      "kind": "fortress"
+    },
+    {
+      "name": "Apostolic Palace",
+      "lat": 41.9035,
+      "lon": 12.4565,
+      "kind": "city"
+    },
+    {
+      "name": "St Peter's Square",
+      "lat": 41.9022,
+      "lon": 12.4568,
+      "kind": "city"
+    },
+    {
+      "name": "Passetto di Borgo (to Castel Sant'Angelo)",
+      "lat": 41.9025,
+      "lon": 12.4612,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Leonine Wall gates (Porta Sant'Anna)",
+      "lat": 41.9046,
+      "lon": 12.4573,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:VAT",
+    "areaKm2": {
+      "low": 0.44,
+      "mid": 0.44,
+      "high": 0.71,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json",
+      "note": "CIA Factbook: land area 0.44 km2. High 0.71 km2 is the area of the generalised Natural Earth 1:50m ne:VAT polygon."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 800,
+      "mid": 1000,
+      "high": 1000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json",
+      "note": "CIA Factbook: population 1,000 (2024 est.); citizens and residents fluctuate with appointments (low)."
+    },
+    "urbanization": {
+      "low": 1.0,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json",
+      "note": "CIA Factbook: 100% urban (2023)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 130,
+      "mid": 135,
+      "high": 135,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Pontifical_Swiss_Guard",
+      "note": "Pontifical Swiss Guard article: 135 members as of 2024 (de facto military per CIA Factbook). The Gendarmerie Corps (~130, a police force) is excluded."
+    },
+    "trainedReserves": {
+      "low": 0,
+      "mid": 0,
+      "high": 20,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No reserve; former guardsmen living in Rome could in theory be recalled."
+    },
+    "supportPersonnel": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Pontifical_Swiss_Guard",
+      "note": "Active 135 minus infantry P roles (135). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. All guardsmen are counted as infantry_light; support personnel 0."
+    },
+    "mobilizationRatio": {
+      "low": 0.135,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Not a nation of conscripts: mobilizable is the Swiss Guard plus a handful of able-bodied lay residents. Educated reading of the Factbook population and Guard size; the ratio is inflated by a mostly adult male clerical population."
+    },
+    "mobilizable": {
+      "low": 135,
+      "mid": 150,
+      "high": 200,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 1,000 x ratio 0.135 / 0.15 / 0.2."
+    },
+    "forces": {
+      "infantry_light": {
+        "count": {
+          "low": 130,
+          "mid": 135,
+          "high": 135,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Pontifical_Swiss_Guard",
+          "note": "135 Swiss Guards (2024); halberds ceremonial, SIG P220/P226, SIG SG 550 and MP7 for protection duties (Military of Vatican City article)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Modern small arms only, no heavy weapons."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): All are Swiss Army-trained volunteers with extra close-protection training."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship): A small professional guard command; no field command capacity."
+    },
+    "cohesion": {
+      "low": 0.8,
+      "mid": 0.95,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 1.0 (elite, fights on when surrounded) (slightly below): Sworn oath to die for the Pope; the Guard fought to the last at the Sack of Rome 1527 (147 of 189 killed)."
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.9,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 1.0 (fanatical or existential defence) (slightly below): Fanatical loyalty within its protection mission."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Modern small arms only (SG 550, MP7, P226); no heavy weapons."
+    },
+    "armor": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Body armour only; no vehicles beyond papal transport."
+    },
+    "ships": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Landlocked enclave of 0.44 km2: no ships or boats of any kind."
+    },
+    "fortification": {
+      "low": 4.8,
+      "mid": 5.0,
+      "high": 5.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 5: 16th-17th c. Leonine and bastioned walls (anchor 5, trace italienne era)."
+    },
+    "logistics": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Fully dependent on Italian supply."
+    },
+    "communications": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Modern civil communications, Vatican Radio."
+    },
+    "isr": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: CCTV and gendarmerie surveillance only."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "No aircraft or air arm; one heliport used by visiting Italian/papal helicopters."
+    },
+    "cyber": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Small civil IT security office."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Vatican City is not in World Bank data. GDP per capita of the state economy (museums, stamps, coins, Holy See administration) per resident is meaningless in PPP terms; judged near the Italian level. (context page: https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json)"
+    },
+    "gdp": {
+      "low": 20000000,
+      "mid": 40000000,
+      "high": 60000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "Population 1,000 x GDP per capita (educated guess 20,000 / 40,000 / 60,000 2011 int$)."
+    },
+    "milSpendShare": {
+      "low": 0.005,
+      "mid": 0.01,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Swiss Guard costs relative to a notional state GDP; no published figure."
+    },
+    "industrialShare": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No industry beyond printing and minting."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.0,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Floored at 0: produces no food; entirely supplied from Italy."
+    },
+    "annualCohort": {
+      "low": 0,
+      "mid": 2,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Very few children; citizenship is by office, not birth."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5,
+      "mid": 9,
+      "high": 9,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 9 km (2003)."
+    },
+    "railKm": {
+      "low": 0.3,
+      "mid": 0.3,
+      "high": 1.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Vatican railway: ~300 m of main line plus sidings to Roma San Pietro."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json",
+      "note": "Landlocked; no ports (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/vt.json",
+      "note": "Landlocked; no merchant marine (CIA Factbook)."
+    },
+    "supplyRangeKm": {
+      "low": 0,
+      "mid": 1,
+      "high": 2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. An enclave of 0.44 km2 depends entirely on Rome; no expeditionary supply."
+    },
+    "draftAnimals": {
+      "low": 0,
+      "mid": 2,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Ceremonial horses only; none for military use."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Vatican City is a party to the NPT."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-small-state",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Passetto di Borgo",
+      "St Peter's Square",
+      "Porta Sant'Anna"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.0: no strategic depth or terrain advantage; defence rests on Italy and international law."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2024-2026. Vatican City has no armed forces: the Pontifical Swiss Guard (135 men, 2024) is its de facto military (CIA Factbook) and is modelled as light infantry; the Gendarmerie (police) is excluded. Not covered by World Bank data, so population, area and urbanization come from the CIA World Factbook and all economy values are educated guesses (grade D); GDP and per-capita figures are notional. Border ne:VAT exists in Natural Earth 1:50m. Defence in practice is guaranteed by Italy under the Lateran Treaty."
+}

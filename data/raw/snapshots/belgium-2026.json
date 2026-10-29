@@ -1,0 +1,645 @@
+{
+  "id": "belgium-2026",
+  "nationId": "belgium",
+  "includes": [],
+  "name": "Kingdom of Belgium",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "federal parliamentary monarchy",
+    "all-volunteer force",
+    "NATO nuclear sharing",
+    "North Sea"
+  ],
+  "capital": {
+    "name": "Brussels",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Antwerp",
+      "lat": 51.2194,
+      "lon": 4.4025,
+      "kind": "port"
+    },
+    {
+      "name": "Ghent",
+      "lat": 51.0543,
+      "lon": 3.7174,
+      "kind": "port"
+    },
+    {
+      "name": "Liege",
+      "lat": 50.6326,
+      "lon": 5.5797,
+      "kind": "city"
+    },
+    {
+      "name": "Charleroi",
+      "lat": 50.4108,
+      "lon": 4.4446,
+      "kind": "city"
+    },
+    {
+      "name": "Zeebrugge naval base",
+      "lat": 51.3333,
+      "lon": 3.2,
+      "kind": "port"
+    },
+    {
+      "name": "Ostend",
+      "lat": 51.2154,
+      "lon": 2.927,
+      "kind": "port"
+    },
+    {
+      "name": "Kleine Brogel Air Base (nuclear sharing)",
+      "lat": 51.1683,
+      "lon": 5.47,
+      "kind": "fortress"
+    },
+    {
+      "name": "Meuse crossings (Namur)",
+      "lat": 50.4669,
+      "lon": 4.8675,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:BEL",
+    "areaKm2": {
+      "low": 30342,
+      "mid": 30494,
+      "high": 31409,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 30,494 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 11822363,
+      "mid": 11941781,
+      "high": 12061199,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 11,941,781. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.8717,
+      "mid": 0.8767,
+      "high": 0.8817,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 87.67% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 23000,
+      "mid": 23500,
+      "high": 23500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS 2025 as quoted (p.72): 23,500 active. CIA Factbook 2025 ~23,000 (low)."
+    },
+    "trainedReserves": {
+      "low": 4000,
+      "mid": 5900,
+      "high": 7000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS 2025 as quoted: 5,900 reserves."
+    },
+    "supportPersonnel": {
+      "low": 16150,
+      "mid": 19000,
+      "high": 20900,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 23,500 minus infantry P roles (4,500). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Small all-volunteer force with no stored equipment; analogy to 1940 Belgium (~650,000 from 8.4 million, ~8%) at the high end."
+    },
+    "mobilizable": {
+      "low": 358253,
+      "mid": 597089,
+      "high": 955342,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 11,941,781 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1000,
+          "mid": 1500,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Motorized brigade infantry battalions on Piranha/Griffon. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Belgian_Land_Component)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Piranha IIIC, Griffon arriving (CaMo programme)."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light brigade: paratroopers, commandos, light infantry. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Belgian_Land_Component)"
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Light kit."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Para-commandos well trained."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 230,
+          "mid": 447,
+          "high": 520,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Belgian_Land_Component",
+          "note": "Piranha IIIC 138 (all variants) + Griffon >60 (474 ordered) + Pandur 31 + Dingo 2 218 = 447. Low excludes Dingo MRAPs; high allows for Griffon/Jaguar deliveries."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Piranha IIIC and Griffon; no tracked vehicles or tanks."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 12,
+          "mid": 14,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Belgian_Land_Component",
+          "note": "LG1 Mk II 105 mm 14; CAESAR ordered. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Only light towed guns."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 40,
+          "mid": 44,
+          "high": 52,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Belgian_Air_Component",
+          "note": "Inventory: F-16 44; first F-35A delivered 2025 (count not given; high allows ~8)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): F-16 MLU, F-35 arriving."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 14,
+          "mid": 16,
+          "high": 20,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Belgian_Air_Component",
+          "note": "AW109 10 + H145 2 + NH90 4 = 16 (navy NH90 NFH included in the NH90 line)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Small fleet."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 4,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. MQ-9B SkyGuardian ordered (4); delivery status not confirmed on fetched pages. (context page: https://en.wikipedia.org/wiki/Belgian_Air_Component)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): MQ-9B."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 1,
+          "mid": 2,
+          "high": 2,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Belgian_Navy",
+          "note": "Karel Doorman-class frigates (2 inherited, replacement ASWF frigates ordered with the Netherlands)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Modernised 1990s frigates."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 5,
+          "mid": 7,
+          "high": 9,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Belgian_Navy",
+          "note": "Tripartite minehunters (~4 remaining) + first City-class rMCM vessels + 2 patrol vessels."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): New rMCM with drone toolbox."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional mine-warfare specialists."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 3,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Only Mistral VSHORAD in service; NASAMS ordered 2025. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Belgian_Land_Component)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): No medium-range GBAD."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): NATO-integrated staff, small expeditionary contributions (Mali, Iraq air ops)."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional; linguistic split managed."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly below): Average to low appetite for combat."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Precision munitions on F-16/F-35; light land weapons."
+    },
+    "armor": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: No tanks; wheeled armour only."
+    },
+    "ships": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Frigates and new drone-based MCM."
+    },
+    "fortification": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Little GBAD."
+    },
+    "logistics": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: A400M, NATO logistics hub (Antwerp)."
+    },
+    "communications": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO HQ host, Link 16."
+    },
+    "isr": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Limited national ISR."
+    },
+    "air": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F-35 arriving."
+    },
+    "cyber": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Cyber Command (2022)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 45740,
+      "mid": 50822,
+      "high": 55905,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 606,910,945,391 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 11,941,781 = 50,822. Range +/-10%."
+    },
+    "gdp": {
+      "low": 546219850852,
+      "mid": 606910945391,
+      "high": 667602039930,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 758,164,828,720 x 0.8005 (US GDP deflator 2011/2021) = 606,910,945,391 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0104,
+      "mid": 0.0201,
+      "high": 0.0211,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.01% of GDP in 2025 (mid), 1.28% in 2024, 1.04% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1711,
+      "mid": 0.1861,
+      "high": 0.2011,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 18.6% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net exporter of processed food, imports feed."
+    },
+    "annualCohort": {
+      "low": 64984,
+      "mid": 72204,
+      "high": 79424,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,891,251 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.128% (SP.POP.1519.MA.5Y) / 5 = 72,204. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 0,
+        "mid": 10,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. John Cockerill turrets/FN Herstal small arms; no AFV hull production."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 118000,
+      "mid": 118414,
+      "high": 118414,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 118,414 km, all paved (2015); 1,747 km motorway."
+    },
+    "railKm": {
+      "low": 3504,
+      "mid": 3612,
+      "high": 3684,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/BEL/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 3,612 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 3,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/be.json",
+      "note": "CIA Factbook 2024: 7 ports, 1 large + 2 medium = 3."
+    },
+    "merchantTonnage": {
+      "low": 6874000,
+      "mid": 6874000,
+      "high": 9000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 6,874 thousand DWT under the Belgian flag."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 150000,
+      "mid": 250000,
+      "high": 350000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Belgium hosts US B61 bombs at Kleine Brogel under NATO nuclear sharing (FAS); not counted."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Meuse crossings",
+      "Ardennes",
+      "Scheldt estuary",
+      "Flanders plain"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.1,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain, urban density; no depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:BEL. Money in 2011 int$ via derived:ppp-rebase-2011. Belgium has no tanks or tracked vehicles (disbanded 2010s) and only light artillery; the CaMo programme brings Griffon/Jaguar/CAESAR. Force counts from the Wikipedia Belgian Army equipment list and Belgian Air Force inventory; navy counts grade C. Infantry P-role splits are educated guesses (grade D)."
+}

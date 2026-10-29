@@ -1,0 +1,735 @@
+{
+  "id": "greece-2026",
+  "nationId": "greece",
+  "includes": [],
+  "name": "Hellenic Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "conscript army",
+    "Aegean",
+    "Mediterranean"
+  ],
+  "capital": {
+    "name": "Athens",
+    "lat": 37.9838,
+    "lon": 23.7275,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Thessaloniki",
+      "lat": 40.6401,
+      "lon": 22.9444,
+      "kind": "port"
+    },
+    {
+      "name": "Piraeus",
+      "lat": 37.942,
+      "lon": 23.6465,
+      "kind": "port"
+    },
+    {
+      "name": "Salamis naval base",
+      "lat": 37.96,
+      "lon": 23.5,
+      "kind": "port"
+    },
+    {
+      "name": "Patras",
+      "lat": 38.2466,
+      "lon": 21.7346,
+      "kind": "port"
+    },
+    {
+      "name": "Heraklion (Crete)",
+      "lat": 35.3387,
+      "lon": 25.1442,
+      "kind": "city"
+    },
+    {
+      "name": "Souda Bay (Crete)",
+      "lat": 35.49,
+      "lon": 24.12,
+      "kind": "port"
+    },
+    {
+      "name": "Alexandroupoli",
+      "lat": 40.8457,
+      "lon": 25.8744,
+      "kind": "port"
+    },
+    {
+      "name": "Evros river line",
+      "lat": 41.3,
+      "lon": 26.35,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Kythira Strait",
+      "lat": 36.1,
+      "lon": 23.1,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Larissa Air Base",
+      "lat": 39.65,
+      "lon": 22.47,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:GRC",
+    "areaKm2": {
+      "low": 128256,
+      "mid": 128900,
+      "high": 132767,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 128,900 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10309822,
+      "mid": 10413962,
+      "high": 10518102,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 10,413,962. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.7872,
+      "mid": 0.7922,
+      "high": 0.7972,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 79.22% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 112000,
+      "mid": 131650,
+      "high": 135000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 131,650 active incl. conscripts. Low: CIA Factbook 2025 ~112,000."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 264500,
+      "high": 264500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 264,500 reserves."
+    },
+    "supportPersonnel": {
+      "low": 77902,
+      "mid": 91650,
+      "high": 100815,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 131,650 minus infantry P roles (40,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.06,
+      "mid": 0.09,
+      "high": 0.12,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Greece 1940-41 (~500,000 from ~7.3 million, ~7%) with universal male conscription and a large trained reserve."
+    },
+    "mobilizable": {
+      "low": 624838,
+      "mid": 937257,
+      "high": 1249675,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,413,962 x ratio 0.06 / 0.09 / 0.12."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry brigades (M113/Leonidas/BMP-1/Marder). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Old M113/BMP-1 heavy."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts (12 months) with professional cadre."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 15000,
+          "mid": 20000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Infantry divisions on the islands and Evros, marines, paratroopers and raiders. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Era-typical light kit."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts; special forces well trained."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 854,
+          "mid": 1100,
+          "high": 1344,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "Leopard 2A6HEL 170 + 2A4 183 + Leopard 1A5 501 + M48A5 390 + M60A3 100 = 1,344 (high); low drops M48/M60 largely in storage."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Leopard 2A6HEL modern; Leopard 1/M48 obsolete."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts with professional crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2500,
+          "mid": 3356,
+          "high": 3356,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "Marder 40 + BMP-1 141 + Leonidas 491 + M113 1,995 + M901 362 + M577 281 + M1059 46 = 3,356."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M113 and Leonidas old."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 700,
+          "mid": 1000,
+          "high": 1304,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "M270 36 + PzH 2000 24 + M109 420 + M110 145 + M114 266 + M101 413 = 1,304 (high); many towed guns in reserve."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M109/M110/M114 old; PzH 2000 and M270 modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 220,
+          "mid": 248,
+          "high": 260,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Greek_military_aircraft",
+          "note": "Rafale 24 (18+6) + F-16 212 (113 Viper/39 Block 52+/60 Block 30/50) + Mirage 2000-5 24 (19+5) = ~260 listed; F-4E 16 counted under strike. Mid allows for retirements."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Rafale and F-16V among the region's best; F-35 ordered."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): High readiness after decades of Aegean intercepts."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 0,
+          "mid": 16,
+          "high": 16,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Greek_military_aircraft",
+          "note": "F-4E AUP 16, retiring."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): F-4E."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 220,
+          "mid": 280,
+          "high": 300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "Army: AH-64A/D 28 + OH-58D 60 + CH-47 25 + NH90 20 + UH-1H/AB-205 100 + AB-206 14 = 247; Air Force AS332 12; Navy S-70B/MH-60R and AB-212 ~20."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Old UH-1 core, AH-64 and MH-60R modern."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 44,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "Sperwer 16 + Orbiter 3 17 + V-BAT 4 + Patroller 4 + Heron 3 (Heron leased)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Small fleet."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 12,
+          "mid": 13,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Hellenic_Navy_ships",
+          "note": "Frigates 13 (Hydra, Elli/Kortenaer, first FDI Kimon delivered 2025-26)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mostly 1980s-90s frigates; FDI new."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional, constant Aegean patrols."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 34,
+          "high": 40,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Hellenic_Navy_ships",
+          "note": "Missile boats 13 + gunboats 8 + patrol 6 + MCM 2 + landing ships ~5 = ~34."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mixed."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 6,
+          "mid": 8,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Hellenic_Navy_ships",
+          "note": "8 (4 Type 214 Papanikolis AIP + 4 modernised Type 209)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Type 214 AIP modern."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 30,
+          "mid": 40,
+          "high": 50,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hellenic_Army",
+          "note": "Air Force Patriot 6 squadrons + S-300PMU-1 1 + Crotale 9 systems; Army Hawk 7 batteries + Osa 7 batteries + Tor 21 systems (~4 per battery, ~5) + ASRAD 54 launchers (~6 per battery, ~9); 631 Stinger MANPADS not counted. ~40."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Patriot PAC-3 and old Soviet/Hawk systems."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): Competent NATO-integrated staff; no major combat since 1974."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): National conscript army with strong identity tied to the Turkish threat."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated for national defence of islands and Evros."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: SCALP, Exocet, Meteor; Achilles Shield GBAD planned."
+    },
+    "armor": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Leopard 2A6HEL; many Cold War tanks."
+    },
+    "ships": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Type 214, FDI frigates new; rest old."
+    },
+    "fortification": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Island fortifications and Evros fence; Patriot GBAD."
+    },
+    "logistics": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Short interior lines, island resupply."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: NATO C2, Link 16."
+    },
+    "isr": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited UAV ISR, Hellas Sat."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Rafale F3R, F-16V; F-35 from 2028."
+    },
+    "cyber": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Cyber Defence Directorate."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 27535,
+      "mid": 30594,
+      "high": 33653,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 318,605,655,941 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 10,413,962 = 30,594. Range +/-10%."
+    },
+    "gdp": {
+      "low": 286745090346,
+      "mid": 318605655941,
+      "high": 350466221535,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 398,008,314,729 x 0.8005 (US GDP deflator 2011/2021) = 318,605,655,941 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0288,
+      "mid": 0.0299,
+      "high": 0.0314,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.99% of GDP in 2025 (mid), 2.88% in 2024, 3.80% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1372,
+      "mid": 0.1522,
+      "high": 0.1672,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 15.2% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Exporter of olive oil, fruit and fish; imports grain and meat."
+    },
+    "annualCohort": {
+      "low": 51992,
+      "mid": 57769,
+      "high": 63546,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,046,070 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.724% (SP.POP.1519.MA.5Y) / 5 = 57,769. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ships_major": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Domestic yards assist FDI/Constellation work; most hulls built abroad. (context page: https://en.wikipedia.org/wiki/List_of_active_Hellenic_Navy_ships)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 110000,
+      "mid": 117000,
+      "high": 117000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 117,000 km (2018)."
+    },
+    "railKm": {
+      "low": 2269,
+      "mid": 2339,
+      "high": 2386,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GRC/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 2,339 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 8,
+      "high": 8,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/gr.json",
+      "note": "CIA Factbook 2024: 1 large + 7 medium = 8."
+    },
+    "merchantTonnage": {
+      "low": 53459000,
+      "mid": 53459000,
+      "high": 400000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 53,459 thousand DWT under the Greek flag; Greek owners control the world's largest merchant fleet (~400 million DWT under all flags, educated reading of the same list), high."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 80000,
+      "mid": 150000,
+      "high": 250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Evros river line",
+      "Kythira Strait",
+      "Aegean island chain",
+      "Rupel Pass"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountains, fortified islands and Evros, strong population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:GRC. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Hellenic Army equipment list, active Greek military aircraft list and active Hellenic Navy ship list; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Large Cold War stocks in reserve make high/low spreads wide."
+}

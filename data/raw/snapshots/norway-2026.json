@@ -1,0 +1,709 @@
+{
+  "id": "norway-2026",
+  "nationId": "norway",
+  "includes": [],
+  "name": "Kingdom of Norway",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "parliamentary monarchy",
+    "selective conscription",
+    "Arctic",
+    "North Sea",
+    "oil exporter"
+  ],
+  "capital": {
+    "name": "Oslo",
+    "lat": 59.9139,
+    "lon": 10.7522,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Bergen (Haakonsvern naval base)",
+      "lat": 60.3913,
+      "lon": 5.3221,
+      "kind": "port"
+    },
+    {
+      "name": "Trondheim",
+      "lat": 63.4305,
+      "lon": 10.3951,
+      "kind": "port"
+    },
+    {
+      "name": "Stavanger",
+      "lat": 58.97,
+      "lon": 5.7331,
+      "kind": "port"
+    },
+    {
+      "name": "Bodo",
+      "lat": 67.2804,
+      "lon": 14.4049,
+      "kind": "port"
+    },
+    {
+      "name": "Narvik",
+      "lat": 68.4385,
+      "lon": 17.4272,
+      "kind": "port"
+    },
+    {
+      "name": "Tromso",
+      "lat": 69.6492,
+      "lon": 18.9553,
+      "kind": "port"
+    },
+    {
+      "name": "Evenes Air Station",
+      "lat": 68.4913,
+      "lon": 16.6781,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bardufoss / Setermoen (Brigade North)",
+      "lat": 69.06,
+      "lon": 18.54,
+      "kind": "fortress"
+    },
+    {
+      "name": "Orland Air Base (F-35)",
+      "lat": 63.6989,
+      "lon": 9.6043,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kirkenes (Russian border)",
+      "lat": 69.7271,
+      "lon": 30.0451,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:NOR",
+    "areaKm2": {
+      "low": 362449,
+      "mid": 364270,
+      "high": 375198,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 364,270 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 5554761,
+      "mid": 5610870,
+      "high": 5666979,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 5,610,870. Everything inside ne:NOR; Svalbard and Jan Mayen are separate Natural Earth units."
+    },
+    "urbanization": {
+      "low": 0.8307,
+      "mid": 0.8357,
+      "high": 0.8407,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 83.57% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 23000,
+      "mid": 25400,
+      "high": 27000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 25,400 active incl. conscripts. CIA Factbook 2025 ~27,000 (high)."
+    },
+    "trainedReserves": {
+      "low": 35000,
+      "mid": 40000,
+      "high": 40000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 40,000 reserves (Home Guard)."
+    },
+    "supportPersonnel": {
+      "low": 17765,
+      "mid": 20900,
+      "high": 22990,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 25,400 minus infantry P roles (4,500). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Cold War Norway (~320,000 wartime strength from ~4 million, ~8%) scaled down for today's smaller structure."
+    },
+    "mobilizable": {
+      "low": 224435,
+      "mid": 336652,
+      "high": 504978,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 5,610,870 x ratio 0.04 / 0.06 / 0.09."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1000,
+          "mid": 1500,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Brigade North mechanized battalions on CV90. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): CV90 Mk IIIb."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional cadre plus selective conscripts."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 4000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry, Finnmark Land Command, His Majesty the King's Guard, Coastal Rangers. (context page: https://en.wikipedia.org/wiki/Norwegian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern kit."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Arctic warfare specialists."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 36,
+          "mid": 38,
+          "high": 54,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army",
+          "note": "Leopard 2A4NO 36 + Leopard 2A8NO 2 delivered (54 ordered)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Leopard 2A4NO old, 2A8 arriving."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 400,
+          "mid": 503,
+          "high": 520,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army",
+          "note": "CV90 (54 + 74 + 21 + 15) 164 + M113 288 + XA-185/186/203N 51 = 503."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): CV90 modern, M113 old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 24,
+          "mid": 28,
+          "high": 44,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army",
+          "note": "K9 Vidar 28 (K239 Chunmoo 16 ordered, high)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): K9 modern."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 46,
+          "mid": 52,
+          "high": 52,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Norwegian_military_aircraft",
+          "note": "F-35A 52 (46 in Norway + 6 at the US training centre)."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0 (the era's best) (slightly below): All-F-35 fighter force."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 40,
+          "mid": 48,
+          "high": 55,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Norwegian_military_aircraft",
+          "note": "Bell 412 18 + AW101 SAR 16 + NH90 ~14 (being returned and replaced by MH-60R) = ~48."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 3,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. No Group 2+ UAV fleet confirmed on the fetched pages; small MALE acquisition planned. (context page: https://en.wikipedia.org/wiki/List_of_active_Norwegian_military_aircraft)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Small."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 4,
+          "mid": 4,
+          "high": 4,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Norwegian_Navy",
+          "note": "Fridtjof Nansen frigates 4 (Helge Ingstad lost 2018)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Aegis-equipped Nansen class with NSM."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 12,
+          "mid": 14,
+          "high": 16,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Norwegian_Navy",
+          "note": "Skjold corvettes 6 + mine countermeasure vessels 8 (4 + 4) = 14; Coast Guard vessels excluded."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Skjold stealth corvettes with NSM."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Royal_Norwegian_Navy",
+          "note": "6 Ula class (Type 212CD ordered)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Ula is 1990s design."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. NASAMS (developed by Kongsberg) fire units; several given to Ukraine; exact count not on the fetched pages. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): NASAMS."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Trained staff, Arctic NATO exercises (Cold Response)."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional cadre with motivated selective conscripts."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated; strong national defence will."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NSM/JSM, NASAMS, K9."
+    },
+    "armor": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Leopard 2A4 now, 2A8 arriving."
+    },
+    "ships": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Aegis frigates, stealth corvettes."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Hardened mountain facilities (Olavsvern, Bardufoss)."
+    },
+    "logistics": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Arctic logistics, prepositioned US Marine stocks."
+    },
+    "communications": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO C2."
+    },
+    "isr": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: P-8A Poseidon, intelligence service."
+    },
+    "air": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: All F-35A."
+    },
+    "cyber": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National Cyber Security Centre."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 68568,
+      "mid": 76186,
+      "high": 83805,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 427,471,601,113 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 5,610,870 = 76,186. Range +/-10%."
+    },
+    "gdp": {
+      "low": 384724441002,
+      "mid": 427471601113,
+      "high": 470218761224,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 534,005,747,799 x 0.8005 (US GDP deflator 2011/2021) = 427,471,601,113 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0168,
+      "mid": 0.0328,
+      "high": 0.0344,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 3.28% of GDP in 2025 (mid), 2.23% in 2024, 1.68% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.3296,
+      "mid": 0.3446,
+      "high": 0.3596,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 34.5% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large fish exporter, otherwise imports ~50% of food."
+    },
+    "annualCohort": {
+      "low": 31610,
+      "mid": 35122,
+      "high": 38634,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 2,828,205 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.209% (SP.POP.1519.MA.5Y) / 5 = 35,122. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "air_defense": {
+        "low": 6,
+        "mid": 12,
+        "high": 24,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Kongsberg NASAMS fire units (mostly exported). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Norwegian_Army)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 95000,
+      "mid": 97746,
+      "high": 97746,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 97,746 km (2025 row)."
+    },
+    "railKm": {
+      "low": 3768,
+      "mid": 3885,
+      "high": 3963,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/NOR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 3,885 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 11,
+      "high": 11,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/no.json",
+      "note": "CIA Factbook 2024: 1 large + 10 medium = 11."
+    },
+    "merchantTonnage": {
+      "low": 21354000,
+      "mid": 21354000,
+      "high": 50000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 21,354 thousand DWT under the Norwegian flag (NOR + NIS); Norwegian owners control much more under foreign flags (educated high)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 30000,
+      "mid": 40000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfc",
+    "chokepoints": [
+      "Kirkenes / Finnmark corridor",
+      "Lyngen line",
+      "Narvik and Ofoten",
+      "Skagerrak"
+    ],
+    "homeDefense": {
+      "low": 1.25,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: mountains and fjords, Arctic climate, long thin geography, strong population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: mainland Norway inside ne:NOR. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Norwegian Army equipment list, active Norwegian military aircraft list and navy article; drones = Group 2+ only. NASAMS and drone counts are educated guesses (grade D). Infantry P-role splits are educated guesses (grade D). Home Guard counted as reserves."
+}

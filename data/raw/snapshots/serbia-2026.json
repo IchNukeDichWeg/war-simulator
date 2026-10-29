@@ -1,0 +1,639 @@
+{
+  "id": "serbia-2026",
+  "nationId": "serbia",
+  "includes": [],
+  "name": "Republic of Serbia",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "militarily neutral",
+    "EU candidate",
+    "parliamentary republic",
+    "all-volunteer force",
+    "landlocked"
+  ],
+  "capital": {
+    "name": "Belgrade",
+    "lat": 44.7866,
+    "lon": 20.4489,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Novi Sad",
+      "lat": 45.2671,
+      "lon": 19.8335,
+      "kind": "city"
+    },
+    {
+      "name": "Nis",
+      "lat": 43.3209,
+      "lon": 21.8958,
+      "kind": "city"
+    },
+    {
+      "name": "Kragujevac (Zastava arms)",
+      "lat": 44.0128,
+      "lon": 20.9114,
+      "kind": "city"
+    },
+    {
+      "name": "Batajnica Air Base",
+      "lat": 44.935,
+      "lon": 20.258,
+      "kind": "fortress"
+    },
+    {
+      "name": "Morava valley",
+      "lat": 43.6,
+      "lon": 21.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Danube Iron Gates",
+      "lat": 44.67,
+      "lon": 22.53,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SRB",
+    "areaKm2": {
+      "low": 87151,
+      "mid": 87589,
+      "high": 90216,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 87,589 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 6483652,
+      "mid": 6549143,
+      "high": 6614634,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 6,549,143. World Bank figure excludes Kosovo; ne:SRB in Natural Earth also excludes Kosovo."
+    },
+    "urbanization": {
+      "low": 0.6214,
+      "mid": 0.6264,
+      "high": 0.6314,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 62.64% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 25000,
+      "mid": 28150,
+      "high": 30000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 28,150 active. CIA Factbook 2025 ~25,000 (15,000 land, 5,000 air/air defence, 5,000 other) (low)."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 50150,
+      "high": 50150,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 50,150 reserves."
+    },
+    "supportPersonnel": {
+      "low": 17128,
+      "mid": 20150,
+      "high": 22165,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 28,150 minus infantry P roles (8,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Yugoslav/Serbian mobilization in the 1990s wars (several hundred thousand from ~10 million, ~4-6%); conscription suspended 2011, reintroduction debated."
+    },
+    "mobilizable": {
+      "low": 261966,
+      "mid": 458440,
+      "high": 654914,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 6,549,143 x ratio 0.04 / 0.07 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 2500,
+          "mid": 3500,
+          "high": 4500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry battalions on M-80/Lazar. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M-80 old, Lazar 3 modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 3500,
+          "mid": 4500,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry, 72nd/63rd special brigades, river flotilla troops. (context page: https://en.wikipedia.org/wiki/Serbian_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Era-typical."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 220,
+          "mid": 242,
+          "high": 260,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces",
+          "note": "M-84 186 + M-84AS ~26 + T-72B1MS 30 = 242."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): M-84 (T-72 derivative), T-72B1MS."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 700,
+          "mid": 850,
+          "high": 950,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces",
+          "note": "M-80 ~325 + Lazar 3/3M ~100 + BTR-80 108 + BOV M16 109 + BRDM 76 + MT-LBu 32 + BOV variants ~100 = ~850."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Mostly old."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 280,
+          "mid": 315,
+          "high": 350,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces",
+          "note": "Nora B-52 24+ + 2S1 ~70 + Nora M-84 36 + M-46 36 + D-30 80 + Orkan 4 + Oganj ~68 = ~315."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Nora B-52 modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 10,
+          "mid": 14,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Serbian_military_aircraft",
+          "note": "MiG-29 11 + 3 = 14; Rafale (12) ordered for 2028."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Upgraded MiG-29."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 10,
+          "mid": 13,
+          "high": 13,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Serbian_military_aircraft",
+          "note": "J-22 Orao 13."
+        },
+        "quality": {
+          "low": 0.15,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind): Obsolete J-22."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 35,
+          "mid": 43,
+          "high": 50,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Serbian_military_aircraft",
+          "note": "Mi-35 15 + Mi-17 5 + H145M 15 + Gazelle remnants ~8 = ~43."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Mixed."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 15,
+          "mid": 18,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Serbian_military_aircraft",
+          "note": "CH-92A 6 + Pegaz 12+ = 18."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Chinese CH-92A."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 16,
+          "mid": 20,
+          "high": 24,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces",
+          "note": "HQ-22 4 + HQ-17 2 + Pantsir 1 + Kub 3 + Neva 5 + Strela-10 1 + Strela-1 4 batteries = 20."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Chinese HQ-22/HQ-17, Pantsir."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional; shot down an F-117 in 1999."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship): Competent staff, 1990s war legacy."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.5 (national conscript army) (slightly above): National army with strong identity."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly above): Motivated for national defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Nora B-52, Chinese drones and SAMs."
+    },
+    "armor": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: M-84/T-72."
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Landlocked: Danube river flotilla patrol boats only; value describes those small craft."
+    },
+    "fortification": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: HQ-22/Pantsir GBAD."
+    },
+    "logistics": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Rail and road."
+    },
+    "communications": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: National C2."
+    },
+    "isr": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: CH-92A, Pegaz."
+    },
+    "air": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: MiG-29SM+."
+    },
+    "cyber": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 19887,
+      "mid": 22097,
+      "high": 24306,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 144,713,236,540 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 6,549,143 = 22,097. Range +/-10%."
+    },
+    "gdp": {
+      "low": 130241912886,
+      "mid": 144713236540,
+      "high": 159184560194,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 180,778,559,076 x 0.8005 (US GDP deflator 2011/2021) = 144,713,236,540 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0267,
+      "mid": 0.0276,
+      "high": 0.029,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.76% of GDP in 2025 (mid), 2.67% in 2024, 2.73% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2081,
+      "mid": 0.2231,
+      "high": 0.2381,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 22.3% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net exporter of maize, fruit."
+    },
+    "annualCohort": {
+      "low": 29397,
+      "mid": 32663,
+      "high": 35929,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 3,104,218 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.261% (SP.POP.1519.MA.5Y) / 5 = 32,663. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "artillery": {
+        "low": 10,
+        "mid": 24,
+        "high": 48,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Yugoimport-SDPR Nora B-52 and MLRS. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Serbian_Armed_Forces)"
+      },
+      "ifv_apc": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Lazar/Milos production."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 44000,
+      "mid": 45419,
+      "high": 45419,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 45,419 km (2024)."
+    },
+    "railKm": {
+      "low": 3248,
+      "mid": 3348,
+      "high": 3415,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SRB/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 3,348 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/ri.json",
+      "note": "Landlocked; Danube river ports only (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 5000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Landlocked; Danube river fleet only."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Short interior lines."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 180000,
+      "high": 250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Morava valley",
+      "Danube Iron Gates",
+      "Sava-Danube confluence"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountainous south, familiar terrain, strong population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: World Bank Serbia excluding Kosovo, matching ne:SRB. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Serbian Armed Forces equipment list (operational equipment, reserve stocks excluded) and active Serbian military aircraft list; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Landlocked: ships tech describes river craft only."
+}

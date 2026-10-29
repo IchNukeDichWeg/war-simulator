@@ -1,0 +1,807 @@
+{
+  "id": "france-2026",
+  "nationId": "france",
+  "includes": [],
+  "name": "French Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "nuclear power",
+    "UN Security Council P5",
+    "semi-presidential republic",
+    "all-volunteer force",
+    "Atlantic",
+    "Mediterranean"
+  ],
+  "capital": {
+    "name": "Paris",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Marseille",
+      "lat": 43.2965,
+      "lon": 5.3698,
+      "kind": "port"
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.764,
+      "lon": 4.8357,
+      "kind": "city"
+    },
+    {
+      "name": "Toulouse",
+      "lat": 43.6047,
+      "lon": 1.4442,
+      "kind": "city"
+    },
+    {
+      "name": "Lille",
+      "lat": 50.6292,
+      "lon": 3.0573,
+      "kind": "city"
+    },
+    {
+      "name": "Strasbourg",
+      "lat": 48.5734,
+      "lon": 7.7521,
+      "kind": "city"
+    },
+    {
+      "name": "Le Havre",
+      "lat": 49.4944,
+      "lon": 0.1079,
+      "kind": "port"
+    },
+    {
+      "name": "Toulon naval base",
+      "lat": 43.1167,
+      "lon": 5.9333,
+      "kind": "port"
+    },
+    {
+      "name": "Brest naval base",
+      "lat": 48.3833,
+      "lon": -4.5,
+      "kind": "port"
+    },
+    {
+      "name": "Ile Longue SSBN base",
+      "lat": 48.307,
+      "lon": -4.505,
+      "kind": "fortress"
+    },
+    {
+      "name": "Cherbourg",
+      "lat": 49.6337,
+      "lon": -1.6222,
+      "kind": "port"
+    },
+    {
+      "name": "Belfort Gap",
+      "lat": 47.64,
+      "lon": 6.86,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:FRA",
+    "areaKm2": {
+      "low": 536255,
+      "mid": 538950,
+      "high": 555118,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 538,950 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 68033134,
+      "mid": 68720337,
+      "high": 69407540,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 68,720,337. World Bank figure covers metropolitan France plus the five overseas departments, which ne:FRA also includes; overseas collectivities (New Caledonia, French Polynesia) excluded."
+    },
+    "urbanization": {
+      "low": 0.7834,
+      "mid": 0.7884,
+      "high": 0.7934,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 78.84% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 201016,
+      "mid": 203900,
+      "high": 206000,
+      "grade": "A",
+      "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+      "note": "Ministry of the Armed Forces, Key Figures 2026 (figures 2025): 201,016 military FTEs (Army 111,585, Navy 34,587, Air and Space Force 38,508, medical, energy, other). Mid: IISS as quoted on the Wikipedia personnel list, 203,900. Gendarmerie (IISS 126,600 paramilitary) excluded."
+    },
+    "trainedReserves": {
+      "low": 38100,
+      "mid": 49290,
+      "high": 50000,
+      "grade": "A",
+      "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+      "note": "Key Figures 2026: 49,290 first-level operational reservists (ESR) at Dec 2025, of which Army 29,292. Low: IISS 38,100 as quoted. National Guard (~80,000 per CIA Factbook) includes gendarmerie and police reserves."
+    },
+    "supportPersonnel": {
+      "low": 155465,
+      "mid": 182900,
+      "high": 201190,
+      "grade": "C",
+      "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+      "note": "Active 203,900 minus infantry P roles (21,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to France 1939-40 (~5 million mobilized from ~41 million, ~12%) scaled down for an all-volunteer force with no stored equipment for mass levies."
+    },
+    "mobilizable": {
+      "low": 2748813,
+      "mid": 4810424,
+      "high": 6872034,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 68,720,337 x ratio 0.04 / 0.07 / 0.1."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 7000,
+          "mid": 9000,
+          "high": 12000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. VBCI/Griffon mechanized infantry: ~20 infantry regiments x ~450 riflemen. (context page: https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): VBCI and Griffon/Serval with SCORPION vetronics."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional, Sahel combat experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 9000,
+          "mid": 12000,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Paratroops (11e BP), mountain (27e BIM), troupes de marine and Foreign Legion infantry regiments. (context page: https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern light kit."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Legion and paras are elite long-service troops (Serval/Barkhane)."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 200,
+          "mid": 225,
+          "high": 225,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026 (equipment at end 2025): 225 Leclerc main battle tanks (incl. XLR upgrades). Low allows for availability."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Leclerc is a good 1990s design; XLR upgrade adds networking, no APS."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 3000,
+          "mid": 3742,
+          "high": 5115,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: AMX-10RCR 174 + Jaguar 128 + VBCI 628 + VAB 1,509 + Griffon 883 + Serval 420 = 3,742. High adds 1,373 VBL light armoured cars; low allows for VAB withdrawals."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): VAB is 1970s; VBCI/Griffon/Jaguar modern."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 75,
+          "mid": 84,
+          "high": 123,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: CAESAR 155 mm 75 + LRU MLRS 9 = 84 (many CAESAR and LRU given to Ukraine). High adds 39 Griffon MEPAC/Serval 120 mm self-propelled mortars. 174 towed 120 mm mortars excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): CAESAR modern and accurate, but tiny fleet; no long-range rocket replacement yet."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 165,
+          "mid": 175,
+          "high": 175,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: Rafale (all variants, Air and Space Force) 112 + Rafale M 41 + Mirage 2000-5F 22 = 175."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Rafale F4 is 4.5 generation with Meteor/SCALP/ASMP-A."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): High readiness, nuclear strike mission, combat in Sahel/Levant."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 45,
+          "mid": 50,
+          "high": 50,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: Mirage 2000D (conventional strike) 50."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mirage 2000D RMV upgrade, 1990s airframe."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Combat experience in Sahel and Levant."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 380,
+          "mid": 418,
+          "high": 418,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: Army 275 (Gazelle 80, Tiger 67, Cougar 24, Puma 15, Caracal 8, Caiman NH90 63, Fennec 18) + Navy 46 combat/SAR + 23 support + Air and Space Force 74 = 418."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Tiger and NH90 modern; Gazelle old."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 12,
+          "mid": 15,
+          "high": 25,
+          "grade": "B",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Group 2+ only: Air and Space Force MQ-9 Reaper 12 + Army Patroller (5 systems ordered, few airframes in service). ~4,000 mini/micro drones excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): MQ-9 Block 5, Patroller."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 19,
+          "mid": 19,
+          "high": 19,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026 (31 Dec 2025): aircraft carrier 1 + amphibious helicopter carriers 3 + first-rank frigates 15 (2 Horizon, 2 FREMM-DA, 6 FREMM, 5 La Fayette) = 19."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Charles de Gaulle CATOBAR carrier, FREMM/Horizon with Aster."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Blue-water experience, Red Sea combat 2024."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 28,
+          "mid": 30,
+          "high": 36,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: surveillance frigates 6 + offshore patrol vessels 16 + minehunters 8 = 30. High adds 6 mine-clearance/channel vessels; 38 gendarmerie patrol craft excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Floreal and OPVs lightly armed."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 8,
+          "mid": 8,
+          "high": 9,
+          "grade": "A",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: 4 Triomphant SSBN + 4 SSN in service (a fifth Suffren-class delivered, in acceptance trials)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0 (the era's best) (slightly below): Suffren SSN and M51 SSBN."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Long-service submariners."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 25,
+          "mid": 37,
+          "high": 45,
+          "grade": "C",
+          "source": "https://www.defense.gouv.fr/sites/default/files/ministere-armees/Chiffres_Cle%CC%81s_2026EN-webVF.pdf",
+          "note": "Key Figures 2026: Air and Space Force SAMP/T 8 + Crotale NG 7 + VL MICA 2 = 17 fire units; Army 234 Mistral launchers (~12 per battery, ~20 sections). Total ~37."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): SAMP/T Mamba modern; thin coverage."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders): Independent joint expeditionary command (Serval, Barkhane), NATO framework nation with corps HQ (Lille)."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly above): Foreign Legion and troupes de marine identity; professional force."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly above): Average to motivated; 2025 surveys show high support for defence spending."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: SCALP, Aster, MMP, Meteor, CAESAR; ASMP-A nuclear."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Leclerc composite armour, no APS."
+    },
+    "ships": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Nuclear carrier and SSNs, FREMM/Horizon."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Hardened bases, limited GBAD (SAMP/T)."
+    },
+    "logistics": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: A400M, A330 MRTT, Africa/Indo-Pacific basing."
+    },
+    "communications": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Syracuse IV satcom, SCORPION networked land force."
+    },
+    "isr": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: CSO imaging and CERES SIGINT satellites, Reaper."
+    },
+    "air": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Rafale F4 (4.5 generation), no 5th generation."
+    },
+    "cyber": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: COMCYBER state cyber command."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 39714,
+      "mid": 44127,
+      "high": 48540,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 3,032,435,620,195 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 68,720,337 = 44,127. Range +/-10%."
+    },
+    "gdp": {
+      "low": 2729192058176,
+      "mid": 3032435620195,
+      "high": 3335679182215,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 3,788,176,914,672 x 0.8005 (US GDP deflator 2011/2021) = 3,032,435,620,195 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0198,
+      "mid": 0.0203,
+      "high": 0.0213,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.03% of GDP in 2025 (mid), 2.01% in 2024, 1.98% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1528,
+      "mid": 0.1678,
+      "high": 0.1828,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 16.8% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large net exporter of cereals, dairy and wine; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 395178,
+      "mid": 439087,
+      "high": 482995,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 33,315,956 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.590% (SP.POP.1519.MA.5Y) / 5 = 439,087. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "aircraft_fighter": {
+        "low": 15,
+        "mid": 25,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Dassault Merignac Rafale line ramping toward 3-4 per month for export and French orders."
+      },
+      "artillery": {
+        "low": 40,
+        "mid": 72,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. KNDS France raised CAESAR output to ~6 per month after 2022."
+      },
+      "ifv_apc": {
+        "low": 200,
+        "mid": 400,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Griffon/Serval/Jaguar (SCORPION) series production."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Naval Group Lorient FDI frigates."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Naval Group Cherbourg Suffren class."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1000000,
+      "mid": 1053215,
+      "high": 1053215,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA Factbook as quoted: 1,053,215 km, all paved (2011); 11,671 km motorway."
+    },
+    "railKm": {
+      "low": 26885,
+      "mid": 27716,
+      "high": 28270,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/FRA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 27,716 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 18,
+      "high": 18,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/fr.json",
+      "note": "CIA Factbook 2024: 66 ports, 6 large + 12 medium = 18; low counts large ports only."
+    },
+    "merchantTonnage": {
+      "low": 9943000,
+      "mid": 9943000,
+      "high": 15000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 9,943 thousand DWT under the French flag (incl. RIF register). High is an educated guess for French-owned foreign-flag tonnage (CMA CGM)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Expeditionary logistics proven in Sahel (Barkhane over 1,000+ km lines), A400M and MRTT airlift."
+    },
+    "draftAnimals": {
+      "low": 600000,
+      "mid": 1000000,
+      "high": 1400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 280,
+      "mid": 290,
+      "high": 370,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: 280 deployed strategic + 10 reserve (carrier weapons) = 290 military stockpile (mid). High: total inventory 370 incl. up to 80 retired TN75 awaiting dismantlement."
+    },
+    "basesAbroad": [
+      {
+        "name": "French Forces in Djibouti",
+        "lat": 11.5469,
+        "lon": 43.1456,
+        "kind": "fortress"
+      },
+      {
+        "name": "French Forces in the UAE (Camp de la Paix, Abu Dhabi)",
+        "lat": 24.52,
+        "lon": 54.39,
+        "kind": "port"
+      },
+      {
+        "name": "Camp de Gaulle, Libreville, Gabon (shared since 2025)",
+        "lat": 0.4162,
+        "lon": 9.4673,
+        "kind": "fortress"
+      },
+      {
+        "name": "Armed Forces of New Caledonia, Noumea",
+        "lat": -22.2758,
+        "lon": 166.458,
+        "kind": "port"
+      },
+      {
+        "name": "Armed Forces of French Polynesia, Papeete",
+        "lat": -17.535,
+        "lon": -149.5696,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Strait of Dover",
+      "Belfort Gap",
+      "Rhine crossings",
+      "Ardennes",
+      "Pyrenees passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, fortified cities, population support and some depth; no harsh-climate bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with the Ministry of the Armed Forces Key Figures 2026 (equipment at end 2025) as the primary order-of-battle source (grade A). Population convention: metropolitan France plus overseas departments inside ne:FRA (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. ships_major = carrier + PHA + first-rank frigates; surveillance frigates (Floreal) counted as minor. drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Gendarmerie excluded. Large donations to Ukraine (CAESAR, AMX-10RC, LRU) depressed artillery holdings. Most African bases (Chad, Senegal, Cote d'Ivoire, Mali, Niger) closed 2022-2025."
+}

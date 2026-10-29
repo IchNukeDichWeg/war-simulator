@@ -1,0 +1,790 @@
+{
+  "id": "united-kingdom-2026",
+  "nationId": "united-kingdom",
+  "includes": [],
+  "name": "United Kingdom of Great Britain and Northern Ireland",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "nuclear power",
+    "UN Security Council P5",
+    "parliamentary monarchy",
+    "all-volunteer force",
+    "island",
+    "Atlantic",
+    "North Sea"
+  ],
+  "capital": {
+    "name": "London",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Birmingham",
+      "lat": 52.4862,
+      "lon": -1.8904,
+      "kind": "city"
+    },
+    {
+      "name": "Manchester",
+      "lat": 53.4808,
+      "lon": -2.2426,
+      "kind": "city"
+    },
+    {
+      "name": "Glasgow",
+      "lat": 55.8642,
+      "lon": -4.2518,
+      "kind": "city"
+    },
+    {
+      "name": "Liverpool",
+      "lat": 53.4084,
+      "lon": -2.9916,
+      "kind": "port"
+    },
+    {
+      "name": "Southampton",
+      "lat": 50.9097,
+      "lon": -1.4044,
+      "kind": "port"
+    },
+    {
+      "name": "HMNB Portsmouth",
+      "lat": 50.7989,
+      "lon": -1.108,
+      "kind": "port"
+    },
+    {
+      "name": "HMNB Devonport (Plymouth)",
+      "lat": 50.3833,
+      "lon": -4.1833,
+      "kind": "port"
+    },
+    {
+      "name": "HMNB Clyde (Faslane, SSBN base)",
+      "lat": 56.067,
+      "lon": -4.818,
+      "kind": "port"
+    },
+    {
+      "name": "Belfast",
+      "lat": 54.5973,
+      "lon": -5.9301,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Dover",
+      "lat": 51.0,
+      "lon": 1.45,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "RAF Lossiemouth",
+      "lat": 57.7052,
+      "lon": -3.3392,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:GBR",
+    "areaKm2": {
+      "low": 240720,
+      "mid": 241930,
+      "high": 249188,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 241,930 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 68792130,
+      "mid": 69487000,
+      "high": 70181870,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 69,487,000. Everything inside ne:GBR (Great Britain and Northern Ireland); Crown dependencies and overseas territories excluded."
+    },
+    "urbanization": {
+      "low": 0.8282,
+      "mid": 0.8332,
+      "high": 0.8382,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 83.32% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 137970,
+      "mid": 141100,
+      "high": 143000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance as quoted: 141,100 active. Low: 137,970 regular forces (MoD statistics April 2026, British Armed Forces article). CIA Factbook 2025: ~138,000 regulars plus 40-45,000 reserves and others on active duty. World Bank MS.MIL.TOTL.P1 153,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 70450,
+      "high": 70450,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 70,450 reserves (all trained and untrained categories). Low: CIA Factbook 2025 \"approximately 40-45,000 reserves\" (https://raw.githubusercontent.com/factbook/factbook.json/master/europe/uk.json)."
+    },
+    "supportPersonnel": {
+      "low": 100385,
+      "mid": 118100,
+      "high": 129910,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 141,100 minus infantry P roles (23,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to WWII Britain (~5.9 million in uniform from ~48 million, ~12%) scaled down for an all-volunteer force with no conscription law, no stored equipment for mass levies and an older population."
+    },
+    "mobilizable": {
+      "low": 2779480,
+      "mid": 4169220,
+      "high": 6253830,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 69,487,000 x ratio 0.04 / 0.06 / 0.09."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured and mechanized infantry riflemen: ~6 Warrior/Boxer battalions and 4 heavy protected mobility battalions x ~550-600. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Warrior is a 1980s IFV, Boxer entering service."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Long-service professionals, NATO eFP Estonia."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 12000,
+          "mid": 16000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry, Parachute Regiment, Gurkhas and 3 Commando Brigade Royal Marines (~6,000): ~20 battalions x ~500 plus commandos. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern small arms, NLAW/Javelin, Foxhound/Jackal mobility."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Paras, Royal Marines and Gurkhas are elite long-service troops with Iraq/Afghanistan experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 148,
+          "mid": 200,
+          "high": 288,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army",
+          "note": "Equipment list: 288 Challenger 2 in inventory, being reduced to 148 Challenger 3 by 2027; tanks inside the conversion programme are unavailable. Mid is a judgement for Oct 2026 (3 regular regiments x 56 plus training fleet, minus hulls in conversion)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Challenger 2 lacks APS; Challenger 3 with Trophy APS arriving."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1600,
+          "mid": 2435,
+          "high": 2985,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army",
+          "note": "Equipment list: Warrior 604 + Bulldog FV430 738 + Boxer 100 + Ajax 142 + Mastiff 297 + Ridgeback 164 + Foxhound 390 = 2,435. Low drops Foxhound/Ridgeback and Bulldogs in non-carrier roles; high adds Jackal 2/3 550."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Fleet dominated by 1960s FV430 and 1980s Warrior; Boxer and Ajax new but Ajax troubled."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 160,
+          "mid": 183,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army",
+          "note": "L118 105 mm 126 + Archer 155 mm 14 + M270 MLRS 43 = 183. AS-90 fleet gone (32 to Ukraine, rest retired)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): GMLRS precision, Archer interim; very small tube fleet."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional Royal Artillery."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 150,
+          "mid": 158,
+          "high": 173,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_Kingdom_military_aircraft",
+          "note": "Typhoon 111 in service (125 total inventory) + F-35B 47 (48 incl. one test aircraft; jointly RAF/FAA) = 158. High uses inventory totals."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0 (the era's best) (slightly below): 5th-generation F-35B plus Typhoon FGR4 with Meteor."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): High flying hours, combat ops over Iraq/Syria and Red Sea."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 170,
+          "mid": 185,
+          "high": 229,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_Kingdom_military_aircraft",
+          "note": "In-service figures: Apache AH-64E 50 + Wildcat AH1 25 + Chinook 36 + Jupiter HC2 3 + Dauphin 5 + Wildcat HMA2 22 + Merlin HM2 23 + Merlin Mk4 21 = 185; inventory totals 229. Trainers excluded."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): AH-64E, Chinook, Merlin modern."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 23,
+          "high": 57,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_Kingdom_military_aircraft",
+          "note": "Group 2+ only: Protector RG1 10 delivered + Watchkeeper WK450 13 in service (47 inventory, retiring by March 2027)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Protector (MQ-9B) modern; Watchkeeper being retired."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 13,
+          "mid": 13,
+          "high": 15,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Navy_ships",
+          "note": "July 2026 list: 2 Queen Elizabeth carriers + 6 Type 45 destroyers + 5 Type 23 frigates = 13. High allows for frigates returning from refit; Type 26/31 not yet commissioned."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Carriers with F-35B, Type 45 Sea Viper."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional, but crew shortages limit availability."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 33,
+          "high": 36,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Navy_ships",
+          "note": "River OPV 8 + coastal/fast patrol boats 18 + MCM 7 = 33. High adds 3 RFA Bay-class landing ships (auxiliaries). Albion LPDs laid up."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Patrol craft lightly armed."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 9,
+          "mid": 10,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Royal_Navy_ships",
+          "note": "4 Vanguard SSBN + 6 Astute SSN (no Trafalgar left). Low allows for one SSN in deep maintenance."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0 (the era's best) (slightly below): Astute SSN among the best attack submarines."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Long-service submariners."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 6,
+          "mid": 10,
+          "high": 15,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_British_Army",
+          "note": "Sky Sabre (CAMM): at least 6 launchers in 3 batteries; Starstreak SP HVM 53 Stormer launchers (~6-7 per battery, ~7 batteries); 145 Starstreak LML not counted as batteries. Total ~10 fire units."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Sky Sabre modern but tiny; no long-range GBAD."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders): Mature joint staff (PJHQ, ARRC corps HQ), recent combat command in Iraq/Afghanistan and Red Sea air defence."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly above): Regimental system, Paras/Royal Marines/Gurkhas with strong identity."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly above): Average: professional force under recruitment and retention strain; would rise for homeland defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Meteor, Storm Shadow, Brimstone, GMLRS; few loitering munitions."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Challenger 2 composite armour; Trophy APS only arriving with Challenger 3."
+    },
+    "ships": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Carrier strike group, Type 45, Astute SSN; USV/MCM autonomy trials."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Hardened air bases; thin layered GBAD (Sky Sabre only)."
+    },
+    "logistics": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: A400M, C-17, Voyager tankers, global basing."
+    },
+    "communications": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Skynet 5/6 military satcom, Link 16, Five Eyes networks."
+    },
+    "isr": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: RC-135W, P-8, Protector, ISTAR fleet, space surveillance."
+    },
+    "air": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F-35B 5th generation plus Typhoon."
+    },
+    "cyber": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National Cyber Force, Five Eyes integration."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 38899,
+      "mid": 43221,
+      "high": 47544,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 3,003,331,701,150 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 69,487,000 = 43,221. Range +/-10%."
+    },
+    "gdp": {
+      "low": 2702998531035,
+      "mid": 3003331701150,
+      "high": 3303664871265,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 3,751,819,739,100 x 0.8005 (US GDP deflator 2011/2021) = 3,003,331,701,150 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0204,
+      "mid": 0.0235,
+      "high": 0.0247,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.35% of GDP in 2025 (mid), 2.44% in 2024, 2.04% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1499,
+      "mid": 0.1649,
+      "high": 0.1799,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 16.5% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. UK imports ~40% of food; production mostly consumed domestically."
+    },
+    "annualCohort": {
+      "low": 388382,
+      "mid": 431535,
+      "high": 474689,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 34,225,295 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.304% (SP.POP.1519.MA.5Y) / 5 = 431,535. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "aircraft_fighter": {
+        "low": 4,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Typhoon line at BAE Warton kept open by export orders; F-35 rear fuselages built in the UK but assembled in the US. (context page: https://en.wikipedia.org/wiki/List_of_active_United_Kingdom_military_aircraft)"
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Type 26 (Govan) and Type 31 (Rosyth) frigates under construction, about one hull per year each."
+      },
+      "armor": {
+        "low": 20,
+        "mid": 50,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Challenger 3 conversions at RBSL Telford (148 by 2027)."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. BAE Barrow builds the last Astutes and Dreadnought SSBNs."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 400000,
+      "mid": 424129,
+      "high": 424129,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 424,129 km, all paved (2020); 3,701 km motorway."
+    },
+    "railKm": {
+      "low": 15693,
+      "mid": 16179,
+      "high": 16502,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/GBR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 16,179 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 7,
+      "mid": 31,
+      "high": 31,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/uk.json",
+      "note": "CIA Factbook 2024: 185 ports, 7 large + 24 medium = 31 (mid); low counts large ports only."
+    },
+    "merchantTonnage": {
+      "low": 10327000,
+      "mid": 10327000,
+      "high": 30000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 10,327 thousand DWT under the UK flag. High is an educated guess for British-owned tonnage under other flags (Isle of Man, Gibraltar, Bermuda red ensign group excluded from mid)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 300,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. NATO-standard deployable logistics, A400M/C-17 airlift and RFA sealift; UK planned Op Granby-scale divisional deployment."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 900000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 120,
+      "mid": 225,
+      "high": 260,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces 2026: 120 deployed strategic + 105 reserve = 225 stockpile (mid); low = deployed on Trident II D5. High: the 2021 Integrated Review cap of no more than 260 warheads."
+    },
+    "basesAbroad": [
+      {
+        "name": "RAF Akrotiri (Sovereign Base Area, Cyprus)",
+        "lat": 34.5904,
+        "lon": 32.9879,
+        "kind": "fortress"
+      },
+      {
+        "name": "Gibraltar naval base",
+        "lat": 36.1408,
+        "lon": -5.3536,
+        "kind": "port"
+      },
+      {
+        "name": "Mount Pleasant, Falkland Islands",
+        "lat": -51.8228,
+        "lon": -58.4472,
+        "kind": "fortress"
+      },
+      {
+        "name": "Diego Garcia (BIOT, shared with US)",
+        "lat": -7.3133,
+        "lon": 72.4111,
+        "kind": "fortress"
+      },
+      {
+        "name": "UK Naval Support Facility Bahrain (HMS Jufair)",
+        "lat": 26.205,
+        "lon": 50.611,
+        "kind": "port"
+      },
+      {
+        "name": "UK Joint Logistics Support Base Duqm, Oman",
+        "lat": 19.6667,
+        "lon": 57.7,
+        "kind": "port"
+      },
+      {
+        "name": "British Forces Brunei (Seria)",
+        "lat": 4.6064,
+        "lon": 114.322,
+        "kind": "fortress"
+      },
+      {
+        "name": "NATO eFP battlegroup Tapa, Estonia",
+        "lat": 59.26,
+        "lon": 25.958,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Strait of Dover",
+      "GIUK gap",
+      "Western Approaches",
+      "Pentland Firth"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: island with naval moat, familiar terrain, population support; little strategic depth, no harsh-climate bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:GBR (World Bank); overseas territories and Crown dependencies excluded. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from Wikipedia inventory tables (British Army equipment list, active aircraft list with in-service/total columns, July 2026 active ships list) and IISS as quoted; ships_major = carriers/LHD + cruisers + destroyers + frigates; ships_minor = OPV, patrol, MCM; drones = Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). No ground-launched missiles; the Trident force is carried by the 4 SSBNs counted under submarines. Army in transition: Challenger 3, Boxer and Ajax replacing older fleets, AS-90 gone, so armour and artillery counts are unusually uncertain for 2026."
+}

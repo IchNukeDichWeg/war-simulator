@@ -1,0 +1,646 @@
+{
+  "id": "czechia-2026",
+  "nationId": "czechia",
+  "includes": [],
+  "name": "Czech Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "all-volunteer force",
+    "landlocked"
+  ],
+  "capital": {
+    "name": "Prague",
+    "lat": 50.0755,
+    "lon": 14.4378,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Brno",
+      "lat": 49.1951,
+      "lon": 16.6068,
+      "kind": "city"
+    },
+    {
+      "name": "Ostrava",
+      "lat": 49.8209,
+      "lon": 18.2625,
+      "kind": "city"
+    },
+    {
+      "name": "Plzen",
+      "lat": 49.7384,
+      "lon": 13.3736,
+      "kind": "city"
+    },
+    {
+      "name": "Olomouc",
+      "lat": 49.5938,
+      "lon": 17.2509,
+      "kind": "city"
+    },
+    {
+      "name": "Caslav Air Base",
+      "lat": 49.94,
+      "lon": 15.38,
+      "kind": "fortress"
+    },
+    {
+      "name": "Moravian Gate",
+      "lat": 49.6,
+      "lon": 17.8,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bohemian Forest passes",
+      "lat": 49.0,
+      "lon": 13.6,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:CZE",
+    "areaKm2": {
+      "low": 76770,
+      "mid": 77156,
+      "high": 79470,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 77,156 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10778009,
+      "mid": 10886878,
+      "high": 10995747,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 10,886,878. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.7238,
+      "mid": 0.7288,
+      "high": 0.7338,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 72.88% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 26600,
+      "mid": 26600,
+      "high": 28000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 26,600 active. CIA Factbook 2025 ~28,000 (high)."
+    },
+    "trainedReserves": {
+      "low": 2000,
+      "mid": 4000,
+      "high": 6000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. IISS as quoted lists no reserves; the Czech Active Reserve has a few thousand members in regional units."
+    },
+    "supportPersonnel": {
+      "low": 18785,
+      "mid": 22100,
+      "high": 24310,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 26,600 minus infantry P roles (4,500). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Czechoslovakia 1938 (~1.25 million mobilized from ~15 million, ~8%) at the high end; low for today's all-volunteer force with no conscription since 2005."
+    },
+    "mobilizable": {
+      "low": 326606,
+      "mid": 544344,
+      "high": 870950,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,886,878 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 4th Rapid Deployment Brigade and 7th Mechanized Brigade infantry on Pandur/BVP-2. (context page: https://en.wikipedia.org/wiki/Czech_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Pandur II modern, BVP-2 old; CV90 ordered."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 1500,
+          "mid": 2000,
+          "high": 2800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. 43rd Airborne Regiment, light units, special forces. (context page: https://en.wikipedia.org/wiki/Czech_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Modern light kit."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Afghanistan experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 42,
+          "mid": 72,
+          "high": 82,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_military_equipment_of_the_Czech_Army",
+          "note": "Leopard 2A4 42 (from Germany) + T-72M4CZ 30 (partly in reserve); Czech Land Forces page lists 82 MBT (1 Jan 2023). Leopard 2A8 ordered."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Leopard 2A4, T-72M4CZ upgraded."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 300,
+          "mid": 385,
+          "high": 450,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Czech_Land_Forces",
+          "note": "Czech Land Forces page (1 Jan 2023): 385 armoured fighting vehicles (Pandur 72, BVP-2, LMV 72, Titus 6, Dingo 21 among them)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Pandur modern; BVP-2 old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 53,
+          "mid": 80,
+          "high": 172,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_military_equipment_of_the_Czech_Army",
+          "note": "DANA 53 (2023 equipment list) + CAESAR 8x8 deliveries (62 ordered, first batteries 2025-26); Czech Land Forces page counts 172 artillery incl. mortars (high). Mid ~80."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): DANA old; CAESAR new."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 12,
+          "mid": 14,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Czech_military_aircraft",
+          "note": "JAS 39C/D Gripen 14 (leased); F-35A ordered (24, from 2031)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Gripen C/D."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional, Baltic air policing."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 10,
+          "mid": 16,
+          "high": 24,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. L-159 ALCA light combat aircraft; exact active count not on the fetched page. (context page: https://en.wikipedia.org/wiki/List_of_active_Czech_military_aircraft)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): L-159 light attack."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 25,
+          "mid": 35,
+          "high": 45,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mi-24/35 (being replaced by AH-1Z), Mi-171Sh, W-3A, new UH-1Y/AH-1Z (12 delivered). (context page: https://en.wikipedia.org/wiki/List_of_active_Czech_military_aircraft)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mixed Soviet and US types."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 4,
+          "high": 8,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. ScanEagle and Heron 1 leased/ordered; no reliable count. (context page: https://en.wikipedia.org/wiki/List_of_military_equipment_of_the_Czech_Army)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Small."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 5,
+          "mid": 8,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_military_equipment_of_the_Czech_Army",
+          "note": "SPYDER 4 batteries + 2K12 Kub 2 batteries + RBS 70 32 launchers (~6 per battery, ~5) = ~11; Kub retiring (low)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): SPYDER modern; Kub old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): Competent NATO-integrated staff, small expeditionary experience."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Spike, SPYDER, CAESAR."
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Leopard 2A4, T-72M4CZ."
+    },
+    "ships": {
+      "low": 0.0,
+      "mid": 0.0,
+      "high": 0.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 0: Landlocked: no navy."
+    },
+    "fortification": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited GBAD."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Rail-heavy."
+    },
+    "communications": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: NATO C2."
+    },
+    "isr": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Limited."
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Gripen C/D, F-35 ordered."
+    },
+    "cyber": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National Cyber and Information Security Agency, cyber forces."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 35513,
+      "mid": 39459,
+      "high": 43405,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 429,581,362,068 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 10,886,878 = 39,459. Range +/-10%."
+    },
+    "gdp": {
+      "low": 386623225861,
+      "mid": 429581362068,
+      "high": 472539498275,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 536,641,301,772 x 0.8005 (US GDP deflator 2011/2021) = 429,581,362,068 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0135,
+      "mid": 0.0184,
+      "high": 0.0193,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 1.84% of GDP in 2025 (mid), 1.88% in 2024, 1.35% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2721,
+      "mid": 0.2871,
+      "high": 0.3021,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 28.7% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Near self-sufficient in cereals, imports fruit/vegetables."
+    },
+    "annualCohort": {
+      "low": 55394,
+      "mid": 61549,
+      "high": 67704,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,369,227 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.732% (SP.POP.1519.MA.5Y) / 5 = 61,549. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "artillery": {
+        "low": 10,
+        "mid": 24,
+        "high": 48,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Excalibur Army DANA M2 and Morana; CSG ammunition. (context page: https://en.wikipedia.org/wiki/List_of_military_equipment_of_the_Czech_Army)"
+      },
+      "ifv_apc": {
+        "low": 20,
+        "mid": 60,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Tatra/Excalibur Army Pandur, Titus and T-72 overhaul."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 55000,
+      "mid": 55744,
+      "high": 55744,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 55,744 km, all paved (2018)."
+    },
+    "railKm": {
+      "low": 9076,
+      "mid": 9357,
+      "high": 9544,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CZE/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 9,357 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/ez.json",
+      "note": "Landlocked; no sea ports (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/ez.json",
+      "note": "Landlocked; CIA Factbook lists no Czech-flag merchant marine."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 80000,
+      "mid": 120000,
+      "high": 160000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Moravian Gate",
+      "Bohemian Forest passes",
+      "Ore Mountains passes",
+      "Elbe valley"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: mountain-ringed Bohemia, fortified cities, population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:CZE. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Czech Army equipment list, Czech Land Forces article (equipment as of 1 Jan 2023) and active Czech military aircraft list; drones = Group 2+ only. Infantry P-role splits, L-159 and helicopter counts are educated guesses (grade D). Landlocked: ships tech describes river craft only."
+}

@@ -1,0 +1,855 @@
+{
+  "id": "turkey-2026",
+  "nationId": "turkey",
+  "includes": [],
+  "name": "Republic of Turkiye",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "presidential republic",
+    "conscript army",
+    "NATO nuclear sharing",
+    "regional power",
+    "defence-industrial exporter",
+    "Black Sea",
+    "Mediterranean"
+  ],
+  "capital": {
+    "name": "Ankara",
+    "lat": 39.9334,
+    "lon": 32.8597,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Istanbul",
+      "lat": 41.0082,
+      "lon": 28.9784,
+      "kind": "city"
+    },
+    {
+      "name": "Izmir",
+      "lat": 38.4237,
+      "lon": 27.1428,
+      "kind": "port"
+    },
+    {
+      "name": "Bursa",
+      "lat": 40.1826,
+      "lon": 29.0665,
+      "kind": "city"
+    },
+    {
+      "name": "Adana",
+      "lat": 37.0,
+      "lon": 35.3213,
+      "kind": "city"
+    },
+    {
+      "name": "Golcuk naval base",
+      "lat": 40.7167,
+      "lon": 29.8167,
+      "kind": "port"
+    },
+    {
+      "name": "Aksaz naval base",
+      "lat": 36.9667,
+      "lon": 28.4,
+      "kind": "port"
+    },
+    {
+      "name": "Mersin",
+      "lat": 36.8,
+      "lon": 34.6333,
+      "kind": "port"
+    },
+    {
+      "name": "Incirlik Air Base (nuclear sharing)",
+      "lat": 37.0021,
+      "lon": 35.4259,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bosporus",
+      "lat": 41.12,
+      "lon": 29.07,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dardanelles",
+      "lat": 40.2,
+      "lon": 26.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Diyarbakir",
+      "lat": 37.9144,
+      "lon": 40.2306,
+      "kind": "city"
+    },
+    {
+      "name": "Erzurum",
+      "lat": 39.9,
+      "lon": 41.27,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "ne:TUR",
+    "areaKm2": {
+      "low": 765782,
+      "mid": 769630,
+      "high": 792719,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 769,630 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 85019770,
+      "mid": 85878556,
+      "high": 86737342,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 85,878,556. Everything inside ne:TUR incl. ~3 million Syrian refugees counted by the World Bank; Northern Cyprus excluded."
+    },
+    "urbanization": {
+      "low": 0.8899,
+      "mid": 0.8949,
+      "high": 0.8999,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 89.49% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 355200,
+      "mid": 355200,
+      "high": 495000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 355,200 active (Gendarmerie and Coast Guard 161,400 paramilitary excluded). High: CIA Factbook 2025 ~495,000 incl. definitions closer to the World Bank 512,000 (2020) figure."
+    },
+    "trainedReserves": {
+      "low": 250000,
+      "mid": 378700,
+      "high": 378700,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 378,700 reserves; low for the share callable with equipment."
+    },
+    "supportPersonnel": {
+      "low": 182920,
+      "mid": 215200,
+      "high": 236720,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 355,200 minus infantry P roles (140,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Turkey 1939-45 (~1.5 million mobilized from ~18 million, ~8%) for a conscript state with universal male service."
+    },
+    "mobilizable": {
+      "low": 4293928,
+      "mid": 6870284,
+      "high": 10305427,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 85,878,556 x ratio 0.05 / 0.08 / 0.12."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 45000,
+          "mid": 60000,
+          "high": 80000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry brigades on ACV/M113. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): ACV-15 and M113; Kaplan/Pars arriving."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Conscripts with professional cadre; Syria/Iraq operations."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Commando brigades, mountain commandos, gendarmerie-style internal security infantry (army only), marines. (context page: https://en.wikipedia.org/wiki/Turkish_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Modern light kit, domestic small arms."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Commandos combat-experienced against PKK."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1400,
+          "mid": 2051,
+          "high": 2400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "Altay 5 + Leopard 2A4 310 + Leopard 1 171 + M60T 165 + M60A3 650 + M48A5 750 = 2,051; many M48/M60A3 in storage (low)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Mostly old M48/M60 and Leopard 1; Altay entering service."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts with professional cadre."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 4000,
+          "mid": 5900,
+          "high": 10000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "ACV-15 IFV 645 + ACV APC 1,433 + M113 family 2,813 + Pars 150 + tank destroyer variants ~856 = ~5,900; high adds ~4,260 MRAPs (Kirpi, Cobra, Ejder)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Old M113/ACV-15 core."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Conscripts."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 900,
+          "mid": 1400,
+          "high": 2000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "Firtina 310 + TTA 40 + M110 219 + Boran 120 + M115 36 + T-122 36+ + T-300 54+ + T-107 100+ plus towed guns and M109/M44 in reserve. Mid ~1,400."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Firtina is modern (K9 derivative)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Combat use in Syria/Iraq."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 100,
+          "mid": 136,
+          "high": 180,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "J-600T Yildirim 36 + Bora ~100 launchers."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Short-range ballistic missiles; Tayfun entering service."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 200,
+          "mid": 235,
+          "high": 245,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_military_aircraft",
+          "note": "F-16C/D Block 30/40/50 34 + 172 + 29 = 235; F-35 programme cancelled, Eurofighter ordered 2025."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): F-16 Block 50 with ÖZGÜR upgrade."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional, pilot shortage after 2016 purges."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_military_aircraft",
+          "note": "F-4E 2020 Terminator 30."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): 1970s F-4E."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 300,
+          "mid": 360,
+          "high": 420,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "T129 58 + AS532 33 + S-70 70 + CH-47F 10 + UH-1 142 + T625 Gokbey 6 plus navy/gendarmerie S-70B/AB-212 = ~360."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): T129 domestic attack helicopter."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 200,
+          "mid": 300,
+          "high": 400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_military_aircraft",
+          "note": "Bayraktar TB2 200+ + Anka 36 + Akinci 20 + Aksungur 5 = ~300 (military only)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Leading MALE drone producer, Akinci and Kizilelma."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Extensive combat use."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 17,
+          "mid": 18,
+          "high": 19,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_Navy_ships",
+          "note": "TCG Anadolu LHD 1 + frigates 17 (Gabya/OHP, Barbaros, Yavuz, Istanbul) = 18."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mostly 1980s-90s frigates, new I-class."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 40,
+          "mid": 44,
+          "high": 50,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_Navy_ships",
+          "note": "Ada corvettes 4 + MCM 11 + landing ships 5 + fast attack craft 17 + fast patrol 7 = 44."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 12,
+          "mid": 13,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Turkish_Navy_ships",
+          "note": "12-14 Type 209 / Preveze / Gur; Reis (Type 214) class entering service."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Type 209 old; Reis AIP new."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 30,
+          "mid": 45,
+          "high": 70,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces",
+          "note": "Atilgan 70 + Zipkin 35 launchers (~6 per battery, ~18) + Hisar-A/O, Siper and S-400 (4 batteries, not operational) + towed Korkut/Oerlikon = ~45 batteries."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Domestic Hisar/Siper arriving under Steel Dome."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Experienced staff (Syria, Iraq, Libya operations), but 2016 coup-attempt purges removed many senior officers."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): National conscript army with strong identity; commandos elite."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated; recent successful operations, nationalist support."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Domestic SOM/Bora/Tayfun, armed drones, MAM-L micro-munitions."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Altay entering service; M60T and Leopard 2A4 upgrades."
+    },
+    "ships": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: TCG Anadolu drone carrier, MILGEM corvettes/I-class frigates."
+    },
+    "fortification": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Steel Dome GBAD under construction."
+    },
+    "logistics": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Conscript army, interior lines."
+    },
+    "communications": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Domestic tactical radios (Aselsan), satellites."
+    },
+    "isr": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Akinci/Anka persistent ISR, Gokturk satellites."
+    },
+    "air": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: F-16 Block 50, no 5th generation (KAAN in test)."
+    },
+    "cyber": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National cyber units."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 26873,
+      "mid": 29859,
+      "high": 32845,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 2,564,269,207,412 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 85,878,556 = 29,859. Range +/-10%."
+    },
+    "gdp": {
+      "low": 2307842286670,
+      "mid": 2564269207412,
+      "high": 2820696128153,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 3,203,334,425,249 x 0.8005 (US GDP deflator 2011/2021) = 2,564,269,207,412 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0181,
+      "mid": 0.0191,
+      "high": 0.0201,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 1.91% of GDP in 2025 (mid), 1.84% in 2024, 1.81% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2252,
+      "mid": 0.2402,
+      "high": 0.2552,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 24.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Near self-sufficient; large fruit/vegetable/flour exporter, imports grain."
+    },
+    "annualCohort": {
+      "low": 567555,
+      "mid": 630616,
+      "high": 693678,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 42,846,961 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 7.359% (SP.POP.1519.MA.5Y) / 5 = 630,616. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "armor": {
+        "low": 0,
+        "mid": 30,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Altay series production (BMC) began slowly with Korean powerpack. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Turkish_Land_Forces)"
+      },
+      "ifv_apc": {
+        "low": 400,
+        "mid": 800,
+        "high": 1500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Otokar/FNSS/BMC/Nurol output incl. exports."
+      },
+      "artillery": {
+        "low": 40,
+        "mid": 80,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. MKE Firtina-II and MLRS."
+      },
+      "drones": {
+        "low": 150,
+        "mid": 300,
+        "high": 600,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Baykar/TAI MALE drones (Group 2+), large share exported."
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 3,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Istanbul-class frigates and MILGEM hulls."
+      },
+      "helicopters": {
+        "low": 20,
+        "mid": 40,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. TAI T129/T625."
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 40,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Roketsan launchers."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 430000,
+      "mid": 438633,
+      "high": 438633,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 438,633 km of which 344,403 paved (2024)."
+    },
+    "railKm": {
+      "low": 10230,
+      "mid": 10546,
+      "high": 10757,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/TUR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 10,546 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 6,
+      "high": 6,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/middle-east/tu.json",
+      "note": "CIA Factbook 2024: 3 large + 3 medium = 6."
+    },
+    "merchantTonnage": {
+      "low": 6842000,
+      "mid": 6842000,
+      "high": 30000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 6,842 thousand DWT under the Turkish flag. High is an educated guess for Turkish-owned tonnage under foreign flags."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Cross-border operations sustained 30-150 km deep into Syria/Iraq."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 900000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Turkey hosts US B61 bombs at Incirlik (FAS host list), but has no Turkish aircraft certified for them; not counted."
+    },
+    "basesAbroad": [
+      {
+        "name": "Turkish forces in Northern Cyprus",
+        "lat": 35.185,
+        "lon": 33.38,
+        "kind": "fortress"
+      },
+      {
+        "name": "Turkish base Doha, Qatar",
+        "lat": 25.25,
+        "lon": 51.5,
+        "kind": "fortress"
+      },
+      {
+        "name": "TURKSOM, Mogadishu, Somalia",
+        "lat": 2.03,
+        "lon": 45.3,
+        "kind": "fortress"
+      },
+      {
+        "name": "Bashiqa / northern Iraq bases",
+        "lat": 36.43,
+        "lon": 43.35,
+        "kind": "fortress"
+      },
+      {
+        "name": "Al-Watiya Air Base, Libya",
+        "lat": 32.47,
+        "lon": 11.9,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Bosporus",
+      "Dardanelles",
+      "Cilician Gates",
+      "Taurus passes",
+      "Eastern Anatolian highlands"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.25,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: mountainous Anatolia gives depth, harsh eastern winter, strong population support."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:TUR (Northern Cyprus excluded). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Turkish Land Forces equipment list, active Turkish military aircraft list and active navy ship list; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Region tagged europe for this wave; Turkey bridges Europe and the Middle East."
+}

@@ -1,0 +1,701 @@
+{
+  "id": "sweden-2026",
+  "nationId": "sweden",
+  "includes": [],
+  "name": "Kingdom of Sweden",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary monarchy",
+    "selective conscription",
+    "total defence",
+    "Baltic"
+  ],
+  "capital": {
+    "name": "Stockholm",
+    "lat": 59.3293,
+    "lon": 18.0686,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Gothenburg",
+      "lat": 57.7089,
+      "lon": 11.9746,
+      "kind": "port"
+    },
+    {
+      "name": "Malmo",
+      "lat": 55.605,
+      "lon": 13.0038,
+      "kind": "port"
+    },
+    {
+      "name": "Uppsala",
+      "lat": 59.8586,
+      "lon": 17.6389,
+      "kind": "city"
+    },
+    {
+      "name": "Karlskrona naval base",
+      "lat": 56.1612,
+      "lon": 15.5869,
+      "kind": "port"
+    },
+    {
+      "name": "Lulea (Norrbotten Wing)",
+      "lat": 65.5436,
+      "lon": 22.122,
+      "kind": "fortress"
+    },
+    {
+      "name": "Visby, Gotland",
+      "lat": 57.6348,
+      "lon": 18.2948,
+      "kind": "fortress"
+    },
+    {
+      "name": "Boden fortress",
+      "lat": 65.825,
+      "lon": 21.6886,
+      "kind": "fortress"
+    },
+    {
+      "name": "Oresund",
+      "lat": 55.9,
+      "lon": 12.7,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Aland Sea",
+      "lat": 60.0,
+      "lon": 19.2,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:SWE",
+    "areaKm2": {
+      "low": 405234,
+      "mid": 407270,
+      "high": 419488,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 407,270 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10490654,
+      "mid": 10596620,
+      "high": 10702586,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 10,596,620. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.8858,
+      "mid": 0.8908,
+      "high": 0.8958,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 89.08% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 14850,
+      "mid": 20000,
+      "high": 25000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Swedish_Armed_Forces",
+      "note": "IISS as quoted (personnel list): 14,850 active. Swedish Armed Forces article: 10,400 officers + 7,200 enlisted = 17,600 military employees, plus ~6-8,000 conscripts in training at any time; CIA Factbook 2025 ~25,000 (high). Mid ~20,000."
+    },
+    "trainedReserves": {
+      "low": 21000,
+      "mid": 21500,
+      "high": 50000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 21,500 reserves. CIA Factbook adds ~21,000 Home Guard. High is an educated allowance for conscript-trained men placed in the wartime organisation (~90,000 total wartime strength is the commonly cited target)."
+    },
+    "supportPersonnel": {
+      "low": 12750,
+      "mid": 15000,
+      "high": 16500,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Swedish_Armed_Forces",
+      "note": "Active 20,000 minus infantry P roles (5,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Cold War Sweden (wartime strength ~800,000 from ~8 million, ~10%) scaled down for today's smaller wartime organisation and equipment stocks."
+    },
+    "mobilizable": {
+      "low": 423865,
+      "mid": 635797,
+      "high": 953696,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 10,596,620 x ratio 0.04 / 0.06 / 0.09."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized battalions of 3 brigades on CV90. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): CV90, Strv 122."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional cadre plus conscripts (selective, motivated)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Ranger (Jaeger) battalions, amphibious corps, Gotland regiment. (context page: https://en.wikipedia.org/wiki/Swedish_Armed_Forces)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern kit, Carl Gustaf, NLAW."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Selective conscription produces well-trained Jaeger units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 110,
+          "high": 120,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army",
+          "note": "Strv 122A 96 + Strv 122B 14 = 110; Strv 123 (Leopard 2A8) ordered."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Strv 122 (Leopard 2A5 improved)."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional/conscript crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 500,
+          "mid": 685,
+          "high": 750,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army",
+          "note": "CV90 224 + Patria XA-360 112 + XA-180 34 + XA-203 148 + Bv410 167 = 685 (some CV90 donated to Ukraine)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): CV90 among the best IFVs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional/conscript."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 26,
+          "mid": 30,
+          "high": 70,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army",
+          "note": "Archer 26 (6x6) + 4 (8x8) = 30; high adds 40 Mjolner 120 mm CV90 mortar systems."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Archer is very modern but few."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 85,
+          "mid": 94,
+          "high": 98,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swedish_military_aircraft",
+          "note": "JAS 39C/D Gripen 71 + further C/D airframes 23 = 94; Gripen E entering service."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Gripen C/D with Meteor, Gripen E arriving."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Dispersed-basing doctrine well drilled."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 45,
+          "mid": 53,
+          "high": 60,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swedish_military_aircraft",
+          "note": "UH-60M 15 + NH90 18 + AW109 20 = 53."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Modern."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 6,
+          "mid": 8,
+          "high": 10,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swedish_military_aircraft",
+          "note": "RQ-7 Shadow 8 (UAV 03 Orkan); Skylark minis excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Small fleet."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 27,
+          "high": 30,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swedish_Navy_ships",
+          "note": "Visby/Goteborg corvettes 7 + patrol vessels 13 + mine countermeasure vessels 7 = 27; ~100 Combat Boat 90 assault craft excluded. No frigates."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Visby stealth corvettes."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional, archipelago warfare."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 4,
+          "mid": 4,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Swedish_Navy_ships",
+          "note": "Gotland-class 3 + Sodermanland 1 = 4 (A26 Blekinge delayed)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Stirling AIP, world-leading conventional subs."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 16,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army",
+          "note": "Patriot (Lvsyst 103) 4 fire units + Lvkv 90 30 SPAAG (~6 per battery, ~5) + IRIS-T SLS/RBS 70/RBS 98 batteries ~3 = ~12."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Patriot, IRIS-T."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Trained staff, total-defence planning; no war since 1814."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional cadre with motivated selective conscripts."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.75 (motivated, recent victories) (slightly below): Motivated: strong societal will to defend (total defence culture), joined NATO 2024."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Meteor, RBS 15, NLAW, Carl Gustaf M4, Archer."
+    },
+    "armor": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Strv 122 with add-on armour; no APS."
+    },
+    "ships": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Visby stealth corvettes, AIP submarines."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Hardened underground facilities, civil defence."
+    },
+    "logistics": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Dispersed road-base logistics."
+    },
+    "communications": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: National secure networks, Link 16."
+    },
+    "isr": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: GlobalEye AEW&C, signals intelligence (FRA)."
+    },
+    "air": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Gripen E (4.5 generation)."
+    },
+    "cyber": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Strong national cyber capability."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 45649,
+      "mid": 50722,
+      "high": 55794,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 537,478,053,528 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 10,596,620 = 50,722. Range +/-10%."
+    },
+    "gdp": {
+      "low": 483730248175,
+      "mid": 537478053528,
+      "high": 591225858881,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 671,427,924,457 x 0.8005 (US GDP deflator 2011/2021) = 537,478,053,528 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.012,
+      "mid": 0.0247,
+      "high": 0.0259,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.47% of GDP in 2025 (mid), 1.99% in 2024, 1.20% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.1953,
+      "mid": 0.2103,
+      "high": 0.2253,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 21.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.0,
+      "mid": 0.05,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Roughly self-sufficient in cereals and dairy; imports fruit/vegetables."
+    },
+    "annualCohort": {
+      "low": 58536,
+      "mid": 65039,
+      "high": 71543,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 5,338,595 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.091% (SP.POP.1519.MA.5Y) / 5 = 65,039. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 80,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. BAE Hagglunds CV90 line (exports to several NATO states). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Swedish_Army)"
+      },
+      "aircraft_fighter": {
+        "low": 6,
+        "mid": 12,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Saab Linkoping Gripen E."
+      },
+      "artillery": {
+        "low": 12,
+        "mid": 24,
+        "high": 48,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. BAE Bofors Archer."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 0,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Saab Kockums A26."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 560000,
+      "mid": 573134,
+      "high": 573134,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 573,134 km incl. private and forest roads, 140,100 paved (2016)."
+    },
+    "railKm": {
+      "low": 9423,
+      "mid": 9714,
+      "high": 9908,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/SWE/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 9,714 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 13,
+      "high": 13,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/sw.json",
+      "note": "CIA Factbook 2024: 3 large + 10 medium = 13."
+    },
+    "merchantTonnage": {
+      "low": 1142000,
+      "mid": 1142000,
+      "high": 3000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 1,142 thousand DWT under the Swedish flag; Swedish-owned tonnage under foreign flags is larger (educated high)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 360000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Oresund",
+      "Aland Sea",
+      "Gotland",
+      "Norrbotten (Boden) approaches"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: forests, lakes and long distances, total-defence population support, harsh northern winter."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:SWE. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Swedish Army equipment list, active Swedish military aircraft list and active navy ship list; no frigates or destroyers, so ships_major is omitted. drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Home Guard (~21,000) excluded from active."
+}

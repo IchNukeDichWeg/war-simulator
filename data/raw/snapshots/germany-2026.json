@@ -1,0 +1,790 @@
+{
+  "id": "germany-2026",
+  "nationId": "germany",
+  "includes": [],
+  "name": "Federal Republic of Germany",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "federal parliamentary republic",
+    "all-volunteer force",
+    "NATO nuclear sharing",
+    "North Sea",
+    "Baltic"
+  ],
+  "capital": {
+    "name": "Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Hamburg",
+      "lat": 53.5511,
+      "lon": 9.9937,
+      "kind": "port"
+    },
+    {
+      "name": "Munich",
+      "lat": 48.1351,
+      "lon": 11.582,
+      "kind": "city"
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.9375,
+      "lon": 6.9603,
+      "kind": "city"
+    },
+    {
+      "name": "Frankfurt am Main",
+      "lat": 50.1109,
+      "lon": 8.6821,
+      "kind": "city"
+    },
+    {
+      "name": "Wilhelmshaven naval base",
+      "lat": 53.5167,
+      "lon": 8.1333,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel naval base",
+      "lat": 54.3233,
+      "lon": 10.1228,
+      "kind": "port"
+    },
+    {
+      "name": "Rostock",
+      "lat": 54.0924,
+      "lon": 12.0991,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel Canal (Brunsbuettel locks)",
+      "lat": 53.8936,
+      "lon": 9.1439,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Buechel Air Base (nuclear sharing)",
+      "lat": 50.1738,
+      "lon": 7.0633,
+      "kind": "fortress"
+    },
+    {
+      "name": "Fulda Gap",
+      "lat": 50.55,
+      "lon": 9.68,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dresden",
+      "lat": 51.0504,
+      "lon": 13.7373,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "ne:DEU",
+    "areaKm2": {
+      "low": 347683,
+      "mid": 349430,
+      "high": 359913,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 349,430 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 82656337,
+      "mid": 83491249,
+      "high": 84326161,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 83,491,249. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.8164,
+      "mid": 0.8214,
+      "high": 0.8264,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 82.14% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 179850,
+      "mid": 186221,
+      "high": 187000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Bundeswehr",
+      "note": "Bundeswehr article: 186,221 active military personnel at 31 Jan 2026 (infobox 186,710). Low: IISS 179,850 as quoted on the Wikipedia personnel list. CIA Factbook 2025 ~185,000. Target 203,000 by 2031; new military service law from 1 Jan 2026."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 34100,
+      "high": 100000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 34,100 reserves. High is an educated allowance for former soldiers callable under the 2026 service law; the ~860,000 in the Bundeswehr infobox are former service members, not trained reservists callable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 145538,
+      "mid": 171221,
+      "high": 188343,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Bundeswehr",
+      "note": "Active 186,221 minus infantry P roles (15,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to WWII Germany (~13 million served from ~80 million incl. annexed areas, ~16%) scaled far down: suspended conscription since 2011, an old population and almost no stored equipment."
+    },
+    "mobilizable": {
+      "low": 3339650,
+      "mid": 5009475,
+      "high": 7514212,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 83,491,249 x ratio 0.04 / 0.06 / 0.09."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 9000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Panzergrenadier battalions (~9) x ~500 dismounts plus Boxer-equipped mechanized infantry. (context page: https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army)"
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Puma IFV and Boxer."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional but exercise and ammunition shortfalls reported for years."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 6000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Jaeger, Gebirgsjaeger and Fallschirmjaeger battalions (~12) x ~500 plus KSK. (context page: https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army)"
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Modern kit."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional; paratroopers and mountain troops well trained."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 280,
+          "mid": 296,
+          "high": 320,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army",
+          "note": "Equipment list: Leopard 2A5 19 + 2A6 68 + 2A6A3 34 + 2A6M 20 + 2A6MA3 50 + 2A7V 104 + 2A7A1 1 = 296. Leopard 2A8 (123 ordered) not yet delivered."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Leopard 2A6/2A7V among the best Western tanks; APS only on 2A8."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional crews; Panzerbrigade 45 forward in Lithuania."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1700,
+          "mid": 2000,
+          "high": 2600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army",
+          "note": "Equipment list: Puma 337 (2022) + Boxer ~450 (APC 256, command 65, ambulance 72+, RCH/other) + Fuchs 825 + Wiesel 1 211 + Marder 1 (quantity unclear, ~170 assumed) = ~2,000. High adds 586 Dingo MRAPs."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): Puma and Boxer modern, Fuchs and Marder old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 160,
+          "mid": 168,
+          "high": 190,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army",
+          "note": "PzH 2000 135 (134 A2 + 1 A4) + M270A1 MARS II 33 = 168."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): PzH 2000 is among the best SP howitzers."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 130,
+          "mid": 141,
+          "high": 141,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/German_Air_Force",
+          "note": "Inventory table: Eurofighter Typhoon 141 (T1-T4; 58 Tranche 4/5 on order). F-35A (35) not yet delivered."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Typhoon with Meteor; no 5th generation until 2027."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional, Baltic Air Policing; readiness issues reported."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 70,
+          "mid": 84,
+          "high": 84,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/German_Air_Force",
+          "note": "Inventory table: Tornado IDS 63 + ECR 21 = 84 (nuclear-sharing and SEAD roles, to be replaced by F-35A/Typhoon EK)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Tornado is a 1980s airframe."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 230,
+          "mid": 264,
+          "high": 280,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/German_Army",
+          "note": "Army Aviation: Tiger 51 active, NH90 TTH 82, H145 LUH SAR 8; Air Force (inventory table): CH-53 66, H145M 17; Navy ~40 (Sea Lynx, NH90 Sea Lion/Sea Tiger; Marinefliegerkommando 56 aircraft incl. MPA, per German Navy article). Trainers excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): NH90/Tiger modern but low availability; CH-53 old."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional, low flying hours."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 31,
+          "mid": 74,
+          "high": 155,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army",
+          "note": "Group 2+: Heron TP 5 + Heron 1 6 (Air Force table) + KZO 43 + LUNA NG 20 = 74. Low drops LUNA/KZO; high adds the 81 LUNA X-2000 listed as usable in 2013."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Heron TP armed since 2023; KZO/LUNA dated."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 11,
+          "mid": 11,
+          "high": 11,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_German_Navy_ships",
+          "note": "Active ships list: 11 frigates (F122 retired; F123, F124, F125)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best): F124 air-defence frigates, F125 stabilisation frigates."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional; Red Sea deployment 2024."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 16,
+          "mid": 18,
+          "high": 18,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_German_Navy_ships",
+          "note": "Corvettes 6 (K130) + mine countermeasure ships 12 = 18."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): K130 batch 2 modern."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 5,
+          "mid": 6,
+          "high": 6,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_German_Navy_ships",
+          "note": "6 Type 212A AIP submarines (availability historically low)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Type 212A AIP among the best conventional submarines."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 22,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/German_Air_Force",
+          "note": "Air and Space Force article: the SAM wing fields 14 Patriot and 4 MANTIS systems (several Patriot units since given to Ukraine); plus IRIS-T SLM fire units delivered from 2024, Arrow 3 (IOC 2025) and Skyranger 30 entering service. ~22 batteries/fire units."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Patriot PAC-3, IRIS-T SLM, Arrow 3 exo-atmospheric."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Trained staff system and NATO corps HQs, but no large combat command since 1945 and a known readiness/bureaucracy gap."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional force; Innere Fuehrung ethos."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average: limited societal willingness to fight in polls, strengthening since 2022."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Taurus, IRIS-T, Meteor, PzH 2000 precision rounds; few loitering munitions."
+    },
+    "armor": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Leopard 2A7V composite armour; Trophy APS on 2A8 from 2027."
+    },
+    "ships": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F124/F125 frigates, 212A AIP submarines."
+    },
+    "fortification": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Layered GBAD building up (Arrow 3, Patriot, IRIS-T, Skyranger)."
+    },
+    "logistics": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: A400M, rail-heavy logistics, Lithuania brigade sustainment."
+    },
+    "communications": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: SATCOMBw, Link 16; D-LBO digitisation behind schedule."
+    },
+    "isr": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: SARah radar satellites, Heron TP, P-8 arriving."
+    },
+    "air": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Typhoon 4.5 generation; F-35A from 2027."
+    },
+    "cyber": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Cyber and Information Domain Service (CIR)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 45261,
+      "mid": 50290,
+      "high": 55319,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 4,198,810,881,805 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 83,491,249 = 50,290. Range +/-10%."
+    },
+    "gdp": {
+      "low": 3778929793624,
+      "mid": 4198810881805,
+      "high": 4618691969985,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 5,245,235,330,174 x 0.8005 (US GDP deflator 2011/2021) = 4,198,810,881,805 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.013,
+      "mid": 0.0227,
+      "high": 0.0238,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.27% of GDP in 2025 (mid), 1.84% in 2024, 1.30% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2366,
+      "mid": 0.2516,
+      "high": 0.2666,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 25.2% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Germany is a net food importer but a large producer of cereals, dairy and pork."
+    },
+    "annualCohort": {
+      "low": 355690,
+      "mid": 395211,
+      "high": 434733,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 41,229,442 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 4.793% (SP.POP.1519.MA.5Y) / 5 = 395,211. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "armor": {
+        "low": 50,
+        "mid": 100,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. KNDS Munich Leopard 2A8 for German, Dutch, Czech, Lithuanian and Norwegian orders. (context page: https://en.wikipedia.org/wiki/List_of_modern_equipment_of_the_German_Army)"
+      },
+      "ifv_apc": {
+        "low": 150,
+        "mid": 300,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Rheinmetall/KNDS Boxer and Puma lines."
+      },
+      "artillery": {
+        "low": 20,
+        "mid": 40,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. PzH 2000 and RCH 155 lines."
+      },
+      "air_defense": {
+        "low": 6,
+        "mid": 12,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Diehl IRIS-T SLM fire units, ramping."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. F126 frigates delayed; MEKO A-200 interim."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. TKMS Kiel Type 212CD."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 800000,
+      "mid": 830000,
+      "high": 830000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 830,000 km, all paved (2022); 16,365 km Autobahn."
+    },
+    "railKm": {
+      "low": 32399,
+      "mid": 33401,
+      "high": 34069,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/DEU/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 33,401 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 9,
+      "high": 9,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/gm.json",
+      "note": "CIA Factbook 2024: 35 ports, 5 large + 4 medium = 9; low counts large ports only."
+    },
+    "merchantTonnage": {
+      "low": 8711000,
+      "mid": 8711000,
+      "high": 30000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 8,711 thousand DWT under the German flag. High is an educated guess for German-owned tonnage under foreign flags (Hapag-Lloyd and KG fleets)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 800000,
+      "mid": 1200000,
+      "high": 1500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Germany hosts US B61 bombs at Buechel under NATO nuclear sharing (FAS lists Germany among host countries); these are US weapons and are not counted."
+    },
+    "basesAbroad": [
+      {
+        "name": "Panzerbrigade 45, Rudninkai/Vilnius area (Lithuania)",
+        "lat": 54.38,
+        "lon": 25.12,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Fulda Gap",
+      "North German Plain",
+      "Kiel Canal",
+      "Fehmarn Belt",
+      "Rhine crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: familiar terrain, dense cities, population support; limited depth on the North German Plain."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:DEU (World Bank). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia modern equipment list of the German Army, the German Air and Space Force inventory table, the German Army article aviation table and the active navy ship list; ships_major = frigates; ships_minor = corvettes + MCM; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Marder count unclear on the source page (assumed ~170). Large transfers to Ukraine (Patriot, IRIS-T, Gepard, PzH 2000, Leopard 2A6) reduced 2022-25 holdings; Zeitenwende orders arrive mostly 2027+."
+}

@@ -1,0 +1,741 @@
+{
+  "id": "ukraine-2026",
+  "nationId": "ukraine",
+  "includes": [],
+  "name": "Ukraine",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "at war",
+    "partly occupied",
+    "general mobilization",
+    "EU candidate",
+    "semi-presidential republic",
+    "Black Sea"
+  ],
+  "capital": {
+    "name": "Kyiv",
+    "lat": 50.4501,
+    "lon": 30.5234,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Kharkiv",
+      "lat": 49.9935,
+      "lon": 36.2304,
+      "kind": "city"
+    },
+    {
+      "name": "Odesa",
+      "lat": 46.4825,
+      "lon": 30.7233,
+      "kind": "port"
+    },
+    {
+      "name": "Dnipro",
+      "lat": 48.4647,
+      "lon": 35.0462,
+      "kind": "city"
+    },
+    {
+      "name": "Zaporizhzhia",
+      "lat": 47.8388,
+      "lon": 35.1396,
+      "kind": "city"
+    },
+    {
+      "name": "Lviv",
+      "lat": 49.8397,
+      "lon": 24.0297,
+      "kind": "city"
+    },
+    {
+      "name": "Mykolaiv",
+      "lat": 46.975,
+      "lon": 31.9946,
+      "kind": "port"
+    },
+    {
+      "name": "Chornomorsk",
+      "lat": 46.3,
+      "lon": 30.65,
+      "kind": "port"
+    },
+    {
+      "name": "Kramatorsk-Sloviansk",
+      "lat": 48.73,
+      "lon": 37.58,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dnipro river crossings (Kherson)",
+      "lat": 46.64,
+      "lon": 32.61,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bosporus (Black Sea exit, Turkish control)",
+      "lat": 41.12,
+      "lon": 29.07,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:UKR",
+    "areaKm2": {
+      "low": 576503,
+      "mid": 579400,
+      "high": 596782,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 579,400 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 35004378,
+      "mid": 38980376,
+      "high": 38980376,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 38,980,376. World Bank total includes occupied territories and does not fully capture ~5-7 million refugees abroad; low 35 million. Population under Kyiv control is roughly 31-33 million (educated reading)."
+    },
+    "urbanization": {
+      "low": 0.691,
+      "mid": 0.696,
+      "high": 0.701,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 69.60% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 677000,
+      "mid": 880000,
+      "high": 1000000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/up.json",
+      "note": "CIA Factbook 2025: estimated 850,000-1 million active Defense Forces; Armed Forces of Ukraine infobox ~900,000 (2025); IISS as quoted (Wikipedia personnel list) 677,000 active (low, likely an earlier wartime count). Mid ~880,000. Excludes ~260,000 paramilitary (National Guard counted by IISS separately, though fighting at the front). asOf 2025-26."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 100000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Pre-war reserve (IISS 900,000) has largely been mobilized; remaining trained reserve is men with prior service not yet called. Very uncertain."
+    },
+    "supportPersonnel": {
+      "low": 365500,
+      "mid": 430000,
+      "high": 473000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/up.json",
+      "note": "Active 880,000 minus infantry P roles (450,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.11,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to the observed war: ~1 million in uniform plus several hundred thousand casualties from ~33 million under government control (~4-5% already), with draft-age limits (25+) and exemptions limiting further call-ups."
+    },
+    "mobilizable": {
+      "low": 1949019,
+      "mid": 3118430,
+      "high": 4287841,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 38,980,376 x ratio 0.05 / 0.08 / 0.11."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 150000,
+          "mid": 250000,
+          "high": 350000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized and assault brigade infantry at the front (~100+ brigades with chronic infantry shortages). (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_Ukraine)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Western and Soviet mix, heavy drone integration."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-hardened core but many short-trained mobilized men."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 120000,
+          "mid": 200000,
+          "high": 300000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Territorial defence, airborne/air-assault, marine and rifle brigades. (context page: https://en.wikipedia.org/wiki/Armed_Forces_of_Ukraine)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Light weapons, FPV drones."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Mix of veterans and newly mobilized."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 700,
+          "mid": 1000,
+          "high": 1500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine",
+          "note": "IISS 2024 rows on the equipment list: T-64 200+, T-80 80+, T-72 (multiple variants, captured), PT-91 26, Leopard 1A5 103, Leopard 2 ~60, Challenger 2 13, Abrams 22 among others. Wartime losses and captures make the 2026 holding very uncertain; mid ~1,000."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mostly upgraded Soviet T-64/T-72; few Western tanks."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-experienced crews."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2500,
+          "mid": 3500,
+          "high": 5000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine",
+          "note": "IISS 2024 rows plus Western deliveries (Bradley ~300, CV90 ~50, Marder ~140, Stryker ~190, M113 ~700, BMP-1/2 several hundred, MRAPs). Mid ~3,500 after losses."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Mix of Western IFVs and Soviet BMP/BTR."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-experienced."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1200,
+          "mid": 1800,
+          "high": 2800,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine",
+          "note": "Self-propelled and rocket systems sum to ~900 in the IISS 2024 rows (2S1, 2S3, 2S19, PzH 2000, Krab, M109, CAESAR, Bohdana, Zuzana, HIMARS, M270, BM-21) plus towed guns (D-30, M777, FH70, D-20). Bohdana production >10/month. Mid ~1,800."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed; Western precision guns but shell-limited."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): The most combat-practised artillery arm in Europe."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 80,
+          "mid": 113,
+          "high": 130,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Ukrainian_military_aircraft",
+          "note": "IISS 2025 (p.202) as quoted: F-16 39 + MiG-29 45 + Su-27 23 + Mirage 2000 6 = 113 (inventory; serviceable fraction lower)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Old Soviet fighters plus F-16AM/Mirage 2000-5."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-experienced, thin pilot pool."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Ukrainian_military_aircraft",
+          "note": "IISS 2025 as quoted: Su-24M 13 + Su-25 17 = 30."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.25 (obsolete, a generation behind) (slightly above): Soviet-era, flying with Storm Shadow/JDAM-ER/glide bombs."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-experienced."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 100,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mi-8/17, Mi-24, Mi-2, plus donated Sea King/Westland types; wartime attrition, no reliable count on the fetched page. (context page: https://en.wikipedia.org/wiki/List_of_active_Ukrainian_military_aircraft)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Mostly Soviet-era."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Combat-experienced."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 200,
+          "mid": 600,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Group 2+ reconnaissance and strike UAVs (TB2 remnants, Shark, Leleka-100, Furia, Fury; long-range one-way attack drones and FPVs excluded per role rules). Massive drone war makes any count rough."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Innovative domestic designs, EW-hardened."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): World-leading drone operators."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Navy lost most large ships 2014/2022; operates patrol boats, Island-class cutters, gunboats and naval drone (USV) units. (context page: https://en.wikipedia.org/wiki/Ukrainian_Navy)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Small craft; Magura USVs excluded as munitions."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Combat-experienced."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 50,
+          "mid": 75,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine",
+          "note": "S-300P/V ~170 launchers (~6 per battery, ~28), Buk ~50 launchers (~12), IRIS-T SLM 6 + SLS 7, NASAMS 14, Patriot 8, SAMP/T 1, Hawk 4+ batteries (IISS 2024/25 rows plus announced deliveries) = ~75 batteries."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Patriot/IRIS-T/NASAMS mixed with ageing S-300/Buk."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Most combat-practised GBAD force in the world."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 10,
+          "mid": 30,
+          "high": 60,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Tochka-U remnants, Neptune, Flamingo/Ruta and Long Neptune launchers; ATACMS fired from HIMARS/M270 counted under artillery. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Domestic cruise missiles emerging."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Combat use."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): Competent wartime staff with adaptation and drone-led innovation, but brigade-level coordination and rotation problems documented."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.5 (national conscript army) (slightly above): National army in an existential war; strained by exhaustion, desertion (AWOL cases) and uneven rotation."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.6,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average) (slightly above): Existential defence vs war fatigue after 4.5 years; range wide."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Massed FPV and strike drones, glide bombs, Western precision munitions, domestic cruise missiles."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Soviet-era composite armour plus improvised cage/EW protection."
+    },
+    "ships": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Naval USVs (Magura/Sea Baby) sank much of the Black Sea Fleet, but no major warships."
+    },
+    "fortification": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Layered field fortifications and dense GBAD."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Rail and road under constant strike; Western supply through Poland/Romania."
+    },
+    "communications": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Starlink, Delta battle-management system."
+    },
+    "isr": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Persistent drone ISR, Western intelligence sharing, commercial satellite imagery."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: F-16/Mirage, no 5th generation."
+    },
+    "cyber": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Experienced military cyber and HUR units."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 9693,
+      "mid": 12117,
+      "high": 14540,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 472,306,299,644 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 38,980,376 = 12,117. Range +/-20%."
+    },
+    "gdp": {
+      "low": 377845039715,
+      "mid": 472306299644,
+      "high": 566767559573,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 590,014,115,733 x 0.8005 (US GDP deflator 2011/2021) = 472,306,299,644 2011 int$. Range +/-20% for PPP benchmark uncertainty and the relative-price drift the rebase ignores. Wartime: wider range for statistical gaps and damaged capacity."
+    },
+    "milSpendShare": {
+      "low": 0.0343,
+      "mid": 0.3956,
+      "high": 0.4,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "State at war: mid is the 2025 wartime share 39.56% of GDP (SIPRI via World Bank MS.MIL.XPND.GD.ZS; 33.96% in 2024); low is the last peacetime share 3.43% (2021). Excludes foreign military aid, which roughly matches domestic spending."
+    },
+    "industrialShare": {
+      "low": 0.1637,
+      "mid": 0.1787,
+      "high": 0.1937,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 17.9% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Large grain and oilseed exporter even in war (Black Sea corridor); output down vs 2021."
+    },
+    "annualCohort": {
+      "low": 203201,
+      "mid": 225779,
+      "high": 248357,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 18,137,513 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 6.224% (SP.POP.1519.MA.5Y) / 5 = 225,779. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "drones": {
+        "low": 500,
+        "mid": 2000,
+        "high": 5000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Group 2+ only (reconnaissance and strike UAVs); Ukraine claims millions of FPV drones a year, excluded. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Armed_Forces_of_Ukraine)"
+      },
+      "artillery": {
+        "low": 100,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Bohdana 2S22 production reported >10 per month plus mortars."
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Neptune/Flamingo launchers and ballistic programmes."
+      },
+      "ifv_apc": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Domestic MRAP/APC (Kozak, Varta, Novator) and repairs."
+      },
+      "armor": {
+        "low": 0,
+        "mid": 10,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Tank overhaul rather than new production."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 150000,
+      "mid": 169694,
+      "high": 169694,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 169,694 km of which 166,095 paved (2012); occupied areas and war damage reduce the usable network (low)."
+    },
+    "railKm": {
+      "low": 20977,
+      "mid": 21626,
+      "high": 22058,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/UKR/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2020: 21,626 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 3,
+      "high": 3,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/up.json",
+      "note": "CIA Factbook 2024: 3 large ports; low reflects Russian strikes and occupation (Odesa-Chornomorsk-Pivdennyi cluster still operating)."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 200000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Not in the quoted UNCTAD table; CIA Factbook lists 410 Ukrainian-flag vessels (2023), mostly small river/coastal craft; many registered abroad. (context page: https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country)"
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Defensive war on interior lines; supply runs by rail to ~50-100 km of the front, last mile under drone attack."
+    },
+    "draftAnimals": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Ukraine gave up its inherited Soviet arsenal under the 1994 Budapest Memorandum."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Dnipro river line",
+      "Donbas fortress belt",
+      "Kerch Strait (Russian-held)",
+      "Black Sea corridor to Bosporus"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: familiar terrain, fortified cities and lines, strong population support; depth west of the Dnipro and a harsh winter."
+    }
+  },
+  "notes": "Modern wartime snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle; ranges are deliberately wide because wartime holdings change monthly and official counts are secret. Population convention: World Bank total for everything inside ne:UKR including occupied areas; ne:UKR is the internationally recognised border, so Crimea and the occupied east are inside the polygon although Kyiv does not control them. Money in 2011 int$ via derived:ppp-rebase-2011; milSpendShare mid is the wartime share, low the last peacetime share (2021). Equipment from the Wikipedia equipment list quoting IISS Military Balance 2024 and 2025 rows; drones = Group 2+ only (FPV and long-range one-way attack drones excluded). Infantry P-role splits are educated guesses (grade D). No major surface warships or submarines remain."
+}

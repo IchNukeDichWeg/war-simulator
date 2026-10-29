@@ -1,0 +1,780 @@
+{
+  "id": "italy-2026",
+  "nationId": "italy",
+  "includes": [],
+  "name": "Italian Republic",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "all-volunteer force",
+    "NATO nuclear sharing",
+    "Mediterranean"
+  ],
+  "capital": {
+    "name": "Rome",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Milan",
+      "lat": 45.4642,
+      "lon": 9.19,
+      "kind": "city"
+    },
+    {
+      "name": "Naples",
+      "lat": 40.8518,
+      "lon": 14.2681,
+      "kind": "port"
+    },
+    {
+      "name": "Turin",
+      "lat": 45.0703,
+      "lon": 7.6869,
+      "kind": "city"
+    },
+    {
+      "name": "Genoa",
+      "lat": 44.4056,
+      "lon": 8.9463,
+      "kind": "port"
+    },
+    {
+      "name": "Palermo",
+      "lat": 38.1157,
+      "lon": 13.3615,
+      "kind": "port"
+    },
+    {
+      "name": "La Spezia naval base",
+      "lat": 44.1025,
+      "lon": 9.8241,
+      "kind": "port"
+    },
+    {
+      "name": "Taranto naval base",
+      "lat": 40.4644,
+      "lon": 17.247,
+      "kind": "port"
+    },
+    {
+      "name": "Aviano Air Base",
+      "lat": 46.0319,
+      "lon": 12.5965,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strait of Messina",
+      "lat": 38.2,
+      "lon": 15.62,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Strait of Otranto",
+      "lat": 40.2,
+      "lon": 18.9,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Brenner Pass",
+      "lat": 47.0,
+      "lon": 11.507,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ITA",
+    "areaKm2": {
+      "low": 294241,
+      "mid": 295720,
+      "high": 304592,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 295,720 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 58326499,
+      "mid": 58915656,
+      "high": 59504813,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 58,915,656. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.6918,
+      "mid": 0.6968,
+      "high": 0.7018,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 69.68% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 155000,
+      "mid": 160400,
+      "high": 170000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 160,400 active (excludes 179,250 Carabinieri/Guardia di Finanza paramilitary). CIA Factbook 2025: ~170,000 (high). World Bank 338,000 (2020) includes Carabinieri."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 14500,
+      "high": 18000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 14,500 reserves. Italy has no conscript reserve since 2005."
+    },
+    "supportPersonnel": {
+      "low": 121040,
+      "mid": 142400,
+      "high": 156640,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 160,400 minus infantry P roles (18,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to WWII Italy (~4.5-5 million mobilized from ~44 million, ~11%) scaled down for an all-volunteer force and an old population."
+    },
+    "mobilizable": {
+      "low": 2356626,
+      "mid": 3534939,
+      "high": 5302409,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 58,915,656 x ratio 0.04 / 0.06 / 0.09."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4500,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry (Bersaglieri, Freccia/Dardo battalions) x ~500. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Freccia 8x8 modern, Dardo dated."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional; Lebanon/Iraq/Baltics deployments."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 9000,
+          "mid": 12000,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Alpini (2 brigades), Folgore paratroopers, San Marco marines and light infantry. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army)"
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Lince mobility, Spike ATGM."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Alpini and Folgore are well-trained long-service units."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 100,
+          "mid": 113,
+          "high": 200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army",
+          "note": "Equipment list: Ariete C1 110 + Ariete C2 3 (87 on order). High: 200 Ariete delivered in total. Leopard 2A8 and KF51 programmes not delivered."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Ariete is a weak 1990s tank, upgrade underway."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1100,
+          "mid": 1319,
+          "high": 1700,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army",
+          "note": "Equipment list: Dardo 198 + Freccia ~450 (630 planned, 249 first phase) + Centauro 259 + Centauro 2 ~100 delivered (150 listed) + Puma 6x6 200 + Bv206S armoured 112 = ~1,319. Centauro wheeled tank destroyers counted here. ~1,900 Lince IMVs excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed: Freccia/Centauro 2 modern, Puma and M113 old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 160,
+          "mid": 175,
+          "high": 190,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army",
+          "note": "PzH 2000 64 + FH70 155 mm 90 + M270A1 MLRS 21 = 175."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): PzH 2000 good; FH70 old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 126,
+          "mid": 136,
+          "high": 140,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_military_aircraft",
+          "note": "Inventory: Eurofighter F-2000A 79 + F-35A 42 + F-35B 5 (Air Force) + F-35B 10 (Navy) = 136."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): F-35A/B plus Typhoon."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional, Baltic/Icelandic air policing."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 25,
+          "mid": 30,
+          "high": 31,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_military_aircraft",
+          "note": "Inventory: Tornado IDS 19 + AV-8B+ Harrier II 11 (navy) = 30. AMX retired."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Tornado and Harrier are old airframes being replaced by F-35."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 280,
+          "mid": 318,
+          "high": 330,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army",
+          "note": "Army equipment list: A129 37, CH-47C/F 21, NH90 59, AB-206 29, AB-205 37, AW169 1 = 184; Air Force (aircraft list): AW101 12, AW139 30, AW169 5 = 47; Navy: SH-101 10, SH-90 45, MH-90 10, SH-212 22 = 87. Total 318, trainers excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): NH90/AW101 modern; A129 and Agusta-Bell utility old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 18,
+          "mid": 20,
+          "high": 26,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_military_aircraft",
+          "note": "MQ-9A 4 (2 on order) + Army RQ-7B Shadow 16 = 20."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Small MQ-9 fleet."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 19,
+          "mid": 19,
+          "high": 19,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_Navy_ships",
+          "note": "Active ships list: aircraft carriers/LHD 2 (Cavour, Trieste) + destroyers 2 (Horizon) + frigates 15 (FREMM, PPA counted as frigates by the list) = 19."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly above): Cavour with F-35B, FREMM/Horizon with Aster."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly above): Professional, Red Sea operations 2024."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 28,
+          "high": 32,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_Navy_ships",
+          "note": "Amphibious ships 3 (San Giorgio LPDs) + OPV 9 + patrol 6 + minehunters 10 = 28."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Mixed age."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 8,
+          "mid": 8,
+          "high": 9,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Italian_Navy_ships",
+          "note": "Attack submarines: 4 Todaro (Type 212A) + 4 Sauro; the list header gives 9."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Type 212A modern, Sauro old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 22,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Italian_Army",
+          "note": "Army: SAMP/T 5 fire units (+1 NG), GRIFO 2 (Skyguard Aspide retired 2025), Skynex 1, Stinger 145 launchers (~12 batteries); Air Force SAMP/T/SPADA-MAADS not itemised. Total ~22."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): SAMP/T NG arriving."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.75 (trained staff system, proven commanders) (slightly below): NATO-integrated staff, Rapid Deployable Corps HQ (Solbiate Olona); long peacekeeping experience, no high-intensity combat."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.75 (professional with strong unit identity) (slightly below): Professional force; Alpini and Folgore strong unit identity."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average; low public appetite for war abroad."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Storm Shadow, Aster, Spike, Meteor."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Ariete is a 1990s design without APS."
+    },
+    "ships": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Carriers with F-35B, FREMM, 212A."
+    },
+    "fortification": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Hardened air bases; limited GBAD."
+    },
+    "logistics": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: KC-767/C-130J/C-27J airlift; Mediterranean basing."
+    },
+    "communications": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Sicral 2 satcom, Link 16."
+    },
+    "isr": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: COSMO-SkyMed radar satellites, MQ-9."
+    },
+    "air": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: F-35A/B 5th generation in service."
+    },
+    "cyber": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Joint cyber command (COR)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 38620,
+      "mid": 42912,
+      "high": 47203,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 2,528,168,964,530 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 58,915,656 = 42,912. Range +/-10%."
+    },
+    "gdp": {
+      "low": 2275352068077,
+      "mid": 2528168964530,
+      "high": 2780985860983,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 3,158,237,307,345 x 0.8005 (US GDP deflator 2011/2021) = 2,528,168,964,530 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0159,
+      "mid": 0.0189,
+      "high": 0.0198,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 1.89% of GDP in 2025 (mid), 1.59% in 2024, 1.61% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2114,
+      "mid": 0.2264,
+      "high": 0.2414,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 22.6% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.2,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net importer of grain and feed, exporter of wine, olive oil, processed food."
+    },
+    "annualCohort": {
+      "low": 268136,
+      "mid": 297928,
+      "high": 327721,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 28,814,684 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.170% (SP.POP.1519.MA.5Y) / 5 = 297,928. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "helicopters": {
+        "low": 40,
+        "mid": 80,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Leonardo Helicopters (AW149, AW169, AW249, NH90 assembly)."
+      },
+      "aircraft_fighter": {
+        "low": 5,
+        "mid": 12,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Cameri F-35 FACO and Eurofighter Caselle work share."
+      },
+      "ifv_apc": {
+        "low": 100,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Iveco-OTO Melara (Freccia, Centauro 2); Leonardo-Rheinmetall JV from 2026."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fincantieri builds FREMM-EVO, PPA, DDX."
+      },
+      "submarines": {
+        "low": 0,
+        "mid": 1,
+        "high": 1,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Fincantieri U212NFS."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 480000,
+      "mid": 487700,
+      "high": 487700,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 487,700 km, all paved (2007); 6,700 km autostrada."
+    },
+    "railKm": {
+      "low": 16786,
+      "mid": 17305,
+      "high": 17651,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ITA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 17,305 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 12,
+      "mid": 23,
+      "high": 23,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/it.json",
+      "note": "CIA Factbook 2024: 123 ports, 12 large + 11 medium = 23; low counts large ports only."
+    },
+    "merchantTonnage": {
+      "low": 7226000,
+      "mid": 7226000,
+      "high": 15000000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "UNCTAD 2025 as quoted: 7,226 thousand DWT under the Italian flag. High is an educated guess for Italian-owned foreign-flag tonnage (MSC is Swiss-based and excluded)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 400000,
+      "mid": 700000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. Italy hosts US B61 bombs (Aviano, Ghedi) under NATO nuclear sharing (FAS lists Italy among host countries); not counted."
+    },
+    "basesAbroad": [
+      {
+        "name": "Italian Military Support Base Djibouti (BMIS)",
+        "lat": 11.552,
+        "lon": 43.15,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Alpine passes (Brenner, Tarvisio)",
+      "Strait of Messina",
+      "Strait of Otranto",
+      "Strait of Sicily"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: Alpine and Apennine mountain terrain, fortified cities, population support; long peninsula gives some depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:ITA (World Bank); San Marino and Vatican City excluded (Vatican has its own snapshot). Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from Wikipedia inventory tables (Italian Army equipment list, active Italian military aircraft list, active navy ship list) and IISS as quoted; ships_major = carriers/LHD + destroyers + frigates; Centauro wheeled tank destroyers counted in ifv_apc. drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Carabinieri excluded although they include a military police brigade."
+}

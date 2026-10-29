@@ -1,0 +1,611 @@
+{
+  "id": "hungary-2026",
+  "nationId": "hungary",
+  "includes": [],
+  "name": "Hungary",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary republic",
+    "all-volunteer force",
+    "landlocked"
+  ],
+  "capital": {
+    "name": "Budapest",
+    "lat": 47.4979,
+    "lon": 19.0402,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Debrecen",
+      "lat": 47.5316,
+      "lon": 21.6273,
+      "kind": "city"
+    },
+    {
+      "name": "Szeged",
+      "lat": 46.253,
+      "lon": 20.1414,
+      "kind": "city"
+    },
+    {
+      "name": "Miskolc",
+      "lat": 48.1035,
+      "lon": 20.7784,
+      "kind": "city"
+    },
+    {
+      "name": "Pecs",
+      "lat": 46.0727,
+      "lon": 18.2323,
+      "kind": "city"
+    },
+    {
+      "name": "Kecskemet Air Base",
+      "lat": 46.917,
+      "lon": 19.749,
+      "kind": "fortress"
+    },
+    {
+      "name": "Papa Air Base (NATO SAC C-17)",
+      "lat": 47.36,
+      "lon": 17.5,
+      "kind": "fortress"
+    },
+    {
+      "name": "Danube crossings (Budapest)",
+      "lat": 47.5,
+      "lon": 19.05,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:HUN",
+    "areaKm2": {
+      "low": 90804,
+      "mid": 91260,
+      "high": 93998,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/AG.LND.TOTL.K2?format=json",
+      "note": "asOf 2024: land area 91,260 km2 (AG.LND.TOTL.K2). Low/high allow for the Natural Earth polygon vs official figure and inland water (surface area is a few % larger)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9419108,
+      "mid": 9514251,
+      "high": 9609394,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025: World Bank SP.POP.TOTL 9,514,251. Range allows for 2026 drift and census revisions."
+    },
+    "urbanization": {
+      "low": 0.7019,
+      "mid": 0.7069,
+      "high": 0.7119,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 70.69% urban (SP.URB.TOTL.IN.ZS), national definition."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 30000,
+      "mid": 32150,
+      "high": 41600,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 32,150 active. CIA Factbook 2025 ~30,000 (low); Hungarian Defence Forces infobox 41,600 (high, broader definition)."
+    },
+    "trainedReserves": {
+      "low": 15000,
+      "mid": 20000,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS as quoted: 20,000 reserves (volunteer reserve)."
+    },
+    "supportPersonnel": {
+      "low": 22228,
+      "mid": 26150,
+      "high": 28765,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 32,150 minus infantry P roles (6,000). Covers navy and air force personnel, armour/artillery/air-defence crews, logistics, staff, training and other support. "
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to Hungary 1941-44 (~1 million mobilized from ~14 million incl. annexed areas, ~7%) at the high end; low for an all-volunteer force."
+    },
+    "mobilizable": {
+      "low": 285428,
+      "mid": 475713,
+      "high": 761140,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 9,514,251 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1800,
+          "mid": 2500,
+          "high": 3200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Mechanized infantry battalions on Lynx/BTR-80/Gidran. (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces)"
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Lynx KF41 modern, BTR-80 old."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 2500,
+          "mid": 3500,
+          "high": 4500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Light infantry, special forces regiment, territorial units. (context page: https://en.wikipedia.org/wiki/Hungarian_Defence_Forces)"
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Era-typical."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 56,
+          "mid": 90,
+          "high": 164,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces",
+          "note": "Leopard 2A7HU 44 + 2A4 12 + T-72 34 (164 T-72 in total, mostly stored) = 90."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): Leopard 2A7HU is top tier."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional, new fleet."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 400,
+          "mid": 506,
+          "high": 600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces",
+          "note": "Lynx 46 of 218 delivered + BTR-80 260 (2024) + Gidran ~200 MRAP = ~506."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical): Lynx modern, BTR-80 old."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training) (slightly above): Professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 24,
+          "mid": 24,
+          "high": 60,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces",
+          "note": "PzH 2000 24; 283 D-20 in reserve (excluded); mortars excluded. High allows for some D-20 reactivation."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): PzH 2000."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 14,
+          "mid": 14,
+          "high": 14,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Hungarian_military_aircraft",
+          "note": "JAS 39C/D Gripen 14 (4 more ordered)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly above): Gripen C/D MS20."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 36,
+          "mid": 40,
+          "high": 45,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Hungarian_military_aircraft",
+          "note": "H225M 16 + H145M 20 = 36; Mi-24 remnants (high)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): New Airbus fleet."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 0,
+          "mid": 2,
+          "high": 6,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Small numbers of tactical UAVs; no reliable Group 2+ count. (context page: https://en.wikipedia.org/wiki/Hungarian_Defence_Forces)"
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.5 (era-typical) (slightly below): Small."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.5 (conscripts with basic training): Professional."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 2,
+          "mid": 3,
+          "high": 5,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces",
+          "note": "NASAMS 2 fire units + Mistral 3 launchers (~6 per battery, <1 battery); 2K12 Kub retired."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 0.75 (among the era's best) (slightly below): NASAMS modern."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75 (professional standing army) (slightly below): Professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.6,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric commandQuality 0.5 (competent staff, average generalship) (slightly above): Competent staff; rebuilding under Zrinyi 2026 programme."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric cohesion 0.5 (national conscript army) (slightly above): National army."
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric morale 0.5 (average): Average."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: NASAMS, Spike, PzH 2000."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Leopard 2A7HU, Lynx."
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 8: Landlocked: Danube river flotilla patrol boats only; value describes those small craft."
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Little GBAD."
+    },
+    "logistics": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Rail-based."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: NATO C2."
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 and 9: Limited."
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 and 10: Gripen C/D."
+    },
+    "cyber": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9: Cyber forces."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 29654,
+      "mid": 32949,
+      "high": 36244,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. GDP 313,485,949,133 2011 int$ (World Bank NY.GDP.MKTP.PP.KD x 0.8005) / population 9,514,251 = 32,949. Range +/-10%."
+    },
+    "gdp": {
+      "low": 282137354219,
+      "mid": 313485949133,
+      "high": 344834544046,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 391,612,678,492 x 0.8005 (US GDP deflator 2011/2021) = 313,485,949,133 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0132,
+      "mid": 0.0204,
+      "high": 0.0214,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank MS.MIL.XPND.GD.ZS: 2.04% of GDP in 2025 (mid), 2.12% in 2024, 1.32% in 2021. Low is the lowest of those years; high allows ~5% for NATO-definition spending above SIPRI."
+    },
+    "industrialShare": {
+      "low": 0.2147,
+      "mid": 0.2297,
+      "high": 0.2447,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 23.0% of GDP (NV.IND.TOTL.ZS). Range +/-1.5 pp for year-to-year variation."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Net exporter of grain and meat."
+    },
+    "annualCohort": {
+      "low": 45940,
+      "mid": 51045,
+      "high": 56149,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 4,572,050 (SP.POP.TOTL.MA.IN) x share of males aged 15-19 5.582% (SP.POP.1519.MA.5Y) / 5 = 51,045. Males only (conscript-pool convention); about double if women are counted. Range +/-10%."
+    },
+    "production": {
+      "ifv_apc": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess. Rheinmetall Zalaegerszeg Lynx plant (2024). (context page: https://en.wikipedia.org/wiki/List_of_equipment_of_the_Hungarian_Ground_Forces)"
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 200000,
+      "mid": 210791,
+      "high": 210791,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "As quoted: 210,791 km of which 77,087 paved (2018)."
+    },
+    "railKm": {
+      "low": 7796,
+      "mid": 8037,
+      "high": 8198,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/HUN/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 8,037 route-km (IS.RRS.TOTL.KM). Low allows for closures since."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/hu.json",
+      "note": "Landlocked; no sea ports (CIA Factbook)."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 3000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Landlocked; CIA Factbook lists 1 Hungarian-flag vessel (2023)."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. By analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km)."
+    },
+    "draftAnimals": {
+      "low": 60000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, mules and donkeys, not from FAO data. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Non-nuclear-weapon state (NPT); FAS Status of World Nuclear Forces 2026 lists only nine nuclear-armed states. FAS lists the five US B61 host states (Belgium, Germany, Italy, Netherlands, Turkey); this state is not one of them."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Danube crossings",
+      "Tisza crossings",
+      "Carpathian passes"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.15,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1: familiar terrain and local supply; open Pannonian plain gives little depth."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 World Bank data with an Oct 2026 order of battle. Population convention: everything inside ne:HUN. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from the Wikipedia Hungarian Ground Forces equipment list and active Hungarian military aircraft list; drones = Group 2+ only. Infantry P-role splits are educated guesses (grade D). Landlocked: ships tech describes river craft only."
+}
