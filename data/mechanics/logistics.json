@@ -1,0 +1,802 @@
+{
+  "foodKgPerPersonDay": {
+    "low": 1.2,
+    "mid": 1.36,
+    "high": 2.7,
+    "grade": "B",
+    "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+    "note": "Engels app.1: minimum 3 lb (1.36 kg) grain or equivalent per person-day. Roth ch.1: Roman ration ~1.3 kg (850 g grain + ~460 g other), under 1.2 kg with biscuit. High: FM 101-10 (1941) field ration \"Average for planning - 6 lbs per ration\" (2.7 kg)."
+  },
+  "waterLPerPersonDay": {
+    "low": 1.9,
+    "mid": 5.7,
+    "high": 11.4,
+    "grade": "B",
+    "source": "https://asktop.net/wp/download/31/FM101-10-1-2.PDF",
+    "note": "FM 101-10-1/2 (1987) table 2-5 drinking water: temperate 1.5 gal (5.7 L), hot 3.0 gal (11.4 L), cold 2.0 gal. Low: Engels minimum \"at least 2 qt.\" (1.9 L) for marching troops on a grain diet. Drinking only; hygiene/laundry (FM: +5.5 gal) excluded."
+  },
+  "fodderKgPerAnimalDay": {
+    "low": 6.8,
+    "mid": 9.1,
+    "high": 14.5,
+    "grade": "B",
+    "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+    "note": "Engels app.1: horse doing moderate work 20-24 lb/day, hard work 24-32 lb (half grain, half fodder); his planning ration 10 lb grain + 10 lb forage = 9.1 kg. High 32 lb = 14.5 kg (FM 101-10 1941: grain 10 lb + hay 14 lb = 10.9 kg). Low: Roth, Wellington's mules 2.3 kg barley + 4.5 kg straw = 6.8 kg."
+  },
+  "animalsPer1000": [
+    {
+      "low": 0,
+      "mid": 0,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: porters only; donkeys rare in war before ~3000 BCE."
+    },
+    {
+      "low": 20,
+      "mid": 50,
+      "high": 100,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: donkey pack trains and a few carts (tech 1 anchor \"donkeys, carts\")."
+    },
+    {
+      "low": 80,
+      "mid": 150,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: chariot armies with 2 horses per chariot plus ox/donkey trains (tech 2 anchor)."
+    },
+    {
+      "low": 130,
+      "mid": 140,
+      "high": 245,
+      "grade": "B",
+      "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+      "note": "Engels table 1: 65,000 personnel with 6,100 cavalry horses + 1,300 baggage + 1,121 provision animals = 131/1000; table 3 arid case with 8,490 provision animals = 245/1000. Engels ch.1: Roman legion ~1 pack animal per 7 combatants (143/1000)."
+    },
+    {
+      "low": 300,
+      "mid": 600,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Regional analogy to tech 5 (Louvois 667/1000) for knightly armies with 2-4 horses per man-at-arms; educated guess."
+    },
+    {
+      "low": 400,
+      "mid": 667,
+      "high": 800,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.1: typical army of Louvois' day, 60,000 men with 40,000 horses (cavalry, artillery, baggage) = 667/1000."
+    },
+    {
+      "low": 300,
+      "mid": 333,
+      "high": 375,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/French_invasion_of_Russia",
+      "note": "1812: \"over 150,000 horses\" for an initial force exceeding 450,000 men = 333/1000. Armee du Nord 1815: 47,000 horses (https://en.wikipedia.org/wiki/Horses_in_the_Napoleonic_Wars)."
+    },
+    {
+      "low": 200,
+      "mid": 300,
+      "high": 400,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+      "note": "Analogy: horse-drawn divisional trains of 1914 were at least as heavy as the German 1943 infantry division (2,652-6,300 horses per ~17,000 men = 156-370/1000). Grade C."
+    },
+    {
+      "low": 0,
+      "mid": 150,
+      "high": 370,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Horses_in_World_War_II",
+      "note": "German 1943 infantry division supply train 2,652 horses, other configurations up to 6,300 (~156-370 per 1000 at ~17,000 men); the US Army in Europe had none (\"not a single horse\")."
+    },
+    {
+      "low": 0,
+      "mid": 0,
+      "high": 2,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Mechanized armies; pack animals only in niche mountain operations."
+    },
+    {
+      "low": 0,
+      "mid": 0,
+      "high": 2,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Mechanized armies; pack animals only in niche mountain operations."
+    }
+  ],
+  "ammoTonsPer1000CombatDay": [
+    {
+      "low": 0.01,
+      "mid": 0.05,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: thrown/shot stone and arrows, a few kg per missile-armed man."
+    },
+    {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: javelins, sling stones, arrows."
+    },
+    {
+      "low": 0.1,
+      "mid": 0.3,
+      "high": 0.6,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: composite-bow archers on chariots with large arrow loads."
+    },
+    {
+      "low": 0.2,
+      "mid": 0.4,
+      "high": 0.8,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: missiles plus torsion-artillery shot; negligible vs food."
+    },
+    {
+      "low": 0.3,
+      "mid": 0.6,
+      "high": 1.2,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: longbow/crossbow troops carrying 2-4 kg of missiles each, ~1/4 of the army missile-armed."
+    },
+    {
+      "low": 0.3,
+      "mid": 1.0,
+      "high": 2.0,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.1: even in sieges no gun fired more than ~5 rounds/day, Vauban reckoned 4; \"consumption of ammunition remained negligible beside that of food and fodder\". Musket rounds ~30-40 g incl. powder, 20-40 fired per man."
+    },
+    {
+      "low": 1.5,
+      "mid": 3.0,
+      "high": 5.0,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.2: a division of 8,000 carried 147-300 rounds per gun and 60-80 infantry rounds per man; Heilbronn depot 1805 passed 75,000-100,000 rounds/day. ~70 rounds x 35 g/man + ~3 guns/1000 x 100 rounds x 7 kg = ~4.5 t at full expenditure."
+    },
+    {
+      "low": 3,
+      "mid": 10,
+      "high": 40,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.4: the 1,000 rounds per barrel stocked in 1914 were almost depleted in 45 days (~22 rounds/gun/day average); Somme 1916: 1.5 million shells for one offensive. Wide range by design."
+    },
+    {
+      "low": 5,
+      "mid": 12,
+      "high": 30,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Red_Ball_Express",
+      "note": "Offensive division consumed ~750 t/day (~45 kg/man) of all classes; minus FM 101-10 (1941) non-ammunition day of supply 24 lb (10.9 kg) leaves up to ~30 t/1000 at the peak; mid 12 for an ordinary combat day."
+    },
+    {
+      "low": 7,
+      "mid": 14.2,
+      "high": 40,
+      "grade": "B",
+      "source": "https://asktop.net/wp/download/31/FM101-10-1-2.PDF",
+      "note": "FM 101-10-1/2 (1987) table 2-3: Class V 31.29 lb/person/day (14.2 kg) theater average at moderate combat intensity. High ~3x moderate for intense combat (educated guess)."
+    },
+    {
+      "low": 7,
+      "mid": 16,
+      "high": 45,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Extrapolated from tech 9 (FM 101-10-1/2 14.2 kg/person moderate) with artillery-heavy 2022-25 practice; educated guess."
+    }
+  ],
+  "supplyTonsPer1000Day": [
+    {
+      "low": 1.2,
+      "mid": 1.4,
+      "high": 2.0,
+      "grade": "C",
+      "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+      "note": "Food only: Roth ~1.3 kg/person, Engels 1.36 kg. No animals."
+    },
+    {
+      "low": 1.5,
+      "mid": 1.9,
+      "high": 2.5,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Food 1.36 t + ~50 animals x 9.1 kg; educated guess on animal count."
+    },
+    {
+      "low": 2.0,
+      "mid": 2.8,
+      "high": 4.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Food 1.36 t + ~150 animals x 9.1 kg (Engels ration) = 2.7 t."
+    },
+    {
+      "low": 2.0,
+      "mid": 2.6,
+      "high": 3.5,
+      "grade": "B",
+      "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+      "note": "Engels table 2: 65,000 personnel x 3 lb + ~8,500 animals x 20 lb grain and forage = ~365,000 lb = 166 t/day = 2.55 t/1000 (water excluded)."
+    },
+    {
+      "low": 4.0,
+      "mid": 6.0,
+      "high": 9.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Food 1.36 t + ~500-600 animals x 9.1 kg; regional analogy to tech 5."
+    },
+    {
+      "low": 5.0,
+      "mid": 7.4,
+      "high": 9.0,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.1: 60,000 men eat 120,000 lb bread + 60,000 lb other food; 40,000 horses ~20 lb each = 800,000 lb; total ~980,000 lb = 445 t/day = 7.4 t/1000."
+    },
+    {
+      "low": 3.2,
+      "mid": 4.5,
+      "high": 6.0,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.3: German corps 1870 ~100 t/day fodder included (~3.2 t/1000 at ~31,000 men); 1812 Grande Armee 450,000 men x 1.36 kg + 150,000 horses x 9.1 kg = ~4.4 t/1000."
+    },
+    {
+      "low": 3.2,
+      "mid": 7.0,
+      "high": 10.9,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.3: II Army 1870 issued food and fodder at 7 lb/man/day (3.2 kg); upper bound FM 101-10 (1941) 24 lb (10.9 kg) classes I-IV. Mid interpolated."
+    },
+    {
+      "low": 4.2,
+      "mid": 10.9,
+      "high": 25,
+      "grade": "B",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) par. 83 \"Day of supply\": 24.0 lb/man/day classes I-IV excl. ammunition (10.9 kg). Low: van Creveld, Barbarossa lorry columns could deliver ~70 t/division/day (~4.2 t/1000, inadequate). High: Red Ball Express 750 t/division offensive (all classes)."
+    },
+    {
+      "low": 25,
+      "mid": 35,
+      "high": 42,
+      "grade": "B",
+      "source": "https://asktop.net/wp/download/31/FM101-10-1-2.PDF",
+      "note": "FM 101-10-1/2 (1987) table 2-3, lb/person/day: I 4.03, II 3.67, III bulk 53.7, III pkg 0.59, IV 8.5, VI 3.2, VIII 1.22, IX 2.5 = 77.4 lb (35 kg); with class VII end items 15 lb = 92.4 lb (42 kg). Ammunition is separate."
+    },
+    {
+      "low": 25,
+      "mid": 38,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Extrapolated from tech 9 (FM 101-10-1/2, 35 kg/person) with more electronics, drones and fuel; educated guess."
+    }
+  ],
+  "fuelTonsPerVehicleDay": {
+    "low": 0.1,
+    "mid": 0.3,
+    "high": 1.0,
+    "grade": "C",
+    "source": "https://en.wikipedia.org/wiki/M1_Abrams",
+    "note": "Per combat vehicle that moves or fights. M1: 1.5-3 US gal per mile; 50-100 km/day = 47-186 gal (0.15-0.57 t) plus turbine idling. https://en.wikipedia.org/wiki/M4_Sherman: M4A2 214-470 L/100 km (0.09-0.4 t for 50-100 km). Truck fuel is in supplyTonsPer1000Day (class III)."
+  },
+  "carryKgPerSoldier": {
+    "low": 25,
+    "mid": 36,
+    "high": 43,
+    "grade": "B",
+    "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+    "note": "Engels ch.1: a man can carry about 80 lb (36 kg) for extended distances. Roth ch.2: legionary burden 24.6 kg without rations (low); with 17 days' rations 43.4 kg, shown plausible by Junkelmann's experiment (high)."
+  },
+  "carryKgPerPackAnimal": {
+    "low": 91,
+    "mid": 113,
+    "high": 175,
+    "grade": "B",
+    "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+    "note": "Engels ch.1: horse or mule ~200 lb (91 kg), camel 300 lb (136 kg); planning average 250 lb (113 kg). Roth: camel load 175 kg (high)."
+  },
+  "carryKgPerWagon": {
+    "low": 352,
+    "mid": 650,
+    "high": 1000,
+    "grade": "B",
+    "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+    "note": "Roth ch.4: Theodosian Code limit 1,075 Roman lb (352 kg); Diocletian's edict 393 kg; Bachrach: two-wheeled cart 500 kg, four-wheeled 650 kg (\"most reasonable\"). High: van Creveld, four-horse wagon c.1805 \"around one ton\"."
+  },
+  "carriedDaysFood": [
+    {
+      "low": 1,
+      "mid": 3,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: what a warrior band carries on the back."
+    },
+    {
+      "low": 2,
+      "mid": 4,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: back loads plus donkeys."
+    },
+    {
+      "low": 3,
+      "mid": 5,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: back loads plus ox/donkey trains."
+    },
+    {
+      "low": 3,
+      "mid": 10,
+      "high": 17,
+      "grade": "B",
+      "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+      "note": "Roth ch.2: Josephus, 3 days' rations per legionary; Historia Augusta and Ammianus, 17 days (18.8 kg); contubernium with mules 5 + 11-13 days. Engels: Macedonians carrying 30 lb could hold ~10 days of grain."
+    },
+    {
+      "low": 3,
+      "mid": 7,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: medieval armies relied on forage and baggage carts."
+    },
+    {
+      "low": 3,
+      "mid": 6,
+      "high": 11,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.1-2: 18th-c. bread wagons covered a few days (\"five days' system\"); 1805 plan: wagons for 116,000 men for 11 days."
+    },
+    {
+      "low": 4,
+      "mid": 8,
+      "high": 11,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.2: 1805 transport plan, wagons to carry provisions for 116,000 men for eleven days (high); only part of it materialised."
+    },
+    {
+      "low": 3,
+      "mid": 6,
+      "high": 17,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.3: II Army 1870 took 4,750 t of food and fodder, \"suffice to supply 100,000 men for 17 days\" (high). Mid: organic trains of ~6 days."
+    },
+    {
+      "low": 3,
+      "mid": 5,
+      "high": 10,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: unit basic loads of ~3-5 days of rations with divisional trains."
+    },
+    {
+      "low": 3,
+      "mid": 5,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: 3 days of MREs per soldier plus brigade stocks."
+    },
+    {
+      "low": 3,
+      "mid": 5,
+      "high": 7,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: as tech 9."
+    }
+  ],
+  "forageYield": {
+    "water": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:mech-composite",
+      "note": "No land forage on water cells."
+    },
+    "plains": {
+      "low": 15,
+      "mid": 30,
+      "high": 60,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Perjes rule (cited in Roth ch.4): an area can feed an army 3-4x its own population for a few days. Mixed farmland/pasture at ~5-15 persons/km2 x 3.5 = 15-50. Educated guess on density."
+    },
+    "cropland": {
+      "low": 60,
+      "mid": 100,
+      "high": 140,
+      "grade": "C",
+      "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+      "note": "Roth ch.4 citing Perjes: armies could live off the land only above ~35 persons/km2 (19th c.) or ~18/km2 (van Creveld) moving; an area supplies 3-4x its population for a few days -> 18-40 x 3.5 = 60-140 person-days/km2/day. Cross-check Engels: 160 t grain per sq mi per year (two-field) = ~124 person-days/km2/day gross."
+    },
+    "forest": {
+      "low": 3,
+      "mid": 8,
+      "high": 20,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: sparse settlement (~2-5/km2) x Perjes 3.5 multiplier."
+    },
+    "hills": {
+      "low": 10,
+      "mid": 25,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: terraced/pastoral land ~5-15 persons/km2 x 3.5."
+    },
+    "mountains": {
+      "low": 2,
+      "mid": 8,
+      "high": 20,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: valley settlement ~1-5 persons/km2 x 3.5."
+    },
+    "desert": {
+      "low": 0,
+      "mid": 1,
+      "high": 5,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: oases only; Engels' Gedrosian march shows the army starving."
+    },
+    "steppe": {
+      "low": 2,
+      "mid": 5,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: pastoral herds at ~1-3 persons/km2 x 3.5; nomad armies feed from own herds."
+    },
+    "wetland": {
+      "low": 2,
+      "mid": 6,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: low settlement density, fish and fowl."
+    },
+    "urban": {
+      "low": 100,
+      "mid": 250,
+      "high": 500,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: town granaries and markets; a 0.25 deg urban cell averages far above the 35/km2 Perjes threshold."
+    },
+    "ice": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "No agriculture."
+    }
+  },
+  "forageWinterFactor": {
+    "low": 0.3,
+    "mid": 0.5,
+    "high": 0.8,
+    "grade": "D",
+    "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+    "note": "Roth ch.4: lack of fodder in winter made it necessary to go into winter quarters; van Creveld: campaigns normally started in April when 6 months of stored flour were on hand. Stored grain remains, green fodder does not. Magnitude is an educated guess."
+  },
+  "forageDepletion": {
+    "low": 0.2,
+    "mid": 0.3,
+    "high": 0.5,
+    "grade": "C",
+    "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+    "note": "Fraction of the remaining forage removed per day of occupation. Perjes (via Roth ch.4): an area feeds 3-4x its population only \"for a few days\" -> exhausted in ~3-5 days (0.2-0.35/day). Engels: Alexander could not retreat by the same route since the crops were eaten."
+  },
+  "forageDependence": [
+    {
+      "low": 0.9,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: no depot system."
+    },
+    {
+      "low": 0.8,
+      "mid": 0.9,
+      "high": 1.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: first state granaries."
+    },
+    {
+      "low": 0.6,
+      "mid": 0.8,
+      "high": 0.95,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: depots appear (tech 2 anchor \"ox wagons, depots\")."
+    },
+    {
+      "low": 0.4,
+      "mid": 0.6,
+      "high": 0.8,
+      "grade": "C",
+      "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+      "note": "Roth ch.4-6: Roman armies combined supply lines (waterborne, overland) with organized foraging and requisition; Engels: Alexander depended on local purchase and fleet supply."
+    },
+    {
+      "low": 0.6,
+      "mid": 0.8,
+      "high": 0.95,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: medieval armies lived largely off the land."
+    },
+    {
+      "low": 0.7,
+      "mid": 0.9,
+      "high": 0.95,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.1: 18th-c. armies \"lived off the country as a matter of course\"; magazines could carry little more than ten per cent of requirements."
+    },
+    {
+      "low": 0.5,
+      "mid": 0.7,
+      "high": 0.9,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.2: Napoleon's armies lived mainly by requisition, supplemented by magazines and wagon trains."
+    },
+    {
+      "low": 0.2,
+      "mid": 0.4,
+      "high": 0.6,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.3: in 1870-1 the Germans were \"compelled ... to live off the country much as Napoleon's soldiers had done\"; by 1914 ammunition and much food came by rail."
+    },
+    {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.3,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.5-7: WWII armies were rail/truck supplied; Germans still requisitioned food in the East. FM 101-10 (1941) day of supply assumes depot feeding."
+    },
+    {
+      "low": 0.0,
+      "mid": 0.02,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: fully depot-fed."
+    },
+    {
+      "low": 0.0,
+      "mid": 0.01,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: fully depot-fed."
+    }
+  ],
+  "throughputRoadTonsDay": [
+    {
+      "low": 5,
+      "mid": 10,
+      "high": 25,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: porter columns, each carrying ~25 kg and eating part of it."
+    },
+    {
+      "low": 10,
+      "mid": 25,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: donkey trains at ~90 kg per animal."
+    },
+    {
+      "low": 20,
+      "mid": 50,
+      "high": 100,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: ox carts and pack trains."
+    },
+    {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "https://archive.org/details/the-logistics-of-the-roman-army-at-war-264-b.c.-a.d.-235",
+      "note": "Roth: wagon 500-650 kg; ~150-300 wagon-loads/day on an engineered road; educated guess."
+    },
+    {
+      "low": 40,
+      "mid": 80,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: carts on poor roads, river transport separate."
+    },
+    {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: comparable to tech 6 wagon services."
+    },
+    {
+      "low": 60,
+      "mid": 100,
+      "high": 200,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld ch.2: 1805 Strasbourg-Augsburg service of 17 sections x 60 four-horse wagons \"must have amounted to between sixty and 120 tons per day\"."
+    },
+    {
+      "low": 100,
+      "mid": 300,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: horse-drawn columns plus first lorries."
+    },
+    {
+      "low": 1000,
+      "mid": 4000,
+      "high": 12500,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Red_Ball_Express",
+      "note": "Red Ball Express peak 5,958 vehicles, ~12,500 t/day (a dedicated two-road network). Low (single road without a convoy system) and mid are educated composites."
+    },
+    {
+      "low": 2000,
+      "mid": 6000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: modern truck fleets on a main supply route."
+    },
+    {
+      "low": 2000,
+      "mid": 7000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: as tech 9 with palletised loading."
+    }
+  ],
+  "throughputRailTonsDay": {
+    "low": 3600,
+    "mid": 9000,
+    "high": 27000,
+    "grade": "B",
+    "source": "https://archive.org/details/supplying-war-logistics-from-w",
+    "note": "Van Creveld ch.4: single line 8 trains/day in 1870, 40 by 1914; double line 12 -> 60. FM 101-10 (1941): single track two-way 20 trains per direction, double track 60. Van Creveld ch.5: 1941 supply trains of 450 t. 8 x 450 = 3,600; 20 x 450 = 9,000; 60 x 450 = 27,000."
+  },
+  "throughputPortTonsDay": [
+    {
+      "low": 5,
+      "mid": 20,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: beach landing of canoes and rafts."
+    },
+    {
+      "low": 20,
+      "mid": 50,
+      "high": 150,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: riverboat landing."
+    },
+    {
+      "low": 50,
+      "mid": 100,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: galley harbour."
+    },
+    {
+      "low": 100,
+      "mid": 400,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: Roman/Hellenistic harbour with merchant ships."
+    },
+    {
+      "low": 100,
+      "mid": 400,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: medieval harbour with cogs."
+    },
+    {
+      "low": 200,
+      "mid": 800,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: early modern harbour."
+    },
+    {
+      "low": 300,
+      "mid": 1000,
+      "high": 3000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: sail-era naval port."
+    },
+    {
+      "low": 1000,
+      "mid": 3000,
+      "high": 8000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: steam-era quays and cranes."
+    },
+    {
+      "low": 600,
+      "mid": 6000,
+      "high": 17000,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld: Tobruk theoretically 1,500 t/day but \"rarely exceeded 600\"; Cherbourg scheduled 6,000 t/day; British ports 17,000 t/day before Antwerp."
+    },
+    {
+      "low": 5000,
+      "mid": 15000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: container and ro-ro ports."
+    },
+    {
+      "low": 5000,
+      "mid": 20000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: as tech 9 with larger ships."
+    }
+  ]
+}

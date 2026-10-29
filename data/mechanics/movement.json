@@ -1,0 +1,525 @@
+{
+  "rate": {
+    "foot": {
+      "low": 16,
+      "mid": 24,
+      "high": 31,
+      "grade": "B",
+      "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+      "note": "Per marching day. Engels table 7 / ch.1: Macedonian army averaged ~15 mi (24 km)/day, fastest whole-army average 19.5 mi (31 km)/day. Van Creveld: 15 mi/day steady \"since time immemorial\", 18th-c. armies seldom >10 mi (16 km)/day for long. FM 101-10 (1941) march table: 12-15 mi/day for a division, 15-20 for smaller units. Dupuy (dupuyinstitute.org verities): opposed advance ~17 km/day Napoleonic, ~26 km/day 1973."
+    },
+    "horse": {
+      "low": 40,
+      "mid": 56,
+      "high": 80,
+      "grade": "B",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) par. 38 march table: cavalry (animal elements) 35 mi (56 km)/day normal march, \"under conditions requiring maneuver, these rates may be increased\". Low 25 mi/day for mixed horse columns; high ~50 mi (80 km)/day forced cavalry marches (educated guess for steppe horse armies with remounts)."
+    },
+    "wagon": {
+      "low": 16,
+      "mid": 32,
+      "high": 40,
+      "grade": "B",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941): horse-drawn artillery / pack 20 mi (32 km)/day. Low: Engels, ox carts 2 mph for 5 h/day = 10 mi (16 km). High: van Creveld, horse-drawn transport in 1914 \"twenty-five miles per day being reckoned as a steady average\" (40 km)."
+    },
+    "rail": {
+      "low": 175,
+      "mid": 300,
+      "high": 480,
+      "grade": "B",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) par. 40: military trains average 20 mph (480 km per 24 h continuous), allow 3 h to load and 3 h to unload. Low: https://en.wikipedia.org/wiki/2nd_SS_Panzer_Division_Das_Reich, unopposed rail move of ~700 km \"would have taken three or four days\" (175-233 km/day for a whole division incl. loading)."
+    },
+    "motorized": {
+      "low": 64,
+      "mid": 160,
+      "high": 280,
+      "grade": "B",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld (WWII ch.): truck companies at \"the regulation 100 miles per day\" (160 km). Low: 1967 campaign, no army \"stands much chance of covering more than forty miles per day\" (64 km). High: FM 101-10 (1941) march table, trucks/motorized units 175 mi (280 km)/day normal march."
+    },
+    "mechanized": {
+      "low": 40,
+      "mid": 100,
+      "high": 240,
+      "grade": "C",
+      "source": "https://archive.org/details/supplying-war-logistics-from-w",
+      "note": "Van Creveld conclusion: tracked vehicles can do 15 mph but no army sustained 75 mi (120 km)/day \"for more than a very few days\". High: FM 101-10 (1941) light & medium tanks 150 mi (240 km)/day road march. Mid 100 km = sustained operational pace between these; low 40 km = 1967 ceiling (64) minus friction."
+    },
+    "tracked_heavy": {
+      "low": 30,
+      "mid": 70,
+      "high": 120,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941): tractor-drawn heavy artillery 40 mi (64 km)/day; tanks 150 mi/day road march. Heavy tracked formations are limited by track wear and fuel (Das Reich 1944 road march: \"steel tracks of the tanks ... wore out\", https://en.wikipedia.org/wiki/2nd_SS_Panzer_Division_Das_Reich). Mid 70 km composite, grade C."
+    },
+    "air": {
+      "low": 400,
+      "mid": 1000,
+      "high": 2500,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Operational redeployment of an air unit per day incl. ground echelon. Spitfire ferry range 1,800 km, B-17 cruise 293 km/h, F-16 cruise 933 km/h (https://en.wikipedia.org/wiki/Supermarine_Spitfire, Boeing_B-17_Flying_Fortress, General_Dynamics_F-16_Fighting_Falcon). Mid = one ferry leg of ~1,000 km per day with support; grade C."
+    },
+    "sea": {
+      "low": 90,
+      "mid": 250,
+      "high": 900,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Envelope of naval.speedKmDay: sail 90-270 km/day (Casson), oared 90 km/day (trireme 6 kn), steam 450 (Liberty ship 11 kn), modern up to ~900 (20 kn). Mid 250 km/day for a mixed pre-modern/modern lift."
+    }
+  },
+  "roleMobility": {
+    "infantry_line": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "motorized",
+      "motorized"
+    ],
+    "infantry_light": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "motorized",
+      "motorized"
+    ],
+    "missile_infantry": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "motorized",
+      "motorized"
+    ],
+    "cavalry_heavy": [
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "mechanized",
+      "mechanized"
+    ],
+    "cavalry_light": [
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "mechanized",
+      "mechanized"
+    ],
+    "chariots": [
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse",
+      "horse"
+    ],
+    "elephants": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot"
+    ],
+    "artillery": [
+      "foot",
+      "foot",
+      "foot",
+      "wagon",
+      "wagon",
+      "wagon",
+      "wagon",
+      "wagon",
+      "motorized",
+      "mechanized",
+      "mechanized"
+    ],
+    "armor": [
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy",
+      "tracked_heavy"
+    ],
+    "ifv_apc": [
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized",
+      "mechanized"
+    ],
+    "aircraft_fighter": [
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air"
+    ],
+    "aircraft_strike": [
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air"
+    ],
+    "helicopters": [
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air"
+    ],
+    "drones": [
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air",
+      "air"
+    ],
+    "ships_major": [
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea"
+    ],
+    "ships_minor": [
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea"
+    ],
+    "submarines": [
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea",
+      "sea"
+    ],
+    "missiles": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "motorized",
+      "motorized",
+      "motorized"
+    ],
+    "air_defense": [
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "foot",
+      "motorized",
+      "motorized",
+      "motorized",
+      "motorized"
+    ]
+  },
+  "terrain": {
+    "water": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:mech-composite",
+      "note": "Impassable to land formations (ENGINE.md section 5: water cells need sea lift). Placeholder 0."
+    },
+    "plains": {
+      "low": 0.32,
+      "mid": 0.6,
+      "high": 0.83,
+      "grade": "B",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "Off-road multiplier. FM 101-10 (1941) march table cross-country vs road (day): foot 1.5/2.5 mph = 0.6; cavalry 5/6 = 0.83; trucks 8/25 = 0.32; tanks 15/25 = 0.6."
+    },
+    "cropland": {
+      "low": 0.32,
+      "mid": 0.6,
+      "high": 0.83,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "Same FM 101-10 (1941) cross-country ratios as plains (fields, hedges, ditches offset by dense track network). Grade C: not separated in the source."
+    },
+    "forest": {
+      "low": 0.2,
+      "mid": 0.4,
+      "high": 0.6,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: below the FM 101-10 (1941) open cross-country foot ratio 0.6; trucks essentially road-bound (0.32 in open country) so low 0.2."
+    },
+    "hills": {
+      "low": 0.3,
+      "mid": 0.5,
+      "high": 0.7,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) note: add 1 hour per 1,000 ft of climb. An 8 h march with ~1,500-3,000 ft of climb = 8/9.5-8/11 = 0.73-0.84 of road speed, times the 0.6 off-road ratio = ~0.45-0.5."
+    },
+    "mountains": {
+      "low": 0.15,
+      "mid": 0.3,
+      "high": 0.5,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941): +1 h per 1,000 ft climb; 4,000-8,000 ft of climb per 8 h march gives 8/12-8/16 = 0.5-0.67 on tracks, times off-road 0.6 = 0.3-0.4; vehicles lower."
+    },
+    "desert": {
+      "low": 0.25,
+      "mid": 0.5,
+      "high": 0.8,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: hard desert near the open-country 0.6-0.8, sand dunes far lower; Engels documents the Gedrosian march as the army's slowest. Water limits are in logistics."
+    },
+    "steppe": {
+      "low": 0.5,
+      "mid": 0.7,
+      "high": 0.9,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "Open firm grassland: between FM 101-10 (1941) foot (0.6) and cavalry (0.83) cross-country ratios; mid 0.7."
+    },
+    "wetland": {
+      "low": 0.1,
+      "mid": 0.25,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: marsh restricts movement to causeways; well under the 0.6 open-country ratio."
+    },
+    "urban": {
+      "low": 0.5,
+      "mid": 0.7,
+      "high": 0.9,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: street network gives near-road speed, congestion and rubble reduce it."
+    },
+    "ice": {
+      "low": 0.05,
+      "mid": 0.2,
+      "high": 0.4,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) par. 38b: snow >= 24 in prohibits marching without skis/snowshoes; trained troops on snowshoes 1.5-2.25 mph, skis 1.5-3.5 mph vs 2.5 mph road. Ice sheets/tundra assumed deep snow most of the year."
+    }
+  },
+  "roadBonus": {
+    "low": 1.2,
+    "mid": 1.67,
+    "high": 3.1,
+    "grade": "B",
+    "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+    "note": "Road / cross-country speed from FM 101-10 (1941) march table: foot 2.5/1.5 = 1.67, cavalry 6/5 = 1.2, trucks 25/8 = 3.1. Applied on road cells so that terrain x roadBonus ~ 1 on plains for foot."
+  },
+  "season": {
+    "spring": {
+      "low": 0.6,
+      "mid": 0.85,
+      "high": 1.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: thaw and spring rains (rasputitsa) on unpaved roads. Weather odds (movement.weatherOdds) source: https://en.wikipedia.org/wiki/Berlin climate table, Dahlem 1961-1990 precipitation days >=1 mm (MAM 27, JJA 28, SON 27, DJF 30 days) and Brandenburg 1991-2020 snow-cover days >=1 cm (MAM 2.8, SON 1.4, DJF 20.1). rain = precip days / season days; snow = snow-cover days / season days; mud share is an educated guess (days after rain/thaw with saturated unpaved ground); clear = remainder."
+    },
+    "summer": {
+      "low": 0.95,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "C",
+      "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+      "note": "Reference season: campaign rates (Engels, van Creveld, FM 101-10) are mostly summer rates. Van Creveld: campaigns \"normally started\" in April. Weather odds (movement.weatherOdds) source: https://en.wikipedia.org/wiki/Berlin climate table, Dahlem 1961-1990 precipitation days >=1 mm (MAM 27, JJA 28, SON 27, DJF 30 days) and Brandenburg 1991-2020 snow-cover days >=1 cm (MAM 2.8, SON 1.4, DJF 20.1). rain = precip days / season days; snow = snow-cover days / season days; mud share is an educated guess (days after rain/thaw with saturated unpaved ground); clear = remainder."
+    },
+    "autumn": {
+      "low": 0.65,
+      "mid": 0.9,
+      "high": 1.0,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: shortening days and autumn rains; https://en.wikipedia.org/wiki/Operation_Barbarossa: Oct 1941 rain \"turned the unpaved road network into mud, and slowed the German advance\". Weather odds (movement.weatherOdds) source: https://en.wikipedia.org/wiki/Berlin climate table, Dahlem 1961-1990 precipitation days >=1 mm (MAM 27, JJA 28, SON 27, DJF 30 days) and Brandenburg 1991-2020 snow-cover days >=1 cm (MAM 2.8, SON 1.4, DJF 20.1). rain = precip days / season days; snow = snow-cover days / season days; mud share is an educated guess (days after rain/thaw with saturated unpaved ground); clear = remainder."
+    },
+    "winter": {
+      "low": 0.4,
+      "mid": 0.7,
+      "high": 0.9,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: ~8 h daylight vs ~16 h in summer at 52N limits marching hours; frozen ground can help vehicles. Snow itself is in weather. Weather odds (movement.weatherOdds) source: https://en.wikipedia.org/wiki/Berlin climate table, Dahlem 1961-1990 precipitation days >=1 mm (MAM 27, JJA 28, SON 27, DJF 30 days) and Brandenburg 1991-2020 snow-cover days >=1 cm (MAM 2.8, SON 1.4, DJF 20.1). rain = precip days / season days; snow = snow-cover days / season days; mud share is an educated guess (days after rain/thaw with saturated unpaved ground); clear = remainder."
+    }
+  },
+  "weather": {
+    "clear": {
+      "low": 1.0,
+      "mid": 1.0,
+      "high": 1.0,
+      "grade": "A",
+      "source": "derived:mech-composite",
+      "note": "Reference weather, multiplier 1 by definition."
+    },
+    "rain": {
+      "low": 0.7,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "Educated guess: rain slows columns and degrades unpaved roads before they turn to mud."
+    },
+    "mud": {
+      "low": 0.2,
+      "mid": 0.4,
+      "high": 0.7,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Operation_Barbarossa",
+      "note": "Oct-Nov 1941: rain and snow \"creating a glutinous mud that German tanks had difficulty traversing\"; Army Group Centre offensive stalled. Magnitude (0.4) is a composite guess, grade C."
+    },
+    "snow": {
+      "low": 0.2,
+      "mid": 0.6,
+      "high": 0.9,
+      "grade": "C",
+      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
+      "note": "FM 101-10 (1941) par. 38b: snow decreases foot mobility, >= 24 in prohibits marching without skis/snowshoes; trained troops on snowshoes 1.5-2.25 mph vs 2.5 mph normal (0.6-0.9); motor vehicles need chains above 6 in, snow plow above 18 in."
+    }
+  },
+  "weatherOdds": {
+    "spring": {
+      "clear": 0.53,
+      "rain": 0.29,
+      "mud": 0.15,
+      "snow": 0.03
+    },
+    "summer": {
+      "clear": 0.65,
+      "rain": 0.3,
+      "mud": 0.05,
+      "snow": 0.0
+    },
+    "autumn": {
+      "clear": 0.5,
+      "rain": 0.3,
+      "mud": 0.18,
+      "snow": 0.02
+    },
+    "winter": {
+      "clear": 0.4,
+      "rain": 0.23,
+      "mud": 0.15,
+      "snow": 0.22
+    }
+  },
+  "restDayFraction": {
+    "low": 0.1,
+    "mid": 0.143,
+    "high": 0.25,
+    "grade": "B",
+    "source": "https://archive.org/details/alexander-the-great-and-the-logistics-of-the-macedonian-army",
+    "note": "Engels ch.2 n.66: army marched 15 mi/day \"and halted for one day in seven\" (1/7 = 0.143). Low 0.1 for forced campaigns, high 0.25 for heavy trains. Weather odds (movement.weatherOdds) source: https://en.wikipedia.org/wiki/Berlin climate table, Dahlem 1961-1990 precipitation days >=1 mm (MAM 27, JJA 28, SON 27, DJF 30 days) and Brandenburg 1991-2020 snow-cover days >=1 cm (MAM 2.8, SON 1.4, DJF 20.1). rain = precip days / season days; snow = snow-cover days / season days; mud share is an educated guess (days after rain/thaw with saturated unpaved ground); clear = remainder."
+  }
+}
