@@ -36,6 +36,12 @@ families, their licenses, and the derivation methods.
 - Money: 2011 international dollars (Maddison Project 2023 convention). Modern World Bank values
   in 2021 PPP are rebased with `derived:ppp-rebase-2011`.
 - Modern values: state the reference year in `note` ("asOf 2024").
+- Borders: several refs can be joined with ` + ` to union polygons
+  (`hb:1938:Germany + hb:1938:Bohemia-Moravia`). Overlapping polygons count once on the map.
+- `urbanization`: share of population living in settlements of 5,000+ (pre-1800, Bairoch
+  convention) or the national statistical definition (modern, as reported by the World Bank).
+- `foodSurplus`: share of food production not consumed by the producing agricultural population
+  (what can feed towns, armies and stores). Pre-modern values are rough (grade C/D).
 - Force accounting: see `military` in `src/types/schema.ts`. `forces` is the standing order of
   battle at the snapshot date, P-role counts exclude crews, navy/air personnel, logistics and
   staff (those are `supportPersonnel`).
@@ -68,6 +74,8 @@ Each `derived:<id>` used in the data must be listed here with its formula.
 - `derived:force-from-spending` - modern equipment estimate for a small state with no published
   order of battle: regional median equipment per $bn of military spending x the state's
   spending. Grade D.
+- `derived:snapshot-composite` - a snapshot value combined from several cited figures; the note
+  shows the arithmetic and names each source. Grade at most C.
 - `derived:mech-composite` - a mechanics constant combined from several cited figures; the note
   shows the arithmetic and names each source.
 

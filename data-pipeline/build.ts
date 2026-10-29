@@ -30,8 +30,14 @@ async function features(url: string): Promise<Feature[]> {
   return fileCache.get(url)!;
 }
 
-/** Resolve "hb:<year>:<NAME>" or "ne:<ISO3>" to a MultiPolygon. */
+/** Resolve "hb:<year>:<NAME>" or "ne:<ISO3>" to a MultiPolygon. Several refs joined
+ *  with " + " are unioned (e.g. a core polygon plus a protectorate). */
 export async function resolveBorder(ref: string): Promise<MultiPolygon | null> {
+  if (ref.includes(' + ')) {
+    const parts = await Promise.all(ref.split(' + ').map((r) => resolveBorder(r.trim())));
+    if (parts.some((p) => !p)) return null;
+    return parts.flatMap((p) => p!);
+  }
   if (ref.startsWith('hb:')) {
     const [, year, ...rest] = ref.split(':');
     const name = rest.join(':');
