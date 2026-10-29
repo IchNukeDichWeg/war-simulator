@@ -1,0 +1,498 @@
+{
+ "id": "babylon--1750",
+ "nationId": "babylon",
+ "includes": [],
+ "name": "Old Babylonian Empire (Hammurabi)",
+ "year": -1750,
+ "era": "bronze",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "empire",
+  "Babylonian",
+  "Amorite",
+  "Mesopotamia",
+  "Hammurabi",
+  "bronze age"
+ ],
+ "capital": {
+  "name": "Babylon",
+  "lat": 32.5363,
+  "lon": 44.4209,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Sippar",
+   "lat": 33.059,
+   "lon": 44.252,
+   "kind": "city"
+  },
+  {
+   "name": "Kish",
+   "lat": 32.541,
+   "lon": 44.603,
+   "kind": "city"
+  },
+  {
+   "name": "Nippur",
+   "lat": 32.127,
+   "lon": 45.23,
+   "kind": "city"
+  },
+  {
+   "name": "Isin",
+   "lat": 31.884,
+   "lon": 45.269,
+   "kind": "city"
+  },
+  {
+   "name": "Larsa",
+   "lat": 31.286,
+   "lon": 45.853,
+   "kind": "city"
+  },
+  {
+   "name": "Ur",
+   "lat": 30.962,
+   "lon": 46.103,
+   "kind": "port"
+  },
+  {
+   "name": "Uruk",
+   "lat": 31.322,
+   "lon": 45.636,
+   "kind": "city"
+  },
+  {
+   "name": "Eshnunna",
+   "lat": 33.484,
+   "lon": 44.729,
+   "kind": "city"
+  },
+  {
+   "name": "Mari",
+   "lat": 34.55,
+   "lon": 40.888,
+   "kind": "fortress"
+  },
+  {
+   "name": "Assur",
+   "lat": 35.456,
+   "lon": 43.262,
+   "kind": "city"
+  },
+  {
+   "name": "Diyala crossing",
+   "lat": 33.3,
+   "lon": 44.55,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc2000:Ur",
+  "areaKm2": {
+   "low": 250000,
+   "mid": 350000,
+   "high": 500000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/479",
+   "note": "Seshat codes Polity Territory 400,000-500,000 km2 for Amorite Babylonia (2000-1600 BCE), Taagepera 1978 gives 0.25 million km2 at 1690 BCE (https://en.wikipedia.org/wiki/List_of_largest_empires). The historical-basemaps world_bc2000 polygon 'Ur' (nearest file before 1750; covers Babylon, Sippar, Larsa, Eshnunna and Assur) measures ~341,000 km2 computed from the GeoJSON. Mari and the middle Euphrates are outside that polygon."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 700000,
+   "mid": 1000000,
+   "high": 1500000,
+   "grade": "C",
+   "source": "derived:snapshot-composite",
+   "note": "OWID historical population (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true): Iraq 0.875 M in 2000 BCE and 1.25 M in 1000 BCE, linear to 1750 BCE = 0.97 M, covering nearly all of Hammurabi's realm (Mari on the middle Euphrates adds little). Seshat codes Amorite Babylonia's population as not available (https://seshat-db.com/core/polity/479)."
+  },
+  "urbanization": {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Southern Mesopotamia remained densely urban; Seshat codes the largest Isin-Larsa period settlement at 175,000-225,000, which looks high."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 10000,
+   "mid": 20000,
+   "high": 40000,
+   "grade": "C",
+   "source": "isbn:9780415255882",
+   "note": "Hamblin 2006, Warfare in the Ancient Near East to 1600 BC, ch. 7 (Mari archive): Shamshi-Adad wrote that 6,000 men from Mari, 10,000 from Assyria and 6,000 from allied Eshnunna would make 'a strong army' of 20,000, implying most armies of the age were smaller; a Mari report puts an enemy force at 15,000; Hammurabi himself warned that 1,000 troops sent are rumoured as 10,000. After 1763-1761 Hammurabi held Larsa, Eshnunna and Mari, so he could field roughly what three kingdoms combined could. Low = one strong field army; high = field army plus garrisons in conquered Mari, Eshnunna and Larsa."
+  },
+  "trainedReserves": {
+   "low": 5000,
+   "mid": 15000,
+   "high": 30000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Ilkum field holders callable within a month."
+  },
+  "supportPersonnel": {
+   "low": 1000,
+   "mid": 2000,
+   "high": 4000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Boat crews, scribes, quartermasters, the few chariot crews."
+  },
+  "mobilizationRatio": {
+   "low": 0.04,
+   "mid": 0.06,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. The ilkum system granted fields for military service, making a large share of free men liable; Old Babylonian armies drew heavily on these holders."
+  },
+  "mobilizable": {
+   "low": 28000,
+   "mid": 60000,
+   "high": 150000,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 5000,
+     "mid": 10000,
+     "high": 20000,
+     "grade": "C",
+     "source": "isbn:9780415255882",
+     "note": "Hamblin 2006, Warfare in the Ancient Near East to 1600 BC, ch. 7 (Mari archive): Shamshi-Adad wrote that 6,000 men from Mari, 10,000 from Assyria and 6,000 from allied Eshnunna would make 'a strong army' of 20,000, implying most armies of the age were smaller; a Mari report puts an enemy force at 15,000; Hammurabi himself warned that 1,000 troops sent are rumoured as 10,000. After 1763-1761 Hammurabi held Larsa, Eshnunna and Mari, so he could field roughly what three kingdoms combined could. Split: close-order spear and axe infantry (redum soldiers) ~55%."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Era-typical bronze axes, spears, helmets."
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Mostly ilkum holders and levies (rubric 0.25-0.5), some professional troops."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 2500,
+     "mid": 5000,
+     "high": 10000,
+     "grade": "C",
+     "source": "isbn:9780415255882",
+     "note": "Hamblin 2006, Warfare in the Ancient Near East to 1600 BC, ch. 7 (Mari archive): Shamshi-Adad wrote that 6,000 men from Mari, 10,000 from Assyria and 6,000 from allied Eshnunna would make 'a strong army' of 20,000, implying most armies of the age were smaller; a Mari report puts an enemy force at 15,000; Hammurabi himself warned that 1,000 troops sent are rumoured as 10,000. After 1763-1761 Hammurabi held Larsa, Eshnunna and Mari, so he could field roughly what three kingdoms combined could. Split: archers and slingers ~28%."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Composite bows in use."
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Levies with some specialists."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 1500,
+     "mid": 3000,
+     "high": 6000,
+     "grade": "C",
+     "source": "isbn:9780415255882",
+     "note": "Hamblin 2006, Warfare in the Ancient Near East to 1600 BC, ch. 7 (Mari archive): Shamshi-Adad wrote that 6,000 men from Mari, 10,000 from Assyria and 6,000 from allied Eshnunna would make 'a strong army' of 20,000, implying most armies of the age were smaller; a Mari report puts an enemy force at 15,000; Hammurabi himself warned that 1,000 troops sent are rumoured as 10,000. After 1763-1761 Hammurabi held Larsa, Eshnunna and Mari, so he could field roughly what three kingdoms combined could. Split: Amorite tribal auxiliaries and skirmishers ~17%."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Light equipment."
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Tribal warriors, experienced but undrilled."
+    }
+   },
+   "chariots": {
+    "count": {
+     "low": 10,
+     "mid": 50,
+     "high": 200,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Horse-drawn chariots existed in the Mari period but were rare and largely royal; chariot armies only spread after ~1600 BCE. Crews are in supportPersonnel."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Early, heavier chariots, a generation before the Late Bronze Age light chariot."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Elite crews but no chariot tactics yet."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.65,
+   "high": 0.75,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5-0.75: Hammurabi was a proven strategist (sequenced wars against Larsa, Eshnunna, Mari; flooding tactics); generalship good, no staff system."
+  },
+  "cohesion": {
+   "low": 0.35,
+   "mid": 0.45,
+   "high": 0.55,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.25-0.5: coalition warfare of shifting Amorite kingdoms; core Babylonian troops more cohesive."
+  },
+  "morale": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.7,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5-0.75: string of victories 1764-1755 BCE."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 1.4,
+   "mid": 1.6,
+   "high": 1.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between anchor 1 and 2: tin bronze, composite bows, early chariots but no chariot armies."
+  },
+  "armor": {
+   "low": 1.3,
+   "mid": 1.4,
+   "high": 1.6,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between anchor 1 and 2: helmets, some leather and early scale armour."
+  },
+  "ships": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.4,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 1: river boats used for troop and grain transport."
+  },
+  "fortification": {
+   "low": 1.4,
+   "mid": 1.6,
+   "high": 1.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between 1 and 2: massive mudbrick walls (Babylon, Mari, Eshnunna), siege towers and rams attested in Mari texts."
+  },
+  "logistics": {
+   "low": 1.3,
+   "mid": 1.5,
+   "high": 1.7,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between 1 and 2: river transport, palace granaries, ration lists; ilkum supply system."
+  },
+  "communications": {
+   "low": 1.4,
+   "mid": 1.6,
+   "high": 1.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between 1 and 2: dense royal correspondence by courier (Mari letters) and fire signals."
+  },
+  "isr": {
+   "low": 1.3,
+   "mid": 1.4,
+   "high": 1.6,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor ~1.4: envoys, spies and informant reports are frequent in the Mari letters."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 750,
+   "mid": 950,
+   "high": 1150,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true: Iraq 1 CE = 1,116, 730 CE = 1,466 (2011 int$). Old Babylonian contracts show a monetised silver economy with hired labour; scaled slightly below the 1 CE value."
+  },
+  "gdp": {
+   "low": 525000000,
+   "mid": 950000000,
+   "high": 1725000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high)."
+  },
+  "milSpendShare": {
+   "low": 0.02,
+   "mid": 0.04,
+   "high": 0.07,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Soldiers were mostly paid in field allotments (ilkum), not cash."
+  },
+  "industrialShare": {
+   "low": 0.06,
+   "mid": 0.1,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Craft and trade economy (textiles, metal, long-distance trade)."
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.3,
+   "high": 0.4,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Irrigated agriculture; recurrent salinisation in the south."
+  },
+  "annualCohort": {
+   "low": 6650,
+   "mid": 9500,
+   "high": 14250,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; Bronze Age life expectancy was if anything lower, so this is not an underestimate."
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 0,
+   "mid": 300,
+   "high": 1500,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. No engineered roads; river, canal and caravan routes."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 4,
+   "high": 6,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. River ports at Sippar, Babylon, Ur, Mari."
+  },
+  "merchantTonnage": {
+   "low": 3000,
+   "mid": 8000,
+   "high": 20000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. River boats of a few tons and Gulf trade via Dilmun."
+  },
+  "supplyRangeKm": {
+   "low": 50,
+   "mid": 80,
+   "high": 130,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Armies followed the rivers with boat supply; Mari letters show armies short of grain away from them."
+  },
+  "draftAnimals": {
+   "low": 70000,
+   "mid": 120000,
+   "high": 200000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. ~0.1-0.13 donkeys and oxen per inhabitant."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-bronze-chariot",
+ "geography": {
+  "climate": "BWh",
+  "chokepoints": [
+   "Euphrates corridor (Mari, Hit)",
+   "Tigris crossings",
+   "Diyala route to Elam and the Zagros",
+   "Head of the Persian Gulf"
+  ],
+  "homeDefense": {
+   "low": 1.05,
+   "mid": 1.15,
+   "high": 1.2,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.1-1.2: familiar alluvium, walled cities and canals that could be used for flooding."
+  }
+ },
+ "notes": "Snapshot = 1750 BCE (middle chronology), after Hammurabi's conquest of Larsa (1763), Eshnunna and Mari (1761). Chariots are listed only as a token royal arm because the horse chariot was not yet a mass weapon in Mesopotamia; the chariot-archetype doctrine fits poorly. Army numbers are reconstructed from Mari-archive letters as discussed by Hamblin (2006), not from any census. Population convention: everything inside the border."
+}

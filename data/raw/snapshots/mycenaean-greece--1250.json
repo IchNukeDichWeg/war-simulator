@@ -1,0 +1,524 @@
+{
+ "id": "mycenaean-greece--1250",
+ "nationId": "mycenaean-greece",
+ "includes": [],
+ "name": "Mycenaean Greece (palatial kingdoms)",
+ "year": -1250,
+ "era": "bronze",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "palace states",
+  "Mycenaean",
+  "Aegean",
+  "Ahhiyawa",
+  "Linear B",
+  "bronze age"
+ ],
+ "capital": {
+  "name": "Mycenae",
+  "lat": 37.7308,
+  "lon": 22.7561,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Tiryns",
+   "lat": 37.599,
+   "lon": 22.8,
+   "kind": "fortress"
+  },
+  {
+   "name": "Midea",
+   "lat": 37.649,
+   "lon": 22.844,
+   "kind": "fortress"
+  },
+  {
+   "name": "Pylos (Palace of Nestor)",
+   "lat": 37.027,
+   "lon": 21.695,
+   "kind": "city"
+  },
+  {
+   "name": "Thebes",
+   "lat": 38.32,
+   "lon": 23.32,
+   "kind": "city"
+  },
+  {
+   "name": "Orchomenos",
+   "lat": 38.493,
+   "lon": 22.976,
+   "kind": "city"
+  },
+  {
+   "name": "Gla",
+   "lat": 38.481,
+   "lon": 23.193,
+   "kind": "fortress"
+  },
+  {
+   "name": "Athens",
+   "lat": 37.9715,
+   "lon": 23.7257,
+   "kind": "fortress"
+  },
+  {
+   "name": "Knossos",
+   "lat": 35.298,
+   "lon": 25.163,
+   "kind": "city"
+  },
+  {
+   "name": "Iolkos (Dimini)",
+   "lat": 39.36,
+   "lon": 22.92,
+   "kind": "port"
+  },
+  {
+   "name": "Isthmus of Corinth",
+   "lat": 37.94,
+   "lon": 22.96,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Euripus strait",
+   "lat": 38.463,
+   "lon": 23.59,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc1500:Greek city-states",
+  "areaKm2": {
+   "low": 60000,
+   "mid": 100000,
+   "high": 141000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. High = historical-basemaps world_bc1500 'Greek city-states' polygon (mainland Greece, Crete and Aegean islands; nearest file at or before 1250) computed from the GeoJSON at ~141,000 km2. The palatial territories proper (Argolid, Messenia, Laconia, Boeotia, Attica, southern Thessaly, Crete) covered less."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 400000,
+   "mid": 600000,
+   "high": 900000,
+   "grade": "C",
+   "source": "derived:snapshot-composite",
+   "note": "OWID historical population (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true): Greece 0.3 M in 2000 BCE and 1.0 M in 1000 BCE; linear interpolation gives ~0.83 M at 1250, but the Late Bronze Age peak was followed by collapse, so the curve is not linear; Seshat codes Mycenaean Crete (Monopalatial) at 50,000-80,000 (https://seshat-db.com/core/polity/63). Mid is a judgement within the range."
+  },
+  "urbanization": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Palatial centres of a few thousand to ~10,000 (Seshat codes Knossos at ~10,000)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 8000,
+   "mid": 18000,
+   "high": 35000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. No Mycenaean army total exists. Anchors: the Pylos rower tablets list ~600 rowers called up by one kingdom, enough for 12-30 ships (Wachsmann 1999, fetched); the Pylos o-ka tablets assign small coastal detachments; every rural community (damos) owed men (D'Amato and Salimbeti 2011, cited in https://en.wikipedia.org/wiki/Mycenaean_Greece). Sum over ~6-10 palatial states (Mycenae, Tiryns, Pylos, Thebes, Orchomenos/Gla, Athens, Knossos, Iolkos). "
+  },
+  "trainedReserves": {
+   "low": 5000,
+   "mid": 10000,
+   "high": 20000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Damos levies callable in a month."
+  },
+  "supportPersonnel": {
+   "low": 2000,
+   "mid": 4000,
+   "high": 7000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Rowers and chariot crews in service at a given time; the Pylos call-up of ~600 rowers in one kingdom scaled to all palaces."
+  },
+  "mobilizationRatio": {
+   "low": 0.04,
+   "mid": 0.06,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Palace-administered service from every damos."
+  },
+  "mobilizable": {
+   "low": 16000,
+   "mid": 36000,
+   "high": 90000,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 4000,
+     "mid": 8000,
+     "high": 15000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. No Mycenaean army total exists. Anchors: the Pylos rower tablets list ~600 rowers called up by one kingdom, enough for 12-30 ships (Wachsmann 1999, fetched); the Pylos o-ka tablets assign small coastal detachments; every rural community (damos) owed men (D'Amato and Salimbeti 2011, cited in https://en.wikipedia.org/wiki/Mycenaean_Greece). Sum over ~6-10 palatial states (Mycenae, Tiryns, Pylos, Thebes, Orchomenos/Gla, Athens, Knossos, Iolkos). Split: close-order spearmen ~60% of the foot."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Bronze spears, swords, boar's tusk and bronze helmets, figure-of-eight and round shields; most hoplite-panoply elements already present (Kagan and Viggiano via https://en.wikipedia.org/wiki/Mycenaean_Greece)."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Aristocratic warriors (e-qe-ta) plus damos levies."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 1000,
+     "mid": 2000,
+     "high": 4000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. No Mycenaean army total exists. Anchors: the Pylos rower tablets list ~600 rowers called up by one kingdom, enough for 12-30 ships (Wachsmann 1999, fetched); the Pylos o-ka tablets assign small coastal detachments; every rural community (damos) owed men (D'Amato and Salimbeti 2011, cited in https://en.wikipedia.org/wiki/Mycenaean_Greece). Sum over ~6-10 palatial states (Mycenae, Tiryns, Pylos, Thebes, Orchomenos/Gla, Athens, Knossos, Iolkos). Split: archers and slingers ~15% of the foot."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Bows, slings."
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Levies."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 1500,
+     "mid": 3000,
+     "high": 6000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. No Mycenaean army total exists. Anchors: the Pylos rower tablets list ~600 rowers called up by one kingdom, enough for 12-30 ships (Wachsmann 1999, fetched); the Pylos o-ka tablets assign small coastal detachments; every rural community (damos) owed men (D'Amato and Salimbeti 2011, cited in https://en.wikipedia.org/wiki/Mycenaean_Greece). Sum over ~6-10 palatial states (Mycenae, Tiryns, Pylos, Thebes, Orchomenos/Gla, Athens, Knossos, Iolkos). Split: javelin skirmishers ~25% of the foot."
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Light kit."
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Levies."
+    }
+   },
+   "chariots": {
+    "count": {
+     "low": 200,
+     "mid": 500,
+     "high": 1000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Knossos Linear B chariot tablets inventory chariots, horses and corslets in the low hundreds for Crete alone; Pylos tablets record chariot wheels. By the 13th century chariots served mainly as battlefield transport (Fields 2004, cited in https://en.wikipedia.org/wiki/Mycenaean_Greece). Crews in supportPersonnel."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Light rail chariot; used as transport more than as an archery platform."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Aristocratic crews."
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 50,
+     "mid": 120,
+     "high": 250,
+     "grade": "C",
+     "source": "https://ancmed.ulb.be/Bibliography/Wachsmann%2C%20The%20Pylos%20Rower%20Tablets%20Reconsidered%20%281999%29.pdf",
+     "note": "Wachsmann 1999: the Pylos An 610 tablet lists ~600 rowers, sufficient for thirty 20-oared ships, twenty triaconters or twelve penteconters, for one kingdom. Scaled to all Aegean palaces. Homer's Catalogue of 1,186 ships is not used."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Oared galleys (penteconter-type), the leading warship of the late Bronze Age Aegean."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Experienced Aegean seafarers."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.4,
+   "mid": 0.5,
+   "high": 0.6,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5: palace bureaucracies organised supply and call-ups; no unified command across kingdoms."
+  },
+  "cohesion": {
+   "low": 0.3,
+   "mid": 0.4,
+   "high": 0.5,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.25-0.5: separate palace states, aristocratic retinues."
+  },
+  "morale": {
+   "low": 0.45,
+   "mid": 0.55,
+   "high": 0.65,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5: average; pressure that preceded the c. 1200 collapse."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 1.9,
+   "mid": 2.0,
+   "high": 2.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 2: bronze swords and spears, chariots, composite bows rare."
+  },
+  "armor": {
+   "low": 1.9,
+   "mid": 2.1,
+   "high": 2.3,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 2+: Dendra-type bronze plate panoply (earlier), boar's tusk and bronze helmets."
+  },
+  "ships": {
+   "low": 1.9,
+   "mid": 2.1,
+   "high": 2.3,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 2+: oared galleys, strong naval tradition."
+  },
+  "fortification": {
+   "low": 2.1,
+   "mid": 2.3,
+   "high": 2.5,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Above anchor 2: Cyclopean citadels (Mycenae, Tiryns, Gla, Athens) with hidden cisterns."
+  },
+  "logistics": {
+   "low": 1.7,
+   "mid": 1.9,
+   "high": 2.1,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Below 2: palace store-rooms, engineered roads with culverts and bridges in the Argolid; small kingdoms."
+  },
+  "communications": {
+   "low": 1.7,
+   "mid": 1.9,
+   "high": 2.1,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Below 2: palace couriers; beacon chains plausible."
+  },
+  "isr": {
+   "low": 1.7,
+   "mid": 1.9,
+   "high": 2.1,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Below 2: coastal watch detachments (o-ka tablets)."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 650,
+   "mid": 850,
+   "high": 1100,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true: Greece 1 CE = 1,275 (2011 int$). Late Bronze Age palatial economy scaled down by about a third."
+  },
+  "gdp": {
+   "low": 260000000,
+   "mid": 510000000,
+   "high": 990000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high)."
+  },
+  "milSpendShare": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Heavy palace investment in fortifications and bronze armour."
+  },
+  "industrialShare": {
+   "low": 0.06,
+   "mid": 0.1,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Palace-controlled craft production (textiles, perfumed oil, bronze)."
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.22,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Mediterranean dry farming; palace stores redistributed grain."
+  },
+  "annualCohort": {
+   "low": 3800,
+   "mid": 5700,
+   "high": 8550,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; Bronze Age life expectancy was if anything lower, so this is not an underestimate."
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 100,
+   "mid": 400,
+   "high": 1000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Engineered Mycenaean roads with culverts and bridges (e.g. Arkadiko bridge) in the Argolid and around other palaces."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 4,
+   "mid": 8,
+   "high": 12,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Nauplion/Tiryns, Pylos, Iolkos, Knossos/Amnisos, Piraeus area, island harbours."
+  },
+  "merchantTonnage": {
+   "low": 3000,
+   "mid": 8000,
+   "high": 20000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Merchant ships of 10-20 t (Uluburun-type) trading to Cyprus, Egypt, the Levant."
+  },
+  "supplyRangeKm": {
+   "low": 40,
+   "mid": 60,
+   "high": 100,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Short-range armies in a mountainous peninsula; sea transport for longer moves."
+  },
+  "draftAnimals": {
+   "low": 40000,
+   "mid": 80000,
+   "high": 150000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Oxen, donkeys, horses; ~0.1-0.17 per inhabitant."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-bronze-chariot",
+ "geography": {
+  "climate": "Csa",
+  "chokepoints": [
+   "Isthmus of Corinth",
+   "Euripus strait",
+   "Thermopylae and the Malian gulf",
+   "Dervenakia pass (Argolid)"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.2: mountain terrain and Cyclopean citadels; no deep strategic depth."
+  }
+ },
+ "notes": "Snapshot = c. 1250 BCE, LH IIIB palatial peak (Ahhiyawa of the Hittite texts). Mycenaean Greece was a set of palace kingdoms, not one state; this snapshot aggregates them, so commandQuality and cohesion are low. Capital = Mycenae as the leading centre. All force numbers are reconstructions from Linear B (Pylos rower and o-ka tablets, Knossos chariot tablets) and are grade D; Homer is not used. Population convention: mainland palatial regions, Crete and the Aegean inside the border."
+}
