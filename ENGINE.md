@@ -231,7 +231,18 @@ not read. Land first: an objective's flow field opens
 sea cells only when some own formation cannot reach it overland, or only by a
 march longer than its supply range (a member without a researched range only
 when cut off). Named simplification: no ports or embarkation time; those
-need sourced constants. Formations at sea draw no supply and
+need sourced constants. Formations on sea cells are never fought with the
+land combat model (`EMBARKED_NAVAL_ONLY`): no battle forms on a sea cell, and
+while the enemy has a fleet in the theater they lose
+`modelRules.naval.navalAttritionPerDay` of the formation's era per day at sea
+(cause naval; 0.001 in the world wars). A landing from the sea onto an
+enemy-held shore cell is a land battle on that cell. Before, allies-vs-axis
+had 15 land battles on sea cells and usa-vs-china 173 (QA round 2); a first
+version that sank troops with their fleet's daily fleet-action loss drowned
+555k Allied troops in 90 days and was replaced. Seed 1 now: allies-vs-axis
+naval losses 17k/6k, Axis win day 144 (133 before); usa-vs-china a draw at
+730 (Chinese win day 515 before). Backtests identical per case. Formations
+at sea draw no supply and
 show as Embarked. Major
 river cells cost extra days without a bridge (a city cell):
 `riverCrossingDelayDays` of the member's era (3 before 1500, 0.5 in the world

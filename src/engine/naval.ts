@@ -4,9 +4,10 @@
 // mechanics contract has no separate naval attrition rate yet.
 import type { Ctx } from './ctx';
 import { addEvent, seasonIdx } from './ctx';
-import { byTech, clamp } from './mech';
-import { NAVAL_ROLES, ROLES } from './roles';
-import { BATTLE_ROUND_LOSS_CAP } from './constants';
+import { byTech, clamp, rule } from './mech';
+import { LC, NAVAL_ROLES, ROLES } from './roles';
+import { BATTLE_ROUND_LOSS_CAP, EMBARKED_NAVAL_ONLY } from './constants';
+import { lossFraction } from './formations';
 import { SEASONS } from './setup';
 
 export function fleetPower(ctx: Ctx, side: 0 | 1): number {
@@ -62,6 +63,7 @@ export function navalPhase(ctx: Ctx): void {
         st.platformLosses[s] += l;
         lostShips[s] += l;
       }
+
       if (lostShips[0] + lostShips[1] >= 1 && (st.day % 30 === 1 || st.acc.seaDays === 0)) {
         const w = lostShips[0] < lostShips[1] ? 0 : 1;
         addEvent(ctx, w as 0 | 1, 'naval', `Fleet action: ${S.sideNames[0]} lost ${lostShips[0].toFixed(1)} ships, ${S.sideNames[1]} ${lostShips[1].toFixed(1)}.`,
@@ -69,6 +71,17 @@ export function navalPhase(ctx: Ctx): void {
       }
       p0 = fleetPower(ctx, 0); p1 = fleetPower(ctx, 1);
       st.lastActivityDay = st.day;
+    }
+  }
+  // interception: troops at sea, while the enemy has a fleet in the theater, lose
+  // modelRules.naval.navalAttritionPerDay (era of the formation) per day at sea; no other combat
+  // reaches them
+  if (EMBARKED_NAVAL_ONLY) {
+    const F = st.F, g = S.grid;
+    for (let f = 0; f < F.n; f++) {
+      if (!F.alive[f] || !F.onMap[f] || g.land[F.cell[f]]) continue;
+      if (!((F.side[f] === 0 ? p1 : p0) > 0)) continue;
+      lossFraction(ctx, f, rule(S.m.modelRules.naval.navalAttritionPerDay, S.members[F.member[f]].ruleYear), LC.naval);
     }
   }
   const tot = p0 + p1;

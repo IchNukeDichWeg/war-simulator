@@ -168,7 +168,7 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
   for (const k of ['battle.outcomeNoiseSigma', 'battle.footPursuitLossFloor', 'collapse.armyCollapsePersonnelFraction', 'collapse.armyCollapseMorale',
     'intel.fogStrengthError', 'c2.missionCommandDelayFactor', 'naval.blockadeSeaControlThreshold']) need(`modelRules.${k}`, 'mv');
   for (const k of ['battle.pursuitDisengageShare', 'river.riverCrossingDelayDays', 'attrition.returnToDutyDays', 'attrition.diseaseDeathShareOfAdmissions',
-    'surrender.encircledSurrenderShare', 'transport.seaLiftGrtPerSoldier']) needEra(`modelRules.${k}`);
+    'surrender.encircledSurrenderShare', 'transport.seaLiftGrtPerSoldier', 'naval.navalAttritionPerDay']) needEra(`modelRules.${k}`);
   needEra('modelRules.transport.seaLiftTonsPerVehicle.tracked', 'industrial');
   needEra('modelRules.transport.seaLiftTonsPerVehicle.wheeled', 'industrial');
   needEra('modelRules.transport.airLiftTonsPerDayPerAircraft', 'worldwars');

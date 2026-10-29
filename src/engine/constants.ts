@@ -196,6 +196,14 @@ export const ENCIRCLED_FLIP_NEEDS_SUPPLY = true;
  *  QA round 2: in japan-vs-usa-1941 crewless US formations (e.g. 4 artillery + 1 armor, personnel 0)
  *  took no casualties, never broke, won 18 battles and inflicted 849k of 1.09M battle casualties. */
 export const CREWED_FORMATIONS = true;
+/** Formations embarked on sea cells are never fought with the land combat model: they meet the
+ *  enemy only through naval interception, modelRules.naval.navalAttritionPerDay (0.001 per sea-day
+ *  in the world wars, submarine-war losses) while the enemy has a fleet in the theater (cause naval).
+ *  A first version sank them with their fleet's daily fleet-action loss and drowned 555k Allied
+ *  troops in 90 days of allies-vs-axis-minus-two: the daily fleet action is a pool model, not a
+ *  per-voyage exposure. QA round 2: allies-vs-axis-minus-two had 15 land battles on sea cells (65k
+ *  casualties), usa-vs-china-2026 173 (33k). */
+export const EMBARKED_NAVAL_ONLY = true;
 
 /** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
  *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),

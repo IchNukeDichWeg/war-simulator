@@ -10,7 +10,7 @@ import {
   BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -69,10 +69,14 @@ export function detectBattles(ctx: Ctx): void {
   sc.battles.length = 0;
   rebuildOccupancy(ctx);
   for (let f = 0; f < F.n; f++) F.battle[f] = -1;
+  const g = S.grid;
+  // formations embarked on sea cells meet the enemy only through naval interception (naval.ts)
+  const afloat = (c: number) => EMBARKED_NAVAL_ONLY && !g.land[c];
   // 1. cells holding both sides
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.battle[f] >= 0) continue;
     const c = F.cell[f], s = F.side[f];
+    if (afloat(c)) continue;
     if (sc.occ[1 - s][c] <= 0 || sc.battleAt[c] >= 0) continue;
     const ctl = st.control[c];
     const att = (ctl === 0 || ctl === 1 ? 1 - ctl : s) as 0 | 1;
@@ -83,7 +87,7 @@ export function detectBattles(ctx: Ctx): void {
     if (!F.alive[f] || !F.onMap[f] || F.battle[f] >= 0 || F.mode[f] !== Mode.Attack) continue;
     const t = F.next[f];
     const s = F.side[f] as 0 | 1;
-    if (t < 0 || sc.occ[1 - s][t] <= 0) continue;
+    if (t < 0 || sc.occ[1 - s][t] <= 0 || afloat(t)) continue;   // landing on an enemy-held shore is a land battle
     const bi = sc.battleAt[t];
     if (bi >= 0) {
       const b = sc.battles[bi];
@@ -93,7 +97,6 @@ export function detectBattles(ctx: Ctx): void {
       createBattle(ctx, t, s);
     }
   }
-  void S;
 }
 
 // ---------------------------------------------------------------- resolution
