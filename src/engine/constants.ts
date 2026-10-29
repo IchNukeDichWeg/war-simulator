@@ -131,6 +131,17 @@ export const OBJECTIVE_KIND_EXPLICIT = true;
 export const HOSPITAL_ADMISSIONS_RETURN = true;
 /** SideStats.casualties = the sum of lossesByCause (every permanent loss), so the two agree. */
 export const CASUALTIES_ALL_CAUSES = true;
+/** Land formations cross sea cells inside the theater at movement.rate.sea while their side is not
+ *  blockaded, up to the side's lift (troopLiftPerShip x theater ships) at sea at once. Embarking
+ *  from any coastal cell, no port needed -- per-port embarkation and merchant-tonnage lift are the
+ *  upgrade path once mechanics source troops per merchant ton. Land first: a flow field opens sea
+ *  cells only when some own formation cannot reach the objective overland, or only by a march
+ *  longer than its supply range (opening them always shipped the British around East Falkland:
+ *  8 days vs 25 historical, a duration fail; land-only left US troops landed at Oslo marching
+ *  through Sweden toward Russia). Before,
+ *  armies on different land masses never met (usa-vs-china-2026, athens-vs-usa-2026,
+ *  usa-spain-vs-russia-2026). */
+export const SEA_MOVEMENT = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

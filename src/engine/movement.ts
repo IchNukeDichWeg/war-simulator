@@ -12,12 +12,22 @@ import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { seasonIdx } from './ctx';
 import { FLAG_RIVER, T } from './terrainClasses';
-import { IS_P, NR } from './roles';
+import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { RIVER_DELAY_DAYS, ROAD_MIN_TECH, STACK_PENALTY_CELLS } from './constants';
+import { RIVER_DELAY_DAYS, ROAD_MIN_TECH, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
+import { byTech } from './mech';
+import { blockaded } from './naval';
+
+/** Troops `side` can have at sea at once in the theater (0: no sea movement today). */
+export function seaLift(ctx: Ctx, side: 0 | 1): number {
+  const { S, st } = ctx;
+  if (!SEA_MOVEMENT || !S.scenario.rules.naval || blockaded(ctx, side)) return 0;
+  const ships = st.fleet[side][RI.ships_major] + st.fleet[side][RI.ships_minor];
+  return ships > 0 ? byTech(S.m.naval.troopLiftPerShip, S.poolTech[side].ships) * ships : 0;
+}
 
 /** Is cell c a road cell for `side` today? (own place, or own cropland/urban at logistics tech >= 3) */
 export function isRoad(ctx: Ctx, side: number, c: number): boolean {
@@ -35,6 +45,8 @@ export function computeInvSpeed(ctx: Ctx, side: 0 | 1): void {
   const inv = sc.invSpeed[side], extra = sc.extra[side];
   const road = S.m.movement.roadBonus.mid;
   const riverKm = RIVER_DELAY_DAYS * S.refRate[side];
+  // sea cells start impassable; computeField opens them only when needed (see there)
+  sc.seaInv[side] = seaLift(ctx, side) > 0 ? S.refRate[side] / Math.max(1e-9, S.m.movement.rate.sea.mid) : Infinity;
   for (let c = 0; c < g.n; c++) {
     if (!g.land[c]) { inv[c] = Infinity; extra[c] = 0; continue; }
     const t = S.terrMove[g.cls[c]] * (isRoad(ctx, side, c) ? road : 1);
@@ -49,6 +61,28 @@ export function computeField(ctx: Ctx, side: 0 | 1, k: number, target: number): 
   const n = S.grid.n;
   const field = st.fields[side].subarray(k * n, (k + 1) * n);
   dijkstra(S.grid, sc.heap, sc.invSpeed[side], sc.extra[side], [target], null, field, null);
+  // Land first: armies march where they can. Only when some own formation cannot reach the
+  // objective overland (another land mass, already at sea) or only by a march longer than its
+  // supply range (in open-country km, as the supply field measures it) is the field rebuilt with
+  // sea cells open at sea speed (km at sea cost refRate / seaRate land km-equivalents).
+  if (sc.seaInv[side] === Infinity) return;
+  const F = st.F, g = S.grid;
+  const plains = S.terrMove[T.plains];
+  let cut = false;
+  for (let f = 0; f < F.n && !cut; f++) {
+    if (!F.alive[f] || !F.onMap[f] || F.side[f] !== side) continue;
+    const v = field[F.cell[f]];
+    // a member without a researched supply range (0, e.g. a synthesized backtest side) only
+    // takes ship when it is cut off: its range is unknown, not 1 km
+    const mr = S.members[F.member[f]];
+    const known = (mr.snap.logistics?.supplyRangeKm?.mid ?? 0) > 0;
+    if (v === Infinity || (known && v * plains > mr.supplyRangeKm)) cut = true;
+  }
+  if (!cut) return;
+  const inv = sc.invSpeed[side];
+  for (let c = 0; c < g.n; c++) if (!g.land[c]) inv[c] = sc.seaInv[side];
+  dijkstra(S.grid, sc.heap, inv, sc.extra[side], [target], null, field, null);
+  for (let c = 0; c < g.n; c++) if (!g.land[c]) inv[c] = Infinity;
 }
 
 /** Field slot for an objective cell, or -1. */
@@ -119,7 +153,9 @@ export function maxDailyKm(ctx: Ctx, f: number): number {
   for (const s of SEASONS) sMax = Math.max(sMax, m.season[s].mid);
   for (const w of WEATHERS) wMax = Math.max(wMax, m.weather[w].mid);
   const air = Math.max(1, S.m.air.airSuperiorityMovementFactor.mid);
-  return formationRate(ctx, f) * sMax * wMax * (1 - m.restDayFraction.mid) * air * S.maxTerrMove * Math.max(1, m.roadBonus.mid) + 1e-6;
+  const land = formationRate(ctx, f) * sMax * wMax * (1 - m.restDayFraction.mid) * air * S.maxTerrMove * Math.max(1, m.roadBonus.mid);
+  const sea = SEA_MOVEMENT ? m.rate.sea.mid * sMax * wMax * (1 - m.restDayFraction.mid) * air : 0;
+  return Math.max(land, sea) + 1e-6;
 }
 
 function bearing(ctx: Ctx, a: number, b: number): number {
@@ -129,7 +165,7 @@ function bearing(ctx: Ctx, a: number, b: number): number {
 }
 
 /** Choose the next cell for f on `field` (downhill), or -1. Sets contact flags via return code. */
-function chooseNext(ctx: Ctx, f: number, field: Float32Array, attack: boolean, rout: boolean): number {
+function chooseNext(ctx: Ctx, f: number, field: Float32Array, attack: boolean, rout: boolean, lift: number): number {
   const { S, st, sc } = ctx;
   const F = st.F;
   const g = S.grid;
@@ -140,7 +176,9 @@ function chooseNext(ctx: Ctx, f: number, field: Float32Array, attack: boolean, r
   let best = -1, bs = Infinity;
   for (let d = 0; d < 8; d++) {
     const j = g.nb[cur * 8 + d];
-    if (j < 0 || !g.land[j]) continue;
+    if (j < 0) continue;
+    // embarking needs free lift; already at sea, moving on at sea is fine
+    if (!g.land[j] && (g.land[cur] ? sc.embarked[side] + F.personnel[f] > lift : lift <= 0)) continue;
     const v = field[j];
     if (!(v < fc)) continue;
     if (sc.occ[enemy][j] > 0 && rout) continue;
@@ -221,6 +259,10 @@ export function movementPhase(ctx: Ctx): void {
   const F = st.F;
   const g = S.grid;
   const n = g.n;
+  const lift: [number, number] = [seaLift(ctx, 0), seaLift(ctx, 1)];
+  sc.embarked[0] = 0; sc.embarked[1] = 0;
+  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && !g.land[F.cell[f]]) sc.embarked[F.side[f]] += F.personnel[f];
+  const seaRate = Math.max(1e-9, S.m.movement.rate.sea.mid);
   for (let f = 0; f < F.n; f++) {
     F.movedKm[f] = 0;
     F.moved[f] = 0;
@@ -253,7 +295,7 @@ export function movementPhase(ctx: Ctx): void {
       const cur = F.cell[f];
       let nx = F.next[f];
       if (nx < 0 || !(field[nx] < field[cur])) {
-        nx = chooseNext(ctx, f, field, attack, rout);
+        nx = chooseNext(ctx, f, field, attack, rout, lift[side]);
         F.next[f] = nx;
         F.prog[f] = 0;
         if (nx < 0) break;
@@ -261,7 +303,8 @@ export function movementPhase(ctx: Ctx): void {
         let km = 0;
         for (let d = 0; d < 8; d++) if (g.nb[cur * 8 + d] === nx) { km = g.nbKm[cur * 8 + d]; break; }
         const river = (g.flags[nx] & FLAG_RIVER) && S.placeAt[nx] < 0 ? RIVER_DELAY_DAYS * full : 0;
-        F.edge[f] = t > 0 ? km / t + river : Infinity;
+        // at sea the formation moves at sea speed whatever its land rate
+        F.edge[f] = !g.land[nx] ? (km * formationRate(ctx, f)) / seaRate : t > 0 ? km / t + river : Infinity;
       }
       // contact: an enemy formation or an unreduced enemy fortress ahead stops the move
       if (sc.occ[enemy][nx] > 0 || isProtectedEnemyPlace(ctx, side, nx)) {
@@ -281,10 +324,11 @@ export function movementPhase(ctx: Ctx): void {
         F.movedKm[f] += (km * remaining) / edge;
         sc.occ[side][cur]--;
         sc.occ[side][nx]++;
+        if (g.land[cur] !== g.land[nx]) sc.embarked[side] += g.land[nx] ? -F.personnel[f] : F.personnel[f];
         F.cell[f] = nx;
         F.next[f] = -1;
         F.prog[f] = 0;
-        enterCell(ctx, side, nx);
+        if (g.land[nx]) enterCell(ctx, side, nx);
       } else {
         F.prog[f] += budget;
         F.movedKm[f] += (km * budget) / edge;
@@ -293,7 +337,8 @@ export function movementPhase(ctx: Ctx): void {
     }
     if (F.moved[f]) {
       F.stillDays[f] = 0;
-      if (mode === Mode.Rout) F.status[f] = UnitStatus.Routing;
+      if (!g.land[F.cell[f]]) F.status[f] = UnitStatus.Embarked;
+      else if (mode === Mode.Rout) F.status[f] = UnitStatus.Routing;
       else F.status[f] = UnitStatus.Moving;
     } else {
       if (F.stillDays[f] < 65535) F.stillDays[f]++;

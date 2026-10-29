@@ -31,6 +31,10 @@ export interface Scratch {
   nextInCell: Int32Array;
   battleAt: Int32Array;
   battles: Battle[];
+  /** Personnel per side currently in sea cells (SEA_MOVEMENT lift accounting). */
+  embarked: [number, number];
+  /** Per-side cost per sea km for flow fields (Infinity: no sea movement this cycle). */
+  seaInv: [number, number];
   claim: [Uint8Array, Uint8Array];
   prevControl: Uint8Array;
   forageTaken: Float32Array;
@@ -66,6 +70,8 @@ export function makeScratch(S: Setup, cap: number): Scratch {
     nextInCell: new Int32Array(Math.max(1, cap)),
     battleAt: new Int32Array(n).fill(-1),
     battles: [],
+    embarked: [0, 0],
+    seaInv: [Infinity, Infinity],
     claim: [new Uint8Array(n), new Uint8Array(n)],
     prevControl: new Uint8Array(n),
     forageTaken: new Float32Array(n),

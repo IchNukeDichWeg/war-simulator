@@ -203,7 +203,16 @@ to a less crowded neighbour when short of supply. A formation with vehicles
 moves at its rate x fuel fraction, but never slower than foot pace (the troops
 walk out when the fuel is gone; without this floor unsupplied armour froze in
 place for good). Water cells
-are impassable to land formations unless embarked (sea lift, section 6). Major
+are impassable to land formations unless embarked (sea lift, section 6). As
+built (`SEA_MOVEMENT`): a side that is not blockaded and has ships in the
+theater can move land formations across sea cells at `movement.rate.sea`,
+with at most `troopLiftPerShip` x theater ships personnel at sea at once,
+embarking from any coastal cell. Land first: an objective's flow field opens
+sea cells only when some own formation cannot reach it overland, or only by a
+march longer than its supply range (a member without a researched range only
+when cut off). Named simplification: no ports, embarkation time or merchant
+tonnage; those need sourced constants. Formations at sea draw no supply and
+show as Embarked. Major
 river cells cost an extra half day without a bridge (a city cell).
 
 Invariant (tested): no formation ever moves more km in a day than its
