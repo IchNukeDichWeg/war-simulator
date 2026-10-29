@@ -376,9 +376,14 @@ fortress).
 
 Explanation: the engine compares the sides on the accumulated factors and ranks
 them: tech gap (mean power multiplier from TLI/dispersion/armor), numbers
-(personnel and platform ratio), supply (shortfall days, starvation losses),
+(engaged personnel ratio per battle with `EXPLAIN_LOCAL_POWER`, else role
+counts, which add platforms to people), supply (shortfall days, starvation losses),
 naval control, air superiority, morale collapses, command and doctrine, terrain
-and fortification, disease/attrition. Each reason carries numbers.
+and fortification, disease/attrition. Each reason carries numbers. Per-battle
+ratios are means of log(side 0 / side 1) weighted by the battle's size. The
+Numbers text also reports the opening-round combat-power ratio (all factors
+combined), so a side that outnumbers locally but is out-gunned reads as such
+(Mongols 1241 vs France 1805: x293 personnel, x2.2 power).
 
 ## 13. Monte Carlo
 

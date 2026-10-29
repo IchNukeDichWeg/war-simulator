@@ -10,7 +10,7 @@ import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -264,6 +264,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   const mountedF = S.terrMounted[cls];
   const massed: [number, number] = [prof[0].specials.has('massed_artillery') ? se('massedArtillery') : 1, prof[1].specials.has('massed_artillery') ? se('massedArtillery') : 1];
   const startHeads: [number, number] = [prof[0].heads, prof[1].heads];
+  const startPers: [number, number] = [0, 0];
+  for (const s of [0, 1] as const) for (const f of b.parts[s]) startPers[s] += F.personnel[f];
   const startP: [number, number] = [0, 0];
   let ended = false;
   const P: [number, number] = [0, 0];
@@ -436,6 +438,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   a.battles++;
   a.tech[0] += wgt * (techRatioParts[0] - techRatioParts[1]); a.tech[1] += wgt;
   a.numbers[0] += wgt * Math.log(Math.max(1e-9, startHeads[0]) / Math.max(1e-9, startHeads[1])); a.numbers[1] += wgt;
+  a.personnel[0] += wgt * Math.log(Math.max(1, startPers[0]) / Math.max(1, startPers[1])); a.personnel[1] += wgt;
+  a.power[0] += wgt * Math.log(Math.max(1e-12, startP[0]) / Math.max(1e-12, startP[1])); a.power[1] += wgt;
   a.terrain[0] += wgt * (postureLog[0] - postureLog[1]); a.terrain[1] += wgt;
   a.command[0] += wgt * (cmdLog[0] - cmdLog[1]); a.command[1] += wgt;
   // air contribution relative to the best ground power of the day (the opening round can be all-air)
@@ -449,7 +453,9 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   const w = b.winner, sign = w === 0 ? 1 : -1;
   const items: [string, number][] = [
     ['lethality per soldier (tech, armor, dispersion)', sign * (techRatioParts[0] - techRatioParts[1])],
-    ['numbers', sign * Math.log(Math.max(1e-9, startHeads[0]) / Math.max(1e-9, startHeads[1]))],
+    ['numbers', sign * (EXPLAIN_LOCAL_POWER
+      ? Math.log(Math.max(1, startPers[0]) / Math.max(1, startPers[1]))
+      : Math.log(Math.max(1e-9, startHeads[0]) / Math.max(1e-9, startHeads[1])))],
     ['terrain, posture and fortification', sign * (postureLog[0] - postureLog[1])],
     ['command and combined arms', sign * (cmdLog[0] - cmdLog[1])],
     ['air support', sign * airLog],

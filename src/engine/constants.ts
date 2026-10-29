@@ -150,6 +150,13 @@ export const AI_CROSS_ERA_POWER = true;
  *  commander is aggressive (aggression >= 0.5) OR its side is the stronger one in those units:
  *  the stronger side advances (Spain 2026, aggression 0.45, held most of its army against Rome 117). */
 export const AI_STRONGER_SIDE_ADVANCES = true;
+/** The explanation's Numbers factor compares engaged PERSONNEL per battle, and its text also
+ *  reports the combat-power ratio at the opening round (all factors: tech, posture, command,
+ *  air, morale). It used role counts, which add platforms to people (a tank and its crew counted
+ *  4 + 1), and called that "strength". Measured seed 1: mongols-1241-vs-france-1805 personnel
+ *  x293 but power x2.2; germany-vs-france-1940 personnel x0.69, power x2.0 for Germany.
+ *  Presentation only: no backtest effect. */
+export const EXPLAIN_LOCAL_POWER = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

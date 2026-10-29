@@ -2,7 +2,7 @@
 // factors and rank them. Each factor is a signed log-ratio (positive favours
 // side 0); weights are the shares of the absolute values. The scales are
 // presentation choices, not model physics.
-import { HOSPITAL_ADMISSIONS_RETURN } from './constants';
+import { EXPLAIN_LOCAL_POWER, HOSPITAL_ADMISSIONS_RETURN } from './constants';
 import type { Ctx } from './ctx';
 import type { Reason } from './protocol';
 import { sideNow } from './victory';
@@ -28,8 +28,15 @@ export function explain(ctx: Ctx): Reason[] {
   const back = (s: 0 | 1) => (HOSPITAL_ADMISSIONS_RETURN ? 0 : st.returned[s]);
   const n0 = st.startPersonnel[0] + st.arrivals[0] - back(0), n1 = st.startPersonnel[1] + st.arrivals[1] - back(1);
   const w0 = st.startW[0] + st.addedW[0], w1 = st.startW[1] + st.addedW[1];
-  const num = a.battles > 0 ? mean(a.numbers) : Math.log(Math.max(1, n0) / Math.max(1, n1));
-  items.push({ factor: 'Numbers', v: num, detail: (f) => `${names[f]} fielded ${Math.round(f === 0 ? n0 : n1).toLocaleString('en-US')} personnel vs ${Math.round(f === 0 ? n1 : n0).toLocaleString('en-US')}${a.battles > 0 ? `, and on average x${x(num)} more strength (personnel + platforms) at the point of battle` : ''}.` });
+  const num = a.battles > 0 ? mean(EXPLAIN_LOCAL_POWER ? a.personnel : a.numbers) : Math.log(Math.max(1, n0) / Math.max(1, n1));
+  // local ratios as "side f had xN" or "side f had 1/N" (f is the side the personnel ratio favours)
+  const rel = (v: number, f: 0 | 1) => { const u = f === 0 ? v : -v; return u >= 0 ? `x${x(u)}` : `1/${x(u)}`; };
+  const pw = mean(a.power);
+  const local = (f: 0 | 1) => (!a.battles ? ''
+    : EXPLAIN_LOCAL_POWER
+      ? `. In the average battle it had ${rel(num, f)} the enemy's personnel and ${rel(pw, f)} its combat power (all factors combined)`
+      : `, and on average x${x(num)} more strength (personnel + platforms) at the point of battle`);
+  items.push({ factor: 'Numbers', v: num, detail: (f) => `${names[f]} fielded ${Math.round(f === 0 ? n0 : n1).toLocaleString('en-US')} personnel vs ${Math.round(f === 0 ? n1 : n0).toLocaleString('en-US')}${local(f)}.` });
   const sf0 = a.formationDays[0] ? a.shortfallDays[0] / a.formationDays[0] : 0;
   const sf1 = a.formationDays[1] ? a.shortfallDays[1] / a.formationDays[1] : 0;
   const starve0 = st.losses[0][4], starve1 = st.losses[1][4];

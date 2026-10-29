@@ -67,6 +67,9 @@ export interface Accum {
   /** Battle-weighted sums: [sum of log(side0/side1) x weight, sum of weight]. */
   tech: [number, number];
   numbers: [number, number];
+  /** Same form: engaged personnel, and combat power at the opening round (all factors). */
+  personnel: [number, number];
+  power: [number, number];
   command: [number, number];
   terrain: [number, number];
   air: [number, number];
@@ -85,7 +88,7 @@ export interface Accum {
 
 export function newAccum(): Accum {
   return {
-    tech: [0, 0], numbers: [0, 0], command: [0, 0], terrain: [0, 0], air: [0, 0],
+    tech: [0, 0], numbers: [0, 0], personnel: [0, 0], power: [0, 0], command: [0, 0], terrain: [0, 0], air: [0, 0],
     battles: 0, battleWins: [0, 0], routs: [0, 0], shortfallDays: [0, 0], formationDays: [0, 0],
     seaControlSum: 0, seaDays: 0, airSupSum: 0, airDays: 0, nonBattle: [0, 0], battleLoss: [0, 0],
   };
