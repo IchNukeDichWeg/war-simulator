@@ -209,3 +209,37 @@ What moved against Run 1:
   which the engine does not have.
 - Adrianople moves from 0% to 40% and Agincourt from 65% to 95% (prepared defenders).
 
+### QA round 2: are the Run 2 passes right for the right reasons?
+
+**Gate NOT CONFIRMED.** Independent QA (it wrote none of the fixes) traced every winner pass and
+classified it. RIGHT = the factor history records decides the run and it ends the way the battle or
+war ended; PARTLY = right winner and kind of ending, but a recorded key mechanism is missing; WRONG =
+an artefact decides.
+
+| Verdict | Count | Cases |
+| --- | --- | --- |
+| RIGHT | 6 | Breitenfeld, El Alamein, Gettysburg, Hastings, Mohi, Waterloo |
+| PARTLY | 10 | Agincourt, Austerlitz, Cannae, Gaugamela, Zama, Kursk, Tannenberg, France 1940, Iraq 2003, Falklands |
+| WRONG | 3 | Stalingrad (capture objective already holds Soviet troops at start, won day 1), Six-Day (decided by the unsourced collapse-morale threshold; 0% at 0.15), Gulf War (Iraq starts at morale 0.20, exactly the threshold, and "collapses" after one contact) |
+
+Right or partly right winners: **16/24**, below the 18 the gate needs. The Run 1 and Run 2 gate lines
+above are therefore "passed on the numbers only".
+
+Corrections to earlier statements in this file:
+- Run 1 attributed Adrianople and Carrhae to missing mechanisms. In the model they are decided by the
+  doctrine withdraw thresholds (steppe 0.06): a uniform threshold passes both. Both are true; the
+  thresholds need a source before either reading is trusted.
+- The model-rules commit bundled seven constants. Split, only one moves a winner:
+  `collapse.armyCollapseMorale` 0.2, an educated guess on an engine-internal scale. A grade D guess
+  must not decide a gate case.
+- `armyCollapsePersonnelFraction` 0.4 was derived from France 1940 and the Gulf War, both backtest cases:
+  in-sample, so those two cases cannot validate it.
+- Leaving three case-construction toggles OFF because each cost a pass was selection by outcome.
+
+Root causes from the first QA pass: B1, B5, B6, C1, C2, C3 fixed (C1: 0 cells missed against a Float64
+reference); B3 and B4 partly; B2, C4, C5, C7 not fixed; C6 regressed (the explicit capture rule).
+Invariants all hold over 24 cases and 12 presets (conservation residual 1.7e-13, losses by cause sum
+exactly, deterministic per seed, no teleports). New preset defects: crewless platform formations win
+battles (Japan vs USA: 18 wins, 849k of 1.09M battle casualties) and land battles are fought on sea
+cells (allies-vs-axis 15, usa-vs-china 173).
+

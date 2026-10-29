@@ -45,3 +45,10 @@ Every open choice made while building, with a one-line reason. Newest at the bot
 - **Phase 2 modern research started before the Phase 1 gate closed.** The schema had held across 13 researched snapshots from 5 eras with no structural change, and research output cannot break the app (invalid files are skipped by the build). Engine work and backtests still gate the Phase 2 historical waves.
 - **`foodSurplus` is never negative, and a net food importer is not 0.** The field is the share of food production not eaten by the farm population, which is high for any urbanized state whatever its imports. A first rule that floored importers at 0 contradicted that definition and was reversed after the data audit; import dependence goes in the note. The engine reads foodSurplus nowhere yet (pre-modern foraging is not modelled), so neither rule changed a simulation result.
 - **`mechanics/modelRules.json` is keyed by the engine's era ids, plus a `napoleonic` key** for the per-era constants. Sources split 1789-1849 from 1850-1914 (Berezina vs Koniggratz, Walcheren vs the Civil War), which the `industrial` era merges; the engine uses `napoleonic` for years before 1850 when present and `industrial` otherwise.
+
+## Validation discipline (after QA round 2)
+- **Model behaviour is chosen by correctness, never by backtest score.** A fix that is right but costs passes stays ON and the cost is recorded; three case-construction toggles left OFF for costing a pass are switched ON. The earlier instruction to leave negative-measured fixes OFF was wrong.
+- **The gate counts right-reason passes.** A winner pass that QA classifies WRONG does not count toward the 18; PARTLY counts, with its gap documented.
+- **No grade D constant may decide a gate case.** Where an engine-internal scale cannot be sourced, the backtest table is reported at the low, mid and high of its range, and a winner that flips across the range counts as unresolved.
+- **Constants are not calibrated on backtest cases.** A value derived from a case in `data/battles/` is re-derived from wars outside the set, or the case is marked in-sample.
+
