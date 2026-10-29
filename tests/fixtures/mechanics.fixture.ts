@@ -87,6 +87,7 @@ export function fixtureMechanics(): Mechanics {
       fortificationFactor: flat(2),
       surpriseFactor: mv(1.5),
       pursuitLossFraction: flat(0.3),
+      footPursuitFloor: mv(0),
       captureFraction: flat(0.2),
       terrainAttackFactor: perTerrain((c) => (c === 'plains' || c === 'steppe' || c === 'desert' ? 1 : 0.8)),
       terrainMountedFactor: perTerrain((c) => (c === 'plains' || c === 'steppe' || c === 'desert' ? 1 : 0.5)),

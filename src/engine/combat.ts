@@ -8,8 +8,7 @@ import { UnitStatus } from './protocol';
 import { FLAG_RIVER } from './terrainClasses';
 import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
-  PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH,
-} from './constants';
+  PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -320,7 +319,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         lossFraction(ctx, f, lGround, LC.combat);
         if (lAir > 0) lossFraction(ctx, f, lAir / Math.max(1e-9, 1 - lGround), LC.air);
         b.casualties[s] += before - F.personnel[f];
-        F.morale[f] = Math.max(0, F.morale[f] - l * (mr.morale0 / mr.breakpoint));
+        const lStart = MORALE_ON_ENGAGED_BASIS ? l * (1 - F.engLoss[f]) : l;   // share of starting strength
+        F.morale[f] = Math.max(0, F.morale[f] - lStart * (mr.morale0 / mr.breakpoint));
         F.engLoss[f] = 1 - (1 - F.engLoss[f]) * (1 - l);
       });
     }
@@ -363,21 +363,26 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       let exploit = 1;
       if (wp.specials.has('blitzkrieg')) exploit *= se('blitzExploitation');
       if (wp.specials.has('deep_battle')) exploit *= se('deepBattleBreakthrough');
-      const pursuit = clamp(wp.pursuit * mobileShare * exploit, 0, 1);
+      // foot pursuit: infantry winners also cut down a broken enemy (placeholder floor, see contract)
+      const pursuers = Math.max(mobileShare, m.combat.footPursuitFloor.mid);
+      const pursuit = clamp(wp.pursuit * pursuers * exploit, 0, 1);
+      const loserEscapes = maxRate(ctx, parts[l]) > maxRate(ctx, parts[w]);
       for (const f of parts[l]) {
         if (!F.alive[f]) continue;
         const mr = S.members[F.member[f]];
         F.morale[f] = Math.max(0, F.morale[f] - m.morale.defeatShock.mid);
-        if (F.mode[f] === Mode.Rout) {
-          st.acc.routs[l]++;
-          F.routDays[f] = 0;
+        const mobEdge = mr.specials.has('horse_archery') && loserEscapes;
+        const pursued = F.mode[f] === Mode.Rout || (PURSUE_WITHDRAWING && F.mode[f] === Mode.Retreat && !mobEdge);
+        if (F.mode[f] === Mode.Rout) { st.acc.routs[l]++; F.routDays[f] = 0; }
+        if (pursued) {
           const guerrilla = mr.specials.has('guerrilla') && S.owner0[F.cell[f]] === mr.idx;
           const cap = guerrilla ? 0 : clamp(wp.capture, 0, 1);
           const before = F.personnel[f];
           lossFraction(ctx, f, pursuit * cap, LC.captured);
           if (pursuit * cap < 1) lossFraction(ctx, f, (pursuit * (1 - cap)) / (1 - pursuit * cap), LC.pursuit);
           b.casualties[l] += before - F.personnel[f];
-        } else if (F.mode[f] !== Mode.Retreat) {
+        }
+        if (F.alive[f] && F.mode[f] !== Mode.Retreat && F.mode[f] !== Mode.Rout) {
           F.mode[f] = Mode.Retreat;
         }
         F.next[f] = -1;

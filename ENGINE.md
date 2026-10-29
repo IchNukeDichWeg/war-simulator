@@ -131,9 +131,16 @@ unsupplied modern formations. Storming a fortified place multiplies the
 attacker's loss rate by `siege.assaultFactor` (not attacker power).
 The withdraw threshold is min(`retreatThreshold`, 0.9 x effective breakpoint)
 with effective breakpoint = `breakpoint(tech)` + `cohesionBreakpointShift` x
-(cohesion - 0.5), so withdrawal always comes before the rout. Pursuit losses
-are `pursuitLossFraction` x the winner's mobile (mounted/vehicle) share. The
-share of losses caused by air support is booked as cause `air`.
+(cohesion - 0.5), so withdrawal always comes before the rout. Morale falls by
+the round's loss as a share of STARTING strength (l x (1 - engLoss)), the
+basis engLoss accumulates on, so morale reaches 0 exactly at the breakpoint
+(`MORALE_ON_ENGAGED_BASIS`). Pursuit losses are `pursuitLossFraction` x
+max(winner mobile share, `footPursuitFloor`), and when a battle is decided
+they fall on the beaten side's withdrawing formations as well as its routed
+ones (`PURSUE_WITHDRAWING`), unless the withdrawing formation has the
+horse-archer mobility edge. Measured: loss ratio passes 10 -> 13 of 24.
+`footPursuitFloor` is a placeholder at 0 until sourced. The share of losses
+caused by air support is booked as cause `air`.
 
 Losses are capped at 50% of engaged strength per round, spread over roles in
 proportion to their exposure. A seeded noise factor (lognormal, sigma 0.15 per

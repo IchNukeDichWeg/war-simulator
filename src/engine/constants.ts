@@ -62,6 +62,17 @@ export const BATTLE_MODE_NO_CONTACT_DAYS = 3;
 /** War ends as a draw if no battle and no control change happened for this long. */
 export const STALEMATE_DAYS = 120;
 
+// Behaviour toggles (ENGINE.md 4). Each is a model change measured on the 20-seed backtest
+// (VALIDATION.md); ON unless the measurement was negative.
+/** Morale falls by the fraction of STARTING strength lost (l x (1 - engLoss)), the same basis as
+ *  engLoss, so morale reaches 0 exactly at the breakpoint. Additive l made modern sides rout via
+ *  morale at engLoss 0.26 before their 0.27 withdraw threshold (QA B1). */
+export const MORALE_ON_ENGAGED_BASIS = true;
+/** When a battle is decided, the beaten side's withdrawing formations take pursuit too, unless
+ *  they have the horse-archer mobility edge. Without it every pre-gunpowder loser withdrew intact
+ *  (0 routs in 77-209 losing formations per case) and lost 10-20% of its historical losses. */
+export const PURSUE_WITHDRAWING = true;
+
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so
 // they are candidates for the mechanics contract (listed in the engine report).
