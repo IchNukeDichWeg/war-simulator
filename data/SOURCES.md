@@ -38,6 +38,10 @@ families, their licenses, and the derivation methods.
 - Modern values: state the reference year in `note` ("asOf 2024").
 - Borders: several refs can be joined with ` + ` to union polygons
   (`hb:1938:Germany + hb:1938:Bohemia-Moravia`). Overlapping polygons count once on the map.
+- Personnel: `activePersonnel` is the standing, household or salaried force under arms at the
+  snapshot date. Feudal, militia and conscript levies that must be called up go in
+  `trainedReserves` (the engine calls them up after its mobilization delay); the untrained pool
+  beyond that is `mobilizable`. Say in `note` which bodies are counted where.
 - `urbanization`: share of population living in settlements of 5,000+ (pre-1800, Bairoch
   convention) or the national statistical definition (modern, as reported by the World Bank).
 - `foodSurplus`: share of food production not consumed by the producing agricultural population
