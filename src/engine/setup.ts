@@ -36,6 +36,8 @@ export interface SimOptions {
   riverCrossing?: boolean;
   /** Battle mode: defender in a prepared defence (BattleSide.prepared). */
   prepared?: [boolean, boolean];
+  /** The case marks the side prepared:false (caught unentrenched): no field_fortification. */
+  unprepared?: [boolean, boolean];
   surprise?: [boolean, boolean];
   reinforcements?: [{ day: number; counts: Partial<Record<UnitRole, number>> }[], { day: number; counts: Partial<Record<UnitRole, number>> }[]];
   objectives?: [CaseObjective | null, CaseObjective | null];

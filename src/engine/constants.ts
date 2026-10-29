@@ -89,6 +89,12 @@ export const ASSAULT_ONLY_REAL_FORTS = true;
 /** In battle mode a defender counts as a prepared defence only when the case says so
  *  (BattleSide.prepared); before, every battle-mode defender was 'prepared' because it spawned still. */
 export const PREPARED_FROM_CASE = true;
+/** A side the case marks prepared:false gets no field_fortification posture (QA B3 residual: the
+ *  doctrine special gave x1.3 to Blenheim's French, Breitenfeld's Imperials, Tannenberg's Russians,
+ *  Crassus's column at Carrhae and the 1940 Allies, all marked unprepared). Measured (20 seeds):
+ *  19/14/23 -> 20/15/22. Blenheim winner 30% -> 90%, ratio x4.00 -> x1.12 (both pass); Tannenberg
+ *  1.7 -> 1.5 days fails duration (hist 5); Carrhae 0% -> 15%; France 1940 95% -> 90%, x4.08 -> x4.63. */
+export const FIELD_FORT_NEEDS_CASE_PREP = true;
 /** War mode: a beaten formation in the battle cell gives the cell up, falling back one cell toward
  *  its supply, or surrenders (all booked as captured) when every neighbour is enemy-held or
  *  impassable. Before, a beaten defender sitting on a supply source never left (its retreat field

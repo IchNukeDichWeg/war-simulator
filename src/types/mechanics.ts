@@ -271,7 +271,8 @@ export interface BattleSide {
   doctrineId?: string;
   fortified?: boolean;
   /** Defender in a prepared defence (QJM 'prepared', defensePostureFactor): dug in and deployed
-   *  in advance, not a hasty or marching defence. Default false. */
+   *  in advance, not a hasty or marching defence. Default false. An explicit false also denies
+   *  the side its doctrine's field_fortification (it was caught before it could dig in). */
   prepared?: boolean;
   surprise?: boolean;
   /** Campaign only: where formations start and what they are. */
