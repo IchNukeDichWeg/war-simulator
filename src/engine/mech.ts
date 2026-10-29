@@ -1,7 +1,8 @@
 // Readers for mechanics constants. The engine only ever reads the `mid` value
 // of an MV; sensitivity analysis swaps low/high into `mid` on a copy of the
 // Mechanics object instead of the engine knowing about ranges.
-import type { ByTech, Mechanics, MV } from '../types/mechanics';
+import type { ByTech, EraRule, Mechanics, MV, RuleEra } from '../types/mechanics';
+import { ERA_SPANS, type EraId } from '../types/schema';
 import { TERRAIN_CLASSES } from './terrainClasses';
 import { ROLES } from './roles';
 
@@ -48,6 +49,41 @@ export function techFromYear(m: Mechanics, year: number): number {
     }
   }
   return a[a.length - 1].level;
+}
+
+/** Tech level -> year (inverse of techFromYear), for era rules in tech-equalized scenarios. */
+export function yearFromTech(m: Mechanics, level: number): number {
+  const a = [...m.techLevels].sort((x, y) => x.level - y.level);
+  if (level <= a[0].level) return a[0].yearAnchor;
+  for (let i = 1; i < a.length; i++) {
+    if (level <= a[i].level) {
+      const f = (level - a[i - 1].level) / (a[i].level - a[i - 1].level);
+      return a[i - 1].yearAnchor + f * (a[i].yearAnchor - a[i - 1].yearAnchor);
+    }
+  }
+  return a[a.length - 1].yearAnchor;
+}
+
+/** Engine era of a year (ERA_SPANS, clamped to the first and last era). */
+export function eraOfYear(year: number): EraId {
+  const eras = Object.keys(ERA_SPANS) as EraId[];
+  if (year < ERA_SPANS[eras[0]][0]) return eras[0];
+  for (const e of eras) if (year >= ERA_SPANS[e][0] && year < ERA_SPANS[e][1]) return e;
+  return eras[eras.length - 1];
+}
+
+/** Value of a model rule for a year: an MV as is; an era map at `napoleonic` for 1789-1849 when
+ *  present, else at the ERA_SPANS era. Undefined when the era has no entry. */
+export function ruleMV(r: MV | EraRule, year: number): MV | undefined {
+  if (isMV(r)) return r as MV;
+  const m = r as EraRule;
+  if (year >= 1789 && year < 1850 && m.napoleonic) return m.napoleonic;
+  return m[eraOfYear(year) as RuleEra];
+}
+
+/** Mid of a model rule for a year, or `fallback` when the era has no entry. */
+export function rule(r: MV | EraRule, year: number, fallback = 0): number {
+  return ruleMV(r, year)?.mid ?? fallback;
 }
 
 const isMV = (x: unknown): boolean => !!x && typeof x === 'object' && typeof (x as MV).mid === 'number';
@@ -121,6 +157,21 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
   const lps = get('air.lossPerSortie');
   if (!Array.isArray(lps) || lps.length !== 11 || !lps.every(isMV)) miss.push('air.lossPerSortie (11 entries)');
   for (const k of ['isrPerLevel', 'precisionStrikePerLevel', 'ewPerLevel', 'cyberPerLevel']) need(`modern.${k}`, 'mv');
+  // model rules: MVs, and era maps with every engine era (napoleonic optional; sparse maps
+  // only where the thing did not exist in early eras)
+  const ERAS = Object.keys(ERA_SPANS) as EraId[];
+  const needEra = (path: string, from: EraId = ERAS[0]) => {
+    const v = get(path);
+    const ok = !!v && typeof v === 'object' && ERAS.slice(ERAS.indexOf(from)).every((e) => isMV((v as any)[e]));
+    if (!ok) miss.push(`${path} (era map from ${from})`);
+  };
+  for (const k of ['battle.outcomeNoiseSigma', 'battle.footPursuitLossFloor', 'collapse.armyCollapsePersonnelFraction', 'collapse.armyCollapseMorale',
+    'intel.fogStrengthError', 'c2.missionCommandDelayFactor', 'naval.blockadeSeaControlThreshold']) need(`modelRules.${k}`, 'mv');
+  for (const k of ['battle.pursuitDisengageShare', 'river.riverCrossingDelayDays', 'attrition.returnToDutyDays', 'attrition.diseaseDeathShareOfAdmissions',
+    'surrender.encircledSurrenderShare', 'transport.seaLiftGrtPerSoldier']) needEra(`modelRules.${k}`);
+  needEra('modelRules.transport.seaLiftTonsPerVehicle.tracked', 'industrial');
+  needEra('modelRules.transport.seaLiftTonsPerVehicle.wheeled', 'industrial');
+  needEra('modelRules.transport.airLiftTonsPerDayPerAircraft', 'worldwars');
   need('c2.orderDelayDays', 'bt');
   need('c2.coalitionFriction', 'mv');
   for (const k of ['formationLoss', 'cityLoss', 'escalationThreshold']) need(`nuclear.${k}`, 'mv');

@@ -1,7 +1,7 @@
 // TEST FIXTURE, not data. Synthetic mechanics with round, obviously made-up
 // numbers so the engine tests do not depend on the research files. Never
 // imported by src/.
-import type { ByTech, Mechanics, MV, MobilityClass, NavalPropulsion, Season, Weather } from '../../src/types/mechanics';
+import type { ByTech, EraRule, Mechanics, MV, MobilityClass, NavalPropulsion, Season, Weather } from '../../src/types/mechanics';
 import type { TerrainClass, UnitRole } from '../../src/types/schema';
 
 export const FIXTURE_NOTE = 'TEST FIXTURE, not data';
@@ -65,9 +65,27 @@ const weatherOdds: Record<Season, Record<Weather, number>> = {
 const naval = <T>(fn: (p: NavalPropulsion) => T): Record<NavalPropulsion, T> =>
   ({ oar: fn('oar'), sail: fn('sail'), steam: fn('steam'), modern: fn('modern') });
 
+/** Era map with one value for every rule era (EraRule). */
+const era = (v: number): EraRule => Object.fromEntries(
+  ['bronze', 'iron', 'medieval', 'gunpowder', 'napoleonic', 'industrial', 'worldwars', 'coldwar', 'modern'].map((e) => [e, mv(v)]));
+
 export function fixtureMechanics(): Mechanics {
   return {
     version: 'fixture',
+    modelRules: {
+      battle: { outcomeNoiseSigma: mv(0.15), pursuitDisengageShare: era(0.7), footPursuitLossFloor: mv(0.09) },
+      river: { riverCrossingDelayDays: era(0.5) },
+      attrition: { returnToDutyDays: era(30), diseaseDeathShareOfAdmissions: era(0.5) },
+      collapse: { armyCollapsePersonnelFraction: mv(0.1), armyCollapseMorale: mv(0.15) },
+      surrender: { encircledSurrenderShare: era(0.8) },
+      intel: { fogStrengthError: mv(0.5) },
+      c2: { missionCommandDelayFactor: mv(0.5) },
+      naval: { blockadeSeaControlThreshold: mv(0.6), navalAttritionPerDay: era(0.001) },
+      transport: {
+        seaLiftGrtPerSoldier: era(5), seaLiftTonsPerVehicle: { tracked: era(40), wheeled: era(8) },
+        airLiftTonsPerDayPerAircraft: era(2), strategicBombingProductionLossPer1000Tons: era(0),
+      },
+    },
     techLevels: Array.from({ length: 11 }, (_, t) => ({
       level: t, yearAnchor: [-3000, -2000, -1300, -300, 1200, 1600, 1800, 1900, 1940, 1985, 2026][t],
       label: `fixture level ${t}`, description: FIXTURE_NOTE, source: FIXTURE_SOURCE,

@@ -2,7 +2,7 @@
 // engine. Every constant the engine uses for real-world behaviour lives here
 // with its range and source, never as a bare literal in engine code.
 
-import type { Grade, TechCategory, TerrainClass, UnitRole } from './schema';
+import type { EraId, Grade, TechCategory, TerrainClass, UnitRole } from './schema';
 export type { TerrainClass } from './schema';
 
 /** A sourced mechanics constant. Same field names as Est so the editor and the
@@ -19,6 +19,37 @@ export interface MV {
 /** Index 0..10 = tech level. Fractional levels interpolate linearly. */
 export type ByTech = MV[];
 
+/** Era keys of data/mechanics/modelRules.json: the engine eras plus `napoleonic`
+ *  (1789-1849, used when present, else the era from ERA_SPANS). */
+export type RuleEra = EraId | 'napoleonic';
+/** One value per era; an absent era means the thing did not exist then (no vehicles before 1914). */
+export type EraRule = Partial<Record<RuleEra, MV>>;
+
+/** Sourced model rules (data/mechanics/modelRules.json): constants the engine once hardcoded. */
+export interface ModelRules {
+  battle: {
+    /** Lognormal sigma of the daily casualty draw. */
+    outcomeNoiseSigma: MV;
+    /** Share of a beaten force that gets away from the field before the mounted-pursuit term. */
+    pursuitDisengageShare: EraRule;
+    /** Extra loss share of the beaten force's engaged strength from a foot-only pursuit. */
+    footPursuitLossFloor: MV;
+  };
+  river: { riverCrossingDelayDays: EraRule };
+  attrition: { returnToDutyDays: EraRule; diseaseDeathShareOfAdmissions: EraRule };
+  collapse: { armyCollapsePersonnelFraction: MV; armyCollapseMorale: MV };
+  surrender: { encircledSurrenderShare: EraRule };
+  intel: { fogStrengthError: MV };
+  c2: { missionCommandDelayFactor: MV };
+  naval: { blockadeSeaControlThreshold: MV; navalAttritionPerDay: EraRule };
+  transport: {
+    seaLiftGrtPerSoldier: EraRule;
+    seaLiftTonsPerVehicle: { tracked: EraRule; wheeled: EraRule };
+    airLiftTonsPerDayPerAircraft: EraRule;
+    strategicBombingProductionLossPer1000Tons: EraRule;
+  };
+}
+
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter';
 export type Weather = 'clear' | 'rain' | 'mud' | 'snow';
 
@@ -29,6 +60,9 @@ export type NavalPropulsion = 'oar' | 'sail' | 'steam' | 'modern';
 
 export interface Mechanics {
   version: string;
+
+  /** Sourced model rules, MV or per-era (see ModelRules). */
+  modelRules: ModelRules;
 
   /** 11 anchors, level 0..10. */
   techLevels: { level: number; yearAnchor: number; label: string; description: string; source: string }[];
