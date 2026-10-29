@@ -52,3 +52,8 @@ Every open choice made while building, with a one-line reason. Newest at the bot
 - **No grade D constant may decide a gate case.** Where an engine-internal scale cannot be sourced, the backtest table is reported at the low, mid and high of its range, and a winner that flips across the range counts as unresolved.
 - **Constants are not calibrated on backtest cases.** A value derived from a case in `data/battles/` is re-derived from wars outside the set, or the case is marked in-sample.
 
+
+## Engine round 3
+- **A synthesized battle-case start base is not a capital.** `capitalLossShock` fires only for a place a case or snapshot marks as a real capital; no case does today, so the shock never fires in the backtest. The base still anchors cell control and the AI. Before this, a grade-D shock fired whenever a made-up base fell (Stalingrad day 4).
+- **A side does not take an attack slot it cannot staff to its doctrine's required ratio.** The assignment loop used to keep pouring every remaining formation into an attack whose need it could never meet, so a defending Iraq 2003 sent 14 of 22 formations at about 1:2.7 against what its own doctrine asks. Unstaffable attack slots are skipped and those formations defend. A floor on the hold slot's need was rejected: it would add an unsourced share-of-army constant.
+- **Measurements are taken in clean worktrees at named commits.** A data change landing in the shared tree mid-run mixed into one fix's numbers (`0c8ca1a`); its corrected figures are in `7dce88a` and VALIDATION.md.
