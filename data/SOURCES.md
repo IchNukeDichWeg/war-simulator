@@ -42,7 +42,9 @@ families, their licenses, and the derivation methods.
   convention) or the national statistical definition (modern, as reported by the World Bank).
 - `foodSurplus`: share of food production not consumed by the producing agricultural population
   (what can feed towns, armies and stores). Pre-modern values are rough (grade C/D).
-  Never negative: a net food importer is 0, with the import dependence stated in `note`.
+  Never negative. A net food importer still has a positive value by this definition (its farms feed
+  its towns); state the import dependence in `note` instead of lowering the value. 0 only where
+  there is no agriculture (Vatican City).
 - Role boundaries: `ships_major` = carriers, amphibious assault ships, battleships, cruisers,
   destroyers, frigates (pre-modern: the era's main line warships, e.g. triremes, ships of the line);
   `ships_minor` = corvettes, patrol, missile and mine craft, small galleys; `drones` = reusable
