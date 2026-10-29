@@ -162,7 +162,9 @@ basis engLoss accumulates on, so morale reaches 0 exactly at the breakpoint
 (`MORALE_ON_ENGAGED_BASIS`). Pursuit losses are max(mounted, foot) x
 exploitation specials, where mounted = `pursuitLossFraction` x winner mobile
 share (cavalry, vehicles, air; artillery, missile launchers and air defence do
-not count even when horse-drawn or motorised, `PURSUIT_MANOEUVRE_ROLES_ONLY`) and, with `PURSUIT_FROM_MODEL_RULES`, foot =
+not count even when horse-drawn or motorised, `PURSUIT_MANOEUVRE_ROLES_ONLY`;
+the air part is the battle's air share of the winner's power, in the same
+units as the ground share, `PURSUIT_AIR_SAME_UNITS`) and, with `PURSUIT_FROM_MODEL_RULES`, foot =
 `modelRules.battle.footPursuitLossFloor` (0.09, Krentz hoplite data) capped
 at 1 - `pursuitDisengageShare`(loser era) - the loser's battle loss share, so
 a foot-only winner never takes more than the share that historically failed

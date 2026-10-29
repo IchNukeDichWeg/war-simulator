@@ -11,7 +11,7 @@ import {
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
-  PURSUIT_MANOEUVRE_ROLES_ONLY } from './constants';
+  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -398,7 +398,11 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
     if (b.winner >= 0) {
       const w = b.winner as 0 | 1, l = 1 - w;
       const wp = prof[w];
-      const mobileShare = clamp((wp.mountedW + b.airPow[w]) / Math.max(1e-9, wp.w + b.airPow[w]), 0, 1);
+      // air power is in battle power units (per enemy dispersion) and mountedW / w in raw TLI, so
+      // the air share comes from the battle's power split (airShare) and the ground part from TLI
+      const mobileShare = PURSUIT_AIR_SAME_UNITS
+        ? clamp(airShare[w] + (1 - airShare[w]) * wp.mountedW / Math.max(1e-9, wp.w), 0, 1)
+        : clamp((wp.mountedW + b.airPow[w]) / Math.max(1e-9, wp.w + b.airPow[w]), 0, 1);
       let exploit = 1;
       if (wp.specials.has('blitzkrieg')) exploit *= se('blitzExploitation');
       if (wp.specials.has('deep_battle')) exploit *= se('deepBattleBreakthrough');

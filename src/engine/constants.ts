@@ -314,3 +314,9 @@ export const HOLD_SIDE_NO_PLACE_TARGETS = true;
  *  21/14/20. Stalingrad 7 -> 25 days (hist 75), France 1940 x2.62 -> x6.44 fails, Six-Day winner
  *  45% -> 65% (ratio x0.47 -> x0.27 fails), Kursk x6.03 -> x3.02, Waterloo x2.53 -> x1.91. */
 export const PURSUIT_MANOEUVRE_ROLES_ONLY = true;
+/** Pursuit mobile share: the air part is the battle's air share of the winner's power. Before, air
+ *  power (battle units, divided by the enemy's dispersion) was added to raw-TLI ground weights, so
+ *  at WWII-and-later dispersion air counted for almost nothing in the pursuit. Measured (20 seeds,
+ *  clean worktree at cab91ee): 21/14/20 -> 20/15/20. France 1940 x6.31 -> x3.42 and 43 -> 37 days,
+ *  Gulf War x2.65 -> x2.29; Six-Day winner 65% -> 55% fails; Stalingrad 24 -> 21 days. */
+export const PURSUIT_AIR_SAME_UNITS = true;
