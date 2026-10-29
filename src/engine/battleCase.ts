@@ -15,6 +15,7 @@ import { techFromYear, clamp } from './mech';
 import { T } from './terrainClasses';
 import { GRID_RES } from './terrainClasses';
 import { IS_P, RI } from './roles';
+import { CASE_CAPITAL_UNFORTIFIED, CASE_SUPPLY_RANGE_FROM_SNAPSHOT, CASE_SUPPLY_RULE_ON } from './constants';
 
 export interface BattleCaseResult {
   winner: 0 | 1 | 'draw';
@@ -28,6 +29,18 @@ const est = (x: number, note: string) => ({ low: x, mid: x, high: x, grade: 'D' 
 
 /** Neutral rating used where neither the case nor a snapshot gives one (0.5 maps to the MV mid). */
 const NEUTRAL_RATING = 0.5;
+
+/** The snapshot nearest a synthesized side in logistics tech, then in year: donor of supplyRangeKm. */
+function supplyDonor(data: EngineData, logTech: number, year: number): Snapshot | undefined {
+  let best: Snapshot | undefined, bt = Infinity, by = Infinity;
+  for (const s of data.snapshots) {
+    const r = s.logistics?.supplyRangeKm?.mid;
+    if (!(r > 0)) continue;
+    const dt = Math.abs((s.tech.logistics?.mid ?? 0) - logTech), dy = Math.abs(s.year - year);
+    if (dt < bt - 1e-9 || (Math.abs(dt - bt) <= 1e-9 && (dy < by || (dy === by && best && s.id < best.id)))) { best = s; bt = dt; by = dy; }
+  }
+  return best;
+}
 
 function sideSnapshot(data: EngineData, bc: BattleCase, i: 0 | 1, home: { lat: number; lon: number }, warnings: string[]): Snapshot {
   const side: BattleSide = bc.sides[i];
@@ -56,6 +69,14 @@ function sideSnapshot(data: EngineData, bc: BattleCase, i: 0 | 1, home: { lat: n
     };
     if (IS_P[RI[role]]) personnel += r.mid;
   }
+  let supplyRangeKm: Snapshot['logistics']['supplyRangeKm'] = est(0, 'unknown: forces live off stocks and forage');
+  if (!base && CASE_SUPPLY_RANGE_FROM_SNAPSHOT) {
+    const donor = supplyDonor(data, tech.logistics.mid, bc.year);
+    if (donor) {
+      supplyRangeKm = { ...donor.logistics.supplyRangeKm, note: `borrowed from ${donor.id} (nearest logistics tech, then year)` };
+      warnings.push(`${bc.id} side ${i}: supply range ${Math.round(supplyRangeKm.mid)} km borrowed from ${donor.id}.`);
+    }
+  }
   // the synthesized 'capital' is the side's main start position, so it lies in its own
   // territory (a capital on the battle location fell to the enemy on day 1)
   const snap: Snapshot = {
@@ -78,7 +99,7 @@ function sideSnapshot(data: EngineData, bc: BattleCase, i: 0 | 1, home: { lat: n
     },
     logistics: base ? structuredClone(base.logistics) : {
       roadKm: est(0, 'n/a'), railKm: est(0, 'n/a'), majorPorts: est(0, 'n/a'), merchantTonnage: est(0, 'n/a'),
-      supplyRangeKm: est(0, 'unknown: forces live off stocks and forage'), draftAnimals: est(0, 'n/a'),
+      supplyRangeKm, draftAnimals: est(0, 'n/a'),
     },
     strategic: { nuclearWarheads: est(0, 'battle case'), basesAbroad: [] },
     doctrineId: side.doctrineId ?? base?.doctrineId ?? '',
@@ -98,7 +119,8 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
   const isBattle = bc.kind === 'battle' || !bc.bbox;
   const base0 = bc.sides[0].snapshotId && data.snapshots.some((s) => s.id === bc.sides[0].snapshotId);
   const base1 = bc.sides[1].snapshotId && data.snapshots.some((s) => s.id === bc.sides[1].snapshotId);
-  if (!isBattle && !(base0 && base1)) warnings.push(`${bc.id}: supply rule off (a side has no snapshot with logistics data).`);
+  const supplyOn = !!(base0 && base1) || (CASE_SUPPLY_RANGE_FROM_SNAPSHOT && CASE_SUPPLY_RULE_ON);
+  if (!isBattle && !supplyOn) warnings.push(`${bc.id}: supply rule off (a side has no snapshot with logistics data).`);
   let bbox: [number, number, number, number];
   if (isBattle) {
     const halfLat = Math.max(loc.radiusKm / 111, 3 * GRID_RES);
@@ -117,9 +139,9 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
     excluded: [], techMode: 'native',
     theater: { name: bc.name, bbox },
     startMonth: month,
-    // Synthesized sides carry no logistics data (supply range, throughput), so campaign
-    // supply runs only when both sides come from snapshots; battles last hours anyway.
-    rules: { naval: !isBattle, air: true, weather: !isBattle, supply: !!(base0 && base1), fogOfWar: false, nuclear: false },
+    // Synthesized sides borrow a supply range (CASE_SUPPLY_RANGE_FROM_SNAPSHOT); throughput comes
+    // from mechanics by tech. Without a range, supply runs only when both sides have snapshots.
+    rules: { naval: !isBattle, air: true, weather: !isBattle, supply: supplyOn, fogOfWar: false, nuclear: false },
     victory: { capitalCaptured: false, territoryShare: 0, armyCollapse: true, timeLimitDays: Math.ceil(isBattle ? Math.max(3, hi * 3) : Math.max(10, hi * 2)) },
     seed, overrides: [],
   };
@@ -147,6 +169,7 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
     objectives: [bc.sides[0].objective ?? null, bc.sides[1].objective ?? null],
     noProduction: true,
     voronoiControl: true,
+    unfortifiedCapitals: CASE_CAPITAL_UNFORTIFIED,
   };
   return { data: { ...data, snapshots: [...data.snapshots, s0, s1] }, scenario, opts, warnings };
 }

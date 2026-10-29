@@ -339,7 +339,19 @@ point territory margin plus at least equal remaining strength. A war with no
 battle or change of territory for 120 days ends as at the time limit, unless
 forces are still on their way. Backtest objectives: a capture objective (not
 held at start) wins when taken; a hold objective is judged at the end, and the
-side still holding it wins.
+side still holding it wins. With `OBJECTIVE_KIND_EXPLICIT` a case can name the
+kind (`objective.kind` 'capture' | 'hold'); a named capture objective counts
+only once an own formation stands on it with no enemy there, so an objective
+inside the side's own start area is no longer a hold by accident. Unnamed
+kinds keep the inferred rule.
+
+Backtest case construction toggles, measured and left OFF (each cost one
+loss-ratio pass): `CASE_SUPPLY_RANGE_FROM_SNAPSHOT` (synthesized sides borrow
+`supplyRangeKm` from the snapshot nearest in logistics tech, then year;
+without it the AI distance scale is 1 km), `CASE_SUPPLY_RULE_ON` (campaign
+backtests with the supply rule; still off in every case) and
+`CASE_CAPITAL_UNFORTIFIED` (a case side's main start position is not a
+fortress).
 
 Explanation: the engine compares the sides on the accumulated factors and ranks
 them: tech gap (mean power multiplier from TLI/dispersion/armor), numbers

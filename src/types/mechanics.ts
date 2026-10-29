@@ -246,7 +246,9 @@ export interface BattleSide {
   /** Campaign only: where formations start and what they are. */
   startPositions?: { lat: number; lon: number; share: number }[];
   /** Campaign victory objective for this side, e.g. capture this place. */
-  objective?: { name: string; lat: number; lon: number };
+  /** kind: 'capture' (won when taken) or 'hold' (won if still held at the end). Default: inferred
+   *  from initial control (capture if the side does not control it at the start). */
+  objective?: { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' };
   reinforcements?: { day: number; forces: Partial<Record<UnitRole, Range>> }[];
   note?: string;
 }

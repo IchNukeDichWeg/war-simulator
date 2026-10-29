@@ -34,11 +34,15 @@ export interface SimOptions {
   prepared?: [boolean, boolean];
   surprise?: [boolean, boolean];
   reinforcements?: [{ day: number; counts: Partial<Record<UnitRole, number>> }[], { day: number; counts: Partial<Record<UnitRole, number>> }[]];
-  objectives?: [{ name: string; lat: number; lon: number } | null, { name: string; lat: number; lon: number } | null];
+  objectives?: [CaseObjective | null, CaseObjective | null];
+  /** Capitals of synthesized backtest sides are ordinary places, not fortresses. */
+  unfortifiedCapitals?: boolean;
   noProduction?: boolean;
   /** Initial control by nearest start position instead of border polygons. */
   voronoiControl?: boolean;
 }
+
+export interface CaseObjective { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' }
 
 export interface PlaceRT {
   name: string;
@@ -133,6 +137,8 @@ export interface Setup {
   poolTech: [{ ships: number; air: number; weapons: number; q: Float64Array; t: Float64Array; cmd: number; propulsion: NavalPropulsion }, { ships: number; air: number; weapons: number; q: Float64Array; t: Float64Array; cmd: number; propulsion: NavalPropulsion }];
   sources: [SourceList, SourceList];
   objectiveCells: [number, number];
+  /** Explicit objective kind per side, or undefined (inferred from initial control). */
+  objectiveKinds: [('capture' | 'hold' | undefined), ('capture' | 'hold' | undefined)];
   /** Terrain index -> movement multiplier (mid), combat factors, forage yield. */
   terrMove: Float64Array; terrAttack: Float64Array; terrMounted: Float64Array; forageYield: Float64Array;
   maxTerrMove: number;
@@ -464,12 +470,12 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     if (cell < 0) return;
     if (placeAt[cell] >= 0) {
       const q = places[placeAt[cell]];
-      if (q.member === mi) { if (capital) { q.capital = true; q.fortified = true; } return; }
+      if (q.member === mi) { if (capital) { q.capital = true; q.fortified = !opts.unfortifiedCapitals; } return; }
     }
     const kind = capital ? 'capital' : p.kind ?? 'city';
     const pl: PlaceRT = {
       name: p.name, cell, member: mi, side: members[mi].side, kind, pop: p.population ?? 0,
-      fortified: kind === 'capital' || kind === 'fortress' || kind === 'city', capital, port: kind === 'port' || (grid.flags[cell] & FLAG_COAST) !== 0,
+      fortified: (kind === 'capital' && !opts.unfortifiedCapitals) || kind === 'fortress' || kind === 'city', capital, port: kind === 'port' || (grid.flags[cell] & FLAG_COAST) !== 0,
     };
     if (placeAt[cell] < 0) placeAt[cell] = places.length;
     places.push(pl);
@@ -837,6 +843,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     data, scenario, m, opts, battleMode, grid, members, sideMembers,
     sideNames: [scenario.sides[0].name, scenario.sides[1].name], lead, friction,
     places, placeAt, control0, owner0, startCells, seeds, fleet0, air0, poolTech, sources, objectiveCells,
+    objectiveKinds: [opts.objectives?.[0]?.kind, opts.objectives?.[1]?.kind],
     terrMove, terrAttack, terrMounted, forageYield, maxTerrMove,
     H: Math.max(1, Math.round(m.combat.battleHoursPerDay.mid)),
     southern, warnings,

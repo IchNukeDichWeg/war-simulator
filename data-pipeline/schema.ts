@@ -184,7 +184,7 @@ const battleSide = obj({
   prepared: { type: 'boolean' },
   surprise: { type: 'boolean' },
   startPositions: { type: 'array', items: obj({ lat: { type: 'number' }, lon: { type: 'number' }, share: { type: 'number' } }) },
-  objective: obj({ name: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' } }),
+  objective: obj({ name: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' }, kind: { enum: ['capture', 'hold'] } }, ['kind']),
   reinforcements: { type: 'array', items: obj({ day: { type: 'number' }, forces: roleMap(range) }) },
   note: { type: 'string' },
 }, ['snapshotId', 'tech', 'commandQuality', 'morale', 'training', 'doctrineId', 'fortified', 'prepared', 'surprise', 'startPositions', 'objective', 'reinforcements', 'note']);

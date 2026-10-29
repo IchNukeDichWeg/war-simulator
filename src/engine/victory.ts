@@ -5,7 +5,7 @@ import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_MORALE, COLLAPSE_PERSONNEL_FRACTION, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_MORALE, OBJECTIVE_KIND_EXPLICIT, COLLAPSE_PERSONNEL_FRACTION, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -160,7 +160,10 @@ export function victoryPhase(ctx: Ctx): void {
     }
     // a capture objective (not held at start) wins when taken; a hold objective is judged at the end
     const oc = S.objectiveCells[s];
-    if (!wins[s] && oc >= 0 && S.control0[oc] !== s && st.control[oc] === s && sc.occ[o][oc] === 0) wins[s] = 'took its objective';
+    const kind = OBJECTIVE_KIND_EXPLICIT ? S.objectiveKinds[s] : undefined;
+    if (!wins[s] && oc >= 0 && sc.occ[o][oc] === 0 && st.control[oc] === s) {
+      if (kind === 'capture' ? sc.occ[s][oc] > 0 : kind === undefined && S.control0[oc] !== s) wins[s] = 'took its objective';
+    }
   }
   if (wins[0] && wins[1]) { end(ctx, 'draw', `both sides met a victory condition (${wins[0]}; ${wins[1]})`); return; }
   for (const s of [0, 1] as const) if (wins[s]) { end(ctx, s, wins[s]!); return; }
@@ -180,7 +183,11 @@ export function victoryPhase(ctx: Ctx): void {
     const s0 = now[0].w / Math.max(1e-9, st.startW[0] + st.addedW[0]);
     const s1 = now[1].w / Math.max(1e-9, st.startW[1] + st.addedW[1]);
     const why = timeUp ? `time limit of ${V.timeLimitDays} days` : `${STALEMATE_DAYS} days without battle or change of territory`;
-    const holds = ([0, 1] as const).filter((s) => S.objectiveCells[s] >= 0 && S.control0[S.objectiveCells[s]] === s && st.control[S.objectiveCells[s]] === s);
+    const isHold = (s: 0 | 1) => {
+      const kind = OBJECTIVE_KIND_EXPLICIT ? S.objectiveKinds[s] : undefined;
+      return kind ? kind === 'hold' : S.control0[S.objectiveCells[s]] === s;
+    };
+    const holds = ([0, 1] as const).filter((s) => S.objectiveCells[s] >= 0 && isHold(s) && st.control[S.objectiveCells[s]] === s);
     if (holds.length === 1) { end(ctx, holds[0], `${why}; still holds its objective`); return; }
     if (h0 >= h1 + TIME_LIMIT_TERRITORY_MARGIN && s0 >= s1) end(ctx, 0, `${why}; holds ${Math.round(h0 * 100)}% of the enemy's territory vs ${Math.round(h1 * 100)}%`);
     else if (h1 >= h0 + TIME_LIMIT_TERRITORY_MARGIN && s1 >= s0) end(ctx, 1, `${why}; holds ${Math.round(h1 * 100)}% of the enemy's territory vs ${Math.round(h0 * 100)}%`);

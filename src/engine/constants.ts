@@ -104,6 +104,26 @@ export const SIMULTANEOUS_BREAK_BY_SEVERITY = true;
 /** Backtest reinforcements with a fractional day join that day's battle at round
  *  ceil(fraction x battleHoursPerDay), not from round 0 (Waterloo Prussians at day 0.21). */
 export const SUBDAY_REINFORCEMENTS = true;
+/** Backtest sides synthesized from a case (no snapshotId) borrow supplyRangeKm from the snapshot
+ *  nearest in logistics tech, then year. Before, it was 0 (clamped to 1 km), which made the AI score
+ *  every objective by 1/km so the synthesized base outranked the case objective (QA C4).
+ *  OFF: measured negative alone, 20/15/22 -> 20/14/22 (Yom Kippur winner 85 -> 100% but its loss
+ *  ratio x2.44 -> x3.28). */
+export const CASE_SUPPLY_RANGE_FROM_SNAPSHOT = false;
+/** With a borrowed supply range, campaign backtests run with the supply rule on (it was off in all
+ *  24 cases, so the logistics layer was never validated).
+ *  OFF: with the borrowed range it measured 20/14/22 and Iraq 2003 fell from 85% to 65%, 54 days. */
+export const CASE_SUPPLY_RULE_ON = false;
+/** A case's synthesized 'capital' (its main start position) is an ordinary place, not a fortress:
+ *  a fortified one added a siege (daysToReduce) where the objective sat on it (QA C5).
+ *  OFF: measured negative alone, 20/15/22 -> 20/14/22: Iraq 2003 improves (100%, 24 days vs 21
+ *  historical, ratio x0.76) but Stalingrad's loss ratio goes x1.79 -> x0.19. */
+export const CASE_CAPITAL_UNFORTIFIED = false;
+/** Objective kind from the case (objective.kind 'capture' | 'hold') instead of inferring it from the
+ *  nearest-start control split; a capture objective is taken when an own formation stands on it
+ *  with no enemy there (QA C6). Cases without kind keep the inferred rule. No case sets a kind
+ *  yet, so it measures neutral (20/15/22). */
+export const OBJECTIVE_KIND_EXPLICIT = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so
