@@ -1,0 +1,613 @@
+{
+ "id": "rome--27",
+ "nationId": "rome",
+ "includes": [],
+ "name": "Roman Empire (Augustan settlement)",
+ "year": -27,
+ "region": "europe",
+ "phase": "rise",
+ "tags": [
+  "empire",
+  "Principate",
+  "Augustus",
+  "Mediterranean",
+  "professional army",
+  "legions",
+  "post-civil-war"
+ ],
+ "capital": {
+  "name": "Rome",
+  "lat": 41.8925,
+  "lon": 12.4853,
+  "kind": "capital",
+  "population": 900000
+ },
+ "places": [
+  {
+   "name": "Alexandria",
+   "lat": 31.2001,
+   "lon": 29.9187,
+   "kind": "port",
+   "population": 300000
+  },
+  {
+   "name": "Antioch",
+   "lat": 36.2021,
+   "lon": 36.16,
+   "kind": "city"
+  },
+  {
+   "name": "Carthage (Colonia Iulia)",
+   "lat": 36.8528,
+   "lon": 10.3233,
+   "kind": "port"
+  },
+  {
+   "name": "Ephesus",
+   "lat": 37.9411,
+   "lon": 27.3419,
+   "kind": "city"
+  },
+  {
+   "name": "Ostia",
+   "lat": 41.7556,
+   "lon": 12.2917,
+   "kind": "port"
+  },
+  {
+   "name": "Misenum (fleet base)",
+   "lat": 40.778,
+   "lon": 14.083,
+   "kind": "port"
+  },
+  {
+   "name": "Ravenna (fleet base)",
+   "lat": 44.4184,
+   "lon": 12.2035,
+   "kind": "port"
+  },
+  {
+   "name": "Forum Iulii (Frejus, fleet base)",
+   "lat": 43.4332,
+   "lon": 6.737,
+   "kind": "port"
+  },
+  {
+   "name": "Lugdunum (Lyon)",
+   "lat": 45.7597,
+   "lon": 4.827,
+   "kind": "city"
+  },
+  {
+   "name": "Aquileia",
+   "lat": 45.769,
+   "lon": 13.37,
+   "kind": "fortress"
+  },
+  {
+   "name": "Zeugma (Euphrates crossing)",
+   "lat": 37.0583,
+   "lon": 37.8708,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Byzantium (Bosporus)",
+   "lat": 41.0086,
+   "lon": 28.9802,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc100:Roman Republic + hb:bc100:Ptolemaic Kingdom",
+  "areaKm2": {
+   "low": 3000000,
+   "mid": 3400000,
+   "high": 4000000,
+   "grade": "C",
+   "source": "https://seshat-db.com/core/polity/184",
+   "note": "Seshat codes the late Republic at 1.95-3.5 million km2 (133-31 BCE) and the Principate (https://seshat-db.com/core/polity/70) at 4.5 million km2 in 1 CE. The 27 BCE empire already held Egypt, all Gaul and Syria but not yet Galatia (25 BCE), Raetia/Noricum (15 BCE) or Moesia; mid 3.4 million. The border polygons used (historical-basemaps world_bc100: two \"Roman Republic\" polygons 1,059,280 + 164,959 km2 plus \"Ptolemaic Kingdom\" 607,216 km2, computed on the sphere) total only ~1.83 million km2: they miss Gallia Comata, Syria and parts of Anatolia, so they are not used as the low bound."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 36000000,
+   "mid": 43000000,
+   "high": 50000000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/70",
+   "note": "Seshat codes the Principate at 50 million for 1 CE (high) and the late Republic (polity 184, https://seshat-db.com/core/polity/184) at 25-35 million for 133-31 BCE, i.e. before Egypt (30 BCE) and before the Gallic provinces were fully counted. Frier 2000 (Cambridge Ancient History XI, isbn:0521263352, p. 814 table 6) gives 45.5 million for 14 CE; the 27 BCE empire lacked Raetia, Noricum, Moesia, Galatia and NW Spain, so mid ~43 million. Brunt (https://archive.org/details/p.-a.-brunt-italian-manpower-225-b.-c.-a.-d.-14-clarendon-press-1971, ch. on the Augustan census) reads the 28 BCE census of 4,063,000 citizens (Res Gestae 8) as all citizens incl. women and children (low count) against Frank's ~12 million (high count); either way citizens are a minority of the empire. Everything inside the border, slaves included."
+  },
+  "urbanization": {
+   "low": 0.1,
+   "mid": 0.15,
+   "high": 0.22,
+   "grade": "C",
+   "source": "doi:10.1017/S1047759400074134",
+   "note": "Hanson & Ortman 2017 (JRA 30, pp. 301-324) put ~20-25% of the 2nd-century CE population in cities above 5,000; the Augustan empire was slightly less urbanised (Gaul and Spain just being urbanised). Seshat codes Rome itself at 900,000-1,100,000 in 1 CE (https://seshat-db.com/core/polity/70)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 250000,
+   "mid": 290000,
+   "high": 360000,
+   "grade": "C",
+   "source": "derived:snapshot-composite",
+   "note": "Legions + Praetorian cohorts 150,000-176,000 (Brunt, https://archive.org/details/p.-a.-brunt-italian-manpower-225-b.-c.-a.-d.-14-clarendon-press-1971, p. 337: by 25 BCE 27 legions which \"with the praetorian cohorts\" made 176,000 men at full strength \"or more probably 150,000\"; 28 legions in 27 BCE before XVII-XIX were counted twice) + auxiliaries and allied contingents 80,000-140,000 (Tacitus Ann. 4.5, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html, for 23 CE: auxilia \"in not much inferior strength\" to the legions; in 27 BCE they were still partly ad hoc allied levies, so mid ~100,000) + navy and staff (see supportPersonnel). Mid = 160,000 + 100,000 + 30,000. Convention: legions, praetorians, auxilia and allied levies in service are counted as active; recallable veterans (evocati) are in trainedReserves."
+  },
+  "trainedReserves": {
+   "low": 30000,
+   "mid": 80000,
+   "high": 145000,
+   "grade": "C",
+   "source": "https://archive.org/details/p.-a.-brunt-italian-manpower-225-b.-c.-a.-d.-14-clarendon-press-1971",
+   "note": "Recently discharged veterans settled in colonies and on Italian allotments after Actium: Brunt (p. 337) gives two estimates of men entitled to allotments in 30 BCE, 85,000 or 145,000; Augustus settled or sent home \"something more than 300,000\" over his reign (Res Gestae 3, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/1*.html). Mid assumes about half of the post-Actium veterans recallable as evocati within a month."
+  },
+  "supportPersonnel": {
+   "low": 20000,
+   "mid": 30000,
+   "high": 42000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Fleet crews at Misenum, Ravenna and Forum Iulii (Tacitus Ann. 4.5 for the three bases, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html): ~120-200 major ships and liburnians x 150-200 men; plus ~2,000-3,000 staff, engineers and officers excluded from unit totals. Many rowers of the Actium fleets had been discharged."
+  },
+  "mobilizationRatio": {
+   "low": 0.02,
+   "mid": 0.04,
+   "high": 0.07,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Octavian and Antony together had at least 250,000 men under arms in 31-30 BCE (Brunt, https://archive.org/details/p.-a.-brunt-italian-manpower-225-b.-c.-a.-d.-14-clarendon-press-1971, p. 337: \"can hardly be put under 250,000\"), and Augustus says ~500,000 citizens swore the military oath to him over his career (Res Gestae 3, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/1*.html). That was ~0.6% of the empire in arms at the civil-war peak; 0.04 assumes an emergency levy on the Republican pattern, mostly from citizens and frontier peoples."
+  },
+  "mobilizable": {
+   "low": 720000,
+   "mid": 1720000,
+   "high": 3500000,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 160000,
+     "mid": 190000,
+     "high": 215000,
+     "grade": "C",
+     "source": "https://archive.org/details/p.-a.-brunt-italian-manpower-225-b.-c.-a.-d.-14-clarendon-press-1971",
+     "note": "Legionary infantry: 28 legions x ~4,800-5,300 (Brunt p. 337 total of 150,000-176,000 with the praetorians, less ~3,400 legionary cavalry) = ~145,000, + 9 Praetorian cohorts (~4,500-9,000; formalised 27 BCE, Tacitus Ann. 4.5 lists nine in 23 CE) + close-order auxiliary and allied infantry (~30,000-55,000, share of the auxilia estimated from Tacitus Ann. 4.5, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html)."
+    },
+    "quality": {
+     "low": 0.8,
+     "mid": 0.9,
+     "high": 0.95,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.75-1.0: the legion kit that the rubric names as the era's best c. 100 CE was already standard (mail, scutum, gladius, pilum); allied infantry lighter, mid 0.9."
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.85,
+     "high": 0.95,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.75-1.0: long-service civil-war veterans; many legions had fought for 10-15 years. Allied infantry lower."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 8000,
+     "mid": 15000,
+     "high": 25000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Allied and auxiliary javelinmen and slingers (Balearic, Spanish caetrati, African) of the client kings and provincial levies; no total survives."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Era-typical javelins and slings (rubric 0.5)."
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.5,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Semi-regular ethnic contingents between levy and professional."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 5000,
+     "mid": 9000,
+     "high": 15000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Cretan and eastern archers (Ituraean, Commagenian) among the auxilia; scaled from the ~1 in 12 archer units of the 2nd-century auxilia (Holder 2003, doi:10.1111/j.2041-5370.2003.tb01979.x) applied to ~100,000 auxiliaries."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Composite bows from eastern recruiting grounds (rubric 0.75)."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Specialist mercenary and allied archers."
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 20000,
+     "mid": 28000,
+     "high": 38000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Gallic, German, Spanish and Thracian alae of the auxilia (heavy-ish shock cavalry with mail, spear and shield) + ~3,400 legionary cavalry (28 x 120). The alae were still largely ethnic contingents under native officers in 27 BCE; the total is scaled from Tacitus Ann. 4.5 (https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html) \"cavalry divisions\" of 23 CE."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Mail-armoured Gallic and German horse with spears; good but below the later Roman alae and Parthian cataphracts (rubric 0.75)."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Experienced civil-war cavalry; still ethnic contingents (rubric 0.5-0.75)."
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 6000,
+     "mid": 12000,
+     "high": 20000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Numidian, Moorish and eastern light horse and horse archers from client kingdoms and auxilia; no total survives."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Unarmoured javelin and bow horse, era-typical (rubric 0.5)."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Raised in the saddle; semi-regular."
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 800,
+     "mid": 1500,
+     "high": 1800,
+     "grade": "C",
+     "source": "derived:mech-composite",
+     "note": "28 legions x ~30-65 bolt-throwers and stone-throwers: Vegetius (Epitoma 2.25) gives 55 carroballistae + 10 onagri per legion for the late empire; Caesar's legions already used scorpiones in numbers. Low allows for smaller late-Republican establishments."
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.85,
+     "high": 0.95,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Torsion artillery of Hellenistic design, era's best (rubric 0.75-1.0)."
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Crewed by veteran legionaries."
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 60,
+     "mid": 110,
+     "high": 200,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Augustus captured 600 ships larger than triremes or equal (Res Gestae 3, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/1*.html) and burned most of Antony's fleet after Actium; the captured warships sent to Forum Iulii (Tacitus Ann. 4.5, https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html) and the Misenum and Ravenna fleets being organised. Triremes, quadriremes and some quinqueremes."
+    },
+    "quality": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Liburnian-heavy Agrippan fleet that won Naulochus and Actium; unchallenged after 30 BCE (rubric 0.75)."
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Crews with recent fleet battle experience (rubric 0.75)."
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 80,
+     "mid": 150,
+     "high": 300,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Liburnians and patrol craft of the Italian fleets and Nile/Egyptian squadrons; the provincial fleets (Germanica, Pannonica) did not exist yet."
+    },
+    "quality": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Liburnians were the decisive light warship of the era."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Standing professional crews being formed."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.6,
+   "mid": 0.75,
+   "high": 0.85,
+   "grade": "B",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75: proven commanders (Agrippa, Statilius Taurus, Augustus' legates) and an officer corps hardened by twenty years of civil war; no formal staff system beyond the legionary hierarchy."
+  },
+  "cohesion": {
+   "low": 0.75,
+   "mid": 0.85,
+   "high": 0.95,
+   "grade": "B",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75-1.0: legionary identity strong (numbered legions with eagles), but the army had just been merged from Octavian's and Antony's forces and loyalty was personal to the commander."
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.75,
+   "high": 0.85,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75: victorious (Actium 31, Alexandria 30), paid from the Egyptian treasure; war-weary after two decades of civil war."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.0,
+   "mid": 3.2,
+   "high": 3.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (iron weapons, torsion artillery) with Roman refinements (pilum, gladius Hispaniensis, scorpio); slightly below the Trajanic ~3.3."
+  },
+  "armor": {
+   "low": 3.1,
+   "mid": 3.3,
+   "high": 3.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (mail): lorica hamata standard, Montefortino/Coolus helmets; segmented plate not yet introduced."
+  },
+  "ships": {
+   "low": 2.9,
+   "mid": 3.1,
+   "high": 3.3,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (triremes, quinqueremes) plus Agrippa's harpax and towered ships; liburnians."
+  },
+  "fortification": {
+   "low": 3.0,
+   "mid": 3.2,
+   "high": 3.4,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (ashlar walls, siege towers); Caesar's siege works at Alesia; no permanent stone legionary fortresses yet."
+  },
+  "logistics": {
+   "low": 3.1,
+   "mid": 3.3,
+   "high": 3.5,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (engineered roads, depot system): Italian viae, sea-borne grain supply; the Augustan reorganisation of provincial roads just starting."
+  },
+  "communications": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 (mounted relay posts): Augustus founded the cursus publicus later in his reign (Suetonius Aug. 49), so couriers and dispatch riders only in 27 BCE."
+  },
+  "isr": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor 3: exploratores and speculatores."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 850,
+   "mid": 1050,
+   "high": 1407,
+   "grade": "C",
+   "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Maddison Project Database 2023 (2011 int$) values for year 1 CE in Roman territory: Italy 1,407, Greece 1,275, Egypt/Levant/Tunisia 1,116, France 956, Turkey 897, Spain 886. Mid ~1,050 is a rough population-weighted average; Italy (~7-8 million of 43 million, with Rome's tribute inflows) pulls it above the Trajanic snapshot's 1,000."
+  },
+  "gdp": {
+   "low": 30600000000,
+   "mid": 45150000000,
+   "high": 70350000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high)."
+  },
+  "milSpendShare": {
+   "low": 0.02,
+   "mid": 0.03,
+   "high": 0.045,
+   "grade": "C",
+   "source": "isbn:0521441927",
+   "note": "Duncan-Jones, Money and Government in the Roman Empire (1994), ch. 3: army cost ~600-650 million HS a year in the 2nd century for ~30 legions + auxilia; the Augustan army of similar size with lower pay (225 denarii) would cost ~400-500 million HS against a GDP of ~15-18 billion HS (Scheidel & Friesen 2009, doi:10.3815/007543509789745223: ~260 HS per head) -> ~3%. Post-Actium land and cash for veterans (Res Gestae 16: 600 million HS for Italian land in 30 and 14 BCE) pushed the real burden higher."
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.15,
+   "high": 0.22,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Agrarian economy, ~75-85% of output agricultural; mining (Spain), textiles, ceramics (Arretine ware) and construction make up the rest. Same basis as rome-117."
+  },
+  "foodSurplus": {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. GDP ~1.7-1.9x bare subsistence (Scheidel & Friesen 2009) implies a modest surplus feeding ~15% urban population and the army. Egypt's grain now went to Rome."
+  },
+  "annualCohort": {
+   "low": 342000,
+   "mid": 408500,
+   "high": 475000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in an ancient Greek-type age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model used for all classical and medieval snapshots."
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 40000,
+   "mid": 60000,
+   "high": 85000,
+   "grade": "C",
+   "source": "https://orbis.stanford.edu/orbis2012/ORBIS_v1paper_20120501.pdf",
+   "note": "ORBIS v1 (Scheidel & Meeks 2012) models 84,631 km of principal roads and desert tracks c. 200 CE (high). In 27 BCE the network outside Italy, Narbonensis, Macedonia (Via Egnatia) and Asia was largely unbuilt, so mid ~60,000 km."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 10,
+   "mid": 15,
+   "high": 25,
+   "grade": "C",
+   "source": "https://orbis.stanford.edu/orbis2012/ORBIS_v1paper_20120501.pdf",
+   "note": "ORBIS has 268 sea-port sites c. 200 CE; ports able to supply a fleet or army in 27 BCE (Ostia, Puteoli, Misenum, Ravenna, Brundisium, Forum Iulii, Massilia, Carthage, Alexandria, Seleucia Pieria, Ephesus, Corinth, Gades...) estimated at ~15."
+  },
+  "merchantTonnage": {
+   "low": 150000,
+   "mid": 300000,
+   "high": 600000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Rome already imported ~200,000 t of grain a year (scaled down from the Trajanic estimate); Mediterranean shipping as in the rome-117 snapshot, somewhat smaller."
+  },
+  "supplyRangeKm": {
+   "low": 100,
+   "mid": 150,
+   "high": 250,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "By analogy with Engels (isbn:0520042727, ch. 1): pre-modern armies carrying their own grain and pack animals could operate ~1-2 weeks' march from a depot or navigable water; same value as the rome-117 snapshot."
+  },
+  "draftAnimals": {
+   "low": 2000000,
+   "mid": 3500000,
+   "high": 6000000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. ~0.05-0.12 draft and pack animals per inhabitant x population, as for the rome-117 snapshot."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "roman-imperial",
+ "geography": {
+  "climate": "Csa",
+  "chokepoints": [
+   "Strait of Gibraltar",
+   "Bosporus",
+   "Dardanelles (Hellespont)",
+   "Strait of Messina",
+   "Alpine passes",
+   "Euphrates crossing at Zeugma"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.2: familiar terrain, local supply, fortified cities and colonies of veterans; not 1.3 (no harsh climate). Gaul and Spain were not yet fully pacified, which lowers the low end."
+  }
+ },
+ "notes": "Snapshot = January 27 BCE, the \"first settlement\" (Octavian becomes Augustus), after the post-Actium demobilisation: 28 legions retained (Brunt, Italian Manpower, archive.org text; Keppie, The Making of the Roman Army, isbn:1566193591, ch. 6, not fetched). Border uses historical-basemaps world_bc100 (latest file at or before -27): the two \"Roman Republic\" polygons plus \"Ptolemaic Kingdom\" (Egypt annexed 30 BCE, Cyrene and Cyprus already Roman); the union misses Gallia Comata, Syria and much of Anatolia, so areaKm2 is researched, not computed. Population convention: everything inside the real 27 BCE border, slaves included; client kingdoms (Judaea, Galatia until 25 BCE, Mauretania, Commagene, Thrace) not counted. Auxiliary numbers are the weakest: no Augustan list exists and Tacitus' \"not much inferior\" (23 CE) is an ancient statement, used only to scale. Ship counts are guesses.",
+ "era": "iron"
+}

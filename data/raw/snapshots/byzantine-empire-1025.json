@@ -1,0 +1,609 @@
+{
+ "id": "byzantine-empire-1025",
+ "nationId": "byzantine-empire",
+ "includes": [],
+ "name": "Byzantine Empire (Basil II)",
+ "year": 1025,
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "empire",
+  "Byzantine",
+  "Macedonian dynasty",
+  "Basil II",
+  "themes",
+  "tagmata",
+  "Greek fire",
+  "Varangian Guard",
+  "Christian"
+ ],
+ "capital": {
+  "name": "Constantinople",
+  "lat": 41.0086,
+  "lon": 28.9802,
+  "kind": "capital",
+  "population": 300000
+ },
+ "places": [
+  {
+   "name": "Thessalonica",
+   "lat": 40.6403,
+   "lon": 22.9439,
+   "kind": "port"
+  },
+  {
+   "name": "Antioch",
+   "lat": 36.2021,
+   "lon": 36.16,
+   "kind": "fortress"
+  },
+  {
+   "name": "Bari (Catepanate of Italy)",
+   "lat": 41.1253,
+   "lon": 16.8667,
+   "kind": "port"
+  },
+  {
+   "name": "Dyrrachium",
+   "lat": 41.3231,
+   "lon": 19.4414,
+   "kind": "port"
+  },
+  {
+   "name": "Ohrid (former Bulgarian capital)",
+   "lat": 41.1172,
+   "lon": 20.8016,
+   "kind": "city"
+  },
+  {
+   "name": "Dorostolon (Danube)",
+   "lat": 44.11,
+   "lon": 27.26,
+   "kind": "fortress"
+  },
+  {
+   "name": "Trebizond",
+   "lat": 41.005,
+   "lon": 39.7269,
+   "kind": "port"
+  },
+  {
+   "name": "Nicaea",
+   "lat": 40.4292,
+   "lon": 29.7211,
+   "kind": "city"
+  },
+  {
+   "name": "Melitene",
+   "lat": 38.35,
+   "lon": 38.33,
+   "kind": "fortress"
+  },
+  {
+   "name": "Cherson (Crimea)",
+   "lat": 44.61,
+   "lon": 33.49,
+   "kind": "port"
+  },
+  {
+   "name": "Abydos (Dardanelles)",
+   "lat": 40.195,
+   "lon": 26.405,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "hb:1000:Byzantine Empire + hb:1000:Bulgar Khanate",
+  "areaKm2": {
+   "low": 1000000,
+   "mid": 1200000,
+   "high": 1400000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/75",
+   "note": "Seshat codes 0.81 million km2 for 1000 CE (before Bulgaria) and 1.15 million km2 for 1050 CE. The historical-basemaps world_1000 polygons \"Byzantine Empire\" (0.84 million) + \"Bulgar Khanate\" (0.37 million, annexed 1018) measure 1.21 million km2 on the sphere, computed from the GeoJSON (mid)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 10000000,
+   "mid": 12000000,
+   "high": 15000000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/75",
+   "note": "Seshat (Byzantine Empire II) codes 10-14 million for 1000 CE, before the annexation of Bulgaria in 1018 (low). Treadgold, A History of the Byzantine State and Society (isbn:0804726302, p. 570; via https://en.wikipedia.org/wiki/Population_of_the_Byzantine_Empire, pointer) gives 12 million in 1025 (mid). High adds Bulgaria and the eastern annexations (Iberia, Vaspurakan, 1000-1022) to Seshat's upper value. Everything inside the border."
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.08,
+   "high": 0.12,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Constantinople (Seshat largest settlement 200,000-300,000, disputed, https://seshat-db.com/core/polity/75) and Thessalonica; most towns were small kastra. Lower than the 6th century."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 135000,
+   "mid": 200000,
+   "high": 292000,
+   "grade": "B",
+   "source": "isbn:185728495X",
+   "note": "Army: Haldon 1999 (Warfare, State and Society in the Byzantine World, p. 103) ~110,000 for 1025 (low); Madgearu 2013 (Byzantine Military Organization on the Danube, isbn:9789004252493, ch. II) cites an estimate of 250,000 (high, Treadgold's school); both via the manpower table at https://en.wikipedia.org/wiki/Byzantine_army (pointer). Mid army 160,000 between them. Navy: Treadgold (isbn:0804726302, p. 576, via https://en.wikipedia.org/wiki/Byzantine_navy) puts oarsmen at 34,200 in 959 and 1025 plus up to 8,000 marines (supportPersonnel). Counted: tagmata (incl. the Varangian Guard), thematic soldiers on the military rolls (registered and paid, mustered seasonally), and the fleets. Allied Rus', Pecheneg and Armenian contingents are in trainedReserves."
+  },
+  "trainedReserves": {
+   "low": 10000,
+   "mid": 30000,
+   "high": 60000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Allied and mercenary contingents hired for campaigns (Rus', Pechenegs, Georgians, Armenian nobles) and thematic households not on the active rolls; militias of fortified towns."
+  },
+  "supportPersonnel": {
+   "low": 25000,
+   "mid": 40000,
+   "high": 42000,
+   "grade": "C",
+   "source": "isbn:0804726302",
+   "note": "Treadgold, A History of the Byzantine State and Society (p. 576) and Byzantium and Its Army (isbn:0804731632, p. 67) via https://en.wikipedia.org/wiki/Byzantine_navy (pointer): 34,200 oarsmen in 1025 and up to 8,000 marines at the 911 peak; mid 34,200 + ~4,000 imperial-fleet marines + staff. Low allows for the decline of the thematic fleets after 949 (Makrypoulias, as cited there)."
+  },
+  "mobilizationRatio": {
+   "low": 0.02,
+   "mid": 0.03,
+   "high": 0.05,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Thematic military lands obliged registered households to provide soldiers; an emergency call on all stratiotic households and militias could perhaps double or triple the registered army."
+  },
+  "mobilizable": {
+   "low": 200000,
+   "mid": 360000,
+   "high": 750000,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 35000,
+     "mid": 55000,
+     "high": 85000,
+     "grade": "C",
+     "source": "derived:snapshot-composite",
+     "note": "Army mid 160,000 (range 110,000-250,000, see activePersonnel) split ~70% infantry / 30% cavalry. Infantry split by the taxiarchy of the Praecepta Militaria (c. 965; McGeer, Sowing the Dragon's Teeth, isbn:0884022242): 400 hoplitai + 100 menaulatoi (line) + 300 archers + 200 light per 1,000 = 50/30/20. Includes the ~6,000 Varangians (sent by Vladimir in 988, via https://en.wikipedia.org/wiki/Byzantine_army)."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.75: lamellar or quilted armour, large shields, spears and menaulia; Varangians with axes and mail."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.65,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Tagmata and Varangians professional (0.75-1.0); thematic infantry part-time (0.5)."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 21000,
+     "mid": 33000,
+     "high": 51000,
+     "grade": "C",
+     "source": "derived:snapshot-composite",
+     "note": "Archers = 30% of the infantry per the Praecepta Militaria taxiarchy; see infantry_line."
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Composite bows (rubric 0.75)."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Thematic archers, drilled in the manuals' formations."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 14000,
+     "mid": 22000,
+     "high": 34000,
+     "grade": "C",
+     "source": "derived:snapshot-composite",
+     "note": "Javelinmen and slingers = 20% of the infantry per the Praecepta Militaria taxiarchy; see infantry_line."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Era-typical light kit (rubric 0.5)."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Thematic light troops."
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 20000,
+     "mid": 30000,
+     "high": 50000,
+     "grade": "C",
+     "source": "derived:snapshot-composite",
+     "note": "Tagmata cavalry (Scholai, Exkoubitoi, Hikanatoi, Athanatoi and provincial tagmata) and thematic heavy horse including kataphraktoi; ~60-65% of the ~48,000 cavalry (30% of the 160,000 mid army)."
+    },
+    "quality": {
+     "low": 0.85,
+     "mid": 0.95,
+     "high": 1.0,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 1.0: kataphraktoi in lamellar with barded horses and maces, among the best heavy cavalry of the era."
+    },
+    "training": {
+     "low": 0.75,
+     "mid": 0.85,
+     "high": 0.95,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Tagmata were full-time professionals under a strong drill tradition (rubric 0.75-1.0)."
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 10000,
+     "mid": 18000,
+     "high": 25000,
+     "grade": "C",
+     "source": "derived:snapshot-composite",
+     "note": "Thematic light horse, horse archers and scouts (trapezitai, prokoursatores); ~1/3 of the cavalry."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.5-0.75: lighter armour, bows and lances."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.65,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Border light horse experienced in raiding warfare (De velitatione)."
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 200,
+     "mid": 500,
+     "high": 1200,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Traction trebuchets (manganika), bolt-throwers on walls and siege trains of Basil II's Bulgarian campaigns; no count survives."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Traction trebuchets and torsion bolt-throwers, era-typical to good."
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Specialist engineers of the tagmata and themes."
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 60,
+     "mid": 100,
+     "high": 140,
+     "grade": "C",
+     "source": "isbn:0804731632",
+     "note": "Treadgold (Byzantium and Its Army, p. 85, via https://en.wikipedia.org/wiki/Byzantine_navy, pointer) extrapolates ~240 warships for the 10th-century navy and 307 for the 960 Cretan expedition, probably the standing strength. Bireme dromons ~100 (the 960 fleet had 100 dromons + 200 chelandia per the same page)."
+    },
+    "quality": {
+     "low": 0.85,
+     "mid": 0.92,
+     "high": 1.0,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 1.0: bireme dromons with Greek fire siphons, the era's best war galleys."
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Professional imperial fleet and marines; thematic fleets declining."
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 100,
+     "mid": 150,
+     "high": 200,
+     "grade": "C",
+     "source": "isbn:0804731632",
+     "note": "Chelandia, ousiakoi and galeai: the rest of Treadgold's ~240-307 warships (see ships_major)."
+    },
+    "quality": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Lighter galleys, some with Greek fire."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Thematic crews."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.65,
+   "mid": 0.78,
+   "high": 0.9,
+   "grade": "B",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75-1.0: a trained officer corps working from military manuals (Praecepta, Taktika of Nikephoros Ouranos), proven commanders (Basil II, Ouranos, Xiphias) after half a century of victories."
+  },
+  "cohesion": {
+   "low": 0.6,
+   "mid": 0.7,
+   "high": 0.8,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75 for the tagmata and Varangians; thematic levies of landholding soldiers lower; the revolts of Skleros and Phokas (976-989) showed aristocratic factionalism."
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.75,
+   "high": 0.85,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75: motivated, decades of victories (conquest of Bulgaria 1018, Armenian annexations)."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.6,
+   "mid": 3.8,
+   "high": 4.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Between anchor 3 and anchor 4: traction trebuchets, Greek fire, composite bows, kontarion lances and maces; no crossbow until the 1090s."
+  },
+  "armor": {
+   "low": 3.6,
+   "mid": 3.8,
+   "high": 4.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Near anchor 4 (plate-and-mail, barding): klibanion lamellar, mail, horse barding for the kataphraktoi."
+  },
+  "ships": {
+   "low": 3.6,
+   "mid": 3.8,
+   "high": 4.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 4 (galleys) with bireme dromons and Greek fire siphons."
+  },
+  "fortification": {
+   "low": 3.6,
+   "mid": 3.8,
+   "high": 4.0,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Theodosian walls and a network of kastra; near anchor 4 short of concentric castles."
+  },
+  "logistics": {
+   "low": 3.4,
+   "mid": 3.6,
+   "high": 3.8,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3-4: aplekta staging camps, thematic supply system and sea transport; granaries of the capital."
+  },
+  "communications": {
+   "low": 3.4,
+   "mid": 3.6,
+   "high": 3.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3-4: the beacon chain from Cilicia to Constantinople (9th c.) and the public post (dromos)."
+  },
+  "isr": {
+   "low": 3.2,
+   "mid": 3.5,
+   "high": 3.7,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor 3-4: organised border scouting and spies described in De velitatione."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 680,
+   "mid": 800,
+   "high": 1000,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project Database 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true (2011 int$): Turkey 1000 CE = 768, Egypt 1000 CE = 956, Iraq 1000 CE = 1,307. Byzantine Anatolia and the Balkans were closest to the Turkey value; the capital, Greece and southern Italy were richer. Mid ~800."
+  },
+  "gdp": {
+   "low": 6800000000,
+   "mid": 9600000000,
+   "high": 15000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high)."
+  },
+  "milSpendShare": {
+   "low": 0.025,
+   "mid": 0.04,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. The army was paid partly in cash (roga) and partly through military lands; Basil II left a treasury surplus. State revenue perhaps 5-10% of output, the largest part going to the army."
+  },
+  "industrialShare": {
+   "low": 0.08,
+   "mid": 0.12,
+   "high": 0.17,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Agrarian economy; silk, textiles, metalwork and shipbuilding concentrated in the capital and Thebes."
+  },
+  "foodSurplus": {
+   "low": 0.12,
+   "mid": 0.2,
+   "high": 0.28,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Thrace, Bithynia and the Balkans fed Constantinople; recovering agrarian economy in the 10th-11th centuries."
+  },
+  "annualCohort": {
+   "low": 95000,
+   "mid": 114000,
+   "high": 142500,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in an ancient Greek-type age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model used for all classical and medieval snapshots."
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 15000,
+   "mid": 25000,
+   "high": 35000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Surviving Roman roads (Via Egnatia, the military road across Anatolia to the eastern frontier) plus maintained routes; much reduced from antiquity."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 5,
+   "mid": 8,
+   "high": 12,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Constantinople, Thessalonica, Abydos, Attaleia, Bari, Dyrrachium, Trebizond, Cherson, Corinth."
+  },
+  "merchantTonnage": {
+   "low": 40000,
+   "mid": 100000,
+   "high": 200000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Coastal and Black Sea shipping of the capital's grain supply; Venetian and Amalfitan shipping not counted."
+  },
+  "supplyRangeKm": {
+   "low": 100,
+   "mid": 150,
+   "high": 250,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "By analogy with Engels (isbn:0520042727, ch. 1): pre-modern armies carrying grain on pack animals could operate ~1-2 weeks' march from a depot; Byzantine campaigns used prepared aplekta and seasonal campaigning."
+  },
+  "draftAnimals": {
+   "low": 700000,
+   "mid": 1100000,
+   "high": 1700000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. ~0.07-0.11 horses, mules, oxen and donkeys per inhabitant x population; imperial stud farms (metata) in Anatolia."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "Csa",
+  "chokepoints": [
+   "Bosporus",
+   "Dardanelles",
+   "Cilician Gates",
+   "Taurus kleisourai",
+   "Haemus (Balkan) passes",
+   "Danube line",
+   "Strait of Otranto"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.2: fortified cities and kastra, local thematic supply and population support; Anatolian plateau and Taurus passes give depth."
+  }
+ },
+ "notes": "Snapshot = December 1025 at Basil II's death, the territorial peak of middle Byzantium (Bulgaria annexed 1018, Iberia and Vaspurakan 1000-1022). Force convention: activePersonnel = tagmata, Varangian Guard, thematic soldiers on the paid military rolls and the fleets; hired allied contingents in trainedReserves. Army size is genuinely disputed: Haldon ~110,000 vs Treadgold-type estimates of ~250,000 (Whittow argued for far fewer per unit); the mid 160,000 is between them and every P-role count inherits that spread. Haldon, Treadgold and Madgearu are cited by ISBN (not fetchable); their figures were read from Wikipedia tables (pointer only), hence grade B at most. Border = historical-basemaps world_1000 \"Byzantine Empire\" + \"Bulgar Khanate\" (Bulgaria annexed 1018). Ancient/medieval chroniclers are not used for counts.",
+ "era": "medieval"
+}

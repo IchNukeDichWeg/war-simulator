@@ -1,0 +1,608 @@
+{
+ "id": "sasanian-empire-600",
+ "nationId": "sasanian-empire",
+ "includes": [],
+ "name": "Sasanian Empire (Khosrow II)",
+ "year": 600,
+ "region": "mena",
+ "phase": "key",
+ "tags": [
+  "empire",
+  "Sasanian",
+  "Eranshahr",
+  "Khosrow II",
+  "savaran",
+  "heavy cavalry",
+  "feudal",
+  "Zoroastrian",
+  "elephants"
+ ],
+ "capital": {
+  "name": "Ctesiphon",
+  "lat": 33.0936,
+  "lon": 44.5808,
+  "kind": "capital",
+  "population": 500000
+ },
+ "places": [
+  {
+   "name": "Gundeshapur",
+   "lat": 32.28,
+   "lon": 48.52,
+   "kind": "city"
+  },
+  {
+   "name": "Istakhr",
+   "lat": 29.98,
+   "lon": 52.91,
+   "kind": "city"
+  },
+  {
+   "name": "Rayy",
+   "lat": 35.59,
+   "lon": 51.44,
+   "kind": "city"
+  },
+  {
+   "name": "Hamadan (Ecbatana)",
+   "lat": 34.8,
+   "lon": 48.51,
+   "kind": "city"
+  },
+  {
+   "name": "Nishapur",
+   "lat": 36.21,
+   "lon": 58.79,
+   "kind": "city"
+  },
+  {
+   "name": "Merv (Khorasan march)",
+   "lat": 37.66,
+   "lon": 62.19,
+   "kind": "fortress"
+  },
+  {
+   "name": "Nisibis (Roman frontier)",
+   "lat": 37.07,
+   "lon": 41.22,
+   "kind": "fortress"
+  },
+  {
+   "name": "Derbent (Caspian Gates wall)",
+   "lat": 42.06,
+   "lon": 48.29,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Great Wall of Gorgan",
+   "lat": 37.2,
+   "lon": 54.6,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "al-Hira (Lakhmid capital)",
+   "lat": 31.98,
+   "lon": 44.37,
+   "kind": "city"
+  },
+  {
+   "name": "Rev-Ardashir (Gulf port)",
+   "lat": 29.25,
+   "lon": 50.85,
+   "kind": "port"
+  }
+ ],
+ "territory": {
+  "border": "hb:600:Sasanian Empire + hb:600:Sasanian dependencies",
+  "areaKm2": {
+   "low": 2600000,
+   "mid": 3000000,
+   "high": 3540000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/130",
+   "note": "Seshat codes 2.60-2.96 million km2 for 600 CE (low to mid). The historical-basemaps world_600 polygons measure 3.20 million km2 (\"Sasanian Empire\") + 0.34 million km2 (\"Sasanian dependencies\", Yemen, a Sasanian province since c. 570) on the sphere, computed from the GeoJSON (high)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 9000000,
+   "mid": 12700000,
+   "high": 18000000,
+   "grade": "C",
+   "source": "https://seshat-db.com/core/polity/130",
+   "note": "Seshat (Sasanid Empire II) codes 12.7 million for 551-619 CE (mid), 8.9 million for 499-550 (low ~9 million) and 22.1 million for 620-642 when the occupied Roman East was included. High 18 million allows for a larger Mesopotamian population than Seshat assumes. Everything inside the border incl. Mesopotamia, Khuzestan, the plateau, Khorasan, Persarmenia and Yemen; Lakhmid and Arab client tribes outside."
+  },
+  "urbanization": {
+   "low": 0.06,
+   "mid": 0.1,
+   "high": 0.14,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Mesopotamia and Khuzestan were heavily urbanised (Seshat largest settlement Ctesiphon 400,000-500,000 for 499-642, https://seshat-db.com/core/polity/130), the plateau and the east much less; set below the late Roman East."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 100000,
+   "mid": 150000,
+   "high": 210000,
+   "grade": "C",
+   "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+   "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 69-72: standing professional army c. 588-603 = 70,000 savaran on the warrior-caste rolls (al-Tabari's 70,000, reinterpreted; Mas'udi has Khosrow II review 50,000 horse c. 603) + ~50,000 (max 60,000) regular infantry (Daylamites, tirbad archers), i.e. ~120,000; plus vassal contingents in service (up to 30,000) and support. Howard-Johnston 1995 (cited by Soto p. 63) estimated ~180,000 for Khosrow I (high side). Counted here: savaran, regular infantry, vassal light horse on duty, garrison levies and support. The peasant levy (paighan) is in trainedReserves. Low allows for a smaller warrior roll after the 589-591 civil war."
+  },
+  "trainedReserves": {
+   "low": 20000,
+   "mid": 70000,
+   "high": 150000,
+   "grade": "C",
+   "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+   "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 73-74: the Chronicle of 1234 gives 120,000 \"peasants\" with Khosrow I before Dara in 573; Soto puts the ceiling of the paighan levy at ~150,000 (high), usable only for short campaigns. Mid assumes about half can be raised within a campaign season; untrained, but counted here per the levies-in-reserves convention."
+  },
+  "supportPersonnel": {
+   "low": 5000,
+   "mid": 10000,
+   "high": 20000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Grooms, baggage train, elephant mahouts and crews, engineers, staff and the small Gulf flotilla crews; no source gives a figure."
+  },
+  "mobilizationRatio": {
+   "low": 0.015,
+   "mid": 0.024,
+   "high": 0.04,
+   "grade": "C",
+   "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+   "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 72-74: in great need and for a limited time Persia could field at most ~300,000 men (70,000 savaran, 50,000 regular infantry, 30,000 vassal troops, 150,000 peasant levies, paighan). 300,000 / 12.7 million = 0.024 (mid); low and high bracket a smaller levy and a larger population."
+  },
+  "mobilizable": {
+   "low": 135000,
+   "mid": 304800,
+   "high": 720000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "cavalry_heavy": {
+    "count": {
+     "low": 40000,
+     "mid": 60000,
+     "high": 70000,
+     "grade": "C",
+     "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+     "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 69-70: 70,000 savaran on the rolls in 588 (high); attested single-front concentrations of 15,000 (531), 23,000 and 40,000 (573), and 50,000 horse at Khosrow II's review. Mid 60,000 allows for losses in the civil war of 589-591 and nobles on garrison duty counted as unavailable."
+    },
+    "quality": {
+     "low": 0.85,
+     "mid": 0.92,
+     "high": 1.0,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 1.0: lamellar/mail-armoured lancer-archers on armoured horses, the model the Romans copied (clibanarii); era best with the Roman bucellarii."
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.9,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.75: hereditary warrior caste trained from youth, periodic royal reviews (Soto p. 69-70 on the 40-day reviews)."
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 5000,
+     "mid": 15000,
+     "high": 30000,
+     "grade": "C",
+     "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+     "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 72-73: vassal contingents (Lakhmid Arabs, Armenian, Albanian and Iberian nobles, settled Hephthalites and Turks) never exceeded ~30,000 in all (high); the largest single contingent was ~15,000 Lakhmids in 531. Mid assumes half on call in peacetime 600."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.5-0.75: horse archers and Arab lancers, lighter kit than the savaran."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Steppe and Arab horsemen raised in the saddle; not drilled as units."
+    }
+   },
+   "infantry_line": {
+    "count": {
+     "low": 20000,
+     "mid": 30000,
+     "high": 36000,
+     "grade": "C",
+     "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+     "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 70-71: regular infantry of ~50,000 (max 60,000); the Chronicle of 1234 has 40,000 foot at Dara in 573. Split ~60/40 between shielded close-order infantry (Daylamites, highland peoples; 3,000-4,000-man contingents attested in 554, 573, 642) and archers."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.5-0.75: Daylamite medium infantry with shields, swords, axes and javelins; generally lighter than Roman line infantry."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Semi-professional highland infantry (rubric 0.5-0.75)."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 15000,
+     "mid": 20000,
+     "high": 24000,
+     "grade": "C",
+     "source": "https://gladius.revistas.csic.es/index.php/gladius/article/download/277/281/285",
+     "note": "Soto Chica, \"Los efectivos del ultimo ejercito de la Persia sasanida (572-642)\", Gladius 35 (2015) pp. 61-76, doi:10.3989/gladius.2015.0004, pp. 70-71: the archer share of the ~50,000 regular infantry (tirbad-led companies; 4,000 archers won at Anglon in 542)."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Composite bows, mass shooting (rubric 0.5-0.75)."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Regular companies under professional officers."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 0,
+     "mid": 5000,
+     "high": 20000,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Paighan levies kept under arms in peacetime 600 as garrison and labour troops; the bulk of the levy is in trainedReserves."
+    },
+    "quality": {
+     "low": 0.15,
+     "mid": 0.25,
+     "high": 0.35,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.25: wicker shield, spear, sometimes sling or sword (Soto p. 73, citing Farrokh)."
+    },
+    "training": {
+     "low": 0.1,
+     "mid": 0.2,
+     "high": 0.3,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Untrained peasant levies (rubric 0.25 and below)."
+    }
+   },
+   "elephants": {
+    "count": {
+     "low": 20,
+     "mid": 50,
+     "high": 200,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Elephants came from India and the corps was \"at no time very numerous\"; Arabic tradition (al-Tabari, ancient, not fetched) puts about thirty at al-Qadisiyya (636). Khosrow II's legendary stables of several hundred are not used."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Indian elephants with towers and armour; effective in sieges and against cavalry, vulnerable to disciplined infantry."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Specialist Indian handlers (zend-hapet command)."
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 100,
+     "mid": 300,
+     "high": 800,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Siege engines, rams, towers and ballistae used at Amida, Dara and Antioch; no count survives."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Roman-derived torsion and traction engines (rubric 0.5)."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Engineers attached to the royal army."
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 10,
+     "mid": 30,
+     "high": 80,
+     "grade": "D",
+     "source": "derived:educated-guess",
+     "note": "Educated guess. Persian Gulf flotilla (the 570 Yemen expedition went by sea; Mas'udi has Khosrow II review army and fleet, as cited by Soto p. 70). No war fleet in the Mediterranean."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Sewn-plank and coastal craft, not purpose-built war galleys."
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:rating-rubric",
+     "note": "Merchant seamen of the Gulf."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5-0.75: experienced generals (Bahram Chobin, Shahrbaraz, Shahin) and a structured command (spahbeds of the four quarters), but the 589-591 civil war had just removed or alienated leading commanders."
+  },
+  "cohesion": {
+   "low": 0.35,
+   "mid": 0.45,
+   "high": 0.6,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.25-0.5: savaran loyal to their noble houses; Bahram Chobin's revolt split the army in 589-591 and Khosrow II was restored only with Roman help."
+  },
+  "morale": {
+   "low": 0.45,
+   "mid": 0.55,
+   "high": 0.7,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5: peace with Rome since 591; elite cavalry confident, levies unwilling."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.2,
+   "mid": 3.4,
+   "high": 3.6,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 plus refinements: heavy composite bows, lance and mace cavalry, stirrups arriving c. 600; below anchor 4 (crossbow, counterweight trebuchet)."
+  },
+  "armor": {
+   "low": 3.4,
+   "mid": 3.6,
+   "high": 3.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Above anchor 3 (mail): lamellar and mail with horse armour for the savaran; short of anchor 4 plate-and-mail."
+  },
+  "ships": {
+   "low": 2.5,
+   "mid": 2.8,
+   "high": 3.0,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 lower end: coastal and Gulf craft, no oared war fleet."
+  },
+  "fortification": {
+   "low": 3.2,
+   "mid": 3.4,
+   "high": 3.6,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 plus long frontier walls (Gorgan ~195 km, Derbent) and fortified cities (Nisibis, Ctesiphon)."
+  },
+  "logistics": {
+   "low": 2.9,
+   "mid": 3.1,
+   "high": 3.3,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: royal roads and depots, irrigated Mesopotamian granaries; levies limited by agricultural calendar (Soto p. 73-74)."
+  },
+  "communications": {
+   "low": 2.9,
+   "mid": 3.1,
+   "high": 3.3,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: mounted relay posts on the royal roads (later the Abbasid barid)."
+  },
+  "isr": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor 3: mounted scouts, spies, frontier informants."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 850,
+   "mid": 1050,
+   "high": 1300,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project Database 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true (2011 int$): Iran and Iraq year 1 CE = 1,116; Iraq 730 CE = 1,466 (early Abbasid). Late Sasanian Mesopotamia was the richest irrigated region of the empire; the plateau and Khorasan poorer. Mid ~1,050."
+  },
+  "gdp": {
+   "low": 7650000000,
+   "mid": 13335000000,
+   "high": 23400000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high)."
+  },
+  "milSpendShare": {
+   "low": 0.02,
+   "mid": 0.03,
+   "high": 0.05,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Savaran were partly paid (Khosrow I's reforms introduced state pay and equipment) and partly supported by land; levies unpaid (Soto p. 73)."
+  },
+  "industrialShare": {
+   "low": 0.07,
+   "mid": 0.11,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Agrarian economy with silk weaving, metalwork and caravan trade."
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.25,
+   "high": 0.35,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Irrigated Mesopotamian (Sawad) agriculture produced large tax surpluses; the plateau far less."
+  },
+  "annualCohort": {
+   "low": 85500,
+   "mid": 120650,
+   "high": 171000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in an ancient Greek-type age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model used for all classical and medieval snapshots."
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 5000,
+   "mid": 9000,
+   "high": 15000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Royal roads inherited from the Achaemenids and Parthians (Ctesiphon-Hamadan-Rayy-Nishapur-Merv, Ctesiphon-Istakhr); total length not documented."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 4,
+   "high": 6,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Ubulla, Rev-Ardashir, Siraf, Hormuz on the Gulf; the river ports of Ctesiphon."
+  },
+  "merchantTonnage": {
+   "low": 10000,
+   "mid": 30000,
+   "high": 80000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Gulf and Indian Ocean shipping (Persian merchants dominated the Ceylon trade per Procopius); no tonnage figure exists."
+  },
+  "supplyRangeKm": {
+   "low": 100,
+   "mid": 200,
+   "high": 300,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "By analogy with Engels (isbn:0520042727, ch. 1) for infantry armies, extended for a cavalry army living off grazing; Sasanian field armies operated ~1-3 weeks from Mesopotamian bases."
+  },
+  "draftAnimals": {
+   "low": 700000,
+   "mid": 1300000,
+   "high": 2500000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. ~0.08-0.14 horses, camels, mules and donkeys per inhabitant x population (horse-breeding nobility, Mesopotamian camels)."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "BSk",
+  "chokepoints": [
+   "Derbent Pass (Caspian Gates)",
+   "Darial Pass (Gate of the Alans)",
+   "Great Wall of Gorgan",
+   "Zagros passes (Behistun road)",
+   "Euphrates crossings",
+   "Strait of Hormuz"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.2: local supply and fortified cities with population support; the plateau gives depth and an arid climate (1.3 at most), but Heraclius showed in 624-628 that the Mesopotamian core was reachable."
+  }
+ },
+ "notes": "Snapshot = 600 CE, Khosrow II (590-628) between his restoration with Roman help (591) and the great war against Rome (603-628). Force convention: activePersonnel = standing savaran heavy cavalry, regular infantry, vassal contingents on duty, garrison levies and support; the peasant levy (paighan) is in trainedReserves. Army figures follow Soto Chica 2015 (Gladius 35), the most detailed source-based reconstruction; medieval Arabic and Persian figures (al-Tabari, Mas'udi, Firdausi) and the Chronicle of 1234 are ancient and are only used through Soto's critique. Border is the historical-basemaps world_600 Sasanian Empire plus \"Sasanian dependencies\" (Yemen). Lakhmid al-Hira was a client kingdom until 602 and its population is not counted; its horsemen are in cavalry_light. Elephant, ship and siege-engine counts are educated guesses.",
+ "era": "medieval"
+}
