@@ -107,3 +107,19 @@ Fractions are allowed (Rome 117 CE weapons ~ 3.3).
 1.0 no home advantage; 1.1 familiar terrain and local supply; 1.2 plus fortified
 cities and population support; 1.3 plus deep strategic depth and harsh climate the invader is
 not adapted to (Russia, Afghanistan). Note says which applies.
+
+## More derivation methods
+
+- `derived:cohort-from-agegroup` - persons reaching military age per year = (male population x
+  share aged 15-19 + female population x share aged 15-19) / 5, World Bank SP.POP.1519.MA.5Y /
+  SP.POP.1519.FE.5Y and SP.POP.TOTL.MA.IN / FE.IN.
+- `derived:ports-from-naturalearth` - number of Natural Earth 1:10m ports (scalerank <= 8) inside
+  the state's border polygon. Counts ports, not capacity.
+
+## Generated modern base snapshots
+
+States without a researched snapshot get one from `data-pipeline/generate-modern.ts` (tag
+`auto-base`). Its hard numbers come from the World Bank (grade A/B); its force mix, ratings and
+tech are the median of the researched snapshots in the same region (grade D, method
+`derived:regional-analogy` or `derived:force-from-spending`). Every such value names the
+analogues in its note.
