@@ -309,8 +309,8 @@ export const HOLD_SIDE_NO_PLACE_TARGETS = true;
  *  infantry), as ENGINE.md defines it ("cavalry, vehicles, air"). Before, every role with a mounted
  *  mobility class counted, so wagon-drawn or towed artillery, which carries 70-88% of a WWII army's
  *  TLI, made the share 0.86-0.97 (Stalingrad Soviets 0.95, of which armour and cavalry 0.07) and
- *  pursuit took 41% of every beaten formation. Measured (20 seeds, clean bb46d5d): 20/18/21 ->
- *  21/14/20. Stalingrad 7 -> 24 days (hist 75); France 1940 x2.62 -> x6.31, Yom Kippur winner
- *  100% -> 25%, Falklands x0.41 -> x0.18 fail; Adrianople 45 -> 80% and Marathon 0 -> 60% pass;
- *  Kursk x6.03 -> x3.35, Six-Day 45 -> 65% (ratio x0.27 fails). */
+ *  pursuit took 41% of every beaten formation. Measured (20 seeds, clean worktrees, against
+ *  8e1a1e8): without the doctrine re-basing (a61c9ba) 20/18/21 -> 21/15/22, with it 20/16/20 ->
+ *  21/14/20. Stalingrad 7 -> 25 days (hist 75), France 1940 x2.62 -> x6.44 fails, Six-Day winner
+ *  45% -> 65% (ratio x0.47 -> x0.27 fails), Kursk x6.03 -> x3.02, Waterloo x2.53 -> x1.91. */
 export const PURSUIT_MANOEUVRE_ROLES_ONLY = true;
