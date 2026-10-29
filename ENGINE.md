@@ -410,14 +410,21 @@ fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
 `daysToReduce` or stormed), territory share, army collapse (personnel below
-`armyCollapsePersonnelFraction` 0.4 of all fielded, France 1940 and Iraq 1991,
-or side morale below `armyCollapseMorale` 0.2; 10% and 0.15 before
-`RULES_FROM_MODEL_RULES`, which measured 20/15/22 -> 21/15/23: Six-Day War
-winner 0% -> 95%, Tannenberg duration passes, Yom Kippur winner 85% -> 70%),
-time limit (draw unless one side holds
-clearly more of the other's territory and strength).
-As built: the morale collapse needs side morale to have fallen below 0.15 (a
-force that starts that low is not beaten on day 1). "Clearly more" is a 10
+`armyCollapsePersonnelFraction` 0.4 of all fielded, derived from France 1940
+and Iraq 1991, so in-sample for those two cases until re-derived from wars
+outside the backtest set), or side morale collapse, time limit (draw unless
+one side holds clearly more of the other's territory and strength).
+Morale collapse: side morale below min(`armyCollapseMorale`, start morale -
+`morale.defeatShock`) (`COLLAPSE_NEEDS_REAL_FALL`): the army must have
+fallen at least one lost battle's morale shock below where it began, so a
+side that starts near the threshold (Iraq 1991 at 0.20) does not collapse on
+a trivial dip. `armyCollapseMorale` = 0.15 is an UNSOURCED MODEL-DEFINITION
+CONSTANT (the engine's original definition; no source measures this
+engine-internal scale). Backtest at its range (`scripts/backtest.ts --sweep
+modelRules.collapse.armyCollapseMorale 0.10,0.15,0.20,0.25`): 19/16/24,
+19/16/24, 20/15/24, 20/15/24. The Six-Day War winner flips across the range
+(fails at 0.10-0.15, passes at 0.20-0.25), so it counts as unresolved; the
+Falklands loss ratio likewise (passes only at 0.10-0.15). "Clearly more" is a 10
 point territory margin plus at least equal remaining strength. A war with no
 battle or change of territory for 120 days ends as at the time limit, unless
 forces are still on their way. Backtest objectives: a capture objective (not

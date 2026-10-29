@@ -328,11 +328,11 @@
     },
     "armyCollapseMorale": {
       "low": 0.1,
-      "mid": 0.2,
-      "high": 0.3,
+      "mid": 0.15,
+      "high": 0.25,
       "grade": "D",
       "source": "derived:educated-guess",
-      "note": "Engine-internal 0..1 side morale below which the army ceases resisting. No source measures this scale. Educated guess: morale in the engine falls with the share of starting strength lost, and the cases above collapse at 30-60% losses, which suggests a threshold somewhat above 0.15; Dupuy's finding that defeat is mostly caused by maneuver, not casualties (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/), argues for the morale trigger firing before the personnel trigger."
+      "note": "UNSOURCED MODEL-DEFINITION CONSTANT: mid 0.15 is the engine's original definition (ENGINE.md 12), restored after QA round 2 found that 0.2 decided gate cases (Six-Day, Gulf War). Backtests are reported across 0.10-0.25 (scripts/backtest.ts --sweep). Earlier reasoning for 0.2: Engine-internal 0..1 side morale below which the army ceases resisting. No source measures this scale. Educated guess: morale in the engine falls with the share of starting strength lost, and the cases above collapse at 30-60% losses, which suggests a threshold somewhat above 0.15; Dupuy's finding that defeat is mostly caused by maneuver, not casualties (https://dupuyinstitute.org/2017/06/23/battle-outcomes-casualty-rates-as-a-measure-of-defeat/), argues for the morale trigger firing before the personnel trigger."
     }
   },
   "surrender": {

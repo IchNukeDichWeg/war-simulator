@@ -5,7 +5,7 @@ import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_NEEDS_REAL_FALL, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -151,8 +151,12 @@ export function victoryPhase(ctx: Ctx): void {
       const baseW = st.startW[o] + st.addedW[o];
       const collapsed = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
       if (collapsed && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
-      // morale collapse needs morale to have FALLEN below the threshold (some forces start low)
-      else if (no.formations > 0 && no.morale < S.rules.collapseMorale && no.morale < st.startMorale[o]) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
+      // morale collapse needs a real fall: below the threshold AND at least one lost battle's morale
+      // shock below where the side started (Iraq 1991 starts at 0.20; a side starting at the
+      // threshold must not "collapse" after a trivial dip)
+      else if (no.formations > 0 && no.morale < (COLLAPSE_NEEDS_REAL_FALL
+        ? Math.min(S.rules.collapseMorale, st.startMorale[o] - S.m.morale.defeatShock.mid)
+        : Math.min(S.rules.collapseMorale, st.startMorale[o]))) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
     }
     if (!wins[s] && V.capitalCaptured) {
       const lead = S.members[S.lead[o]];

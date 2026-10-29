@@ -204,11 +204,20 @@ export const CREWED_FORMATIONS = true;
  *  per-voyage exposure. QA round 2: allies-vs-axis-minus-two had 15 land battles on sea cells (65k
  *  casualties), usa-vs-china-2026 173 (33k). */
 export const EMBARKED_NAVAL_ONLY = true;
+/** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
+ *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
+ *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)
+ *  "collapsed" after one contact (QA round 2). defeatShock is the contract's own unit of a defeat
+ *  on this scale; no new number. Measured with armyCollapseMorale back at 0.15 (one commit):
+ *  20/15/24 -> 19/16/24; Six-Day War winner 95% -> 0% (now unresolved: it flips across the
+ *  0.10-0.25 range), Falklands loss ratio x3.86 -> x0.86 passes, Gulf War Iraq collapses on day 9
+ *  instead of 5. */
+export const COLLAPSE_NEEDS_REAL_FALL = true;
 
 /** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
  *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),
- *  collapse.armyCollapsePersonnelFraction 0.4 (was 0.1), collapse.armyCollapseMorale 0.2 (was
- *  0.15), intel.fogStrengthError, c2.missionCommandDelayFactor, naval.blockadeSeaControlThreshold
+ *  collapse.armyCollapsePersonnelFraction 0.4 (was 0.1), collapse.armyCollapseMorale (0.2 at first,
+ *  back to the model definition 0.15 after QA round 2), intel.fogStrengthError, c2.missionCommandDelayFactor, naval.blockadeSeaControlThreshold
  *  (all three unchanged at 0.5, 0.5, 0.6). OFF: the constants below. Measured: 20/15/22 -> 21/15/23
  *  (Six-Day War winner 0% -> 95% and 6 days, Tannenberg duration passes, Iraq 2003 46 -> 26 days;
  *  Yom Kippur winner 85% -> 70%, Gulf War loss ratio x4.9 -> x5.8). */
