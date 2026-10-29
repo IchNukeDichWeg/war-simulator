@@ -65,8 +65,9 @@ Each `derived:<id>` used in the data must be listed here with its formula.
 - `derived:absent-in-era` - the thing did not exist at the snapshot date (rail before 1825,
   nuclear weapons before 1945, air/cyber tech before powered flight/computers). Value 0, grade A.
 - `derived:ppp-rebase-2011` - World Bank GDP in 2021 PPP $ x (US GDP deflator 2011 / 2021 =
-  0.8005, FRED series GDPDEF annual 2011 = 98.1, 2021 = 118.4,
-  https://fred.stlouisfed.org/series/GDPDEF). Approximate: ignores relative-price drift.
+  0.8306, FRED series GDPDEF annual, 2017=100: 2011 = 91.478, 2021 = 110.130,
+  https://fred.stlouisfed.org/series/GDPDEF). Both years must come from the same FRED vintage.
+  Approximate: ignores relative-price drift.
 - `derived:terrain-class` - terrain class of a 0.25 degree cell: MODIS IGBP majority class,
   then relief override (std-dev of ~10 km elevation samples >= 250 m or mean >= 3000 m ->
   mountains, >= 90 m -> hills), following the relief-roughness typology of Meybeck, Green and

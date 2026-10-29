@@ -152,7 +152,7 @@ async function main() {
 
     const gdp21 = v('gdpPpp2021');
     const gdp = gdp21
-      ? est(gdp21.value * 0.8005, 0.1, 'B', 'derived:ppp-rebase-2011', `World Bank NY.GDP.MKTP.PP.KD asOf ${gdp21.year} x 0.8005`)
+      ? est(gdp21.value * 0.8306, 0.1, 'B', 'derived:ppp-rebase-2011', `World Bank NY.GDP.MKTP.PP.KD asOf ${gdp21.year} x 0.8306`)
       : est(P * ana((s) => s.economy.gdpPerCapita.mid), 0.5, 'D', 'derived:regional-analogy', `gdp per capita from ${anaNote}`);
     const gdppc = est(gdp.mid / P, 0.1, gdp.grade, gdp21 ? 'derived:ppp-rebase-2011' : 'derived:regional-analogy', 'gdp / population');
     const milShare = wbE('milexPctGdp', 'MS.MIL.XPND.GD.ZS', 0.15, 'A', 0.01) ?? est(noArmy ? 0 : ana((s) => s.economy.milSpendShare.mid), 0.5, 'D', 'derived:regional-analogy', anaNote);
