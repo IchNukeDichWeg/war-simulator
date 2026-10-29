@@ -7,6 +7,7 @@
   "bbox": [-61.5, -52.5, -57.5, -51.0],
   "terrain": "hills",
   "season": "winter",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "United Kingdom (3 Commando Brigade, 5 Infantry Brigade, Task Force)",
@@ -29,11 +30,11 @@
       "startPositions": [
         { "lat": -51.5, "lon": -59.03, "share": 1.0 }
       ],
-      "objective": { "name": "Stanley", "lat": -51.694, "lon": -57.857 },
+      "objective": { "name": "Stanley", "lat": -51.694, "lon": -57.857, "kind": "capture" },
       "reinforcements": [
         { "day": 11, "forces": { "infantry_line": { "low": 2000, "mid": 2500, "high": 3000 } } }
       ],
-      "note": "Strength: 4,000 men of 3 Commando Brigade landed at San Carlos on 21 May (40, 42, 45 Cdo; 2 and 3 Para), 5 Infantry Brigade (2 Scots Guards, 1 Welsh Guards, 1/7 Gurkha Rifles) added ~5,000 by 1 June (Wikipedia); infantry_line counts rifle strength, educated (~600-700 per battalion plus SAS/SBS). Armour: 4 Scorpion + 4 Scimitar (Blues and Royals). Artillery: 29 Cdo Regt three batteries + 29 Bty 4 Fd Regt, 105 mm Light Guns in 6-gun batteries: 18 + 12 = 30 (DTIC ADA401278); low = guns ashore in the first days. Air: 28 Sea Harrier FRS1 (fighter), ~10-14 Harrier GR3 (strike); helicopters ~100 (Sea King, Wessex, Gazelle, Scout, one Chinook), educated. Naval: 2 carriers, 2 LPDs, ~23 destroyers/frigates; 5 SSN + 1 SSK, educated from the Task Force list. Tech (derived:tech-anchor, 1982 near 1985 anchor 9): weapons 8.8 (Milan, AIM-9L, Rapier, Sea Dart); armor 8.4 (only light CVR(T)); comms 8.8 (SCOT satcom). Ratings: training 0.95 = elite long-service professionals (Paras, Royal Marines, Guards, Gurkhas); command 0.8; morale 0.8."
+      "note": "Strength: 4,000 men of 3 Commando Brigade landed at San Carlos on 21 May (40, 42, 45 Cdo; 2 and 3 Para), 5 Infantry Brigade (2 Scots Guards, 1 Welsh Guards, 1/7 Gurkha Rifles) added ~5,000 by 1 June (Wikipedia); infantry_line counts rifle strength, educated (~600-700 per battalion plus SAS/SBS). Armour: 4 Scorpion + 4 Scimitar (Blues and Royals). Artillery: 29 Cdo Regt three batteries + 29 Bty 4 Fd Regt, 105 mm Light Guns in 6-gun batteries: 18 + 12 = 30 (DTIC ADA401278); low = guns ashore in the first days. Air: 28 Sea Harrier FRS1 (fighter), ~10-14 Harrier GR3 (strike); helicopters ~100 (Sea King, Wessex, Gazelle, Scout, one Chinook), educated. Naval: 2 carriers, 2 LPDs, ~23 destroyers/frigates; 5 SSN + 1 SSK, educated from the Task Force list. Tech (derived:tech-anchor, 1982 near 1985 anchor 9): weapons 8.8 (Milan, AIM-9L, Rapier, Sea Dart); armor 8.4 (only light CVR(T)); comms 8.8 (SCOT satcom). Ratings: training 0.95 = elite long-service professionals (Paras, Royal Marines, Guards, Gurkhas); command 0.8; morale 0.8. riverCrossing false: the advance from San Carlos to Stanley was overland across East Falkland (https://en.wikipedia.org/wiki/Falklands_War). objective kind capture: the land campaign from San Carlos aimed at Stanley, taken with the Argentine surrender on 14 June, the last day of this window (https://en.wikipedia.org/wiki/Falklands_War)."
     },
     {
       "name": "Argentina (Malvinas garrison and air forces)",
@@ -52,6 +53,7 @@
       "training": 0.4,
       "doctrineId": "archetype-coldwar-western",
       "fortified": true,
+      "prepared": true,
       "startPositions": [
         { "lat": -51.69, "lon": -57.86, "share": 0.6 },
         { "lat": -51.68, "lon": -58.1, "share": 0.07 },
@@ -59,8 +61,8 @@
         { "lat": -51.62, "lon": -59.52, "share": 0.13 },
         { "lat": -51.95, "lon": -60.07, "share": 0.1 }
       ],
-      "objective": { "name": "Stanley (hold)", "lat": -51.694, "lon": -57.857 },
-      "note": "Strength: ~13,000 land forces at peak on the islands (Wikipedia infobox), incl. air force and support personnel; infantry_line = ~8-10 army infantry regiments plus BIM 5 marines, educated. ifv_apc = 12 Panhard AML-90 armoured cars. Artillery: ~30 OTO Melara 105 mm pack howitzers (1.5 battalions, British estimate in DTIC ADA401278) plus a few 155 mm. Aircraft were mainland-based at the edge of their radius: Mirage III/Dagger as fighters; A-4 Skyhawk, Super Etendard, Canberra, Pucara (on the islands), MB-339 as strike; counts educated. Fleet stayed in port after the Belgrano sinking (2 May), so no ships are listed. Starts: Stanley and its mountain ring (Longdon, Two Sisters, Tumbledown, Wireless Ridge), outer Mount Kent area, Goose Green/Darwin, Port Howard and Fox Bay on West Falkland. Tech: logistics 7.5 (air bridge, then blockade; troops underfed). Ratings: command 0.35 (Menendez static, poor army/air coordination); morale 0.4 (cold, hungry conscripts; BIM 5 an exception); training 0.4 (1963-class conscripts with months of service). Fortified: prepared positions on the high ground."
+      "objective": { "name": "Stanley (hold)", "lat": -51.694, "lon": -57.857, "kind": "hold" },
+      "note": "Strength: ~13,000 land forces at peak on the islands (Wikipedia infobox), incl. air force and support personnel; infantry_line = ~8-10 army infantry regiments plus BIM 5 marines, educated. ifv_apc = 12 Panhard AML-90 armoured cars. Artillery: ~30 OTO Melara 105 mm pack howitzers (1.5 battalions, British estimate in DTIC ADA401278) plus a few 155 mm. Aircraft were mainland-based at the edge of their radius: Mirage III/Dagger as fighters; A-4 Skyhawk, Super Etendard, Canberra, Pucara (on the islands), MB-339 as strike; counts educated. Fleet stayed in port after the Belgrano sinking (2 May), so no ships are listed. Starts: Stanley and its mountain ring (Longdon, Two Sisters, Tumbledown, Wireless Ridge), outer Mount Kent area, Goose Green/Darwin, Port Howard and Fox Bay on West Falkland. Tech: logistics 7.5 (air bridge, then blockade; troops underfed). Ratings: command 0.35 (Menendez static, poor army/air coordination); morale 0.4 (cold, hungry conscripts; BIM 5 an exception); training 0.4 (1963-class conscripts with months of service). Fortified: prepared positions on the high ground. prepared true: the final British attacks of 11-14 June were made against the heavily defended ring of high ground surrounding Stanley, garrisoned since April (https://en.wikipedia.org/wiki/Falklands_War). objective kind hold: Argentina held Stanley from 2 April and sought to keep it until the surrender on 14 June (https://en.wikipedia.org/wiki/Falklands_War)."
     }
   ],
   "outcome": {

@@ -10,6 +10,7 @@
   },
   "terrain": "cropland",
   "season": "summer",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "Eastern Roman Empire (Valens)",
@@ -53,7 +54,7 @@
       "doctrineId": "roman-imperial",
       "fortified": false,
       "surprise": false,
-      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Modern estimates 15,000 (Heather) to 30,000 (Williams and Friell); mid 20,000. Role split (legions/auxilia palatina, foot archers, scholae and mounted archers) is an educated guess. Command 0.35: attacked after an 8-mile march in heat, without waiting for Gratian, underestimating the Goths; cavalry attacked without orders. Training 0.75: comitatenses field army."
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Modern estimates 15,000 (Heather) to 30,000 (Williams and Friell); mid 20,000. Role split (legions/auxilia palatina, foot archers, scholae and mounted archers) is an educated guess. Command 0.35: attacked after an 8-mile march in heat, without waiting for Gratian, underestimating the Goths; cavalry attacked without orders. Training 0.75: comitatenses field army. riverCrossing false: the Romans closed overland on the Gothic camp after an 8-mile march, no river between the armies (https://en.wikipedia.org/wiki/Battle_of_Adrianople)."
     },
     {
       "name": "Goths (Thervingi, Greuthungi) and Alans (Fritigern)",
@@ -81,6 +82,7 @@
       "training": 0.5,
       "doctrineId": "archetype-feudal-host",
       "fortified": false,
+      "prepared": true,
       "surprise": false,
       "reinforcements": [
         {
@@ -94,7 +96,7 @@
           }
         }
       ],
-      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Total 12,000-15,000 (Delbrück) to 20,000 (Williams and Friell). Thervingi infantry defending the wagon laager on a hill; the Greuthungi and Alan cavalry under Alatheus and Saphrax were foraging and arrived early in the fight to strike the Roman left (reinforcement at day 0.05). Infantry/cavalry split is an educated guess. Tribal warband host mapped to archetype-feudal-host. Morale 0.85: existential, starving refugees. Wagon laager is a field fortification, not a fortified city, so fortified=false."
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Total 12,000-15,000 (Delbrück) to 20,000 (Williams and Friell). Thervingi infantry defending the wagon laager on a hill; the Greuthungi and Alan cavalry under Alatheus and Saphrax were foraging and arrived early in the fight to strike the Roman left (reinforcement at day 0.05). Infantry/cavalry split is an educated guess. Tribal warband host mapped to archetype-feudal-host. Morale 0.85: existential, starving refugees. Wagon laager is a field fortification, not a fortified city, so fortified=false. prepared true: the Goths fought from a wagon circle set up in advance on a hilltop, with the families and possessions inside, while the Romans arrived tired from the march (https://en.wikipedia.org/wiki/Battle_of_Adrianople, citing Ammianus 31.12)."
     }
   ],
   "outcome": {

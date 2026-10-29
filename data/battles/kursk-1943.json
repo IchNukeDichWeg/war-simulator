@@ -6,6 +6,7 @@
   "location": { "lat": 51.7, "lon": 36.4, "radiusKm": 150 },
   "terrain": "cropland",
   "season": "summer",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "Germany (9th Army, 4th Panzer Army, Army Detachment Kempf)",
@@ -22,7 +23,7 @@
       "morale": 0.65,
       "training": 0.7,
       "doctrineId": "german-blitzkrieg-1939",
-      "note": "Strength (Wikipedia infobox citing Frieser and Zetterling/Frankson): 780,900 men, 2,928 tanks and assault guns (low ~2,450 = tanks only), 9,966 guns and mortars (low excludes light mortars, educated), 2,110 aircraft. infantry_line ~45-50% of strength across ~50 divisions (17 panzer/panzergrenadier), educated split. Fighter/strike split of Luftflotte 4 and 6 is educated. Tech (derived:tech-anchor, 1943 = anchor 8): weapons/armor 8.1-8.2 (Tiger, Panther, Ferdinand debut); logistics 7.6 (horse-drawn infantry divisions, rail-fed). Ratings: command 0.75 (trained staff, Manstein/Model, but a delayed and predictable offensive); morale 0.65; training 0.7. No surprise: the Soviets knew the plan and timing."
+      "note": "Strength (Wikipedia infobox citing Frieser and Zetterling/Frankson): 780,900 men, 2,928 tanks and assault guns (low ~2,450 = tanks only), 9,966 guns and mortars (low excludes light mortars, educated), 2,110 aircraft. infantry_line ~45-50% of strength across ~50 divisions (17 panzer/panzergrenadier), educated split. Fighter/strike split of Luftflotte 4 and 6 is educated. Tech (derived:tech-anchor, 1943 = anchor 8): weapons/armor 8.1-8.2 (Tiger, Panther, Ferdinand debut); logistics 7.6 (horse-drawn infantry divisions, rail-fed). Ratings: command 0.75 (trained staff, Manstein/Model, but a delayed and predictable offensive); morale 0.65; training 0.7. No surprise: the Soviets knew the plan and timing. riverCrossing false: only Army Detachment Kempf had to cross the Northern Donets against the dug-in 7th Guards Army; 9th Army and 4th Panzer Army attacked overland (https://en.wikipedia.org/wiki/Battle_of_Kursk)."
     },
     {
       "name": "Soviet Union (Central and Voronezh Fronts; Steppe Front as reinforcement)",
@@ -40,10 +41,11 @@
       "training": 0.55,
       "doctrineId": "soviet-deep-operations",
       "fortified": true,
+      "prepared": true,
       "reinforcements": [
         { "day": 6, "forces": { "infantry_line": { "low": 150000, "mid": 250000, "high": 330000 }, "armor": { "low": 650, "mid": 900, "high": 1550 } } }
       ],
-      "note": "Strength (Wikipedia citing Glantz/House, Zetterling/Frankson, Healy): Central Front 711,575 men (510,983 combat), Voronezh Front 625,591 (446,236 combat); together ~1,300,000 men, 3,600 tanks (1,061 light T-60/T-70), ~20,000 guns and mortars, 2,792 aircraft (Bergstrom). infantry_line ~55-65% of the 957,219 'combat soldiers' plus rifle troops counted elsewhere, educated. Reinforcement day 6 (11-12 July): Steppe Front had 573,195 men (449,133 combat) and ~1,600 tanks in reserve; 5th Guards Tank Army (~650-850 tanks) and 5th Guards Army were committed at Prokhorovka; mid assumes about half the front engaged, high = all of it (Steppe Front's 70,085 casualties in the defensive operation show heavy commitment). Tech: fortification 8.3 (eight defensive belts, e.g. 6th Guards Army: 69,688 AT + 64,430 AP mines in its first belt alone); ISR 7.9 (strategic warning of timing and axes). Ratings: command 0.75 (Zhukov, Vasilevsky, Rokossovsky, Vatutin; proven staff system by 1943); morale 0.8 after Stalingrad; training 0.55."
+      "note": "Strength (Wikipedia citing Glantz/House, Zetterling/Frankson, Healy): Central Front 711,575 men (510,983 combat), Voronezh Front 625,591 (446,236 combat); together ~1,300,000 men, 3,600 tanks (1,061 light T-60/T-70), ~20,000 guns and mortars, 2,792 aircraft (Bergstrom). infantry_line ~55-65% of the 957,219 'combat soldiers' plus rifle troops counted elsewhere, educated. Reinforcement day 6 (11-12 July): Steppe Front had 573,195 men (449,133 combat) and ~1,600 tanks in reserve; 5th Guards Tank Army (~650-850 tanks) and 5th Guards Army were committed at Prokhorovka; mid assumes about half the front engaged, high = all of it (Steppe Front's 70,085 casualties in the defensive operation show heavy commitment). Tech: fortification 8.3 (eight defensive belts, e.g. 6th Guards Army: 69,688 AT + 64,430 AP mines in its first belt alone); ISR 7.9 (strategic warning of timing and axes). Ratings: command 0.75 (Zhukov, Vasilevsky, Rokossovsky, Vatutin; proven staff system by 1943); morale 0.8 after Stalingrad; training 0.55. prepared true: the Central and Voronezh Fronts each built three main defensive belts while the offensive was delayed (https://en.wikipedia.org/wiki/Battle_of_Kursk, citing Glantz and House 2004 pp.64-67)."
     }
   ],
   "outcome": {

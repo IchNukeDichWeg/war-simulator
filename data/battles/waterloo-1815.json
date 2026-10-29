@@ -10,6 +10,7 @@
   },
   "terrain": "cropland",
   "season": "summer",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "French Empire (Napoleon)",
@@ -53,7 +54,7 @@
       "doctrineId": "napoleonic-corps",
       "fortified": false,
       "surprise": false,
-      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 72,000-73,000: 48,950-50,600 infantry, 14,390-15,765 cavalry, 246-252 guns (Clodfelter, Bodart). Heavy/light cavalry split (cuirassiers, carabiniers, Guard heavy vs lancers, chasseurs, hussars) roughly half each, educated guess. Command 0.7: Napoleon slow to start (ground drying), Ney's unsupported cavalry charges, Grouchy's 33,000 detached. Training 0.7: veteran cadres but a hastily rebuilt army."
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 72,000-73,000: 48,950-50,600 infantry, 14,390-15,765 cavalry, 246-252 guns (Clodfelter, Bodart). Heavy/light cavalry split (cuirassiers, carabiniers, Guard heavy vs lancers, chasseurs, hussars) roughly half each, educated guess. Command 0.7: Napoleon slow to start (ground drying), Ney's unsupported cavalry charges, Grouchy's 33,000 detached. Training 0.7: veteran cadres but a hastily rebuilt army. riverCrossing false: the French attacked across the open valley between the two ridges (https://en.wikipedia.org/wiki/Battle_of_Waterloo)."
     },
     {
       "name": "Seventh Coalition (Wellington, Blucher)",
@@ -96,6 +97,7 @@
       "training": 0.6,
       "doctrineId": "archetype-gunpowder-linear",
       "fortified": false,
+      "prepared": true,
       "surprise": false,
       "reinforcements": [
         {
@@ -139,7 +141,7 @@
           }
         }
       ],
-      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Initial force = Wellington's army ~68,000 (Clodfelter 67,661: 49,608 infantry, 12,408 cavalry, 5,645 artillerymen), 156 guns; heavy/light cavalry split educated guess. Prussians (~48,000 engaged of ~50,000): Bulow's IV Corps attacked Plancenoit at 16:30 (day 0.21 after a ~11:30 start), Zieten's I Corps and part of Pirch's II Corps engaged about 18:00-19:00 (day 0.29). Per-corps split of the Prussian total is an educated guess; 44 guns in action (Clodfelter) to 126 present (Bowden). Training 0.6: British/KGL core, inexperienced Dutch-Belgian, Hanoverian and Landwehr units. Hougoumont and La Haye Sainte were fortified farms (not a fortified city)."
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Initial force = Wellington's army ~68,000 (Clodfelter 67,661: 49,608 infantry, 12,408 cavalry, 5,645 artillerymen), 156 guns; heavy/light cavalry split educated guess. Prussians (~48,000 engaged of ~50,000): Bulow's IV Corps attacked Plancenoit at 16:30 (day 0.21 after a ~11:30 start), Zieten's I Corps and part of Pirch's II Corps engaged about 18:00-19:00 (day 0.29). Per-corps split of the Prussian total is an educated guess; 44 guns in action (Clodfelter) to 126 present (Bowden). Training 0.6: British/KGL core, inexperienced Dutch-Belgian, Hanoverian and Landwehr units. Hougoumont and La Haye Sainte were fortified farms (not a fortified city). prepared true for Wellington's army: it reached the Mont-Saint-Jean ridge on the evening of 17 June, deployed on the reverse slope and fortified and garrisoned Hougoumont and Papelotte with La Haye Sainte garrisoned in front; the Prussian contingent arrived on the march (https://en.wikipedia.org/wiki/Battle_of_Waterloo, citing Barbero 2005 p.149)."
     }
   ],
   "outcome": {

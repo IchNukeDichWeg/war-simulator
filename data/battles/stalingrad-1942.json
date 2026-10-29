@@ -7,6 +7,7 @@
   "bbox": [40.0, 46.8, 46.5, 50.5],
   "terrain": "steppe",
   "season": "winter",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "Soviet Union (Southwestern, Don and Stalingrad Fronts)",
@@ -32,8 +33,8 @@
         { "lat": 48.3, "lon": 44.6, "share": 0.2 },
         { "lat": 49.9, "lon": 40.9, "share": 0.2 }
       ],
-      "objective": { "name": "Kalach-na-Donu (encirclement link-up)", "lat": 48.69, "lon": 43.53 },
-      "note": "Strength (Wikipedia Stalingrad and Uranus infoboxes; Krivosheev): 1,103,000-1,143,500 personnel incl. reserves, 804-979 tanks (894 infobox), 13,400-13,451 guns and mortars, 1,000-1,500 aircraft (1,115 infobox). infantry_line ~55% of personnel (rifle troops, excluding crews, gunners, rear services), educated split; cavalry_light = 3rd Guards, 4th and 8th Cavalry Corps (~8 divisions), educated. artillery low excludes light mortars. Fighter/strike split of the air armies is an educated ~50/50. Totals already include the 2nd Guards Army committed in December, so no separate reinforcement. Starts: Serafimovich/Kletskaya bridgeheads (5th Tank, 21st Army), Don Front (65th, 24th, 66th), 62nd Army in the city, 57th/51st Armies south of Stalingrad, Southwestern Front left wing on the Middle Don (Little Saturn). Tech (derived:tech-anchor, 1942 just below the 1943 anchor): armor 7.9 (T-34/76, KV-1), logistics 7.4 (rail to the Don, few trucks), communications 7.5 (radio scarce below brigade). Ratings: command 0.7 (Vasilevsky/Zhukov staff planning, Vatutin, Rokossovsky, Yeremenko; still uneven execution); morale 0.8 existential defence; training 0.5. Surprise: Uranus achieved operational surprise against the Romanian flanks."
+      "objective": { "name": "Stalingrad (6th Army pocket, Univermag HQ)", "lat": 48.708, "lon": 44.516, "kind": "capture" },
+      "note": "Strength (Wikipedia Stalingrad and Uranus infoboxes; Krivosheev): 1,103,000-1,143,500 personnel incl. reserves, 804-979 tanks (894 infobox), 13,400-13,451 guns and mortars, 1,000-1,500 aircraft (1,115 infobox). infantry_line ~55% of personnel (rifle troops, excluding crews, gunners, rear services), educated split; cavalry_light = 3rd Guards, 4th and 8th Cavalry Corps (~8 divisions), educated. artillery low excludes light mortars. Fighter/strike split of the air armies is an educated ~50/50. Totals already include the 2nd Guards Army committed in December, so no separate reinforcement. Starts: Serafimovich/Kletskaya bridgeheads (5th Tank, 21st Army), Don Front (65th, 24th, 66th), 62nd Army in the city, 57th/51st Armies south of Stalingrad, Southwestern Front left wing on the Middle Don (Little Saturn). Tech (derived:tech-anchor, 1942 just below the 1943 anchor): armor 7.9 (T-34/76, KV-1), logistics 7.4 (rail to the Don, few trucks), communications 7.5 (radio scarce below brigade). Ratings: command 0.7 (Vasilevsky/Zhukov staff planning, Vatutin, Rokossovsky, Yeremenko; still uneven execution); morale 0.8 existential defence; training 0.5. Surprise: Uranus achieved operational surprise against the Romanian flanks. riverCrossing false: the Soviets attacked from bridgeheads they had kept on the right bank of the Don and from positions south of the city, not by a contested crossing (https://en.wikipedia.org/wiki/Battle_of_Stalingrad). objective changed from Kalach-na-Donu (link-up achieved by late 22 November, day 4) to the 6th Army pocket in Stalingrad, because this 19 Nov-2 Feb window ends with Operation Koltso, which forced the capitulation of the forces encircled in the city after Paulus's headquarters in the Univermag department store gave up (https://en.wikipedia.org/wiki/Operation_Koltso; https://en.wikipedia.org/wiki/Operation_Uranus); point = Square of the Fallen Fighters beside the Univermag, 48.708 N 44.516 E (https://nominatim.openstreetmap.org/search?q=%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C+%D0%9F%D0%B0%D0%B2%D1%88%D0%B8%D1%85+%D0%91%D0%BE%D1%80%D1%86%D0%BE%D0%B2%2C+%D0%92%D0%BE%D0%BB%D0%B3%D0%BE%D0%B3%D1%80%D0%B0%D0%B4). objective kind capture: the city centre was Axis-held at the start (https://en.wikipedia.org/wiki/Battle_of_Stalingrad)."
     },
     {
       "name": "Axis (German 6th Army and 4th Panzer Army, Romanian 3rd and 4th Armies, Italian 8th Army)",
@@ -50,6 +51,7 @@
       "morale": 0.5,
       "training": 0.55,
       "doctrineId": "german-blitzkrieg-1939",
+      "prepared": true,
       "startPositions": [
         { "lat": 48.75, "lon": 44.35, "share": 0.3 },
         { "lat": 49.2, "lon": 43.7, "share": 0.08 },
@@ -58,11 +60,11 @@
         { "lat": 49.9, "lon": 40.5, "share": 0.22 },
         { "lat": 47.6, "lon": 43.1, "share": 0.1 }
       ],
-      "objective": { "name": "Stalingrad (hold)", "lat": 48.708, "lon": 44.514 },
+      "objective": { "name": "Stalingrad (hold)", "lat": 48.708, "lon": 44.514, "kind": "hold" },
       "reinforcements": [
         { "day": 23, "forces": { "infantry_line": { "low": 20000, "mid": 30000, "high": 40000 }, "armor": { "low": 200, "mid": 230, "high": 260 } } }
       ],
-      "note": "Strength (Wikipedia Stalingrad infobox, counter-offensive phase): 1,011,000 personnel, 640+ tanks, 732 aircraft (402 serviceable); Uranus infobox: Germans 400,000 in 6th Army and 4th Panzer Army, Romanians 143,296-200,000 with 827 guns and 134 tanks. infantry_line ~50% of personnel, educated split. Artillery: ~2,000 guns and mortars trapped in the pocket (Uranus article) plus Romanian 827 and Italian/4th Pz Army pieces; total is an educated guess (grade D). Aircraft split of the 732 is educated. Reinforcement day 23 (12 Dec) = LVII Panzer Corps for Operation Winter Storm (6th Panzer Division ~160 tanks + 23rd Panzer), educated range. Tech: blend of German (weapons 8, air 8) and weaker Romanian/Italian formations (anti-tank weapons inadequate vs T-34); logistics 7.2 = single rail line, overextended. Ratings: command 0.6 (Hitler's hold order, Paulus passive; staff competent); morale 0.5 falling to near collapse in the pocket; training 0.55 averaged German and allied. Not fortified: the city was ruins, the Don flanks thinly held by Romanians."
+      "note": "Strength (Wikipedia Stalingrad infobox, counter-offensive phase): 1,011,000 personnel, 640+ tanks, 732 aircraft (402 serviceable); Uranus infobox: Germans 400,000 in 6th Army and 4th Panzer Army, Romanians 143,296-200,000 with 827 guns and 134 tanks. infantry_line ~50% of personnel, educated split. Artillery: ~2,000 guns and mortars trapped in the pocket (Uranus article) plus Romanian 827 and Italian/4th Pz Army pieces; total is an educated guess (grade D). Aircraft split of the 732 is educated. Reinforcement day 23 (12 Dec) = LVII Panzer Corps for Operation Winter Storm (6th Panzer Division ~160 tanks + 23rd Panzer), educated range. Tech: blend of German (weapons 8, air 8) and weaker Romanian/Italian formations (anti-tank weapons inadequate vs T-34); logistics 7.2 = single rail line, overextended. Ratings: command 0.6 (Hitler's hold order, Paulus passive; staff competent); morale 0.5 falling to near collapse in the pocket; training 0.55 averaged German and allied. Not fortified: the city was ruins, the Don flanks thinly held by Romanians. prepared true: the Axis had held static positions on the Don and in the city since the autumn, with minefields in front of the Romanian lines, though thinly spread (Third Romanian Army on 140 km) and short of anti-tank guns (https://en.wikipedia.org/wiki/Operation_Uranus). objective kind hold: Hitler ordered 6th Army to stay in Stalingrad rather than break out; it capitulated on 2 February 1943, the last day of this window (https://en.wikipedia.org/wiki/Battle_of_Stalingrad; https://en.wikipedia.org/wiki/Operation_Uranus)."
     }
   ],
   "outcome": {

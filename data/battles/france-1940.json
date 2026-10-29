@@ -7,6 +7,7 @@
   "bbox": [-1.5, 47.0, 8.5, 53.6],
   "terrain": "cropland",
   "season": "spring",
+  "riverCrossing": true,
   "sides": [
     {
       "name": "Germany",
@@ -30,8 +31,8 @@
         { "lat": 50.2, "lon": 6.6, "share": 0.5 },
         { "lat": 49.3, "lon": 7.0, "share": 0.2 }
       ],
-      "objective": { "name": "Paris", "lat": 48.857, "lon": 2.352 },
-      "note": "Strength (Wikipedia infobox citing Umbreit, David, Hooton; Frieser 2005 pp.35-37): ~3.0-3.3 million men in 135-141 divisions, 2,439 (Frieser) / 2,445 (Umbreit) tanks, 7,378 guns, 5,638 aircraft incl. gliders and transports. infantry_line: ~141 divisions x ~9,500 riflemen/pioneers, excluding crews, artillery, signals and trains (educated split of the 3.3M total). cavalry_light: 1st Cavalry Division. Aircraft: 836 Bf 109 (Hooton) + ~250 Bf 110 = fighters; Luftflotten II and III had 1,771 + 1,756 front-line aircraft, remainder after fighters = bombers, Stukas, recon (split is derived, not quoted). Italian Alpine front (22 divisions) excluded: outside bbox. Starts: Army Group B (Lower Rhine), Army Group A (Eifel, incl. Panzergruppe Kleist and most OKH reserves), Army Group C (Saar). Tech (derived:tech-anchor, 1940 between anchors 7 and 8): communications 8 = radio in every tank and command vehicle; air 8 = Bf 109E/Ju 87 near the 1943 anchor; logistics 7.5 = rail plus horse-drawn infantry divisions, motorised only in mobile divisions. Ratings: command 0.85 = trained General Staff, Manstein plan, Guderian; training 0.7; morale 0.7 after Poland. Surprise: Ardennes main effort was not expected by the Allies."
+      "objective": { "name": "Paris", "lat": 48.857, "lon": 2.352, "kind": "capture" },
+      "note": "Strength (Wikipedia infobox citing Umbreit, David, Hooton; Frieser 2005 pp.35-37): ~3.0-3.3 million men in 135-141 divisions, 2,439 (Frieser) / 2,445 (Umbreit) tanks, 7,378 guns, 5,638 aircraft incl. gliders and transports. infantry_line: ~141 divisions x ~9,500 riflemen/pioneers, excluding crews, artillery, signals and trains (educated split of the 3.3M total). cavalry_light: 1st Cavalry Division. Aircraft: 836 Bf 109 (Hooton) + ~250 Bf 110 = fighters; Luftflotten II and III had 1,771 + 1,756 front-line aircraft, remainder after fighters = bombers, Stukas, recon (split is derived, not quoted). Italian Alpine front (22 divisions) excluded: outside bbox. Starts: Army Group B (Lower Rhine), Army Group A (Eifel, incl. Panzergruppe Kleist and most OKH reserves), Army Group C (Saar). Tech (derived:tech-anchor, 1940 between anchors 7 and 8): communications 8 = radio in every tank and command vehicle; air 8 = Bf 109E/Ju 87 near the 1943 anchor; logistics 7.5 = rail plus horse-drawn infantry divisions, motorised only in mobile divisions. Ratings: command 0.85 = trained General Staff, Manstein plan, Guderian; training 0.7; morale 0.7 after Poland. Surprise: Ardennes main effort was not expected by the Allies. riverCrossing true: the decisive breakthrough required assault crossings of the Meuse (Sedan, Dinant) on 13 May before Guderian and Rommel broke out of the Meuse bridgeheads (https://en.wikipedia.org/wiki/Battle_of_France). objective kind capture: Germany set out to defeat France and took Paris on 14 June (day 35 of this 43-day window to the 22 June armistice) (https://en.wikipedia.org/wiki/Battle_of_France)."
     },
     {
       "name": "Allies (France, Britain, Belgium, Netherlands)",
@@ -49,6 +50,7 @@
       "morale": 0.5,
       "training": 0.55,
       "doctrineId": "french-methodical-1940",
+      "prepared": false,
       "startPositions": [
         { "lat": 52.0, "lon": 5.3, "share": 0.07 },
         { "lat": 50.95, "lon": 4.9, "share": 0.13 },
@@ -57,8 +59,8 @@
         { "lat": 49.25, "lon": 6.6, "share": 0.3 },
         { "lat": 49.1, "lon": 2.8, "share": 0.1 }
       ],
-      "objective": { "name": "Paris (hold)", "lat": 48.857, "lon": 2.352 },
-      "note": "Strength (Wikipedia citing Frieser 2005 pp.36-37): 104 French divisions for the north, 13 BEF, 22 Belgian, 10 Dutch, 2 Polish; ~3.3 million men; guns: France 10,700 + Britain 1,280 + Belgium 1,338 + Dutch 656 = ~14,000 (13,974 infobox). Tanks: French 3,254 on the north-east front (Frieser) to 4,071 (Zaloga, all French), plus ~310 British; Belgian/Dutch armour negligible. Fighters: 81 Belgian + 261 British + 764 French = 1,106 in theatre (Hooton); high adds RAF Fighter Command sorties from England. Strike: Armee de l'Air 1,562 aircraft total, AASF and Bomber Command ~392, minus fighters (derived range). infantry_line: ~150 divisions x ~8,500 riflemen, educated split. cavalry_light: horse elements of the DLC/brigades, educated. Starts: Dutch Fortress Holland, Belgian KW/Albert Canal line, French 1st Army Group + BEF on the Belgian border (Dyle plan), Sedan-Meuse (9th/2nd Armies), Maginot Line (2nd/3rd Army Groups), GQG reserve. Tech: fortification 8 = Maginot Line is the anchor (fortified flag left false because most of the field army was not in it); armor 7.8 (Char B1, Somua S35 thicker than German tanks); communications 7.1 (most tanks without radio, GQG without radio links). Ratings: command 0.4 (Gamelin's slow chain of command, Dyle-Breda overcommitment); morale 0.5; training 0.55 (many B-series reserve divisions)."
+      "objective": { "name": "Paris (hold)", "lat": 48.857, "lon": 2.352, "kind": "hold" },
+      "note": "Strength (Wikipedia citing Frieser 2005 pp.36-37): 104 French divisions for the north, 13 BEF, 22 Belgian, 10 Dutch, 2 Polish; ~3.3 million men; guns: France 10,700 + Britain 1,280 + Belgium 1,338 + Dutch 656 = ~14,000 (13,974 infobox). Tanks: French 3,254 on the north-east front (Frieser) to 4,071 (Zaloga, all French), plus ~310 British; Belgian/Dutch armour negligible. Fighters: 81 Belgian + 261 British + 764 French = 1,106 in theatre (Hooton); high adds RAF Fighter Command sorties from England. Strike: Armee de l'Air 1,562 aircraft total, AASF and Bomber Command ~392, minus fighters (derived range). infantry_line: ~150 divisions x ~8,500 riflemen, educated split. cavalry_light: horse elements of the DLC/brigades, educated. Starts: Dutch Fortress Holland, Belgian KW/Albert Canal line, French 1st Army Group + BEF on the Belgian border (Dyle plan), Sedan-Meuse (9th/2nd Armies), Maginot Line (2nd/3rd Army Groups), GQG reserve. Tech: fortification 8 = Maginot Line is the anchor (fortified flag left false because most of the field army was not in it); armor 7.8 (Char B1, Somua S35 thicker than German tanks); communications 7.1 (most tanks without radio, GQG without radio links). Ratings: command 0.4 (Gamelin's slow chain of command, Dyle-Breda overcommitment); morale 0.5; training 0.55 (many B-series reserve divisions). prepared false at campaign level: under the Dyle plan the main Franco-British mobile forces advanced into Belgium on 10 May to a line they had to reach before the Germans, and later lines were improvised; only static sectors such as the Maginot Line were prepared in advance (https://en.wikipedia.org/wiki/Battle_of_France). objective kind hold: the Allies controlled Paris at the start and sought to keep it; it was declared open and fell on 14 June (https://en.wikipedia.org/wiki/Battle_of_France)."
     }
   ],
   "outcome": {

@@ -7,6 +7,7 @@
   "bbox": [43.0, 28.0, 48.6, 31.2],
   "terrain": "desert",
   "season": "winter",
+  "riverCrossing": false,
   "sides": [
     {
       "name": "Coalition (US, UK, France, Saudi Arabia, Egypt, Syria, Gulf states)",
@@ -33,8 +34,8 @@
         { "lat": 28.6, "lon": 47.4, "share": 0.2 },
         { "lat": 28.5, "lon": 48.3, "share": 0.1 }
       ],
-      "objective": { "name": "Kuwait City", "lat": 29.376, "lon": 47.977 },
-      "note": "Strength: >540,000 coalition troops from 31 countries in theatre, 1,736 combat aircraft (Conduct of the Persian Gulf War, DoD 1992). VII Corps >142,000 soldiers with 1,587 tanks, 1,502 Bradleys/APCs, 669 artillery pieces, 223 attack helicopters; XVIII Corps 116,000 (Whirlwind War, CMH); XVIII Corps alone >1,000 helicopters (Certain Victory). Coalition totals: 3,113 tanks, 2,200 artillery systems (Wikipedia infobox); high adds Arab, USMC and reserve tanks. infantry_line = dismounted infantry of ~17 division-equivalents (~20-30% of ground strength), educated. ifv_apc and the fighter/strike split of the 1,736 combat aircraft are educated. Starts: XVIII Corps near Rafha (far west), VII Corps west of Wadi al-Batin, Joint Forces Command North, I MEF, Joint Forces Command East on the coast. Tech (derived:tech-anchor): 1991 just above the 1985 anchor 9: M1A1 with thermal sights, GPS, JSTARS, F-117 and laser-guided bombs; cyber 9 = 1990 networks anchor. Ratings: command 0.85 (CENTCOM joint planning, left hook); morale 0.75; training 0.85 (US volunteer force trained at the NTC; Arab partners lower). Surprise: the western envelopment was not detected."
+      "objective": { "name": "Kuwait City", "lat": 29.376, "lon": 47.977, "kind": "capture" },
+      "note": "Strength: >540,000 coalition troops from 31 countries in theatre, 1,736 combat aircraft (Conduct of the Persian Gulf War, DoD 1992). VII Corps >142,000 soldiers with 1,587 tanks, 1,502 Bradleys/APCs, 669 artillery pieces, 223 attack helicopters; XVIII Corps 116,000 (Whirlwind War, CMH); XVIII Corps alone >1,000 helicopters (Certain Victory). Coalition totals: 3,113 tanks, 2,200 artillery systems (Wikipedia infobox); high adds Arab, USMC and reserve tanks. infantry_line = dismounted infantry of ~17 division-equivalents (~20-30% of ground strength), educated. ifv_apc and the fighter/strike split of the 1,736 combat aircraft are educated. Starts: XVIII Corps near Rafha (far west), VII Corps west of Wadi al-Batin, Joint Forces Command North, I MEF, Joint Forces Command East on the coast. Tech (derived:tech-anchor): 1991 just above the 1985 anchor 9: M1A1 with thermal sights, GPS, JSTARS, F-117 and laser-guided bombs; cyber 9 = 1990 networks anchor. Ratings: command 0.85 (CENTCOM joint planning, left hook); morale 0.75; training 0.85 (US volunteer force trained at the NTC; Arab partners lower). Surprise: the western envelopment was not detected. riverCrossing false: the ground offensive went through berms and minefields in open desert, no river (https://en.wikipedia.org/wiki/Gulf_War). objective kind capture: the coalition aim was the liberation of Kuwait, Kuwaiti forces liberated the city during the 100-hour ground war (https://en.wikipedia.org/wiki/Gulf_War)."
     },
     {
       "name": "Iraq (forces in the Kuwait Theater of Operations)",
@@ -51,6 +52,7 @@
       "training": 0.4,
       "doctrineId": "archetype-coldwar-soviet",
       "fortified": true,
+      "prepared": true,
       "startPositions": [
         { "lat": 28.75, "lon": 47.6, "share": 0.35 },
         { "lat": 29.2, "lon": 47.4, "share": 0.2 },
@@ -58,8 +60,8 @@
         { "lat": 30.4, "lon": 45.0, "share": 0.1 },
         { "lat": 30.1, "lon": 47.2, "share": 0.2 }
       ],
-      "objective": { "name": "Kuwait City (hold)", "lat": 29.376, "lon": 47.977 },
-      "note": "Strength at G-day (24 Feb): DIA credited 540,000-545,000 troops, 43 divisions, 4,280 tanks, 2,800 APCs, 3,100 guns (CPGW); the Gulf War Air Power Survey revised this to no more than 336,000 on 17 Jan, then 25-30% desertion and <10% air casualties leaving ~200,000-222,000 by 24 Feb; equipment ~800 fewer tanks and 600 fewer guns than DIA thought, then air attrition (CENTCOM: 39% tanks, 32% APCs, 47% artillery; CIA/DIA lower). Counts above apply those decrements (derived, grade C). infantry_line ~65-75% of the 200,000-222,000, educated. Air force did not fight (hid or fled to Iran), so no aircraft are listed. Starts: frontline infantry divisions on the Saudi border, tactical armoured reserves (12th, 52nd, 17th, 10th Armd), coast and Kuwait City, western flank (26th, 45th Divs near As Salman), Republican Guard on the Kuwait-Iraq border. Tech: T-72M/T-62/T-55/Type 69, 1970s Soviet kit; ISR 7 (no air reconnaissance in the war); cyber 7 = computerised KARI air-defence network but no network warfare (educated, outside the anchor table). Ratings: command 0.25 (centralised, frozen); morale 0.2 (deserting, short of food and water after 38 days of bombing); training 0.4 (Republican Guard higher). Fortified: Saddam Line berms, minefields, fire trenches."
+      "objective": { "name": "Kuwait City (hold)", "lat": 29.376, "lon": 47.977, "kind": "hold" },
+      "note": "Strength at G-day (24 Feb): DIA credited 540,000-545,000 troops, 43 divisions, 4,280 tanks, 2,800 APCs, 3,100 guns (CPGW); the Gulf War Air Power Survey revised this to no more than 336,000 on 17 Jan, then 25-30% desertion and <10% air casualties leaving ~200,000-222,000 by 24 Feb; equipment ~800 fewer tanks and 600 fewer guns than DIA thought, then air attrition (CENTCOM: 39% tanks, 32% APCs, 47% artillery; CIA/DIA lower). Counts above apply those decrements (derived, grade C). infantry_line ~65-75% of the 200,000-222,000, educated. Air force did not fight (hid or fled to Iran), so no aircraft are listed. Starts: frontline infantry divisions on the Saudi border, tactical armoured reserves (12th, 52nd, 17th, 10th Armd), coast and Kuwait City, western flank (26th, 45th Divs near As Salman), Republican Guard on the Kuwait-Iraq border. Tech: T-72M/T-62/T-55/Type 69, 1970s Soviet kit; ISR 7 (no air reconnaissance in the war); cyber 7 = computerised KARI air-defence network but no network warfare (educated, outside the anchor table). Ratings: command 0.25 (centralised, frozen); morale 0.2 (deserting, short of food and water after 38 days of bombing); training 0.4 (Republican Guard higher). Fortified: Saddam Line berms, minefields, fire trenches. prepared true: coalition breaching forces cleared fortified trench systems, bunkers and minefields built during the months of occupation (https://en.wikipedia.org/wiki/Gulf_War). objective kind hold: Iraq occupied Kuwait City from August 1990 and was ordered to hold Kuwait (https://en.wikipedia.org/wiki/Gulf_War)."
     }
   ],
   "outcome": {
