@@ -402,10 +402,17 @@ battle or change of territory for 120 days ends as at the time limit, unless
 forces are still on their way. Backtest objectives: a capture objective (not
 held at start) wins when taken; a hold objective is judged at the end, and the
 side still holding it wins. With `OBJECTIVE_KIND_EXPLICIT` a case can name the
-kind (`objective.kind` 'capture' | 'hold'); a named capture objective counts
-only once an own formation stands on it with no enemy there, so an objective
-inside the side's own start area is no longer a hold by accident. Unnamed
-kinds keep the inferred rule.
+kind (`objective.kind` 'capture' | 'hold' | 'destroy'). A named capture
+objective counts only once an own formation stands on it with no enemy there,
+and only if the enemy held the cell at the start; setup warns when it does
+not (it then cannot be won by capture). A destroy objective (`radiusKm`
+required) is won when every enemy formation standing within the radius at
+the start is destroyed or has surrendered, wherever it has gone since: an
+encircled army such as Stalingrad's 6th Army. Unnamed kinds keep the
+inferred rule. Measured: 19/15/22 -> 20/15/24 (Stalingrad ends on day 36-38
+by Axis army collapse instead of day 1; Yom Kippur 0% -> 70%, Israel takes
+Deversoir; Egypt's Mitla Pass objective starts in Egyptian control in the
+case's nearest-start split, so it warns).
 
 Backtest case construction toggles, measured and left OFF (each cost one
 loss-ratio pass): `CASE_SUPPLY_RANGE_FROM_SNAPSHOT` (synthesized sides borrow

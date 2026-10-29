@@ -142,6 +142,8 @@ export interface SimState {
   startPersonnel: [number, number];
   startW: [number, number];
   startMorale: [number, number];
+  /** 'destroy' objectives: the enemy formations within the radius at the start, per side holding the objective. */
+  destroyTargets: [number[], number[]];
   addedW: [number, number];
   events: SimEvent[];
   battlesToday: BattleRec[];

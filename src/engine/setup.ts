@@ -46,7 +46,7 @@ export interface SimOptions {
   voronoiControl?: boolean;
 }
 
-export interface CaseObjective { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' }
+export interface CaseObjective { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' | 'destroy'; radiusKm?: number }
 
 export interface PlaceRT {
   name: string;
@@ -152,7 +152,9 @@ export interface Setup {
   sources: [SourceList, SourceList];
   objectiveCells: [number, number];
   /** Explicit objective kind per side, or undefined (inferred from initial control). */
-  objectiveKinds: [('capture' | 'hold' | undefined), ('capture' | 'hold' | undefined)];
+  objectiveKinds: [CaseObjective['kind'], CaseObjective['kind']];
+  /** 'destroy' objectives: radius around the objective point (km), else 0. */
+  objectiveRadiusKm: [number, number];
   /** Terrain index -> movement multiplier (mid), combat factors, forage yield. */
   terrMove: Float64Array; terrAttack: Float64Array; terrMounted: Float64Array; forageYield: Float64Array;
   maxTerrMove: number;
@@ -833,6 +835,11 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
   for (const side of [0, 1] as const) {
     const o = opts.objectives?.[side];
     if (o && inBbox(grid.bbox, o.lat, o.lon)) objectiveCells[side] = nearestLand(grid, o.lat, o.lon);
+    const oc = objectiveCells[side];
+    if (o && oc >= 0 && o.kind === 'capture' && control0[oc] !== 1 - side) {
+      warnings.push(`${scenario.sides[side].name}: capture objective ${o.name} is ${control0[oc] === side ? 'in its own control' : 'not enemy-held'} at the start; it cannot be won by capture.`);
+    }
+    if (o && o.kind === 'destroy' && !(o.radiusKm! > 0)) warnings.push(`${scenario.sides[side].name}: destroy objective ${o.name} has no radiusKm; it cannot be won.`);
   }
   if (opts.fortified) {
     for (const side of [0, 1] as const) {
@@ -879,6 +886,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     } : { noiseSigma: BATTLE_NOISE_SIGMA, collapsePersonnel: COLLAPSE_PERSONNEL_FRACTION, collapseMorale: COLLAPSE_MORALE, fogError: FOG_STRENGTH_ERROR, blockade: BLOCKADE_SEA_CONTROL },
     places, placeAt, control0, owner0, startCells, seeds, fleet0, air0, poolTech, sources, objectiveCells,
     objectiveKinds: [opts.objectives?.[0]?.kind, opts.objectives?.[1]?.kind],
+    objectiveRadiusKm: [opts.objectives?.[0]?.radiusKm ?? 0, opts.objectives?.[1]?.radiusKm ?? 0],
     terrMove, terrAttack, terrMounted, forageYield, maxTerrMove,
     H: Math.max(1, Math.round(m.combat.battleHoursPerDay.mid)),
     southern, warnings,

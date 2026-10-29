@@ -125,6 +125,10 @@ export function validateAll(): { issues: Issue[]; counts: Record<string, number>
   for (const f of listJson('battles')) {
     const b = JSON.parse(readFileSync(f, 'utf8'));
     if (!vBattle(b)) { ajvErr(f, vBattle.errors); continue; }
+    for (const sd of (b.sides ?? []) as { name: string; objective?: { kind?: string; radiusKm?: number } }[]) {
+      const o = sd.objective;
+      if (o?.kind === 'destroy' && !((o.radiusKm ?? 0) > 0)) issues.push({ file: f, level: 'error', msg: `${sd.name}: destroy objective needs radiusKm > 0` });
+    }
     counts.battles++;
   }
 

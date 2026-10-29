@@ -276,10 +276,14 @@ export interface BattleSide {
   surprise?: boolean;
   /** Campaign only: where formations start and what they are. */
   startPositions?: { lat: number; lon: number; share: number }[];
-  /** Campaign victory objective for this side, e.g. capture this place. */
-  /** kind: 'capture' (won when taken) or 'hold' (won if still held at the end). Default: inferred
-   *  from initial control (capture if the side does not control it at the start). */
-  objective?: { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' };
+  /** Campaign victory objective for this side.
+   *  kind 'capture': won when an own formation stands on the cell with no enemy there; the cell must
+   *    be enemy-held at the start (setup warns otherwise and the objective cannot be won).
+   *  kind 'hold': won if still held at the end (time limit or stalemate).
+   *  kind 'destroy': won when every enemy formation standing within radiusKm of the point at the start
+   *    is destroyed or has surrendered (an encircled army: Stalingrad 1942-43). radiusKm is required.
+   *  Default (no kind): inferred from initial control (capture if the side does not control it). */
+  objective?: { name: string; lat: number; lon: number; kind?: 'capture' | 'hold' | 'destroy'; radiusKm?: number };
   reinforcements?: { day: number; forces: Partial<Record<UnitRole, Range>> }[];
   note?: string;
 }

@@ -164,8 +164,13 @@ export function victoryPhase(ctx: Ctx): void {
     // a capture objective (not held at start) wins when taken; a hold objective is judged at the end
     const oc = S.objectiveCells[s];
     const kind = OBJECTIVE_KIND_EXPLICIT ? S.objectiveKinds[s] : undefined;
-    if (!wins[s] && oc >= 0 && sc.occ[o][oc] === 0 && st.control[oc] === s) {
-      if (kind === 'capture' ? sc.occ[s][oc] > 0 : kind === undefined && S.control0[oc] !== s) wins[s] = 'took its objective';
+    if (!wins[s] && oc >= 0 && kind === 'destroy') {
+      const tg = st.destroyTargets[s];
+      if (tg.length > 0 && tg.every((f) => !st.F.alive[f])) wins[s] = 'destroyed the enemy force at its objective';
+    } else if (!wins[s] && oc >= 0 && sc.occ[o][oc] === 0 && st.control[oc] === s) {
+      // capture counts only for a cell the enemy held at the start (QA round 2: own-territory
+      // objectives were "taken" on day 1 with no battle)
+      if (kind === 'capture' ? sc.occ[s][oc] > 0 && S.control0[oc] === o : kind === undefined && S.control0[oc] !== s) wins[s] = 'took its objective';
     }
   }
   if (wins[0] && wins[1]) { end(ctx, 'draw', `both sides met a victory condition (${wins[0]}; ${wins[1]})`); return; }

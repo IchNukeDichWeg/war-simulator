@@ -11,6 +11,7 @@ import { Rng } from './rng';
 import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './ctx';
 import { spawnFormation } from './formations';
 import { NR } from './roles';
+import { haversineKm } from './grid';
 import { AI_MAX_OBJECTIVES, RETURN_RING_DAYS } from './constants';
 import { productionPhase } from './production';
 import { aiPhase } from './ai';
@@ -88,6 +89,7 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
     startPersonnel: [0, 0],
     startW: [0, 0],
     startMorale: [0, 0],
+    destroyTargets: [[], []],
     addedW: [0, 0],
     events: [],
     battlesToday: [],
@@ -115,6 +117,17 @@ export function simFromSetup(S: Setup, seed: number): Sim {
     st.startMorale[F.side[f]] += F.morale[f] * F.curW[f];
   }
   for (const s of [0, 1] as const) st.startMorale[s] = st.startW[s] > 0 ? st.startMorale[s] / st.startW[s] : 0;
+  // 'destroy' objective: the target force is the enemy standing within the radius at the start
+  for (const s of [0, 1] as const) {
+    const oc = S.objectiveCells[s], rk = S.objectiveRadiusKm[s];
+    if (S.objectiveKinds[s] !== 'destroy' || oc < 0 || !(rk > 0)) continue;
+    const g = S.grid;
+    for (let f = 0; f < F.n; f++) {
+      if (F.side[f] === s || !F.alive[f] || !F.onMap[f]) continue;
+      if (haversineKm(g.lat[oc], g.lon[oc], g.lat[F.cell[f]], g.lon[F.cell[f]]) <= rk) st.destroyTargets[s].push(f);
+    }
+    if (!st.destroyTargets[s].length) S.warnings.push(`${S.sideNames[s]}: no enemy formation within ${rk} km of its destroy objective at the start; it cannot be won.`);
+  }
   rebuildOccupancy(ctx);
   for (const w of S.warnings) void w;
   const cursor: FrameCursor = { eventIdx: 0, controlVersion: -1, controlDay: -1 };

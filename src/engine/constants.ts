@@ -130,10 +130,12 @@ export const CASE_SUPPLY_RULE_ON = false;
  *  OFF: measured negative alone, 20/15/22 -> 20/14/22: Iraq 2003 improves (100%, 24 days vs 21
  *  historical, ratio x0.76) but Stalingrad's loss ratio goes x1.79 -> x0.19. */
 export const CASE_CAPITAL_UNFORTIFIED = false;
-/** Objective kind from the case (objective.kind 'capture' | 'hold') instead of inferring it from the
- *  nearest-start control split; a capture objective is taken when an own formation stands on it
- *  with no enemy there (QA C6). Cases without kind keep the inferred rule. No case sets a kind
- *  yet, so it measures neutral (20/15/22). */
+/** Objective kind from the case (objective.kind 'capture' | 'hold' | 'destroy') instead of inferring
+ *  it from the nearest-start control split (QA C6). A capture objective is taken when an own
+ *  formation stands on it with no enemy there, and only if the enemy held it at the start (QA
+ *  round 2: Stalingrad and Yom Kippur were "taken" on day 1-3 with no battle). A destroy objective
+ *  is won when every enemy formation within radiusKm at the start is gone. Cases without kind keep
+ *  the inferred rule. Measured with the start-control rule: 19/15/22 -> 20/15/24. */
 export const OBJECTIVE_KIND_EXPLICIT = true;
 /** Hospital admissions from the sourced model rules (per era of the member): deaths and
  *  discharges = attrition.diseaseDeathShareOfAdmissions (WWII 0.03, napoleonic 0.15), the rest
