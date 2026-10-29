@@ -8,7 +8,8 @@ import { UnitStatus } from './protocol';
 import { FLAG_RIVER } from './terrainClasses';
 import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
-  PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING } from './constants';
+  PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
+  DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -192,6 +193,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   const cls = g.cls[cell];
   const place = S.placeAt[cell];
   const fortified = place >= 0 && S.places[place].fortified && st.control[cell] === def;
+  // storming walls (assaultFactor) vs attacking a field position (power factor only)
+  const stormed = fortified && !(ASSAULT_ONLY_REAL_FORTS && S.places[place].fieldWorks);
   const se = S.specialEffect;
   const fixMult = new Float64Array(b.parts[0].length + b.parts[1].length);
   const sideOff = [0, b.parts[0].length];
@@ -229,9 +232,14 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (F.cell[f] !== cell && (g.flags[cell] & FLAG_RIVER)) posture *= m.combat.riverCrossingFactor.mid;
         if (opening && S.opts.surprise?.[s]) posture *= m.combat.surpriseFactor.mid;
       } else {
-        if (F.stillDays[f] >= 1 && F.mode[f] !== Mode.Rout) posture *= m.combat.defensePostureFactor.mid;
-        if (fortified && F.cell[f] === cell) posture *= mr.fortF;
-        if (mr.specials.has('field_fortification')) posture *= se('fieldFortification');
+        const prepared = S.battleMode && PREPARED_FROM_CASE ? !!S.opts.prepared?.[s] && F.mode[f] !== Mode.Rout
+          : F.stillDays[f] >= 1 && F.mode[f] !== Mode.Rout;
+        const alt = [
+          prepared ? m.combat.defensePostureFactor.mid : 1,
+          fortified && F.cell[f] === cell ? mr.fortF : 1,
+          mr.specials.has('field_fortification') ? se('fieldFortification') : 1,
+        ];
+        posture *= DEFENSE_ALTERNATIVES_MAX ? Math.max(...alt) : alt[0] * alt[1] * alt[2];
         if (mr.specials.has('defense_in_depth')) posture *= se('defenseInDepth');
         if (S.owner0[F.cell[f]] === mr.idx) posture *= mr.homeDefense;
         if (opening && S.opts.surprise?.[s]) posture *= m.combat.surpriseFactor.mid;
@@ -297,7 +305,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
     loss[def] = (prof[def].baseCas * Math.pow(Rd, prof[def].alpha)) / H * rng.lognormal(BATTLE_NOISE_SIGMA);
     loss[att] = (prof[att].baseCas * Math.pow(Ra, prof[att].alpha)) / H * rng.lognormal(BATTLE_NOISE_SIGMA);
     // storming a fortified place: siege.assaultFactor multiplies the attacker's loss rate
-    if (fortified) loss[att] *= m.siege.assaultFactor.mid;
+    if (stormed) loss[att] *= m.siege.assaultFactor.mid;
     for (const s of [0, 1] as const) {
       if (prof[s].specials.has('human_wave')) loss[s] *= se('humanWaveOwnLoss');
       // feigned retreat: once per battle, in the second round, the pursuers pay

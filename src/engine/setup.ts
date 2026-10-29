@@ -28,6 +28,8 @@ export interface SimOptions {
   starts?: [Start[] | undefined, Start[] | undefined];
   postures?: ['attack' | 'defend', 'attack' | 'defend'];
   fortified?: [boolean, boolean];
+  /** Battle mode: defender in a prepared defence (BattleSide.prepared). */
+  prepared?: [boolean, boolean];
   surprise?: [boolean, boolean];
   reinforcements?: [{ day: number; counts: Partial<Record<UnitRole, number>> }[], { day: number; counts: Partial<Record<UnitRole, number>> }[]];
   objectives?: [{ name: string; lat: number; lon: number } | null, { name: string; lat: number; lon: number } | null];
@@ -44,6 +46,8 @@ export interface PlaceRT {
   kind: string;
   pop: number;
   fortified: boolean;
+  /** A battle case's field position (trenches, minefields), not a walled place. */
+  fieldWorks?: boolean;
   capital: boolean;
   port: boolean;
 }
@@ -796,7 +800,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       if (c < 0) continue;
       const mi = sideMembers[side][0];
       placeAt[c] = places.length;
-      places.push({ name: 'Fortified position', cell: c, member: mi, side, kind: 'fortress', pop: 0, fortified: true, capital: false, port: false });
+      places.push({ name: 'Fortified position', cell: c, member: mi, side, kind: 'fortress', pop: 0, fortified: true, fieldWorks: true, capital: false, port: false });
     }
   }
 

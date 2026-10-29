@@ -237,6 +237,9 @@ export interface BattleSide {
   training?: number;
   doctrineId?: string;
   fortified?: boolean;
+  /** Defender in a prepared defence (QJM 'prepared', defensePostureFactor): dug in and deployed
+   *  in advance, not a hasty or marching defence. Default false. */
+  prepared?: boolean;
   surprise?: boolean;
   /** Campaign only: where formations start and what they are. */
   startPositions?: { lat: number; lon: number; share: number }[];

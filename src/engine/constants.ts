@@ -72,6 +72,17 @@ export const MORALE_ON_ENGAGED_BASIS = true;
  *  they have the horse-archer mobility edge. Without it every pre-gunpowder loser withdrew intact
  *  (0 routs in 77-209 losing formations per case) and lost 10-20% of its historical losses. */
 export const PURSUE_WITHDRAWING = true;
+/** Defender posture takes the MAX of the alternatives QJM gives (prepared defence, hasty field
+ *  fortification, fortified place) instead of their product: 1.5 x 1.3 = 1.95 exceeded QJM's own
+ *  fortified 1.6 for every defender of a field_fortification doctrine (QA B3). */
+export const DEFENSE_ALTERNATIVES_MAX = true;
+/** siege.assaultFactor (sourced on storming the breach at Badajoz) multiplies the attacker's loss
+ *  rate only at real fortified places, not at a battle case's field position (minefields at
+ *  El Alamein and Kursk got x3 attacker losses). Field positions keep the fortification power factor. */
+export const ASSAULT_ONLY_REAL_FORTS = true;
+/** In battle mode a defender counts as a prepared defence only when the case says so
+ *  (BattleSide.prepared); before, every battle-mode defender was 'prepared' because it spawned still. */
+export const PREPARED_FROM_CASE = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so

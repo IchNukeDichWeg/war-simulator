@@ -84,7 +84,8 @@ P_F = sum_r count_r x OLI_r
       x terrainAttackFactor[terrain] (attacker only) x terrainMountedFactor (mounted/vehicle roles)
       x qualityFactor(quality_r) x trainingFactor(training_r) x commandFactor(commandQuality)
       x moraleFactor (= 0.5 + morale) x supplyFactor (ammo/fuel fraction for tech >= 6)
-      x posture (defensePostureFactor for a prepared defender, fortificationFactor in a fortified city)
+      x posture: max(defensePostureFactor if prepared, fortificationFactor in a fortified place,
+                     fieldFortification for field_fortification doctrines)   (alternatives, not a product)
       x surpriseFactor (if surprise) x riverCrossingFactor (attacking across a river)
       x combinedArms (1 + combinedArmsBonus x doctrine.combinedArms x roleDiversity)
       x modern gaps: (1 + isrPerLevel x gapISR) (1 + ewPerLevel x gapComms) (1 + cyberPerLevel x gapCyber)
@@ -128,7 +129,16 @@ count as targets, and an out-of-supply side fires with less but is not a
 smaller target; the plain R form gave R = infinity (a side that could not
 reach the enemy took the 50% cap) and let a bronze-age force shred
 unsupplied modern formations. Storming a fortified place multiplies the
-attacker's loss rate by `siege.assaultFactor` (not attacker power).
+attacker's loss rate by `siege.assaultFactor` (not attacker power), and only
+at real fortified places: a battle case's `fortified` field position gets the
+fortification power factor but not the breach-storming factor
+(`ASSAULT_ONLY_REAL_FORTS`). The defender's prepared defence, fortification
+and field fortification are QJM alternatives, so the largest applies
+(`DEFENSE_ALTERNATIVES_MAX`; their product reached 1.95, above QJM fortified
+1.6). In battle mode a defender is prepared only when the case says so
+(`BattleSide.prepared`, default false, `PREPARED_FROM_CASE`); in war mode a
+defender that stood still for a day is prepared. Measured together: winner
+12 -> 14, loss ratio 13 -> 16, duration 21 -> 22 of 24.
 The withdraw threshold is min(`retreatThreshold`, 0.9 x effective breakpoint)
 with effective breakpoint = `breakpoint(tech)` + `cohesionBreakpointShift` x
 (cohesion - 0.5), so withdrawal always comes before the rout. Morale falls by

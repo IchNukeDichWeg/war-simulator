@@ -181,12 +181,13 @@ const battleSide = obj({
   training: { type: 'number', minimum: 0, maximum: 1 },
   doctrineId: { type: 'string' },
   fortified: { type: 'boolean' },
+  prepared: { type: 'boolean' },
   surprise: { type: 'boolean' },
   startPositions: { type: 'array', items: obj({ lat: { type: 'number' }, lon: { type: 'number' }, share: { type: 'number' } }) },
   objective: obj({ name: { type: 'string' }, lat: { type: 'number' }, lon: { type: 'number' } }),
   reinforcements: { type: 'array', items: obj({ day: { type: 'number' }, forces: roleMap(range) }) },
   note: { type: 'string' },
-}, ['snapshotId', 'tech', 'commandQuality', 'morale', 'training', 'doctrineId', 'fortified', 'surprise', 'startPositions', 'objective', 'reinforcements', 'note']);
+}, ['snapshotId', 'tech', 'commandQuality', 'morale', 'training', 'doctrineId', 'fortified', 'prepared', 'surprise', 'startPositions', 'objective', 'reinforcements', 'note']);
 
 export const battleSchema = {
   $id: 'battle',
