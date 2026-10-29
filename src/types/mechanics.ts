@@ -48,6 +48,11 @@ export interface Mechanics {
     rangeKm: Record<UnitRole, ByTech>;
   };
 
+  org: {
+    /** Personnel per manoeuvre formation (legion, corps, division, brigade) by tech level. */
+    formationSize: ByTech;
+  };
+
   /** When a role does not exist at the target tech level (era-equalized mode),
    *  its personnel/platforms are converted to another role. Ordered by fromTech. */
   roleRemap: Record<UnitRole, { fromTech: number; to: UnitRole; ratio: number }[]>;
@@ -56,8 +61,10 @@ export interface Mechanics {
     /** Fraction of engaged strength lost per day by the side in a stand-up
      *  fight at force ratio 1:1, by tech level (Dupuy/Helmbold base rates). */
     baseDailyCasualtyRate: ByTech;
-    /** Lanchester exponent blend: 1 = linear law (ancient melee), 2 = square law. */
-    lanchesterExponent: ByTech;
+    /** Exponent alpha on the power ratio R in fractional loss rates:
+     *  loser-side daily loss = base x R^alpha, other side base x R^-alpha
+     *  (Helmbold / Dupuy: casualty rates respond less than proportionally to force ratio). */
+    powerRatioExponent: ByTech;
     defensePostureFactor: MV;      // prepared defence vs hasty attack
     fortificationFactor: ByTech;   // per fortification tech level, for a fortified city
     surpriseFactor: MV;
@@ -75,6 +82,11 @@ export interface Mechanics {
     commandFactor: MV;
     /** Shift of the morale breakpoint per unit of cohesion above/below 0.5. */
     cohesionBreakpointShift: MV;
+    /** Multipliers for doctrine specials in battle. Keys: phalanxFront, phalanxFlank,
+     *  horseArcheryOpening, feignedRetreatPursuerLoss, fieldFortification,
+     *  massedArtillery, defenseInDepth, humanWavePower, humanWaveOwnLoss,
+     *  siegeEngineering, blitzExploitation, deepBattleBreakthrough. */
+    specialEffects: Record<string, MV>;
   };
 
   morale: {
