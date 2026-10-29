@@ -1,0 +1,771 @@
+{
+  "id": "spain-2026",
+  "nationId": "spain",
+  "includes": [],
+  "name": "Kingdom of Spain",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "EU",
+    "parliamentary monarchy",
+    "all-volunteer force",
+    "Mediterranean",
+    "Atlantic"
+  ],
+  "capital": {
+    "name": "Madrid",
+    "lat": 40.4168,
+    "lon": -3.7038,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Barcelona",
+      "lat": 41.3874,
+      "lon": 2.1686,
+      "kind": "port"
+    },
+    {
+      "name": "Valencia",
+      "lat": 39.4699,
+      "lon": -0.3763,
+      "kind": "port"
+    },
+    {
+      "name": "Seville",
+      "lat": 37.3891,
+      "lon": -5.9845,
+      "kind": "city"
+    },
+    {
+      "name": "Zaragoza",
+      "lat": 41.6488,
+      "lon": -0.8891,
+      "kind": "city"
+    },
+    {
+      "name": "Bilbao",
+      "lat": 43.263,
+      "lon": -2.935,
+      "kind": "port"
+    },
+    {
+      "name": "Cartagena naval base",
+      "lat": 37.5986,
+      "lon": -0.986,
+      "kind": "port"
+    },
+    {
+      "name": "Ferrol naval base",
+      "lat": 43.4831,
+      "lon": -8.2369,
+      "kind": "port"
+    },
+    {
+      "name": "Rota naval base",
+      "lat": 36.6206,
+      "lon": -6.3497,
+      "kind": "port"
+    },
+    {
+      "name": "Las Palmas de Gran Canaria",
+      "lat": 28.1235,
+      "lon": -15.4363,
+      "kind": "port"
+    },
+    {
+      "name": "Ceuta",
+      "lat": 35.8894,
+      "lon": -5.3213,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strait of Gibraltar",
+      "lat": 35.95,
+      "lon": -5.6,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "La Jonquera / Le Perthus pass (Pyrenees)",
+      "lat": 42.42,
+      "lon": 2.87,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:ESP",
+    "areaKm2": {
+      "low": 499686,
+      "mid": 505981,
+      "high": 505981,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 505,981 km2 (AG.SRF.TOTL.K2); low is land area 499,686 km2 (AG.LND.TOTL.K2). Includes Balearic and Canary Islands, Ceuta and Melilla."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 48848840,
+      "mid": 49355143,
+      "high": 49800000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank SP.POP.TOTL 49,355,143). Low is the 2024 value; high allows for 2026 growth at the recent ~1%/yr immigration-driven rate. Everything inside ne:ESP incl. Canaries, Ceuta, Melilla."
+    },
+    "urbanization": {
+      "low": 0.8,
+      "mid": 0.805,
+      "high": 0.81,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 80.51% urban (SP.URB.TOTL.IN.ZS)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 117000,
+      "mid": 122200,
+      "high": 125000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025 p.134 as quoted: 122,200 active (excludes 87,450 Guardia Civil paramilitary). CIA Factbook 2025 gives ~120,000; low/high span both. World Bank MS.MIL.TOTL.P1 199,000 (2020) includes paramilitary."
+    },
+    "trainedReserves": {
+      "low": 8478,
+      "mid": 13800,
+      "high": 15000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2025: 13,800 reserves. Low is the Army reserve figure 8,478 (2022, Spanish Army article citing Anuario Estadistico Militar). Spain has no conscript reserve; mobilization of 19-25 year olds is legally possible (CIA Factbook)."
+    },
+    "supportPersonnel": {
+      "low": 90000,
+      "mid": 103200,
+      "high": 110000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 122,200 (IISS 2025) minus infantry P roles (6,000 + 13,000). Covers navy (25,449 personnel 2025 per Spanish Navy article, minus the marine infantry counted under infantry_light), air force (26,953, 2025), armour/artillery crews, logistics, staff, UME."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to 20th-century Western European total-war mobilization (WWII belligerents reached roughly 8-15% of population); scaled down for an all-volunteer force with no conscript reserve and no stored equipment to arm mass levies. Educated judgement."
+    },
+    "mobilizable": {
+      "low": 1974206,
+      "mid": 3454860,
+      "high": 4935514,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 49,355,143 x ratio 0.04 / 0.07 / 0.10."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 9000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Spanish_Army",
+          "note": "Educated guess. Mechanized/armoured infantry personnel: roughly 10 mechanized battalions (BRI X, XI, XII, Canarias motorized) x ~550 infantry. Army strength 91,775 (2025) per Spanish Army article; the rest is crews, artillery, support."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row quality 0.75 (among era best): Pizarro IFV, Dragon 8x8 entering service, but many M113/BMR still in use."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row training 0.75: professional standing army; NATO eFP rotations in Latvia/Slovakia."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 9000,
+          "mid": 13000,
+          "high": 17000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Spanish_Armed_Forces",
+          "note": "Educated guess. Light, airborne (BRIPAC), Legion, mountain and marine infantry (~5,000 marines per Spanish Armed Forces article): ~24 battalions x ~500 plus marines."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band, slightly lower: light kit, VAMTAC/RG-31 mobility."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75-1.0: Legion and paratroopers are long-service professionals with Afghanistan/Iraq/Mali experience."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 274,
+          "mid": 274,
+          "high": 299,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+          "note": "IISS Military Balance 2025 as quoted: 219 Leopard 2E + 55 Leopard 2A4 active; high adds 25 Leopard 2A4 in storage. Excludes 82 Centauro wheeled tank destroyers (counted nowhere; note for editors)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Leopard 2E is a contemporary 2A6-class tank without active protection."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1700,
+          "mid": 2100,
+          "high": 2300,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+          "note": "Sum of listed in-service figures: Pizarro 204 + Pizarro command 21 + Dragon 8x8 119 + M113 family 800 + BMR-600 648 + RG-31 150 + VEC-M1 135 = 2,077. Low allows for IISS counting fewer active M113/BMR."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 era-typical: fleet dominated by M113 and BMR (1970s-80s designs), Pizarro and Dragon modern."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 220,
+          "mid": 234,
+          "high": 260,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+          "note": "M109A5E 96 + SBS 155/52 82 + L118 105mm 56 = 234 tubes >=105mm. No MLRS delivered yet (SILAM 0/12); K9 ordered (0/128 delivered). 120mm mortars excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 era-typical: M109A5E is old; no MLRS."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 140,
+          "mid": 151,
+          "high": 151,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Spanish_Air_and_Space_Force",
+          "note": "Air and Space Force inventory table: Eurofighter 70 + EF-18 Hornet (A+/M and B/BM) 81 = 151. Low allows for attrition and EF-18 retirements as Halcon Typhoons arrive."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: 4.5-generation Typhoon plus upgraded legacy Hornet; no 5th-generation aircraft."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: NATO-standard flying hours, Baltic Air Policing rotations."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 11,
+          "mid": 12,
+          "high": 13,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Spanish_Navy",
+          "note": "Navy AV-8B Harrier II: 12 EAV-8B + 1 TAV-8B (one EAV-8B lost 2024). Spain has no dedicated bombers; Typhoon/Hornet strike role counted under fighters."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Harrier II Plus is an aging design."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 180,
+          "mid": 197,
+          "high": 205,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+          "note": "Army 110 (Tiger 18, CH-47F 17, AS332 14, AS532 17, NH90 26, Bell 212 6, H135 12; World Air Forces 2025 as quoted) + Air Force 58 (NH90 12, AS332 10, AS532 2, S-76 8, EC120 15, H135 11; Air and Space Force article) + Navy 29 (NH90 4, SH-60B/F 18, H135 7; Spanish Navy article). Only 18 are attack helicopters."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: Tiger and NH90 modern, Bell 212/AS332 old."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 18,
+          "mid": 20,
+          "high": 30,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Spanish_Air_and_Space_Force",
+          "note": "Group 2+ UAVs only (hand-launched minis excluded): MQ-9A Block 5 4 (Air and Space Force) + Searcher Mk II/III 4 + Fulmar X 2 (Army list) + ScanEagle 8 (Navy) = 18. Excludes 72 RQ-11 Raven."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: MQ-9 modern, small fleet."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 12,
+          "mid": 12,
+          "high": 12,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Spanish_Navy_ships",
+          "note": "Convention used for all 2026 snapshots: ships_major = carriers/LHD + cruisers + destroyers + frigates. Juan Carlos I LHD 1 + Alvaro de Bazan (F-100, Aegis) 5 + Santa Maria (F-80) 6 = 12."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: F-100 Aegis frigates among era best; F-80 are 1980s design."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 27,
+          "mid": 29,
+          "high": 31,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Spanish_Navy_ships",
+          "note": "Galicia-class LPD 2 + Meteoro (BAM) OPV 6 + other patrol vessels 15 + Segura MCM 6 = 29. Auxiliaries (18) excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 3,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Spanish_Navy_ships",
+          "note": "Active list: Galerna (Agosta) 1 + Isaac Peral (S-80 Plus) 1. High allows for the second S-80 (Narciso Monturiol) entering service during 2026."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: S-80 Plus with AIP is modern, Agosta is old."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: long gap with very few boats."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 30,
+          "mid": 42,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+          "note": "Batteries/fire units derived from launcher counts on the Army equipment list: Patriot 18 launchers ~3 batteries, NASAMS 8 launchers ~2, I-Hawk 32 launchers ~5, Oerlikon 35mm 92 guns with 18 Skyguard fire-control units ~18, Mistral 168 launchers / ~12 per battery ~14. Total ~42."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Patriot/NASAMS modern, I-Hawk and Mistral 1 dated."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 professional."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 (trained staff system, proven commanders) slightly discounted: NATO-integrated staff, Spain hosts NATO CAOC Torrejon and a rapid deployable corps HQ (Valencia), but no large-scale combat command since 1939."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: professional force with strong unit identity (Legion, BRIPAC, marines)."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 average, slightly up for home defence: low public appetite for war abroad, high for defence of Ceuta/Melilla/Canaries."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 (1985 guided missiles, MBTs with FCS) and 10: Meteor, IRIS-T, Taurus, Spike; few drones/loitering munitions, no hypersonics."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 composite armour (Leopard 2E); no active protection systems fielded (anchor 10)."
+    },
+    "ships": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 (Aegis) to 10: F-100 Aegis frigates, AIP S-80; F-110 frigates not yet in service; no networked USV fleet."
+    },
+    "fortification": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 hardened shelters; partial layered air defence (Patriot, NASAMS) short of anchor 10."
+    },
+    "logistics": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 containerised + airlift (14 A400M), NATO logistics integration; limited sealift."
+    },
+    "communications": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: SPAINSAT NG military satellites, Link 16, NATO C2."
+    },
+    "isr": {
+      "low": 9.0,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 satellites (PAZ radar satellite) plus a small MQ-9 fleet; short of persistent drone ISR (10)."
+    },
+    "air": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 9 (1985 jets) and 10 (5th generation): Typhoon is 4.5 generation, no F-35."
+    },
+    "cyber": {
+      "low": 9.3,
+      "mid": 9.5,
+      "high": 9.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 state cyber forces partly met: Mando Conjunto del Ciberespacio (MCCE) exists; mid-tier capacity."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 35531,
+      "mid": 39479,
+      "high": 43427,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.PCAP.PP.KD 49,318.1 (2021 int$) x 0.8005 = 39,479 2011 int$. Range +/-10%."
+    },
+    "gdp": {
+      "low": 1753648895664,
+      "mid": 1948498772960,
+      "high": 2143348650257,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 2,434,102,152,355 x 0.8005 (US GDP deflator 2011/2021) = 1,948,498,772,960 2011 int$. Range +/-10% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0146,
+      "mid": 0.0213,
+      "high": 0.0213,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 2.13% of GDP in 2025 (NATO 2% pledge reached), 1.46% in 2024, 1.37% in 2021. Low is 2024."
+    },
+    "industrialShare": {
+      "low": 0.19,
+      "mid": 0.196,
+      "high": 0.21,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 19.6% of GDP (NV.IND.TOTL.ZS); 21.2% in 2022."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.25,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: large net exporter of fruit, vegetables, olive oil and pork but imports feed grain; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 246230,
+      "mid": 273589,
+      "high": 300948,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 24,226,170 x share of males aged 15-19 5.647% (SP.POP.1519.MA.5Y) / 5 = 273,589. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+        "note": "Educated guess: Leopard 2E line (Santa Barbara Sistemas) is closed; the Leopard 2A8 replacement is planned but not in production."
+      },
+      "ifv_apc": {
+        "low": 60,
+        "mid": 120,
+        "high": 200,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Spanish_Army",
+        "note": "Educated guess: Dragon 8x8 programme (348 first phase, 119 delivered) at Indra/Santa Barbara/Escribano; wartime surge could roughly double peacetime rate."
+      },
+      "aircraft_fighter": {
+        "low": 3,
+        "mid": 8,
+        "high": 15,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/Spanish_Air_and_Space_Force",
+        "note": "Educated guess: Airbus Getafe is one of four Eurofighter final assembly lines (Halcon I/II orders); 1-2 per month at full rate with European supply chain."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/Spanish_Navy",
+        "note": "Educated guess: Navantia Ferrol builds F-110 frigates (first entering service ~2026-27); about one hull per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 650000,
+      "mid": 683175,
+      "high": 683175,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted: 683,175 km roads, all paved (2020), incl. 17,228 km controlled-access highway. Low allows for definitional differences (municipal roads)."
+    },
+    "railKm": {
+      "low": 15489,
+      "mid": 15963,
+      "high": 15963,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/ESP/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 15,963 route-km (World Bank). CIA Factbook 15,489 km (2020). Mixed Iberian/standard gauge; standard-gauge high-speed network connects to France."
+    },
+    "majorPorts": {
+      "low": 9,
+      "mid": 17,
+      "high": 17,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/europe/sp.json",
+      "note": "CIA Factbook 2024: 52 ports, 3 large + 14 medium = 17; 17 key ports named (Algeciras-region, Barcelona, Valencia, Bilbao, Las Palmas...). Low counts only large ports plus main naval bases."
+    },
+    "merchantTonnage": {
+      "low": 1601000,
+      "mid": 1601000,
+      "high": 4000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 1,601 thousand DWT under the Spanish flag (incl. Canary Islands special register). High is an educated guess for Spanish-owned tonnage under foreign flags."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess by analogy to NATO mechanized brigade sustainment (truck-based, depots every ~150-200 km); Spain has limited deployable logistics and 14 A400M."
+    },
+    "draftAnimals": {
+      "low": 400000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess for horses, mules and donkeys (not from FAO data). Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "Spain is a non-nuclear-weapon state (NPT); not listed by FAS. No NATO nuclear sharing in Spain."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "nato-european-2026",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Strait of Gibraltar",
+      "Pyrenees passes",
+      "Alboran Sea",
+      "Canary Islands approaches"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar mountainous terrain (Meseta, Pyrenees, Cantabrian range), local supply, population support; no harsh-climate/deep-depth bonus."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: everything inside ne:ESP (peninsula, Balearics, Canaries, Ceuta, Melilla); World Bank figures. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts from IISS Military Balance 2025 as quoted on Wikipedia, Wikipedia inventory tables (World Air Forces 2025), and the active-ships list; ships_major = carriers/LHD + cruisers + destroyers + frigates; ships_minor = LPD/LSD, corvettes, OPVs, patrol, MCM; drones = Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). basesAbroad empty: Spain has no permanent overseas bases; ~3,000 troops deployed on EU/NATO/UN missions (CIA Factbook 2025). Guardia Civil (87,450) is paramilitary and excluded. US Naval Station Rota and Moron Air Base are on Spanish soil but belong to the US basing network."
+}

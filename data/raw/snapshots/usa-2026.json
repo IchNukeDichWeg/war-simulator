@@ -1,0 +1,976 @@
+{
+  "id": "usa-2026",
+  "nationId": "usa",
+  "includes": [],
+  "name": "United States of America",
+  "year": 2026,
+  "era": "modern",
+  "region": "north_america",
+  "phase": "current",
+  "tags": [
+    "NATO",
+    "superpower",
+    "nuclear power",
+    "federal republic",
+    "all-volunteer force",
+    "blue-water navy",
+    "global basing"
+  ],
+  "capital": {
+    "name": "Washington, D.C.",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "New York City",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "kind": "port"
+    },
+    {
+      "name": "Los Angeles",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "kind": "port"
+    },
+    {
+      "name": "Chicago",
+      "lat": 41.8781,
+      "lon": -87.6298,
+      "kind": "city"
+    },
+    {
+      "name": "Houston",
+      "lat": 29.7604,
+      "lon": -95.3698,
+      "kind": "port"
+    },
+    {
+      "name": "Naval Station Norfolk",
+      "lat": 36.9466,
+      "lon": -76.3297,
+      "kind": "port"
+    },
+    {
+      "name": "Naval Base San Diego",
+      "lat": 32.684,
+      "lon": -117.129,
+      "kind": "port"
+    },
+    {
+      "name": "Pearl Harbor (Hawaii)",
+      "lat": 21.3649,
+      "lon": -157.95,
+      "kind": "port"
+    },
+    {
+      "name": "Naval Base Kitsap (Puget Sound)",
+      "lat": 47.56,
+      "lon": -122.65,
+      "kind": "port"
+    },
+    {
+      "name": "Fort Bragg / Fort Liberty area",
+      "lat": 35.139,
+      "lon": -79.006,
+      "kind": "fortress"
+    },
+    {
+      "name": "Cheyenne Mountain",
+      "lat": 38.744,
+      "lon": -104.846,
+      "kind": "fortress"
+    },
+    {
+      "name": "Anchorage (JB Elmendorf-Richardson)",
+      "lat": 61.25,
+      "lon": -149.8,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bering Strait",
+      "lat": 65.75,
+      "lon": -168.8,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:USA",
+    "areaKm2": {
+      "low": 9147420,
+      "mid": 9831510,
+      "high": 9831510,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 9,831,510 km2 (AG.SRF.TOTL.K2, incl. inland and coastal waters); low is land area 9,147,420 km2 (AG.LND.TOTL.K2). 50 states + DC."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 340003797,
+      "mid": 341784857,
+      "high": 344000000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank 341,784,857). Low is 2024; high allows for 2026 growth. 50 states + DC; excludes Puerto Rico, Guam and other territories (~3.6 million)."
+    },
+    "urbanization": {
+      "low": 0.8,
+      "mid": 0.802,
+      "high": 0.81,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 80.19% urban."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1280000,
+      "mid": 1340150,
+      "high": 1345000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.39 as quoted: 1,340,150 active. CIA Factbook 2025: ~1.28 million (Army 450,000, Navy 334,000, Air Force 317,000, Space Force 10,000, Marine Corps 168,000) plus 42,000 Coast Guard; low is that figure. World Bank MS.MIL.TOTL.P1 1,395,000 (2020)."
+    },
+    "trainedReserves": {
+      "low": 750000,
+      "mid": 804800,
+      "high": 850000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 804,800 reserves (Selected Reserve incl. Army and Air National Guard). Individual Ready Reserve (~200k+) not counted as callable within 30 days."
+    },
+    "supportPersonnel": {
+      "low": 1180000,
+      "mid": 1263150,
+      "high": 1280000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 1,340,150 minus infantry P roles (22,000 + 55,000). Navy, Air Force, Space Force, armour/artillery/aviation crews, logistics, staff. US tooth-to-tail is long by design."
+    },
+    "mobilizationRatio": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.13,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "US WWII analogue (National WWII Museum page): peak strength 12,209,238 (1945) and ~17.9 million served 1941-45 against a population of roughly 132-140 million, i.e. ~9% peak and ~13% cumulative. Mid 0.10; low 0.07 reflects a less labour-intensive modern force and industrial labour needs."
+    },
+    "mobilizable": {
+      "low": 23924940,
+      "mid": 34178486,
+      "high": 44432031,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 341,784,857 x ratio 0.07 / 0.10 / 0.13."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 18000,
+          "mid": 22000,
+          "high": 30000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/United_States_Army",
+          "note": "Educated guess. Mechanized and Stryker infantry: ~6 Stryker BCTs x ~2,100 infantry + ~11 armored BCTs x ~800 mech infantry (BCT counts approximate after the 2025 Army Transformation Initiative). Army active ~450,000 (CIA Factbook 2025)."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric quality 1.0: US 2026 is the rubric's own anchor for era best."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric training 0.75-1.0: long-service professionals, CTC rotations; limited large-scale combat experience since 2003."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 45000,
+          "mid": 55000,
+          "high": 75000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/United_States_Marine_Corps",
+          "note": "Educated guess. ~11 active infantry BCTs (82nd, 101st, 10th Mtn, 25th, 11th Abn, 173rd) x ~2,000 + Rangers ~3,500 + Army SF ~7,000 + Marine infantry ~21-24 battalions x ~900 + Raiders."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor (US 2026), slightly lower for light vehicles."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: airborne, Ranger, SOF and Marine infantry are elite long-service professionals."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 2400,
+          "mid": 2640,
+          "high": 2640,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+          "note": "About 2,640 M1A2 Abrams operational (Army equipment list; same figure quoted from the new IISS Military Balance edition by www1.ru, May 2026). ~2,000 M1A1/A2 in storage not counted. USMC divested its tanks in 2021-23."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor; M1A2 SEPv3 with Trophy APS only on part of the fleet."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0 professional."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 10000,
+          "mid": 12700,
+          "high": 14000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+          "note": "IISS Military Balance 2024 as quoted on the Army equipment list: M2 Bradley ~2,310 + M3 ~1,200 + Stryker 4,214 + M113 ~4,700 + AMPV ~276 = ~12,700 active. Storage (~2,800 Bradley, ~8,000 M113) excluded. USMC ACV/AAV not counted (high covers them); JLTV (~12,500) are light tactical vehicles, excluded."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor minus: M113 share is old."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0 professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 2800,
+          "mid": 3600,
+          "high": 4000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+          "note": "Army equipment list: M109 Paladin section 370 + towed 1,878 (M777A2 ~1,000, M119 821 per IISS 2025) + HIMARS 368 + M270A1/A2 991 (IISS 2024) = ~3,607 Army systems. Some M270 likely in store (low); USMC M777/HIMARS partly inside these totals."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor: GMLRS/PrSM precision fires; tube artillery range trails newest 52-cal guns."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0 professional."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 2300,
+          "mid": 2500,
+          "high": 2750,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+          "note": "Sum of the active-aircraft list (Air & Space Forces almanac 2024 / Flight Global 2023 as quoted): F-15C/D 108, F-15E 218, F-15EX 8, F-16 762+22, F-22 183, F-35A 302, F-35B 112, F-35C 45, F/A-18E/F 549, F/A-18C (USMC) 186 = ~2,495. F-35 counts are dated (fleet has grown since); legacy F-15C/F-16 retirements offset."
+        },
+        "quality": {
+          "low": 0.95,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor: largest 5th-generation fleet (F-22, F-35)."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: highest flying hours among major air forces, Red Flag."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 280,
+          "mid": 328,
+          "high": 360,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+          "note": "Bombers B-1B 40 + B-2A 20 + B-52H 72 + B-21 3 = 135; A-10C 162; AC-130J 31; total 328. A-10 retirements under way (low). F-15E strike role counted under fighters."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor: B-2/B-21 stealth bombers unique."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 4200,
+          "mid": 4600,
+          "high": 4900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+          "note": "Attack: AH-64D/E 824 + AH-1Z 189 = 1,013; utility/transport: UH-60 1,447, UH-72 483, UH-1Y 160, UH-1N 63, CH-47 571, CH-53E/K 144, MH-60 584, HH-60 96, others = ~3,595. Total ~4,600. Coast Guard and trainers excluded."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 180,
+          "mid": 350,
+          "high": 600,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+          "note": "Group 3-5 UAVs. Listed counts sum to 180 (MQ-9 55 USAF + 20 USMC, MQ-1C 75, RQ-4B 9, MQ-4C 20, MQ-25 1) but the USAF MQ-9 figure is plainly incomplete; mid is an educated scaling. Thousands of hand-launched Group 1 drones excluded."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor for large UAVs; behind Russia/Ukraine in mass small drones."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 103,
+          "mid": 103,
+          "high": 111,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_ships_of_the_United_States_Navy",
+          "note": "Fleet totals table (Naval Vessel Register based): aircraft carriers 11 + amphibious assault ships 9 + cruisers 5 commissioned + destroyers 78 = 103. High adds Ticonderoga cruisers the table lists in the reserve column whose status is unclear."
+        },
+        "quality": {
+          "low": 0.95,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor: nuclear carriers, Aegis destroyers."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0; readiness strained by maintenance backlogs."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 55,
+          "high": 60,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_ships_of_the_United_States_Navy",
+          "note": "Littoral combat ships 27 + mine countermeasures 4 + LPD 13 + LSD 9 + amphibious command ships 2 = 55. MSC auxiliaries (83 USNS) and the Coast Guard excluded."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: LCS weakly armed, San Antonio LPDs modern."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 64,
+          "mid": 64,
+          "high": 64,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_current_ships_of_the_United_States_Navy",
+          "note": "Attack submarines 46 + 1 + ballistic missile submarines 14 + guided missile submarines 3 = 64, all nuclear-powered. Roughly a third are in maintenance at any time."
+        },
+        "quality": {
+          "low": 0.95,
+          "mid": 1.0,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor: Virginia/Seawolf class."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 400,
+          "mid": 405,
+          "high": 450,
+          "grade": "B",
+          "source": "https://thebulletin.org/premium/2025-01/united-states-nuclear-weapons-2025/",
+          "note": "Launchers: 400 deployed Minuteman III ICBM silos (+50 empty \"warm\" silos = high), Bulletin Nuclear Notebook Jan 2025. Plus a handful of Army Typhon/Dark Eagle long-range launchers (educated guess ~5). SLBMs and HIMARS/PrSM counted elsewhere."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor minus: Minuteman III is a 1970s missile awaiting Sentinel."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 80,
+          "mid": 113,
+          "high": 140,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+          "note": "Batteries/fire units from the Army list (IISS 2024): Patriot 55 active + 5 reserve = 60 batteries, THAAD 7 + 1 = 8 batteries, Avenger 453 fire units / ~12 per battery = ~38, M-SHORAD ~80 vehicles / ~12 = ~7. Total ~113. Navy Aegis ships not counted here."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0 anchor; SHORAD gap partly closed only since 2022."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: trained joint staff system, global combatant commands, extensive recent operational experience (Iraq, Afghanistan, Red Sea 2024-25); short of a Napoleon-1805 tier."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "B",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 professional with strong unit identity, plus elite formations (Marines, airborne) toward 1.0."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: motivated volunteer force, but recruiting shortfalls 2022-23 and low public appetite for long wars abroad; would rise toward 0.9 in homeland defence."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 (2026 frontier): precision munitions, PrSM, LRASM, JASSM-ER; hypersonics (Dark Eagle) only just fielded."
+    },
+    "armor": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: M1A2 SEPv3 with Trophy active protection on part of the fleet."
+    },
+    "ships": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: networked carrier groups, Aegis BMD, early USV squadrons."
+    },
+    "fortification": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 10.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 layered air defence partly met: Patriot/THAAD/Aegis Ashore abroad; homeland air defence thin outside NORAD (Golden Dome not yet built)."
+    },
+    "logistics": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: global sealift and airlift (C-17, KC-46, MSC), prepositioned stocks."
+    },
+    "communications": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 networked C4ISR; Space Force constellations, Link 16, Starshield."
+    },
+    "isr": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 persistent space and drone ISR (RQ-4, MQ-9, MQ-4C, NRO constellations)."
+    },
+    "air": {
+      "low": 10.0,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: 5th-generation fleets (F-22, F-35), B-21 entering service."
+    },
+    "cyber": {
+      "low": 9.8,
+      "mid": 10.0,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 state cyber forces: US Cyber Command, NSA."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 58504,
+      "mid": 61584,
+      "high": 64663,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.PCAP.PP.KD 76,931.3 (2021 int$) x 0.8005 = 61,584 2011 int$. Range +/-5%."
+    },
+    "gdp": {
+      "low": 19995896969419,
+      "mid": 21048312599388,
+      "high": 22100728229358,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 26,293,957,026,094 x 0.8005 (US GDP deflator 2011/2021) = 21,048,312,599,388 2011 int$. Range +/-5% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.031,
+      "mid": 0.0312,
+      "high": 0.0343,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 3.12% of GDP in 2025, 3.43% in 2024. CIA Factbook 3.2% (2025 est.)."
+    },
+    "industrialShare": {
+      "low": 0.17,
+      "mid": 0.176,
+      "high": 0.19,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2021 (latest WB value): industry incl. construction 17.6% of GDP."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.35,
+      "high": 0.5,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: world's largest food exporter by value (grains, soy, meat); not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 2082312,
+      "mid": 2313680,
+      "high": 2545048,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 171,737,770 x share of males aged 15-19 6.736% (SP.POP.1519.MA.5Y) / 5 = 2,313,680. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 100,
+        "mid": 300,
+        "high": 800,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+        "note": "Educated guess: single tank plant (Lima JSMC) mostly rebuilds/upgrades existing hulls; surge depends on stored hulls (~2,000 M1 in storage)."
+      },
+      "ifv_apc": {
+        "low": 300,
+        "mid": 800,
+        "high": 2000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+        "note": "Educated guess: BAE York (Bradley/AMPV) and GD Land Systems (Stryker) lines."
+      },
+      "artillery": {
+        "low": 100,
+        "mid": 250,
+        "high": 500,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_United_States_Army",
+        "note": "Educated guess: M109A7, HIMARS (Lockheed Camden plant expanding toward ~96/yr in 2024 plans)."
+      },
+      "aircraft_fighter": {
+        "low": 80,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+        "note": "Educated guess: F-35 line (~150/yr all customers at full rate), F-15EX ~24/yr, F/A-18 line closing."
+      },
+      "helicopters": {
+        "low": 150,
+        "mid": 300,
+        "high": 500,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+        "note": "Educated guess: UH-60M, AH-64E, CH-47F, CH-53K lines."
+      },
+      "drones": {
+        "low": 300,
+        "mid": 1000,
+        "high": 5000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_United_States_military_aircraft",
+        "note": "Educated guess: Group 3-5 UAVs; Replicator initiative aimed at thousands of attritable systems."
+      },
+      "ships_major": {
+        "low": 2,
+        "mid": 3,
+        "high": 5,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_current_ships_of_the_United_States_Navy",
+        "note": "Educated guess: two DDG-51 yards (~2/yr) plus carrier/LHA every few years; the table lists 10 destroyers, 3 carriers, 2 LHA under construction."
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_current_ships_of_the_United_States_Navy",
+        "note": "Educated guess: Virginia-class output ~1.2-1.3/yr (target 2) plus Columbia SSBNs; 8 SSN and 2 SSBN under construction per the fleet table."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 4304715,
+      "mid": 4304715,
+      "high": 6586610,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "CIA World Factbook as quoted (2023): 4,304,715 km paved of 6,586,610 km total; 76,334 km controlled-access. High is total network."
+    },
+    "railKm": {
+      "low": 148553,
+      "mid": 148553,
+      "high": 293564,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/USA/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "World Bank 148,553 route-km (2021, apparently Class I network); CIA Factbook 293,564 km (2014) counts all track/railroads, used as high."
+    },
+    "majorPorts": {
+      "low": 21,
+      "mid": 40,
+      "high": 59,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/north-america/us.json",
+      "note": "CIA Factbook 2024: 666 ports, 21 large + 38 medium = 59. Mid is an educated cut to ports usable for military sealift (the strategic seaports program designates ~17-23 commercial ports plus naval bases)."
+    },
+    "merchantTonnage": {
+      "low": 13244000,
+      "mid": 13244000,
+      "high": 40000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 13,244 thousand DWT under the US flag (incl. Jones Act and MSC-chartered). High is an educated guess for US-owned tonnage under foreign flags, much of it under Effective US Control (EUSC) arrangements."
+    },
+    "supplyRangeKm": {
+      "low": 300,
+      "mid": 500,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: expeditionary sustainment via sealift, airlift and contracted trucking lets US formations operate far from bases; ranges for a land force beyond its theater depots."
+    },
+    "draftAnimals": {
+      "low": 6000000,
+      "mid": 6650000,
+      "high": 7500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Horses_in_the_United_States",
+      "note": "About 6.65 million horses in the US in 2023 (American Horse Council study as quoted). Mules/donkeys not added. Militarily irrelevant in 2026."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 3700,
+      "mid": 3700,
+      "high": 5177,
+      "grade": "B",
+      "source": "https://thebulletin.org/premium/2025-01/united-states-nuclear-weapons-2025/",
+      "note": "Bulletin Nuclear Notebook (Jan 2025): military stockpile ~3,700 (1,770 deployed, 1,930 reserve); total inventory incl. ~1,477 retired awaiting dismantlement 5,177 (high). FAS Status of World Nuclear Forces (early 2026): stockpile 3,700, total 5,042."
+    },
+    "basesAbroad": [
+      {
+        "name": "Ramstein Air Base, Germany",
+        "lat": 49.4369,
+        "lon": 7.6003,
+        "kind": "fortress"
+      },
+      {
+        "name": "USAG Bavaria (Grafenwoehr), Germany",
+        "lat": 49.698,
+        "lon": 11.94,
+        "kind": "fortress"
+      },
+      {
+        "name": "RAF Lakenheath, UK",
+        "lat": 52.4093,
+        "lon": 0.561,
+        "kind": "fortress"
+      },
+      {
+        "name": "Naval Station Rota, Spain",
+        "lat": 36.645,
+        "lon": -6.349,
+        "kind": "port"
+      },
+      {
+        "name": "Aviano Air Base, Italy",
+        "lat": 46.0319,
+        "lon": 12.5965,
+        "kind": "fortress"
+      },
+      {
+        "name": "NSA Naples, Italy",
+        "lat": 40.884,
+        "lon": 14.29,
+        "kind": "port"
+      },
+      {
+        "name": "NAS Sigonella, Italy",
+        "lat": 37.4017,
+        "lon": 14.9224,
+        "kind": "fortress"
+      },
+      {
+        "name": "NSA Souda Bay, Greece",
+        "lat": 35.5317,
+        "lon": 24.1497,
+        "kind": "port"
+      },
+      {
+        "name": "Incirlik Air Base, Turkey",
+        "lat": 37.0021,
+        "lon": 35.4259,
+        "kind": "fortress"
+      },
+      {
+        "name": "Mihail Kogalniceanu Air Base, Romania",
+        "lat": 44.3622,
+        "lon": 28.4883,
+        "kind": "fortress"
+      },
+      {
+        "name": "Aegis Ashore Redzikowo, Poland",
+        "lat": 54.479,
+        "lon": 17.0975,
+        "kind": "fortress"
+      },
+      {
+        "name": "Camp Lemonnier, Djibouti",
+        "lat": 11.547,
+        "lon": 43.155,
+        "kind": "fortress"
+      },
+      {
+        "name": "Al Udeid Air Base, Qatar",
+        "lat": 25.1173,
+        "lon": 51.315,
+        "kind": "fortress"
+      },
+      {
+        "name": "NSA Bahrain (5th Fleet)",
+        "lat": 26.209,
+        "lon": 50.609,
+        "kind": "port"
+      },
+      {
+        "name": "Camp Arifjan, Kuwait",
+        "lat": 28.883,
+        "lon": 48.155,
+        "kind": "fortress"
+      },
+      {
+        "name": "Diego Garcia",
+        "lat": -7.3133,
+        "lon": 72.4111,
+        "kind": "port"
+      },
+      {
+        "name": "Kadena Air Base, Okinawa",
+        "lat": 26.3556,
+        "lon": 127.7681,
+        "kind": "fortress"
+      },
+      {
+        "name": "Fleet Activities Yokosuka, Japan (7th Fleet)",
+        "lat": 35.293,
+        "lon": 139.665,
+        "kind": "port"
+      },
+      {
+        "name": "Misawa Air Base, Japan",
+        "lat": 40.7032,
+        "lon": 141.3683,
+        "kind": "fortress"
+      },
+      {
+        "name": "Camp Humphreys, South Korea",
+        "lat": 36.9633,
+        "lon": 127.0311,
+        "kind": "fortress"
+      },
+      {
+        "name": "Osan Air Base, South Korea",
+        "lat": 37.0906,
+        "lon": 127.03,
+        "kind": "fortress"
+      },
+      {
+        "name": "Andersen AFB / Naval Base Guam (US territory)",
+        "lat": 13.584,
+        "lon": 144.93,
+        "kind": "fortress"
+      },
+      {
+        "name": "Pituffik Space Base, Greenland",
+        "lat": 76.5312,
+        "lon": -68.7031,
+        "kind": "fortress"
+      },
+      {
+        "name": "Naval Station Guantanamo Bay, Cuba",
+        "lat": 19.903,
+        "lon": -75.097,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "us-joint-2026",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Panama Canal (access)",
+      "Bering Strait",
+      "Florida Straits",
+      "GIUK gap",
+      "Strait of Juan de Fuca"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: familiar terrain, local supply, population support and fortified/defended cities; two-ocean moat and continental depth push toward 1.3 for any invader."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: 50 states + DC (World Bank); territories (Puerto Rico, Guam) excluded from population but Guam listed as an overseas base. Money in 2011 int$ via derived:ppp-rebase-2011. Force counts: IISS Military Balance 2024-2026 as quoted on Wikipedia, Wikipedia aircraft list (Air & Space Forces almanac 2024, Flight Global 2023 - F-35 counts dated), and the Naval Vessel Register-based fleet totals table. ships_major = carriers/LHA/LHD + cruisers + destroyers + frigates; ships_minor = LCS, MCM, LPD/LSD, LCC; drones = Group 3-5 UAVs only. Infantry P-role splits are educated guesses (grade D). Coast Guard (42,000) counted inside IISS active but its cutters are not in forces. About 200,000 personnel are deployed abroad on permanent or rotational basis (CIA Factbook 2025), so not all of forces is available at home on day 1. basesAbroad: 24 major installations (coordinates approximate to the main gate/airfield)."
+}

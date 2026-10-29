@@ -1,0 +1,878 @@
+{
+  "id": "china-2026",
+  "nationId": "china",
+  "includes": [],
+  "name": "People's Republic of China",
+  "year": 2026,
+  "era": "modern",
+  "region": "east_asia",
+  "phase": "current",
+  "tags": [
+    "great power",
+    "nuclear power",
+    "one-party state",
+    "conscription (selective)",
+    "blue-water navy",
+    "A2/AD"
+  ],
+  "capital": {
+    "name": "Beijing",
+    "lat": 39.9042,
+    "lon": 116.4074,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Shanghai",
+      "lat": 31.2304,
+      "lon": 121.4737,
+      "kind": "port"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.1291,
+      "lon": 113.2644,
+      "kind": "port"
+    },
+    {
+      "name": "Shenzhen",
+      "lat": 22.5431,
+      "lon": 114.0579,
+      "kind": "port"
+    },
+    {
+      "name": "Chongqing",
+      "lat": 29.563,
+      "lon": 106.5516,
+      "kind": "city"
+    },
+    {
+      "name": "Wuhan",
+      "lat": 30.5928,
+      "lon": 114.3055,
+      "kind": "city"
+    },
+    {
+      "name": "Qingdao (Northern Theater Navy)",
+      "lat": 36.0671,
+      "lon": 120.3826,
+      "kind": "port"
+    },
+    {
+      "name": "Ningbo-Zhoushan (Eastern Theater Navy)",
+      "lat": 29.87,
+      "lon": 121.55,
+      "kind": "port"
+    },
+    {
+      "name": "Zhanjiang (Southern Theater Navy)",
+      "lat": 21.27,
+      "lon": 110.36,
+      "kind": "port"
+    },
+    {
+      "name": "Yulin Naval Base, Sanya (Hainan)",
+      "lat": 18.22,
+      "lon": 109.55,
+      "kind": "port"
+    },
+    {
+      "name": "Urumqi",
+      "lat": 43.8256,
+      "lon": 87.6168,
+      "kind": "city"
+    },
+    {
+      "name": "Taiwan Strait",
+      "lat": 24.5,
+      "lon": 119.5,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:CHN",
+    "areaKm2": {
+      "low": 9388210,
+      "mid": 9562910,
+      "high": 9562910,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 9,562,910 km2; low is land area 9,388,210 km2. Excludes Taiwan, Hong Kong and Macau (separate World Bank entries)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 1400000000,
+      "mid": 1406585000,
+      "high": 1408975000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank 1,406,585,000; 2024 1,408,975,000 = high). Population is falling (~-0.2%/yr); low allows for 2026 decline. Mainland only; excludes Hong Kong, Macau, Taiwan."
+    },
+    "urbanization": {
+      "low": 0.65,
+      "mid": 0.663,
+      "high": 0.67,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 66.34% urban."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 2000000,
+      "mid": 2035000,
+      "high": 2050000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.248-249 as quoted: 2,035,000 active. CIA Factbook 2025: ~2 million (Ground 950,000-1,000,000; Navy 250,000 incl. ~50,000 marines; Air Force 350-400,000; Rocket Force 120,000; other 150-175,000). People's Armed Police (~500,000) excluded."
+    },
+    "trainedReserves": {
+      "low": 510000,
+      "mid": 510000,
+      "high": 800000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 510,000 reserves. High is an educated allowance for the militia system (primary militia is much larger but untrained for combat)."
+    },
+    "supportPersonnel": {
+      "low": 1700000,
+      "mid": 1775000,
+      "high": 1800000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 2,035,000 minus infantry P roles (150,000 + 110,000). Navy, Air Force (403,000 per IISS 2026 as quoted on the PLAAF article), Rocket Force, Aerospace/Cyberspace/Information Support and Joint Logistics forces, vehicle crews, artillery, staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess by analogy: WWII belligerents reached ~10-17% of population (USSR, Germany); China is held lower because the binding constraint is equipment, training cadres and industrial labour, not manpower; 5% is still ~70 million people."
+    },
+    "mobilizable": {
+      "low": 42197550,
+      "mid": 70329250,
+      "high": 112526800,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 1,406,585,000 x ratio 0.03 / 0.05 / 0.08."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 110000,
+          "mid": 150000,
+          "high": 200000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "Educated guess. Ground Force 960,000 (IISS 2025 as quoted) in 13 group armies; ~55 heavy and medium combined-arms brigades x ~2,500-3,000 mechanized infantry."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 among era best: ZBD-04A/ZBL-08 families, digital C2; below US kit."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: two-year conscripts plus a growing NCO corps; intensive exercises but no combat since 1979."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 80000,
+          "mid": 110000,
+          "high": 150000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+          "note": "Educated guess. Light, mountain and amphibious combined-arms brigades, Airborne Corps (~35,000), PLAN Marine Corps (30,000-55,000 per PLAN article, inconsistent), special operations brigades."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: marines and airborne are better trained than line conscripts."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 4700,
+          "mid": 4700,
+          "high": 5950,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "IISS Military Balance 2025 as quoted: 4,700 main battle tanks (Type 99/99A, 96/96B, older 88). High adds 1,250 light tanks (ZTQ-15, ZTD-05). 1,200 assault guns (ZTL-11 etc.) not counted."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: Type 99A modern, many Type 96 and older."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 11500,
+          "mid": 12410,
+          "high": 13000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "IISS Military Balance 2025 as quoted: 8,060 IFVs + 3,600 APCs + 750 amphibious armoured vehicles = 12,410."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 5500,
+          "mid": 6780,
+          "high": 7000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "IISS Military Balance 2025 as quoted: 3,240 self-propelled + 900 towed + 1,250 self-propelled gun-mortars + 1,390+ MLRS = 6,780. Low excludes the gun-mortars."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band plus: PCH-191/PHL-16 long-range rocket artillery, PLZ-05."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 1700,
+          "mid": 1850,
+          "high": 2000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_People%27s_Liberation_Army_Air_Force_aircraft",
+          "note": "PLAAF list (IISS Military Balance 2026 p.255 and RUSI Jan 2026 as quoted): J-10 608, J-20 300-350, J-11 245, J-16 330-450, J-35 4-54, Su-27/30/35 153, J-8 40 = ~1,680-1,900; plus ~60 carrier J-15 (educated guess, PLAN aviation largely merged into PLAAF in 2023)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: second-largest 5th-generation fleet (J-20), J-16 with AESA and PL-15."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: rising flying hours and realistic training, no air combat experience."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 400,
+          "mid": 420,
+          "high": 480,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_People%27s_Liberation_Army_Air_Force_aircraft",
+          "note": "H-6 family 219+ (H-6K 110, H-6N 12+, H-6J 18, others) + JH-7A 200 = ~420 (IISS 2026 as quoted)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: H-6 airframe is 1950s-derived but carries modern long-range cruise/anti-ship missiles."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 1120,
+          "mid": 1220,
+          "high": 1350,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "Army aviation per IISS 2025 as quoted: 320+ attack + 208 multi-role + 512 transport = 1,040; PLAAF 83+ (list); PLAN ~100 (educated guess, not fetched)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band: Z-10, Z-20 modern; heavy-lift gap."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 300,
+          "mid": 800,
+          "high": 2000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_People%27s_Liberation_Army_Air_Force_aircraft",
+          "note": "Educated guess. Group 3+ military UAVs: PLAAF list shows 48+ (WZ-7, WZ-8, GJ-1, GJ-11, WZ-10) with several types of unknown number; Army and Navy fleets not enumerated in fetched sources."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: stealth UCAV (GJ-11), supersonic recon UAV (WZ-8)."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 115,
+          "mid": 122,
+          "high": 130,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+          "note": "Convention: carriers/LHD + cruisers + destroyers + frigates. PLAN article (IISS 2025 totals, counts otherwise unsourced): carriers 3 + destroyers 61 (incl. Type 055) + frigates 54 + Type 075 assault ships 4 = 122."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Type 055/052D comparable to Aegis ships; carriers less capable than US CVNs (Fujian is first catapult carrier)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: very young fleet, limited blue-water combat experience."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 230,
+          "mid": 250,
+          "high": 270,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+          "note": "Corvettes (Type 056/056A) 50 + missile boats (Type 022) 82 + LPD 8 + LST 33 + medium landing ships 37 + MCM 40+ = 250. 232 auxiliaries and the China Coast Guard/maritime militia excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 64,
+          "mid": 66,
+          "high": 68,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+          "note": "PLAN article: 64+ (infobox) to 68 (text), of which 12 nuclear-powered (6 SSBN Type 094 + ~6 SSN). Mostly diesel-electric/AIP (Type 039A/B, Kilo)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: nuclear boats noisier than US/Russian peers; AIP boats modern."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 900,
+          "mid": 1000,
+          "high": 1350,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Rocket_Force",
+          "note": "Rocket Force launcher table as quoted: ICBM ~298 (DF-5A 18+, DF-31 family ~236, DF-41 ~44), IRBM DF-26 ~250, MRBM ~102, SRBM ~225, GLCM ~126 = ~1,000. US DoD missile (not launcher) estimates on the same page: ~400 ICBM, ~500 IRBM, ~1,300 MRBM, ~900 SRBM, ~400 GLCM. High allows for reload/under-counted brigades. ~320 silos excluded."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: largest conventional ballistic-missile force, DF-17 hypersonic glide vehicle, DF-21D/DF-26 anti-ship."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 220,
+          "mid": 330,
+          "high": 450,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+          "note": "Educated guess in batteries: Ground Force 754+ SAM systems (/~4 per battery ~190) + 270 SP AA guns (/~4 ~70) per IISS 2025 as quoted, plus PLAAF SAM brigades (HQ-9/HQ-9B, S-300/S-400) ~70-100 battalions (not fetched)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: HQ-9B, S-400, dense layered coastal coverage."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "B",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 (competent staff, average generalship): 2015-16 joint theater-command reform built a modern staff system, but no war since 1979 and repeated purges of the senior leadership (Rocket Force 2023, Central Military Commission members 2024-25) disrupt command."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: national conscript/professional mix with strong party-political control and unit identity; untested under combat losses."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: nationalist motivation strong for Taiwan/home defence, unknown for expeditionary war; one-child-generation casualty sensitivity often cited."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: precision strike in mass, DF-17 hypersonic glide vehicle, PL-15/PL-17 AAMs, large drone programs."
+    },
+    "armor": {
+      "low": 9.2,
+      "mid": 9.4,
+      "high": 9.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 composite armour with some anchor-10 features (Type 99A, ZTQ-15; APS on few vehicles)."
+    },
+    "ships": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 networked fleets largely met: Type 055, catapult carrier Fujian (2025), large USV/UUV programs; nuclear submarines lag (anchor 9)."
+    },
+    "fortification": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 layered air defence along the coast, hardened underground facilities, fortified South China Sea islands."
+    },
+    "logistics": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Joint Logistics Support Force, dense rail/road network and civilian RO-RO ferries; limited global sealift/airlift (Y-20 growing) and one overseas base."
+    },
+    "communications": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: BeiDou, Tianlian relay satellites, Information Support Force (2024)."
+    },
+    "isr": {
+      "low": 9.5,
+      "mid": 9.7,
+      "high": 9.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: Yaogan and other ISR constellations (hundreds of satellites), long-endurance UAVs, over-the-horizon radar."
+    },
+    "air": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 5th generation: J-20 (300+), J-35 entering service."
+    },
+    "cyber": {
+      "low": 9.7,
+      "mid": 9.9,
+      "high": 10.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 state cyber forces: Cyberspace Force (2024), extensive state-linked operations."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 17056,
+      "mid": 20066,
+      "high": 23076,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.PCAP.PP.KD 25,066.5 (2021 int$) x 0.8005 = 20,066 2011 int$. Range +/-15%."
+    },
+    "gdp": {
+      "low": 23990556098435,
+      "mid": 28224183645218,
+      "high": 32457811192000,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 35,258,193,185,781 x 0.8005 (US GDP deflator 2011/2021) = 28,224,183,645,218 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.0157,
+      "mid": 0.0172,
+      "high": 0.025,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 1.72% of GDP in 2025, 1.57% in 2021. High allows for spending outside the official budget (R&D, PAP, procurement) that Western estimates add; educated range. CIA Factbook 1.5% (2024)."
+    },
+    "industrialShare": {
+      "low": 0.35,
+      "mid": 0.356,
+      "high": 0.38,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 35.6% of GDP; 38.1% in 2021."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: large domestic production but net importer of soybeans, feed grain and meat; low surplus over subsistence under blockade."
+    },
+    "annualCohort": {
+      "low": 8168284,
+      "mid": 9075871,
+      "high": 9983458,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/CHN/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 716,046,014 x share of males aged 15-19 6.337% (SP.POP.1519.MA.5Y) / 5 = 9,075,871. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 300,
+        "mid": 500,
+        "high": 1000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+        "note": "Educated guess: Norinco heavy-vehicle plants; no fetched production figure."
+      },
+      "ifv_apc": {
+        "low": 800,
+        "mid": 1500,
+        "high": 3000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+        "note": "Educated guess."
+      },
+      "artillery": {
+        "low": 300,
+        "mid": 600,
+        "high": 1200,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+        "note": "Educated guess."
+      },
+      "aircraft_fighter": {
+        "low": 120,
+        "mid": 200,
+        "high": 300,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_People%27s_Liberation_Army_Air_Force_aircraft",
+        "note": "Educated guess consistent with the J-20 fleet growing from ~50 (2020) to ~300 (mid-2025) per the PLAAF article, i.e. ~50/yr for that type alone, plus J-16, J-10C, J-35."
+      },
+      "helicopters": {
+        "low": 80,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Ground_Force",
+        "note": "Educated guess."
+      },
+      "drones": {
+        "low": 1000,
+        "mid": 5000,
+        "high": 20000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_People%27s_Liberation_Army_Air_Force_aircraft",
+        "note": "Educated guess for Group 2+ military UAVs; China is the largest civilian drone producer, which a war economy could convert."
+      },
+      "ships_major": {
+        "low": 8,
+        "mid": 12,
+        "high": 18,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+        "note": "Educated guess: PLAN commissions roughly a dozen destroyers/frigates/large amphibs per year in recent years; world's largest shipbuilding capacity."
+      },
+      "ships_minor": {
+        "low": 10,
+        "mid": 15,
+        "high": 30,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+        "note": "Educated guess."
+      },
+      "submarines": {
+        "low": 2,
+        "mid": 4,
+        "high": 6,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Navy",
+        "note": "Educated guess (Huludao and Wuhan yards)."
+      },
+      "missiles": {
+        "low": 50,
+        "mid": 150,
+        "high": 300,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/People%27s_Liberation_Army_Rocket_Force",
+        "note": "Educated guess for TEL launchers per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5344700,
+      "mid": 5344700,
+      "high": 5490400,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Chinese 2024 transport statistical bulletin as quoted: 5,490,400 km total, 5,344,700 km paved (mid), 190,700 km expressway."
+    },
+    "railKm": {
+      "low": 109767,
+      "mid": 150000,
+      "high": 160000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/ch.json",
+      "note": "CIA Factbook: 150,000 km (2021) incl. 40,000 km high-speed (mid). World Bank IS.RRS.TOTL.KM 109,767 km (2021) as low. High allows for 2022-2026 growth (educated)."
+    },
+    "majorPorts": {
+      "low": 14,
+      "mid": 25,
+      "high": 40,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/east-n-southeast-asia/ch.json",
+      "note": "CIA Factbook 2024: 66 ports, 5 large + 9 medium = 14 (low); its classification by harbour size understates China, which has ~25-40 major coastal ports handling hundreds of millions of tonnes (educated guess mid/high)."
+    },
+    "merchantTonnage": {
+      "low": 137064000,
+      "mid": 137064000,
+      "high": 340112000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 137,064 thousand DWT under the Chinese flag; high adds Hong Kong register 203,048 thousand DWT (Hong Kong is outside ne:CHN but under PRC sovereignty)."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: mechanized PLA formations sustained by the Joint Logistics Support Force and rail; little experience sustaining operations abroad."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 8000000,
+      "high": 12000000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess for horses, mules and donkeys (not from FAO data). Militarily marginal (some pack animals in Tibet border units)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 600,
+      "mid": 620,
+      "high": 700,
+      "grade": "B",
+      "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+      "note": "FAS Status of World Nuclear Forces (beginning 2026): military stockpile 620 (34 deployed, 586 reserve/non-deployed). Low is the 2025 FAS estimate of ~600 (Rocket Force article). High allows for fast growth (US DoD projects >1,000 by 2030)."
+    },
+    "basesAbroad": [
+      {
+        "name": "PLA Support Base Djibouti",
+        "lat": 11.59,
+        "lon": 43.06,
+        "kind": "port"
+      },
+      {
+        "name": "Ream Naval Base, Cambodia (Chinese-built, access)",
+        "lat": 10.51,
+        "lon": 103.62,
+        "kind": "port"
+      },
+      {
+        "name": "Woody Island, Paracels (disputed)",
+        "lat": 16.834,
+        "lon": 112.338,
+        "kind": "fortress"
+      },
+      {
+        "name": "Fiery Cross Reef, Spratlys (disputed)",
+        "lat": 9.55,
+        "lon": 112.89,
+        "kind": "fortress"
+      },
+      {
+        "name": "Subi Reef, Spratlys (disputed)",
+        "lat": 10.92,
+        "lon": 114.08,
+        "kind": "fortress"
+      },
+      {
+        "name": "Mischief Reef, Spratlys (disputed)",
+        "lat": 9.9,
+        "lon": 115.53,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "pla-2026",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Taiwan Strait",
+      "Strait of Malacca (import dependence)",
+      "Miyako Strait",
+      "Bashi Channel",
+      "Korea Strait",
+      "Karakoram/Himalayan passes"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: fortified cities, population support, deep strategic depth; 1.3 for invasions into the Tibetan plateau or Xinjiang (harsh climate, altitude)."
+    }
+  },
+  "notes": "Modern snapshot, asOf 2025 data with 2026 order of battle. Population convention: mainland China inside ne:CHN; Hong Kong, Macau, Taiwan excluded. Climate Cwa is the dominant class of the populated east; the west is BWk/ET. Money in 2011 int$ via derived:ppp-rebase-2011 (+/-15% for PPP uncertainty). Force counts: IISS Military Balance 2025-2026 as quoted on Wikipedia (Ground Force, PLAAF list, personnel list), PLAN article (counts partly unsourced there), Rocket Force table. The US DoD 2025 China Military Power Report PDF returned HTTP 403 and was not used. ships_major = carriers/LHD + destroyers + frigates; ships_minor = corvettes, missile boats, LPD/LST/LSM, MCM; drones = Group 3+ UAVs (grade D). Infantry P-role splits and air_defense batteries are educated guesses. People's Armed Police (~500,000), China Coast Guard and maritime militia excluded. Disputed South China Sea outposts listed under basesAbroad because they lie outside the ne:CHN polygon."
+}

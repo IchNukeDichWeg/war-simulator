@@ -1,0 +1,906 @@
+{
+  "id": "russia-2026",
+  "nationId": "russia",
+  "includes": [],
+  "name": "Russian Federation",
+  "year": 2026,
+  "era": "modern",
+  "region": "europe",
+  "phase": "current",
+  "tags": [
+    "great power",
+    "nuclear power",
+    "at war",
+    "CSTO",
+    "conscription",
+    "war economy",
+    "Eurasian"
+  ],
+  "capital": {
+    "name": "Moscow",
+    "lat": 55.7558,
+    "lon": 37.6173,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Saint Petersburg",
+      "lat": 59.9311,
+      "lon": 30.3609,
+      "kind": "port"
+    },
+    {
+      "name": "Novosibirsk",
+      "lat": 55.0084,
+      "lon": 82.9357,
+      "kind": "city"
+    },
+    {
+      "name": "Yekaterinburg",
+      "lat": 56.8389,
+      "lon": 60.6057,
+      "kind": "city"
+    },
+    {
+      "name": "Rostov-on-Don (Southern Military District HQ)",
+      "lat": 47.2357,
+      "lon": 39.7015,
+      "kind": "city"
+    },
+    {
+      "name": "Severomorsk (Northern Fleet)",
+      "lat": 69.07,
+      "lon": 33.42,
+      "kind": "port"
+    },
+    {
+      "name": "Vladivostok (Pacific Fleet)",
+      "lat": 43.1155,
+      "lon": 131.8855,
+      "kind": "port"
+    },
+    {
+      "name": "Baltiysk / Kaliningrad (Baltic Fleet)",
+      "lat": 54.65,
+      "lon": 19.91,
+      "kind": "port"
+    },
+    {
+      "name": "Novorossiysk (Black Sea Fleet)",
+      "lat": 44.7167,
+      "lon": 37.7833,
+      "kind": "port"
+    },
+    {
+      "name": "Sevastopol (occupied Crimea, outside ne:RUS)",
+      "lat": 44.6167,
+      "lon": 33.5254,
+      "kind": "port"
+    },
+    {
+      "name": "Kerch Strait",
+      "lat": 45.31,
+      "lon": 36.51,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Suwalki Gap (Poland-Lithuania, Kaliningrad link)",
+      "lat": 54.1,
+      "lon": 23.2,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "ne:RUS",
+    "areaKm2": {
+      "low": 16376870,
+      "mid": 17125190,
+      "high": 17125190,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/AG.SRF.TOTL.K2?format=json",
+      "note": "asOf 2024. Surface area 17,125,190 km2; low is land area 16,376,870 km2. Internationally recognised territory; occupied Ukrainian territory (Crimea and parts of four oblasts, ~100,000+ km2) not included."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 143000000,
+      "mid": 143513328,
+      "high": 146000000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/SP.POP.TOTL?format=json",
+      "note": "asOf 2025 (World Bank 143,513,328, declining ~0.1%/yr). High allows for Russian official statistics that include annexed Crimea (a few million higher; not fetched). Population of occupied Ukrainian territories excluded."
+    },
+    "urbanization": {
+      "low": 0.745,
+      "mid": 0.7525,
+      "high": 0.76,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/SP.URB.TOTL.IN.ZS?format=json",
+      "note": "asOf 2025: 75.25% urban."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 1100000,
+      "mid": 1264000,
+      "high": 1500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026 p.188 as quoted: 1,264,000 active (plus 569,000 paramilitary, excluded). CIA Factbook 2025: 1.1-1.2 million (low); September 2024 decree sets 1.5 million servicemen (high, a target). Wartime: high casualties (~1 million killed and wounded by mid-2025 per the Russian Armed Forces article, Western estimates) are replaced by contract recruitment."
+    },
+    "trainedReserves": {
+      "low": 300000,
+      "mid": 1500000,
+      "high": 2000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "IISS Military Balance 2026: 1,500,000 reserves (mid). Low is what was actually called up in the 2022 partial mobilization (~300,000, IISS Feb 2023 as quoted on the Russian Ground Forces article), i.e. the realistic 30-day intake. High: \"close to two million\" reservists (Russian Armed Forces article)."
+    },
+    "supportPersonnel": {
+      "low": 750000,
+      "mid": 864000,
+      "high": 1000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_military_and_paramilitary_personnel",
+      "note": "Active 1,264,000 minus infantry P roles (300,000 + 100,000). Aerospace Forces, Navy, Strategic Rocket Forces, crews, artillery, drone units (Unmanned Systems Forces), logistics, staff, and the ~20,000 deployed in other former Soviet states/Africa (CIA Factbook 2025)."
+    },
+    "mobilizationRatio": {
+      "low": 0.06,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogy to the USSR in WWII (roughly 34 million mobilized from ~195 million, ~17%) scaled down for a smaller, older population, emigration since 2022 and a labour-short war economy. Ukrainian C-in-C Syrskyi (Apr 2025, a party to the war) claimed Russia could mobilize 20 million (14%), 5 million with military training (Russian Armed Forces article)."
+    },
+    "mobilizable": {
+      "low": 8610800,
+      "mid": 14351333,
+      "high": 21526999,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "Population 143,513,328 x ratio 0.06 / 0.10 / 0.15."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 200000,
+          "mid": 300000,
+          "high": 400000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Russian_Armed_Forces",
+          "note": "Educated guess. The grouping in Ukraine was ~623,000 in April 2025 and growing 8-9,000/month (Syrskyi, as quoted; CIA Factbook 2025: ~600,000 in Ukraine). The war is infantry-heavy (motor-rifle and \"assault\" units of contract soldiers and mobilized men); about half of the grouping taken as line infantry."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: era-typical small arms and drones, but many units ride MT-LB/old BMPs or go on foot; a generation behind NATO in protection."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: short training for contract recruits (weeks), offset by combat experience of survivors."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 70000,
+          "mid": 100000,
+          "high": 150000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Russian_Ground_Forces",
+          "note": "Educated guess. Airborne Forces (VDV), naval infantry, Spetsnaz, Storm-Z/Storm-V penal assault units, plus foreign contingents (North Korean troops deployed 2024-25 excluded)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 era-typical."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: elite VDV/naval infantry cadres largely destroyed in 2022-23 and refilled; penal units 0.25."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1750,
+          "mid": 2700,
+          "high": 3460,
+          "grade": "C",
+          "source": "https://www1.ru/news/2026/05/03/rossiia-postroila-v-13-raza-bolshe-tankov-chem-ssha.amp.html",
+          "note": "Highly uncertain wartime figure. High: ~3,460 tanks in service per the new IISS Military Balance edition (as reported by www1.ru, May 2026; the same 3,460 appears on the Ground Forces equipment list: T-54/55 120, T-62 600, T-64 50, T-72 1,470, T-80 600, T-90M 620), with ~2,100 left in storage. Low: 1,750 active (IISS 2024, mind.ua). Losses since 2022 exceed 3,000 (IISS 2024)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: T-90M/T-80BVM/T-72B3M current, but a large share are refurbished T-62/T-55 (obsolete, 0.25)."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 5000,
+          "mid": 6500,
+          "high": 8500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Russian_Ground_Forces",
+          "note": "IISS as quoted on the equipment list: IFVs 1,950 (BMP-1 750, BMP-2 550, BMP-3 650; IISS 2025) + APCs BTR-60 800, BTR-70 200, BTR-80 1,200, MT-LB 2,500 (IISS 2024) = ~6,650. BMD airborne vehicles not counted (high). Up to 3,000 BMP-1/2 and 1,000 MT-LB in storage excluded."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: mostly Soviet-era designs."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 2800,
+          "mid": 3400,
+          "high": 4500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Russian_Ground_Forces",
+          "note": "IISS 2025 as quoted: SP 1,675 (2S1 400, 2S3 600, 2S19 450, 2S5 100, 2S7 125) + towed 152mm 370 + D-30 200 + MLRS 1,181 = ~3,426 active. ~4,800 more in storage (SP 1,900, towed 152mm 1,650, MLRS 1,250) feed refurbishment (high). Artillery advantage over Ukraine fell from ~10:1 to ~2:1 by 2025 (Syrskyi, as quoted)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 era-typical; Tornado-S/2S19M2 modern, many barrels worn."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 plus combat experience in counter-battery and drone-spotted fires."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 650,
+          "mid": 800,
+          "high": 1050,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+          "note": "Active-aircraft list (World Air Forces 2025 / IISS 2022 as quoted): Su-27/30/35 combined \"<422\", naval Su-30SM 22, Su-57 29, MiG-29 ~87, MiG-31 128+ and 32 naval, MiG-35 6 = ~726; list subtotal ~1,069 double-counts across tables (high)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 band minus: Su-35S/Su-30SM2 modern 4+ generation, only ~29 Su-57."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: low peacetime flying hours, but extensive stand-off combat sorties since 2022."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 450,
+          "mid": 550,
+          "high": 700,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+          "note": "World Air Forces 2025 as quoted: Su-24 259, Su-25 175, Su-34 142-163, Tu-22M3 55, Tu-95MS 46, Tu-160 17 = ~700 (high). Mid discounts the Su-24 count (many retired/stored) and combat losses; Bulletin 2026: ~60 heavy bombers active."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Su-34 and glide bombs (UMPK) effective; Su-24/Su-25/Tu-95 old airframes."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 1150,
+          "mid": 1350,
+          "high": 1500,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+          "note": "World Air Forces 2025 as quoted: attack Ka-52 135 + Mi-28 94 + Mi-24 323 = 552; transport/utility Mi-8/17 777 + Mi-26 45 + Ka-226 36 + Ansat-U 50 = 908; total ~1,460 (high). Mid allows for war losses."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Ka-52M/Mi-28NM modern, Mi-24/Mi-8 old."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 8000,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/Russian_Armed_Forces",
+          "note": "Educated guess. Reusable Group 2+ UAVs (Orlan-10/30, Zala, Supercam, Orion, Forpost) in service; no fetched inventory. FPV drones (millions per year) and one-way attack drones (Geran) are munitions and excluded."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: mass-produced, combat-iterated designs; few large MALE drones."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Unmanned Systems Forces formed from combat-experienced units (Rubikon)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 17,
+          "mid": 19,
+          "high": 25,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+          "note": "Convention: carriers + cruisers + destroyers + frigates. Active list (statuses partly 2021-24): cruisers 2 + destroyers 6 + frigates 9-12 (mid 11) = 19; high adds the non-operational carrier Kuznetsov, battlecruiser Admiral Nakhimov on trials and damaged/refit hulls. Moskva and other Black Sea Fleet ships lost 2022-24."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Admiral Gorshkov frigates modern (Zircon), destroyers/cruisers 1980s."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 90,
+          "mid": 110,
+          "high": 150,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+          "note": "Active list tallies: corvettes ~47 operational (8 large + ~39 small missile ships; page summary c. 79 incl. reserve), landing ships ~10-17, mine countermeasures 42+, patrol ships 5 (patrol boats excluded). Mid ~110."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Karakurt/Buyan-M corvettes carry Kalibr; old landing ships and MCM."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 42,
+          "mid": 46,
+          "high": 57,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+          "note": "Active list: operational SSBN 12 + SSGN 4 + SSN 10 + SSK 16 = 42 (low); page summary incl. refit/reserve 57 (high). Bulletin Nuclear Notebook (Mar 2026): 13 operational SSBNs."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Yasen-M and Borei-A among era best; older Akula/Oscar/Kilo."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: submarine force is the best-maintained navy branch."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 450,
+          "mid": 490,
+          "high": 600,
+          "grade": "B",
+          "source": "https://thebulletin.org/premium/2026-05/russian-nuclear-weapons-2026/",
+          "note": "Launchers: ~324 ICBMs (Yars ~207, Voevoda ~40, Topol-M, Avangard; Bulletin Nuclear Notebook Mar 2026) + 162 Iskander-M launchers (IISS 2025 as quoted on the equipment list) = ~486. High allows for Bastion/Bal coastal anti-ship launchers (not counted)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: Iskander-M, Kinzhal, Zircon, Oreshnik IRBM (used Nov 2024); Sarmat not on combat duty."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Strategic Rocket Forces are well-trained long-service units."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 250,
+          "mid": 350,
+          "high": 450,
+          "grade": "D",
+          "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Russian_Ground_Forces",
+          "note": "Educated guess in batteries: Ground Forces SAM systems 1,029+ (Strela-10 300, Tunguska 190, Osa 100, Tor 129+, Buk 310; IISS 2025) / ~4 per battery = ~260, plus Aerospace Forces S-300/S-400/S-350 battalions (~80-120, not fetched). Several S-300/S-400 units destroyed in Crimea/occupied areas 2023-25."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: S-400, Pantsir-SM, Tor-M2 among era best; older Osa/Strela."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5 (competent staff, average generalship): failed 2022 opening, then effective defensive operations (2023) and slow attritional advances; centralized command, generals purged/killed; reportedly improving drone-artillery integration."
+    },
+    "cohesion": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: national army but filled with pay-motivated contract volunteers, mobilized men, convicts and foreign recruits; units repeatedly reconstituted after losses; ~250,000+ draft evaders fled (Russian Armed Forces article)."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: high signing bonuses rather than enthusiasm, heavy casualties; would rise toward 0.75 for defence of Russian territory proper."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 partly: hypersonic Kinzhal/Zircon, Oreshnik IRBM, glide bombs, mass drones; precision-munition stocks limited; much Soviet-era equipment."
+    },
+    "armor": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 composite/ERA armour; Arena-M APS fielded only in small numbers; field-improvised anti-drone cages."
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 (nuclear subs) with Yasen-M/Zircon toward 10; surface fleet aging, no networked USV fleet."
+    },
+    "fortification": {
+      "low": 9.4,
+      "mid": 9.6,
+      "high": 9.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10: layered air defence (S-400, Pantsir), deep fortified lines in occupied Ukraine (2023 \"Surovikin line\")."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Between anchor 8 (motor transport + rail) and 9: rail-dependent, truck-poor (forces operate ~90 miles from railheads, War on the Rocks 2021); limited airlift."
+    },
+    "communications": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9 satellite comms and data links, but chronic shortages of secure tactical radios (use of commercial phones/Starlink terminals reported 2022-24)."
+    },
+    "isr": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: dense tactical drone ISR, limited satellite and AEW (few A-50 left)."
+    },
+    "air": {
+      "low": 9.1,
+      "mid": 9.3,
+      "high": 9.5,
+      "grade": "B",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 9-10: Su-35/Su-34 4+ generation; Su-57 5th generation in small numbers only."
+    },
+    "cyber": {
+      "low": 9.6,
+      "mid": 9.8,
+      "high": 10.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 10 state cyber forces: GRU units (Sandworm etc.), FSB, SVR."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 28821,
+      "mid": 33908,
+      "high": 38994,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.PCAP.PP.KD 42,358.0 (2021 int$) x 0.8005 = 33,908 2011 int$. Range +/-15%."
+    },
+    "gdp": {
+      "low": 4207116326154,
+      "mid": 4949548619005,
+      "high": 5691980911856,
+      "grade": "B",
+      "source": "derived:ppp-rebase-2011",
+      "note": "asOf 2025. World Bank NY.GDP.MKTP.PP.KD (constant 2021 int$) 6,183,071,354,160 x 0.8005 (US GDP deflator 2011/2021) = 4,949,548,619,005 2011 int$. Range +/-15% for PPP benchmark uncertainty and the relative-price drift the rebase ignores."
+    },
+    "milSpendShare": {
+      "low": 0.036,
+      "mid": 0.075,
+      "high": 0.08,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/MS.MIL.XPND.GD.ZS?format=json",
+      "note": "SIPRI via World Bank: 7.50% of GDP in 2025 (wartime, mid), 6.87% 2024, 3.60% 2021 (pre-war peacetime, low). The field is defined as peacetime share; mid is the current wartime value because the 2026 snapshot is at war. High allows for classified spending."
+    },
+    "industrialShare": {
+      "low": 0.29,
+      "mid": 0.297,
+      "high": 0.32,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/NV.IND.TOTL.ZS?format=json",
+      "note": "asOf 2025: industry incl. construction 29.7% of GDP; 32.2% in 2022."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess: world's largest wheat exporter and self-sufficient in most staples; not computed from FAO balance sheets."
+    },
+    "annualCohort": {
+      "low": 749879,
+      "mid": 833199,
+      "high": 916519,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/SP.POP.1519.MA.5Y?format=json",
+      "note": "asOf 2025. Males reaching military age per year = male population 66,553,257 x share of males aged 15-19 6.260% (SP.POP.1519.MA.5Y) / 5 = 833,199. Male population from SP.POP.TOTL.MA.IN. Males only (conscript-pool convention); about double if women are counted. Range +/-10% for single-year cohort variation."
+    },
+    "production": {
+      "armor": {
+        "low": 200,
+        "mid": 1200,
+        "high": 1500,
+        "grade": "B",
+        "source": "https://www.swissinfo.ch/eng/russia-refits-old-tanks-after-losing-3%2c000-in-ukraine-research-centre/72529572",
+        "note": "IISS (Military Balance 2024 as reported by swissinfo): Russia put ~1,000-1,500 tanks into service in a year, of which \"200 at most were newly built\"; the rest refurbished from storage (up to ~90/month). Low = new-build only: with ~2,100 left in storage (new IISS edition via www1.ru) refurbishment cannot continue at the mid rate beyond ~2027."
+      },
+      "ifv_apc": {
+        "low": 600,
+        "mid": 1500,
+        "high": 2500,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Russian_Ground_Forces",
+        "note": "Educated guess incl. refurbishment from storage (BMP-1/2, MT-LB); new-build BMP-3/BTR-82A a few hundred per year."
+      },
+      "artillery": {
+        "low": 150,
+        "mid": 400,
+        "high": 800,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Russian_Ground_Forces",
+        "note": "Educated guess incl. refurbished towed guns; barrel production is a known bottleneck."
+      },
+      "aircraft_fighter": {
+        "low": 15,
+        "mid": 30,
+        "high": 50,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+        "note": "Educated guess (Su-35S, Su-30SM2, Su-57 at Komsomolsk/Irkutsk)."
+      },
+      "aircraft_strike": {
+        "low": 10,
+        "mid": 20,
+        "high": 35,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+        "note": "Educated guess (Su-34 at Novosibirsk; Tu-160M slow)."
+      },
+      "helicopters": {
+        "low": 50,
+        "mid": 100,
+        "high": 150,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_military_aircraft",
+        "note": "Educated guess (Ka-52M, Mi-28NM, Mi-8AMTSh)."
+      },
+      "drones": {
+        "low": 2000,
+        "mid": 5000,
+        "high": 15000,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/Russian_Armed_Forces",
+        "note": "Educated guess for reusable Group 2+ UAVs only. Excludes FPV drones and Geran-type one-way attack drones, which Western estimates put at tens of thousands per year (not fetched)."
+      },
+      "ships_major": {
+        "low": 0,
+        "mid": 1,
+        "high": 2,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+        "note": "Educated guess (Admiral Gorshkov frigates)."
+      },
+      "ships_minor": {
+        "low": 3,
+        "mid": 6,
+        "high": 10,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+        "note": "Educated guess (Karakurt/Buyan-M corvettes, MCM)."
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "https://en.wikipedia.org/wiki/List_of_active_Russian_Navy_ships",
+        "note": "Educated guess (Yasen-M, Borei-A, Improved Kilo)."
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 40,
+        "high": 80,
+        "grade": "D",
+        "source": "https://thebulletin.org/premium/2026-05/russian-nuclear-weapons-2026/",
+        "note": "Educated guess for Iskander/Yars launchers per year; missile output itself is far higher."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1124116,
+      "mid": 1124116,
+      "high": 1579291,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_road_network_size",
+      "note": "Rosstat 2023 as quoted: 1,124,116 km paved of 1,579,291 km total (high); only ~4,923 km expressway."
+    },
+    "railKm": {
+      "low": 85494,
+      "mid": 85544,
+      "high": 87000,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/RUS/indicator/IS.RRS.TOTL.KM?format=json",
+      "note": "asOf 2021: 85,544 route-km (World Bank); CIA Factbook 85,494 km (2019). Broad (1,520 mm) gauge, differs from Europe and China (break of gauge at borders). Lines built into occupied Ukraine excluded."
+    },
+    "majorPorts": {
+      "low": 7,
+      "mid": 9,
+      "high": 12,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/factbook/factbook.json/master/central-asia/rs.json",
+      "note": "CIA Factbook 2024: 67 ports, 4 large + 5 medium = 9; key ports Arkhangelsk, De-Kastri, Dudinka, Kaliningrad, Murmansk, Novorossiysk, St Petersburg, Vladivostok, Vyborg. Separated across four fleets that cannot reinforce each other quickly."
+    },
+    "merchantTonnage": {
+      "low": 14786000,
+      "mid": 14786000,
+      "high": 25000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/List_of_merchant_navy_capacity_by_country",
+      "note": "asOf 2025: 14,786 thousand DWT under the Russian flag. High is an educated guess adding the Russian-controlled \"shadow fleet\" of tankers under flags of convenience."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 145,
+      "high": 290,
+      "grade": "B",
+      "source": "https://warontherocks.com/2021/11/feeding-the-bear-a-closer-look-at-russian-army-logistics/",
+      "note": "War on the Rocks (Vershinin, 2021): Russian forces lack the trucks to sustain operations more than ~90 miles (145 km) beyond supply dumps/railheads; 180 miles (290 km) would need double the truck allocation (high). Borne out in 2022."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1400000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:regional-analogy",
+      "note": "Educated guess for horses (not from FAO data). Militarily marginal, though some use of horses and donkeys by assault units was reported in 2025."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 4300,
+      "mid": 4400,
+      "high": 5420,
+      "grade": "B",
+      "source": "https://thebulletin.org/premium/2026-05/russian-nuclear-weapons-2026/",
+      "note": "Bulletin Nuclear Notebook (Mar 2026) and FAS Status of World Nuclear Forces (2026): military stockpile ~4,400 (1,796 deployed strategic, ~810 strategic in storage, ~1,794 nonstrategic, low confidence); total inventory incl. ~1,020 retired warheads 5,420 (high)."
+    },
+    "basesAbroad": [
+      {
+        "name": "102nd Military Base, Gyumri, Armenia",
+        "lat": 40.7894,
+        "lon": 43.8475,
+        "kind": "fortress"
+      },
+      {
+        "name": "201st Military Base, Dushanbe, Tajikistan",
+        "lat": 38.5598,
+        "lon": 68.787,
+        "kind": "fortress"
+      },
+      {
+        "name": "Kant Air Base, Kyrgyzstan",
+        "lat": 42.8531,
+        "lon": 74.8461,
+        "kind": "fortress"
+      },
+      {
+        "name": "Operational Group of Russian Forces, Tiraspol (Transnistria)",
+        "lat": 46.8403,
+        "lon": 29.6433,
+        "kind": "fortress"
+      },
+      {
+        "name": "7th Military Base, Gudauta (Abkhazia, occupied Georgia)",
+        "lat": 43.105,
+        "lon": 40.62,
+        "kind": "fortress"
+      },
+      {
+        "name": "4th Military Base, Tskhinvali (South Ossetia, occupied Georgia)",
+        "lat": 42.23,
+        "lon": 43.97,
+        "kind": "fortress"
+      },
+      {
+        "name": "Hmeimim Air Base, Syria (status uncertain after Dec 2024)",
+        "lat": 35.4011,
+        "lon": 35.9487,
+        "kind": "fortress"
+      },
+      {
+        "name": "Tartus naval facility, Syria (status uncertain after Dec 2024)",
+        "lat": 34.91,
+        "lon": 35.87,
+        "kind": "port"
+      },
+      {
+        "name": "Africa Corps, Bamako, Mali",
+        "lat": 12.6392,
+        "lon": -8.0029,
+        "kind": "city"
+      }
+    ]
+  },
+  "doctrineId": "russian-2026",
+  "geography": {
+    "climate": "Dfc",
+    "chokepoints": [
+      "Turkish Straits (Bosporus/Dardanelles)",
+      "Danish Straits",
+      "GIUK gap",
+      "Kerch Strait",
+      "Suwalki Gap",
+      "La Perouse Strait",
+      "Northern Sea Route"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "B",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.3: deep strategic depth, harsh winter climate the invader is not adapted to, fortified cities and population support (the rubric names Russia as the example)."
+    }
+  },
+  "notes": "WARTIME snapshot (4th year of the full-scale invasion of Ukraine), asOf 2025 economic data with a 2026 order of battle. All equipment counts are highly uncertain: IISS figures as quoted are from the 2023-2026 editions and mix active and refurbished stock; losses since 2022 exceed 3,000 tanks (IISS 2024) and the force is sustained by drawing down Soviet-era storage (~2,100 tanks left per the new IISS edition as reported May 2026). Population convention: internationally recognised territory inside ne:RUS (World Bank); occupied Crimea and parts of Ukraine, and their populations, excluded; forces deployed there are counted. Money in 2011 int$ via derived:ppp-rebase-2011 (+/-15%). ships_major = carriers + cruisers + destroyers + frigates; ships_minor = corvettes, landing ships, MCM, patrol ships; drones = reusable Group 2+ UAVs only. Infantry P-role splits are educated guesses (grade D). Rosgvardiya (~350,000) and other paramilitary (IISS 569,000) excluded. North Korean troops sent in 2024-25 excluded. Figures from Ukrainian officials (Syrskyi) are from a party to the war and used only as ranges."
+}
