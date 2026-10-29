@@ -15,18 +15,35 @@ import { FLAG_RIVER, T } from './terrainClasses';
 import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { RIVER_DELAY_DAYS, ROAD_MIN_TECH, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
+import { RIVER_DELAY_DAYS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
-import { byTech } from './mech';
+import { byTech, rule, yearFromTech } from './mech';
 import { blockaded } from './naval';
 
-/** Troops `side` can have at sea at once in the theater (0: no sea movement today). */
+/** What `side` can have at sea at once in the theater (0: no sea movement today), in the units of
+ *  seaLoad: shipping tonnage (troopLiftPerShip x ships x seaLiftGrtPerSoldier of the ship era) with
+ *  SEA_LIFT_TONNAGE, else troops. */
 export function seaLift(ctx: Ctx, side: 0 | 1): number {
   const { S, st } = ctx;
   if (!SEA_MOVEMENT || !S.scenario.rules.naval || blockaded(ctx, side)) return 0;
   const ships = st.fleet[side][RI.ships_major] + st.fleet[side][RI.ships_minor];
-  return ships > 0 ? byTech(S.m.naval.troopLiftPerShip, S.poolTech[side].ships) * ships : 0;
+  if (!(ships > 0)) return 0;
+  const tech = S.poolTech[side].ships;
+  const troops = byTech(S.m.naval.troopLiftPerShip, tech) * ships;
+  return SEA_LIFT_TONNAGE ? troops * rule(S.m.modelRules.transport.seaLiftGrtPerSoldier, yearFromTech(S.m, tech)) : troops;
+}
+
+/** Shipping formation f needs (units of seaLift): personnel x seaLiftGrtPerSoldier of its era plus
+ *  its tracked and wheeled land vehicles (seaLiftTonsPerVehicle) with SEA_LIFT_TONNAGE, else personnel. */
+export function seaLoad(ctx: Ctx, f: number): number {
+  const F = ctx.st.F;
+  if (!SEA_LIFT_TONNAGE) return F.personnel[f];
+  const mr = ctx.S.members[F.member[f]];
+  let t = F.personnel[f] * mr.seaTonsPerSoldier;
+  const o = f * NR;
+  for (let r = 0; r < NR; r++) if (mr.seaTonsPerRole[r] > 0) t += F.counts[o + r] * mr.seaTonsPerRole[r];
+  return t;
 }
 
 /** Is cell c a road cell for `side` today? (own place, or own cropland/urban at logistics tech >= 3) */
@@ -178,7 +195,7 @@ function chooseNext(ctx: Ctx, f: number, field: Float32Array, attack: boolean, r
     const j = g.nb[cur * 8 + d];
     if (j < 0) continue;
     // embarking needs free lift; already at sea, moving on at sea is fine
-    if (!g.land[j] && (g.land[cur] ? sc.embarked[side] + F.personnel[f] > lift : lift <= 0)) continue;
+    if (!g.land[j] && (g.land[cur] ? sc.embarked[side] + seaLoad(ctx, f) > lift : lift <= 0)) continue;
     const v = field[j];
     if (!(v < fc)) continue;
     if (sc.occ[enemy][j] > 0 && rout) continue;
@@ -261,7 +278,7 @@ export function movementPhase(ctx: Ctx): void {
   const n = g.n;
   const lift: [number, number] = [seaLift(ctx, 0), seaLift(ctx, 1)];
   sc.embarked[0] = 0; sc.embarked[1] = 0;
-  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && !g.land[F.cell[f]]) sc.embarked[F.side[f]] += F.personnel[f];
+  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && !g.land[F.cell[f]]) sc.embarked[F.side[f]] += seaLoad(ctx, f);
   const seaRate = Math.max(1e-9, S.m.movement.rate.sea.mid);
   for (let f = 0; f < F.n; f++) {
     F.movedKm[f] = 0;
@@ -324,7 +341,7 @@ export function movementPhase(ctx: Ctx): void {
         F.movedKm[f] += (km * remaining) / edge;
         sc.occ[side][cur]--;
         sc.occ[side][nx]++;
-        if (g.land[cur] !== g.land[nx]) sc.embarked[side] += g.land[nx] ? -F.personnel[f] : F.personnel[f];
+        if (g.land[cur] !== g.land[nx]) sc.embarked[side] += g.land[nx] ? -seaLoad(ctx, f) : seaLoad(ctx, f);
         F.cell[f] = nx;
         F.next[f] = -1;
         F.prog[f] = 0;

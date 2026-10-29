@@ -72,6 +72,8 @@ export interface MemberRT {
   ruleYear: number;
   /** Hospital admissions: share lost (deaths, discharges) and days until the rest return. */
   admitLossShare: number; returnDays: number;
+  /** Sea lift needed: GRT per soldier (with kit) and per platform of each role (land vehicles only). */
+  seaTonsPerSoldier: number; seaTonsPerRole: Float64Array;
   doctrine: DoctrineProfile;
   w: DoctrineProfile['weights'];
   specials: Set<string>;
@@ -384,6 +386,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       warnings.push(`${snap.name}: no doctrine profiles loaded; using neutral weights (retreat at 75% of the breakpoint).`);
     }
     const w = doctrine.weights;
+    const ruleYear = scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year;
     const tli = new Float64Array(NR), qF = new Float64Array(NR), tF = new Float64Array(NR), range = new Float64Array(NR), rate = new Float64Array(NR), rangeClass = new Float64Array(NR);
     const mounted = new Uint8Array(NR), vehicle = new Uint8Array(NR);
     const mob: MobilityClass[] = [];
@@ -403,6 +406,15 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       mounted[r] = MOUNTED[cls] ? 1 : 0;
       vehicle[r] = VEHICLE[cls] && !IS_P[r] ? 1 : 0;
     }
+    // sea lift: measurement tons (40 cu ft) per vehicle -> GRT (100 cu ft) x 0.4, by definition of the units;
+    // no broken stowage (named simplification, a lower bound)
+    const TR = m.modelRules.transport;
+    const seaTonsPerRole = new Float64Array(NR);
+    for (let r = 0; r < NR; r++) {
+      if (!IS_LAND[r] || IS_P[r]) continue;
+      const kind = mob[r] === 'mechanized' || mob[r] === 'tracked_heavy' ? TR.seaLiftTonsPerVehicle.tracked : mob[r] === 'motorized' ? TR.seaLiftTonsPerVehicle.wheeled : null;
+      if (kind) seaTonsPerRole[r] = rule(kind, ruleYear) * 0.4;
+    }
     const pMix = new Float64Array(NR);
     let pTot = 0;
     for (let r = 0; r < NR; r++) if (IS_P[r]) { pMix[r] = forces[ROLES[r]]?.count?.mid ?? 0; pTot += pMix[r]; }
@@ -420,10 +432,10 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       : byTech(mobArr, tech.communications);
     const cohortFrac = levee ? m.production.cohortTrainableFraction.high : m.production.cohortTrainableFraction.mid;
     const delay = byTech(m.c2.orderDelayDays, tech.communications) * (doctrine.specials.includes('mission_command') ? MISSION_COMMAND_DELAY_FACTOR : 1);
-    const ruleYear = scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year;
     const mr: MemberRT = {
       idx, side, snapId: snap.id, nationId: snap.nationId, name: snap.name, snap, doctrine, w,
       ruleYear,
+      seaTonsPerSoldier: rule(TR.seaLiftGrtPerSoldier, ruleYear), seaTonsPerRole,
       admitLossShare: ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.diseaseDeathShareOfAdmissions, ruleYear) : 1 - m.attrition.returnToDuty.mid,
       returnDays: clamp(Math.round(ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.returnToDutyDays, ruleYear) : RETURN_TO_DUTY_DAYS), 1, RETURN_RING_DAYS - 1),
       specials: new Set(doctrine.specials), tech, commitment: 1,

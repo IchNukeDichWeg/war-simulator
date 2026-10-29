@@ -159,6 +159,13 @@ export const CASUALTIES_ALL_CAUSES = true;
  *  armies on different land masses never met (usa-vs-china-2026, athens-vs-usa-2026,
  *  usa-spain-vs-russia-2026). */
 export const SEA_MOVEMENT = true;
+/** Sea lift in shipping tonnage: capacity = troopLiftPerShip x ships x seaLiftGrtPerSoldier (ship
+ *  era); a formation needs personnel x seaLiftGrtPerSoldier (its era) plus its tracked/wheeled
+ *  vehicles (seaLiftTonsPerVehicle, measurement tons x 0.4 = GRT). OFF: troops only, vehicles ride
+ *  free. The per-soldier figure is a long-haul average that already carries a division's share of
+ *  vehicles, so vehicle-heavy formations are counted somewhat high. Measured: backtests identical;
+ *  seed 1 allies-vs-axis-minus-two Axis win day 329 -> draw day 730, usa-vs-china-2026 day 493 -> 503. */
+export const SEA_LIFT_TONNAGE = true;
 /** AI compares forces in the units battle uses: enemy strength (sum count x enemy TLI) is scaled by
  *  enemy dispersion / own dispersion, so both sides are lethality against the other's dispersion.
  *  Raw strengths compared a 2026 army's TLI with a Roman one's as if the target were the same. */

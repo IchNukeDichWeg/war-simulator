@@ -216,11 +216,21 @@ are impassable to land formations unless embarked (sea lift, section 6). As
 built (`SEA_MOVEMENT`): a side that is not blockaded and has ships in the
 theater can move land formations across sea cells at `movement.rate.sea`,
 with at most `troopLiftPerShip` x theater ships personnel at sea at once,
-embarking from any coastal cell. Land first: an objective's flow field opens
+embarking from any coastal cell. With `SEA_LIFT_TONNAGE` the limit is in
+shipping tonnage: capacity = that troop lift x `seaLiftGrtPerSoldier` (ship
+era), and a formation needs personnel x `seaLiftGrtPerSoldier` (its era) plus
+its tracked and wheeled vehicles (`seaLiftTonsPerVehicle`, measurement tons x
+0.4 = GRT, no broken stowage). The per-soldier figure is a long-haul average
+that already carries a division's share of vehicles, so armoured formations
+count somewhat high. Measured: backtests identical; seed 1 presets: Allies vs
+Axis without the two largest goes from an Axis win on day 329 to a draw at
+730, USA vs China still a Chinese win (day 503 vs 493). No airlift: the
+engine has no transport-aircraft role, so `airLiftTonsPerDayPerAircraft` is
+not read. Land first: an objective's flow field opens
 sea cells only when some own formation cannot reach it overland, or only by a
 march longer than its supply range (a member without a researched range only
-when cut off). Named simplification: no ports, embarkation time or merchant
-tonnage; those need sourced constants. Formations at sea draw no supply and
+when cut off). Named simplification: no ports or embarkation time; those
+need sourced constants. Formations at sea draw no supply and
 show as Embarked. Major
 river cells cost an extra half day without a bridge (a city cell).
 
