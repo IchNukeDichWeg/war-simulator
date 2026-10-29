@@ -1,0 +1,546 @@
+{
+ "id": "macedon--334",
+ "nationId": "macedon",
+ "includes": [],
+ "name": "Kingdom of Macedon (Alexander III)",
+ "year": -334,
+ "era": "iron",
+ "region": "europe",
+ "phase": "rise",
+ "tags": [
+  "kingdom",
+  "Argead",
+  "Alexander the Great",
+  "League of Corinth",
+  "hegemon",
+  "combined arms",
+  "phalanx"
+ ],
+ "capital": {
+  "name": "Pella",
+  "lat": 40.7553,
+  "lon": 22.524,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Aigai (Vergina)",
+   "lat": 40.48,
+   "lon": 22.32,
+   "kind": "city"
+  },
+  {
+   "name": "Dion",
+   "lat": 40.17,
+   "lon": 22.49,
+   "kind": "city"
+  },
+  {
+   "name": "Pydna",
+   "lat": 40.37,
+   "lon": 22.6,
+   "kind": "port"
+  },
+  {
+   "name": "Amphipolis",
+   "lat": 40.822,
+   "lon": 23.846,
+   "kind": "port"
+  },
+  {
+   "name": "Philippi",
+   "lat": 41.013,
+   "lon": 24.286,
+   "kind": "fortress"
+  },
+  {
+   "name": "Vale of Tempe",
+   "lat": 39.89,
+   "lon": 22.59,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Larissa (Thessaly)",
+   "lat": 39.639,
+   "lon": 22.419,
+   "kind": "city"
+  },
+  {
+   "name": "Corinth (League synedrion)",
+   "lat": 37.906,
+   "lon": 22.88,
+   "kind": "city"
+  },
+  {
+   "name": "Sestos (Hellespont crossing)",
+   "lat": 40.23,
+   "lon": 26.41,
+   "kind": "chokepoint"
+  }
+ ],
+ "territory": {
+  "border": "none",
+  "areaKm2": {
+   "low": 30000,
+   "mid": 40000,
+   "high": 70000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Analogue: the modern Greek region of Macedonia (~34,000 km2) plus Upper Macedonia/Paeonia; high adds directly ruled parts of Thrace. Seshat (https://seshat-db.com/core/polity/506) codes only 10,000 km2 for 359 BCE, the core before Philip II's expansion."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 700000,
+   "mid": 1000000,
+   "high": 1500000,
+   "grade": "C",
+   "source": "https://seshat-db.com/core/polity/506",
+   "note": "Seshat codes the Macedonian polity at 1,000,000 for 359-336 BCE (single value; range is ours). Macedon proper (Lower and Upper Macedonia, Chalcidice, east to the Nestos) only: Thessaly, Thrace and the League of Corinth members are not counted, although their contingents are in `forces`."
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.08,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: a mostly rural kingdom; Pella, Aigai, Pydna, Amphipolis were the main towns (Seshat largest settlement 20,000-80,000 for 330-312)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 75000,
+   "mid": 86000,
+   "high": 100000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Field and home armies (50,600) + League fleet crews and engineers (34,000) + margin. About half are non-Macedonians: League allies (7,000 infantry, 600 cavalry, the fleet), Greek mercenaries (5,000) and Balkan contingents (7,000+)."
+  },
+  "trainedReserves": {
+   "low": 2000,
+   "mid": 5000,
+   "high": 10000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: Macedonians trained under Philip but not under arms; reinforcements of a few thousand were sent to Asia in 333."
+  },
+  "supportPersonnel": {
+   "low": 25000,
+   "mid": 34000,
+   "high": 38000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "League fleet 160 triremes x ~200 crew = 32,000 (largely allied Greeks) + ~2,000 engineers, surveyors (bematists), staff."
+  },
+  "mobilizationRatio": {
+   "low": 0.12,
+   "mid": 0.18,
+   "high": 0.22,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Analogy with the Greek total-war call-up of 90% of the year classes 20-49/55 in 480 (Hansen 2006, https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 10), slightly lower for a less urbanised kingdom."
+  },
+  "mobilizable": {
+   "low": 84000,
+   "mid": 180000,
+   "high": 330000,
+   "grade": "C",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 33000,
+     "mid": 36000,
+     "high": 44000,
+     "grade": "B",
+     "source": "isbn:0521343208",
+     "note": "Diodorus 17.17.3-5 as accepted by Bosworth, Conquest and Empire (1988), Part II section on the army, and Hammond & Walbank, A History of Macedonia III (isbn:0198148151): crossing army 32,000 infantry + 5,100 cavalry; Antipater kept 12,000 infantry + 1,500 cavalry in Europe. Parmenion's advance force (~10,000 in 336, Polyaenus 5.44.4) is only in the high value because it may already be inside Diodorus' totals. Line = Macedonian phalanx and hypaspists (12,000) + League hoplites (7,000) + mercenary hoplites (5,000) + Antipater's 12,000."
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.8,
+     "high": 0.95,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Sarissa phalanx and hypaspists the era's best (1.0); allied and mercenary hoplites era-typical (0.5)."
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.75,
+     "high": 0.9,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Philip's professionalised Macedonian infantry (0.75-1.0); allies citizen militia (0.5)."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 6000,
+     "mid": 7500,
+     "high": 9000,
+     "grade": "B",
+     "source": "isbn:0521343208",
+     "note": "Diodorus 17.17.3-5 as accepted by Bosworth, Conquest and Empire (1988), Part II section on the army, and Hammond & Walbank, A History of Macedonia III (isbn:0198148151): crossing army 32,000 infantry + 5,100 cavalry; Antipater kept 12,000 infantry + 1,500 cavalry in Europe. Parmenion's advance force (~10,000 in 336, Polyaenus 5.44.4) is only in the high value because it may already be inside Diodorus' totals. Odrysians, Triballians, Illyrians (7,000) + Agrianians (~500)."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Javelinmen; the Agrianians were elite skirmishers."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.75,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Balkan tribal troops, Agrianians professional."
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 300,
+     "mid": 500,
+     "high": 1000,
+     "grade": "C",
+     "source": "isbn:0521343208",
+     "note": "Diodorus 17.17.3-5 as accepted by Bosworth, Conquest and Empire (1988), Part II section on the army, and Hammond & Walbank, A History of Macedonia III (isbn:0198148151): crossing army 32,000 infantry + 5,100 cavalry; Antipater kept 12,000 infantry + 1,500 cavalry in Europe. Parmenion's advance force (~10,000 in 336, Polyaenus 5.44.4) is only in the high value because it may already be inside Diodorus' totals. Cretan and Macedonian archers (~500, shared 1,000 with the Agrianians)."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Cretan archers renowned."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Mercenary specialists."
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 5000,
+     "mid": 5700,
+     "high": 6500,
+     "grade": "B",
+     "source": "isbn:0521343208",
+     "note": "Diodorus 17.17.3-5 as accepted by Bosworth, Conquest and Empire (1988), Part II section on the army, and Hammond & Walbank, A History of Macedonia III (isbn:0198148151): crossing army 32,000 infantry + 5,100 cavalry; Antipater kept 12,000 infantry + 1,500 cavalry in Europe. Parmenion's advance force (~10,000 in 336, Polyaenus 5.44.4) is only in the high value because it may already be inside Diodorus' totals. Companions 1,800 + Thessalians 1,800 + allied Greek cavalry 600 + Antipater's 1,500."
+    },
+    "quality": {
+     "low": 0.85,
+     "mid": 0.95,
+     "high": 1.0,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Companion and Thessalian shock cavalry, the era's best (rubric 1.0)."
+    },
+    "training": {
+     "low": 0.8,
+     "mid": 0.9,
+     "high": 1.0,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Aristocratic long-service cavalry (rubric 0.75-1.0)."
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 600,
+     "mid": 900,
+     "high": 1200,
+     "grade": "B",
+     "source": "isbn:0521343208",
+     "note": "Diodorus 17.17.3-5 as accepted by Bosworth, Conquest and Empire (1988), Part II section on the army, and Hammond & Walbank, A History of Macedonia III (isbn:0198148151): crossing army 32,000 infantry + 5,100 cavalry; Antipater kept 12,000 infantry + 1,500 cavalry in Europe. Parmenion's advance force (~10,000 in 336, Polyaenus 5.44.4) is only in the high value because it may already be inside Diodorus' totals. Thracian and Paeonian prodromoi/scouts 900."
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Sarissa-armed scouts and light horse."
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "B",
+     "source": "derived:rating-rubric",
+     "note": "Professional scouts."
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 140,
+     "mid": 160,
+     "high": 182,
+     "grade": "C",
+     "source": "isbn:0521343208",
+     "note": "Arrian 1.11.6: 160 triremes of the League fleet (ancient figure accepted by modern historians; low/high are +/-~12% for uncertainty). Disbanded after Miletus in 334."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Standard triremes; inferior to the Persian-Phoenician fleet."
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Allied crews of uncertain loyalty."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.8,
+   "mid": 0.9,
+   "high": 1.0,
+   "grade": "B",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 1.0 row (best-in-era command): Alexander, with Parmenion and Philip's trained officer corps; mid 0.9 at the start of the campaign."
+  },
+  "cohesion": {
+   "low": 0.7,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "B",
+   "source": "derived:rating-rubric",
+   "note": "Macedonian units 0.75-1.0 (regional taxeis, Companions); allied and mercenary contingents lower."
+  },
+  "morale": {
+   "low": 0.7,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.75: motivated, recent victories (Chaeronea 338, Balkan campaign and Thebes 335)."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 2.9,
+   "mid": 3.0,
+   "high": 3.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 exactly (300 BCE: iron weapons, torsion artillery, sarissa)."
+  },
+  "armor": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: bronze/iron and linen cuirasses."
+  },
+  "ships": {
+   "low": 2.8,
+   "mid": 2.9,
+   "high": 3.0,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: triremes; no larger polyremes in the League fleet."
+  },
+  "fortification": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.1,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: siege towers and torsion artillery (Philip at Perinthus 340, Diades' engineers)."
+  },
+  "logistics": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "B",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: Engels (isbn:0520042727) shows minimal baggage, soldiers carrying their own rations and pack horses instead of wagons, and pre-arranged depots."
+  },
+  "communications": {
+   "low": 2.6,
+   "mid": 2.8,
+   "high": 3.0,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Mounted couriers; no permanent relay system until the Persian one was taken over."
+  },
+  "isr": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor 3: prodromoi scouts, bematists surveying routes."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 900,
+   "mid": 1100,
+   "high": 1400,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true: Greece year 1 CE = 1,275 (2011 int$). Macedon was less urbanised than southern Greece but rich in timber, horses and Pangaion gold."
+  },
+  "gdp": {
+   "low": 630000000,
+   "mid": 1100000000,
+   "high": 2100000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high). "
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.08,
+   "high": 0.12,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: a permanent army on Philip's model; Alexander crossed to Asia in debt (Arrian 7.9.6 / Plutarch, ancient)."
+  },
+  "industrialShare": {
+   "low": 0.05,
+   "mid": 0.1,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: mining (Pangaion), timber and shipbuilding, crafts."
+  },
+  "foodSurplus": {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: fertile plains of Emathia and Thessaly; self-sufficient in grain."
+  },
+  "annualCohort": {
+   "low": 6650,
+   "mid": 9500,
+   "high": 14250,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in an ancient Greek-type age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model used for all classical snapshots. "
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 100,
+   "mid": 500,
+   "high": 1500,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: some military roads built under Philip II; no engineered network."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 3,
+   "mid": 4,
+   "high": 6,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Pydna, Methone, Amphipolis, Therme."
+  },
+  "merchantTonnage": {
+   "low": 3000,
+   "mid": 8000,
+   "high": 20000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: timber and grain coasting trade; the League's merchant shipping (Athens) is not counted."
+  },
+  "supplyRangeKm": {
+   "low": 80,
+   "mid": 150,
+   "high": 250,
+   "grade": "C",
+   "source": "isbn:0520042727",
+   "note": "Engels (ch. 1-2): the army carried its own provisions on soldiers and pack animals and could operate only a limited number of days from water and a supply source; mid assumes ~1 week of marching between depots or the fleet."
+  },
+  "draftAnimals": {
+   "low": 40000,
+   "mid": 80000,
+   "high": 150000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: ~0.06-0.1 horses, mules and oxen per inhabitant x population (horse-rich kingdom)."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": [
+   {
+    "name": "Abydos (bridgehead held since 336)",
+    "lat": 40.195,
+    "lon": 26.405,
+    "kind": "port"
+   }
+  ]
+ },
+ "doctrineId": "macedonian-combined-arms",
+ "geography": {
+  "climate": "Csa",
+  "chokepoints": [
+   "Hellespont (Sestos-Abydos crossing)",
+   "Vale of Tempe",
+   "Thermopylae",
+   "Strymon crossing at Amphipolis"
+  ],
+  "homeDefense": {
+   "low": 1.05,
+   "mid": 1.1,
+   "high": 1.2,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.1: familiar mountain terrain and local supply; few fortified cities."
+  }
+ },
+ "notes": "Snapshot = spring 334 BCE, Alexander crossing the Hellespont. Border \"none\": historical-basemaps has no Macedon polygon near this date. world_bc400 is not available, world_bc323 shows only the \"Empire of Alexander\" (after the conquests), and world_bc500 lumps Macedon into the shared \"Greek city-states\" polygon (which also includes southern Greece, Magna Graecia and Massalia). Population is Macedon proper only; League of Corinth allies, Thessalians, mercenaries and Balkan troops are in `forces` but their homelands are not counted (includes = []). Army figures are Diodorus' breakdown as accepted by modern historians; Arrian gives \"not much more than 30,000 infantry and over 5,000 cavalry\". The siege train (torsion artillery) is not counted: its size at the start is undocumented."
+}

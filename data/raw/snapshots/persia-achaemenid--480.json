@@ -1,0 +1,559 @@
+{
+ "id": "persia-achaemenid--480",
+ "nationId": "persia-achaemenid",
+ "includes": [],
+ "name": "Achaemenid Empire (Xerxes I)",
+ "year": -480,
+ "era": "iron",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "empire",
+  "Achaemenid",
+  "Persian Wars",
+  "Xerxes",
+  "multi-ethnic",
+  "satrapies"
+ ],
+ "capital": {
+  "name": "Susa",
+  "lat": 32.1894,
+  "lon": 48.2575,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Persepolis",
+   "lat": 29.9352,
+   "lon": 52.8914,
+   "kind": "city"
+  },
+  {
+   "name": "Pasargadae",
+   "lat": 30.2,
+   "lon": 53.179,
+   "kind": "city"
+  },
+  {
+   "name": "Babylon",
+   "lat": 32.5363,
+   "lon": 44.4209,
+   "kind": "city",
+   "population": 200000
+  },
+  {
+   "name": "Ecbatana",
+   "lat": 34.798,
+   "lon": 48.515,
+   "kind": "city"
+  },
+  {
+   "name": "Sardis",
+   "lat": 38.4883,
+   "lon": 28.0403,
+   "kind": "city"
+  },
+  {
+   "name": "Memphis",
+   "lat": 29.8447,
+   "lon": 31.25,
+   "kind": "city"
+  },
+  {
+   "name": "Bactra",
+   "lat": 36.7581,
+   "lon": 66.8978,
+   "kind": "city"
+  },
+  {
+   "name": "Sidon",
+   "lat": 33.563,
+   "lon": 35.3688,
+   "kind": "port"
+  },
+  {
+   "name": "Tyre",
+   "lat": 33.2705,
+   "lon": 35.1964,
+   "kind": "port"
+  },
+  {
+   "name": "Abydos (Hellespont)",
+   "lat": 40.195,
+   "lon": 26.405,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Cilician Gates",
+   "lat": 37.293,
+   "lon": 34.778,
+   "kind": "chokepoint"
+  },
+  {
+   "name": "Pelusium",
+   "lat": 31.042,
+   "lon": 32.545,
+   "kind": "fortress"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc500:Achaemenid Empire",
+  "areaKm2": {
+   "low": 4800000,
+   "mid": 5500000,
+   "high": 5950000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/107",
+   "note": "Seshat codes 4.8-5.5 million km2 for 500-451 BCE. The historical-basemaps world_bc500 polygon measures 5.95 million km2 on the sphere (computed from the GeoJSON, high)."
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 17000000,
+   "mid": 23000000,
+   "high": 35000000,
+   "grade": "B",
+   "source": "https://seshat-db.com/core/polity/107",
+   "note": "Seshat codes 20-26 million for 500 BCE (mid = 23 million) and 17-35 million for 400 BCE (range). Everything inside the 480 BCE imperial border incl. Egypt, Babylonia, Ionia, Bactria and the Indus satrapy."
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.1,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Seshat codes the largest settlement at 200,000 (Babylon). Mesopotamia, Egypt, the Levant and Ionia were urbanised; the Iranian plateau and Central Asia much less. Scaled below the Roman 10-25% (Hanson & Ortman 2017)."
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 222000,
+   "mid": 362000,
+   "high": 641000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Invasion land army (80,000 / 152,000 / 300,000) + fleet crews (102,000 / 150,000 / 241,000, see supportPersonnel) + garrisons across the empire left behind (40,000 / 60,000 / 100,000; educated guess: Elephantine, Babylon, Sardis, satrapal guards). Garrisons are not broken down by role in `forces`."
+  },
+  "trainedReserves": {
+   "low": 0,
+   "mid": 50000,
+   "high": 150000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: Iranian and satrapal cavalry and levies reachable within ~30 days; the empire's distances make most levies slower than that."
+  },
+  "supportPersonnel": {
+   "low": 102000,
+   "mid": 150000,
+   "high": 241000,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Fleet crews: triremes (600 / 750 / 1,207) x ~170-200 men (oarsmen, deck crew, the ~30 marines per ship that Herodotus mentions). Excludes the transport crews."
+  },
+  "mobilizationRatio": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess for an agrarian empire levying satrapal contingents (hatru land-for-service system): the 480 expedition plus fleet (~300,000 men) was already ~1.3% of the population."
+  },
+  "mobilizable": {
+   "low": 510000,
+   "mid": 1150000,
+   "high": 2800000,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+  },
+  "forces": {
+   "missile_infantry": {
+    "count": {
+     "low": 37000,
+     "mid": 70000,
+     "high": 138000,
+     "grade": "C",
+     "source": "isbn:9780199732159",
+     "note": "Land army of the 480 invasion: low 80,000 (Shahbazi 2012, Oxford Handbook of Iranian History, p. 129: 80,000-100,000 or fewer), mid 150,000, high 300,000 (Munro and Macan, from six marshals and 29 myriarchs). Herodotus 7.60-99 gives 1,700,000 infantry and 80,000 cavalry (rejected). Split by role on the composition in Herodotus' muster list (Iranian archer infantry dominant): Iranian and Saka archer infantry incl. the 10,000 Immortals (Herodotus 7.83) ~46%."
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Rubric 0.5 era-typical: composite bows, wicker shields (spara), little armour."
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Immortals professional (0.75); most contingents satrapal levies (0.25-0.5)."
+    }
+   },
+   "infantry_line": {
+    "count": {
+     "low": 21000,
+     "mid": 40000,
+     "high": 78000,
+     "grade": "C",
+     "source": "isbn:9780199732159",
+     "note": "Land army of the 480 invasion: low 80,000 (Shahbazi 2012, Oxford Handbook of Iranian History, p. 129: 80,000-100,000 or fewer), mid 150,000, high 300,000 (Munro and Macan, from six marshals and 29 myriarchs). Herodotus 7.60-99 gives 1,700,000 infantry and 80,000 cavalry (rejected). Split by role on the composition in Herodotus' muster list (Iranian archer infantry dominant): spear-armed close-order contingents (Assyrians, Egyptians, Anatolians, Ionian hoplites) ~26%."
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Below the Greek hoplite panoply; between obsolete and era-typical."
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.5,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Mostly levies (rubric 0.25-0.5)."
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 13000,
+     "mid": 25000,
+     "high": 50000,
+     "grade": "C",
+     "source": "isbn:9780199732159",
+     "note": "Land army of the 480 invasion: low 80,000 (Shahbazi 2012, Oxford Handbook of Iranian History, p. 129: 80,000-100,000 or fewer), mid 150,000, high 300,000 (Munro and Macan, from six marshals and 29 myriarchs). Herodotus 7.60-99 gives 1,700,000 infantry and 80,000 cavalry (rejected). Split by role on the composition in Herodotus' muster list (Iranian archer infantry dominant): javelin and other light levies (Thracians, Libyans, Ethiopians, Arabians) ~17%."
+    },
+    "quality": {
+     "low": 0.2,
+     "mid": 0.3,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Light, often traditional equipment (rubric 0.25)."
+    },
+    "training": {
+     "low": 0.2,
+     "mid": 0.3,
+     "high": 0.4,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Levies (rubric 0.25)."
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 1000,
+     "mid": 2000,
+     "high": 4000,
+     "grade": "C",
+     "source": "isbn:9780199732159",
+     "note": "Land army of the 480 invasion: low 80,000 (Shahbazi 2012, Oxford Handbook of Iranian History, p. 129: 80,000-100,000 or fewer), mid 150,000, high 300,000 (Munro and Macan, from six marshals and 29 myriarchs). Herodotus 7.60-99 gives 1,700,000 infantry and 80,000 cavalry (rejected). Split by role on the composition in Herodotus' muster list (Iranian archer infantry dominant): the two 1,000-strong Persian guard cavalry regiments (Herodotus 7.40-41) and armoured noble cavalry ~1.3%."
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Armoured noble cavalry; era-typical to good."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Royal guard professionals (rubric 0.75)."
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 8000,
+     "mid": 15000,
+     "high": 30000,
+     "grade": "C",
+     "source": "isbn:9780199732159",
+     "note": "Land army of the 480 invasion: low 80,000 (Shahbazi 2012, Oxford Handbook of Iranian History, p. 129: 80,000-100,000 or fewer), mid 150,000, high 300,000 (Munro and Macan, from six marshals and 29 myriarchs). Herodotus 7.60-99 gives 1,700,000 infantry and 80,000 cavalry (rejected). Split by role on the composition in Herodotus' muster list (Iranian archer infantry dominant): Iranian and Saka horse archers and javelin cavalry ~10%."
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Mounted archers/javelinmen, era-typical."
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Iranian nobility and steppe horsemen, raised in the saddle."
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 600,
+     "mid": 750,
+     "high": 1207,
+     "grade": "C",
+     "source": "isbn:0856685917",
+     "note": "Lazenby 1993 (The Defence of Greece, p. 93 per citation key) argues for no more than ~600 warships; Shahbazi 2012 gives 600-1,200; Herodotus 7.89 gives 1,207 triremes (Phoenicia 300, Egypt 200, Cyprus 150...). Mid 750 between them. ~3,000 transports/penteconters (Herodotus) not counted as combatants."
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Phoenician triremes among the era's best (rubric 0.75)."
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "C",
+     "source": "derived:rating-rubric",
+     "note": "Professional Phoenician and Ionian seafarers."
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.4,
+   "mid": 0.5,
+   "high": 0.65,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5: competent staff (outstanding logistics planning: canal at Athos, Hellespont bridges, depots), average generalship in battle."
+  },
+  "cohesion": {
+   "low": 0.25,
+   "mid": 0.35,
+   "high": 0.5,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.25-0.5: multi-ethnic host of ~46 contingents with separate languages; core Persian units better."
+  },
+  "morale": {
+   "low": 0.4,
+   "mid": 0.55,
+   "high": 0.65,
+   "grade": "C",
+   "source": "derived:rating-rubric",
+   "note": "Rubric 0.5 average; royal presence raised it, subject levies low."
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 2.5,
+   "mid": 2.7,
+   "high": 2.9,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Between anchor 2 (composite bow, bronze) and 3 (iron weapons, torsion artillery): iron weapons common, no torsion artillery yet."
+  },
+  "armor": {
+   "low": 2.4,
+   "mid": 2.6,
+   "high": 2.8,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 2 (bronze scale) to 3: scale and linen armour for elites, most infantry unarmoured."
+  },
+  "ships": {
+   "low": 2.8,
+   "mid": 2.9,
+   "high": 3.0,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3 triremes (Phoenician), no larger polyremes yet."
+  },
+  "fortification": {
+   "low": 2.6,
+   "mid": 2.8,
+   "high": 3.0,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 2-3: stone citadels, Babylon's walls; Seshat codes a 60 km long wall."
+  },
+  "logistics": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: Royal Road and depot system documented in the Persepolis Fortification tablets (Briant, isbn:1575060310, ch. 9)."
+  },
+  "communications": {
+   "low": 2.8,
+   "mid": 3.0,
+   "high": 3.2,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Anchor 3: mounted relay posts (angareion) on the royal roads."
+  },
+  "isr": {
+   "low": 2.5,
+   "mid": 2.7,
+   "high": 2.9,
+   "grade": "C",
+   "source": "derived:tech-anchor",
+   "note": "Year anchor (480 BCE between 2 and 3): mounted scouts, spies."
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No aircraft before 1903."
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No computer networks before ~1990."
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 800,
+   "mid": 1000,
+   "high": 1300,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Maddison Project 2023 via https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true: year 1 CE values for Iran, Iraq, Egypt, Israel and Jordan are 1,116, Turkey 897 (2011 int$). Applied 500 years earlier to the same region; Central Asian and Indian satrapies probably lower, hence mid 1,000."
+  },
+  "gdp": {
+   "low": 13600000000,
+   "mid": 23000000000,
+   "high": 45500000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita (low x low, mid x mid, high x high). "
+  },
+  "milSpendShare": {
+   "low": 0.02,
+   "mid": 0.03,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess. Herodotus 3.89-95 lists ~14,560 Euboic talents of annual tribute, not convertible to GDP reliably; most military service was paid in land grants (hatru)."
+  },
+  "industrialShare": {
+   "low": 0.05,
+   "mid": 0.1,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess for an agrarian empire with craft centres in Mesopotamia, Egypt, Lydia."
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.25,
+   "high": 0.35,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: irrigated Mesopotamian and Egyptian agriculture produced large surpluses stored in royal granaries (Persepolis tablets)."
+  },
+  "annualCohort": {
+   "low": 161500,
+   "mid": 218500,
+   "high": 332500,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in an ancient Greek-type age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model used for all classical snapshots. "
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2500,
+   "mid": 6000,
+   "high": 13000,
+   "grade": "D",
+   "source": "isbn:1575060310",
+   "note": "Briant, From Cyrus to Alexander, ch. 9: the Sardis-Susa Royal Road (Herodotus 5.52-53: 450 parasangs, ~2,500 km) is the low bound; the Persepolis tablets attest further routes to Persepolis, Ecbatana, Bactra, Arachosia and Egypt. Total length not documented; mid and high are educated guesses."
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No railways before 1825."
+  },
+  "majorPorts": {
+   "low": 6,
+   "mid": 10,
+   "high": 15,
+   "grade": "C",
+   "source": "derived:regional-analogy",
+   "note": "Phoenicia (Sidon, Tyre, Arwad, Byblos), Cyprus (Salamis), Cilicia, Egypt, Ionia and the Hellespont; count of ports able to supply a fleet is an estimate."
+  },
+  "merchantTonnage": {
+   "low": 50000,
+   "mid": 150000,
+   "high": 300000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: Herodotus' ~3,000 transports and penteconters x ~50 t."
+  },
+  "supplyRangeKm": {
+   "low": 60,
+   "mid": 100,
+   "high": 150,
+   "grade": "C",
+   "source": "isbn:1575060310",
+   "note": "The 480 army advanced along the coast with the fleet and pre-stocked depots on the Thracian coast (Herodotus 7.25); away from the sea and depots its range was short."
+  },
+  "draftAnimals": {
+   "low": 1200000,
+   "mid": 2300000,
+   "high": 4000000,
+   "grade": "D",
+   "source": "derived:educated-guess",
+   "note": "Educated guess: ~0.07-0.11 draft and pack animals (incl. camels) per inhabitant x population."
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "No nuclear weapons before 1945."
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "achaemenid-persian",
+ "geography": {
+  "climate": "BWh",
+  "chokepoints": [
+   "Hellespont (Dardanelles)",
+   "Bosporus",
+   "Cilician Gates",
+   "Persian Gates (Zagros)",
+   "Pelusium (Sinai approach)",
+   "Strait of Hormuz"
+  ],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "C",
+   "source": "derived:home-defense",
+   "note": "Rubric 1.2 (local supply, fortified cities); deep strategic depth and desert climate argue for 1.3, weak loyalty of subject peoples for less."
+  }
+ },
+ "notes": "Snapshot = spring 480 BCE, Xerxes' invasion of Greece; forces are the expeditionary army and fleet at campaign start, garrisons elsewhere only in activePersonnel. Herodotus' figures (2,641,610 men, 1,207 triremes) are not used as mid values; modern estimates range from under 100,000 to ~300,000 for the land army. Macedon and Thrace were tributary in 480 but are not inside the bc500 polygon and are not counted. Population convention: inside the border, Seshat range."
+}
