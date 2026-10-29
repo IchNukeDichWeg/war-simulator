@@ -5,7 +5,7 @@ import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -23,6 +23,7 @@ export function controlPhase(ctx: Ctx): void {
   c0.fill(0); c1.fill(0);
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.mode[f] === Mode.Rout) continue;
+    if (CREWED_FORMATIONS && F.personnel[f] < 0.5) continue;
     const cl = F.side[f] === 0 ? c0 : c1;
     const c = F.cell[f];
     cl[c] = 2;

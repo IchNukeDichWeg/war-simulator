@@ -8,7 +8,7 @@ import { data, personnelNow, totalLosses } from './helpers';
 const scenarios = [['basic', basicScenario(3)], ['absurd', absurdScenario(3)]] as const;
 
 describe.each(scenarios)('invariants (%s)', (_name, scenario) => {
-  it('no negative strength, ratings stay in 0..1, movement within the daily maximum, personnel conserved', () => {
+  it('no crewless formations, no negative strength, ratings stay in 0..1, movement within the daily maximum, personnel conserved', () => {
     const sim = createSim(data(), scenario);
     const { st } = sim.ctx;
     const start: [number, number] = [personnelNow(sim, 0), personnelNow(sim, 1)];
@@ -21,7 +21,7 @@ describe.each(scenarios)('invariants (%s)', (_name, scenario) => {
       const F = st.F;
       for (let f = 0; f < F.n; f++) {
         if (!F.alive[f]) continue;
-        expect(F.personnel[f]).toBeGreaterThanOrEqual(0);
+        expect(F.personnel[f]).toBeGreaterThanOrEqual(0.5);   // no crewless formations (CREWED_FORMATIONS)
         expect(F.curW[f]).toBeGreaterThanOrEqual(0);
         for (let r = 0; r < NR; r++) expect(F.counts[f * NR + r]).toBeGreaterThanOrEqual(0);
         expect(F.morale[f]).toBeGreaterThanOrEqual(0);

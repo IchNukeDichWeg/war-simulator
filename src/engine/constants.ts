@@ -189,6 +189,13 @@ export const EXPLAIN_LOCAL_POWER = true;
  *  control overlay (rome-117-vs-spain-2026 before fix round 1, seed 1 day 119: 76 isolated
  *  cells, rows of alternating R/s across northern Spain). */
 export const ENCIRCLED_FLIP_NEEDS_SUPPLY = true;
+/** Formations need personnel. Produced land platforms join the member's crewed formation nearest its
+ *  spawn cell instead of forming a crewless formation; a formation whose personnel falls below half a
+ *  man is destroyed and its remaining platforms are booked as platform losses; a side with no
+ *  personnel in a battle cannot win it, and a crewless formation never takes control of a cell.
+ *  QA round 2: in japan-vs-usa-1941 crewless US formations (e.g. 4 artillery + 1 armor, personnel 0)
+ *  took no casualties, never broke, won 18 battles and inflicted 849k of 1.09M battle casualties. */
+export const CREWED_FORMATIONS = true;
 
 /** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
  *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),

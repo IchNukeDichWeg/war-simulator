@@ -328,6 +328,16 @@ start + arrivals = current + losses + in hospital, every day.
   `trainingDays`, capped by `mobilizable` minus everyone already called up.
 - Platforms: `production[role]` per year, x `blockadeProductionFactor` under
   blockade, x strategic bombing damage, delivered monthly.
+- Formations need personnel (`CREWED_FORMATIONS`). Delivered land platforms
+  with no personnel in the depot join the member's crewed formation nearest
+  its spawn cell instead of forming a formation of their own (crews of tanks,
+  guns and aircraft are support personnel, not P roles, so a platform-only
+  formation had no one to lose). A formation whose personnel falls below half
+  a man is destroyed and its platforms are booked as platform losses; a side
+  with no personnel in a battle cannot win it, and a crewless formation never
+  claims a cell. Before, japan-vs-usa-1941 crewless US formations won 18
+  battles and inflicted 849k of 1.09M battle casualties (QA round 2); seed 1
+  now ends as a draw at the time limit. Backtests identical per case.
 
 ## 10. Command AI
 

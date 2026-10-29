@@ -4,9 +4,10 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
-import { spawnFormation } from './formations';
+import { refreshFormation, spawnFormation } from './formations';
+import { haversineKm } from './grid';
 import { UnitStatus } from './protocol';
 
 function addPersonnelToDepot(ctx: Ctx, mi: number, amount: number): void {
@@ -32,6 +33,27 @@ function spawnCellFor(ctx: Ctx, mi: number): number {
   return best;
 }
 
+/** Hand the depot's land platforms to the member's crewed formation nearest its spawn cell (kept in
+ *  the depot while the member has none on the map). */
+function mergePlatforms(ctx: Ctx, mi: number): void {
+  const { S, st } = ctx;
+  const F = st.F, g = S.grid;
+  const d = st.members[mi].depot;
+  const at = spawnCellFor(ctx, mi);
+  const ref = at >= 0 ? at : S.members[mi].spawnCells.find((c) => c >= 0) ?? -1;
+  if (ref < 0) return;
+  let best = -1, bd = Infinity;
+  for (let f = 0; f < F.n; f++) {
+    if (!F.alive[f] || !F.onMap[f] || F.member[f] !== mi || F.personnel[f] < 0.5 || !g.land[F.cell[f]]) continue;
+    const dist = haversineKm(g.lat[ref], g.lon[ref], g.lat[F.cell[f]], g.lon[F.cell[f]]);
+    if (dist < bd) { bd = dist; best = f; }
+  }
+  if (best < 0) return;
+  const o = best * NR;
+  for (let r = 0; r < NR; r++) if (IS_LAND[r] && !IS_P[r] && d[r] > 0) { F.counts[o + r] += d[r]; d[r] = 0; }
+  refreshFormation(ctx, best);
+}
+
 function flushDepot(ctx: Ctx, mi: number, force: boolean): void {
   const { S, st } = ctx;
   const mr = S.members[mi];
@@ -40,6 +62,9 @@ function flushDepot(ctx: Ctx, mi: number, force: boolean): void {
   let p = 0, nland = 0;
   for (let r = 0; r < NR; r++) { if (IS_P[r]) p += d[r]; else if (IS_LAND[r]) nland += d[r]; }
   if (p <= 0 && nland < 1) return;
+  // platforms without personnel join a crewed formation of the member instead of forming a
+  // crewless one (QA round 2: US platform-only formations won 18 battles in japan-vs-usa-1941)
+  if (CREWED_FORMATIONS && p < 0.5) { if (force && nland >= 1) mergePlatforms(ctx, mi); return; }
   if (!(p >= mr.formationSize || (force && (p >= 0.25 * mr.formationSize || nland >= 1)))) return;
   if (mr.entryBySea && (blockaded(ctx, mr.side) || st.day < st.nextLiftDay[mi])) return;
   const cell = spawnCellFor(ctx, mi);

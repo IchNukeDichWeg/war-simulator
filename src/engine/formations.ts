@@ -3,6 +3,7 @@
 import type { Ctx } from './ctx';
 import { ensureScratchCap } from './ctx';
 import { IS_P, NR } from './roles';
+import { CREWED_FORMATIONS } from './constants';
 import { growFormations, Mode } from './state';
 import { UnitStatus } from './protocol';
 
@@ -36,7 +37,9 @@ function destroyIfEmpty(ctx: Ctx, f: number, cause: number): void {
   const o = f * NR;
   let p = 0, n = 0;
   for (let r = 0; r < NR; r++) { if (IS_P[r]) p += F.counts[o + r]; else n += F.counts[o + r]; }
-  if (p >= 0.5 || n >= 0.5) return;
+  // a formation with no personnel left is gone: its platforms have no crews or escort (crews are
+  // support personnel, not modelled per formation) and are booked as platform losses
+  if (p >= 0.5 || (n >= 0.5 && !CREWED_FORMATIONS)) return;
   const side = F.side[f];
   ctx.st.losses[side][cause] += p;
   ctx.st.platformLosses[side] += n;

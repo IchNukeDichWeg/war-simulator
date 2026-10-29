@@ -10,7 +10,7 @@ import {
   BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -372,6 +372,12 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (sev[0] !== sev[1]) b.winner = sev[0] > sev[1] ? 1 : 0;
       }
     }
+  }
+  // a side that brought no personnel cannot win (platforms without crews hold nothing)
+  if (CREWED_FORMATIONS && b.winner >= 0 && startPers[b.winner as 0 | 1] < 0.5) {
+    const o = (1 - b.winner) as 0 | 1;
+    b.winner = startPers[o] >= 0.5 ? o : -1;
+    ended = b.winner >= 0;
   }
   // ---- after the day
   const parts = b.parts;
