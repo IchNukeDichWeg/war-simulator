@@ -1,0 +1,143 @@
+{
+  "id": "mohi-1241",
+  "name": "Battle of Mohi",
+  "year": 1241,
+  "kind": "battle",
+  "location": {
+    "lat": 47.978,
+    "lon": 20.913,
+    "radiusKm": 6
+  },
+  "terrain": "plains",
+  "season": "spring",
+  "sides": [
+    {
+      "name": "Mongol Empire (Batu, Subutai)",
+      "posture": "attack",
+      "forces": {
+        "cavalry_heavy": {
+          "low": 3500,
+          "mid": 6000,
+          "high": 12000
+        },
+        "cavalry_light": {
+          "low": 5500,
+          "mid": 9000,
+          "high": 18000
+        },
+        "artillery": {
+          "low": 7,
+          "mid": 7,
+          "high": 12
+        }
+      },
+      "tech": {
+        "weapons": 4.1,
+        "armor": 3.8,
+        "ships": 3.0,
+        "fortification": 3.8,
+        "logistics": 4.0,
+        "communications": 4.2,
+        "isr": 4.3,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 1.0,
+      "morale": 0.8,
+      "training": 0.95,
+      "doctrineId": "mongol-steppe",
+      "fortified": false,
+      "surprise": false,
+      "reinforcements": [
+        {
+          "day": 0.1,
+          "forces": {
+            "cavalry_heavy": {
+              "low": 2500,
+              "mid": 4000,
+              "high": 8000
+            },
+            "cavalry_light": {
+              "low": 3500,
+              "mid": 6000,
+              "high": 12000
+            }
+          }
+        }
+      ],
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Estimates 15,000-30,000 (Wikipedia infobox), others 20,000/50,000/70,000; Rashid al-Din gives 40,000 for the whole central-European invasion, only part at Mohi. Mid 25,000, high 50,000 (70,000 treated as outlier). 40/60 lancer/horse-archer split is an educated guess. At least seven stone throwers cleared the Sajo bridge. Initial force = Batu's bridge column (~60%); Subutai's column crossed downstream and hit the Hungarian flank/camp later in the morning (reinforcement at day 0.1, split is an educated guess). Command 1.0 = rubric anchor \"Mongols 1241\". Comms 4.2 / ISR 4.3: yam relay, flag signals, wide scouting."
+    },
+    {
+      "name": "Kingdom of Hungary (Bela IV)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": {
+          "low": 3500,
+          "mid": 8000,
+          "high": 17000
+        },
+        "missile_infantry": {
+          "low": 1500,
+          "mid": 4000,
+          "high": 8000
+        },
+        "cavalry_heavy": {
+          "low": 4000,
+          "mid": 10000,
+          "high": 20000
+        },
+        "cavalry_light": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 5000
+        }
+      },
+      "tech": {
+        "weapons": 3.9,
+        "armor": 3.9,
+        "ships": 3.5,
+        "fortification": 3.6,
+        "logistics": 3.6,
+        "communications": 3.5,
+        "isr": 3.2,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.3,
+      "morale": 0.4,
+      "training": 0.45,
+      "doctrineId": "archetype-feudal-host",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Estimates 25,000/50,000/80,000 (infobox); the near-contemporary Epternacher Notiz reports 10,000 Hungarian dead, suggesting an army near that size, so low 10,000, mid 25,000, high 50,000 (80,000 outlier). Role split is an educated guess. Cuman auxiliaries had left after Koten's murder. Camped in a wagon fort (field fortification, not a fortified city). Command 0.3: king at odds with barons, poor reconnaissance. Morale 0.4."
+    }
+  ],
+  "outcome": {
+    "winner": 0,
+    "durationDays": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.5
+    },
+    "losses": [
+      {
+        "low": 500,
+        "mid": 2000,
+        "high": 5000
+      },
+      {
+        "low": 10000,
+        "mid": 15000,
+        "high": 30000
+      }
+    ],
+    "note": "Mongol victory. A near-contemporary source reports 10,000 Hungarian dead, \"almost the entire army\"; many more cut down in the pursuit toward Pest. Mongol losses: modern estimates several hundred to several thousand. Dawn attack across the Sajo, camp broken by about midday. Forces and losses are the weakest-documented in this set."
+  },
+  "sources": [
+    {
+      "title": "Battle of Mohi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mohi"
+    }
+  ],
+  "grade": "D"
+}

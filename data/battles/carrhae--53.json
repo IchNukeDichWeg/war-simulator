@@ -1,0 +1,121 @@
+{
+  "id": "carrhae--53",
+  "name": "Battle of Carrhae",
+  "year": -53,
+  "kind": "battle",
+  "location": {
+    "lat": 36.8,
+    "lon": 39.03,
+    "radiusKm": 25
+  },
+  "terrain": "steppe",
+  "season": "summer",
+  "sides": [
+    {
+      "name": "Parthian Empire (Surena)",
+      "posture": "attack",
+      "forces": {
+        "cavalry_heavy": {
+          "low": 800,
+          "mid": 1000,
+          "high": 1500
+        },
+        "cavalry_light": {
+          "low": 8000,
+          "mid": 9000,
+          "high": 10000
+        }
+      },
+      "tech": {
+        "weapons": 3.3,
+        "armor": 3.2,
+        "ships": 2.0,
+        "fortification": 2.9,
+        "logistics": 3.0,
+        "communications": 3.0,
+        "isr": 3.3,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.9,
+      "morale": 0.75,
+      "training": 0.85,
+      "doctrineId": "archetype-steppe-nomad",
+      "fortified": false,
+      "surprise": true,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 10,000 cavalry (Plutarch, accepted by most modern historians): 1,000 cataphracts, 9,000 horse archers, plus ~1,000 camels carrying arrow resupply (logistics, not a combat role). Weapons 3.3: composite bow with continuous resupply, kontos. Ships 2.0: no navy. Command 0.9: Surena. Training 0.85: Surena's household retainers. Surprise: Surena concealed his strength and armor behind a screen."
+    },
+    {
+      "name": "Roman Republic (Crassus)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": {
+          "low": 28000,
+          "mid": 34000,
+          "high": 35000
+        },
+        "infantry_light": {
+          "low": 3000,
+          "mid": 4000,
+          "high": 4000
+        },
+        "cavalry_heavy": {
+          "low": 900,
+          "mid": 1000,
+          "high": 1000
+        },
+        "cavalry_light": {
+          "low": 2500,
+          "mid": 3000,
+          "high": 3000
+        }
+      },
+      "tech": {
+        "weapons": 3.2,
+        "armor": 3.2,
+        "ships": 3.1,
+        "fortification": 3.1,
+        "logistics": 3.1,
+        "communications": 3.0,
+        "isr": 2.8,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.3,
+      "morale": 0.45,
+      "training": 0.7,
+      "doctrineId": "roman-imperial",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 42,000: seven legions (34,000 nominal; 28,000 if understrength), 4,000 light infantry, 4,000 cavalry incl. Publius Crassus's 1,000 Gauls (heavy). Command 0.3: Crassus marched into open country without scouts on Ariamnes' advice. Morale 0.45: thirst, heat, Publius's death. Terrain: open semi-arid plain south of Harran (steppe class; summer heat and lack of water were decisive)."
+    }
+  ],
+  "outcome": {
+    "winner": 0,
+    "durationDays": {
+      "low": 0.5,
+      "mid": 1,
+      "high": 3
+    },
+    "losses": [
+      {
+        "low": 200,
+        "mid": 500,
+        "high": 2000
+      },
+      {
+        "low": 25000,
+        "mid": 30000,
+        "high": 35000
+      }
+    ],
+    "note": "Parthian victory. Roman losses 20,000 killed + 10,000 captured (Plutarch, accepted in broad terms by moderns), 5,000-10,000 escaped; a large share fell during the night retreat to Carrhae and the following 1-2 days (Crassus killed at a parley), hence high duration 3. Parthian losses unknown but minimal: educated guess, grade D. Exact battlefield unknown; location is south of Harran with a wide radius."
+  },
+  "sources": [
+    {
+      "title": "Battle of Carrhae (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Carrhae"
+    }
+  ],
+  "grade": "C"
+}

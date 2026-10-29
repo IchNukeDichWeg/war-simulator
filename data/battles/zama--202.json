@@ -1,0 +1,136 @@
+{
+  "id": "zama--202",
+  "name": "Battle of Zama",
+  "year": -202,
+  "kind": "battle",
+  "location": {
+    "lat": 36.299,
+    "lon": 9.449,
+    "radiusKm": 6
+  },
+  "terrain": "plains",
+  "season": "autumn",
+  "sides": [
+    {
+      "name": "Roman Republic and Numidia (Scipio, Masinissa)",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": {
+          "low": 16000,
+          "mid": 18000,
+          "high": 19000
+        },
+        "infantry_light": {
+          "low": 4500,
+          "mid": 5500,
+          "high": 6000
+        },
+        "cavalry_heavy": {
+          "low": 1500,
+          "mid": 1500,
+          "high": 1600
+        },
+        "cavalry_light": {
+          "low": 4500,
+          "mid": 4600,
+          "high": 4600
+        }
+      },
+      "tech": {
+        "weapons": 3.1,
+        "armor": 3.05,
+        "ships": 3.05,
+        "fortification": 3.0,
+        "logistics": 3.0,
+        "communications": 2.9,
+        "isr": 3.0,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.9,
+      "morale": 0.8,
+      "training": 0.8,
+      "doctrineId": "roman-imperial",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. c. 29,000-30,000: 23,000-24,000 infantry (incl. Masinissa's 6,000 Numidian foot) and 6,100 cavalry (1,500 Italian, 4,600 Numidian). Line/velites split derived from the manipular ratio. Scipio's flexible manipular legion mapped to roman-imperial. Command 0.9: Scipio. Training 0.8: veterans of Spain and the Cannae legions."
+    },
+    {
+      "name": "Carthage (Hannibal)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": {
+          "low": 28000,
+          "mid": 32000,
+          "high": 40000
+        },
+        "infantry_light": {
+          "low": 3000,
+          "mid": 4000,
+          "high": 6000
+        },
+        "cavalry_heavy": {
+          "low": 1500,
+          "mid": 2000,
+          "high": 2000
+        },
+        "cavalry_light": {
+          "low": 2000,
+          "mid": 2000,
+          "high": 2000
+        },
+        "elephants": {
+          "low": 80,
+          "mid": 80,
+          "high": 90
+        }
+      },
+      "tech": {
+        "weapons": 3.05,
+        "armor": 2.95,
+        "ships": 3.0,
+        "fortification": 3.05,
+        "logistics": 3.0,
+        "communications": 2.9,
+        "isr": 2.8,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.85,
+      "morale": 0.6,
+      "training": 0.5,
+      "doctrineId": "archetype-classical-infantry",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. c. 40,000 or 50,000: 36,000-46,000 infantry in three lines (mercenaries, Carthaginian/Libyan levy, 15,000-20,000 veterans of Italy), 4,000 cavalry (half Numidian), 80+ elephants. Split derived. Mapped to archetype-classical-infantry: weak cavalry, infantry-line battle. Training 0.5: mix of veterans and raw levies. Morale 0.6: new levies wavered."
+    }
+  ],
+  "outcome": {
+    "winner": 0,
+    "durationDays": {
+      "low": 0.2,
+      "mid": 0.35,
+      "high": 0.5
+    },
+    "losses": [
+      {
+        "low": 2500,
+        "mid": 4000,
+        "high": 6000
+      },
+      {
+        "low": 30000,
+        "mid": 35000,
+        "high": 40000
+      }
+    ],
+    "note": "Roman victory. Polybius: Carthaginians 20,000 killed + 20,000 captured; Romans at least 1,500 killed and many wounded. Roman mid 4,000 assumes ~1.5 wounded per killed (derived). Ancient figures, grade C. Exact site of the battle is disputed; coordinates are the commonly cited one."
+  },
+  "sources": [
+    {
+      "title": "Battle of Zama (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Zama"
+    }
+  ],
+  "grade": "C"
+}

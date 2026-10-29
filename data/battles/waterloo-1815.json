@@ -1,0 +1,173 @@
+{
+  "id": "waterloo-1815",
+  "name": "Battle of Waterloo",
+  "year": 1815,
+  "kind": "battle",
+  "location": {
+    "lat": 50.68,
+    "lon": 4.412,
+    "radiusKm": 6
+  },
+  "terrain": "cropland",
+  "season": "summer",
+  "sides": [
+    {
+      "name": "French Empire (Napoleon)",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": {
+          "low": 48950,
+          "mid": 49800,
+          "high": 50600
+        },
+        "cavalry_heavy": {
+          "low": 7500,
+          "mid": 8000,
+          "high": 8500
+        },
+        "cavalry_light": {
+          "low": 6890,
+          "mid": 7000,
+          "high": 7265
+        },
+        "artillery": {
+          "low": 246,
+          "mid": 250,
+          "high": 252
+        }
+      },
+      "tech": {
+        "weapons": 6.05,
+        "armor": 6.05,
+        "ships": 6.0,
+        "fortification": 6.0,
+        "logistics": 6.0,
+        "communications": 6.0,
+        "isr": 6.0,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.7,
+      "morale": 0.8,
+      "training": 0.7,
+      "doctrineId": "napoleonic-corps",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 72,000-73,000: 48,950-50,600 infantry, 14,390-15,765 cavalry, 246-252 guns (Clodfelter, Bodart). Heavy/light cavalry split (cuirassiers, carabiniers, Guard heavy vs lancers, chasseurs, hussars) roughly half each, educated guess. Command 0.7: Napoleon slow to start (ground drying), Ney's unsupported cavalry charges, Grouchy's 33,000 detached. Training 0.7: veteran cadres but a hastily rebuilt army."
+    },
+    {
+      "name": "Seventh Coalition (Wellington, Blucher)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": {
+          "low": 49000,
+          "mid": 49608,
+          "high": 50000
+        },
+        "cavalry_heavy": {
+          "low": 3000,
+          "mid": 3500,
+          "high": 4000
+        },
+        "cavalry_light": {
+          "low": 8400,
+          "mid": 8900,
+          "high": 9400
+        },
+        "artillery": {
+          "low": 150,
+          "mid": 156,
+          "high": 160
+        }
+      },
+      "tech": {
+        "weapons": 6.1,
+        "armor": 6.0,
+        "ships": 6.2,
+        "fortification": 6.0,
+        "logistics": 6.1,
+        "communications": 6.0,
+        "isr": 6.0,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.85,
+      "morale": 0.65,
+      "training": 0.6,
+      "doctrineId": "archetype-gunpowder-linear",
+      "fortified": false,
+      "surprise": false,
+      "reinforcements": [
+        {
+          "day": 0.21,
+          "forces": {
+            "infantry_line": {
+              "low": 20000,
+              "mid": 22000,
+              "high": 25000
+            },
+            "cavalry_heavy": {
+              "low": 2000,
+              "mid": 3000,
+              "high": 4000
+            },
+            "artillery": {
+              "low": 30,
+              "mid": 60,
+              "high": 80
+            }
+          }
+        },
+        {
+          "day": 0.29,
+          "forces": {
+            "infantry_line": {
+              "low": 12000,
+              "mid": 15000,
+              "high": 18000
+            },
+            "cavalry_heavy": {
+              "low": 1500,
+              "mid": 2500,
+              "high": 3500
+            },
+            "artillery": {
+              "low": 14,
+              "mid": 40,
+              "high": 46
+            }
+          }
+        }
+      ],
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. Initial force = Wellington's army ~68,000 (Clodfelter 67,661: 49,608 infantry, 12,408 cavalry, 5,645 artillerymen), 156 guns; heavy/light cavalry split educated guess. Prussians (~48,000 engaged of ~50,000): Bulow's IV Corps attacked Plancenoit at 16:30 (day 0.21 after a ~11:30 start), Zieten's I Corps and part of Pirch's II Corps engaged about 18:00-19:00 (day 0.29). Per-corps split of the Prussian total is an educated guess; 44 guns in action (Clodfelter) to 126 present (Bowden). Training 0.6: British/KGL core, inexperienced Dutch-Belgian, Hanoverian and Landwehr units. Hougoumont and La Haye Sainte were fortified farms (not a fortified city)."
+    }
+  ],
+  "outcome": {
+    "winner": 1,
+    "durationDays": {
+      "low": 0.35,
+      "mid": 0.4,
+      "high": 0.45
+    },
+    "losses": [
+      {
+        "low": 24000,
+        "mid": 26000,
+        "high": 33000
+      },
+      {
+        "low": 22000,
+        "mid": 24000,
+        "high": 25000
+      }
+    ],
+    "note": "Coalition victory. French ~25,000 killed or wounded plus 8,000 captured (6,000-7,000 of them wounded), i.e. 26,000-27,000; Barbero 24,000-26,000; high counts captured separately. 15,000 deserted after the battle (not counted). Coalition 24,000: Wellington 17,000, Prussians 6,604-7,000. Start contested (10:00-13:00, ~11:30 usual), ended after 21:00. Rain the night before: muddy ground."
+  },
+  "sources": [
+    {
+      "title": "Battle of Waterloo (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo"
+    }
+  ],
+  "grade": "B"
+}

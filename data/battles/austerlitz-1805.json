@@ -1,0 +1,148 @@
+{
+  "id": "austerlitz-1805",
+  "name": "Battle of Austerlitz",
+  "year": 1805,
+  "kind": "battle",
+  "location": {
+    "lat": 49.128,
+    "lon": 16.7625,
+    "radiusKm": 7
+  },
+  "terrain": "hills",
+  "season": "winter",
+  "sides": [
+    {
+      "name": "Russia and Austria (Alexander I, Kutuzov, Weyrother)",
+      "posture": "attack",
+      "forces": {
+        "infantry_line": {
+          "low": 57000,
+          "mid": 62000,
+          "high": 70000
+        },
+        "cavalry_heavy": {
+          "low": 5500,
+          "mid": 7000,
+          "high": 8000
+        },
+        "cavalry_light": {
+          "low": 9000,
+          "mid": 10000,
+          "high": 11000
+        },
+        "artillery": {
+          "low": 278,
+          "mid": 300,
+          "high": 318
+        }
+      },
+      "tech": {
+        "weapons": 5.9,
+        "armor": 6.0,
+        "ships": 6.0,
+        "fortification": 5.9,
+        "logistics": 5.7,
+        "communications": 5.7,
+        "isr": 5.6,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 0.3,
+      "morale": 0.6,
+      "training": 0.6,
+      "doctrineId": "archetype-gunpowder-linear",
+      "fortified": false,
+      "surprise": false,
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. 73,000 (Uffindell) to 89,000; Chandler 85,000, which Bowden calls theoretical strength. Mid 79,000. 278-318 guns. Role split is an educated guess. Command 0.3: Weyrother's plan stripped the Pratzen; Kutuzov overruled. Logistics/ISR low: Allies short of supply and deceived by Napoleon's feigned weakness."
+    },
+    {
+      "name": "French Empire (Napoleon)",
+      "posture": "defend",
+      "forces": {
+        "infantry_line": {
+          "low": 51000,
+          "mid": 53000,
+          "high": 57000
+        },
+        "cavalry_heavy": {
+          "low": 6000,
+          "mid": 7000,
+          "high": 8000
+        },
+        "cavalry_light": {
+          "low": 6000,
+          "mid": 7000,
+          "high": 7500
+        },
+        "artillery": {
+          "low": 139,
+          "mid": 157,
+          "high": 157
+        }
+      },
+      "tech": {
+        "weapons": 6.0,
+        "armor": 6.0,
+        "ships": 6.0,
+        "fortification": 6.0,
+        "logistics": 6.0,
+        "communications": 6.0,
+        "isr": 6.0,
+        "air": 0,
+        "cyber": 0
+      },
+      "commandQuality": 1.0,
+      "morale": 0.85,
+      "training": 0.85,
+      "doctrineId": "napoleonic-corps",
+      "fortified": false,
+      "surprise": false,
+      "reinforcements": [
+        {
+          "day": 0.05,
+          "forces": {
+            "infantry_line": {
+              "low": 3800,
+              "mid": 4500,
+              "high": 6000
+            },
+            "cavalry_heavy": {
+              "low": 1500,
+              "mid": 2000,
+              "high": 2500
+            }
+          }
+        }
+      ],
+      "note": "Tech override per derived:tech-anchor (SOURCES.md anchor table, interpolated by year); air and cyber 0 = derived:absent-in-era. Ratings per derived:rating-rubric. About 67,000 on the field at dawn (Chandler) with 139-157 guns; ~7,000 of Davout's III Corps (Friant's division, Bourcier's dragoons) arrived after a forced march and entered the fight at Telnitz/Sokolnitz in the early morning (reinforcement at day 0.05). Role split is an educated guess. All categories at anchor 6 (1805, Gribeauval, Chappe semaphore). Command 1.0 = rubric anchor \"Napoleon 1805\"."
+    }
+  ],
+  "outcome": {
+    "winner": 1,
+    "durationDays": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.4
+    },
+    "losses": [
+      {
+        "low": 27000,
+        "mid": 31500,
+        "high": 36000
+      },
+      {
+        "low": 8279,
+        "mid": 8800,
+        "high": 9288
+      }
+    ],
+    "note": "French victory. Allies 27,000-36,000 (15,000-16,000 killed or wounded, 12,000-20,000 captured), 186 guns lost; mid is the midpoint. French 8,569-9,288 total incl. 573-760 captured; Roberts 8,279 killed and wounded only. Fighting about 08:00 to 16:30."
+  },
+  "sources": [
+    {
+      "title": "Battle of Austerlitz (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Austerlitz"
+    }
+  ],
+  "grade": "B"
+}
