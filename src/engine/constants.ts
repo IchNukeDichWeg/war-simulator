@@ -95,6 +95,11 @@ export const PREPARED_FROM_CASE = true;
  *  19/14/23 -> 20/15/22. Blenheim winner 30% -> 90%, ratio x4.00 -> x1.12 (both pass); Tannenberg
  *  1.7 -> 1.5 days fails duration (hist 5); Carrhae 0% -> 15%; France 1940 95% -> 90%, x4.08 -> x4.63. */
 export const FIELD_FORT_NEEDS_CASE_PREP = true;
+/** Battle mode: no daily disease, exposure, starvation or desertion inside a battle decided on its
+ *  first day (shorter than a day). The rates are per day of campaigning; a fight of hours booked a
+ *  full day of them. Measured (20 seeds): 20/15/22 -> 20/14/22. 11 battle cases lose 0.3-11% of their
+ *  median losses (Marathon Persians 945 -> 849); Waterloo ratio x2.98 -> x3.08 now fails. */
+export const BATTLE_NO_DAILY_ATTRITION = true;
 /** War mode: a beaten formation in the battle cell gives the cell up, falling back one cell toward
  *  its supply, or surrenders (all booked as captured) when every neighbour is enemy-held or
  *  impassable. Before, a beaten defender sitting on a supply source never left (its retreat field

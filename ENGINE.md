@@ -326,6 +326,9 @@ from the member's era: `modelRules.attrition.diseaseDeathShareOfAdmissions`
 napoleonic 40, before 1789 30), instead of 0.3 and 30 days everywhere.
 Measured: counts unchanged at 20/15/22; Gulf War loss ratio x9.3 -> x4.9,
 Iraq 2003 x1.21 -> x1.00, France 1940 x6.8 -> x6.2.
+In battle mode a battle decided on its first day (shorter than a day) books no
+non-battle losses at all (`BATTLE_NO_DAILY_ATTRITION`): the rates are per day
+of campaigning, not per hour of fighting.
 Reported casualties are the sum of losses over every cause
 (`CASUALTIES_ALL_CAUSES`), so they equal the lossesByCause total; tested:
 start + arrivals = current + losses + in hospital, every day.

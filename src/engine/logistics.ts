@@ -10,7 +10,7 @@ import { UnitStatus } from './protocol';
 import { isRoad } from './movement';
 import { lossPersonnel, withdrawPersonnel } from './formations';
 import { blockaded, seaFactor } from './naval';
-import { DESERTION_MORALE, HOSPITAL_ADMISSIONS_RETURN, RETURN_RING_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
+import { BATTLE_NO_DAILY_ATTRITION, DESERTION_MORALE, HOSPITAL_ADMISSIONS_RETURN, RETURN_RING_DAYS, ROUT_FLEE_DAYS, SUPPLY_FALLOFF_MULT } from './constants';
 
 /**
  * Supply network cost field per side over own and neutral land from active sources,
@@ -127,6 +127,9 @@ export function logisticsPhase(ctx: Ctx): void {
   const diseaseCause = LC.disease, expCause = LC.exposure, starvCause = LC.starvation, desCause = LC.desertion;
   const winterExp = m.attrition.winterExposure.mid, desertHeat = m.attrition.desertHeat.mid;
   const starvMult = m.attrition.starvationMultiplier.mid, rtd = m.attrition.returnToDuty.mid;
+  // battle mode: a battle decided on its first day lasted under a day; daily disease, exposure,
+  // starvation and desertion rates do not apply to a fight of hours (victoryPhase ends it today)
+  const underADay = BATTLE_NO_DAILY_ATTRITION && S.battleMode && st.day === 1 && sc.battles.some((b) => b.winner >= 0);
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f]) continue;
     const side = F.side[f] as 0 | 1;
@@ -156,7 +159,7 @@ export function logisticsPhase(ctx: Ctx): void {
     st.acc.formationDays[side]++;
     // non-battle attrition (personnel only)
     const P = F.personnel[f];
-    if (P > 0) {
+    if (P > 0 && !underADay) {
       const c = F.cell[f];
       const cls = S.grid.cls[c];
       const W = winter && cls !== T.urban && S.placeAt[c] < 0 ? winterExp : 1;
