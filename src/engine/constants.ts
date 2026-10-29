@@ -118,18 +118,17 @@ export const SUBDAY_REINFORCEMENTS = true;
 /** Backtest sides synthesized from a case (no snapshotId) borrow supplyRangeKm from the snapshot
  *  nearest in logistics tech, then year. Before, it was 0 (clamped to 1 km), which made the AI score
  *  every objective by 1/km so the synthesized base outranked the case objective (QA C4).
- *  OFF: measured negative alone, 20/15/22 -> 20/14/22 (Yom Kippur winner 85 -> 100% but its loss
- *  ratio x2.44 -> x3.28). */
-export const CASE_SUPPLY_RANGE_FROM_SNAPSHOT = false;
+ *  ON by correctness (DECISIONS.md, validation discipline): it was left OFF in round 1 for costing a
+ *  pass, which was selection by outcome. The three case toggles together: 19/16/24 -> 19/15/23. */
+export const CASE_SUPPLY_RANGE_FROM_SNAPSHOT = true;
 /** With a borrowed supply range, campaign backtests run with the supply rule on (it was off in all
- *  24 cases, so the logistics layer was never validated).
- *  OFF: with the borrowed range it measured 20/14/22 and Iraq 2003 fell from 85% to 65%, 54 days. */
-export const CASE_SUPPLY_RULE_ON = false;
+ *  24 cases, so the logistics layer was never validated). ON by correctness, see above. */
+export const CASE_SUPPLY_RULE_ON = true;
 /** A case's synthesized 'capital' (its main start position) is an ordinary place, not a fortress:
- *  a fortified one added a siege (daysToReduce) where the objective sat on it (QA C5).
- *  OFF: measured negative alone, 20/15/22 -> 20/14/22: Iraq 2003 improves (100%, 24 days vs 21
- *  historical, ratio x0.76) but Stalingrad's loss ratio goes x1.79 -> x0.19. */
-export const CASE_CAPITAL_UNFORTIFIED = false;
+ *  a fortified one added a siege (daysToReduce) where the objective sat on it (QA C5). ON by
+ *  correctness, see above. With all three: Stalingrad ends on day 6 by Axis morale collapse (ratio
+ *  x0.18, both fail), Gulf War and France 1940 end by taking their objectives, Yom Kippur 70 -> 100%. */
+export const CASE_CAPITAL_UNFORTIFIED = true;
 /** Objective kind from the case (objective.kind 'capture' | 'hold' | 'destroy') instead of inferring
  *  it from the nearest-start control split (QA C6). A capture objective is taken when an own
  *  formation stands on it with no enemy there, and only if the enemy held it at the start (QA

@@ -442,13 +442,16 @@ by Axis army collapse instead of day 1; Yom Kippur 0% -> 70%, Israel takes
 Deversoir; Egypt's Mitla Pass objective starts in Egyptian control in the
 case's nearest-start split, so it warns).
 
-Backtest case construction toggles, measured and left OFF (each cost one
-loss-ratio pass): `CASE_SUPPLY_RANGE_FROM_SNAPSHOT` (synthesized sides borrow
-`supplyRangeKm` from the snapshot nearest in logistics tech, then year;
-without it the AI distance scale is 1 km), `CASE_SUPPLY_RULE_ON` (campaign
-backtests with the supply rule; still off in every case) and
+Backtest case construction, ON by correctness (round 1 left them OFF for
+costing a pass, which was selection by outcome): `CASE_SUPPLY_RANGE_FROM_SNAPSHOT`
+(synthesized sides borrow `supplyRangeKm` from the snapshot nearest in
+logistics tech, then year; without it the AI distance scale is 1 km),
+`CASE_SUPPLY_RULE_ON` (campaign backtests run with the supply rule) and
 `CASE_CAPITAL_UNFORTIFIED` (a case side's main start position is not a
-fortress).
+fortress). Measured together: 19/16/24 -> 19/15/23. Stalingrad now ends on
+day 6 by Axis morale collapse (out-of-supply pocket; ratio x0.18 and duration
+fail), Gulf War and France 1940 end by taking Kuwait City and Paris, Iraq
+2003 takes 25 days (ratio x0.50), Yom Kippur 70% -> 100%.
 
 Explanation: the engine compares the sides on the accumulated factors and ranks
 them: tech gap (mean power multiplier from TLI/dispersion/armor), numbers
