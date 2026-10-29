@@ -1,6 +1,7 @@
-// Readers for mechanics constants. The engine only ever reads the `mid` value
-// of an MV; sensitivity analysis swaps low/high into `mid` on a copy of the
-// Mechanics object instead of the engine knowing about ranges.
+// Readers for mechanics constants. The engine reads the `mid` value of an MV,
+// except the battle breakpoint, drawn per seed within low/high (sim.ts,
+// BREAKPOINT_FROM_MODEL_RULES); sensitivity analysis otherwise swaps low/high
+// into `mid` on a copy of the Mechanics object.
 import type { ByTech, EraRule, Mechanics, MV, RuleEra } from '../types/mechanics';
 import { ERA_SPANS, type EraId } from '../types/schema';
 import { TERRAIN_CLASSES } from './terrainClasses';
@@ -168,7 +169,8 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
   for (const k of ['battle.outcomeNoiseSigma', 'battle.footPursuitLossFloor', 'collapse.armyCollapsePersonnelFraction', 'collapse.armyCollapseMorale',
     'intel.fogStrengthError', 'c2.missionCommandDelayFactor', 'naval.blockadeSeaControlThreshold']) need(`modelRules.${k}`, 'mv');
   for (const k of ['battle.pursuitDisengageShare', 'river.riverCrossingDelayDays', 'attrition.returnToDutyDays', 'attrition.diseaseDeathShareOfAdmissions',
-    'surrender.encircledSurrenderShare', 'transport.seaLiftGrtPerSoldier', 'naval.navalAttritionPerDay']) needEra(`modelRules.${k}`);
+    'surrender.encircledSurrenderShare', 'transport.seaLiftGrtPerSoldier', 'naval.navalAttritionPerDay',
+    'breakpoint.loserCasualtyShareAtBreak']) needEra(`modelRules.${k}`);
   needEra('modelRules.transport.seaLiftTonsPerVehicle.tracked', 'industrial');
   needEra('modelRules.transport.seaLiftTonsPerVehicle.wheeled', 'industrial');
   needEra('modelRules.transport.airLiftTonsPerDayPerAircraft', 'worldwars');

@@ -231,7 +231,7 @@ export interface DoctrineProfile {
     reserveUse: number;       // fraction held back
     scouting: number;
     retreatThreshold: number; // fraction of starting strength LOST at which a formation withdraws
-                              // in good order; must sit below morale.breakpoint, where it routs
+                              // in good order; the engine caps it at 0.9 x the breakpoint, where it routs
     combinedArms: number;
     initiative: number;       // decentralised command / mission tactics
     logisticsDiscipline: number; // how strictly operations stay within supply

@@ -8,6 +8,7 @@ import type { Scenario } from '../types/scenario';
 import { buildSetup, type Setup, type SimOptions, WEATHERS } from './setup';
 import { allocFormations, cloneState, newAccum, type SimState, NLC } from './state';
 import { Rng } from './rng';
+import { clamp, factor } from './mech';
 import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './ctx';
 import { spawnFormation } from './formations';
 import { NR } from './roles';
@@ -46,6 +47,8 @@ export interface Sim {
 function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
   const n = S.grid.n;
   const rng = new Rng(seed);
+  // breakpoint quantile: one draw per seed from its own stream (the main stream is untouched)
+  const bpU = S.opts.breakpointQuantile ?? new Rng((seed ^ 0x5bd1e995) >>> 0).next();
   const F = allocFormations(Math.max(16, Math.ceil(S.seeds.length * 1.25) + 16));
   const st: SimState = {
     day: 0,
@@ -79,6 +82,10 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
       productionDamage: 1,
       capitalLost: false,
       capitalHeldDays: 0,
+      ...(() => {
+        const breakpoint = clamp(factor(mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98);
+        return { breakpoint, retreat: clamp(Math.min(mr.retreatThreshold, 0.9 * breakpoint), 0.01, 0.95) };
+      })(),
     })),
     losses: [new Float64Array(NLC), new Float64Array(NLC)],
     platformLosses: [0, 0],

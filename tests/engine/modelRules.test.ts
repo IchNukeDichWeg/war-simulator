@@ -2,7 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { eraOfYear, rule, ruleMV, validateMechanics } from '../../src/engine/mech';
 import { fixtureMechanics, mv } from '../fixtures/mechanics.fixture';
-import type { EraRule } from '../../src/types/mechanics';
+import type { EraRule, MV } from '../../src/types/mechanics';
+import { createSim } from '../../src/engine/sim';
+import { basicScenario } from '../fixtures/snapshots.fixture';
+import { data } from './helpers';
 
 describe('model rules', () => {
   const r: EraRule = { iron: mv(1), medieval: mv(2), gunpowder: mv(3), napoleonic: mv(4), industrial: mv(5), modern: mv(9) };
@@ -26,5 +29,31 @@ describe('model rules', () => {
     expect(validateMechanics(fixtureMechanics())).toEqual([]);
     const built = JSON.parse(readFileSync(new URL('../../public/data/mechanics.json', import.meta.url), 'utf8'));
     expect(validateMechanics(built)).toEqual([]);
+  });
+});
+
+describe('battle breakpoint draw', () => {
+  // fixture breakpoint: low 0.1, mid 0.2, high 0.4 in every era
+  const withRange = () => {
+    const d = data();
+    const m = structuredClone(d.mechanics);
+    for (const e of Object.keys(m.modelRules.breakpoint.loserCasualtyShareAtBreak)) {
+      (m.modelRules.breakpoint.loserCasualtyShareAtBreak as Record<string, MV>)[e] = mv(0.2, 0.1, 0.4);
+    }
+    return { ...d, mechanics: m };
+  };
+  const bps = (sim: ReturnType<typeof createSim>) => sim.ctx.st.members.map((ms, i) => ms.breakpoint - sim.setup.members[i].bpShift);
+  it('a fixed quantile gives low, mid and high', () => {
+    const d = withRange();
+    for (const [q, v] of [[0, 0.1], [0.5, 0.2], [1, 0.4]] as const) {
+      for (const b of bps(createSim(d, basicScenario(3), { breakpointQuantile: q }))) expect(b).toBeCloseTo(v, 12);
+    }
+  });
+  it('the per-seed draw stays in range, repeats per seed and varies across seeds', () => {
+    const d = withRange();
+    const draws = [1, 2, 3, 4, 5, 6].map((s) => bps(createSim(d, basicScenario(s)))[0]);
+    for (const b of draws) { expect(b).toBeGreaterThanOrEqual(0.1); expect(b).toBeLessThanOrEqual(0.4); }
+    expect(bps(createSim(d, basicScenario(4)))[0]).toBe(draws[3]);
+    expect(new Set(draws).size).toBeGreaterThan(1);
   });
 });

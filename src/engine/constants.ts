@@ -280,3 +280,14 @@ export const PRECISION_MIN_TECH = 8;
  *  x0.18 -> x0.09; Falklands morale-collapse seeds 1.6k -> 6.5k Argentine (median unchanged 8.1k, set
  *  by personnel-collapse seeds that have nothing left on the map). Kept ON: the share is sourced. */
 export const COLLAPSE_SURRENDER = true;
+/** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
+ *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
+ *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the
+ *  battle noise is untouched) and every member takes factor(MV, u): u 0 -> low, 0.5 -> mid, 1 -> high;
+ *  SimOptions.breakpointQuantile fixes u (0.5 = deterministic mid). OFF: the tech-keyed
+ *  morale.breakpoint table at mid. Measured (20 seeds, clean HEAD 65493a9): 20/14/22 -> 20/17/21.
+ *  Gulf War x4.87 -> x2.71, Six-Day x3.33 -> x0.59 (winner 0% -> 45%), Waterloo x3.08 -> x2.53, Yom
+ *  Kippur x0.44 -> x1.96 pass; El Alamein 4.9 -> 3.4 days fails; Kursk x3.96 -> x6.03. Fixed quantile:
+ *  low 21/15/19, mid 20/17/20, high 21/16/23. */
+export const BREAKPOINT_FROM_MODEL_RULES = true;
+

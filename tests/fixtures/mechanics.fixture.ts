@@ -78,6 +78,7 @@ export function fixtureMechanics(): Mechanics {
       attrition: { returnToDutyDays: era(30), diseaseDeathShareOfAdmissions: era(0.5) },
       collapse: { armyCollapsePersonnelFraction: mv(0.1), armyCollapseMorale: mv(0.15) },
       surrender: { encircledSurrenderShare: era(0.8) },
+      breakpoint: { loserCasualtyShareAtBreak: era(0.2), winnerCasualtyShareAtEnd: era(0.05) },
       intel: { fogStrengthError: mv(0.5) },
       c2: { missionCommandDelayFactor: mv(0.5) },
       naval: { blockadeSeaControlThreshold: mv(0.6), navalAttritionPerDay: era(0.001) },

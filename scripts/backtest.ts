@@ -1,6 +1,7 @@
 // Backtest every BattleCase in public/data/battles.json for N seeds.
 //   npx tsx scripts/backtest.ts [--seeds 20] [--only cannae--216,waterloo-1815] [--data DIR] [--json out.json]
 //   npx tsx scripts/backtest.ts --sweep modelRules.collapse.armyCollapseMorale 0.10,0.15,0.20,0.25
+//   npx tsx scripts/backtest.ts --bp-quantile 0,0.5,1     (every breakpoint at low, mid, high)
 // Prints per case: historical winner win rate, model loss ratio vs historical, duration vs historical.
 // --sweep sets one mechanics value (an MV's mid, or a plain number) to each listed value in turn and
 // prints the VALIDATION counts at each; nothing is written to disk.
@@ -9,6 +10,7 @@ import { arg, dataDir, loadBattles, loadEngineData, Progress } from './lib/loadD
 import { runBattleCase } from '../src/engine/battleCase';
 import type { EngineData } from '../src/engine/protocol';
 import type { BattleCase } from '../src/types/mechanics';
+import type { SimOptions } from '../src/engine/setup';
 
 const argv = process.argv.slice(2);
 const dir = dataDir(argv);
@@ -26,7 +28,7 @@ type Row = {
   histLosses: number[]; durationModel: number; durationHist: number; warnings: string[]; line: string;
 };
 
-function runAll(d: EngineData, list: BattleCase[], label: string): Row[] {
+function runAll(d: EngineData, list: BattleCase[], label: string, extra: Partial<SimOptions> = {}): Row[] {
   const prog = new Progress(list.length * seeds, label);
   const rows: Row[] = [];
   let done = 0;
@@ -37,7 +39,7 @@ function runAll(d: EngineData, list: BattleCase[], label: string): Row[] {
     let error = '';
     for (let s = 0; s < seeds; s++) {
       try {
-        const r = runBattleCase(d, bc, 1 + s);
+        const r = runBattleCase(d, bc, 1 + s, extra);
         wins[r.winner === 'draw' ? 2 : r.winner]++;
         lr.push(ratio(r.losses[0], r.losses[1]));
         l0.push(r.losses[0]); l1.push(r.losses[1]);
@@ -102,7 +104,18 @@ function withValue(d: EngineData, path: string, v: number): EngineData {
 }
 
 const sweepAt = argv.indexOf('--sweep');
-if (sweepAt >= 0) {
+const bpq = arg(argv, 'bp-quantile');
+if (bpq) {
+  const qs = bpq.split(',').map(Number);
+  if (!qs.length || qs.some((q) => !(q >= 0 && q <= 1))) { console.error('usage: --bp-quantile <q1,q2,...> in [0,1]'); process.exit(2); }
+  const table: string[] = [];
+  for (const q of qs) {
+    const c = counts(runAll(data, cases, `breakpoint quantile ${q}`, { breakpointQuantile: q }));
+    table.push(`breakpoint quantile ${q}: ${c.line}`, ...c.fails);
+  }
+  console.log('');
+  for (const l of table) console.log(l);
+} else if (sweepAt >= 0) {
   const path = argv[sweepAt + 1];
   const values = (argv[sweepAt + 2] ?? '').split(',').filter(Boolean).map(Number);
   if (!path || !values.length || values.some((v) => !isFinite(v))) {

@@ -104,7 +104,7 @@ unless they close (melee roles close in round 2). As built
 tech level reached (floor), so a 0.05-level difference across a steep table
 step (artillery 0.9 km at 6, 6 km at 7) no longer silences a whole army.
 
-Tech index per quantity (as built): combat, breakpoint, formation size and
+Tech index per quantity (as built): combat, formation size and
 training days by `weapons`; supply needs, forage dependence, disease and
 role mobility by `logistics`; order delay, mobilization and desertion by
 `communications`; ships and aircraft by `ships` and `air`. `missiles` and
@@ -145,8 +145,18 @@ and field fortification are QJM alternatives, so the largest applies
 defender that stood still for a day is prepared. Measured together: winner
 12 -> 14, loss ratio 13 -> 16, duration 21 -> 22 of 24.
 The withdraw threshold is min(`retreatThreshold`, 0.9 x effective breakpoint)
-with effective breakpoint = `breakpoint(tech)` + `cohesionBreakpointShift` x
-(cohesion - 0.5), so withdrawal always comes before the rout. Morale falls by
+with effective breakpoint = breakpoint + `cohesionBreakpointShift` x
+(cohesion - 0.5), so withdrawal always comes before the rout. The breakpoint
+(`BREAKPOINT_FROM_MODEL_RULES`) is `modelRules.breakpoint.loserCasualtyShareAtBreak`
+for the member's era (`napoleonic` for 1789-1849): the loser's casualty share
+when it broke, from CDB90 with the 24 backtest battles removed (gunpowder to
+cold war grade B, bronze, medieval and modern grade D). Each seed draws one
+quantile u from its own stream and every member takes its era MV at u
+(0 low, 0.5 mid, 1 high, piecewise linear); `SimOptions.breakpointQuantile`
+fixes u, 0.5 being the deterministic mid (`scripts/backtest.ts --bp-quantile`).
+OFF: the tech-keyed `morale.breakpoint` table. Measured (20 seeds, Run 3
+20/14/22): per-seed draw 20/17/21; all at low 21/15/19, mid 20/17/20, high
+21/16/23. Morale falls by
 the round's loss as a share of STARTING strength (l x (1 - engLoss)), the
 basis engLoss accumulates on, so morale reaches 0 exactly at the breakpoint
 (`MORALE_ON_ENGAGED_BASIS`). Pursuit losses are max(mounted, foot) x
@@ -169,7 +179,7 @@ proportion to their exposure. A seeded noise factor (lognormal per round,
 sigma `modelRules.battle.outcomeNoiseSigma` 0.25 from Helmbold's residuals,
 0.15 before; `RULES_FROM_MODEL_RULES`) represents friction and chance. Morale falls with losses. A formation
 whose cumulative battle loss reaches the doctrine `retreatThreshold` withdraws
-in good order; one reaching `breakpoint(tech)` (shifted by cohesion) routs: it
+in good order; one reaching the breakpoint (shifted by cohesion) routs: it
 suffers `pursuitLossFraction` x (winner mounted/mobile share) extra losses, of
 which `captureFraction` are prisoners, and flees toward supply. When every
 formation of one side has withdrawn or routed, the battle ends. Otherwise it

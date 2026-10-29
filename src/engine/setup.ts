@@ -5,15 +5,15 @@
 import type { EngineData, TheaterInfo } from './protocol';
 import type { Scenario } from '../types/scenario';
 import type { DoctrineProfile, Snapshot, TechCategory, UnitRole } from '../types/schema';
-import type { Mechanics, MobilityClass, NavalPropulsion, Season } from '../types/mechanics';
+import type { Mechanics, MobilityClass, MV, NavalPropulsion, Season } from '../types/mechanics';
 import { GRID_H, GRID_RES, GRID_W, FLAG_COAST, T, cellIndex, cellCenter } from './terrainClasses';
 import { buildGrid, cellAt, globalTerrain, haversineKm, inBbox, nearestLand, rasterizeMultiPolygon, type GlobalTerrain, type Grid } from './grid';
-import { byTech, clamp, factor, rule, techFromYear, validateMechanics, yearFromTech } from './mech';
+import { byTech, clamp, factor, rule, ruleMV, techFromYear, validateMechanics, yearFromTech } from './mech';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI, ROLES } from './roles';
 import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
   RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
-  FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS,
+  FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS, BREAKPOINT_FROM_MODEL_RULES,
 } from './constants';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
@@ -36,6 +36,9 @@ export interface SimOptions {
   riverCrossing?: boolean;
   /** Battle mode: defender in a prepared defence (BattleSide.prepared). */
   prepared?: [boolean, boolean];
+  /** Fixed quantile of every member's breakpoint range (0 low, 0.5 mid, 1 high) instead of the
+   *  per-seed draw: 0.5 is the deterministic mode. */
+  breakpointQuantile?: number;
   /** The case marks the side prepared:false (caught unentrenched): no field_fortification. */
   unprepared?: [boolean, boolean];
   surprise?: [boolean, boolean];
@@ -90,7 +93,10 @@ export interface MemberRT {
   mob: MobilityClass[]; mounted: Uint8Array; vehicle: Uint8Array;
   dispersion: number;
   commandF: number; homeDefense: number; morale0: number; cohesion: number;
+  /** Breakpoint mid (cohesion-shifted) and withdraw threshold at it; the per-seed values are in
+   *  MemberState (BREAKPOINT_FROM_MODEL_RULES draws within bpMV per seed). */
   breakpoint: number; retreat: number;
+  bpMV: MV; bpShift: number; retreatThreshold: number;
   baseCas: number; alpha: number; pursuit: number; capture: number; fortF: number;
   supplyRangeKm: number; carriedDays: number; forageDep: number; animalsPer1000: number;
   ammoPer1000: number; supplyPer1000: number;
@@ -385,7 +391,13 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       doctrine = data.doctrines.find((d) => d.archetype && d.era.includes(snap.era)) ?? data.doctrines.find((d) => d.archetype);
       if (doctrine) warnings.push(`${snap.name}: doctrine "${snap.doctrineId}" not found; using archetype ${doctrine.id}.`);
     }
-    const bp = byTech(m.morale.breakpoint, tech.weapons);
+    const ruleYear = scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year;
+    // battle breakpoint: the sourced loser casualty share at the break for the member's era
+    // (napoleonic sub-key for 1789-1849); OFF: the tech-keyed morale.breakpoint table
+    const bpMV: MV = BREAKPOINT_FROM_MODEL_RULES
+      ? ruleMV(m.modelRules.breakpoint.loserCasualtyShareAtBreak, ruleYear) ?? m.morale.breakpoint[0]
+      : (() => { const mid = byTech(m.morale.breakpoint, tech.weapons); return { ...m.morale.breakpoint[clamp(Math.round(tech.weapons), 0, m.morale.breakpoint.length - 1)], low: mid, mid, high: mid }; })();
+    const bp = bpMV.mid;
     if (!doctrine) {
       doctrine = {
         id: 'engine-neutral', name: 'Neutral (no doctrine data)', appliesTo: [], era: [snap.era], archetype: true, grade: 'D',
@@ -395,7 +407,6 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       warnings.push(`${snap.name}: no doctrine profiles loaded; using neutral weights (retreat at 75% of the breakpoint).`);
     }
     const w = doctrine.weights;
-    const ruleYear = scenario.techMode === 'equalized' ? yearFromTech(m, clamp(scenario.equalizedTech ?? 5, 0, 10)) : snap.year;
     const tli = new Float64Array(NR), qF = new Float64Array(NR), tF = new Float64Array(NR), range = new Float64Array(NR), rate = new Float64Array(NR), rangeClass = new Float64Array(NR);
     const mounted = new Uint8Array(NR), vehicle = new Uint8Array(NR);
     const mob: MobilityClass[] = [];
@@ -458,6 +469,9 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       cohesion: clamp(snap.military.cohesion?.mid ?? 0.5, 0, 1),
       breakpoint: 0,
       retreat: 0,
+      bpMV,
+      bpShift: 0,
+      retreatThreshold: w.retreatThreshold,
       baseCas: byTech(m.combat.baseDailyCasualtyRate, tech.weapons),
       alpha: byTech(m.combat.powerRatioExponent, tech.weapons),
       pursuit: byTech(m.combat.pursuitLossFraction, tech.weapons),
@@ -486,10 +500,11 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       startCells: 0,
       propulsion: propulsionOf(tech.ships),
     };
-    // Effective breakpoint = breakpoint(tech) shifted by cohesion; a formation withdraws in good
+    // Effective breakpoint = era breakpoint shifted by cohesion; a formation withdraws in good
     // order at min(doctrine retreatThreshold, 0.9 x effective breakpoint), so withdrawal always
     // comes before the rout even where a doctrine's threshold sits above the breakpoint.
-    mr.breakpoint = clamp(bp + m.combat.cohesionBreakpointShift.mid * (mr.cohesion - 0.5), 0.02, 0.98);
+    mr.bpShift = m.combat.cohesionBreakpointShift.mid * (mr.cohesion - 0.5);
+    mr.breakpoint = clamp(bp + mr.bpShift, 0.02, 0.98);
     mr.retreat = clamp(Math.min(w.retreatThreshold, 0.9 * mr.breakpoint), 0.01, 0.95);
     members.push(mr);
     sideMembers[side].push(idx);

@@ -39,6 +39,8 @@ export interface ModelRules {
   attrition: { returnToDutyDays: EraRule; diseaseDeathShareOfAdmissions: EraRule };
   collapse: { armyCollapsePersonnelFraction: MV; armyCollapseMorale: MV };
   surrender: { encircledSurrenderShare: EraRule };
+  /** CDB90 and others, backtest battles removed: loser's casualty share when it broke, winner's at the end. */
+  breakpoint: { loserCasualtyShareAtBreak: EraRule; winnerCasualtyShareAtEnd: EraRule };
   intel: { fogStrengthError: MV };
   c2: { missionCommandDelayFactor: MV };
   naval: { blockadeSeaControlThreshold: MV; navalAttritionPerDay: EraRule };
@@ -124,7 +126,7 @@ export interface Mechanics {
   };
 
   morale: {
-    breakpoint: ByTech;            // cumulative casualty fraction at which baseline units rout
+    breakpoint: ByTech;            // cumulative casualty fraction at which baseline units rout (BREAKPOINT_FROM_MODEL_RULES OFF)
     dailyRecovery: MV;
     supplyShortfallPenalty: MV;
     defeatShock: MV;

@@ -332,13 +332,13 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
       const lAir = l * airShare[1 - s], lGround = l - lAir;
       b.parts[s].forEach((f, i) => {
         if (!active[s][i] || !F.alive[f] || absent(f, round)) return;
-        const mr = S.members[F.member[f]];
+        const mr = S.members[F.member[f]], ms = st.members[F.member[f]];
         const before = F.personnel[f];
         lossFraction(ctx, f, lGround, LC.combat);
         if (lAir > 0) lossFraction(ctx, f, lAir / Math.max(1e-9, 1 - lGround), LC.air);
         b.casualties[s] += before - F.personnel[f];
         const lStart = MORALE_ON_ENGAGED_BASIS ? l * (1 - F.engLoss[f]) : l;   // share of starting strength
-        F.morale[f] = Math.max(0, F.morale[f] - lStart * (mr.morale0 / mr.breakpoint));
+        F.morale[f] = Math.max(0, F.morale[f] - lStart * (mr.morale0 / ms.breakpoint));
         F.engLoss[f] = 1 - (1 - F.engLoss[f]) * (1 - l);
       });
     }
@@ -350,13 +350,13 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (!active[s][i]) return;
         if (!F.alive[f]) { active[s][i] = 0; return; }
         if (absent(f, round)) { any = true; return; }
-        const mr = S.members[F.member[f]];
-        if (F.engLoss[f] >= mr.breakpoint || F.morale[f] <= 0.001) {
+        const mr = S.members[F.member[f]], ms = st.members[F.member[f]];
+        if (F.engLoss[f] >= ms.breakpoint || F.morale[f] <= 0.001) {
           active[s][i] = 0;
           // horse archers with the mobility edge break contact instead of routing
           const mobEdge = mr.specials.has('horse_archery') && maxRate(ctx, b.parts[s]) > maxRate(ctx, b.parts[e]);
           F.mode[f] = mobEdge ? Mode.Retreat : Mode.Rout;
-        } else if (F.engLoss[f] >= mr.retreat) {
+        } else if (F.engLoss[f] >= ms.retreat) {
           active[s][i] = 0;
           F.mode[f] = Mode.Retreat;
         } else any = true;
@@ -369,7 +369,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         // both broke this round: the side further past its breakpoint lost the field
         const sev = [0, 1].map((s) => {
           let num = 0, den = 0;
-          for (const f of b.parts[s]) { const w = Math.max(F.startW[f], 1e-9); num += w * F.engLoss[f] / S.members[F.member[f]].breakpoint; den += w; }
+          for (const f of b.parts[s]) { const w = Math.max(F.startW[f], 1e-9); num += w * F.engLoss[f] / st.members[F.member[f]].breakpoint; den += w; }
           return den > 0 ? num / den : 0;
         });
         if (sev[0] !== sev[1]) b.winner = sev[0] > sev[1] ? 1 : 0;

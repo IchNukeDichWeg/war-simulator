@@ -175,9 +175,10 @@ export function battleCaseScenario(data: EngineData, bc: BattleCase, seed: numbe
   return { data: { ...data, snapshots: [...data.snapshots, s0, s1] }, scenario, opts, warnings };
 }
 
-export function runBattleCase(data: EngineData, bc: BattleCase, seed: number): BattleCaseResult {
+/** `extra` overrides sim options (e.g. breakpointQuantile for a sweep). */
+export function runBattleCase(data: EngineData, bc: BattleCase, seed: number, extra: Partial<SimOptions> = {}): BattleCaseResult {
   const { data: d2, scenario, opts, warnings } = battleCaseScenario(data, bc, seed);
-  const sim = createSim(d2, scenario, opts);
+  const sim = createSim(d2, scenario, { ...opts, ...extra });
   const r = runToEnd(sim);
   return {
     winner: r.winner,
