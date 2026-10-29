@@ -57,12 +57,10 @@ Every numeric field is an Est `{low, mid, high, grade, source, note}`. Key rules
 - `economy.production`: per-role wartime production per year (platform roles); for
   pre-modern use `{}` unless there is a documented figure.
 - `territory.border`: `hb:<year>:<NAME>` where `<year>` is one of the
-  historical-basemaps files (world_bc500, world_bc323, world_bc200, world_1, world_100,
-  world_200, world_400, world_500, world_700, world_800, world_1000, world_1200,
-  world_1279, world_1300, world_1400, world_1492, world_1500, world_1600, world_1650,
-  world_1700, world_1715, world_1783, world_1800, world_1815, world_1880, world_1900,
-  world_1914, world_1920, world_1930, world_1938, world_1945, world_1960, world_1994,
-  world_2000, world_2010 -> write the year part, e.g. `hb:100:Roman Empire`,
+  historical-basemaps files (every year in the repository: bc3000, bc2000, bc1500, bc1000, bc700,
+  bc500, bc400, bc323, bc300, bc200, bc100, bc1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000,
+  1100, 1200, 1279, 1300, 1400, 1492, 1500, 1530, 1600, 1650, 1700, 1715, 1783, 1800, 1815, 1878,
+  1880, 1900, 1914, 1920, 1930, 1938, 1945, 1960, 1994, 2000, 2010; files are named world_<year>.geojson -> write the year part, e.g. `hb:100:Roman Empire`,
   `hb:bc500:Achaemenid Empire`) and `<NAME>` is the exact `NAME` property in that file.
   Check the name by fetching
   `https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_<year>.geojson`
