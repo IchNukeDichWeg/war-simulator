@@ -161,3 +161,51 @@ x9 -> x18; Yom Kippur winner 85% -> 70%.
 **Passes that need caution:** Iraq 2003 wins with Iraqi losses about 3x the historical figure;
 Yom Kippur at 70% sits near the threshold.
 
+### Run 2: sourced case fields (engine `e1c4896`, cases `61f5bb9`), 20 seeds
+
+Gate still passes on the numbers: winner 19/24, loss ratio 15/24, duration 22/24. The case fields
+the fix round introduced (`prepared`, `riverCrossing`, `objective.kind`, Stalingrad's objective) were
+filled by a researcher from the historical record without running the model. The result is worse
+than Run 1 and the data is kept: changing sourced case data to recover passes would be fitting.
+
+| case | hist winner wins | winner | loss ratio vs hist | ratio | losses model vs hist (side 0 / side 1) | days model / hist | duration |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| adrianople-378 | 40% | **fail** | x0.11 | **fail** | 2,481 / 4,147 vs 13,000 / 2,500 | 1.3 / 0.25 | pass |
+| agincourt-1415 | 95% | pass | x0.36 | pass | 2,775 / 607 vs 8,000 / 600 | 0.7 / 0.13 | pass |
+| austerlitz-1805 | 100% | pass | x1.40 | pass | 22,261 / 4,498 vs 31,500 / 8,800 | 0.8 / 0.35 | pass |
+| blenheim-1704 | 30% | **fail** | x4.00 | **fail** | 17,228 / 10,154 vs 12,984 / 30,000 | 1.2 / 0.35 | pass |
+| breitenfeld-1631 | 100% | pass | x1.22 | pass | 5,325 / 10,850 vs 5,550 / 13,600 | 1 / 0.37 | pass |
+| cannae--216 | 100% | pass | x1.18 | pass | 16,763 / 2,108 vs 55,000 / 8,000 | 0.7 / 0.4 | pass |
+| carrhae--53 | 0% | **fail** | x22.79 | **fail** | 1,529 / 4,066 vs 500 / 30,000 | 0.8 / 1 | pass |
+| el-alamein-1942 | 100% | pass | x1.13 | pass | 8,031 / 26,213 vs 13,560 / 50,000 | 4.9 / 13 | pass |
+| falklands-1982 | 100% | pass | x3.86 | **fail** | 345 / 1,395 vs 800 / 12,600 | 12 / 25 | pass |
+| france-1940 | 100% | pass | x6.01 | **fail** | 273,041 / 626,969 vs 156,547 / 2,084,000 | 47 / 43 | pass |
+| gaugamela--331 | 100% | pass | x1.69 | pass | 2,653 / 18,643 vs 3,000 / 35,000 | 0.7 / 0.4 | pass |
+| gettysburg-1863 | 100% | pass | x2.11 | pass | 15,341 / 7,377 vs 23,231 / 23,049 | 2.4 / 2.4 | pass |
+| gulf-war-1991 | 100% | pass | x5.75 | **fail** | 110 / 3,060 vs 700 / 110,000 | 5 / 4.17 | pass |
+| hastings-1066 | 100% | pass | x0.50 | pass | 644 / 2,164 vs 3,000 / 5,000 | 1 / 0.35 | pass |
+| iraq-2003 | 100% | pass | x1.30 | pass | 3,057 / 107,063 vs 760 / 35,000 | 26 / 21 | pass |
+| kursk-1943 | 100% | pass | x3.85 | **fail** | 213,372 / 186,837 vs 54,182 / 177,847 | 9.7 / 12 | pass |
+| marathon--490 | 0% | **fail** | x18.03 | **fail** | 1,743 / 945 vs 500 / 5,000 | 0.6 / 0.15 | pass |
+| mohi-1241 | 100% | pass | x0.54 | pass | 989 / 13,634 vs 2,000 / 15,000 | 0.7 / 0.35 | pass |
+| six-day-war-1967 | 95% | pass | x3.50 | **fail** | 2,136 / 10,198 vs 1,300 / 22,000 | 6 / 4 | pass |
+| stalingrad-1942 | 100% | pass | x1.25 | pass | 17,130 / 16,953 vs 485,777 / 600,000 | 1 / 75 | **fail** |
+| tannenberg-1914 | 100% | pass | x2.15 | pass | 13,069 / 48,514 vs 15,000 / 120,000 | 1.7 / 5 | pass |
+| waterloo-1815 | 100% | pass | x2.98 | pass | 24,713 / 7,825 vs 26,000 / 24,000 | 0.9 / 0.4 | pass |
+| yom-kippur-sinai-1973 | 0% | **fail** | x2.42 | pass | 8 / 1 vs 38,000 / 7,500 | 3 / 18 | **fail** |
+| zama--202 | 100% | pass | x2.05 | pass | 2,334 / 9,887 vs 4,000 / 35,000 | 0.9 / 0.35 | pass |
+| **total** | | **19/24** | | **15/24** | | | **22/24** |
+
+What moved against Run 1:
+- **Blenheim** flips (100% -> 30%): the Nebel is now a contested crossing. The researcher marked
+  this a judgement call: the Allies bridged it under fire, but Tallard chose not to defend the bank.
+- **Yom Kippur** flips (70% -> 0%) and fails duration: the Egyptian canal assault is a river
+  crossing and Israel's Sinai defence is no longer marked prepared (the Bar Lev line was thinly
+  held). The case had passed narrowly before (see Run 1 cautions).
+- **Stalingrad** now ends on day 1. The new Soviet objective (the 6th Army pocket) lies in the same
+  0.25 degree cell (about 28 km) as the 62nd Army's start position in the city, so the capture is
+  met at once. This is a grid-resolution limit of a city fight, recorded here as a wrong-reason
+  pass of the winner criterion; it needs an annihilation objective (destroy the encircled force),
+  which the engine does not have.
+- Adrianople moves from 0% to 40% and Agincourt from 65% to 95% (prepared defenders).
+
