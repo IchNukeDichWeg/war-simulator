@@ -1,0 +1,550 @@
+{
+  "id": "timurid-empire-1400",
+  "nationId": "timurid-empire",
+  "includes": [],
+  "name": "Timurid Empire",
+  "year": 1400,
+  "era": "medieval",
+  "region": "central_asia",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Turco-Mongol",
+    "steppe",
+    "horse archers",
+    "Timur"
+  ],
+  "capital": {
+    "name": "Samarkand",
+    "lat": 39.65,
+    "lon": 66.96,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Bukhara",
+      "lat": 39.77,
+      "lon": 64.42,
+      "kind": "city"
+    },
+    {
+      "name": "Shahrisabz (Kesh)",
+      "lat": 39.06,
+      "lon": 66.83,
+      "kind": "city"
+    },
+    {
+      "name": "Herat",
+      "lat": 34.35,
+      "lon": 62.2,
+      "kind": "city"
+    },
+    {
+      "name": "Balkh",
+      "lat": 36.76,
+      "lon": 66.9,
+      "kind": "city"
+    },
+    {
+      "name": "Urgench",
+      "lat": 42.33,
+      "lon": 59.15,
+      "kind": "city"
+    },
+    {
+      "name": "Tabriz",
+      "lat": 38.08,
+      "lon": 46.29,
+      "kind": "city"
+    },
+    {
+      "name": "Sultaniyya",
+      "lat": 36.43,
+      "lon": 48.8,
+      "kind": "city"
+    },
+    {
+      "name": "Isfahan",
+      "lat": 32.65,
+      "lon": 51.67,
+      "kind": "city"
+    },
+    {
+      "name": "Shiraz",
+      "lat": 29.59,
+      "lon": 52.58,
+      "kind": "city"
+    },
+    {
+      "name": "Termez (Amu Darya crossing)",
+      "lat": 37.22,
+      "lon": 67.28,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Iron Gate pass",
+      "lat": 38.25,
+      "lon": 67.05,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1400:Timurid Empire",
+    "areaKm2": {
+      "low": 4400000,
+      "mid": 5100000,
+      "high": 5500000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/370",
+      "note": "Seshat codes 5.5 million km2 for 1400 (high); Turchin, Adams and Hall give 4.4 million km2 for 1405 (via https://en.wikipedia.org/wiki/Timurid_Empire, low); the world_1400 polygon measures 5.10 million km2 (mid)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 10000000,
+      "mid": 16000000,
+      "high": 49000000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Sum of HYDE/Gapminder 1400 country series (OWID): Iran 3.75M, Iraq 1.0M, Afghanistan 1.9M, Uzbekistan 1.2M, Turkmenistan 0.2M, Tajikistan 0.3M, Azerbaijan, Armenia and eastern Anatolia ~1.0M, parts of Kazakhstan, Kyrgyzstan and Pakistan ~1M = ~10-11M (low). Mid allows for HYDE undercounting Iran and Transoxiana. Seshat codes 49 million (https://seshat-db.com/core/polity/370, high), which this researcher considers implausible for these lands."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.14,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Samarkand ~150,000 (Seshat), Herat, Tabriz, Isfahan, Shiraz, Bukhara."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 100000,
+      "mid": 150000,
+      "high": 200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Ankara",
+      "note": "Timur's field army at Ankara (1402) is \"reliably estimated\" at 140,000, mostly cavalry (Nicolle 1983 p. 29, via the article); he led over 100,000 against Tokhtamysh in 1391 (via https://en.wikipedia.org/wiki/Timur). Adds garrisons and the princes' armies in Khurasan and Fars. Ibn Arabshah's 800,000 rejected. Tribal tumens were permanently embodied under Timur, so they count as active, as in mongol-empire-1241."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Further tribal contingents and sedentary (Tajik) levies (hashar) called for specific campaigns."
+    },
+    "supportPersonnel": {
+      "low": 4000,
+      "mid": 8000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Siege engineers, naphtha throwers, artisans and Indian mahouts with the army."
+    },
+    "mobilizationRatio": {
+      "low": 0.012,
+      "mid": 0.018,
+      "high": 0.03,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nomadic Turco-Mongol tribes mobilised most adult males; sedentary subjects supplied far fewer."
+    },
+    "mobilizable": {
+      "low": 120000,
+      "mid": 288000,
+      "high": 1470000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_light": {
+        "count": {
+          "low": 55000,
+          "mid": 80000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horse archers, the majority of the tumens (Manz, Rise and Rule of Tamerlane, describes the army as tribal cavalry)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: composite bow, remounts."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: lifelong riders, continuous campaigning since 1370."
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 25000,
+          "mid": 35000,
+          "high": 50000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Armoured lancers and the guard (kheshig-type) regiments."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: lamellar and mail, horse armour for the guard."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 8000,
+          "mid": 15000,
+          "high": 25000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Tajik and Persian foot, sappers, garrison troops."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 5000,
+          "mid": 10000,
+          "high": 15000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Foot archers and dismounted horse archers in sieges."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "elephants": {
+        "count": {
+          "low": 20,
+          "mid": 32,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Ankara",
+          "note": "32 war elephants at Ankara (Nicolle 1983, via the article), brought from the 1398 Delhi campaign; more were used as labour at Samarkand (high)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: Indian war elephants."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: Indian mahouts."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 50,
+          "mid": 150,
+          "high": 300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Trebuchets, mangonels and naphtha engines built on campaign (sieges of Aleppo and Damascus 1400-01, Baghdad 1401)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Persian and Chinese-derived siege technology."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.9,
+      "mid": 0.95,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 1.0: Timur never lost a major battle (Kondurcha 1391, Terek 1395, Delhi 1398, Ankara 1402); best-in-era."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: loyalty to Timur personally; tribal amirs reorganised under his household (Manz), fragile without him."
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: thirty years of victories and plunder."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: composite bow, counterweight trebuchet, naphtha; little gunpowder artillery."
+    },
+    "armor": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: lamellar, mail and brigandine."
+    },
+    "ships": {
+      "low": 1.0,
+      "mid": 1.5,
+      "high": 2.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2: river craft only; no navy."
+    },
+    "fortification": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus: walled Samarkand and Herat citadels, little new building."
+    },
+    "logistics": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: herds and remounts gave strategic reach from Delhi to Ankara."
+    },
+    "communications": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: yam-type relay stations."
+    },
+    "isr": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: merchants and spies ahead of every campaign."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 750,
+      "mid": 950,
+      "high": 1150,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Analogue: Maddison 2023 (via OWID) Iraq 1150 = 1,084, Iran 1 CE = 1,116, Turkey 1348 = 743 (2011 int$). Plunder from Delhi, Persia and Syria flowed to Samarkand."
+    },
+    "gdp": {
+      "low": 7500000000,
+      "mid": 15200000000,
+      "high": 56350000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. A state organised around permanent campaigning."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Deported artisans in Samarkand, textiles, metalwork."
+    },
+    "foodSurplus": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Oasis irrigation and pastoralism; Iran's agriculture damaged by the conquests."
+    },
+    "annualCohort": {
+      "low": 95000,
+      "mid": 152000,
+      "high": 465500,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caravan routes of the Silk Road; few engineered roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 2,
+      "high": 4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Persian Gulf ports via vassal Hormuz; Caspian landings."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 5000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No merchant marine of its own."
+    },
+    "supplyRangeKm": {
+      "low": 600,
+      "mid": 1000,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Herds and remounts let armies range far beyond bases where pasture existed; Timur campaigned 2,000+ km from Samarkand. Comparable to mongol-empire-1241."
+    },
+    "draftAnimals": {
+      "low": 3000000,
+      "mid": 6000000,
+      "high": 10000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses (several remounts per rider), camels and oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-steppe-nomad",
+  "geography": {
+    "climate": "BSk",
+    "chokepoints": [
+      "Amu Darya crossings (Termez)",
+      "Iron Gate pass",
+      "Caucasian Derbent",
+      "Khyber Pass",
+      "Zagros passes"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: steppe and desert depth and a harsh continental climate around Transoxiana; conquered Iran gives less."
+    }
+  },
+  "notes": "Snapshot = 1400, Timur's invasion of Syria (Aleppo, Damascus) between Delhi (1398) and Ankara (1402). Army size anchored on Nicolle's 140,000 at Ankara (an Osprey-level source, so grade C); Manz (The Rise and Rule of Tamerlane, 1989) describes the army's tribal structure but no total was found to quote. Chronicle figures (Ibn Arabshah 800,000; a German witness 1.6 million) rejected (via https://en.wikipedia.org/wiki/Battle_of_Ankara). Population convention: directly ruled Transoxiana, Khwarazm, Khurasan, Iran, Iraq and the southern Caucasus; vassal Georgia, Delhi and the Golden Horde excluded. Population is the weakest number: HYDE (~11M) and Seshat (49M) disagree by a factor of four."
+}

@@ -1,0 +1,551 @@
+{
+  "id": "ottoman-empire-1453",
+  "nationId": "ottoman-empire",
+  "includes": [],
+  "name": "Ottoman Empire",
+  "year": 1453,
+  "era": "medieval",
+  "region": "mena",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "sultanate",
+    "janissaries",
+    "timar",
+    "gunpowder siege",
+    "Mehmed II"
+  ],
+  "capital": {
+    "name": "Edirne",
+    "lat": 41.68,
+    "lon": 26.56,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Bursa",
+      "lat": 40.18,
+      "lon": 29.06,
+      "kind": "city"
+    },
+    {
+      "name": "Gallipoli",
+      "lat": 40.41,
+      "lon": 26.67,
+      "kind": "port"
+    },
+    {
+      "name": "Constantinople (besieged)",
+      "lat": 41.01,
+      "lon": 28.98,
+      "kind": "city"
+    },
+    {
+      "name": "Rumelihisari",
+      "lat": 41.08,
+      "lon": 29.06,
+      "kind": "fortress"
+    },
+    {
+      "name": "Thessaloniki",
+      "lat": 40.64,
+      "lon": 22.94,
+      "kind": "port"
+    },
+    {
+      "name": "Skopje",
+      "lat": 42.0,
+      "lon": 21.43,
+      "kind": "city"
+    },
+    {
+      "name": "Sofia",
+      "lat": 42.7,
+      "lon": 23.32,
+      "kind": "city"
+    },
+    {
+      "name": "Plovdiv",
+      "lat": 42.15,
+      "lon": 24.75,
+      "kind": "city"
+    },
+    {
+      "name": "Ankara",
+      "lat": 39.93,
+      "lon": 32.86,
+      "kind": "city"
+    },
+    {
+      "name": "Bosporus",
+      "lat": 41.1,
+      "lon": 29.05,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dardanelles",
+      "lat": 40.2,
+      "lon": 26.4,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1400:Ottoman Empire + hb:1400:Bulgar Khanate + hb:1400:Beylik of Aydin",
+    "areaKm2": {
+      "low": 633000,
+      "mid": 750000,
+      "high": 866000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/174",
+      "note": "Seshat codes 633,000 km2 for 1440 (low) and 866,000 km2 for 1460 (high); 1453 interpolated. The world_1400 union (Ottoman Empire + its Bulgarian subject + the Aydin beylik absorbed in 1425) measures 520,781 km2, the pre-Ankara state."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 5500000,
+      "mid": 7000000,
+      "high": 8500000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/174",
+      "note": "Seshat codes 7.0 million for 1450 and 9.0 million for 1500. Range is a researcher's allowance; vassal Serbia, Wallachia and Byzantine remnants excluded."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Largest settlement 50,000-60,000 in 1453 (Seshat: Bursa or Edirne)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 18000,
+      "mid": 25000,
+      "high": 35000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+      "note": "Standing salaried kapikulu and fleet: 5,000-10,000 Janissaries (archival data via the Fall of Constantinople article; Nicolle has ~6,000 in 1475 via https://en.wikipedia.org/wiki/Janissary), Porte cavalry, gunners and armourers (~3,000-6,000, educated guess) and ~10,000 fleet crews and marines (85 galleys, educated guess at 100-150 men each)."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 55000,
+      "high": 80000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+      "note": "Timariot sipahis ~40,000 (Nicolle 1983 pp. 9-10, via https://en.wikipedia.org/wiki/Janissary), plus azab infantry, akinci raiders and vassal contingents (1,500 Serbian horse). The 1453 siege army is put at 50,000-80,000 in recent studies (archival) and 100,000 by Runciman; western contemporaries' 160,000-300,000 rejected. Counted as feudal levy per the convention."
+    },
+    "supportPersonnel": {
+      "low": 8000,
+      "mid": 12000,
+      "high": 16000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Fleet crews (~85 galleys and galliots at 100-150 rowers and sailors), gunners, Orban's foundry men, miners, carpenters (Nicolle 2000: 50 carpenters and 200 artisans improved the roads)."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.013,
+      "high": 0.018,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Timar and azab registers plus vassals; ~1.3% of the population reproduces the 1453 siege army."
+    },
+    "mobilizable": {
+      "low": 55000,
+      "mid": 91000,
+      "high": 153000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "missile_infantry": {
+        "count": {
+          "low": 5000,
+          "mid": 7000,
+          "high": 10000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+          "note": "Janissaries, 5,000-10,000 in 1453 (archival, via the article). Bowmen with the first hand guns."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: composite bows and early firearms, among the era's best."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: elite long-service slave soldiers (devshirme)."
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 5000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Six divisions of the Porte cavalry (sipahis of the Porte, silahdars)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: mail and lamellar, composite bow and lance."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: palace-trained."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 500,
+          "mid": 1500,
+          "high": 3000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Palace guard infantry (solak, peyk) and garrison troops of Rumelihisari."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 50,
+          "mid": 70,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+          "note": "~70 cannon at the siege (Lanning 2005, Nicolle 2000, via the article), including Orban's great bombard; 5,000 shots fired with 55,000 lb of powder."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: the largest siege artillery train of its time."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Orban and other hired founders."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 60,
+          "mid": 75,
+          "high": 110,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+          "note": "Nicolle 2000 p. 44 (via the article): 70 large galleys and 5 ordinary galleys (mid). Contemporary estimates run 110-430 ships including transports (high capped at 110)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5: new-built galleys, outmatched by Genoese carracks on 20 April 1453."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5: raw crews."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 35,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+          "note": "Nicolle 2000 (via the article): 10 smaller galleys and 25 large rowing boats; 75 horse transports excluded."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5 minus."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: Mehmed II built Rumelihisari to close the Bosporus, hauled ships over Galata into the Golden Horn and coordinated round-the-clock bombardment."
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: kapikulu slave soldiers with strong corps identity; timariot levy weaker."
+    },
+    "morale": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75: motivated by recent victories (Varna 1444, Kosovo 1448) and the prize of Constantinople."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.5,
+      "mid": 4.7,
+      "high": 4.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4-5: great bombards and early hand guns alongside composite bows; between the 1250 and 1600 anchors."
+    },
+    "armor": {
+      "low": 3.9,
+      "mid": 4.1,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: mail-and-plate, lamellar."
+    },
+    "ships": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: galleys."
+    },
+    "fortification": {
+      "low": 4.1,
+      "mid": 4.3,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: Rumelihisari (1452) with gun towers."
+    },
+    "logistics": {
+      "low": 4.0,
+      "mid": 4.3,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: menzil road stations, granaries; feeding 60,000 men and 40,000 horses needed ~0.5 million kg of food a day (Military of the Ottoman Empire article)."
+    },
+    "communications": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: ulak relay couriers."
+    },
+    "isr": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: akinci raiders and spies."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 750,
+      "mid": 850,
+      "high": 1000,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Maddison Project 2023 (via OWID) Turkey 1450 = 781, 1500 = 768; Greece 1 CE = 1,275 (2011 int$). Balkan provinces with mining (Serbian silver) somewhat above Anatolia."
+    },
+    "gdp": {
+      "low": 4125000000,
+      "mid": 5950000000,
+      "high": 8500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Kapikulu salaries from cash revenue plus timar revenues assigned to sipahis; low = peacetime."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Bursa silk, mining, arsenal at Gallipoli."
+    },
+    "foodSurplus": {
+      "low": 0.12,
+      "mid": 0.18,
+      "high": 0.24,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Thracian and Bulgarian grain."
+    },
+    "annualCohort": {
+      "low": 52250,
+      "mid": 66500,
+      "high": 80750,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3000,
+      "mid": 5000,
+      "high": 8000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Via Egnatia, Via Militaris (Belgrade-Constantinople) and Anatolian caravan roads."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 9,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Gallipoli (arsenal), Thessaloniki, Izmit, Mudanya, Izmir, Enez."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 25000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Black Sea and Aegean trade mostly in Genoese and Venetian hands."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Engels (isbn:0520042727, ch. 1) scaled up for the Ottoman menzil station system and pre-stocked depots along the Via Militaris."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses, camels, oxen and buffalo, ~0.3 per inhabitant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Bosporus",
+      "Dardanelles",
+      "Gallipoli",
+      "Trajan's Gate (Balkan passes)",
+      "Danube crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: walled cities, local supply; Christian Balkan subjects not reliably supportive."
+    }
+  },
+  "notes": "Snapshot = April 1453, start of the siege of Constantinople. Per the feudal-host convention the timariot sipahis, azabs and akincis of the siege army sit in trainedReserves; activePersonnel is the salaried kapikulu and the fleet. Siege-army estimates: 50,000-80,000 (recent studies, Ottoman archival), Runciman 100,000 (incl. non-combatants), western contemporaries 160,000-300,000 (rejected), all via https://en.wikipedia.org/wiki/Fall_of_Constantinople. Agoston (Guns for the Sultan) is the standard modern source on artillery but was not consulted directly. Population convention: directly ruled Rumelia and Anatolia; vassal Serbia, Wallachia and Byzantine remnants excluded."
+}

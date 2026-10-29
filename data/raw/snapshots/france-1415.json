@@ -1,0 +1,550 @@
+{
+  "id": "france-1415",
+  "nationId": "france",
+  "includes": [],
+  "name": "Kingdom of France",
+  "year": 1415,
+  "era": "medieval",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "kingdom",
+    "Valois",
+    "Hundred Years War",
+    "Armagnac-Burgundian civil war",
+    "chivalry"
+  ],
+  "capital": {
+    "name": "Paris",
+    "lat": 48.85,
+    "lon": 2.35,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Rouen",
+      "lat": 49.44,
+      "lon": 1.1,
+      "kind": "city"
+    },
+    {
+      "name": "Orleans",
+      "lat": 47.9,
+      "lon": 1.9,
+      "kind": "city"
+    },
+    {
+      "name": "Lyon",
+      "lat": 45.76,
+      "lon": 4.84,
+      "kind": "city"
+    },
+    {
+      "name": "Toulouse",
+      "lat": 43.6,
+      "lon": 1.44,
+      "kind": "city"
+    },
+    {
+      "name": "Bourges",
+      "lat": 47.08,
+      "lon": 2.4,
+      "kind": "city"
+    },
+    {
+      "name": "Reims",
+      "lat": 49.26,
+      "lon": 4.03,
+      "kind": "city"
+    },
+    {
+      "name": "Dijon",
+      "lat": 47.32,
+      "lon": 5.04,
+      "kind": "city"
+    },
+    {
+      "name": "La Rochelle",
+      "lat": 46.16,
+      "lon": -1.15,
+      "kind": "port"
+    },
+    {
+      "name": "Harfleur",
+      "lat": 49.51,
+      "lon": 0.2,
+      "kind": "port"
+    },
+    {
+      "name": "Blanchetaque ford (Somme)",
+      "lat": 50.12,
+      "lon": 1.83,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Agincourt",
+      "lat": 50.46,
+      "lon": 2.14,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1400:France",
+    "areaKm2": {
+      "low": 340000,
+      "mid": 390000,
+      "high": 420000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/333",
+      "note": "Seshat codes 390,000 km2 for 1350 and 1400 and 340,000 km2 for 1450 (low). The world_1400 France polygon measures 393,605 km2. High allows for Brittany and Burgundian lands counted as part of the kingdom."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9000000,
+      "mid": 10000000,
+      "high": 12000000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/333",
+      "note": "Seshat codes 9.0 million (1400) and 9.5 million (1450); HYDE/OWID France 1400 = 10.9 million within modern borders (high side). Down from ~16-20 million before the Black Death."
+    },
+    "urbanization": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Paris 200,000-300,000 (Seshat), Rouen, Lyon, Toulouse, Orleans."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 15000,
+      "mid": 22000,
+      "high": 35000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+      "note": "Troops in royal pay in October 1415: the army at Agincourt, 12,000 (Curry) or 14,000-15,000 (Rogers, Mortimer, Sumption: 10,000 men-at-arms + 4,000-5,000 gens de trait) plus up to 10,000 armed valets (high); plus garrisons of Normandy, Picardy and the Gascon march. Contingents of Brittany (6,000, Monstrelet), Anjou (600) and Brabant (2,000) were still marching and are not counted."
+    },
+    "trainedReserves": {
+      "low": 15000,
+      "mid": 30000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Arriere-ban of the nobility and town militias not yet summoned; Burgundian forces withheld by John the Fearless."
+    },
+    "supportPersonnel": {
+      "low": 500,
+      "mid": 800,
+      "high": 2000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Royal artillery train, Clos des Galees crews at Rouen, heralds and officials."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.008,
+      "high": 0.012,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. The noble class (40,000 noble families under the Valois, Seshat) plus militias."
+    },
+    "mobilizable": {
+      "low": 45000,
+      "mid": 80000,
+      "high": 144000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 9000,
+          "mid": 13000,
+          "high": 16000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+          "note": "Men-at-arms: 10,000 at Agincourt (herald of the Duke of Berry, via Rogers, Mortimer, Sumption; Curry 2000 p. 181) + ~3,000 in garrisons."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: best plate harness in Europe."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: individually trained nobles, little collective drill."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 4000,
+          "mid": 5500,
+          "high": 7000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+          "note": "4,000-5,000 archers and crossbowmen at Agincourt + ~1,000 in garrisons."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: crossbows, slower than the longbow."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 1000,
+          "mid": 2000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Pavisiers, town militia and armed valets fighting on foot (high includes part of the 10,000 gros valets)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal bombards and smaller guns; few reached Agincourt."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 5,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal galleys of the Clos des Galees at Rouen; France relied on hired Castilian and Genoese ships."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 5,
+          "mid": 10,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Balingers and coastal craft."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: Charles VI insane, divided command at Agincourt where Constable d'Albret and Marshal Boucicaut were overruled by princes of the blood."
+    },
+    "cohesion": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: Armagnac-Burgundian civil war; Burgundy stood aside."
+    },
+    "morale": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: confident in numbers, defending the homeland, but riven by faction."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.1,
+      "mid": 4.3,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: crossbow, lance, poleaxe, bombards."
+    },
+    "armor": {
+      "low": 4.2,
+      "mid": 4.4,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: full plate harness."
+    },
+    "ships": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: galleys and cogs."
+    },
+    "fortification": {
+      "low": 4.1,
+      "mid": 4.3,
+      "high": 4.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: walled towns and castles, Harfleur held five weeks."
+    },
+    "logistics": {
+      "low": 3.6,
+      "mid": 3.9,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: river transport (Seine, Loire), local supply."
+    },
+    "communications": {
+      "low": 3.6,
+      "mid": 3.9,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: royal couriers."
+    },
+    "isr": {
+      "low": 3.3,
+      "mid": 3.6,
+      "high": 3.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus: shadowed the English march but misjudged numbers."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1550,
+      "mid": 1650,
+      "high": 1750,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (via OWID): France 1410 = 1,553, 1415 = 1,651, 1420 = 1,600 (2011 int$)."
+    },
+    "gdp": {
+      "low": 13950000000,
+      "mid": 16500000000,
+      "high": 21000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Wartime: taille and aides for the 1415 army; low = peacetime share."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Textiles, building, metalwork."
+    },
+    "foodSurplus": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post-plague land abundance, disrupted by war."
+    },
+    "annualCohort": {
+      "low": 85500,
+      "mid": 95000,
+      "high": 114000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 30000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Royal roads and surviving Roman routes."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 10,
+      "high": 15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rouen, Harfleur, Dieppe, La Rochelle, Nantes (Breton), Marseille (Provence, outside the kingdom), Aigues-Mortes, Narbonne."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Atlantic and Channel coastal trade."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "By analogy with Engels (isbn:0520042727, ch. 1): pre-modern armies with carts and pack animals operated ~1-2 weeks' march from a depot or navigable water."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 2500000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and oxen, ~0.2-0.3 per inhabitant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Somme crossings",
+      "Seine estuary",
+      "Loire crossings",
+      "Gironde estuary",
+      "Channel ports"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: walled towns and familiar terrain; civil war limits population support."
+    }
+  },
+  "notes": "Snapshot = October 1415, the Agincourt campaign. Agincourt numbers are disputed: Curry's record-based 12,000 French vs 9,000 English, against Rogers, Mortimer and Sumption's ~14,000-15,000 French (plus up to 10,000 valets) vs ~6,000 English (https://en.wikipedia.org/wiki/Battle_of_Agincourt). The 1415 royal army was largely paid men-at-arms in companies and counts as activePersonnel at the date; the unsummoned arriere-ban is trainedReserves. Population convention: the kingdom per Seshat, including Burgundian and Breton fiefs held under the crown; English Gascony and Calais excluded. Same nationId as later france snapshots."
+}

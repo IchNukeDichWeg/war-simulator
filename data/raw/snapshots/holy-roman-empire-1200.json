@@ -1,0 +1,503 @@
+{
+  "id": "holy-roman-empire-1200",
+  "nationId": "holy-roman-empire",
+  "includes": [],
+  "name": "Holy Roman Empire",
+  "year": 1200,
+  "era": "medieval",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "empire",
+    "feudal",
+    "Hohenstaufen",
+    "throne war",
+    "ministeriales"
+  ],
+  "capital": {
+    "name": "Aachen (coronation seat; itinerant court)",
+    "lat": 50.78,
+    "lon": 6.08,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Cologne",
+      "lat": 50.94,
+      "lon": 6.96,
+      "kind": "city"
+    },
+    {
+      "name": "Milan",
+      "lat": 45.46,
+      "lon": 9.19,
+      "kind": "city"
+    },
+    {
+      "name": "Mainz",
+      "lat": 50.0,
+      "lon": 8.27,
+      "kind": "city"
+    },
+    {
+      "name": "Regensburg",
+      "lat": 49.01,
+      "lon": 12.1,
+      "kind": "city"
+    },
+    {
+      "name": "Prague",
+      "lat": 50.09,
+      "lon": 14.42,
+      "kind": "city"
+    },
+    {
+      "name": "Nuremberg",
+      "lat": 49.45,
+      "lon": 11.08,
+      "kind": "fortress"
+    },
+    {
+      "name": "Hagenau",
+      "lat": 48.82,
+      "lon": 7.79,
+      "kind": "fortress"
+    },
+    {
+      "name": "Magdeburg",
+      "lat": 52.13,
+      "lon": 11.62,
+      "kind": "city"
+    },
+    {
+      "name": "Vienna",
+      "lat": 48.21,
+      "lon": 16.37,
+      "kind": "city"
+    },
+    {
+      "name": "Luebeck",
+      "lat": 53.87,
+      "lon": 10.69,
+      "kind": "port"
+    },
+    {
+      "name": "Genoa",
+      "lat": 44.41,
+      "lon": 8.93,
+      "kind": "port"
+    },
+    {
+      "name": "Brenner Pass",
+      "lat": 47.0,
+      "lon": 11.51,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1200:Holy Roman Empire + hb:1200:Burgandy",
+    "areaKm2": {
+      "low": 690000,
+      "mid": 900000,
+      "high": 1100000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+      "note": "Wikipedia infobox gives 1.1 million km2 (c. 1150, high), including imperial Italy and Burgundy. The world_1200 union (Holy Roman Empire + Burgandy) measures 0.69 million km2 on the sphere (low); it under-draws imperial Italy. Mid is a compromise."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 12000000,
+      "mid": 16000000,
+      "high": 20000000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE/Gapminder country series for 1200 (OWID): Germany 6.0M, Austria 1.25M, Czechia 1.44M, Switzerland 0.5M, Netherlands 0.5M, ~60% of Belgium 0.54M, Slovenia 0.2M, imperial northern and central Italy ~55% of Italy's 8.5M = 4.7M, plus the Kingdom of Arles/Burgundy and Lorraine in modern France ~1.5M = ~16.6M. Range covers uncertainty over how much of Italy obeyed the emperor in 1200."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Lombard and Tuscan cities (Milan ~ 60,000-100,000) raise the average; Germany proper ~3-5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Standing element: the household knights and imperial ministeriales of the two rival kings, Philip of Swabia and Otto IV, plus castle garrisons on royal domain. Barbarossa's Italian army at Legnano (1176) was ~3,000 heavy cavalry (Grillo 2024, via https://en.wikipedia.org/wiki/Battle_of_Legnano)."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 35000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Knights and mounted sergeants owing imperial service (Heerfahrt) through princes and bishops; the 981 Indiculus loricatorum asked ~2,000 armoured horsemen of the German churches alone for one Italian campaign. Contingents arrive in weeks, not days."
+    },
+    "supportPersonnel": {
+      "low": 200,
+      "mid": 400,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Household officials, engineers, carters."
+    },
+    "mobilizationRatio": {
+      "low": 0.005,
+      "mid": 0.008,
+      "high": 0.012,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Knightly class plus communal militias of German and Italian towns."
+    },
+    "mobilizable": {
+      "low": 60000,
+      "mid": 128000,
+      "high": 240000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 1500,
+          "mid": 3200,
+          "high": 6500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Household knights and ministeriales in full mail on barded or unbarded destriers."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: mail hauberk, great helm emerging, couched lance; among the best in Europe."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: lifelong professional warriors."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 300,
+          "mid": 800,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Castle garrison spearmen and mercenary foot (Brabanters)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 100,
+          "mid": 400,
+          "high": 1000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Crossbowmen, many Italian."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: crossbows."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 10,
+          "mid": 30,
+          "high": 80,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Traction and early counterweight trebuchets built for sieges (Crema 1159, Milan 1162)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25-0.5: two rival kings during the throne war (1198-1208); princes followed their own interests."
+    },
+    "cohesion": {
+      "low": 0.2,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.25: feudal host split by civil war."
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5: after Henry VI's death (1197) the empire's fortunes turned."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.7,
+      "mid": 3.9,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 (1250): crossbow, couched lance, trebuchet."
+    },
+    "armor": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus: full mail, early great helm, no plate yet."
+    },
+    "ships": {
+      "low": 3.0,
+      "mid": 3.4,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3-4: Baltic cogs (Luebeck), Italian galleys of nominally imperial Genoa and Pisa; no imperial navy."
+    },
+    "fortification": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: stone castles (Pfalzen, Reichsburgen), walled cities."
+    },
+    "logistics": {
+      "low": 3.2,
+      "mid": 3.5,
+      "high": 3.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3-4: river transport on Rhine and Danube, requisition."
+    },
+    "communications": {
+      "low": 2.8,
+      "mid": 3.1,
+      "high": 3.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3: couriers."
+    },
+    "isr": {
+      "low": 2.8,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3: scouts."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 900,
+      "mid": 1050,
+      "high": 1300,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Maddison 2023 (via OWID) UK 1252-1270 ~1,200-1,400, Spain 1280 = 1,381, UK 1000 = 1,151 (2011 int$). Germany lagged England; Lombardy led Europe. Mid ~1,050."
+    },
+    "gdp": {
+      "low": 10800000000,
+      "mid": 16800000000,
+      "high": 26000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Mostly service in kind; both claimants spent heavily to buy princes."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Italian and Rhenish crafts, mining (Goslar silver)."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. High-medieval clearance and expansion."
+    },
+    "annualCohort": {
+      "low": 114000,
+      "mid": 152000,
+      "high": 190000,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Roman roads in the Rhineland and Italy, Alpine pass roads, few elsewhere."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 8,
+      "high": 12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Luebeck, Bremen, Hamburg, Genoa, Pisa, Cologne (river)."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Baltic and Rhine shipping plus nominally imperial Genoa and Pisa."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "By analogy with Engels (isbn:0520042727, ch. 1): pre-modern armies with carts and pack animals operated ~1-2 weeks' march from a depot or navigable water."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 4000000,
+      "high": 6000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. ~0.15-0.3 oxen and horses per inhabitant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Brenner Pass",
+      "Great St Bernard Pass",
+      "Rhine crossings",
+      "Danube at Passau and Vienna"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.1-1.2: dense castle network and walled cities; civil war limits population support."
+    }
+  },
+  "notes": "Snapshot = 1200, during the throne war between Philip of Swabia (Hohenstaufen) and Otto IV (Welf). The Kingdom of Sicily (Frederick II, a minor) is not counted. No modern total for the imperial army exists; the household-plus-ministeriales active force and the knightly reserve are educated guesses anchored on Legnano (~3,000 imperial heavy horse, Grillo 2024) and Bouvines 1214, where Otto IV fielded 1,300-1,500 knights and ~7,500 infantry, mostly Flemish and Low Country allies (Verbruggen 1997, via https://en.wikipedia.org/wiki/Battle_of_Bouvines). Population convention: imperial Germany, Bohemia, the Low Countries, Burgundy-Arles and imperial Italy."
+}

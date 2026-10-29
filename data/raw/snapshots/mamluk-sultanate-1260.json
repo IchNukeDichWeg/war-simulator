@@ -1,0 +1,543 @@
+{
+  "id": "mamluk-sultanate-1260",
+  "nationId": "mamluk-sultanate",
+  "includes": [],
+  "name": "Mamluk Sultanate",
+  "year": 1260,
+  "era": "medieval",
+  "region": "mena",
+  "phase": "rise",
+  "tags": [
+    "sultanate",
+    "mamluk",
+    "slave soldiers",
+    "Ain Jalut",
+    "Bahri"
+  ],
+  "capital": {
+    "name": "Cairo",
+    "lat": 30.04,
+    "lon": 31.24,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Alexandria",
+      "lat": 31.2,
+      "lon": 29.92,
+      "kind": "port"
+    },
+    {
+      "name": "Damietta",
+      "lat": 31.42,
+      "lon": 31.81,
+      "kind": "port"
+    },
+    {
+      "name": "Qus",
+      "lat": 25.92,
+      "lon": 32.76,
+      "kind": "city"
+    },
+    {
+      "name": "Damascus",
+      "lat": 33.51,
+      "lon": 36.29,
+      "kind": "city"
+    },
+    {
+      "name": "Aleppo",
+      "lat": 36.2,
+      "lon": 37.16,
+      "kind": "city"
+    },
+    {
+      "name": "Homs",
+      "lat": 34.73,
+      "lon": 36.71,
+      "kind": "city"
+    },
+    {
+      "name": "Gaza",
+      "lat": 31.5,
+      "lon": 34.47,
+      "kind": "city"
+    },
+    {
+      "name": "Ain Jalut",
+      "lat": 32.55,
+      "lon": 35.36,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Al-Bira (Euphrates crossing)",
+      "lat": 37.06,
+      "lon": 37.99,
+      "kind": "fortress"
+    },
+    {
+      "name": "Isthmus of Suez (Qatya road)",
+      "lat": 30.9,
+      "lon": 32.6,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1279:Mamluke Sultanate",
+    "areaKm2": {
+      "low": 1000000,
+      "mid": 1240000,
+      "high": 2100000,
+      "grade": "C",
+      "source": "https://seshat-db.com/core/polity/232",
+      "note": "Seshat codes 2.1 million km2 for 1260-1348 (high, includes desert margins). No 1260 polygon exists: world_1200 still shows the Ayyubids, so the later world_1279 Mamluke Sultanate polygon is used; it measures 1.24 million km2 (mid). Low reflects that northern Syria was only won after Ain Jalut (September 1260)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 4500000,
+      "mid": 5500000,
+      "high": 6500000,
+      "grade": "B",
+      "source": "https://seshat-db.com/core/polity/232",
+      "note": "Seshat codes 5-6 million for 1260-1348 and notes ~6-7 million at the 14th-century peak. HYDE/OWID Egypt 1200-1300 = 4.0-4.7 million plus Syria-Palestine ~1.5-2 million."
+    },
+    "urbanization": {
+      "low": 0.1,
+      "mid": 0.14,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Cairo 200,000-500,000 (Seshat), Alexandria, Damascus, Aleppo."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 10000,
+      "mid": 15000,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Battle_of_Ain_Jalut",
+      "note": "Mamluk army at Ain Jalut 15,000-20,000 (Nicolle 1990 p. 116; Waterson 2007 p. 75), including Ayyubid Syrian refugees and Khwarazmians. Baybars later expanded the army from 10,000 cavalry to 40,000 (Asbridge 2010, via https://en.wikipedia.org/wiki/Mamluk_Sultanate), so ~10,000 regular cavalry is the low."
+    },
+    "trainedReserves": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Bedouin tribes, Turkmen and Kurdish auxiliaries and the troops of Syrian Ayyubid princes who submitted after Ain Jalut."
+    },
+    "supportPersonnel": {
+      "low": 300,
+      "mid": 500,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Naffatun, armourers, siege engineers and the few galley crews."
+    },
+    "mobilizationRatio": {
+      "low": 0.004,
+      "mid": 0.007,
+      "high": 0.012,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Military service was the preserve of the imported mamluk caste and halqa; the Egyptian peasantry was not levied."
+    },
+    "mobilizable": {
+      "low": 18000,
+      "mid": 38500,
+      "high": 78000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 6000,
+          "mid": 9000,
+          "high": 12000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
+          "note": "Royal mamluks and the mamluks of the amirs, armoured horse archers who also charged with lance; part of the ~10,000 cavalry of 1260 (Asbridge, via the article)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: lamellar and mail, composite bow, lance, the best horses of the region."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: furusiyya training from boyhood in the barracks schools."
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 2500,
+          "mid": 4500,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Halqa, Khwarazmian and Bedouin light horse."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 200,
+          "mid": 500,
+          "high": 1000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Garrison and citadel infantry."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 100,
+          "mid": 300,
+          "high": 700,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Foot archers and naffatun with incendiaries."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 5,
+          "mid": 20,
+          "high": 50,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Counterweight and traction trebuchets in the citadels; the great siege trains came under Baybars and Qalawun."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: Islamic counterweight trebuchets among the era's best."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 0,
+          "mid": 5,
+          "high": 15,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. A small Nile and coastal galley force; Baybars' 1271 fleet of ~17 galleys (11 lost off Cyprus) came later."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25-0.5."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.25."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: Qutuz and Baybars lured Kitbuqa's tumen into the Ain Jalut valley with a feigned retreat and won."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: khushdashiyya bonds within each mamluk household, but factional: Baybars killed Qutuz weeks after Ain Jalut."
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: existential defence against the Mongols, crowned by victory."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 (1250): composite bow, lance, counterweight trebuchet, incendiaries."
+    },
+    "armor": {
+      "low": 3.7,
+      "mid": 3.9,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: lamellar and mail, horse armour for the elite."
+    },
+    "ships": {
+      "low": 2.7,
+      "mid": 3.0,
+      "high": 3.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3: a few galleys; the Mamluks were a land power."
+    },
+    "fortification": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: Cairo Citadel, Damascus and Aleppo citadels."
+    },
+    "logistics": {
+      "low": 3.6,
+      "mid": 3.9,
+      "high": 4.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: Nile transport, granaries, camel trains across Sinai."
+    },
+    "communications": {
+      "low": 3.4,
+      "mid": 3.7,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus in 1260: the barid with relay horses and pigeon post was rebuilt by Baybars in the 1260s."
+    },
+    "isr": {
+      "low": 3.6,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: scouting and Syrian informants tracked Kitbuqa."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 950,
+      "mid": 1060,
+      "high": 1150,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (via OWID): Egypt 1150 = 1,052, 1280 = 1,068, 1300 = 972 (2011 int$)."
+    },
+    "gdp": {
+      "low": 4275000000,
+      "mid": 5830000000,
+      "high": 7475000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Most land revenue was assigned as iqta to mamluks and halqa; the state was built to pay its army."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Textiles, sugar refining, metalwork in Cairo and Damascus."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.22,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nile irrigation agriculture with high yields."
+    },
+    "annualCohort": {
+      "low": 42750,
+      "mid": 52250,
+      "high": 61750,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 1000,
+      "mid": 3000,
+      "high": 6000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Caravan and barid routes Cairo-Gaza-Damascus-Aleppo; little engineered road."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 5,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Alexandria, Damietta, Rosetta, Gaza; most Levantine ports still Frankish."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Nile and Red Sea shipping; Mediterranean trade carried by Italians."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Engels (isbn:0520042727, ch. 1) scaled up for camel trains across the Sinai and Syrian desert."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 600000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Camels, horses, donkeys and buffalo."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Sinai land route (Qatya-Gaza)",
+      "Nile Delta branches",
+      "Euphrates crossings (al-Bira)",
+      "Orontes valley"
+    ],
+    "homeDefense": {
+      "low": 1.15,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: fortified Cairo behind the Sinai desert, whose heat and lack of pasture punish steppe armies."
+    }
+  },
+  "notes": "Snapshot = September 1260, the Ain Jalut campaign, Qutuz sultan (killed by Baybars in October). The mamluks and halqa were salaried standing professionals paid through iqta, so they are activePersonnel; Bedouin and Syrian allies are reserves. Amitai-Preiss (Mongols and Mamluks, 1995) argues the two armies at Ain Jalut were roughly equal, Kitbuqa having 10,000-12,000 (via https://en.wikipedia.org/wiki/Battle_of_Ain_Jalut). Population convention: Egypt plus the Syria and Palestine won in 1260; Frankish coastal states, Kerak (Ayyubid until 1263) and Lesser Armenia excluded. No 1260 polygon exists; see the territory note."
+}

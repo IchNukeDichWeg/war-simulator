@@ -1,0 +1,498 @@
+{
+  "id": "england-1415",
+  "nationId": "england",
+  "includes": [],
+  "name": "Kingdom of England",
+  "year": 1415,
+  "era": "medieval",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "kingdom",
+    "Lancastrian",
+    "Hundred Years War",
+    "longbow",
+    "indenture army"
+  ],
+  "capital": {
+    "name": "London (Westminster)",
+    "lat": 51.5,
+    "lon": -0.13,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "York",
+      "lat": 53.96,
+      "lon": -1.08,
+      "kind": "city"
+    },
+    {
+      "name": "Bristol",
+      "lat": 51.45,
+      "lon": -2.59,
+      "kind": "port"
+    },
+    {
+      "name": "Norwich",
+      "lat": 52.63,
+      "lon": 1.3,
+      "kind": "city"
+    },
+    {
+      "name": "Southampton",
+      "lat": 50.9,
+      "lon": -1.4,
+      "kind": "port"
+    },
+    {
+      "name": "Calais",
+      "lat": 50.95,
+      "lon": 1.86,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bordeaux",
+      "lat": 44.84,
+      "lon": -0.58,
+      "kind": "city"
+    },
+    {
+      "name": "Berwick-upon-Tweed",
+      "lat": 55.77,
+      "lon": -2.0,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dover",
+      "lat": 51.13,
+      "lon": 1.31,
+      "kind": "fortress"
+    },
+    {
+      "name": "Harfleur",
+      "lat": 49.51,
+      "lon": 0.2,
+      "kind": "fortress"
+    },
+    {
+      "name": "Coventry",
+      "lat": 52.41,
+      "lon": -1.51,
+      "kind": "city"
+    },
+    {
+      "name": "Strait of Dover",
+      "lat": 51.0,
+      "lon": 1.45,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1400:English territory",
+    "areaKm2": {
+      "low": 160000,
+      "mid": 180000,
+      "high": 290000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1400.geojson",
+      "note": "England and Wales ~151,000 km2 + Gascony ~20,000-30,000 + Calais Pale ~700 + the Irish Pale (mid). The world_1400 \"English territory\" polygon measures 287,393 km2 because it draws all of Ireland (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 2100000,
+      "mid": 2600000,
+      "high": 3200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Economy_of_England_in_the_Middle_Ages",
+      "note": "England fell from 4-5 million in 1300 by roughly half in the Black Death and later plagues (Economy of England article), giving ~2.0-2.5 million c. 1400; HYDE/OWID UK 1400 = 2.9M including Scotland. Adds Wales (~0.2M) and Gascony (~0.2-0.3M, educated guess)."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.1,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Economy_of_England_in_the_Middle_Ages",
+      "note": "Urban share rose to up to 10% by 1377 (Economy of England article)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 13000,
+      "mid": 16000,
+      "high": 20000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Siege_of_Harfleur",
+      "note": "Paid troops under arms in August 1415: Henry V's indentured expedition of at least 2,300 men-at-arms and 9,000 archers at Harfleur (Curry 2005, p. 70; infobox 11,300), plus Calais garrison (~1,000), Scottish March, Welsh castle and Gascon garrisons (~2,000-5,000, educated guess). These are contract soldiers, the standing force of the moment, not a feudal levy."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Further retinues raised by indenture and county levies under commissions of array; Henry raised ~10,000 again for 1417."
+    },
+    "supportPersonnel": {
+      "low": 800,
+      "mid": 1200,
+      "high": 2500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Gunners, miners, carpenters, surgeons and armourers with the expedition and crews of the ~12 royal ships."
+    },
+    "mobilizationRatio": {
+      "low": 0.01,
+      "mid": 0.015,
+      "high": 0.025,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Commissions of array could call all able men 16-60, but only a fraction were useful."
+    },
+    "mobilizable": {
+      "low": 21000,
+      "mid": 39000,
+      "high": 80000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "cavalry_heavy": {
+        "count": {
+          "low": 2500,
+          "mid": 3300,
+          "high": 4000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Siege_of_Harfleur",
+          "note": "Men-at-arms: at least 2,300 with the expedition (Curry) + ~1,000 in garrisons. They rode to battle but fought dismounted at Agincourt."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75-1.0: full plate harness c. 1415, the era's best."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: veterans of Wales and Scotland in indentured retinues."
+        }
+      },
+      "missile_infantry": {
+        "count": {
+          "low": 9000,
+          "mid": 11000,
+          "high": 13000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Siege_of_Harfleur",
+          "note": "Archers: 9,000 with the expedition (Curry) + ~2,000 in garrisons. About 7,000 longbowmen stood at Agincourt (https://en.wikipedia.org/wiki/Battle_of_Agincourt)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 1.0: the English longbow massed in the field was the era's best missile weapon."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: trained archers on contract, many veterans."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Great guns of the Harfleur siege train (Allmand: artillery barrages forced Harfleur's surrender, via https://en.wikipedia.org/wiki/Henry_V_of_England); exact count not found."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75: early bombards, among the best siege guns of 1415."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75: specialist gunners."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Royal ships (cogs, carracks, balingers) in 1415, before the build-up to ~30-40 by 1418-20 (Grace Dieu). The 1,500 vessels of the 1415 crossing (Allmand via Henry V article) were hired and impressed merchantmen, counted in merchantTonnage."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.75 minus: cogs and carracks."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric 0.5-0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75-1.0: Henry V, proven in Wales, won Agincourt against superior numbers by choice of ground and use of archers."
+    },
+    "cohesion": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.75 minus: indentured retinues with strong captain loyalty; the Southampton Plot (July 1415) shows noble disaffection."
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric 0.5-0.75: motivated, but dysentery at Harfleur sent ~1,330 home (Curry)."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.2,
+      "mid": 4.4,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 (longbow, crossbow) plus early bombards towards anchor 5."
+    },
+    "armor": {
+      "low": 4.2,
+      "mid": 4.4,
+      "high": 4.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 plus: full white plate harness, beyond the 1250 plate-and-mail anchor."
+    },
+    "ships": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: cogs, carracks and balingers."
+    },
+    "fortification": {
+      "low": 4.0,
+      "mid": 4.2,
+      "high": 4.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: concentric castles, Calais walls, first gunports."
+    },
+    "logistics": {
+      "low": 3.8,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: sea transport across the Channel, purveyance and supply contracts."
+    },
+    "communications": {
+      "low": 3.7,
+      "mid": 4.0,
+      "high": 4.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4: royal messengers and written orders."
+    },
+    "isr": {
+      "low": 3.5,
+      "mid": 3.8,
+      "high": 4.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 4 minus: scouts and spies in France."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1500,
+      "mid": 1700,
+      "high": 1750,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (via OWID): United Kingdom 1400 = 1,717, 1450 = 1,683 (2011 int$). Post-plague real wages were high; Gascony lower (low)."
+    },
+    "gdp": {
+      "low": 3150000000,
+      "mid": 4420000000,
+      "high": 5600000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Wartime: Henry V pawned crown jewels and borrowed to fund the 1415 expedition; low = peacetime crown spending share."
+    },
+    "industrialShare": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Woollen cloth industry, tin and lead mining."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.2,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Post-plague land abundance; pastoral shift."
+    },
+    "annualCohort": {
+      "low": 19950,
+      "mid": 24700,
+      "high": 30400,
+      "grade": "D",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical snapshots; medieval age structures were similar (high mortality, young population)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 15000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Roman road network maintained by local obligation."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 12,
+      "high": 18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. London, Southampton, Bristol, Sandwich, Dover, Plymouth, Dartmouth, Hull, King's Lynn, Calais, Bordeaux."
+    },
+    "merchantTonnage": {
+      "low": 30000,
+      "mid": 50000,
+      "high": 90000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Some 1,500 vessels assembled in the Solent for the 1415 crossing (Allmand, via the Henry V article), many foreign hires; English merchant shipping estimated at tens of thousands of tons."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "By analogy with Engels (isbn:0520042727, ch. 1): pre-modern armies with carts and pack animals operated ~1-2 weeks' march from a depot or navigable water."
+    },
+    "draftAnimals": {
+      "low": 500000,
+      "mid": 800000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Horses and oxen; the 1415 army alone took up to 20,000 horses (Agincourt article)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Strait of Dover",
+      "Calais Pale",
+      "Seine estuary (Harfleur)",
+      "Tweed (Scottish border)",
+      "Gironde estuary"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.25,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2: island position, castles, walled towns and population support."
+    }
+  },
+  "notes": "Snapshot = August 1415, Henry V at Harfleur. Unlike the feudal levies of other snapshots, the 1415 army was paid indentured troops, counted as activePersonnel because they were under arms on the snapshot date. Curry (Agincourt: A New History) puts the English at ~9,000 at Agincourt vs 12,000 French; Barker, Sumption and Rogers prefer ~6,000 English (5,000 archers, 900-1,000 men-at-arms) vs 14,000-15,000 French plus up to 10,000 armed valets (https://en.wikipedia.org/wiki/Battle_of_Agincourt). Population convention: England, Wales, Calais and Gascony; the Irish lordship counted only for the Pale. Same nationId as england-1066."
+}
