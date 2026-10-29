@@ -5,7 +5,7 @@ import { Mode } from './state';
 import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, COLLAPSE_MORALE, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, COLLAPSE_PERSONNEL_FRACTION, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -148,10 +148,10 @@ export function victoryPhase(ctx: Ctx): void {
     if (V.armyCollapse) {
       const base = st.startPersonnel[o] + st.arrivals[o];
       const baseW = st.startW[o] + st.addedW[o];
-      const collapsed = base > 0 ? no.personnel < COLLAPSE_PERSONNEL_FRACTION * base : baseW > 0 && no.w < COLLAPSE_PERSONNEL_FRACTION * baseW;
-      if (collapsed && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(COLLAPSE_PERSONNEL_FRACTION * 100)}% of all it fielded)`;
+      const collapsed = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
+      if (collapsed && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
       // morale collapse needs morale to have FALLEN below the threshold (some forces start low)
-      else if (no.formations > 0 && no.morale < COLLAPSE_MORALE && no.morale < st.startMorale[o]) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
+      else if (no.formations > 0 && no.morale < S.rules.collapseMorale && no.morale < st.startMorale[o]) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
     }
     if (!wins[s] && V.capitalCaptured) {
       const lead = S.members[S.lead[o]];

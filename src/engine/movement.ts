@@ -5,7 +5,7 @@
 //
 // Budget per day (km-equivalents) = rate[slowest role] x season x weather x
 // (1 - restDayFraction) x air-superiority factor (x supply for vehicles).
-// Entering a cell costs km / (terrain x road) plus RIVER_DELAY_DAYS of the
+// Entering a cell costs km / (terrain x road) plus the member's riverDelayDays of the
 // formation's daily budget on an unbridged major river. Real km covered are
 // therefore at most budget x max(terrain x road): the tested invariant.
 import type { Ctx } from './ctx';
@@ -15,7 +15,7 @@ import { FLAG_RIVER, T } from './terrainClasses';
 import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { RIVER_DELAY_DAYS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
+import { ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
 import { byTech, rule, yearFromTech } from './mech';
@@ -61,7 +61,7 @@ export function computeInvSpeed(ctx: Ctx, side: 0 | 1): void {
   const g = S.grid;
   const inv = sc.invSpeed[side], extra = sc.extra[side];
   const road = S.m.movement.roadBonus.mid;
-  const riverKm = RIVER_DELAY_DAYS * S.refRate[side];
+  const riverKm = S.members[S.lead[side]].riverDelayDays * S.refRate[side];
   // sea cells start impassable; computeField opens them only when needed (see there)
   sc.seaInv[side] = seaLift(ctx, side) > 0 ? S.refRate[side] / Math.max(1e-9, S.m.movement.rate.sea.mid) : Infinity;
   for (let c = 0; c < g.n; c++) {
@@ -230,7 +230,7 @@ function disperse(ctx: Ctx, f: number, budget: number): void {
     const t = S.terrMove[g.cls[j]] * (isRoad(ctx, side, j) ? S.m.movement.roadBonus.mid : 1);
     if (!(t > 0)) continue;
     const km = g.nbKm[cur * 8 + d];
-    const cost = km / t + ((g.flags[j] & FLAG_RIVER) && S.placeAt[j] < 0 ? RIVER_DELAY_DAYS * budget : 0);
+    const cost = km / t + ((g.flags[j] & FLAG_RIVER) && S.placeAt[j] < 0 ? S.members[F.member[f]].riverDelayDays * budget : 0);
     if (cost > budget) continue;
     best = j; bo = o; bf = st.forage[j]; bkm = km; bcost = cost;
   }
@@ -319,7 +319,7 @@ export function movementPhase(ctx: Ctx): void {
         const t = S.terrMove[g.cls[nx]] * (isRoad(ctx, side, nx) ? S.m.movement.roadBonus.mid : 1);
         let km = 0;
         for (let d = 0; d < 8; d++) if (g.nb[cur * 8 + d] === nx) { km = g.nbKm[cur * 8 + d]; break; }
-        const river = (g.flags[nx] & FLAG_RIVER) && S.placeAt[nx] < 0 ? RIVER_DELAY_DAYS * full : 0;
+        const river = (g.flags[nx] & FLAG_RIVER) && S.placeAt[nx] < 0 ? S.members[F.member[f]].riverDelayDays * full : 0;
         // at sea the formation moves at sea speed whatever its land rate
         F.edge[f] = !g.land[nx] ? (km * formationRate(ctx, f)) / seaRate : t > 0 ? km / t + river : Infinity;
       }

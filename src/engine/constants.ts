@@ -188,9 +188,17 @@ export const EXPLAIN_LOCAL_POWER = true;
  *  cells, rows of alternating R/s across northern Spain). */
 export const ENCIRCLED_FLIP_NEEDS_SUPPLY = true;
 
-// Thresholds written into ENGINE.md as part of the model definition. They are
-// model rules rather than measured quantities, but they shape outcomes, so
-// they are candidates for the mechanics contract (listed in the engine report).
+/** Thresholds from the sourced model rules (data/mechanics/modelRules.json): battle noise
+ *  battle.outcomeNoiseSigma 0.25 (was 0.15), river.riverCrossingDelayDays per era (was 0.5),
+ *  collapse.armyCollapsePersonnelFraction 0.4 (was 0.1), collapse.armyCollapseMorale 0.2 (was
+ *  0.15), intel.fogStrengthError, c2.missionCommandDelayFactor, naval.blockadeSeaControlThreshold
+ *  (all three unchanged at 0.5, 0.5, 0.6). OFF: the constants below. Measured: 20/15/22 -> 21/15/23
+ *  (Six-Day War winner 0% -> 95% and 6 days, Tannenberg duration passes, Iraq 2003 46 -> 26 days;
+ *  Yom Kippur winner 85% -> 70%, Gulf War loss ratio x4.9 -> x5.8). */
+export const RULES_FROM_MODEL_RULES = true;
+
+// Thresholds written into ENGINE.md as part of the model definition. The ones read from the
+// model rules above are kept as the RULES_FROM_MODEL_RULES OFF values.
 /** Lognormal sigma of per-round battle noise (ENGINE.md 4). */
 export const BATTLE_NOISE_SIGMA = 0.15;
 /** Extra days to cross a major river cell without a bridge (ENGINE.md 5). */

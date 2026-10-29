@@ -12,7 +12,8 @@ import { byTech, clamp, factor, rule, techFromYear, validateMechanics, yearFromT
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI, ROLES } from './roles';
 import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
-  RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS,
+  RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
+  FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS,
 } from './constants';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
@@ -74,6 +75,8 @@ export interface MemberRT {
   admitLossShare: number; returnDays: number;
   /** Sea lift needed: GRT per soldier (with kit) and per platform of each role (land vehicles only). */
   seaTonsPerSoldier: number; seaTonsPerRole: Float64Array;
+  /** Extra days to cross a major river cell without a bridge (era of the member). */
+  riverDelayDays: number;
   doctrine: DoctrineProfile;
   w: DoctrineProfile['weights'];
   specials: Set<string>;
@@ -143,6 +146,8 @@ export interface Setup {
   seeds: FormationSeed[];
   fleet0: [Float64Array, Float64Array];
   air0: [Float64Array, Float64Array];
+  /** Model thresholds in force (sourced model rules, or the old constants with RULES_FROM_MODEL_RULES OFF). */
+  rules: { noiseSigma: number; collapsePersonnel: number; collapseMorale: number; fogError: number; blockade: number };
   poolTech: [{ ships: number; air: number; weapons: number; q: Float64Array; t: Float64Array; cmd: number; propulsion: NavalPropulsion }, { ships: number; air: number; weapons: number; q: Float64Array; t: Float64Array; cmd: number; propulsion: NavalPropulsion }];
   sources: [SourceList, SourceList];
   objectiveCells: [number, number];
@@ -431,11 +436,13 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       ? (() => { const L = clamp(tech.communications, 0, mobArr.length - 1); const i = Math.floor(L); const j = Math.min(i + 1, mobArr.length - 1); const f = L - i; return mobArr[i].low * (1 - f) + mobArr[j].low * f; })()
       : byTech(mobArr, tech.communications);
     const cohortFrac = levee ? m.production.cohortTrainableFraction.high : m.production.cohortTrainableFraction.mid;
-    const delay = byTech(m.c2.orderDelayDays, tech.communications) * (doctrine.specials.includes('mission_command') ? MISSION_COMMAND_DELAY_FACTOR : 1);
+    const missionF = RULES_FROM_MODEL_RULES ? m.modelRules.c2.missionCommandDelayFactor.mid : MISSION_COMMAND_DELAY_FACTOR;
+    const delay = byTech(m.c2.orderDelayDays, tech.communications) * (doctrine.specials.includes('mission_command') ? missionF : 1);
     const mr: MemberRT = {
       idx, side, snapId: snap.id, nationId: snap.nationId, name: snap.name, snap, doctrine, w,
       ruleYear,
       seaTonsPerSoldier: rule(TR.seaLiftGrtPerSoldier, ruleYear), seaTonsPerRole,
+      riverDelayDays: RULES_FROM_MODEL_RULES ? rule(m.modelRules.river.riverCrossingDelayDays, ruleYear) : RIVER_DELAY_DAYS,
       admitLossShare: ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.diseaseDeathShareOfAdmissions, ruleYear) : 1 - m.attrition.returnToDuty.mid,
       returnDays: clamp(Math.round(ATTRITION_FROM_MODEL_RULES ? rule(m.modelRules.attrition.returnToDutyDays, ruleYear) : RETURN_TO_DUTY_DAYS), 1, RETURN_RING_DAYS - 1),
       specials: new Set(doctrine.specials), tech, commitment: 1,
@@ -865,6 +872,11 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
   return {
     data, scenario, m, opts, battleMode, grid, members, sideMembers,
     sideNames: [scenario.sides[0].name, scenario.sides[1].name], lead, friction,
+    rules: RULES_FROM_MODEL_RULES ? {
+      noiseSigma: m.modelRules.battle.outcomeNoiseSigma.mid, collapsePersonnel: m.modelRules.collapse.armyCollapsePersonnelFraction.mid,
+      collapseMorale: m.modelRules.collapse.armyCollapseMorale.mid, fogError: m.modelRules.intel.fogStrengthError.mid,
+      blockade: m.modelRules.naval.blockadeSeaControlThreshold.mid,
+    } : { noiseSigma: BATTLE_NOISE_SIGMA, collapsePersonnel: COLLAPSE_PERSONNEL_FRACTION, collapseMorale: COLLAPSE_MORALE, fogError: FOG_STRENGTH_ERROR, blockade: BLOCKADE_SEA_CONTROL },
     places, placeAt, control0, owner0, startCells, seeds, fleet0, air0, poolTech, sources, objectiveCells,
     objectiveKinds: [opts.objectives?.[0]?.kind, opts.objectives?.[1]?.kind],
     terrMove, terrAttack, terrMounted, forageYield, maxTerrMove,

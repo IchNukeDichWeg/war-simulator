@@ -164,8 +164,9 @@ model's Persian winners now pursue). The share of losses caused by air
 support is booked as cause `air`.
 
 Losses are capped at 50% of engaged strength per round, spread over roles in
-proportion to their exposure. A seeded noise factor (lognormal, sigma 0.15 per
-round) represents friction and chance. Morale falls with losses. A formation
+proportion to their exposure. A seeded noise factor (lognormal per round,
+sigma `modelRules.battle.outcomeNoiseSigma` 0.25 from Helmbold's residuals,
+0.15 before; `RULES_FROM_MODEL_RULES`) represents friction and chance. Morale falls with losses. A formation
 whose cumulative battle loss reaches the doctrine `retreatThreshold` withdraws
 in good order; one reaching `breakpoint(tech)` (shifted by cohesion) routs: it
 suffers `pursuitLossFraction` x (winner mounted/mobile share) extra losses, of
@@ -232,7 +233,9 @@ march longer than its supply range (a member without a researched range only
 when cut off). Named simplification: no ports or embarkation time; those
 need sourced constants. Formations at sea draw no supply and
 show as Embarked. Major
-river cells cost an extra half day without a bridge (a city cell).
+river cells cost extra days without a bridge (a city cell):
+`riverCrossingDelayDays` of the member's era (3 before 1500, 0.5 in the world
+wars, 0.25 modern; a flat half day before `RULES_FROM_MODEL_RULES`).
 
 Invariant (tested): no formation ever moves more km in a day than its
 `rate` x best multipliers.
@@ -385,8 +388,12 @@ fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
 
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
-`daysToReduce` or stormed), territory share, army collapse (personnel below 10%
-of start or side morale below 0.15), time limit (draw unless one side holds
+`daysToReduce` or stormed), territory share, army collapse (personnel below
+`armyCollapsePersonnelFraction` 0.4 of all fielded, France 1940 and Iraq 1991,
+or side morale below `armyCollapseMorale` 0.2; 10% and 0.15 before
+`RULES_FROM_MODEL_RULES`, which measured 20/15/22 -> 21/15/23: Six-Day War
+winner 0% -> 95%, Tannenberg duration passes, Yom Kippur winner 85% -> 70%),
+time limit (draw unless one side holds
 clearly more of the other's territory and strength).
 As built: the morale collapse needs side morale to have fallen below 0.15 (a
 force that starts that low is not beaten on day 1). "Clearly more" is a 10

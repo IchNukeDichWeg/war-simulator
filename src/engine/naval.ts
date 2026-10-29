@@ -6,7 +6,7 @@ import type { Ctx } from './ctx';
 import { addEvent, seasonIdx } from './ctx';
 import { byTech, clamp } from './mech';
 import { NAVAL_ROLES, ROLES } from './roles';
-import { BATTLE_ROUND_LOSS_CAP, BLOCKADE_SEA_CONTROL } from './constants';
+import { BATTLE_ROUND_LOSS_CAP } from './constants';
 import { SEASONS } from './setup';
 
 export function fleetPower(ctx: Ctx, side: 0 | 1): number {
@@ -25,7 +25,7 @@ export function fleetPower(ctx: Ctx, side: 0 | 1): number {
 export function blockaded(ctx: Ctx, side: 0 | 1): boolean {
   const { S, st } = ctx;
   if (!S.scenario.rules.naval) return false;
-  return st.seaControl[1 - side] > BLOCKADE_SEA_CONTROL && fleetPower(ctx, (1 - side) as 0 | 1) > 0;
+  return st.seaControl[1 - side] > ctx.S.rules.blockade && fleetPower(ctx, (1 - side) as 0 | 1) > 0;
 }
 
 /** Multiplier on sea-borne supply for `side`. */

@@ -7,7 +7,7 @@ import { Mode } from './state';
 import { UnitStatus } from './protocol';
 import { FLAG_RIVER } from './terrainClasses';
 import {
-  BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
+  BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES } from './constants';
@@ -309,8 +309,8 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
     const loss: [number, number] = [0, 0];
     const Rd = Math.max(P[att], 0) / Math.max(Pfull[def], 1e-12);   // attacker fire vs defender
     const Ra = Math.max(P[def], 0) / Math.max(Pfull[att], 1e-12);   // defender fire vs attacker
-    loss[def] = (prof[def].baseCas * Math.pow(Rd, prof[def].alpha)) / H * rng.lognormal(BATTLE_NOISE_SIGMA);
-    loss[att] = (prof[att].baseCas * Math.pow(Ra, prof[att].alpha)) / H * rng.lognormal(BATTLE_NOISE_SIGMA);
+    loss[def] = (prof[def].baseCas * Math.pow(Rd, prof[def].alpha)) / H * rng.lognormal(S.rules.noiseSigma);
+    loss[att] = (prof[att].baseCas * Math.pow(Ra, prof[att].alpha)) / H * rng.lognormal(S.rules.noiseSigma);
     // storming a fortified place: siege.assaultFactor multiplies the attacker's loss rate
     if (stormed) loss[att] *= m.siege.assaultFactor.mid;
     for (const s of [0, 1] as const) {

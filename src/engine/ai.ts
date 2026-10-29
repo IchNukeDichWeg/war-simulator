@@ -10,7 +10,7 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  FOG_STRENGTH_ERROR, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
@@ -115,7 +115,7 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     if (distOwn) {
       const d = distOwn[c];
       if (d > radius * UNSEEN_RANGE_FACTOR) continue;
-      if (d > radius) k *= 1 + FOG_STRENGTH_ERROR * (2 * rng.next() - 1);
+      if (d > radius) k *= 1 + S.rules.fogError * (2 * rng.next() - 1);
     }
     seen[c] += F.curW[f] * k;
     totalEnemy += F.curW[f] * k;
