@@ -10,7 +10,8 @@ import { computeField, computeInvSpeed } from './movement';
 import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
-  FOG_STRENGTH_ERROR, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT } from './constants';
+  FOG_STRENGTH_ERROR, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
+  AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
 import { NR } from './roles';
 
 export const OBJ = { Capital: 0, City: 1, Formation: 2, Defend: 3, Case: 4 } as const;
@@ -105,14 +106,16 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     dijkstra(g, sc.heap, inv, null, srcs, null, distOwn, null);
   }
   let totalEnemy = 0;
+  // enemy strength in own-strength units: what it does to us vs what we do to it
+  const xk = AI_CROSS_ERA_POWER ? S.members[S.lead[enemy]].dispersion / Math.max(1e-12, lead.dispersion) : 1;
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.side[f] !== enemy) continue;
     const c = F.cell[f];
-    let k = 1;
+    let k = xk;
     if (distOwn) {
       const d = distOwn[c];
       if (d > radius * UNSEEN_RANGE_FACTOR) continue;
-      if (d > radius) k = 1 + FOG_STRENGTH_ERROR * (2 * rng.next() - 1);
+      if (d > radius) k *= 1 + FOG_STRENGTH_ERROR * (2 * rng.next() - 1);
     }
     seen[c] += F.curW[f] * k;
     totalEnemy += F.curW[f] * k;
@@ -266,7 +269,7 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       if (taken[i]) continue;
       const f = avail[i];
       let bestK = -1, bv = Infinity;
-      if (w.aggression >= 0.5) {
+      if (w.aggression >= 0.5 || (AI_STRONGER_SIDE_ADVANCES && ownTotal > totalEnemy)) {
         for (const sl of slots) {
           if (sl.c.kind === OBJ.Defend) continue;
           const v = st.fields[side][sl.k * n + F.cell[f]];

@@ -323,6 +323,12 @@ tech)` (`mission_command` halves it). Each order cycle:
    the most threatened own city. As built (`RESERVE_NO_OVERSHOOT`): the reserve
    skips formations that would overshoot that share and is empty when a member
    has a single available formation (the first formation was always taken).
+   Strengths are compared in battle units (`AI_CROSS_ERA_POWER`): enemy
+   strength x enemy dispersion / own dispersion, so a 2026 army no longer
+   reads a Roman legion's TLI as if both hit the same target. Formations left
+   after the objectives are covered join the nearest attack when the commander
+   is aggressive (aggression >= 0.5) or its side is the stronger one
+   (`AI_STRONGER_SIDE_ADVANCES`).
 4. Formations below `retreatThreshold` or out of supply for more than a few days
    fall back toward the supply network to recover.
    As built: the cycle runs every 5 days. A formation falls back for supply only

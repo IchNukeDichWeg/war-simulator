@@ -142,6 +142,14 @@ export const CASUALTIES_ALL_CAUSES = true;
  *  armies on different land masses never met (usa-vs-china-2026, athens-vs-usa-2026,
  *  usa-spain-vs-russia-2026). */
 export const SEA_MOVEMENT = true;
+/** AI compares forces in the units battle uses: enemy strength (sum count x enemy TLI) is scaled by
+ *  enemy dispersion / own dispersion, so both sides are lethality against the other's dispersion.
+ *  Raw strengths compared a 2026 army's TLI with a Roman one's as if the target were the same. */
+export const AI_CROSS_ERA_POWER = true;
+/** Formations left over after the objectives are covered join the nearest attack when the
+ *  commander is aggressive (aggression >= 0.5) OR its side is the stronger one in those units:
+ *  the stronger side advances (Spain 2026, aggression 0.45, held most of its army against Rome 117). */
+export const AI_STRONGER_SIDE_ADVANCES = true;
 
 // Thresholds written into ENGINE.md as part of the model definition. They are
 // model rules rather than measured quantities, but they shape outcomes, so
