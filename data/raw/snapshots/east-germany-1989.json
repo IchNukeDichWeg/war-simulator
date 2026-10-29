@@ -1,0 +1,731 @@
+{
+  "id": "east-germany-1989",
+  "nationId": "east-germany",
+  "includes": [],
+  "name": "German Democratic Republic (East Germany)",
+  "year": 1989,
+  "era": "coldwar",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "Warsaw Pact",
+    "NVA",
+    "Central Front",
+    "conscript army",
+    "Soviet satellite",
+    "Cold War"
+  ],
+  "capital": {
+    "name": "East Berlin",
+    "lat": 52.52,
+    "lon": 13.405,
+    "kind": "capital",
+    "population": 1280000
+  },
+  "places": [
+    {
+      "name": "Leipzig",
+      "lat": 51.34,
+      "lon": 12.375,
+      "kind": "city",
+      "population": 530000
+    },
+    {
+      "name": "Dresden",
+      "lat": 51.05,
+      "lon": 13.738,
+      "kind": "city",
+      "population": 500000
+    },
+    {
+      "name": "Karl-Marx-Stadt (Chemnitz)",
+      "lat": 50.833,
+      "lon": 12.92,
+      "kind": "city",
+      "population": 310000
+    },
+    {
+      "name": "Magdeburg",
+      "lat": 52.131,
+      "lon": 11.64,
+      "kind": "city",
+      "population": 290000
+    },
+    {
+      "name": "Rostock",
+      "lat": 54.092,
+      "lon": 12.099,
+      "kind": "port",
+      "population": 250000
+    },
+    {
+      "name": "Strausberg (Ministry of National Defence)",
+      "lat": 52.579,
+      "lon": 13.882,
+      "kind": "fortress"
+    },
+    {
+      "name": "Wuensdorf (Soviet GSFG HQ)",
+      "lat": 52.17,
+      "lon": 13.47,
+      "kind": "fortress"
+    },
+    {
+      "name": "Peenemuende / Wolgast naval base",
+      "lat": 54.14,
+      "lon": 13.77,
+      "kind": "port"
+    },
+    {
+      "name": "Eisenach (Fulda Gap approach)",
+      "lat": 50.975,
+      "lon": 10.32,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Frankfurt (Oder) crossing to Poland",
+      "lat": 52.343,
+      "lon": 14.55,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:East Germany",
+    "areaKm2": {
+      "low": 108300,
+      "mid": 108333,
+      "high": 113400,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "Official GDR area 108,333 km2 incl. East Berlin (mid). The world_1960 East Germany polygon measures ~113,400 km2 on a spherical approximation (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 16430000,
+      "mid": 16630000,
+      "high": 16700000,
+      "grade": "A",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1989 = 16,630 thousand (mid-year, incl. East Berlin). Low = end-1989 ~16.43M after ~340,000 people left during 1989."
+    },
+    "urbanization": {
+      "low": 0.7,
+      "mid": 0.73,
+      "high": 0.77,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID/HYDE urban share Germany 1989 = 73.1% (whole Germany). GDR official statistics (towns of 2,000+) gave ~77% (high)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 166000,
+      "mid": 173000,
+      "high": 225000,
+      "grade": "B",
+      "source": "https://archive.org/download/DTIC_ADA221839/DTIC_ADA221839_djvu.txt",
+      "note": "Crane, RAND, East Germany's Military (1989) p. 34, citing IISS Military Balance 1987: 176,000 excluding border troops (army 120,000, navy 16,000, air force 40,000) plus 49,000 Border Troops. NVA article: 175,300 at the 1987 peak. Mid 173,000 allows the 10,000-man cut announced in January 1989. High 225,000 includes the Border Troops; COW NMC v7 milper 1989 = 262,000 also counts security troops."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 300000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about 2.5 million men served 1956-1990 (NVA article); mobilisation planned four mobilisation divisions and two reserve divisions plus fillers (Land Forces article; Crane p. 34 notes four motor rifle divisions formed from reserves). IISS gave ~300,000 reserves (not fetched). Workers' militia Kampfgruppen (~200,000) excluded as paramilitary."
+    },
+    "supportPersonnel": {
+      "low": 130000,
+      "mid": 139000,
+      "high": 145000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Active 173,000 minus infantry P roles (~34,000): navy 16,000, air force/air defence 40,000-44,000 (Crane p. 38; LSK article infobox 44,000), and the army's tank, artillery, air defence, engineer, signals and rear services."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: same reasoning as the FRG: a 1989 general war would be short; the GDR could field ~0.5M in uniform plus militia (3%) at once, total war more."
+    },
+    "mobilizable": {
+      "low": 1314000.0,
+      "mid": 1996000.0,
+      "high": 2505000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 25000,
+          "mid": 32000,
+          "high": 40000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: dismounted motor rifle infantry of four motor rifle divisions and the motor rifle regiments of two tank divisions (Land Forces article: 1st, 4th, 8th, 11th MRD, 7th and 9th Panzer divisions); ~120,000 army personnel (Crane p. 34)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: BMP-1 and BTR-60/70 carriers, AK-74, RPG-7; BMP-2 only 24 (Land Forces article)."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: 18-month conscripts; NATO officers rated the NVA the best-trained Warsaw Pact army (NVA article)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 1500,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Luftsturmregiment 40 (upgraded from a battalion in 1986, Land Forces article) and reconnaissance/special units."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: light airborne equipment."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: volunteers with longer service."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1800,
+          "mid": 2199,
+          "high": 2500,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/National_People's_Army",
+          "note": "NVA article (BICC 1995): 2,199 artillery pieces handed over in 1990. Includes 2S1, 2S3 (95), D-30, D-20 (137), M-46 (175), BM-21 (72) and RM-70 (265) MRLs (Land Forces article)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mix of SP 2S1/2S3 and towed guns; RM-70 MRLs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Soviet artillery doctrine; Crane p. 36 notes GSFG had three times more artillery per unit."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 2050,
+          "mid": 2761,
+          "high": 3150,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/National_People's_Army",
+          "note": "NVA article (BICC Brief 3, Nassauer 1995): 2,761 tanks handed over in 1990 (mid). Low: Crane Table 11 (MB 1988) 1,700 T-54/55 and 350 T-72 with active units. Cumulative deliveries 2,099 T-55, 690 T-54, 583 T-72 (Land Forces article). High allows tanks in storage."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.25. Evidence: ~80% T-54/55 (some T-55AM2), only ~550 T-72M."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: conscript crews, high readiness, Soviet-style drills."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 4000,
+          "mid": 5000,
+          "high": 5900,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Land_Forces_of_the_National_People's_Army",
+          "note": "Land Forces article cumulative deliveries: BMP-1 1,133, BMP-2 24, BTR-60 2,260, BTR-70 1,316, MT-LB 721 = 5,454; older BTR-152/50/40 mostly retired by 1989. BRDM scout cars excluded. Mid allows attrition and retirements."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: BMP-1 and wheeled BTRs."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: conscripts."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 230,
+          "mid": 270,
+          "high": 300,
+          "grade": "C",
+          "source": "https://archive.org/download/DTIC_ADA221839/DTIC_ADA221839_djvu.txt",
+          "note": "Crane Table 12 (Military Balance): 330 combat aircraft in 1987, of which >225 MiG-21 and 70 MiG-23. JG-3 converted to 24 MiG-29 in 1988-89 (LSK article; 24 MiG-29 passed to the Luftwaffe in 1990, NVA article). The LSK infobox figure of 800 combat aircraft counts trainers and helicopters."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mostly MiG-21; few MiG-23ML and 24 MiG-29."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: tight ground-controlled interception, low flying hours."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 60,
+          "mid": 80,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Air_Forces_of_the_National_People's_Army",
+          "note": "Fighter-bomber wings JBG-37 (MiG-23BN) and JBG-77 (Su-22M-4) and naval MFG-28 (Su-22M-4), two squadrons each (LSK article), ~12-15 aircraft per squadron; Crane Table 12 shows 35 Su-22 added by 1987."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Su-22M-4 and MiG-23BN era-typical fighter-bombers."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscript ground crews, limited low-level training."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 150,
+          "mid": 180,
+          "high": 220,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: NVA had 767 aircraft and helicopters in 1990 (NVA article); helicopters ~50 Mi-24, ~90 Mi-8, Mi-2 and ~13 Mi-14 naval."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Mi-24 attack helicopters."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 3,
+          "mid": 3,
+          "high": 3,
+          "grade": "A",
+          "source": "https://en.wikipedia.org/wiki/Volksmarine",
+          "note": "Three Koni-class frigates (Rostock, Berlin, Halle), the largest Volksmarine ships (Volksmarine article; Crane p. 38)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: export-model Koni with SA-N-4 and guns, no anti-ship missiles."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscript sailors, Baltic only."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 70,
+          "mid": 85,
+          "high": 100,
+          "grade": "C",
+          "source": "https://archive.org/download/DTIC_ADA221839/DTIC_ADA221839_djvu.txt",
+          "note": "Crane p. 38: ~160 ships, of which ~30 patrol craft and ~70 auxiliaries. Combatants: 15-16 Parchim corvettes, 5 Tarantul missile corvettes (Volksmarine article), ~12 Osa missile boats, ~30 Libelle/Shershen torpedo boats, ~25 Kondor minesweepers."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Tarantul with SS-N-2C, Parchim ASW corvettes new; torpedo boats dated."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 32,
+          "mid": 44,
+          "high": 56,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Land_Forces_of_the_National_People's_Army",
+          "note": "Launchers: R-17 Scud (24 launchers plus decoys, retired 1990), 9K52 Luna-M (24 in service 1980), a few OTR-21 Tochka (Land Forces article). Nuclear warheads were Soviet-held."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Scud-B and FROG-7 inaccurate unguided or inertial missiles."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 55,
+          "mid": 75,
+          "high": 100,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Air_Forces_of_the_National_People's_Army",
+          "note": "Batteries: LSK article lists ~31 Fla-Raketenabteilungen (S-75, S-125, S-200 fire units) in regiments FRR-13, -23, -31 and brigades; plus army divisional air defence regiments with 2K12 Kub, 9K33 Osa (41), Strela-1/10 and 131 ZSU-23-4 (Land Forces article) at ~5 batteries per division and an army 2K11 Krug brigade."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: dense Soviet-type SAM belt, mostly 1960s systems; S-200 long-range."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: integrated in the Warsaw Pact air defence system."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: Soviet-trained staffs rated highly by NATO; but no national front command, NVA divisions under GSFG and Soviet army command in war (Crane p. 35); no war experience."
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: SED-vetted officer corps, ~50% career soldiers (NVA article); conscript reliability doubtful once the regime crisis began in 1989."
+    },
+    "morale": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: mass emigration from mid-1989; no units deployed against protesters in autumn 1989 (NVA article); fighting fellow Germans unpopular."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: ATGMs, SAMs, T-72M and MiG-29 present, but most kit 1960s Soviet (T-55, MiG-21)."
+    },
+    "armor": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (RHA) and 9 (composite). Evidence: ~20% T-72M; T-55 RHA tanks dominant."
+    },
+    "ships": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9. Evidence: missile corvettes and frigates without long-range missiles; no submarines."
+    },
+    "fortification": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9. Evidence: hardened aircraft shelters, fortified border system (built against own citizens)."
+    },
+    "logistics": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (motor transport, rail) and 9. Evidence: 133,900 wheeled vehicles handed over 1990 (NVA article); rail-heavy Warsaw Pact logistics."
+    },
+    "communications": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9. Evidence: Soviet-standard radio and troposcatter nets, Warsaw Pact automated air defence command."
+    },
+    "isr": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (radar) and 9 (satellites). Evidence: radar networks, recon aircraft; Soviet satellite data only via GSFG."
+    },
+    "air": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 = 1943, 9 = 1985. Evidence: mostly MiG-21/MiG-23 (1960s-70s), 24 MiG-29."
+    },
+    "cyber": {
+      "low": 6.0,
+      "mid": 6.5,
+      "high": 7.0,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: cyber 9 = 1990 networks. Evidence: Robotron computing years behind the West; Stasi signals intelligence but no military network operations."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 12100,
+      "mid": 14750,
+      "high": 17300,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Maddison 2023 (OWID CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) Germany 1989 = 26,393 (2011 int$), split East/West with a per-capita ratio of 0.5 (range 0.4-0.6): CIA 1990 GDR GNP per capita $9,679 (Economy of East Germany article, https://en.wikipedia.org/wiki/Economy_of_East_Germany) against FRG ~$19,000-20,000. With COW populations 62.06M/16.63M: East = r x 26,393 x 78.69 / (62.06 + r x 16.63) = 12,090-17,298."
+    },
+    "gdp": {
+      "low": 198803000000,
+      "mid": 245292000000,
+      "high": 288910000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.043,
+      "mid": 0.05,
+      "high": 0.06,
+      "grade": "B",
+      "source": "https://archive.org/download/DTIC_ADA221839/DTIC_ADA221839_djvu.txt",
+      "note": "Crane p. 33: reported defence budget 4.3% of GNP in 1980 (Collier estimate), 6.0% with state security; real spending grew faster than GNP into 1987-88 then flattened."
+    },
+    "industrialShare": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: CIA 1990 (Economy of East Germany infobox): 90% of GNP outside agriculture; industry was ~60-70% of net material product, ~50-55% of a Western-style GNP."
+    },
+    "foodSurplus": {
+      "low": 0.87,
+      "mid": 0.892,
+      "high": 0.91,
+      "grade": "B",
+      "source": "https://www.gutenberg.org/cache/epub/14/pg14.txt",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). CIA World Factbook 1990 (Project Gutenberg #14) labour force, GDR: 10.8% agriculture and forestry (1987). Share 10.8% (range 9.0-13.0%) -> 0.892 (0.87-0.91)."
+    },
+    "annualCohort": {
+      "low": 105000,
+      "mid": 118000,
+      "high": 125000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: males reaching 18 in 1989 = 1971 birth cohort (~235,000 GDR births) x 0.513, minus mortality. Crane ch. IV: the GDR would need to conscript nearly all 18-year-old males in the early 1990s. Males only (conscript pool)."
+    },
+    "production": {
+      "artillery": {
+        "low": 20,
+        "mid": 50,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: light weapons and some artillery ammunition and components only."
+      },
+      "ifv_apc": {
+        "low": 0,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no indigenous AFV lines; licence or repair capacity only. Tanks, aircraft and most weapons were imported from the USSR, CSSR and Poland (Crane ch. II: CSSR and Poland built T-72s under licence)."
+      },
+      "ships_minor": {
+        "low": 3,
+        "mid": 5,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Peene-Werft Wolgast built Parchim corvettes and minesweepers at a few a year (Crane p. 38)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 45000,
+      "mid": 47000,
+      "high": 125000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: ~47,000 km classified roads incl. ~1,850 km Autobahn; high includes municipal roads."
+    },
+    "railKm": {
+      "low": 13800,
+      "mid": 14000,
+      "high": 14200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Deutsche Reichsbahn route network ~14,000 km in 1989, dense and heavily used for military transport."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 4,
+      "high": 5,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Rostock (overseas port opened 1960, Economy of East Germany article), Wismar, Stralsund, Sassnitz/Mukran (rail ferry to the USSR from 1986)."
+    },
+    "merchantTonnage": {
+      "low": 1500000,
+      "mid": 2000000,
+      "high": 2500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Deutsche Seereederei Rostock fleet ~1.3-1.5M GRT, x1.5 dwt/GRT."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Warsaw Pact front logistics, rail-fed, NVA divisions attached to Soviet armies."
+    },
+    "draftAnimals": {
+      "low": 80000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses ~0.1M, militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS stockpile series (OWID) lists no East German warheads. Soviet nuclear warheads stored in the GDR for NVA delivery systems (Scud, FROG, Su-22) under Soviet custody belong to the ussr-1989 snapshot."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Fulda Gap approaches (Thuringia)",
+      "North German Plain",
+      "Berlin and its encircled western sectors",
+      "Baltic approaches (Fehmarn Belt)"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row: familiar terrain and local supply, rail network, border fortifications; population support uncertain in 1989; no strategic depth."
+    }
+  },
+  "notes": "Snapshot date mid-1989 (IISS Military Balance 1989-90 reference date 1 July 1989), before the November 1989 collapse. Main source: Keith Crane, East Germany's Military: Forces and Expenditures, RAND Arroyo Center report (Oct 1989, isbn 0-8330-1033-6), fetched as DTIC ADA221839 full text on archive.org; it quotes IISS Military Balance 1987-88 figures. Equipment totals cross-checked with the 1990 handover inventory (NVA article, BICC Brief 3): 767 aircraft, 208 ships, 2,761 tanks, 2,199 artillery pieces. The January 1989 Warsaw Pact force data statement was not fetched. Border Troops (~47,000-49,000) and Kampfgruppen militia excluded from active (border troops in the high range). The 19-20 Soviet divisions of the GSFG (~380,000 troops) stationed in the GDR are counted in ussr-1989. Population includes East Berlin."
+}

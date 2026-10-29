@@ -1,0 +1,616 @@
+{
+  "id": "north-korea-1950",
+  "nationId": "north-korea",
+  "includes": [],
+  "name": "North Korea (DPRK)",
+  "year": 1950,
+  "era": "coldwar",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "communist",
+    "DPRK",
+    "Korean People's Army",
+    "Soviet client",
+    "Korean War",
+    "Operation Pokpung"
+  ],
+  "capital": {
+    "name": "Pyongyang",
+    "lat": 39.019,
+    "lon": 125.738,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Hamhung",
+      "lat": 39.918,
+      "lon": 127.536,
+      "kind": "city"
+    },
+    {
+      "name": "Hungnam",
+      "lat": 39.832,
+      "lon": 127.618,
+      "kind": "port"
+    },
+    {
+      "name": "Wonsan",
+      "lat": 39.153,
+      "lon": 127.443,
+      "kind": "port"
+    },
+    {
+      "name": "Chongjin",
+      "lat": 41.796,
+      "lon": 129.776,
+      "kind": "port"
+    },
+    {
+      "name": "Chinnampo (Nampo)",
+      "lat": 38.737,
+      "lon": 125.398,
+      "kind": "port"
+    },
+    {
+      "name": "Haeju",
+      "lat": 38.04,
+      "lon": 125.714,
+      "kind": "port"
+    },
+    {
+      "name": "Sinuiju (Yalu bridges)",
+      "lat": 40.1,
+      "lon": 124.398,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Chorwon (38th parallel, Uijongbu axis)",
+      "lat": 38.147,
+      "lon": 127.313,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Ongjin Peninsula (38th parallel)",
+      "lat": 37.93,
+      "lon": 125.36,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1945:Korea (USSR)",
+    "areaKm2": {
+      "low": 120000,
+      "mid": 121000,
+      "high": 134200,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1945.geojson",
+      "note": "world_1945 \"Korea (USSR)\" polygon ~134,000 km2 on the sphere (high; coarse 38th-parallel line); the zone north of the 38th parallel was ~121,000 km2 (standard figure), used as mid."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9400000,
+      "mid": 9600000,
+      "high": 11100000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop PRK 1950 = 9,488k; the 1949 northern census gave ~9.6M; OWID (HYDE/UN, present DPRK borders) 1950 = 11.12M (high). Mid 9.6M."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.18,
+      "high": 0.29,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID (HYDE) urban share North Korea 1950 = 28.6% (high); COW upop/tpop 1950 = 473/9,488 = 0.05 (cities over 100,000 only, low). Pyongyang, Hamhung-Hungnam, Chongjin and Wonsan were the industrial cities."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 135000,
+      "mid": 187000,
+      "high": 198380,
+      "grade": "B",
+      "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+      "note": "ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950: army 148,680, air force 2,000, navy 13,700 (164,380 under the Ministry of People's Defense) plus 34,000 Interior Ministry security troops = 198,380 (high). Mid includes the 38th Border Constabulary brigades (22,600), which attacked on 25 June, and excludes the other 11,400 internal security police. Appleman (South to the Naktong, CMH 1961, ch. 2) gives the older US estimate ~135,000 (low). ROK MND figure also in the Operation Pokpung infobox."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Reserve training units and divisions forming in mid-1950 (the 10th, 13th and 15th were newly raised), the remaining security police and veterans of the Korean volunteer units of the Chinese PLA; the KPA mobilised heavily in July-August 1950, including forced conscription in the occupied South."
+    },
+    "supportPersonnel": {
+      "low": 60000,
+      "mid": 72000,
+      "high": 85000,
+      "grade": "C",
+      "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+      "note": "Remainder of activePersonnel after P roles: tank brigade 8,800, artillery and AA regiments 2,500, engineers 2,500, signals 1,000, motorcycle and mechanised regiments (part), military academies 4,000, air force 2,000, navy base and coastal artillery 4,700, division artillery, signals and rear services (~30% of 120,880 divisional strength). ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: KPA peaked at 266,600 in October 1952 (Shrader via Korean War infobox) after ~335,000 casualties by October 1950: ~600,000+ served from ~9.5M (plus southern conscripts), i.e. 0.06-0.08."
+    },
+    "mobilizable": {
+      "low": 470000.0,
+      "mid": 768000.0,
+      "high": 1332000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 75000,
+          "mid": 90000,
+          "high": 100000,
+          "grade": "C",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "Rifle troops of the 10 infantry divisions (120,880 total, ~8,000-11,000 each; ~70% infantry) plus the 9,000 naval infantry (marine) troops and the 3,000-man mechanised infantry regiment. Reconstruction from ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Soviet WWII small arms (PPSh-41, Mosin, DP), 76 mm and 45 mm guns at regiment; fully equipped with war reserve stocks (MND)."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: about a third were veterans of the Korean divisions of the Chinese PLA; Soviet advisers trained the staff; newer divisions were raw."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 20000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "38th Border Constabulary (22,600, with 36 AT guns, 24 guns, 180 mortars) and the northern guerrilla unit (2,500); they opened the attack on Ongjin and along the east coast (766th and 549th units landed near Kangnung). ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light weapons, few heavy support."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: border-raid veterans of 1949 clashes; partisan units of mixed quality."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 500,
+          "mid": 552,
+          "high": 730,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "Howitzers and field guns: 552 incl. 122 mm M-30, 76 mm (ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950); plus 1,728 mortars incl. 120 mm, excluded. High adds ~176 SU-76 self-propelled guns (Appleman ch. 2, from memory)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: new Soviet 122 mm howitzers out-ranged ROK M3 105 mm; ratio 6:1 in howitzers."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Soviet doctrine, opening barrages effective; little counter-battery skill."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 150,
+          "mid": 242,
+          "high": 258,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "T-34/85 tanks: 242 (ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950), in the 105th Armoured Brigade (8,800 men). The ROK had none. Appleman gives ~150 tanks committed to the invasion (low); high allows a few training tanks."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: T-34/85 nearly impregnable to ROK 57 mm AT guns and 2.36 in. bazookas (Pokpung article); inferior to M26 and Centurion of 1950."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Soviet-trained crews, aggressive but tied to road axes; weak tank-infantry coordination later."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 40,
+          "mid": 54,
+          "high": 70,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "54 armoured cars (BA-64 class) of the 603rd Motorcycle Regiment (ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light WWII scout cars."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: as the motorcycle regiment."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 62,
+          "mid": 75,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Operation_Pokpung",
+          "note": "Yak-9P and La-type piston fighters. ROK MND: 211 aircraft of which 170 combat aircraft (ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950, https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf); Operation Pokpung article: 150 Yak-9 fighters and Il-10 attack bombers. Split ~45% fighters; Appleman gives 62 fighters, 70 attack (low)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: piston Yak-9 against USAF and USN jets (F-80, F9F); shot down only 3 US aircraft (KPAF article)."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: short Soviet training; air force effectively destroyed by 10 August 1950."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 70,
+          "mid": 80,
+          "high": 95,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Operation_Pokpung",
+          "note": "Il-10 Shturmovik attack aircraft and a few trainers/bombers: remainder of the 170 combat aircraft (ROK MND) after fighters; Appleman 70 attack aircraft (low)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Il-10 armoured ground-attack aircraft, effective only without enemy fighters."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: raided Kimpo and Seoul in June, wiped out by US air within weeks."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 30,
+          "high": 110,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Korea_Navy",
+          "note": "KPA navy 13,700 men and 110 naval vessels (US Naval Historical Center via the ROK Navy article), mostly small patrol and landing craft; combat craft were a few P-4/G-5 torpedo boats, subchasers and minesweepers. Mid counts armed patrol and torpedo craft."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: small coastal craft; no major warships."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: torpedo unit formed 1949; landed raiding parties on 25 June; destroyed off Chumunjin on 2 July 1950."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 6,
+          "mid": 9,
+          "high": 12,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "Batteries: one AA artillery regiment with 36 AA guns (ROK Ministry of National Defense Institute for Military History, \"Force gap between South and North just before the war\" (compiling the 6.25 War History vol. 1, 2004, pp. 590-591), table of KPA strength as of 25 June 1950) = ~6-9 batteries at 4-6 guns."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Soviet 37 mm and 85 mm AA guns."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: newly formed regiment."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Soviet advisers drafted the Pokpung plan; Seoul fell in three days; but divisions outran supply, the II Corps was mauled at Chunchon and the whole army collapsed after Inchon."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: party-political cadres and PLA veteran cores; collapsed into rout once encircled in September 1950."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: offensive for reunification with expected quick victory; ideological indoctrination."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.7,
+      "mid": 7.9,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943). Evidence: T-34/85, 122 mm M-30, PPSh-41: late-WWII Soviet kit."
+    },
+    "armor": {
+      "low": 7.7,
+      "mid": 7.9,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (rolled homogeneous armour). Evidence: T-34/85."
+    },
+    "ships": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (steam navy). Evidence: torpedo boats and small patrol craft only."
+    },
+    "fortification": {
+      "low": 7.0,
+      "mid": 7.3,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (concrete forts, trenches) to 8. Evidence: field fortifications on the 38th parallel; no fortified line."
+    },
+    "logistics": {
+      "low": 7.2,
+      "mid": 7.5,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways) to 8 (motor transport). Evidence: Japanese-built railways and some Soviet trucks; infantry supply by ox-cart and porters."
+    },
+    "communications": {
+      "low": 7.3,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (telephone) to 8 (radio at company level). Evidence: radio at regiment/division, field telephone below."
+    },
+    "isr": {
+      "low": 7.0,
+      "mid": 7.3,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 (aerial reconnaissance) to 8 (radar). Evidence: aerial and ground reconnaissance; little or no radar."
+    },
+    "air": {
+      "low": 7.6,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 (1943). Evidence: piston Yak-9 and Il-10; no jets in June 1950."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks in 1950; cyber did not exist as a military domain."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 700,
+      "mid": 1000,
+      "high": 1400,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "No Maddison 2023 value for North Korea in 1950. Analogue: South Korea 1950 = 998 (Maddison 2023, OWID CSV). The North held most of the Japanese-built heavy industry and hydropower (Hungnam chemicals, Supung dam) but had suffered Soviet dismantling and the 1945-50 emigration; taken equal to the South, range 0.7-1.4 x."
+    },
+    "gdp": {
+      "low": 6580000000,
+      "mid": 9600000000,
+      "high": 15540000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: COW milex for PRK 1950 is missing (-9). The DPRK had mobilised for an invasion for over a year (Pokpung article); arms came largely as Soviet credit, so the budget share understates the effort. Low = 1949 level, high = wartime."
+    },
+    "industrialShare": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Northern Korea held most of colonial Korea's heavy industry, mining and electricity; agriculture still the largest employer."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.28,
+      "high": 0.36,
+      "grade": "C",
+      "source": "https://api.worldbank.org/v2/sources/57/country/PRK/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) North Korea 1960 = 64.0% (the series starts in 1960, so it is the floor for 1950); CIA World Factbook 1990: 36% (1987). 1950 share extrapolated to ~72% (64-80%) on the 1960-70 trend of ~0.9 points a year. Grade C. Share 72.0% (range 64.0-80.0%) -> 0.28 (0.2-0.36)."
+    },
+    "annualCohort": {
+      "low": 80000,
+      "mid": 100000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Males reaching 18 per year: ~9.6M population, ~2.1% per single-year cohort, halved."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 13000,
+      "high": 16000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Mostly unpaved roads north of the 38th parallel; few could bear tanks, so the T-34 axes followed the main roads to Seoul."
+    },
+    "railKm": {
+      "low": 3300,
+      "mid": 3800,
+      "high": 4200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Colonial Korea had ~6,000+ km of railway in 1945, the larger share in the north (Kyongui, Kyongwon, Hamgyong and Manpo lines); T-34s were light enough for Korean rail bridges (Pokpung article)."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 5,
+      "high": 6,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Chinnampo, Haeju, Wonsan, Hungnam, Chongjin, Rajin."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Small coastal merchant fleet; most seaborne trade was with the USSR in Soviet hulls."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: KPA advanced ~300 km to the Naktong in six weeks and its supply failed there under US air interdiction (Korean War article: forced to move only at night)."
+    },
+    "draftAnimals": {
+      "low": 400000,
+      "mid": 600000,
+      "high": 800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Cattle (ox-carts) and some horses of the northern farm economy; ox-carts and A-frame porters carried KPA supplies."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS via OWID: no Korean nuclear weapons in 1950."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "Dwa",
+    "chokepoints": [
+      "38th parallel (Chorwon-Uijongbu and Kaesong-Munsan corridors)",
+      "Yalu River bridges at Sinuiju",
+      "Pyongyang-Wonsan waist",
+      "Taebaek mountain passes"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar mountainous terrain, local supply and population support; harsh winter but no great strategic depth."
+    }
+  },
+  "notes": "Snapshot date 25 June 1950 (invasion of South Korea, Operation Pokpung). Territory and population: the DPRK north of the 38th parallel (border ref hb:1945:Korea (USSR), the nearest basemap at or before 1950). Main source for the order of battle: ROK MND Institute for Military History compilation (2004) of KPA strength on 25 June 1950 (198,380 men incl. 34,000 Interior Ministry troops; 242 T-34; 552 howitzers; 1,728 mortars; 211 aircraft of which 170 combat), fetched from the web.archive.org copy of 1K29.pdf. Appleman, South to the Naktong, North to the Yalu (CMH 1961) and history.army.mil could not be fetched (HTTP 403; archive.org copy is lending-only), so Appleman figures are cited from memory and only as low ends. activePersonnel includes the 38th Border Constabulary (paramilitary, but it fought in the invasion); other police excluded. No domestic arms production: all heavy equipment came from the USSR, so production is empty. Weakest numbers: GDP per head (no Maddison value), reserves and the fighter/attack split."
+}

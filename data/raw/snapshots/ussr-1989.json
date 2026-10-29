@@ -1,0 +1,910 @@
+{
+  "id": "ussr-1989",
+  "nationId": "ussr",
+  "includes": [],
+  "name": "Soviet Union",
+  "year": 1989,
+  "era": "coldwar",
+  "region": "europe",
+  "phase": "decline",
+  "tags": [
+    "superpower",
+    "Warsaw Pact",
+    "late Cold War",
+    "nuclear power",
+    "perestroika"
+  ],
+  "capital": {
+    "name": "Moscow",
+    "lat": 55.756,
+    "lon": 37.617,
+    "kind": "capital",
+    "population": 8967000
+  },
+  "places": [
+    {
+      "name": "Leningrad",
+      "lat": 59.939,
+      "lon": 30.316,
+      "kind": "city",
+      "population": 4460000
+    },
+    {
+      "name": "Kiev",
+      "lat": 50.45,
+      "lon": 30.524,
+      "kind": "city",
+      "population": 2587000
+    },
+    {
+      "name": "Tashkent",
+      "lat": 41.3,
+      "lon": 69.24,
+      "kind": "city",
+      "population": 2073000
+    },
+    {
+      "name": "Baku",
+      "lat": 40.409,
+      "lon": 49.867,
+      "kind": "city",
+      "population": 1757000
+    },
+    {
+      "name": "Minsk",
+      "lat": 53.904,
+      "lon": 27.561,
+      "kind": "city",
+      "population": 1612000
+    },
+    {
+      "name": "Novosibirsk",
+      "lat": 55.008,
+      "lon": 82.935,
+      "kind": "city",
+      "population": 1436000
+    },
+    {
+      "name": "Severomorsk (Northern Fleet)",
+      "lat": 69.069,
+      "lon": 33.417,
+      "kind": "port"
+    },
+    {
+      "name": "Sevastopol (Black Sea Fleet)",
+      "lat": 44.616,
+      "lon": 33.525,
+      "kind": "port"
+    },
+    {
+      "name": "Vladivostok (Pacific Fleet)",
+      "lat": 43.116,
+      "lon": 131.882,
+      "kind": "port"
+    },
+    {
+      "name": "Baltiysk (Baltic Fleet)",
+      "lat": 54.654,
+      "lon": 19.906,
+      "kind": "port"
+    },
+    {
+      "name": "Plesetsk Cosmodrome",
+      "lat": 62.926,
+      "lon": 40.578,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:USSR",
+    "areaKm2": {
+      "low": 21740000,
+      "mid": 22402000,
+      "high": 22402000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 USSR polygon = ~21.74M km2 computed on the sphere (low). Official USSR area 22,402,200 km2 (mid/high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 286700000,
+      "mid": 287630000,
+      "high": 289123000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1989 = 287,630k (mid). OWID population CSV USSR 1989 = 289.12M (high). January 1989 census ~286.7M (low, from memory)."
+    },
+    "urbanization": {
+      "low": 0.39,
+      "mid": 0.66,
+      "high": 0.67,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Population-weighted OWID urban share of the 15 union republics in 1989 = 65.7% (OWID population and urban CSVs; Russia 73.4%). Low = COW upop/tpop = 113.5M/287.6M = 0.39 (cities over 100,000 only)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 3700000,
+      "mid": 4000000,
+      "high": 4260000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milper 1989 = 3,700k (low). Soviet Armed Forces article infobox: 4.9M active in 1985. Soviet official figure published early 1989 ~4.26M (high, from memory), before the 500,000 unilateral cut announced Dec 1988 (Odom via Soviet Armed Forces article). Excludes KGB border troops and MVD internal troops."
+    },
+    "trainedReserves": {
+      "low": 4100000,
+      "mid": 5000000,
+      "high": 6200000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Soviet_Army",
+      "note": "Soviet Army infobox: 4,129,506 reserve (1991) (low). Western estimates of reservists with service in the last five years ~5-6M; the total reserve obligation was far larger (~55M). Callable in ~30 days counted only."
+    },
+    "supportPersonnel": {
+      "low": 3000000,
+      "mid": 3250000,
+      "high": 3500000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Active minus P roles: Strategic Rocket Forces, Air Defence Forces, Air Forces, Navy (~450k), rear services and construction troops, plus Ground Forces tank, artillery, air defence and support arms (4.0M - ~750k infantry)."
+    },
+    "mobilizationRatio": {
+      "low": 0.12,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "B",
+      "source": "isbn:1-85367-280-7",
+      "note": "Krivosheev, Soviet Casualties and Combat Losses (1997), ch. 2: ~34.5M mobilized 1941-45 from ~196M pre-war population (~0.18). Mid 0.15 for an older, more urban 1989 population; high 0.2."
+    },
+    "mobilizable": {
+      "low": 34404000.0,
+      "mid": 43144000.0,
+      "high": 57825000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 500000,
+          "mid": 650000,
+          "high": 800000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Motor-rifle infantry of ~150 motor-rifle divisions (SMP 1989 counts 132 active MRDs), most at reduced or cadre strength; Ground Forces had nearly two million men (SMP 1989; Zickel and Keefe 1991 p. 705 via Soviet Army article). Infantry about a third of ground strength."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: BMP-2, AK-74, RPG-18/22; Category A divisions modern, cadre divisions older kit"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: two-year conscripts, little NCO corps, dedovshchina; Category B/C divisions low readiness"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 80000,
+          "mid": 100000,
+          "high": 120000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "VDV (7 airborne divisions ~60,000), air-assault brigades (~20,000), Naval Infantry 18,000 in 1989 (Soviet Navy article) and Spetsnaz brigades."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: BMD air-droppable IFVs, Mi-8 assault lift"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: elite VDV and Spetsnaz, Afghanistan combat experience"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 45000,
+          "mid": 49000,
+          "high": 50000,
+          "grade": "B",
+          "source": "https://archive.org/details/soviet-military-power-1989_202409",
+          "note": "Soviet Military Power 1989: 49,000 artillery pieces, mortars and MRLs of 100 mm or larger. IISS Military Balance 1991-92 (via Soviet Army article): 33,000 towed, ~9,000 SP and 8,000 MRL in 1991."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: 2S1/2S3/2S5/2S19, BM-27 and BM-30 MRLs; massed rather than precise fires"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: artillery the elite arm of the Soviet army, but conscript gunners"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 53000,
+          "mid": 53000,
+          "high": 55000,
+          "grade": "B",
+          "source": "https://archive.org/details/soviet-military-power-1989_202409",
+          "note": "Soviet Military Power 1989 (DoD), ground forces equipment: over 53,000 main battle tanks before the announced reductions. IISS Military Balance 1991-92 p. 37 (via Soviet Army article): ~54,400 MBTs on 1 June 1991 (5,400 T-80, 9,000 T-72, 4,900 T-64, 8,500 T-62, 10,600 T-54/55, 16,000 in store east of the Urals) plus ~1,000 PT-76."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: T-80/T-72/T-64 with composite armour and Kontakt ERA, but ~40% are T-54/55/T-62 a generation behind"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscript crews, limited live firing"
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 61000,
+          "mid": 61000,
+          "high": 78000,
+          "grade": "B",
+          "source": "https://archive.org/details/soviet-military-power-1989_202409",
+          "note": "Soviet Military Power 1989: 61,000 APC/IFVs. IISS Military Balance 1991-92 p. 37 (via Soviet Army article): over 50,000 APCs plus ~28,000 AIFVs in 1991 (high)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: BMP-2 and BTR-80 modern, BTR-60/BMP-1 older"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscripts"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 3400,
+          "mid": 3645,
+          "high": 4000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Soviet_Air_Forces",
+          "note": "Soviet Air Forces article, inventory 1990: 1,275 fighters (50 MiG-21, 595 MiG-23, 90 Su-27, 540 MiG-29); Soviet Air Defence Forces article, IISS Military Balance 1991-92 p. 38: 2,370 PVO interceptors (500 Su-15, 890 MiG-23, 480 MiG-25, 230 Su-27, 270 MiG-31). Total 3,645. SMP 1989 gives 5,970 tactical aircraft in all roles."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: MiG-29, Su-27, MiG-31 entering; MiG-23/Su-15 dated, weaker avionics than F-15"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: rigid GCI-controlled tactics, fewer flight hours than NATO"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 3000,
+          "mid": 3300,
+          "high": 3600,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Soviet_Air_Forces",
+          "note": "Soviet Air Forces article, inventory 1990: 175 strategic bombers (160 Tu-95, 15 Tu-160), 390 medium bombers (Tu-16, Tu-22, Tu-22M), 2,510 attack aircraft (Su-17, Su-24, Su-25, MiG-27) = 3,075; plus Soviet Naval Aviation strike aircraft (SMP 1989: 160 Backfire in SNA, ~175 SNA Badgers) partly overlapping."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Su-24, Tu-22M3, Tu-160 modern; few precision weapons"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Afghanistan close-support experience, limited flight hours"
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 4300,
+          "mid": 4400,
+          "high": 4600,
+          "grade": "B",
+          "source": "https://archive.org/details/soviet-military-power-1989_202409",
+          "note": "Soviet Military Power 1989: 4,300 ground forces helicopters. IISS Military Balance 1991-92 (via Soviet Army article): ~4,500 helicopters in 1991 incl. ~2,050 armed (1,420 Mi-24). Mid adds naval helicopters."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Mi-24 and Mi-8 robust; Mi-28/Ka-50 not yet in service"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: extensive Afghanistan combat experience"
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 200,
+          "mid": 350,
+          "high": 600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Tu-143 Reys and Tu-141 Strizh reconnaissance UAVs (Group 4/5) with Frontal Aviation and Ground Forces recce units; ~950 Tu-143 built 1973-89."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: film-camera recon drones, recovered by parachute"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: specialist units"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 190,
+          "mid": 198,
+          "high": 230,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+          "note": "Soviet Navy infobox (1990): 5 aircraft carriers (Kiev class, Kuznetsov), 2 helicopter carriers, 3 battlecruisers (Kirov), 30 cruisers, 45 destroyers, 113 frigates = 198. 1989 slightly higher (older ships not yet retired)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Kirov, Slava, Sovremenny, Udaloy modern; no CATOBAR carrier"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: low sea time, conscript crews"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 584,
+          "mid": 600,
+          "high": 900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+          "note": "Soviet Navy infobox (1990): 124 corvettes, 425 patrol boats, 35 amphibious warfare ships = 584; high adds ~300 mine-warfare ships (SMP 1989 lists MCM squadrons per fleet)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Tarantul, Nanuchka missile corvettes"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscript crews"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 266,
+          "mid": 275,
+          "high": 340,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Soviet_Navy",
+          "note": "Soviet Navy infobox (1990): 63 SSBN, 72 cruise-missile, 68 nuclear attack, 63 conventional attack = 266 plus 9 auxiliary. Mid-1989 somewhat higher before 1990 retirements (high)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Akula, Sierra, Typhoon, Delta IV, Oscar II modern; many noisy older boats"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: long-service officers, conscript ratings"
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 2860,
+          "mid": 3000,
+          "high": 3200,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Launchers: >1,400 ICBMs in 1989 (Strategic Rocket Forces article, citing the Library of Congress Soviet Union country study) plus 1,460 ground forces SSM launchers (FROG, SS-21, Scud) in Soviet Military Power 1989. Remaining SS-20 launchers (over half eliminated by mid-1989 under the INF Treaty per the SRF article) add 0-300. SLBM tubes are in submarines."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: SS-18 heavy MIRVed ICBM, mobile SS-24 and SS-25, accurate SS-21"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Strategic Rocket Forces the elite service"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 3800,
+          "mid": 4500,
+          "high": 5200,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Batteries. Ground forces: 4,900 SAM launchers (SMP 1989) at ~4 per battery = ~1,200; PVO strategic SAMs ~8,000 launchers (SMP 1989; 1990 list in the PVO article: 1,400 S-25, 2,400 S-75, 1,000 S-125, 1,950 S-200, 1,700 S-300) at ~6 per site = ~1,350; 12,000 AAA guns (SMP 1989; Zickel and Keefe p. 708) at ~6 per battery = ~2,000."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: S-300P/V, Buk, Tor: the densest and among the best integrated air defences of 1989"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Mathias Rust landed in Red Square in May 1987"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: General Staff academy system, operational-art doctrine (deep operations, OMGs); centralised command, Afghanistan exposed weak junior leadership"
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: national conscript army split along ethnic lines (Slav vs Central Asian/Caucasian conscripts), dedovshchina hazing, 1989 nationalist unrest in the Baltics and Caucasus"
+    },
+    "morale": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: withdrawal from Afghanistan completed Feb 1989, glasnost criticism of the army, unilateral cuts and housing shortages"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: weapons 9 (1985). Evidence: T-80U, BMP-2, 2S19, SS-21, Kh-29/Kh-25 guided missiles; fewer precision munitions than NATO"
+    },
+    "armor": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: armor 9 (composite armour). Evidence: T-64B/T-72B/T-80 composite with Kontakt-1 and Kontakt-5 ERA; most tanks older types"
+    },
+    "ships": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ships 9 (nuclear subs, Aegis). Evidence: nuclear submarines, Kirov battlecruisers, no Aegis-equivalent until later; first conventional-takeoff carrier Kuznetsov on trials 1989"
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: fortification 9 (hardened shelters). Evidence: hardened ICBM silos and command bunkers, hardened aircraft shelters"
+    },
+    "logistics": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: logistics between 8 (motor transport, rail) and 9. Evidence: rail-centric operational logistics, large truck parks, An-124/Il-76 airlift, limited containerisation"
+    },
+    "communications": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: communications between 8 and 9. Evidence: Molniya and Raduga satellite comms at strategic level; tactical radios analogue, limited data links"
+    },
+    "isr": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: isr 9 (satellites). Evidence: Zenit/Yantar imaging and US-A RORSAT ocean surveillance satellites, A-50 AWACS (15 aircraft)"
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 (1985). Evidence: MiG-29, Su-27, MiG-31, Tu-160 in service"
+    },
+    "cyber": {
+      "low": 7.0,
+      "mid": 7.5,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: cyber 9 = 1990 networks. Evidence: military computer networks limited; ES EVM mainframes, KGB SIGINT; behind the US"
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 10500,
+      "mid": 11336,
+      "high": 12766,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV) USSR 1989 = 11,336 (2011 int$); Russia alone 12,766 (high). Western estimates of Soviet output carry wide uncertainty (low)."
+    },
+    "gdp": {
+      "low": 3010350000000,
+      "mid": 3260574000000,
+      "high": 3690944000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.09,
+      "mid": 0.15,
+      "high": 0.17,
+      "grade": "B",
+      "source": "https://archive.org/details/soviet-military-power-1989_202409",
+      "note": "Soviet Military Power 1989: Western estimate 15-17 percent of GNP in the mid-1980s; Soviet official defence budget 77.3 billion rubles in 1989 (about 9% of GNP, low). COW milex 1989 = $119.4bn."
+    },
+    "industrialShare": {
+      "low": 0.38,
+      "mid": 0.43,
+      "high": 0.48,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry ~40-45% of Soviet net material product in the late 1980s; heavy-industry economy."
+    },
+    "foodSurplus": {
+      "low": 0.77,
+      "mid": 0.8,
+      "high": 0.84,
+      "grade": "B",
+      "source": "https://www.gutenberg.org/cache/epub/14/pg14.txt",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). CIA World Factbook 1990 (Project Gutenberg #14) labour force, Soviet Union: 20% agriculture (1989). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Russia alone 1989 = 13.9% (low end of the share range 16%); high 23% for collective-farm under-reporting. The USSR imported grain heavily, but that does not lower this value. Share 20.0% (range 16.0-23.0%) -> 0.8 (0.77-0.84)."
+    },
+    "annualCohort": {
+      "low": 2100000,
+      "mid": 2250000,
+      "high": 2400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: males reaching 18 in 1989 = males born 1971 (~4.6M USSR births, about 51% male) less mortality."
+    },
+    "production": {
+      "artillery": {
+        "low": 2300,
+        "mid": 2400,
+        "high": 2500,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: towed field artillery 1,000, SP 900, MRLs 480 per year (1986-88 average)."
+      },
+      "armor": {
+        "low": 3300,
+        "mid": 3400,
+        "high": 3500,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "Soviet Military Power 1989 production tables: tanks 3,400 per year (1986-88 average), 3,300-3,500 in 1986-88; totals include exports."
+      },
+      "ifv_apc": {
+        "low": 4200,
+        "mid": 4600,
+        "high": 5250,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: other armoured vehicles 4,600 per year (1986-88 average), 4,200-5,250 by year."
+      },
+      "aircraft_fighter": {
+        "low": 680,
+        "mid": 680,
+        "high": 950,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: fighters 680 per year 1986-88 (950 in 1982-84, high)."
+      },
+      "aircraft_strike": {
+        "low": 40,
+        "mid": 47,
+        "high": 100,
+        "grade": "C",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: bombers ~40-47 per year (OCR uncertain); fighter-bomber production is inside the fighter line; high allows wartime surge."
+      },
+      "helicopters": {
+        "low": 450,
+        "mid": 450,
+        "high": 580,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: military helicopters 450 per year 1986-88 (580 in 1982-84)."
+      },
+      "ships_major": {
+        "low": 9,
+        "mid": 9,
+        "high": 12,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: surface warships 9 per year (1982-84 and 1986-88 averages)."
+      },
+      "ships_minor": {
+        "low": 55,
+        "mid": 55,
+        "high": 57,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: minor surface combatants 55 per year 1986-88."
+      },
+      "submarines": {
+        "low": 9,
+        "mid": 9,
+        "high": 10,
+        "grade": "B",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "SMP 1989: submarines 9 per year."
+      },
+      "missiles": {
+        "low": 100,
+        "mid": 150,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: launchers per year; SMP 1989 gives 116 ICBMs and ~520 SRBMs per year (missiles, not launchers)."
+      },
+      "air_defense": {
+        "low": 150,
+        "mid": 250,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: SAM batteries per year; SMP 1989 gives ~16,000 SAMs (missiles) per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 800000,
+      "mid": 1000000,
+      "high": 1200000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: hard-surfaced roads ~1M km of ~1.6M km total in the late 1980s; poor rural roads."
+    },
+    "railKm": {
+      "low": 140000,
+      "mid": 147000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: common-carrier railways ~147,000 km in 1989 plus extensive industrial track; BAM completed 1984."
+    },
+    "majorPorts": {
+      "low": 12,
+      "mid": 15,
+      "high": 20,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Leningrad, Riga, Tallinn, Klaipeda, Odessa, Ilyichevsk, Novorossiysk, Murmansk, Arkhangelsk, Vladivostok, Nakhodka, Vostochny, Baku plus naval bases."
+    },
+    "merchantTonnage": {
+      "low": 20000000,
+      "mid": 25000000,
+      "high": 28000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Soviet merchant fleet ~25M dwt in 1989 (Morflot), one of the largest in the world."
+    },
+    "supplyRangeKm": {
+      "low": 300,
+      "mid": 450,
+      "high": 600,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Soviet front operations planned for 400-600 km depth with rail and truck brigades; reliance on railheads."
+    },
+    "draftAnimals": {
+      "low": 5000000,
+      "mid": 5900000,
+      "high": 6500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses ~5.9M in the late 1980s; militarily negligible."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 33000,
+      "mid": 35078,
+      "high": 37000,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimate (Kristensen and Korda, via OWID nuclear-warhead-stockpiles CSV, listed under Russia) 1989 = 35,078 warheads; the Soviet stockpile peaked near 40,000 in 1986 (Norris and Kristensen)."
+    },
+    "basesAbroad": [
+      {
+        "name": "Wuensdorf (Western Group of Forces HQ), East Germany",
+        "lat": 52.168,
+        "lon": 13.468,
+        "kind": "fortress"
+      },
+      {
+        "name": "Legnica (Northern Group of Forces), Poland",
+        "lat": 51.207,
+        "lon": 16.155,
+        "kind": "fortress"
+      },
+      {
+        "name": "Milovice (Central Group of Forces), Czechoslovakia",
+        "lat": 50.226,
+        "lon": 14.889,
+        "kind": "fortress"
+      },
+      {
+        "name": "Tokol (Southern Group of Forces), Hungary",
+        "lat": 47.321,
+        "lon": 18.962,
+        "kind": "fortress"
+      },
+      {
+        "name": "Ulan Bator garrison, Mongolia",
+        "lat": 47.918,
+        "lon": 106.918,
+        "kind": "fortress"
+      },
+      {
+        "name": "Cam Ranh Bay naval base, Vietnam",
+        "lat": 11.996,
+        "lon": 109.215,
+        "kind": "port"
+      },
+      {
+        "name": "Tartus naval facility, Syria",
+        "lat": 34.889,
+        "lon": 35.873,
+        "kind": "port"
+      },
+      {
+        "name": "Lourdes SIGINT station, Cuba",
+        "lat": 22.97,
+        "lon": -82.47,
+        "kind": "fortress"
+      },
+      {
+        "name": "Dahlak Archipelago anchorage, Ethiopia",
+        "lat": 15.72,
+        "lon": 40.08,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "Dfc",
+    "chokepoints": [
+      "Bosporus and Dardanelles",
+      "Danish straits",
+      "GIUK gap",
+      "La Perouse and Tsushima straits",
+      "Fulda Gap",
+      "Salang Pass"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep strategic depth, harsh winter climate and fortified cities (Russia anchor)."
+    }
+  },
+  "notes": "Snapshot date mid-1989 (IISS Military Balance 1989-90 era), after the Afghanistan withdrawal (Feb 1989) and before the Eastern European revolutions; Gorbachev's unilateral cut of 500,000 men, 10,000 tanks, 8,500 artillery and 800 aircraft (announced Dec 1988) was under way. Population convention: all 15 union republics. Forces include the Western, Northern, Central and Southern Groups of Forces abroad (~550,000 men in Eastern Europe) and stored equipment east of the Urals. Key equipment totals from the DoD Soviet Military Power 1989 (archive.org full text) cross-checked against IISS Military Balance 1991-92 figures quoted in Wikipedia; personnel from COW NMC v7. Food: the USSR imported 25-40M t of grain per year in the 1980s; foodSurplus follows the SOURCES convention (positive, import dependence noted). KGB border troops (~230,000) and MVD troops (~340,000) are excluded from activePersonnel."
+}

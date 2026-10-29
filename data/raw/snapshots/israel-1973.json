@@ -1,0 +1,769 @@
+{
+  "id": "israel-1973",
+  "nationId": "israel",
+  "includes": [],
+  "name": "State of Israel",
+  "year": 1973,
+  "era": "coldwar",
+  "region": "mena",
+  "phase": "key",
+  "tags": [
+    "Yom Kippur War",
+    "IDF",
+    "reserve army",
+    "surprised"
+  ],
+  "capital": {
+    "name": "Jerusalem",
+    "lat": 31.778,
+    "lon": 35.225,
+    "kind": "capital",
+    "population": 320000
+  },
+  "places": [
+    {
+      "name": "Tel Aviv-Yafo",
+      "lat": 32.085,
+      "lon": 34.781,
+      "kind": "city",
+      "population": 360000
+    },
+    {
+      "name": "Haifa",
+      "lat": 32.794,
+      "lon": 34.99,
+      "kind": "port",
+      "population": 220000
+    },
+    {
+      "name": "Ashdod",
+      "lat": 31.804,
+      "lon": 34.655,
+      "kind": "port"
+    },
+    {
+      "name": "Eilat",
+      "lat": 29.557,
+      "lon": 34.952,
+      "kind": "port"
+    },
+    {
+      "name": "Beersheba",
+      "lat": 31.252,
+      "lon": 34.791,
+      "kind": "city",
+      "population": 95000
+    },
+    {
+      "name": "Dimona (Negev Nuclear Research Center)",
+      "lat": 31.001,
+      "lon": 35.145,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bar Lev Line (Suez Canal east bank)",
+      "lat": 30.6,
+      "lon": 32.36,
+      "kind": "fortress"
+    },
+    {
+      "name": "Refidim (Bir Gifgafa) air base",
+      "lat": 30.41,
+      "lon": 33.15,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mitla Pass",
+      "lat": 30.03,
+      "lon": 32.9,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Golan Heights (Nafah)",
+      "lat": 33.06,
+      "lon": 35.77,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Sharm el-Sheikh (Ofira)",
+      "lat": 27.915,
+      "lon": 34.33,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Israel",
+    "areaKm2": {
+      "low": 20770,
+      "mid": 20770,
+      "high": 89000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "Pre-1967 lines 20,770 km2 (mid; the hb:1960 polygon). Held since 1967 with no separate basemap polygon: Sinai ~61,000, Golan ~1,150, West Bank ~5,600, Gaza ~360 km2 -> ~89,000 km2 controlled (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 3160000,
+      "mid": 3278000,
+      "high": 3340000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1973 = 3,278k (mid); World Bank 1973 male+female = 3,278,000; OWID/HYDE 3,163,042 (low). Israeli citizens within its own jurisdiction incl. East Jerusalem; the ~1M Palestinians of the occupied West Bank and Gaza are excluded."
+    },
+    "urbanization": {
+      "low": 0.62,
+      "mid": 0.8,
+      "high": 0.86,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share 1973 = 62.2% (low). Israel CBS national definition ~85% in the early 1970s (high); mid between. Grade C."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 90000,
+      "mid": 115000,
+      "high": 130000,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "Standing force = conscripts + career regulars before mobilisation (6 Oct 1973, Yom Kippur). COW NMC v7 milper 1973 = 130,000 is a year average including October mobilisation (high). IISS Military Balance 1973-74 order of magnitude ~115,000 regulars incl. conscripts (not fetched; edition paywalled). Grade C."
+    },
+    "trainedReserves": {
+      "low": 245000,
+      "mid": 275000,
+      "high": 300000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+      "note": "Reservists, mobilised from the morning of 6 Oct (Golan reinforced 9 h after the war began). Total strength 375,000 (Rabinovich 2004 p. 54) to 415,000 per the Yom Kippur War infobox, minus ~115,000-130,000 standing -> ~245,000-300,000 reservists."
+    },
+    "supportPersonnel": {
+      "low": 62000,
+      "mid": 70000,
+      "high": 80000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Air force (~17,000), navy (~5,000), armour, artillery, engineer, signals, logistics and staff inside the ~115,000 standing force; remainder after the P roles. Reconstruction, grade C."
+    },
+    "mobilizationRatio": {
+      "low": 0.11,
+      "mid": 0.13,
+      "high": 0.16,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "375,000-415,000 under arms (Yom Kippur War infobox) / 3.28M population = 11.4-12.7% achieved; ceiling ~16%."
+    },
+    "mobilizable": {
+      "low": 348000.0,
+      "mid": 426000.0,
+      "high": 534000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 28000,
+          "mid": 35000,
+          "high": 42000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Standing infantry only: Golani brigade, Nahal, conscript infantry battalions and the reserve-brigade garrison of the Bar Lev Line (~450 men in 16 strongpoints on 6 Oct). Reserve infantry brigades enter via trainedReserves. Reconstruction, grade C."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Galil not yet issued, FN FAL/Uzi; few ATGMs, infantry neglected in favour of armour."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: well trained, but doctrine of \"all-tank\" armour neglected infantry-armour cooperation (Pollack, Arabs at War ch. on 1973)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 6000,
+          "mid": 8000,
+          "high": 10000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: paratroop brigade (35th) conscript battalions plus Sayeret reconnaissance units."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: light-infantry kit, M72 LAW."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: elite volunteer units (Chinese Farm, Hermon recapture)."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 570,
+          "mid": 945,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 945 artillery units of 100 mm and up. Low = pieces with the regular army only (~60%)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M109 and M107 SP guns arriving; still many Sherman-based conversions."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: artillery a weak arm; IDF relied on the air force for fire support."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1700,
+          "mid": 1700,
+          "high": 2100,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 1,700 tanks (Sunday Times Insight Team pp. 372-373). High ~2,100 allows estimates incl. Shermans in storage and captured T-54/55 (Tiran). Centurion (Sho't), M48/M60 (Magach), Super Sherman, Tiran."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: 105 mm-gunned Sho't and Magach equal to or better than T-55/T-62; no ATGM-resistant armour."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: superior gunnery (7th Brigade at the Valley of Tears) but costly unsupported tank charges on 8 Oct."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2500,
+          "mid": 3000,
+          "high": 3000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 3,000 armored carriers (M3 half-tracks, M113 entering service)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mostly WWII half-tracks."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: mechanised infantry underused tactically."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 210,
+          "mid": 240,
+          "high": 260,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Split of 440 combat aircraft (Yom Kippur War infobox): F-4E Phantom ~125-130 (multirole, counted here) plus Mirage IIIC/Nesher ~100-110. Grade C for the split."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: F-4E among the best fighters of 1973; Mirage/Nesher dominant in dogfights."
+        },
+        "training": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: air-to-air kill ratios of the order of 20:1 or better over the Arab air forces."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 180,
+          "mid": 200,
+          "high": 220,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Rest of the 440 (Yom Kippur War infobox): A-4 Skyhawk ~160-170 plus IAI Sa'ar/Super Mystere ~25-30. Official losses 102 aircraft incl. 53 A-4 (Israeli Air Force article)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: A-4 subsonic, little ECM against SA-6."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: high skill, but Operation Model 5 lost 6 Phantoms for 1 SAM battery."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 60,
+          "mid": 80,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: CH-53, Super Frelon, Bell 205, Bell 206 and Alouette III; no fetched order of battle."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: modern transport helicopters, no attack helicopters yet."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Mount Hermon heliborne assault 21-22 Oct."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 0,
+          "mid": 0,
+          "high": 1,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Israel had retired its destroyers by 1973 (Eilat sunk 1967, Yafo decommissioned); the fleet was built around missile boats."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: no modern major combatant."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 14,
+          "mid": 20,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Baltim",
+          "note": "12 Sa'ar 2/3 plus 2 Sa'ar 4 missile boats (6 at the Battle of Baltim: 2 Sa'ar 4, 2 Sa'ar 3, 1 Sa'ar 2, 1 Sa'ar 1) plus larger patrol craft; high counts Dabur patrol boats. Grade C."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Gabriel missiles plus ECM and chaff defeated every Styx fired (Latakia, Baltim)."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: first missile-boat battles won without loss."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 3,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: S/T-class boats Tanin, Rahav, Leviathan after the 1968 loss of INS Dakar; Gal class not before 1976."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: WWII-era boats."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 0,
+          "mid": 8,
+          "high": 25,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Jericho I ballistic missiles reportedly operational in small numbers by 1973; launcher count unpublished."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: ~500 km road-mobile missile."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: MIM-23 Hawk batteries (several battalions after 1970 US deliveries; one hit at Ophir on 6 Oct, Yom Kippur War article) plus 40 mm and Vulcan AAA batteries."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Improved Hawk-era SAMs."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: strategic surprise from the \"conception\" failure (Agranat Commission), poor 8 Oct counterattack; then recovery, canal crossing and encirclement of the Third Army."
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: reserve units mobilised and fought within hours; Golan brigades held while outnumbered."
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: initial overconfidence and shock, but existential defence of the Golan and Sinai."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: Gabriel anti-ship missiles, TOW and Maverick arriving by US airlift, Shrike ARMs; few ATGMs at the start."
+    },
+    "armor": {
+      "low": 8.5,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = RHA, 9 = composite. Evidence: M60/Centurion steel armour, no composite."
+    },
+    "ships": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radar, 9 = Aegis/nuclear subs. Evidence: Sa'ar missile boats with Gabriel and electronic warfare suites."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = concrete lines. Evidence: Bar Lev Line strongpoints behind a sand rampart; Golan anti-tank ditch."
+    },
+    "logistics": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 motor transport, 9 airlift. Evidence: motorised; dependent on the US Operation Nickel Grass airlift for resupply."
+    },
+    "communications": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 company radio, 9 satellite comms. Evidence: VHF radio to tank level; no satellite comms."
+    },
+    "isr": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radar, 9 = satellites. Evidence: Hermon SIGINT site, Firebee reconnaissance drones, US satellite data late in the war; strategic warning failed."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 = 1985. Evidence: F-4E with radar-guided AAMs and ECM pods; A-4 Skyhawk subsonic."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer-network capability before ~1985 (cyber anchor 9 = 1990 networks)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 14000,
+      "mid": 15374,
+      "high": 16900,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Israel 1973 = 15,374 (2011 int$). Range +/-10%."
+    },
+    "gdp": {
+      "low": 44240000000,
+      "mid": 50396000000,
+      "high": 56446000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.204,
+      "mid": 0.279,
+      "high": 0.279,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/military-spending-as-a-share-of-gdp-sipri.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "SIPRI via OWID: 1972 = 20.4% (last peacetime, low), 1973 = 27.9% (mid and high, war year)."
+    },
+    "industrialShare": {
+      "low": 0.28,
+      "mid": 0.32,
+      "high": 0.36,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry about a third of output; World Bank NV.IND.TOTL.ZS has no Israel value for 1973."
+    },
+    "foodSurplus": {
+      "low": 0.9,
+      "mid": 0.915,
+      "high": 0.93,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/ISR/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Israel 1973 = 8.5%. Share 8.5% (range 7.0-10.0%) -> 0.915 (0.9-0.93)."
+    },
+    "annualCohort": {
+      "low": 58000,
+      "mid": 64900,
+      "high": 70000,
+      "grade": "B",
+      "source": "derived:cohort-from-agegroup",
+      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (1,634,642 x 10.12% + 1,643,358 x 9.68%) / 5 = 64,900 persons (men and women conscripted)."
+    },
+    "production": {
+      "artillery": {
+        "low": 30,
+        "mid": 60,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Soltam mortars and SP conversions."
+      },
+      "armor": {
+        "low": 20,
+        "mid": 50,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no domestic new-build tanks (Merkava from 1979); rebuilds of Centurions and captured T-54/55."
+      },
+      "aircraft_fighter": {
+        "low": 10,
+        "mid": 25,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: IAI Nesher (Mirage 5 copy) production 1971-74, ~60 built in total."
+      },
+      "ships_minor": {
+        "low": 1,
+        "mid": 3,
+        "high": 6,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Sa'ar 4 missile boats built at Haifa from 1973."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 4000,
+      "mid": 4800,
+      "high": 5600,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: paved roads within pre-1967 Israel plus the military Lateral and Artillery roads in Sinai."
+    },
+    "railKm": {
+      "low": 650,
+      "mid": 780,
+      "high": 900,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Israel Railways ~780 km; no rail into Sinai."
+    },
+    "majorPorts": {
+      "low": 3,
+      "mid": 3,
+      "high": 4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Haifa, Ashdod, Eilat, plus Sharm el-Sheikh used as a naval base."
+    },
+    "merchantTonnage": {
+      "low": 2000000,
+      "mid": 3000000,
+      "high": 4000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: ZIM and tanker fleet of the early 1970s, roughly 2-2.5M GRT x 1.5."
+    },
+    "supplyRangeKm": {
+      "low": 200,
+      "mid": 300,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: operations on the Suez front ~250-300 km from Negev bases via Refidim; west-bank pocket 100 km from Cairo."
+    },
+    "draftAnimals": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: negligible military role."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 10,
+      "mid": 15,
+      "high": 20,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimate via OWID: Israel 1973 = 15 (undeclared; reported nuclear alert in October 1973). Range +/- 5."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Suez Canal",
+      "Mitla Pass",
+      "Giddi Pass",
+      "Golan Heights (Quneitra Gap)",
+      "Straits of Tiran",
+      "Bab-el-Mandeb (Egyptian blockade)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified lines (Bar Lev, Golan ditch) and full population support; the occupied Sinai gives depth but is not home ground."
+    }
+  },
+  "notes": "Snapshot date 6 October 1973 (Egyptian-Syrian surprise attack on Yom Kippur). Territory: hb:1960:Israel is the pre-1967 polygon; Sinai, Golan, West Bank and Gaza were occupied but have no separate basemap polygon (areaKm2 high counts them). Population excludes the Palestinians of the occupied territories. Personnel convention: activePersonnel = conscripts + career regulars (~115,000); trainedReserves = reservists mobilised from 6 Oct (~275,000). P roles hold standing infantry only. Key sources: Yom Kippur War infobox (1,700 tanks, 3,000 APCs, 945 guns, 440 aircraft; Rabinovich, Sunday Times Insight), Israeli Air Force and Battle of Baltim articles, COW NMC v7, SIPRI via OWID, Maddison 2023. IISS Military Balance 1973-74 and Dupuy, Elusive Victory could not be fetched; activePersonnel mid relies on recalled IISS order of magnitude (grade C). US airlift (Operation Nickel Grass, from 14 Oct) replaced losses and is not in the snapshot."
+}

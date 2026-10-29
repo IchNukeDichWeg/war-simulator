@@ -1,0 +1,680 @@
+{
+  "id": "iran-1980",
+  "nationId": "iran",
+  "includes": [],
+  "name": "Islamic Republic of Iran",
+  "year": 1980,
+  "era": "coldwar",
+  "region": "mena",
+  "phase": "key",
+  "tags": [
+    "Islamic Revolution",
+    "Iran-Iraq War",
+    "IRGC",
+    "post-revolutionary purge",
+    "arms embargo"
+  ],
+  "capital": {
+    "name": "Tehran",
+    "lat": 35.6892,
+    "lon": 51.389,
+    "kind": "capital",
+    "population": 5000000
+  },
+  "places": [
+    {
+      "name": "Mashhad",
+      "lat": 36.2972,
+      "lon": 59.6067,
+      "kind": "city"
+    },
+    {
+      "name": "Isfahan",
+      "lat": 32.6546,
+      "lon": 51.668,
+      "kind": "city"
+    },
+    {
+      "name": "Tabriz",
+      "lat": 38.08,
+      "lon": 46.2919,
+      "kind": "city"
+    },
+    {
+      "name": "Ahvaz",
+      "lat": 31.3183,
+      "lon": 48.6706,
+      "kind": "city"
+    },
+    {
+      "name": "Abadan (refinery)",
+      "lat": 30.3392,
+      "lon": 48.3043,
+      "kind": "port"
+    },
+    {
+      "name": "Khorramshahr",
+      "lat": 30.4397,
+      "lon": 48.1664,
+      "kind": "port"
+    },
+    {
+      "name": "Dezful (Vahdati air base)",
+      "lat": 32.4342,
+      "lon": 48.3976,
+      "kind": "fortress"
+    },
+    {
+      "name": "Bandar Abbas",
+      "lat": 27.1832,
+      "lon": 56.2666,
+      "kind": "port"
+    },
+    {
+      "name": "Kharg Island oil terminal",
+      "lat": 29.2333,
+      "lon": 50.3167,
+      "kind": "port"
+    },
+    {
+      "name": "Strait of Hormuz",
+      "lat": 26.5667,
+      "lon": 56.25,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Qasr-e Shirin (Baghdad-Tehran road)",
+      "lat": 34.5157,
+      "lon": 45.5795,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Iran",
+    "areaKm2": {
+      "low": 1615000,
+      "mid": 1648000,
+      "high": 1648195,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 Iran polygon = ~1,615,000 km2 computed on the sphere (low). Official area 1,648,195 km2 (mid/high). Iraqi-occupied strip of Khuzestan (from Sep 1980) not removed."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 38250000,
+      "mid": 39800000,
+      "high": 40200000,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID (UN WPP) Iran 1980 = 39.84M; COW NMC v7 tpop 1980 = 39,291k; MB 1981-82 = 39,665,000; MB 1980-81 = 38,250,000 (low, older estimate)."
+    },
+    "urbanization": {
+      "low": 0.47,
+      "mid": 0.507,
+      "high": 0.52,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share Iran 1980 = 50.7%. COW upop/tpop 1980 = 13,588/39,291 = 0.35 (cities over 100,000 only), not used for mid."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 150000,
+      "mid": 230000,
+      "high": 305000,
+      "grade": "B",
+      "source": "http://samlib.ru/t/temezhnikow_e_a/mb1981.shtml",
+      "note": "IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): total 195,000 (army 150,000 incl. 100,000 conscripts, navy 10,000, air force 35,000) + Revolutionary Guards (Pasdaran) ~30,000 in Sep 1980 (40,000 by mid-1981, MB 1981-82 para-military) = ~225,000. IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 240,000 pre-1979. Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 110,000-215,000 soldiers. COW NMC v7 milper 1980 = 305,000 (high). Pasdaran counted inside active because it fought as a combat force from the first week; gendarmerie excluded."
+    },
+    "trainedReserves": {
+      "low": 200000,
+      "mid": 350000,
+      "high": 400000,
+      "grade": "C",
+      "source": "http://samlib.ru/t/temezhnikow_e_a/mb1981.shtml",
+      "note": "IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): RESERVES 400,000 (former conscripts, high). Mid discounts for post-revolution disorganisation; Basij volunteers (formed Nov 1979) were untrained in Sep 1980 and are not counted."
+    },
+    "supportPersonnel": {
+      "low": 100000,
+      "mid": 125000,
+      "high": 150000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Everything outside the P roles: navy 10,000-20,000 and air force 35,000-70,000 (MB 1981-82 vs 1980-81) + army armour, artillery, aviation (~700 helicopters), HAWK battalions and logistics, ~60,000-70,000."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 600,000-850,000 soldiers in 1988 out of ~52M, plus Basij rotating through the front, so several million served over the war. Ratio of a total-war call-up 4-10% of population; Iran never mobilised to the levels of Iraq (COW milper peak)."
+    },
+    "mobilizable": {
+      "low": 1530000.0,
+      "mid": 2786000.0,
+      "high": 4020000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 40000,
+          "mid": 60000,
+          "high": 80000,
+          "grade": "C",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1981.shtml",
+          "note": "IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): 4 armoured and 4 infantry 'divisions' (at least 2 of each only brigade strength). ~3 infantry divisions and the mech infantry of the armoured divisions at 50-60% strength after desertions = ~60,000 infantry. Reconstruction."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: G3 rifles, TOW and Dragon ATGW (MB 1980-81) were modern 1970s Western kit."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: 100,000 of 150,000 army personnel were conscripts (MB 1981-82); training collapsed in 1979-80 and 12,000 officers were purged (Iran-Iraq War article)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 25000,
+          "mid": 35000,
+          "high": 50000,
+          "grade": "C",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1981.shtml",
+          "note": "IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): Pasdaran 40,000 by mid-1981 (~30,000 in Sep 1980) + the airborne / special forces brigade (~5,000). Reconstruction."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Pasdaran had small arms and RPGs only, no heavy weapons in 1980."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.3,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25 (militia). Evidence: Pasdaran were revolutionary militia; the airborne brigade (high) was professional."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 300,
+          "mid": 700,
+          "high": 1100,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War",
+          "note": "Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 300-1,100 artillery pieces (low = operable). IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 1,000+ guns/how incl. 330 M-101, 112 M-114, 440 M-109, 38 M-107, 14 M-110, 72 BM-21 MRL."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.62,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M-109 and M-107/110 SP artillery modern for 1980."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5 minus purge. Evidence: artillery branch less purged than armour; fire control weak."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 500,
+          "mid": 1000,
+          "high": 1985,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War",
+          "note": "Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 1,700-2,100 tanks, 500-1,150 operable. IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less) (http://samlib.ru/t/temezhnikow_e_a/mb1980.shtml): 875 Chieftain, 400 M-47/-48, 460 M-60A1, 250 Scorpion = 1,985 (high). MB 1981-82: 620 Chieftain, 390 M-47/48, 400 M-60A1, 220 Scorpion after a year of losses. Mid = the operable fleet."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Chieftain Mk 3/5 and M-60A1 were front-line Western tanks of the late 1970s, degraded by missing spare parts and the US embargo."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: Khuzestan had only a handful of operational company-size tank units (Iran-Iraq War article); crews and maintainers lost in the purge."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 700,
+          "mid": 1000,
+          "high": 1900,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War",
+          "note": "Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 1,000-1,900 armoured vehicles. IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): BMP MICV, about 325 M-113, 500 BTR-40/-50/-60/-152 APC."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: mix of M-113 and old Soviet BTRs, a few BMP-1."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: see infantry."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 70,
+          "mid": 130,
+          "high": 243,
+          "grade": "B",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1980.shtml",
+          "note": "IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 4 sqn with 77 F-14A + 8 sqn with 166 F-5E/F = 243 (high). IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): F-14A perhaps 9 serviceable by mid-1981. Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 421-485 fighter-bombers, 200-205 fully operational in Sep 1980. Mid ~ half the inventory."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75 (F-14A with AWG-9 and Phoenix the best interceptor in the region) minus serviceability. Evidence: MB 1980-81 lists Phoenix, Sidewinder, Sparrow AAM."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: US-trained pilots, some purged and jailed, released to fly after the invasion; air force showed its power in 1980 strikes (Iran-Iraq War article)."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 90,
+          "mid": 120,
+          "high": 188,
+          "grade": "B",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1980.shtml",
+          "note": "IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 10 FGA sqn with 188 F-4D/E (high); 14 RF-4E excluded. IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): 90 F-4D/E, perhaps 50 serviceable, by mid-1981. Mid ~60% serviceable in Sep 1980: the day after the invasion Iran struck air bases, refineries and Baghdad in the large-scale Operation Kaman 99 (Iran-Iraq War article)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: F-4E with Maverick and laser-guided bombs; 707/747 tankers gave reach."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: as fighters."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 240,
+          "mid": 500,
+          "high": 835,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War",
+          "note": "Iran-Iraq War infobox, start of war (Pollack p. 186-187; Razoux 2015; Farrokh 2011 p. 304-305): 750-835 helicopters, 240 fully operational. IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): army 205 AH-1J, 295 Bell 214A, 50 AB-205A, 20 AB-206, 90 CH-47C; plus air force and naval helicopters."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: AH-1J with TOW and CH-47C among the era's best, if serviceable."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Army Aviation Command remained effective in close support (Iran-Iraq War article)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 6,
+          "mid": 7,
+          "high": 7,
+          "grade": "B",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1980.shtml",
+          "note": "IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 3 destroyers (1 ex-British Battle, 2 ex-US Sumner) with Standard SSM, 4 Saam (Vosper Mk 5) frigates with Seakiller SSM and Seacat SAM = 7; same in MB 1981-82."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Saam frigates modern; destroyers WWII hulls with missile refits."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: navy halved (20,000 to 10,000) after the revolution."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 25,
+          "high": 39,
+          "grade": "B",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1980.shtml",
+          "note": "IISS Military Balance 1980-1981, Iran entry (samlib.ru transcription; the edition flags that pre-1979 manpower and holdings are shown and present totals are considerably less): 4 ex-US PF-103 corvettes, 9 Kaman (La Combattante II) FAC(M) with Harpoon, 7 large patrol craft, 5 minesweepers = 25; high adds 14 hovercraft. MB 1981-82: 7 Kaman."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Harpoon-armed Kaman FAC led Operation Morvarid (Nov 1980), which destroyed 80% of the Iraqi navy (Iran-Iraq War article)."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: as major ships."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 200,
+          "mid": 300,
+          "high": 400,
+          "grade": "C",
+          "source": "http://samlib.ru/t/temezhnikow_e_a/mb1981.shtml",
+          "note": "Batteries. IISS Military Balance 1981-1982, Iran entry (samlib.ru transcription, post-losses estimates): 4 army SAM battalions with HAWK/Improved HAWK (~12-16 batteries); air force 5 SAM sqn with Rapier and 25 Tigercat (~10-15 fire-unit batteries); 1,800 towed AA guns (ZU-23, 35 mm, 40 mm, 57 mm, 85 mm) + 100 ZSU-23-4/ZSU-57-2 at 6-8 guns per battery = ~240-300 batteries."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Improved HAWK and Rapier were modern Western SAMs; much AAA older."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5 minus purge. Evidence: HAWK crews US-trained; spare parts lacking."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.25,
+      "mid": 0.3,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25 (ad hoc, poor coordination). Evidence: 85 senior generals executed Feb-Sep 1979 and ~12,000 officers purged by Sep 1980 (Iran-Iraq War article); rival chains of command between the army and the Pasdaran under President Banisadr."
+    },
+    "cohesion": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: army units at half strength after desertions, distrusted by the clergy; Pasdaran cohesive but improvised."
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75 (motivated) toward 1.0 (fanatical or existential defence). Evidence: revolutionary fervour and defence of the homeland against invasion; volunteers flooded in, Khorramshahr held for over a month."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: TOW, Dragon, Phoenix, Harpoon, Maverick, Improved HAWK (MB 1980-81): late-1970s Western guided weapons."
+    },
+    "armor": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: below 9 (composite armour). Evidence: Chieftain Mk 5 and M-60A1 with steel armour; the Shir Iran (Challenger precursor) order was cancelled in 1979."
+    },
+    "ships": {
+      "low": 8.1,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9. Evidence: Saam frigates and Harpoon-armed FAC; no submarines (Tang order cancelled)."
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = concrete lines. Evidence: some hardened aircraft shelters at main bases; no prepared border defences in Khuzestan."
+    },
+    "logistics": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (motor transport) and 9 (airlift). Evidence: 54 C-130, 12 Boeing 707 and 8 Boeing 747 tanker/transports, 80-90 CH-47C (MB 1981-82); spare-parts collapse under embargo."
+    },
+    "communications": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9. Evidence: US-built microwave and tropo-scatter military network; no satellite communications."
+    },
+    "isr": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 8 = radar, 9 = satellites. Evidence: F-14 AWG-9 used as mini-AWACS, P-3F maritime patrol, RF-4E; no satellites."
+    },
+    "air": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 = 1985. Evidence: F-14A Tomcat (fourth generation), F-4E, inflight refuelling."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer networks with attack capability before ~1985; anchor cyber 9 = 1990 networks."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 5887,
+      "mid": 6334,
+      "high": 7678,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 (OWID CSV) Iran 1980 = 6,334 (2011 int$); 1979 = 7,678 (high), 1981 = 5,887 (low); 1977 = 10,205 before the revolutionary collapse."
+    },
+    "gdp": {
+      "low": 225178000000,
+      "mid": 252093000000,
+      "high": 308656000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.053,
+      "mid": 0.065,
+      "high": 0.082,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/military-expenditure-share-gdp.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "SIPRI via OWID: Iran 1980 = 5.34% (low, mostly peacetime months), 1981 = 8.19% (high, first full war year); 1978 = 11.1% under the Shah. Mid for the wartime run rate in late 1980."
+    },
+    "industrialShare": {
+      "low": 0.35,
+      "mid": 0.38,
+      "high": 0.46,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/IRN/indicator/NV.IND.TOTL.ZS?date=1979:1981&format=json",
+      "note": "World Bank NV.IND.TOTL.ZS (industry incl. oil, % GDP): 1980 = 35.2%, 1979 = 45.8%, 1981 = 34.7%."
+    },
+    "foodSurplus": {
+      "low": 0.5,
+      "mid": 0.544,
+      "high": 0.6,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/IRN/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Iran 1980 = 45.6%. CIA World Factbook 1990: 33% (1988). Share 45.6% (range 40.0-50.0%) -> 0.544 (0.5-0.6)."
+    },
+    "annualCohort": {
+      "low": 750000,
+      "mid": 832000,
+      "high": 900000,
+      "grade": "B",
+      "source": "derived:cohort-from-agegroup",
+      "note": "World Bank 1980: (male pop 20,500,870 x 10.53% + female pop 19,341,454 x 10.34%) / 5 = ~832,000 persons per year. CIA World Factbook 1990 (Iran): 569,647 males reach military age (21) annually."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 40000,
+      "mid": 60000,
+      "high": 89432,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: CIA World Factbook 1990 (https://www.gutenberg.org/cache/epub/14/pg14.txt) gives 42,566 km bituminous and 46,866 km gravel/crushed stone roads in 1990 (high = sum); the 1980 network was smaller."
+    },
+    "railKm": {
+      "low": 4400,
+      "mid": 4500,
+      "high": 4601,
+      "grade": "B",
+      "source": "https://www.gutenberg.org/cache/epub/14/pg14.txt",
+      "note": "CIA World Factbook 1990 (Project Gutenberg #14), Iran entry: railroads 4,601 km total in 1990 with 730 km (Bafq-Bandar Abbas) still under construction, so the 1980 network was ~4,500 km."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 7,
+      "grade": "C",
+      "source": "https://www.gutenberg.org/cache/epub/14/pg14.txt",
+      "note": "CIA World Factbook 1990 (Project Gutenberg #14), Iran entry lists Abadan, Bandar Beheshti (Chabahar), Bandar Abbas, Bushehr, Bandar Khomeyni, Bandar Shahid Rajai, Khorramshahr; Abadan and Khorramshahr were in the 1980 battle zone (low). Plus Kharg Island oil terminal."
+    },
+    "merchantTonnage": {
+      "low": 1500000,
+      "mid": 2200000,
+      "high": 3500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: National Iranian Tanker Co. and IRISL fleets of ~1.5M GRT in 1980 x 1.5 dwt/grt. CIA World Factbook 1990 gives 8,662,454 DWT for 1990, after the wartime tanker build-up."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Iranian logistics in 1980 could barely move divisions to Khuzestan; the 1981-82 counter-offensives reached ~100-150 km from railheads at Ahvaz and Dezful."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 2000000,
+      "high": 2500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: donkeys (~1.8M), horses, mules and camels in a large rural economy; mules used by mountain units in Kurdistan."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS stockpile series (OWID) lists no Iranian warheads; the Shah's nuclear power programme was halted in 1979."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-modern-regional",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Strait of Hormuz",
+      "Shatt al-Arab",
+      "Zagros passes (Qasr-e Shirin to Kermanshah)",
+      "Karun and Karkheh rivers"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified cities (Khorramshahr, Abadan held), strong population support; high 1.3 for the Zagros barrier and strategic depth behind Khuzestan."
+    }
+  },
+  "notes": "Snapshot date 22 September 1980 (Iraqi invasion). The IISS Military Balance 1980-81 (data July 1980) reprinted pre-revolution holdings and said present totals were considerably less; the 1981-82 edition shows post-losses holdings. Equipment counts therefore span operable (low, Pollack and Razoux via the Iran-Iraq War infobox) to nominal inventory (high); mid is the operable-plus-repairable fleet. Personnel: active = regular army, navy, air force + Pasdaran (~30,000, fought as combat troops from the start); Basij and gendarmerie excluded; reservists (400,000 ex-conscripts per MB) in trainedReserves. Population and territory: Iran within its 1980 borders; Iraqi-occupied parts of Khuzestan not removed. Logistics bounds come from the 1990 CIA World Factbook and are shifted down for 1980 by judgement (grade D where stated). No domestic production of major platforms in 1980 (production {})."
+}

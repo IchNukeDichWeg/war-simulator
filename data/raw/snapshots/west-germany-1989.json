@@ -1,0 +1,837 @@
+{
+  "id": "west-germany-1989",
+  "nationId": "west-germany",
+  "includes": [],
+  "name": "Federal Republic of Germany (West Germany)",
+  "year": 1989,
+  "era": "coldwar",
+  "region": "europe",
+  "phase": "peak",
+  "tags": [
+    "NATO",
+    "Bundeswehr",
+    "Central Front",
+    "conscript army",
+    "forward defence",
+    "Cold War"
+  ],
+  "capital": {
+    "name": "Bonn",
+    "lat": 50.7374,
+    "lon": 7.0982,
+    "kind": "capital",
+    "population": 287000
+  },
+  "places": [
+    {
+      "name": "Hamburg",
+      "lat": 53.551,
+      "lon": 9.994,
+      "kind": "port",
+      "population": 1600000
+    },
+    {
+      "name": "Munich",
+      "lat": 48.137,
+      "lon": 11.576,
+      "kind": "city",
+      "population": 1210000
+    },
+    {
+      "name": "Cologne",
+      "lat": 50.938,
+      "lon": 6.96,
+      "kind": "city",
+      "population": 940000
+    },
+    {
+      "name": "Frankfurt am Main",
+      "lat": 50.11,
+      "lon": 8.682,
+      "kind": "city",
+      "population": 630000
+    },
+    {
+      "name": "Essen (Ruhr)",
+      "lat": 51.456,
+      "lon": 7.012,
+      "kind": "city",
+      "population": 620000
+    },
+    {
+      "name": "Hanover",
+      "lat": 52.375,
+      "lon": 9.732,
+      "kind": "city",
+      "population": 500000
+    },
+    {
+      "name": "Wilhelmshaven naval base",
+      "lat": 53.531,
+      "lon": 8.106,
+      "kind": "port"
+    },
+    {
+      "name": "Kiel naval base and canal",
+      "lat": 54.323,
+      "lon": 10.14,
+      "kind": "port"
+    },
+    {
+      "name": "Bremerhaven",
+      "lat": 53.54,
+      "lon": 8.58,
+      "kind": "port"
+    },
+    {
+      "name": "Fulda Gap",
+      "lat": 50.55,
+      "lon": 9.68,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Hof Corridor",
+      "lat": 50.31,
+      "lon": 11.91,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Koblenz (III Corps HQ)",
+      "lat": 50.356,
+      "lon": 7.589,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:West Germany",
+    "areaKm2": {
+      "low": 236400,
+      "mid": 248600,
+      "high": 248700,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "Official FRG area 248,577 km2 (without West Berlin, 480 km2) used as mid. The world_1960 West Germany polygon measures ~236,400 km2 on a spherical approximation (low)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 61700000,
+      "mid": 62062000,
+      "high": 62700000,
+      "grade": "A",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1989 = 62,062 thousand (mid-year). High = end-1989 resident population ~62.7M after the 1989 influx of East German and ethnic German migrants. West Berlin (~2.1M) excluded, as in the polygon."
+    },
+    "urbanization": {
+      "low": 0.7,
+      "mid": 0.73,
+      "high": 0.85,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID/HYDE urban share Germany 1989 = 73.1% (whole Germany; the FRG was similar). High allows for national definitions counting municipalities, under which over 80% lived in towns."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 485000,
+      "mid": 495000,
+      "high": 503000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Bundeswehr",
+      "note": "Bundeswehr article: Cold War strength 495,000 military and 170,000 civilians (de.wikipedia Bundeswehr: Sollstaerke ~495,000). COW NMC v7 milper 1989 = 503,000 (high). IISS Military Balance 1989-90 gives ~494,000 (Army ~345,000, Navy ~36,000, Air Force ~108,000; edition not fetched)."
+    },
+    "trainedReserves": {
+      "low": 500000,
+      "mid": 750000,
+      "high": 900000,
+      "grade": "C",
+      "source": "https://de.wikipedia.org/wiki/Bundeswehr",
+      "note": "de.wikipedia Bundeswehr: about half a million reservists were earmarked for the non-active units that would grow in a defence emergency (low). de.wikipedia Heer (Bundeswehr): the Territorial Army alone could grow to 450,000 in wartime. The planned wartime strength of ~1.3M (IISS, not fetched) implies ~750,000-850,000 reservists called within days; mid 750,000. Paramilitary Bundesgrenzschutz (~20,000) excluded."
+    },
+    "supportPersonnel": {
+      "low": 350000,
+      "mid": 380000,
+      "high": 400000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Active 495,000 minus the infantry P roles (~115,000): Air Force ~108,000, Navy ~36,000, and the Army tank, artillery, engineer, signals, logistics, Territorial Army cadre and training establishment. Army 340,000 from de.wikipedia Heer (Bundeswehr) and Bundeswehr article."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: WWII Germany reached ~0.2 (germany-1939 snapshot); a 1989 total war would be far shorter and nuclear, and the FRG planned only ~1.3M (2% of population) for wartime strength. 0.12 allows a prolonged conventional war with the 2.5M+ trained ex-conscripts."
+    },
+    "mobilizable": {
+      "low": 4936000.0,
+      "mid": 7447000.0,
+      "high": 10032000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 70000,
+          "mid": 90000,
+          "high": 110000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: dismounted Panzergrenadier and Jaeger infantry of 15 Panzergrenadier brigades, the infantry companies of 17 Panzer brigades and the active Heimatschutz brigades (Heer (Bundeswehr): 38 active brigades in Heeresstruktur 4). Vehicle crews counted as support."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Marder IFV, Milan ATGM, G3 rifle, MG3; among the best-equipped mechanised infantry of 1989."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: 15-month conscripts (W15) under long-service NCO cadres; regular brigade exercises, no combat experience."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 18000,
+          "mid": 25000,
+          "high": 30000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: 1. Luftlandedivision (three airborne brigades, ~12,000-15,000), 1. Gebirgsdivision mountain infantry and long-range reconnaissance companies (Heer (Bundeswehr), Heeresstruktur 4)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Milan, Wiesel tankettes entering service in 1989, airmobile with CH-53G."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: higher share of volunteers and long-service soldiers in airborne and mountain units."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1300,
+          "mid": 1600,
+          "high": 2200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: ~590 M109A3G, ~200 FH-70, ~80 M110A2, ~200 LARS 110 mm MRL, first MLRS, plus older towed M101/M114 in the Territorial Army. 120 mm mortars excluded (high includes some)."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: self-propelled M109A3G, FH-70, digital fire direction being introduced."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional artillery arm, NATO firing standards."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 4600,
+          "mid": 4850,
+          "high": 5100,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Leopard 2 delivered to the Bundeswehr from 1979 in batches of 380, 450, 300, 300 and later smaller lots, ~2,125 by the end of production (Leopard 2 article), so ~1,800-2,000 by mid-1989; plus 2,437 Leopard 1 (Leopard 1 article) and ~650 M48A2GA2 in the Territorial Army (M48 article, count from IISS). 1,800 + 2,400 + 650 = 4,850. IISS MB 1989-90 gives ~5,000 (not fetched)."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Leopard 2A4 one of the two best MBTs of 1989 with M1A1; Leopard 1A5 upgrade from 1986; M48A2GA2 obsolescent."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: PzBtl 123 won the Canadian Army Trophy gunnery competition in 1989 (Tank battalions of the German Army article)."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 5000,
+          "mid": 6000,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: ~2,100 Marder IFVs (whole production for the Bundeswehr), ~2,500-3,000 M113 variants, ~900 Fuchs wheeled APCs, 408 Luchs reconnaissance vehicles. Tank destroyers (Jaguar) excluded."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Marder 1A3 heavily armoured IFV; M113 dated."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: conscript crews, professional commanders."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 140,
+          "mid": 150,
+          "high": 175,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/McDonnell_Douglas_F-4_Phantom_II_non-U.S._operators",
+          "note": "F-4F: 175 delivered (non-US operators article); ~150 in squadron service in 1989 with JG 71, JG 74 (air defence) and JaboG 35, 36. Counted here as the fighter/multirole fleet."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: F-4F lacked a look-down radar and Sparrow until the ICE upgrade of the 1990s; era-typical against MiG-23, behind F-15/MiG-29."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: pilots trained in the US, NATO exercises, ~150-180 flying hours a year."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 480,
+          "mid": 530,
+          "high": 580,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Panavia_Tornado",
+          "note": "Tornado IDS: 247 delivered to the Luftwaffe (incl. 35 ECR from 1990) and 112 to the Marineflieger (Panavia Tornado article), ~300 in service mid-1989; plus ~150 Alpha Jet light attack (175 delivered, Alpha Jet article) and ~80 RF-4E reconnaissance (88 delivered)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Tornado IDS with terrain-following radar, MW-1 dispenser and Kormoran anti-ship missile among the era best; Alpha Jet weakly armed."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Tri-national Tornado Training Establishment, low-level NATO training."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 650,
+          "mid": 800,
+          "high": 900,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Army aviation ~212 PAH-1 (BO 105P anti-tank), ~110 CH-53G, ~230 UH-1D, ~100 BO 105M and Alouette II; Luftwaffe ~100 UH-1D; Navy ~22 Sea King and ~19 Sea Lynx."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: PAH-1 with HOT missiles capable but light; no dedicated gunship like the AH-64."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional army aviation corps."
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 60,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Canadair CL-89 (AN/USD-501) reconnaissance drones in Army drone batteries; CL-289 entered service from 1990. Group 3 class."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: pre-programmed film-camera drones without real-time datalink."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: specialist batteries."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 13,
+          "mid": 13,
+          "high": 15,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Bremen-class_frigate",
+          "note": "Mid-1989: 3 Luetjens-class and 4 Hamburg-class destroyers (class articles), 6 Bremen-class frigates commissioned 1982-84 (Augsburg followed on 3 Oct 1989, Bremen-class article). High allows 1-2 Koeln-class frigates still in commission."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Bremen class with Harpoon, Sea Sparrow and Lynx; Hamburg class old."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: long-service crews, Standing NATO forces."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 90,
+          "mid": 100,
+          "high": 110,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/List_of_German_Navy_ship_classes",
+          "note": "Class list: 40 fast attack craft (Type 143, 143A and 148), 5 Thetis-class corvettes and ~55-60 mine countermeasure vessels (Lindau, Schuetze, Frauenlob, Type 343 entering 1989). Landing craft excluded."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Exocet-armed Type 143A, modern Troika remote minesweeping."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Baltic approaches specialists."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 22,
+          "mid": 24,
+          "high": 24,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Type_206_submarine",
+          "note": "18 Type 206 built for the Bundesmarine (Type 206 article) plus ~6 Type 205 (class list). Small diesel-electric coastal boats."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: quiet small non-magnetic coastal boats, wire-guided torpedoes; no ocean-going boats."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional submarine arm."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 72,
+          "mid": 98,
+          "high": 100,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/MGM-31_Pershing",
+          "note": "Launchers: 72 Pershing 1a with two Luftwaffe wings (Pershing article; warheads in US custody, missiles retired 1991) plus ~26 Lance launchers with four Army rocket artillery battalions (MGM-52 Lance article lists West Germany as user; count from IISS, not fetched)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Pershing 1a 1960s design; Lance short-range."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: dedicated professional missile wings."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 150,
+          "mid": 190,
+          "high": 230,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: batteries. Luftwaffe ~36 Hawk batteries, Patriot fire units replacing Nike Hercules (~24-36), Roland airfield units; Army ~420 Gepard SPAAG (~6 per battery, ~70 batteries) and ~140 Roland launchers (~25 batteries)."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Patriot, Gepard and Roland among the best of 1989 (Flakpanzer Gepard article)."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: integrated in NATINAD, live firing at Crete and Fort Bliss."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75 (trained staff system). Evidence: general-staff training, Auftragstaktik and Innere Fuehrung; Gaddis rates the Bundeswehr \"perhaps the world's best army\" (Bundeswehr article); no war experience."
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75 (national conscript army with professional cadre). Evidence: regionally based brigades, strong NCO corps; many conscientious objectors."
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: defending the homeland on the Central Front; strong peace movement and detente in 1989 lowered war-readiness motivation."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 9 (1985: guided missiles, MBTs with FCS, jets). Evidence: Leopard 2, Milan/HOT ATGMs, Tornado with Kormoran, Patriot."
+    },
+    "armor": {
+      "low": 8.8,
+      "mid": 9.0,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 9 (composite armour). Evidence: Leopard 2 with multilayer armour (C-Technologie from the 6th lot), Marder."
+    },
+    "ships": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9 (nuclear subs, Aegis). Evidence: missile frigates and FACs, small conventional submarines, no nuclear subs or carriers."
+    },
+    "fortification": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 and 9 (hardened shelters). Evidence: hardened aircraft shelters, prepared demolition and barrier systems on the border."
+    },
+    "logistics": {
+      "low": 8.6,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 9 (containerised). Evidence: Bundeswehr logistics brigades, dense rail and Autobahn, Wartime Host Nation Support to US forces."
+    },
+    "communications": {
+      "low": 8.5,
+      "mid": 8.8,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 9 (satellite comms, data links). Evidence: AUTOKO automated trunk network, SEM 80/90 radios fitted from 1985 (Leopard 2 article); satellite links via NATO only."
+    },
+    "isr": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (radar) and 9 (satellites). Evidence: RF-4E, CL-89 drones, NATO E-3 AWACS share; no national satellites."
+    },
+    "air": {
+      "low": 8.7,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 = 1985. Evidence: Tornado IDS; F-4F older generation."
+    },
+    "cyber": {
+      "low": 7.5,
+      "mid": 8.0,
+      "high": 8.5,
+      "grade": "D",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: cyber 9 = 1990 networks. Evidence: computerised command systems and the AUTOKO network, but no offensive network capability in 1989."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 26400,
+      "mid": 29500,
+      "high": 30200,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Maddison 2023 (OWID CSV, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) Germany 1989 = 26,393 (2011 int$), taken as the present-territory series. Split with East/West per-capita ratio 0.5 (range 0.4-0.6; CIA 1990 GDR GNP per capita $9,679 in the Economy of East Germany article vs FRG ~$19,000-20,000) and COW populations 62.06M/16.63M: West = 26,393 x 78.69 / (62.06 + r x 16.63) = 28,830-30,226. Low 26,400 covers the case that the Maddison series is West Germany only."
+    },
+    "gdp": {
+      "low": 1628880000000,
+      "mid": 1830829000000,
+      "high": 1893540000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.023,
+      "mid": 0.028,
+      "high": 0.03,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Bundeswehr",
+      "note": "Bundeswehr article (NATO defence expenditure series): 2.40% of GDP in 1990. COW milex 1989 = US$27.46bn against a GDP of ~US$1.2tn = 2.3%. NATO-definition share incl. Berlin aid ~2.8-2.9% in 1989 (not fetched)."
+    },
+    "industrialShare": {
+      "low": 0.35,
+      "mid": 0.38,
+      "high": 0.4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry incl. construction ~37-39% of West German GDP in the late 1980s, the highest of the large OECD economies."
+    },
+    "foodSurplus": {
+      "low": 0.94,
+      "mid": 0.955,
+      "high": 0.965,
+      "grade": "B",
+      "source": "https://www.gutenberg.org/cache/epub/14/pg14.txt",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). CIA World Factbook 1990 (Project Gutenberg #14) labour force, FRG: 4.8% agriculture (1987). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Germany 1989 = 4.2% (series covers the pre-1990 Federal Republic). Mid 4.5%. Share 4.5% (range 3.5-6.0%) -> 0.955 (0.94-0.965)."
+    },
+    "annualCohort": {
+      "low": 370000,
+      "mid": 395000,
+      "high": 410000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Demographics_of_Germany",
+      "note": "Males reaching 18 in 1989 = 1971 birth cohort. Demographics of Germany: 1,013,396 births in all Germany in 1971; minus ~235,000 in the GDR gives ~780,000 West German births, x 0.513 male share, minus ~1.5% mortality = ~395,000. Males only (conscript pool)."
+    },
+    "production": {
+      "artillery": {
+        "low": 100,
+        "mid": 200,
+        "high": 400,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: self-propelled and towed guns per year."
+      },
+      "armor": {
+        "low": 300,
+        "mid": 450,
+        "high": 700,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: tanks per year at full war economy. Leopard 2 was delivered at ~300 a year in 1983-85 (Leopard 2 batches); two production lines (Krauss-Maffei, MaK) could be surged."
+      },
+      "ifv_apc": {
+        "low": 400,
+        "mid": 700,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Marder and Fuchs lines surged; Marder was built at ~300 a year in the 1970s."
+      },
+      "aircraft_strike": {
+        "low": 40,
+        "mid": 60,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Tornado final assembly at MBB Manching at ~3-6 a month for Germany."
+      },
+      "helicopters": {
+        "low": 50,
+        "mid": 80,
+        "high": 120,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: MBB BO 105 / PAH-1 and licence production."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: frigates per year, several yards (Bremer Vulkan, Blohm + Voss, HDW, Nordseewerke)."
+      },
+      "submarines": {
+        "low": 1,
+        "mid": 3,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: HDW and TNSW built export submarines at several a year."
+      },
+      "air_defense": {
+        "low": 10,
+        "mid": 20,
+        "high": 40,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: batteries per year (Gepard, Roland, Patriot licence)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 173000,
+      "mid": 490000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: all roads paved, ~490,000 km including municipal roads; ~173,000 km classified roads incl. ~8,800 km Autobahn (low)."
+    },
+    "railKm": {
+      "low": 26000,
+      "mid": 27000,
+      "high": 28500,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Deutsche Bundesbahn route network ~27,000 km in 1989."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 7,
+      "high": 8,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Hamburg, Bremen/Bremerhaven, Wilhelmshaven, Emden, Kiel, Luebeck/Travemuende, Nordenham; counted from the places list. Rotterdam and Antwerp served as NATO reinforcement ports outside the FRG."
+    },
+    "merchantTonnage": {
+      "low": 5000000,
+      "mid": 6000000,
+      "high": 8000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: German-flag fleet ~4M GRT in 1989 after heavy flagging-out, x1.5 dwt/GRT = ~6M dwt."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: NATO forward defence near own depots; brigade logistics truck-based with depots every ~150-200 km; not built for expeditionary range."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 400000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses ~0.4M, militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS stockpile series (OWID) lists no West German warheads. US nuclear warheads stationed in the FRG (Pershing 1a, Lance, artillery and aircraft bombs under NATO dual key) belong to the usa-1989 snapshot."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "Cfb",
+    "chokepoints": [
+      "Fulda Gap",
+      "North German Plain (Hanover corridor)",
+      "Hof Corridor",
+      "Kiel Canal and Danish straits",
+      "Rhine crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, local supply, prepared barrier plans and strong population support; no strategic depth (forward defence ~100 km from the inner German border to the Rhine-Ruhr)."
+    }
+  },
+  "notes": "Snapshot date mid-1989 (IISS Military Balance 1989-90 reference date 1 July 1989), before the opening of the Berlin Wall. Territory and population exclude West Berlin (allied-occupied, not part of the FRG polygon). The IISS Military Balance 1989-90 could not be fetched (archive.org copies are lending-only); equipment counts are composites of Wikipedia equipment and class articles and are grade B/C/D accordingly. Allied forces stationed in the FRG (US ~250,000, UK ~67,000 BAOR/RAFG, France, Belgium, Netherlands, Canada) are counted in their own snapshots, as are US nuclear weapons. Paramilitary Bundesgrenzschutz (~20,000) excluded. Pershing 1a counted as missile launchers although their warheads were US-held."
+}

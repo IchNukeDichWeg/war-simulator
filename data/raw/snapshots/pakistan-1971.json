@@ -1,0 +1,704 @@
+{
+  "id": "pakistan-1971",
+  "nationId": "pakistan",
+  "includes": [],
+  "name": "Pakistan (West and East)",
+  "year": 1971,
+  "era": "coldwar",
+  "region": "south_asia",
+  "phase": "key",
+  "tags": [
+    "CENTO",
+    "SEATO",
+    "military regime",
+    "Bangladesh war",
+    "two-wing state"
+  ],
+  "capital": {
+    "name": "Islamabad",
+    "lat": 33.6844,
+    "lon": 73.0479,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Karachi",
+      "lat": 24.8607,
+      "lon": 67.0011,
+      "kind": "port",
+      "population": 3500000
+    },
+    {
+      "name": "Lahore",
+      "lat": 31.5204,
+      "lon": 74.3587,
+      "kind": "city",
+      "population": 2170000
+    },
+    {
+      "name": "Dacca",
+      "lat": 23.8103,
+      "lon": 90.4125,
+      "kind": "city",
+      "population": 1500000
+    },
+    {
+      "name": "Chittagong",
+      "lat": 22.3569,
+      "lon": 91.7832,
+      "kind": "port"
+    },
+    {
+      "name": "Rawalpindi (GHQ)",
+      "lat": 33.5651,
+      "lon": 73.0169,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sargodha air base",
+      "lat": 32.0486,
+      "lon": 72.665,
+      "kind": "fortress"
+    },
+    {
+      "name": "Sialkot",
+      "lat": 32.4945,
+      "lon": 74.5229,
+      "kind": "city"
+    },
+    {
+      "name": "Jessore cantonment",
+      "lat": 23.1667,
+      "lon": 89.2167,
+      "kind": "fortress"
+    },
+    {
+      "name": "Khyber Pass",
+      "lat": 34.0833,
+      "lon": 71.0833,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Shakargarh bulge",
+      "lat": 32.26,
+      "lon": 75.16,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Pakistan",
+    "areaKm2": {
+      "low": 940000,
+      "mid": 951500,
+      "high": 1030000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 Pakistan polygon (West and East wings) = ~957,000 km2 computed on the sphere. West ~803,900 + East 147,570 km2 = ~951,500 (mid); high adds the Pakistani-administered parts of Kashmir (Azad Kashmir, Northern Areas) where the polygon omits them."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 125000000,
+      "mid": 132100000,
+      "high": 135000000,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Both wings included. OWID (HYDE/UN) 1971: Pakistan (today's territory) 61.8M + Bangladesh 70.3M = 132.1M. COW NMC v7 tpop 1971 = 62.4M covers the West wing only. ~10M East Bengalis had fled to India by December 1971 (low)."
+    },
+    "urbanization": {
+      "low": 0.15,
+      "mid": 0.169,
+      "high": 0.19,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share 1971: Pakistan 26.5%, Bangladesh 8.5%; population-weighted (61.8M, 70.3M) = 16.9%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 310800,
+      "mid": 350000,
+      "high": 404000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_war_of_1971",
+      "note": "War article infobox: Pakistan Armed Forces 350,000 (Dixit 2002 p. 165) to 365,000 (Cloughley 2016). CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9) (https://archive.org/details/cia-readingroom-document-0000399238): army 284,000, air force 17,100, navy 9,700 = 310,800 (low, before the two new divisions were raised). COW NMC v7 milper 1971 = 404,000 (high). Paramilitary (~280,000 incl. EPCAF, Rangers, Razakars ~35,000) excluded."
+    },
+    "trainedReserves": {
+      "low": 50000,
+      "mid": 150000,
+      "high": 280000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: CIA memo: Pakistan lacks an organized reserve. Counted here: ex-servicemen, Mujahid and paramilitary that can be called up; Cooper and Ali via the Bangladesh Liberation War article give ~280,000 paramilitary for both wings (high)."
+    },
+    "supportPersonnel": {
+      "low": 180000,
+      "mid": 220000,
+      "high": 260000,
+      "grade": "C",
+      "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+      "note": "Everything outside the infantry P roles: air force 17,100 and navy 9,700 (CIA mid-1971), plus armour (2 armoured divisions, ~1,100 tanks), artillery (1,320 pieces), engineers, signals, logistics and staffs. Mid = active minus P roles."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Volunteer army recruited mainly from Punjab and the NWFP; the East wing (53% of population) was in revolt and not a recruitment base, so the realistic total-war ratio of the whole population is low."
+    },
+    "mobilizable": {
+      "low": 3750000.0,
+      "mid": 6605000.0,
+      "high": 9450000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 95000,
+          "mid": 120000,
+          "high": 140000,
+          "grade": "C",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "Reconstruction from the CIA order of battle (mid-1971): 13 infantry divisions and 7 independent brigades (~140 battalions), plus 2 new divisions raised in 1971 with Chinese equipment, at ~800 riflemen per battalion. East Pakistan: ~91,000 regular troops of all arms (Cloughley, via https://en.wikipedia.org/wiki/Bangladesh_Liberation_War), CIA mid-1971 ~70,000 in a corps of 3 infantry divisions."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: G3 rifles and US/Chinese small arms; CIA notes complete dependence on foreign materiel"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: long-service volunteers, but CIA notes inadequate training facilities and insufficient combined-arms training"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 6000,
+          "mid": 10000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Special Service Group (~2,000 commandos) plus Gilgit/Northern Scouts and light Azad Kashmir units in the mountain sector."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: light infantry kit"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: SSG US-trained commandos"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1150,
+          "mid": 1320,
+          "high": 1400,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): artillery including self-propelled guns 1,320 (incl. ~500 guns and AA guns from China and 60 Soviet pieces added since 1965)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: US 105/155 mm, 25-pdr, Chinese and Soviet 130 mm"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: professional artillery, 1965 veterans"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 850,
+          "mid": 1094,
+          "high": 1094,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): 1,000 medium tanks (M47/M48 Patton, Chinese T-59, T-54/55, M4 Sherman) and 94 light tanks (M24, PT-76) = 1,094. CIA notes condition and operational status unknown, so low 850."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: aging Pattons, obsolete Shermans and M24s; T-59s newer"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: CIA: insufficient combined-arms training; Basantar losses"
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 80,
+          "mid": 100,
+          "high": 150,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): 100 armoured personnel carriers (M113)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: M113 era-typical"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: small mechanised component"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 130,
+          "mid": 154,
+          "high": 154,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): Mirage IIIE 24 + F-104 8 + MiG-19 (F-6) 122 = 154; five interceptor squadrons at Sargodha."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Mirage IIIE modern, MiG-19 and F-104 era-typical, few BVR weapons"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: well-regarded pilots, 1965 veterans; CIA notes pilot shortage"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 150,
+          "mid": 182,
+          "high": 182,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): F-86 Sabre 160 + B-57 18 + Il-28 4 = 182. Wikipedia air war article: ~290 aircraft in the West and 16 F-86 in East Pakistan."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: F-86 Sabre a Korean War-era subsonic type; B-57 aging"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: aggressive and skilled PAF pilots"
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 35,
+          "mid": 45,
+          "high": 45,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): 45 helicopters (Mi-8, Alouette III, Bell 47)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: utility helicopters"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: small army aviation"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 7,
+          "mid": 8,
+          "high": 8,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_naval_war_of_1971",
+          "note": "Naval war article infobox (Pakistan Navy): 1 light cruiser (Babur), 5 destroyers, 2 frigates. CIA memo: all major combatants operational except two destroyers."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: old ex-British WWII hulls, no anti-ship missiles"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: CIA: ships rarely operate outside West Pakistan coastal waters"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 10,
+          "mid": 14,
+          "high": 20,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_naval_war_of_1971",
+          "note": "Naval war article: 8 minesweepers and 2 ex-Saudi Jaguar fast attack craft; plus river gunboats and patrol craft in East Pakistan (7 gunboats and 3 patrol vessels lost in the war). Reconstruction."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: small, old craft"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: coastal navy"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 3,
+          "mid": 4,
+          "high": 4,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-0000399238",
+          "note": "CIA Directorate of Intelligence memorandum \"India-Pakistan: Comparative Capabilities in a New Military Confrontation\", 13 Sep 1971, table \"Military Personnel and Equipment as of Mid-1971\" (p. 9): 4 submarines (3 French Daphne class, PNS Ghazi ex-US Tench class) plus 6 Italian midget submarines (not counted). Ghazi lost off Visakhapatnam on 4 Dec 1971."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: modern Daphnes; Ghazi a WWII fleet boat"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Hangor sank INS Khukri (9 Dec 1971)"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 25,
+          "mid": 40,
+          "high": 70,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: batteries. No SAMs in 1971; army and air force AAA (Chinese 37/57 mm, US 40 mm and 90 mm). CIA: ~500 artillery and AA guns from China since 1965. At ~6-8 guns per battery."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: guns only, no SAMs"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: IAF lost most of its eastern aircraft to ground fire"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Yahya Khan military regime; no joint plan for the East; Niazi surrendered Dacca after 13 days; poor inter-service coordination"
+    },
+    "cohesion": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: strong regimental identity in the West, but Bengali units (East Bengal Regiment, EPR) defected in March 1971"
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: East wing garrison isolated among a hostile population after a brutal counter-insurgency; West wing morale average"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: Pattons, F-86, Chinese T-59 and 130 mm guns; no SAMs or guided anti-tank missiles in quantity"
+    },
+    "armor": {
+      "low": 8.0,
+      "mid": 8.1,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (rolled homogeneous armour). Evidence: M47/M48, T-59; Shermans still in service"
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (carriers, radar, submarines). Evidence: WWII destroyers and cruiser, modern Daphne submarines, no missile craft"
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8. Evidence: Ichhogil (BRB) Canal defences of Lahore, bunker lines; fortress towns in East Pakistan (Jessore, Jamalpur)"
+    },
+    "logistics": {
+      "low": 7.7,
+      "mid": 7.9,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (motor transport, rail). Evidence: CIA: 60-90 days of fuel and ammunition, dependence on foreign spares; East wing supplied only by sea/air around India"
+    },
+    "communications": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (radio at company level). Evidence: US-pattern radios; Dacca-Rawalpindi link by radio"
+    },
+    "isr": {
+      "low": 7.9,
+      "mid": 8.1,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 8 = radar. Evidence: radar network in West Pakistan; RB-57 reconnaissance"
+    },
+    "air": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 = 1943, 9 = 1985. Evidence: Mirage IIIE and F-104 Mach 2, but F-86 bulk"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer networks; anchor cyber 9 = 1990 networks."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1050,
+      "mid": 1190,
+      "high": 1300,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV) 1971: Pakistan 1,484, Bangladesh 934 (2011 int$); population-weighted (61.8M, 70.3M) = ~1,190."
+    },
+    "gdp": {
+      "low": 131250000000,
+      "mid": 157199000000,
+      "high": 175500000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.037,
+      "mid": 0.05,
+      "high": 0.068,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milex 1971 = 727,215 thousand current US$. World Bank GDP 1971: Pakistan (West) US$10.67bn (https://api.worldbank.org/v2/country/PAK/indicator/NY.GDP.MKTP.CD?date=1970:1972&format=json), Bangladesh US$8.75bn -> 3.7% of both wings (low), 6.8% of the West wing (high). Mid 5% for wartime 1971."
+    },
+    "industrialShare": {
+      "low": 0.13,
+      "mid": 0.15,
+      "high": 0.21,
+      "grade": "A",
+      "source": "https://api.worldbank.org/v2/country/PAK/indicator/NV.IND.TOTL.ZS?date=1970:1972&format=json",
+      "note": "World Bank NV.IND.TOTL.ZS 1971: Pakistan 21.1%, Bangladesh 7.7%; GDP-weighted both wings ~15%."
+    },
+    "foodSurplus": {
+      "low": 0.25,
+      "mid": 0.295,
+      "high": 0.35,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/BGD/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Pakistan (West) 1971 = 59.0% and Bangladesh (East) 1971 = 80.7%, weighted by OWID population 61.8M and 70.3M = 70.5%. Same series at https://api.worldbank.org/v2/sources/57/country/PAK/series/SL.AGR.TOTL.ZS/time/all?format=json. Share 70.5% (range 65.0-75.0%) -> 0.295 (0.25-0.35)."
+    },
+    "annualCohort": {
+      "low": 1180000,
+      "mid": 1313000,
+      "high": 1440000,
+      "grade": "B",
+      "source": "derived:cohort-from-agegroup",
+      "note": "Males reaching military age per year, World Bank 1971: Pakistan male pop 32,964,917 x 9.333% aged 15-19 / 5 = 615,358; Bangladesh 36,329,727 x 9.602% / 5 = 697,646; total 1,313,004 (https://api.worldbank.org/v2/country/PAK/indicator/SP.POP.1519.MA.5Y?date=1971&format=json). Males only; range +/-10%."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 20000,
+      "mid": 29000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Paved roads: West wing ~25,000 km, East wing ~4,000 km (delta country with few bridges)."
+    },
+    "railKm": {
+      "low": 10500,
+      "mid": 11500,
+      "high": 12000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Pakistan Western Railway ~8,600 km plus East Pakistan Railway ~2,850 km."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Karachi; Chittagong and Chalna in the East."
+    },
+    "merchantTonnage": {
+      "low": 600000,
+      "mid": 800000,
+      "high": 1000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Pakistan ~0.55M GRT of merchant shipping (National Shipping Corporation and private lines) x ~1.5 dwt/grt."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Short-range army built for border defence; CIA: 60-90 day stocks and no organized reserve; the East wing was 1,600 km away across India."
+    },
+    "draftAnimals": {
+      "low": 12000000,
+      "mid": 18000000,
+      "high": 24000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Plough bullocks in both wings, camels and donkeys in the West; early-1970s livestock censuses."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimates via OWID list no Pakistani warheads before the 1990s; the weapons programme was launched only in January 1972 (Multan meeting)."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Khyber Pass",
+      "Indus River crossings",
+      "Ichhogil (BRB) Canal before Lahore",
+      "Shakargarh bulge",
+      "Sea route Karachi-Chittagong around India (~4,800 km)",
+      "Padma and Meghna rivers in East Pakistan"
+    ],
+    "homeDefense": {
+      "low": 1.0,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row in the West wing (familiar terrain, canal defences, local supply, population support); 1.0 in the East wing where the population was hostile and supported the Mukti Bahini."
+    }
+  },
+  "notes": "Snapshot date 3 December 1971 (PAF pre-emptive strikes, Operation Chengiz Khan). Population and territory include BOTH wings: West Pakistan and East Pakistan (today Bangladesh); hb:1960:Pakistan contains both polygons. includes is empty because Bangladesh had no state of its own until 16 December 1971. Main order-of-battle source: declassified CIA intelligence memorandum of 13 Sep 1971 (https://archive.org/details/cia-readingroom-document-0000399238), table as of mid-1971; the IISS Military Balance 1971-72 and Sisson and Rose, War and Secession, were not fetchable and are not cited line by line. Theatre split for the battle agent: East Pakistan ~91,000 regular troops of all arms (Cloughley via the Bangladesh Liberation War article; CIA mid-1971 ~70,000, one corps of 3 divisions, later 2 ad hoc divisions), 16 F-86 and no submarines bar Ghazi; the rest in the West, 8+ divisions near Kashmir. Paramilitary (~280,000 incl. East Pakistan Civil Armed Forces and ~35,000 Razakars) excluded from active. Pakistan had no domestic production of major platforms in 1971 (Heavy Industries Taxila and the Kamra aircraft factories came later), so production is empty; resupply came from China, plus France for aircraft and submarines. Infantry splits are reconstructions (grade C/D)."
+}

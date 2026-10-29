@@ -1,0 +1,965 @@
+{
+  "id": "usa-1989",
+  "nationId": "usa",
+  "includes": [],
+  "name": "United States",
+  "year": 1989,
+  "era": "coldwar",
+  "region": "north_america",
+  "phase": "peak",
+  "tags": [
+    "superpower",
+    "NATO",
+    "late Cold War",
+    "nuclear power",
+    "AirLand Battle"
+  ],
+  "capital": {
+    "name": "Washington, D.C.",
+    "lat": 38.895,
+    "lon": -77.036,
+    "kind": "capital",
+    "population": 604000
+  },
+  "places": [
+    {
+      "name": "New York",
+      "lat": 40.713,
+      "lon": -74.006,
+      "kind": "city",
+      "population": 7323000
+    },
+    {
+      "name": "Los Angeles",
+      "lat": 34.052,
+      "lon": -118.244,
+      "kind": "city",
+      "population": 3485000
+    },
+    {
+      "name": "Chicago",
+      "lat": 41.878,
+      "lon": -87.63,
+      "kind": "city",
+      "population": 2784000
+    },
+    {
+      "name": "Houston",
+      "lat": 29.76,
+      "lon": -95.37,
+      "kind": "city",
+      "population": 1631000
+    },
+    {
+      "name": "Norfolk (Atlantic Fleet)",
+      "lat": 36.946,
+      "lon": -76.313,
+      "kind": "port"
+    },
+    {
+      "name": "San Diego (Pacific Fleet)",
+      "lat": 32.715,
+      "lon": -117.161,
+      "kind": "port"
+    },
+    {
+      "name": "Pearl Harbor",
+      "lat": 21.354,
+      "lon": -157.97,
+      "kind": "port"
+    },
+    {
+      "name": "Fort Hood",
+      "lat": 31.134,
+      "lon": -97.776,
+      "kind": "fortress"
+    },
+    {
+      "name": "Cheyenne Mountain (NORAD)",
+      "lat": 38.744,
+      "lon": -104.846,
+      "kind": "fortress"
+    },
+    {
+      "name": "Offutt AFB (SAC HQ)",
+      "lat": 41.118,
+      "lon": -95.912,
+      "kind": "fortress"
+    },
+    {
+      "name": "Panama Canal",
+      "lat": 9.08,
+      "lon": -79.68,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:United States",
+    "areaKm2": {
+      "low": 9250000,
+      "mid": 9372000,
+      "high": 9630000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 United States polygons (contiguous states, Alaska, Hawaii) = ~9.25M km2 computed on the sphere (low). Land plus inland water ~9.37M km2 used as mid; total incl. coastal and Great Lakes waters ~9.63M (high)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 246800000,
+      "mid": 247342000,
+      "high": 250675000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1989 = 247,342k (mid). OWID population CSV (HYDE/UN) 1989 = 250.68M (high). Census Bureau mid-1989 estimate ~246.8M (low, from memory). 50 states + DC."
+    },
+    "urbanization": {
+      "low": 0.74,
+      "mid": 0.754,
+      "high": 0.76,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share United States 1989 = 75.4% (national definition)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 2130000,
+      "mid": 2200000,
+      "high": 2240000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milper 1989 = 2,240k (high). End-FY1989 DoD active strength ~2.13M (Army ~770k, Navy ~593k, USMC ~197k, USAF ~571k; from memory, low). The US Army article notes plans in Nov 1989 to cut Army end strength from 750,000 to 580,000. Coast Guard excluded."
+    },
+    "trainedReserves": {
+      "low": 1150000,
+      "mid": 1600000,
+      "high": 1800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Selected Reserve ~1.17M (Army National Guard ~457k, Army Reserve ~319k, Air Guard ~116k, Air Force Reserve ~83k, Naval Reserve ~150k, Marine Reserve ~44k) plus part of the Individual Ready Reserve (~450k), as in the IISS Military Balance 1989-90 (not fetched). Guard brigades needed 60-90 days for combat readiness in 1990, so not all is callable in 30 days."
+    },
+    "supportPersonnel": {
+      "low": 1800000,
+      "mid": 1900000,
+      "high": 1960000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Active personnel minus the P roles: Navy (~593k), Air Force (~571k), Marine aviation and support, Army armor, artillery, aviation, air defence, engineer, signal, logistics and staff (2.2M - ~290k infantry)."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "WWII benchmark: about 16.1M Americans served 1941-45 out of ~132-140M (~0.12); 12.2M under arms at the 1945 peak (~0.09). High allows a larger 1989 population share in total war."
+    },
+    "mobilizable": {
+      "low": 19744000.0,
+      "mid": 29681000.0,
+      "high": 37601000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 150000,
+          "mid": 200000,
+          "high": 260000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Infantry of the 18 active Army divisions (6 armored, 6 mechanized/infantry with ~4-5 mech infantry battalions each, ~800 riflemen per battalion) plus 3 active Marine divisions (~9 infantry battalions each). Reconstruction from division structure; Guard divisions are reserves."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: M2 Bradley IFV, TOW, Dragon, M16A2; era-best mechanized infantry kit"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: all-volunteer long-service force, NTC Fort Irwin rotations since 1982"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 45000,
+          "mid": 60000,
+          "high": 80000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Infantry of the 82nd Airborne, 101st Air Assault and the 7th, 10th and 25th light divisions (~10,700 men each), 75th Ranger Regiment and Special Forces groups; about 60% of light division strength is infantry."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: UH-60 airmobility, night vision, but light anti-armour only"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: elite airborne and Ranger units; Panama (Dec 1989) showed high proficiency"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 5800,
+          "mid": 6800,
+          "high": 8000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: M109 (~2,500) and M110 (~1,000) SP howitzers, ~2,000 towed M101/M102/M114/M198 (Army and USMC), ~470 MLRS launchers; Guard units included. Reconstruction from memory of the IISS Military Balance 1989-90."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: MLRS, Copperhead, TACFIRE fire direction, counter-battery radars"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: professional artillery branch"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 14000,
+          "mid": 15600,
+          "high": 16500,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "M1 Abrams article: 3,273 M1/IPM1 built 1979-85 and 4,753 M1A1 for the Army 1985-93 (roughly 3,000 delivered by mid-1989), so ~6,300-7,000 Abrams; plus ~8,000 M60A1/A3 in Army active and Guard units and ~716 USMC M60A1. IISS Military Balance 1989-90 gives a total near 15,600 (not fetched). Includes Guard and stored tanks."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.92,
+          "high": 0.97,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: M1A1 with 120 mm gun and DU armour among the best tanks of 1989; M60A3 a generation older"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: NTC force-on-force training, gunnery tables; Desert Storm 1991 confirmed"
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 26000,
+          "mid": 30000,
+          "high": 34000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: M2/M3 Bradley ~6,000 delivered by 1989, M113 family ~22,000, LVTP-7 ~1,300 (USMC), plus M88/M577 variants partly counted. Totals as remembered from the IISS Military Balance 1989-90."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Bradley with TOW and 25 mm; M113 dated"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: professional crews"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 3900,
+          "mid": 4300,
+          "high": 4800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: F-15 (~900), F-16 (~1,600), F-4 (~800, mostly Guard/Reserve), Navy F-14 (~420) and Navy/USMC F/A-18 (~600). Active plus Guard and Reserve; reconstruction from memory of the IISS Military Balance 1989-90."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0. Evidence: F-15C/F-14/F-16 with AIM-7/AIM-9M, AWACS support: best in era"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Red Flag, Top Gun, ~20 flight hours per month"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 1900,
+          "mid": 2250,
+          "high": 2600,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: B-52G/H (~260), B-1B (97), FB-111 (~60), F-111 (~300), A-10 (~600), A-6 (~330), A-7 (~400), AV-8B (~200), F-117 (~50, secret until Nov 1988). Reconstruction from memory of the IISS Military Balance 1989-90."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.92,
+          "high": 0.97,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: stealth F-117, laser-guided bombs, cruise-missile carrying bombers"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Red Flag, SAC readiness"
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 9500,
+          "mid": 11000,
+          "high": 12500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Army ~8,600 (UH-1 ~3,500, UH-60 ~1,000, AH-1 ~1,100, AH-64 ~550, OH-58, CH-47 ~450) plus Navy/USMC ~1,800 and USAF ~200. Reconstruction from memory of the IISS Military Balance 1989-90."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: AH-64 Apache with Hellfire the best attack helicopter of 1989"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Army aviation branch, night flying"
+        }
+      },
+      "drones": {
+        "count": {
+          "low": 30,
+          "mid": 50,
+          "high": 80,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: RQ-2 Pioneer systems bought 1986-89 for the Navy and Marines (~9 systems of 5-8 air vehicles); Army Aquila cancelled 1987. Group 3 only."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: early tactical UAV, line-of-sight datalink"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: new capability"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 235,
+          "mid": 242,
+          "high": 250,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/600-ship_Navy",
+          "note": "600-ship Navy article, build-up table 1989 column (from NHHC force levels): 17 carriers (incl. training carrier Lexington), 4 Iowa battleships, 41 cruisers, 63 destroyers, 104 frigates, 13 LHA/LPH/LHD = 242."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0. Evidence: Aegis cruisers, nuclear carriers, Tomahawk; era best"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: blue-water navy with continuous deployments"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 80,
+          "mid": 87,
+          "high": 110,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/600-ship_Navy",
+          "note": "600-ship Navy article 1989 column: 21 mine-warfare ships, 10 PHM hydrofoils and gunboats, 10 LSD, 15 LPD, 5 LKA, 20 LST + 4 LSV, 2 LCC = 87. High adds Coast Guard cutters under Navy control in war."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mine warfare force small and old (Aggressive class), Avenger class entering"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional crews"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 130,
+          "mid": 132,
+          "high": 135,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/600-ship_Navy",
+          "note": "600-ship Navy article 1989 column: 94 attack submarines (42 Los Angeles, 37 Sturgeon, ...) and 38 SSBN (10 Ohio, 28 Lafayette/Franklin/Madison/Ethan Allen) = 132."
+        },
+        "quality": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 1.0. Evidence: quietest SSNs of the era, Trident II entering service 1990"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: nuclear navy selection and training"
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 1000,
+          "mid": 1100,
+          "high": 1250,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/LGM-30_Minuteman",
+          "note": "Launchers: 1,000 ICBM silos (950 Minuteman II/III, 50 Peacekeeper; the Minuteman article gives 1,000 Minuteman deployed from the 1970s, 50 converted to Peacekeeper 1986-88) plus ~100 Lance launchers; Pershing II and GLCM launchers were being eliminated under the INF Treaty (completed May 1991) so only some remain mid-1989 (high). SLBM tubes are in submarines."
+        },
+        "quality": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: MX/Peacekeeper with 10 MIRVs, accurate Minuteman III"
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: SAC missile crews, high alert rates"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 200,
+          "mid": 300,
+          "high": 400,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Batteries: Patriot (~60 fire units in 1989), Improved Hawk (~70 Army, USMC and Guard batteries), Chaparral/Vulcan batteries in divisional ADA battalions (~150). Stinger teams excluded. Reconstruction from division structure."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: Patriot PAC-1 the most modern Western SAM"
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: professional ADA branch"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: AirLand Battle doctrine (FM 100-5, 1982/86), Goldwater-Nichols joint command reform 1986; Grenada 1983 showed joint friction, Panama (Dec 1989) went well"
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: all-volunteer professional force recovered from post-Vietnam hollow army; strong unit identity"
+    },
+    "morale": {
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: Reagan-era rebuilding, high recruit quality; no recent major war"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: weapons 9 (1985: guided missiles, MBTs with FCS, jets). Evidence: M1A1, Bradley with TOW, Tomahawk, Patriot, laser-guided bombs; above the 1985 anchor"
+    },
+    "armor": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: armor 9 (composite armour). Evidence: M1A1 Chobham-type composite with depleted-uranium inserts (heavy armor 1988)"
+    },
+    "ships": {
+      "low": 9.0,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ships 9 (nuclear subs, Aegis). Evidence: Ticonderoga Aegis cruisers, Arleigh Burke 1991, Los Angeles SSNs, nuclear carriers"
+    },
+    "fortification": {
+      "low": 8.6,
+      "mid": 8.9,
+      "high": 9.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: fortification 9 (hardened shelters). Evidence: hardened aircraft shelters in Europe, hardened ICBM silos and NORAD Cheyenne Mountain"
+    },
+    "logistics": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: logistics 9 (containerised, airlift). Evidence: C-5/C-141 strategic airlift, fast sealift ships, prepositioning (MPS squadrons from 1984)"
+    },
+    "communications": {
+      "low": 8.9,
+      "mid": 9.1,
+      "high": 9.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: communications 9 (satellite comms, data links). Evidence: DSCS and FLTSATCOM satellites, Link 11/16, MSE mobile subscriber equipment"
+    },
+    "isr": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: isr 9 (satellites). Evidence: KH-11 imaging satellites, E-3 AWACS, JSTARS prototype, U-2/TR-1, SR-71 retired 1990"
+    },
+    "air": {
+      "low": 9.0,
+      "mid": 9.2,
+      "high": 9.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 (1985). Evidence: F-15C, F-16C, F-14, F-117 stealth, B-1B, B-2 first flight July 1989"
+    },
+    "cyber": {
+      "low": 8.2,
+      "mid": 8.7,
+      "high": 9.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: cyber 9 = 1990 networks. Evidence: ARPANET/MILNET and DDN in service; Morris worm Nov 1988 prompted CERT; NSA computer security center; just below the 1990 anchor"
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 35500,
+      "mid": 36756,
+      "high": 38000,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV) United States 1989 = 36,756 (2011 int$)."
+    },
+    "gdp": {
+      "low": 8761400000000,
+      "mid": 9091303000000,
+      "high": 9525650000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.056,
+      "mid": 0.0587,
+      "high": 0.0607,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/military-expenditure-share-gdp.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "SIPRI military expenditure share of GDP (OWID CSV): 1988 = 6.07%, 1989 = 5.87%, 1990 = 5.61%. COW milex 1989 = $294.9bn current."
+    },
+    "industrialShare": {
+      "low": 0.26,
+      "mid": 0.29,
+      "high": 0.32,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry (manufacturing, mining, construction, utilities) roughly 28-30% of US value added in the late 1980s."
+    },
+    "foodSurplus": {
+      "low": 0.96,
+      "mid": 0.971,
+      "high": 0.99,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/USA/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) USA 1989 = 2.9%. Range 2-4%. The US was a large net food exporter. Share 2.9% (range 1.0-4.0%) -> 0.971 (0.96-0.99)."
+    },
+    "annualCohort": {
+      "low": 1750000,
+      "mid": 1850000,
+      "high": 1950000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: males reaching 18 in 1989 = males born 1971 (~3.56M US births, about 51% male) less mortality and plus immigration."
+    },
+    "production": {
+      "artillery": {
+        "low": 150,
+        "mid": 300,
+        "high": 600,
+        "grade": "C",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "Soviet Military Power 1989 production table: US towed plus SP field artillery and MRLs 1986-88 roughly 150-350 per year; high is a wartime surge."
+      },
+      "armor": {
+        "low": 730,
+        "mid": 900,
+        "high": 1500,
+        "grade": "C",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "Soviet Military Power 1989, table Production of Ground Forces Materiel: US tanks 1986-88 roughly 730-950 per year (OCR of the table). High = wartime surge with Lima and Detroit plants on extra shifts (educated)."
+      },
+      "ifv_apc": {
+        "low": 800,
+        "mid": 1100,
+        "high": 1800,
+        "grade": "C",
+        "source": "https://archive.org/details/soviet-military-power-1989_202409",
+        "note": "Soviet Military Power 1989 production table: US other armoured fighting vehicles 1986-88 ~800-1,300 per year; high is a wartime surge."
+      },
+      "aircraft_fighter": {
+        "low": 400,
+        "mid": 500,
+        "high": 900,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: F-16, F-15, F/A-18 and F-14 deliveries ~450-550 per year in 1987-89; high is a wartime surge."
+      },
+      "aircraft_strike": {
+        "low": 50,
+        "mid": 100,
+        "high": 250,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: A-6E, AV-8B, F-15E, B-1B (completed 1988) deliveries; high is a wartime surge."
+      },
+      "helicopters": {
+        "low": 400,
+        "mid": 600,
+        "high": 1000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: UH-60, AH-64, SH-60, CH-53E deliveries ~500-600 per year."
+      },
+      "ships_major": {
+        "low": 6,
+        "mid": 9,
+        "high": 14,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Ticonderoga, Burke, Oliver Hazard Perry and Wasp-class completions late 1980s ~6-10 per year."
+      },
+      "submarines": {
+        "low": 3,
+        "mid": 5,
+        "high": 7,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Los Angeles (~4 per year) and Ohio (~1 per year) completions."
+      },
+      "missiles": {
+        "low": 20,
+        "mid": 50,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ICBM and Lance launchers; production of launchers is small in peacetime."
+      },
+      "air_defense": {
+        "low": 10,
+        "mid": 20,
+        "high": 50,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Patriot fire units and Hawk batteries fielded per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3300000,
+      "mid": 3600000,
+      "high": 3900000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: about 3.6M km of paved roads of ~6.2M km public roads in the late 1980s; Interstate system ~70,000 km."
+    },
+    "railKm": {
+      "low": 220000,
+      "mid": 240000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Class I railroad route ~236,000 km in 1989 after 1980s abandonments; high includes regional lines."
+    },
+    "majorPorts": {
+      "low": 30,
+      "mid": 40,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: major container and naval ports on three coasts and the Great Lakes (New York-New Jersey, Hampton Roads, Baltimore, Charleston, Savannah, Houston, New Orleans, Long Beach-Los Angeles, Oakland, Seattle-Tacoma, ...)."
+    },
+    "merchantTonnage": {
+      "low": 18000000,
+      "mid": 21000000,
+      "high": 30000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: US-flag merchant fleet ~21M dwt in 1989 (privately owned plus Ready Reserve Force); high adds effective US-controlled flags of convenience."
+    },
+    "supplyRangeKm": {
+      "low": 1500,
+      "mid": 3000,
+      "high": 6000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: global power projection: strategic airlift, sealift and prepositioning; Desert Shield 1990 moved corps-size forces ~12,000 km."
+    },
+    "draftAnimals": {
+      "low": 4000000,
+      "mid": 5000000,
+      "high": 6000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and mules in the US ~5M in the late 1980s; militarily irrelevant."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 21000,
+      "mid": 22217,
+      "high": 23500,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimate (Kristensen and Korda, via OWID nuclear-warhead-stockpiles CSV) United States 1989 = 22,217 stockpiled warheads; range for Bulletin Nuclear Notebook variants."
+    },
+    "basesAbroad": [
+      {
+        "name": "Ramstein Air Base, West Germany",
+        "lat": 49.437,
+        "lon": 7.6,
+        "kind": "fortress"
+      },
+      {
+        "name": "USAREUR HQ Heidelberg, West Germany",
+        "lat": 49.399,
+        "lon": 8.672,
+        "kind": "fortress"
+      },
+      {
+        "name": "Grafenwoehr training area, West Germany",
+        "lat": 49.698,
+        "lon": 11.94,
+        "kind": "fortress"
+      },
+      {
+        "name": "RAF Lakenheath, UK",
+        "lat": 52.409,
+        "lon": 0.561,
+        "kind": "fortress"
+      },
+      {
+        "name": "Holy Loch SSBN base, UK",
+        "lat": 55.99,
+        "lon": -4.93,
+        "kind": "port"
+      },
+      {
+        "name": "Naval Station Rota, Spain",
+        "lat": 36.645,
+        "lon": -6.349,
+        "kind": "port"
+      },
+      {
+        "name": "Torrejon Air Base, Spain",
+        "lat": 40.497,
+        "lon": -3.446,
+        "kind": "fortress"
+      },
+      {
+        "name": "NSA Naples, Italy",
+        "lat": 40.884,
+        "lon": 14.29,
+        "kind": "port"
+      },
+      {
+        "name": "Aviano Air Base, Italy",
+        "lat": 46.032,
+        "lon": 12.597,
+        "kind": "fortress"
+      },
+      {
+        "name": "Incirlik Air Base, Turkey",
+        "lat": 37.002,
+        "lon": 35.426,
+        "kind": "fortress"
+      },
+      {
+        "name": "NAS Keflavik, Iceland",
+        "lat": 63.985,
+        "lon": -22.605,
+        "kind": "fortress"
+      },
+      {
+        "name": "Subic Bay Naval Base, Philippines",
+        "lat": 14.8,
+        "lon": 120.28,
+        "kind": "port"
+      },
+      {
+        "name": "Clark Air Base, Philippines",
+        "lat": 15.186,
+        "lon": 120.56,
+        "kind": "fortress"
+      },
+      {
+        "name": "Yokosuka Naval Base, Japan",
+        "lat": 35.283,
+        "lon": 139.667,
+        "kind": "port"
+      },
+      {
+        "name": "Kadena Air Base, Okinawa",
+        "lat": 26.356,
+        "lon": 127.768,
+        "kind": "fortress"
+      },
+      {
+        "name": "Yongsan Garrison, Seoul, South Korea",
+        "lat": 37.532,
+        "lon": 126.985,
+        "kind": "fortress"
+      },
+      {
+        "name": "Diego Garcia",
+        "lat": -7.313,
+        "lon": 72.411,
+        "kind": "port"
+      },
+      {
+        "name": "Guantanamo Bay, Cuba",
+        "lat": 19.904,
+        "lon": -75.096,
+        "kind": "port"
+      },
+      {
+        "name": "Howard Air Force Base, Panama",
+        "lat": 8.915,
+        "lon": -79.599,
+        "kind": "fortress"
+      },
+      {
+        "name": "Guam (Andersen AFB, Apra Harbor)",
+        "lat": 13.584,
+        "lon": 144.93,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "Cfa",
+    "chokepoints": [
+      "Panama Canal",
+      "GIUK gap",
+      "Strait of Gibraltar",
+      "Strait of Hormuz",
+      "Fulda Gap (forward defence in Germany)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, local supply and strong population support; two-ocean isolation makes invasion near-impossible but the rubric has no ocean row."
+    }
+  },
+  "notes": "Snapshot date mid-1989 (IISS Military Balance 1989-90 basis, data as of 1 July 1989), before the fall of the Berlin Wall and the Panama intervention. Population convention: 50 states + DC; Puerto Rico and Guam excluded from population, Guam listed as a base. About 320,000 personnel were stationed in Europe (~250,000 in West Germany) and ~45,000 in Korea, so part of forces is forward-deployed. Ship counts come from the NHHC-based 600-ship Navy table; aircraft, armour, artillery and helicopter totals are reconstructions from memory of the IISS Military Balance 1989-90 (not fetchable) and are grade C/D; Guard and Reserve equipment is included in forces, Guard and Reserve personnel in trainedReserves. P-role splits are reconstructions from division structure. ships_major includes LHA/LPH amphibious assault ships; other amphibious ships are ships_minor. Cyber is rated by tech-anchor interpolation below the 1990 anchor."
+}

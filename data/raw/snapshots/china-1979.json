@@ -1,0 +1,827 @@
+{
+  "id": "china-1979",
+  "nationId": "china",
+  "includes": [],
+  "name": "People's Republic of China",
+  "year": 1979,
+  "era": "coldwar",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "great power",
+    "communist",
+    "nuclear power",
+    "people's war",
+    "Sino-Vietnamese War"
+  ],
+  "capital": {
+    "name": "Beijing",
+    "lat": 39.904,
+    "lon": 116.407,
+    "kind": "capital",
+    "population": 8710000
+  },
+  "places": [
+    {
+      "name": "Shanghai",
+      "lat": 31.23,
+      "lon": 121.474,
+      "kind": "port",
+      "population": 11300000
+    },
+    {
+      "name": "Tianjin",
+      "lat": 39.084,
+      "lon": 117.201,
+      "kind": "city",
+      "population": 7400000
+    },
+    {
+      "name": "Shenyang",
+      "lat": 41.806,
+      "lon": 123.432,
+      "kind": "city",
+      "population": 4100000
+    },
+    {
+      "name": "Wuhan",
+      "lat": 30.593,
+      "lon": 114.305,
+      "kind": "city",
+      "population": 4200000
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.129,
+      "lon": 113.264,
+      "kind": "city",
+      "population": 5000000
+    },
+    {
+      "name": "Chongqing",
+      "lat": 29.563,
+      "lon": 106.551,
+      "kind": "city"
+    },
+    {
+      "name": "Nanning (Guangxi front base)",
+      "lat": 22.817,
+      "lon": 108.366,
+      "kind": "city"
+    },
+    {
+      "name": "Kunming (Yunnan front base)",
+      "lat": 25.038,
+      "lon": 102.718,
+      "kind": "city"
+    },
+    {
+      "name": "Qingdao (North Sea Fleet)",
+      "lat": 36.067,
+      "lon": 120.383,
+      "kind": "port"
+    },
+    {
+      "name": "Zhanjiang (South Sea Fleet)",
+      "lat": 21.271,
+      "lon": 110.359,
+      "kind": "port"
+    },
+    {
+      "name": "Friendship Pass (Youyiguan)",
+      "lat": 21.97,
+      "lon": 106.71,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:China",
+    "areaKm2": {
+      "low": 8200000,
+      "mid": 9600000,
+      "high": 9600000,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 China polygon = ~8.20M km2 computed on the sphere (low; the basemap polygon omits some western territory). Official PRC area ~9.6M km2 (mid/high). Excludes Taiwan."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 969300000,
+      "mid": 975000000,
+      "high": 985500000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1979 = 985,467k (high). OWID population CSV China 1979 = 969.3M (low). Official year-end 1979 figure ~975M used as mid (from memory)."
+    },
+    "urbanization": {
+      "low": 0.13,
+      "mid": 0.19,
+      "high": 0.2,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share China 1979 = 19.1%. Low = COW upop/tpop = 129.4M/985.5M = 0.13 (large cities only)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 4000000,
+      "mid": 4300000,
+      "high": 4600000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 milper 1979 = 4,600k (high). Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80, Table II-1: Army strength 3,600,000 (main forces 115 infantry, 11 armoured, 40 artillery and 16 railway divisions; local forces 85 infantry divisions). Navy ~0.3M and Air Force ~0.4M added for the mid."
+    },
+    "trainedReserves": {
+      "low": 5000000,
+      "mid": 7000000,
+      "high": 10000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: armed (core) militia with basic weapons training; the ordinary militia of tens of millions is untrained and sits in mobilizable. Western estimates of the armed militia in the late 1970s were ~5-7M (IISS, not fetched)."
+    },
+    "supportPersonnel": {
+      "low": 2700000,
+      "mid": 2950000,
+      "high": 3200000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Active minus P roles: Navy, Air Force, Second Artillery, artillery, armour, AAA, engineer and railway divisions, logistics and staff (4.3M - ~1.35M infantry)."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: people's war doctrine with a huge militia; Korean War and civil-war peaks were ~5-6M under arms of ~550M (~0.01), so the total-war ratio is a judgement."
+    },
+    "mobilizable": {
+      "low": 48465000.0,
+      "mid": 78000000.0,
+      "high": 118260000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 1000000,
+          "mid": 1250000,
+          "high": 1500000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Infantry of 115 main-force infantry divisions (~12,000 men, ~60% infantry = ~7,000 each, ~800,000) plus 85 local-force infantry divisions at lower strength (~5,000 infantry each, ~425,000); division counts from Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Type 56 rifles and RPG-2/Type 69, 57-82 mm recoilless rifles; Yang: anti-tank weapons years behind the Soviets"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: Cultural Revolution disrupted training; no combat since 1969; human-wave tactics and heavy losses in Feb 1979"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 100000,
+          "high": 140000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: 15th Airborne Corps (3 divisions, ~30,000), independent main-force regiments (150, part infantry) and border/mountain units. Cavalry divisions were converted in the 1970s and are not counted separately."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: light weapons only"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: airborne relatively better trained"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 16000,
+          "mid": 18000,
+          "high": 20000,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: 16,000-18,000 field guns and howitzers (122, 130, 152 mm) plus a few SP guns (SU-76/85/100, ISU-122); high adds 107/130 mm MRLs. Mortars excluded."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Soviet 1950s designs (D-30 copies came later), towed, no modern fire control"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: massed preparatory barrages effective at Lang Son 1979"
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 10000,
+          "mid": 11000,
+          "high": 11000,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: Table II-1 11,000 tanks (IS-2, T-34, Type 59 medium, Type 62 light, Type 63 amphibious); text gives some 10,000. Sino-Vietnamese War article: 400-550 tanks committed to Vietnam (200 Type 59/62/63 in the first wave)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Type 59 = T-54A copy without stabiliser or rangefinder, a generation behind the T-72 (Yang)"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: weak infantry-tank cooperation in Vietnam 1979, heavy tank losses"
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 1500,
+          "mid": 2500,
+          "high": 3500,
+          "grade": "C",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: Table II-1 1,500 K-63 (Type 63) APCs; text gives 3,500 Chinese-designed APCs. Mid splits the two."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Type 63 tracked APC, no IFVs"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little mechanised doctrine"
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 3700,
+          "mid": 3900,
+          "high": 4300,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80, Table II-2: MiG-15 500, MiG-17 and MiG-19 (J-5/J-6) 3,700, MiG-21 80; ~300-500 of the MiG-19 family are Q-5 attack aircraft counted in strike. PLAAF article: 50 air divisions in 1971-89. Naval aviation fighters (~500) partly added in the high."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: J-6 (MiG-19) and J-5 (MiG-17) a generation behind MiG-23/F-15; Chinese MiG-21s nearly all grounded by 1975 (Yang)"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: PLAAF article: Cultural Revolution closed technical schools and damaged pilot training; PLAAF largely stayed out of the 1979 war"
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 480,
+          "mid": 700,
+          "high": 900,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80, Table II-2: Tu-16 (H-6) 80-90, Il-28 (H-5) 300, Tu-2 100 = ~480; plus ~300 Q-5 attack aircraft inside the MiG-19 family total and naval aviation Il-28s (high)."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: Il-28 (1947 design), Tu-2 piston bombers still in service"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: see fighters"
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 250,
+          "mid": 350,
+          "high": 450,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Z-5 (Mi-4 copy), Mi-8, Z-6, Alouette III and Super Frelon in Army and Navy service; small transport force."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: piston Z-5 dominant"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little airmobile experience"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 20,
+          "mid": 27,
+          "high": 35,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: about 11 destroyers (4 ex-Soviet Anshan class, ~7 Type 051 Luda) and ~16 frigates (Jiangdong, Jianghu, Chengdu, Jiangnan); Yang only says handfuls of destroyers and frigates."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Luda (1971) with Styx copies, no SAMs, poor sensors"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: coastal navy, little blue-water experience"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 850,
+          "mid": 903,
+          "high": 1000,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: 160 Osa/Hola/Komar missile boats, 403 fast attack gunboats, 220 torpedo boats and over 120 hydrofoil torpedo boats = 903. PLAN article: missile-carrying ships grew from 20 to 200 in the 1970s."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: Styx-armed FACs dangerous near the coast, vulnerable to ECM (Yang)"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: coastal people's-war navy"
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 90,
+          "mid": 93,
+          "high": 100,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: some 91 medium-range torpedo attack submarines (Romeo/Whiskey types), 1 Han-class nuclear submarine and 1 Golf-class SSB without missiles = 93. PLAN article: conventional submarines grew from 35 to 100 in the 1970s."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: Romeo (Type 033) a 1950s design; Han SSN noisy and unreliable"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: short-range patrols only"
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 92,
+          "mid": 105,
+          "high": 122,
+          "grade": "B",
+          "source": "https://archive.org/details/DTIC_ADA092422",
+          "note": "Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80, Table II-4: 2 CSS-3 (DF-4) ICBM, 50-70 CSS-2 (DF-3) IRBM, 40-50 CSS-1 (DF-2) MRBM launchers."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: liquid-fuelled, slow to launch, inaccurate; DF-5 ICBM first full test May 1980"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Second Artillery an elite, politically trusted service"
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 1200,
+          "mid": 1700,
+          "high": 2200,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Batteries. Yang, The Modernization of the Chinese PLA (Naval Postgraduate School thesis, June 1980, DTIC ADA092422), tables citing the IISS Military Balance 1979-80: ~10,000 anti-aircraft guns (14.5-100 mm) at ~6 per battery = ~1,650, plus ~100 HQ-2/CSA-1 (SA-2) SAM launchers at ~6 per site = ~17 sites."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: guns and late-1950s SA-2 copies only, no mobile SAMs (Yang)"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: large dedicated AAA divisions, Vietnam War experience 1965-69"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.3,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: military ranks abolished 1965-88, Cultural Revolution purges; 1979 offensive showed poor coordination, weak communications and logistics"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: national conscript and volunteer army with strong political-commissar system"
+    },
+    "morale": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5-0.75. Evidence: nationalist campaign to punish Vietnam; heavy losses (6,954-8,531 killed in about a month, Sino-Vietnamese War article)"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: weapons 8 (1943: tanks, dive bombers, radar-directed AA). Evidence: Type 59 tank, towed 1950s artillery, J-6 jets, Styx-copy anti-ship missiles; well short of the 1985 anchor"
+    },
+    "armor": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: armor 8 (rolled homogeneous armour). Evidence: Type 59 and Type 63 cast/rolled steel, no composite armour"
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ships 8 (carriers, radar, submarines) to 9. Evidence: Luda destroyers, Romeo submarines, one Han SSN; no carriers"
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: fortification 8 (concrete lines). Evidence: \"Underground Great Wall\" tunnel and bunker networks against Soviet invasion"
+    },
+    "logistics": {
+      "low": 7.3,
+      "mid": 7.6,
+      "high": 7.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: logistics between 7 (railways) and 8 (motor transport). Evidence: rail to the border, then trucks and civilian porters; 1979 advance stalled by supply"
+    },
+    "communications": {
+      "low": 7.6,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: communications 8 (radio at company level). Evidence: radio below regiment scarce, poor tactical comms in 1979"
+    },
+    "isr": {
+      "low": 7.9,
+      "mid": 8.1,
+      "high": 8.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: isr 8 (radar) to 9 (satellites). Evidence: early-warning radars; FSW recoverable reconnaissance satellites from 1975"
+    },
+    "air": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 (1943) to 9 (1985). Evidence: J-6 supersonic (MiG-19, 1955 design), H-6 (Tu-16); a generation behind"
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer networks before ~1985 (cyber 9 anchor = 1990 networks)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1700,
+      "mid": 1859,
+      "high": 2000,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV) China 1979 = 1,859 (2011 int$)."
+    },
+    "gdp": {
+      "low": 1647810000000,
+      "mid": 1812525000000,
+      "high": 1971000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: official 1979 defence budget ~22bn yuan (~5-6% of GNP, raised for the Vietnam war); Western estimates of real spending higher. Wartime year: low is roughly the 1978 peacetime share."
+    },
+    "industrialShare": {
+      "low": 0.4,
+      "mid": 0.45,
+      "high": 0.48,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry ~45% of GDP in 1979 under the Soviet-model heavy-industry strategy, but most of the workforce in farming."
+    },
+    "foodSurplus": {
+      "low": 0.22,
+      "mid": 0.253,
+      "high": 0.29,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/CHN/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) China 1979 = 74.7% (1980 = 74.2%). CIA World Factbook 1990: 61.1% (1986), after decollectivisation. Share 74.7% (range 71.0-78.0%) -> 0.253 (0.22-0.29)."
+    },
+    "annualCohort": {
+      "low": 6000000,
+      "mid": 8000000,
+      "high": 10000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: males reaching 18 in 1979 = born 1961, the Great Leap famine birth trough (~12M births); adjacent cohorts are larger."
+    },
+    "production": {
+      "artillery": {
+        "low": 1000,
+        "mid": 2000,
+        "high": 3000,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: towed guns and MRLs; China was a large artillery producer."
+      },
+      "armor": {
+        "low": 500,
+        "mid": 800,
+        "high": 1200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Type 59/62/63 output at Baotou (Factory 617) in the late 1970s."
+      },
+      "ifv_apc": {
+        "low": 200,
+        "mid": 400,
+        "high": 700,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Type 63 APC production."
+      },
+      "aircraft_fighter": {
+        "low": 200,
+        "mid": 350,
+        "high": 500,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: J-6 production at Shenyang (~5,000 built 1958-81 incl. exports) and J-7 start."
+      },
+      "aircraft_strike": {
+        "low": 50,
+        "mid": 100,
+        "high": 150,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Q-5 (Nanchang) and H-6/H-5 output."
+      },
+      "helicopters": {
+        "low": 10,
+        "mid": 30,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Z-5 production ended 1979; small Z-9 licence programme from 1980."
+      },
+      "ships_major": {
+        "low": 1,
+        "mid": 2,
+        "high": 3,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Luda destroyers and Jianghu frigates completed per year."
+      },
+      "ships_minor": {
+        "low": 30,
+        "mid": 60,
+        "high": 100,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: FAC and patrol boat output."
+      },
+      "submarines": {
+        "low": 3,
+        "mid": 5,
+        "high": 8,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Type 033 Romeo (84 built 1962-84) and Ming class."
+      },
+      "missiles": {
+        "low": 5,
+        "mid": 10,
+        "high": 20,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: DF-2/DF-3 launchers per year."
+      },
+      "air_defense": {
+        "low": 50,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: AAA batteries equipped per year."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 100000,
+      "mid": 150000,
+      "high": 250000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: total highways ~875,000 km in 1979, mostly unsurfaced; paved or engineered all-weather share used here."
+    },
+    "railKm": {
+      "low": 48000,
+      "mid": 50000,
+      "high": 53000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: operating railway ~50,000 km in 1979, single-track to the Vietnamese border at Pingxiang and Hekou."
+    },
+    "majorPorts": {
+      "low": 10,
+      "mid": 14,
+      "high": 18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Shanghai, Dalian, Tianjin (Xingang), Qingdao, Guangzhou (Huangpu), Zhanjiang, Qinhuangdao, Lianyungang, Ningbo, Fuzhou, Xiamen, Yantai, Shantou, Beihai."
+    },
+    "merchantTonnage": {
+      "low": 5000000,
+      "mid": 7000000,
+      "high": 9000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: COSCO and provincial fleets ~7M dwt in 1979, fast-growing."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: PLA logistics in 1979 relied on rail to the border and porters/trucks; the offensive reached only 15-40 km into Vietnam (Sino-Vietnamese War article)."
+    },
+    "draftAnimals": {
+      "low": 40000000,
+      "mid": 50000000,
+      "high": 60000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses (~11M), mules, donkeys and draft cattle/buffalo in the late 1970s."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 150,
+      "mid": 195,
+      "high": 230,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimate (Kristensen and Korda, via OWID nuclear-warhead-stockpiles CSV) China 1979 = 195 warheads; range for Norris and Kristensen variants."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Friendship Pass (Lang Son road)",
+      "Taiwan Strait",
+      "Bohai Strait",
+      "Dzungarian Gate",
+      "Ussuri River (Zhenbao Island)"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: huge strategic depth, harsh mountain and desert frontiers, people's war doctrine with militia and tunnel defences."
+    }
+  },
+  "notes": "Snapshot date 17 February 1979, start of the Sino-Vietnamese War. Forces are national totals; the invasion force was ~200,000 troops with 400-550 tanks (Sino-Vietnamese War article, Chinese data), while ~1M troops faced the USSR. Key order-of-battle numbers come from a 1980 Naval Postgraduate School thesis (Yang, DTIC ADA092422, archive.org full text) whose tables cite the IISS Military Balance 1979-80. Population convention: mainland PRC, Taiwan excluded. Militia: armed core militia counted as trainedReserves; the ordinary militia falls under mobilizable. Many economic and logistics values are educated guesses (grade D) because no fetchable 1979 statistical yearbook was available."
+}

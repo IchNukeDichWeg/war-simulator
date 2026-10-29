@@ -1,0 +1,755 @@
+{
+  "id": "egypt-1973",
+  "nationId": "egypt",
+  "includes": [],
+  "name": "Arab Republic of Egypt",
+  "year": 1973,
+  "era": "coldwar",
+  "region": "mena",
+  "phase": "key",
+  "tags": [
+    "Yom Kippur War",
+    "October War",
+    "Operation Badr",
+    "Sadat",
+    "Soviet-equipped",
+    "SAM umbrella"
+  ],
+  "capital": {
+    "name": "Cairo",
+    "lat": 30.044,
+    "lon": 31.236,
+    "kind": "capital",
+    "population": 5100000
+  },
+  "places": [
+    {
+      "name": "Alexandria",
+      "lat": 31.2,
+      "lon": 29.918,
+      "kind": "port",
+      "population": 2100000
+    },
+    {
+      "name": "Port Said",
+      "lat": 31.265,
+      "lon": 32.302,
+      "kind": "port"
+    },
+    {
+      "name": "Ismailia",
+      "lat": 30.605,
+      "lon": 32.272,
+      "kind": "city"
+    },
+    {
+      "name": "Suez",
+      "lat": 29.967,
+      "lon": 32.55,
+      "kind": "port"
+    },
+    {
+      "name": "Suez Canal crossing sector (Deversoir / Great Bitter Lake)",
+      "lat": 30.42,
+      "lon": 32.36,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Cairo West Air Base",
+      "lat": 30.116,
+      "lon": 30.915,
+      "kind": "fortress"
+    },
+    {
+      "name": "Aswan High Dam",
+      "lat": 23.97,
+      "lon": 32.88,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mitla Pass (Israeli-held)",
+      "lat": 30.03,
+      "lon": 32.9,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Giddi Pass (Israeli-held)",
+      "lat": 30.22,
+      "lon": 32.85,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bab-el-Mandeb (naval blockade)",
+      "lat": 12.58,
+      "lon": 43.33,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Egypt",
+    "areaKm2": {
+      "low": 940000,
+      "mid": 1001450,
+      "high": 1001450,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "Official area 1,001,450 km2 (hb:1960 polygon ~1,000,600 km2), which includes the Sinai (~61,000 km2) occupied by Israel since 1967; low = area actually held on 6 Oct 1973."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 34500000,
+      "mid": 35366000,
+      "high": 37100000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1973 = 35,366k (mid). Low: censuses 1966 (30.1M) and 1976 (36.6M) interpolated = ~34.5M. High: OWID/UN 37,102,044 and World Bank 1973 (37.1M)."
+    },
+    "urbanization": {
+      "low": 0.42,
+      "mid": 0.43,
+      "high": 0.44,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share 1973 = 42.8%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 300000,
+      "mid": 390000,
+      "high": 450000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "Standing conscript and regular forces. COW NMC v7 milper 1973 = 390,000 (mid). Low ~300,000 reflects estimates of the pre-mobilisation regular force (IISS Military Balance 1973-74 order of magnitude, not fetched). High allows the extended service of conscripts held since 1967."
+    },
+    "trainedReserves": {
+      "low": 260000,
+      "mid": 350000,
+      "high": 500000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+      "note": "Yom Kippur War infobox: Egypt 650,000 (Rabinovich 2004 p. 54) to 850,000 (Herzog 1975 p. 239) troops after mobilisation; minus ~390,000 standing = 260,000-460,000 reservists. Reservists were called up in batches from 27 Sep (Shazly p. 207). High ~500,000 trained reserve pool."
+    },
+    "supportPersonnel": {
+      "low": 190000,
+      "mid": 220000,
+      "high": 250000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Air force (~25,000), Air Defence Forces (~75,000; separate branch since 1968, Egyptian Air Defense Forces article), navy (~15,000), armour, artillery, engineers (bridging) and logistics: active 390,000 minus P roles ~165,000. Grade C."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.08,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "650,000-850,000 under arms (Yom Kippur War infobox) / ~35.4M = 1.8-2.4% achieved in October 1973; total-war ceiling assumed 4-8%."
+    },
+    "mobilizable": {
+      "low": 1380000.0,
+      "mid": 2122000.0,
+      "high": 2968000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 120000,
+          "mid": 150000,
+          "high": 180000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Five assault infantry divisions crossed the canal (32,000 infantry in the first waves, Shazly p. 228), plus infantry of 3 mechanised divisions and independent brigades on both banks and in the rear. Reconstruction, grade C."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: massed RPG-7, AT-3 Sagger and SA-7 at section level, devastating to Israeli armour on 6-8 Oct."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: crossing rehearsed for years and executed to plan; little flexibility once beyond the script (Pollack, Arabs at War ch. 1)."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 10000,
+          "mid": 15000,
+          "high": 20000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Sa'iqa commando groups and paratroop brigades; heliborne commando raids into Sinai on 6-14 Oct (Yom Kippur War article)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: light weapons, helicopter-delivered."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Israeli commanders commended the commandos, though many helicopters were shot down."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 1120,
+          "mid": 1120,
+          "high": 1600,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 1,120 artillery units of 100 mm and up; ~2,000 guns and mortars fired the 6 Oct opening barrage per Egyptian accounts (high side). Plus FROG-7 rocket launchers counted under missiles."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M-46 130 mm and D-30 122 mm guns outranging Israeli tubes."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: meticulously planned 53-minute opening fire plan."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 1700,
+          "mid": 1850,
+          "high": 2200,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 1,700 tanks, 1,020 crossed (Shazly 2003 p. 244). High ~2,200 = Dupuy, Elusive Victory (Ramadan War order of battle, total holdings incl. reserves; book not fetched). T-54/55, T-62, IS-3, PT-76."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: T-62 115 mm and T-55, era-typical; poorer fire control than M60."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: 14 Oct offensive lost ~250 tanks in one day; poor manoeuvre outside the SAM umbrella."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 2000,
+          "mid": 2400,
+          "high": 2500,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 2,400 armored carriers (BTR-50, BTR-60, BMP-1, OT-64; Shazly)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: some BMP-1 IFVs, otherwise wheeled/tracked APCs."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 180,
+          "mid": 210,
+          "high": 240,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Split of the 400 combat aircraft (Yom Kippur War infobox): MiG-21 ~210. Grade C for the split."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: MiG-21MF short-ranged, inferior to F-4E and Mirage in combat."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: heavy air-to-air losses; air force kept under the SAM umbrella."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 160,
+          "mid": 190,
+          "high": 220,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Rest of the 400 (Yom Kippur War infobox): Su-7BMK, MiG-17F, Tu-16 (with AS-5 Kelt missiles), Il-28; ~200 aircraft flew the opening strike on 6 Oct (Gawrych p. 28)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5."
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: opening strike of 6 Oct well executed (Refidim and Bir Tamada closed)."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 120,
+          "mid": 140,
+          "high": 160,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 140 helicopters (Shazly 2003 p. 272); Mi-8 transports used for commando landings."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: up to 20 helicopters shot down on 6 Oct (Haber and Schiff)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 5,
+          "mid": 7,
+          "high": 9,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: about 5 destroyers (Skoryy class, El Nasser) and 2-3 escort frigates within the 104 naval vessels of the Yom Kippur War infobox."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: 1950s Soviet destroyers."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 70,
+          "high": 90,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Yom Kippur War infobox: 104 naval vessels in all; minus ~7 major combatants, ~12 submarines and auxiliaries leaves ~70 Osa/Komar missile boats, torpedo boats, patrol craft and minesweepers. Battle of Baltim: 4 Osa engaged, 3 sunk."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Styx outranged Gabriel but was defeated by Israeli ECM."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: lost every missile-boat engagement."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 10,
+          "mid": 12,
+          "high": 12,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: 12 Romeo/Whiskey boats as in 1967 (CIA/DIA 26 May 1967), several deployed to enforce the Bab-el-Mandeb blockade."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5."
+        }
+      },
+      "missiles": {
+        "count": {
+          "low": 9,
+          "mid": 18,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: one Scud-B brigade (~9 launchers; 3 Scuds fired on 22 Oct, Yom Kippur War article) plus FROG-7 battalions (~12-24 launchers)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: inaccurate unguided/inertial missiles."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: possibly Soviet-crewed."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 150,
+          "mid": 150,
+          "high": 180,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+          "note": "Yom Kippur War infobox: 150 SAM batteries, 62 in the front line (Haber and Schiff pp. 30-31). SA-2, SA-3 and SA-6; Soviet SAM battalions of ~4-6 launchers counted as batteries. High adds ZSU-23-4 and heavy AAA batteries."
+        },
+        "quality": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: dense SA-6/SA-3/SA-2/ZSU-23-4 umbrella; ~50 IAF aircraft lost 6-8 Oct (Egyptian Air Defense Forces article)."
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: well drilled ambush tactics; batteries withdrawn after the Israeli canal crossing."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Shazly and Gamasy planned Badr and achieved strategic surprise; 14 Oct offensive and response to Deversoir crossing were poor (Pollack ch. 1)."
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: national conscript army with better officers (graduates drafted after 1967); Third Army held when encircled."
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: war to regain occupied national territory; successful crossing raised morale."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.5,
+      "mid": 8.7,
+      "high": 8.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: AT-3 Sagger ATGMs, SA-6/SA-7 SAMs, Scud and FROG-7, Kelt air-launched missiles."
+    },
+    "armor": {
+      "low": 8.4,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = RHA, 9 = composite. Evidence: T-62 and T-55 steel armour; BMP-1."
+    },
+    "ships": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 radar/submarines, 9 nuclear subs/Aegis. Evidence: Osa/Komar Styx boats, Romeo submarines."
+    },
+    "fortification": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = concrete lines. Evidence: hardened aircraft shelters built after 1967; west-bank sand ramparts higher than the Bar Lev rampart; fortified SAM sites."
+    },
+    "logistics": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = motor transport. Evidence: motorised supply; Soviet airlift and sealift from 9 Oct; canal bridging (PMP bridges, water cannon)."
+    },
+    "communications": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = company radio. Evidence: Soviet radio nets; Banha cable cut forced radio use (Yom Kippur War article)."
+    },
+    "isr": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radar. Evidence: early-warning radars and Soviet satellite/aircraft reconnaissance support; no national satellites."
+    },
+    "air": {
+      "low": 8.5,
+      "mid": 8.6,
+      "high": 8.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 9 = 1985. Evidence: MiG-21MF, Su-7, Tu-16 with Kelt."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer-network capability before ~1985 (cyber anchor 9 = 1990 networks)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1850,
+      "mid": 2063,
+      "high": 2270,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Egypt 1973 = 2,063 (2011 int$). Range +/-10%."
+    },
+    "gdp": {
+      "low": 63825000000,
+      "mid": 72960000000,
+      "high": 84217000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.13,
+      "mid": 0.135,
+      "high": 0.173,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/military-spending-as-a-share-of-gdp-sipri.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "SIPRI via OWID: 1972 = 13.6%, 1973 = 13.5% (mid), 1974 = 17.3% (high); wartime footing since 1967 (1971 = 17.2%)."
+    },
+    "industrialShare": {
+      "low": 0.19,
+      "mid": 0.205,
+      "high": 0.23,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/country/ISR;EGY/indicator/NV.IND.TOTL.ZS?date=1967:1973&format=json&per_page=100",
+      "note": "World Bank NV.IND.TOTL.ZS: industry (incl. construction) 20.5% of GDP in 1973."
+    },
+    "foodSurplus": {
+      "low": 0.43,
+      "mid": 0.466,
+      "high": 0.5,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/EGY/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Egypt 1973 = 53.4% (1989 Apr vintage 50.1%, low end). Egypt was a wheat importer; that does not lower this value. Share 53.4% (range 50.0-57.0%) -> 0.466 (0.43-0.5)."
+    },
+    "annualCohort": {
+      "low": 700000,
+      "mid": 777900,
+      "high": 820000,
+      "grade": "B",
+      "source": "derived:cohort-from-agegroup",
+      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (18,585,445 x 10.64% + 18,516,598 x 10.33%) / 5 = 777,900 persons (both sexes; men only conscripted)."
+    },
+    "production": {
+      "artillery": {
+        "low": 50,
+        "mid": 100,
+        "high": 200,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: ammunition, mortars and small arms domestically; guns from the USSR."
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 2,
+        "high": 5,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: small patrol craft only."
+      },
+      "missiles": {
+        "low": 0,
+        "mid": 2,
+        "high": 10,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no domestic missile production in 1973 (earlier al-Zafir programme abandoned)."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 13000,
+      "high": 16000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: paved roads of the Nile valley and delta plus military roads to the canal front."
+    },
+    "railKm": {
+      "low": 4300,
+      "mid": 4600,
+      "high": 5000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Egyptian National Railways ~4,500-4,800 km (Sinai line lost in 1967)."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Alexandria (main), Port Said and Suez on the closed canal, Safaga."
+    },
+    "merchantTonnage": {
+      "low": 300000,
+      "mid": 450000,
+      "high": 650000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: small national merchant fleet (~250-400k GRT) x 1.5."
+    },
+    "supplyRangeKm": {
+      "low": 10,
+      "mid": 15,
+      "high": 50,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Egyptian doctrine kept the assault within the 10-15 km SAM umbrella east of the canal; the 14 Oct attack beyond it failed."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 2500000,
+      "high": 3500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: buffaloes, cattle, donkeys and camels on farms; negligible military use."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "Egypt never possessed nuclear weapons."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-soviet",
+  "geography": {
+    "climate": "BWh",
+    "chokepoints": [
+      "Suez Canal",
+      "Mitla Pass",
+      "Giddi Pass",
+      "Bab-el-Mandeb",
+      "Straits of Tiran",
+      "Great Bitter Lake"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: familiar terrain, fortified canal line and cities, full population support on the west bank; Sinai is occupied territory."
+    }
+  },
+  "notes": "Snapshot date 6 October 1973 (Operation Badr). Name Arab Republic of Egypt since September 1971 (United Arab Republic before). Territory: hb:1960:Egypt includes the Sinai, held by Israel since 1967; Egypt controlled only the west bank of the canal on the snapshot date. Personnel: activePersonnel = standing conscripts and regulars (~390,000, COW); trainedReserves = reservists mobilised from 27 Sep (650,000-850,000 total under arms). Key sources: Yom Kippur War infobox (Shazly, Rabinovich, Herzog, Haber and Schiff: 1,700 tanks, 2,400 APCs, 1,120 guns, 400 combat aircraft, 140 helicopters, 104 naval vessels, 150 SAM batteries), Egyptian Air Defense Forces and Battle of Baltim articles, COW NMC v7, SIPRI via OWID, World Bank, Maddison 2023. IISS Military Balance 1973-74 and Dupuy, Elusive Victory not fetched (paywalled/print). Soviet airlift and sealift after 9 Oct not included."
+}

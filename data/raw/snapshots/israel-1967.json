@@ -1,0 +1,736 @@
+{
+  "id": "israel-1967",
+  "nationId": "israel",
+  "includes": [],
+  "name": "State of Israel",
+  "year": 1967,
+  "era": "coldwar",
+  "region": "mena",
+  "phase": "key",
+  "tags": [
+    "Six-Day War",
+    "IDF",
+    "reserve army",
+    "preemptive strike"
+  ],
+  "capital": {
+    "name": "Jerusalem (West)",
+    "lat": 31.778,
+    "lon": 35.205,
+    "kind": "capital",
+    "population": 197000
+  },
+  "places": [
+    {
+      "name": "Tel Aviv-Yafo",
+      "lat": 32.085,
+      "lon": 34.781,
+      "kind": "city",
+      "population": 390000
+    },
+    {
+      "name": "Haifa",
+      "lat": 32.794,
+      "lon": 34.99,
+      "kind": "port",
+      "population": 210000
+    },
+    {
+      "name": "Ashdod",
+      "lat": 31.804,
+      "lon": 34.655,
+      "kind": "port"
+    },
+    {
+      "name": "Eilat",
+      "lat": 29.557,
+      "lon": 34.952,
+      "kind": "port"
+    },
+    {
+      "name": "Beersheba",
+      "lat": 31.252,
+      "lon": 34.791,
+      "kind": "city",
+      "population": 70000
+    },
+    {
+      "name": "Dimona (Negev Nuclear Research Center)",
+      "lat": 31.001,
+      "lon": 35.145,
+      "kind": "fortress"
+    },
+    {
+      "name": "Hatzor Air Base",
+      "lat": 31.762,
+      "lon": 34.727,
+      "kind": "fortress"
+    },
+    {
+      "name": "Latrun",
+      "lat": 31.838,
+      "lon": 34.979,
+      "kind": "fortress"
+    },
+    {
+      "name": "Straits of Tiran",
+      "lat": 27.97,
+      "lon": 34.46,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Nitzana / Abu Ageila axis",
+      "lat": 30.88,
+      "lon": 34.43,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Israel",
+    "areaKm2": {
+      "low": 20700,
+      "mid": 20770,
+      "high": 31141,
+      "grade": "B",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "Pre-June-1967 armistice lines: official 20,770 km2 (incl. inland water). The world_1960 Israel polygon computes to ~31,100 km2 on the sphere (coarse outline), used as high."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 2540000,
+      "mid": 2715000,
+      "high": 2780000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop 1967 = 2,715k (mid). OWID/HYDE 2,538,658 (low); World Bank 1967 male+female = 2,745,000; high allows for the CBS mid-year figure incl. East Jerusalem after June. Pre-war lines only."
+    },
+    "urbanization": {
+      "low": 0.58,
+      "mid": 0.75,
+      "high": 0.82,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE (OWID) urban share 1967 = 58.2% (low). Israel CBS national definition (towns of 2,000+) was ~80% in the 1960s, used for high; mid between. Grade C."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 66000,
+      "mid": 71000,
+      "high": 75000,
+      "grade": "B",
+      "source": "https://archive.org/details/cia-readingroom-document-cia-rdp79t00826a002000010049-0",
+      "note": "Standing force = conscripts + career regulars. CIA/DIA memo 26 May 1967: army average peacetime strength ~55,000; plus air force (~8,000) and navy (~3,000-4,000). COW NMC v7 milper 1967 = 75,000 (high). Mobilised reservists are counted in trainedReserves, not here."
+    },
+    "trainedReserves": {
+      "low": 190000,
+      "mid": 200000,
+      "high": 225000,
+      "grade": "B",
+      "source": "https://archive.org/details/cia-readingroom-document-cia-rdp79t00826a002000010049-0",
+      "note": "Reservists mobilised by 5 June 1967. CIA/DIA 26 May: 158,000 already mobilised, maximum 280,000 (army) -> up to ~225,000 reservists. Stone 2004 p. 217 via https://en.wikipedia.org/wiki/Six-Day_War: total strength incl. reservists 264,000 -> ~193,000 reservists. Reserve brigades formed most of the 1967 ground force."
+    },
+    "supportPersonnel": {
+      "low": 38000,
+      "mid": 42000,
+      "high": 46000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Air force, navy, armour and artillery crews, signals, logistics and staff within the ~71,000 standing force. Reconstruction from the CIA army figure plus service strengths; grade C."
+    },
+    "mobilizationRatio": {
+      "low": 0.1,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Achieved: 264,000 under arms (Stone 2004 p. 217 via Six-Day War article) / ~2.7M population = 9.8%; 1973 reached ~12.5%. A total-war ceiling of ~15% is the high."
+    },
+    "mobilizable": {
+      "low": 254000.0,
+      "mid": 326000.0,
+      "high": 417000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 18000,
+          "mid": 22000,
+          "high": 26000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Standing (conscript/regular) infantry only: Golani, Givati remnants and Nahal line units, ~5-6 battalions-equivalent of 4,000-man brigades (CIA: brigades of ~4,000). Reserve infantry brigades (the bulk) arrive via trainedReserves. Reconstruction, grade C."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: FN FAL and Uzi, but many units on mixed WWII-era kit and M3 half-tracks."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75 (professional standing army). Evidence: CIA 26 May 1967 credits high quality of training and operational proficiency."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 4000,
+          "mid": 5000,
+          "high": 7000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: paratroop and reconnaissance (Sayeret) conscript units; 55th Paratroop Brigade (reserve) not counted here. Grade C reconstruction."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: light weapons, limited AT means."
+        },
+        "training": {
+          "low": 0.8,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: elite volunteer paratroop and Sayeret units."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 250,
+          "mid": 350,
+          "high": 474,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "CIA/DIA table: 274 SP antitank/assault guns (M50 155 mm SP, AMX-105, tank destroyers). Towed field artillery estimated ~100-200 more; reconstruction, grade C."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: French-built SP guns on Sherman chassis, short-ranged."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: artillery a secondary arm; air force substituted for fire support."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 800,
+          "mid": 1000,
+          "high": 1123,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-cia-rdp79t00826a002000010049-0",
+          "note": "CIA/DIA table 26 May 1967: Israel 1,123 tanks; text \"about 1,000 tanks\". Tucker 2004 p. 176 via Six-Day War article: 800. Centurion, M48, upgunned Sherman, AMX-13."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical). Evidence: Centurions with 105 mm L7 among the best, but Shermans and AMX-13 obsolescent."
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Tal's gunnery reforms; long-range tank gunnery superiority shown in the 1964-65 water war."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 700,
+          "mid": 1000,
+          "high": 1500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: M3/M5 half-tracks were the IDF APC fleet; no published count fetched. Range brackets the ~1,100 Egyptian APCs in Sinai (Pollack p. 59) which Israel roughly matched."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: WWII half-tracks, open-topped."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: mechanised brigades exercised with armour."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 85,
+          "mid": 96,
+          "high": 110,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Split of the CIA/DIA total of 256 operationally assigned jet fighters: ~72 Mirage IIIC plus ~24 Super Mystere B2 in the interceptor role (Oren 2002 / Pollack composition). Grade C for the split."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Mirage IIIC Mach 2 with radar, the IAF best type, comparable to the MiG-21."
+        },
+        "training": {
+          "low": 0.9,
+          "mid": 0.95,
+          "high": 1.0,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 1.0. Evidence: elite pilots, 7-8 minute turnarounds in Operation Focus; CIA notes high readiness."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 140,
+          "mid": 160,
+          "high": 200,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Rest of the 256 jet fighters: Mystere IVA, Ouragan, Vautour II bombers (~160); high includes ~40 armed Fouga Magister trainers used for ground attack. Wikipedia Six-Day War infobox: 250-300 combat aircraft (Oren p. 171, Tucker pp. 540-541)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: subsonic French types of the 1950s."
+        },
+        "training": {
+          "low": 0.85,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Operation Focus destroyed ~300 Egyptian aircraft on the ground in hours."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 20,
+          "mid": 30,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: S-58, Super Frelon, Alouette II/III in IAF service; no fetched count."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: transport helicopters only, no gunships."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: heliborne paratroop raid at Um Katef (Abu Ageila)."
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 3,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-cia-rdp79t00826a002000010049-0",
+          "note": "CIA/DIA 26 May 1967: Israel has two destroyers (INS Eilat, INS Yafo; ex-RN Z-class). High allows the old frigate INS Mivtach-era escorts."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: WWII-built destroyers; Eilat sunk by Styx missiles in Oct 1967."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: CIA rates Egyptian ships ~80% as effective as Israeli ones."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 8,
+          "mid": 12,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Motor torpedo boats and patrol craft; the Sa'ar missile boats were still being built in Cherbourg (Israeli Navy article: missile-boat era begins 1965, delivered 1968-69)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: gun and torpedo craft, no missiles yet."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: small professional navy."
+        }
+      },
+      "submarines": {
+        "count": {
+          "low": 2,
+          "mid": 2,
+          "high": 3,
+          "grade": "B",
+          "source": "https://archive.org/details/cia-readingroom-document-cia-rdp79t00826a002000010049-0",
+          "note": "CIA/DIA 26 May 1967: two submarines (ex-RN S-class Tanin and Rahav)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: WWII-era boats."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: volunteer submarine flotilla since 1959."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 12,
+          "mid": 20,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: One MIM-23 Hawk battalion (CIA notes \"an effective Hawk missile system\") of ~4-6 batteries plus 40 mm Bofors AAA batteries around the five airbases."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Hawk was a modern SAM in 1967."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional air force air-defence units."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75-1.0. Evidence: single command over interior lines (CIA 26 May 1967); Rabin/Gavish/Tal/Sharon combined-arms plan won in six days."
+    },
+    "cohesion": {
+      "low": 0.75,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: reserve brigades with stable territorial membership; strong unit identity."
+    },
+    "morale": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: existential threat perceived during the May 1967 waiting period; CIA cites the \"important, but intangible, morale factor\"."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.2,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 8 (1943) and 9 (1985). Evidence: jet aircraft, 105 mm L7 tank guns, Hawk SAM; no ATGMs or guided air weapons in use."
+    },
+    "armor": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = RHA (1943). Evidence: Centurion and M48 cast/rolled steel, no composite armour."
+    },
+    "ships": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radar, submarines. Evidence: WWII destroyers and S-class submarines; missile boats not yet delivered."
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.0,
+      "high": 8.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8. Evidence: fortified border kibbutzim and bunkers; hardened aircraft revetments (CIA)."
+    },
+    "logistics": {
+      "low": 8.0,
+      "mid": 8.2,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = motor transport. Evidence: fully motorised supply, rapid reserve mobilisation in 48-72 h (CIA)."
+    },
+    "communications": {
+      "low": 8.1,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radio at company level. Evidence: VHF radio nets to tank level, central air control."
+    },
+    "isr": {
+      "low": 8.1,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 = radar, 9 = satellites. Evidence: excellent HUMINT/SIGINT and photo reconnaissance; no satellites."
+    },
+    "air": {
+      "low": 8.3,
+      "mid": 8.5,
+      "high": 8.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 = 1943, 9 = 1985. Evidence: Mach 2 Mirage IIIC with radar and early AAMs; most strike types subsonic."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No military computer-network capability before ~1985 (cyber anchor 9 = 1990 networks)."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 9000,
+      "mid": 9918,
+      "high": 10900,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (OWID CSV): Israel 1967 = 9,918 (2011 int$). Range +/-10%."
+    },
+    "gdp": {
+      "low": 22860000000,
+      "mid": 26927000000,
+      "high": 30302000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.094,
+      "mid": 0.154,
+      "high": 0.174,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/military-spending-as-a-share-of-gdp-sipri.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "SIPRI via OWID: 1966 = 9.4% (last peacetime, low), 1967 = 15.4% (mid, war year), 1968 = 17.4% (high)."
+    },
+    "industrialShare": {
+      "low": 0.28,
+      "mid": 0.32,
+      "high": 0.36,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: industry (manufacturing, construction, utilities) about a third of Israeli output in the 1960s; World Bank NV.IND.TOTL.ZS has no Israel value for 1967."
+    },
+    "foodSurplus": {
+      "low": 0.87,
+      "mid": 0.891,
+      "high": 0.91,
+      "grade": "B",
+      "source": "https://api.worldbank.org/v2/sources/57/country/ISR/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Israel 1967 = 10.9%. Share 10.9% (range 9.0-13.0%) -> 0.891 (0.87-0.91)."
+    },
+    "annualCohort": {
+      "low": 52000,
+      "mid": 58000,
+      "high": 62000,
+      "grade": "B",
+      "source": "derived:cohort-from-agegroup",
+      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (1,373,628 x 10.80% + 1,371,372 x 10.47%) / 5 = 58,400 persons (men and women; both were conscripted)."
+    },
+    "production": {
+      "artillery": {
+        "low": 20,
+        "mid": 40,
+        "high": 80,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: Soltam built mortars and some SP conversions on Sherman chassis."
+      },
+      "armor": {
+        "low": 0,
+        "mid": 20,
+        "high": 60,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: no domestic tank production in 1967; only rebuilds and upgunning of Shermans and Centurions."
+      },
+      "aircraft_strike": {
+        "low": 0,
+        "mid": 10,
+        "high": 30,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: IAI licence-built Fouga Magister trainers; no combat-jet production."
+      },
+      "ships_minor": {
+        "low": 0,
+        "mid": 2,
+        "high": 4,
+        "grade": "D",
+        "source": "derived:educated-guess",
+        "note": "Educated guess: patrol craft only; missile boats built in France."
+      }
+    }
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3500,
+      "mid": 4200,
+      "high": 5000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: paved roads within the pre-1967 lines (CBS reported roughly 4,000 km in the 1960s)."
+    },
+    "railKm": {
+      "low": 600,
+      "mid": 750,
+      "high": 850,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Israel Railways network ~750 km (Haifa, Tel Aviv, Jerusalem, Beersheba lines)."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Haifa (main naval base), Ashdod (opened 1965), Eilat (Red Sea, closed by the Tiran blockade in May 1967)."
+    },
+    "merchantTonnage": {
+      "low": 900000,
+      "mid": 1300000,
+      "high": 1800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: ZIM-led merchant fleet of the mid-1960s, roughly 0.8-1.1M GRT x 1.5 dwt/grt."
+    },
+    "supplyRangeKm": {
+      "low": 150,
+      "mid": 250,
+      "high": 350,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the IDF reached the Suez Canal ~200-250 km from its Negev bases within four days; CIA 26 May notes regrouping and resupply would be needed before a drive to the canal."
+    },
+    "draftAnimals": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: negligible military role; farm horses and mules only."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 2,
+      "high": 2,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS estimate via OWID: Israel 1967 = 2 (improvised devices reportedly assembled during the crisis; never declared). Low 0: not acknowledged, not deliverable by a tested system."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Straits of Tiran",
+      "Jerusalem corridor (Latrun)",
+      "Abu Ageila crossroads",
+      "Gaza-El Arish coastal road",
+      "Jordan River crossings"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.15,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1-1.2 rows: familiar terrain, fortified border settlements and total population support, but no strategic depth (15 km waist at Netanya)."
+    }
+  },
+  "notes": "Snapshot date 5 June 1967 (Operation Focus). Territory and population: pre-war armistice lines, no occupied territories. Personnel convention: activePersonnel = conscripts + career regulars (~71,000); trainedReserves = reservists, already mobilised on 5 June (~190,000-225,000). The P roles hold only standing infantry; reserve infantry and armoured brigades (most of the IDF in battle) enter through trainedReserves. Key sources: CIA/DIA intelligence memorandum \"Military Capabilities of Israel and the Arab States\", 26 May 1967 (archive.org CIA reading room copy; table: Israel 55,000 prior to mobilisation, 280,000 at M+15, 1,123 tanks, 274 SP AT/assault guns, 256 jet fighters, 2 destroyers, 2 submarines); Six-Day War article infobox (Stone, Oren, Tucker, Pollack citations). IISS Military Balance 1967-68 could not be fetched (paywalled; archive.org copies access-restricted); its Israel entry was not used. Weakest values: half-track count, helicopter and air-defence battery counts (educated guesses)."
+}

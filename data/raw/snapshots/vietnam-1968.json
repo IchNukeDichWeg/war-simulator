@@ -1,0 +1,669 @@
+{
+  "id": "vietnam-1968",
+  "nationId": "vietnam",
+  "includes": [],
+  "name": "Vietnam (DRV)",
+  "year": 1968,
+  "era": "coldwar",
+  "region": "southeast_asia",
+  "phase": "key",
+  "tags": [
+    "communist",
+    "Democratic Republic of Vietnam",
+    "PAVN",
+    "Viet Cong",
+    "insurgency",
+    "Tet Offensive",
+    "Vietnam War"
+  ],
+  "capital": {
+    "name": "Hanoi",
+    "lat": 21.028,
+    "lon": 105.854,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Haiphong",
+      "lat": 20.865,
+      "lon": 106.683,
+      "kind": "port"
+    },
+    {
+      "name": "Nam Dinh",
+      "lat": 20.42,
+      "lon": 106.168,
+      "kind": "city"
+    },
+    {
+      "name": "Hon Gai",
+      "lat": 20.951,
+      "lon": 107.08,
+      "kind": "port"
+    },
+    {
+      "name": "Thanh Hoa (Ham Rong bridge)",
+      "lat": 19.858,
+      "lon": 105.805,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Vinh",
+      "lat": 18.679,
+      "lon": 105.681,
+      "kind": "city"
+    },
+    {
+      "name": "Lang Son (rail link to China)",
+      "lat": 21.853,
+      "lon": 106.761,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Mu Gia Pass (Ho Chi Minh Trail entry)",
+      "lat": 17.68,
+      "lon": 105.79,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Tchepone (Ho Chi Minh Trail hub, Laos)",
+      "lat": 16.69,
+      "lon": 106.23,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "DMZ, Ben Hai River (17th parallel)",
+      "lat": 17.0,
+      "lon": 107.0,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Dien Bien Phu",
+      "lat": 21.386,
+      "lon": 103.017,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1960:Vietnam",
+    "areaKm2": {
+      "low": 155000,
+      "mid": 158000,
+      "high": 333199,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1960.geojson",
+      "note": "world_1960 has ONE Vietnam polygon covering north and south (~333,000 km2 computed on the sphere, used as high only); the DRV north of the 17th parallel was ~158,000 km2 (standard figure), used as mid. The border ref therefore overstates DRV territory."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 19500000,
+      "mid": 20280000,
+      "high": 21300000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop DRV 1968 = 20,280k. OWID (HYDE/UN) all-Vietnam 1968 = 39.73M, of which the North was roughly half. Excludes the population of VC-controlled areas of the South."
+    },
+    "urbanization": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.17,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW upop/tpop DRV 1968 = 1,620/20,280 = 0.08 (cities over 100,000 only) as low; OWID urban share all Vietnam 1968 = 17.4% (high, the South was more urban). Hanoi and Haiphong were partly evacuated under bombing 1965-68."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 640000,
+      "mid": 740000,
+      "high": 860000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "note": "Main forces only: PAVN regulars in the North, Laos and the South plus VC (PLAF) main-force units. Hanoi official history (Military History Institute of Vietnam, Victory in Vietnam p. 182, quoted in the Vietnam War article): \"By the end of 1966 the total strength of our armed forces was 690,000\"; growth through 1967 for Tet. COW milper DRV 1968 = 447k counts only forces in the North. Vietnam War infobox ~860,000 (1967) is the high. A CIA/DIA March 1968 figure of ~475,000 regulars in the North could not be fetched (CIA reading room blocks automated access). Regional/local forces and guerrillas are in trainedReserves."
+    },
+    "trainedReserves": {
+      "low": 130000,
+      "mid": 450000,
+      "high": 1000000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Tet_Offensive",
+      "note": "Regional and local forces and guerrillas (PAVN/VC convention: active = main force, reserves = regional and local forces). MACV Jan 1968: 72,605 guerrillas plus 84,000 infrastructure; MACV revised total 287,465 minus 155,945 regulars = 131,520 non-regular (low); CIA argued VC irregulars, self-defence and cadre could reach 430,000 (Tet Offensive article, Dougan and Weiss p. 22). Plus DRV militia and self-defence forces in the North (several hundred thousand; not fetched, educated part of the high)."
+    },
+    "supportPersonnel": {
+      "low": 300000,
+      "mid": 380000,
+      "high": 450000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_trail",
+      "note": "Air defence and AAA troops (25+ SAM battalions, 5,000-7,000 guns), Group 559 on the Ho Chi Minh Trail (up to 43,000 operating the system, Ho Chi Minh trail article), MACV Jan 1968 37,725 service and support troops in the South, navy, air force, artillery, engineers, rear services and staffs. Remainder of activePersonnel after the P roles."
+    },
+    "mobilizationRatio": {
+      "low": 0.07,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "note": "Hanoi fielded 690,000 regulars (end 1966) from ~19M plus militia, and kept expanding to ~1M by the 1970s: 0.04-0.05 under arms plus losses replaced; 0.10 total mobilisable is consistent with ~200,000 males reaching draft age per year sustained over a decade."
+    },
+    "mobilizable": {
+      "low": 1365000.0,
+      "mid": 2028000.0,
+      "high": 3195000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 220000,
+          "mid": 260000,
+          "high": 350000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Tet_Offensive",
+          "note": "PAVN regular infantry. South: MACV Jan 1968 55,744 in PAVN units plus 10,000-12,000 North Vietnamese in VC units; MACV later revised regulars in the South to 155,945 (PAVN and VC combined). Laos and the DMZ front ~30,000-40,000 (Khe Sanh siege force alone 20,000-40,000). North: home-defence and training divisions ~120,000. Reconstruction: ~90k South + ~35k Laos/DMZ + ~120k North + fillers. Excludes AAA and support troops."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: AK-47, RPD, RPG-2/RPG-7, 82 mm mortars; no armour or air cover in the South; light infantry kit era-typical, heavy support weak."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: conscripts with months of training in the North, then a 2-3 month march down the trail; veteran cadres, but heavy 1967-68 losses filled with recruits."
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 60000,
+          "mid": 80000,
+          "high": 100000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Tet_Offensive",
+          "note": "VC (PLAF) main-force units: MACV revised regulars 155,945 in the South minus ~75,000-80,000 PAVN = ~75,000-80,000 VC main force incl. sapper battalions. South Vietnamese JGS estimate 130,000 regulars (PAVN+VC). Regional forces and guerrillas excluded (trainedReserves)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: re-equipped with AK-47 and RPGs from 1965-67; still mixed captured and Chinese weapons."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: full-time chu luc fighters promoted from regional forces (Pike via NLF/PAVN organisation article); strong small-unit and sapper skills, weak in conventional combined arms."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 600,
+          "mid": 1000,
+          "high": 1800,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Field guns, howitzers and rocket launchers: 130 mm M-46 and 152 mm across the DMZ, 122 mm and 85 mm guns, 105 mm captured pieces, 122 mm DKB and 140 mm rockets in the South; mortars excluded. No fetched count."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: M-46 130 mm out-ranged most US tube artillery; rockets inaccurate but portable."
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: effective siege fire at Con Thien and Khe Sanh; limited fire-direction communications."
+        }
+      },
+      "armor": {
+        "count": {
+          "low": 150,
+          "mid": 300,
+          "high": 500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: PAVN tanks (T-34/85, T-54/Type 59, PT-76, Type 62/63 light tanks) in the 202nd Armoured Regiment and training units in early 1968; first PAVN tank attack was Lang Vei, 7 Feb 1968, with PT-76s. No fetched count."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: PT-76 amphibious light tanks and WWII-generation T-34/85 plus some T-54; era best is M60/T-62."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: armour arm small and inexperienced; poorly coordinated tank-infantry action at Lang Vei and later in 1971-72."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 50,
+          "mid": 100,
+          "high": 200,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: BTR-40/BTR-152/K-63 class carriers in training and armoured units; tiny force, none committed to Tet."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: 1950s Soviet and Chinese wheeled carriers."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little mechanised experience."
+        }
+      },
+      "aircraft_fighter": {
+        "count": {
+          "low": 100,
+          "mid": 140,
+          "high": 180,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Vietnam_Air_Defence_-_Air_Force",
+          "note": "VPAF had 36 MiG-17s in 1965, rising to 180 MiGs and 72 qualified pilots by 1968 (VPAF article, via acepilots/Russian sources); many airframes were held in Chinese bases and lost 85 MiGs April 1965 to November 1968, so ~100-150 on hand in January 1968. MiG-17, MiG-21F-13/PF; J-6 regiment only from 1969."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: MiG-21 competitive with the F-4 in GCI hit-and-run attacks; MiG-17 subsonic but agile."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: only 72 qualified pilots for 180 MiGs; strong GCI ground control, short pilot training in USSR/China."
+        }
+      },
+      "aircraft_strike": {
+        "count": {
+          "low": 4,
+          "mid": 6,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: A handful of Il-28 light bombers delivered 1965, never used offensively; An-2 biplanes raided Lima Site 85 on 12 Jan 1968 (VPAF article) but are not combat aircraft."
+        },
+        "quality": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.3,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: Il-28 obsolete and could not survive US air superiority."
+        },
+        "training": {
+          "low": 0.2,
+          "mid": 0.25,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25. Evidence: no operational bomber missions flown."
+        }
+      },
+      "helicopters": {
+        "count": {
+          "low": 8,
+          "mid": 15,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Mi-4 transport helicopters of the 919th transport regiment; liaison and supply only."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: 1950s piston Mi-4, unarmed."
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: small transport arm, no air-assault doctrine."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 25,
+          "mid": 35,
+          "high": 40,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Vietnam_People%27s_Navy",
+          "note": "Vietnam People's Navy article: before 1975 the navy operated fewer than forty patrol boats (P-4 torpedo boats, Swatow gunboats, Shanghai-class) plus a coastal junk force for sea infiltration (759th Transport Unit / Group 125). Many lost to US strikes after August 1964."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: P-4 and Swatow craft obsolete against US destroyers and carrier air."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: aggressive but ineffective in the Tonkin Gulf; skilled covert sea-transport crews."
+        }
+      },
+      "air_defense": {
+        "count": {
+          "low": 600,
+          "mid": 830,
+          "high": 1200,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Operation_Rolling_Thunder",
+          "note": "Batteries. Rolling Thunder article (Thompson 2002 pp. 40-41): by 1967 an estimated 150 SAM launchers in 25 battalions (~25-30 SA-2 batteries); AAA grew from ~1,500 weapons (1965) to over 5,000 guns, US high estimate 7,000 in early 1967, incl. radar-directed 85 and 100 mm. At ~6-8 guns per AAA battery: ~650-1,150 gun batteries plus ~25-30 SAM battalions. 200 radar facilities coordinated SAMs, AAA and MiGs."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: SA-2 Guideline with repeatedly upgraded ECM-resistant radars; densest AD system of its time."
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: three years of continuous combat; Soviet-trained SAM crews, dummy sites and passive-guidance tactics against Shrike."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5-0.75. Evidence: experienced command from Dien Bien Phu; strategically effective (Tet broke US political will) but the Tet plan was too complex, attacked everywhere at once and was defeated piecemeal (Willbanks via Tet Offensive article)."
+    },
+    "cohesion": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: party cadre chain at every level down to company, three-man cells and self-criticism (NLF/PAVN organisation article); units fought on despite heavy losses."
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: national reunification cause, bombing of the North; strained by 1967-68 losses and VC morale fell after Tet."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 8.0,
+      "mid": 8.3,
+      "high": 8.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (1943) moving toward 9 (guided missiles). Evidence: AK-47, RPG-7, 130 mm M-46, SA-2 SAMs; no precision munitions, little heavy armour."
+    },
+    "armor": {
+      "low": 7.6,
+      "mid": 7.9,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (rolled homogeneous armour). Evidence: T-34/85, PT-76, some T-54; no composite armour."
+    },
+    "ships": {
+      "low": 6.8,
+      "mid": 7.1,
+      "high": 7.5,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (steam navy) to 8. Evidence: only torpedo boats and gunboats, junks; no major warships or submarines."
+    },
+    "fortification": {
+      "low": 7.8,
+      "mid": 8.1,
+      "high": 8.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (concrete lines). Evidence: tunnel complexes, bunker systems, bomb shelters for the population, dispersed and camouflaged depots."
+    },
+    "logistics": {
+      "low": 6.8,
+      "mid": 7.3,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways) to 8 (motor transport). Evidence: Ho Chi Minh Trail truck convoys, pipelines (later), but bicycles, porters and river drums still carried much; rail lines to China under constant attack."
+    },
+    "communications": {
+      "low": 7.5,
+      "mid": 7.8,
+      "high": 8.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 8 (radio at company level) not fully met. Evidence: radios at regiment and battalion, wire and couriers below; good secure signals discipline."
+    },
+    "isr": {
+      "low": 7.6,
+      "mid": 7.9,
+      "high": 8.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 8 = radar. Evidence: 200 radar facilities in the Red River delta air defence net; human intelligence networks in the South; no aerial reconnaissance over the South."
+    },
+    "air": {
+      "low": 8.1,
+      "mid": 8.4,
+      "high": 8.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 8 (1943) to 9 (1985). Evidence: MiG-21F/PF second-generation jets under GCI, MiG-17; no attack aviation."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks; cyber did not exist as a military domain in 1968."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 800,
+      "mid": 950,
+      "high": 1114,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 (OWID CSV): Vietnam 1968 = 1,114 (2011 int$) for the whole of Vietnam. The North was poorer per head than the aid-fed South and its industry was bombed 1965-68; ~0.85 x national used as mid. Scaled estimate, grade C."
+    },
+    "gdp": {
+      "low": 15600000000,
+      "mid": 19266000000,
+      "high": 23728000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.4,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "Wartime share (low = pre-escalation level). COW milex DRV 1968 = 500,000 thousand current US$ (an estimate incl. aid-funded spending) against a DRV GDP of very roughly US$1.5-2.5bn current: ~0.2-0.33. Much hardware was Soviet and Chinese aid outside the budget."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.18,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Light industry, Thai Nguyen steel, Haiphong cement and Nam Dinh textiles; much dispersed or destroyed by Rolling Thunder; economy over 70% agricultural."
+    },
+    "foodSurplus": {
+      "low": 0.18,
+      "mid": 0.223,
+      "high": 0.26,
+      "grade": "C",
+      "source": "https://api.worldbank.org/v2/sources/57/country/VNM/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Vietnam (whole country) 1968 = 77.7%; the DRV alone was at least as agrarian (high 82%). Grade C because the series covers north and south. Share 77.7% (range 74.0-82.0%) -> 0.223 (0.18-0.26)."
+    },
+    "annualCohort": {
+      "low": 170000,
+      "mid": 200000,
+      "high": 230000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Males reaching 17-18 per year. DRV population ~20M with ~2% per single-year cohort, halved for males; US intelligence commonly cited ~200,000 physically fit males per year (not fetched)."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 9000,
+      "mid": 13000,
+      "high": 18000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: DRV road net (mostly unpaved) plus the Ho Chi Minh Trail corridor in Laos: a June 1966 DIA estimate credited ~1,000 km (600 mi) of passable roads within the corridor (Ho Chi Minh trail article)."
+    },
+    "railKm": {
+      "low": 800,
+      "mid": 1000,
+      "high": 1200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hanoi-Lao Cai, Hanoi-Dong Dang (to China), Hanoi-Haiphong and Hanoi-Thanh Hoa-Vinh lines, ~1,000 km total, repeatedly cut by bombing."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 3,
+      "high": 4,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Operation_Rolling_Thunder",
+      "note": "Haiphong (two-thirds of imports came by sea through Haiphong and other ports, Rolling Thunder article), Hon Gai, Cam Pha; Haiphong was not mined until 1972."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Small coastal steamers and junks; DRV imports came in Soviet bloc and Chinese ships. Deadweight guess."
+    },
+    "supplyRangeKm": {
+      "low": 300,
+      "mid": 800,
+      "high": 1200,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_trail",
+      "note": "The Ho Chi Minh Trail sustained divisions 800-1,200 km from Hanoi (Binh Tram relay system, 30 trucks a day in 1965 rising sharply; Ho Chi Minh trail article), but at low tonnage; conventional offensives beyond the trailheads ran short within days."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 1500000,
+      "high": 2000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Water buffalo and oxen of the DRV farm economy plus porters and ~tens of thousands of cargo bicycles on the trail."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS via OWID: the DRV never had nuclear weapons."
+    },
+    "basesAbroad": [
+      {
+        "name": "Ho Chi Minh Trail base areas, Laos (Base Area 604, Tchepone)",
+        "lat": 16.69,
+        "lon": 106.23,
+        "kind": "fortress"
+      },
+      {
+        "name": "Cambodian sanctuaries (Fishhook, COSVN area)",
+        "lat": 11.9,
+        "lon": 106.4,
+        "kind": "fortress"
+      },
+      {
+        "name": "MiG bases in southern China (Mengzi/Ningming area)",
+        "lat": 22.14,
+        "lon": 107.07,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-insurgent",
+  "geography": {
+    "climate": "Cwa",
+    "chokepoints": [
+      "Mu Gia and Ban Karai passes (trail entries)",
+      "DMZ / Ben Hai River (17th parallel)",
+      "Red River delta bridges (Paul Doumer, Thanh Hoa)",
+      "Hanoi-Dong Dang and Hanoi-Lao Cai railways to China",
+      "Haiphong harbour"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.25,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2-1.3 rows: familiar jungle and mountain terrain, dense population support and shelters, deep sanctuaries in Laos and China; monsoon climate US forces were not adapted to. No US ground invasion of the North was ever attempted."
+    }
+  },
+  "notes": "Snapshot date 30 January 1968 (Tet Offensive). Nation = Democratic Republic of Vietnam (North Vietnam) and the forces it commanded: PAVN in the North, Laos and the South plus VC (PLAF) main-force units, treated as one force as Hanoi's official history does. Force convention (insurgent archetype): activePersonnel = main force (PAVN regulars + VC main force); trainedReserves = regional and local forces, guerrillas and the northern militia/self-defence forces. Population, economy and territory are the DRV only (COW tpop 20.28M); VC-controlled areas of the South are excluded. Border: the world_1960 basemap has a single Vietnam polygon covering north and south, so hb:1960:Vietnam overstates the DRV; areaKm2 mid is the DRV figure. Order of battle in the South from MACV Combined Intelligence Center OB summaries as quoted in the Tet Offensive article (Jan 1968 estimate 225,346; revised in 1972 to 287,465 incl. 155,945 regulars). Weakest numbers: tanks, artillery and AAA batteries (no fetched OB of PAVN heavy equipment; CIA reading-room documents could not be fetched). Most heavy equipment was Soviet and Chinese aid, so production is empty; China also kept up to 170,000 support troops (engineering and AAA) in the North in 1968 (Vietnam War infobox), not counted here. Pike, PAVN: People's Army of Vietnam (1986) is the background reference for structure."
+}

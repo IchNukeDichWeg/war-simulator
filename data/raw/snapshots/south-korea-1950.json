@@ -1,0 +1,491 @@
+{
+  "id": "south-korea-1950",
+  "nationId": "south-korea",
+  "includes": [],
+  "name": "South Korea (Republic of Korea)",
+  "year": 1950,
+  "era": "coldwar",
+  "region": "east_asia",
+  "phase": "key",
+  "tags": [
+    "Republic of Korea",
+    "ROK Army",
+    "US client",
+    "Korean War"
+  ],
+  "capital": {
+    "name": "Seoul",
+    "lat": 37.566,
+    "lon": 126.978,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Pusan",
+      "lat": 35.104,
+      "lon": 129.042,
+      "kind": "port"
+    },
+    {
+      "name": "Taegu",
+      "lat": 35.871,
+      "lon": 128.601,
+      "kind": "city"
+    },
+    {
+      "name": "Inchon",
+      "lat": 37.456,
+      "lon": 126.705,
+      "kind": "port"
+    },
+    {
+      "name": "Kwangju",
+      "lat": 35.16,
+      "lon": 126.852,
+      "kind": "city"
+    },
+    {
+      "name": "Taejon",
+      "lat": 36.351,
+      "lon": 127.385,
+      "kind": "city"
+    },
+    {
+      "name": "Mokpo",
+      "lat": 34.812,
+      "lon": 126.392,
+      "kind": "port"
+    },
+    {
+      "name": "Kaesong",
+      "lat": 37.971,
+      "lon": 126.554,
+      "kind": "city"
+    },
+    {
+      "name": "Uijongbu corridor",
+      "lat": 37.738,
+      "lon": 127.047,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Han River bridges, Seoul",
+      "lat": 37.517,
+      "lon": 126.958,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Naktong River line (Waegwan)",
+      "lat": 35.991,
+      "lon": 128.398,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1945:Korea (USA)",
+    "areaKm2": {
+      "low": 90770,
+      "mid": 93600,
+      "high": 99000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1945.geojson",
+      "note": "world_1945 \"Korea (USA)\" polygon ~90,800 km2 on the sphere (low); the zone south of the 38th parallel was ~93,600 km2 (standard figure, mid)."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 19750000,
+      "mid": 20200000,
+      "high": 20400000,
+      "grade": "B",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW NMC v7 tpop ROK 1950 = 20,357k; OWID (HYDE/UN) South Korea 1950 = 19.76M (low); 1949 census ~20.2M."
+    },
+    "urbanization": {
+      "low": 0.15,
+      "mid": 0.21,
+      "high": 0.25,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID (HYDE) urban share South Korea 1950 = 21.4%; COW upop/tpop = 3,127/20,357 = 0.15 (cities over 100,000 only, low)."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 95000,
+      "mid": 105752,
+      "high": 110000,
+      "grade": "B",
+      "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+      "note": "ROK MND Institute for Military History (6.25 War History vol. 1, 2004): ROK armed forces 105,752 on 25 June 1950, about half the KPA (also the Operation Pokpung infobox). Army ~97,000 (8 divisions, 4 on the parallel), navy 6,956 (ROK Navy article, NHC), air force 1,800 (ROKAF article). Korean War article: 95,000 troops on 25 June, under 22,000 left five days later. National Police (~48,000) excluded."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 50000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Youth corps, police and recently discharged men usable as fillers; the ROK had no organised reserve divisions and rebuilt from stragglers, police and hasty conscripts in July 1950."
+    },
+    "supportPersonnel": {
+      "low": 40000,
+      "mid": 48000,
+      "high": 55000,
+      "grade": "C",
+      "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+      "note": "Remainder after the infantry: navy 6,956, air force 1,800, divisional artillery (91 howitzers), engineers, signals, service troops, the Seoul HQ and schools. Vehicle holdings were only 52% of TO&E (MND)."
+    },
+    "mobilizationRatio": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: ROK forces grew to ~590,000 by 1953 after very heavy 1950-51 losses from ~20M people: 0.04-0.06 including replacements."
+    },
+    "mobilizable": {
+      "low": 790000.0,
+      "mid": 1212000.0,
+      "high": 1632000.0,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 45000,
+          "mid": 55000,
+          "high": 65000,
+          "grade": "C",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "Rifle troops of 8 infantry divisions (several with only two regiments) plus the Capital Division and independent regiments: ~97,000 army x ~0.55-0.65 infantry share. Reconstruction from the MND total; a third of the frontline troops were on weekend pass on 25 June (MND)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: US WWII small arms; 57 mm AT guns and 2.36 in. bazookas could not stop the T-34; 15% of weapons unserviceable for lack of parts (MND)."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: trained for counter-insurgency, not conventional war (Korean War article); most battalions had not completed battalion-level training."
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 85,
+          "mid": 91,
+          "high": 91,
+          "grade": "B",
+          "source": "https://web.archive.org/web/20120405115059/http://www.imhc.mil.kr/imhcroot/upload/resource/1K29.pdf",
+          "note": "91 M3 105 mm howitzers (ROK MND); plus 960 81 mm and 60 mm mortars, excluded. KPA advantage in howitzers ~6:1."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.4,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: short-barrel M3 105 mm with ~6.5 km range, outranged by KPA 122 mm."
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: US KMAG-trained, small and new artillery arm."
+        }
+      },
+      "ifv_apc": {
+        "count": {
+          "low": 20,
+          "mid": 27,
+          "high": 37,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: M8 Greyhound armoured cars of the ROK cavalry regiment (Appleman ch. 2 gives 27, from memory; not fetched). The ROK had no tanks."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: 37 mm armoured cars useless against T-34s."
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: as the army."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 33,
+          "high": 36,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Republic_of_Korea_Navy",
+          "note": "ROK Navy at the outbreak: 6,956 men and 33 vessels of various types (ROK Navy figures and US NHC, ROK Navy article): one PC-701 subchaser Baekdusan, ex-US YMS minesweepers and ex-Japanese craft."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.3,
+          "high": 0.35,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25. Evidence: small second-hand craft."
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.45,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: NHC called the ROKN the most aggressive and effective ROK service in 1950; sank a KPA troop transport off Pusan on 25-26 June."
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.4,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: no corps headquarters, piecemeal commitment, premature Han bridge demolition trapped ROK units north of the river (Korean War article)."
+    },
+    "cohesion": {
+      "low": 0.25,
+      "mid": 0.35,
+      "high": 0.45,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: 1948 Yosu-Sunchon mutiny and purges; 95,000 fell to under 22,000 in five days; but the 6th Division held at Chunchon."
+    },
+    "morale": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.25-0.5. Evidence: surprise attack on a Sunday with troops on leave; mass retreat and defections in the first week."
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 7.4,
+      "mid": 7.6,
+      "high": 7.8,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: between 7 (1905) and 8 (1943). Evidence: M1 rifles and 105 mm M3 howitzers but no tanks, no effective AT weapons, no heavy artillery."
+    },
+    "armor": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (armoured cars). Evidence: only M8 armoured cars; no tanks."
+    },
+    "ships": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7. Evidence: a 600-ton subchaser and minesweepers."
+    },
+    "fortification": {
+      "low": 7.0,
+      "mid": 7.2,
+      "high": 7.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (trenches). Evidence: field positions on the parallel only."
+    },
+    "logistics": {
+      "low": 7.0,
+      "mid": 7.3,
+      "high": 7.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7 (railways) to 8 (motor transport). Evidence: railways, but division vehicle holdings 52% of TO&E with <40% serviceable (MND)."
+    },
+    "communications": {
+      "low": 7.3,
+      "mid": 7.5,
+      "high": 7.7,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 7-8. Evidence: US radios at regiment/division, KMAG advisers; poor inter-division coordination."
+    },
+    "isr": {
+      "low": 6.8,
+      "mid": 7.0,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR 7 (aerial reconnaissance). Evidence: L-4/L-5 liaison planes only; ignored warnings of the build-up."
+    },
+    "air": {
+      "low": 6.5,
+      "mid": 7.0,
+      "high": 7.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: air 7 (1914 aircraft level of capability). Evidence: 20-22 trainers and liaison aircraft, no combat aircraft (ROKAF article, MND)."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks in 1950; cyber did not exist as a military domain."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 900,
+      "mid": 998,
+      "high": 1100,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison 2023 (OWID CSV): South Korea 1950 = 998 (2011 int$)."
+    },
+    "gdp": {
+      "low": 17775000000,
+      "mid": 20160000000,
+      "high": 22440000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
+      "note": "COW milex ROK 1950 = 32,000 thousand current US$ (~US$32M) against a GNP of very roughly US$1-1.5bn current: ~2-3% (low); mid allows US-funded equipment; high = wartime 1950."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.18,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: The South was the agricultural half of colonial Korea; light industry (textiles) around Seoul, Pusan and Taegu; power came from the North until 1948."
+    },
+    "foodSurplus": {
+      "low": 0.2,
+      "mid": 0.28,
+      "high": 0.387,
+      "grade": "C",
+      "source": "https://api.worldbank.org/v2/sources/57/country/KOR/series/SL.AGR.TOTL.ZS/time/all?format=json",
+      "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) South Korea 1960 = 61.3% (the series starts in 1960, so it is the floor for 1950). 1950 share extrapolated to ~72% (61-80%) on the 1960-70 trend of ~1.2 points a year. Grade C. Share 72.0% (range 61.3-80.0%) -> 0.28 (0.2-0.387)."
+    },
+    "annualCohort": {
+      "low": 170000,
+      "mid": 200000,
+      "high": 240000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Males reaching 18 per year: ~20M population, ~2% per single-year cohort, halved."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 15000,
+      "mid": 20000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Mostly unpaved roads south of the 38th parallel."
+    },
+    "railKm": {
+      "low": 2400,
+      "mid": 2700,
+      "high": 3000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Southern share of colonial Korea's railway (Kyongbu Seoul-Pusan, Honam, Chungang, Kyongui south of the parallel)."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 6,
+      "high": 8,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Pusan, Inchon, Mokpo, Kunsan, Yosu, Masan, Pohang; Pusan was the UN lifeline."
+    },
+    "merchantTonnage": {
+      "low": 50000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Korea Shipping Corporation fleet of ex-Japanese and US-leased ships; deadweight guess."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: ROK divisions lacked vehicles (52% of TO&E) and depended on rail; fought close to their bases."
+    },
+    "draftAnimals": {
+      "low": 700000,
+      "mid": 1000000,
+      "high": 1300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Cattle (ox-carts) of the southern farm economy; A-frame porters carried much front-line supply."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "https://ourworldindata.org/grapher/nuclear-warhead-stockpiles.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "FAS via OWID: no Korean nuclear weapons in 1950."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-coldwar-western",
+  "geography": {
+    "climate": "Dwa",
+    "chokepoints": [
+      "Uijongbu and Kaesong-Munsan corridors to Seoul",
+      "Han River crossings",
+      "Naktong River (Pusan Perimeter)",
+      "Korea Strait (Pusan)",
+      "Inchon tidal approaches"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row: familiar terrain and local supply; population support divided by the 1948-50 insurgency; no fortified line."
+    }
+  },
+  "notes": "Snapshot date 25 June 1950 (KPA invasion). Territory and population: the ROK south of the 38th parallel (border ref hb:1945:Korea (USA), the nearest basemap at or before 1950). activePersonnel = ROK armed forces 105,752 per the ROK MND Institute for Military History (fetched via web.archive.org, 1K29.pdf, compiling the 2004 official history); US Military Advisory Group (KMAG, ~500 men) and the National Police are excluded. The ROK had no tanks and no combat aircraft (20-22 trainers and liaison aircraft only), so those roles are omitted; aircraft counts are in the notes only. All equipment was US-supplied; no domestic arms production, production empty. Appleman (CMH) could not be fetched (HTTP 403; archive.org copy lending-only), so the M8 count is an educated guess. Weakest numbers: infantry share of the army, trained reserves and logistics infrastructure (educated guesses)."
+}
