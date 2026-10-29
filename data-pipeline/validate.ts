@@ -39,6 +39,28 @@ export function walkEst(o: unknown, path: string, fn: (e: Record<string, unknown
   for (const [k, v] of Object.entries(r)) walkEst(v, path ? `${path}.${k}` : k, fn);
 }
 
+/** ISBN-10 or ISBN-13 check digit. A citation from memory with a wrong digit points at no book
+ *  (wave H5 cited Brewer's Sinews of Power with check digit 6 instead of 0). */
+export function isbnValid(isbn: string): boolean {
+  const d = isbn.replace(/-/g, '').toUpperCase();
+  if (/^\d{9}[\dX]$/.test(d)) {
+    const sum = [...d].reduce((a, c, i) => a + (c === 'X' ? 10 : Number(c)) * (10 - i), 0);
+    return sum % 11 === 0;
+  }
+  if (/^\d{13}$/.test(d)) {
+    const sum = [...d].reduce((a, c, i) => a + Number(c) * (i % 2 ? 3 : 1), 0);
+    return sum % 10 === 0;
+  }
+  return false;
+}
+
+/** Every isbn: citation anywhere in a data file (sources, notes, doctrine source lists). */
+function checkIsbns(file: string, issues: Issue[]) {
+  const bad = new Set<string>();
+  for (const m of readFileSync(file, 'utf8').matchAll(/isbn:([0-9Xx-]{10,17})/g)) if (!isbnValid(m[1])) bad.add(m[1]);
+  for (const b of bad) issues.push({ file, level: 'error', msg: `isbn:${b} fails its check digit` });
+}
+
 const FRACTION_PATHS = [
   'demography.urbanization', 'military.mobilizationRatio', 'military.commandQuality',
   'military.cohesion', 'military.morale', 'economy.milSpendShare', 'economy.industrialShare',
@@ -154,6 +176,7 @@ export function validateAll(): { issues: Issue[]; counts: Record<string, number>
       if (src.startsWith('derived:') && !derived.has(src.slice(8))) issues.push({ file: f, level: 'error', msg: `${p}: ${src} undocumented` });
     });
   }
+  for (const dir of ['raw/snapshots', 'doctrine', 'battles', 'mechanics']) for (const f of listJson(dir)) checkIsbns(f, issues);
   return { issues, counts };
 }
 
