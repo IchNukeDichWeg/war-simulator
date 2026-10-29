@@ -12,7 +12,7 @@
     "siegePreference": 0.15,
     "reserveUse": 0.3,
     "scouting": 0.6,
-    "retreatThreshold": 0.25,
+    "retreatThreshold": 0.333,
     "combinedArms": 0.8,
     "initiative": 0.5,
     "logisticsDiscipline": 0.3
@@ -24,7 +24,7 @@
     "siegePreference": "The objective was the enemy field army, not fortresses; sieges (Danzig 1807, Saragossa 1808-09) were delegated to secondary forces. Capitals were taken after the field army was beaten (Vienna 1805, Berlin 1806).",
     "reserveUse": "Guard and Cavalry Reserve held back for the decisive blow (Austerlitz, Wagram); Napoleon's refusal to commit the Guard at Borodino shows the habit. Most corps strength was committed, so the held-back fraction is low-moderate.",
     "scouting": "Light cavalry screens of each corps plus the Cavalry Reserve gave good operational intelligence in 1805; in 1806 Napoleon misplaced the main Prussian army (fought the smaller part at Jena), and in 1812 the cavalry wore out its horses early. Moderate-good.",
-    "retreatThreshold": "Corps were built to hold an enemy army for a day until others arrived (Lannes at Saalfeld/Friedland, Davout at Auerstedt lost about a quarter of his corps and held); judgment from the Lannes thesis and Chandler, not a measured figure.",
+    "retreatThreshold": "Basis: share of starting strength lost (killed, wounded, captured, missing) at the moment of withdrawal or break, never the battle total with pursuit. derived:breakpoint-quartile: modelRules.breakpoint.loserCasualtyShareAtBreak.napoleonic high quartile 0.333 (1789-1849 rule). Sourced holding: corps were built to hold an army for a day (Everson on Lannes; Chandler). Auerstedt 1806: Davout's III Corps lost 7,052 of 26,000, about 27%, and held and won (Auerstedt page), so its threshold lies above 0.27.",
     "combinedArms": "Each corps d'armee had infantry divisions, its own light cavalry, artillery and engineers and fought as a combined-arms unit (Everson, DTIC ADA284591). Grand batteries (Friedland, Wagram, Borodino) integrated artillery with assault.",
     "initiative": "Marshals ran their corps independently on the march and in the opening battle (ADA284591), but operational direction was entirely Napoleon's; marshals did poorly when left without him (Spain 1808-1812). Mid value.",
     "logisticsDiscipline": "Armies lived largely off the country and outran magazines; this worked in rich central Europe and failed in Poland 1807 and Russia 1812 (Jelinek, DTIC AD1022125)."
@@ -34,6 +34,7 @@
   "whyItWorked": "Dispersed marching gave speed and let the army feed itself, while each corps' ability to hold for a day meant concentration could happen on the battlefield itself. Opponents still marched as single slow armies tied to magazines and were outmanoeuvred before they could concentrate: Ulm 1805 captured an Austrian army with almost no battle, Jena-Auerstedt 1806 destroyed the Prussian field army in one day.",
   "whereItFailed": "Eylau 1807 (winter, poor roads and starving troops produced a bloody draw); Spain 1808-1812, where marshals without central direction and a guerrilla war defeated foraging logistics; Aspern-Essling 1809, a failed river crossing; Russia 1812, where foraging collapsed over vast poor country, horses and men died before Moscow, the Russians traded space and avoided encirclement, and Borodino became a frontal battle of attrition. The army of over 600,000 that crossed the Niemen came back with a small fraction.",
   "sources": [
+    { "title": "Battle of Auerstedt, Wikipedia", "url": "https://en.wikipedia.org/wiki/Battle_of_Auerstedt" },
     { "title": "Everson, Marshal Jean Lannes in the Battles of Saalfeld, Pultusk, and Friedland 1806-1807 (CGSC thesis, DTIC ADA284591)", "url": "https://archive.org/details/DTIC_ADA284591" },
     { "title": "Jelinek, Napoleon's Logistics; or How Napoleon Learned to Worry about Supply (ACSC paper, DTIC AD1022125)", "url": "https://archive.org/details/DTIC_AD1022125" },
     { "title": "Chandler, The Campaigns of Napoleon (Macmillan), parts 7-12", "url": "isbn:0025236601" },

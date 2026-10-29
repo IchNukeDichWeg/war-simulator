@@ -12,7 +12,7 @@
     "siegePreference": 0.3,
     "reserveUse": 0.15,
     "scouting": 0.4,
-    "retreatThreshold": 0.95,
+    "retreatThreshold": 0.355,
     "combinedArms": 0.35,
     "initiative": 0.55,
     "logisticsDiscipline": 0.1
@@ -24,7 +24,7 @@
     "siegePreference": "Took fortresses and bases when they were the objective (Hong Kong, Singapore, Bataan and Corregidor), but doctrine aimed at the enemy force. Low-moderate.",
     "reserveUse": "Advance guards took a third to a half of a division's infantry and units were committed in full (TM-E 30-480 ch. VII); piecemeal commitment on Guadalcanal. Low.",
     "scouting": "Good pre-war intelligence for Malaya, but chronic underestimation of the enemy: Ichiki's detachment of about 900 attacked a Marine division on Guadalcanal, and late carrier scouting contributed to Midway. Low-moderate.",
-    "retreatThreshold": "Share of the engaged force lost before it withdrew or broke: garrisons fought to annihilation. Iwo Jima 1945: of 21,000 defenders only 216 were taken prisoner, about 99% lost (Iwo Jima page); Attu 1943: over 2,351 lost and 28 prisoners, the last in a banzai charge, about 99% (Attu page); Tarawa 1943: the 4,500 defenders fought almost to the last man (Tarawa page). Surrender and retreat were dishonourable; the 1932 manual told commanders forced to withdraw to regain the offensive (Drea). Corrected 2026-10-30: 0.1 -> 0.95.",
+    "retreatThreshold": "Basis: share of starting strength lost (killed, wounded, captured, missing) at the moment of withdrawal or break, never the battle total with pursuit. derived:breakpoint-quartile: modelRules.breakpoint.loserCasualtyShareAtBreak.worldwars high quartile 0.355, consistent with the shares at withdrawal on Guadalcanal: Edson's Ridge 1942, about 830 of some 3,000 attackers lost in the attack before Kawaguchi withdrew, about 28% killed alone (Edson's Ridge page); Henderson Field 1942, 2,200-3,000 killed of 20,000 before Hyakutake called off the attacks, 11-15% (Henderson Field page). Previous 0.95 came from Iwo Jima and Attu totals (99%), which include weeks of mopping-up after organised resistance ended; garrisons that could not withdraw are not a withdrawal share. Sourced refusal to surrender or retreat (TM-E 30-480; Drea) puts the doctrine at the top quartile.",
     "combinedArms": "Training stressed 'infantry tactics as opposed to combined arms tactics' and spiritual training to compensate for weak artillery and armour (Drea, Nomonhan). Naval aviation was strong, which keeps it above the floor.",
     "initiative": "Commanders and staffs operated well forward and junior officers were aggressive (TM-E 30-480 ch. VII); offset by rigid adherence to complex plans (Midway) and insubordination at the top (Kwantung Army).",
     "logisticsDiscipline": "Operations routinely outran supply: Guadalcanal ('Starvation Island'), Imphal 1944 where troops were expected to live on captured stores, New Guinea. Very low."
@@ -34,6 +34,8 @@
   "whyItWorked": "Against unprepared colonial garrisons in 1941-42 speed, surprise and infiltration were overwhelming: Pearl Harbor, the Philippines, Malaya and Singapore (February 1942) fell within months. Night actions such as Savo Island (August 1942) showed the navy's training edge. The 1944-45 island defences inflicted very heavy US casualties (Iwo Jima, Okinawa).",
   "whereItFailed": "Nomonhan 1939, where Soviet combined arms crushed infantry spirit; Midway, June 1942, four fleet carriers lost through poor scouting and an over-complex plan; Guadalcanal, August 1942 to February 1943, where piecemeal night attacks (Tenaru, Bloody Ridge) broke on prepared Marine positions and starvation and disease killed more men than combat; Imphal-Kohima 1944, an offensive launched without supply that cost most of the Fifteenth Army; banzai charges at Attu and Saipan; Leyte Gulf, October 1944.",
   "sources": [
+    { "title": "Battle for Henderson Field, Wikipedia", "url": "https://en.wikipedia.org/wiki/Battle_for_Henderson_Field" },
+    { "title": "Battle of Edson's Ridge, Wikipedia", "url": "https://en.wikipedia.org/wiki/Battle_of_Edson%27s_Ridge" },
     { "title": "War Department TM-E 30-480, Handbook on Japanese Military Forces (1944), ch. VII Tactics of the Japanese Army", "url": "https://www.ibiblio.org/hyperwar/Japan/IJA/HB/HB-7.html" },
     { "title": "Drea, Nomonhan: Japanese-Soviet Tactical Combat, 1939 (Leavenworth Paper 2, DTIC ADA322749)", "url": "https://archive.org/details/DTIC_ADA322749" },
     { "title": "Miller, Guadalcanal: The First Offensive (US Army in World War II)", "url": "https://www.ibiblio.org/hyperwar/USA/USA-P-Guadalcanal/index.html" },

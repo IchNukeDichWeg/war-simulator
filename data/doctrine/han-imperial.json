@@ -16,7 +16,7 @@
     "siegePreference": 0.4,
     "reserveUse": 0.3,
     "scouting": 0.45,
-    "retreatThreshold": 0.5,
+    "retreatThreshold": 0.14,
     "combinedArms": 0.75,
     "initiative": 0.35,
     "logisticsDiscipline": 0.55
@@ -28,7 +28,7 @@
     "siegePreference": "Capable of sieges (Dayuan 102 BC: engineers diverted the river and cut the city's water; Zhizhi 36 BC: citadel stormed and burned), but the strategic target was the nomad field army (War of the Heavenly Horses, Zhizhi pages).",
     "reserveUse": "Wei Qing held 5,000 cavalry inside the wagon ring to deal with breakthroughs before committing it to the envelopment (Mobei page). Moderate.",
     "scouting": "Frontier beacon and watch-post system with careful records (Military of the Han page), but in the field intelligence failed often: a prisoner's misinformation reshuffled the Mobei columns, Li Guang got lost, Gaozu was lured into encirclement at Baideng (200 BC).",
-    "retreatThreshold": "Share of the engaged force lost before it withdrew or broke. The one quantified case held to near destruction: Li Ling 99 BC, 5,000 infantry encircled by 30,000-80,000 Xiongnu fought a days-long retreat, ran out of arrows and surrendered with only 400 escaping, about 92% lost (Li Ling page). Han law executed generals who failed (Military of the Han page), which pushed commanders to hold. Single episode of a detached force, and conscript or penal armies (first Dayuan expedition) dissolved through starvation rather than battle, so 0.5 rather than higher.",
+    "retreatThreshold": "Basis: share of starting strength lost (killed, wounded, captured, missing) at the moment of withdrawal or break, never the battle total with pursuit. derived:breakpoint-quartile: modelRules.breakpoint.loserCasualtyShareAtBreak.iron mid 0.14, grade C. Previous 0.5 came from Li Ling 99 BC, 92% lost, a total that includes a days-long fighting retreat and the surrender (Li Ling page); the retreat began before the heavy losses, so it is no evidence of holding. Han law executing failed generals (Military of the Han page) pushes the other way. No source supports a profile-specific value: era baseline.",
     "combinedArms": "Crossbow infantry, armoured war wagons (wugang chariots), cavalry and archers in one formation; at Mobei the wagon ring sheltered archers, crossbowmen and infantry while cavalry manoeuvred (Mobei page). The crossbow gave Han forces a 'slight advantage' (Military of the Han page).",
     "initiative": "Column commanders operated weeks apart in the steppe, but under heavy penalties for failure and with the emperor redirecting columns (Mobei); Li Guang's suicide shows the system punished, not rewarded, independent judgment.",
     "logisticsDiscipline": "Expeditions needed huge trains (second Dayuan expedition: 60,000 men with 100,000 oxen and 20,000 donkeys and camels; it still returned with only 10,000 men), the first Dayuan army starved, and frontier military colonies grew grain for garrisons (War of the Heavenly Horses, Military of the Han pages). Planned but often exceeded."

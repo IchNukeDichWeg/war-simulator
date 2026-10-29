@@ -16,7 +16,7 @@
     "siegePreference": 0.35,
     "reserveUse": 0.45,
     "scouting": 0.5,
-    "retreatThreshold": 0.3,
+    "retreatThreshold": 0.356,
     "combinedArms": 0.85,
     "initiative": 0.5,
     "logisticsDiscipline": 0.4
@@ -28,7 +28,7 @@
     "siegePreference": "Sought field battle; fortified towns were taken by quick assault or negotiation. The direct attack on Wallenstein's entrenched camp failed with 2,500 casualties (Alte Veste page). Low-middling.",
     "reserveUse": "Two-line deployment with a real second line and reserve: at Breitenfeld 'reserves and Baner's units from the second line' reinforced the exposed flank (Breitenfeld page; Roberts, Gustavus Adolphus). Moderate-high for the era.",
     "scouting": "No distinctive reconnaissance record; Lutzen was fought in fog and the king himself rode into an enemy unit. Educated guess, middling.",
-    "retreatThreshold": "Share of the engaged force lost before it withdrew or broke. Lutzen 1632: about 6,000 casualties of 19,000 (about 32%) and the army held the field and won after the king was killed, some brigades losing up to 65% (Lutzen page). Breitenfeld 1631: about 1,000 killed in the opening cannonade and the line re-formed after the Saxons fled (Breitenfeld page). Nordlingen 1634: 12,000-14,000 casualties of about 26,000 (46-54%), but most came in the rout after Horn ordered the withdrawal, so the share at withdrawal is lower and unknown (Nordlingen page). 0.3.",
+    "retreatThreshold": "Basis: share of starting strength lost (killed, wounded, captured, missing) at the moment of withdrawal or break, never the battle total with pursuit. derived:breakpoint-quartile: modelRules.breakpoint.loserCasualtyShareAtBreak.gunpowder high quartile 0.356. Lutzen 1632: about 6,000 of 18,738 killed or wounded (32%) and the army did not withdraw (Lutzen page), so the threshold lies above 0.32; the top quartile is the nearest sourced value above it. Nordlingen 1634 (12,000-14,000 of about 26,000) is a total including the rout after Horn ordered the withdrawal and is not used. Breitenfeld 1631 is a backtest battle and not evidence.",
     "combinedArms": "Light regimental guns grouped in batteries, shallow 5-6 rank infantry, and cavalry that 'could attack from the safety of an infantry line reinforced by cannon' (Gustavus Adolphus page; Roberts' Military Revolution thesis). Best in era.",
     "initiative": "Brigade system with capable subordinates (Horn, Baner, Torstensson, Bernhard); at Lutzen Bernhard kept attacking after the king fell (Lutzen page). Moderate.",
     "logisticsDiscipline": "The army in Germany lived by contributions, and supply failure drove it from Nuremberg: 'running short on provisions, Gustavus Adolphus was forced to withdraw' after the Alte Veste (Alte Veste page). Operations often outran supply."

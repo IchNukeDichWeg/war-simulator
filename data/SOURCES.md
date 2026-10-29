@@ -98,6 +98,20 @@ Each `derived:<id>` used in the data must be listed here with its formula.
   judgement, explained in the note. Always grade D.
 - `derived:mech-composite` - a mechanics constant combined from several cited figures; the note
   shows the arithmetic and names each source.
+- `derived:breakpoint-quartile` - doctrine `weights.retreatThreshold`. Definition: the share of a
+  formation's STARTING strength lost (killed, wounded, captured, missing) at the moment it
+  withdraws or breaks, never the battle total including pursuit, prisoners taken after the break,
+  mopping-up or campaign attrition. Value read off `modelRules.breakpoint.loserCasualtyShareAtBreak`
+  for the profile's era (`napoleonic` for 1789-1849): the `mid` when no source gives a
+  profile-specific reason (stated as grade C in the note); the `low` quartile when sources record
+  a doctrine of early disengagement (skirmish or delay doctrine, breaking contact, casualty
+  conservation, collapse when the commander fell); the `high` quartile when sources record a
+  refusal to withdraw (standing orders, holding by drill under heavy loss, fighting to
+  destruction). A non-backtest battle that gives the loss at withdrawal with no pursuit, or
+  bounds it, overrides or brackets the quartile; the note gives the arithmetic. A profile spanning
+  several eras takes the mean of their values. Battles in `data/battles` are backtest cases and
+  never evidence. Doctrine weights are plain numbers (schema), so the basis, method and sources
+  go in `weightNotes.retreatThreshold` and the profile's `sources` list.
 
 ## Tech level anchors (0..10)
 

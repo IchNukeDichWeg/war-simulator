@@ -12,7 +12,7 @@
     "siegePreference": 0.4,
     "reserveUse": 0.25,
     "scouting": 0.5,
-    "retreatThreshold": 0.07,
+    "retreatThreshold": 0.05,
     "combinedArms": 0.55,
     "initiative": 0.2,
     "logisticsDiscipline": 0.65
@@ -24,7 +24,7 @@
     "siegePreference": "Competent besiegers (Ionian revolt sieges, Babylon), yet campaigns sought a decisive field battle with the king present. Below 0.5.",
     "reserveUse": "Deployed in one broad line by contingent with the Immortals around the king; little evidence of a held-back reserve committed deliberately.",
     "scouting": "Large cavalry arm and the royal road courier system gave reach, but Greek sources record repeated surprises; middling. Grade C because nearly all narrative is Greek.",
-    "retreatThreshold": "Armies collapsed when the commander fell or fled (Plataea after Mardonius was killed, Issus and Gaugamela after Darius III fled), well before heavy losses; levy contingents had little cohesion.",
+    "retreatThreshold": "Basis: share of starting strength lost (killed, wounded, captured, missing) at the moment of withdrawal or break, never the battle total with pursuit. derived:breakpoint-quartile: modelRules.breakpoint.loserCasualtyShareAtBreak.iron low quartile 0.05. Sourced early break: armies collapsed when the commander fell or fled, before heavy losses (Plataea 479 BC after Mardonius was killed, Plataea page; Issus 333 BC after Darius fled, Issus page). No battle gives a loss share at the break, so the quartile, not a measured figure.",
     "combinedArms": "Sparabara spearmen-archers behind wicker shields, cavalry, chariots, Greek mercenary hoplites and dozens of national contingents; arms existed but contingents fought by nation and were loosely integrated.",
     "initiative": "Command was centred on the king or a single royal commander; the army's fate followed his person (Cunaxa, Issus, Gaugamela). Low.",
     "logisticsDiscipline": "Xerxes's 480 invasion was prepared for years with depots, the Athos canal and Hellespont bridges (Briant); fleet-supported advance along the coast. Scythia 513 shows the limit when the enemy stripped the land."
@@ -34,6 +34,7 @@
   "whyItWorked": "Scale, cavalry and archery overwhelmed Near Eastern states (Lydia, Babylon, Egypt at Pelusium) whose armies fought in the same idiom. Administrative reach let it mass and feed armies no rival could match, and competent siege work took Ionian and Cypriot cities.",
   "whereItFailed": "Against heavy close-order infantry that closed the distance: Marathon (490), Plataea (479), where the Spartan and Tegean hoplites broke through the shield wall and the army dissolved once Mardonius was killed. Against Macedonian combined arms: Granicus, Issus, Gaugamela (331), where Alexander's cavalry exploited a gap toward Darius. Against nomads who would not fight: Scythia (513), where scorched earth and blocked wells forced Darius to withdraw.",
   "sources": [
+    { "title": "Battle of Issus, Wikipedia", "url": "https://en.wikipedia.org/wiki/Battle_of_Issus" },
     { "title": "Military of the Achaemenid Empire, Wikipedia", "url": "https://en.wikipedia.org/wiki/Military_of_the_Achaemenid_Empire" },
     { "title": "Immortals (Achaemenid Empire), Wikipedia", "url": "https://en.wikipedia.org/wiki/Immortals_(Achaemenid_Empire)" },
     { "title": "Sparabara, Wikipedia", "url": "https://en.wikipedia.org/wiki/Sparabara" },
