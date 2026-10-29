@@ -18,6 +18,10 @@ assumptions.
 - Layers, in order each day: weather -> production/mobilization -> command AI
   (orders, with delay) -> movement -> naval and air war -> tactical resolution
   -> logistics and attrition -> morale -> control and victory check -> frame.
+  As built (`src/engine/sim.ts`): weather -> production -> AI -> movement ->
+  battle detection -> naval -> air -> tactical resolution -> siege -> logistics,
+  attrition and daily morale -> control -> nuclear -> victory. Naval and air run
+  after battle detection so air support can be allotted to the day's battles.
 - Every loss is booked under a cause (`LossCause`) and every battle records the
   modifiers that decided it, which feeds the result explanation.
 
@@ -40,12 +44,20 @@ assumptions.
    neighbours; distances are great-circle km between cell centres.
 5. **Initial control.** Each member's border polygon is rasterised onto the
    theater grid (cell centre in polygon). Unclaimed land is neutral.
+   Members without a polygon (`territory.border` "none") claim the land cells
+   within sqrt(`areaKm2`/pi) km of their capital, nearest first, never taking a
+   cell another member's polygon claimed; a setup warning says so. Backtest
+   campaigns split control by nearest start position instead.
 6. **Commitment and power projection.** For each member, the share of its forces
    that can be brought to the theater: 100% if its capital is inside the theater
    or land-connected within `supplyRangeKm`; otherwise limited by sea lift
    (`troopLiftPerShip` x ships + merchant tonnage) and air lift, and those
    formations arrive over time at the nearest own port/coast cell or theater
    edge. A user `commitment` overrides this.
+   As built: sea lift is `troopLiftPerShip` x ships only. Merchant tonnage and
+   air lift are not used because the contract has no troops-per-ton or
+   air-lift constants. Overseas formations arrive in waves, one lift per round
+   trip (`naval.speedKmDay`), and arrivals stop under blockade.
 7. **Formations.** Each member's committed P-role personnel and N-role platforms
    are split into formations of `org.formationSize` (by weapons tech), keeping
    the member's role mix. Formations start at own cities/places in the theater
@@ -86,6 +98,13 @@ P_F = sum_r count_r x OLI_r
 the first hour: roles out-ranged by the enemy contribute 0 in the opening round
 unless they close (melee roles close in round 2).
 
+Tech index per quantity (as built): combat, breakpoint, formation size and
+training days by `weapons`; supply needs, forage dependence, disease and
+role mobility by `logistics`; order delay, mobilization and desertion by
+`communications`; ships and aircraft by `ships` and `air`. `missiles` and
+`air_defense` are ground roles inside formations. The supply factor scales the
+power a formation fires with, not its size as a target (see section 4).
+
 ## 4. Tactical resolution
 
 A battle happens when opposing formations share a cell or are adjacent and one
@@ -100,6 +119,21 @@ R      = P_attacker / P_defender
 lossD  = baseDailyCasualtyRate(tech_D) x R^alpha / H
 lossA  = baseDailyCasualtyRate(tech_A) x R^-alpha / H     alpha = powerRatioExponent(tech)
 ```
+
+As built, each side's loss uses the enemy's FIRING power over its own FULL
+power: `lossD = base_D x (Pfire_A / Pfull_D)^alpha / H` and the mirror for the
+attacker. Outside the opening round both are equal, so this is the formula
+above exactly. In the opening round out-ranged roles do not fire but still
+count as targets, and an out-of-supply side fires with less but is not a
+smaller target; the plain R form gave R = infinity (a side that could not
+reach the enemy took the 50% cap) and let a bronze-age force shred
+unsupplied modern formations. Storming a fortified place multiplies the
+attacker's loss rate by `siege.assaultFactor` (not attacker power).
+The withdraw threshold is min(`retreatThreshold`, 0.9 x effective breakpoint)
+with effective breakpoint = `breakpoint(tech)` + `cohesionBreakpointShift` x
+(cohesion - 0.5), so withdrawal always comes before the rout. Pursuit losses
+are `pursuitLossFraction` x the winner's mobile (mounted/vehicle) share. The
+share of losses caused by air support is booked as cause `air`.
 
 Losses are capped at 50% of engaged strength per round, spread over roles in
 proportion to their exposure. A seeded noise factor (lognormal, sigma 0.15 per
@@ -126,7 +160,14 @@ Formation speed = `rate[roleMobility(slowest role, tech)]` x `terrain[class]`
 (x `roadBonus` on cells with roads: own territory cells containing a place, or
 for tech >= 3 any own cropland/urban cell) x `season` x `weather` x
 (1 - `restDayFraction`) x air superiority factor if the enemy holds the air.
-Paths are A* over the theater grid with cost = km / speed (days). Water cells
+Paths are A* over the theater grid with cost = km / speed (days). As built:
+flow fields instead of per-formation A* (one multi-source Dijkstra per side
+per objective, at most 12 per side, recomputed each AI cycle); formations walk
+downhill with a small stacking penalty so they spread over a front, and spread
+to a less crowded neighbour when short of supply. A formation with vehicles
+moves at its rate x fuel fraction, but never slower than foot pace (the troops
+walk out when the fuel is gone; without this floor unsupplied armour froze in
+place for good). Water cells
 are impassable to land formations unless embarked (sea lift, section 6). Major
 river cells cost an extra half day without a bridge (a city cell).
 
@@ -153,6 +194,10 @@ Strike aircraft, helicopters and drones fly `sortiesPerAircraftDay` within
 `combatRadiusKm` of own bases, split between battle support (added to P),
 interdiction (reduces enemy supply throughput) and, with `strategic_bombing`,
 production. Missiles strike formations and air defence.
+As built: strategic bombing of production is not implemented (the contract
+has no bombing-damage constant); missiles fight as a ground role. Naval
+battles reuse the ground casualty model at ships tech (no separate naval
+attrition constant).
 
 ## 8. Logistics and attrition
 
@@ -173,6 +218,17 @@ Supply comes from two places:
   sea control. A formation within `supplyRangeKm` along an uncut path receives
   delivery = need x clamp(1 - distance/range, 0, 1) x throughput limits x enemy
   air interdiction.
+  As built: full delivery within `supplyRangeKm`, falling linearly to zero at
+  2 x range. The 1 - d/range form starved armies fighting on their own
+  territory, because `supplyRangeKm` is the distance an army can operate
+  beyond its base. Distance is km of open country: cost per km = plains
+  terrain factor / (terrain x road), so roads stretch the range and rough
+  ground shortens it (raw km / speed cut every range by 40%). Besides cities
+  and capitals, the urban cells of a member's own starting territory are
+  depots (at most 200 per member). Each source delivers at most its
+  throughput (`throughputRoadTonsDay`, rail, port), shared pro rata. Allied
+  sources deliver x (1 - `coalitionFriction`). Forage regrows to full at the
+  start of each summer.
 
 Shortfall reduces the supply fraction, multiplies `diseaseDaily` by
 `starvationMultiplier`, costs morale (`supplyShortfallPenalty`) and, for
@@ -180,11 +236,16 @@ modern forces, reduces ammo/fuel and hence combat power and movement.
 Non-battle losses per day: `diseaseDaily(tech)` x (`winterExposure` in winter
 outside towns, `desertHeat` in desert in summer) + `desertionDaily` when morale
 <= 0.5. A fraction `returnToDuty` of non-battle losses returns after 30 days.
+Reported casualties are combat + pursuit + captured + air + naval + nuclear;
+disease, exposure, starvation and desertion are listed by cause but not
+counted as casualties.
 
 ## 9. Production and mobilization
 
 - Trained reserves arrive at the capital (or entry point) after
-  `mobilizationDays(tech)`, faster with `levee_en_masse`.
+  `mobilizationDays(tech)`, faster with `levee_en_masse` (as built: the
+  `low` end of `mobilizationDays` and the `high` end of
+  `cohortTrainableFraction`).
 - New recruits: `annualCohort` x `cohortTrainableFraction` per year, ready after
   `trainingDays`, capped by `mobilizable` minus everyone already called up.
 - Platforms: `production[role]` per year, x `blockadeProductionFactor` under
@@ -212,6 +273,11 @@ tech)` (`mission_command` halves it). Each order cycle:
    the most threatened own city.
 4. Formations below `retreatThreshold` or out of supply for more than a few days
    fall back toward the supply network to recover.
+   As built: the cycle runs every 5 days. A formation falls back for supply only
+   when it is out of supply AND beyond `supplyRangeKm` of a reachable depot
+   (at a congested depot or when cut off, moving back feeds no one), and is
+   available again once morale is back to 75% of its baseline. Fog of war is
+   modelled as visibility around own formations, not a strength error.
 
 ## 11. Nuclear (off by default)
 
@@ -230,6 +296,13 @@ capital cell uncontested for 1 day; a fortified capital must be besieged for
 `daysToReduce` or stormed), territory share, army collapse (personnel below 10%
 of start or side morale below 0.15), time limit (draw unless one side holds
 clearly more of the other's territory and strength).
+As built: the morale collapse needs side morale to have fallen below 0.15 (a
+force that starts that low is not beaten on day 1). "Clearly more" is a 10
+point territory margin plus at least equal remaining strength. A war with no
+battle or change of territory for 120 days ends as at the time limit, unless
+forces are still on their way. Backtest objectives: a capture objective (not
+held at start) wins when taken; a hold objective is judged at the end, and the
+side still holding it wins.
 
 Explanation: the engine compares the sides on the accumulated factors and ranks
 them: tech gap (mean power multiplier from TLI/dispersion/armor), numbers
@@ -247,4 +320,5 @@ often ranked first.
 
 The worker stores a full state keyframe every 30 days. Seeking to day d
 restores the last keyframe <= d and re-simulates to d. Because the engine is
-deterministic, the replay matches the original run exactly (tested).
+deterministic, the replay matches the original run exactly (tested: full state
+and frame equal to an uninterrupted run, `tests/engine/worker.test.ts`).
