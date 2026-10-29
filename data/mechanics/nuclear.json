@@ -1,0 +1,26 @@
+{
+ "formationLoss": {
+  "low": 0.03,
+  "mid": 0.15,
+  "high": 0.4,
+  "grade": "C",
+  "source": "derived:mech-composite",
+  "note": "Fraction of a targeted formation lost per strike. A division of 15,000 at 1973 density (29-36 men/km2, Attrition Fig. 14, https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/) spreads over ~420-520 km2. Glasstone and Dolan Table 12.09: Hiroshima casualties over a 'vulnerable area' of 9.36 sq mi (24 km2), Nagasaki 7.01 sq mi (18 km2) (https://archive.org/details/DTIC_ADA087568). One ~20 kt weapon -> 18-24 km2 / 420-520 km2 = 3.5-6%; 100-300 kt (area scales W^2/3, x2.9-6) -> 10-35%; first use targets the densest concentration, so mid 0.15."
+ },
+ "cityLoss": {
+  "low": 0.2,
+  "mid": 0.3,
+  "high": 0.6,
+  "grade": "B",
+  "source": "https://archive.org/details/DTIC_ADA087568",
+  "note": "Glasstone and Dolan Table 12.09: Hiroshima killed 68,000 of 256,300 (27%) and injured 76,000; Nagasaki killed 38,000 of 173,800 (22%) and injured 21,000. Killed fraction 0.22-0.27; mid 0.3 for modern yields; high 0.6 for a 100-300 kt weapon on a city core (vulnerable area x2.9-6 by W^2/3 scaling)."
+ },
+ "escalationThreshold": {
+  "low": 0.1,
+  "mid": 0.3,
+  "high": 0.5,
+  "grade": "D",
+  "source": "derived:mech-composite",
+  "note": "Share of own starting theater territory lost before first use. Deliberately simple escalation ladder; no empirical basis exists (no nuclear use since 1945). Educated guess."
+ }
+}

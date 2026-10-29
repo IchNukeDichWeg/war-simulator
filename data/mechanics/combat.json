@@ -1,0 +1,802 @@
+{
+ "baseDailyCasualtyRate": [
+  {
+   "low": 0.04,
+   "mid": 0.08,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Pre-state/early warfare; scaled from Krentz hoplite data below at 0.8x for less lethal stone/copper weapons. Educated guess. Krentz: https://grbs.library.duke.edu/article/viewFile/5321/5325"
+  },
+  {
+   "low": 0.04,
+   "mid": 0.08,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "As tech 0-2: Krentz-based ancient rate x0.8. Educated guess. https://grbs.library.duke.edu/article/viewFile/5321/5325"
+  },
+  {
+   "low": 0.05,
+   "mid": 0.09,
+   "high": 0.16,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Krentz-based ancient rate x0.9. Educated guess. https://grbs.library.duke.edu/article/viewFile/5321/5325"
+  },
+  {
+   "low": 0.05,
+   "mid": 0.1,
+   "high": 0.17,
+   "grade": "C",
+   "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+   "note": "Krentz 1985 (hoplite battles): victors lost avg ~5% killed (typical 3-10%), vanquished avg ~14% (10-20%), killed only. Pre-rout rate at 1:1 ~ victor's 5% killed x2 for wounded = 0.10; high = geometric mean of totals sqrt(0.10 x 0.28) = 0.17."
+  },
+  {
+   "low": 0.05,
+   "mid": 0.1,
+   "high": 0.17,
+   "grade": "C",
+   "source": "https://grbs.library.duke.edu/article/viewFile/5321/5325",
+   "note": "No systematic medieval series; kept at the Krentz-based ancient value (rates before 1600 were not lower per Dupuy's trend). Range as tech 3."
+  },
+  {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/",
+   "note": "Dupuy, Attrition Fig. 13 'Average daily battle casualty rates 1600-1973' (losers/winners, read off the chart, reproduced at this URL): Thirty Years War losers ~30%/day, winners ~20%/day. 1:1 base between winner and loser; pursuit losses are added separately, so mid 0.20 sits at the winners' rate."
+  },
+  {
+   "low": 0.12,
+   "mid": 0.16,
+   "high": 0.21,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/",
+   "note": "Dupuy, Attrition Fig. 13 'Average daily battle casualty rates 1600-1973' (losers/winners, read off the chart, reproduced at this URL): Napoleonic losers ~21%/day, winners ~15%/day; French Revolution ~16/9.5. Mid 0.16 ~ geometric mean sqrt(21 x 15) = 17.7 minus pursuit share."
+  },
+  {
+   "low": 0.07,
+   "mid": 0.1,
+   "high": 0.13,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/",
+   "note": "Dupuy, Attrition Fig. 13 'Average daily battle casualty rates 1600-1973' (losers/winners, read off the chart, reproduced at this URL): c.1900 losers ~12-13%/day, winners ~8%/day; WWI ~10/7. Bodart: Franco-German War 1870-71 average 7.5% bloody losses per battle (quoted in https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf)."
+  },
+  {
+   "low": 0.015,
+   "mid": 0.025,
+   "high": 0.033,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/",
+   "note": "Dupuy, Attrition Fig. 13 'Average daily battle casualty rates 1600-1973' (losers/winners, read off the chart, reproduced at this URL): WWII losers 3.3%/day, winners 2.3%/day. QJM standard rates: attacker 2.8%, defender 1.5% per day for divisions (https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/). Mid 0.025."
+  },
+  {
+   "low": 0.012,
+   "mid": 0.022,
+   "high": 0.031,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/",
+   "note": "Dupuy, Attrition Fig. 13 'Average daily battle casualty rates 1600-1973' (losers/winners, read off the chart, reproduced at this URL): 1973 October War losers ~3.1%/day, winners ~2.1%/day; low allows the continuing decline (CAA: casualty fractions declined 1600-present, https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf)."
+  },
+  {
+   "low": 0.008,
+   "mid": 0.018,
+   "high": 0.03,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Extrapolated: 1973 value 0.022 x 0.8 for continued dispersion; high 0.03 because drone/artillery-heavy fighting in Ukraine 2022-26 kept rates near WWII levels. Educated guess."
+  }
+ ],
+ "powerRatioExponent": [
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. Pre-1600 data are thinner (CAA set starts 1600); high 0.45 allows the more decisive ancient/medieval outcomes (Krentz winner:loser killed ratios 1:2 to 1:5)."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. Pre-1600 data are thinner (CAA set starts 1600); high 0.45 allows the more decisive ancient/medieval outcomes (Krentz winner:loser killed ratios 1:2 to 1:5)."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. Pre-1600 data are thinner (CAA set starts 1600); high 0.45 allows the more decisive ancient/medieval outcomes (Krentz winner:loser killed ratios 1:2 to 1:5)."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. Pre-1600 data are thinner (CAA set starts 1600); high 0.45 allows the more decisive ancient/medieval outcomes (Krentz winner:loser killed ratios 1:2 to 1:5)."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. Pre-1600 data are thinner (CAA set starts 1600); high 0.45 allows the more decisive ancient/medieval outcomes (Krentz winner:loser killed ratios 1:2 to 1:5)."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio."
+  },
+  {
+   "low": 0.25,
+   "mid": 0.3,
+   "high": 0.3,
+   "grade": "B",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio."
+  },
+  {
+   "low": 0.2,
+   "mid": 0.3,
+   "high": 0.35,
+   "grade": "C",
+   "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+   "note": "CAA-RP-95-1 (Helmbold 1995), finding n/p: fractional exchange ratio favouring the defender FERY ~ 0.5 x FRY^0.6, favouring the winner FERW ~ 7.4 x FRW^0.5, with battle date having very little influence. Engine: loss_loser/loss_winner = R^(2 alpha), so 2 alpha = 0.5-0.6 -> alpha 0.25-0.30. Note the CAA exponents are on numerical force ratio, the engine applies alpha to power ratio. 2026 extrapolated from the 1600-1990 stability."
+  }
+ ],
+ "defensePostureFactor": {
+  "low": 1.3,
+  "mid": 1.5,
+  "high": 1.6,
+  "grade": "B",
+  "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+  "note": "QJM posture factors (NPW Table 5, p.230): hasty defense 1.3, prepared 1.5, fortified 1.6, attack 1.0."
+ },
+ "fortificationFactor": [
+  {
+   "low": 1.1,
+   "mid": 1.3,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Palisade: about a QJM hasty-defense factor 1.3 (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Educated guess."
+  },
+  {
+   "low": 1.5,
+   "mid": 1.8,
+   "high": 2.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Mudbrick walls: between QJM fortified 1.6 and stone walls. Educated guess."
+  },
+  {
+   "low": 1.8,
+   "mid": 2.5,
+   "high": 3.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Stone citadels. Educated guess."
+  },
+  {
+   "low": 2.0,
+   "mid": 3.0,
+   "high": 4.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Ashlar city walls with towers; garrisons routinely held against several-fold superior attackers until starved or stormed. Educated guess."
+  },
+  {
+   "low": 2.5,
+   "mid": 4.0,
+   "high": 6.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Concentric castles: the peak of pre-gunpowder fortification; small garrisons held against large armies. Educated guess."
+  },
+  {
+   "low": 2.5,
+   "mid": 3.5,
+   "high": 5.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Trace italienne bastioned fortress. Educated guess."
+  },
+  {
+   "low": 2.0,
+   "mid": 3.0,
+   "high": 4.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Vauban-type fortress. Educated guess."
+  },
+  {
+   "low": 1.6,
+   "mid": 2.5,
+   "high": 3.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Concrete ring forts; Liege 1914 fell in days to super-heavy siege guns. Educated guess."
+  },
+  {
+   "low": 1.6,
+   "mid": 1.8,
+   "high": 2.5,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM posture factor 'fortified defense' 1.6 (NPW Table 5, p.230, quoted by TDI); fortified city adds urban terrain (QJM urban 1.4, applied separately), so mid 1.8."
+  },
+  {
+   "low": 1.6,
+   "mid": 1.8,
+   "high": 2.5,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM fortified 1.6 as floor; hardened shelters. Mid 1.8."
+  },
+  {
+   "low": 1.5,
+   "mid": 1.8,
+   "high": 2.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Layered air defence, but precision strike reduces fixed-fortification value; kept at tech-9 value. Educated guess."
+  }
+ ],
+ "surpriseFactor": {
+  "low": 1.3,
+  "mid": 1.8,
+  "high": 2.5,
+  "grade": "C",
+  "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+  "note": "TNDM multiplier for complete surprise is 2.5, degraded by historical period; partial surprise is lower. Mid 1.8."
+ },
+ "pursuitLossFraction": [
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Interpreted as extra loss fraction of a routed force when the pursuer is fully mobile (engine scales by the winner's mounted/mobile share). Krentz: hoplite losers lost ~14% killed vs ~5% for winners, most of the gap in flight (https://grbs.library.duke.edu/article/viewFile/5321/5325). Educated guess."
+  },
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Interpreted as extra loss fraction of a routed force when the pursuer is fully mobile (engine scales by the winner's mounted/mobile share). Krentz: hoplite losers lost ~14% killed vs ~5% for winners, most of the gap in flight (https://grbs.library.duke.edu/article/viewFile/5321/5325). Educated guess."
+  },
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Interpreted as extra loss fraction of a routed force when the pursuer is fully mobile (engine scales by the winner's mounted/mobile share). Krentz: hoplite losers lost ~14% killed vs ~5% for winners, most of the gap in flight (https://grbs.library.duke.edu/article/viewFile/5321/5325). Educated guess."
+  },
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.8,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Ancient pursuit: Krentz hoplite losers ~14% vs winners ~5% killed with little cavalry (https://grbs.library.duke.edu/article/viewFile/5321/5325); with mounted pursuers losses run much higher: Carrhae 20,000 killed + 10,000 captured of 42,000 vs 10,000 horse (https://en.wikipedia.org/wiki/Battle_of_Carrhae). Engine scales by mounted share."
+  },
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.8,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Medieval: Agincourt French ~6,000 killed + 700-2,200 captured, much of it after the line broke (https://en.wikipedia.org/wiki/Battle_of_Agincourt). Engine scales by mounted share. Educated guess on the magnitude."
+  },
+  {
+   "low": 0.2,
+   "mid": 0.4,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Pike-and-shot: Dupuy's 1600s loser-winner gap ~10 points/day (https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/, Attrition Fig. 13) is mostly pursuit. Educated guess."
+  },
+  {
+   "low": 0.2,
+   "mid": 0.4,
+   "high": 0.6,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Napoleonic loser-winner gap ~6 points/day (https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/, Attrition Fig. 13); Jena-Auerstedt Prussian 41,000 losses incl. captured vs French 12,600 (https://en.wikipedia.org/wiki/Battle_of_Jena–Auerstedt). Educated guess."
+  },
+  {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.4,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Trench-era firepower made pursuit costly; loser-winner gap ~4 points/day (https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/). Educated guess."
+  },
+  {
+   "low": 0.2,
+   "mid": 0.4,
+   "high": 0.7,
+   "grade": "C",
+   "source": "derived:mech-composite",
+   "note": "Mechanized pursuit and encirclement: Bagration German losses 399,102 of which 262,929 missing/captured (https://en.wikipedia.org/wiki/Operation_Bagration). Engine scales by mobile share."
+  },
+  {
+   "low": 0.15,
+   "mid": 0.3,
+   "high": 0.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Mechanized pursuit under air power. Educated guess."
+  },
+  {
+   "low": 0.15,
+   "mid": 0.3,
+   "high": 0.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Drone ISR makes pursuit and withdrawal both costly. Educated guess."
+  }
+ ],
+ "captureFraction": [
+  {
+   "low": 0.05,
+   "mid": 0.15,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Pre-state warfare: few prisoners kept. Educated guess."
+  },
+  {
+   "low": 0.05,
+   "mid": 0.15,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Early states took captives as labour/slaves. Educated guess."
+  },
+  {
+   "low": 0.05,
+   "mid": 0.15,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "As tech 1. Educated guess."
+  },
+  {
+   "low": 0.12,
+   "mid": 0.2,
+   "high": 0.33,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Cannae",
+   "note": "Cannae Roman losses: Polybius 70,000 killed / 10,000 captured (12.5%), Livy 48,200 / 19,300 (29%) - ancient figures; Carrhae 10,000 of 30,000 (33%, https://en.wikipedia.org/wiki/Battle_of_Carrhae)."
+  },
+  {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.27,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt",
+   "note": "Agincourt French: 6,000 killed, 700-2,200 captured -> 10-27%."
+  },
+  {
+   "low": 0.2,
+   "mid": 0.3,
+   "high": 0.45,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Interpolated between medieval (0.2) and Napoleonic (0.3-0.56). Educated guess."
+  },
+  {
+   "low": 0.24,
+   "mid": 0.35,
+   "high": 0.56,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/Battle_of_Austerlitz",
+   "note": "Austerlitz Allies: 15,000-16,000 killed/wounded + 12,000-20,000 captured -> 43-56%; Waterloo French 25,000 K/W + 8,000 captured -> 24% (https://en.wikipedia.org/wiki/Battle_of_Waterloo). Mid 0.35."
+  },
+  {
+   "low": 0.15,
+   "mid": 0.3,
+   "high": 0.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Trench-war battles had low prisoner shares, mobile 1914 battles high. Educated guess."
+  },
+  {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.66,
+   "grade": "B",
+   "source": "https://en.wikipedia.org/wiki/Operation_Bagration",
+   "note": "Bagration German losses (Frieser): 399,102 incl. 262,929 missing/captured -> 66%; encirclement battles typical of the era; mid 0.5."
+  },
+  {
+   "low": 0.15,
+   "mid": 0.3,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Late Cold War conventional wars (1973, 1991 Iraq) had high prisoner shares for collapsing forces. Educated guess."
+  },
+  {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.4,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Drone-era attritional warfare: few large surrenders. Educated guess."
+  }
+ ],
+ "terrainAttackFactor": {
+  "water": {
+   "low": 0.4,
+   "mid": 0.5,
+   "high": 0.7,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+   "note": "Attacking across water = amphibious: TNDM multiplier 2.00 for amphibious attack across a beach (attacker casualties), so attacker power ~1/2."
+  },
+  "plains": {
+   "low": 0.9,
+   "mid": 1.0,
+   "high": 1.0,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Flat open terrain is the QJM baseline 1.0."
+  },
+  "cropland": {
+   "low": 0.85,
+   "mid": 0.95,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Flat mixed (fields, hedges, villages) slightly above baseline: 1/1.05. Educated guess."
+  },
+  "forest": {
+   "low": 0.65,
+   "mid": 0.75,
+   "high": 0.85,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Heavily wooded taken between rolling-mixed 1.3 and rugged-mixed 1.5: 1/1.35 = 0.74. Educated guess."
+  },
+  "hills": {
+   "low": 0.7,
+   "mid": 0.77,
+   "high": 0.85,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Rolling-mixed 1.3 -> 1/1.3 = 0.77."
+  },
+  "mountains": {
+   "low": 0.55,
+   "mid": 0.65,
+   "high": 0.75,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Rugged-mixed 1.5 -> 0.67; rugged wooded/high mountains lower; mid 0.65."
+  },
+  "desert": {
+   "low": 0.9,
+   "mid": 0.95,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Open desert ~ flat baseline; dunes/escarpments slightly favour the defender. Educated guess."
+  },
+  "steppe": {
+   "low": 0.95,
+   "mid": 1.0,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Flat open grassland = baseline. Educated guess."
+  },
+  "wetland": {
+   "low": 0.65,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Swamp/marsh: channelised approaches; ~1/1.25. Educated guess."
+  },
+  "urban": {
+   "low": 0.6,
+   "mid": 0.71,
+   "high": 0.8,
+   "grade": "B",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Urban 1.4 -> 1/1.4 = 0.71."
+  },
+  "ice": {
+   "low": 0.6,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Glacier/polar terrain: exposure and slow movement favour the defender ~1/1.25. Educated guess."
+  }
+ },
+ "terrainMountedFactor": {
+  "water": {
+   "low": 0.0,
+   "mid": 0.1,
+   "high": 0.3,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Mounted/vehicle roles cannot fight on water."
+  },
+  "plains": {
+   "low": 0.9,
+   "mid": 1.0,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Open plains: full value."
+  },
+  "cropland": {
+   "low": 0.7,
+   "mid": 0.9,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Fields, hedgerows, ditches."
+  },
+  "forest": {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Dense woods canalise and blind cavalry and tanks."
+  },
+  "hills": {
+   "low": 0.6,
+   "mid": 0.8,
+   "high": 0.9,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Rolling hills."
+  },
+  "mountains": {
+   "low": 0.2,
+   "mid": 0.4,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Mountains."
+  },
+  "desert": {
+   "low": 0.8,
+   "mid": 1.0,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Open desert suits horse and tank; dunes lower."
+  },
+  "steppe": {
+   "low": 0.95,
+   "mid": 1.0,
+   "high": 1.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Steppe: classic cavalry country."
+  },
+  "wetland": {
+   "low": 0.2,
+   "mid": 0.4,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Marsh and swamp."
+  },
+  "urban": {
+   "low": 0.3,
+   "mid": 0.5,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Streets canalise and expose vehicles and horses."
+  },
+  "ice": {
+   "low": 0.4,
+   "mid": 0.6,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Snow and ice."
+  }
+ },
+ "riverCrossingFactor": {
+  "low": 0.5,
+  "mid": 0.6,
+  "high": 0.8,
+  "grade": "C",
+  "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+  "note": "TNDM has an amphibious/river-crossing factor; amphibious across a beach is 2.00. A contested major river is taken as 1/1.67 (between beach 1/2 and a minor stream ~0.8). Educated interpolation."
+ },
+ "combinedArmsBonus": {
+  "low": 0.05,
+  "mid": 0.2,
+  "high": 0.4,
+  "grade": "D",
+  "source": "derived:mech-composite",
+  "note": "Bonus = combinedArmsBonus x doctrine.combinedArms x roleDiversity. No quantitative source found; Dupuy lists combined arms among the adaptations to lethality (https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/). Educated guess."
+ },
+ "battleHoursPerDay": {
+  "low": 4,
+  "mid": 10,
+  "high": 16,
+  "grade": "C",
+  "source": "https://www.generalstaff.org/BBOW/LOV-DUP/ADA298124_CAA-RP-95-1.pdf",
+  "note": "Rounds per battle day. Battle durations have increased over time (CAA finding a); pre-modern battles lasted a few hours, modern combat runs in day and night phases. Mid 10."
+ },
+ "qualityFactor": {
+  "low": 0.75,
+  "mid": 1.0,
+  "high": 1.3,
+  "grade": "C",
+  "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+  "note": "Converts a 0..1 rating to a multiplier (low at 0, mid at 0.5, high at 1). Calibration: Dupuy's CEV - TNDM caps the opponent CEV at 1.5 (https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/); Israeli forces won 81% of attacks at odds below 1:1 while Arab forces lost every attack below 3.94:1 (https://dupuyinstitute.org/2019/11/28/force-ratios-in-the-arab-israeli-wars-1956-1973/), implying a combined effectiveness gap of ~2-3x spread over quality, training, command and morale. Equipment quality within an era (TLI handles the tech level), so the narrowest of the three."
+ },
+ "trainingFactor": {
+  "low": 0.7,
+  "mid": 1.0,
+  "high": 1.4,
+  "grade": "C",
+  "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+  "note": "Converts a 0..1 rating to a multiplier (low at 0, mid at 0.5, high at 1). Calibration: Dupuy's CEV - TNDM caps the opponent CEV at 1.5 (https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/); Israeli forces won 81% of attacks at odds below 1:1 while Arab forces lost every attack below 3.94:1 (https://dupuyinstitute.org/2019/11/28/force-ratios-in-the-arab-israeli-wars-1956-1973/), implying a combined effectiveness gap of ~2-3x spread over quality, training, command and morale."
+ },
+ "commandFactor": {
+  "low": 0.75,
+  "mid": 1.0,
+  "high": 1.35,
+  "grade": "C",
+  "source": "https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/",
+  "note": "Converts a 0..1 rating to a multiplier (low at 0, mid at 0.5, high at 1). Calibration: Dupuy's CEV - TNDM caps the opponent CEV at 1.5 (https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/); Israeli forces won 81% of attacks at odds below 1:1 while Arab forces lost every attack below 3.94:1 (https://dupuyinstitute.org/2019/11/28/force-ratios-in-the-arab-israeli-wars-1956-1973/), implying a combined effectiveness gap of ~2-3x spread over quality, training, command and morale."
+ },
+ "cohesionBreakpointShift": {
+  "low": 0.1,
+  "mid": 0.2,
+  "high": 0.3,
+  "grade": "D",
+  "source": "derived:mech-composite",
+  "note": "Breakpoint += shift x (cohesion - 0.5): an elite unit (cohesion 1.0) breaks ~10 points later, e.g. 0.30 -> 0.40, matching the FM 105-5 defender breakpoint of ~40% (https://dupuyinstitute.org/2024/03/26/the-40-rule/). Educated guess."
+ },
+ "specialEffects": {
+  "phalanxFront": {
+   "low": 1.1,
+   "mid": 1.3,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Frontal multiplier for a deep pike/spear phalanx; comparable to a hasty-to-prepared defensive gain (QJM 1.3-1.5, https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Educated guess."
+  },
+  "phalanxFlank": {
+   "low": 0.4,
+   "mid": 0.6,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Phalanx struck in flank/rear or broken ground (Cynoscephalae, Pydna); ancient loss reports are lopsided. Educated guess."
+  },
+  "horseArcheryOpening": {
+   "low": 1.2,
+   "mid": 1.5,
+   "high": 2.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Horse archers' opening rounds against slower melee forces; Carrhae: 42,000 Romans lost 30,000 to 10,000 Parthian horse (https://en.wikipedia.org/wiki/Battle_of_Carrhae). Educated guess on the multiplier."
+  },
+  "feignedRetreatPursuerLoss": {
+   "low": 1.5,
+   "mid": 2.0,
+   "high": 3.0,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Loss multiplier for pursuers caught by a feigned retreat; ENGINE.md specifies one round at 2x. Educated guess."
+  },
+  "fieldFortification": {
+   "low": 1.15,
+   "mid": 1.3,
+   "high": 1.5,
+   "grade": "C",
+   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
+   "note": "Nightly fortified camp = QJM hasty defense 1.3 (prepared 1.5) per NPW Table 5."
+  },
+  "massedArtillery": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.4,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Massed artillery doctrine; artillery caused 40-50% of casualties before 1850 and 71% in WWI (Attrition Figs. 19 and 35, https://dupuyinstitute.org/2016/11/12/what-is-the-relationship-between-rate-of-fire-and-military-effectiveness/). Educated guess on the multiplier."
+  },
+  "defenseInDepth": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.4,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Defense in depth: between hasty 1.3 and prepared 1.5 relative to attack (QJM, https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/), applied on top of posture. Educated guess."
+  },
+  "humanWavePower": {
+   "low": 1.05,
+   "mid": 1.15,
+   "high": 1.3,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Power multiplier for massed infantry assaults. Educated guess."
+  },
+  "humanWaveOwnLoss": {
+   "low": 1.4,
+   "mid": 1.8,
+   "high": 2.5,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Own-loss multiplier for human-wave tactics. Educated guess."
+  },
+  "siegeEngineering": {
+   "low": 1.2,
+   "mid": 1.4,
+   "high": 1.8,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Attacker power multiplier against fortifications (equivalently a shorter siege) for Roman/Mongol-type engineering. Educated guess."
+  },
+  "blitzExploitation": {
+   "low": 1.1,
+   "mid": 1.3,
+   "high": 1.6,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Exploitation multiplier for combined-arms armoured breakthroughs; TNDM caps CEV at 1.5 (https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/). Educated guess."
+  },
+  "deepBattleBreakthrough": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.4,
+   "grade": "D",
+   "source": "derived:mech-composite",
+   "note": "Soviet deep battle echelon breakthrough multiplier. Educated guess."
+  }
+ }
+}

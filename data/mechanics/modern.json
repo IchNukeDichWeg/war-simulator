@@ -1,0 +1,34 @@
+{
+ "isrPerLevel": {
+  "low": 0.03,
+  "mid": 0.1,
+  "high": 0.2,
+  "grade": "D",
+  "source": "derived:mech-composite",
+  "note": "Per level of ISR gap. Upper bound from information asymmetry: complete surprise multiplies by up to 2.5 (TNDM, https://dupuyinstitute.org/2019/12/26/how-attrition-is-calculated-in-the-qjm-vs-the-tndm/); spread over ~5 levels, 2.5^(1/5) = 1.20 -> 0.2 per level as high; mid 0.1. Educated guess."
+ },
+ "precisionStrikePerLevel": {
+  "low": 0.05,
+  "mid": 0.15,
+  "high": 0.4,
+  "grade": "C",
+  "source": "https://www.govinfo.gov/content/pkg/GAOREPORTS-PEMD-96-10/html/GAOREPORTS-PEMD-96-10.htm",
+  "note": "Desert Storm: guided munitions were 8% of tonnage but 11 of 55 tons on targets assessed destroyed; per-ton association (11/8)/(44/92) = 2.9. Force-level effect with an 8% guided share: 1 + 0.08 x (2.9 - 1) = 1.15 -> 0.15 per level. High 0.4 for forces whose strike load is mostly guided. GAO cautions the PGM contribution 'is unknowable' from campaign data."
+ },
+ "ewPerLevel": {
+  "low": 0.05,
+  "mid": 0.15,
+  "high": 0.5,
+  "grade": "C",
+  "source": "https://www.afcea.org/signal-media/network-centric-warfare-offers-warfighting-advantage",
+  "note": "Per level of communications gap. JTIDS/Link-16 F-15C evaluation (>12,000 sorties): datalink aircraft raised kill ratio by more than 150% over voice-only; 29 Sqn Tornados reached ~4:1. A 2.5x kill ratio ~ sqrt(2.5) = 1.58 power under square-law -> 0.58/level in air combat (high 0.5); ground combat effect smaller, mid 0.15. Educated scaling."
+ },
+ "cyberPerLevel": {
+  "low": 0.0,
+  "mid": 0.03,
+  "high": 0.1,
+  "grade": "D",
+  "source": "derived:mech-composite",
+  "note": "Per level of cyber gap. No quantitative battlefield evidence; observed effects in 2022-26 were disruptive but rarely decisive in combat. Educated guess."
+ }
+}
