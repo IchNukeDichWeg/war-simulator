@@ -1,0 +1,590 @@
+{
+  "id": "portugal-1550",
+  "nationId": "portugal",
+  "includes": [],
+  "name": "Kingdom of Portugal (John III)",
+  "year": 1550,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "peak",
+  "tags": [
+    "kingdom",
+    "maritime empire",
+    "Estado da India",
+    "carracks",
+    "spice trade",
+    "Aviz dynasty"
+  ],
+  "capital": {
+    "name": "Lisbon",
+    "lat": 38.7223,
+    "lon": -9.1393,
+    "kind": "capital",
+    "population": 100000
+  },
+  "places": [
+    {
+      "name": "Porto",
+      "lat": 41.1579,
+      "lon": -8.6291,
+      "kind": "port",
+      "population": 15000
+    },
+    {
+      "name": "Evora",
+      "lat": 38.5714,
+      "lon": -7.9135,
+      "kind": "city"
+    },
+    {
+      "name": "Coimbra",
+      "lat": 40.2033,
+      "lon": -8.4103,
+      "kind": "city"
+    },
+    {
+      "name": "Lagos",
+      "lat": 37.1028,
+      "lon": -8.6742,
+      "kind": "port"
+    },
+    {
+      "name": "Setubal",
+      "lat": 38.5244,
+      "lon": -8.8882,
+      "kind": "port"
+    },
+    {
+      "name": "Ceuta",
+      "lat": 35.8894,
+      "lon": -5.3213,
+      "kind": "fortress"
+    },
+    {
+      "name": "Tangier",
+      "lat": 35.7595,
+      "lon": -5.834,
+      "kind": "fortress"
+    },
+    {
+      "name": "Mazagao (El Jadida)",
+      "lat": 33.2316,
+      "lon": -8.5007,
+      "kind": "fortress"
+    },
+    {
+      "name": "Elvas",
+      "lat": 38.8815,
+      "lon": -7.1628,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1530:Portugal",
+    "areaKm2": {
+      "low": 89000,
+      "mid": 92000,
+      "high": 93200,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1530.geojson",
+      "note": "world_1530 Portugal polygon = 93,126 km2 on the sphere (metropolitan Portugal, ~92,000 km2 modern). Overseas forts not included."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 1200000,
+      "mid": 1400000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "HYDE via OWID: Portugal 1,147,012 (1500), 1,835,219 (1600); interpolation gives ~1.5M for 1550. Census-based estimates for 1527-32 (numeramento) ~1.2-1.4M. Mid 1.4M. Overseas Portuguese (perhaps 10,000-15,000 in Asia) excluded from the count."
+    },
+    "urbanization": {
+      "low": 0.1,
+      "mid": 0.13,
+      "high": 0.15,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share (de Vries based): Portugal 13.8% (1500), 12.7% (1600). Lisbon alone held ~100,000."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 12000,
+      "mid": 19000,
+      "high": 26000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "No standing army at home before the ordenancas of 1570. Counted: soldados of the Estado da India ~6,000-10,000 (Boxer, The Portuguese Seaborne Empire, ch. 3, gives at most ~10,000 able-bodied Portuguese in Asia in the mid-16th c.), garrisons of the Moroccan fortresses (Ceuta, Tangier, Mazagao, Arzila to 1550) ~4,000, royal guard and fortress garrisons at home ~1,000, plus ~5,000-7,000 sailors and gunners of the India armadas and Indian Ocean squadrons."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 35000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: noble retinues, military orders and town levies callable within a month (the 1578 Alcacer Quibir army of ~17,000 Portuguese needed a year of raising and mercenaries)."
+    },
+    "supportPersonnel": {
+      "low": 4000,
+      "mid": 6000,
+      "high": 8000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: sailors and gunners of the carreira da India and the Indian Ocean fleets (5-7 India ships a year, Portuguese India Armadas article, plus ~20-40 armed ships in Asia)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the 1578 Moroccan expedition (~17,000 Portuguese plus mercenaries, ~1.2% of population) nearly exhausted the kingdom; 3% is the practical ceiling with town and noble levies."
+    },
+    "mobilizable": {
+      "low": 24000,
+      "mid": 42000,
+      "high": 64000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 7000,
+          "mid": 11000,
+          "high": 15000,
+          "grade": "C",
+          "source": "derived:snapshot-composite",
+          "note": "Soldados (arquebusiers and pikemen) in Asian fortresses (Goa, Malacca, Hormuz, Diu, Cochin) and North African garrisons; see activePersonnel note."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: arquebus and pike, superior to most Asian and Moroccan opponents"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: experienced but unorganised companies, no regimental system"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 200,
+          "mid": 500,
+          "high": 900,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: fidalgo men-at-arms in the Moroccan fortresses."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: lance and plate"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: frontier raiding experience"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 800,
+          "mid": 1500,
+          "high": 2500,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: ginete light horse of the Moroccan presidios (the fronteiros)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: jinete light horse"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: constant frontier raiding"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 20,
+          "mid": 50,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field pieces outside fortress and ship mountings; Portuguese gunnery was concentrated on ships and forts."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: bronze guns from Lisbon and Goa foundries"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: contract gunners, many German and Flemish"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: carracks and galleons able to fight in line, in the India run (5-7 sailings a year, ~400 tons average, a few 900-ton ships in the 1550s: Portuguese India Armadas article, https://en.wikipedia.org/wiki/Portuguese_India_Armadas) and the Goa and Malacca squadrons."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: large heavily-gunned carracks and galleons outclassed Indian Ocean opponents (Diu 1509)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: oceanic navigation and gunnery the best of the 1550s"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 60,
+          "high": 100,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: caravels, fustas and galliots of the Asian and Moroccan coasts."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: lateen caravels, local fustas"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: experienced crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5 (competent, average). Evidence: capable viceroys (Joao de Castro, Diu 1546) but no permanent army command or staff"
+    },
+    "cohesion": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: companies of fidalgos and adventurers bound by personal loyalty"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: crusading ethos and recent victories (second siege of Diu 1546)"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.6,
+      "mid": 4.75,
+      "high": 4.9,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (1600: arquebus/musket, pike, field cannon). Evidence: arquebus-armed soldados, no musket or formed pike regiments yet"
+    },
+    "armor": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 between plate-and-mail and half-armor. Evidence: corselets and morions"
+    },
+    "ships": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (galleons). Evidence: oceanic carracks and early galleons with broadside guns; the era leader in ocean navigation"
+    },
+    "fortification": {
+      "low": 4.45,
+      "mid": 4.6,
+      "high": 4.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.6 toward 5 (trace italienne). Evidence: Mazagao (1541-42) one of the first bastioned forts outside Italy; Asian forts mostly older"
+    },
+    "logistics": {
+      "low": 4.45,
+      "mid": 4.6,
+      "high": 4.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.6. Evidence: seaborne supply of fortress garrisons via the carreira da India"
+    },
+    "communications": {
+      "low": 4.45,
+      "mid": 4.6,
+      "high": 4.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.6. Evidence: annual fleets; a letter Lisbon-Goa took 6-8 months"
+    },
+    "isr": {
+      "low": 4.43,
+      "mid": 4.58,
+      "high": 4.73,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1281,
+      "mid": 1331,
+      "high": 1565,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Portugal 1530 = 1,281, 1550 = 1,331, 1560 = 1,565."
+    },
+    "gdp": {
+      "low": 1537200000,
+      "mid": 1863400000,
+      "high": 2504000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the crown spent most pepper-trade and customs revenue on fleets and fortresses; Moroccan forts were abandoned 1541-50 because of cost."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: shipbuilding at the Ribeira das Naus, textiles, salt."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Portugal was a chronic grain importer (Baltic, Moroccan and Azorean wheat); Lisbon depended on imports."
+    },
+    "annualCohort": {
+      "low": 10800,
+      "mid": 13300,
+      "high": 17600,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 2000,
+      "mid": 4000,
+      "high": 6000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: unpaved royal roads; coastal and river shipping carried most traffic."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 8,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Lisbon, Porto, Setubal, Lagos, Viana, Aveiro; overseas Goa, Malacca, Hormuz, Mozambique as bases."
+    },
+    "merchantTonnage": {
+      "low": 40000,
+      "mid": 70000,
+      "high": 120000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: India carracks (~400 tons each, 5-7 sailings a year), Brazil and Atlantic island shipping, coastal trade."
+    },
+    "supplyRangeKm": {
+      "low": 50,
+      "mid": 100,
+      "high": 200,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: land operations limited to fortress hinterlands; sea supply carried expeditions thousands of km."
+    },
+    "draftAnimals": {
+      "low": 150000,
+      "mid": 300000,
+      "high": 500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: mules, oxen and horses for 1.4M people."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Goa",
+        "lat": 15.4909,
+        "lon": 73.8278,
+        "kind": "port"
+      },
+      {
+        "name": "Malacca",
+        "lat": 2.1896,
+        "lon": 102.2501,
+        "kind": "port"
+      },
+      {
+        "name": "Hormuz",
+        "lat": 27.0947,
+        "lon": 56.4569,
+        "kind": "fortress"
+      },
+      {
+        "name": "Diu",
+        "lat": 20.7144,
+        "lon": 70.9822,
+        "kind": "fortress"
+      },
+      {
+        "name": "Mozambique Island",
+        "lat": -15.0346,
+        "lon": 40.7358,
+        "kind": "port"
+      },
+      {
+        "name": "Elmina",
+        "lat": 5.0847,
+        "lon": -1.3509,
+        "kind": "fortress"
+      },
+      {
+        "name": "Salvador da Bahia",
+        "lat": -12.9777,
+        "lon": -38.5016,
+        "kind": "port"
+      },
+      {
+        "name": "Cochin",
+        "lat": 9.9312,
+        "lon": 76.2673,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Tagus estuary",
+      "Strait of Gibraltar",
+      "Cape of Good Hope route",
+      "Strait of Hormuz",
+      "Strait of Malacca"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.1,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.1 row: familiar terrain and local supply; Elvas and border castles, but 1580 showed the kingdom fell in weeks."
+    }
+  },
+  "notes": "Snapshot = 1550, late reign of John III, height of the Estado da India before the Spanish union. Population counts metropolitan Portugal only; overseas forts are basesAbroad. Personnel convention: salaried soldados in Asia and the Moroccan garrisons and fleet crews are active; noble retinues and town levies are trainedReserves (the ordenancas militia was only created in 1570). Force numbers are thin: there was no standing army and no muster series, so most counts are grade D."
+}

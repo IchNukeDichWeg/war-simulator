@@ -1,0 +1,565 @@
+{
+  "id": "sweden-1709",
+  "nationId": "sweden",
+  "includes": [],
+  "name": "Swedish Empire (Charles XII)",
+  "year": 1709,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "empire",
+    "Swedish Empire",
+    "Great Northern War",
+    "Charles XII",
+    "Caroleans",
+    "allotment system",
+    "Poltava"
+  ],
+  "capital": {
+    "name": "Stockholm",
+    "lat": 59.3293,
+    "lon": 18.0686,
+    "kind": "capital",
+    "population": 55000
+  },
+  "places": [
+    {
+      "name": "Gothenburg",
+      "lat": 57.7089,
+      "lon": 11.9746,
+      "kind": "port"
+    },
+    {
+      "name": "Kalmar",
+      "lat": 56.6634,
+      "lon": 16.3568,
+      "kind": "fortress"
+    },
+    {
+      "name": "Turku (Abo)",
+      "lat": 60.4518,
+      "lon": 22.2666,
+      "kind": "city"
+    },
+    {
+      "name": "Tallinn (Reval)",
+      "lat": 59.437,
+      "lon": 24.7536,
+      "kind": "port"
+    },
+    {
+      "name": "Riga",
+      "lat": 56.9496,
+      "lon": 24.1052,
+      "kind": "port"
+    },
+    {
+      "name": "Karlskrona",
+      "lat": 56.1612,
+      "lon": 15.5869,
+      "kind": "port"
+    },
+    {
+      "name": "Stralsund",
+      "lat": 54.3091,
+      "lon": 13.0818,
+      "kind": "port"
+    },
+    {
+      "name": "Uppsala",
+      "lat": 59.8586,
+      "lon": 17.6389,
+      "kind": "city"
+    },
+    {
+      "name": "Falun (copper mine)",
+      "lat": 60.6065,
+      "lon": 15.6355,
+      "kind": "city"
+    },
+    {
+      "name": "Oresund",
+      "lat": 56.0,
+      "lon": 12.7,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1700:Sweden",
+    "areaKm2": {
+      "low": 850000,
+      "mid": 917000,
+      "high": 930000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1700.geojson",
+      "note": "world_1700 Sweden polygon = 917,490 km2 on the sphere (Sweden, Finland, Baltic provinces, German territories). Ingria was lost in 1703; low subtracts it."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 2100000,
+      "mid": 2400000,
+      "high": 2700000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "HYDE via OWID: Sweden 1,368,171 (1700) and 1,422,676 (1710); Finland 400,119 (1700) and 437,513 (1710); plus Estonia and Livonia ~0.3-0.4M and the German provinces (Swedish Pomerania, Wismar, Bremen-Verden) ~0.3M. Ingria lost 1703. Plague 1710-11 not yet."
+    },
+    "urbanization": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Sweden 4.0% (1700, de Vries-type). Stockholm ~55,000, Riga ~15,000. Mid 5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 90000,
+      "mid": 100000,
+      "high": 115000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+      "note": "Effective strength peaked at ~100,000 in 1707-08 (Great Northern War article after Silfverstolpe 1864 p. 151 and Glete 2010 p. 206), nominal 110,000-115,000 (Chandler, Kennedy). Counted: the allotted (indelta) regiments and enlisted (varvade) regiments in the field, in Finland, the Baltic provinces and Pomerania, and garrisons, plus the navy. Snapshot is before Poltava (28 June 1709)."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 25000,
+      "high": 40000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: replacement (tremanning/femmanning) levies and reserve regiments raised in 1709-10 from the allotment districts; Frost (Northern Wars ch. 12, isbn:0-582-06429-5) describes repeated extra levies."
+    },
+    "supportPersonnel": {
+      "low": 12000,
+      "mid": 15000,
+      "high": 20000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Navy ~10,000-12,000 (43 ships of the line at peak, Glete 2010 p. 429 via the Great Northern War article; ~300 men per ship of the line in commission), artillery ~2,000, train and staffs."
+    },
+    "mobilizationRatio": {
+      "low": 0.06,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+      "note": "Sweden-Finland lost ~200,000 soldiers 1700-21 from ~2M people (Great Northern War article, Hoglund and Sallnas); peak strength ~100,000 = ~4% under arms; extreme ceiling 8-10%."
+    },
+    "mobilizable": {
+      "low": 126000,
+      "mid": 192000,
+      "high": 270000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 48000,
+          "mid": 55000,
+          "high": 62000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+          "note": "Infantry ~55-60% of the ~100,000 effective (indelta and varvade regiments, garrisons). Main army in Ukraine before Poltava: 24,392 regulars incl. ~13,000 cavalry (Battle of Poltava article, Krotov 2014)."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: flintlock and bayonet, pikes still in the front rank, gå-på cold-steel tactics"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Carolean veterans of Narva and Holowczyn; replacement drafts weaker"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 12000,
+          "mid": 16000,
+          "high": 20000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+          "note": "Cavalry regiments (indelta rusthall cavalry) charging knee to knee with the sword."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: good horses from the rusthall system; arme blanche"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: veteran shock cavalry, the best in northern Europe"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 11000,
+          "high": 15000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+          "note": "Dragoon regiments (counted as light cavalry, as in the France 1805 snapshot); Swedish dragoons fought mounted like cavalry."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: as cavalry"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veteran"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 80,
+          "mid": 150,
+          "high": 250,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Charles XII had 34 guns with the main army at Poltava (Battle of Poltava article), left most of the train behind; field guns in Finland, Livonia and Pomerania add the rest."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: good guns but neglected by Charles XII"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional gunners, little used"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 34,
+          "mid": 38,
+          "high": 43,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+          "note": "Swedish navy at peak: 43 ships of the line (Glete 2010 p. 429, Great Northern War article); ~38 in 1709."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Karlskrona-built ships of the line, Baltic-sized"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: trained crews, but navy starved of funds"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 15,
+          "mid": 25,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: frigates, galleys and skerries craft (Swedish archipelago fleet small before 1714)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Charles XII and Rehnskiold tactically brilliant (Narva 1700, Holowczyn 1708) but the 1708-09 Russian campaign over-reached; Lewenhaupt's supply column destroyed at Lesnaya"
+    },
+    "cohesion": {
+      "low": 0.8,
+      "mid": 0.85,
+      "high": 0.95,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75-1.0. Evidence: allotment regiments recruited from home parishes, Lutheran discipline; Carolean regiments fought on when surrounded"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: a decade of victories, but the winter of 1708-09 cost thousands to frostbite"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.35,
+      "mid": 5.5,
+      "high": 5.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.5 between 1600 (5) and 1805 (6). Evidence: flintlock muskets and socket bayonets, pikes retained"
+    },
+    "armor": {
+      "low": 5.15,
+      "mid": 5.3,
+      "high": 5.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.3. Evidence: cuirass largely abandoned except some cavalry"
+    },
+    "ships": {
+      "low": 5.35,
+      "mid": 5.5,
+      "high": 5.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.5. Evidence: 70-gun ships of the line at Karlskrona"
+    },
+    "fortification": {
+      "low": 5.35,
+      "mid": 5.5,
+      "high": 5.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.5. Evidence: Dahlbergh's Vauban-type fortresses at Riga, Narva, Stralsund"
+    },
+    "logistics": {
+      "low": 5.05,
+      "mid": 5.2,
+      "high": 5.35,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.2. Evidence: magazines in the Baltic provinces; the 1708-09 Ukraine campaign depended on a supply column that was lost"
+    },
+    "communications": {
+      "low": 4.95,
+      "mid": 5.1,
+      "high": 5.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.1. Evidence: courier post; Charles XII out of reach of Stockholm for years"
+    },
+    "isr": {
+      "low": 5.05,
+      "mid": 5.2,
+      "high": 5.35,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1330,
+      "mid": 1700,
+      "high": 1824,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Sweden 1700 = 2,002, 1709 = 1,824; Finland 1700 = 1,331. Mid weights Finland and the Baltic provinces in."
+    },
+    "gdp": {
+      "low": 2793000000,
+      "mid": 4080000000,
+      "high": 4924800000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: wartime contributions from Poland and Saxony (1702-07) funded much of the war; Sweden itself was taxed to exhaustion by 1709. Peacetime share low."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.18,
+      "high": 0.24,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: iron (the largest European bar-iron exporter), copper, gun founding."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.12,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: grain imports from Livonia and the German provinces; poor harvests in 1709."
+    },
+    "annualCohort": {
+      "low": 18900,
+      "mid": 22800,
+      "high": 29700,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5000,
+      "mid": 8000,
+      "high": 12000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: royal roads between Swedish towns and the Finland coastal road; sea lanes carried most traffic."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 8,
+      "high": 10,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Stockholm, Karlskrona, Gothenburg, Riga, Reval, Turku, Stralsund, Wismar, Stade."
+    },
+    "merchantTonnage": {
+      "low": 40000,
+      "mid": 70000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Swedish merchant fleet grew under the 1724-type navigation protections later; c. 1700 small."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War (isbn:0-521-54657-5) ch. 1: 17th-18th c. armies tied to magazines and bread ovens, operating ~5 marches (~100-150 km) beyond the nearest magazine or navigable river; requisition extends it in rich country."
+    },
+    "draftAnimals": {
+      "low": 300000,
+      "mid": 500000,
+      "high": 800000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses (rusthall system supplied cavalry remounts) and oxen."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Stralsund",
+        "lat": 54.3091,
+        "lon": 13.0818,
+        "kind": "port"
+      },
+      {
+        "name": "Wismar",
+        "lat": 53.8933,
+        "lon": 11.4655,
+        "kind": "port"
+      },
+      {
+        "name": "Stade (Bremen-Verden)",
+        "lat": 53.5998,
+        "lon": 9.4766,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Oresund",
+      "Gulf of Finland",
+      "Gulf of Riga",
+      "Dvina crossings (Riga)"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep strategic depth, forest and lakes, harsh winters, sea moat; Sweden proper was not invaded until the 1719 Russian galley raids."
+    }
+  },
+  "notes": "Snapshot = early 1709, before Poltava (28 June 1709) and Perevolochna. Population counts Sweden, Finland, Estonia, Livonia and the German provinces. Personnel convention: allotted (indelta) and enlisted regiments in the field and in garrisons plus the navy are active; extra replacement levies are trainedReserves. The ~100,000 effective peak (1707-08) is the anchor; after Perevolochna (~15,000 surrendered) the field army was gone, so a late-1709 snapshot would be far weaker."
+}

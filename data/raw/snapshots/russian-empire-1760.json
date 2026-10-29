@@ -1,0 +1,592 @@
+{
+  "id": "russian-empire-1760",
+  "nationId": "russian-empire",
+  "includes": [],
+  "name": "Russian Empire (Elizabeth)",
+  "year": 1760,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "rise",
+  "tags": [
+    "empire",
+    "Seven Years War",
+    "Elizabeth",
+    "Kunersdorf",
+    "raid on Berlin",
+    "recruit levy"
+  ],
+  "capital": {
+    "name": "Saint Petersburg",
+    "lat": 59.9343,
+    "lon": 30.3351,
+    "kind": "capital",
+    "population": 150000
+  },
+  "places": [
+    {
+      "name": "Moscow",
+      "lat": 55.7558,
+      "lon": 37.6173,
+      "kind": "city",
+      "population": 160000
+    },
+    {
+      "name": "Riga",
+      "lat": 56.9496,
+      "lon": 24.1052,
+      "kind": "port"
+    },
+    {
+      "name": "Reval (Tallinn)",
+      "lat": 59.437,
+      "lon": 24.7536,
+      "kind": "port"
+    },
+    {
+      "name": "Kronstadt",
+      "lat": 59.9925,
+      "lon": 29.7681,
+      "kind": "port"
+    },
+    {
+      "name": "Kyiv",
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "kind": "fortress"
+    },
+    {
+      "name": "Smolensk",
+      "lat": 54.7826,
+      "lon": 32.0453,
+      "kind": "fortress"
+    },
+    {
+      "name": "Konigsberg (occupied 1758-62)",
+      "lat": 54.7104,
+      "lon": 20.4522,
+      "kind": "city"
+    },
+    {
+      "name": "Kazan",
+      "lat": 55.7963,
+      "lon": 49.1088,
+      "kind": "city"
+    },
+    {
+      "name": "Tula (arms works)",
+      "lat": 54.1931,
+      "lon": 37.6177,
+      "kind": "city"
+    },
+    {
+      "name": "Arkhangelsk",
+      "lat": 64.5401,
+      "lon": 40.5433,
+      "kind": "port"
+    },
+    {
+      "name": "Yekaterinburg (Urals iron)",
+      "lat": 56.8389,
+      "lon": 60.6057,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1715:Tsardom of Muscovy",
+    "areaKm2": {
+      "low": 15000000,
+      "mid": 15400000,
+      "high": 16000000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1715.geojson",
+      "note": "world_1715 Tsardom of Muscovy polygon = 15,379,517 km2 on the sphere (incl. Siberia). Baltic provinces (1721) added after 1715."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 21000000,
+      "mid": 23500000,
+      "high": 27000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Third revision (1762-63) ~23M for the empire as usually cited from Kabuzan; HYDE via OWID gives Russia (modern borders) 24.67M for 1760 plus Baltic provinces (Estonia 0.17M, Latvia part ~0.2M) and Left-bank Ukraine, which is the high end. Mid 23.5M."
+    },
+    "urbanization": {
+      "low": 0.02,
+      "mid": 0.035,
+      "high": 0.05,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Russia 2.0% (1750). Petersburg and Moscow ~150,000 each. Mid 3.5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 200000,
+      "mid": 260000,
+      "high": 330000,
+      "grade": "C",
+      "source": "isbn:0-7100-0797-3",
+      "note": "Duffy, Russia's Military Way to the West (1981) ch. 3: on paper ~330,000 c. 1756 including field regulars (~170,000), garrison troops (~75,000), the Ukrainian landmilitia and serving irregulars. Effectives were well below paper. Field army in Prussia 1759 ~60,000-70,000 (41,000 Russians at Kunersdorf, Battle of Kunersdorf article after Duffy 1996)."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: recruits of the annual levy in depots, Cossack hosts (Don, Yaik) not yet called, and landmilitia not embodied."
+    },
+    "supportPersonnel": {
+      "low": 25000,
+      "mid": 35000,
+      "high": 45000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery and Shuvalov's Observation Corps gunners (~10,000), engineers, train, staff, and the navy (~15,000-20,000 for ~27 ships of the line and a large galley fleet)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "C",
+      "source": "isbn:0-7100-0797-3",
+      "note": "Paper strength ~330,000 on ~23M = 1.4%; levies of 1756-62 took ~230,000 recruits (Duffy ch. 3). Ceiling 3-4%."
+    },
+    "mobilizable": {
+      "low": 420000,
+      "mid": 705000,
+      "high": 1080000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 120000,
+          "mid": 150000,
+          "high": 180000,
+          "grade": "C",
+          "source": "isbn:0-7100-0797-3",
+          "note": "Field infantry (46 musketeer and 4 grenadier regiments plus Guards) and garrison battalions, at effective rather than paper strength (Duffy ch. 3)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: flintlock-bayonet, era-typical; good grenadiers"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: lifetime-service conscripts, slow to manoeuvre, notoriously steady in defence (Zorndorf, Kunersdorf)"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 1000,
+          "mid": 3000,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: light infantry (jager) battalions only formed by Rumyantsev in 1761; grenadier detachments used as light troops."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: new units"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 4000,
+          "mid": 6000,
+          "high": 8000,
+          "grade": "C",
+          "source": "isbn:0-7100-0797-3",
+          "note": "Cuirassier regiments (6) and horse grenadiers (Duffy ch. 3)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: poor horses"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: weak heavy cavalry"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 30000,
+          "mid": 45000,
+          "high": 60000,
+          "grade": "C",
+          "source": "isbn:0-7100-0797-3",
+          "note": "Dragoon regiments (~20,000), hussar regiments (~6,000) and Cossacks and Kalmyks serving with the field army (~15,000-20,000) (Duffy ch. 3). Dragoons counted as light cavalry."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: Cossacks excellent at raiding (Berlin raid Oct 1760)"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed regulars and irregulars"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 350,
+          "mid": 500,
+          "high": 800,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Kunersdorf",
+          "note": "The allied Russo-Austrian army at Kunersdorf had 248 guns (Battle of Kunersdorf article, Duffy 1996 p. 235); the Russian field army carried a very large artillery park incl. Shuvalov unicorns. Total field pieces estimated 350-800."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Shuvalov secret howitzers and unicorns, heavy batteries; Russian artillery considered among the most numerous of the war"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional artillery corps"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 20,
+          "mid": 27,
+          "high": 32,
+          "grade": "C",
+          "source": "isbn:91-22-01565-5",
+          "note": "Glete, Navies and Nations (1993): Russian Baltic fleet c. 1760 ~25-30 ships of the line, many in poor condition; blockade of Kolberg 1760-61."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: short-lived Baltic-built ships"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: little sea time"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 60,
+          "mid": 100,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: frigates, prams and the Baltic galley fleet (~100 galleys in the archipelago flotilla)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: galleys for skerries"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: soldier-rowers"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.45,
+      "mid": 0.55,
+      "high": 0.65,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Saltykov won Kunersdorf (1759) but cautious; the Conference in Petersburg micromanaged; Rumyantsev rising"
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: lifetime service, regiment as home; Russian infantry held at Zorndorf and Kunersdorf"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: Gross-Jagersdorf (1757), Kunersdorf (1759), occupation of East Prussia and the Berlin raid (1760)"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.65,
+      "mid": 5.8,
+      "high": 5.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.8 near 6 (1805). Evidence: flintlock-bayonet line infantry and Shuvalov unicorn howitzers"
+    },
+    "armor": {
+      "low": 5.45,
+      "mid": 5.6,
+      "high": 5.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.6. Evidence: cuirassiers only"
+    },
+    "ships": {
+      "low": 5.45,
+      "mid": 5.6,
+      "high": 5.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.6. Evidence: Baltic-built 66-gun ships, weaker than British or French"
+    },
+    "fortification": {
+      "low": 5.55,
+      "mid": 5.7,
+      "high": 5.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.7. Evidence: Vauban-type fortresses at Riga, Kyiv, Petersburg"
+    },
+    "logistics": {
+      "low": 5.15,
+      "mid": 5.3,
+      "high": 5.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.3. Evidence: magazines on the Vistula from 1758; operations in Prussia hampered by supply (Duffy ch. 4)"
+    },
+    "communications": {
+      "low": 5.15,
+      "mid": 5.3,
+      "high": 5.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.3. Evidence: courier post; Petersburg to the army in Brandenburg ~2 weeks"
+    },
+    "isr": {
+      "low": 5.3,
+      "mid": 5.45,
+      "high": 5.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 850,
+      "mid": 1000,
+      "high": 1150,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Poland 1760 = 1,019 (Maddison Project 2023, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true); Russia taken at the Polish level. No Maddison Project series exists for Russia before 1820 (checked MPD 2020 and MPD 2023 via OWID); analogue = Poland (MPD 2023)."
+    },
+    "gdp": {
+      "low": 17850000000,
+      "mid": 23500000000,
+      "high": 31050000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: army and navy took over half of a state revenue of ~15M rubles; war year 1760."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.13,
+      "high": 0.17,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Urals iron (Russia the largest pig-iron producer in Europe by 1760s), textiles; overwhelmingly agrarian."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.18,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: black-earth surplus growing; low northern yields."
+    },
+    "annualCohort": {
+      "low": 189000,
+      "mid": 223250,
+      "high": 297000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: post roads Petersburg-Moscow-Riga-Kyiv; most unpaved."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 4,
+      "mid": 6,
+      "high": 8,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Kronstadt, Petersburg, Reval, Riga, Pernau, Arkhangelsk, plus occupied Konigsberg/Pillau."
+    },
+    "merchantTonnage": {
+      "low": 10000,
+      "mid": 30000,
+      "high": 60000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Russian exports moved mostly on British and Dutch ships."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War (isbn:0-521-54657-5) ch. 1: 17th-18th c. armies tied to magazines and bread ovens, operating ~5 marches (~100-150 km) beyond the nearest magazine or navigable river; requisition extends it in rich country. Russian operations in Brandenburg depended on Vistula magazines and repeatedly stalled."
+    },
+    "draftAnimals": {
+      "low": 4000000,
+      "mid": 6000000,
+      "high": 9000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: peasant horses and oxen for ~23M people."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Konigsberg (occupied East Prussia)",
+        "lat": 54.7104,
+        "lon": 20.4522,
+        "kind": "city"
+      },
+      {
+        "name": "Pillau",
+        "lat": 54.6324,
+        "lon": 19.8949,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Gulf of Finland",
+      "Narva",
+      "Smolensk gate",
+      "Vistula crossings",
+      "Oder crossings"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep strategic depth and harsh winter; not tested on Russian soil in this war."
+    }
+  },
+  "notes": "Snapshot = 1760, Seven Years War (Russian occupation of East Prussia, raid on Berlin in October). Population: Russian Empire incl. Baltic provinces and Left-bank Ukraine. Personnel convention: field and garrison regulars and irregulars serving with the field army are active; landmilitia not embodied, depot recruits and uncalled Cossack hosts are trainedReserves. Duffy's paper strengths (book, not fetched; cited from Russia's Military Way to the West, ch. 3) are the anchor; effectives were well below. GDP per head is a regional analogy (no Maddison series for Russia before 1820)."
+}

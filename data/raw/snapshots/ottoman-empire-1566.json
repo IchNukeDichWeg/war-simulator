@@ -1,0 +1,554 @@
+{
+  "id": "ottoman-empire-1566",
+  "nationId": "ottoman-empire",
+  "includes": [],
+  "name": "Ottoman Empire (Suleiman I)",
+  "year": 1566,
+  "era": "gunpowder",
+  "region": "mena",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Ottoman",
+    "janissaries",
+    "timar",
+    "galleys",
+    "Suleiman the Magnificent",
+    "gunpowder empire"
+  ],
+  "capital": {
+    "name": "Constantinople (Istanbul)",
+    "lat": 41.0082,
+    "lon": 28.9784,
+    "kind": "capital",
+    "population": 400000
+  },
+  "places": [
+    {
+      "name": "Edirne",
+      "lat": 41.6771,
+      "lon": 26.5557,
+      "kind": "city",
+      "population": 100000
+    },
+    {
+      "name": "Cairo",
+      "lat": 30.0444,
+      "lon": 31.2357,
+      "kind": "city",
+      "population": 200000
+    },
+    {
+      "name": "Damascus",
+      "lat": 33.5138,
+      "lon": 36.2765,
+      "kind": "city"
+    },
+    {
+      "name": "Aleppo",
+      "lat": 36.2021,
+      "lon": 37.1343,
+      "kind": "city"
+    },
+    {
+      "name": "Baghdad",
+      "lat": 33.3152,
+      "lon": 44.3661,
+      "kind": "city"
+    },
+    {
+      "name": "Bursa",
+      "lat": 40.1885,
+      "lon": 29.061,
+      "kind": "city"
+    },
+    {
+      "name": "Thessaloniki",
+      "lat": 40.6401,
+      "lon": 22.9444,
+      "kind": "port"
+    },
+    {
+      "name": "Belgrade",
+      "lat": 44.7866,
+      "lon": 20.4489,
+      "kind": "fortress"
+    },
+    {
+      "name": "Buda",
+      "lat": 47.4979,
+      "lon": 19.0402,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dardanelles",
+      "lat": 40.2,
+      "lon": 26.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bosporus",
+      "lat": 41.12,
+      "lon": 29.07,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1530:Ottoman Empire",
+    "areaKm2": {
+      "low": 3500000,
+      "mid": 4500000,
+      "high": 5280000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1530.geojson",
+      "note": "world_1530 Ottoman Empire polygons = 5,280,075 km2 on the sphere (includes the Arabian and North African claims and Hungary). Directly administered area was smaller; mid allows for the desert hinterlands of Arabia and Libya being nominal."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 18000000,
+      "mid": 22000000,
+      "high": 26000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Sum of HYDE country values (OWID population.csv, https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true) interpolated to 1566 for the directly ruled lands: Anatolia (Turkey 6.25M in 1500, 8.0M in 1600), Egypt (4-5M), Greater Syria and Iraq (~3.5M), Balkans (Greece, Bulgaria, Bosnia, Albania, Macedonia, Serbia ~4.5M), Ottoman Hungary (~0.6M), North African regencies (~3M), Hejaz/Yemen (~1M) = ~24M; Barkan-type tax-register estimates for c. 1580 are 17-22M without North Africa. Vassal Wallachia, Moldavia, Transylvania and Crimea excluded."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Turkey 2.3% (1500), 2.4% (1600) (de Vries-type, likely too low for the empire), Egypt 3.0-3.2%. Istanbul ~400,000, Cairo ~200,000, plus Edirne, Bursa, Aleppo, Damascus give a 5,000+ share around 8%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 50000,
+      "mid": 65000,
+      "high": 80000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Standing salaried forces only: kapikulu (Janissaries 12,131 in 1547 and 13,599 in 1574, kapikulu sipahi 5,957, other kapikulu 9,619 = 29,175 in 1574) plus ~30,000 salaried fortress guards (Military of the Ottoman Empire, Ottoman Army Strength table, after Agoston 2014). 1566 sits between the 1547 and 1574 rows. Timariot cavalry is counted in trainedReserves."
+    },
+    "trainedReserves": {
+      "low": 100000,
+      "mid": 130000,
+      "high": 160000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Provincial forces called for the campaign season: timariot sipahis ~40,000, ~90,000 with their cebelu retainers (1574 estimate), akinci raiders ~15,000, azab infantry ~20,000, yaya/musellem ~8,000 (same table). Tatar and Danubian vassal contingents excluded."
+    },
+    "supportPersonnel": {
+      "low": 12000,
+      "mid": 17000,
+      "high": 25000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Other kapikulu corps (gunners topcu, gun-carriage arabaci, armourers cebeci, miners) 9,619 in 1574, plus galley fighting crews and arsenal seamen (~6,000-10,000 non-oarsmen). Galley oarsmen excluded."
+    },
+    "mobilizationRatio": {
+      "low": 0.008,
+      "mid": 0.012,
+      "high": 0.016,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "The 1574 total establishment of ~192,000 (same table) on ~22M population = 0.9%; with fortress militias and emergency levies the ceiling is ~1.2-1.6%. The timar system, not conscription, set the limit."
+    },
+    "mobilizable": {
+      "low": 144000,
+      "mid": 264000,
+      "high": 416000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 32000,
+          "mid": 41000,
+          "high": 48000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Janissary",
+          "note": "Janissaries ~12,500-13,000 (paper strength 12,131 in 1547 and 13,599 in 1574, Janissary article after Agoston 2014 p. 113) plus ~28,000 salaried fortress-guard infantry (Military of the Ottoman Empire table, 1574 estimate 30,000)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: janissary matchlocks (tufek) and archery; among the best infantry firepower of the 1560s (Agoston, Guns for the Sultan ch. 1); fortress guards lower"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: janissaries elite long-service professionals (0.9); fortress guards militia-like (0.5)"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 5000,
+          "mid": 6000,
+          "high": 7000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+          "note": "Kapikulu sipahis (six divisions of household cavalry): 5,957 in 1574."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: mail, lance, composite bow, fine horses"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.8,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: long-service household cavalry"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 200,
+          "mid": 300,
+          "high": 400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Siege_of_Szigetv%C3%A1r",
+          "note": "Siege of Szigetvar 1566: Ottoman train ~300 cannon (Szigetvar article, after Clodfelter 2017). Mix of field and siege pieces; counted as the campaign train."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: large state foundry (Tophane) and plentiful bronze guns; heavy siege guns the era's best (Agoston ch. 6)"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: standing topcu corps"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 120,
+          "mid": 150,
+          "high": 220,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Lepanto",
+          "note": "War galleys: at Lepanto 1571 the Ottoman fleet had 211 war galleys and 63 galliots incl. corsair squadrons, and over 150 galleys were rebuilt within six months (Lepanto article). In 1566 the Istanbul arsenal fleet raided the Adriatic with ~130-150 galleys."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: standard Mediterranean galleys, fewer bow guns than Western galleys at Lepanto"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: experienced corsair-led crews (Lepanto article: skilled sailors)"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 40,
+          "mid": 60,
+          "high": 90,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Lepanto",
+          "note": "Galliots and fustas: 63 galliots at Lepanto 1571; corsair regencies add more."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: fast corsair galliots"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: Barbary corsair crews"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Suleiman and Sokollu Mehmed Pasha; centralised campaign planning and logistics without peer in Europe; Suleiman died during the siege of Szigetvar (Sept 1566)"
+    },
+    "cohesion": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: janissary corps identity and the timar hierarchy; ethnic and confessional mix held together by the dynasty"
+    },
+    "morale": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: four decades of victories (Mohacs 1526, Preveza 1538, Djerba 1560); Malta 1565 the first major check"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (1600: arquebus/musket, field cannon). Evidence: janissary matchlocks since the 1440s, field guns chained in the tabur; still heavy reliance on archery cavalry"
+    },
+    "armor": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 between plate-and-mail and half-armor. Evidence: mail and lamellar for sipahis; janissaries unarmoured"
+    },
+    "ships": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 between galleys (4) and galleons (5). Evidence: galley navy, no ocean-going sailing battle fleet"
+    },
+    "fortification": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 toward trace italienne. Evidence: medieval-plan fortresses in the Balkans modernised slowly; strong siege engineering"
+    },
+    "logistics": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (magazines). Evidence: menzilhane road-stage depots, state grain requisition and camel/ox trains (Murphey, Ottoman Warfare ch. 4) let armies march 1,000+ km from Istanbul to Hungary each season"
+    },
+    "communications": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7. Evidence: ulak relay couriers on the menzil network"
+    },
+    "isr": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 750,
+      "mid": 850,
+      "high": 1000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Turkey 768 (1500), 832 (1650); Egypt 1,084 (1500). Mid ~850 weights Egypt and the Balkans in; the empire's richer Balkan and Egyptian provinces lift it slightly above Anatolia."
+    },
+    "gdp": {
+      "low": 13500000000,
+      "mid": 18700000000,
+      "high": 26000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: kapikulu salaries and the fleet absorbed most central cash revenue (~5-7M ducats); timar cavalry was paid by land assignments outside the treasury. Includes the value of timar revenue."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: textile, metal and arsenal crafts in Istanbul, Bursa, Cairo, Aleppo; agrarian empire."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.22,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Egypt and the Danube basin exported grain to Istanbul under state provisioning (iase); generally self-sufficient."
+    },
+    "annualCohort": {
+      "low": 162000,
+      "mid": 209000,
+      "high": 286000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the three great military roads (sol, orta, sag kol) through the Balkans and the Anatolian caravan routes with menzil stations."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 12,
+      "high": 16,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Ottoman_Navy",
+      "note": "Istanbul arsenal (Tersane-i Amire), Gallipoli, Sinop, Izmit, Thessaloniki, Alexandria, Suez, Basra, Algiers, Tripoli, Rhodes, Chios (Ottoman Navy article lists the arsenals)."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Black Sea grain shipping, Egyptian and Levantine coastal traffic; much carriage by Venetian and Ragusan ships."
+    },
+    "supplyRangeKm": {
+      "low": 250,
+      "mid": 400,
+      "high": 700,
+      "grade": "C",
+      "source": "isbn:0-521-84313-8",
+      "note": "Agoston (Guns for the Sultan) and Murphey (Ottoman Warfare 1500-1700, isbn:1-85728-389-9, ch. 4): pre-stocked menzil depots and Danube shipping supplied armies 1,000+ km from Istanbul; campaigns beyond Buda strained the season."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 3000000,
+      "high": 5000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: camels, horses, mules, oxen across a 22M empire with large nomadic pastoral sectors; a 60,000-man army needed ~40,000 animals (Military of the Ottoman Empire article)."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Algiers",
+        "lat": 36.7538,
+        "lon": 3.0588,
+        "kind": "port"
+      },
+      {
+        "name": "Tripoli",
+        "lat": 32.8872,
+        "lon": 13.1913,
+        "kind": "port"
+      },
+      {
+        "name": "Suez",
+        "lat": 29.9668,
+        "lon": 32.5498,
+        "kind": "port"
+      },
+      {
+        "name": "Basra",
+        "lat": 30.5085,
+        "lon": 47.7804,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Bosporus",
+      "Dardanelles",
+      "Danube crossings (Belgrade, Buda)",
+      "Cilician Gates",
+      "Suez isthmus"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row in Anatolia and Rumelia (fortified cities, local supply, loyal Muslim population); Hungary frontier closer to 1.1."
+    }
+  },
+  "notes": "Snapshot = 1566, the Szigetvar campaign and death of Suleiman I. Population convention: directly administered provinces including the North African regencies; vassals (Crimea, Wallachia, Moldavia, Transylvania) excluded. Personnel convention: kapikulu household troops and salaried fortress guards are active; timariot sipahis with retainers, akinci, azab and yaya are trainedReserves, because they served only when called for a campaign. Janissary figures are paper strengths from treasury pay registers (Agoston 2014); effective field strength was lower. The 1574 establishment table (Military of the Ottoman Empire) is the anchor; 1566 numbers are interpolated with 1547."
+}

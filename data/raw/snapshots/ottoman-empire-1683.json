@@ -1,0 +1,565 @@
+{
+  "id": "ottoman-empire-1683",
+  "nationId": "ottoman-empire",
+  "includes": [],
+  "name": "Ottoman Empire (Mehmed IV)",
+  "year": 1683,
+  "era": "gunpowder",
+  "region": "mena",
+  "phase": "key",
+  "tags": [
+    "empire",
+    "Ottoman",
+    "janissaries",
+    "Koprulu era",
+    "siege of Vienna",
+    "gunpowder empire"
+  ],
+  "capital": {
+    "name": "Constantinople (Istanbul)",
+    "lat": 41.0082,
+    "lon": 28.9784,
+    "kind": "capital",
+    "population": 600000
+  },
+  "places": [
+    {
+      "name": "Edirne",
+      "lat": 41.6771,
+      "lon": 26.5557,
+      "kind": "city",
+      "population": 100000
+    },
+    {
+      "name": "Cairo",
+      "lat": 30.0444,
+      "lon": 31.2357,
+      "kind": "city",
+      "population": 200000
+    },
+    {
+      "name": "Damascus",
+      "lat": 33.5138,
+      "lon": 36.2765,
+      "kind": "city"
+    },
+    {
+      "name": "Aleppo",
+      "lat": 36.2021,
+      "lon": 37.1343,
+      "kind": "city"
+    },
+    {
+      "name": "Baghdad",
+      "lat": 33.3152,
+      "lon": 44.3661,
+      "kind": "city"
+    },
+    {
+      "name": "Bursa",
+      "lat": 40.1885,
+      "lon": 29.061,
+      "kind": "city"
+    },
+    {
+      "name": "Thessaloniki",
+      "lat": 40.6401,
+      "lon": 22.9444,
+      "kind": "port"
+    },
+    {
+      "name": "Belgrade",
+      "lat": 44.7866,
+      "lon": 20.4489,
+      "kind": "fortress"
+    },
+    {
+      "name": "Buda",
+      "lat": 47.4979,
+      "lon": 19.0402,
+      "kind": "fortress"
+    },
+    {
+      "name": "Dardanelles",
+      "lat": 40.2,
+      "lon": 26.4,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Bosporus",
+      "lat": 41.12,
+      "lon": 29.07,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Candia (Heraklion)",
+      "lat": 35.3387,
+      "lon": 25.1442,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kamianets-Podilskyi",
+      "lat": 48.6744,
+      "lon": 26.5809,
+      "kind": "fortress"
+    }
+  ],
+  "territory": {
+    "border": "hb:1650:Ottoman Empire",
+    "areaKm2": {
+      "low": 4000000,
+      "mid": 4800000,
+      "high": 5500000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1650.geojson",
+      "note": "world_1650 Ottoman Empire polygons = 5,494,842 km2 on the sphere (incl. North African and Arabian claims). Crete (1669) and Podolia (1672) added after 1650. Mid discounts nominal desert hinterlands."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 20000000,
+      "mid": 24000000,
+      "high": 28000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Sum of HYDE 1700 country values (OWID population.csv): Turkey 8.5M, Egypt 4.5M, Greater Syria and Iraq ~3.0M, Balkans ~4.9M, Ottoman Hungary ~1.0M, Crete, North African regencies ~3.0M, Hejaz ~0.5M = ~25M. The Military Revolution article (Parker) gives 18M for c. 1650 without the regencies. Vassals excluded."
+    },
+    "urbanization": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.12,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Turkey 2.5% (1700), Egypt 3.3% (de Vries-type, low); Istanbul ~600,000 and Cairo ~250,000 imply a 5,000+ share near 8%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 85000,
+      "mid": 110000,
+      "high": 140000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Standing salaried forces: kapikulu 70,296 in 1670 (Janissaries 39,470, kapikulu sipahi 14,070, other 16,756) and fortress guards ~25,000 plus ~10,000 other salaried provincial troops (Military of the Ottoman Empire, Ottoman Army Strength table). Janissary paper strength rose to 62,826 by 1687-88 (Janissary article, Agoston 2014). Mid ~110,000 effective incl. ~8,000 naval personnel. Kara Mustafa's 1683 field army was 90,000-170,000 incl. Tatar and Danubian vassals (Battle of Vienna article)."
+    },
+    "trainedReserves": {
+      "low": 40000,
+      "mid": 70000,
+      "high": 100000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Timariot sipahis 22,000 (50,000 with cebelu retainers, 1670 estimate, same table) plus provincial sekban/levend mercenary infantry raised by governors for the campaign (~20,000-40,000). Crimean Tatars (~20,000-40,000 at Vienna) excluded as a vassal force."
+    },
+    "supportPersonnel": {
+      "low": 18000,
+      "mid": 25000,
+      "high": 32000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+      "note": "Other kapikulu corps (gunners, carriage drivers, armourers, miners) 16,756 in 1670, plus fleet personnel (~8,000 non-oarsmen: a typical mid-17th c. fleet had 5,300 fighters and 10,500 oarsmen, Ottoman Navy article after Katip Celebi)."
+    },
+    "mobilizationRatio": {
+      "low": 0.008,
+      "mid": 0.012,
+      "high": 0.016,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Total establishment ~155,000-200,000 (1670 table plus provincial levies) on ~24M = 0.7-0.9%; War of the Holy League emergency levies pushed toward 1.2-1.6%."
+    },
+    "mobilizable": {
+      "low": 160000,
+      "mid": 288000,
+      "high": 448000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 55000,
+          "mid": 68000,
+          "high": 85000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Janissary",
+          "note": "Janissaries ~40,000-45,000 effective (paper 47,233 in 1666-67 and 62,826 in 1687-88, Janissary article) plus ~25,000 salaried fortress-guard infantry (1670 table). Many registered janissaries were part-time artisans who did not campaign."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: matchlock muskets without bayonet; janissaries lagged Western linear infantry by the 1680s (Agoston ch. 7)"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: corps diluted by artisan entrants; no drill for volley fire"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 10000,
+          "mid": 14000,
+          "high": 16000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Military_of_the_Ottoman_Empire",
+          "note": "Kapikulu sipahis 14,070 in 1670 (Military of the Ottoman Empire table)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: mail, lance, bow and pistols"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: household cavalry, declining discipline"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 150,
+          "high": 300,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Vienna",
+          "note": "Field and siege guns of Kara Mustafa's army at Vienna: the Ottomans had few heavy siege guns and relied on mining; estimates of the train range ~130-300 pieces, mostly light (Battle of Vienna article order of battle). Grade C."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: plentiful but heavy, poorly mobile field guns; few heavy siege guns brought to Vienna"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: standing topcu corps, falling behind Western gunnery"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 30,
+          "mid": 45,
+          "high": 60,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Ottoman_Navy",
+          "note": "Galleys and the first sailing warships (kalyon programme began 1682): a typical mid-17th c. Ottoman fleet had 40 galleys and 6 maonas (Ottoman Navy article after Katip Celebi)."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: galley fleet obsolete against Venetian and Western sailing ships of the line"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: experienced from the Cretan War, but losing seamanship edge"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 30,
+          "mid": 50,
+          "high": 80,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: galliots, Black Sea and Danube flotillas (the Danube flotilla supported the Vienna campaign)."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical small craft"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.4,
+      "mid": 0.5,
+      "high": 0.6,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.5. Evidence: Koprulu-era administration still mobilised large armies, but Kara Mustafa failed to guard the Kahlenberg and was routed by Sobieski (12 Sept 1683)"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5-0.75. Evidence: janissary corps identity strong but politicised; provincial levies and vassals broke at Vienna"
+    },
+    "morale": {
+      "low": 0.55,
+      "mid": 0.65,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: recent victories at Candia (1669) and Kamianets (1672); collapse after Vienna"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.95,
+      "mid": 5.1,
+      "high": 5.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (1600: arquebus/musket, pike, field cannon). Evidence: matchlocks and field guns, no flintlock-bayonet or linear tactics; behind the 1683 Habsburg army"
+    },
+    "armor": {
+      "low": 4.65,
+      "mid": 4.8,
+      "high": 4.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 between plate-and-mail and half-armor. Evidence: mail and lamellar for sipahis; janissaries unarmoured"
+    },
+    "ships": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (galleons) reached only from 1682. Evidence: galley fleet plus first kalyon squadron"
+    },
+    "fortification": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (trace italienne). Evidence: bastioned works at Candia and Uyvar; Ottoman sapping the best of the era"
+    },
+    "logistics": {
+      "low": 4.95,
+      "mid": 5.1,
+      "high": 5.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (magazines). Evidence: menzilhane road-stage depots, state grain requisition and camel/ox trains (Murphey, Ottoman Warfare ch. 4) let armies march 1,000+ km from Istanbul to Hungary each season"
+    },
+    "communications": {
+      "low": 4.65,
+      "mid": 4.8,
+      "high": 4.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7. Evidence: ulak relay couriers on the menzil network"
+    },
+    "isr": {
+      "low": 4.7,
+      "mid": 4.85,
+      "high": 5.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 800,
+      "mid": 870,
+      "high": 1000,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Turkey 832 (1650), 897 (1700); Egypt and the Balkans similar. Mid 870 interpolated for 1683."
+    },
+    "gdp": {
+      "low": 16000000000,
+      "mid": 20880000000,
+      "high": 28000000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: war years 1683-99 forced tax farming (malikane later) and debasement; peacetime low, wartime mid."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: as 1566; guild crafts in Istanbul, Bursa, Aleppo, Cairo."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.22,
+      "high": 0.3,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Egypt and the Danube basin fed Istanbul; generally self-sufficient."
+    },
+    "annualCohort": {
+      "low": 180000,
+      "mid": 228000,
+      "high": 308000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 10000,
+      "mid": 20000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Balkan military roads and Anatolian caravan network."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 8,
+      "mid": 12,
+      "high": 16,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Ottoman_Navy",
+      "note": "Istanbul arsenal, Gallipoli, Sinop, Izmir, Thessaloniki, Alexandria, Suez, Basra, Algiers, Tripoli, Candia, Rhodes."
+    },
+    "merchantTonnage": {
+      "low": 100000,
+      "mid": 200000,
+      "high": 300000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Black Sea and Levantine coastal shipping; much foreign carriage (French, English, Dutch) by the 1680s."
+    },
+    "supplyRangeKm": {
+      "low": 250,
+      "mid": 400,
+      "high": 700,
+      "grade": "C",
+      "source": "isbn:1-85728-389-9",
+      "note": "Murphey, Ottoman Warfare 1500-1700, ch. 4: menzil depots and Danube transport sustained a 1,200 km march Edirne-Vienna, but only for one campaign season."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 3000000,
+      "high": 5000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: camels, horses, mules and oxen; pastoral sector large."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Algiers",
+        "lat": 36.7538,
+        "lon": 3.0588,
+        "kind": "port"
+      },
+      {
+        "name": "Tripoli",
+        "lat": 32.8872,
+        "lon": 13.1913,
+        "kind": "port"
+      },
+      {
+        "name": "Suez",
+        "lat": 29.9668,
+        "lon": 32.5498,
+        "kind": "port"
+      },
+      {
+        "name": "Basra",
+        "lat": 30.5085,
+        "lon": 47.7804,
+        "kind": "port"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Bosporus",
+      "Dardanelles",
+      "Danube crossings (Belgrade, Buda)",
+      "Cilician Gates",
+      "Suez isthmus"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row in Anatolia and Rumelia; 1.1 on the Hungarian frontier."
+    }
+  },
+  "notes": "Snapshot = summer 1683, the Vienna campaign at the Ottoman territorial maximum (Podolia 1672). Population: directly administered provinces incl. the North African regencies; vassals excluded. Personnel convention: kapikulu, salaried fortress guards and naval personnel are active; timariots and governors' sekban/levend levies are trainedReserves; Crimean Tatars, Wallachian, Moldavian, Transylvanian and Hungarian Kuruc allies are excluded. Janissary numbers are pay-register paper strengths (Agoston 2014); the 1670 table row is the anchor. The siege army size (90,000-170,000) is disputed; the documents captured in Kara Mustafa's tent give 170,000 at campaign start incl. non-combatants and vassals."
+}

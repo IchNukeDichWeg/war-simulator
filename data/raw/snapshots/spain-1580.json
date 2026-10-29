@@ -1,0 +1,602 @@
+{
+  "id": "spain-1580",
+  "nationId": "spain",
+  "includes": [],
+  "name": "Spanish Monarchy (Philip II)",
+  "year": 1580,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "peak",
+  "tags": [
+    "empire",
+    "Habsburg",
+    "composite monarchy",
+    "tercios",
+    "Army of Flanders",
+    "galleys",
+    "Philip II"
+  ],
+  "capital": {
+    "name": "Madrid",
+    "lat": 40.4168,
+    "lon": -3.7038,
+    "kind": "capital",
+    "population": 55000
+  },
+  "places": [
+    {
+      "name": "Seville",
+      "lat": 37.3891,
+      "lon": -5.9845,
+      "kind": "port",
+      "population": 120000
+    },
+    {
+      "name": "Naples",
+      "lat": 40.8518,
+      "lon": 14.2681,
+      "kind": "city",
+      "population": 220000
+    },
+    {
+      "name": "Milan",
+      "lat": 45.4642,
+      "lon": 9.19,
+      "kind": "city",
+      "population": 110000
+    },
+    {
+      "name": "Palermo",
+      "lat": 38.1157,
+      "lon": 13.3615,
+      "kind": "port",
+      "population": 100000
+    },
+    {
+      "name": "Barcelona",
+      "lat": 41.3874,
+      "lon": 2.1686,
+      "kind": "port",
+      "population": 35000
+    },
+    {
+      "name": "Cartagena",
+      "lat": 37.6257,
+      "lon": -0.9966,
+      "kind": "port"
+    },
+    {
+      "name": "Antwerp",
+      "lat": 51.2194,
+      "lon": 4.4025,
+      "kind": "port",
+      "population": 80000
+    },
+    {
+      "name": "Brussels",
+      "lat": 50.8503,
+      "lon": 4.3517,
+      "kind": "city"
+    },
+    {
+      "name": "Valladolid",
+      "lat": 41.6523,
+      "lon": -4.7245,
+      "kind": "city",
+      "population": 40000
+    },
+    {
+      "name": "Lisbon (taken Aug 1580)",
+      "lat": 38.7223,
+      "lon": -9.1393,
+      "kind": "port"
+    },
+    {
+      "name": "Oran",
+      "lat": 35.6969,
+      "lon": -0.6331,
+      "kind": "fortress"
+    },
+    {
+      "name": "Strait of Gibraltar",
+      "lat": 35.97,
+      "lon": -5.6,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1530:Spain + hb:1530:Habsburg Netherlands + hb:1530:Naples + hb:1530:Sicily + hb:1530:Sardinia + hb:1530:Milan",
+    "areaKm2": {
+      "low": 650000,
+      "mid": 693000,
+      "high": 700000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1530.geojson",
+      "note": "world_1530 polygons on the sphere: Spain 490,467 + Habsburg Netherlands 61,054 + Naples 68,817 + Sicily 24,017 + Sardinia 21,927 + Milan 26,972 = 693,254 km2. The Netherlands polygon covers all 17 provinces, half of which were in revolt; low subtracts the rebel north. Americas and Portugal excluded."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 13000000,
+      "mid": 15000000,
+      "high": 17000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Crowns of Castile and Aragon ~8.1M (HYDE via OWID population.csv: Spain 6.5M in 1500, 8.5M in 1600, interpolated; https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true) + Kingdom of Naples ~3.0M, Sicily ~1.0M, Duchy of Milan ~1.1M, Sardinia ~0.25M + the Netherlands provinces under royal control in 1580 (~1.5M of ~3M). Portugal (conquered Aug 1580) and the American viceroyalties are excluded. Low drops half the Netherlands and uses lower Italian figures."
+    },
+    "urbanization": {
+      "low": 0.12,
+      "mid": 0.16,
+      "high": 0.2,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share (de Vries based): Spain 13.8% (1500), 17.1% (1600); Italy 18.4% (1600); Belgium ~29%. Bairoch 5,000+ convention runs a little higher; mid 16%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 80000,
+      "mid": 100000,
+      "high": 130000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Army_of_Flanders",
+      "note": "Salaried forces under arms in 1580: Army of Flanders ~30,000-45,000 after the 1577-79 withdrawal of the Spanish tercios (Dutch States Army article: Parma had 93 infantry companies in late 1579; Army of Flanders peaked at 86,000 paper in 1574 and 63,455 effectives in 1588), Alba's army for Portugal ~35,000-40,000, Italian garrisons of Milan, Naples and Sicily ~15,000-20,000, North African presidios and Spanish guards ~8,000, galley infantry and crews ~10,000-15,000. Parker (Military Revolution p. 24, quoted at https://en.wikipedia.org/wiki/Military_Revolution) gives ~200,000 paper for the Spanish Monarchy in the 1590s; effective is lower."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Neapolitan and Sicilian militia (battaglione) and Castilian urban and seigneurial levies callable within a month; the general Castilian militia was only organised in 1590-98."
+    },
+    "supportPersonnel": {
+      "low": 10000,
+      "mid": 16000,
+      "high": 25000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Galley sailors and gunners (~100 galleys x ~60-80 non-rowing seamen = 6,000-8,000), artillery trains and engineers (~2,000), Atlantic squadron crews (~3,000), administration and staffs. Galley oarsmen (convicts, slaves, buonavoglia, ~20,000) are not counted as military personnel."
+    },
+    "mobilizationRatio": {
+      "low": 0.03,
+      "mid": 0.04,
+      "high": 0.05,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_Revolution",
+      "note": "Parker: Philip IV claimed 300,000 regulars and 500,000 militia (paper) in 1625 for a monarchy of ~20M (Military Revolution article); real wartime peaks under Philip II ~200,000 incl. foreign mercenaries, i.e. ~3-5% of the subject population."
+    },
+    "mobilizable": {
+      "low": 390000,
+      "mid": 600000,
+      "high": 850000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 50000,
+          "mid": 64000,
+          "high": 85000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Army_of_Flanders",
+          "note": "Tercios and regiments of Spanish, Italian, Walloon and German pike and shot (Army of Flanders infantry; Alba's Portuguese army ~20,000 Spanish/Italian/German foot; Italian garrisons). Reconstruction, grade C."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: arquebus and heavy musket (introduced by Alba 1567) with pike; best infantry kit of the 1580s"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: veteran Spanish tercios the best infantry of the era (Parker, Army of Flanders); Walloon and German regiments weaker"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 2000,
+          "mid": 3000,
+          "high": 5000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Army_of_Flanders",
+          "note": "Lancers and men-at-arms of the Guardas de Castilla and Italian companies; the Army of Flanders discharged its heavy cavalry in 1572 (Army of Flanders article)."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: lance and plate, being replaced by pistol-armed cuirassiers elsewhere"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional companies"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 4000,
+          "mid": 7000,
+          "high": 10000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Army_of_Flanders",
+          "note": "Light horse, mounted arquebusiers and herreruelos; the Army of Flanders cavalry was mainly light cavalry until the 1630s (Army of Flanders article)."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical light horse; chronic horse shortage in Flanders"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: professional but small arm"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 80,
+          "mid": 150,
+          "high": 250,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field pieces with the Army of Flanders and Alba's Portuguese campaign plus Italian trains; fortress guns excluded."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Spanish foundries at Malaga and Mechelen, standardised calibres under Philip II"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: contract gunners"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 60,
+          "mid": 90,
+          "high": 130,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Lepanto",
+          "note": "War galleys in royal service (Spain, Naples, Sicily) plus Genoese galleys on asiento: at Lepanto 1571 the Spanish Empire sent 49 galleys and Genoa 27 (Lepanto article, Konstam/Parker); the total galley establishment reached ~146 in 1574 (Thompson, War and Government in Habsburg Spain) and was cut after the 1578-81 truce with the Ottomans. Atlantic galleons were few before the Portuguese fleet was taken over."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Mediterranean galleys with bow batteries, the Lepanto-winning type"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veteran galley squadrons of Naples and Sicily"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 20,
+          "mid": 40,
+          "high": 70,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: galliots, fragatas, zabras and pataches in Mediterranean and Biscay service."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: mixed"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.65,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75 (trained staff system, proven commanders). Evidence: Alba (Portugal 1580) and Alessandro Farnese of Parma, the era's leading generals; Council of War administration; slow centralised decision making from Madrid"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: tercio esprit de corps, but repeated mutinies over pay (sack of Antwerp 1576)"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: Lepanto (1571) and the conquest of Portugal; pay arrears after the 1575 bankruptcy"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 4.8,
+      "mid": 4.95,
+      "high": 5.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (1600: arquebus/musket, pike, field cannon). Evidence: Alba introduced the heavy musket in 1567; pike-and-shot tercios"
+    },
+    "armor": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (half-armor, cuirass). Evidence: morion and corselet for pikemen"
+    },
+    "ships": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (galleons, ships of the line) vs 4 (galleys). Evidence: Mediterranean galley fleet, first Atlantic galleons; 1580 is before the galleon squadrons of the 1588 Armada"
+    },
+    "fortification": {
+      "low": 4.65,
+      "mid": 4.8,
+      "high": 4.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (trace italienne). Evidence: bastioned fortifications in Italy and the Low Countries, but most of the Netherlands frontier still medieval"
+    },
+    "logistics": {
+      "low": 4.55,
+      "mid": 4.7,
+      "high": 4.85,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.7 between river transport and magazines. Evidence: the Spanish Road and its etapas (Parker, Army of Flanders) were the first planned military supply corridor"
+    },
+    "communications": {
+      "low": 4.65,
+      "mid": 4.8,
+      "high": 4.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.8 between relay horses and early postal. Evidence: Taxis imperial postal service Madrid-Brussels; dispatches ~2 weeks"
+    },
+    "isr": {
+      "low": 4.63,
+      "mid": 4.78,
+      "high": 4.93,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1446,
+      "mid": 1600,
+      "high": 1850,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Spain 1580 = 1,446; Italy 1580 = 2,458 (MPD 2020, Malanima series, centre-north weighted); Belgium 1550/1600 = 2,410/2,533. Mid ~1,600 is the population-weighted mix with southern Italy discounted to ~1,600. Low = Spain alone."
+    },
+    "gdp": {
+      "low": 18798000000,
+      "mid": 24000000000,
+      "high": 31450000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.04,
+      "mid": 0.06,
+      "high": 0.09,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: military and naval spending took most of Castilian crown revenue of ~8-10M ducats; bankruptcies in 1557, 1560, 1575 show it exceeded sustainable levels. Peacetime low."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Castilian textiles (Segovia, Toledo), Basque iron and Milanese and Flemish crafts; agrarian economy ~70% of output."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.18,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Castile imported Sicilian and Baltic grain in bad years; Sicily and Apulia were grain exporters."
+    },
+    "annualCohort": {
+      "low": 117000,
+      "mid": 142500,
+      "high": 187000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 8000,
+      "mid": 15000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: royal caminos reales of Castile and the Spanish Road corridor; mostly unpaved tracks."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 6,
+      "mid": 9,
+      "high": 12,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Seville, Cadiz, Cartagena, Barcelona, Naples, Messina, Palermo, Genoa (allied), Antwerp, Dunkirk, Santander, A Coruna."
+    },
+    "merchantTonnage": {
+      "low": 150000,
+      "mid": 250000,
+      "high": 400000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Castilian and Basque Atlantic shipping (~175,000-300,000 tons burden c. 1580 in older estimates) plus Italian shipping."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War (isbn:0-521-54657-5) ch. 1: 17th-18th c. armies tied to magazines and bread ovens, operating ~5 marches (~100-150 km) beyond the nearest magazine or navigable river; requisition extends it in rich country. The Spanish Road etapas supplied marching tercios over 1,000 km from Milan to Flanders."
+    },
+    "draftAnimals": {
+      "low": 1000000,
+      "mid": 2000000,
+      "high": 3000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: mules dominated Castilian transport; horses, oxen across 15M people."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Havana",
+        "lat": 23.1136,
+        "lon": -82.3666,
+        "kind": "port"
+      },
+      {
+        "name": "Veracruz",
+        "lat": 19.1738,
+        "lon": -96.1342,
+        "kind": "port"
+      },
+      {
+        "name": "Cartagena de Indias",
+        "lat": 10.391,
+        "lon": -75.4794,
+        "kind": "port"
+      },
+      {
+        "name": "Manila",
+        "lat": 14.5995,
+        "lon": 120.9842,
+        "kind": "port"
+      },
+      {
+        "name": "Oran",
+        "lat": 35.6969,
+        "lon": -0.6331,
+        "kind": "fortress"
+      },
+      {
+        "name": "Melilla",
+        "lat": 35.2923,
+        "lon": -2.9381,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Csa",
+    "chokepoints": [
+      "Strait of Gibraltar",
+      "Strait of Messina",
+      "Spanish Road (Alpine passes, Franche-Comte, Lorraine)",
+      "English Channel"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row in Iberia and Italy (fortified cities, familiar terrain, popular support); 1.1 or less in the rebel Netherlands."
+    }
+  },
+  "notes": "Snapshot = 1580, the year of the conquest of Portugal (Alba enters Lisbon Aug 1580), before the Portuguese fleet and empire are merged. Population and forces: Castile, Aragon, the Italian possessions (Naples, Sicily, Milan, Sardinia) and the royal-controlled Netherlands; Portugal and the Americas are excluded (Americas as bases only). Personnel convention: salaried troops (Army of Flanders, Italian garrisons, presidios, Alba's army, galley infantry) are active; Italian and Castilian militia are trainedReserves. Army of Flanders strength in 1580 is uncertain because the Spanish tercios had left in 1577-78 and returned in 1582. Parker's paper figures (Military Revolution) are wartime ceilings, not effectives."
+}

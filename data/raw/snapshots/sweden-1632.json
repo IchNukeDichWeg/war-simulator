@@ -1,0 +1,571 @@
+{
+  "id": "sweden-1632",
+  "nationId": "sweden",
+  "includes": [],
+  "name": "Kingdom of Sweden (Gustavus Adolphus)",
+  "year": 1632,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "key",
+  "tags": [
+    "kingdom",
+    "Swedish Empire",
+    "Thirty Years War",
+    "Gustavus Adolphus",
+    "conscription",
+    "mercenaries",
+    "Lion of the North"
+  ],
+  "capital": {
+    "name": "Stockholm",
+    "lat": 59.3293,
+    "lon": 18.0686,
+    "kind": "capital",
+    "population": 10000
+  },
+  "places": [
+    {
+      "name": "Gothenburg",
+      "lat": 57.7089,
+      "lon": 11.9746,
+      "kind": "port"
+    },
+    {
+      "name": "Kalmar",
+      "lat": 56.6634,
+      "lon": 16.3568,
+      "kind": "fortress"
+    },
+    {
+      "name": "Turku (Abo)",
+      "lat": 60.4518,
+      "lon": 22.2666,
+      "kind": "city"
+    },
+    {
+      "name": "Tallinn (Reval)",
+      "lat": 59.437,
+      "lon": 24.7536,
+      "kind": "port"
+    },
+    {
+      "name": "Riga",
+      "lat": 56.9496,
+      "lon": 24.1052,
+      "kind": "port"
+    },
+    {
+      "name": "Narva",
+      "lat": 59.3797,
+      "lon": 28.1791,
+      "kind": "fortress"
+    },
+    {
+      "name": "Stralsund",
+      "lat": 54.3091,
+      "lon": 13.0818,
+      "kind": "port"
+    },
+    {
+      "name": "Uppsala",
+      "lat": 59.8586,
+      "lon": 17.6389,
+      "kind": "city"
+    },
+    {
+      "name": "Falun (copper mine)",
+      "lat": 60.6065,
+      "lon": 15.6355,
+      "kind": "city"
+    },
+    {
+      "name": "Oresund",
+      "lat": 56.0,
+      "lon": 12.7,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1600:Sweden",
+    "areaKm2": {
+      "low": 680000,
+      "mid": 750000,
+      "high": 800000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1600.geojson",
+      "note": "world_1600 Sweden polygons (13 features: Sweden proper, Finland, Estonia) = 679,396 km2 on the sphere. Livonia (conquered 1621-29) and Ingria/Kexholm (1617) are not in the 1600 polygon: add ~60,000-90,000 km2. Occupied Pomerania and Prussian ports excluded."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 1150000,
+      "mid": 1350000,
+      "high": 1600000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "HYDE via OWID population.csv (https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true): Sweden 766,244 (1600) and 1,368,171 (1700), interpolated ~0.96M for 1632; Finland 0.2M (1600) to 0.4M (1700), ~0.26M (other estimates ~0.35M); Estonia and Swedish Livonia ~0.15-0.25M. The Military Revolution article gives 1.1M for Sweden c. 1650. Occupied German territory excluded."
+    },
+    "urbanization": {
+      "low": 0.02,
+      "mid": 0.04,
+      "high": 0.06,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Sweden 1.4% (1600), 4.0% (1700) (de Vries-type, Scandinavia). Stockholm ~10,000; Riga and Reval add Baltic towns. Mid 4% for the 5,000+ convention."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 75000,
+      "mid": 100000,
+      "high": 150000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Swedish_intervention_in_the_Thirty_Years%27_War",
+      "note": "Forces in Swedish pay in 1632: 140,000 in the Swedish intervention article infobox (25,000 Swedes and Finns in Germany, ~115,000 German allies and mercenaries), of which the Saxon and other allied armies (~25,000-40,000) are not Swedish; plus garrisons in Sweden, Finland and the Baltic (16,000 in Sweden and 6,500 for Finland in 1630, same article after Dodge). Mid ~100,000 Swedish-paid incl. navy. Parker (Military Revolution p. 24) gives 45,000 for the national army of the 1630s (https://en.wikipedia.org/wiki/Military_Revolution); 149,000 is the Nov 1632 paper total often quoted."
+    },
+    "trainedReserves": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: next utskrivning levy class and the lantvarn (home defence levy) callable within a month."
+    },
+    "supportPersonnel": {
+      "low": 8000,
+      "mid": 12000,
+      "high": 16000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Navy ~5,000-7,000 sailors (Glete, Navies and Nations: ~30 major warships), artillery corps and train ~3,000-5,000 (regimental guns with every infantry regiment), commissariat ~1,000."
+    },
+    "mobilizationRatio": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.15,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Includes the mercenary market Sweden bought with French subsidies and German contributions (Barwalde 1631): Swedish-paid strength of 100,000-150,000 was 7-11% of the home population. The native-only ceiling was ~4-5% (the utskrivning drafted ~50,000 Swedes and Finns 1621-32; Frost, Northern Wars ch. 6, isbn:0-582-06429-5)."
+    },
+    "mobilizable": {
+      "low": 92000,
+      "mid": 162000,
+      "high": 240000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 45000,
+          "mid": 62000,
+          "high": 90000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Swedish_intervention_in_the_Thirty_Years%27_War",
+          "note": "Swedish, Finnish, Scottish and German infantry brigades (pike and musket in ~1:2 ratio). Share of the Swedish-paid total after subtracting cavalry (~25-30%); grade C."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.8,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: lightened musket, cartridges, regimental 3-pdrs; the leading tactical system of 1630-32"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: drilled native brigades 0.85, German recruits after 1631 0.6"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 7000,
+          "mid": 10000,
+          "high": 15000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Swedish_intervention_in_the_Thirty_Years%27_War",
+          "note": "Cuirassier and harquebusier regiments charging home with the sword (Swedish and German), ~1/4 of cavalry as heavy."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: charge-oriented Swedish horse supported by commanded musketeers"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veteran of the Prussian war 1626-29"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 8000,
+          "mid": 14000,
+          "high": 20000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Swedish_intervention_in_the_Thirty_Years%27_War",
+          "note": "Finnish (hakkapeliitta), Swedish and German horse regiments of medium-light type and dragoons."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: small Nordic horses, pistols and swords"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veteran"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 250,
+          "high": 400,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: two light regimental guns per infantry regiment plus field and siege trains; Breitenfeld 1631 saw ~75 Swedish guns with the main army."
+        },
+        "quality": {
+          "low": 0.8,
+          "mid": 0.9,
+          "high": 0.95,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75-1.0. Evidence: light leather and 3-pdr regimental guns, standardised calibres under Torstensson: the era's most mobile field artillery"
+        },
+        "training": {
+          "low": 0.75,
+          "mid": 0.85,
+          "high": 0.9,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75-1.0. Evidence: Torstensson's artillery regiment"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 22,
+          "mid": 30,
+          "high": 40,
+          "grade": "C",
+          "source": "isbn:91-22-01565-5",
+          "note": "Glete, Navies and Nations (1993) tables: Swedish navy c. 1630-35 ~30 major warships (~20,000-25,000 tons). Vasa (1628) sank on launch."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: mixed new-built ships; Baltic-sized warships"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Baltic sea control against Poland, no major fleet battle"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 30,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: smaller warships, pinnaces and transports in naval service."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: era-typical"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: conscripted seamen"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.85,
+      "mid": 0.92,
+      "high": 1.0,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 1.0 (best-in-era). Evidence: Gustavus Adolphus (Breitenfeld 1631, Lech 1632), Banér, Torstensson, Horn; killed at Lutzen 16 Nov 1632"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: native brigades with strong identity; growing mercenary share after 1631 lowered cohesion"
+    },
+    "morale": {
+      "low": 0.75,
+      "mid": 0.85,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75-1.0. Evidence: Protestant cause and unbroken victories 1630-32"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.1,
+      "mid": 5.25,
+      "high": 5.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (1600) toward 6. Evidence: Swedish brigade, lighter musket, paper cartridges, regimental guns: the most advanced tactical system of 1632"
+    },
+    "armor": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (half-armor, cuirass). Evidence: cuirassiers and armoured pikemen"
+    },
+    "ships": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (galleons). Evidence: Baltic galleons"
+    },
+    "fortification": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (trace italienne). Evidence: bastioned works at Riga, Stralsund and Baltic ports"
+    },
+    "logistics": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (magazines). Evidence: contributions system and Baltic sea transport; Swedish-paid armies largely lived off German territory"
+    },
+    "communications": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.9. Evidence: courier network; Oxenstierna administered from Prussia and the Rhine"
+    },
+    "isr": {
+      "low": 4.83,
+      "mid": 4.98,
+      "high": 5.13,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1250,
+      "mid": 1500,
+      "high": 1605,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Maddison Project 2023 (2011 int$): Sweden 1630 = 1,423, 1632 = 1,605, 1640 = 1,701; Finland 1600/1650 = 1,191/1,246. Mid 1,500 weights Finland and the Baltic provinces in."
+    },
+    "gdp": {
+      "low": 1437500000,
+      "mid": 2025000000,
+      "high": 2568000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.05,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: home revenue (copper, Prussian tolls, taxes) of ~3M riksdaler could not fund the war; French subsidies (400,000 rdr a year from 1631) and German contributions paid most of it. Peacetime share lower."
+    },
+    "industrialShare": {
+      "low": 0.1,
+      "mid": 0.15,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: copper (Falun the largest European source) and iron exports, gun founding (Finspang); agrarian economy."
+    },
+    "foodSurplus": {
+      "low": 0.05,
+      "mid": 0.12,
+      "high": 0.2,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: thin northern agriculture, Baltic grain (Livonia, Prussian ports) supplemented supply."
+    },
+    "annualCohort": {
+      "low": 10350,
+      "mid": 12825,
+      "high": 17600,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 3000,
+      "mid": 6000,
+      "high": 10000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: tracks between Swedish market towns; winter sledge routes; Baltic sea lanes carried most traffic."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 5,
+      "mid": 7,
+      "high": 9,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Stockholm, Kalmar, Gothenburg (founded 1621), Riga, Reval, Turku, Stralsund (allied 1628), plus occupied Prussian ports."
+    },
+    "merchantTonnage": {
+      "low": 20000,
+      "mid": 40000,
+      "high": 70000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: small domestic shipping; copper and iron largely carried by Dutch ships."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War (isbn:0-521-54657-5) ch. 1: 17th-18th c. armies tied to magazines and bread ovens, operating ~5 marches (~100-150 km) beyond the nearest magazine or navigable river; requisition extends it in rich country. Swedish armies relied on contributions in Germany and the Oder, Elbe and Main rivers."
+    },
+    "draftAnimals": {
+      "low": 200000,
+      "mid": 400000,
+      "high": 600000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: horses and oxen for 1.35M people; cavalry remounts bought in Germany."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": [
+      {
+        "name": "Stralsund",
+        "lat": 54.3091,
+        "lon": 13.0818,
+        "kind": "port"
+      },
+      {
+        "name": "Stettin (Szczecin)",
+        "lat": 53.4285,
+        "lon": 14.5528,
+        "kind": "port"
+      },
+      {
+        "name": "Pillau (Baltiysk)",
+        "lat": 54.6324,
+        "lon": 19.8949,
+        "kind": "port"
+      },
+      {
+        "name": "Mainz (occupied 1631-35)",
+        "lat": 49.9929,
+        "lon": 8.2473,
+        "kind": "fortress"
+      }
+    ]
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Oresund",
+      "Gulf of Finland",
+      "Oder estuary",
+      "Elbe crossings"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep strategic depth, forest and lakes, harsh winters, sea moat; invasion of Sweden proper rarely attempted."
+    }
+  },
+  "notes": "Snapshot = 1632, Gustavus Adolphus in Germany (Alte Veste, Lutzen). Population counts Sweden proper, Finland, Estonia, Livonia and Ingria; occupied German lands excluded. Personnel convention: all regiments in Swedish pay (native conscripts and German/Scottish mercenaries) are active because they were salaried and under arms; allied armies (Saxony, Brandenburg, Hesse) are excluded; the next levy and the lantvarn are trainedReserves. This makes active larger than a native mobilization ratio would allow, so mobilizationRatio includes the subsidised mercenary market (stated there). The 140,000-150,000 headline totals are paper strengths mixing Swedish-paid and allied forces."
+}

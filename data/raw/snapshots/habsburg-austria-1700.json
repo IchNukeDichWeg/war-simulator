@@ -1,0 +1,527 @@
+{
+  "id": "habsburg-austria-1700",
+  "nationId": "habsburg-austria",
+  "includes": [],
+  "name": "Habsburg Monarchy (Leopold I)",
+  "year": 1700,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "rise",
+  "tags": [
+    "monarchy",
+    "Habsburg",
+    "Leopold I",
+    "Eugene of Savoy",
+    "Military Frontier",
+    "composite monarchy"
+  ],
+  "capital": {
+    "name": "Vienna",
+    "lat": 48.2082,
+    "lon": 16.3738,
+    "kind": "capital",
+    "population": 100000
+  },
+  "places": [
+    {
+      "name": "Prague",
+      "lat": 50.0755,
+      "lon": 14.4378,
+      "kind": "city",
+      "population": 40000
+    },
+    {
+      "name": "Breslau (Wroclaw)",
+      "lat": 51.1079,
+      "lon": 17.0385,
+      "kind": "city",
+      "population": 40000
+    },
+    {
+      "name": "Graz",
+      "lat": 47.0707,
+      "lon": 15.4395,
+      "kind": "city"
+    },
+    {
+      "name": "Pressburg (Bratislava)",
+      "lat": 48.1486,
+      "lon": 17.1077,
+      "kind": "city"
+    },
+    {
+      "name": "Buda",
+      "lat": 47.4979,
+      "lon": 19.0402,
+      "kind": "fortress"
+    },
+    {
+      "name": "Komarom",
+      "lat": 47.7383,
+      "lon": 18.1294,
+      "kind": "fortress"
+    },
+    {
+      "name": "Petrovaradin",
+      "lat": 45.2519,
+      "lon": 19.8622,
+      "kind": "fortress"
+    },
+    {
+      "name": "Innsbruck",
+      "lat": 47.2692,
+      "lon": 11.4041,
+      "kind": "city"
+    },
+    {
+      "name": "Linz",
+      "lat": 48.3069,
+      "lon": 14.2858,
+      "kind": "city"
+    },
+    {
+      "name": "Karlovac (Military Frontier)",
+      "lat": 45.4929,
+      "lon": 15.5553,
+      "kind": "fortress"
+    },
+    {
+      "name": "Trieste",
+      "lat": 45.6495,
+      "lon": 13.7768,
+      "kind": "port"
+    }
+  ],
+  "territory": {
+    "border": "hb:1700:Austrian Empire",
+    "areaKm2": {
+      "low": 550000,
+      "mid": 600000,
+      "high": 650000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "world_1700 \"Austrian Empire\" polygons = 426,621 km2 on the sphere but cover mainly Hungary, Croatia and Transylvania; the hereditary lands, Bohemia, Moravia and Silesia (~200,000 km2) lie inside the Holy Roman Empire polygon of that file and are not drawn. Sum ~600,000 km2. The map border therefore understates the monarchy."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 9000000,
+      "mid": 10500000,
+      "high": 12000000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "HYDE via OWID (1700, modern borders): Austria 2.12M, Czechia 3.24M, Hungary 1.50M, Slovakia 1.14M, Croatia 0.66M, Slovenia 0.25M, plus Silesia (~1.0M), Transylvania (~0.8M) and South Tyrol/Trentino (~0.2M) = ~10.9M. The Military Revolution article gives 8M for c. 1650 (before the reconquest of Hungary). Mid 10.5M. Spanish Netherlands and Milan (1714) excluded."
+    },
+    "urbanization": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.07,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Austria 4.8%, Czechia 4.8%, Hungary 4.8% (1700, de Vries-type). Mid 5%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 60000,
+      "mid": 80000,
+      "high": 100000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Army_of_the_Holy_Roman_Emperor",
+      "note": "Kaiserliche Armee (the Habsburg standing army) averaged ~70,000 in the Great Turkish War (1683-89) and the Nine Years War (Wilson 2016 via the Imperial Army of the Holy Roman Emperor article); Parker gives 110,000-130,000 for c. 1700-10 (Military Revolution article) and 20,000-24,000 for the 1650s. After Karlowitz (1699) regiments were reduced; mid ~80,000 incl. Danube flotilla and artillery. Reichsarmee contingents of the Empire excluded."
+    },
+    "trainedReserves": {
+      "low": 30000,
+      "mid": 50000,
+      "high": 80000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Military Frontier border militia (Grenzer, ~20,000-40,000 able to serve), the Hungarian noble insurrectio and Bohemian/Austrian Landesdefension levies. Hochedlinger, Austria's Wars of Emergence (isbn:0-582-29084-8), ch. 6, describes the Grenzer as a part-time militia."
+    },
+    "supportPersonnel": {
+      "low": 4000,
+      "mid": 6000,
+      "high": 9000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: artillery (Feldzeugamt), pontoniers and Danube flotilla (Tschaikisten), staff and commissariat."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Military_Revolution",
+      "note": "Peaks of 110,000-130,000 regulars (Military Revolution article, Parker) plus Grenzer on ~10.5M = 1.5-2%; ceiling ~3-4% with insurrectio levies."
+    },
+    "mobilizable": {
+      "low": 180000,
+      "mid": 315000,
+      "high": 480000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 40000,
+          "mid": 52000,
+          "high": 65000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imperial_Army_of_the_Holy_Roman_Emperor",
+          "note": "German infantry regiments (~2/3 of the Kaiserliche Armee)."
+        },
+        "quality": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: flintlock and bayonet adopted in the 1690s, some pikes retained"
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veterans of 16 years of war against the Ottomans (Zenta 1697)"
+        }
+      },
+      "cavalry_heavy": {
+        "count": {
+          "low": 9000,
+          "mid": 12000,
+          "high": 16000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imperial_Army_of_the_Holy_Roman_Emperor",
+          "note": "Cuirassier regiments, the core of the Habsburg cavalry."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: heavy cuirassiers, among the best battle cavalry"
+        },
+        "training": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.85,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: veteran"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 5000,
+          "mid": 8000,
+          "high": 12000,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Imperial_Army_of_the_Holy_Roman_Emperor",
+          "note": "Dragoon regiments and Hungarian hussars (counted as light cavalry)."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: hussars the model for Europe's light cavalry"
+        },
+        "training": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: frontier warfare experience"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 100,
+          "mid": 200,
+          "high": 300,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: field pieces of the Feldzeugamt; Eugene took ~60-80 guns on campaign."
+        },
+        "quality": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: artillery the weakest Habsburg arm before Liechtenstein's reforms (1744)"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: guild-like civilian gunners"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 10,
+          "mid": 20,
+          "high": 40,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Danube flotilla of armed boats (tschaiken) and a few Adriatic vessels; no seagoing navy."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: river craft"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Tschaikisten border militia"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.7,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75-1.0. Evidence: Eugene of Savoy (Zenta 1697) and Ludwig of Baden; Hofkriegsrat slow and underfunded"
+    },
+    "cohesion": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.75. Evidence: standing regiments owned by Inhaber colonels; multinational"
+    },
+    "morale": {
+      "low": 0.7,
+      "mid": 0.75,
+      "high": 0.85,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: reconquest of Hungary 1683-99, Zenta (1697), Karlowitz (1699)"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.35,
+      "mid": 5.5,
+      "high": 5.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.5 between 1600 and 1805. Evidence: flintlock and socket bayonet in the 1690s"
+    },
+    "armor": {
+      "low": 5.15,
+      "mid": 5.3,
+      "high": 5.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.3. Evidence: cuirassiers"
+    },
+    "ships": {
+      "low": 4.35,
+      "mid": 4.5,
+      "high": 4.65,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.5. Evidence: river flotilla only; no ocean navy"
+    },
+    "fortification": {
+      "low": 5.45,
+      "mid": 5.6,
+      "high": 5.75,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.6. Evidence: bastioned fortresses at Komarom, Gyor, Petrovaradin (rebuilt from 1692)"
+    },
+    "logistics": {
+      "low": 4.95,
+      "mid": 5.1,
+      "high": 5.25,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.1. Evidence: Danube shipping and magazines for Hungarian campaigns"
+    },
+    "communications": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.0. Evidence: imperial post (Paar) courier network"
+    },
+    "isr": {
+      "low": 5.0,
+      "mid": 5.15,
+      "high": 5.3,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 1100,
+      "mid": 1300,
+      "high": 1450,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Germany 1700 = 1,511 (Maddison Project 2023, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true) scaled by the Austria/Germany ratio in 1820 (1,941/2,041 = 0.95, MPD 2020, https://www.rug.nl/ggdc/historicaldevelopment/maddison/data/mpd2020.xlsx) = ~1,440 for the hereditary lands and Bohemia; Hungary, war-ravaged after 1683-99, lower. Mid 1,300. No Maddison series for Austria or Hungary before 1820."
+    },
+    "gdp": {
+      "low": 9900000000,
+      "mid": 13650000000,
+      "high": 17400000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: state revenue ~12-15M florins dominated by army costs; war loans from Oppenheimer; peacetime 1700."
+    },
+    "industrialShare": {
+      "low": 0.12,
+      "mid": 0.17,
+      "high": 0.22,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Bohemian and Silesian linen and glass, Styrian iron; Hungary pastoral."
+    },
+    "foodSurplus": {
+      "low": 0.15,
+      "mid": 0.25,
+      "high": 0.35,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hungarian plain under-populated but fertile; Bohemia self-sufficient."
+    },
+    "annualCohort": {
+      "low": 81000,
+      "mid": 99750,
+      "high": 132000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 8000,
+      "mid": 15000,
+      "high": 25000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: post roads Vienna-Prague-Breslau and Vienna-Graz-Trieste; Danube the main military artery."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 1,
+      "mid": 2,
+      "high": 3,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Trieste and Fiume (minor Adriatic ports); Danube river ports (Vienna, Pressburg, Buda) for military supply."
+    },
+    "merchantTonnage": {
+      "low": 2000,
+      "mid": 5000,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: negligible seagoing merchant fleet; Danube barges not counted."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 150,
+      "high": 250,
+      "grade": "C",
+      "source": "isbn:0-521-54657-5",
+      "note": "van Creveld, Supplying War (isbn:0-521-54657-5) ch. 1: 17th-18th c. armies tied to magazines and bread ovens, operating ~5 marches (~100-150 km) beyond the nearest magazine or navigable river; requisition extends it in rich country. Hungarian campaigns followed the Danube."
+    },
+    "draftAnimals": {
+      "low": 1500000,
+      "mid": 2500000,
+      "high": 3500000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: Hungarian horse and cattle herds, Bohemian draught animals."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Danube (Vienna, Pressburg, Buda)",
+      "Semmering and Alpine passes",
+      "Moravian Gate",
+      "Sava crossings (Military Frontier)"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.2,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.2 row: fortified Danube line, Alps and Bohemian hills; Hungary restive (Rakoczi revolt 1703)."
+    }
+  },
+  "notes": "Snapshot = 1700, after the Peace of Karlowitz (1699) and before the War of the Spanish Succession. Population: hereditary lands, Bohemian crown lands (incl. Silesia) and Hungary with Croatia and Transylvania; the Spanish inheritance (1714) and Reich contingents excluded. Personnel convention: the Kaiserliche Armee regiments are active; Grenzer, Hungarian insurrectio and Landesdefension levies are trainedReserves. The map border (world_1700 \"Austrian Empire\") draws only the Hungarian lands; the core lands sit in that file's Holy Roman Empire polygon, so the rendered area understates the monarchy. Habsburg army size in 1700 is uncertain (post-war reductions); range 60,000-100,000."
+}

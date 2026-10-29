@@ -1,0 +1,527 @@
+{
+  "id": "russian-empire-1709",
+  "nationId": "russian-empire",
+  "includes": [],
+  "name": "Tsardom of Russia (Peter I)",
+  "year": 1709,
+  "era": "gunpowder",
+  "region": "europe",
+  "phase": "rise",
+  "tags": [
+    "tsardom",
+    "Peter the Great",
+    "Great Northern War",
+    "Poltava",
+    "Petrine reforms",
+    "recruit levy"
+  ],
+  "capital": {
+    "name": "Moscow",
+    "lat": 55.7558,
+    "lon": 37.6173,
+    "kind": "capital",
+    "population": 160000
+  },
+  "places": [
+    {
+      "name": "Saint Petersburg (founded 1703)",
+      "lat": 59.9343,
+      "lon": 30.3351,
+      "kind": "port",
+      "population": 20000
+    },
+    {
+      "name": "Arkhangelsk",
+      "lat": 64.5401,
+      "lon": 40.5433,
+      "kind": "port"
+    },
+    {
+      "name": "Azov",
+      "lat": 47.1,
+      "lon": 39.4167,
+      "kind": "fortress"
+    },
+    {
+      "name": "Voronezh (shipyards)",
+      "lat": 51.6608,
+      "lon": 39.2003,
+      "kind": "city"
+    },
+    {
+      "name": "Smolensk",
+      "lat": 54.7826,
+      "lon": 32.0453,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kyiv",
+      "lat": 50.4501,
+      "lon": 30.5234,
+      "kind": "fortress"
+    },
+    {
+      "name": "Novgorod",
+      "lat": 58.5215,
+      "lon": 31.2755,
+      "kind": "city"
+    },
+    {
+      "name": "Kazan",
+      "lat": 55.7963,
+      "lon": 49.1088,
+      "kind": "city"
+    },
+    {
+      "name": "Poltava",
+      "lat": 49.5883,
+      "lon": 34.5514,
+      "kind": "fortress"
+    },
+    {
+      "name": "Kronshlot (Kronstadt)",
+      "lat": 59.9925,
+      "lon": 29.7681,
+      "kind": "fortress"
+    },
+    {
+      "name": "Tula (arms works)",
+      "lat": 54.1931,
+      "lon": 37.6177,
+      "kind": "city"
+    }
+  ],
+  "territory": {
+    "border": "hb:1700:Tsardom of Muscovy",
+    "areaKm2": {
+      "low": 13000000,
+      "mid": 13500000,
+      "high": 14500000,
+      "grade": "C",
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1700.geojson",
+      "note": "world_1700 Tsardom of Muscovy polygon = 13,518,628 km2 on the sphere (incl. Siberia). Ingria (1703) and Narva, Dorpat (1704) were added after."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 13000000,
+      "mid": 15000000,
+      "high": 16500000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "HYDE via OWID: Russia (modern borders) 10.71M (1700) and 13.04M (1710); add the Left-bank Hetmanate (~1.2-1.5M) and Smolensk/Novgorod lands not covered. The first revision (1719) counted ~15.6M (Kabuzan, as usually cited). Mid 15M."
+    },
+    "urbanization": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "C",
+      "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID urban share: Russia 2.0% (1700). Moscow ~160,000; few other towns above 5,000. Mid 3%."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 140000,
+      "mid": 170000,
+      "high": 200000,
+      "grade": "B",
+      "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+      "note": "Regular field army ~100,000-110,000 (52,100 regulars at Poltava, Battle of Poltava article after Krotov 2014), garrison regiments ~40,000-50,000, plus Cossacks and Kalmyks on campaign (~20,000). Peak strength 200,000 during the war (Pintner 1978 via the Great Northern War article); the Military Revolution article (Parker) gives 170,000 for c. 1700-10."
+    },
+    "trainedReserves": {
+      "low": 10000,
+      "mid": 25000,
+      "high": 50000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: the annual recruit levy (1 recruit per 20 households from 1705, ~20,000-30,000 a year in training depots) and Cossack hosts not yet called."
+    },
+    "supportPersonnel": {
+      "low": 10000,
+      "mid": 15000,
+      "high": 22000,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Artillery (Bruce's artillery regiment ~3,000), engineers, train, and Azov and Baltic fleet crews (~6,000-10,000 incl. galley soldiers)."
+    },
+    "mobilizationRatio": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.04,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Great_Northern_War",
+      "note": "Peak 200,000 (Pintner 1978) on ~15M = 1.3%; the recruit levies of 1700-09 took ~300,000 men in total. Ceiling 3-4%."
+    },
+    "mobilizable": {
+      "low": 260000,
+      "mid": 450000,
+      "high": 660000,
+      "grade": "C",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "infantry_line": {
+        "count": {
+          "low": 80000,
+          "mid": 95000,
+          "high": 110000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Poltava",
+          "note": "Field infantry (33,500 at Poltava among 52,100 regulars, Battle of Poltava article) plus garrison regiments. Reconstruction of the split; grade B from the Poltava anchor."
+        },
+        "quality": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5 (era-typical) to 0.75 (among the era best). Evidence: flintlock and bayonet from Tula and imported Dutch muskets"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: conscripts drilled since 1700; guards regiments (Preobrazhensky, Semyonovsky) elite"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 40000,
+          "mid": 55000,
+          "high": 65000,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Poltava",
+          "note": "All regular cavalry were dragoons (18,600 at Poltava, Battle of Poltava article) ~30,000-35,000 in total, plus Cossacks and Kalmyks on campaign (~20,000). Dragoons counted as light cavalry as in the France 1805 snapshot."
+        },
+        "quality": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: dragoons on small horses; Cossack irregulars"
+        },
+        "training": {
+          "low": 0.5,
+          "mid": 0.6,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5. Evidence: Menshikov's dragoons won at Kalisz (1706) and Lesnaya (1708)"
+        }
+      },
+      "artillery": {
+        "count": {
+          "low": 150,
+          "mid": 250,
+          "high": 400,
+          "grade": "C",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Poltava",
+          "note": "Russian army at Poltava had 102 guns (Battle of Poltava article); the 1700 Narva train of ~180 guns was rebuilt with church-bell bronze by 1701-02. Total field pieces estimated 150-400."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.7,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Bruce's new standardised field guns; artillery decided Poltava"
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.65,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: new professional artillery regiment"
+        }
+      },
+      "ships_major": {
+        "count": {
+          "low": 3,
+          "mid": 10,
+          "high": 20,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: rated ships of the Azov fleet (e.g. 58-gun Goto Predestinatsia, 1700), mostly laid up; the Baltic fleet had no ship of the line until 1712 (Poltava, 54 guns). Peak 37 ships of the line later in the war (Glete 2010 via the Great Northern War article)."
+        },
+        "quality": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: green-timber Voronezh ships"
+        },
+        "training": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: foreign officers, untrained crews"
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 50,
+          "mid": 100,
+          "high": 150,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess: Baltic galleys, shnyavas and brigantines plus Azov galleys and Don craft."
+        },
+        "quality": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5. Evidence: galleys suited to the skerries"
+        },
+        "training": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5. Evidence: soldier-rowers"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.75. Evidence: Peter I, Menshikov and Sheremetev; scorched-earth strategy of 1708-09 and the redoubt defence at Poltava"
+    },
+    "cohesion": {
+      "low": 0.5,
+      "mid": 0.6,
+      "high": 0.7,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.5. Evidence: new conscript regiments, lifelong service; desertion high"
+    },
+    "morale": {
+      "low": 0.6,
+      "mid": 0.7,
+      "high": 0.8,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.75. Evidence: Lesnaya (Oct 1708) restored confidence after Narva and Holowczyn"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 5.25,
+      "mid": 5.4,
+      "high": 5.55,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.4. Evidence: flintlock-bayonet infantry and standardised artillery on the Western model, introduced 1699-1708"
+    },
+    "armor": {
+      "low": 5.05,
+      "mid": 5.2,
+      "high": 5.35,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.2. Evidence: no body armour except some officers"
+    },
+    "ships": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5 (galleons). Evidence: young fleet built by Dutch and English shipwrights"
+    },
+    "fortification": {
+      "low": 5.15,
+      "mid": 5.3,
+      "high": 5.45,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 5.3. Evidence: Vauban-style works at Azov, Kronshlot, Petersburg (Peter and Paul fortress)"
+    },
+    "logistics": {
+      "low": 4.75,
+      "mid": 4.9,
+      "high": 5.05,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.9. Evidence: magazines in Smolensk and Kyiv; scorched-earth defence; vast distances"
+    },
+    "communications": {
+      "low": 4.65,
+      "mid": 4.8,
+      "high": 4.95,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: 4.8. Evidence: courier post (yamskaya gonba)"
+    },
+    "isr": {
+      "low": 4.85,
+      "mid": 5.0,
+      "high": 5.15,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor: ISR uses the same years as the anchor table (1600 -> 5, 1805 -> 6). Evidence: cavalry screens, spies and merchant reports only; no aerial or signal intelligence"
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft or military balloons before 1783/1794."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 800,
+      "mid": 950,
+      "high": 1100,
+      "grade": "C",
+      "source": "derived:regional-analogy",
+      "note": "Analogue: Poland 1709 = 974 (Maddison Project 2023, https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true). Russia taken at about the Polish level (Broadberry and Korchmina find Russian income per head close to Poland in the 1690s-1700s). No Maddison Project series exists for Russia before 1820 (checked MPD 2020 and MPD 2023 via OWID); analogue = Poland (MPD 2023)."
+    },
+    "gdp": {
+      "low": 10400000000,
+      "mid": 14250000000,
+      "high": 18150000000,
+      "grade": "C",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.06,
+      "mid": 0.1,
+      "high": 0.14,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: army and navy took ~80% of state spending in 1700-09; state revenue rose from ~1.5M to ~3M rubles; wartime share mid."
+    },
+    "industrialShare": {
+      "low": 0.08,
+      "mid": 0.12,
+      "high": 0.16,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: new Urals ironworks (Nevyansk 1701), Tula arms works, sailcloth manufactories; overwhelmingly agrarian."
+    },
+    "foodSurplus": {
+      "low": 0.1,
+      "mid": 0.18,
+      "high": 0.25,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: subsistence agriculture with low yields; black-earth south provided surplus."
+    },
+    "annualCohort": {
+      "low": 117000,
+      "mid": 142500,
+      "high": 181500,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "population x 0.009-0.011 (mid 0.0095): in a pre-transition age structure (Wrigley and Schofield type, life expectancy ~30-35) males reaching 18 each year are about 0.9-1.1% of total population. Males only."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 5000,
+      "mid": 10000,
+      "high": 20000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: unpaved tracks; rivers and winter sledge roads carried supply."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 2,
+      "mid": 4,
+      "high": 5,
+      "grade": "C",
+      "source": "derived:snapshot-composite",
+      "note": "Arkhangelsk, Saint Petersburg/Kronshlot, Azov/Taganrog, Narva (from 1704)."
+    },
+    "merchantTonnage": {
+      "low": 5000,
+      "mid": 15000,
+      "high": 30000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: almost no ocean-going Russian merchant fleet; Arkhangelsk trade on Dutch and English ships."
+    },
+    "supplyRangeKm": {
+      "low": 100,
+      "mid": 200,
+      "high": 400,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: river-borne supply and requisition; defence on interior lines in 1708-09."
+    },
+    "draftAnimals": {
+      "low": 2000000,
+      "mid": 4000000,
+      "high": 6000000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess: peasant horses (~1 per household) and steppe herds."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-gunpowder-linear",
+  "geography": {
+    "climate": "Dfb",
+    "chokepoints": [
+      "Gulf of Finland (Kronshlot)",
+      "Narva",
+      "Smolensk gate",
+      "Dnieper crossings",
+      "Sea of Azov (Kerch Strait, Ottoman)"
+    ],
+    "homeDefense": {
+      "low": 1.2,
+      "mid": 1.3,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "1.3 row: deep strategic depth and harsh winter (the 1708-09 winter crippled the Swedish army) plus scorched earth."
+    }
+  },
+  "notes": "Snapshot = spring 1709, before Poltava. Population: Tsardom incl. the Left-bank Hetmanate and new Baltic conquests (Ingria, Narva, Dorpat). Personnel convention: regular field and garrison regiments, plus Cossacks and Kalmyks actually serving, are active; recruits in depots and Cossack hosts not called are trainedReserves. GDP per head is a regional analogy (no Maddison series for Russia before 1820). Fleet numbers for 1709 are weak."
+}
