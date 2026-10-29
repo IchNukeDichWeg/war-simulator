@@ -84,6 +84,8 @@ Each `derived:<id>` used in the data must be listed here with its formula.
   spending. Grade D.
 - `derived:snapshot-composite` - a snapshot value combined from several cited figures; the note
   shows the arithmetic and names each source. Grade at most C.
+- `derived:grt-to-dwt` - merchant fleet deadweight from gross register tons x 1.5 (range 1.3-1.6,
+  the usual dwt/grt ratio of cargo ships); the note gives the GRT figure and its source.
 - `derived:educated-guess` - no source gives the number; the value is the researcher's informed
   judgement, explained in the note. Always grade D.
 - `derived:mech-composite` - a mechanics constant combined from several cited figures; the note
