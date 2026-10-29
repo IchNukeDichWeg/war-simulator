@@ -10,7 +10,7 @@ import {
   BATTLE_NOISE_SIGMA, BATTLE_ROUND_LOSS_CAP, FEIGNED_RETREAT_INITIATIVE_THRESHOLD, MAX_BATTLE_EVENTS_PER_DAY,
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, BEATEN_LEAVE_CELL,
-  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES } from './constants';
+  RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -488,6 +488,9 @@ function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
   }
   if (best < 0) {
     const before = F.personnel[f];
+    // the pocket is destroyed: encircledSurrenderShare (era of the formation) surrenders, the rest die
+    const share = SURRENDER_SHARE_FROM_MODEL_RULES ? clamp(rule(S.m.modelRules.surrender.encircledSurrenderShare, S.members[F.member[f]].ruleYear), 0, 1) : 1;
+    if (share < 1) lossFraction(ctx, f, 1 - share, LC.combat);
     lossFraction(ctx, f, 1, LC.captured);
     b.casualties[side] += before - F.personnel[f];
     return;

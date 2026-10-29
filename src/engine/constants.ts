@@ -94,6 +94,11 @@ export const PREPARED_FROM_CASE = true;
  *  impassable. Before, a beaten defender sitting on a supply source never left (its retreat field
  *  is 0 there), so an objective could be won in battle 31 times and never entered (QA C2). */
 export const BEATEN_LEAVE_CELL = true;
+/** A surrounded beaten formation is destroyed: modelRules.surrender.encircledSurrenderShare of it
+ *  (per era: WWII 0.8 from Stalingrad, Kiev, Falaise, Tunisia; classical 0.3) is booked as
+ *  captured, the rest as killed. OFF: all captured. Only the cause split changes (the formation is
+ *  gone either way); backtest counts unchanged. */
+export const SURRENDER_SHARE_FROM_MODEL_RULES = true;
 /** AI reserve: skip formations that would overshoot reserveUse x strength, and never hold back a
  *  member's only available formation (the first formation was always taken, QA C3). */
 export const RESERVE_NO_OVERSHOOT = true;

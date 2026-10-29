@@ -174,7 +174,9 @@ formation of one side has withdrawn or routed, the battle ends. Otherwise it
 continues the next day. In war mode a beaten formation standing in the battle
 cell gives it up: it falls back one cell toward its supply (lowest supply
 distance among neighbours not held or occupied by the enemy), or, when no such
-neighbour exists, surrenders and is booked as captured (`BEATEN_LEAVE_CELL`).
+neighbour exists, surrenders (`BEATEN_LEAVE_CELL`): with
+`SURRENDER_SHARE_FROM_MODEL_RULES` the era's `encircledSurrenderShare` is
+booked as captured and the rest as killed (before: all captured).
 Without this a beaten defender on a supply source never moved and the
 objective could not be entered. Measured: winner 14 -> 18 of 24, loss ratio
 16 -> 14 (Gulf War and Six-Day losers now lose more than history records).
