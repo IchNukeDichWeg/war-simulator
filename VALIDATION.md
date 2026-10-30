@@ -515,3 +515,74 @@ Sweeps at `25de49e` (every member at one quantile):
 
 Bold = fails its criterion. The gate (18 right-reason winners, none flipped by a single grade-D
 constant) is now at most met on raw count and needs QA round 5.
+
+### QA round 5 (final): verdict on Run 5
+
+**Gate NOT MET.** Independent QA reproduced Run 5 (18/13/21) at `6936ffc`.
+
+| Verdict | Count | Cases |
+| --- | --- | --- |
+| RIGHT | 6 | Blenheim (thin), Breitenfeld, El Alamein, Gettysburg, Hastings, Waterloo |
+| PARTLY | 12 | Agincourt, Austerlitz, Cannae, Gaugamela, Kursk, Tannenberg, Zama, Falklands, France 1940, Gulf War, Iraq 2003, Stalingrad |
+| WRONG | 0 | |
+
+Right or partly right: 18. Two each flip on one grade-D constant within its own range (10-seed
+screen, confirmed at 20 seeds): the Gulf War at a winter season factor of 0.4 instead of 0.7 (85% ->
+20%; the factor is a Berlin-latitude daylight rule), and Blenheim at one armour-matrix cell of 0.95
+instead of 1.0 (65% -> 50%). **Robust: 16 of the 18 needed.** Zama passes only through the grade-B
+roman-imperial threshold (45% at the era mid).
+
+What decides the six winner fails (QA's trace; "inferred" where QA said so):
+
+| case | model result | decided by |
+| --- | --- | --- |
+| Adrianople | 10% | doctrine value: the Roman "holds" threshold (0.25 vs era 0.20); at the era mid the Goths win 100%. Case data: the Goths use a medieval archetype |
+| Carrhae | 0% | missing mechanism: the Parthian break-contact threshold (-0.93) beats its power edge, because breaking contact is scored as losing; 100% at the era mid |
+| Mohi | 15% | the same missing mechanism for the Mongols (-0.92); 100% at the era mid |
+| Marathon | 0% | the Athenians are out-powered (-0.58) and the tech term runs against hoplites; case data or a missing mechanism (inferred) |
+| Six-Day | 0% | Egypt holds its objective at the 10-day limit; missing: the pre-emptive air strike and the Egyptian withdrawal order (inferred) |
+| Yom Kippur | 25% | Egypt wins 13/20 on territory share at the limit after 2-3 undecided battles; missing: a crossing at a seam. Case data: Egypt's objective starts Egyptian-held |
+
+## Sensitivity analysis (QA round 5, `6936ffc`)
+
+One at a time, every graded constant (1,025, of which 622 grade D) at its own low and high; gate
+counts winner / ratio / duration against 18/13/21. The largest effects:
+
+| constant | grade | at low | at high |
+| --- | --- | --- | --- |
+| era breakpoints (quantile) | B-D | 18/15/20 | 16/12/24 |
+| isrPerLevel | D | 18/13/21 | 20/15/22 |
+| commandFactor (switched off) | C | 16/11/22 | 16/11/22 |
+| ewPerLevel | C | 17/13/21 | 20/14/22 |
+| riverCrossingFactor | C | 17/12/22 | 19/14/22 |
+| movement season winter | D | 17/14/22 | 18/13/22 |
+| movement terrain desert | C | 16/13/21 | 18/13/21 |
+
+The remaining constants tie at a total change of 2 or less.
+
+Global: every constant drawn independently from its range, 20 draws x 20 seeds (command, quality and
+training scales and the per-seed breakpoints left free):
+
+| count | min | median | max |
+| --- | --- | --- | --- |
+| winner | 15 | 17 | 20 |
+| loss ratio | 12 | 14 | 16 |
+| duration | 20 | 22 | 24 |
+
+The winner count reaches 18 in 9 of 20 draws. Fragile passes: France 1940 (10/20 draws), the Gulf War
+(8/20), Blenheim (15/20). Mohi, a fail, passes in 14/20. The draws ignore correlations between
+constants, so this is a picture of the wide end, not a calibrated interval.
+
+Invariants: all 48 case runs and 24 preset runs clean. The allies-vs-axis stand-off is gone (Axis
+wins after 138 battles); mongols-vs-rome is still a draw with no battle.
+
+## Verdict
+
+The backtest gate (18 of 24 winners right for the right reasons and not flipped by any single
+grade-D constant) is **not met**: 16 robust passes at the final commit, a median of 17 winners when
+all constants are drawn together. Five QA rounds moved the model from 14 winners decided largely by
+artefacts to 18 with none judged WRONG. The rest was not pursued by tuning: every change was chosen
+on sourced data or a stated mechanism, and the costs are recorded above. What would move the
+remaining cases is listed per case: breaking contact without counting it as defeat (Carrhae, Mohi),
+pre-emptive air strikes and withdrawal orders (Six-Day), seam crossings (Yom Kippur), and sourcing
+the grade-D constants that still decide the Gulf War and Blenheim.
