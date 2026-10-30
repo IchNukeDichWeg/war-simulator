@@ -475,44 +475,44 @@
    "note": "Attacking across water = amphibious: TNDM multiplier 2.00 for amphibious attack across a beach (attacker casualties), so attacker power ~1/2."
   },
   "plains": {
-   "low": 0.9,
-   "mid": 1.0,
-   "high": 1.0,
-   "grade": "C",
-   "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Flat open terrain is the QJM baseline 1.0."
-  },
-  "cropland": {
-   "low": 0.85,
+   "low": 0.95,
    "mid": 0.95,
    "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Flat mixed (fields, hedges, villages) slightly above baseline: 1/1.05. Educated guess."
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Attacker factor = 1/ru. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Plains = flat bare: 1/1.05 = 0.95. High 1.0 = no terrain effect (the QJM attacker baseline). Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. Was 0.9/1.0/1.0 C."
+  },
+  "cropland": {
+   "low": 0.83,
+   "mid": 0.83,
+   "high": 0.95,
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Attacker factor = 1/ru. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Cropland (low-relief fields, hedges, villages) = flat mixed: 1/1.2 = 0.83. High = flat bare 1/1.05 for open fields. Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. Was 0.85/0.95/1.0 D."
   },
   "forest": {
-   "low": 0.65,
-   "mid": 0.75,
-   "high": 0.85,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Heavily wooded taken between rolling-mixed 1.3 and rugged-mixed 1.5: 1/1.35 = 0.74. Educated guess."
+   "low": 0.74,
+   "mid": 0.82,
+   "high": 0.91,
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Attacker factor = 1/ru. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Forest (low or moderate relief; rugged forest is classed mountains) between flat heavily wooded 1.1 (1/1.1 = 0.91, high) and rolling heavily wooded 1.35 (0.74, low); mid = 1/mean(1.1, 1.35) = 0.82. Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. Was 0.65/0.75/0.85 D."
   },
   "hills": {
-   "low": 0.7,
+   "low": 0.69,
    "mid": 0.77,
-   "high": 0.85,
+   "high": 0.77,
    "grade": "B",
    "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Rolling-mixed 1.3 -> 1/1.3 = 0.77."
+   "note": "Attacker factor = 1/ru. QJM 1985 rolling-mixed 1.3 (NPW Table 1 p.228 via TDI, fetched) -> 0.77, also rolling bare 1.3 in 1972. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Low = 1972 rolling mixed 1/1.45 = 0.69. Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. High was 0.85 (unsourced), now 0.77."
   },
   "mountains": {
-   "low": 0.55,
-   "mid": 0.65,
-   "high": 0.75,
-   "grade": "C",
+   "low": 0.65,
+   "mid": 0.67,
+   "high": 0.69,
+   "grade": "B",
    "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Rugged-mixed 1.5 -> 0.67; rugged wooded/high mountains lower; mid 0.65."
+   "note": "Attacker factor = 1/ru. QJM 1985 rugged-mixed 1.5 (NPW Table 1 p.228 via TDI, fetched) -> 0.67. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Range over the 1972 rugged rows 1.45-1.55 -> 0.65-0.69. Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. Was 0.55/0.65/0.75 C."
   },
   "desert": {
    "low": 0.9,
@@ -520,15 +520,15 @@
    "high": 1.0,
    "grade": "D",
    "source": "derived:mech-composite",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Open desert ~ flat baseline; dunes/escarpments slightly favour the defender. Educated guess."
+   "note": "Attacker factor = 1/ru. NOT FETCHED: the 1985 QJM table has \"flat desert\" and sandy-dune rows (their mobility values are in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63), but no fetched source gives their defensive ru; the 1972 table has no desert row. Value kept as the flat-bare analogue (1/1.05 = 0.95), educated guess. Out-of-sample check, CDB90 (https://github.com/jrnold/CDB90, 573 battles with terrain and strengths after removing every battle of a backtest war): logistic fit of attacker win on ln(force ratio) plus terrain class gives terrain coefficients all within 1 SE of zero (attackers choose where to attack), so CDB90 neither confirms nor refutes these factors and sets none of them. Evidence that would set it: the NPW Table 1 desert rows (book not fetched)."
   },
   "steppe": {
    "low": 0.95,
-   "mid": 1.0,
+   "mid": 0.95,
    "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Flat open grassland = baseline. Educated guess."
+   "grade": "C",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Attacker factor = 1/ru. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. Steppe (IGBP grassland/shrubland on low relief; hilly steppe is classed hills) = flat bare 1.05 -> 0.95; grade C because grassland vs bare is a class mapping. High 1.0 = no terrain effect. Was 0.95/1.0/1.0 D."
   },
   "wetland": {
    "low": 0.65,
@@ -536,7 +536,7 @@
    "high": 0.9,
    "grade": "D",
    "source": "derived:mech-composite",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/). Swamp/marsh: channelised approaches; ~1/1.25. Educated guess."
+   "note": "Attacker factor = 1/ru. NOT FETCHED: the 1985 QJM table has \"swamp, jungle\" and \"swamp, mixed or open\" rows (mobility only in Clark 1989, https://archive.org/details/dimensionalnalys1094526997), defensive ru not found in any fetched source; the 1972 table has no swamp row. Kept ~1/1.25, educated guess. Evidence that would set it: the NPW Table 1 swamp rows."
   },
   "urban": {
    "low": 0.6,
@@ -544,7 +544,7 @@
    "high": 0.8,
    "grade": "B",
    "source": "https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/",
-   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Urban 1.4 -> 1/1.4 = 0.71."
+   "note": "QJM terrain factors (NPW Table 1, p.228, quoted by TDI): rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4 as defensive multipliers; attacker factor = 1/defensive factor. Urban 1.4 -> 1/1.4 = 0.71. Not in the 1972 ORALFORE table (https://archive.org/details/DTIC_AD0902830), which has 9 non-urban rows only."
   },
   "ice": {
    "low": 0.6,
@@ -552,7 +552,7 @@
    "high": 0.9,
    "grade": "D",
    "source": "derived:mech-composite",
-   "note": "Glacier/polar terrain: exposure and slow movement favour the defender ~1/1.25. Educated guess."
+   "note": "Glacier/polar terrain: exposure and slow movement favour the defender ~1/1.25. Educated guess. No QJM row for snow/ice terrain in any fetched table; kept."
   }
  },
  "terrainMountedFactor": {
@@ -562,79 +562,79 @@
    "high": 0.3,
    "grade": "D",
    "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Mounted/vehicle roles cannot fight on water."
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Mounted/vehicle roles cannot fight on water. No QJM row; left grade D."
   },
   "plains": {
    "low": 0.9,
    "mid": 1.0,
    "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Open plains: full value."
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Plains = flat bare 1.0; low = flat mixed 0.9 (savanna tree cover). Was 0.9/1.0/1.0 D."
   },
   "cropland": {
-   "low": 0.7,
+   "low": 0.9,
    "mid": 0.9,
    "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Fields, hedgerows, ditches."
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Cropland = flat mixed 0.9; high = flat bare 1.0. Was 0.7/0.9/1.0 D."
   },
   "forest": {
-   "low": 0.3,
-   "mid": 0.5,
+   "low": 0.6,
+   "mid": 0.65,
    "high": 0.7,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Dense woods canalise and blind cavalry and tanks."
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Forest between rolling heavily wooded 0.6 and flat heavily wooded 0.7, mid 0.65. Was 0.3/0.5/0.7 D."
   },
   "hills": {
    "low": 0.6,
    "mid": 0.8,
-   "high": 0.9,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Rolling hills."
+   "high": 1.0,
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Hills = rolling: mixed 0.8 (mid), heavily wooded 0.6, bare 1.0. Was 0.6/0.8/0.9 D."
   },
   "mountains": {
    "low": 0.2,
-   "mid": 0.4,
-   "high": 0.6,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Mountains."
+   "mid": 0.3,
+   "high": 0.5,
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Mountains = rugged: mixed 0.3 (mid), heavily wooded 0.2, bare 0.5. Was 0.2/0.4/0.6 D."
   },
   "desert": {
-   "low": 0.8,
-   "mid": 1.0,
-   "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Open desert suits horse and tank; dunes lower."
+   "low": 0.1,
+   "mid": 0.95,
+   "high": 0.95,
+   "grade": "C",
+   "source": "derived:qjm-terrain-proxy",
+   "note": "Proxy (derived:qjm-terrain-proxy): no fetched rwi row, so rwi is taken equal to the QJM 1985 mobility factor rm (Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63, fetched: flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7). In the 1972 table rwi = rm on all 6 non-rugged rows and is 0.1-0.2 below rm on the 3 rugged rows, so low = lowest rm in the class minus 0.2. Desert: mid/high = flat desert 0.95 (stony desert, most desert campaign ground), low = dunes 0.3 - 0.2 = 0.1. Was 0.8/1.0/1.0 D."
   },
   "steppe": {
-   "low": 0.95,
+   "low": 0.9,
    "mid": 1.0,
    "high": 1.0,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Steppe: classic cavalry country."
+   "grade": "B",
+   "source": "https://archive.org/details/DTIC_AD0902830",
+   "note": "Multiplier on mounted and vehicle roles' power = QJM terrain effect on tanks rwi. HERO, Opposed Rates of Advance of Large Forces in Europe (ORALFORE), 1972, App. E Table 2 \"Terrain factors (r)\" p. App-E10 (fetched, page image read): defense-position factor ru (attacker always 1.0) rugged heavily wooded 1.5, rugged mixed 1.55, rugged bare 1.45, rolling heavily wooded 1.35, rolling mixed 1.45, rolling bare 1.3, flat heavily wooded 1.1, flat mixed 1.2, flat bare 1.05; tanks rwi 0.2, 0.3, 0.5, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0; mobility rm 0.4, 0.5, 0.6, 0.6, 0.8, 1.0, 0.7, 0.9, 1.0. The 1985 QJM (Numbers, Predictions and War, Table 1 p.228, quoted by TDI, fetched: https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/) gives rugged-mixed 1.5, rolling-mixed 1.3, urban 1.4, so the table was revised between versions. The QJM column is for WWII-era armour; applying it to horse cavalry is an assumption. Steppe = flat/rolling bare 1.0; low = flat mixed 0.9 (shrubland). Was 0.95/1.0/1.0 D."
   },
   "wetland": {
-   "low": 0.2,
-   "mid": 0.4,
-   "high": 0.6,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Marsh and swamp."
+   "low": 0.1,
+   "mid": 0.35,
+   "high": 0.4,
+   "grade": "C",
+   "source": "derived:qjm-terrain-proxy",
+   "note": "Proxy (derived:qjm-terrain-proxy): no fetched rwi row, so rwi is taken equal to the QJM 1985 mobility factor rm (Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63, fetched: flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7). In the 1972 table rwi = rm on all 6 non-rugged rows and is 0.1-0.2 below rm on the 3 rugged rows, so low = lowest rm in the class minus 0.2. Wetland: mean of swamp-jungle 0.3 and swamp mixed/open 0.4 = 0.35; high 0.4; low 0.3 - 0.2 = 0.1. Was 0.2/0.4/0.6 D."
   },
   "urban": {
-   "low": 0.3,
-   "mid": 0.5,
+   "low": 0.5,
+   "mid": 0.7,
    "high": 0.7,
-   "grade": "D",
-   "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Streets canalise and expose vehicles and horses."
+   "grade": "C",
+   "source": "derived:qjm-terrain-proxy",
+   "note": "Proxy (derived:qjm-terrain-proxy): no fetched rwi row, so rwi is taken equal to the QJM 1985 mobility factor rm (Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63, fetched: flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7). In the 1972 table rwi = rm on all 6 non-rugged rows and is 0.1-0.2 below rm on the 3 rugged rows, so low = lowest rm in the class minus 0.2. Urban rm 0.7; low 0.7 - 0.2 = 0.5. Was 0.3/0.5/0.7 D."
   },
   "ice": {
    "low": 0.4,
@@ -642,7 +642,7 @@
    "high": 0.8,
    "grade": "D",
    "source": "derived:mech-composite",
-   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Snow and ice."
+   "note": "Multiplier on mounted and vehicle roles' power by terrain. QJM gives separate terrain effects for mobility (https://dupuyinstitute.org/2022/08/16/the-defensive-value-of-urban-terrain-according-to-the-qjm/ quotes only the defensive column); values here are educated guesses consistent with restricted/severely restricted going. Snow and ice. No QJM row for snow/ice terrain in any fetched table (ORALFORE 1972, Clark 1989); left grade D."
   }
  },
  "riverCrossingFactor": {

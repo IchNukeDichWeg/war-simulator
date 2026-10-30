@@ -157,6 +157,17 @@ not adapted to (Russia, Afghanistan). Note says which applies.
   SP.POP.1519.FE.5Y and SP.POP.TOTL.MA.IN / FE.IN.
 - `derived:ports-from-naturalearth` - number of Natural Earth 1:10m ports (scalerank <= 8) inside
   the state's border polygon. Counts ports, not capacity.
+- `derived:qjm-terrain-proxy` - a terrain multiplier for which no fetched source gives the
+  needed QJM column, filled from the QJM terrain mobility factor rm (Dupuy, Numbers, Predictions
+  and War 1985, Table 1, as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997,
+  Fig. 42 p.63). Two uses: (1) `movement.terrain` off-road multiplier = plains FM 101-10 (1941)
+  off-road ratio (low 0.32 / mid 0.6 / high 0.83) x rm(class) / rm(flat bare hard, 1.05); check:
+  the same formula gives hills 0.46 and mountains 0.29 against the independent FM 101-10 values
+  0.5 and 0.3. (2) `combat.terrainMountedFactor` for desert, wetland and urban: the QJM tank
+  factor rwi is taken equal to rm, because in the 1972 table (HERO ORALFORE,
+  https://archive.org/details/DTIC_AD0902830, App. E Table 2) rwi = rm on all six non-rugged rows
+  and lies 0.1-0.2 below rm on the three rugged rows; low = lowest rm in the class minus 0.2.
+  Grade at most C: rm measures the mobility of an attacking force in the QJM, not a march rate.
 
 ## Generated modern base snapshots
 

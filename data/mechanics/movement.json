@@ -340,20 +340,20 @@
       "note": "Off-road multiplier. FM 101-10 (1941) march table cross-country vs road (day): foot 1.5/2.5 mph = 0.6; cavalry 5/6 = 0.83; trucks 8/25 = 0.32; tanks 15/25 = 0.6."
     },
     "cropland": {
-      "low": 0.32,
-      "mid": 0.6,
-      "high": 0.83,
+      "low": 0.27,
+      "mid": 0.51,
+      "high": 0.71,
       "grade": "C",
-      "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
-      "note": "Same FM 101-10 (1941) cross-country ratios as plains (fields, hedges, ditches offset by dense track network). Grade C: not separated in the source."
+      "source": "derived:qjm-terrain-proxy",
+      "note": "Off-road multiplier (derived:qjm-terrain-proxy) = plains FM 101-10 (1941) off-road ratio (low 0.32 trucks, mid 0.6 foot, high 0.83 cavalry) x QJM terrain mobility factor rm / rm(flat bare hard 1.05). rm from Dupuy NPW 1985 Table 1 as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63 (fetched, page image read): rugged heavily wooded 0.4, rugged mixed 0.5, rugged bare 0.6, rolling heavily wooded 0.6, rolling mixed 0.8, rolling bare 1.0, flat heavily wooded 0.7, flat mixed 0.9, flat bare hard 1.05, flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7. rm is the QJM effect of terrain on the mobility of an attacking force, so using it as a march-rate ratio is a proxy (grade C); check: the same arithmetic gives hills (rolling mixed) 0.6 x 0.8/1.05 = 0.46 and mountains (rugged mixed) 0.29 against the independent FM 101-10 climb-based 0.5 and 0.3. Cropland: flat mixed 0.9/1.05 = 0.857 -> mid 0.6 x 0.857 = 0.51, low 0.32 x 0.857 = 0.27, high 0.83 x 0.857 = 0.71. Was 0.32/0.6/0.83 C (plains copied)."
     },
     "forest": {
-      "low": 0.2,
-      "mid": 0.4,
-      "high": 0.6,
-      "grade": "D",
-      "source": "derived:mech-composite",
-      "note": "Educated guess: below the FM 101-10 (1941) open cross-country foot ratio 0.6; trucks essentially road-bound (0.32 in open country) so low 0.2."
+      "low": 0.18,
+      "mid": 0.37,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:qjm-terrain-proxy",
+      "note": "Off-road multiplier (derived:qjm-terrain-proxy) = plains FM 101-10 (1941) off-road ratio (low 0.32 trucks, mid 0.6 foot, high 0.83 cavalry) x QJM terrain mobility factor rm / rm(flat bare hard 1.05). rm from Dupuy NPW 1985 Table 1 as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63 (fetched, page image read): rugged heavily wooded 0.4, rugged mixed 0.5, rugged bare 0.6, rolling heavily wooded 0.6, rolling mixed 0.8, rolling bare 1.0, flat heavily wooded 0.7, flat mixed 0.9, flat bare hard 1.05, flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7. rm is the QJM effect of terrain on the mobility of an attacking force, so using it as a march-rate ratio is a proxy (grade C); check: the same arithmetic gives hills (rolling mixed) 0.6 x 0.8/1.05 = 0.46 and mountains (rugged mixed) 0.29 against the independent FM 101-10 climb-based 0.5 and 0.3. Forest: flat heavily wooded 0.7/1.05 = 0.667, rolling heavily wooded 0.6/1.05 = 0.571, mean 0.619 -> mid 0.6 x 0.619 = 0.37; low 0.32 x 0.571 = 0.18; high 0.83 x 0.667 = 0.55. Was 0.2/0.4/0.6 D."
     },
     "hills": {
       "low": 0.3,
@@ -361,7 +361,7 @@
       "high": 0.7,
       "grade": "C",
       "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
-      "note": "FM 101-10 (1941) note: add 1 hour per 1,000 ft of climb. An 8 h march with ~1,500-3,000 ft of climb = 8/9.5-8/11 = 0.73-0.84 of road speed, times the 0.6 off-road ratio = ~0.45-0.5."
+      "note": "FM 101-10 (1941) note: add 1 hour per 1,000 ft of climb. An 8 h march with ~1,500-3,000 ft of climb = 8/9.5-8/11 = 0.73-0.84 of road speed, times the 0.6 off-road ratio = ~0.45-0.5. Cross-check: QJM rolling mixed rm 0.8/1.05 x 0.6 = 0.46 (Clark 1989, https://archive.org/details/dimensionalnalys1094526997)."
     },
     "mountains": {
       "low": 0.15,
@@ -369,15 +369,15 @@
       "high": 0.5,
       "grade": "C",
       "source": "https://archive.org/details/FM10110STAFFOFFICERSFIELDMANUALORGANIZATIONTECHNICALANDLOGISTICALDATA1941",
-      "note": "FM 101-10 (1941): +1 h per 1,000 ft climb; 4,000-8,000 ft of climb per 8 h march gives 8/12-8/16 = 0.5-0.67 on tracks, times off-road 0.6 = 0.3-0.4; vehicles lower."
+      "note": "FM 101-10 (1941): +1 h per 1,000 ft climb; 4,000-8,000 ft of climb per 8 h march gives 8/12-8/16 = 0.5-0.67 on tracks, times off-road 0.6 = 0.3-0.4; vehicles lower. Cross-check: QJM rugged mixed rm 0.5/1.05 x 0.6 = 0.29 (Clark 1989, https://archive.org/details/dimensionalnalys1094526997)."
     },
     "desert": {
-      "low": 0.25,
-      "mid": 0.5,
-      "high": 0.8,
-      "grade": "D",
-      "source": "derived:mech-composite",
-      "note": "Educated guess: hard desert near the open-country 0.6-0.8, sand dunes far lower; Engels documents the Gedrosian march as the army's slowest. Water limits are in logistics."
+      "low": 0.09,
+      "mid": 0.54,
+      "high": 0.75,
+      "grade": "C",
+      "source": "derived:qjm-terrain-proxy",
+      "note": "Off-road multiplier (derived:qjm-terrain-proxy) = plains FM 101-10 (1941) off-road ratio (low 0.32 trucks, mid 0.6 foot, high 0.83 cavalry) x QJM terrain mobility factor rm / rm(flat bare hard 1.05). rm from Dupuy NPW 1985 Table 1 as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63 (fetched, page image read): rugged heavily wooded 0.4, rugged mixed 0.5, rugged bare 0.6, rolling heavily wooded 0.6, rolling mixed 0.8, rolling bare 1.0, flat heavily wooded 0.7, flat mixed 0.9, flat bare hard 1.05, flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7. rm is the QJM effect of terrain on the mobility of an attacking force, so using it as a march-rate ratio is a proxy (grade C); check: the same arithmetic gives hills (rolling mixed) 0.6 x 0.8/1.05 = 0.46 and mountains (rugged mixed) 0.29 against the independent FM 101-10 climb-based 0.5 and 0.3. Desert: flat desert 0.95/1.05 = 0.905 -> mid 0.6 x 0.905 = 0.54, high 0.83 x 0.905 = 0.75; dunes 0.3/1.05 = 0.286 -> low 0.32 x 0.286 = 0.09 (trucks in sand sea). FM 90-3 (1993, https://archive.org/details/MManuals, fetched text) gives no numeric speeds, only that desert speed \"varies depending on surface texture\" and that wheeled vehicles have a lower average speed in poor terrain. Water limits are in logistics. Was 0.25/0.5/0.8 D."
     },
     "steppe": {
       "low": 0.5,
@@ -388,20 +388,20 @@
       "note": "Open firm grassland: between FM 101-10 (1941) foot (0.6) and cavalry (0.83) cross-country ratios; mid 0.7."
     },
     "wetland": {
-      "low": 0.1,
-      "mid": 0.25,
-      "high": 0.4,
-      "grade": "D",
-      "source": "derived:mech-composite",
-      "note": "Educated guess: marsh restricts movement to causeways; well under the 0.6 open-country ratio."
+      "low": 0.09,
+      "mid": 0.2,
+      "high": 0.32,
+      "grade": "C",
+      "source": "derived:qjm-terrain-proxy",
+      "note": "Off-road multiplier (derived:qjm-terrain-proxy) = plains FM 101-10 (1941) off-road ratio (low 0.32 trucks, mid 0.6 foot, high 0.83 cavalry) x QJM terrain mobility factor rm / rm(flat bare hard 1.05). rm from Dupuy NPW 1985 Table 1 as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63 (fetched, page image read): rugged heavily wooded 0.4, rugged mixed 0.5, rugged bare 0.6, rolling heavily wooded 0.6, rolling mixed 0.8, rolling bare 1.0, flat heavily wooded 0.7, flat mixed 0.9, flat bare hard 1.05, flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7. rm is the QJM effect of terrain on the mobility of an attacking force, so using it as a march-rate ratio is a proxy (grade C); check: the same arithmetic gives hills (rolling mixed) 0.6 x 0.8/1.05 = 0.46 and mountains (rugged mixed) 0.29 against the independent FM 101-10 climb-based 0.5 and 0.3. Wetland: swamp-jungle 0.3/1.05 = 0.286, swamp mixed or open 0.4/1.05 = 0.381, mean 0.333 -> mid 0.6 x 0.333 = 0.20; low 0.32 x 0.286 = 0.09; high 0.83 x 0.381 = 0.32. Was 0.1/0.25/0.4 D."
     },
     "urban": {
-      "low": 0.5,
-      "mid": 0.7,
-      "high": 0.9,
-      "grade": "D",
-      "source": "derived:mech-composite",
-      "note": "Educated guess: street network gives near-road speed, congestion and rubble reduce it."
+      "low": 0.21,
+      "mid": 0.4,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:qjm-terrain-proxy",
+      "note": "Off-road multiplier (derived:qjm-terrain-proxy) = plains FM 101-10 (1941) off-road ratio (low 0.32 trucks, mid 0.6 foot, high 0.83 cavalry) x QJM terrain mobility factor rm / rm(flat bare hard 1.05). rm from Dupuy NPW 1985 Table 1 as reproduced in Clark 1989, https://archive.org/details/dimensionalnalys1094526997, Fig. 42 p.63 (fetched, page image read): rugged heavily wooded 0.4, rugged mixed 0.5, rugged bare 0.6, rolling heavily wooded 0.6, rolling mixed 0.8, rolling bare 1.0, flat heavily wooded 0.7, flat mixed 0.9, flat bare hard 1.05, flat desert 0.95, \"rolling dunes\" 0.3, swamp-jungle 0.3, swamp mixed or open 0.4, urban 0.7. rm is the QJM effect of terrain on the mobility of an attacking force, so using it as a march-rate ratio is a proxy (grade C); check: the same arithmetic gives hills (rolling mixed) 0.6 x 0.8/1.05 = 0.46 and mountains (rugged mixed) 0.29 against the independent FM 101-10 climb-based 0.5 and 0.3. Urban: 0.7/1.05 = 0.667 -> mid 0.6 x 0.667 = 0.40, low 0.32 x 0.667 = 0.21, high 0.83 x 0.667 = 0.55. This is opposed movement through built-up terrain; road cells still get roadBonus. Was 0.5/0.7/0.9 D (street-network guess)."
     },
     "ice": {
       "low": 0.05,
@@ -464,12 +464,12 @@
       "note": "Reference weather, multiplier 1 by definition."
     },
     "rain": {
-      "low": 0.7,
-      "mid": 0.85,
-      "high": 0.95,
-      "grade": "D",
-      "source": "derived:mech-composite",
-      "note": "Educated guess: rain slows columns and degrades unpaved roads before they turn to mud."
+      "low": 0.5,
+      "mid": 0.8,
+      "high": 0.9,
+      "grade": "C",
+      "source": "https://archive.org/details/DTIC_AD0902830",
+      "note": "QJM weather effect on mobility hm, ORALFORE (1972) App. E Table 3 p. App-E10 (fetched, page image read), identical in the 1985 version reproduced by Clark 1989 (https://archive.org/details/dimensionalnalys1094526997, Fig. 42): dry-sunshine-temperate 1.0; wet-light 0.9 (extreme heat), 0.8 (temperate), 0.8 (extreme cold); wet-heavy 0.5, 0.6, 0.5. A rain day (>= 1 mm) is mostly light rain: mid 0.8, high 0.9, low 0.5 (heavy rain). Combat-mobility factor used as a march-rate ratio, so grade C. Was 0.7/0.85/0.95 D."
     },
     "mud": {
       "low": 0.2,
