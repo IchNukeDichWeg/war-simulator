@@ -165,10 +165,12 @@ async function main() {
     const milShare = wbE('milexPctGdp', 'MS.MIL.XPND.GD.ZS', 0.15, 'A', 0.01) ?? est(noArmy ? 0 : ana((s) => s.economy.milSpendShare.mid), 0.5, 'D', 'derived:regional-analogy', anaNote);
     clampFraction(milShare);
     const ind = wbE('industryPct', 'NV.IND.TOTL.ZS', 0.1, 'A', 0.01) ?? est(ana((s) => s.economy.industrialShare.mid), 0.3, 'D', 'derived:regional-analogy', anaNote);
-    const m1519 = v('male1519Pct'), f1519 = v('female1519Pct'), mp = v('malePop'), fp = v('femalePop');
-    const cohort = m1519 && f1519 && mp && fp
-      ? est((mp.value * m1519.value + fp.value * f1519.value) / 100 / 5, 0.05, 'B', 'derived:cohort-from-agegroup', `World Bank SP.POP.1519.MA/FE.5Y x population, /5, asOf ${m1519.year}`)
-      : est(P * 0.015, 0.4, 'D', 'derived:regional-analogy', 'no age structure; 1.5% of population per year assumed');
+    // Males only, as every researched snapshot counts it (conscript-pool convention): counting
+    // both sexes here once doubled the recruits of every auto-base state against its neighbours.
+    const m1519 = v('male1519Pct'), mp = v('malePop');
+    const cohort = m1519 && mp
+      ? est(mp.value * m1519.value / 100 / 5, 0.05, 'B', 'derived:cohort-from-agegroup', `World Bank SP.POP.1519.MA.5Y x SP.POP.TOTL.MA.IN / 100 / 5, asOf ${m1519.year}. Males only (conscript-pool convention)`)
+      : est(P * ana((s) => s.economy.annualCohort.mid / s.demography.population.mid), 0.4, 'D', 'derived:regional-analogy', `no World Bank age structure; males reaching military age per capita from ${anaNote}`);
 
     const road = wbE('roadKm', 'IS.ROD.TOTL.KM', 0.1, 'B') ?? est(area.mid * ana((s) => s.logistics.roadKm.mid / Math.max(1, s.territory.areaKm2.mid)), 0.6, 'D', 'derived:regional-analogy', `road density per km2 from ${anaNote}`);
     const rail = wbE('railKm', 'IS.RRS.TOTL.KM', 0.05, 'A') ?? est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank rail data; many of these states have little or no rail. Assumed 0.');

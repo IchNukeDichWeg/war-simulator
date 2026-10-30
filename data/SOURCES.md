@@ -160,9 +160,9 @@ not adapted to (Russia, Afghanistan). Note says which applies.
 
 ## More derivation methods
 
-- `derived:cohort-from-agegroup` - persons reaching military age per year = (male population x
-  share aged 15-19 + female population x share aged 15-19) / 5, World Bank SP.POP.1519.MA.5Y /
-  SP.POP.1519.FE.5Y and SP.POP.TOTL.MA.IN / FE.IN.
+- `derived:cohort-from-agegroup` - males reaching military age per year = male population x
+  share of males aged 15-19 / 100 / 5, World Bank SP.POP.TOTL.MA.IN and SP.POP.1519.MA.5Y.
+  Males only (conscript-pool convention); counting both sexes about doubles it.
 - `derived:ports-from-naturalearth` - number of Natural Earth 1:10m ports (scalerank <= 8) inside
   the state's border polygon. Counts ports, not capacity.
 - `derived:qjm-terrain-proxy` - a terrain multiplier for which no fetched source gives the
