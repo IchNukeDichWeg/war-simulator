@@ -418,3 +418,43 @@ Read with care:
   with no battle). rome-vs-france-equalized goes to Rome. Invariants are clean in all 24 preset runs.
 - Stalingrad now runs 31 to 32 days with the pocket cut off from day 10. Soviet losses are still
   about 41k against 486k, so the ratio fails.
+
+### QA round 4: are the Run 4 passes right for the right reasons?
+
+**Gate NOT CONFIRMED.** Independent QA reproduced Run 4 (20/15/21) at `b4198fd` and traced every pass.
+
+| Verdict | Count | Cases |
+| --- | --- | --- |
+| RIGHT | 7 | Adrianople, Blenheim (thin), Breitenfeld, Gettysburg, Hastings, Mohi, Waterloo |
+| PARTLY | 12 | Agincourt, Austerlitz, Cannae, Gaugamela, Zama, Kursk, Tannenberg, Falklands, France 1940, Gulf War, Iraq 2003, Stalingrad |
+| WRONG | 1 | Marathon: wins only because the Persians withdraw at 5% (achaemenid low quartile, cited for "the commander fell or fled", which did not happen at Marathon); Athens is weaker in power and 12/20 sits on the 60% line |
+
+Right or partly right: 19. One grade-D constant within its own range flips Adrianople, Falklands, the
+Gulf War and Iraq 2003 (confirmed at 20 seeds after a 10-seed screen of all 615), so **15 are
+robust**, below the 18 the gate needs.
+
+Findings that changed the plan (measured, 20 seeds):
+- **El Alamein** (55%) moved only through the withdraw-threshold term (-0.84 for the British);
+  british-ww2 at the era value gives 100%. QA's judgement, which I accept on its reasoning, not on
+  the case: casualty conservation is a choice about when to attack (aggression, required ratio) and
+  is already priced into the aggression weight, so putting it in the loss at withdrawal counts it
+  twice. Evidence at the strategic or political level (us-joint, nato) is the wrong level for a
+  battle threshold. Delay and break-contact doctrines (small-state, insurgent) fit.
+- **The threshold scheme is one-sided.** The cap at 0.9 of the breakpoint makes every high-quartile
+  ("refuses to withdraw") value inert, so only brittleness has any effect.
+- **Yom Kippur** (0%): the staffing rule compares raw weapon weight, without quality, training or
+  command, of the WHOLE side against the required ratio times a whole enemy group, so a small force
+  can never attack locally. With the rule off, Israel wins 45% (coldwar-western) or 100% (idf-1967).
+  Both Israeli case sides use the coldwar-western archetype although an idf-1967 profile exists.
+- **New decider:** the AI mass ratios (code constants 3.0 attrition and 1.5 manoeuvre, no grade or
+  source) now decide whether a side attacks at all; at 1.5 Falklands and Iraq 2003 go to 0%.
+- **Preset stand-offs are artefacts**: the Allies reach 3x Axis strength and never attack (defend
+  slots fill first, then the attack slot needs 2.4x the concentrated Axis group); 101-136 Mongol
+  formations sit out of supply while Rome needs 2.5x to attack.
+- **Stalingrad is PARTLY now:** a day-1 breakthrough, Axis supply 1.00 -> 0.36 by day 15 (the
+  pocket), collapse and 242k captured; still 32 of 75 days and 41k Soviet losses against 486k.
+- B2 moved rather than being fixed: the withdraw threshold now decides Carrhae (-0.24), El Alamein
+  (-0.84) and Marathon (+0.92), no longer Zama or Adrianople. C5 and C7 unchanged; clear weather
+  flips no gate case.
+
+Invariants: all 48 case runs and 24 preset runs are clean.
