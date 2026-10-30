@@ -11,6 +11,8 @@ export interface EngineData {
   mechanics: Mechanics;
   /** public/data/terrain/grid.bin as loaded. */
   terrain: ArrayBuffer;
+  /** public/data/climate/zones.bin as loaded (Koppen-Geiger zones, src/engine/climate.ts); without it weather uses zone C. */
+  climate?: ArrayBuffer;
   /** Border polygons per snapshot id (GeoJSON MultiPolygon coordinates). */
   borders: Record<string, number[][][][]>;
 }

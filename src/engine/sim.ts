@@ -146,7 +146,7 @@ export function simFromSetup(S: Setup, seed: number): Sim {
     // weather
     const prevW = st.weather;
     if (S.scenario.rules.weather) {
-      const odds = S.m.movement.weatherOdds[SEASONS[seasonIdx(ctx)]];
+      const odds = S.weatherOdds[SEASONS[seasonIdx(ctx)]];
       let u = rng.next() * WEATHERS.reduce((a, w) => a + (odds[w] ?? 0), 0);
       let wi = 0;
       for (; wi < WEATHERS.length - 1; wi++) { u -= odds[WEATHERS[wi]] ?? 0; if (u < 0) break; }

@@ -139,6 +139,10 @@ export function fixtureMechanics(): Mechanics {
       season: { spring: mv(0.9), summer: mv(1), autumn: mv(0.9), winter: mv(0.7) },
       weather: { clear: mv(1), rain: mv(0.8), mud: mv(0.5), snow: mv(0.6) },
       weatherOdds,
+      // Every zone carries the same table, so a fixture run draws the same weather with or without a climate grid.
+      weatherOddsByZone: Object.fromEntries((['A', 'BW', 'BS', 'C', 'D', 'E'] as const).map((z) => [z, Object.fromEntries(SEASONS.map((s) => [s, {
+        clear: mv(weatherOdds[s].clear), rain: mv(weatherOdds[s].rain), mud: mv(weatherOdds[s].mud), snow: mv(weatherOdds[s].snow),
+      }]))])) as Mechanics['movement']['weatherOddsByZone'],
       restDayFraction: mv(0.1),
     },
     logistics: {

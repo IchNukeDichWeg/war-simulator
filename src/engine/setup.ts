@@ -5,7 +5,7 @@
 import type { EngineData, TheaterInfo } from './protocol';
 import type { Scenario } from '../types/scenario';
 import type { DoctrineProfile, Snapshot, TechCategory, UnitRole } from '../types/schema';
-import type { Mechanics, MobilityClass, MV, NavalPropulsion, Season } from '../types/mechanics';
+import type { ClimateZone, Mechanics, MobilityClass, MV, NavalPropulsion, Season, Weather } from '../types/mechanics';
 import { GRID_H, GRID_RES, GRID_W, FLAG_COAST, T, cellIndex, cellCenter } from './terrainClasses';
 import { buildGrid, cellAt, globalTerrain, haversineKm, inBbox, nearestLand, rasterizeMultiPolygon, type GlobalTerrain, type Grid } from './grid';
 import { byTech, clamp, factor, rule, ruleMV, techFromYear, validateMechanics, yearFromTech } from './mech';
@@ -14,7 +14,9 @@ import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
   RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
   FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS, BREAKPOINT_FROM_MODEL_RULES,
+  REGIONAL_WEATHER,
 } from './constants';
+import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
 export const SEASONS: Season[] = ['spring', 'summer', 'autumn', 'winter'];
@@ -172,6 +174,10 @@ export interface Setup {
   maxTerrMove: number;
   H: number;
   southern: boolean;
+  /** Climate zone whose weather odds the theater uses (REGIONAL_WEATHER), or null with the toggle OFF. */
+  climateZone: ClimateZone | null;
+  /** Weather odds by local season in force (mids), indexed like movement.weatherOdds. */
+  weatherOdds: Record<Season, Record<Weather, number>>;
   warnings: string[];
   theater: TheaterInfo;
   specialEffect: (key: string) => number;
@@ -322,6 +328,22 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
   }
   if (grid.landCount === 0) throw new Error('The theater contains no land cells.');
   const southern = (grid.north - (grid.rows * grid.cellDeg) / 2) < 0;
+
+  // Weather odds: the theater's majority Koppen-Geiger zone over its land cells (spec in
+  // movement.weatherOddsByZone), zone C when the climate grid is missing or covers no land cell.
+  let climateZone: ClimateZone | null = null;
+  const weatherOdds = {} as Record<Season, Record<Weather, number>>;
+  if (REGIONAL_WEATHER) {
+    const zb = data.climate && data.climate.byteLength === CLIMATE_W * CLIMATE_H ? new Uint8Array(data.climate) : null;
+    const tz = zb ? theaterZone(zb, grid) : null;
+    climateZone = tz?.zone ?? CLIMATE_FALLBACK;
+    if (!zb) warnings.push(`No climate grid (climate/zones.bin); weather uses zone ${CLIMATE_FALLBACK} odds.`);
+    else if (!tz?.zone) warnings.push(`No theater land cell has a climate zone; weather uses zone ${CLIMATE_FALLBACK} odds.`);
+    for (const s of SEASONS) {
+      const t = m.movement.weatherOddsByZone[climateZone][s];
+      weatherOdds[s] = { clear: t.clear.mid, rain: t.rain.mid, mud: t.mud.mid, snow: t.snow.mid };
+    }
+  } else for (const s of SEASONS) weatherOdds[s] = m.movement.weatherOdds[s];
 
   const tmv = (k: string) => (m.movement.terrain as any)[k].mid as number;
   const terrMove = new Float64Array(11), terrAttack = new Float64Array(11), terrMounted = new Float64Array(11), forageYield = new Float64Array(11);
@@ -910,7 +932,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     objectiveRadiusKm: [opts.objectives?.[0]?.radiusKm ?? 0, opts.objectives?.[1]?.radiusKm ?? 0],
     terrMove, terrAttack, terrMounted, forageYield, maxTerrMove,
     H: Math.max(1, Math.round(m.combat.battleHoursPerDay.mid)),
-    southern, warnings,
+    southern, climateZone, weatherOdds, warnings,
     theater: { bbox: grid.bbox, cols: grid.cols, rows: grid.rows, cellDeg: grid.cellDeg },
     specialEffect, refRate,
   };

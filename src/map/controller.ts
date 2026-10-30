@@ -26,6 +26,7 @@ export const ATTR = {
   dem: 'Elevation: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">AWS Terrain Tiles</a> (Mapzen; SRTM, GMTED2010, ETOPO1 et al.)',
   modis: 'Land cover: NASA GIBS MODIS Combined IGBP Land Cover Type, 2022 (public domain)',
   ne: 'Rivers: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> (public domain)',
+  kg: 'Climate zones (weather odds): Beck et al. 2018, <a href="https://doi.org/10.1038/sdata.2018.214" target="_blank" rel="noopener">Present and future K&ouml;ppen-Geiger climate classification maps at 1-km resolution</a> (CC BY 4.0)',
   hb: 'Historical borders (approximate): <a href="https://github.com/aourednik/historical-basemaps" target="_blank" rel="noopener">aourednik/historical-basemaps</a> (GPL-3.0)',
 };
 
@@ -118,7 +119,7 @@ export class MapController {
       minZoom: 1,
       maxZoom: 11,
       maxPitch: 70,
-      attributionControl: { compact: false, customAttribution: ATTR.hb },
+      attributionControl: { compact: false, customAttribution: [ATTR.hb, ATTR.kg] },
       dragRotate: true,
       canvasContextAttributes: { antialias: true },
     });

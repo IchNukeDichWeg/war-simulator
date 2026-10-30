@@ -265,6 +265,18 @@ wars, 0.25 modern; a flat half day before `RULES_FROM_MODEL_RULES`).
 Invariant (tested): no formation ever moves more km in a day than its
 `rate` x best multipliers.
 
+Weather: one draw per day for the whole theater from the odds of the local
+season (`seasonOf` shifts southern theaters by six months). As built
+(`REGIONAL_WEATHER`): the odds are the mids of `weatherOddsByZone[zone]`, the
+zone being the majority Koppen-Geiger zone (A, BW, BS, C, D, E; B split into
+desert and steppe) over the theater's land cell centres on the Beck et al.
+2018 present-day 0.5 deg map (`public/data/climate/zones.bin`, built by
+`npm run data:climate`; ties go to the earlier zone in that order). Without
+the map, or with no classified land cell, the zone is C and setup warns. With
+the toggle OFF every theater uses `movement.weatherOdds`, one table derived
+for Berlin. The day's weather multiplies movement only (`weather`); naval
+`weatherDenial` goes by season.
+
 ## 6. Naval
 
 Each side's ships form one theater fleet, propulsion by ships tech (oar <= 3,

@@ -343,3 +343,10 @@ export const CAPITAL_SHOCK_REAL_ONLY = true;
  *  allies-vs-axis-minus-two and mongols-vs-rome both seeds and usa-vs-china-2026 seed 1 to draws,
  *  rome-vs-france-equalized seed 1 to Rome. */
 export const AI_SKIP_UNSTAFFABLE_ATTACKS = true;
+/** Daily weather is drawn from the theater's Koppen-Geiger zone table (movement.weatherOddsByZone:
+ *  A, BW, BS, C, D, E), the zone being the majority over the theater's land cells on the Beck et al.
+ *  2018 0.5 deg map (public/data/climate/zones.bin), zone C without the map. Before, every theater
+ *  used one temperate table derived for Berlin (QA C7: the Gulf War drew snow on 22% of February
+ *  days). Measured (20 seeds, clean facfd50, no zone grid built yet, so every theater draws zone C):
+ *  19/17/22 unchanged; France 1940 95% -> 90%, Gulf War 8 -> 9 days, Stalingrad 31 -> 30 days. */
+export const REGIONAL_WEATHER = true;

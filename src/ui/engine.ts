@@ -54,6 +54,7 @@ export function engineDataFrom(d: AppData | null): EngineData | string {
     doctrines: d.doctrines,
     mechanics: d.mechanics!,
     terrain: d.terrain!.slice(0),
+    climate: d.climate ? d.climate.slice(0) : undefined,
     borders: d.borders,
   };
 }

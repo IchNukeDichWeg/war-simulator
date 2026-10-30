@@ -4,6 +4,7 @@ import type { Coalition, DoctrineProfile, Nation, Snapshot } from '../types/sche
 import type { Mechanics } from '../types/mechanics';
 import type { Scenario } from '../types/scenario';
 import { GRID_H, GRID_W } from '../engine/terrainClasses';
+import { CLIMATE_H, CLIMATE_W } from '../engine/climate';
 
 export interface AppData {
   snapshots: Snapshot[];
@@ -15,6 +16,8 @@ export interface AppData {
   presets: Scenario[];
   borders: Record<string, number[][][][]>;
   terrain: ArrayBuffer | null;
+  /** Koppen-Geiger zone grid; without it the engine uses zone C weather odds everywhere. */
+  climate: ArrayBuffer | null;
   /** Files that were missing, empty or unparsable. */
   missing: string[];
   /** True when synthetic dev fixtures were loaded (?fixtures=1). */
@@ -54,13 +57,27 @@ async function getTerrain(missing: string[]): Promise<ArrayBuffer | null> {
   }
 }
 
+async function getClimate(missing: string[]): Promise<ArrayBuffer | null> {
+  try {
+    const r = await fetch(BASE + 'climate/zones.bin');
+    const ct = r.headers.get('content-type') ?? '';
+    if (!r.ok || ct.includes('text/html')) { missing.push('climate/zones.bin'); return null; }
+    const b = await r.arrayBuffer();
+    if (b.byteLength !== CLIMATE_W * CLIMATE_H) { missing.push('climate/zones.bin'); return null; }
+    return b;
+  } catch {
+    missing.push('climate/zones.bin');
+    return null;
+  }
+}
+
 function isMechanics(m: unknown): m is Mechanics {
   return !!m && typeof m === 'object' && 'lethality' in (m as object) && 'combat' in (m as object);
 }
 
 export async function loadData(): Promise<AppData> {
   const missing: string[] = [];
-  const [snapshots, nations, doctrines, mechanics, coalitions, battles, presets, borders, terrain] = await Promise.all([
+  const [snapshots, nations, doctrines, mechanics, coalitions, battles, presets, borders, terrain, climate] = await Promise.all([
     getJson<Snapshot[]>('snapshots.json', missing),
     getJson<Nation[]>('nations.json', missing),
     getJson<DoctrineProfile[]>('doctrines.json', missing),
@@ -70,6 +87,7 @@ export async function loadData(): Promise<AppData> {
     getJson<Scenario[]>('presets.json', missing),
     getJson<Record<string, number[][][][]>>('borders.json', missing),
     getTerrain(missing),
+    getClimate(missing),
   ]);
   const mech = isMechanics(mechanics) ? mechanics : null;
   if (!mech && !missing.includes('mechanics.json')) missing.push('mechanics.json');
@@ -83,6 +101,7 @@ export async function loadData(): Promise<AppData> {
     presets: Array.isArray(presets) ? presets : [],
     borders: borders && typeof borders === 'object' ? borders : {},
     terrain,
+    climate,
     missing,
     fixtures: false,
     snapById: new Map(),

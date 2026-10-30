@@ -22,12 +22,16 @@ function readJson<T>(dir: string, file: string, fallback?: T): T {
 export function loadEngineData(dir: string): EngineData {
   const bin = readFileSync(join(dir, 'terrain', 'grid.bin'));
   const terrain = bin.buffer.slice(bin.byteOffset, bin.byteOffset + bin.byteLength) as ArrayBuffer;
+  const cf = join(dir, 'climate', 'zones.bin');
+  const cb = existsSync(cf) ? readFileSync(cf) : null;
+  const climate = cb ? (cb.buffer.slice(cb.byteOffset, cb.byteOffset + cb.byteLength) as ArrayBuffer) : undefined;
   return {
     snapshots: readJson(dir, 'snapshots.json'),
     doctrines: readJson(dir, 'doctrines.json', []),
     mechanics: readJson(dir, 'mechanics.json'),
     borders: readJson(dir, 'borders.json', {}),
     terrain,
+    climate,
   };
 }
 

@@ -135,6 +135,9 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
     need(`movement.weatherOdds.${s}`, 'obj');
   }
   for (const w of ['clear', 'rain', 'mud', 'snow']) need(`movement.weather.${w}`, 'mv');
+  for (const z of ['A', 'BW', 'BS', 'C', 'D', 'E']) {
+    for (const s of ['spring', 'summer', 'autumn', 'winter']) for (const w of ['clear', 'rain', 'mud', 'snow']) need(`movement.weatherOddsByZone.${z}.${s}.${w}`, 'mv');
+  }
   for (const k of ['foodKgPerPersonDay', 'fodderKgPerAnimalDay', 'fuelTonsPerVehicleDay', 'forageWinterFactor', 'forageDepletion', 'throughputRailTonsDay']) need(`logistics.${k}`, 'mv');
   for (const k of ['animalsPer1000', 'ammoTonsPer1000CombatDay', 'supplyTonsPer1000Day', 'carriedDaysFood', 'forageDependence', 'throughputRoadTonsDay', 'throughputPortTonsDay']) need(`logistics.${k}`, 'bt');
   need('production.mobilizationDays', 'bt');

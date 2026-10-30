@@ -181,6 +181,16 @@ not adapted to (Russia, Afghanistan). Note says which applies.
   and clear at most C. mid = the zone's primary station, low/high = min/max over the zone's
   stations. Zone lookup: Beck et al. 2018 Koppen-Geiger 0.5 deg map, doi:10.1038/sdata.2018.214
   (CC BY 4.0), see the note of `movement.weatherOddsByZone.A.spring.clear`.
+- `derived:climate-zone-grid` - `public/data/climate/zones.bin`, built by
+  `data-pipeline/build-climate.ts` (`npm run data:climate`): Beck, H.E., Zimmermann, N.E.,
+  McVicar, T.R., Vergopolan, N., Berg, A. and Wood, E.F. 2018, "Present and future
+  Koppen-Geiger climate classification maps at 1-km resolution", Scientific Data 5:180214,
+  doi:10.1038/sdata.2018.214; data Beck_KG_V1.zip, doi:10.6084/m9.figshare.6396959 (CC BY 4.0),
+  file Beck_KG_V1_present_0p5.tif (1980-2016, 0.5 deg). Codes are read from the archive's
+  legend.txt, which the build checks against the 30 classes of the paper's Table 1 and against
+  seven interior points (Manaus A, Riyadh and central Sahara BW, Niamey BS, Paris C, Moscow D,
+  Greenland ice sheet E); symbols collapse to A, BW, BS, C, D, E. The tif stays in the local
+  cache and is not committed.
 
 ## Generated modern base snapshots
 

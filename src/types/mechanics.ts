@@ -54,6 +54,8 @@ export interface ModelRules {
 
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter';
 export type Weather = 'clear' | 'rain' | 'mud' | 'snow';
+/** Koppen-Geiger main groups with B split into desert (BW) and steppe (BS), as in Beck et al. 2018. */
+export type ClimateZone = 'A' | 'BW' | 'BS' | 'C' | 'D' | 'E';
 
 export type MobilityClass =
   | 'foot' | 'horse' | 'wagon' | 'rail' | 'motorized' | 'mechanized' | 'tracked_heavy' | 'air' | 'sea';
@@ -143,6 +145,8 @@ export interface Mechanics {
     weather: Record<Weather, MV>;
     /** Probability of each weather by season in a temperate theater. */
     weatherOdds: Record<Season, Record<Weather, number>>;
+    /** Probability of each weather by local season per climate zone (REGIONAL_WEATHER); .mid is used. */
+    weatherOddsByZone: Record<ClimateZone, Record<Season, Record<Weather, MV>>>;
     restDayFraction: MV;
   };
 
