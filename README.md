@@ -116,6 +116,28 @@ npx tsx scripts/backtest.ts
 
 The default run (24 cases x 20 seeds) takes about 3 s; `--bp-quantile 0,1 --seeds 1` takes under 1 s.
 
+### Robustness screen
+
+Moves every grade-D constant to its low and its high, one at a time, on every case that passes at
+base, then the era breakpoints at both ends, and prints the VALIDATION.md gate count with a 95%
+margin on each share.
+
+```sh
+npx tsx scripts/robustness.ts --out validation/robustness-200.jsonl
+```
+
+| Flag | Meaning |
+| --- | --- |
+| `--out FILE` | Results, appended per evaluation. Required. An existing file is refused unless `--resume` is given. |
+| `--seeds N` | Seeds per evaluation (default 200, margin about +/- 7% at the 60% line). |
+| `--workers N` | Processes (default 0, every core). |
+| `--resume` | Continues `--out`; refused if it was made with other seeds or other data. |
+| `--data DIR` | Reads another data directory instead of `public/data`. |
+
+Ctrl-C prints the summary so far and keeps the results. 1,177 evaluations took 5 min 12 s at 20 seeds
+on 18 cores, so 200 seeds takes about 52 min (scaled from that rate). Each seed count is its own
+campaign: results at different seed counts are never pooled.
+
 ### One scenario
 
 ```sh
@@ -141,7 +163,8 @@ data/            research input: raw snapshots, doctrine, mechanics, battles, pr
                  SOURCES.md, RESEARCH_BRIEF.md
 data-pipeline/   fetch, generate, validate and build scripts (see above)
 public/data/     built runtime data the app loads (committed)
-scripts/         headless backtest and scenario runner
+scripts/         headless backtest, robustness screen and scenario runner
+validation/      robustness campaign results
 tests/           Vitest suites (engine, data, stale-build guard) and fixtures
 ```
 
