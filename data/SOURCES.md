@@ -49,7 +49,11 @@ families, their licenses, and the derivation methods.
   (what can feed towns, armies and stores). Pre-modern values are rough (grade C/D).
   Never negative. A net food importer still has a positive value by this definition (its farms feed
   its towns); state the import dependence in `note` instead of lowering the value. 0 only where
-  there is no agriculture (Vatican City).
+  there is no agriculture (Vatican City). Formula: foodSurplus = 1 - a / s, where a = agricultural
+  share of employment and s = food self-sufficiency (domestic production over consumption, in
+  calories). The farm population eats a share a of all food, which is a / s of what is produced.
+  Where no self-sufficiency figure can be fetched, s = 1 is assumed and the note says so; this
+  overstates the value for a heavy importer.
 - Role boundaries: `ships_major` = carriers, amphibious assault ships, battleships, cruisers,
   destroyers, frigates (pre-modern: the era's main line warships, e.g. triremes, ships of the line);
   `ships_minor` = corvettes, patrol, missile and mine craft, small galleys; `drones` = reusable
