@@ -12,7 +12,7 @@ export function explain(ctx: Ctx): Reason[] {
   const { S, st } = ctx;
   const a = st.acc;
   const names = S.sideNames;
-  const items: { factor: string; v: number; detail: (fav: 0 | 1) => string }[] = [];
+  const items: { factor: string; v: number; always?: boolean; detail: (fav: 0 | 1) => string }[] = [];
   const mean = (p: [number, number]) => (p[1] > 0 ? p[0] / p[1] : 0);
   const x = (v: number) => { const e = Math.exp(Math.abs(v)); return e >= 1000 ? e.toExponential(1) : e.toFixed(e >= 10 ? 0 : 1); };
   if (a.battles > 0) {
@@ -64,13 +64,16 @@ export function explain(ctx: Ctx): Reason[] {
   const nk0 = st.losses[0][LC.nuclear], nk1 = st.losses[1][LC.nuclear];
   if (nk0 + nk1 > 0) {
     const f0 = nk0 / Math.max(1, n0), f1 = nk1 / Math.max(1, n1);
-    items.push({ factor: 'Nuclear strikes', v: 2 * (f1 - f0), detail: (f) => `${names[1 - f]} lost ${Math.round(f === 0 ? nk1 : nk0).toLocaleString('en-US')} personnel to nuclear strikes, ${Math.round((f === 0 ? f1 : f0) * 100)}% of the personnel it fielded (vs ${Math.round(f === 0 ? nk0 : nk1).toLocaleString('en-US')}, ${Math.round((f === 0 ? f0 : f1) * 100)}%).` });
+    // listed whatever its weight: a nuclear exchange is never a detail the reader should not
+    // see, yet Russia's 123,672 nuclear casualties (5.6% of fielded) fell under the 1% cut below
+    // (red team W7). The weight stays the honest share; only the cut is waived.
+    items.push({ factor: 'Nuclear strikes', v: 2 * (f1 - f0), always: true, detail: (f) => `${names[1 - f]} lost ${Math.round(f === 0 ? nk1 : nk0).toLocaleString('en-US')} personnel to nuclear strikes, ${Math.round((f === 0 ? f1 : f0) * 100)}% of the personnel it fielded (vs ${Math.round(f === 0 ? nk0 : nk1).toLocaleString('en-US')}, ${Math.round((f === 0 ? f0 : f1) * 100)}%).` });
   }
   void w0; void w1; void sideNow;
   const tot = items.reduce((s, i) => s + Math.abs(i.v), 0);
   if (tot <= 0) return [{ factor: 'No decisive factor', side: 0, weight: 1, detail: 'The sides never fought and no factor separated them.' }];
   return items
-    .filter((i) => Math.abs(i.v) / tot >= 0.01)
+    .filter((i) => i.always || Math.abs(i.v) / tot >= 0.01)
     .map((i) => {
       const fav: 0 | 1 = i.v >= 0 ? 0 : 1;
       return { factor: i.factor, side: fav, weight: +(Math.abs(i.v) / tot).toFixed(3), detail: i.detail(fav) };
