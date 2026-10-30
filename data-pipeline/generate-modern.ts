@@ -8,7 +8,7 @@
 // Generated files carry the tag "auto-base" and are regenerated on every run;
 // a researched file (no "auto-base" tag) is never touched.
 // Usage: tsx data-pipeline/generate-modern.ts   (after fetch-worldbank.ts)
-import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Est, ForceEntry, Grade, RegionId, Snapshot, TechCategory, UnitRole } from '../src/types/schema';
 import { PERSONNEL_ROLES } from '../src/types/schema';
@@ -63,6 +63,12 @@ interface StateRow { iso3: string; nationId: string; name: string; status: strin
 async function main() {
   const wb: WbCountry[] = JSON.parse(readFileSync(join(ROOT, 'data', 'raw', 'worldbank.json'), 'utf8')).countries;
   const states: StateRow[] = JSON.parse(readFileSync(join(ROOT, 'data', 'reference', 'states.json'), 'utf8')).states;
+  // A specific modern profile whose appliesTo names the state wins over the archetype, as for
+  // researched snapshots; it was once set by hand in denmark-2026 and lost on the next rerun.
+  const doctrineDir = join(ROOT, 'data', 'doctrine');
+  const specific = readdirSync(doctrineDir).filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(doctrineDir, f), 'utf8')) as { id: string; appliesTo: string[]; era: string[]; archetype: boolean })
+    .filter((d) => !d.archetype && d.era.includes('modern'));
   const wbBy = new Map(wb.map((c) => [c.iso3, c]));
   const grid = new Uint8Array(readFileSync(join(ROOT, 'public', 'data', 'terrain', 'grid.bin')));
   const ports = JSON.parse((await cachedFetch(NE_PORTS)).toString()).features as { properties: { name: string; scalerank: number }; geometry: { coordinates: number[] } }[];
@@ -212,7 +218,7 @@ async function main() {
         draftAnimals: est(0, 0, 'C', 'derived:regional-analogy', 'modern militaries do not rely on draft animals'),
       },
       strategic: { nuclearWarheads: est(0, 0, 'A', FAS, 'not a nuclear-armed state per FAS Status of World Nuclear Forces'), basesAbroad: [] },
-      doctrineId: milex >= 20e9 ? 'archetype-modern-regional' : 'archetype-modern-small-state',
+      doctrineId: specific.find((d) => d.appliesTo.includes(st.nationId))?.id ?? (milex >= 20e9 ? 'archetype-modern-regional' : 'archetype-modern-small-state'),
       geography: { climate: 'see terrainMix', chokepoints: [], homeDefense: est(1.1, 0.1, 'D', 'derived:home-defense', 'rubric default: familiar terrain and local supply') },
       notes: `AUTO-GENERATED BASE SNAPSHOT. Population, economy, personnel and infrastructure from the World Bank (grade A/B). Force mix, ratings and tech copied from researched regional analogues (${poolNames}) and graded D. Replace with a researched snapshot when one exists.`,
     };
