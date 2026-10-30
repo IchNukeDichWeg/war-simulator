@@ -377,12 +377,12 @@
    },
    "ships_major": {
     "count": {
-     "low": 55,
-     "mid": 56,
-     "high": 58,
+     "low": 166,
+     "mid": 169,
+     "high": 171,
      "grade": "A",
      "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
-     "note": "Roskill App. L, 7 Dec 1941: 10 battleships (11 by year end with Yamato), 6 fleet carriers, 4 light fleet carriers, 18 heavy cruisers, 18 light cruisers. Comparative-fleet table (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan) gives 10 BB, 10 CV, 18 CA, 17 CL."
+     "note": "Battleships, carriers, cruisers and destroyers. Roskill App. L, 7 Dec 1941: 10 battleships (11 by year end with Yamato), 6 fleet carriers, 4 light fleet carriers, 18 heavy cruisers, 18 light cruisers = 55/56/58; plus 113 destroyers (111 in the comparative-fleet table) = 111/113/113. Comparative-fleet table (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan) gives 10 BB, 10 CV, 18 CA, 17 CL. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
     },
     "quality": {
      "low": 0.75,
@@ -390,7 +390,7 @@
      "high": 0.85,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: quality 0.75-1.0. Evidence: carrier force the strongest in the world, Long Lance torpedoes, Yamato completing; no radar until 1942"
+     "note": "Count-weighted mean (mid counts) of battleships/carriers/cruisers (56) and destroyers (113), both 0.75/0.8/0.85, role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.75-1.0 and 0.75. Evidence: carrier force the strongest in the world, Long Lance torpedoes (Fubuki/Kagero classes with reloads), Yamato completing; weak ASW, no radar until 1942"
     },
     "training": {
      "low": 0.85,
@@ -398,33 +398,7 @@
      "high": 0.95,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: training 1.0. Evidence: intensive night-fighting and long-range training"
-    }
-   },
-   "ships_minor": {
-    "count": {
-     "low": 111,
-     "mid": 113,
-     "high": 113,
-     "grade": "A",
-     "source": "http://www.ibiblio.org/hyperwar/UN/UK/UK-RN-II/UK-RN-II-L.html",
-     "note": "Roskill App. L: 113 destroyers on 7 Dec 1941 (111 in the comparative-fleet table)."
-    },
-    "quality": {
-     "low": 0.75,
-     "mid": 0.8,
-     "high": 0.85,
-     "grade": "C",
-     "source": "derived:rating-rubric",
-     "note": "Rubric row: quality 0.75. Evidence: Fubuki/Kagero classes with 24-in Long Lance torpedoes and reloads; weak ASW"
-    },
-    "training": {
-     "low": 0.85,
-     "mid": 0.9,
-     "high": 0.95,
-     "grade": "C",
-     "source": "derived:rating-rubric",
-     "note": "Rubric row: training 1.0. Evidence: night torpedo-attack training"
+     "note": "Count-weighted mean (mid counts) of battleships/carriers/cruisers (56) and destroyers (113), both 0.85/0.9/0.95, role split per SOURCES.md naval role boundaries. Rubric row: training 1.0. Evidence: intensive night-fighting, night torpedo-attack and long-range training"
     }
    },
    "submarines": {
@@ -809,5 +783,5 @@
    "note": "1.2 row: islands with mountainous terrain, fortified naval bases and total population support (high 1.3 for the sea moat); no continental strategic depth."
   }
  },
- "notes": "Snapshot date 7-8 December 1941 (Pearl Harbor, Malaya, Philippines). COUNTED as integral parts: Japan proper, Korea (Chosen), Taiwan (Formosa) and Karafuto (population ~102.9M, area 675,000 km2). NOT counted: Manchukuo (separate puppet state, Kwantung Army forces stationed there ARE counted as Japanese forces), the Kwantung lease, the South Seas Mandate, occupied China, French Indochina. includes is empty because Korea and Taiwan had no separate state in 1941. The hb:1938:Empire of Japan polygon merges Korea and Manchukuo (~1.79M km2), so the polygon is larger than the counted territory. Forces are the whole armed forces (~27 divisions in China, 13 in Manchuria at the start of the war per Jowett). Weakest values: artillery, AA, tank inventory, army aircraft split, roads and draft animals. Ship convention: battleships, carriers, cruisers = ships_major; destroyers = ships_minor. Merchant tonnage converted to deadweight at x1.5."
+ "notes": "Snapshot date 7-8 December 1941 (Pearl Harbor, Malaya, Philippines). COUNTED as integral parts: Japan proper, Korea (Chosen), Taiwan (Formosa) and Karafuto (population ~102.9M, area 675,000 km2). NOT counted: Manchukuo (separate puppet state, Kwantung Army forces stationed there ARE counted as Japanese forces), the Kwantung lease, the South Seas Mandate, occupied China, French Indochina. includes is empty because Korea and Taiwan had no separate state in 1941. The hb:1938:Empire of Japan polygon merges Korea and Manchukuo (~1.79M km2), so the polygon is larger than the counted territory. Forces are the whole armed forces (~27 divisions in China, 13 in Manchuria at the start of the war per Jowett). Weakest values: artillery, AA, tank inventory, army aircraft split, roads and draft animals. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5."
 }

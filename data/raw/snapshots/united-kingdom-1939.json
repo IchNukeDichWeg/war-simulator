@@ -344,12 +344,12 @@
    },
    "ships_major": {
     "count": {
-     "low": 78,
-     "mid": 80,
-     "high": 82,
-     "grade": "A",
+     "low": 251,
+     "mid": 253,
+     "high": 255,
+     "grade": "B",
      "source": "https://www.naval-history.net/WW2CampaignRoyalNavy.htm",
-     "note": "naval-history.net Sep 1939: 15 battleships/battlecruisers, 7 aircraft carriers, 66 cruisers including Dominion ships; minus 8 Dominion cruisers (RAN 6, NZ Division 2) = 80 for the UK alone. Convention: capital ships, carriers and cruisers are ships_major."
+     "note": "Capital ships, carriers, cruisers and destroyers. naval-history.net Sep 1939: 15 battleships/battlecruisers, 7 aircraft carriers, 66 cruisers including Dominion ships; minus 8 Dominion cruisers (RAN 6, NZ Division 2) = 80 for the UK alone (78/80/82, grade A); plus destroyers from the naval-history.net tables (https://www.naval-history.net/WW2aBritishLosses10tables.htm, grade B): 184 in Sep 1939 including Dominion, minus 11 (RAN 5, RCN 6) = 173. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor."
     },
     "quality": {
      "low": 0.55,
@@ -357,25 +357,25 @@
      "high": 0.75,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: quality 0.5-0.75. Evidence: only 2 capital ships post-WWI (Nelson, Rodney); 5 KGV building; carriers with obsolescent aircraft; ASDIC and early radar"
+     "note": "Count-weighted mean (mid counts) of capital ships/carriers/cruisers (80) and destroyers (173), both 0.55/0.65/0.75, role split per SOURCES.md naval role boundaries. Rubric row: quality 0.5-0.75. Evidence: only 2 capital ships post-WWI (Nelson, Rodney); 5 KGV building; carriers with obsolescent aircraft; over half of destroyers modern; ASDIC and early radar"
     },
     "training": {
-     "low": 0.8,
-     "mid": 0.85,
+     "low": 0.77,
+     "mid": 0.82,
      "high": 0.9,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: training 0.75-1.0. Evidence: long-service professional navy, best ship handling of the era"
+     "note": "Count-weighted mean (mid counts) of capital ships/carriers/cruisers 0.8/0.85/0.9 (80) and destroyers 0.75/0.8/0.9 (173), role split per SOURCES.md naval role boundaries. Rubric rows: training 0.75-1.0 and 0.75. Evidence: long-service professional navy, best ship handling of the era"
     }
    },
    "ships_minor": {
     "count": {
-     "low": 200,
-     "mid": 208,
-     "high": 230,
+     "low": 27,
+     "mid": 35,
+     "high": 57,
      "grade": "B",
      "source": "https://www.naval-history.net/WW2aBritishLosses10tables.htm",
-     "note": "naval-history.net tables: 184 destroyers in Sep 1939 including Dominion; minus 11 (RAN 5, RCN 6) = 173; plus ~35 of the 45 escort and patrol vessels (minus 10 Dominion/RIN sloops). Minesweepers and coastal craft excluded."
+     "note": "naval-history.net tables: ~35 of the 45 escort and patrol vessels (sloops; minus 10 Dominion/RIN sloops). Minesweepers and coastal craft excluded. The 173 UK destroyers moved to ships_major (was 200/208/230), role split per SOURCES.md naval role boundaries."
     },
     "quality": {
      "low": 0.55,
@@ -775,5 +775,5 @@
    "note": "1.2 row: familiar terrain, fortified naval bases, strong population support; the Channel acts as a moat (high 1.3) though there is no strategic depth or harsh climate."
   }
  },
- "notes": "Snapshot date 3 September 1939 (declaration of war). United Kingdom ONLY: home islands (Great Britain and Northern Ireland). includes is empty: forces, population and GDP of India, the Dominions and the colonies are NOT counted; Dominion warships (RAN, RCN, NZ Division) were subtracted from the naval-history.net totals. Overseas British Army garrisons (India, Egypt, Palestine) and overseas RAF squadrons ARE counted because they were UK forces. The hb:1938:United Kingdom polygon also contains Cyprus; area uses the LoN figure for GB+NI. Ship convention: battleships, battlecruisers, carriers and cruisers = ships_major; destroyers and ocean escorts = ships_minor. Weakest values: artillery (educated guess), infantry share of the army (reconstruction), roadKm for Northern Ireland, industrialShare. COW NMC v7 (2025 release) used instead of v6; values for these years are unchanged in substance. Merchant tonnage converted from gross to deadweight tons at x1.5."
+ "notes": "Snapshot date 3 September 1939 (declaration of war). United Kingdom ONLY: home islands (Great Britain and Northern Ireland). includes is empty: forces, population and GDP of India, the Dominions and the colonies are NOT counted; Dominion warships (RAN, RCN, NZ Division) were subtracted from the naval-history.net totals. Overseas British Army garrisons (India, Egypt, Palestine) and overseas RAF squadrons ARE counted because they were UK forces. The hb:1938:United Kingdom polygon also contains Cyprus; area uses the LoN figure for GB+NI. Ship convention per SOURCES.md naval role boundaries: battleships, battlecruisers, carriers, cruisers and destroyers = ships_major; sloops (ocean escorts) and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Weakest values: artillery (educated guess), infantry share of the army (reconstruction), roadKm for Northern Ireland, industrialShare. COW NMC v7 (2025 release) used instead of v6; values for these years are unchanged in substance. Merchant tonnage converted from gross to deadweight tons at x1.5."
 }

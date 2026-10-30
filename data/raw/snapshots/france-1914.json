@@ -295,12 +295,12 @@
       },
       "ships_major": {
         "count": {
-          "low": 42,
-          "mid": 48,
-          "high": 52,
+          "low": 122,
+          "mid": 132,
+          "high": 142,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: 2 Courbet dreadnoughts in service (France and Paris commissioned Aug-Oct 1914), 6 Danton semi-dreadnoughts, ~13 older pre-dreadnoughts, ~19 armoured and ~8 protected cruisers. Most of the fleet in the Mediterranean (Halpern ch. 1)."
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships, cruisers and destroyers. Conway's 1906-1921: 2 Courbet dreadnoughts in service (France and Paris commissioned Aug-Oct 1914), 6 Danton semi-dreadnoughts, ~13 older pre-dreadnoughts, ~19 armoured and ~8 protected cruisers = 42/48/52; plus ~84 torpilleurs d'escadre (destroyers) = 80/84/90. Most of the fleet in the Mediterranean (Halpern ch. 1). Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted (135 smaller torpedo boats stay excluded as coastal craft)."
         },
         "quality": {
           "low": 0.55,
@@ -308,7 +308,7 @@
           "high": 0.65,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: mixed pre-dreadnought fleet, few dreadnoughts"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (48) and destroyers (84), both 0.55/0.6/0.65, role split per SOURCES.md naval role boundaries. Rubric row: quality 0.5-0.75. Evidence: mixed pre-dreadnought fleet, few dreadnoughts; small 300-800 t destroyers"
         },
         "training": {
           "low": 0.6,
@@ -316,33 +316,7 @@
           "high": 0.7,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5-0.75. Evidence: long-service crews, weak fleet tactics"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 80,
-          "mid": 84,
-          "high": 90,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~84 torpilleurs d'escadre (destroyers); 135 smaller torpedo boats excluded."
-        },
-        "quality": {
-          "low": 0.55,
-          "mid": 0.6,
-          "high": 0.65,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: small 300-800 t destroyers"
-        },
-        "training": {
-          "low": 0.6,
-          "mid": 0.65,
-          "high": 0.7,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5-0.75. Evidence: Mediterranean blockade duty"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (48) and destroyers (84), both 0.6/0.65/0.7, role split per SOURCES.md naval role boundaries. Rubric row: training 0.5-0.75. Evidence: long-service crews, weak fleet tactics; Mediterranean blockade duty"
         }
       },
       "submarines": {
@@ -684,5 +658,5 @@
       "note": "1.2 row: familiar terrain, fortress belt (Verdun-Toul-Epinal-Belfort), population support."
     }
   },
-  "notes": "Snapshot date August 1914 after mobilisation (ordered 1 Aug). Metropolitan France only; North and West African colonial troops (~600,000 raised over the war) and colonial populations excluded, includes empty. Forces are the whole French army; ~1.65M in 62 infantry divisions faced Germany in the north-east. Aircraft all in aircraft_strike (no fighters in 1914). Ship convention: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Doughty, Conway's, Morrow) not fetched online, graded at most B."
+  "notes": "Snapshot date August 1914 after mobilisation (ordered 1 Aug). Metropolitan France only; North and West African colonial troops (~600,000 raised over the war) and colonial populations excluded, includes empty. Forces are the whole French army; ~1.65M in 62 infantry divisions faced Germany in the north-east. Aircraft all in aircraft_strike (no fighters in 1914). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Book figures (Doughty, Conway's, Morrow) not fetched online, graded at most B."
 }

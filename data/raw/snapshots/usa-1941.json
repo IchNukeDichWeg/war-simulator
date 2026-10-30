@@ -345,38 +345,38 @@
    },
    "ships_major": {
     "count": {
-     "low": 61,
-     "mid": 62,
-     "high": 62,
+     "low": 232,
+     "mid": 233,
+     "high": 233,
      "grade": "A",
      "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
-     "note": "NHHC ship force levels on 7 Dec 1941 (via cited page): 17 battleships, 7 fleet carriers + 1 escort carrier (Long Island), 37 cruisers. Pacific and Asiatic Fleets alone: 9 BB, 3 CV, 13 CA, 11 CL (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan)."
+     "note": "Battleships, carriers, cruisers and destroyers. NHHC ship force levels on 7 Dec 1941 (via cited page): 17 battleships, 7 fleet carriers + 1 escort carrier (Long Island), 37 cruisers = 61/62/62; plus 171 destroyers of all types (NHHC table via cited page). Pacific and Asiatic Fleets alone: 9 BB, 3 CV, 13 CA, 11 CL (https://historicaltextarchive.org/sections/article/194-comparative-fleet-strengths-dec-1-1941-us-japan) and 80 destroyers. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor."
     },
     "quality": {
-     "low": 0.65,
-     "mid": 0.75,
-     "high": 0.8,
+     "low": 0.61,
+     "mid": 0.71,
+     "high": 0.76,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: quality 0.75. Evidence: new North Carolina-class battleships and Yorktown-class carriers, CXAM radar on several ships; old battleships slow"
+     "note": "Count-weighted mean (mid counts) of battleships/carriers/cruisers 0.65/0.75/0.8 (62) and destroyers 0.6/0.7/0.75 (171), role split per SOURCES.md naval role boundaries. Rubric row: quality 0.75. Evidence: new North Carolina-class battleships and Yorktown-class carriers, CXAM radar on several ships, modern Benson/Gleaves destroyers; old battleships slow, old flush-deckers, torpedo (Mk 15) defects"
     },
     "training": {
      "low": 0.65,
      "mid": 0.7,
-     "high": 0.8,
+     "high": 0.76,
      "grade": "C",
      "source": "derived:rating-rubric",
-     "note": "Rubric row: training 0.75. Evidence: long-service fleet with realistic Fleet Problems; night fighting weaker than the IJN"
+     "note": "Count-weighted mean (mid counts) of battleships/carriers/cruisers 0.65/0.7/0.8 (62) and destroyers 0.65/0.7/0.75 (171), role split per SOURCES.md naval role boundaries. Rubric row: training 0.75. Evidence: long-service fleet with realistic Fleet Problems; night fighting weaker than the IJN"
     }
    },
    "ships_minor": {
     "count": {
-     "low": 171,
-     "mid": 171,
-     "high": 190,
+     "low": 0,
+     "mid": 0,
+     "high": 19,
      "grade": "A",
      "source": "https://en.wikipedia.org/wiki/United_States_Navy_in_World_War_II",
-     "note": "171 destroyers of all types on 7 Dec 1941 (NHHC table via cited page); Pacific and Asiatic Fleets 80. High adds Coast Guard cutters and patrol vessels used as escorts."
+     "note": "High only: Coast Guard cutters and patrol vessels used as escorts. The 171 destroyers moved to ships_major (was 171/171/190), role split per SOURCES.md naval role boundaries."
     },
     "quality": {
      "low": 0.6,
@@ -604,20 +604,12 @@
     "note": "Harrison Table 1-6: 'guns' 188k (1942), 221k (1943), 103k (1944); note (a): roughly half were small-calibre naval and aviation weapons, so about half is taken for ground and AA artillery."
    },
    "ships_major": {
-    "low": 20,
-    "mid": 30,
-    "high": 57,
+    "low": 170,
+    "mid": 280,
+    "high": 457,
     "grade": "C",
     "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
-    "note": "1941-45 output: 29 fleet carriers, 121 escort carriers, 10 battleships, 52 cruisers (cited page) over ~3.7 war years: ~25/yr without escort carriers, ~57/yr with them."
-   },
-   "ships_minor": {
-    "low": 150,
-    "mid": 250,
-    "high": 400,
-    "grade": "C",
-    "source": "https://en.wikipedia.org/wiki/Military_production_during_World_War_II",
-    "note": "396 destroyers 1941-45 (cited page) plus several hundred destroyer escorts; Harrison Table 1-6 counts 1,854-2,654 'major naval vessels' per year including small combatants."
+    "note": "Carriers, battleships, cruisers, destroyers and destroyer escorts per year. 1941-45 output: 29 fleet carriers, 121 escort carriers, 10 battleships, 52 cruisers (cited page) over ~3.7 war years: ~25/yr without escort carriers, ~57/yr with them = 20/30/57; plus 396 destroyers 1941-45 (cited page) and several hundred destroyer escorts = 150/250/400 per year. Harrison Table 1-6 counts 1,854-2,654 'major naval vessels' per year including small combatants. Role split per SOURCES.md naval role boundaries: destroyers and destroyer escorts moved from ships_minor, which is now omitted."
    },
    "submarines": {
     "low": 50,
@@ -767,5 +759,5 @@
    "note": "1.2 row: familiar terrain, fortified harbours, total population support; two oceans give strategic depth an invader could not cross (high 1.3), but no harsh-climate factor."
   }
  },
- "notes": "Snapshot date 7 December 1941 (Pearl Harbor). United States incl. Alaska and Hawaii; the Philippine Commonwealth (Philippine Army, ~100k mobilised) is NOT included, but US forces in the Philippines (USAFFE American units, Philippine Scouts) are. Pacific Fleet share: 9 BB, 3 CV, 24 cruisers, 80 DD, 55 SS (comparative fleet strengths 1 Dec 1941). Weakest values: artillery, AA batteries and tank inventory (Lend-Lease outflow unknown), the infantry share of the Army, and trainedReserves. Production rates are 1942-44 full war economy (Harrison 1998). Ship convention: battleships, carriers, cruisers = ships_major; destroyers = ships_minor. Merchant tonnage converted to deadweight at x1.5."
+ "notes": "Snapshot date 7 December 1941 (Pearl Harbor). United States incl. Alaska and Hawaii; the Philippine Commonwealth (Philippine Army, ~100k mobilised) is NOT included, but US forces in the Philippines (USAFFE American units, Philippine Scouts) are. Pacific Fleet share: 9 BB, 3 CV, 24 cruisers, 80 DD, 55 SS (comparative fleet strengths 1 Dec 1941). Weakest values: artillery, AA batteries and tank inventory (Lend-Lease outflow unknown), the infantry share of the Army, and trainedReserves. Production rates are 1942-44 full war economy (Harrison 1998). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5."
 }

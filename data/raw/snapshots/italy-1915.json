@@ -289,20 +289,20 @@
       },
       "ships_major": {
         "count": {
-          "low": 27,
-          "mid": 31,
-          "high": 34,
+          "low": 57,
+          "mid": 64,
+          "high": 74,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's 1906-1921 and checked loosely against the Regia Marina page, not read from a fetched source. Conway's 1906-1921 (isbn 0-85177-245-5) and the cited page: 5 dreadnoughts (Dante Alighieri, Conte di Cavour, Giulio Cesare, Leonardo da Vinci, Caio Duilio), ~8 pre-dreadnoughts, ~10 armoured cruisers and ~8 scouts/light cruisers."
+          "note": "Educated guess. Recalled from Conway's 1906-1921 and checked loosely against the Regia Marina page, not read from a fetched source. Battleships, cruisers and destroyers. Conway's 1906-1921 (isbn 0-85177-245-5) and the cited page: 5 dreadnoughts (Dante Alighieri, Conte di Cavour, Giulio Cesare, Leonardo da Vinci, Caio Duilio), ~8 pre-dreadnoughts, ~10 armoured cruisers and ~8 scouts/light cruisers = 27/31/34; plus ~33 destroyers in May 1915 (Conway's) = 30/33/40. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted (MAS boats and torpedo boats stay excluded)."
         },
         "quality": {
-          "low": 0.65,
-          "mid": 0.7,
-          "high": 0.75,
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.75. Evidence: modern dreadnoughts, fast armoured cruisers"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.65/0.7/0.75 (31) and destroyers 0.55/0.6/0.65 (33), role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.75 and 0.5-0.75. Evidence: modern dreadnoughts, fast armoured cruisers, fast destroyers"
         },
         "training": {
           "low": 0.6,
@@ -310,33 +310,7 @@
           "high": 0.7,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5-0.75. Evidence: fleet held back from Austrian minefields and submarines"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 30,
-          "mid": 33,
-          "high": 40,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~33 destroyers in May 1915 (Conway's); MAS boats and torpedo boats excluded."
-        },
-        "quality": {
-          "low": 0.55,
-          "mid": 0.6,
-          "high": 0.65,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: fast destroyers"
-        },
-        "training": {
-          "low": 0.6,
-          "mid": 0.65,
-          "high": 0.7,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5-0.75. Evidence: Adriatic raiding"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (31) and destroyers (33), both 0.6/0.65/0.7, role split per SOURCES.md naval role boundaries. Rubric row: training 0.5-0.75. Evidence: fleet held back from Austrian minefields and submarines; destroyers in Adriatic raiding"
         }
       },
       "submarines": {
@@ -540,20 +514,12 @@
         "note": "Educated guess. Reconnaissance and Caproni bombers per year 1916-1918; Italian total ~12,000 aircraft over the war."
       },
       "ships_major": {
-        "low": 0,
-        "mid": 1,
-        "high": 2,
-        "grade": "D",
-        "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Andrea Doria completed 1916; capital ship building then stopped."
-      },
-      "ships_minor": {
         "low": 3,
-        "mid": 8,
-        "high": 15,
+        "mid": 9,
+        "high": 17,
         "grade": "D",
         "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Destroyers per year 1915-1918."
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Capital ships and destroyers per year: Andrea Doria completed 1916, capital ship building then stopped = 0/1/2; destroyers per year 1915-1918 = 3/8/15. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
       },
       "submarines": {
         "low": 3,
@@ -663,5 +629,5 @@
       "note": "1.2 row: Alpine barrier and fortified frontier, population support."
     }
   },
-  "notes": "Snapshot date 24 May 1915 (declaration of war on Austria-Hungary; mobilisation ordered 22 May, covered earlier by secret call-ups). Territory = the Kingdom of Italy in Europe; Libya, Eritrea, Somalia and the Dodecanese excluded, includes empty. The world_1914 basemap is the nearest file at or before 1915. Aircraft in aircraft_strike (no Italian fighters in May 1915). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Thompson, Schindler, Conway's) not fetched online, graded at most B."
+  "notes": "Snapshot date 24 May 1915 (declaration of war on Austria-Hungary; mobilisation ordered 22 May, covered earlier by secret call-ups). Territory = the Kingdom of Italy in Europe; Libya, Eritrea, Somalia and the Dodecanese excluded, includes empty. The world_1914 basemap is the nearest file at or before 1915. Aircraft in aircraft_strike (no Italian fighters in May 1915). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Book figures (Thompson, Schindler, Conway's) not fetched online, graded at most B."
 }

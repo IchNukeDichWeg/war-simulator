@@ -303,20 +303,20 @@
       },
       "ships_major": {
         "count": {
-          "low": 75,
-          "mid": 85,
-          "high": 90,
+          "low": 185,
+          "mid": 225,
+          "high": 245,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. Dreadnought, battlecruiser and pre-dreadnought counts read from the cited Imperial German Navy page; cruiser counts recalled from Conway's, not read from a fetched source. Cited page: 14 dreadnoughts, 4 battlecruisers and 22 pre-dreadnoughts at the outbreak; plus ~9 armoured and ~40 protected/light cruisers (Conway's 1906-1921, isbn 0-85177-245-5). Low drops old cruisers and pre-dreadnoughts in reserve. Convention as other world-war snapshots: battleships and cruisers = ships_major."
+          "note": "Educated guess. Dreadnought, battlecruiser and pre-dreadnought counts read from the cited Imperial German Navy page; cruiser and destroyer counts recalled from Conway's, not read from a fetched source. Battleships, cruisers and destroyers. Cited page: 14 dreadnoughts, 4 battlecruisers and 22 pre-dreadnoughts at the outbreak; plus ~9 armoured and ~40 protected/light cruisers (Conway's 1906-1921, isbn 0-85177-245-5) = 75/85/90, low drops old cruisers and pre-dreadnoughts in reserve; plus high-seas torpedo boats (destroyer equivalents) in service in August 1914, ~90 modern plus ~50 older boats (Conway's 1906-1921; Halpern ch. 1) = 110/140/155. Role split per SOURCES.md naval role boundaries: the high-seas torpedo boats are torpedo-boat destroyers, moved from ships_minor, which is now omitted (coastal torpedo boats and minesweepers stay excluded)."
         },
         "quality": {
-          "low": 0.75,
-          "mid": 0.8,
-          "high": 0.85,
+          "low": 0.66,
+          "mid": 0.71,
+          "high": 0.76,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.75-1.0. Evidence: excellent armour subdivision and shells; 28-30.5 cm guns smaller than British 34.3 cm"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.75/0.8/0.85 (85) and high-seas torpedo boats 0.6/0.65/0.7 (140), role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.75-1.0 and 0.5-0.75. Evidence: excellent armour subdivision and shells; 28-30.5 cm guns smaller than British 34.3 cm; torpedo boats small and torpedo-heavy, weaker gun armament than British destroyers"
         },
         "training": {
           "low": 0.7,
@@ -324,33 +324,7 @@
           "high": 0.8,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.75. Evidence: long-service petty officers, good gunnery and night-fighting training"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 110,
-          "mid": 140,
-          "high": 155,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. High-seas torpedo boats (destroyer equivalents) in service in August 1914: ~90 modern plus ~50 older boats (Conway's 1906-1921; Halpern ch. 1). Coastal torpedo boats and minesweepers excluded."
-        },
-        "quality": {
-          "low": 0.6,
-          "mid": 0.65,
-          "high": 0.7,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: small, torpedo-heavy boats, weaker gun armament than British destroyers"
-        },
-        "training": {
-          "low": 0.7,
-          "mid": 0.75,
-          "high": 0.8,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.75. Evidence: intensive night torpedo training"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (85) and high-seas torpedo boats (140), both 0.7/0.75/0.8, role split per SOURCES.md naval role boundaries. Rubric row: training 0.75. Evidence: long-service petty officers, good gunnery and night-fighting training; intensive night torpedo training"
         }
       },
       "submarines": {
@@ -554,20 +528,12 @@
         "note": "Educated guess. Field and heavy guns per year 1915-1918; the 1916 Hindenburg Programme aimed at ~3,000 guns per month."
       },
       "ships_major": {
-        "low": 3,
-        "mid": 5,
-        "high": 8,
+        "low": 33,
+        "mid": 50,
+        "high": 68,
         "grade": "D",
         "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Capital ships and cruisers completed per year 1914-1916: 3 Koenig class and Derfflinger in late 1914, 2 Bayern and Luetzow 1916, ~6 light cruisers per year."
-      },
-      "ships_minor": {
-        "low": 30,
-        "mid": 45,
-        "high": 60,
-        "grade": "D",
-        "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Torpedo boats (destroyers) completed per year 1915-1918 (Conway's 1906-1921)."
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Capital ships, cruisers and destroyers completed per year. Capital ships and cruisers 1914-1916 = 3/5/8: 3 Koenig class and Derfflinger in late 1914, 2 Bayern and Luetzow 1916, ~6 light cruisers per year; torpedo boats (destroyers) 1915-1918 = 30/45/60 (Conway's 1906-1921). Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
       },
       "submarines": {
         "low": 52,
@@ -677,5 +643,5 @@
       "note": "1.2 row: familiar terrain, fortified cities (Metz, Strasbourg, Koenigsberg), population support; no climate depth."
     }
   },
-  "notes": "Snapshot date August 1914 after mobilisation (order of 1 Aug; Feldheer concentrated by 17-18 Aug). Territory and population = the German Empire in Europe incl. Alsace-Lorraine; colonies (10.7M people, B&H Table 2) excluded and not listed in includes. Forces are the whole army; the western deployment was ~1.6M men in 7 armies and the eastern 8th Army ~150,000-200,000. Aircraft are all counted as aircraft_strike because no fighters existed in 1914. Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, torpedo boats/destroyers = ships_minor. Book figures (Herwig, Strachan, Conway's) are from standard works not fetched online, graded at most B."
+  "notes": "Snapshot date August 1914 after mobilisation (order of 1 Aug; Feldheer concentrated by 17-18 Aug). Territory and population = the German Empire in Europe incl. Alsace-Lorraine; colonies (10.7M people, B&H Table 2) excluded and not listed in includes. Forces are the whole army; the western deployment was ~1.6M men in 7 armies and the eastern 8th Army ~150,000-200,000. Aircraft are all counted as aircraft_strike because no fighters existed in 1914. Ship convention per SOURCES.md naval role boundaries: battleships, cruisers and destroyers (incl. high-seas torpedo boats) = ships_major, coastal torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Book figures (Herwig, Strachan, Conway's) are from standard works not fetched online, graded at most B."
 }

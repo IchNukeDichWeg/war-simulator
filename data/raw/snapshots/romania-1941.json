@@ -323,14 +323,40 @@
           "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
         }
       },
-      "ships_minor": {
+      "ships_major": {
         "count": {
-          "low": 7,
-          "mid": 7,
-          "high": 14,
+          "low": 4,
+          "mid": 4,
+          "high": 4,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. 4 destroyers read from the Romanian Navy page; torpedo boats and monitors recalled from Conway's, not read from a fetched source. 4 destroyers (2 Regele Ferdinand, 2 Marasti class) and 3 torpedo boats; 7 Danube monitors in the high bound only (Conway's 1922-1946)."
+          "note": "Destroyers only. 4 destroyers (2 Regele Ferdinand, 2 Marasti class) read from the Romanian Navy page. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor."
+        },
+        "quality": {
+          "low": 0.6,
+          "mid": 0.65,
+          "high": 0.7,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.5-0.75. Evidence: Regele Ferdinand class modern. Carried over from ships_minor with the destroyers, role split per SOURCES.md naval role boundaries."
+        },
+        "training": {
+          "low": 0.55,
+          "mid": 0.6,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5-0.75. Evidence: Black Sea convoy escort. Carried over from ships_minor with the destroyers, role split per SOURCES.md naval role boundaries."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 3,
+          "mid": 3,
+          "high": 10,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Torpedo boats and monitors recalled from Conway's, not read from a fetched source. 3 torpedo boats; 7 Danube monitors in the high bound only (Conway's 1922-1946). The 4 destroyers moved to ships_major (was 7/7/14), role split per SOURCES.md naval role boundaries."
         },
         "quality": {
           "low": 0.6,
@@ -681,5 +707,5 @@
       "note": "1.2 row: Carpathian barrier and population support."
     }
   },
-  "notes": "Snapshot date 22 June 1941 (Romania joined Operation Barbarossa; Romanian 3rd and 4th Armies attacked across the Prut on 2 July). Territory = rump Romania after the 1940 cessions; the border uses the world_1938 basemap (nearest at or before 1941), which still shows Greater Romania, so areaKm2 mid is the real 1941 area. Production rates are war totals from the Military production during WWII page spread over ~4 years. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+  "notes": "Snapshot date 22 June 1941 (Romania joined Operation Barbarossa; Romanian 3rd and 4th Armies attacked across the Prut on 2 July). Territory = rump Romania after the 1940 cessions; the border uses the world_1938 basemap (nearest at or before 1941), which still shows Greater Romania, so areaKm2 mid is the real 1941 area. Production rates are war totals from the Military production during WWII page spread over ~4 years. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries)."
 }

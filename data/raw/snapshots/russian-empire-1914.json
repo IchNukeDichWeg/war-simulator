@@ -302,20 +302,20 @@
       },
       "ships_major": {
         "count": {
-          "low": 20,
-          "mid": 24,
-          "high": 28,
+          "low": 105,
+          "mid": 124,
+          "high": 143,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: ~9 pre-dreadnoughts (4 Baltic, 5 Black Sea) and ~14 armoured and protected cruisers (Rurik, Bayan class, Bogatyr class, Aurora, Pamiat Merkuria...). The 4 Gangut-class dreadnoughts commissioned in late 1914 (high)."
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships, cruisers and destroyers. Conway's 1906-1921: ~9 pre-dreadnoughts (4 Baltic, 5 Black Sea) and ~14 armoured and protected cruisers (Rurik, Bayan class, Bogatyr class, Aurora, Pamiat Merkuria...) = 20/24/28, the 4 Gangut-class dreadnoughts commissioned in late 1914 (high); plus ~100 destroyers (Baltic, Black Sea and Pacific), incl. the modern Novik = 85/100/115. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
         },
         "quality": {
-          "low": 0.45,
-          "mid": 0.5,
-          "high": 0.55,
+          "low": 0.49,
+          "mid": 0.54,
+          "high": 0.59,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5. Evidence: pre-dreadnought fleet rebuilt after Tsushima; dreadnoughts not yet ready"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.45/0.5/0.55 (24) and destroyers 0.5/0.55/0.6 (100), role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.5 and 0.5-0.75. Evidence: pre-dreadnought fleet rebuilt after Tsushima; dreadnoughts not yet ready; Novik the fastest destroyer of 1914, many older boats"
         },
         "training": {
           "low": 0.5,
@@ -323,33 +323,7 @@
           "high": 0.6,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5-0.75. Evidence: Baltic Fleet excellent at mine warfare (cited navy page)"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 85,
-          "mid": 100,
-          "high": 115,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~100 destroyers (Baltic, Black Sea and Pacific), incl. the modern Novik."
-        },
-        "quality": {
-          "low": 0.5,
-          "mid": 0.55,
-          "high": 0.6,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: Novik the fastest destroyer of 1914; many older boats"
-        },
-        "training": {
-          "low": 0.5,
-          "mid": 0.55,
-          "high": 0.6,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5. Evidence: mine-laying and coastal operations"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (24) and destroyers (100), both 0.5/0.55/0.6, role split per SOURCES.md naval role boundaries. Rubric rows: training 0.5-0.75 and 0.5. Evidence: Baltic Fleet excellent at mine warfare (cited navy page); mine-laying and coastal operations"
         }
       },
       "submarines": {
@@ -553,20 +527,12 @@
         "note": "Educated guess. Reconnaissance and bomber aircraft per year 1915-1916."
       },
       "ships_major": {
-        "low": 0,
-        "mid": 2,
-        "high": 4,
-        "grade": "D",
-        "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Dreadnoughts and cruisers completed per year 1914-1917 (4 Gangut 1914-15, 3 Imperatritsa Mariya 1915-17)."
-      },
-      "ships_minor": {
         "low": 5,
-        "mid": 12,
-        "high": 20,
+        "mid": 14,
+        "high": 24,
         "grade": "D",
         "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Novik-type destroyers completed per year."
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Dreadnoughts, cruisers and destroyers completed per year: dreadnoughts and cruisers 1914-1917 (4 Gangut 1914-15, 3 Imperatritsa Mariya 1915-17) = 0/2/4; Novik-type destroyers = 5/12/20. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
       },
       "submarines": {
         "low": 5,
@@ -665,5 +631,5 @@
       "note": "1.3 row: familiar terrain, fortresses, deep strategic depth and a continental winter that invaders were not adapted to."
     }
   },
-  "notes": "Snapshot date August 1914 after mobilisation (general mobilisation 30-31 July). Territory and population = the Russian Empire in Europe and Asia including the Grand Duchy of Finland and Congress Poland (neither a separate state in 1914, so includes is empty; the finland and poland nationIds are later states). Bukhara and Khiva protectorates excluded. Forces are the whole army; on the German front in August the 1st and 2nd Armies had ~30 divisions, the four armies against Austria-Hungary ~53. Aircraft in aircraft_strike (no fighters in 1914). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Stone, Conway's, Ferguson) not fetched online, graded at most B."
+  "notes": "Snapshot date August 1914 after mobilisation (general mobilisation 30-31 July). Territory and population = the Russian Empire in Europe and Asia including the Grand Duchy of Finland and Congress Poland (neither a separate state in 1914, so includes is empty; the finland and poland nationIds are later states). Bukhara and Khiva protectorates excluded. Forces are the whole army; on the German front in August the 1st and 2nd Armies had ~30 divisions, the four armies against Austria-Hungary ~53. Aircraft in aircraft_strike (no fighters in 1914). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Book figures (Stone, Conway's, Ferguson) not fetched online, graded at most B."
 }

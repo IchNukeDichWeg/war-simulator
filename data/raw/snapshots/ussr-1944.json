@@ -346,54 +346,28 @@
       },
       "ships_major": {
         "count": {
-          "low": 11,
-          "mid": 13,
-          "high": 15,
+          "low": 49,
+          "mid": 58,
+          "high": 70,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. 1941 totals read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Cited page: 3 battleships and 7 cruisers in 1941; by June 1944 2 Gangut-class battleships (Marat a floating battery), ~9 cruisers incl. 2 new in the Pacific; Royal Sovereign and USS Milwaukee transferred in spring 1944 (high) (Conway's 1922-1946)."
+          "note": "Educated guess. 1941 totals read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Battleships, cruisers and destroyers. Cited page: 3 battleships and 7 cruisers in 1941; by June 1944 2 Gangut-class battleships (Marat a floating battery), ~9 cruisers incl. 2 new in the Pacific; Royal Sovereign and USS Milwaukee transferred in spring 1944 (high) (Conway's 1922-1946) = 11/13/15. Destroyers: 59 in 1941 (cited page); ~34 lost, ~10 added by 1944 (Conway's 1922-1946) = 38/45/55. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
         },
         "quality": {
-          "low": 0.5,
-          "mid": 0.55,
-          "high": 0.6,
+          "low": 0.58,
+          "mid": 0.63,
+          "high": 0.68,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5. Evidence: old battleships, modern Kirov-class cruisers"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.5/0.55/0.6 (13) and destroyers 0.6/0.65/0.7 (45), role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.5 and 0.5-0.75. Evidence: old battleships, modern Kirov-class cruisers, Gnevny and Soobrazitelny destroyers"
         },
         "training": {
-          "low": 0.45,
-          "mid": 0.5,
-          "high": 0.55,
+          "low": 0.49,
+          "mid": 0.54,
+          "high": 0.59,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5. Evidence: little open-sea action"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 38,
-          "mid": 45,
-          "high": 55,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. 1941 total read from the Soviet Navy page; 1944 losses and additions recalled, not read from a fetched source. Cited page: 59 destroyers in 1941; ~34 lost, ~10 added by 1944 (Conway's 1922-1946)."
-        },
-        "quality": {
-          "low": 0.6,
-          "mid": 0.65,
-          "high": 0.7,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.5-0.75. Evidence: Gnevny and Soobrazitelny classes"
-        },
-        "training": {
-          "low": 0.5,
-          "mid": 0.55,
-          "high": 0.6,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.5. Evidence: no specific evidence beyond the era-typical row"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.45/0.5/0.55 (13) and destroyers 0.5/0.55/0.6 (45), role split per SOURCES.md naval role boundaries. Rubric row: training 0.5. Evidence: little open-sea action"
         }
       },
       "submarines": {
@@ -749,5 +723,5 @@
       "note": "1.3 row: strategic depth, winter, partisan support behind German lines."
     }
   },
-  "notes": "Snapshot date June 1944 (Operation Bagration, 22 June). Territory = the USSR in its 1941 borders as claimed; Belorussia, the Baltic states and western Ukraine were still being liberated. The border uses world_1938 (nearest at or before 1944) and excludes the 1939-40 annexations, so areaKm2 mid is the claimed area. Forces are the whole Red Army, VVS, PVO and Navy incl. the Far East. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+  "notes": "Snapshot date June 1944 (Operation Bagration, 22 June). Territory = the USSR in its 1941 borders as claimed; Belorussia, the Baltic states and western Ukraine were still being liberated. The border uses world_1938 (nearest at or before 1944) and excludes the 1939-40 annexations, so areaKm2 mid is the claimed area. Forces are the whole Red Army, VVS, PVO and Navy incl. the Far East. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries)."
 }

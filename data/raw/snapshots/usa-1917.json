@@ -265,20 +265,20 @@
       },
       "ships_major": {
         "count": {
-          "low": 60,
-          "mid": 68,
-          "high": 75,
+          "low": 105,
+          "mid": 119,
+          "high": 131,
           "grade": "D",
           "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Conway's 1906-1921: 14 dreadnoughts (South Carolina to Pennsylvania class), ~22 pre-dreadnoughts, ~10 armoured and ~20 protected/scout cruisers."
+          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships, cruisers and destroyers. Conway's 1906-1921: 14 dreadnoughts (South Carolina to Pennsylvania class), ~22 pre-dreadnoughts, ~10 armoured and ~20 protected/scout cruisers = 60/68/75; plus ~51 destroyers in commission = 45/51/56 (the flush-deck programme added ~270 from 1918). Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
         },
         "quality": {
-          "low": 0.75,
-          "mid": 0.8,
-          "high": 0.85,
+          "low": 0.71,
+          "mid": 0.76,
+          "high": 0.81,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.75-1.0. Evidence: Nevada and Pennsylvania classes with all-or-nothing armour, 14-in guns"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers 0.75/0.8/0.85 (68) and destroyers 0.65/0.7/0.75 (51), role split per SOURCES.md naval role boundaries. Rubric rows: quality 0.75-1.0 and 0.75. Evidence: Nevada and Pennsylvania classes with all-or-nothing armour, 14-in guns; modern oil-fired destroyers"
         },
         "training": {
           "low": 0.65,
@@ -286,33 +286,7 @@
           "high": 0.75,
           "grade": "C",
           "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.75. Evidence: professional navy, little war experience"
-        }
-      },
-      "ships_minor": {
-        "count": {
-          "low": 45,
-          "mid": 51,
-          "high": 56,
-          "grade": "D",
-          "source": "derived:educated-guess",
-          "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. ~51 destroyers in commission (Conway's); the flush-deck programme added ~270 from 1918."
-        },
-        "quality": {
-          "low": 0.65,
-          "mid": 0.7,
-          "high": 0.75,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: quality 0.75. Evidence: modern oil-fired destroyers"
-        },
-        "training": {
-          "low": 0.65,
-          "mid": 0.7,
-          "high": 0.75,
-          "grade": "C",
-          "source": "derived:rating-rubric",
-          "note": "Rubric row: training 0.75. Evidence: Queenstown escort force from May 1917"
+          "note": "Count-weighted mean (mid counts) of battleships/cruisers (68) and destroyers (51), both 0.65/0.7/0.75, role split per SOURCES.md naval role boundaries. Rubric row: training 0.75. Evidence: professional navy, little war experience; Queenstown destroyer escort force from May 1917"
         }
       },
       "submarines": {
@@ -524,20 +498,12 @@
         "note": "Educated guess. M1917 (Renault FT licence): only a few delivered by November 1918, ~950 by 1919."
       },
       "ships_major": {
-        "low": 1,
-        "mid": 3,
-        "high": 6,
+        "low": 21,
+        "mid": 63,
+        "high": 126,
         "grade": "D",
         "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships completed per year 1917-1921 (Mississippi, New Mexico, Idaho, Tennessee...)."
-      },
-      "ships_minor": {
-        "low": 20,
-        "mid": 60,
-        "high": 120,
-        "grade": "D",
-        "source": "derived:educated-guess",
-        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Destroyers commissioned per year 1918-1919 (Wickes and Clemson flush-deckers)."
+        "note": "Educated guess. Recalled from Conway's All the World's Fighting Ships 1906-1921 (isbn:0-85177-245-5), not read from a fetched source. Battleships and destroyers per year: battleships completed 1917-1921 (Mississippi, New Mexico, Idaho, Tennessee...) = 1/3/6; destroyers commissioned 1918-1919 (Wickes and Clemson flush-deckers) = 20/60/120. Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor, which is now omitted."
       },
       "submarines": {
         "low": 10,
@@ -658,5 +624,5 @@
       "note": "1.2 row: oceans, coastal fortifications and population support; no invader could reach the homeland in 1917."
     }
   },
-  "notes": "Snapshot date 6 April 1917 (declaration of war on Germany), when the US was formally at war but not yet mobilised: forces are the peacetime-sized Regular Army, federalised Guard, Navy and Marines. The AEF grew to ~2M in France by November 1918 (World War I casualties page: 4,355,000 mobilised in total). Continental United States; territories excluded, includes empty. Aircraft in aircraft_strike (no fighters or combat types). Ship convention as in the other world-war snapshots: battleships and cruisers = ships_major, destroyers = ships_minor. Book figures (Coffman, Conway's) not fetched online, graded at most B."
+  "notes": "Snapshot date 6 April 1917 (declaration of war on Germany), when the US was formally at war but not yet mobilised: forces are the peacetime-sized Regular Army, federalised Guard, Navy and Marines. The AEF grew to ~2M in France by November 1918 (World War I casualties page: 4,355,000 mobilised in total). Continental United States; territories excluded, includes empty. Aircraft in aircraft_strike (no fighters or combat types). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Book figures (Coffman, Conway's) not fetched online, graded at most B."
 }

@@ -346,14 +346,40 @@
           "note": "Rubric row: training 0.5-0.75. Evidence: Bomber Brigade attacked German columns"
         }
       },
-      "ships_minor": {
+      "ships_major": {
         "count": {
           "low": 4,
-          "mid": 5,
-          "high": 5,
+          "mid": 4,
+          "high": 4,
           "grade": "B",
           "source": "https://en.wikipedia.org/wiki/Polish_Navy",
-          "note": "Cited page: 4 destroyers (Burza, Wicher, Blyskawica, Grom; three left for Britain on 30 August under the Peking Plan) plus the minelayer Gryf."
+          "note": "Destroyers only. Cited page: 4 destroyers (Burza, Wicher, Blyskawica, Grom; three left for Britain on 30 August under the Peking Plan). Role split per SOURCES.md naval role boundaries: destroyers moved from ships_minor."
+        },
+        "quality": {
+          "low": 0.7,
+          "mid": 0.75,
+          "high": 0.8,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.75. Evidence: Grom-class among the most powerful destroyers of 1939. Carried over from ships_minor with the destroyers, role split per SOURCES.md naval role boundaries."
+        },
+        "training": {
+          "low": 0.65,
+          "mid": 0.7,
+          "high": 0.75,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.75. Evidence: professional navy. Carried over from ships_minor with the destroyers, role split per SOURCES.md naval role boundaries."
+        }
+      },
+      "ships_minor": {
+        "count": {
+          "low": 0,
+          "mid": 1,
+          "high": 1,
+          "grade": "B",
+          "source": "https://en.wikipedia.org/wiki/Polish_Navy",
+          "note": "Cited page: the minelayer Gryf. The 4 destroyers moved to ships_major (was 4/5/5), role split per SOURCES.md naval role boundaries."
         },
         "quality": {
           "low": 0.7,
@@ -606,13 +632,13 @@
         "source": "derived:educated-guess",
         "note": "Educated guess. Field guns, howitzers and Bofors guns per year (Starachowice, Stalowa Wola)."
       },
-      "ships_minor": {
+      "ships_major": {
         "low": 0,
         "mid": 1,
         "high": 2,
         "grade": "D",
         "source": "derived:educated-guess",
-        "note": "Educated guess. Destroyers per year (Grom class built in Britain)."
+        "note": "Educated guess. Destroyers per year (Grom class built in Britain). Moved from ships_minor, role split per SOURCES.md naval role boundaries."
       }
     }
   },
@@ -696,5 +722,5 @@
       "note": "1.2 row: population support and river lines, but open plains enveloped on three sides after March 1939."
     }
   },
-  "notes": "Snapshot date 1 September 1939 (German invasion). Mobilisation was incomplete: secret partial call-up from 23 August, general mobilisation ordered 30-31 August. Forces are the whole army in the field; the Soviet invasion of 17 September is outside this snapshot. The navy's three destroyers that sailed to Britain on 30 August are still counted. Ship convention as in the other world-war snapshots: battleships, carriers and cruisers = ships_major, destroyers and torpedo boats = ships_minor."
+  "notes": "Snapshot date 1 September 1939 (German invasion). Mobilisation was incomplete: secret partial call-up from 23 August, general mobilisation ordered 30-31 August. Forces are the whole army in the field; the Soviet invasion of 17 September is outside this snapshot. The navy's three destroyers that sailed to Britain on 30 August are still counted. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries)."
 }
