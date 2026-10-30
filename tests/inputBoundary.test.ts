@@ -7,8 +7,9 @@ import { Controller } from '../src/engine/controller';
 import type { FromWorker } from '../src/engine/protocol';
 import { NR } from '../src/engine/roles';
 import { createSim } from '../src/engine/sim';
-import { MAX_RESEARCHED_FORCE_COUNT, overridePathProblem, overrideValueProblem } from '../src/engine/overridePath';
-import type { Snapshot, UnitRole } from '../src/types/schema';
+import { fieldBound, MAX_RESEARCHED_FORCE_COUNT, overrideMax, overridePathProblem, overrideValueProblem } from '../src/engine/overridePath';
+import { collectFields } from '../src/ui/panels/Editor';
+import type { Snapshot } from '../src/types/schema';
 import { normalizeScenario } from '../src/ui/scenarioDefaults';
 import { decodeScenario, encodeScenario } from '../src/ui/scenarioIO';
 import type { Scenario } from '../src/types/scenario';
@@ -89,18 +90,73 @@ describe('C2/C3: override values are finite, non-negative and bounded', () => {
     for (let i = 0; i < F.n * NR; i++) expect(F.counts[i]).toBeGreaterThanOrEqual(0);
   });
 
-  it('the bound covers every researched count in public/data (fails if the data outgrows it)', () => {
+  it('the bound covers every researched field in public/data (fails if the data outgrows it)', () => {
     const dir = 'public/data';
+    let n = 0;
     for (const f of readdirSync(dir).filter((x) => /^snapshots.*\.json$/.test(x) && !x.includes('index'))) {
       const j = JSON.parse(readFileSync(`${dir}/${f}`, 'utf8'));
       const snaps: Snapshot[] = Array.isArray(j) ? j : j.snapshots ?? [];
       for (const s of snaps) {
-        for (const [role, e] of Object.entries(s.military.forces)) {
-          const c = e?.count;
-          if (c) expect(Math.max(c.low, c.mid, c.high), `${s.id} ${role}`).toBeLessThanOrEqual(MAX_RESEARCHED_FORCE_COUNT[role as UnitRole]);
+        // every field the Editor offers, so a new field without a bound fails here too
+        for (const { path, est } of collectFields(s)) {
+          const b = fieldBound(path);
+          expect(b, `${s.id} ${path} has no bound`).toBeDefined();
+          const top = 'researched' in b! ? b.researched : b!.scaleTop;
+          expect(Math.max(est.low, est.mid, est.high), `${s.id} ${path}`).toBeLessThanOrEqual(top);
+          n++;
         }
       }
     }
+    expect(n).toBeGreaterThan(50_000);
+  });
+});
+
+describe('N1: every personnel, stock, rating and tech field is bounded', () => {
+  it.each([
+    ['military.trainedReserves.mid', 1e15],
+    ['military.mobilizable.mid', 1e15],
+    ['military.activePersonnel.mid', 1e15],
+    ['demography.population.mid', 1e15],
+    ['economy.annualCohort.mid', 1e15],
+    ['economy.production.armor.mid', 1e12],
+    ['logistics.supplyRangeKm.mid', 1e15],
+    ['strategic.nuclearWarheads.mid', 1e12],
+    ['geography.homeDefense.mid', 1e300],
+    ['tech.weapons.mid', 10.5],
+    ['tech.weapons.mid', 1e300],
+    ['military.morale.mid', 1.01],
+    ['military.forces.infantry_line.quality.mid', 1e300],
+  ])('refuses %s = %s', (path, v) => {
+    expect(overridePathProblem(path)).toBeNull();
+    expect(overrideValueProblem(path, v)).not.toBeNull();
+  });
+
+  it('a stock field takes 10x its researched maximum and no more', () => {
+    const p = 'military.trainedReserves.mid';
+    expect(overrideMax(p)).toBe(100_000_000);   // 10x china-1979
+    expect(overrideValueProblem(p, 100_000_000)).toBeNull();
+    expect(overrideValueProblem(p, 100_000_001)).toMatch(/at most 100,000,000/);
+  });
+
+  it('ratings and tech take the top of their scale', () => {
+    expect(overrideValueProblem('tech.cyber.mid', 10)).toBeNull();
+    expect(overrideValueProblem('military.cohesion.mid', 1)).toBeNull();
+    expect(overrideValueProblem('military.forces.armor.training.mid', 1)).toBeNull();
+  });
+
+  it.each(['tech.newcategory.mid', 'military.foo.mid', 'economy.production.infantry_line.mid', 'military.forces.armor.speed.mid'])('refuses the field-less path %s', (p) => {
+    expect(overridePathProblem(p)).not.toBeNull();
+  });
+
+  it('a loaded scenario with 1e15 trained reserves is refused, naming the field', () => {
+    const sc = { ...basicScenario(), overrides: [{ snapshotId: 'westland-1900', path: 'military.trainedReserves.mid', value: 1e15 }] };
+    expect(() => normalizeScenario(JSON.parse(JSON.stringify(sc)))).toThrow(/overrides\[0\]\.value: military\.trainedReserves\.mid must be at most/);
+  });
+
+  it('the engine ignores 1e15 trained reserves instead of fielding them', () => {
+    const sc = { ...basicScenario(), overrides: [{ snapshotId: 'westland-1900', path: 'military.trainedReserves.mid', value: 1e15 }] };
+    const sim = createSim(data(), sc);
+    expect(sim.setup.warnings.some((w) => w.includes('ignored') && w.includes('trainedReserves'))).toBe(true);
   });
 });
 

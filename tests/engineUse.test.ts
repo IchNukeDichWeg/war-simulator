@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { overrideMax } from '../src/engine/overridePath';
 import { createSim } from '../src/engine/sim';
 import { ENGINE_USE } from '../src/ui/engineUse';
 import { collectFields } from '../src/ui/panels/Editor';
@@ -26,8 +27,10 @@ describe('Editor fields the engine does not read', () => {
     for (const p of Object.keys(ENGINE_USE)) expect(paths.has(p), p).toBe(true);
   });
 
-  it.each(unused)('%s at 0 or 1e12 leaves the run unchanged', (p) => {
-    for (const value of [0, 1e12]) expect(state(ids.map((snapshotId) => ({ snapshotId, path: `${p}.mid`, value })))).toBe(base);
+  // the largest value an override may hold: 1e12 is above most bounds now (red team N1), and
+  // an override the engine refuses would leave the run unchanged whether or not it reads the field
+  it.each(unused)('%s at 0 or its override bound leaves the run unchanged', (p) => {
+    for (const value of [0, overrideMax(`${p}.mid`)!]) expect(state(ids.map((snapshotId) => ({ snapshotId, path: `${p}.mid`, value })))).toBe(base);
   });
 
   it('home defense is read (the red team saw no effect only because the attacker never defended at home)', () => {
