@@ -862,5 +862,23 @@
         "note": "Educated guess: precision munitions put a far larger share of tonnage on aim points; no fetched production-loss figure."
       }
     }
+  },
+  "aiForceRatio": {
+    "attrition": {
+      "low": 2.5,
+      "mid": 3,
+      "high": 5,
+      "grade": "B",
+      "source": "https://web.archive.org/web/2012/http://www.fas.org/irp/doddir/army/fm5-0.pdf",
+      "note": "Combat-power ratio (attacker:defender) an attrition-doctrine AI (maneuver weight 0) masses at the attack point before it attacks. All figures below are LOCAL (attack point, sector or avenue of approach), not theatre. Mid 3: FM 5-0 The Operations Process (2010) table B-1 'Historical minimum planning ratios', attack against a prepared or fortified position 3:1, applied per task and avenue of approach two levels down, in relative combat power including intangibles (paras B-89, B-90); Mearsheimer, 'Assessing the Conventional Balance: The 3:1 Rule and Its Critics', International Security 13:4 (1989) p.54 (https://www.mearsheimer.com/wp-content/uploads/2019/07/A0013.pdf): a local advantage of at least 3:1 in combat power to break through at a specific point, for breakthrough battles only; FM 100-2-1 The Soviet Army: Operations and Tactics (1984) p.2-11 (https://irp.fas.org/doddir/army/fm100-2-1.pdf): contemporary Soviet writings put the aggregate combat-power ratio for an attack at about 3:1, counting all forces and fires the commander can bring to bear on the sector. Low 2.5: FM 5-0 hasty attack 2.5:1 (FM 100-2-1 adds that the ratio actually at the FEBA may be as small as 2:1). High 5: FM 100-2-1, post-1945 Soviet main-attack weighting of 3-5:1 in tanks and 4-5:1 in personnel (6-8:1 in artillery) on the main-attack sector. Critics: Epstein (International Security 12:4, 1988) disputes the rule with historical cases (as summarised by Mearsheimer 1989); the Dupuy Institute division-level database (752 cases 1904-1991, local engagements, raw strength; https://dupuyinstitute.org/2019/10/31/tests-using-the-752-case-division-level-data-base/) has attackers winning 55% at 1.0-1.49:1 and 83% at 2.5-2.99:1, so 3:1 is a conservative planning norm rather than an outcome threshold, which is what an attrition doctrine plans to. Not used: theatre-level figures (Dupuy Institute Campaign Data Base, 196 campaigns 1905-1991, attacker wins at an average 2.28:1, https://dupuyinstitute.org/2024/04/23/analysis-for-force-ratios-using-the-campaign-data-base-cadb/) and the lead-element penetration ratio 18:1 of the proposed ATP 5-0.2 (2019), which is only reported second-hand."
+    },
+    "maneuver": {
+      "low": 1,
+      "mid": 1.5,
+      "high": 2.5,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "Combat-power ratio (attacker:defender) a maneuver-doctrine AI (maneuver weight 1) masses at the attack point before it attacks; LOCAL, not theatre. No doctrine publishes a maneuver-specific ratio, so derived: mid 1.5 = the local 3:1 norm (attrition leaf) divided by a surprise multiplier of 2.0, the middle of Dupuy's 1.5-2.5 (HERO, Handbook on Ground Forces Attrition in Modern Warfare, 1986, https://apps.dtic.mil/sti/citations/ADA278728: an attacker expecting surprise 'would be willing to attack with less than a three-to-one superiority'); the range 3/2.5 to 3/1.5 is 1.2-2.0. Low 1.0: FM 5-0 (2010) table B-1, counterattack into a flank 1:1 (local). High 2.5: FM 5-0 hasty attack 2.5:1 (local). Cross-check against outcomes, not planning norms: Dupuy Institute division-level database (752 cases 1904-1991, local engagements, raw strength; https://dupuyinstitute.org/2019/10/31/tests-using-the-752-case-division-level-data-base/) attackers won 59% at 1.5-1.99:1 and 55% at 1.0-1.49:1; ETO 1944-45 division engagements (116 cases, Lawrence, War by Numbers p.10; https://dupuyinstitute.org/2020/12/24/force-ratios-and-crts/) attacks at 1.15-1.88:1 succeeded 79%. Dupuy (HERO 1986) also credits German WWII and Israeli attacks below 3:1 to troop quality; the AI already measures power with quality, training and command, so only the surprise and flank effect is used here, to avoid counting quality twice. Grade C: a derivation from cited figures, not a stated doctrine norm."
+    }
   }
 }
