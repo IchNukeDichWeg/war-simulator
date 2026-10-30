@@ -119,6 +119,11 @@ export function checkSnapshot(s: Snapshot, file: string, derived: Set<string>, i
     warn(`gdp ${s.economy.gdp.mid.toExponential(2)} vs pop x gdppc ${gdpCheck.toExponential(2)}`);
   }
   if (!s.capital || !s.places) err('missing capital/places');
+  // exactly 0,0 is a missing coordinate (palestine-2026 had its capital there, in the Gulf of
+  // Guinea, outside every theater it could fight in), not a place
+  const nullIsland = (p?: { lat: number; lon: number }) => !!p && p.lat === 0 && p.lon === 0;
+  if (nullIsland(s.capital)) err(`capital ${s.capital.name} at 0,0 (missing coordinates)`);
+  for (const p of [...(s.places ?? []), ...(s.strategic?.basesAbroad ?? [])]) if (nullIsland(p)) err(`place ${p.name} at 0,0 (missing coordinates)`);
 }
 
 export function validateAll(): { issues: Issue[]; counts: Record<string, number> } {

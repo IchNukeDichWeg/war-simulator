@@ -26,6 +26,14 @@ const NO_ARMY = 'https://en.wikipedia.org/wiki/List_of_countries_without_armed_f
 const NE_PORTS = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_ports.geojson';
 const NE_PLACES = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_populated_places_simple.geojson';
 const YEAR = 2026;
+// Natural Earth files some states under another adm0_a3 than the World Bank's ISO3: Palestine is
+// PSX there and PSE at the World Bank, so its places came back empty.
+const NE_ADM0: Record<string, string> = { PSE: 'PSX' };
+// The World Bank lists no capital (and lat/lon 0) for these; the fallback then put the capital at
+// 0,0. Palestine: Ramallah, the administrative seat. Natural Earth marks it an "Admin-0 region
+// capital" (as it does Gaza City) and files Jerusalem under Israel, so the sources do not give
+// Jerusalem; the coordinates come from the Natural Earth place.
+const SEAT: Record<string, string> = { PSE: 'Ramallah' };
 // States listed without standing armed forces on the page above (fetched 2026-10-29).
 const NO_ARMED_FORCES = new Set(['AND', 'CRI', 'DMA', 'GRD', 'ISL', 'KIR', 'LIE', 'MHL', 'MUS', 'FSM', 'MCO', 'NRU', 'PLW', 'PAN', 'LCA', 'VCT', 'WSM', 'SLB', 'TUV', 'VUT', 'VAT', 'KNA']);
 
@@ -187,7 +195,7 @@ async function main() {
     if (!coastal) { merchant.low = merchant.mid = merchant.high = 0; merchant.note = 'landlocked'; }
 
     const places = placesAll
-      .filter((p) => p.properties.adm0_a3 === st.iso3)
+      .filter((p) => p.properties.adm0_a3 === (NE_ADM0[st.iso3] ?? st.iso3))
       .sort((a, b) => b.properties.pop_max - a.properties.pop_max)
       .slice(0, 8)
       .map((p) => ({ name: p.properties.name, lat: round4(p.properties.latitude), lon: round4(p.properties.longitude), kind: 'city' as const, population: p.properties.pop_max }));
@@ -195,7 +203,7 @@ async function main() {
     const snap: Snapshot = {
       id: `${st.nationId}-${YEAR}`, nationId: st.nationId, includes: [], name: st.name, year: YEAR, era: 'modern',
       region: reg, phase: 'current', tags: ['auto-base', 'modern-state', st.status],
-      capital: { name: c?.capital || places[0]?.name || st.name, lat: c?.lat || places[0]?.lat || 0, lon: c?.lon || places[0]?.lon || 0, kind: 'capital' },
+      capital: capitalOf(st, c, places),
       places,
       territory: { border: border ? `ne:${st.iso3}` : 'none', areaKm2: area },
       demography: { population: pop, urbanization: urban },
@@ -262,5 +270,14 @@ function foodSurplus(iso3: string, a: { value: number; year: number } | undefine
 /** Fractions cannot exceed 1 however wide the range is. */
 function clampFraction(e: Est) { e.high = Math.min(1, e.high); e.mid = Math.min(e.mid, e.high); e.low = Math.min(e.low, e.mid); }
 const round4 = (x: number) => Math.round(x * 1e4) / 1e4;
+
+/** World Bank capital, else the named seat among the state's places, else its largest place;
+ *  never 0,0 (validate.ts rejects a place there). */
+function capitalOf(st: StateRow, c: WbCountry | undefined, places: { name: string; lat: number; lon: number }[]): Snapshot['capital'] {
+  if (c?.capital && (c.lat || c.lon)) return { name: c.capital, lat: c.lat, lon: c.lon, kind: 'capital' };
+  const p = places.find((x) => x.name === SEAT[st.iso3]) ?? places[0];
+  if (!p) throw new Error(`${st.iso3}: no World Bank capital and no Natural Earth place; add it to SEAT with a source`);
+  return { name: p.name, lat: p.lat, lon: p.lon, kind: 'capital' };
+}
 
 main().catch((e) => { console.error(e); process.exit(1); });
