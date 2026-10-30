@@ -6,6 +6,7 @@ import { EXPLAIN_LOCAL_POWER, HOSPITAL_ADMISSIONS_RETURN } from './constants';
 import type { Ctx } from './ctx';
 import type { Reason } from './protocol';
 import { sideNow } from './victory';
+import { LC } from './roles';
 
 export function explain(ctx: Ctx): Reason[] {
   const { S, st } = ctx;
@@ -57,6 +58,13 @@ export function explain(ctx: Ctx): Reason[] {
   if (nb0 + nb1 > 0) {
     const f0 = nb0 / Math.max(1, n0), f1 = nb1 / Math.max(1, n1);
     items.push({ factor: 'Disease and attrition', v: 2 * (f1 - f0), detail: (f) => `${names[1 - f]} suffered non-battle losses (disease, exposure, starvation, desertion; part return to duty) equal to ${Math.round((f === 0 ? f1 : f0) * 100)}% of the personnel it fielded (vs ${Math.round((f === 0 ? f0 : f1) * 100)}%).` });
+  }
+  // nuclear losses scored like the non-battle losses above: share of the personnel fielded; they
+  // were missing, so 740k US nuclear casualties that decided Russia vs USA 2026 never showed
+  const nk0 = st.losses[0][LC.nuclear], nk1 = st.losses[1][LC.nuclear];
+  if (nk0 + nk1 > 0) {
+    const f0 = nk0 / Math.max(1, n0), f1 = nk1 / Math.max(1, n1);
+    items.push({ factor: 'Nuclear strikes', v: 2 * (f1 - f0), detail: (f) => `${names[1 - f]} lost ${Math.round(f === 0 ? nk1 : nk0).toLocaleString('en-US')} personnel to nuclear strikes, ${Math.round((f === 0 ? f1 : f0) * 100)}% of the personnel it fielded (vs ${Math.round(f === 0 ? nk0 : nk1).toLocaleString('en-US')}, ${Math.round((f === 0 ? f0 : f1) * 100)}%).` });
   }
   void w0; void w1; void sideNow;
   const tot = items.reduce((s, i) => s + Math.abs(i.v), 0);
