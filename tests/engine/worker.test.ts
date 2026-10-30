@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { Controller, type Timers } from '../../src/engine/controller';
 import type { Frame, FromWorker } from '../../src/engine/protocol';
+import { KEYFRAME_DAYS, MAX_KEYFRAMES } from '../../src/engine/constants';
 import { createSim } from '../../src/engine/sim';
 import { basicScenario } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
@@ -102,5 +103,25 @@ describe('worker protocol (Controller)', () => {
     expect(h.msgs.some((m) => m.type === 'mcProgress')).toBe(true);
     expect(h.frames().length).toBe(0);
     if (res?.type === 'mcResult') expect(res.result.winProb.reduce((a, b) => a + b, 0)).toBeCloseTo(1, 9);
+  });
+});
+
+describe('replay keyframes on a long run (red team W9)', () => {
+  it('the store stays at most MAX_KEYFRAMES and seek is still exact after thinning', () => {
+    const h = harness();
+    const days = KEYFRAME_DAYS * (MAX_KEYFRAMES + 6);   // past the first thinning
+    const sc = { ...basicScenario(11), victory: { capitalCaptured: false, territoryShare: 0, armyCollapse: false, timeLimitDays: days + 10 } };
+    h.ctl.handle({ type: 'init', data: data() });
+    h.ctl.handle({ type: 'start', scenario: sc });
+    h.ctl.handle({ type: 'step', days });
+    const ctl = h.ctl as unknown as { keyframes: Map<number, unknown>; sim: ReturnType<typeof createSim> };
+    expect(ctl.sim.day()).toBe(days);
+    expect(ctl.keyframes.size).toBeLessThanOrEqual(MAX_KEYFRAMES);
+    expect(ctl.keyframes.has(0)).toBe(true);
+    const target = days - KEYFRAME_DAYS - 7;   // between two of the thinned keyframes
+    h.ctl.handle({ type: 'seek', day: target });
+    const ref = createSim(data(), sc);
+    ref.step(target);
+    expect(ctl.sim.snapshot()).toEqual(ref.snapshot());
   });
 });

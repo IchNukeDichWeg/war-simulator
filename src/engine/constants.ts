@@ -4,8 +4,17 @@
 
 /** Theater cells above this are merged k x k (ENGINE.md 2.4). */
 export const MAX_THEATER_CELLS = 20000;
-/** Replay keyframe interval in days (ENGINE.md 14). */
+/** Replay keyframe interval in days at the start of a run (ENGINE.md 14). */
 export const KEYFRAME_DAYS = 30;
+/** Most replay keyframes the worker holds. When the store fills, every other keyframe is
+ *  dropped and the interval doubles, so memory is bounded on any run length and a seek
+ *  re-simulates at most one interval. Measured on germany-vs-france-1940 run to the UI's
+ *  36,500-day limit with every victory condition off (red team W9; v8.serialize bytes):
+ *  unbounded 1,217 keyframes, 7,673 MB (8.5 MB each by the end); capped 39 keyframes,
+ *  246 MB, interval 960 days, so a worst-case seek replays 960 days (about 11 s at the
+ *  90 days/s that run stepped). Runs shorter than 1,920 days never thin, so every preset
+ *  keeps its 30-day keyframes. */
+export const MAX_KEYFRAMES = 64;
 /** Base command re-plan interval in days, before coalition friction. */
 export const AI_CYCLE_DAYS = 5;
 /** Candidate objectives (each gets a flow field) per side and cycle. */

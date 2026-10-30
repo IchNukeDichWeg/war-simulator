@@ -7,7 +7,7 @@ import { buildSetup, type Setup } from './setup';
 import { simFromSetup, runToEnd, type Sim } from './sim';
 import type { SimState } from './state';
 import { summarize } from './montecarlo';
-import { KEYFRAME_DAYS, MAX_FRAMES_PER_SECOND } from './constants';
+import { KEYFRAME_DAYS, MAX_FRAMES_PER_SECOND, MAX_KEYFRAMES } from './constants';
 
 export interface Timers {
   setTimeout(fn: () => void, ms: number): unknown;
@@ -28,6 +28,8 @@ export class Controller {
   private data: EngineData | null = null;
   private sim: Sim | null = null;
   private keyframes = new Map<number, SimState>();
+  /** Current keyframe interval in days; doubles each time the store is thinned. */
+  private keyframeEvery = KEYFRAME_DAYS;
   private maxDay = 0;
   private dps = 0;
   private acc = 0;
@@ -67,6 +69,7 @@ export class Controller {
     const setup = buildSetup(this.requireData(), scenario);
     this.sim = simFromSetup(setup, scenario.seed);
     this.keyframes.clear();
+    this.keyframeEvery = KEYFRAME_DAYS;
     this.keyframes.set(0, this.sim.snapshot());
     this.maxDay = 0;
     this.endSent = false;
@@ -91,7 +94,17 @@ export class Controller {
     sim.step(1);
     const d = sim.day();
     if (d > this.maxDay) this.maxDay = d;
-    if (d % KEYFRAME_DAYS === 0 && !this.keyframes.has(d)) this.keyframes.set(d, sim.snapshot());
+    if (d % this.keyframeEvery === 0 && !this.keyframes.has(d)) {
+      this.keyframes.set(d, sim.snapshot());
+      if (this.keyframes.size > MAX_KEYFRAMES) this.thinKeyframes();
+    }
+  }
+
+  /** Keep every other keyframe (day 0 always survives) and double the interval. Replay stays
+   *  exact because the engine is deterministic; only the distance a seek re-simulates grows. */
+  private thinKeyframes(): void {
+    this.keyframeEvery *= 2;
+    for (const k of [...this.keyframes.keys()]) if (k % this.keyframeEvery !== 0) this.keyframes.delete(k);
   }
 
   private stepDays(days: number): void {

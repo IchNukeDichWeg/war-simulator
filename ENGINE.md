@@ -566,7 +566,10 @@ often ranked first.
 
 ## 14. Replay
 
-The worker stores a full state keyframe every 30 days. Seeking to day d
-restores the last keyframe <= d and re-simulates to d. Because the engine is
+The worker stores a full state keyframe every 30 days, at most
+`MAX_KEYFRAMES` (64) of them: when the store fills, every other keyframe is
+dropped and the interval doubles (60, 120, ... days), so memory stays bounded
+on long runs. Seeking to day d restores the last keyframe <= d and
+re-simulates to d. Because the engine is
 deterministic, the replay matches the original run exactly (tested: full state
 and frame equal to an uninterrupted run, `tests/engine/worker.test.ts`).
