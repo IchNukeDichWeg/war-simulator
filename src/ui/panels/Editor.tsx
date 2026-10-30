@@ -4,6 +4,7 @@ import { yearLabel } from '../data';
 import { DerivedBadge, GradeBadge, SourceLink } from '../Grade';
 import { ensureSnapshots } from '../lazy';
 import { fmt } from '../format';
+import { engineUse } from '../engineUse';
 import { setScenario, store, toast, useStore } from '../store';
 import { overrideValueProblem } from '../../engine/overridePath';
 import { EmptyData } from './EmptyData';
@@ -63,9 +64,11 @@ function EditCell({ f, snapId, ov }: { f: Field; snapId: string; ov?: Override }
     setOverride(snapId, f.path + '.mid', v === f.est.mid ? null : v);
   };
   const out = ov && (ov.value < f.est.low || ov.value > f.est.high);
+  const use = engineUse(f.path);
   return (
     <div className={`ed-row${ov ? ' edited' : ''}`}>
-      <div className="ed-label" title={f.path}>{f.label}{ov && <span className="edited-tag">edited</span>}</div>
+      <div className="ed-label" title={f.path}>{f.label}{ov && <span className="edited-tag">edited</span>}
+        {use && <span className={use.used === false ? 'unused-tag' : 'partly-tag'} title={use.note}>{use.used === false ? 'not used by the engine' : 'partly used'}</span>}</div>
       <input className={out ? 'out' : ''} value={txt} onChange={(e) => setTxt(e.target.value)} onBlur={commit}
         onKeyDown={(e) => { if (e.key === 'Enter') (e.target as HTMLInputElement).blur(); }} />
       <div className="ed-meta">
@@ -109,7 +112,7 @@ export function Editor() {
           {data.snapshots.map((s) => <option key={s.id} value={s.id}>{s.name} ({yearLabel(s.year)}){data.phase3ById.has(s.id) ? `, Phase 3 derived, confidence ${data.phase3ById.get(s.id)!.confidence}` : ''}</option>)}
         </optgroup>
       </select>
-      {!snap && <p className="muted">Every numeric field of a snapshot is editable here. Edits are stored in the scenario (and its share URL) as overrides; the researched value stays visible with its range, grade and source.</p>}
+      {!snap && <p className="muted">Every numeric field of a snapshot is editable here. Edits are stored in the scenario (and its share URL) as overrides; the researched value stays visible with its range, grade and source. Fields tagged "not used by the engine" are researched context only; "partly used" fields matter only in the case their tooltip names.</p>}
       {snap && (
         <>
           <div className="ed-head">
