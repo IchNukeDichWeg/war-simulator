@@ -158,7 +158,8 @@ and field fortification are QJM alternatives, so the largest applies
 defender that stood still for a day is prepared. Measured together: winner
 12 -> 14, loss ratio 13 -> 16, duration 21 -> 22 of 24.
 As built (`SYMMETRIC_DOCTRINE_BREAKPOINT`): a formation's effective breakpoint
-is the doctrine `retreatThreshold` x bp_era(u) / bp_era(mid) +
+is the doctrine `retreatThreshold` x bp_era(u) / bp_era(mid), held inside the
+era low..high (`ERA_CLAMPED_BREAKPOINT`), +
 `cohesionBreakpointShift` x (cohesion - 0.5), and it withdraws in good order at
 `WITHDRAW_SHARE_OF_BREAKPOINT` (0.9) of that, just before the rout. The
 doctrine thresholds are quartiles of the era breakpoint MV, so a high-quartile

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { eraOfYear, rule, ruleMV, validateMechanics } from '../../src/engine/mech';
+import { doctrineBreak, eraOfYear, rule, ruleMV, validateMechanics } from '../../src/engine/mech';
 import { fixtureMechanics, mv } from '../fixtures/mechanics.fixture';
 import type { EraRule, MV } from '../../src/types/mechanics';
 import { createSim } from '../../src/engine/sim';
@@ -43,13 +43,20 @@ describe('battle breakpoint draw', () => {
     }
     return { ...d, mechanics: m };
   };
-  // SYMMETRIC_DOCTRINE_BREAKPOINT: break = doctrine retreatThreshold x bp_era(u) / bp_era(mid) + cohesion shift
-  const bps = (sim: ReturnType<typeof createSim>) => sim.ctx.st.members.map((ms, i) => (ms.breakpoint - sim.setup.members[i].bpShift) / sim.setup.members[i].retreatThreshold);
-  it('a fixed quantile scales the doctrine threshold by low, mid and high over mid', () => {
+  // SYMMETRIC_DOCTRINE_BREAKPOINT: break = doctrine retreatThreshold x bp_era(u) / bp_era(mid), held in
+  // the era range (ERA_CLAMPED_BREAKPOINT), + cohesion shift
+  const bps = (sim: ReturnType<typeof createSim>) => sim.ctx.st.members.map((ms, i) => ms.breakpoint - sim.setup.members[i].bpShift);
+  it('a fixed quantile scales the doctrine threshold by low, mid and high over mid, inside the era range', () => {
     const d = withRange();
     for (const [q, v] of [[0, 0.1], [0.5, 0.2], [1, 0.4]] as const) {
-      for (const b of bps(createSim(d, basicScenario(3), { breakpointQuantile: q }))) expect(b).toBeCloseTo(v / 0.2, 12);
+      const sim = createSim(d, basicScenario(3), { breakpointQuantile: q });
+      bps(sim).forEach((b, i) => expect(b).toBeCloseTo(Math.min(0.4, Math.max(0.1, sim.setup.members[i].retreatThreshold * v / 0.2)), 12));
     }
+  });
+  it('doctrineBreak holds a threshold scaled past either end at the era bound', () => {
+    expect(doctrineBreak(0.154, mv(0.1, 0.04, 0.3), 1)).toBeCloseTo(0.3, 12);   // Iraq 1991, unclamped 0.462
+    expect(doctrineBreak(0.083, mv(0.1, 0.04, 0.3), 0)).toBeCloseTo(0.04, 12);  // Coalition 1991, unclamped 0.033
+    expect(doctrineBreak(0.083, mv(0.1, 0.04, 0.3), 0.5)).toBeCloseTo(0.083, 12);
   });
   it('withdrawal comes at WITHDRAW_SHARE_OF_BREAKPOINT of the break, also for a high threshold', () => {
     const d = withRange();
@@ -59,7 +66,7 @@ describe('battle breakpoint draw', () => {
   it('the per-seed draw stays in range, repeats per seed and varies across seeds', () => {
     const d = withRange();
     const draws = [1, 2, 3, 4, 5, 6].map((s) => bps(createSim(d, basicScenario(s)))[0]);
-    for (const b of draws) { expect(b).toBeGreaterThanOrEqual(0.5 - 1e-12); expect(b).toBeLessThanOrEqual(2 + 1e-12); }
+    for (const b of draws) { expect(b).toBeGreaterThanOrEqual(0.1 - 1e-12); expect(b).toBeLessThanOrEqual(0.4 + 1e-12); }
     expect(bps(createSim(d, basicScenario(4)))[0]).toBe(draws[3]);
     expect(new Set(draws).size).toBeGreaterThan(1);
   });

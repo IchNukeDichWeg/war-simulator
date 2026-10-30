@@ -815,4 +815,31 @@ days against 4 historical, so x5.0 and outside the duration window. The miss is 
 
 Winners at the line stay 18 of 24 in all three columns, and the other 18 cases do not move. The clamp is the
 fix the range argument supports. It was chosen after seeing these results, so it would need its own
-toggle and a fresh campaign, not pooled with this one. Neither change has been applied.
+toggle and a fresh campaign, not pooled with this one. The clamp is applied below; the time limit is not.
+
+## Era clamp (`ERA_CLAMPED_BREAKPOINT`)
+
+Instrument: the 20-seed backtest, clamp off at 6928165 against clamp on, then 24 preset runs. The 200-seed
+figures above predate the clamp and do not describe this code. The robustness campaign has not been rerun,
+so the gate reading is still the one above: **not met**.
+
+The doctrine-scaled break is held inside the era low..high before the cohesion shift.
+
+| Backtest | Winner | Loss ratio | Duration |
+| --- | --- | --- | --- |
+| Random draw, off | 18 | 13 | 22 |
+| Random draw, on | **19** | **15** | 22 |
+| Quantile 0, off and on | 17 | 15 | 20 |
+| Quantile 1, off | 16 | 13 | 24 |
+| Quantile 1, on | 17 | 15 | 24 |
+
+- **Gained at base:** Adrianople 10% -> 65%, with its ratio x0.26 -> x0.49, and the Gulf War's ratio x3.00 ->
+  x2.65. Gulf War winner 90% -> 100%, France 70% -> 80%, Mohi 15% -> 30%, still failing.
+- **Adrianople is not settled.** The 40-seed counterfactual had it at 19 of 40, under the line, so 65% over
+  20 seeds may not hold at 200.
+- **At quantile 1** the Gulf War and Adrianople pass, Hastings still fails, and **Zama falls under the line
+  at 20 seeds**. Over 40 seeds it is 29 of 40, so it may be noise. The clamp has a cost here: at quantile 1
+  Rome (0.25) and Carthage (0.14 x 1.79) both pin at 0.25, so the doctrine edge disappears.
+- **Presets:** 24 runs, no winner changes, invariants clean.
+- **Inherent limit:** a clamp cannot widen a range. A doctrine at the era high gets no margin above it at any
+  quantile, so doctrines at the bound behave alike near the top of the draw.

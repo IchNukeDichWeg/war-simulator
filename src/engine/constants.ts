@@ -396,6 +396,17 @@ export const WITHDRAW_SHARE_OF_BREAKPOINT = 0.9;
  *  18/13/20, 16/10/24 (was 20/18/19, 21/18/21, 20/16/21). Presets (24 runs, invariants clean):
  *  rome-vs-france-equalized seed 1 and macedon-vs-persia seed 1 change winner. */
 export const SYMMETRIC_DOCTRINE_BREAKPOINT = true;
+/** The doctrine-scaled break stays inside its era's breakpoint range (low..high), before the
+ *  cohesion shift. Without it a doctrine already high in its era is scaled past the sourced high:
+ *  Iraq 1991, 0.154 x 0.30 / 0.10 = 0.462 at quantile 1, against an era high of 0.30, which ran the
+ *  Gulf War out of its time limit. Chosen after seeing that result (VALIDATION.md, Diagnosis: the
+ *  high era breakpoint), so its campaign is not pooled with earlier ones.
+ *  Measured (20 seeds, clean 6928165): 18/13/22 -> 19/15/22. Gulf War 90% -> 100%, Adrianople 10% ->
+ *  65%, France 70% -> 80%, Mohi 15% -> 30%. Fixed quantile low 17/15/20 unchanged; high 16/13/24 ->
+ *  17/15/24, Gulf War and Adrianople pass, Zama falls under the line (72.5% at 40 seeds): at u = 1 a
+ *  doctrine at the era high and one at the mid both pin at the high, so the doctrine edge is gone.
+ *  Presets (24 runs, invariants clean): no winner changes. */
+export const ERA_CLAMPED_BREAKPOINT = true;
 /** The AI's required force ratios are modelRules.aiForceRatio.{attrition, maneuver} (FM 5-0, FM
  *  100-2-1, Mearsheimer 1989; grade B and C), drawn per seed at one quantile u from a stream of
  *  their own (seed ^ 0x27d4eb2f), independent of the breakpoint draw; SimOptions.ratioQuantile

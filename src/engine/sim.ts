@@ -8,7 +8,7 @@ import type { Scenario } from '../types/scenario';
 import { buildSetup, type Setup, type SimOptions, WEATHERS } from './setup';
 import { allocFormations, cloneState, newAccum, type SimState, NLC } from './state';
 import { Rng } from './rng';
-import { clamp, factor } from './mech';
+import { clamp, doctrineBreak, factor } from './mech';
 import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './ctx';
 import { spawnFormation } from './formations';
 import { NR } from './roles';
@@ -96,7 +96,7 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
         // the break, withdrawal comes just before it; OFF: the era draw is the break and the
         // doctrine only moves the withdrawal, capped below the break
         if (SYMMETRIC_DOCTRINE_BREAKPOINT) {
-          const breakpoint = clamp(mr.retreatThreshold * factor(mr.bpMV, bpU) / Math.max(1e-9, mr.bpMV.mid) + mr.bpShift, 0.02, 0.98);
+          const breakpoint = clamp(doctrineBreak(mr.retreatThreshold, mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98);
           return { breakpoint, retreat: clamp(WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint, 0.01, 0.95) };
         }
         const breakpoint = clamp(factor(mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98);

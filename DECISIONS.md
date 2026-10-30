@@ -92,3 +92,7 @@ Every open choice made while building, with a one-line reason. Newest at the bot
   constant in the data and a war-mode path no test reaches. The measured code stays in history at
   `19cd622`. Reaching the gate needs Carrhae's horse-archer standoff and a sourced constant for
   Blenheim and France, not this rule.
+- **The doctrine-scaled break is clamped to its era range.** `ERA_CLAMPED_BREAKPOINT` keeps the sourced
+  low..high as a hard limit, because Iraq's 0.462 at the high draw was above any value the data
+  supports. The time limit stays as it is: raising it would hide slow runs rather than correct a
+  value. The clamp was chosen after seeing the failure it fixes, so it gets a new campaign.

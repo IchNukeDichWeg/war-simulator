@@ -6,6 +6,7 @@ import type { ByTech, EraRule, Mechanics, MV, RuleEra } from '../types/mechanics
 import { ERA_SPANS, type EraId } from '../types/schema';
 import { TERRAIN_CLASSES } from './terrainClasses';
 import { ROLES } from './roles';
+import { BREAKPOINT_FROM_MODEL_RULES, ERA_CLAMPED_BREAKPOINT } from './constants';
 
 export function clamp(x: number, lo: number, hi: number): number {
   return x < lo ? lo : x > hi ? hi : x;
@@ -29,6 +30,14 @@ export function byTech(arr: ByTech, level: number): number {
 export function factor(m: MV, rating: number): number {
   const r = clamp(rating, 0, 1);
   return r <= 0.5 ? m.low + (m.mid - m.low) * (r / 0.5) : m.mid + (m.high - m.mid) * ((r - 0.5) / 0.5);
+}
+
+/** A doctrine's break at era quantile u: its threshold scaled by bp_era(u) / bp_era(mid), held
+ *  inside the era range (ERA_CLAMPED_BREAKPOINT). The tech-keyed table has low = mid = high, so
+ *  the clamp only applies to the sourced era ranges. */
+export function doctrineBreak(threshold: number, era: MV, u: number): number {
+  const scaled = threshold * factor(era, u) / Math.max(1e-9, era.mid);
+  return ERA_CLAMPED_BREAKPOINT && BREAKPOINT_FROM_MODEL_RULES ? clamp(scaled, era.low, era.high) : scaled;
 }
 
 /** Matrix lookup at integer levels (rounded and clamped to the table). */

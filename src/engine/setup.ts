@@ -8,7 +8,7 @@ import type { DoctrineProfile, Snapshot, TechCategory, UnitRole } from '../types
 import type { ClimateZone, Mechanics, MobilityClass, MV, NavalPropulsion, Season, Weather } from '../types/mechanics';
 import { GRID_H, GRID_RES, GRID_W, FLAG_COAST, T, cellIndex, cellCenter } from './terrainClasses';
 import { buildGrid, cellAt, globalTerrain, haversineKm, inBbox, nearestLand, rasterizeMultiPolygon, type GlobalTerrain, type Grid } from './grid';
-import { byTech, clamp, factor, rule, ruleMV, techFromYear, validateMechanics, yearFromTech } from './mech';
+import { byTech, clamp, doctrineBreak, factor, rule, ruleMV, techFromYear, validateMechanics, yearFromTech } from './mech';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI, ROLES } from './roles';
 import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
@@ -541,7 +541,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     // in good order at WITHDRAW_SHARE_OF_BREAKPOINT of it. OFF: the era breakpoint shifted by
     // cohesion, withdrawal at min(retreatThreshold, that share of the breakpoint).
     mr.bpShift = m.combat.cohesionBreakpointShift.mid * (mr.cohesion - 0.5);
-    mr.breakpoint = clamp((SYMMETRIC_DOCTRINE_BREAKPOINT ? w.retreatThreshold : bp) + mr.bpShift, 0.02, 0.98);
+    mr.breakpoint = clamp((SYMMETRIC_DOCTRINE_BREAKPOINT ? doctrineBreak(w.retreatThreshold, bpMV, 0.5) : bp) + mr.bpShift, 0.02, 0.98);
     mr.retreat = clamp(SYMMETRIC_DOCTRINE_BREAKPOINT ? WITHDRAW_SHARE_OF_BREAKPOINT * mr.breakpoint : Math.min(w.retreatThreshold, WITHDRAW_SHARE_OF_BREAKPOINT * mr.breakpoint), 0.01, 0.95);
     members.push(mr);
     sideMembers[side].push(idx);
