@@ -206,3 +206,103 @@ States without a researched snapshot get one from `data-pipeline/generate-modern
 tech are the median of the researched snapshots in the same region (grade D, method
 `derived:regional-analogy` or `derived:force-from-spending`). Every such value names the
 analogues in its note.
+
+## Phase 3 derivation inputs
+
+`data/reference/phase3-inputs.json` holds the researched inputs of the Phase 3 builder, which
+derives a low-confidence snapshot for every remaining historical-basemaps polity from its polygon
+area, centroid region and year. Keys are the basemap file years from 3000 BCE to 1994 (`bc1` =
+-1); between keys interpolate linearly (log-linearly for density). Region = the project
+`RegionId` of the centroid; `meta.regionCountries` lists the modern countries (ISO3) summed into
+each region: `data/nations.json` region where the nation exists, else the World Bank mapping of
+`data-pipeline/generate-modern.ts`, plus Greenland in `north_america`. Sources, all fetched
+2026-10-30:
+
+- Population: OWID long-run population, https://ourworldindata.org/grapher/population
+  (HYDE 3.3 for 10,000 BCE-1799, Gapminder v7 1800-1949, UN WPP 2024 from 1950). The HYDE
+  portal at Utrecht is behind a bot check and was not used directly.
+- Land area: https://ourworldindata.org/grapher/land-area-km (FAO via World Bank), fallback
+  `data/raw/worldbank.json`. Countries with neither (Taiwan, Western Sahara, Kosovo, small
+  territories) are left out of both numerator and denominator.
+- GDP per capita: Maddison Project Database 2023 via
+  https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database (2011 int$).
+  Before 1820 only 35 country series exist, most from 1500 on; before 1000 CE only Italy, Greece,
+  Spain, Portugal, France, Belgium, Switzerland, Turkey, Egypt, Iraq, Iran, Israel, Jordan,
+  Tunisia (all at 1 CE) and Japan (730).
+- Urban share: HYDE 3.5 via https://ourworldindata.org/grapher/urbanization-last-500-years.
+- Technology adoption: Comin, Easterly and Gong, "Was the Wealth of Nations Determined in
+  1000 B.C.?", NBER w12657, https://www.nber.org/system/files/working_papers/w12657/w12657.pdf
+  (Table 4, sec. 2) and its data appendix https://m.nber.org/data-appendix/w12657/appen.pdf
+  (published as doi:10.1257/mac.2.3.65). The country-level data file needs an openICPSR login
+  and was not used.
+
+Methods:
+
+- `derived:hyde-region-density` - persons/km2 = sum of the region's country populations at the
+  year / sum of their modern land areas. Basemap years between HYDE time steps (1000-year steps
+  BCE, 100-year steps to 1700, 10-year to 1800) are log-linear between the bracketing steps.
+  Total land includes deserts, ice and unclaimed land, so this is a LOWER BOUND on the density
+  of state territory. HYDE also gives cropland and agricultural area, but density over
+  agricultural land overstates state density 10-20x for large polities (China 1 CE: 6 /km2 of
+  land, 96 /km2 of agricultural land, Han Empire snapshot 10 /km2), so it is not used.
+  Band +/-50% (BCE), 40% (1-1499), 30% (1500-1799), 15% (1800-1949), 5% (1950+): judgement.
+- `derived:state-density-factor` - corrects the regional lower bound to state territory, fitted
+  on the researched snapshots (not `auto-base`): ln(snapshot population / area / regional
+  density at the snapshot year) = intercept + slope x ln(areaKm2) + regionOffset. Pre-1991, 133
+  snapshots: intercept 6.73, slope -0.414 +/- 0.041, residual sd 0.80 (1.07 without the area
+  term), so a 10,000 km2 polity is ~18x and a 1M km2 empire ~2.7x its regional density.
+  Region offset = median residual where the region has 5+ snapshots (south_asia -1.25,
+  europe +0.17, mena +0.22, east_asia -0.08, north_america +0.32), else 0. A separate fit on the
+  81 researched 1991+ snapshots serves the 1994 map. Population mid = A x regional density x
+  exp(intercept.mid + slope.mid x ln A + offset.mid); low/high use intercept.low/high, which
+  carry the pooled residual quartiles (offset and slope stay at mid). Clamp A to the fitted
+  range (2,550 to 22.4M km2).
+  Grade C at best: the targets are themselves B/C estimates.
+- `derived:maddison-region-weighted` - population-weighted mean (OWID population) of the
+  Maddison 2023 country values in the region. A country counts at a year when it has a value
+  there, or a linear interpolation between observations at most 1,000 years apart (60 from
+  1820), or an observation within 100 years (pre-1500), 50 years (1500-1819) or 5 years (1820+).
+  Settler-enclave series are dropped where they misrepresent the territory's population (USA
+  before 1800, South Africa before 1820). Coverage = covered population / regional population,
+  stated in each note. Grade: from 1820 B at >= 70% coverage, else C; before 1820 C at >= 30%,
+  else D; nothing below 10% is used. From 1820 a region under 10% takes the Maddison regional
+  average (Sub Saharan Africa, Latin America, MENA, South and South East Asia, East Asia,
+  Western offshoots), grade C. Central Asia 1860-1972: the five ex-Soviet states take the USSR
+  series x 0.96 (their 1973 population-weighted ratio to the USSR), grade D, band 0.5x/1.1x.
+  Low/high = population-weighted quartiles of the country values, at least +/-10%; +/-25% with
+  fewer than 3 countries.
+- `derived:maddison-hold` - a region and year without 10% coverage takes the value of the
+  nearest basemap year that has country coverage, preferring years before 1820 for years before
+  1820 (Malthusian-stagnation assumption); a region with no country coverage before 1820 holds the
+  Maddison regional 1820 benchmark (Sub-Saharan Africa: 1,188, which equals the Cape Colony
+  value and likely overstates the region). Central Asia before 1860 instead takes the lowest of
+  mena, south_asia and east_asia at that year (`derived:regional-analogy`). Grade D, band +/-30%.
+- `derived:hyde-region-urban` - HYDE 3.5 urban population share, population-weighted over the
+  region. HYDE's urban definition is its own model, not the Bairoch 5,000+ convention of the
+  snapshots, so this is a regional cross-check; `eraPeerRatios.urbanization` is the default.
+  Grade C (B from 1950), band -40%/+50%.
+- `derived:era-peer-median` - median of a ratio over the researched snapshots of one era
+  (`auto-base` excluded), low/high = first and third quartile; the note gives the snapshot count.
+  Used for activePersonnel / population, mobilizable / population and urbanization, per era and
+  per era x region where the cell has 3+ snapshots. Grade C with 10+ snapshots, else D.
+- `derived:tech-anchor-default` - default tech level per field: the Tech level anchors above as
+  a piecewise-linear curve (level 0.5 at 3000 BCE, 1 at 2500 BCE, 2 at 1400 BCE, 3 at 300 BCE,
+  4 at 1250, 5 at 1600, 6 at 1805, 7 at 1905, 8 at 1943, 9 at 1985, 10 at 2026). Air is 0
+  before 1911 and cyber 0 before 1990 (`derived:absent-in-era`); cyber from 1990 = 9 + (year -
+  1990) / 36. This is the frontier, so it overstates most polities. Grade D, band +/-0.3.
+- `derived:tech-regional-cap` - regional lag as a cap: tech = min(default, cap) for the regions,
+  years and polity types listed in `tech.regionalCaps`. Caps come from Comin, Easterly and Gong
+  (above): the Americas had no bronze or iron weapons, wheel, draft animals, ocean-going armed
+  ships or paper before contact (cap weapons 1, armor 1, ships 0.5, logistics 0.5,
+  communications 1 to 1492, and for indigenous polities to 1900 at grade D); Oceania has the
+  lowest adoption of any continent in all three periods (Table 4: 0.20 / 0.17 / 0.12 against
+  Europe 0.66 / 0.88 / 0.87; caps 0.5-1 to 1783); Sub-Saharan Africa had iron but no steel or
+  firearms in 1500, no wheel and no ocean ships (cap weapons 3.5, armor 3, ships 2, logistics 1
+  from 500 to 1500; ships and logistics for indigenous polities to 1880 at grade D); China used
+  no iron before the 6th century BCE (east_asia weapons cap 2.5 to 600 BCE). A cap the source
+  states directly is grade C; one inferred from it is grade D. No other region gets a lag.
+
+Doctrine defaults per region x era (`doctrine` in the JSON) pick an `archetype-*` profile, with
+a one-line reason each, mostly following the researched snapshots of that cell. For the Americas
+and Oceania before 1800 the default is for indigenous polities; colonial polygons should take
+their metropole's profile.
