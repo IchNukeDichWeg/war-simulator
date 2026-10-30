@@ -586,3 +586,13 @@ on sourced data or a stated mechanism, and the costs are recorded above. What wo
 remaining cases is listed per case: breaking contact without counting it as defeat (Carrhae, Mohi),
 pre-emptive air strikes and withdrawal orders (Six-Day), seam crossings (Yom Kippur), and sourcing
 the grade-D constants that still decide the Gulf War and Blenheim.
+
+### After the verdict: daylight from latitude (`46a3774`)
+
+The grade-D winter factor that flipped the Gulf War in QA round 5 was a Berlin-latitude daylight rule.
+It is retired: march hours are now min(1, sunrise-to-sunset hours at the theatre latitude on the sim
+date / `movement.marchHoursPerDay` 6.0 h from FM 101-10), with day length from the Spencer 1971 / NOAA
+formula. Measured at 20 seeds against `f991a6e`: 18/13/21 unchanged; Gulf War 85% -> 90%, 9 -> 8 days;
+France 1940 75% -> 70%, ratio x3.88 -> x5.10. Every backtest theatre has at least 7.7 h of daylight, so
+the factor is 1 throughout. That removes one of the two single-constant flips QA found, so the robust
+count is probably 17 (inferred, not re-run by QA); the gate verdict stands.
