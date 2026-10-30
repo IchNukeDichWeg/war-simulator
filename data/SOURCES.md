@@ -212,7 +212,11 @@ States without a researched snapshot get one from `data-pipeline/generate-modern
 `auto-base`). Its hard numbers come from the World Bank (grade A/B); its force mix, ratings and
 tech are the median of the researched snapshots in the same region (grade D, method
 `derived:regional-analogy` or `derived:force-from-spending`). Every such value names the
-analogues in its note.
+analogues in its note. `foodSurplus` is the exception: 1 - a / s with a = World Bank
+SL.AGR.EMPL.ZS and s = 1 (no self-sufficiency figure is fetched), `derived:snapshot-composite`
+grade C like the researched 2026 files, with their low side (a x 1.5 below 5% farm employment,
+x 1.3 to 25%, x 1.2 above; floored at 0.01) and high = mid. The regional median is used only
+where the World Bank has no farm employment figure (mostly microstates).
 
 ## Phase 3 derivation inputs
 

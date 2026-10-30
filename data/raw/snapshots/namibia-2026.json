@@ -560,12 +560,12 @@
    "note": "World Bank NV.IND.TOTL.ZS, asOf 2025"
   },
   "foodSurplus": {
-   "low": 0.034999999999999996,
-   "mid": 0.05,
-   "high": 0.065,
-   "grade": "D",
-   "source": "derived:regional-analogy",
-   "note": "median of researched subsaharan_africa analogues (Republic of Angola, Democratic Republic of the Congo, State of Eritrea, Federal Democratic Republic of Ethiopia, Republic of Kenya, Federal Republic of Nigeria, Republic of South Africa, Republic of the Sudan, United Republic of Tanzania, Republic of Uganda); not researched for this state"
+   "low": 0.71,
+   "mid": 0.78,
+   "high": 0.78,
+   "grade": "C",
+   "source": "derived:snapshot-composite",
+   "note": "Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/NAM/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 22.34% (2025). s = 1 assumed: no self-sufficiency figure is fetched for auto-base states, which overstates the value for a net food importer. Mid 1 - 0.223/1 = 0.78. Low: a x 1.3 (farm households larger than the employed count) = 0.71. High: kept at mid (no s range)."
   },
   "annualCohort": {
    "low": 27602.164137616986,

@@ -1,9 +1,10 @@
 // Generates a base 2026 snapshot for every modern state that has no researched
 // snapshot yet. Hard data (population, urbanization, GDP, personnel, military
-// spending, industry, rail, roads, land area, age structure) comes from the
-// World Bank (grade A/B). Everything a database cannot give (force mix, ratings,
-// tech) is copied from the median of RESEARCHED snapshots of the same region
-// (derived:regional-analogy / derived:force-from-spending, grade D) and says so.
+// spending, industry, rail, roads, land area, age structure, farm employment)
+// comes from the World Bank (grade A/B; foodSurplus C, see foodSurplus()).
+// Everything a database cannot give (force mix, ratings, tech) is copied from
+// the median of RESEARCHED snapshots of the same region (derived:regional-analogy
+// / derived:force-from-spending, grade D) and says so.
 // Generated files carry the tag "auto-base" and are regenerated on every run;
 // a researched file (no "auto-base" tag) is never touched.
 // Usage: tsx data-pipeline/generate-modern.ts   (after fetch-worldbank.ts)
@@ -203,7 +204,7 @@ async function main() {
       tech,
       economy: {
         gdpPerCapita: gdppc, gdp, milSpendShare: milShare, industrialShare: ind,
-        foodSurplus: rating((s) => s.economy.foodSurplus.mid), annualCohort: cohort, production: {},
+        foodSurplus: foodSurplus(st.iso3, v('agriEmplPct')) ?? rating((s) => s.economy.foodSurplus.mid), annualCohort: cohort, production: {},
       },
       logistics: {
         roadKm: road, railKm: rail, majorPorts: portsE, merchantTonnage: merchant,
@@ -232,6 +233,26 @@ function hasCoast(mp: number[][][][], grid: Uint8Array): boolean {
   }
   return false;
 }
+/** foodSurplus = 1 - a / s by its definition (data/SOURCES.md), a = agricultural employment share,
+ *  in the format of the researched 2026 files. No calorie self-sufficiency is fetched here, so
+ *  s = 1, which overstates a heavy importer and is why high stays at mid. The regional median it
+ *  replaces ignored a: it put Albania (a about 31%) at the Europe median of 0.94. */
+function foodSurplus(iso3: string, a: { value: number; year: number } | undefined): Est | null {
+  if (!a) return null;
+  const share = a.value / 100;
+  // Low-side multiplier for farm households being larger than the employed count, in the bands
+  // the researched 2026 files use: x1.5 below 5% farm employment, x1.3 to 25%, x1.2 above.
+  const k = a.value < 5 ? 1.5 : a.value < 25 ? 1.3 : 1.2;
+  const r2 = (x: number) => Math.round(x * 100) / 100;
+  const mid = r2(1 - share);
+  // Never 0 while agriculture exists (data/SOURCES.md), so the low side is floored at 0.01.
+  const raw = r2(1 - share * k), low = Math.max(0.01, raw);
+  return {
+    low, mid, high: mid, grade: 'C', source: 'derived:snapshot-composite',
+    note: `Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/${iso3}/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = ${a.value.toFixed(2)}% (${a.year}). s = 1 assumed: no self-sufficiency figure is fetched for auto-base states, which overstates the value for a net food importer. Mid 1 - ${share.toFixed(3)}/1 = ${mid.toFixed(2)}. Low: a x ${k} (farm households larger than the employed count) = ${low.toFixed(2)}${raw < 0.01 ? ' (floored at 0.01: never 0 while agriculture exists)' : ''}. High: kept at mid (no s range).`,
+  };
+}
+
 /** Fractions cannot exceed 1 however wide the range is. */
 function clampFraction(e: Est) { e.high = Math.min(1, e.high); e.mid = Math.min(e.mid, e.high); e.low = Math.min(e.low, e.mid); }
 const round4 = (x: number) => Math.round(x * 1e4) / 1e4;

@@ -492,12 +492,12 @@
    "note": "World Bank NV.IND.TOTL.ZS, asOf 2025"
   },
   "foodSurplus": {
-   "low": 0.12249999999999998,
-   "mid": 0.175,
-   "high": 0.22749999999999998,
-   "grade": "D",
-   "source": "derived:regional-analogy",
-   "note": "median of researched europe analogues (Republic of Armenia, Republic of Azerbaijan, Republic of Belarus, Kingdom of Belgium, Czech Republic, Republic of Finland, French Republic, Georgia, Federal Republic of Germany, Hellenic Republic, Hungary, Italian Republic, Kingdom of the Netherlands, Kingdom of Norway, Republic of Poland, Portuguese Republic, Romania, Russian Federation, Republic of Serbia, Kingdom of Spain, Kingdom of Sweden, Swiss Confederation, Republic of Turkiye, Ukraine, United Kingdom of Great Britain and Northern Ireland, Vatican City State); not researched for this state"
+   "low": 0.97,
+   "mid": 0.98,
+   "high": 0.98,
+   "grade": "C",
+   "source": "derived:snapshot-composite",
+   "note": "Formula: surplus = 1 - a/s, a = farm population share of consumers (proxy: agricultural employment share, World Bank SL.AGR.EMPL.ZS, ILO modelled, https://api.worldbank.org/v2/country/SVK/indicator/SL.AGR.EMPL.ZS), s = domestic production / consumption (calorie self-sufficiency). a = 2.16% (2025). s = 1 assumed: no self-sufficiency figure is fetched for auto-base states, which overstates the value for a net food importer. Mid 1 - 0.022/1 = 0.98. Low: a x 1.5 (farm households larger than the employed count) = 0.97. High: kept at mid (no s range)."
   },
   "annualCohort": {
    "low": 27325.27417593351,

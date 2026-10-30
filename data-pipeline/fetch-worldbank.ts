@@ -22,6 +22,7 @@ export const INDICATORS: Record<string, string> = {
   femalePop: 'SP.POP.TOTL.FE.IN',
   cerealYield: 'AG.YLD.CREL.KG',
   arablePct: 'AG.LND.ARBL.ZS',
+  agriEmplPct: 'SL.AGR.EMPL.ZS',           // ILO modelled; the a in foodSurplus = 1 - a / s
 };
 
 export interface WbCountry {
