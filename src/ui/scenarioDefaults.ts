@@ -53,11 +53,37 @@ function checkOverrides(ovs: Override[]): Override[] {
   return ovs;
 }
 
+/** Longest text a loaded scenario may carry, per field. The presets reach 60 (name),
+ *  153 (description) and 17 (side name) characters and snapshot ids 44, so these leave
+ *  ample room while a link can no longer put megabytes into a rendered label (red team C5). */
+export const MAX_TEXT = { name: 200, description: 2000, sideName: 100, color: 32, id: 100 } as const;
+
+function checkLength(v: unknown, max: number, field: string): void {
+  if (typeof v === 'string' && v.length > max) throw new Error(`${field} is ${v.length.toLocaleString('en-US')} characters long; at most ${max} are allowed`);
+}
+
+/** Refuse over-long strings before anything renders or copies them. */
+function checkStrings(o: Partial<Scenario>): void {
+  checkLength(o.id, MAX_TEXT.id, 'id');
+  checkLength(o.name, MAX_TEXT.name, 'name');
+  checkLength(o.description, MAX_TEXT.description, 'description');
+  checkLength(o.theater?.name, MAX_TEXT.sideName, 'theater.name');
+  o.sides?.forEach((s, i) => {
+    if (!s || typeof s !== 'object') return;
+    checkLength(s.name, MAX_TEXT.sideName, `sides[${i}].name`);
+    checkLength(s.color, MAX_TEXT.color, `sides[${i}].color`);
+    if (Array.isArray(s.members)) s.members.forEach((m, k) => checkLength(m, MAX_TEXT.id, `sides[${i}].members[${k}]`));
+  });
+  if (Array.isArray(o.excluded)) o.excluded.forEach((m, k) => checkLength(m, MAX_TEXT.id, `excluded[${k}]`));
+  if (Array.isArray(o.overrides)) o.overrides.forEach((v, k) => { checkLength(v?.snapshotId, MAX_TEXT.id, `overrides[${k}].snapshotId`); checkLength(v?.path, MAX_TEXT.id, `overrides[${k}].path`); });
+}
+
 /** Fill gaps in an uploaded / decoded scenario with defaults and reject the unusable. */
 export function normalizeScenario(x: unknown): Scenario {
   if (!x || typeof x !== 'object') throw new Error('not a scenario object');
   const o = x as Partial<Scenario>;
   if (!Array.isArray(o.sides) || o.sides.length !== 2) throw new Error('scenario needs exactly two sides');
+  checkStrings(o);
   const d = defaultScenario();
   const sides = o.sides.map((s, i) => ({
     ...d.sides[i],

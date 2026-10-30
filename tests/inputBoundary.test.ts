@@ -10,6 +10,8 @@ import { createSim } from '../src/engine/sim';
 import { MAX_RESEARCHED_FORCE_COUNT, overridePathProblem, overrideValueProblem } from '../src/engine/overridePath';
 import type { Snapshot, UnitRole } from '../src/types/schema';
 import { normalizeScenario } from '../src/ui/scenarioDefaults';
+import { decodeScenario, encodeScenario } from '../src/ui/scenarioIO';
+import type { Scenario } from '../src/types/scenario';
 import { basicScenario, fixtureData } from './fixtures/snapshots.fixture';
 import { data } from './engine/helpers';
 
@@ -123,5 +125,35 @@ describe('C2: formations per member stay capped after day 0', () => {
     }
     // before the cap F.n grew by hundreds a day here
     expect(sim.ctx.st.F.n - seeds).toBeLessThan(200);
+  });
+});
+
+describe('C5: share links unpack to a bounded size', () => {
+  const presets = JSON.parse(readFileSync('public/data/presets.json', 'utf8')) as Scenario[];
+
+  it('every preset round-trips through a share link', async () => {
+    for (const p of presets) expect(await decodeScenario(await encodeScenario(p))).toEqual(normalizeScenario(structuredClone(p)));
+  });
+
+  it('a deflate bomb is refused with a clear message', async () => {
+    const bomb = { ...presets[0], sides: [{ ...presets[0].sides[0], name: 'A'.repeat(8 << 20) }, presets[0].sides[1]] };
+    const code = await encodeScenario(bomb as Scenario);
+    expect(code.length).toBeLessThan(12_000);   // an 8 MB scenario in a short link
+    await expect(decodeScenario(code)).rejects.toThrow(/larger than 16 KB once unpacked/);
+  });
+
+  it('a garbage code gives a message, not an empty error', async () => {
+    await expect(decodeScenario('AAAA')).rejects.toThrow(/damaged/);
+  });
+
+  it.each([
+    ['name', (s: any) => { s.name = 'x'.repeat(201); }],
+    ['description', (s: any) => { s.description = 'x'.repeat(2001); }],
+    ['sides[1].name', (s: any) => { s.sides[1].name = 'x'.repeat(101); }],
+    ['sides[0].members[0]', (s: any) => { s.sides[0].members[0] = 'x'.repeat(101); }],
+  ])('an over-long %s is refused, naming the field', (field, mut) => {
+    const s = structuredClone(presets[0]);
+    mut(s);
+    expect(() => normalizeScenario(s)).toThrow(new RegExp(field.replace(/[[\]]/g, '\\$&')));
   });
 });

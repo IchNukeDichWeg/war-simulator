@@ -20,10 +20,59 @@ export async function encodeScenario(s: Scenario): Promise<string> {
   return b64urlEncode(new Uint8Array(await new Response(stream).arrayBuffer()));
 }
 
+/** Most bytes a share link may unpack to. The largest preset is 802 bytes of JSON
+ *  (allies-vs-axis-minus-two, measured on public/data/presets.json); 20x that, rounded up
+ *  to 16 KiB, leaves room for about 170 Editor overrides. A 44 KB link that unpacked to a
+ *  32 MB side name froze the tab (red team C5), so the stream stops at this size. */
+export const MAX_SCENARIO_BYTES = 16 * 1024;
+/** Most characters of a #s= code: base64 of MAX_SCENARIO_BYTES even if deflate saved nothing. */
+const MAX_CODE_CHARS = Math.ceil((MAX_SCENARIO_BYTES * 4) / 3) + 64;
+/** Most bytes of a loaded file: the same preset saved by downloadScenario (pretty-printed)
+ *  is 1,130 bytes; 20x that, rounded up to 24 KiB. */
+export const MAX_FILE_BYTES = 24 * 1024;
+/** Input fed to the inflater per pull. Deflate expands at most about 1032:1, so one slice
+ *  yields about 1 MB at worst before the byte count is checked again. */
+const SLICE = 1024;
+
+/** Inflate `bytes`, giving up as soon as the output passes `max` bytes. */
+async function inflateCapped(bytes: Uint8Array, max: number): Promise<string> {
+  let off = 0;
+  const src = new ReadableStream<BufferSource>({
+    pull(c) {
+      if (off >= bytes.length) c.close();
+      else c.enqueue(bytes.slice(off, (off += SLICE)));
+    },
+  });
+  const reader = src.pipeThrough(new DecompressionStream('deflate-raw')).getReader();
+  const parts: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    let r: ReadableStreamReadResult<Uint8Array>;
+    // the browser's inflate error has an empty message; say what went wrong instead
+    try { r = await reader.read(); } catch { throw new Error('the link is damaged (its data could not be unpacked)'); }
+    if (r.done) break;
+    total += r.value.byteLength;
+    if (total > max) {
+      void reader.cancel().catch(() => {});
+      throw new Error(`the scenario in the link is larger than ${max / 1024} KB once unpacked, so it was not loaded`);
+    }
+    parts.push(r.value);
+  }
+  const out = new Uint8Array(total);
+  let at = 0;
+  for (const p of parts) { out.set(p, at); at += p.byteLength; }
+  return new TextDecoder().decode(out);
+}
+
+function parseJson(text: string): unknown {
+  try { return JSON.parse(text); } catch (e) { throw new Error(`not a scenario (invalid JSON: ${(e as Error).message})`); }
+}
+
 export async function decodeScenario(code: string): Promise<Scenario> {
-  const bytes = b64urlDecode(code);
-  const stream = new Blob([bytes as BlobPart]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
-  return normalizeScenario(JSON.parse(await new Response(stream).text()));
+  if (code.length > MAX_CODE_CHARS) throw new Error(`the link is too long (${code.length.toLocaleString('en-US')} characters)`);
+  let bytes: Uint8Array;
+  try { bytes = b64urlDecode(code); } catch { throw new Error('the link is damaged (not valid base64)'); }
+  return normalizeScenario(parseJson(await inflateCapped(bytes, MAX_SCENARIO_BYTES)));
 }
 
 export async function shareUrl(s: Scenario): Promise<string> {
@@ -54,7 +103,8 @@ export function uploadScenario(): Promise<Scenario> {
     inp.onchange = async () => {
       const f = inp.files?.[0];
       if (!f) return reject(new Error('no file'));
-      try { resolve(normalizeScenario(JSON.parse(await f.text()))); } catch (e) { reject(e); }
+      if (f.size > MAX_FILE_BYTES) return reject(new Error(`the file is ${Math.ceil(f.size / 1024).toLocaleString('en-US')} KB; a scenario file is at most ${MAX_FILE_BYTES / 1024} KB`));
+      try { resolve(normalizeScenario(parseJson(await f.text()))); } catch (e) { reject(e); }
     };
     inp.click();
   });
