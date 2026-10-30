@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import type { Scenario, SideSpec, TechMode } from '../../types/scenario';
 import type { Snapshot } from '../../types/schema';
-import { yearLabel, type AppData } from '../data';
+import { yearLabel, yearOf, type AppData } from '../data';
+import { DerivedBadge } from '../Grade';
+import { ensureSnapshots } from '../lazy';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
 import { THEATERS, type BBox } from '../scenarioDefaults';
 import { setScenario, store, toast, useStore } from '../store';
@@ -28,10 +30,11 @@ function SnapshotPicker({ data, onPick, placeholder }: { data: AppData; onPick: 
       <input list={listId} value={v} placeholder={placeholder} onChange={(e) => {
         const val = e.target.value;
         const m = val.match(/\[([^\]]+)\]$/);
-        if (m && data.snapById.has(m[1])) { onPick(m[1]); setV(''); } else setV(val);
+        if (m && (data.snapById.has(m[1]) || data.phase3ById.has(m[1]))) { onPick(m[1]); setV(''); } else setV(val);
       }} />
       <datalist id={listId}>
-        {data.snapshots.map((s) => <option key={s.id} value={`${snapLabel(s)} [${s.id}]`} />)}
+        {data.snapshots.filter((s) => !data.phase3ById.has(s.id)).map((s) => <option key={s.id} value={`${snapLabel(s)} [${s.id}]`} />)}
+        {data.phase3.map((e) => <option key={e.id} value={`${e.name} (${yearLabel(e.year)}), Phase 3 derived, confidence ${e.confidence} [${e.id}]`} />)}
       </datalist>
     </>
   );
@@ -42,10 +45,12 @@ function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) 
   const mapMode = useStore((s) => s.mapMode);
   const [year, setYear] = useState('');
   const placing = mapMode.kind === 'start' && mapMode.side === i;
-  const addIds = (ids: string[]) => updSide(i, (s) => {
-    const taken = new Set(sc.sides.flatMap((x) => x.members));
-    return { ...s, members: [...s.members, ...ids.filter((id) => !taken.has(id) && data.snapById.has(id))] };
-  });
+  // Phase 3 ids load their era first; the check reads the store, not the (older) props.
+  const addIds = (ids: string[]) => ensureSnapshots(ids).then(() => updSide(i, (s) => {
+    const taken = new Set(store.get().scenario.sides.flatMap((x) => x.members));
+    const known = store.get().data?.snapById ?? data.snapById;
+    return { ...s, members: [...s.members, ...ids.filter((id) => !taken.has(id) && known.has(id))] };
+  }));
   const snapToYear = () => {
     const y = parseInt(year, 10);
     if (!Number.isFinite(y)) { toast('Enter a year (negative for BCE).'); return; }
@@ -57,12 +62,13 @@ function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) 
         if (!nat) return id;
         let best = id, bd = Infinity;
         for (const sid of nat.snapshotIds) {
-          const o = data.snapById.get(sid);
-          if (o && Math.abs(o.year - y) < bd) { bd = Math.abs(o.year - y); best = sid; }
+          const oy = yearOf(data, sid);
+          if (oy != null && Math.abs(oy - y) < bd) { bd = Math.abs(oy - y); best = sid; }
         }
         return best;
       }),
     }));
+    void ensureSnapshots(store.get().scenario.sides[i].members);
   };
   return (
     <fieldset className="side" style={{ borderColor: side.color }}>
@@ -78,10 +84,11 @@ function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) 
           const excluded = s && (sc.excluded.includes(s.nationId));
           return (
             <li key={id} className={excluded ? 'excluded' : ''}>
-              <span className="member-name" title={id}>{s ? s.name : <span className="warn">unknown: {id}</span>}</span>
+              <span className="member-name" title={id}>{s ? s.name : data.phase3ById.has(id) ? <span className="muted">loading {id}...</span> : <span className="warn">unknown: {id}</span>}</span>
+              {data.phase3ById.has(id) && <DerivedBadge grade={data.phase3ById.get(id)!.confidence} />}
               {nat && nat.snapshotIds.length > 1 ? (
-                <select title="Time-slice: pick another year of this nation" value={id} onChange={(e) => updSide(i, (x) => ({ ...x, members: x.members.map((m) => (m === id ? e.target.value : m)) }))}>
-                  {nat.snapshotIds.map((sid) => { const o = data.snapById.get(sid); return <option key={sid} value={sid}>{o ? yearLabel(o.year) : sid}</option>; })}
+                <select title="Time-slice: pick another year of this nation" value={id} onChange={(e) => { const v = e.target.value; ensureSnapshots([v]).then(() => updSide(i, (x) => ({ ...x, members: x.members.map((m) => (m === id ? v : m)) }))); }}>
+                  {nat.snapshotIds.map((sid) => { const oy = yearOf(data, sid); return <option key={sid} value={sid}>{oy != null ? yearLabel(oy) : sid}</option>; })}
                 </select>
               ) : s ? <span className="muted">{yearLabel(s.year)}</span> : null}
               <button className="x" title="Remove" onClick={() => updSide(i, (x) => ({ ...x, members: x.members.filter((m) => m !== id) }))}>x</button>

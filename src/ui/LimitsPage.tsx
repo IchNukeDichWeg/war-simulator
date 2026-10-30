@@ -32,6 +32,7 @@ export function LimitsPage() {
               ))}
             </div>
           )}
+          {data && data.phase3.length > 0 && <p className="small">{data.phase3.length.toLocaleString('en-US')} more snapshots are <b>Phase 3 derived</b>: not researched, every value a formula over the polity's border polygon and regional inputs, overall confidence {[...new Set(data.phase3.map((e) => e.confidence))].sort().join('/')}. Their values count above only once their era is loaded (on first use).</p>}
           <p className="small"><GradeBadge g="A" /> documented or officially reported. <GradeBadge g="B" /> scholarly estimate with a range. <GradeBadge g="C" /> reconstructed from analogies or indirect evidence. <GradeBadge g="D" /> educated guess, flagged as such. <GradeBadge g="M" /> model output: computed by the simulation, not sourced.</p>
         </section>
 

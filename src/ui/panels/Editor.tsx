@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Est, Override, Snapshot } from '../../types/schema';
 import { yearLabel } from '../data';
-import { GradeBadge, SourceLink } from '../Grade';
+import { DerivedBadge, GradeBadge, SourceLink } from '../Grade';
+import { ensureSnapshots } from '../lazy';
 import { fmt } from '../format';
 import { setScenario, store, useStore } from '../store';
 import { EmptyData } from './EmptyData';
@@ -82,6 +83,8 @@ export function Editor() {
   const [onlyEdited, setOnlyEdited] = useState(false);
   const snap = snapId ? data?.snapById.get(snapId) : undefined;
   const fields = useMemo(() => (snap ? collectFields(snap) : []), [snap]);
+  const p3 = snapId ? data?.phase3ById.get(snapId) : undefined;
+  useEffect(() => { if (snapId && !snap && p3) void ensureSnapshots([snapId]); }, [snapId, snap, p3]);
   if (!data) return <div className="panel-body muted">Loading data...</div>;
   if (data.snapshots.length === 0) return <EmptyData what="snapshots to edit" file="snapshots.json" />;
 
@@ -99,14 +102,14 @@ export function Editor() {
           {members.map((id) => { const s = data.snapById.get(id); return s ? <option key={id} value={id}>{s.name} ({yearLabel(s.year)})</option> : null; })}
         </optgroup>}
         <optgroup label="All snapshots">
-          {data.snapshots.map((s) => <option key={s.id} value={s.id}>{s.name} ({yearLabel(s.year)})</option>)}
+          {data.snapshots.map((s) => <option key={s.id} value={s.id}>{s.name} ({yearLabel(s.year)}){data.phase3ById.has(s.id) ? `, Phase 3 derived, confidence ${data.phase3ById.get(s.id)!.confidence}` : ''}</option>)}
         </optgroup>
       </select>
       {!snap && <p className="muted">Every numeric field of a snapshot is editable here. Edits are stored in the scenario (and its share URL) as overrides; the researched value stays visible with its range, grade and source.</p>}
       {snap && (
         <>
           <div className="ed-head">
-            <b>{snap.name}, {yearLabel(snap.year)}</b>
+            <b>{snap.name}, {yearLabel(snap.year)}</b>{p3 && <DerivedBadge grade={p3.confidence} />}
             <span className="muted small"> {snap.id} | doctrine {snap.doctrineId}</span>
             {snap.notes && <p className="small muted">{snap.notes}</p>}
           </div>

@@ -1,14 +1,17 @@
 import { yearLabel } from '../data';
 import { startRun } from '../engine';
 import { normalizeScenario } from '../scenarioDefaults';
+import { ensureSnapshots } from '../lazy';
 import { store, toast, useStore } from '../store';
 import type { Scenario } from '../../types/scenario';
 import { EmptyData } from './EmptyData';
 
-export function loadScenario(s: Scenario, msg = 'Scenario loaded') {
+/** Resolves once every member snapshot is loaded (Phase 3 members load their era file). */
+export function loadScenario(s: Scenario, msg = 'Scenario loaded'): Promise<boolean> {
   const sc = normalizeScenario(structuredClone(s));
   store.set({ scenario: sc, scenarioDirty: false, leftTab: 'scenario', mapMode: { kind: 'none' } });
   toast(msg);
+  return ensureSnapshots(sc.sides.flatMap((x) => x.members));
 }
 
 export function Presets() {
@@ -31,7 +34,7 @@ export function Presets() {
             </div>
             <div className="row">
               <button onClick={() => loadScenario(p, `Loaded preset: ${p.name}`)}>Load</button>
-              <button className="primary" onClick={() => { loadScenario(p, `Running preset: ${p.name}`); startRun(store.get().scenario, 3); }}>Run</button>
+              <button className="primary" onClick={() => { void loadScenario(p, `Running preset: ${p.name}`).then(() => startRun(store.get().scenario, 3)); }}>Run</button>
             </div>
           </li>
         ))}

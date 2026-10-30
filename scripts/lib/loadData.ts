@@ -1,9 +1,10 @@
 // Node loader for the runtime data in public/data (or another directory via --data).
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import type { EngineData } from '../../src/engine/protocol';
 import type { BattleCase } from '../../src/types/mechanics';
 import type { Scenario } from '../../src/types/scenario';
+import type { Snapshot } from '../../src/types/schema';
 
 export function dataDir(argv: string[]): string {
   const i = argv.indexOf('--data');
@@ -19,6 +20,12 @@ function readJson<T>(dir: string, file: string, fallback?: T): T {
   return JSON.parse(readFileSync(p, 'utf8')) as T;
 }
 
+/** Phase 3 derived snapshots, one file per era (the browser loads them lazily; Node reads all). */
+function phase3Snapshots(dir: string): Snapshot[] {
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir).filter((f) => /^snapshots-phase3-(?!index).*\.json$/.test(f)).flatMap((f) => readJson<Snapshot[]>(dir, f));
+}
+
 export function loadEngineData(dir: string): EngineData {
   const bin = readFileSync(join(dir, 'terrain', 'grid.bin'));
   const terrain = bin.buffer.slice(bin.byteOffset, bin.byteOffset + bin.byteLength) as ArrayBuffer;
@@ -26,7 +33,7 @@ export function loadEngineData(dir: string): EngineData {
   const cb = existsSync(cf) ? readFileSync(cf) : null;
   const climate = cb ? (cb.buffer.slice(cb.byteOffset, cb.byteOffset + cb.byteLength) as ArrayBuffer) : undefined;
   return {
-    snapshots: readJson(dir, 'snapshots.json'),
+    snapshots: [...readJson<Snapshot[]>(dir, 'snapshots.json'), ...phase3Snapshots(dir)],
     doctrines: readJson(dir, 'doctrines.json', []),
     mechanics: readJson(dir, 'mechanics.json'),
     borders: readJson(dir, 'borders.json', {}),

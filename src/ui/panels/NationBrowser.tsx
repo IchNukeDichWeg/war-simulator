@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react';
-import type { EraId, Est, RegionId, Snapshot } from '../../types/schema';
+import type { EraId, Est, Grade, RegionId, Snapshot } from '../../types/schema';
+import { fmt } from '../format';
 import { ERA_SPANS } from '../../types/schema';
-import { yearLabel } from '../data';
-import { EstValue, GradeBadge } from '../Grade';
+import { yearLabel, type Phase3Entry } from '../data';
+import { DerivedBadge, EstValue, GradeBadge } from '../Grade';
+import { ensureSnapshots } from '../lazy';
 
 import { ROLE_LABEL, ROLE_ORDER } from '../roles';
 import { setScenario, store, toast, useStore } from '../store';
@@ -27,7 +29,15 @@ export function addMember(side: 0 | 1, id: string) {
   });
 }
 
-function matches(s: Snapshot, q: string, aliases: string[]) {
+/** A browse row: a loaded snapshot, or a Phase 3 index entry whose era file is not loaded yet. */
+type Item = { id: string; nationId: string; name: string; year: number; era: EraId; region: RegionId; tags: string[]; snap?: Snapshot; p3?: Phase3Entry };
+
+/** Run an action on a snapshot once it is loaded (Phase 3 eras load on first use). */
+function withSnap(id: string, f: () => void) {
+  ensureSnapshots([id]).then((ok) => { if (ok) f(); else toast(`Snapshot ${id} could not be loaded.`); });
+}
+
+function matches(s: Item, q: string, aliases: string[]) {
   if (!q) return true;
   const hay = `${s.name} ${s.id} ${s.tags.join(' ')} ${aliases.join(' ')} ${yearLabel(s.year)}`.toLowerCase();
   return q.toLowerCase().split(/\s+/).every((w) => hay.includes(w));
@@ -41,25 +51,31 @@ export function NationBrowser() {
   const [region, setRegion] = useState<RegionId | ''>('');
   const [limit, setLimit] = useState(120);
 
+  const items = useMemo((): Item[] => {
+    if (!data) return [];
+    const loaded: Item[] = data.snapshots.map((s) => ({ ...s, snap: s, p3: data.phase3ById.get(s.id) }));
+    const stubs: Item[] = data.phase3.filter((e) => !data.snapById.has(e.id)).map((e) => ({ ...e, p3: e }));
+    return [...loaded, ...stubs].sort((a, b) => a.name.localeCompare(b.name) || a.year - b.year);
+  }, [data]);
   const list = useMemo(() => {
     if (!data) return [];
-    return data.snapshots.filter((s) => (!era || s.era === era) && (!region || s.region === region)
+    return items.filter((s) => (!era || s.era === era) && (!region || s.region === region)
       && matches(s, q, data.nationById.get(s.nationId)?.aliases ?? []));
-  }, [data, q, era, region]);
+  }, [data, items, q, era, region]);
 
   if (!data) return <div className="panel-body muted">Loading data...</div>;
-  if (data.snapshots.length === 0) return <EmptyData what="nation snapshots" file="snapshots.json" />;
+  if (items.length === 0) return <EmptyData what="nation snapshots" file="snapshots.json" />;
 
-  const setCmp = (i: 0 | 1, id: string) => {
+  const setCmp = (i: 0 | 1, id: string) => withSnap(id, () => {
     const c: [string | null, string | null] = [...store.get().compare];
     c[i] = id;
     store.set({ compare: c });
-  };
+  });
 
   return (
     <div className="panel-body">
       <div className="filters">
-        <input type="search" placeholder={`Search ${data.snapshots.length} snapshots (name, tag, year)`} value={q} onChange={(e) => setQ(e.target.value)} />
+        <input type="search" placeholder={`Search ${items.length} snapshots (name, tag, year)`} value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="row">
           <select value={era} onChange={(e) => setEra(e.target.value as EraId | '')}>
             <option value="">All eras</option>
@@ -70,23 +86,25 @@ export function NationBrowser() {
             {(Object.keys(REGION_LABEL) as RegionId[]).map((r) => <option key={r} value={r}>{REGION_LABEL[r]}</option>)}
           </select>
         </div>
-        <div className="muted small">{list.length} match{list.length === 1 ? '' : 'es'}. Click C1 / C2 to compare two snapshots.</div>
+        <div className="muted small">{list.length} match{list.length === 1 ? '' : 'es'}. Click C1 / C2 to compare two snapshots. Entries marked <i>Phase 3 derived</i> are not researched (low confidence) and load on first use.</div>
       </div>
-      {compare[0] && compare[1] && <Compare a={data.snapById.get(compare[0])} b={data.snapById.get(compare[1])} />}
+      {compare[0] && compare[1] && <Compare a={data.snapById.get(compare[0])} b={data.snapById.get(compare[1])} grade={(id) => data.phase3ById.get(id)?.confidence} />}
       <ul className="snap-list">
         {list.slice(0, limit).map((s) => (
           <li key={s.id} className={compare.includes(s.id) ? 'sel' : ''}>
             <div className="snap-main">
-              <b>{s.name}</b> <span className="muted">{yearLabel(s.year)}</span>
-              <div className="muted small">{ERA_LABEL[s.era]} | {REGION_LABEL[s.region] ?? s.region} | {s.phase}{s.tags.length ? ` | ${s.tags.slice(0, 3).join(', ')}` : ''}</div>
-              <div className="small">pop <EstValue e={s.demography.population} /> active <EstValue e={s.military.activePersonnel} /></div>
+              <b>{s.name}</b> <span className="muted">{yearLabel(s.year)}</span>{s.p3 && <DerivedBadge grade={s.p3.confidence} />}
+              <div className="muted small">{ERA_LABEL[s.era]} | {REGION_LABEL[s.region] ?? s.region}{s.snap ? ` | ${s.snap.phase}` : ''}{s.tags.length ? ` | ${s.tags.slice(0, 3).join(', ')}` : ''}</div>
+              {s.snap
+                ? <div className="small">pop <EstValue e={s.snap.demography.population} /> active <EstValue e={s.snap.military.activePersonnel} /></div>
+                : <div className="small">pop {fmt(s.p3!.population)} active {fmt(s.p3!.active)} <span className="muted">(not loaded)</span></div>}
             </div>
             <div className="snap-actions">
-              <button title="Add to side A" onClick={() => addMember(0, s.id)}>+A</button>
-              <button title="Add to side B" onClick={() => addMember(1, s.id)}>+B</button>
+              <button title="Add to side A" onClick={() => withSnap(s.id, () => addMember(0, s.id))}>+A</button>
+              <button title="Add to side B" onClick={() => withSnap(s.id, () => addMember(1, s.id))}>+B</button>
               <button title="Compare slot 1" className={compare[0] === s.id ? 'on' : ''} onClick={() => setCmp(0, s.id)}>C1</button>
               <button title="Compare slot 2" className={compare[1] === s.id ? 'on' : ''} onClick={() => setCmp(1, s.id)}>C2</button>
-              <button title="Open in editor" onClick={() => store.set({ leftTab: 'editor', editorSnapshot: s.id })}>Edit</button>
+              <button title="Open in editor" onClick={() => withSnap(s.id, () => store.set({ leftTab: 'editor', editorSnapshot: s.id }))}>Edit</button>
             </div>
           </li>
         ))}
@@ -120,14 +138,15 @@ const ROWS: Row[] = [
   ...ROLE_ORDER.map((r): Row => [ROLE_LABEL[r], (s) => s.military.forces[r]?.count]),
 ];
 
-function Compare({ a, b }: { a?: Snapshot; b?: Snapshot }) {
+function Compare({ a, b, grade }: { a?: Snapshot; b?: Snapshot; grade: (id: string) => Grade | undefined }) {
   if (!a || !b) return null;
+  const ga = grade(a.id), gb = grade(b.id);
   return (
     <div className="compare">
       <div className="compare-head">
         <span />
-        <b>{a.name} {yearLabel(a.year)}</b>
-        <b>{b.name} {yearLabel(b.year)}</b>
+        <b>{a.name} {yearLabel(a.year)}{ga && <DerivedBadge grade={ga} />}</b>
+        <b>{b.name} {yearLabel(b.year)}{gb && <DerivedBadge grade={gb} />}</b>
       </div>
       {ROWS.map(([label, get]) => {
         const ea = get(a), eb = get(b);

@@ -35,3 +35,12 @@ export function EstValue({ e, unit = '', value }: { e: Est | undefined; unit?: s
     </span>
   );
 }
+
+/** Label every Phase 3 derived snapshot carries wherever it is listed or shown. */
+export function DerivedBadge({ grade }: { grade: Grade }) {
+  return (
+    <span className="derived-badge" title={`Phase 3 derived snapshot, not researched: every value is a formula over its border polygon and regional inputs (data/SOURCES.md, "Phase 3 derivation inputs"). Overall confidence ${GRADE_TEXT[grade]}.`}>
+      Phase 3 derived <GradeBadge g={grade} />
+    </span>
+  );
+}

@@ -1,5 +1,7 @@
 // Builds the runtime data from validated research output.
-//   data/raw/snapshots/*.json -> public/data/snapshots.json, data/nations.json, public/data/nations.json
+//   data/raw/snapshots/*.json -> public/data/snapshots.json (researched + auto-base), data/nations.json, public/data/nations.json
+//                                public/data/snapshots-phase3-<era>.json + snapshots-phase3-index.json (tag phase3,
+//                                lazy-loaded by the UI per era; the index makes them searchable before loading)
 //   border refs              -> public/data/borders.json (simplified MultiPolygons) + terrainMix
 //   data/doctrine/*.json     -> public/data/doctrines.json
 //   data/mechanics/*.json    -> public/data/mechanics.json
@@ -7,13 +9,15 @@
 //   data/coalitions.json, data/presets.json -> public/data/
 // Files that fail validation are skipped with a message, so one bad research
 // file never breaks the app. Usage: tsx data-pipeline/build.ts
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Nation, Snapshot } from '../src/types/schema';
+import type { Phase3Entry } from '../src/ui/data';
 import { GRID_H, GRID_RES, GRID_W, TERRAIN_CLASSES } from '../src/engine/terrainClasses';
 import { ROOT, Progress, cachedFetch } from './lib/util';
 import { MultiPolygon, bboxOf, multiAreaKm2, pointInMulti, simplifyMulti, toMulti } from './lib/geo';
-import { listJson, validateAll } from './validate';
+import { confidence, listJson, validateAll } from './validate';
+import { ERAS } from './schema';
 
 const DATA = join(ROOT, 'data');
 const PUB = join(ROOT, 'public', 'data');
@@ -139,7 +143,24 @@ async function main() {
   const mechanics = buildMechanics(bad);
 
   const write = (name: string, v: unknown) => writeFileSync(join(PUB, name), JSON.stringify(v));
-  write('snapshots.json', snapshots);
+  // Phase 3 snapshots (tag phase3) are split per era so the first load stays small; the
+  // index carries what search and browse need plus the confidence label.
+  const isP3 = (s: Snapshot) => s.tags.includes('phase3');
+  write('snapshots.json', snapshots.filter((s) => !isP3(s)));
+  const p3 = snapshots.filter(isP3);
+  const eraFiles = new Set<string>();
+  for (const era of ERAS) {
+    const e = p3.filter((s) => s.era === era);
+    if (!e.length) continue;
+    eraFiles.add(`snapshots-phase3-${era}.json`);
+    write(`snapshots-phase3-${era}.json`, e);
+  }
+  for (const f of readdirSync(PUB)) if (/^snapshots-phase3-(?!index).*\.json$/.test(f) && !eraFiles.has(f)) unlinkSync(join(PUB, f));
+  const index: Phase3Entry[] = p3.map((s) => ({
+    id: s.id, nationId: s.nationId, name: s.name, year: s.year, era: s.era, region: s.region, tags: s.tags,
+    confidence: confidence(s).letter, population: s.demography.population.mid, active: s.military.activePersonnel.mid,
+  }));
+  write('snapshots-phase3-index.json', index);
   write('nations.json', nationList);
   writeFileSync(join(DATA, 'nations.json'), JSON.stringify(nationList, null, 1));
   write('borders.json', borders);
@@ -150,7 +171,7 @@ async function main() {
     const src = join(DATA, name);
     write(name, existsSync(src) && !bad.has(src) ? JSON.parse(readFileSync(src, 'utf8')) : []);
   }
-  console.log(`built ${snapshots.length} snapshots, ${nationList.length} nations, ${Object.keys(borders).length} borders, mechanics sections: ${Object.keys(mechanics).length - 1}`);
+  console.log(`built ${snapshots.length} snapshots (${p3.length} phase 3 in ${eraFiles.size} era files), ${nationList.length} nations, ${Object.keys(borders).length} borders, mechanics sections: ${Object.keys(mechanics).length - 1}`);
 }
 
 if (process.argv[1]?.endsWith('build.ts')) main().catch((e) => { console.error(e); process.exit(1); });
