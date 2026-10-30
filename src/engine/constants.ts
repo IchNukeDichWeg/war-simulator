@@ -348,7 +348,13 @@ export const AI_SKIP_UNSTAFFABLE_ATTACKS = true;
  *  2018 0.5 deg map (public/data/climate/zones.bin), zone C without the map. Before, every theater
  *  used one temperate table derived for Berlin (QA C7: the Gulf War drew snow on 22% of February
  *  days). Measured (20 seeds, clean facfd50, no zone grid built yet, so every theater draws zone C):
- *  19/17/22 unchanged; France 1940 95% -> 90%, Gulf War 8 -> 9 days, Stalingrad 31 -> 30 days. */
+ *  19/17/22 unchanged; France 1940 95% -> 90%, Gulf War 8 -> 9 days, Stalingrad 31 -> 30 days.
+ *  With the grid (20 seeds, clean e615341): 17/14/21 -> 18/13/21. Gulf War (BW) winner 50% -> 85%
+ *  passes, ratio x2.98 -> x3.19 fails; Yom Kippur (BW) 15% -> 0%; Falklands (E) 9 -> 12 days; Iraq
+ *  2003 (BW) 21 -> 19 days. Gulf War run in February: snow on 0 of 175 days (50 of 186, 26.9%, on
+ *  zone C). Zones: BW Gulf, Iraq, El Alamein, Six-Day, Yom Kippur; BS Stalingrad, Cannae, Zama (24:24
+ *  tie with C, first in order); E Falklands; D Austerlitz, Blenheim, Breitenfeld, Gettysburg, Kursk,
+ *  Mohi, Tannenberg; C the other eight. */
 export const REGIONAL_WEATHER = true;
 /** The AI's attack staffing is local and in combat power: an attack slot needs the doctrine's
  *  ratio times the enemy power within engagement reach of the target cell (the cell and its 8
