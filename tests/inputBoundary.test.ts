@@ -1,7 +1,7 @@
 // Untrusted scenario input: share links, loaded files and Editor values (red team
 // report C1, C2, C3, C5, W1). Each block pins one boundary check.
 import { readdirSync, readFileSync } from 'node:fs';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { MAX_FORMATIONS_PER_MEMBER } from '../src/engine/constants';
 import { Controller } from '../src/engine/controller';
 import type { FromWorker } from '../src/engine/protocol';
@@ -11,7 +11,7 @@ import { fieldBound, MAX_RESEARCHED_FORCE_COUNT, overrideMax, overridePathProble
 import { collectFields } from '../src/ui/panels/Editor';
 import type { Snapshot } from '../src/types/schema';
 import { normalizeScenario } from '../src/ui/scenarioDefaults';
-import { decodeScenario, encodeScenario } from '../src/ui/scenarioIO';
+import { decodeScenario, encodeScenario, MAX_FILE_BYTES, MAX_SCENARIO_BYTES, scenarioFileText, shareUrl } from '../src/ui/scenarioIO';
 import type { Scenario } from '../src/types/scenario';
 import { absurdScenario, basicScenario, fixtureData, perfScenario } from './fixtures/snapshots.fixture';
 import { data } from './engine/helpers';
@@ -211,6 +211,48 @@ describe('C5: share links unpack to a bounded size', () => {
     const s = structuredClone(presets[0]);
     mut(s);
     expect(() => normalizeScenario(s)).toThrow(new RegExp(field.replace(/[[\]]/g, '\\$&')));
+  });
+});
+
+describe('N2: Share refuses a link the loader would refuse', () => {
+  const presets = JSON.parse(readFileSync('public/data/presets.json', 'utf8')) as Scenario[];
+  const fields = collectFields(fixtureData().snapshots[0]).map((f) => `${f.path}.mid`);
+  /** presets[6] with `n` Editor overrides spread over made-up snapshot ids */
+  const withOverrides = (n: number): Scenario => ({
+    ...structuredClone(presets[6]),
+    overrides: Array.from({ length: n }, (_, i) => ({ snapshotId: `snap-${Math.floor(i / fields.length)}`, path: fields[i % fields.length], value: 1 })),
+  });
+  const bytes = (t: string) => new TextEncoder().encode(t).byteLength;
+  // the smallest override count whose compact JSON passes the share cap
+  const firstOver = (() => { let n = 1; while (bytes(JSON.stringify(withOverrides(n))) <= MAX_SCENARIO_BYTES) n++; return n; })();
+  afterEach(() => { vi.unstubAllGlobals(); });
+
+  it('a scenario at the cap gets a link that loads', async () => {
+    vi.stubGlobal('location', { origin: 'http://localhost', pathname: '/', search: '' });
+    const s = withOverrides(firstOver - 1);
+    const url = await shareUrl(s);
+    expect(await decodeScenario(url.split('#s=')[1])).toEqual(normalizeScenario(structuredClone(s)));
+  });
+
+  it('one override more is refused before a link is built, pointing to Save', async () => {
+    await expect(shareUrl(withOverrides(firstOver))).rejects.toThrow(/more than the 16 KB a share link can carry.*Use Save/);
+  });
+
+  it('Save writes a file Load accepts for a scenario well past the share cap', () => {
+    // the pretty form of this one is over the file cap, so Save falls back to compact JSON
+    const s = withOverrides(Math.round(firstOver * 1.3));
+    expect(bytes(JSON.stringify(s, null, 2))).toBeGreaterThan(MAX_FILE_BYTES);
+    const text = scenarioFileText(s);
+    expect(bytes(text)).toBeLessThanOrEqual(MAX_FILE_BYTES);
+    expect(normalizeScenario(JSON.parse(text))).toEqual(normalizeScenario(structuredClone(s)));
+  });
+
+  it('a small scenario is still saved pretty-printed', () => {
+    expect(scenarioFileText(presets[6])).toBe(JSON.stringify(presets[6], null, 2));
+  });
+
+  it('a scenario over the file cap even compact is refused with a message', () => {
+    expect(() => scenarioFileText(withOverrides(firstOver * 2))).toThrow(/a scenario file is at most 24 KB/);
   });
 });
 

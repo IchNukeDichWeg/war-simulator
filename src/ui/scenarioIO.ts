@@ -75,7 +75,19 @@ export async function decodeScenario(code: string): Promise<Scenario> {
   return normalizeScenario(parseJson(await inflateCapped(bytes, MAX_SCENARIO_BYTES)));
 }
 
+/** UTF-8 size of a scenario's compact JSON: what a share link unpacks to. */
+function scenarioBytes(s: Scenario): number {
+  return new TextEncoder().encode(JSON.stringify(s)).byteLength;
+}
+
+/** A link for `s`, refused when it would unpack past MAX_SCENARIO_BYTES: the loader would
+ *  refuse it, yet "Share link copied" reported success from about 240 overrides on (red
+ *  team N2). The thrown message is the toast, so it points to the file path instead. */
 export async function shareUrl(s: Scenario): Promise<string> {
+  const bytes = scenarioBytes(s);
+  if (bytes > MAX_SCENARIO_BYTES) {
+    throw new Error(`the scenario is ${Math.ceil(bytes / 1024)} KB, more than the ${MAX_SCENARIO_BYTES / 1024} KB a share link can carry, so no link was copied. Use Save to keep it as a file (up to ${MAX_FILE_BYTES / 1024} KB) instead`);
+  }
   const code = await encodeScenario(s);
   return `${location.origin}${location.pathname}${location.search}#s=${code}`;
 }
@@ -86,8 +98,21 @@ export async function scenarioFromHash(): Promise<Scenario | null> {
   return decodeScenario(m[1]);
 }
 
+/** The text Save writes: pretty-printed to stay readable, compact when the pretty form would
+ *  pass MAX_FILE_BYTES. Pretty-printing adds 40 to 52% to an override-heavy scenario, so a
+ *  scenario just past the share link cap, which the share toast sends to Save, could
+ *  otherwise be saved as a file that Load then refuses. */
+export function scenarioFileText(s: Scenario): string {
+  const pretty = JSON.stringify(s, null, 2);
+  if (new TextEncoder().encode(pretty).byteLength <= MAX_FILE_BYTES) return pretty;
+  const compact = JSON.stringify(s);
+  const bytes = new TextEncoder().encode(compact).byteLength;
+  if (bytes > MAX_FILE_BYTES) throw new Error(`the scenario is ${Math.ceil(bytes / 1024)} KB; a scenario file is at most ${MAX_FILE_BYTES / 1024} KB`);
+  return compact;
+}
+
 export function downloadScenario(s: Scenario) {
-  const blob = new Blob([JSON.stringify(s, null, 2)], { type: 'application/json' });
+  const blob = new Blob([scenarioFileText(s)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = `${(s.name || 'scenario').replace(/[^a-z0-9-_]+/gi, '_').slice(0, 60)}.json`;

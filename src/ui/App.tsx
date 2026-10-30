@@ -35,7 +35,7 @@ function TopBar() {
       <div className="brand">Multi-Era War Simulator</div>
       <div className="scn-name" title="Current scenario">{name}</div>
       <div className="actions">
-        <button onClick={() => downloadScenario(store.get().scenario)} title="Download scenario JSON">Save</button>
+        <button onClick={() => { try { downloadScenario(store.get().scenario); } catch (e) { toast('Could not save: ' + (e as Error).message); } }} title="Download scenario JSON">Save</button>
         <button onClick={() => uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message))} title="Load scenario JSON">Load</button>
         <button onClick={share} title="Copy a URL that contains this scenario">Share URL</button>
         <button onClick={() => store.set({ showLimits: true })}>Honest limits</button>
