@@ -738,3 +738,33 @@ Corrections and limits from this round:
   `aircraft_strike.8` low as well (52.8). The screen stays at 20 seeds so that the count compares with
   earlier rounds; a change of instrument would be its own campaign.
 
+## Robustness campaign at 200 seeds
+
+A separate campaign from every 20-seed count above, never pooled with them: same data (`3b053d3`, data
+hash `05fd7676dd1481b8`), same 60% line, same constants, 200 seeds per evaluation
+(`validation/robustness-200.jsonl`, 1,177 evaluations, 0 errors, 1 h 07 min on 18 cores, Apple M5 Pro).
+
+| | 20 seeds | 200 seeds |
+| --- | --- | --- |
+| Winners at base | 18 | 18 |
+| Robust, grade-D constants | 16 | **17** |
+| Robust, also era breakpoints | 14 | **15** |
+| Gate (18 robust) | not met | **not met** |
+
+The same 18 cases pass at base in both. What changed is which flips were real:
+
+- **Blenheim was noise.** 74.0% +/- 6.1 at base, and it holds on `armorMatrix.6.5` low at 63.5% +/- 6.7, over
+  the line but not clear of it.
+- **France 1940 is the real failure.** 81.5% +/- 5.4 at base, and clearly under the line on two grade-D
+  constants: `starvationMultiplier` high 48.0% +/- 6.9, and `aircraft_strike.8` low 51.5% +/- 6.9.
+  The 20-seed screen found only the first.
+- **Gulf War and Hastings fall to 0% at breakpoint quantile 1**, clearly and at both seed counts: at the
+  high era breakpoint neither side breaks in time. No other single constant takes either under the line.
+- The next closest is Gaugamela, 98.0% at base and 91.5% at its lowest.
+- Failing cases stay failed: Mohi 38.0% +/- 6.7, Yom Kippur 33.5% +/- 6.5, Adrianople 6.5%, and
+  Carrhae, Marathon and the Six-Day War at 0%.
+
+The gate is one case short on grade-D constants. Under the 20-seed screen it was two short, and that
+reading was partly noise. The closest routes to 18 are France 1940 and one more winner, and any
+route still has to survive the era breakpoints, which cost three cases at this count.
+

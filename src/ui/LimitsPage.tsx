@@ -58,14 +58,14 @@ export function LimitsPage() {
 
         <section>
           <h3>How it scores against history</h3>
-          <p>24 historical battles from Marathon to Iraq 2003 are rerun over 20 seeds each (VALIDATION.md). The model picks the historical winner in 18 of 24, gets the loss ratio within a factor of 3 in 13 and the duration within a factor of 3 in 21. The pass mark set before building was 18 winners that hold up when any single grade-D constant moves across its range; 16 do, so <b>the validation gate is not met</b>.</p>
+          <p>24 historical battles from Marathon to Iraq 2003 are rerun over 20 seeds each (VALIDATION.md). The model picks the historical winner in 18 of 24, gets the loss ratio within a factor of 3 in 13 and the duration within a factor of 3 in 21. The pass mark set before building was 18 winners that hold up when any single grade-D constant moves across its range; 16 do at 20 seeds and 17 at 200, so <b>the validation gate is not met</b>.</p>
           <ul>
             <li>Marathon: the Athenians are out-powered in the model and lose. Adrianople: the Gothic cavalry arriving on the flank mid-battle is not modelled.</li>
             <li>Carrhae and Mohi: the winners broke contact and harassed. A break-contact rule was built and rejected: it left Carrhae lost, since horse-archer standoff is not modelled, and won Mohi for the wrong reason.</li>
             <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
             <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
             <li>Loss ratios are the weakest output: 11 of 24 are off by more than a factor of 3.</li>
-            <li>Blenheim and France 1940 each flip when one grade-D constant moves across its range, and applying all the researched replacements for those guesses, including ones still graded D, takes both below the winner line. Counting the grade-D era breakpoints too, 14 winners hold up, not 16. At 20 seeds per battle a winner near the 60% line is partly noise.</li>
+            <li>France 1940 is the one winner that fails on a single grade-D constant at 200 seeds per battle: starvation at its high, or WWII air strike lethality at its low. Gulf War and Hastings fall to nothing at the high era breakpoint. That leaves 17 robust winners, or 15 counting the era breakpoints, against 18 needed. Applying every researched replacement for the guessed values, including ones still graded D, takes Blenheim and France below the winner line.</li>
           </ul>
         </section>
 

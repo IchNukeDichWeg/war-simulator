@@ -135,7 +135,7 @@ npx tsx scripts/robustness.ts --out validation/robustness-200.jsonl
 | `--data DIR` | Reads another data directory instead of `public/data`. |
 
 Ctrl-C prints the summary so far and keeps the results. 1,177 evaluations took 5 min 12 s at 20 seeds
-on 18 cores, so 200 seeds takes about 52 min (scaled from that rate). Each seed count is its own
+and 1 h 07 min at 200 seeds on 18 cores (Apple M5 Pro). Each seed count is its own
 campaign: results at different seed counts are never pooled.
 
 ### One scenario
