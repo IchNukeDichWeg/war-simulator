@@ -758,8 +758,9 @@ The same 18 cases pass at base in both. What changed is which flips were real:
 - **France 1940 is the real failure.** 81.5% +/- 5.4 at base, and clearly under the line on two grade-D
   constants: `starvationMultiplier` high 48.0% +/- 6.9, and `aircraft_strike.8` low 51.5% +/- 6.9.
   The 20-seed screen found only the first.
-- **Gulf War and Hastings fall to 0% at breakpoint quantile 1**, clearly and at both seed counts: at the
-  high era breakpoint neither side breaks in time. No other single constant takes either under the line.
+- **Gulf War and Hastings fall to 0% at breakpoint quantile 1**, clearly and at both seed counts. They
+  fail differently (40 seeds at that quantile): Iraq wins the Gulf War 40 of 40, and Hastings ends a draw
+  40 of 40. No other single constant takes either under the line.
 - The next closest is Gaugamela, 98.0% at base and 91.5% at its lowest.
 - Failing cases stay failed: Mohi 38.0% +/- 6.7, Yom Kippur 33.5% +/- 6.5, Adrianople 6.5%, and
   Carrhae, Marathon and the Six-Day War at 0%.
