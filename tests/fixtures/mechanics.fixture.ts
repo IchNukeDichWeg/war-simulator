@@ -144,6 +144,7 @@ export function fixtureMechanics(): Mechanics {
       weatherOddsByZone: Object.fromEntries((['A', 'BW', 'BS', 'C', 'D', 'E'] as const).map((z) => [z, Object.fromEntries(SEASONS.map((s) => [s, {
         clear: mv(weatherOdds[s].clear), rain: mv(weatherOdds[s].rain), mud: mv(weatherOdds[s].mud), snow: mv(weatherOdds[s].snow),
       }]))])) as Mechanics['movement']['weatherOddsByZone'],
+      marchHoursPerDay: mv(6),
       restDayFraction: mv(0.1),
     },
     logistics: {

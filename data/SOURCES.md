@@ -188,6 +188,13 @@ not adapted to (Russia, Afghanistan). Note says which applies.
   and clear at most C. mid = the zone's primary station, low/high = min/max over the zone's
   stations. Zone lookup: Beck et al. 2018 Koppen-Geiger 0.5 deg map, doi:10.1038/sdata.2018.214
   (CC BY 4.0), see the note of `movement.weatherOddsByZone.A.spring.clear`.
+- `derived:daylight-from-latitude` - the daylight march factor min(1, D / `movement.marchHoursPerDay`).
+  D = hours from sunrise to sunset at the theater's centre latitude phi on the sim date:
+  declination delta from Spencer, J.W. 1971, "Fourier series representation of the position of
+  the sun", Search 2(5):172, the series NOAA's General Solar Position Calculations use
+  (https://gml.noaa.gov/grad/solcalc/solareqns.PDF); D = 2 x arccos((cos 90.833 deg - sin phi
+  sin delta) / (cos phi cos delta)) / 15 deg per hour, 90.833 deg being NOAA's sunrise zenith
+  (refraction plus the solar disc). `src/engine/daylight.ts`.
 - `derived:climate-zone-grid` - `public/data/climate/zones.bin`, built by
   `data-pipeline/build-climate.ts` (`npm run data:climate`): Beck, H.E., Zimmermann, N.E.,
   McVicar, T.R., Vergopolan, N., Berg, A. and Wood, E.F. 2018, "Present and future

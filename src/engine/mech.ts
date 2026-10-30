@@ -130,6 +130,7 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
   for (const c of ['foot', 'horse', 'wagon', 'rail', 'motorized', 'mechanized', 'tracked_heavy', 'air', 'sea']) need(`movement.rate.${c}`, 'mv');
   need('movement.roadBonus', 'mv');
   need('movement.restDayFraction', 'mv');
+  need('movement.marchHoursPerDay', 'mv');
   for (const s of ['spring', 'summer', 'autumn', 'winter']) {
     need(`movement.season.${s}`, 'mv');
     need(`movement.weatherOdds.${s}`, 'obj');

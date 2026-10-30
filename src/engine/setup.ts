@@ -176,6 +176,8 @@ export interface Setup {
   maxTerrMove: number;
   H: number;
   southern: boolean;
+  /** Latitude of the theater's centre (deg), for daylight (DAYLIGHT_MARCH_HOURS). */
+  theaterLat: number;
   /** Climate zone whose weather odds the theater uses (REGIONAL_WEATHER), or null with the toggle OFF. */
   climateZone: ClimateZone | null;
   /** Weather odds by local season in force (mids), indexed like movement.weatherOdds. */
@@ -935,7 +937,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     objectiveRadiusKm: [opts.objectives?.[0]?.radiusKm ?? 0, opts.objectives?.[1]?.radiusKm ?? 0],
     terrMove, terrAttack, terrMounted, forageYield, maxTerrMove,
     H: Math.max(1, Math.round(m.combat.battleHoursPerDay.mid)),
-    southern, climateZone, weatherOdds, warnings,
+    southern, theaterLat: grid.north - (grid.rows * grid.cellDeg) / 2, climateZone, weatherOdds, warnings,
     theater: { bbox: grid.bbox, cols: grid.cols, rows: grid.rows, cellDeg: grid.cellDeg },
     specialEffect, refRate,
   };

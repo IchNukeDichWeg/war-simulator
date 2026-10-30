@@ -396,3 +396,16 @@ export const SYMMETRIC_DOCTRINE_BREAKPOINT = true;
  *  18/13/21, 18/13/22. Presets (24 runs, invariants clean): rome-vs-france-equalized seed 2 and
  *  macedon-vs-persia seed 1 change winner. */
 export const AI_RATIOS_FROM_MODEL_RULES = true;
+/** The seasonal march factor is daylight: min(1, sunrise-to-sunset hours at the theater's centre
+ *  latitude on the sim date / movement.marchHoursPerDay), the march-hours basis of FM 101-10 (1941)
+ *  par. 38 (6 h for a foot division). Spencer 1971 declination, NOAA 90.833 deg sunrise zenith
+ *  (src/engine/daylight.ts). Mud, rain and snow stay in the zone weather. OFF: movement.season, a
+ *  Berlin-latitude table (winter 0.7 from ~8 h vs ~16 h of daylight) applied at every latitude
+ *  (QA round 5: winter 0.4 flips the Gulf War). Sunrise to sunset never falls below 6 h in
+ *  any backtest or preset theater (shortest: Stalingrad January 8.4 h, Falklands July 7.8 h), so
+ *  the factor is 1 throughout and the change removes the old spring 0.85, autumn 0.9 and winter
+ *  0.7. Measured (20 seeds, clean f991a6e): 18/13/21 unchanged; Gulf War 85% -> 90%, ratio x3.19
+ *  -> x3.01 (still fails), 9 -> 8 days; Falklands 12 -> 9 days; Iraq 2003 19 -> 17 days; France
+ *  1940 75% -> 70%, x3.88 -> x5.10. Presets (24 runs, invariants clean): rome-vs-france-equalized
+ *  seed 1 changes winner. */
+export const DAYLIGHT_MARCH_HOURS = true;

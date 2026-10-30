@@ -143,7 +143,10 @@ export interface Mechanics {
     roleMobility: Record<UnitRole, MobilityClass[]>;
     terrain: Record<TerrainClass, MV>;         // off-road multiplier
     roadBonus: MV;
+    /** Retired with DAYLIGHT_MARCH_HOURS ON (read only with it OFF). */
     season: Record<Season, MV>;
+    /** Hours of marching in a normal day's march (FM 101-10 1941), basis of the daylight factor. */
+    marchHoursPerDay: MV;
     weather: Record<Weather, MV>;
     /** Probability of each weather by season in a temperate theater. */
     weatherOdds: Record<Season, Record<Weather, number>>;

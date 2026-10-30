@@ -15,7 +15,8 @@ import { FLAG_RIVER, T } from './terrainClasses';
 import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
+import { DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
+import { dayOfYear, daylightHours } from './daylight';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
 import { byTech, rule, yearFromTech } from './mech';
@@ -144,14 +145,23 @@ export function usesFuel(ctx: Ctx, f: number): boolean {
   return false;
 }
 
+/** Seasonal march factor of today: daylight over the march-hours basis (DAYLIGHT_MARCH_HOURS),
+ *  else the movement.season table. */
+export function seasonMarchFactor(ctx: Ctx): number {
+  const { S, st } = ctx;
+  const m = S.m.movement;
+  if (!DAYLIGHT_MARCH_HOURS) return m.season[SEASONS[seasonIdx(ctx)]].mid;
+  const h = daylightHours(S.theaterLat, dayOfYear(S.scenario.startMonth || 1, st.day));
+  return Math.min(1, h / Math.max(1e-9, m.marchHoursPerDay.mid));
+}
+
 /** Daily movement budget in km-equivalents for formation f (before terrain). */
 export function dailyBudget(ctx: Ctx, f: number): number {
   const { S, st } = ctx;
   const F = st.F;
   const side = F.side[f];
   const m = S.m.movement;
-  const season = SEASONS[seasonIdx(ctx)];
-  let b = formationRate(ctx, f) * m.season[season].mid * m.weather[WEATHERS[st.weather]].mid * (1 - m.restDayFraction.mid);
+  let b = formationRate(ctx, f) * seasonMarchFactor(ctx) * m.weather[WEATHERS[st.weather]].mid * (1 - m.restDayFraction.mid);
   if (st.airHolds[1 - side]) b *= S.m.air.airSuperiorityMovementFactor.mid;
   if (usesFuel(ctx, f) && S.scenario.rules.supply) {
     // out of fuel the vehicles crawl, but the troops can still walk out at foot pace
@@ -167,7 +177,8 @@ export function maxDailyKm(ctx: Ctx, f: number): number {
   const { S } = ctx;
   const m = S.m.movement;
   let sMax = 0, wMax = 0;
-  for (const s of SEASONS) sMax = Math.max(sMax, m.season[s].mid);
+  if (DAYLIGHT_MARCH_HOURS) sMax = 1;
+  else for (const s of SEASONS) sMax = Math.max(sMax, m.season[s].mid);
   for (const w of WEATHERS) wMax = Math.max(wMax, m.weather[w].mid);
   const air = Math.max(1, S.m.air.airSuperiorityMovementFactor.mid);
   const land = formationRate(ctx, f) * sMax * wMax * (1 - m.restDayFraction.mid) * air * S.maxTerrMove * Math.max(1, m.roadBonus.mid);

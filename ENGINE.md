@@ -224,7 +224,7 @@ of 24.
 
 Formation speed = `rate[roleMobility(slowest role, tech)]` x `terrain[class]`
 (x `roadBonus` on cells with roads: own territory cells containing a place, or
-for tech >= 3 any own cropland/urban cell) x `season` x `weather` x
+for tech >= 3 any own cropland/urban cell) x daylight x `weather` x
 (1 - `restDayFraction`) x air superiority factor if the enemy holds the air.
 Paths are A* over the theater grid with cost = km / speed (days). As built:
 flow fields instead of per-formation A* (one multi-source Dijkstra per side
@@ -271,6 +271,17 @@ wars, 0.25 modern; a flat half day before `RULES_FROM_MODEL_RULES`).
 
 Invariant (tested): no formation ever moves more km in a day than its
 `rate` x best multipliers.
+
+Daylight (`DAYLIGHT_MARCH_HOURS`): the seasonal factor is min(1, sunrise-to-sunset
+hours at the theater's centre latitude on the sim date / `marchHoursPerDay`),
+the hours of marching in FM 101-10 (1941)'s normal day's march (6 h for a foot
+division; 4.8-8 h across its table). Declination after Spencer 1971, day length
+at NOAA's 90.833 deg sunrise zenith (`src/engine/daylight.ts`,
+`derived:daylight-from-latitude`). A day shorter than the march basis only
+occurs poleward of about 59 deg in winter, so the factor is 1 in every backtest
+theater. OFF: `movement.season`, a Berlin-latitude table (winter 0.7, spring
+0.85, autumn 0.9) at every latitude; its rain, mud and thaw share is now in the
+zone weather and its daylight share is this factor, so it is retired.
 
 Weather: one draw per day for the whole theater from the odds of the local
 season (`seasonOf` shifts southern theaters by six months). As built
