@@ -102,14 +102,14 @@ export function detectBattles(ctx: Ctx): void {
 
 // ---------------------------------------------------------------- resolution
 
-interface SideProf {
+export interface SideProf {
   weapons: number; armor: number; disp: number; isr: number; comms: number; cyber: number;
   initiative: number; flanking: number; combinedArms: number; maxRange: number;
   baseCas: number; alpha: number; pursuit: number; capture: number;
   specials: Set<string>; heads: number; w: number; mountedW: number; airTech: number;
 }
 
-function profile(ctx: Ctx, list: number[]): SideProf {
+export function profile(ctx: Ctx, list: number[]): SideProf {
   const { S, st } = ctx;
   const F = st.F;
   const p: SideProf = {
@@ -164,6 +164,21 @@ function rawPower(ctx: Ctx, f: number, opening: boolean, enemyMaxRange: number, 
 }
 
 const gapF = (perLevel: number, own: number, enemy: number) => Math.max(0.05, 1 + perLevel * clamp(own - enemy, -5, 5));
+
+/** Battle power of f against an enemy profile as the battle model rates it before the situation:
+ *  count x TLI x quality x training (rawPower, no opening round), x command, x the tech factors
+ *  (armour matrix over enemy dispersion, ISR/EW/cyber gaps, precision). Posture, terrain, morale,
+ *  supply and combined arms are left out: they depend on the battle, and the AI's required ratio
+ *  is the rule of thumb that already prices the defender's advantage. Used by the AI (ai.ts). */
+export function aiPower(ctx: Ctx, f: number, e: SideProf): number {
+  const m = ctx.S.m;
+  const mr = ctx.S.members[ctx.st.F.member[f]];
+  const t = mr.tech;
+  let k = matrix(m.lethality.armorMatrix, t.weapons, e.armor) / e.disp;
+  k *= gapF(m.modern.isrPerLevel.mid, t.isr, e.isr) * gapF(m.modern.ewPerLevel.mid, t.communications, e.comms) * gapF(m.modern.cyberPerLevel.mid, t.cyber, e.cyber);
+  if (t.weapons >= PRECISION_MIN_TECH) k *= gapF(m.modern.precisionStrikePerLevel.mid, t.weapons, e.weapons);
+  return rawPower(ctx, f, false, 0, 1, 1) * mr.commandF * k;
+}
 
 export function resolveBattles(ctx: Ctx): void {
   const { S, st, sc } = ctx;

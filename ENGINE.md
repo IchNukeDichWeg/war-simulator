@@ -417,6 +417,20 @@ tech)` (`mission_command` halves it). Each order cycle:
    (in place when that place has no flow field this cycle). Before, such a slot
    took everything left (Iraq 2003: 14 of 22 formations at an enemy group
    needing 2.7x their power).
+   As built (`AI_LOCAL_COMBAT_POWER_STAFFING`): the staffing is local and in
+   combat power. Every formation is rated with the battle model's power
+   against the other side's profile (`aiPower` in `combat.ts`: count x TLI x
+   quality x training x command x the tech factors, armour matrix over enemy
+   dispersion, ISR, EW, cyber and precision gaps; posture, terrain, morale and
+   supply are left to the required ratio and the battle). An attack slot needs
+   the ratio x the enemy power within engagement reach of the target cell (the
+   cell and its 8 neighbours, two rings against `corps_system`), not a 3x3
+   sector group. The skip test is against the side's whole available power
+   less what earlier attack slots took and what defend slots needed (the lesser
+   of need and what they took), so a defend slot's overshoot and the reserve do
+   not starve it; an attack the member cannot fill to its need from formations
+   still free is not launched and those formations stay free. Defend needs,
+   candidate values and the stronger-side test use the same combat power.
    Before, Defend slots near the start won on distance and their need took
    the whole army (89 of 92 German formations defending France 1940).
    Strengths are compared in battle units (`AI_CROSS_ERA_POWER`): enemy

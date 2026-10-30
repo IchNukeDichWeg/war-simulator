@@ -11,7 +11,8 @@ import {
   AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
   AI_DEFEND_CAP_BY_VALUE, AI_SKIP_UNSTAFFABLE_ATTACKS, HOLD_SIDE_NO_PLACE_TARGETS, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
-  AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES } from './constants';
+  AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES, AI_LOCAL_COMBAT_POWER_STAFFING } from './constants';
+import { aiPower, profile } from './combat';
 import { NR } from './roles';
 
 export const OBJ = { Capital: 0, City: 1, Formation: 2, Defend: 3, Case: 4 } as const;
@@ -106,8 +107,19 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     dijkstra(g, sc.heap, inv, null, srcs, null, distOwn, null);
   }
   let totalEnemy = 0;
+  // AI_LOCAL_COMBAT_POWER_STAFFING: every formation, own and enemy, is rated with the battle
+  // model's power against the other side's profile (aiPower); otherwise raw weapon weight
+  let pw: Float64Array | null = null;
+  if (AI_LOCAL_COMBAT_POWER_STAFFING) {
+    const lists: [number[], number[]] = [[], []];
+    for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f]) lists[F.side[f]].push(f);
+    const prof = [profile(ctx, lists[0]), profile(ctx, lists[1])];
+    pw = new Float64Array(F.n);
+    for (const s of [0, 1] as const) for (const f of lists[s]) pw[f] = aiPower(ctx, f, prof[1 - s]);
+  }
+  const W = (f: number) => (pw ? pw[f] : F.curW[f]);
   // enemy strength in own-strength units: what it does to us vs what we do to it
-  const xk = AI_CROSS_ERA_POWER ? S.members[S.lead[enemy]].dispersion / Math.max(1e-12, lead.dispersion) : 1;
+  const xk = pw ? 1 : AI_CROSS_ERA_POWER ? S.members[S.lead[enemy]].dispersion / Math.max(1e-12, lead.dispersion) : 1;
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.side[f] !== enemy) continue;
     const c = F.cell[f];
@@ -117,8 +129,8 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       if (d > radius * UNSEEN_RANGE_FACTOR) continue;
       if (d > radius) k *= 1 + S.rules.fogError * (2 * rng.next() - 1);
     }
-    seen[c] += F.curW[f] * k;
-    totalEnemy += F.curW[f] * k;
+    seen[c] += W(f) * k;
+    totalEnemy += W(f) * k;
   }
   // ---- 2. sectors
   const sx = Math.max(1, Math.ceil(g.cols / AI_SECTORS_PER_AXIS)), sy = Math.max(1, Math.ceil(g.rows / AI_SECTORS_PER_AXIS));
@@ -146,7 +158,7 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
   // ---- 3. candidates
   const cands: Cand[] = [];
   let ownTotal = 0;
-  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && F.side[f] === side) ownTotal += F.curW[f];
+  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.onMap[f] && F.side[f] === side) ownTotal += W(f);
   if (S.objectiveCells[side] >= 0) cands.push({ cell: S.objectiveCells[side], kind: OBJ.Case, base: 10 * AI_VALUE_CAPITAL, pow: near(S.objectiveCells[side]) });
   // a side whose case objective is to hold a place defends it and fights enemy formations, but
   // does not march on enemy places (Iraq 2003 sent 14 of 22 formations at the Coalition's base)
@@ -235,12 +247,32 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       }
       if (F.mode[f] === Mode.Retreat && F.morale[f] < AI_RECOVERED_STRENGTH * mr.morale0) continue;
       avail.push(f);
-      totalW += F.curW[f];
+      totalW += W(f);
     }
     return { mi, delay, avail, totalW };
   });
   // power of the side not yet given an order this cycle
   let sideLeft = pools.reduce((a, p) => a + p.totalW, 0);
+  // AI_LOCAL_COMBAT_POWER_STAFFING: an attack is tested against the side's whole available power
+  // less what earlier attack slots took and what its defend slots needed (min of need and what
+  // they took), so formations a defend slot took beyond its need, or the doctrine's reserve, do
+  // not starve it
+  let attackPool = sideLeft;
+  // enemy power within engagement reach of a cell: the cell and its 8 neighbours, two rings for a
+  // corps_system enemy (createBattle in combat.ts)
+  const enemyCorps = S.sideMembers[enemy].some((mi) => S.members[mi].specials.has('corps_system'));
+  const localEnemy = (c: number): number => {
+    const cells = new Set<number>([c]);
+    for (let d = 0; d < 8; d++) {
+      const j = g.nb[c * 8 + d];
+      if (j < 0) continue;
+      cells.add(j);
+      if (enemyCorps) for (let d2 = 0; d2 < 8; d2++) { const k = g.nb[j * 8 + d2]; if (k >= 0) cells.add(k); }
+    }
+    let p = 0;
+    for (const x of cells) p += seen[x];
+    return p;
+  };
   // ---- 7. assignment per member
   for (const { mi, delay, avail, totalW } of pools) {
     const mr = S.members[mi];
@@ -258,10 +290,10 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       let acc = 0;
       for (const i of idx) {
         if (acc >= reserveW) break;
-        if (RESERVE_NO_OVERSHOOT && acc + F.curW[avail[i]] > reserveW) continue;
+        if (RESERVE_NO_OVERSHOOT && acc + W(avail[i]) > reserveW) continue;
         taken[i] = 1;
-        acc += F.curW[avail[i]];
-        sideLeft -= F.curW[avail[i]];
+        acc += W(avail[i]);
+        sideLeft -= W(avail[i]);
         order(ctx, avail[i], defendSlot ? Mode.Defend : Mode.Hold, defendSlot ? defendSlot.c.cell : -1, delay);
       }
     }
@@ -279,20 +311,29 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
       if (!idx.length) continue;
       idx.sort((a, b) => field[F.cell[avail[a]]] - field[F.cell[avail[b]]] || a - b);
       const defend = sl.c.kind === OBJ.Defend || (holdTargets && sl.c.kind === OBJ.Case);
-      let need = sl.c.pow * (defend ? 1 : ratio);
+      let need = defend ? sl.c.pow : (pw ? localEnemy(sl.c.cell) : sl.c.pow) * ratio;
       const capped = AI_DEFEND_CAP_BY_VALUE && sl.c.kind === OBJ.Defend && valSum > 0;
       if (capped) need = Math.min(need, totalW * value(mi, sl.c) / valSum);
-      if (AI_SKIP_UNSTAFFABLE_ATTACKS && !defend && sideLeft < need) { skipped.add(sl.k); continue; }
+      if (AI_SKIP_UNSTAFFABLE_ATTACKS && !defend && (pw ? attackPool : sideLeft) < need) { skipped.add(sl.k); continue; }
       let acc = 0;
       const mode = defend ? Mode.Defend : Mode.Attack;
+      const picks: number[] = [];
       for (const i of idx) {
-        if (capped && acc + F.curW[avail[i]] > need) continue;   // the cap is a ceiling, not a floor
-        taken[i] = 1;
-        acc += F.curW[avail[i]];
-        sideLeft -= F.curW[avail[i]];
-        order(ctx, avail[i], mode, sl.c.cell, delay);
+        if (capped && acc + W(avail[i]) > need) continue;   // the cap is a ceiling, not a floor
+        picks.push(i);
+        acc += W(avail[i]);
         if (acc >= need) break;
       }
+      // AI_LOCAL_COMBAT_POWER_STAFFING: an attack this member cannot fill to its need with the
+      // formations still free is not launched (those formations stay free), so the looser pool test
+      // does not send a lone formation at a ratio its doctrine refuses
+      if (pw && AI_SKIP_UNSTAFFABLE_ATTACKS && !defend && acc < need) { skipped.add(sl.k); continue; }
+      for (const i of picks) {
+        taken[i] = 1;
+        sideLeft -= W(avail[i]);
+        order(ctx, avail[i], mode, sl.c.cell, delay);
+      }
+      attackPool -= defend ? Math.min(acc, need) : acc;
     }
     // leftovers: aggressive commanders join the nearest attack, others hold; a side whose case
     // objective is to hold a place defends it instead (Iraq 2003: 9-15 of 22 Iraqi formations

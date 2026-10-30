@@ -350,3 +350,18 @@ export const AI_SKIP_UNSTAFFABLE_ATTACKS = true;
  *  days). Measured (20 seeds, clean facfd50, no zone grid built yet, so every theater draws zone C):
  *  19/17/22 unchanged; France 1940 95% -> 90%, Gulf War 8 -> 9 days, Stalingrad 31 -> 30 days. */
 export const REGIONAL_WEATHER = true;
+/** The AI's attack staffing is local and in combat power: an attack slot needs the doctrine's
+ *  ratio times the enemy power within engagement reach of the target cell (the cell and its 8
+ *  neighbours, two rings against corps_system), and both sides are rated with the battle model's
+ *  power (combat.ts aiPower: count x TLI x quality x training x command x tech factors) instead of
+ *  raw weapon weight. The unstaffable-attack test is against the side's whole available power less
+ *  what its defend slots needed. Before, the need was the ratio times a 3x3-sector enemy group in
+ *  raw weight and the test ran against what the defend slots had left (QA round 4: Allies at 3x
+ *  never attack, Israel never attacks locally). An attack a member cannot fill to its need from free
+ *  formations is not launched. Measured (20 seeds, clean 73fa63c): 19/17/22 -> 19/17/21; France
+ *  1940 90% -> 100%, 56 -> 36 days; Iraq 2003 x0.26 -> x0.12; Stalingrad 30 -> 21 days fails; Yom
+ *  Kippur still 0% (17 of 20 draws), ratio x2.27 -> x0.70. Presets (24 runs, invariants clean):
+ *  allies-vs-axis-minus-two draw -> Axis (the Axis is 1.5x the Allies in combat power and attacks),
+ *  macedon-vs-persia both seeds and rome-vs-france-equalized seed 2 flip to the defender;
+ *  mongols-vs-rome, usa-vs-china, usa-spain-vs-russia and japan-vs-usa stay draws. */
+export const AI_LOCAL_COMBAT_POWER_STAFFING = true;
