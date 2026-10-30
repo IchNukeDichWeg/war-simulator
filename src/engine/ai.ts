@@ -56,7 +56,11 @@ function battleOrders(ctx: Ctx, side: 0 | 1): void {
   st.objKind[side][0] = OBJ.Case;
   computeField(ctx, side, 0, target);
   for (let f = 0; f < F.n; f++) {
-    if (!F.alive[f] || !F.onMap[f] || F.side[f] !== side || F.mode[f] === Mode.Rout || F.mode[f] === Mode.Retreat) continue;
+    if (!F.alive[f] || !F.onMap[f] || F.side[f] !== side || F.mode[f] === Mode.Rout) continue;
+    // a formation that broke contact intact (BREAK_CONTACT_INTACT) comes back the next day; a
+    // beaten one stays gone. One day is the engine's order tick, not a measured re-forming time:
+    // re-engaging inside the day needs per-round orders, if that ever matters
+    if (F.mode[f] === Mode.Retreat && !F.brokeContact[f]) continue;
     order(ctx, f, posture === 'attack' ? Mode.Attack : Mode.Hold, posture === 'attack' ? target : -1, 0);
   }
   void sc;

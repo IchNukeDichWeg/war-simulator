@@ -25,6 +25,7 @@ const FIELDS: [string, Ctor, number][] = [
   ['stillDays', Uint16Array, 1], ['arriveDay', Int32Array, 1], ['onMap', Uint8Array, 1],
   ['feignUsed', Uint8Array, 1], ['routDays', Uint16Array, 1], ['battle', Int32Array, 1], ['spawnCell', Int32Array, 1],
   ['joinDay', Int32Array, 1], ['joinRound', Uint8Array, 1],
+  ['brokeContact', Uint8Array, 1], ['contactLoss', Float32Array, 1],
 ];
 
 export interface Formations {
@@ -43,6 +44,8 @@ export interface Formations {
   feignUsed: Uint8Array; routDays: Uint16Array; battle: Int32Array; spawnCell: Int32Array;
   /** Joins the battle of day joinDay only from round joinRound (sub-day reinforcements). */
   joinDay: Int32Array; joinRound: Uint8Array;
+  /** BREAK_CONTACT_INTACT: left its last battle by choice; engLoss at that moment (re-arms the withdrawal). */
+  brokeContact: Uint8Array; contactLoss: Float32Array;
 }
 
 export function allocFormations(cap: number): Formations {
@@ -108,6 +111,7 @@ export interface MemberState {
   capitalHeldDays: number;      // days the capital has been held by the enemy
   capitalReached: boolean;      // an enemy formation has been on or next to the capital since the enemy took it
   breakpoint: number;           // this seed's battle breakpoint (cohesion-shifted)
+  eraBreak: number;             // this seed's era breakpoint (cohesion-shifted), doctrine not applied (BREAK_CONTACT_INTACT)
   retreat: number;              // withdraw threshold: WITHDRAW_SHARE_OF_BREAKPOINT x breakpoint (SYMMETRIC_DOCTRINE_BREAKPOINT)
 }
 

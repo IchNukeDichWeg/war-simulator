@@ -73,7 +73,7 @@ export function fixtureMechanics(): Mechanics {
   return {
     version: 'fixture',
     modelRules: {
-      battle: { outcomeNoiseSigma: mv(0.15), pursuitDisengageShare: era(0.7), footPursuitLossFloor: mv(0.09) },
+      battle: { outcomeNoiseSigma: mv(0.15), pursuitDisengageShare: era(0.7), footPursuitLossFloor: mv(0.09), breakContactPinRatio: mv(1) },
       river: { riverCrossingDelayDays: era(0.5) },
       attrition: { returnToDutyDays: era(30), diseaseDeathShareOfAdmissions: era(0.5) },
       collapse: { armyCollapsePersonnelFraction: mv(0.1), armyCollapseMorale: mv(0.15) },

@@ -11,7 +11,7 @@ import {
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
-  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY } from './constants';
+  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY, BREAK_CONTACT_INTACT } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -38,7 +38,7 @@ function createBattle(ctx: Ctx, cell: number, att: 0 | 1): Battle | null {
   const g = S.grid;
   const b: Battle = {
     id: sc.battles.length, cell, att, parts: [[], []], airSorties: [0, 0], airPow: [0, 0], airLossFrac: [0, 0],
-    casualties: [0, 0], winner: -1, endRound: 0,
+    casualties: [0, 0], winner: -1, endRound: 0, brokeOff: [0, 0],
   };
   joinCell(ctx, b, cell, true, -1);
   for (const s of [0, 1] as const) {
@@ -188,6 +188,15 @@ export function resolveBattles(ctx: Ctx): void {
     if (b.winner >= 0) decisive.push({ b, size: b.parts[0].length + b.parts[1].length, why });
   }
   if (sc.battles.length) st.lastActivityDay = st.day;
+  // the largest battle a side left intact gets a line: the event log is how a backtest is read
+  const left = sc.battles.filter((b) => b.winner < 0 && (b.brokeOff[0] || b.brokeOff[1]))
+    .sort((a, b) => b.parts[0].length + b.parts[1].length - a.parts[0].length - a.parts[1].length || a.id - b.id)[0];
+  if (left) {
+    const s = (left.brokeOff[0] ? 0 : 1) as 0 | 1;
+    addEvent(ctx, s, 'battle',
+      `${S.sideNames[s]} broke contact in good order (losses ${Math.round(left.casualties[s]).toLocaleString('en-US')} vs ${Math.round(left.casualties[1 - s]).toLocaleString('en-US')}).`,
+      'Mobile, ahead of its break point, and the enemy could not pin it: no defeat, no pursuit.', left.cell);
+  }
   decisive.sort((a, b) => b.size - a.size || a.b.id - b.b.id);
   let n = 0;
   for (const d of decisive) {
@@ -215,7 +224,10 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   // surprise belongs to the opening of the offensive, the side's day 1, not to every fresh
   // formation's first battle all campaign (QA round 3, C6)
   const surprised = (s: number) => !!S.opts.surprise?.[s] && (SURPRISE_DAY_ONE_ONLY ? ctx.st.day === 1 : opening);
-  for (const s of [0, 1]) for (const f of b.parts[s]) if (F.engagedDays[f] === 0) { F.engLoss[f] = 0; F.feignUsed[f] = 0; }
+  for (const s of [0, 1]) for (const f of b.parts[s]) {
+    if (F.engagedDays[f] === 0) { F.engLoss[f] = 0; F.feignUsed[f] = 0; F.contactLoss[f] = 0; }
+    F.brokeContact[f] = 0;
+  }
   const cls = g.cls[cell];
   const place = S.placeAt[cell];
   const fortified = place >= 0 && S.places[place].fortified && st.control[cell] === def;
@@ -285,6 +297,13 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
     techRatioParts[s] /= wsum || 1; postureLog[s] /= wsum || 1; cmdLog[s] /= wsum || 1;
   }
   const active: [Uint8Array, Uint8Array] = [new Uint8Array(b.parts[0].length).fill(1), new Uint8Array(b.parts[1].length).fill(1)];
+  const mayLeave: [Uint8Array, Uint8Array] = [new Uint8Array(b.parts[0].length), new Uint8Array(b.parts[1].length)];
+  if (BREAK_CONTACT_INTACT) for (const s of [0, 1] as const) markBreakContact(ctx, b, s, prof, mayLeave[s]);
+  // where f's cohesion actually goes: the era's break, not a doctrine's chosen earlier withdrawal
+  const breakAt = (s: number, i: number, f: number) => {
+    const ms = st.members[F.member[f]];
+    return mayLeave[s][i] ? Math.max(ms.breakpoint, ms.eraBreak) : ms.breakpoint;
+  };
   const mountedF = S.terrMounted[cls];
   const massed: [number, number] = [prof[0].specials.has('massed_artillery') ? se('massedArtillery') : 1, prof[1].specials.has('massed_artillery') ? se('massedArtillery') : 1];
   const startHeads: [number, number] = [prof[0].heads, prof[1].heads];
@@ -359,7 +378,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (lAir > 0) lossFraction(ctx, f, lAir / Math.max(1e-9, 1 - lGround), LC.air);
         b.casualties[s] += before - F.personnel[f];
         const lStart = MORALE_ON_ENGAGED_BASIS ? l * (1 - F.engLoss[f]) : l;   // share of starting strength
-        F.morale[f] = Math.max(0, F.morale[f] - lStart * (mr.morale0 / ms.breakpoint));
+        F.morale[f] = Math.max(0, F.morale[f] - lStart * (mr.morale0 / breakAt(s, i, f)));
         F.engLoss[f] = 1 - (1 - F.engLoss[f]) * (1 - l);
       });
     }
@@ -372,19 +391,26 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (!F.alive[f]) { active[s][i] = 0; return; }
         if (absent(f, round)) { any = true; return; }
         const mr = S.members[F.member[f]], ms = st.members[F.member[f]];
-        if (F.engLoss[f] >= ms.breakpoint || F.morale[f] <= 0.001) {
+        if (F.engLoss[f] >= breakAt(s, i, f) || F.morale[f] <= 0.001) {
           active[s][i] = 0;
           // horse archers with the mobility edge break contact instead of routing
           const mobEdge = mr.specials.has('horse_archery') && maxRate(ctx, b.parts[s]) > maxRate(ctx, b.parts[e]);
           F.mode[f] = mobEdge ? Mode.Retreat : Mode.Rout;
-        } else if (F.engLoss[f] >= ms.retreat) {
+        } else if (F.engLoss[f] - (mayLeave[s][i] ? F.contactLoss[f] : 0) >= ms.retreat) {
           active[s][i] = 0;
           F.mode[f] = Mode.Retreat;
+          if (mayLeave[s][i]) { F.brokeContact[f] = 1; F.contactLoss[f] = F.engLoss[f]; }
         } else any = true;
       });
-      if (!any) { ended = true; b.winner = e as 0 | 1; b.endRound = round + 1; }
+      if (!any) {
+        ended = true;
+        // a side that left by choice, all of it, is not beaten: the battle ends without a loser
+        if (BREAK_CONTACT_INTACT && b.parts[s].some((f) => F.alive[f]) && b.parts[s].every((f) => !F.alive[f] || F.brokeContact[f])) b.brokeOff[s] = 1;
+        else { b.winner = e as 0 | 1; b.endRound = round + 1; }
+      }
     }
-    if (ended && active[0].every((x) => !x) && active[1].every((x) => !x)) {
+    // both out in the same round: one that left by choice stands against one that was beaten
+    if (ended && !b.brokeOff[0] && !b.brokeOff[1] && active[0].every((x) => !x) && active[1].every((x) => !x)) {
       b.winner = -1;
       if (SIMULTANEOUS_BREAK_BY_SEVERITY) {
         // both broke this round: the side further past its breakpoint lost the field
@@ -439,7 +465,7 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         const mr = S.members[F.member[f]];
         const pursuit = pursuitFor(mr.ruleYear);
         F.morale[f] = Math.max(0, F.morale[f] - m.morale.defeatShock.mid);
-        const mobEdge = mr.specials.has('horse_archery') && loserEscapes;
+        const mobEdge = (mr.specials.has('horse_archery') && loserEscapes) || F.brokeContact[f] === 1;
         const pursued = F.mode[f] === Mode.Rout || (PURSUE_WITHDRAWING && F.mode[f] === Mode.Retreat && !mobEdge);
         if (F.mode[f] === Mode.Rout) { st.acc.routs[l]++; F.routDays[f] = 0; }
         if (pursued) {
@@ -458,6 +484,11 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
         if (BEATEN_LEAVE_CELL && !S.battleMode && F.alive[f] && F.onMap[f] && F.cell[f] === cell) leaveCell(ctx, f, cell, b);
       }
       st.acc.battleWins[w]++;
+    } else for (const s of [0, 1] as const) if (b.brokeOff[s]) for (const f of parts[s]) {
+      if (!F.alive[f]) continue;
+      F.next[f] = -1;
+      F.prog[f] = 0;
+      if (BEATEN_LEAVE_CELL && !S.battleMode && F.onMap[f] && F.cell[f] === cell) leaveCell(ctx, f, cell, b);
     }
   }
   // strike aircraft lost flying battle support
@@ -507,11 +538,11 @@ function resolveBattle(ctx: Ctx, b: Battle): string {
   return 'Winner\'s edge: ' + top.map(([k, v]) => `${k} x${Math.exp(v) >= 100 ? Math.exp(v).toExponential(1) : Math.exp(v).toFixed(1)}`).join(', ') + '.';
 }
 
-/** Beaten formation f gives up the contested cell: one cell toward own supply, else it surrenders. */
-function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
+/** The neighbour of `cell` that `side` falls back to: lowest supply distance not held or occupied by
+ *  the enemy, -1 when there is none. */
+function fallbackCell(ctx: Ctx, side: number, cell: number): number {
   const { S, st, sc } = ctx;
-  const F = st.F, g = S.grid;
-  const side = F.side[f], enemy = 1 - side;
+  const g = S.grid, enemy = 1 - side;
   const sd = st.supplyDist[side];
   let best = -1, bv = Infinity;
   for (let d = 0; d < 8; d++) {
@@ -520,6 +551,15 @@ function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
     const v = sd[j] + (st.control[j] === side ? 0 : 1e-3);   // finite supply distance first, own ground on ties
     if (best < 0 || v < bv) { best = j; bv = v; }
   }
+  return best;
+}
+
+/** Beaten formation f gives up the contested cell: one cell toward own supply, else it surrenders. */
+function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
+  const { S, st, sc } = ctx;
+  const F = st.F;
+  const side = F.side[f];
+  const best = fallbackCell(ctx, side, cell);
   if (best < 0) {
     const before = F.personnel[f];
     // the pocket is destroyed: encircledSurrenderShare (era of the formation) surrenders, the rest die
@@ -532,6 +572,38 @@ function leaveCell(ctx: Ctx, f: number, cell: number, b: Battle): void {
   sc.occ[side][cell]--;
   sc.occ[side][best]++;
   F.cell[f] = best;
+}
+
+/** Marks the formations of side s that may leave this battle by choice (BREAK_CONTACT_INTACT): the
+ *  doctrine withdraws before the era's break (retreatThreshold under its mid, so the withdrawal is a
+ *  choice and not the end of its cohesion), no manoeuvre role is slower than the enemy's fastest, a
+ *  way out exists, and the enemy cannot pin it: no air support, and mobile strength under
+ *  breakContactPinRatio of its own. Any strike air counts as able to find a withdrawing column, a
+ *  yes/no where a share of the air power would do if modern break-contact ever matters. */
+function markBreakContact(ctx: Ctx, b: Battle, s: 0 | 1, prof: [SideProf, SideProf], out: Uint8Array): void {
+  const { S, st } = ctx;
+  const F = st.F;
+  const e = 1 - s;
+  if (b.airPow[e] > 0) return;
+  if (prof[e].mountedW >= S.m.modelRules.battle.breakContactPinRatio.mid * prof[s].mountedW) return;
+  const enemyTop = maxRate(ctx, b.parts[e]);
+  b.parts[s].forEach((f, i) => {
+    const mr = S.members[F.member[f]];
+    if (mr.retreatThreshold >= mr.bpMV.mid || slowestManoeuvreRate(ctx, f) < enemyTop) return;
+    if (!S.battleMode && F.cell[f] === b.cell && fallbackCell(ctx, s, b.cell) < 0) return;
+    out[i] = 1;
+  });
+}
+
+/** Rate of f's slowest manoeuvre role, 0 with none: support fire neither pursues (profile) nor holds
+ *  a withdrawal back. */
+function slowestManoeuvreRate(ctx: Ctx, f: number): number {
+  const F = ctx.st.F;
+  const mr = ctx.S.members[F.member[f]];
+  const o = f * NR;
+  let low = Infinity;
+  for (let r = 0; r < NR; r++) if (F.counts[o + r] >= 0.5 && !IS_SUPPORT_FIRE[r]) low = Math.min(low, mr.rate[r]);
+  return low === Infinity ? 0 : low;
 }
 
 function maxRate(ctx: Ctx, list: number[]): number {

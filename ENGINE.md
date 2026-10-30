@@ -206,7 +206,32 @@ in good order; one reaching the breakpoint (shifted by cohesion) routs: it
 suffers `pursuitLossFraction` x (winner mounted/mobile share) extra losses, of
 which `captureFraction` are prisoners, and flees toward supply. When every
 formation of one side has withdrawn or routed, the battle ends. Otherwise it
-continues the next day. In war mode a beaten formation standing in the battle
+continues the next day.
+
+A formation may leave by choice (`BREAK_CONTACT_INTACT`) when its doctrine
+withdraws before the era's break (`retreatThreshold` under the era mid), no
+manoeuvre role of it is slower than the enemy's fastest role, a way out exists,
+and the enemy cannot pin it: no air support in the battle, and enemy mobile
+strength (count x TLI of manoeuvre roles) under
+`modelRules.battle.breakContactPinRatio` (1.0, grade D, 0.5-2.0) of its own.
+Such a formation withdraws at its doctrine threshold as before, but the doctrine
+no longer sets where its cohesion goes: rout and the morale scale use
+max(breakpoint, era draw). If all of a side leaves this way the battle ends
+without a loser: no `defeatShock`, no pursuit, no battle win, and the side
+keeps the fight open. In battle mode the formation returns the next day (one day
+is the order tick, not a measured re-forming time) and its withdrawal re-arms
+for another withdraw share of loss, while `engLoss` stays cumulative because the
+era breakpoints are loser casualty shares of a whole battle. In war mode it
+falls back like any withdrawing formation, leaves a contested cell, and recovers
+under the usual AI rule. If only part of a side leaves, the side is beaten but
+the formations that left escape the pursuit.
+Measured (20 seeds): 18/13/21 -> 19/14/21. Mohi 15% -> 95%, x12.96 -> x1.21,
+most of it from the morale scale (4 of 20 seeds break off); it falls to 55%, a
+fail, at pin ratio 0.5. Carrhae stays 0%, x20.06 -> x18.31: the Parthians break off in
+every seed and then rout at the era break, because the exchange is about even
+after day 1 and no horse-archer standoff exists.
+
+In war mode a beaten formation standing in the battle
 cell gives it up: it falls back one cell toward its supply (lowest supply
 distance among neighbours not held or occupied by the enemy), or, when no such
 neighbour exists, surrenders (`BEATEN_LEAVE_CELL`): with

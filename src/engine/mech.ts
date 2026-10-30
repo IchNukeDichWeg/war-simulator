@@ -170,7 +170,7 @@ export function validateMechanics(m: Mechanics | undefined | null): string[] {
     const ok = !!v && typeof v === 'object' && ERAS.slice(ERAS.indexOf(from)).every((e) => isMV((v as any)[e]));
     if (!ok) miss.push(`${path} (era map from ${from})`);
   };
-  for (const k of ['battle.outcomeNoiseSigma', 'battle.footPursuitLossFloor', 'collapse.armyCollapsePersonnelFraction', 'collapse.armyCollapseMorale',
+  for (const k of ['battle.outcomeNoiseSigma', 'battle.footPursuitLossFloor', 'battle.breakContactPinRatio', 'collapse.armyCollapsePersonnelFraction', 'collapse.armyCollapseMorale',
     'intel.fogStrengthError', 'c2.missionCommandDelayFactor', 'naval.blockadeSeaControlThreshold',
     'aiForceRatio.attrition', 'aiForceRatio.maneuver']) need(`modelRules.${k}`, 'mv');
   for (const k of ['battle.pursuitDisengageShare', 'river.riverCrossingDelayDays', 'attrition.returnToDutyDays', 'attrition.diseaseDeathShareOfAdmissions',
