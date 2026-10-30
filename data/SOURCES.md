@@ -104,13 +104,16 @@ Each `derived:<id>` used in the data must be listed here with its formula.
   withdraws or breaks, never the battle total including pursuit, prisoners taken after the break,
   mopping-up or campaign attrition. Value read off `modelRules.breakpoint.loserCasualtyShareAtBreak`
   for the profile's era (`napoleonic` for 1789-1849): the `mid` when no source gives a
-  profile-specific reason (stated as grade C in the note); the `low` quartile when sources record
-  a doctrine of early disengagement (skirmish or delay doctrine, breaking contact, casualty
-  conservation, collapse when the commander fell); the `high` quartile when sources record a
-  refusal to withdraw (standing orders, holding by drill under heavy loss, fighting to
-  destruction). A non-backtest battle that gives the loss at withdrawal with no pursuit, or
-  bounds it, overrides or brackets the quartile; the note gives the arithmetic. A profile spanning
-  several eras takes the mean of their values. Battles in `data/battles` are backtest cases and
+  profile-specific reason (stated as grade C in the note); a quartile only on battlefield
+  evidence of when that army's formations withdrew or held. The `low` quartile when sources
+  record tactical early disengagement (skirmish, delay or break-contact doctrine); the `high`
+  quartile when sources record tactical holding (standing orders to hold or not to withdraw,
+  shown in battles; drill that held formations under heavy loss; fighting to destruction).
+  Not evidence for a quartile: casualty conservation or caution about attacking (those belong
+  in aggression and the required force ratio), strategic or political limits, and one-off
+  events such as a commander falling or fleeing. A non-backtest battle that gives the loss at
+  withdrawal with no pursuit, or bounds it, overrides or brackets the quartile; the note gives
+  the arithmetic. A profile spanning several eras takes the mean of their values. Battles in `data/battles` are backtest cases and
   never evidence. Doctrine weights are plain numbers (schema), so the basis, method and sources
   go in `weightNotes.retreatThreshold` and the profile's `sources` list.
 
