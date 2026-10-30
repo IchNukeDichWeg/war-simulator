@@ -767,5 +767,52 @@ The same 18 cases pass at base in both. What changed is which flips were real:
 
 The gate is one case short on grade-D constants. Under the 20-seed screen it was two short, and that
 reading was partly noise. The closest routes to 18 are France 1940 and one more winner, and any
-route still has to survive the era breakpoints, which cost three cases at this count.
+route still has to survive the era breakpoints, which cost two more cases at this count.
 
+## Diagnosis: the high era breakpoint
+
+Instrument: 40 seeds per line at HEAD 048ff5c, same seeds across columns, with the time limit or the
+per-seed breakpoint overridden from a scratch script. No engine or data value changed. These are not
+pooled with the 200-seed campaign, and 40 seeds is a diagnostic count, not a gate reading.
+
+**Both collapses are time-limit endings, not lost fights.** Every seed at quantile 1 reaches the limit:
+
+| Case, quantile 1 | Limit as set | Limit x2 | Historical |
+| --- | --- | --- | --- |
+| Gulf War | Iraq 40 of 40 at 10 days, on "still holds its objective" | Coalition 40 of 40, median 12 days | 4.17 days |
+| Hastings | draw 40 of 40 at 3 days | Normans 40 of 40, median 3.8 days | 0.35 days |
+
+At the same quantile the Gulf War stands at a median 2,818 Coalition and 61,582 Iraqi losses when the
+limit fires (20 seeds). The base losses are the same thing: each case misses 5 of 40 at base, and all 5
+are time-limit endings. The flip sits between quantiles 0.7 and 0.9 in both cases.
+
+**The Six-Day War has the same trigger with no breakpoint moved.** Egypt "wins" 40 of 40 at the limit of 10
+days. With no binding limit Israel wins 40 of 40, on its objective or a morale collapse, at a median 20
+days against 4.17 historical, so x4.8 and outside the duration window. The miss is speed, not the winner.
+
+**Is the range right?**
+
+- **Modern: no, as applied.** Iraq's break at quantile 1 is 0.462, above the era high of 0.30. The doctrine
+  threshold 0.154 is scaled by the era's high/mid of 3.0, so a doctrine already high in its era leaves the
+  sourced range. The modern range is grade D besides, and the doctrine values are coldwar quartiles.
+- **Medieval: not shown wrong, and weak.** The feudal doctrine sits at the era mid, so quantile 1 is exactly
+  the era high, 0.41. Its own note calls that an upper bound from totals dominated by the rout, grade D.
+  Hastings stays a timing failure there: the Normans win at x2 the limit, at x10.9 the historical duration.
+  No sourced replacement is in hand.
+
+**Counterfactuals** (winner hits of 40 seeds, base draws unless stated):
+
+| Case | Now | Break clamped to era low-high | Campaign limit 3 x high duration |
+| --- | --- | --- | --- |
+| Gulf War | 35 | 40 | 40 |
+| Gulf War at quantile 1 | 0 | 40, median 8 days | 33 |
+| Hastings | 35 | 35 | 35 |
+| Hastings at quantile 1 | 0 | 0 | 0 |
+| Six-Day War | 0 | 0 | 0 |
+| Adrianople | 2 | 19 | 2 |
+| Mohi | 11 | 19 | 11 |
+| France 1940 | 32 | 33 | 32 |
+
+Winners at the line stay 18 of 24 in all three columns, and the other 16 cases do not move. The clamp is the
+fix the range argument supports. It was chosen after seeing these results, so it would need its own
+toggle and a fresh campaign, not pooled with this one. Neither change has been applied.
