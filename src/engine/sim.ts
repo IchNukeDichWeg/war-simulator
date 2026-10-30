@@ -13,7 +13,7 @@ import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './
 import { spawnFormation } from './formations';
 import { NR } from './roles';
 import { haversineKm } from './grid';
-import { AI_MAX_OBJECTIVES, RETURN_RING_DAYS, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT } from './constants';
+import { AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RATIOS_FROM_MODEL_RULES, RETURN_RING_DAYS, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT } from './constants';
 import { productionPhase } from './production';
 import { aiPhase } from './ai';
 import { movementPhase } from './movement';
@@ -49,9 +49,17 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
   const rng = new Rng(seed);
   // breakpoint quantile: one draw per seed from its own stream (the main stream is untouched)
   const bpU = S.opts.breakpointQuantile ?? new Rng((seed ^ 0x5bd1e995) >>> 0).next();
+  // AI force-ratio quantile: one draw per seed from a third stream, independent of the breakpoint
+  // draw (how much a side masses and when its formations break are separate uncertainties)
+  const ratioU = S.opts.ratioQuantile ?? new Rng((seed ^ 0x27d4eb2f) >>> 0).next();
+  const ar = S.m.modelRules.aiForceRatio;
+  const aiRatio = AI_RATIOS_FROM_MODEL_RULES
+    ? { attrition: factor(ar.attrition, ratioU), maneuver: factor(ar.maneuver, ratioU) }
+    : { attrition: AI_MASS_RATIO_ATTRITION, maneuver: AI_MASS_RATIO_MANEUVER };
   const F = allocFormations(Math.max(16, Math.ceil(S.seeds.length * 1.25) + 16));
   const st: SimState = {
     day: 0,
+    aiRatio,
     rng: rng.s,
     F,
     control: S.control0.slice(),

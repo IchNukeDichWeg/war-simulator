@@ -41,6 +41,8 @@ export interface SimOptions {
   /** Fixed quantile of every member's breakpoint range (0 low, 0.5 mid, 1 high) instead of the
    *  per-seed draw: 0.5 is the deterministic mode. */
   breakpointQuantile?: number;
+  /** Fixed quantile of the AI force ratios (modelRules.aiForceRatio) instead of the per-seed draw. */
+  ratioQuantile?: number;
   /** The case marks the side prepared:false (caught unentrenched): no field_fortification. */
   unprepared?: [boolean, boolean];
   surprise?: [boolean, boolean];

@@ -81,6 +81,7 @@ export function fixtureMechanics(): Mechanics {
       breakpoint: { loserCasualtyShareAtBreak: era(0.2), winnerCasualtyShareAtEnd: era(0.05) },
       intel: { fogStrengthError: mv(0.5) },
       c2: { missionCommandDelayFactor: mv(0.5) },
+      aiForceRatio: { attrition: mv(3), maneuver: mv(1.5) },
       naval: { blockadeSeaControlThreshold: mv(0.6), navalAttritionPerDay: era(0.001) },
       transport: {
         seaLiftGrtPerSoldier: era(5), seaLiftTonsPerVehicle: { tracked: era(40), wheeled: era(8) },

@@ -43,6 +43,8 @@ export interface ModelRules {
   breakpoint: { loserCasualtyShareAtBreak: EraRule; winnerCasualtyShareAtEnd: EraRule };
   intel: { fogStrengthError: MV };
   c2: { missionCommandDelayFactor: MV };
+  /** Local combat-power ratio (attacker:defender) the AI masses before it attacks, at maneuver weight 0 and 1. */
+  aiForceRatio: { attrition: MV; maneuver: MV };
   naval: { blockadeSeaControlThreshold: MV; navalAttritionPerDay: EraRule };
   transport: {
     seaLiftGrtPerSoldier: EraRule;

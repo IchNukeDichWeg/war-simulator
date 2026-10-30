@@ -8,7 +8,7 @@ import { dijkstra, haversineKm } from './grid';
 import { Mode } from './state';
 import { computeField, computeInvSpeed } from './movement';
 import {
-  AI_CYCLE_DAYS, AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
+  AI_CYCLE_DAYS, AI_MAX_OBJECTIVES, AI_RECOVERED_STRENGTH,
   AI_SECTORS_PER_AXIS, AI_VALUE_CAPITAL, AI_VALUE_CITY, AI_VALUE_DEFENSE, AI_VALUE_FORMATION, AIR_MIN_TECH,
   AI_DEFEND_CAP_BY_VALUE, AI_SKIP_UNSTAFFABLE_ATTACKS, HOLD_SIDE_NO_PLACE_TARGETS, LEFTOVERS_FOLLOW_OBJECTIVE, OUT_OF_SUPPLY_FALLBACK_DAYS, UNSEEN_RANGE_FACTOR, RESERVE_NO_OVERSHOOT,
   AI_CROSS_ERA_POWER, AI_STRONGER_SIDE_ADVANCES, AI_LOCAL_COMBAT_POWER_STAFFING } from './constants';
@@ -299,7 +299,7 @@ function planSide(ctx: Ctx, side: 0 | 1): void {
     }
     // attack slots the side cannot staff to the doctrine's ratio with all it has left are skipped
     const skipped = new Set<number>();
-    const ratio = AI_MASS_RATIO_ATTRITION + (AI_MASS_RATIO_MANEUVER - AI_MASS_RATIO_ATTRITION) * w.maneuver;
+    const ratio = st.aiRatio.attrition + (st.aiRatio.maneuver - st.aiRatio.attrition) * w.maneuver;
     // a Defend slot absorbs at most its value's share of the member's army (QA C4: Defend slots near
     // the start won on distance and their need, the enemy power nearby, took the whole army)
     const valSum = slots.reduce((a, x) => a + (x.s > 0 ? value(mi, x.c) : 0), 0);

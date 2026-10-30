@@ -114,6 +114,8 @@ export interface BattleRec { lat: number; lon: number; intensity: number }
 
 export interface SimState {
   day: number;
+  /** AI required force ratio at maneuver weight 0 and 1, drawn per seed (AI_RATIOS_FROM_MODEL_RULES). */
+  aiRatio: { attrition: number; maneuver: number };
   rng: Uint32Array;
   F: Formations;
   control: Uint8Array;          // per cell: 0/1 side, 255 neutral or sea

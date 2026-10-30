@@ -408,7 +408,12 @@ tech)` (`mission_command` halves it). Each order cycle:
    enemy "capital" is the synthesized start base.
 3. Assign formations greedily to the best objectives until each objective has
    the force ratio the doctrine wants (attrition doctrines mass, maneuver
-   doctrines move fast with less); keep `reserveUse` x strength in reserve at
+   doctrines move fast with less). As built (`AI_RATIOS_FROM_MODEL_RULES`):
+   ratio = attrition + (maneuver - attrition) x the doctrine's maneuver weight,
+   with `modelRules.aiForceRatio.attrition` (2.5 / 3 / 5) and `.maneuver`
+   (1.0 / 1.5 / 2.5) taken at one quantile u per seed from their own stream,
+   independent of the breakpoint draw (`SimOptions.ratioQuantile` fixes u,
+   `scripts/backtest.ts --ratio-quantile`); OFF: the constants 3.0 and 1.5; keep `reserveUse` x strength in reserve at
    the most threatened own city. As built (`RESERVE_NO_OVERSHOOT`): the reserve
    skips formations that would overshoot that share and is empty when a member
    has a single available formation (the first formation was always taken).

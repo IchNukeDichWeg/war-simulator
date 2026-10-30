@@ -13,7 +13,7 @@ export const AI_MAX_OBJECTIVES = 12;
 /** Enemy formations are clustered on a coarse grid of about this many sectors per axis. */
 export const AI_SECTORS_PER_AXIS = 12;
 /** Desired local force ratio the AI masses before attacking: attrition doctrine (maneuver 0)
- *  vs maneuver doctrine (maneuver 1). AI behaviour weights, not combat physics. */
+ *  vs maneuver doctrine (maneuver 1). Used only with AI_RATIOS_FROM_MODEL_RULES OFF. */
 export const AI_MASS_RATIO_ATTRITION = 3;
 export const AI_MASS_RATIO_MANEUVER = 1.5;
 /** AI objective values (relative weights for ranking objectives). */
@@ -387,3 +387,12 @@ export const WITHDRAW_SHARE_OF_BREAKPOINT = 0.9;
  *  18/13/20, 16/10/24 (was 20/18/19, 21/18/21, 20/16/21). Presets (24 runs, invariants clean):
  *  rome-vs-france-equalized seed 1 and macedon-vs-persia seed 1 change winner. */
 export const SYMMETRIC_DOCTRINE_BREAKPOINT = true;
+/** The AI's required force ratios are modelRules.aiForceRatio.{attrition, maneuver} (FM 5-0, FM
+ *  100-2-1, Mearsheimer 1989; grade B and C), drawn per seed at one quantile u from a stream of
+ *  their own (seed ^ 0x27d4eb2f), independent of the breakpoint draw; SimOptions.ratioQuantile
+ *  fixes u (scripts/backtest.ts --ratio-quantile). OFF: the code constants 3.0 and 1.5 (the mids).
+ *  Measured (20 seeds, clean 27c49c5): 18/13/21 unchanged; Yom Kippur 0% -> 25%, France 1940 80% ->
+ *  75% and 50 -> 57 days, Stalingrad 21 -> 24 days. Fixed quantile low/mid/high: 18/12/21,
+ *  18/13/21, 18/13/22. Presets (24 runs, invariants clean): rome-vs-france-equalized seed 2 and
+ *  macedon-vs-persia seed 1 change winner. */
+export const AI_RATIOS_FROM_MODEL_RULES = true;

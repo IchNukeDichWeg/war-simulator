@@ -2,6 +2,7 @@
 //   npx tsx scripts/backtest.ts [--seeds 20] [--only cannae--216,waterloo-1815] [--data DIR] [--json out.json]
 //   npx tsx scripts/backtest.ts --sweep modelRules.collapse.armyCollapseMorale 0.10,0.15,0.20,0.25
 //   npx tsx scripts/backtest.ts --bp-quantile 0,0.5,1     (every breakpoint at low, mid, high)
+//   npx tsx scripts/backtest.ts --ratio-quantile 0,0.5,1  (the AI force ratios at low, mid, high)
 // Prints per case: historical winner win rate, model loss ratio vs historical, duration vs historical.
 // --sweep sets one mechanics value (an MV's mid, or a plain number) to each listed value in turn and
 // prints the VALIDATION counts at each; nothing is written to disk.
@@ -105,7 +106,18 @@ function withValue(d: EngineData, path: string, v: number): EngineData {
 
 const sweepAt = argv.indexOf('--sweep');
 const bpq = arg(argv, 'bp-quantile');
-if (bpq) {
+const rq = arg(argv, 'ratio-quantile');
+if (rq) {
+  const qs = rq.split(',').map(Number);
+  if (!qs.length || qs.some((q) => !(q >= 0 && q <= 1))) { console.error('usage: --ratio-quantile <q1,q2,...> in [0,1]'); process.exit(2); }
+  const table: string[] = [];
+  for (const q of qs) {
+    const c = counts(runAll(data, cases, `ratio quantile ${q}`, { ratioQuantile: q }));
+    table.push(`ratio quantile ${q}: ${c.line}`, ...c.fails);
+  }
+  console.log('');
+  for (const l of table) console.log(l);
+} else if (bpq) {
   const qs = bpq.split(',').map(Number);
   if (!qs.length || qs.some((q) => !(q >= 0 && q <= 1))) { console.error('usage: --bp-quantile <q1,q2,...> in [0,1]'); process.exit(2); }
   const table: string[] = [];
