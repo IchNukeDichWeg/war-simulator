@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, MAX_FORMATIONS_PER_MEMBER, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { refreshFormation, spawnFormation } from './formations';
 import { haversineKm } from './grid';
@@ -33,22 +33,29 @@ function spawnCellFor(ctx: Ctx, mi: number): number {
   return best;
 }
 
-/** Hand the depot's land platforms to the member's crewed formation nearest its spawn cell (kept in
- *  the depot while the member has none on the map). */
-function mergePlatforms(ctx: Ctx, mi: number): void {
+/** The member's crewed land formation on the map nearest its spawn cell, or -1. */
+function nearestCrewed(ctx: Ctx, mi: number): number {
   const { S, st } = ctx;
   const F = st.F, g = S.grid;
-  const d = st.members[mi].depot;
   const at = spawnCellFor(ctx, mi);
   const ref = at >= 0 ? at : S.members[mi].spawnCells.find((c) => c >= 0) ?? -1;
-  if (ref < 0) return;
+  if (ref < 0) return -1;
   let best = -1, bd = Infinity;
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.member[f] !== mi || F.personnel[f] < 0.5 || !g.land[F.cell[f]]) continue;
     const dist = haversineKm(g.lat[ref], g.lon[ref], g.lat[F.cell[f]], g.lon[F.cell[f]]);
     if (dist < bd) { bd = dist; best = f; }
   }
+  return best;
+}
+
+/** Hand the depot's land platforms to the member's crewed formation nearest its spawn cell (kept in
+ *  the depot while the member has none on the map). */
+function mergePlatforms(ctx: Ctx, mi: number): void {
+  const d = ctx.st.members[mi].depot;
+  const best = nearestCrewed(ctx, mi);
   if (best < 0) return;
+  const F = ctx.st.F;
   const o = best * NR;
   for (let r = 0; r < NR; r++) if (IS_LAND[r] && !IS_P[r] && d[r] > 0) { F.counts[o + r] += d[r]; d[r] = 0; }
   refreshFormation(ctx, best);
@@ -73,8 +80,23 @@ function flushDepot(ctx: Ctx, mi: number, force: boolean): void {
   const share = mr.entryBySea && mr.lift > 0 ? Math.min(1, mr.lift / Math.max(1e-9, p)) : 1;
   if (mr.entryBySea) st.nextLiftDay[mi] = st.day + Math.max(1, Math.ceil(mr.roundTripDays));
   const ship = p * share;
-  // one formation per formationSize of personnel
-  const nF = Math.max(1, Math.floor(ship / mr.formationSize));
+  // one formation per formationSize of personnel, but the member never holds more than
+  // MAX_FORMATIONS_PER_MEMBER alive, the same cap the day-0 seeds use. Without it the hospital
+  // returns and recruits of a 1e9-strong army added about 500 formations a day until V8 aborted
+  // (red team C2). Below the cap nothing changes; at it the draft joins the nearest crewed
+  // formation, so the extra men are fielded in larger formations instead of more of them.
+  let alive = 0;
+  for (let f = 0; f < st.F.n; f++) if (st.F.alive[f] && st.F.member[f] === mi) alive++;
+  const room = MAX_FORMATIONS_PER_MEMBER - alive;
+  const join = room <= 0 ? nearestCrewed(ctx, mi) : -1;
+  if (join >= 0) {
+    const F = st.F, o = join * NR;
+    for (let r = 0; r < NR; r++) if (IS_LAND[r]) F.counts[o + r] += d[r] * share;
+    refreshFormation(ctx, join);
+    for (let r = 0; r < NR; r++) if (IS_LAND[r]) d[r] -= d[r] * share;
+    return;
+  }
+  const nF = Math.max(1, Math.min(Math.floor(ship / mr.formationSize), room));
   const counts = new Float64Array(NR);
   for (let k = 0; k < nF; k++) {
     for (let r = 0; r < NR; r++) counts[r] = IS_LAND[r] ? (d[r] * share) / nF : 0;

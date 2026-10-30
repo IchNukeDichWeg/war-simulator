@@ -4,7 +4,8 @@ import { yearLabel } from '../data';
 import { DerivedBadge, GradeBadge, SourceLink } from '../Grade';
 import { ensureSnapshots } from '../lazy';
 import { fmt } from '../format';
-import { setScenario, store, useStore } from '../store';
+import { setScenario, store, toast, useStore } from '../store';
+import { overrideValueProblem } from '../../engine/overridePath';
 import { EmptyData } from './EmptyData';
 
 interface Field { path: string; est: Est; group: string; label: string }
@@ -56,6 +57,9 @@ function EditCell({ f, snapId, ov }: { f: Field; snapId: string; ov?: Override }
     const v = parseFloat(txt);
     if (!Number.isFinite(v)) { setTxt(shownCur); return; }
     if (txt === shownCur) return;
+    // same bound the share link and the engine apply: no negative or absurd counts (red team C2/C3)
+    const bad = overrideValueProblem(f.path + '.mid', v);
+    if (bad) { toast(bad); setTxt(shownCur); return; }
     setOverride(snapId, f.path + '.mid', v === f.est.mid ? null : v);
   };
   const out = ov && (ov.value < f.est.low || ov.value > f.est.high);

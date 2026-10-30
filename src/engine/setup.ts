@@ -17,7 +17,7 @@ import {
   REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT,
 } from './constants';
 import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
-import { overridePathProblem } from './overridePath';
+import { overridePathProblem, overrideValueProblem } from './overridePath';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
 export const SEASONS: Season[] = ['spring', 'summer', 'autumn', 'winter'];
@@ -310,7 +310,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       }
       for (const ov of scenario.overrides ?? []) {
         if (ov.snapshotId !== id) continue;
-        const bad = overridePathProblem(ov.path);
+        const bad = overridePathProblem(ov.path) ?? overrideValueProblem(ov.path, ov.value);
         if (bad) { warnings.push(`Override on ${id} ignored: ${bad}.`); continue; }
         if (!setPath(snap, ov.path, ov.value)) warnings.push(`Override ${ov.path} on ${id} could not be applied.`);
       }
