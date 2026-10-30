@@ -1,0 +1,560 @@
+{
+ "id": "manchuria-1945",
+ "nationId": "manchuria",
+ "includes": [],
+ "name": "Manchuria",
+ "year": 1945,
+ "era": "coldwar",
+ "region": "east_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Manchuria interior point",
+  "lat": 46.375,
+  "lon": 124.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Manchuria interior point",
+   "lat": 46.375,
+   "lon": 124.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1945:Manchuria",
+  "areaKm2": {
+   "low": 1121540,
+   "mid": 1121540,
+   "high": 1121540,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1945:Manchuria polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 111632346,
+   "mid": 171607663,
+   "high": 288648834,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 1,116,484 km2 (100% habitable) x east_asia 1945 density 63.4 x factor 2.42"
+  },
+  "urbanization": {
+   "low": 0.185,
+   "mid": 0.19,
+   "high": 0.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.coldwar.byRegion.east_asia.urbanization; HYDE cross-check 0.139"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 538068,
+   "mid": 899224,
+   "high": 3579246,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00524 (inputs eraPeerRatios.coldwar.byRegion.east_asia.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 271069,
+   "mid": 480868,
+   "high": 3870357,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 3 coldwar east_asia peers"
+  },
+  "supportPersonnel": {
+   "low": 225698,
+   "mid": 408151,
+   "high": 2040060,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 3 coldwar east_asia peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.07,
+   "mid": 0.08,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.coldwar.byRegion.east_asia.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 7814264,
+   "mid": 13728613,
+   "high": 23091907,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 272077,
+     "mid": 454697,
+     "high": 1809864,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "92.6% of combat personnel, median share, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.4,
+     "high": 0.475,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.425,
+     "mid": 0.45,
+     "high": 0.525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 21766,
+     "mid": 36376,
+     "high": 144789,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "7.4% of combat personnel, median share, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.413,
+     "mid": 0.425,
+     "high": 0.438,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.5,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 1026,
+     "mid": 2654,
+     "high": 12774,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 866,
+     "mid": 1732,
+     "high": 8025,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.438,
+     "mid": 0.525,
+     "high": 0.612,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.438,
+     "mid": 0.475,
+     "high": 0.513,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "ifv_apc": {
+    "count": {
+     "low": 146,
+     "mid": 260,
+     "high": 1557,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ifv_apc per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.325,
+     "mid": 0.35,
+     "high": 0.35,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.375,
+     "mid": 0.4,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 284,
+     "mid": 588,
+     "high": 2794,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.325,
+     "mid": 0.35,
+     "high": 0.375,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.313,
+     "mid": 0.325,
+     "high": 0.337,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 123,
+     "mid": 266,
+     "high": 1294,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_strike per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.4,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.313,
+     "mid": 0.325,
+     "high": 0.337,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 100,
+     "mid": 189,
+     "high": 934,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.3,
+     "high": 0.35,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.375,
+     "mid": 0.4,
+     "high": 0.425,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 3 coldwar east_asia peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 73,
+     "mid": 199,
+     "high": 1104,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 3 coldwar east_asia peers"
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 3 coldwar east_asia peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.45,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 3 coldwar east_asia peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.35,
+   "mid": 0.35,
+   "high": 0.45,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 3 coldwar east_asia peers"
+  },
+  "cohesion": {
+   "low": 0.45,
+   "mid": 0.55,
+   "high": 0.575,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 3 coldwar east_asia peers"
+  },
+  "morale": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 3 coldwar east_asia peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1945"
+  },
+  "armor": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1945"
+  },
+  "ships": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1945"
+  },
+  "fortification": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1945"
+  },
+  "logistics": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1945"
+  },
+  "communications": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1945"
+  },
+  "isr": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1945"
+  },
+  "air": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1945"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1945"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 884,
+   "mid": 1280,
+   "high": 1400,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.east_asia 1945"
+  },
+  "gdp": {
+   "low": 98700000000,
+   "mid": 220000000000,
+   "high": 404000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.055,
+   "mid": 0.07,
+   "high": 0.11,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 3 coldwar east_asia peers"
+  },
+  "industrialShare": {
+   "low": 0.21,
+   "mid": 0.3,
+   "high": 0.375,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 3 coldwar east_asia peers"
+  },
+  "foodSurplus": {
+   "low": 0.267,
+   "mid": 0.28,
+   "high": 0.28,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 3 coldwar east_asia peers"
+  },
+  "annualCohort": {
+   "low": 1013307,
+   "mid": 1699086,
+   "high": 2932334,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 3 coldwar east_asia peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 69010,
+   "mid": 120496,
+   "high": 180071,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 3 coldwar east_asia peers"
+  },
+  "railKm": {
+   "low": 19097,
+   "mid": 32352,
+   "high": 33787,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 3 coldwar east_asia peers"
+  },
+  "majorPorts": {
+   "low": 24,
+   "mid": 46,
+   "high": 59,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 3 coldwar east_asia peers"
+  },
+  "merchantTonnage": {
+   "low": 345930,
+   "mid": 854640,
+   "high": 1786699,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 3 coldwar east_asia peers"
+  },
+  "supplyRangeKm": {
+   "low": 100,
+   "mid": 100,
+   "high": 175,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 3 coldwar east_asia peers"
+  },
+  "draftAnimals": {
+   "low": 5642377,
+   "mid": 8852144,
+   "high": 16465052,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 3 coldwar east_asia peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "B",
+   "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+   "note": "not among the states that have held nuclear weapons per FAS Status of World Nuclear Forces"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-coldwar-soviet",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 3 coldwar east_asia peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1945:Manchuria polygon (area, habitable share, region east_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Manchuria\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-coldwar-soviet: PRC, North Korea and Mongolia built Soviet-model forces; 2 of 3 researched snapshots."
+}

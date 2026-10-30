@@ -1,0 +1,482 @@
+{
+ "id": "mysore-1783",
+ "nationId": "mysore",
+ "includes": [],
+ "name": "Mysore",
+ "year": 1783,
+ "era": "gunpowder",
+ "region": "south_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Mysore interior point",
+  "lat": 12.625,
+  "lon": 76.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Mysore interior point",
+   "lat": 12.625,
+   "lon": 76.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1783:Mysore",
+  "areaKm2": {
+   "low": 139184,
+   "mid": 139184,
+   "high": 139184,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1783:Mysore polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 9187669,
+   "mid": 14123813,
+   "high": 23756644,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 139,184 km2 (100% habitable) x south_asia 1783 density 57 x factor 1.78"
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.08,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.urbanization; HYDE cross-check 0.114"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 40793,
+   "mid": 108047,
+   "high": 339720,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00765 (inputs eraPeerRatios.gunpowder.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 9503,
+   "mid": 65731,
+   "high": 491381,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 24 gunpowder peers"
+  },
+  "supportPersonnel": {
+   "low": 3299,
+   "mid": 13755,
+   "high": 65628,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 24 gunpowder peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0158,
+   "mid": 0.03,
+   "high": 0.04,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 145165,
+   "mid": 423714,
+   "high": 950266,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 25279,
+     "mid": 66955,
+     "high": 210520,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "71.0% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.625,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 4206,
+     "mid": 11140,
+     "high": 35025,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "11.8% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 3758,
+     "mid": 9953,
+     "high": 31294,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.6% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 60,
+     "mid": 208,
+     "high": 894,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 12,
+     "mid": 41,
+     "high": 306,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 15,
+     "mid": 69,
+     "high": 409,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.438,
+     "mid": 0.5,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.487,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 24 gunpowder peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 24 gunpowder peers"
+  },
+  "cohesion": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 24 gunpowder peers"
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.65,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 24 gunpowder peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1783"
+  },
+  "armor": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1783"
+  },
+  "ships": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1783"
+  },
+  "fortification": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1783"
+  },
+  "logistics": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1783"
+  },
+  "communications": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1783"
+  },
+  "isr": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1783"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1783"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1783"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 933,
+   "mid": 1040,
+   "high": 1140,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.south_asia 1783"
+  },
+  "gdp": {
+   "low": 8570000000,
+   "mid": 14700000000,
+   "high": 27100000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.06,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 24 gunpowder peers"
+  },
+  "industrialShare": {
+   "low": 0.12,
+   "mid": 0.15,
+   "high": 0.18,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 24 gunpowder peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.228,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 24 gunpowder peers"
+  },
+  "annualCohort": {
+   "low": 87283,
+   "mid": 134176,
+   "high": 225688,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 24 gunpowder peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 478,
+   "mid": 1164,
+   "high": 3190,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 24 gunpowder peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 3,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 24 gunpowder peers"
+  },
+  "merchantTonnage": {
+   "low": 7138,
+   "mid": 36803,
+   "high": 284179,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 24 gunpowder peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 150,
+   "high": 275,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 24 gunpowder peers"
+  },
+  "draftAnimals": {
+   "low": 804886,
+   "mid": 2044668,
+   "high": 5727048,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 24 gunpowder peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 24 gunpowder peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1783:Mysore polygon (area, habitable share, region south_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Mysore\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Firearms and artillery from the 16th century; the one archetype precedent (Maratha) uses it."
+}

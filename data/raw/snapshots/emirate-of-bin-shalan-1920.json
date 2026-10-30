@@ -1,0 +1,653 @@
+{
+ "id": "emirate-of-bin-shalan-1920",
+ "nationId": "emirate-of-bin-shalan",
+ "includes": [],
+ "name": "Emirate of Bin Shal'an",
+ "year": 1920,
+ "era": "worldwars",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Emirate of Bin Shal'an interior point",
+  "lat": 22.375,
+  "lon": 47.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Emirate of Bin Shal'an interior point",
+   "lat": 22.375,
+   "lon": 47.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1920:Emirate of Bin Shal'an",
+  "areaKm2": {
+   "low": 1145118,
+   "mid": 1145118,
+   "high": 1145118,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1920:Emirate of Bin Shal'an polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 11037509,
+   "mid": 16967493,
+   "high": 28539792,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 1,145,118 km2 (100% habitable) x mena 1920 density 4.57 x factor 3.24"
+  },
+  "urbanization": {
+   "low": 0.255,
+   "mid": 0.375,
+   "high": 0.52,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.worldwars.urbanization; HYDE cross-check 0.207"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 285871,
+   "mid": 648158,
+   "high": 1798007,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0382 (inputs eraPeerRatios.worldwars.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 46653,
+   "mid": 226855,
+   "high": 874031,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 22 worldwars peers"
+  },
+  "supportPersonnel": {
+   "low": 124447,
+   "mid": 366214,
+   "high": 1258736,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 22 worldwars peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0925,
+   "mid": 0.13,
+   "high": 0.168,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.worldwars.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 1020970,
+   "mid": 2205774,
+   "high": 4794685,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 109849,
+     "mid": 249062,
+     "high": 690906,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "88.3% of combat personnel, median share, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.637,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.525,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 5642,
+     "mid": 12793,
+     "high": 35487,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "4.5% of combat personnel, median share, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 5980,
+     "mid": 13559,
+     "high": 37612,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "4.8% of combat personnel, median share, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.475,
+     "high": 0.538,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 493,
+     "mid": 1466,
+     "high": 6261,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.512,
+     "mid": 0.575,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 154,
+     "mid": 511,
+     "high": 1612,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.425,
+     "high": 0.538,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.413,
+     "mid": 0.525,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 67,
+     "mid": 173,
+     "high": 915,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.575,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 17,
+     "mid": 159,
+     "high": 817,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_strike per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.538,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 2,
+     "mid": 13,
+     "high": 106,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 1,
+     "mid": 2,
+     "high": 28,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.65,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 3,
+     "mid": 12,
+     "high": 84,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median submarines per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines training of fielding peers, 22 worldwars peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 27,
+     "mid": 87,
+     "high": 352,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 22 worldwars peers"
+    },
+    "quality": {
+     "low": 0.463,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 22 worldwars peers"
+    },
+    "training": {
+     "low": 0.463,
+     "mid": 0.55,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 22 worldwars peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.45,
+   "mid": 0.5,
+   "high": 0.688,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 22 worldwars peers"
+  },
+  "cohesion": {
+   "low": 0.512,
+   "mid": 0.6,
+   "high": 0.738,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 22 worldwars peers"
+  },
+  "morale": {
+   "low": 0.563,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 22 worldwars peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1920"
+  },
+  "armor": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1920"
+  },
+  "ships": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1920"
+  },
+  "fortification": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1920"
+  },
+  "logistics": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1920"
+  },
+  "communications": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1920"
+  },
+  "isr": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1920"
+  },
+  "air": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1920"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1920"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1450,
+   "mid": 1640,
+   "high": 1810,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1920"
+  },
+  "gdp": {
+   "low": 16000000000,
+   "mid": 27800000000,
+   "high": 51700000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.128,
+   "mid": 0.18,
+   "high": 0.265,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 22 worldwars peers"
+  },
+  "industrialShare": {
+   "low": 0.273,
+   "mid": 0.335,
+   "high": 0.393,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 22 worldwars peers"
+  },
+  "foodSurplus": {
+   "low": 0.335,
+   "mid": 0.47,
+   "high": 0.673,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 22 worldwars peers"
+  },
+  "annualCohort": {
+   "low": 87146,
+   "mid": 150105,
+   "high": 266589,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 22 worldwars peers"
+  },
+  "production": {
+   "artillery": {
+    "low": 55,
+    "mid": 410,
+    "high": 2183,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.artillery per $ GDP (snapshots with a figure), 22 worldwars peers"
+   },
+   "armor": {
+    "low": 41,
+    "mid": 120,
+    "high": 821,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.armor per $ GDP (snapshots with a figure), 22 worldwars peers"
+   },
+   "aircraft_fighter": {
+    "low": 30,
+    "mid": 205,
+    "high": 717,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.aircraft_fighter per $ GDP (snapshots with a figure), 22 worldwars peers"
+   },
+   "aircraft_strike": {
+    "low": 57,
+    "mid": 221,
+    "high": 808,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.aircraft_strike per $ GDP (snapshots with a figure), 22 worldwars peers"
+   },
+   "submarines": {
+    "low": 0,
+    "mid": 1,
+    "high": 4,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.submarines per $ GDP (snapshots with a figure), 22 worldwars peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 75462,
+   "mid": 253680,
+   "high": 581197,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 22 worldwars peers"
+  },
+  "railKm": {
+   "low": 24160,
+   "mid": 68196,
+   "high": 88176,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 22 worldwars peers"
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 14,
+   "high": 23,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 22 worldwars peers"
+  },
+  "merchantTonnage": {
+   "low": 63222,
+   "mid": 263901,
+   "high": 1000494,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 22 worldwars peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 225,
+   "high": 288,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 22 worldwars peers"
+  },
+  "draftAnimals": {
+   "low": 569700,
+   "mid": 1125790,
+   "high": 3033999,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 22 worldwars peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-ww-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 22 worldwars peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1920:Emirate of Bin Shal'an polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Emirate of Bin Shal'an\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-ww-infantry: Remaining interwar states (Iraq, Iran, Saudi Arabia, Egypt) had foot infantry and little armour."
+}

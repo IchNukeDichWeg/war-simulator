@@ -1,0 +1,534 @@
+{
+ "id": "hafsid-caliphate-1300",
+ "nationId": "hafsid-caliphate",
+ "includes": [],
+ "name": "Hafsid Caliphate",
+ "year": 1300,
+ "era": "medieval",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Hafsid Caliphate interior point",
+  "lat": 33.625,
+  "lon": 7.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Hafsid Caliphate interior point",
+   "lat": 33.625,
+   "lon": 7.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1300:Hafsid Caliphate",
+  "areaKm2": {
+   "low": 687766,
+   "mid": 687766,
+   "high": 687766,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1300:Hafsid Caliphate polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 3378667,
+   "mid": 5193882,
+   "high": 8736253,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 685,270 km2 (100% habitable) x mena 1300 density 1.89 x factor 4.01"
+  },
+  "urbanization": {
+   "low": 0.1,
+   "mid": 0.11,
+   "high": 0.13,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.mena.urbanization; HYDE cross-check 0.0145"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 12062,
+   "mid": 18698,
+   "high": 93478,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0036 (inputs eraPeerRatios.medieval.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 5629,
+   "mid": 12465,
+   "high": 93478,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 5 medieval mena peers"
+  },
+  "supportPersonnel": {
+   "low": 804,
+   "mid": 2078,
+   "high": 10906,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 5 medieval mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.01,
+   "mid": 0.013,
+   "high": 0.015,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 33787,
+   "mid": 67520,
+   "high": 131044,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 2474,
+     "mid": 3835,
+     "high": 19174,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "23.1% of combat personnel, median share, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 412,
+     "mid": 639,
+     "high": 3196,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "3.8% of combat personnel, median share, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.4,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 1416,
+     "mid": 2195,
+     "high": 10974,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "13.2% of combat personnel, median share, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 3436,
+     "mid": 5327,
+     "high": 26631,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "32.1% of combat personnel, median share, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.8,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 1618,
+     "mid": 2509,
+     "high": 12542,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "15.1% of combat personnel, median share, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 16,
+     "mid": 25,
+     "high": 187,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 7,
+     "mid": 14,
+     "high": 125,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.487,
+     "mid": 0.525,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.425,
+     "mid": 0.45,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 5 medieval mena peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 5,
+     "mid": 15,
+     "high": 111,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 5 medieval mena peers"
+    },
+    "quality": {
+     "low": 0.475,
+     "mid": 0.5,
+     "high": 0.512,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 5 medieval mena peers"
+    },
+    "training": {
+     "low": 0.438,
+     "mid": 0.475,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 5 medieval mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.6,
+   "mid": 0.6,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 5 medieval mena peers"
+  },
+  "cohesion": {
+   "low": 0.45,
+   "mid": 0.5,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 5 medieval mena peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.55,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 5 medieval mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1300"
+  },
+  "armor": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1300"
+  },
+  "ships": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1300"
+  },
+  "fortification": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1300"
+  },
+  "logistics": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1300"
+  },
+  "communications": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1300"
+  },
+  "isr": {
+   "low": 3.84,
+   "mid": 4.14,
+   "high": 4.44,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1300"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1300"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1300"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 738,
+   "mid": 984,
+   "high": 1230,
+   "grade": "D",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1300"
+  },
+  "gdp": {
+   "low": 2490000000,
+   "mid": 5110000000,
+   "high": 10700000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.06,
+   "mid": 0.08,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 5 medieval mena peers"
+  },
+  "industrialShare": {
+   "low": 0.12,
+   "mid": 0.15,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 5 medieval mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.2,
+   "high": 0.22,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 5 medieval mena peers"
+  },
+  "annualCohort": {
+   "low": 32097,
+   "mid": 49342,
+   "high": 82994,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 5 medieval mena peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2063,
+   "mid": 3098,
+   "high": 4143,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 5 medieval mena peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 1,
+   "high": 3,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 5 medieval mena peers"
+  },
+  "merchantTonnage": {
+   "low": 6407,
+   "mid": 21329,
+   "high": 44958,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 5 medieval mena peers"
+  },
+  "supplyRangeKm": {
+   "low": 250,
+   "mid": 250,
+   "high": 250,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 5 medieval mena peers"
+  },
+  "draftAnimals": {
+   "low": 337867,
+   "mid": 531657,
+   "high": 953046,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 5 medieval mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.15,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 5 medieval mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1300:Hafsid Caliphate polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Hafsid Caliphate\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-feudal-host: Iqta-based cavalry with levies; 4 of 5 researched MENA medieval snapshots."
+}

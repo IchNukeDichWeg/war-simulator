@@ -1,0 +1,465 @@
+{
+ "id": "turan-1815",
+ "nationId": "turan",
+ "includes": [],
+ "name": "Turan",
+ "year": 1815,
+ "era": "industrial",
+ "region": "central_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Turan interior point",
+  "lat": 42.375,
+  "lon": 64.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Turan interior point",
+   "lat": 42.375,
+   "lon": 64.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1815:Turan",
+  "areaKm2": {
+   "low": 2027249,
+   "mid": 2027249,
+   "high": 2027249,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1815:Turan polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 3925378,
+   "mid": 6034317,
+   "high": 10149888,
+   "grade": "D",
+   "source": "derived:state-density-factor",
+   "note": "A_h 1,917,892 km2 (95% habitable) x central_asia 1815 density 1.5 x factor 2.1"
+  },
+  "urbanization": {
+   "low": 0.0775,
+   "mid": 0.13,
+   "high": 0.21,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.industrial.urbanization; HYDE cross-check 0.0176"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 45534,
+   "mid": 94739,
+   "high": 238522,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0157 (inputs eraPeerRatios.industrial.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 8987,
+   "mid": 27450,
+   "high": 98177,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 16 industrial peers"
+  },
+  "supportPersonnel": {
+   "low": 4101,
+   "mid": 13679,
+   "high": 51592,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 16 industrial peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0375,
+   "mid": 0.05,
+   "high": 0.0625,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.industrial.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 147202,
+   "mid": 301716,
+   "high": 634368,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 31261,
+     "mid": 65042,
+     "high": 163753,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "80.2% of combat personnel, median share, 16 industrial peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 16 industrial peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 16 industrial peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 3209,
+     "mid": 6677,
+     "high": 16810,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "8.2% of combat personnel, median share, 16 industrial peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 16 industrial peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 16 industrial peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 697,
+     "mid": 1450,
+     "high": 3650,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "1.8% of combat personnel, median share, 16 industrial peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 16 industrial peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 16 industrial peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 3763,
+     "mid": 7829,
+     "high": 19710,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "9.7% of combat personnel, median share, 16 industrial peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 16 industrial peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 16 industrial peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 92,
+     "mid": 261,
+     "high": 717,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 16 industrial peers"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 16 industrial peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.7,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 16 industrial peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.438,
+   "mid": 0.575,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 16 industrial peers"
+  },
+  "cohesion": {
+   "low": 0.588,
+   "mid": 0.65,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 16 industrial peers"
+  },
+  "morale": {
+   "low": 0.588,
+   "mid": 0.7,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 16 industrial peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1815"
+  },
+  "armor": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1815"
+  },
+  "ships": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1815"
+  },
+  "fortification": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1815"
+  },
+  "logistics": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1815"
+  },
+  "communications": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1815"
+  },
+  "isr": {
+   "low": 5.8,
+   "mid": 6.1,
+   "high": 6.4,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1815"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1815"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1815"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 508,
+   "mid": 846,
+   "high": 1020,
+   "grade": "D",
+   "source": "derived:regional-analogy",
+   "note": "inputs gdpPerCapita.central_asia 1815"
+  },
+  "gdp": {
+   "low": 1990000000,
+   "mid": 5110000000,
+   "high": 10400000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0575,
+   "mid": 0.06,
+   "high": 0.11,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 16 industrial peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.2,
+   "high": 0.242,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 16 industrial peers"
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.25,
+   "high": 0.413,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 16 industrial peers"
+  },
+  "annualCohort": {
+   "low": 36727,
+   "mid": 63345,
+   "high": 106592,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 16 industrial peers"
+  },
+  "production": {
+   "artillery": {
+    "low": 10,
+    "mid": 37,
+    "high": 129,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.artillery per $ GDP (snapshots with a figure), 16 industrial peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 6085,
+   "mid": 21501,
+   "high": 213509,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 16 industrial peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 175,
+   "high": 250,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 16 industrial peers"
+  },
+  "draftAnimals": {
+   "low": 326716,
+   "mid": 644440,
+   "high": 1711029,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 16 industrial peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-steppe-nomad",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 16 industrial peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1815:Turan polygon (area, habitable share, region central_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Turan\"; classified state. No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-steppe-nomad: Khanates of Khiva, Bukhara and Kokand and the Kazakh hordes before Russian conquest."
+}

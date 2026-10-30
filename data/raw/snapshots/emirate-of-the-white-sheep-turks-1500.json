@@ -1,0 +1,456 @@
+{
+ "id": "emirate-of-the-white-sheep-turks-1500",
+ "nationId": "emirate-of-the-white-sheep-turks",
+ "includes": [],
+ "name": "Emirate of the White Sheep Turks",
+ "year": 1500,
+ "era": "gunpowder",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Emirate of the White Sheep Turks interior point",
+  "lat": 32.625,
+  "lon": 49.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Emirate of the White Sheep Turks interior point",
+   "lat": 32.625,
+   "lon": 49.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1500:Emirate of the White Sheep Turks",
+  "areaKm2": {
+   "low": 1816969,
+   "mid": 1816969,
+   "high": 1816969,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1500:Emirate of the White Sheep Turks polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 5570536,
+   "mid": 8563348,
+   "high": 14403788,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 1,799,048 km2 (99% habitable) x mena 1500 density 1.77 x factor 2.69"
+  },
+  "urbanization": {
+   "low": 0.08,
+   "mid": 0.08,
+   "high": 0.09,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.mena.urbanization; HYDE cross-check 0.0171"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 21001,
+   "mid": 39220,
+   "high": 68994,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00458 (inputs eraPeerRatios.gunpowder.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 22433,
+   "mid": 58830,
+   "high": 120740,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 3 gunpowder mena peers"
+  },
+  "supportPersonnel": {
+   "low": 3962,
+   "mid": 8914,
+   "high": 16863,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 3 gunpowder mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.012,
+   "mid": 0.012,
+   "high": 0.014,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 66846,
+   "mid": 102760,
+   "high": 201653,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 13457,
+     "mid": 25132,
+     "high": 44211,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "82.9% of combat personnel, median share, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 2771,
+     "mid": 5174,
+     "high": 9102,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "17.1% of combat personnel, median share, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.625,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 63,
+     "mid": 181,
+     "high": 375,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 19,
+     "mid": 53,
+     "high": 126,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.588,
+     "mid": 0.625,
+     "high": 0.662,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 12,
+     "mid": 27,
+     "high": 56,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.637,
+     "mid": 0.675,
+     "high": 0.713,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 3 gunpowder mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.625,
+   "mid": 0.75,
+   "high": 0.775,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 3 gunpowder mena peers"
+  },
+  "cohesion": {
+   "low": 0.6,
+   "mid": 0.6,
+   "high": 0.675,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 3 gunpowder mena peers"
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.65,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 3 gunpowder mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1500"
+  },
+  "armor": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1500"
+  },
+  "ships": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1500"
+  },
+  "fortification": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1500"
+  },
+  "logistics": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1500"
+  },
+  "communications": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1500"
+  },
+  "isr": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1500"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1500"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1500"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 797,
+   "mid": 1060,
+   "high": 1330,
+   "grade": "D",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1500"
+  },
+  "gdp": {
+   "low": 4440000000,
+   "mid": 9080000000,
+   "high": 19200000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.05,
+   "mid": 0.05,
+   "high": 0.055,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 3 gunpowder mena peers"
+  },
+  "industrialShare": {
+   "low": 0.145,
+   "mid": 0.15,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 3 gunpowder mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.185,
+   "mid": 0.22,
+   "high": 0.22,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 3 gunpowder mena peers"
+  },
+  "annualCohort": {
+   "low": 52920,
+   "mid": 81352,
+   "high": 136836,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 3 gunpowder mena peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 5804,
+   "mid": 7571,
+   "high": 7823,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 3 gunpowder mena peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 3,
+   "mid": 5,
+   "high": 5,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 3 gunpowder mena peers"
+  },
+  "merchantTonnage": {
+   "low": 21917,
+   "mid": 86973,
+   "high": 194628,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 3 gunpowder mena peers"
+  },
+  "supplyRangeKm": {
+   "low": 325,
+   "mid": 400,
+   "high": 400,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 3 gunpowder mena peers"
+  },
+  "draftAnimals": {
+   "low": 727968,
+   "mid": 1167729,
+   "high": 2782550,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 3 gunpowder mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 3 gunpowder mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1500:Emirate of the White Sheep Turks polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Emirate of the White Sheep Turks\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Firearm infantry and artillery in Ottoman-style and Safavid armies; the one archetype precedent in this cell."
+}

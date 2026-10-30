@@ -1,0 +1,456 @@
+{
+ "id": "empire-of-ghana-300",
+ "nationId": "empire-of-ghana",
+ "includes": [],
+ "name": "Empire of Ghana",
+ "year": 300,
+ "era": "iron",
+ "region": "subsaharan_africa",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "indigenous"
+ ],
+ "capital": {
+  "name": "Empire of Ghana interior point",
+  "lat": 15.875,
+  "lon": -7.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Empire of Ghana interior point",
+   "lat": 15.875,
+   "lon": -7.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:300:Empire of Ghana",
+  "areaKm2": {
+   "low": 335335,
+   "mid": 335335,
+   "high": 335335,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:300:Empire of Ghana polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 404057,
+   "mid": 621140,
+   "high": 1044775,
+   "grade": "D",
+   "source": "derived:state-density-factor",
+   "note": "A_h 335,335 km2 (100% habitable) x subsaharan_africa 300 density 0.429 x factor 4.32"
+  },
+  "urbanization": {
+   "low": 0.08,
+   "mid": 0.1,
+   "high": 0.12,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.urbanization; HYDE cross-check 1.42e-9"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 3592,
+   "mid": 9379,
+   "high": 31657,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0151 (inputs eraPeerRatios.iron.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 293,
+   "mid": 2271,
+   "high": 18843,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 20 iron peers"
+  },
+  "supportPersonnel": {
+   "low": 321,
+   "mid": 954,
+   "high": 7670,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 20 iron peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.0725,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 12122,
+   "mid": 31057,
+   "high": 75746,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 1653,
+     "mid": 4316,
+     "high": 14567,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "51.2% of combat personnel, median share, 20 iron peers"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 20 iron peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 435,
+     "mid": 1136,
+     "high": 3835,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "13.5% of combat personnel, median share, 20 iron peers"
+    },
+    "quality": {
+     "low": 0.375,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 20 iron peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 280,
+     "mid": 732,
+     "high": 2470,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "8.7% of combat personnel, median share, 20 iron peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 20 iron peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 249,
+     "mid": 650,
+     "high": 2193,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "7.7% of combat personnel, median share, 20 iron peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.825,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.7,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 20 iron peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 206,
+     "mid": 538,
+     "high": 1817,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "6.4% of combat personnel, median share, 20 iron peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 20 iron peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.588,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 20 iron peers"
+  },
+  "cohesion": {
+   "low": 0.538,
+   "mid": 0.6,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 20 iron peers"
+  },
+  "morale": {
+   "low": 0.588,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 20 iron peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 300"
+  },
+  "armor": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 300"
+  },
+  "ships": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 300"
+  },
+  "fortification": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 300"
+  },
+  "logistics": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 300"
+  },
+  "communications": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 300"
+  },
+  "isr": {
+   "low": 3.09,
+   "mid": 3.39,
+   "high": 3.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 300"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 300"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 300"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 832,
+   "mid": 1190,
+   "high": 1540,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.subsaharan_africa 300"
+  },
+  "gdp": {
+   "low": 336000000,
+   "mid": 739000000,
+   "high": 1610000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.0625,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 20 iron peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.12,
+   "high": 0.13,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 20 iron peers"
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.2,
+   "high": 0.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 20 iron peers"
+  },
+  "annualCohort": {
+   "low": 3839,
+   "mid": 5901,
+   "high": 9925,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 20 iron peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 535,
+   "mid": 832,
+   "high": 3695,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 20 iron peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 120,
+   "mid": 150,
+   "high": 225,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 20 iron peers"
+  },
+  "draftAnimals": {
+   "low": 28284,
+   "mid": 52885,
+   "high": 113184,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 20 iron peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 20 iron peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:300:Empire of Ghana polygon (area, habitable share, region subsaharan_africa, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Empire of Ghana\"; classified indigenous. No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Kush and Aksum fought with infantry and archers; researched Kush uses it."
+}

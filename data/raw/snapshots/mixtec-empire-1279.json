@@ -1,0 +1,404 @@
+{
+ "id": "mixtec-empire-1279",
+ "nationId": "mixtec-empire",
+ "includes": [],
+ "name": "Mixtec Empire",
+ "year": 1279,
+ "era": "medieval",
+ "region": "north_america",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "indigenous"
+ ],
+ "capital": {
+  "name": "Mixtec Empire interior point",
+  "lat": 19.375,
+  "lon": -100.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Mixtec Empire interior point",
+   "lat": 19.375,
+   "lon": -100.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1279:Mixtec Empire",
+  "areaKm2": {
+   "low": 68288,
+   "mid": 68288,
+   "high": 68288,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1279:Mixtec Empire polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 552392,
+   "mid": 849169,
+   "high": 1428326,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 68,288 km2 (100% habitable) x north_america 1279 density 1.08 x factor 11.5"
+  },
+  "urbanization": {
+   "low": 0.0675,
+   "mid": 0.08,
+   "high": 0.103,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.urbanization; HYDE cross-check 0.000173"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1497,
+   "mid": 6055,
+   "high": 15426,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00713 (inputs eraPeerRatios.medieval.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 574,
+   "mid": 5046,
+   "high": 49010,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 24 medieval peers"
+  },
+  "supportPersonnel": {
+   "low": 93,
+   "mid": 511,
+   "high": 1735,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 24 medieval peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0123,
+   "mid": 0.02,
+   "high": 0.025,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 6794,
+   "mid": 16983,
+   "high": 35708,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 657,
+     "mid": 2657,
+     "high": 6768,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "47.9% of combat personnel, median share, 24 medieval peers, x1.88 (no horses)"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 24 medieval peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 382,
+     "mid": 1547,
+     "high": 3941,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "27.9% of combat personnel, median share, 24 medieval peers, x1.88 (no horses)"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.625,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 24 medieval peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 1,
+     "mid": 8,
+     "high": 42,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 24 medieval peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.65,
+   "high": 0.785,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 24 medieval peers"
+  },
+  "cohesion": {
+   "low": 0.438,
+   "mid": 0.525,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 24 medieval peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 24 medieval peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 4.08)"
+  },
+  "armor": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 4.08)"
+  },
+  "ships": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 4.08)"
+  },
+  "fortification": {
+   "low": 3.78,
+   "mid": 4.08,
+   "high": 4.38,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1279"
+  },
+  "logistics": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 4.08)"
+  },
+  "communications": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 2,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 4.08)"
+  },
+  "isr": {
+   "low": 3.78,
+   "mid": 4.08,
+   "high": 4.38,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1279"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1279"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1279"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 402,
+   "mid": 574,
+   "high": 746,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.north_america 1279"
+  },
+  "gdp": {
+   "low": 222000000,
+   "mid": 487000000,
+   "high": 1070000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 24 medieval peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.12,
+   "high": 0.152,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 24 medieval peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.205,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 24 medieval peers"
+  },
+  "annualCohort": {
+   "low": 5248,
+   "mid": 8067,
+   "high": 13569,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 24 medieval peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 204,
+   "mid": 525,
+   "high": 1438,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 24 medieval peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 250,
+   "high": 388,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 24 medieval peers"
+  },
+  "draftAnimals": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Horses_in_the_United_States",
+   "note": "no horses: extinct in the Americas ~8,000-12,000 years ago, reintroduced by the Spanish from 1493; no other draft animals before contact (inputs tech caps); llamas not counted"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 24 medieval peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1279:Mixtec Empire polygon (area, habitable share, region north_america, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Mixtec Empire\"; classified indigenous. No horses (cavalry, chariots, draft animals 0). No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Mesoamerican infantry armies; no horses before contact."
+}

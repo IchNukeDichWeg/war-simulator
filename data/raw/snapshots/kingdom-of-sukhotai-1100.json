@@ -1,0 +1,508 @@
+{
+ "id": "kingdom-of-sukhotai-1100",
+ "nationId": "kingdom-of-sukhotai",
+ "includes": [],
+ "name": "Kingdom of Sukhotai",
+ "year": 1100,
+ "era": "medieval",
+ "region": "southeast_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Kingdom of Sukhotai interior point",
+  "lat": 20.625,
+  "lon": 98.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Kingdom of Sukhotai interior point",
+   "lat": 20.625,
+   "lon": 98.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1100:Kingdom of Sukhotai",
+  "areaKm2": {
+   "low": 762654,
+   "mid": 762654,
+   "high": 762654,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1100:Kingdom of Sukhotai polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 3690301,
+   "mid": 5672944,
+   "high": 9542048,
+   "grade": "D",
+   "source": "derived:state-density-factor",
+   "note": "A_h 757,744 km2 (99% habitable) x southeast_asia 1100 density 2.43 x factor 3.08"
+  },
+  "urbanization": {
+   "low": 0.0675,
+   "mid": 0.08,
+   "high": 0.103,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.urbanization; HYDE cross-check 0.0000196"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 10001,
+   "mid": 40448,
+   "high": 103054,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00713 (inputs eraPeerRatios.medieval.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 3834,
+   "mid": 33707,
+   "high": 327411,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 24 medieval peers"
+  },
+  "supportPersonnel": {
+   "low": 619,
+   "mid": 3416,
+   "high": 11594,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 24 medieval peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0123,
+   "mid": 0.02,
+   "high": 0.025,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 45391,
+   "mid": 113459,
+   "high": 238551,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 2333,
+     "mid": 9435,
+     "high": 24039,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "25.5% of combat personnel, median share, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 24 medieval peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 1358,
+     "mid": 5494,
+     "high": 13997,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "14.8% of combat personnel, median share, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.625,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 24 medieval peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 2201,
+     "mid": 8902,
+     "high": 22680,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "24.0% of combat personnel, median share, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 24 medieval peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 1050,
+     "mid": 4246,
+     "high": 10818,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "11.5% of combat personnel, median share, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 24 medieval peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 9,
+     "mid": 54,
+     "high": 281,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 24 medieval peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 2,
+     "mid": 17,
+     "high": 78,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.625,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 24 medieval peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 7,
+     "mid": 53,
+     "high": 483,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 24 medieval peers"
+    },
+    "quality": {
+     "low": 0.475,
+     "mid": 0.525,
+     "high": 0.563,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 24 medieval peers"
+    },
+    "training": {
+     "low": 0.487,
+     "mid": 0.5,
+     "high": 0.512,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 24 medieval peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.65,
+   "high": 0.785,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 24 medieval peers"
+  },
+  "cohesion": {
+   "low": 0.438,
+   "mid": 0.525,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 24 medieval peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 24 medieval peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1100"
+  },
+  "armor": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1100"
+  },
+  "ships": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1100"
+  },
+  "fortification": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1100"
+  },
+  "logistics": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1100"
+  },
+  "communications": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1100"
+  },
+  "isr": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1100"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1100"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1100"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 581,
+   "mid": 830,
+   "high": 1080,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.southeast_asia 1100"
+  },
+  "gdp": {
+   "low": 2140000000,
+   "mid": 4710000000,
+   "high": 10300000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 24 medieval peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.12,
+   "high": 0.152,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 24 medieval peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.205,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 24 medieval peers"
+  },
+  "annualCohort": {
+   "low": 35058,
+   "mid": 53893,
+   "high": 90649,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 24 medieval peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2277,
+   "mid": 5860,
+   "high": 16061,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 24 medieval peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 2,
+   "high": 6,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 24 medieval peers"
+  },
+  "merchantTonnage": {
+   "low": 2524,
+   "mid": 11007,
+   "high": 43063,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 24 medieval peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 250,
+   "high": 388,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 24 medieval peers"
+  },
+  "draftAnimals": {
+   "low": 337179,
+   "mid": 830681,
+   "high": 2385512,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 24 medieval peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 24 medieval peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1100:Kingdom of Sukhotai polygon (area, habitable share, region southeast_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Kingdom of Sukhotai\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-feudal-host: Khmer and Burmese levy armies around elephant and cavalry elites; researched Khmer uses it."
+}

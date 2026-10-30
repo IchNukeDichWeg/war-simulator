@@ -1,0 +1,673 @@
+{
+ "id": "french-guiana-1994",
+ "nationId": "french-guiana",
+ "includes": [],
+ "name": "French Guiana",
+ "year": 1994,
+ "era": "modern",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "colonial"
+ ],
+ "capital": {
+  "name": "French Guiana interior point",
+  "lat": 3.875,
+  "lon": -53.125,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "French Guiana interior point",
+   "lat": 3.875,
+   "lon": -53.125,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1994:French Guiana",
+  "areaKm2": {
+   "low": 82678,
+   "mid": 82678,
+   "high": 82678,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1994:French Guiana polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 5519492,
+   "mid": 9662824,
+   "high": 15772784,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 82,678 km2 (100% habitable) x europe 1994 density 34.8 x factor 3.36"
+  },
+  "urbanization": {
+   "low": 0.668,
+   "mid": 0.77,
+   "high": 0.835,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.europe.urbanization; HYDE cross-check 0.704"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 13357,
+   "mid": 39038,
+   "high": 85962,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00404 (inputs eraPeerRatios.modern.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 2508,
+   "mid": 31922,
+   "high": 148701,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 26 modern europe peers"
+  },
+  "supportPersonnel": {
+   "low": 8940,
+   "mid": 30292,
+   "high": 71248,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 26 modern europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.05,
+   "mid": 0.065,
+   "high": 0.0775,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 275975,
+   "mid": 628084,
+   "high": 1222391,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 1309,
+     "mid": 3826,
+     "high": 8426,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "43.8% of combat personnel, median share, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 1683,
+     "mid": 4920,
+     "high": 10833,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "56.3% of combat personnel, median share, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 15,
+     "mid": 105,
+     "high": 653,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 20,
+     "mid": 107,
+     "high": 543,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.487,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "ifv_apc": {
+    "count": {
+     "low": 165,
+     "mid": 674,
+     "high": 2191,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ifv_apc per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 7,
+     "mid": 33,
+     "high": 124,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.762,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.637,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 1,
+     "mid": 10,
+     "high": 37,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_strike per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.3,
+     "mid": 0.35,
+     "high": 0.475,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "helicopters": {
+    "count": {
+     "low": 14,
+     "mid": 51,
+     "high": 162,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median helicopters per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "drones": {
+    "count": {
+     "low": 2,
+     "mid": 9,
+     "high": 40,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median drones per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median drones quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median drones training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 1,
+     "mid": 4,
+     "high": 10,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.675,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.725,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 2,
+     "mid": 9,
+     "high": 26,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.637,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.662,
+     "mid": 0.725,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 0,
+     "mid": 2,
+     "high": 7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median submarines per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines training of fielding peers, 26 modern europe peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 2,
+     "mid": 11,
+     "high": 32,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 26 modern europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 26 modern europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 26 modern europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.625,
+   "high": 0.688,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 26 modern europe peers"
+  },
+  "cohesion": {
+   "low": 0.6,
+   "mid": 0.65,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 26 modern europe peers"
+  },
+  "morale": {
+   "low": 0.5,
+   "mid": 0.55,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 26 modern europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1994"
+  },
+  "armor": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1994"
+  },
+  "ships": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1994"
+  },
+  "fortification": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1994"
+  },
+  "logistics": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1994"
+  },
+  "communications": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1994"
+  },
+  "isr": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1994"
+  },
+  "air": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1994"
+  },
+  "cyber": {
+   "low": 8.81,
+   "mid": 9.11,
+   "high": 9.41,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.cyber 1994"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 8740,
+   "mid": 17100,
+   "high": 27700,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.europe 1994"
+  },
+  "gdp": {
+   "low": 48200000000,
+   "mid": 165000000000,
+   "high": 437000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0193,
+   "mid": 0.0227,
+   "high": 0.0293,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 26 modern europe peers"
+  },
+  "industrialShare": {
+   "low": 0.183,
+   "mid": 0.226,
+   "high": 0.253,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 26 modern europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.88,
+   "mid": 0.94,
+   "high": 0.968,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 26 modern europe peers"
+  },
+  "annualCohort": {
+   "low": 29802,
+   "mid": 55989,
+   "high": 97667,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 26 modern europe peers"
+  },
+  "production": {
+   "ifv_apc": {
+    "low": 4,
+    "mid": 25,
+    "high": 123,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.ifv_apc per $ GDP (snapshots with a figure), 26 modern europe peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 32571,
+   "mid": 109968,
+   "high": 157413,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 26 modern europe peers"
+  },
+  "railKm": {
+   "low": 1991,
+   "mid": 3123,
+   "high": 6843,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 26 modern europe peers"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 2,
+   "high": 3,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 26 modern europe peers"
+  },
+  "merchantTonnage": {
+   "low": 5685,
+   "mid": 333879,
+   "high": 1622095,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 26 modern europe peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 200,
+   "high": 200,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 26 modern europe peers"
+  },
+  "draftAnimals": {
+   "low": 53849,
+   "mid": 119981,
+   "high": 249127,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 26 modern europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "B",
+   "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+   "note": "not among the states that have held nuclear weapons per FAS Status of World Nuclear Forces"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-modern-small-state",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 26 modern europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1994:French Guiana polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"French Guiana\"; classified colonial. The capital is an interior point, NOT a documented capital. Doctrine archetype-modern-small-state: Remaining 1994 European polities are small states facing larger neighbours; 4 researched precedents."
+}

@@ -1,0 +1,698 @@
+{
+ "id": "morocco-hb-1945",
+ "nationId": "morocco-hb",
+ "includes": [],
+ "name": "Morocco",
+ "year": 1945,
+ "era": "coldwar",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "colonial",
+  "subject of France"
+ ],
+ "capital": {
+  "name": "Morocco interior point",
+  "lat": 31.875,
+  "lon": -6.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Morocco interior point",
+   "lat": 31.875,
+   "lon": -6.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1945:Morocco",
+  "areaKm2": {
+   "low": 411551,
+   "mid": 411551,
+   "high": 411551,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1945:Morocco polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 8898830,
+   "mid": 13679794,
+   "high": 23009791,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 409,610 km2 (100% habitable) x mena 1945 density 6.73 x factor 4.96"
+  },
+  "urbanization": {
+   "low": 0.449,
+   "mid": 0.616,
+   "high": 0.744,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.coldwar.byRegion.mena.urbanization; HYDE cross-check 0.265"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 72081,
+   "mid": 254444,
+   "high": 754721,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0186 (inputs eraPeerRatios.coldwar.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 51312,
+   "mid": 307772,
+   "high": 1640698,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 6 coldwar mena peers"
+  },
+  "supportPersonnel": {
+   "low": 39546,
+   "mid": 144051,
+   "high": 442046,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 6 coldwar mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0625,
+   "mid": 0.09,
+   "high": 0.118,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.coldwar.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 556177,
+   "mid": 1231181,
+   "high": 2715155,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 26338,
+     "mid": 92972,
+     "high": 275769,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "84.2% of combat personnel, median share, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.475,
+     "mid": 0.55,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.375,
+     "mid": 0.5,
+     "high": 0.662,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 4935,
+     "mid": 17421,
+     "high": 51674,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "15.8% of combat personnel, median share, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.525,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.625,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 231,
+     "mid": 1098,
+     "high": 4018,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.563,
+     "mid": 0.6,
+     "high": 0.615,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.487,
+     "mid": 0.625,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 331,
+     "mid": 1316,
+     "high": 9029,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.512,
+     "mid": 0.575,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.375,
+     "mid": 0.475,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "ifv_apc": {
+    "count": {
+     "low": 406,
+     "mid": 1737,
+     "high": 9388,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ifv_apc per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.413,
+     "mid": 0.45,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.375,
+     "mid": 0.475,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 39,
+     "mid": 210,
+     "high": 970,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.613,
+     "mid": 0.675,
+     "high": 0.738,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.413,
+     "mid": 0.5,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 36,
+     "mid": 136,
+     "high": 1087,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_strike per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.512,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.463,
+     "mid": 0.525,
+     "high": 0.813,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "helicopters": {
+    "count": {
+     "low": 27,
+     "mid": 116,
+     "high": 486,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median helicopters per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.5,
+     "high": 0.575,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.463,
+     "mid": 0.5,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 0,
+     "mid": 6,
+     "high": 23,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.362,
+     "mid": 0.425,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.413,
+     "mid": 0.475,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 9,
+     "mid": 44,
+     "high": 134,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.625,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.413,
+     "mid": 0.475,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 2,
+     "mid": 7,
+     "high": 28,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median submarines per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.35,
+     "mid": 0.4,
+     "high": 0.45,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.388,
+     "mid": 0.55,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "missiles": {
+    "count": {
+     "low": 4,
+     "mid": 18,
+     "high": 59,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median missiles per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missiles quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missiles training of fielding peers, 6 coldwar mena peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 17,
+     "mid": 85,
+     "high": 497,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 6 coldwar mena peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.625,
+     "high": 0.738,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 6 coldwar mena peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.6,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 6 coldwar mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.338,
+   "mid": 0.5,
+   "high": 0.662,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 6 coldwar mena peers"
+  },
+  "cohesion": {
+   "low": 0.413,
+   "mid": 0.5,
+   "high": 0.738,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 6 coldwar mena peers"
+  },
+  "morale": {
+   "low": 0.6,
+   "mid": 0.75,
+   "high": 0.825,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 6 coldwar mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1945"
+  },
+  "armor": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1945"
+  },
+  "ships": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1945"
+  },
+  "fortification": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1945"
+  },
+  "logistics": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1945"
+  },
+  "communications": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1945"
+  },
+  "isr": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1945"
+  },
+  "air": {
+   "low": 7.75,
+   "mid": 8.05,
+   "high": 8.35,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1945"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1945"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1480,
+   "mid": 2250,
+   "high": 2540,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1945"
+  },
+  "gdp": {
+   "low": 13200000000,
+   "mid": 30800000000,
+   "high": 58400000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.101,
+   "mid": 0.145,
+   "high": 0.166,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 6 coldwar mena peers"
+  },
+  "industrialShare": {
+   "low": 0.259,
+   "mid": 0.32,
+   "high": 0.365,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 6 coldwar mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.486,
+   "mid": 0.647,
+   "high": 0.856,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 6 coldwar mena peers"
+  },
+  "annualCohort": {
+   "low": 95491,
+   "mid": 149014,
+   "high": 255917,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 6 coldwar mena peers"
+  },
+  "production": {
+   "artillery": {
+    "low": 16,
+    "mid": 42,
+    "high": 87,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.artillery per $ GDP (snapshots with a figure), 6 coldwar mena peers"
+   },
+   "armor": {
+    "low": 10,
+    "mid": 23,
+    "high": 51,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.armor per $ GDP (snapshots with a figure), 6 coldwar mena peers"
+   },
+   "ships_minor": {
+    "low": 1,
+    "mid": 2,
+    "high": 4,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.ships_minor per $ GDP (snapshots with a figure), 6 coldwar mena peers"
+   },
+   "missiles": {
+    "low": 1,
+    "mid": 3,
+    "high": 7,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.missiles per $ GDP (snapshots with a figure), 6 coldwar mena peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 7254,
+   "mid": 13986,
+   "high": 66162,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 6 coldwar mena peers"
+  },
+  "railKm": {
+   "low": 1890,
+   "mid": 2337,
+   "high": 11842,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 6 coldwar mena peers"
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 2,
+   "high": 45,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 6 coldwar mena peers"
+  },
+  "merchantTonnage": {
+   "low": 98656,
+   "mid": 508567,
+   "high": 2469340,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 6 coldwar mena peers"
+  },
+  "supplyRangeKm": {
+   "low": 175,
+   "mid": 250,
+   "high": 250,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 6 coldwar mena peers"
+  },
+  "draftAnimals": {
+   "low": 111307,
+   "mid": 534772,
+   "high": 1508978,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 6 coldwar mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "B",
+   "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+   "note": "not among the states that have held nuclear weapons per FAS Status of World Nuclear Forces"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-coldwar-soviet",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.16,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 6 coldwar mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1945:Morocco polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"France\"; classified colonial. The capital is an interior point, NOT a documented capital. Doctrine archetype-coldwar-soviet: Egypt, Syria, Iraq, Libya and Algeria built Soviet-model forces; 3 of 6 researched snapshots."
+}

@@ -1,0 +1,661 @@
+{
+ "id": "ottoman-sultanate-1920",
+ "nationId": "ottoman-sultanate",
+ "includes": [],
+ "name": "Ottoman Sultanate",
+ "year": 1920,
+ "era": "worldwars",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Ottoman Sultanate interior point",
+  "lat": 40.125,
+  "lon": 34.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Ottoman Sultanate interior point",
+   "lat": 40.125,
+   "lon": 34.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1920:Ottoman Sultanate",
+  "areaKm2": {
+   "low": 249115,
+   "mid": 249115,
+   "high": 249115,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1920:Ottoman Sultanate polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 19232895,
+   "mid": 29565912,
+   "high": 49730681,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 247,955 km2 (100% habitable) x europe 1920 density 20.5 x factor 5.82"
+  },
+  "urbanization": {
+   "low": 0.3,
+   "mid": 0.38,
+   "high": 0.53,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.worldwars.byRegion.europe.urbanization; HYDE cross-check 0.356"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 525058,
+   "mid": 1496035,
+   "high": 3476175,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0506 (inputs eraPeerRatios.worldwars.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 94040,
+   "mid": 498678,
+   "high": 2317450,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 17 worldwars europe peers"
+  },
+  "supportPersonnel": {
+   "low": 244833,
+   "mid": 808668,
+   "high": 2303976,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 17 worldwars europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.1,
+   "mid": 0.155,
+   "high": 0.17,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.worldwars.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 1923290,
+   "mid": 4582716,
+   "high": 8454216,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 211778,
+     "mid": 603414,
+     "high": 1402087,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "87.8% of combat personnel, median share, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 13310,
+     "mid": 37924,
+     "high": 88119,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "5.5% of combat personnel, median share, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.55,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.625,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 11557,
+     "mid": 32928,
+     "high": 76511,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "4.8% of combat personnel, median share, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 875,
+     "mid": 3016,
+     "high": 13036,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 315,
+     "mid": 1178,
+     "high": 3098,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.325,
+     "mid": 0.45,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 122,
+     "mid": 392,
+     "high": 1411,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.425,
+     "mid": 0.55,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.625,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "aircraft_strike": {
+    "count": {
+     "low": 32,
+     "mid": 339,
+     "high": 1130,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_strike per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_strike training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 3,
+     "mid": 25,
+     "high": 147,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.72,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.588,
+     "mid": 0.65,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 1,
+     "mid": 6,
+     "high": 74,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "submarines": {
+    "count": {
+     "low": 4,
+     "mid": 22,
+     "high": 145,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median submarines per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.6,
+     "high": 0.662,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median submarines training of fielding peers, 17 worldwars europe peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 60,
+     "mid": 200,
+     "high": 793,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 17 worldwars europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 17 worldwars europe peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 17 worldwars europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.45,
+   "mid": 0.5,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 17 worldwars europe peers"
+  },
+  "cohesion": {
+   "low": 0.5,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 17 worldwars europe peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 17 worldwars europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1920"
+  },
+  "armor": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1920"
+  },
+  "ships": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1920"
+  },
+  "fortification": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1920"
+  },
+  "logistics": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1920"
+  },
+  "communications": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1920"
+  },
+  "isr": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1920"
+  },
+  "air": {
+   "low": 7.09,
+   "mid": 7.39,
+   "high": 7.69,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1920"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1920"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1060,
+   "mid": 3590,
+   "high": 5140,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.europe 1920"
+  },
+  "gdp": {
+   "low": 20400000000,
+   "mid": 106000000000,
+   "high": 256000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.28,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 17 worldwars europe peers"
+  },
+  "industrialShare": {
+   "low": 0.28,
+   "mid": 0.35,
+   "high": 0.4,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 17 worldwars europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.35,
+   "mid": 0.48,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 17 worldwars europe peers"
+  },
+  "annualCohort": {
+   "low": 151006,
+   "mid": 263198,
+   "high": 463509,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 17 worldwars europe peers"
+  },
+  "production": {
+   "artillery": {
+    "low": 159,
+    "mid": 1634,
+    "high": 7098,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.artillery per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   },
+   "armor": {
+    "low": 62,
+    "mid": 493,
+    "high": 4401,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.armor per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   },
+   "aircraft_fighter": {
+    "low": 55,
+    "mid": 781,
+    "high": 3549,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.aircraft_fighter per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   },
+   "aircraft_strike": {
+    "low": 73,
+    "mid": 725,
+    "high": 3846,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.aircraft_strike per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   },
+   "ships_major": {
+    "low": 0,
+    "mid": 1,
+    "high": 11,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.ships_major per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   },
+   "submarines": {
+    "low": 1,
+    "mid": 5,
+    "high": 21,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.submarines per $ GDP (snapshots with a figure), 17 worldwars europe peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 41626,
+   "mid": 98387,
+   "high": 136611,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 17 worldwars europe peers"
+  },
+  "railKm": {
+   "low": 9581,
+   "mid": 17058,
+   "high": 24912,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 17 worldwars europe peers"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 4,
+   "high": 5,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 17 worldwars europe peers"
+  },
+  "merchantTonnage": {
+   "low": 77414,
+   "mid": 1021101,
+   "high": 5170874,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 17 worldwars europe peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 200,
+   "high": 250,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 17 worldwars europe peers"
+  },
+  "draftAnimals": {
+   "low": 989120,
+   "mid": 1905202,
+   "high": 5121317,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 17 worldwars europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-ww-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 17 worldwars europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1920:Ottoman Sultanate polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Ottoman Sultanate\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-ww-infantry: Remaining (smaller) European states lacked the industry to mechanise; the great powers are researched already."
+}

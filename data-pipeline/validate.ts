@@ -39,6 +39,17 @@ export function walkEst(o: unknown, path: string, fn: (e: Record<string, unknown
   for (const [k, v] of Object.entries(r)) walkEst(v, path ? `${path}.${k}` : k, fn);
 }
 
+/** Confidence of a snapshot: mean grade over every Est (A=4 ... D=1) and its nearest letter.
+ *  COVERAGE.md and the UI's phase 3 label both use this. */
+export function confidence(s: unknown) {
+  const g: Record<string, number> = { A: 0, B: 0, C: 0, D: 0 };
+  walkEst(s, '', (e) => { g[String(e.grade)]++; });
+  const n = Object.values(g).reduce((a, b) => a + b, 0) || 1;
+  const score = (4 * g.A + 3 * g.B + 2 * g.C + g.D) / n;
+  return { g, n, score, letter: gradeLetter(score) };
+}
+export const gradeLetter = (score: number): 'A' | 'B' | 'C' | 'D' => score >= 3.5 ? 'A' : score >= 2.5 ? 'B' : score >= 1.75 ? 'C' : 'D';
+
 /** ISBN-10 or ISBN-13 check digit. A citation from memory with a wrong digit points at no book
  *  (wave H5 cited Brewer's Sinews of Power with check digit 6 instead of 0). */
 export function isbnValid(isbn: string): boolean {

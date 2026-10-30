@@ -1,0 +1,404 @@
+{
+ "id": "greenland-1994",
+ "nationId": "greenland",
+ "includes": [],
+ "name": "Greenland",
+ "year": 1994,
+ "era": "modern",
+ "region": "north_america",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Greenland interior point",
+  "lat": 72.875,
+  "lon": -41.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Greenland interior point",
+   "lat": 72.875,
+   "lon": -41.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1994:Greenland",
+  "areaKm2": {
+   "low": 2091280,
+   "mid": 2091280,
+   "high": 2091280,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1994:Greenland polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 52815,
+   "mid": 55766,
+   "high": 58717,
+   "grade": "B",
+   "source": "derived:country-population-match",
+   "note": "OWID GRL 1994 (https://ourworldindata.org/grapher/population); overlap 100% of the polity, 81% of GRL (habitable land); band +/-5% as inputs populationDensity"
+  },
+  "urbanization": {
+   "low": 0.801,
+   "mid": 0.802,
+   "high": 0.815,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.north_america.urbanization; HYDE cross-check 0.766"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 100,
+   "mid": 127,
+   "high": 182,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00228 (inputs eraPeerRatios.modern.byRegion.north_america.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 37,
+   "mid": 59,
+   "high": 97,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 3 modern north_america peers"
+  },
+  "supportPersonnel": {
+   "low": 84,
+   "mid": 114,
+   "high": 167,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 3 modern north_america peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.045,
+   "mid": 0.05,
+   "high": 0.075,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.north_america.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 2377,
+   "mid": 2788,
+   "high": 4404,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 3,
+     "mid": 4,
+     "high": 5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "28.6% of combat personnel, median share, 3 modern north_america peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.7,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 3 modern north_america peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 3 modern north_america peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 7,
+     "mid": 9,
+     "high": 13,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "71.4% of combat personnel, median share, 3 modern north_america peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.825,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 3 modern north_america peers"
+    },
+    "training": {
+     "low": 0.675,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 3 modern north_america peers"
+    }
+   },
+   "ifv_apc": {
+    "count": {
+     "low": 1,
+     "mid": 1,
+     "high": 2,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ifv_apc per active of fielding peers, 3 modern north_america peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.65,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc quality of fielding peers, 3 modern north_america peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc training of fielding peers, 3 modern north_america peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.6,
+   "mid": 0.7,
+   "high": 0.775,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 3 modern north_america peers"
+  },
+  "cohesion": {
+   "low": 0.65,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 3 modern north_america peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.55,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 3 modern north_america peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1994"
+  },
+  "armor": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1994"
+  },
+  "ships": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1994"
+  },
+  "fortification": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1994"
+  },
+  "logistics": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1994"
+  },
+  "communications": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1994"
+  },
+  "isr": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1994"
+  },
+  "air": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1994"
+  },
+  "cyber": {
+   "low": 8.81,
+   "mid": 9.11,
+   "high": 9.41,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.cyber 1994"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 28500,
+   "mid": 31700,
+   "high": 38800,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.north_america 1994"
+  },
+  "gdp": {
+   "low": 1510000000,
+   "mid": 1770000000,
+   "high": 2280000000,
+   "grade": "B",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0118,
+   "mid": 0.0163,
+   "high": 0.0238,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 3 modern north_america peers"
+  },
+  "industrialShare": {
+   "low": 0.225,
+   "mid": 0.274,
+   "high": 0.29,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 3 modern north_america peers"
+  },
+  "foodSurplus": {
+   "low": 0.915,
+   "mid": 0.99,
+   "high": 0.99,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 3 modern north_america peers"
+  },
+  "annualCohort": {
+   "low": 326,
+   "mid": 378,
+   "high": 451,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 3 modern north_america peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 327665,
+   "mid": 437020,
+   "high": 676342,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 3 modern north_america peers"
+  },
+  "railKm": {
+   "low": 17538,
+   "mid": 24991,
+   "high": 28295,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 3 modern north_america peers"
+  },
+  "majorPorts": {
+   "low": 6,
+   "mid": 7,
+   "high": 8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 3 modern north_america peers"
+  },
+  "merchantTonnage": {
+   "low": 1158,
+   "mid": 1642,
+   "high": 2936,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 3 modern north_america peers"
+  },
+  "supplyRangeKm": {
+   "low": 200,
+   "mid": 250,
+   "high": 375,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 3 modern north_america peers"
+  },
+  "draftAnimals": {
+   "low": 767,
+   "mid": 1085,
+   "high": 2351,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 3 modern north_america peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "B",
+   "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+   "note": "not among the states that have held nuclear weapons per FAS Status of World Nuclear Forces"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-modern-regional",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 3 modern north_america peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1994:Greenland polygon (area, habitable share, region north_america, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Greenland\"; classified state. Population: the modern country GRL (OWID), which covers the same land. The capital is an interior point, NOT a documented capital. Doctrine archetype-modern-regional: Mexico and Canada 1994; researched Mexico-type precedent."
+}

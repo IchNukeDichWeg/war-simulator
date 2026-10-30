@@ -1,0 +1,482 @@
+{
+ "id": "maan--200",
+ "nationId": "maan",
+ "includes": [],
+ "name": "Maan",
+ "year": -200,
+ "era": "iron",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Maan interior point",
+  "lat": 21.875,
+  "lon": 40.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Maan interior point",
+   "lat": 21.875,
+   "lon": 40.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc200:Maan",
+  "areaKm2": {
+   "low": 218279,
+   "mid": 218279,
+   "high": 218279,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:bc200:Maan polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 1335004,
+   "mid": 2052244,
+   "high": 3451932,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 218,279 km2 (100% habitable) x mena -200 density 1.46 x factor 6.44"
+  },
+  "urbanization": {
+   "low": 0.1,
+   "mid": 0.1,
+   "high": 0.11,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.byRegion.mena.urbanization; HYDE cross-check 0.00658"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 11000,
+   "mid": 32220,
+   "high": 85953,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0157 (inputs eraPeerRatios.iron.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 1215,
+   "mid": 4450,
+   "high": 26144,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 7 iron mena peers"
+  },
+  "supportPersonnel": {
+   "low": 1532,
+   "mid": 6014,
+   "high": 22239,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 7 iron mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.05,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 40050,
+   "mid": 102612,
+   "high": 172597,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 3253,
+     "mid": 9529,
+     "high": 25422,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "36.4% of combat personnel, median share, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 7 iron mena peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 1698,
+     "mid": 4973,
+     "high": 13267,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "19.0% of combat personnel, median share, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.325,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.3,
+     "mid": 0.4,
+     "high": 0.575,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 7 iron mena peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 949,
+     "mid": 2779,
+     "high": 7415,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.6% of combat personnel, median share, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.65,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 7 iron mena peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 664,
+     "mid": 1946,
+     "high": 5191,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "7.4% of combat personnel, median share, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.825,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 7 iron mena peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 746,
+     "mid": 2184,
+     "high": 5826,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "8.3% of combat personnel, median share, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 7 iron mena peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 6,
+     "mid": 23,
+     "high": 125,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 7 iron mena peers"
+    },
+    "quality": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 7 iron mena peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 7 iron mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.525,
+   "mid": 0.7,
+   "high": 0.725,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 7 iron mena peers"
+  },
+  "cohesion": {
+   "low": 0.4,
+   "mid": 0.5,
+   "high": 0.55,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 7 iron mena peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.7,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 7 iron mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons -200"
+  },
+  "armor": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor -200"
+  },
+  "ships": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships -200"
+  },
+  "fortification": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification -200"
+  },
+  "logistics": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics -200"
+  },
+  "communications": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications -200"
+  },
+  "isr": {
+   "low": 2.76,
+   "mid": 3.06,
+   "high": 3.36,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr -200"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air -200"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber -200"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 784,
+   "mid": 1120,
+   "high": 1460,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.mena -200"
+  },
+  "gdp": {
+   "low": 1050000000,
+   "mid": 2300000000,
+   "high": 5040000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0375,
+   "mid": 0.05,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 7 iron mena peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.1,
+   "high": 0.12,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 7 iron mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.25,
+   "mid": 0.25,
+   "high": 0.275,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 7 iron mena peers"
+  },
+  "annualCohort": {
+   "low": 12683,
+   "mid": 19496,
+   "high": 32793,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 7 iron mena peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 297,
+   "mid": 364,
+   "high": 503,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 7 iron mena peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 1,
+   "high": 1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 7 iron mena peers"
+  },
+  "merchantTonnage": {
+   "low": 5150,
+   "mid": 15000,
+   "high": 45200,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 7 iron mena peers"
+  },
+  "supplyRangeKm": {
+   "low": 110,
+   "mid": 120,
+   "high": 150,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 7 iron mena peers"
+  },
+  "draftAnimals": {
+   "low": 106800,
+   "mid": 184702,
+   "high": 402725,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 7 iron mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.17,
+   "mid": 1.2,
+   "high": 1.23,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 7 iron mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:bc200:Maan polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Maan\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Smaller Iron Age and Hellenistic-period states fought with infantry levies; empires are researched individually."
+}

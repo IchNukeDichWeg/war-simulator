@@ -1,0 +1,482 @@
+{
+ "id": "nayarit-1530",
+ "nationId": "nayarit",
+ "includes": [],
+ "name": "Nayarit",
+ "year": 1530,
+ "era": "gunpowder",
+ "region": "north_america",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "indigenous"
+ ],
+ "capital": {
+  "name": "Nayarit interior point",
+  "lat": 21.875,
+  "lon": -105.125,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Nayarit interior point",
+   "lat": 21.875,
+   "lon": -105.125,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1530:Nayarit",
+  "areaKm2": {
+   "low": 50709,
+   "mid": 50709,
+   "high": 50709,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1530:Nayarit polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 231358,
+   "mid": 355657,
+   "high": 598224,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 49,998 km2 (99% habitable) x north_america 1530 density 0.543 x factor 13.1"
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.08,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.urbanization; HYDE cross-check 0.00295"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1027,
+   "mid": 2721,
+   "high": 8555,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00765 (inputs eraPeerRatios.gunpowder.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 239,
+   "mid": 1655,
+   "high": 12374,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 24 gunpowder peers"
+  },
+  "supportPersonnel": {
+   "low": 83,
+   "mid": 346,
+   "high": 1653,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 24 gunpowder peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0158,
+   "mid": 0.03,
+   "high": 0.04,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 3655,
+   "mid": 10670,
+   "high": 23929,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 637,
+     "mid": 1686,
+     "high": 5302,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "71.0% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.625,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 106,
+     "mid": 281,
+     "high": 882,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "11.8% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 95,
+     "mid": 251,
+     "high": 788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.6% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 2,
+     "mid": 5,
+     "high": 23,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 0,
+     "mid": 1,
+     "high": 8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 0,
+     "mid": 2,
+     "high": 10,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.438,
+     "mid": 0.5,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.487,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 24 gunpowder peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 24 gunpowder peers"
+  },
+  "cohesion": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 24 gunpowder peers"
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.65,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 24 gunpowder peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america 1493..1900 indigenous (default 4.8)"
+  },
+  "armor": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america 1493..1900 indigenous (default 4.8)"
+  },
+  "ships": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america 1493..1900 indigenous (default 4.8)"
+  },
+  "fortification": {
+   "low": 4.5,
+   "mid": 4.8,
+   "high": 5.1,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1530"
+  },
+  "logistics": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america 1493..1900 indigenous (default 4.8)"
+  },
+  "communications": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 2,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america 1493..1900 indigenous (default 4.8)"
+  },
+  "isr": {
+   "low": 4.5,
+   "mid": 4.8,
+   "high": 5.1,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1530"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1530"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1530"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 430,
+   "mid": 574,
+   "high": 718,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.north_america 1530"
+  },
+  "gdp": {
+   "low": 99500000,
+   "mid": 204000000,
+   "high": 430000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.06,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 24 gunpowder peers"
+  },
+  "industrialShare": {
+   "low": 0.12,
+   "mid": 0.15,
+   "high": 0.18,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 24 gunpowder peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.228,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 24 gunpowder peers"
+  },
+  "annualCohort": {
+   "low": 2198,
+   "mid": 3379,
+   "high": 5683,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 24 gunpowder peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 174,
+   "mid": 424,
+   "high": 1162,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 24 gunpowder peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 24 gunpowder peers"
+  },
+  "merchantTonnage": {
+   "low": 83,
+   "mid": 511,
+   "high": 4509,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 24 gunpowder peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 150,
+   "high": 275,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 24 gunpowder peers"
+  },
+  "draftAnimals": {
+   "low": 20268,
+   "mid": 51488,
+   "high": 144215,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 24 gunpowder peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 24 gunpowder peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1530:Nayarit polygon (area, habitable share, region north_america, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Nayarit\"; classified indigenous. The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Default for indigenous polities (researched Aztec precedent); colonial polygons should take their metropole profile."
+}

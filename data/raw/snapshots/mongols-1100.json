@@ -1,0 +1,534 @@
+{
+ "id": "mongols-1100",
+ "nationId": "mongols",
+ "includes": [],
+ "name": "Mongols",
+ "year": 1100,
+ "era": "medieval",
+ "region": "east_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Mongols interior point",
+  "lat": 47.375,
+  "lon": 122.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Mongols interior point",
+   "lat": 47.375,
+   "lon": 122.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1100:Mongols",
+  "areaKm2": {
+   "low": 4709172,
+   "mid": 4709172,
+   "high": 4709172,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1100:Mongols polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 40648296,
+   "mid": 62486898,
+   "high": 105104690,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 4,662,630 km2 (99% habitable) x east_asia 1100 density 9.99 x factor 1.34"
+  },
+  "urbanization": {
+   "low": 0.0775,
+   "mid": 0.085,
+   "high": 0.095,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.east_asia.urbanization; HYDE cross-check 0.0455"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 373558,
+   "mid": 656112,
+   "high": 1366361,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0105 (inputs eraPeerRatios.medieval.byRegion.east_asia.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 93390,
+   "mid": 213236,
+   "high": 1168998,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 4 medieval east_asia peers"
+  },
+  "supportPersonnel": {
+   "low": 33516,
+   "mid": 62331,
+   "high": 151581,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 4 medieval east_asia peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0287,
+   "mid": 0.03,
+   "high": 0.0312,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.east_asia.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 1166606,
+   "mid": 1874607,
+   "high": 3279266,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 135496,
+     "mid": 237984,
+     "high": 495604,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "40.1% of combat personnel, median share, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.688,
+     "mid": 0.7,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.55,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 17172,
+     "mid": 30160,
+     "high": 62809,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "5.1% of combat personnel, median share, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.45,
+     "high": 0.463,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.4,
+     "high": 0.4,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 98380,
+     "mid": 172793,
+     "high": 359844,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "29.1% of combat personnel, median share, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.738,
+     "mid": 0.775,
+     "high": 0.813,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.55,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 20908,
+     "mid": 36722,
+     "high": 76474,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "6.2% of combat personnel, median share, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.725,
+     "mid": 0.75,
+     "high": 0.762,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.762,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 46954,
+     "mid": 82470,
+     "high": 171744,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "13.9% of combat personnel, median share, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.662,
+     "mid": 0.725,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 467,
+     "mid": 1230,
+     "high": 3558,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.775,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 58,
+     "mid": 137,
+     "high": 683,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.675,
+     "mid": 0.7,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.5,
+     "high": 0.537,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 4 medieval east_asia peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 399,
+     "mid": 820,
+     "high": 3416,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 4 medieval east_asia peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 4 medieval east_asia peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.5,
+     "high": 0.525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 4 medieval east_asia peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.637,
+   "mid": 0.725,
+   "high": 0.775,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 4 medieval east_asia peers"
+  },
+  "cohesion": {
+   "low": 0.525,
+   "mid": 0.575,
+   "high": 0.613,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 4 medieval east_asia peers"
+  },
+  "morale": {
+   "low": 0.563,
+   "mid": 0.625,
+   "high": 0.675,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 4 medieval east_asia peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1100"
+  },
+  "armor": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1100"
+  },
+  "ships": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1100"
+  },
+  "fortification": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1100"
+  },
+  "logistics": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1100"
+  },
+  "communications": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1100"
+  },
+  "isr": {
+   "low": 3.6,
+   "mid": 3.9,
+   "high": 4.2,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1100"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1100"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1100"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 899,
+   "mid": 1200,
+   "high": 1500,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.east_asia 1100"
+  },
+  "gdp": {
+   "low": 36500000000,
+   "mid": 75000000000,
+   "high": 158000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.05,
+   "mid": 0.065,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 4 medieval east_asia peers"
+  },
+  "industrialShare": {
+   "low": 0.152,
+   "mid": 0.16,
+   "high": 0.17,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 4 medieval east_asia peers"
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.225,
+   "high": 0.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 4 medieval east_asia peers"
+  },
+  "annualCohort": {
+   "low": 386105,
+   "mid": 593626,
+   "high": 998495,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 4 medieval east_asia peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 38568,
+   "mid": 56699,
+   "high": 79930,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 4 medieval east_asia peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 4,
+   "mid": 6,
+   "high": 8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 4 medieval east_asia peers"
+  },
+  "merchantTonnage": {
+   "low": 38925,
+   "mid": 92717,
+   "high": 281361,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 4 medieval east_asia peers"
+  },
+  "supplyRangeKm": {
+   "low": 463,
+   "mid": 600,
+   "high": 750,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 4 medieval east_asia peers"
+  },
+  "draftAnimals": {
+   "low": 2460292,
+   "mid": 4165793,
+   "high": 9008973,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 4 medieval east_asia peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 4 medieval east_asia peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1100:Mongols polygon (area, habitable share, region east_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Mongols\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-feudal-host: Retinue and levy armies around cavalry elites; 3 of 4 researched snapshots."
+}

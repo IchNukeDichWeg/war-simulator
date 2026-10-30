@@ -1,0 +1,482 @@
+{
+ "id": "burma-1783",
+ "nationId": "burma",
+ "includes": [],
+ "name": "Burma",
+ "year": 1783,
+ "era": "gunpowder",
+ "region": "south_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Burma interior point",
+  "lat": 25.375,
+  "lon": 93.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Burma interior point",
+   "lat": 25.375,
+   "lon": 93.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1783:Burma",
+  "areaKm2": {
+   "low": 648065,
+   "mid": 648065,
+   "high": 648065,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1783:Burma polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 4080874,
+   "mid": 5829821,
+   "high": 7578767,
+   "grade": "C",
+   "source": "derived:country-population-match",
+   "note": "OWID MMR 1783 (https://ourworldindata.org/grapher/population); overlap 76% of the polity, 74% of MMR (habitable land); band +/-30% as inputs populationDensity"
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.08,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.urbanization; HYDE cross-check 0.114"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 18119,
+   "mid": 44598,
+   "high": 108376,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00765 (inputs eraPeerRatios.gunpowder.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 4221,
+   "mid": 27132,
+   "high": 156758,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 24 gunpowder peers"
+  },
+  "supportPersonnel": {
+   "low": 1465,
+   "mid": 5678,
+   "high": 20936,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 24 gunpowder peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0158,
+   "mid": 0.03,
+   "high": 0.04,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 64478,
+   "mid": 174895,
+   "high": 303151,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 11228,
+     "mid": 27636,
+     "high": 67158,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "71.0% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.538,
+     "mid": 0.625,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 1868,
+     "mid": 4598,
+     "high": 11173,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "11.8% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 1669,
+     "mid": 4108,
+     "high": 9983,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.6% of combat personnel, median share, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 27,
+     "mid": 86,
+     "high": 285,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 5,
+     "mid": 17,
+     "high": 98,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 24 gunpowder peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 7,
+     "mid": 28,
+     "high": 130,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 24 gunpowder peers"
+    },
+    "quality": {
+     "low": 0.438,
+     "mid": 0.5,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 24 gunpowder peers"
+    },
+    "training": {
+     "low": 0.487,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 24 gunpowder peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.55,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 24 gunpowder peers"
+  },
+  "cohesion": {
+   "low": 0.5,
+   "mid": 0.6,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 24 gunpowder peers"
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.65,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 24 gunpowder peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1783"
+  },
+  "armor": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1783"
+  },
+  "ships": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1783"
+  },
+  "fortification": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1783"
+  },
+  "logistics": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1783"
+  },
+  "communications": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1783"
+  },
+  "isr": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1783"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1783"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1783"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 933,
+   "mid": 1040,
+   "high": 1140,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.south_asia 1783"
+  },
+  "gdp": {
+   "low": 3810000000,
+   "mid": 6060000000,
+   "high": 8640000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.06,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 24 gunpowder peers"
+  },
+  "industrialShare": {
+   "low": 0.12,
+   "mid": 0.15,
+   "high": 0.18,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 24 gunpowder peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.2,
+   "high": 0.228,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 24 gunpowder peers"
+  },
+  "annualCohort": {
+   "low": 38768,
+   "mid": 55383,
+   "high": 71998,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 24 gunpowder peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2223,
+   "mid": 5419,
+   "high": 14851,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 24 gunpowder peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 2,
+   "high": 12,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 24 gunpowder peers"
+  },
+  "merchantTonnage": {
+   "low": 3173,
+   "mid": 15172,
+   "high": 90602,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 24 gunpowder peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 150,
+   "high": 275,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 24 gunpowder peers"
+  },
+  "draftAnimals": {
+   "low": 357505,
+   "mid": 843968,
+   "high": 1827024,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 24 gunpowder peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 24 gunpowder peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1783:Burma polygon (area, habitable share, region south_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Burma\"; classified state. Population: the modern country MMR (OWID), which covers the same land. The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Firearms and artillery from the 16th century; the one archetype precedent (Maratha) uses it."
+}

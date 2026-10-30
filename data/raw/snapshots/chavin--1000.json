@@ -1,0 +1,404 @@
+{
+ "id": "chavin--1000",
+ "nationId": "chavin",
+ "includes": [],
+ "name": "Chavin",
+ "year": -1000,
+ "era": "iron",
+ "region": "latin_america",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "indigenous"
+ ],
+ "capital": {
+  "name": "Chavin interior point",
+  "lat": -9.875,
+  "lon": -75.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Chavin interior point",
+   "lat": -9.875,
+   "lon": -75.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc1000:Chavin",
+  "areaKm2": {
+   "low": 82926,
+   "mid": 82926,
+   "high": 82926,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:bc1000:Chavin polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 144603,
+   "mid": 222292,
+   "high": 373901,
+   "grade": "D",
+   "source": "derived:state-density-factor",
+   "note": "A_h 52,324 km2 (63% habitable) x latin_america -1000 density 0.456 x factor 9.32"
+  },
+  "urbanization": {
+   "low": 0.08,
+   "mid": 0.1,
+   "high": 0.12,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.urbanization; HYDE cross-check 8.14e-11"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1286,
+   "mid": 3357,
+   "high": 11329,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0151 (inputs eraPeerRatios.iron.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 105,
+   "mid": 813,
+   "high": 6743,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 20 iron peers"
+  },
+  "supportPersonnel": {
+   "low": 115,
+   "mid": 341,
+   "high": 2745,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 20 iron peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.03,
+   "mid": 0.05,
+   "high": 0.0725,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 4338,
+   "mid": 11115,
+   "high": 27108,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 706,
+     "mid": 1842,
+     "high": 6216,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "61.1% of combat personnel, median share, 20 iron peers, x1.19 (no horses)"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 20 iron peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 186,
+     "mid": 485,
+     "high": 1636,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "16.1% of combat personnel, median share, 20 iron peers, x1.19 (no horses)"
+    },
+    "quality": {
+     "low": 0.375,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.45,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 20 iron peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 120,
+     "mid": 312,
+     "high": 1054,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.4% of combat personnel, median share, 20 iron peers, x1.19 (no horses)"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 20 iron peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 20 iron peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.588,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 20 iron peers"
+  },
+  "cohesion": {
+   "low": 0.538,
+   "mid": 0.6,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 20 iron peers"
+  },
+  "morale": {
+   "low": 0.588,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 20 iron peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 2.36)"
+  },
+  "armor": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 1.5,
+   "grade": "D",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 2.36)"
+  },
+  "ships": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 2.36)"
+  },
+  "fortification": {
+   "low": 2.06,
+   "mid": 2.36,
+   "high": 2.66,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification -1000"
+  },
+  "logistics": {
+   "low": 0,
+   "mid": 0.5,
+   "high": 1,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 2.36)"
+  },
+  "communications": {
+   "low": 0.5,
+   "mid": 1,
+   "high": 2,
+   "grade": "C",
+   "source": "derived:tech-regional-cap",
+   "note": "inputs tech cap north_america/latin_america -3000..1492 (default 2.36)"
+  },
+  "isr": {
+   "low": 2.06,
+   "mid": 2.36,
+   "high": 2.66,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr -1000"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air -1000"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber -1000"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 645,
+   "mid": 921,
+   "high": 1200,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.latin_america -1000"
+  },
+  "gdp": {
+   "low": 93300000,
+   "mid": 205000000,
+   "high": 449000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.0625,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 20 iron peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.12,
+   "high": 0.13,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 20 iron peers"
+  },
+  "foodSurplus": {
+   "low": 0.2,
+   "mid": 0.2,
+   "high": 0.25,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 20 iron peers"
+  },
+  "annualCohort": {
+   "low": 1374,
+   "mid": 2112,
+   "high": 3552,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 20 iron peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 132,
+   "mid": 206,
+   "high": 914,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 20 iron peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 120,
+   "mid": 150,
+   "high": 225,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 20 iron peers"
+  },
+  "draftAnimals": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Horses_in_the_United_States",
+   "note": "no horses: extinct in the Americas ~8,000-12,000 years ago, reintroduced by the Spanish from 1493; no other draft animals before contact (inputs tech caps); llamas not counted"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 20 iron peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:bc1000:Chavin polygon (area, habitable share, region latin_america, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Chavin\"; classified indigenous. No horses (cavalry, chariots, draft animals 0). No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Andean and Mesoamerican infantry armies."
+}

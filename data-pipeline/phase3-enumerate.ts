@@ -110,12 +110,15 @@ const INDIGENOUS_REGIONS: { id: string; box: [number, number, number, number] }[
   { id: 'South America', box: [-82, -56, -34, 13] },
 ];
 const STATE_FORM = /empire|kingdom|confedera|republic|viceroyalty|dominion|united|provinces|\((UK|GB|France|FR|Spain|Portugal|Netherlands)\)/i;
-const INDIGENOUS_KEEP = new Set([
-  // colonial units the basemap records with SUBJECTO = NAME
+/** Colonial units the basemap records with SUBJECTO = NAME (also read by generate-phase3.ts). */
+export const COLONIAL_UNITS = new Set([
   "Rupert's Land", 'Louisiana', 'Essequibo', 'Cayenne', 'Dutch Guiana', 'French Guiana', 'Surinam',
-  // pre-colonial or treaty-recognised polities
+]);
+/** Pre-colonial or treaty-recognised polities inside the boxes. */
+const NATIVE_STATES = new Set([
   'Chimú', 'Muisca', 'Iroquois', 'Ho-de-no-sau-nee-ga (Haudenosaunee)', 'Mapuche', 'Wallmapu (Mapuche)',
 ]);
+const INDIGENOUS_KEEP = new Set([...COLONIAL_UNITS, ...NATIVE_STATES]);
 
 export type Candidate = {
   name: string; subjecto: string; year: number; era: EraId;
@@ -134,7 +137,7 @@ export function eraOf(year: number): EraId | null {
   return null;
 }
 
-const norm = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2010-\u2015]/g, '-').replace(/\s+/g, ' ').trim().toLowerCase();
+export const norm = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2010-\u2015]/g, '-').replace(/\s+/g, ' ').trim().toLowerCase();
 const tokens = (s: string) => norm(s).replace(/['\u2019]/g, '').split(/[^a-z0-9]+/).filter((t) => t.length > 1 && !GENERIC_TOKENS.has(t));
 
 export function exclusionOf(name: string | null | undefined, year: number): Rule | null {
@@ -166,8 +169,8 @@ export function centroidOf(mp: MultiPolygon): [number, number] {
 
 /** Engine-grid cells (cell centre inside the polygon, even-odd per part, parts unioned),
  *  sorted, with each cell weighted by cos(lat) so shares are area shares. Scanline per row. */
-type Raster = { cells: Int32Array; w: Float64Array; total: number; bbox: [number, number, number, number] };
-function rasterize(mp: MultiPolygon): Raster {
+export type Raster = { cells: Int32Array; w: Float64Array; total: number; bbox: [number, number, number, number] };
+export function rasterize(mp: MultiPolygon): Raster {
   const set = new Set<number>();
   for (const poly of mp) {
     let s = 90, n = -90;
@@ -216,7 +219,9 @@ export function existingCoverage() {
   const refs = new Set<string>();
   const years = new Map<string, number[]>();
   const add = (name: string, y: number) => { const k = norm(name); if (k) years.set(k, [...(years.get(k) ?? []), y]); };
-  const snaps: Snapshot[] = listJson('raw/snapshots').map((f) => JSON.parse(readFileSync(f, 'utf8')));
+  // Phase 3 output is derived from this enumeration, so it never counts as coverage.
+  const snaps: Snapshot[] = listJson('raw/snapshots').map((f) => JSON.parse(readFileSync(f, 'utf8')) as Snapshot)
+    .filter((s) => !s.tags.includes('phase3'));
   const snapTokens = new Map<string, Set<string>>(); // snapshot id -> distinctive name tokens
   for (const s of snaps) {
     const names = [s.name, s.name.replace(/\s*\(.*?\)\s*/g, ' ')];

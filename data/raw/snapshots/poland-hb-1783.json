@@ -1,0 +1,482 @@
+{
+ "id": "poland-hb-1783",
+ "nationId": "poland-hb",
+ "includes": [],
+ "name": "Poland",
+ "year": 1783,
+ "era": "gunpowder",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Poland interior point",
+  "lat": 52.875,
+  "lon": 25.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Poland interior point",
+   "lat": 52.875,
+   "lon": 25.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1783:Poland",
+  "areaKm2": {
+   "low": 548582,
+   "mid": 548582,
+   "high": 548582,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1783:Poland polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 12216391,
+   "mid": 18779739,
+   "high": 31588041,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 548,164 km2 (100% habitable) x europe 1783 density 8.18 x factor 4.19"
+  },
+  "urbanization": {
+   "low": 0.0475,
+   "mid": 0.08,
+   "high": 0.138,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.europe.urbanization; HYDE cross-check 0.122"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 93578,
+   "mid": 234747,
+   "high": 1130852,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0125 (inputs eraPeerRatios.gunpowder.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 14238,
+   "mid": 50684,
+   "high": 515951,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 12 gunpowder europe peers"
+  },
+  "supportPersonnel": {
+   "low": 7947,
+   "mid": 33406,
+   "high": 243485,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 12 gunpowder europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.03,
+   "mid": 0.04,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 366492,
+   "mid": 751190,
+   "high": 2527043,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 58491,
+     "mid": 146729,
+     "high": 706840,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "72.9% of combat personnel, median share, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.588,
+     "mid": 0.75,
+     "high": 0.813,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 12 gunpowder europe peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 8287,
+     "mid": 20789,
+     "high": 100147,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.3% of combat personnel, median share, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.675,
+     "mid": 0.75,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.675,
+     "mid": 0.7,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 12 gunpowder europe peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 10014,
+     "mid": 25120,
+     "high": 121013,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "12.5% of combat personnel, median share, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.637,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 12 gunpowder europe peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 137,
+     "mid": 389,
+     "high": 2827,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.712,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 12 gunpowder europe peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 28,
+     "mid": 142,
+     "high": 1018,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.75,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 12 gunpowder europe peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 25,
+     "mid": 92,
+     "high": 648,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 12 gunpowder europe peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.6,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 12 gunpowder europe peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.6,
+     "high": 0.637,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 12 gunpowder europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.7,
+   "mid": 0.75,
+   "high": 0.813,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 12 gunpowder europe peers"
+  },
+  "cohesion": {
+   "low": 0.6,
+   "mid": 0.7,
+   "high": 0.762,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 12 gunpowder europe peers"
+  },
+  "morale": {
+   "low": 0.688,
+   "mid": 0.7,
+   "high": 0.8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 12 gunpowder europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1783"
+  },
+  "armor": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1783"
+  },
+  "ships": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1783"
+  },
+  "fortification": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1783"
+  },
+  "logistics": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1783"
+  },
+  "communications": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1783"
+  },
+  "isr": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1783"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1783"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1783"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1460,
+   "mid": 1920,
+   "high": 2500,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.europe 1783"
+  },
+  "gdp": {
+   "low": 17800000000,
+   "mid": 36100000000,
+   "high": 79000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.065,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 12 gunpowder europe peers"
+  },
+  "industrialShare": {
+   "low": 0.145,
+   "mid": 0.17,
+   "high": 0.185,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 12 gunpowder europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.172,
+   "mid": 0.19,
+   "high": 0.275,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 12 gunpowder europe peers"
+  },
+  "annualCohort": {
+   "low": 116056,
+   "mid": 178408,
+   "high": 300086,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 12 gunpowder europe peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 4206,
+   "mid": 12794,
+   "high": 26200,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 12 gunpowder europe peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 6,
+   "high": 14,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 12 gunpowder europe peers"
+  },
+  "merchantTonnage": {
+   "low": 58661,
+   "mid": 293886,
+   "high": 1635076,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 12 gunpowder europe peers"
+  },
+  "supplyRangeKm": {
+   "low": 143,
+   "mid": 150,
+   "high": 150,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 12 gunpowder europe peers"
+  },
+  "draftAnimals": {
+   "low": 1943892,
+   "mid": 4247798,
+   "high": 8340351,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 12 gunpowder europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.3,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 12 gunpowder europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1783:Poland polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Poland\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Standing drilled armies fighting in line; 9 of 12 researched European gunpowder snapshots."
+}

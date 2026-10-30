@@ -1,0 +1,404 @@
+{
+ "id": "nejd-1783",
+ "nationId": "nejd",
+ "includes": [],
+ "name": "Nejd",
+ "year": 1783,
+ "era": "gunpowder",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Nejd interior point",
+  "lat": 22.125,
+  "lon": 46.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Nejd interior point",
+   "lat": 22.125,
+   "lon": 46.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1783:Nejd",
+  "areaKm2": {
+   "low": 657966,
+   "mid": 657966,
+   "high": 657966,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1783:Nejd polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 3805330,
+   "mid": 5849772,
+   "high": 9839479,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 657,966 km2 (100% habitable) x mena 1783 density 2.18 x factor 4.08"
+  },
+  "urbanization": {
+   "low": 0.08,
+   "mid": 0.08,
+   "high": 0.09,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.mena.urbanization; HYDE cross-check 0.0538"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 14346,
+   "mid": 26792,
+   "high": 47131,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00458 (inputs eraPeerRatios.gunpowder.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 15324,
+   "mid": 40188,
+   "high": 82479,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 3 gunpowder mena peers"
+  },
+  "supportPersonnel": {
+   "low": 2706,
+   "mid": 6089,
+   "high": 11519,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 3 gunpowder mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.012,
+   "mid": 0.012,
+   "high": 0.014,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 45664,
+   "mid": 70197,
+   "high": 137753,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 9193,
+     "mid": 17168,
+     "high": 30202,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "82.9% of combat personnel, median share, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 1893,
+     "mid": 3535,
+     "high": 6218,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "17.1% of combat personnel, median share, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.625,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.75,
+     "high": 0.775,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 3 gunpowder mena peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 43,
+     "mid": 124,
+     "high": 256,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 3 gunpowder mena peers"
+    },
+    "quality": {
+     "low": 0.525,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 3 gunpowder mena peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 3 gunpowder mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.625,
+   "mid": 0.75,
+   "high": 0.775,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 3 gunpowder mena peers"
+  },
+  "cohesion": {
+   "low": 0.6,
+   "mid": 0.6,
+   "high": 0.675,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 3 gunpowder mena peers"
+  },
+  "morale": {
+   "low": 0.65,
+   "mid": 0.65,
+   "high": 0.7,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 3 gunpowder mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1783"
+  },
+  "armor": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1783"
+  },
+  "ships": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1783"
+  },
+  "fortification": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1783"
+  },
+  "logistics": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1783"
+  },
+  "communications": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1783"
+  },
+  "isr": {
+   "low": 5.59,
+   "mid": 5.89,
+   "high": 6.19,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1783"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1783"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1783"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 685,
+   "mid": 849,
+   "high": 971,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1783"
+  },
+  "gdp": {
+   "low": 2610000000,
+   "mid": 4970000000,
+   "high": 9550000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.05,
+   "mid": 0.05,
+   "high": 0.055,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 3 gunpowder mena peers"
+  },
+  "industrialShare": {
+   "low": 0.145,
+   "mid": 0.15,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 3 gunpowder mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.185,
+   "mid": 0.22,
+   "high": 0.22,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 3 gunpowder mena peers"
+  },
+  "annualCohort": {
+   "low": 36151,
+   "mid": 55573,
+   "high": 93475,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 3 gunpowder mena peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2102,
+   "mid": 2742,
+   "high": 2833,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 3 gunpowder mena peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 325,
+   "mid": 400,
+   "high": 400,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 3 gunpowder mena peers"
+  },
+  "draftAnimals": {
+   "low": 497287,
+   "mid": 797696,
+   "high": 1900808,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 3 gunpowder mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.2,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 3 gunpowder mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1783:Nejd polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Nejd\"; classified state. No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Firearm infantry and artillery in Ottoman-style and Safavid armies; the one archetype precedent in this cell."
+}

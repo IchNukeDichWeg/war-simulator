@@ -1,0 +1,456 @@
+{
+ "id": "thrace--1500",
+ "nationId": "thrace",
+ "includes": [],
+ "name": "Thrace",
+ "year": -1500,
+ "era": "bronze",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Thrace interior point",
+  "lat": 43.125,
+  "lon": 24.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Thrace interior point",
+   "lat": 43.125,
+   "lon": 24.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc1500:Thrace",
+  "areaKm2": {
+   "low": 255338,
+   "mid": 255338,
+   "high": 255338,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:bc1500:Thrace polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 546165,
+   "mid": 839596,
+   "high": 1412224,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 254,748 km2 (100% habitable) x europe -1500 density 0.573 x factor 5.75"
+  },
+  "urbanization": {
+   "low": 0.045,
+   "mid": 0.07,
+   "high": 0.14,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.bronze.urbanization; HYDE cross-check 0.00162"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 4872,
+   "mid": 10495,
+   "high": 34035,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0125 (inputs eraPeerRatios.bronze.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 2707,
+   "mid": 6297,
+   "high": 24108,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 7 bronze peers"
+  },
+  "supportPersonnel": {
+   "low": 426,
+   "mid": 2332,
+   "high": 7611,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 7 bronze peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.bronze.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 21847,
+   "mid": 41980,
+   "high": 84733,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 2132,
+     "mid": 4592,
+     "high": 14891,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "56.3% of combat personnel, median share, 7 bronze peers, x0.984"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 7 bronze peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 7 bronze peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 622,
+     "mid": 1339,
+     "high": 4343,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "16.4% of combat personnel, median share, 7 bronze peers, x0.984"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.4,
+     "high": 0.475,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 7 bronze peers"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.4,
+     "high": 0.475,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 7 bronze peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 1036,
+     "mid": 2232,
+     "high": 7239,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "27.3% of combat personnel, median share, 7 bronze peers, x0.984"
+    },
+    "quality": {
+     "low": 0.575,
+     "mid": 0.6,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 7 bronze peers"
+    },
+    "training": {
+     "low": 0.475,
+     "mid": 0.5,
+     "high": 0.575,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 7 bronze peers"
+    }
+   },
+   "chariots": {
+    "count": {
+     "low": 52,
+     "mid": 356,
+     "high": 1900,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median chariots per active of fielding peers, 7 bronze peers"
+    },
+    "quality": {
+     "low": 0.475,
+     "mid": 0.65,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median chariots quality of fielding peers, 7 bronze peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median chariots training of fielding peers, 7 bronze peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 9,
+     "mid": 23,
+     "high": 118,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 7 bronze peers"
+    },
+    "quality": {
+     "low": 0.637,
+     "mid": 0.65,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 7 bronze peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.6,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 7 bronze peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.575,
+   "mid": 0.6,
+   "high": 0.675,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 7 bronze peers"
+  },
+  "cohesion": {
+   "low": 0.45,
+   "mid": 0.45,
+   "high": 0.525,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 7 bronze peers"
+  },
+  "morale": {
+   "low": 0.575,
+   "mid": 0.6,
+   "high": 0.625,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 7 bronze peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons -1500"
+  },
+  "armor": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor -1500"
+  },
+  "ships": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships -1500"
+  },
+  "fortification": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification -1500"
+  },
+  "logistics": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics -1500"
+  },
+  "communications": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications -1500"
+  },
+  "isr": {
+   "low": 1.61,
+   "mid": 1.91,
+   "high": 2.21,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr -1500"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air -1500"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber -1500"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 756,
+   "mid": 1080,
+   "high": 1400,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.europe -1500"
+  },
+  "gdp": {
+   "low": 413000000,
+   "mid": 907000000,
+   "high": 1980000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.05,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 7 bronze peers"
+  },
+  "industrialShare": {
+   "low": 0.09,
+   "mid": 0.1,
+   "high": 0.1,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 7 bronze peers"
+  },
+  "foodSurplus": {
+   "low": 0.22,
+   "mid": 0.3,
+   "high": 0.325,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 7 bronze peers"
+  },
+  "annualCohort": {
+   "low": 5189,
+   "mid": 7976,
+   "high": 13416,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 7 bronze peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 119,
+   "mid": 170,
+   "high": 378,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 7 bronze peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 2,
+   "mid": 2,
+   "high": 3,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 7 bronze peers"
+  },
+  "merchantTonnage": {
+   "low": 1679,
+   "mid": 4199,
+   "high": 19256,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 7 bronze peers"
+  },
+  "supplyRangeKm": {
+   "low": 70,
+   "mid": 80,
+   "high": 110,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 7 bronze peers"
+  },
+  "draftAnimals": {
+   "low": 44413,
+   "mid": 83960,
+   "high": 172997,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 7 bronze peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-bronze-chariot",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 7 bronze peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:bc1500:Thrace polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Thrace\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-bronze-chariot: Mycenaean and Danubian palace/warrior elites fought from chariots with infantry levies."
+}

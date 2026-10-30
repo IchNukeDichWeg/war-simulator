@@ -1,0 +1,508 @@
+{
+ "id": "cappadocia--323",
+ "nationId": "cappadocia",
+ "includes": [],
+ "name": "Cappadocia",
+ "year": -323,
+ "era": "iron",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Cappadocia interior point",
+  "lat": 40.375,
+  "lon": 35.125,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Cappadocia interior point",
+   "lat": 40.375,
+   "lon": 35.125,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:bc323:Cappadocia",
+  "areaKm2": {
+   "low": 203805,
+   "mid": 203805,
+   "high": 203805,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:bc323:Cappadocia polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 1043739,
+   "mid": 1604496,
+   "high": 2698806,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 203,240 km2 (100% habitable) x europe -323 density 1.25 x factor 6.32"
+  },
+  "urbanization": {
+   "low": 0.11,
+   "mid": 0.12,
+   "high": 0.16,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.byRegion.europe.urbanization; HYDE cross-check 0.00621"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 9602,
+   "mid": 49900,
+   "high": 296869,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0311 (inputs eraPeerRatios.iron.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 444,
+   "mid": 2901,
+   "high": 54240,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 7 iron europe peers"
+  },
+  "supportPersonnel": {
+   "low": 913,
+   "mid": 5162,
+   "high": 128660,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 7 iron europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.04,
+   "mid": 0.08,
+   "high": 0.18,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.iron.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 41750,
+   "mid": 128360,
+   "high": 485785,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 6125,
+     "mid": 31829,
+     "high": 189362,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "71.1% of combat personnel, median share, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.775,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.575,
+     "mid": 0.75,
+     "high": 0.825,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 1276,
+     "mid": 6631,
+     "high": 39450,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "14.8% of combat personnel, median share, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.375,
+     "mid": 0.5,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.35,
+     "mid": 0.5,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 246,
+     "mid": 1278,
+     "high": 7605,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "2.9% of combat personnel, median share, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 760,
+     "mid": 3951,
+     "high": 23507,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "8.8% of combat personnel, median share, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.75,
+     "mid": 0.8,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.7,
+     "mid": 0.7,
+     "high": 0.85,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 153,
+     "mid": 796,
+     "high": 4734,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "1.8% of combat personnel, median share, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.625,
+     "high": 0.662,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.6,
+     "mid": 0.675,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 3,
+     "mid": 24,
+     "high": 509,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 7 iron europe peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 4,
+     "mid": 29,
+     "high": 202,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 7 iron europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.675,
+     "high": 0.762,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 7 iron europe peers"
+    },
+    "training": {
+     "low": 0.588,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 7 iron europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.625,
+   "mid": 0.7,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 7 iron europe peers"
+  },
+  "cohesion": {
+   "low": 0.65,
+   "mid": 0.8,
+   "high": 0.875,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 7 iron europe peers"
+  },
+  "morale": {
+   "low": 0.75,
+   "mid": 0.75,
+   "high": 0.825,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 7 iron europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons -323"
+  },
+  "armor": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor -323"
+  },
+  "ships": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships -323"
+  },
+  "fortification": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification -323"
+  },
+  "logistics": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics -323"
+  },
+  "communications": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications -323"
+  },
+  "isr": {
+   "low": 2.68,
+   "mid": 2.98,
+   "high": 3.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr -323"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air -323"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber -323"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 756,
+   "mid": 1080,
+   "high": 1400,
+   "grade": "D",
+   "source": "derived:maddison-hold",
+   "note": "inputs gdpPerCapita.europe -323"
+  },
+  "gdp": {
+   "low": 789000000,
+   "mid": 1730000000,
+   "high": 3780000000,
+   "grade": "D",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.05,
+   "high": 0.07,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 7 iron europe peers"
+  },
+  "industrialShare": {
+   "low": 0.1,
+   "mid": 0.13,
+   "high": 0.15,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 7 iron europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.19,
+   "mid": 0.2,
+   "high": 0.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 7 iron europe peers"
+  },
+  "annualCohort": {
+   "low": 9916,
+   "mid": 15243,
+   "high": 25639,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 7 iron europe peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 2346,
+   "mid": 3450,
+   "high": 3796,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 7 iron europe peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 10,
+   "high": 34,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 7 iron europe peers"
+  },
+  "merchantTonnage": {
+   "low": 5113,
+   "mid": 11533,
+   "high": 27245,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 7 iron europe peers"
+  },
+  "supplyRangeKm": {
+   "low": 105,
+   "mid": 150,
+   "high": 150,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 7 iron europe peers"
+  },
+  "draftAnimals": {
+   "low": 66799,
+   "mid": 128360,
+   "high": 218269,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 7 iron europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-classical-infantry",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 7 iron europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:bc323:Cappadocia polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Cappadocia\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-classical-infantry: Celtic, Italic, Iberian and Greek states fought with infantry levies; the profile names them."
+}

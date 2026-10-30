@@ -313,3 +313,93 @@ Doctrine defaults per region x era (`doctrine` in the JSON) pick an `archetype-*
 a one-line reason each, mostly following the researched snapshots of that cell. For the Americas
 and Oceania before 1800 the default is for indigenous polities; colonial polygons should take
 their metropole's profile.
+
+How `data-pipeline/generate-phase3.ts` applies these inputs (tag `phase3`, one file per polity
+of `data/reference/phase3-polities.json`, minus polities with a same-name snapshot in the same era):
+
+- Habitable land: an engine grid cell (0.25 deg, `public/data/terrain/grid.bin`) inside the
+  border that is land (not water) and outside Koppen-Geiger zone E (polar: ET, EF) on the Beck
+  et al. 2018 grid the engine already reads (`public/data/climate/zones.bin`, 0.5 deg,
+  doi:10.1038/sdata.2018.214). Habitable share h = habitable cell area / all cell area;
+  habitable area A_h = A x h.
+- Region: the inputs' region rule read off the polygon, as the region holding most of the
+  polity's people: each habitable cell takes the region of its Natural Earth country
+  (`meta.regionCountries`), weighted by cell area x that region's density at the year. Equal to
+  the centroid's region except where a polygon spans regions (Denmark-Norway with Greenland).
+- Capital and places: one interior point, the polygon cell nearest the area-weighted centre of
+  its main-region cells. Not a documented capital or city; the snapshot note says so.
+- Area: `derived:area-from-border`, grade C (basemap borders are approximate).
+- Population, first choice: `derived:country-population-match`. The polity takes the
+  population of one modern country when they overlap mutually by at least 70%: the country
+  holds at least 70% of the polity's habitable land and the polity holds at least 70% of the
+  country's (both on the engine grid; all land instead of habitable land when the polity has
+  no habitable cell; only cells inside a Natural Earth 50m country count, so a one-cell
+  coastline difference does not decide the match). The value is the country's OWID population
+  (https://ourworldindata.org/grapher/population, current borders: HYDE 3.3 to 1799, Gapminder
+  v7 1800-1949, UN WPP 2024 from 1950; fetched by the pipeline as CSV) at the polity's year,
+  log-linear between observations (1 BCE reads OWID year 0); no value outside the series. Band
+  and grade are those of the inputs' `populationDensity` at that year, which sums the same
+  series. 269 of 904 polities match (Libya 1960 LBY, Greenland GRL, Iceland ISL, Saudi Arabia
+  SAU, Denmark DNK).
+- Population, otherwise: `derived:state-density-factor` with A_h in place of A (in the area term and the
+  clamp), then bounded by the region's total population at the year: each of low/mid/high is
+  at most the regional density (low/mid/high) x the regional land area that the density's input
+  note states ("<people> over <X>M km2"), so no polity exceeds its region. Grade at most C.
+- GDP per capita, tech and doctrine: the formulas above; gdp = `derived:gdp-from-pc`. Polity type for the indigenous-only tech caps and the
+  doctrine exceptions: colonial (SUBJECTO differs, or a colonial name), settler republic,
+  post-independence American state (a states.json name), else indigenous inside the caps'
+  windows (Americas to 1900, Sub-Saharan Africa to 1880, Oceania to 1913) and plain state
+  outside them. In the Americas and Oceania the pre-1914 doctrine defaults are written for
+  indigenous polities, so colonial, settler and successor polities there take the European
+  default of the era (the north_america and latin_america industrial defaults already describe
+  their post-independence states).
+- `derived:era-peer-median`, same pool rule as `eraPeerRatios` (the era x region cell with 3+
+  researched snapshots, else the era), also fills every field the inputs do not give, grade D:
+  supportPersonnel and trainedReserves per active; P-role shares of combat personnel (active -
+  support; a role is fielded when half the pool fields it; shares scaled to sum 1 when the
+  medians exceed it); platforms per active soldier; per-role quality and training;
+  commandQuality, cohesion, morale; milSpendShare, industrialShare, foodSurplus; annualCohort
+  and draftAnimals per person; roadKm and railKm (from 1825) per km2; majorPorts per km2 and
+  merchantTonnage per $ GDP (0 without sea access); supplyRangeKm;
+  wartime production per $ GDP for fielded platform roles. A value scaled by a peer ratio uses
+  low x first quartile and high x third quartile. Personnel shares from `eraPeerRatios` are
+  applied to the population the same way and graded D: the analogy, not the input, dominates.
+- Role availability (`derived:role-availability`):
+  - Horses: no horses before contact, for every polity: the Americas before 1493 and Oceania
+    before 1788. There cavalry_heavy, cavalry_light and chariots are not fielded and
+    draftAnimals is 0, grade C, sourced to the fetched pages: horses became extinct in the
+    Americas about 8,000-12,000 years ago and were reintroduced by the Spanish from 1493
+    (https://en.wikipedia.org/wiki/Horses_in_the_United_States, also
+    https://en.wikipedia.org/wiki/Evolution_of_the_horse); the first horses reached Australia
+    with the First Fleet in 1788 (https://en.wikipedia.org/wiki/Brumby). The inputs' cap note
+    (Comin, Easterly and Gong) adds no draft animals of any kind in the Americas before contact.
+    Llamas are pack animals with no sourced count and are not counted. After contact horses
+    spread at different dates per people (the Mapuche, Comanche and Lakota became horse
+    peoples); that is not modelled per people, so post-contact polities take the peer pool.
+    The cavalry share of combat personnel goes to the remaining personnel roles in proportion,
+    so their total share stays the peer total.
+  - Ships: naval roles (ships_major, ships_minor, submarines), majorPorts and merchantTonnage
+    only with sea access: a border cell, or one of its 4 neighbours, is a sea cell. Sea = an
+    engine water cell connected (8-neighbour, through water cells) to a cell the Beck grid marks
+    as sea (value 0). Beck classifies lakes as land climate, so the Caspian, Aral, the Great
+    Lakes, Victoria and Baikal are not sea, and a polity on their shores alone has no ships.
+    8-neighbour links keep a river estuary one diagonal step wide (St Lawrence below Quebec)
+    connected.
+  - No other region-specific role rule: a role is fielded when half the peer pool fields it.
+- Notes: each value's note is a reference (the input path and year, or the peer pool) plus
+  the polity's own numbers; the formulas live here and the full input notes in
+  `phase3-inputs.json`.
+- Known limits:
+  - Without a country match the density formula still applies, and desert counts as habitable
+    (zone B is not E). Polygons that are a fragment or a superset of a modern country keep
+    regional densities far above plausible values: the 1945 Libya pieces (Cyrenaica 21M, Fezzan
+    16M, Tripolitania 10M), Western Sahara 1945/1994 (11M/15M; the 1994 polygon is 63% Moroccan
+    land), Arabia 1878 (18M, 68% Saudi), Emirate of Bin Shal'an 1920 (17M), Xixia 1100 (21M),
+    Air 1783 (5M), Kalmar Union 1500 (11M). Gridded population (HYDE count grids) would fix
+    these; the HYDE portal was behind a bot check when the inputs were researched.
+  - A match to one country drops the rest of a union: Denmark-Norway 1783/1800 match Norway
+    (0.8-0.9M) and leave out Denmark.
+  - The state-density factor makes small habitable areas dense (exp(-0.414 ln A_h)) where no
+    country matches.
+  - Sub-Saharan cavalry (Asante and other forest-zone states) comes from the peer pool; no
+    fetched source was applied to it.

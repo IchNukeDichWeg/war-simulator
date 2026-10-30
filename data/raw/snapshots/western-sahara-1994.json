@@ -1,0 +1,586 @@
+{
+ "id": "western-sahara-1994",
+ "nationId": "western-sahara",
+ "includes": [],
+ "name": "Western Sahara",
+ "year": 1994,
+ "era": "modern",
+ "region": "mena",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Western Sahara interior point",
+  "lat": 24.875,
+  "lon": -13.625,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Western Sahara interior point",
+   "lat": 24.875,
+   "lon": -13.625,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1994:Western Sahara",
+  "areaKm2": {
+   "low": 265764,
+   "mid": 265764,
+   "high": 265764,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1994:Western Sahara polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 8534962,
+   "mid": 14941924,
+   "high": 24389945,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 265,764 km2 (100% habitable) x mena 1994 density 25.1 x factor 2.24"
+  },
+  "urbanization": {
+   "low": 0.71,
+   "mid": 0.795,
+   "high": 0.897,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.mena.urbanization; HYDE cross-check 0.56"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 37981,
+   "mid": 82928,
+   "high": 180729,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.00555 (inputs eraPeerRatios.modern.byRegion.mena.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 0,
+   "mid": 0,
+   "high": 166743,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 15 modern mena peers"
+  },
+  "supportPersonnel": {
+   "low": 16815,
+   "mid": 47183,
+   "high": 111446,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 15 modern mena peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0225,
+   "mid": 0.04,
+   "high": 0.05,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.modern.byRegion.mena.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 192037,
+   "mid": 597677,
+   "high": 1219497,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 9095,
+     "mid": 19858,
+     "high": 43278,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "55.6% of combat personnel, median share, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 7276,
+     "mid": 15887,
+     "high": 34623,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "44.4% of combat personnel, median share, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 109,
+     "mid": 339,
+     "high": 883,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "armor": {
+    "count": {
+     "low": 94,
+     "mid": 258,
+     "high": 926,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median armor per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.425,
+     "mid": 0.6,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median armor training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "ifv_apc": {
+    "count": {
+     "low": 205,
+     "mid": 859,
+     "high": 2532,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ifv_apc per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ifv_apc training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "aircraft_fighter": {
+    "count": {
+     "low": 8,
+     "mid": 56,
+     "high": 252,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median aircraft_fighter per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.375,
+     "mid": 0.65,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.425,
+     "mid": 0.55,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median aircraft_fighter training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "helicopters": {
+    "count": {
+     "low": 19,
+     "mid": 62,
+     "high": 238,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median helicopters per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.425,
+     "mid": 0.6,
+     "high": 0.675,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median helicopters training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "drones": {
+    "count": {
+     "low": 4,
+     "mid": 18,
+     "high": 73,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median drones per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median drones quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.525,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median drones training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 4,
+     "mid": 13,
+     "high": 96,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.375,
+     "mid": 0.5,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 15 modern mena peers"
+    }
+   },
+   "air_defense": {
+    "count": {
+     "low": 4,
+     "mid": 21,
+     "high": 70,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median air_defense per active of fielding peers, 15 modern mena peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.6,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense quality of fielding peers, 15 modern mena peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.55,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median air_defense training of fielding peers, 15 modern mena peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.4,
+   "mid": 0.5,
+   "high": 0.55,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 15 modern mena peers"
+  },
+  "cohesion": {
+   "low": 0.45,
+   "mid": 0.55,
+   "high": 0.6,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 15 modern mena peers"
+  },
+  "morale": {
+   "low": 0.5,
+   "mid": 0.55,
+   "high": 0.575,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 15 modern mena peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1994"
+  },
+  "armor": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1994"
+  },
+  "ships": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1994"
+  },
+  "fortification": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1994"
+  },
+  "logistics": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1994"
+  },
+  "communications": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1994"
+  },
+  "isr": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1994"
+  },
+  "air": {
+   "low": 8.92,
+   "mid": 9.22,
+   "high": 9.52,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.air 1994"
+  },
+  "cyber": {
+   "low": 8.81,
+   "mid": 9.11,
+   "high": 9.41,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.cyber 1994"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 4750,
+   "mid": 6720,
+   "high": 7390,
+   "grade": "B",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.mena 1994"
+  },
+  "gdp": {
+   "low": 40500000000,
+   "mid": 100000000000,
+   "high": 180000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0352,
+   "mid": 0.0469,
+   "high": 0.0608,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 15 modern mena peers"
+  },
+  "industrialShare": {
+   "low": 0.264,
+   "mid": 0.396,
+   "high": 0.491,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 15 modern mena peers"
+  },
+  "foodSurplus": {
+   "low": 0.68,
+   "mid": 0.74,
+   "high": 0.825,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 15 modern mena peers"
+  },
+  "annualCohort": {
+   "low": 55862,
+   "mid": 123858,
+   "high": 239106,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 15 modern mena peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 30514,
+   "mid": 35890,
+   "high": 92066,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 15 modern mena peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 752,
+   "high": 1444,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median railKm per km2, 15 modern mena peers"
+  },
+  "majorPorts": {
+   "low": 1,
+   "mid": 3,
+   "high": 8,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 15 modern mena peers"
+  },
+  "merchantTonnage": {
+   "low": 19669,
+   "mid": 74027,
+   "high": 215786,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 15 modern mena peers"
+  },
+  "supplyRangeKm": {
+   "low": 200,
+   "mid": 250,
+   "high": 300,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 15 modern mena peers"
+  },
+  "draftAnimals": {
+   "low": 108433,
+   "mid": 357686,
+   "high": 770896,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 15 modern mena peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "B",
+   "source": "https://fas.org/initiative/status-world-nuclear-forces/",
+   "note": "not among the states that have held nuclear weapons per FAS Status of World Nuclear Forces"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-modern-regional",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.1,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 15 modern mena peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1994:Western Sahara polygon (area, habitable share, region mena, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Western Sahara\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-modern-regional: Mixed-equipment top-down middle powers; 8 of 15 researched modern MENA snapshots."
+}

@@ -1,0 +1,482 @@
+{
+ "id": "scotland-1492",
+ "nationId": "scotland",
+ "includes": [],
+ "name": "Scotland",
+ "year": 1492,
+ "era": "medieval",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Scotland interior point",
+  "lat": 56.625,
+  "lon": -4.125,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Scotland interior point",
+   "lat": 56.625,
+   "lon": -4.125,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1492:Scotland",
+  "areaKm2": {
+   "low": 61778,
+   "mid": 61778,
+   "high": 61778,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1492:Scotland polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 1487888,
+   "mid": 2287267,
+   "high": 3847246,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 60,921 km2 (99% habitable) x europe 1492 density 3.61 x factor 10.4"
+  },
+  "urbanization": {
+   "low": 0.05,
+   "mid": 0.07,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.europe.urbanization; HYDE cross-check 0.0717"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 1352,
+   "mid": 5718,
+   "high": 23661,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0025 (inputs eraPeerRatios.medieval.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 1690,
+   "mid": 17869,
+   "high": 82814,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 9 medieval europe peers"
+  },
+  "supportPersonnel": {
+   "low": 85,
+   "mid": 457,
+   "high": 2290,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 9 medieval europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.009,
+   "mid": 0.015,
+   "high": 0.02,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.medieval.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 13391,
+   "mid": 34309,
+   "high": 76945,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 332,
+     "mid": 1403,
+     "high": 5805,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "26.7% of combat personnel, median share, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.575,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 9 medieval europe peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 113,
+     "mid": 478,
+     "high": 1979,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "9.1% of combat personnel, median share, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.65,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.45,
+     "mid": 0.55,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 9 medieval europe peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 565,
+     "mid": 2391,
+     "high": 9895,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "45.5% of combat personnel, median share, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.8,
+     "high": 0.905,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.637,
+     "mid": 0.7,
+     "high": 0.813,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 9 medieval europe peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 89,
+     "mid": 376,
+     "high": 1555,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "7.1% of combat personnel, median share, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.55,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.55,
+     "mid": 0.6,
+     "high": 0.65,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 9 medieval europe peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 1,
+     "mid": 14,
+     "high": 83,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.55,
+     "mid": 0.7,
+     "high": 0.725,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.6,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 9 medieval europe peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 1,
+     "mid": 9,
+     "high": 281,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 9 medieval europe peers"
+    },
+    "quality": {
+     "low": 0.438,
+     "mid": 0.55,
+     "high": 0.662,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 9 medieval europe peers"
+    },
+    "training": {
+     "low": 0.5,
+     "mid": 0.5,
+     "high": 0.613,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 9 medieval europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.45,
+   "mid": 0.6,
+   "high": 0.75,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 9 medieval europe peers"
+  },
+  "cohesion": {
+   "low": 0.3,
+   "mid": 0.4,
+   "high": 0.55,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 9 medieval europe peers"
+  },
+  "morale": {
+   "low": 0.55,
+   "mid": 0.6,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 9 medieval europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1492"
+  },
+  "armor": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1492"
+  },
+  "ships": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1492"
+  },
+  "fortification": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1492"
+  },
+  "logistics": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1492"
+  },
+  "communications": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1492"
+  },
+  "isr": {
+   "low": 4.39,
+   "mid": 4.69,
+   "high": 4.99,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1492"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1492"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1492"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1220,
+   "mid": 1580,
+   "high": 1760,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.europe 1492"
+  },
+  "gdp": {
+   "low": 1820000000,
+   "mid": 3610000000,
+   "high": 6770000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.04,
+   "mid": 0.04,
+   "high": 0.04,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 9 medieval europe peers"
+  },
+  "industrialShare": {
+   "low": 0.08,
+   "mid": 0.12,
+   "high": 0.13,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 9 medieval europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.15,
+   "mid": 0.15,
+   "high": 0.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 9 medieval europe peers"
+  },
+  "annualCohort": {
+   "low": 14135,
+   "mid": 21729,
+   "high": 36549,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 9 medieval europe peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 1103,
+   "mid": 2059,
+   "high": 3954,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 9 medieval europe peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 1,
+   "high": 2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 9 medieval europe peers"
+  },
+  "merchantTonnage": {
+   "low": 3102,
+   "mid": 10744,
+   "high": 64476,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 9 medieval europe peers"
+  },
+  "supplyRangeKm": {
+   "low": 150,
+   "mid": 150,
+   "high": 150,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 9 medieval europe peers"
+  },
+  "draftAnimals": {
+   "low": 162315,
+   "mid": 571817,
+   "high": 961812,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 9 medieval europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-feudal-host",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.2,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 9 medieval europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1492:Scotland polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Scotland\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-feudal-host: Mounted men-at-arms plus levies raised by obligation; 8 of 9 researched European medieval snapshots use it."
+}

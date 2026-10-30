@@ -1,0 +1,465 @@
+{
+ "id": "swabia-1800",
+ "nationId": "swabia",
+ "includes": [],
+ "name": "Swabia",
+ "year": 1800,
+ "era": "industrial",
+ "region": "europe",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Swabia interior point",
+  "lat": 49.875,
+  "lon": 9.875,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Swabia interior point",
+   "lat": 49.875,
+   "lon": 9.875,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1800:Swabia",
+  "areaKm2": {
+   "low": 84586,
+   "mid": 84586,
+   "high": 84586,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1800:Swabia polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 4376120,
+   "mid": 6727223,
+   "high": 11315375,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 84,586 km2 (100% habitable) x europe 1800 density 8.76 x factor 9.08"
+  },
+  "urbanization": {
+   "low": 0.105,
+   "mid": 0.15,
+   "high": 0.23,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.industrial.byRegion.europe.urbanization; HYDE cross-check 0.127"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 49888,
+   "mid": 89472,
+   "high": 214992,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0133 (inputs eraPeerRatios.industrial.byRegion.europe.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 9026,
+   "mid": 31740,
+   "high": 93200,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 10 industrial europe peers"
+  },
+  "supportPersonnel": {
+   "low": 6570,
+   "mid": 14408,
+   "high": 49511,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 10 industrial europe peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0325,
+   "mid": 0.05,
+   "high": 0.0587,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.industrial.byRegion.europe.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 142224,
+   "mid": 336361,
+   "high": 664213,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 30899,
+     "mid": 55415,
+     "high": 133157,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "73.8% of combat personnel, median share, 10 industrial europe peers"
+    },
+    "quality": {
+     "low": 0.6,
+     "mid": 0.65,
+     "high": 0.738,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 10 industrial europe peers"
+    },
+    "training": {
+     "low": 0.625,
+     "mid": 0.7,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 10 industrial europe peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 3941,
+     "mid": 7069,
+     "high": 16986,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "9.4% of combat personnel, median share, 10 industrial europe peers"
+    },
+    "quality": {
+     "low": 0.563,
+     "mid": 0.65,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 10 industrial europe peers"
+    },
+    "training": {
+     "low": 0.613,
+     "mid": 0.725,
+     "high": 0.8,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 10 industrial europe peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 1050,
+     "mid": 1883,
+     "high": 4525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "2.5% of combat personnel, median share, 10 industrial europe peers"
+    },
+    "quality": {
+     "low": 0.65,
+     "mid": 0.7,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 10 industrial europe peers"
+    },
+    "training": {
+     "low": 0.65,
+     "mid": 0.725,
+     "high": 0.75,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 10 industrial europe peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 4577,
+     "mid": 8209,
+     "high": 19724,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "10.9% of combat personnel, median share, 10 industrial europe peers"
+    },
+    "quality": {
+     "low": 0.613,
+     "mid": 0.65,
+     "high": 0.688,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 10 industrial europe peers"
+    },
+    "training": {
+     "low": 0.613,
+     "mid": 0.675,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 10 industrial europe peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 114,
+     "mid": 251,
+     "high": 635,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 10 industrial europe peers"
+    },
+    "quality": {
+     "low": 0.613,
+     "mid": 0.75,
+     "high": 0.788,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 10 industrial europe peers"
+    },
+    "training": {
+     "low": 0.563,
+     "mid": 0.7,
+     "high": 0.825,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 10 industrial europe peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.45,
+   "mid": 0.525,
+   "high": 0.825,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 10 industrial europe peers"
+  },
+  "cohesion": {
+   "low": 0.563,
+   "mid": 0.7,
+   "high": 0.788,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 10 industrial europe peers"
+  },
+  "morale": {
+   "low": 0.563,
+   "mid": 0.675,
+   "high": 0.788,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 10 industrial europe peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1800"
+  },
+  "armor": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1800"
+  },
+  "ships": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1800"
+  },
+  "fortification": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1800"
+  },
+  "logistics": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1800"
+  },
+  "communications": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1800"
+  },
+  "isr": {
+   "low": 5.68,
+   "mid": 5.98,
+   "high": 6.28,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1800"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1800"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1800"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 1370,
+   "mid": 1860,
+   "high": 2510,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.europe 1800"
+  },
+  "gdp": {
+   "low": 6000000000,
+   "mid": 12500000000,
+   "high": 28400000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0525,
+   "mid": 0.06,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 10 industrial europe peers"
+  },
+  "industrialShare": {
+   "low": 0.163,
+   "mid": 0.21,
+   "high": 0.287,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 10 industrial europe peers"
+  },
+  "foodSurplus": {
+   "low": 0.25,
+   "mid": 0.275,
+   "high": 0.475,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 10 industrial europe peers"
+  },
+  "annualCohort": {
+   "low": 45924,
+   "mid": 70636,
+   "high": 118871,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 10 industrial europe peers"
+  },
+  "production": {
+   "artillery": {
+    "low": 35,
+    "mid": 91,
+    "high": 320,
+    "grade": "D",
+    "source": "derived:era-peer-median",
+    "note": "x median production.artillery per $ GDP (snapshots with a figure), 10 industrial europe peers"
+   }
+  }
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 705,
+   "mid": 4921,
+   "high": 9337,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 10 industrial europe peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "merchantTonnage": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "C",
+   "source": "derived:role-availability",
+   "note": "no sea access"
+  },
+  "supplyRangeKm": {
+   "low": 163,
+   "mid": 225,
+   "high": 250,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 10 industrial europe peers"
+  },
+  "draftAnimals": {
+   "low": 401183,
+   "mid": 718439,
+   "high": 1626585,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 10 industrial europe peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-industrial-mass",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.15,
+   "mid": 1.17,
+   "high": 1.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 10 industrial europe peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1800:Swabia polygon (area, habitable share, region europe, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Swabia\"; classified state. No sea access (no ships). The capital is an interior point, NOT a documented capital. Doctrine archetype-industrial-mass: Conscription, reserves and railways; 9 of 10 researched European industrial snapshots."
+}

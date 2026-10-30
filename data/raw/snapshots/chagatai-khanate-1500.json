@@ -1,0 +1,534 @@
+{
+ "id": "chagatai-khanate-1500",
+ "nationId": "chagatai-khanate",
+ "includes": [],
+ "name": "Chagatai Khanate",
+ "year": 1500,
+ "era": "gunpowder",
+ "region": "east_asia",
+ "phase": "peak",
+ "tags": [
+  "phase3",
+  "derived",
+  "state"
+ ],
+ "capital": {
+  "name": "Chagatai Khanate interior point",
+  "lat": 42.375,
+  "lon": 101.375,
+  "kind": "capital"
+ },
+ "places": [
+  {
+   "name": "Chagatai Khanate interior point",
+   "lat": 42.375,
+   "lon": 101.375,
+   "kind": "city"
+  }
+ ],
+ "territory": {
+  "border": "hb:1500:Chagatai Khanate",
+  "areaKm2": {
+   "low": 8339011,
+   "mid": 8339011,
+   "high": 8339011,
+   "grade": "C",
+   "source": "derived:area-from-border",
+   "note": "hb:1500:Chagatai Khanate polygon"
+  }
+ },
+ "demography": {
+  "population": {
+   "low": 59445667,
+   "mid": 91383298,
+   "high": 139860000,
+   "grade": "C",
+   "source": "derived:state-density-factor",
+   "note": "A_h 7,808,276 km2 (94% habitable) x east_asia 1500 density 10.8 x factor 1.08; bounded by the east_asia total 108000000"
+  },
+  "urbanization": {
+   "low": 0.06,
+   "mid": 0.075,
+   "high": 0.08,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.east_asia.urbanization; HYDE cross-check 0.0584"
+  }
+ },
+ "military": {
+  "activePersonnel": {
+   "low": 310306,
+   "mid": 877280,
+   "high": 1999998,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "population x 0.0096 (inputs eraPeerRatios.gunpowder.byRegion.east_asia.activeShare)"
+  },
+  "trainedReserves": {
+   "low": 102512,
+   "mid": 416207,
+   "high": 1308625,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median trainedReserves / activePersonnel, 4 gunpowder east_asia peers"
+  },
+  "supportPersonnel": {
+   "low": 25098,
+   "mid": 114666,
+   "high": 383646,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median supportPersonnel / activePersonnel, 4 gunpowder east_asia peers"
+  },
+  "mobilizationRatio": {
+   "low": 0.0138,
+   "mid": 0.02,
+   "high": 0.025,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "inputs eraPeerRatios.gunpowder.byRegion.east_asia.mobilizableShare"
+  },
+  "mobilizable": {
+   "low": 820350,
+   "mid": 1827666,
+   "high": 3496500,
+   "grade": "D",
+   "source": "derived:mobilizable-from-ratio",
+   "note": "population x mobilizationRatio"
+  },
+  "forces": {
+   "infantry_line": {
+    "count": {
+     "low": 101409,
+     "mid": 286697,
+     "high": 653604,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "37.6% of combat personnel, median share, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.525,
+     "high": 0.637,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.412,
+     "mid": 0.5,
+     "high": 0.6,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_line training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "infantry_light": {
+    "count": {
+     "low": 52451,
+     "mid": 148286,
+     "high": 338058,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "19.4% of combat personnel, median share, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.362,
+     "mid": 0.375,
+     "high": 0.388,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.263,
+     "mid": 0.275,
+     "high": 0.287,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median infantry_light training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "missile_infantry": {
+    "count": {
+     "low": 12546,
+     "mid": 35470,
+     "high": 80864,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "4.7% of combat personnel, median share, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.563,
+     "mid": 0.575,
+     "high": 0.588,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.512,
+     "mid": 0.575,
+     "high": 0.637,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median missile_infantry training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "cavalry_heavy": {
+    "count": {
+     "low": 31097,
+     "mid": 87916,
+     "high": 200428,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "11.5% of combat personnel, median share, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.588,
+     "mid": 0.6,
+     "high": 0.625,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.588,
+     "mid": 0.625,
+     "high": 0.7,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_heavy training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "cavalry_light": {
+    "count": {
+     "low": 20586,
+     "mid": 58199,
+     "high": 132682,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "7.6% of combat personnel, median share, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.5,
+     "mid": 0.5,
+     "high": 0.525,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.525,
+     "mid": 0.55,
+     "high": 0.55,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median cavalry_light training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "artillery": {
+    "count": {
+     "low": 610,
+     "mid": 2482,
+     "high": 6512,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median artillery per active of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.45,
+     "mid": 0.5,
+     "high": 0.563,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.438,
+     "mid": 0.45,
+     "high": 0.463,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median artillery training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "ships_major": {
+    "count": {
+     "low": 95,
+     "mid": 293,
+     "high": 1322,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_major per active of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.575,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.438,
+     "mid": 0.475,
+     "high": 0.537,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_major training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   },
+   "ships_minor": {
+    "count": {
+     "low": 334,
+     "mid": 1073,
+     "high": 2609,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "x median ships_minor per active of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "quality": {
+     "low": 0.4,
+     "mid": 0.425,
+     "high": 0.463,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor quality of fielding peers, 4 gunpowder east_asia peers"
+    },
+    "training": {
+     "low": 0.4,
+     "mid": 0.45,
+     "high": 0.5,
+     "grade": "D",
+     "source": "derived:era-peer-median",
+     "note": "median ships_minor training of fielding peers, 4 gunpowder east_asia peers"
+    }
+   }
+  },
+  "commandQuality": {
+   "low": 0.525,
+   "mid": 0.625,
+   "high": 0.712,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median commandQuality, 4 gunpowder east_asia peers"
+  },
+  "cohesion": {
+   "low": 0.388,
+   "mid": 0.45,
+   "high": 0.512,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median cohesion, 4 gunpowder east_asia peers"
+  },
+  "morale": {
+   "low": 0.487,
+   "mid": 0.575,
+   "high": 0.65,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median morale, 4 gunpowder east_asia peers"
+  }
+ },
+ "tech": {
+  "weapons": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.weapons 1500"
+  },
+  "armor": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.armor 1500"
+  },
+  "ships": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.ships 1500"
+  },
+  "fortification": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.fortification 1500"
+  },
+  "logistics": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.logistics 1500"
+  },
+  "communications": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.communications 1500"
+  },
+  "isr": {
+   "low": 4.41,
+   "mid": 4.71,
+   "high": 5.01,
+   "grade": "D",
+   "source": "derived:tech-anchor-default",
+   "note": "inputs tech.default.isr 1500"
+  },
+  "air": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.air 1500"
+  },
+  "cyber": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "inputs tech.default.cyber 1500"
+  }
+ },
+ "economy": {
+  "gdpPerCapita": {
+   "low": 881,
+   "mid": 1170,
+   "high": 1470,
+   "grade": "C",
+   "source": "derived:maddison-region-weighted",
+   "note": "inputs gdpPerCapita.east_asia 1500"
+  },
+  "gdp": {
+   "low": 52400000000,
+   "mid": 107000000000,
+   "high": 206000000000,
+   "grade": "C",
+   "source": "derived:gdp-from-pc",
+   "note": "population x gdpPerCapita"
+  },
+  "milSpendShare": {
+   "low": 0.0287,
+   "mid": 0.035,
+   "high": 0.06,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median milSpendShare, 4 gunpowder east_asia peers"
+  },
+  "industrialShare": {
+   "low": 0.11,
+   "mid": 0.15,
+   "high": 0.18,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median industrialShare, 4 gunpowder east_asia peers"
+  },
+  "foodSurplus": {
+   "low": 0.172,
+   "mid": 0.19,
+   "high": 0.2,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median foodSurplus, 4 gunpowder east_asia peers"
+  },
+  "annualCohort": {
+   "low": 564734,
+   "mid": 868141,
+   "high": 1328670,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median annualCohort / population, 4 gunpowder east_asia peers"
+  },
+  "production": {}
+ },
+ "logistics": {
+  "roadKm": {
+   "low": 86135,
+   "mid": 122788,
+   "high": 143909,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median roadKm per km2, 4 gunpowder east_asia peers"
+  },
+  "railKm": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no railways before 1825"
+  },
+  "majorPorts": {
+   "low": 12,
+   "mid": 92,
+   "high": 175,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median majorPorts per km2, 4 gunpowder east_asia peers"
+  },
+  "merchantTonnage": {
+   "low": 55875,
+   "mid": 148530,
+   "high": 430978,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median merchantTonnage per $ GDP, 4 gunpowder east_asia peers"
+  },
+  "supplyRangeKm": {
+   "low": 188,
+   "mid": 275,
+   "high": 413,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median supplyRangeKm, 4 gunpowder east_asia peers"
+  },
+  "draftAnimals": {
+   "low": 4812268,
+   "mid": 7948043,
+   "high": 12751941,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "x median draftAnimals / population, 4 gunpowder east_asia peers"
+  }
+ },
+ "strategic": {
+  "nuclearWarheads": {
+   "low": 0,
+   "mid": 0,
+   "high": 0,
+   "grade": "A",
+   "source": "derived:absent-in-era",
+   "note": "no nuclear weapons before 1945"
+  },
+  "basesAbroad": []
+ },
+ "doctrineId": "archetype-gunpowder-linear",
+ "geography": {
+  "climate": "see terrainMix",
+  "chokepoints": [],
+  "homeDefense": {
+   "low": 1.19,
+   "mid": 1.2,
+   "high": 1.21,
+   "grade": "D",
+   "source": "derived:era-peer-median",
+   "note": "median homeDefense, 4 gunpowder east_asia peers"
+  }
+ },
+ "notes": "PHASE 3 DERIVED SNAPSHOT, low confidence, not researched: every value is a formula over the hb:1500:Chagatai Khanate polygon (area, habitable share, region east_asia, sea access) and data/reference/phase3-inputs.json; methods in data/SOURCES.md \"Phase 3 derivation inputs\". SUBJECTO \"Chagatai Khanate\"; classified state. The capital is an interior point, NOT a documented capital. Doctrine archetype-gunpowder-linear: Ming, Joseon and Tokugawa firearm infantry; 3 of 4 researched snapshots."
+}
