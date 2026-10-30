@@ -96,7 +96,16 @@ export function App() {
       <main>
         <LeftPanel />
         <section className="center">
-          <MapView />
+          <ErrorBoundary name="map" fallback={(err) => (
+            <div className="map-fallback">
+              <div className="notice warn">
+                {/webgl/i.test(err.message) ? 'The map needs WebGL2, which this browser does not provide.' : `The map failed: ${err.message}`}
+                {' '}The other panels work without it.
+              </div>
+            </div>
+          )}>
+            <MapView />
+          </ErrorBoundary>
           <MapToolbar />
           {mapMode.kind !== 'none' && (
             <div className="mode-hint">
