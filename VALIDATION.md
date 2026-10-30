@@ -788,7 +788,7 @@ are time-limit endings. The flip sits between quantiles 0.7 and 0.9 in both case
 
 **The Six-Day War has the same trigger with no breakpoint moved.** Egypt "wins" 40 of 40 at the limit of 10
 days. With no binding limit Israel wins 40 of 40, on its objective or a morale collapse, at a median 20
-days against 4.17 historical, so x4.8 and outside the duration window. The miss is speed, not the winner.
+days against 4 historical, so x5.0 and outside the duration window. The miss is speed, not the winner.
 
 **Is the range right?**
 
@@ -813,6 +813,6 @@ days against 4.17 historical, so x4.8 and outside the duration window. The miss 
 | Mohi | 11 | 19 | 11 |
 | France 1940 | 32 | 33 | 32 |
 
-Winners at the line stay 18 of 24 in all three columns, and the other 16 cases do not move. The clamp is the
+Winners at the line stay 18 of 24 in all three columns, and the other 18 cases do not move. The clamp is the
 fix the range argument supports. It was chosen after seeing these results, so it would need its own
 toggle and a fresh campaign, not pooled with this one. Neither change has been applied.
