@@ -88,3 +88,7 @@ Every open choice made while building, with a one-line reason. Newest at the bot
   (share link, loaded file, editor) passes the loader's type checks and caps. Scripts that call the
   engine directly are trusted, as `scripts/` is; the red team showed that a wrong type there can
   still crash a run.
+- **Break contact is reverted, not left off.** A const toggle set off would keep a rejected grade-D
+  constant in the data and a war-mode path no test reaches. The measured code stays in history at
+  `19cd622`. Reaching the gate needs Carrhae's horse-archer standoff and a sourced constant for
+  Blenheim and France, not this rule.

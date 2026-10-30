@@ -61,11 +61,11 @@ export function LimitsPage() {
           <p>24 historical battles from Marathon to Iraq 2003 are rerun over 20 seeds each (VALIDATION.md). The model picks the historical winner in 18 of 24, gets the loss ratio within a factor of 3 in 13 and the duration within a factor of 3 in 21. The pass mark set before building was 18 winners that hold up when any single grade-D constant moves across its range; 16 do, so <b>the validation gate is not met</b>.</p>
           <ul>
             <li>Marathon: the Athenians are out-powered in the model and lose. Adrianople: the Gothic cavalry arriving on the flank mid-battle is not modelled.</li>
-            <li>Carrhae and Mohi: the winners broke contact and harassed; the model scores breaking contact as losing.</li>
+            <li>Carrhae and Mohi: the winners broke contact and harassed. A break-contact rule was built and rejected: it left Carrhae lost, since horse-archer standoff is not modelled, and won Mohi for the wrong reason.</li>
             <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
             <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
             <li>Loss ratios are the weakest output: 11 of 24 are off by more than a factor of 3.</li>
-            <li>The Blenheim result still turns on one grade-D constant; moving it across its range flips the winner.</li>
+            <li>Blenheim turns on one grade-D constant and France 1940 on nine (attrition and disease rates among them): moving one across its range flips the winner. Counting the grade-D era breakpoints too, 14 winners hold up, not 16.</li>
           </ul>
         </section>
 

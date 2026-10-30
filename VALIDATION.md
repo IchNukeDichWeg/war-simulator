@@ -594,8 +594,8 @@ It is retired: march hours are now min(1, sunrise-to-sunset hours at the theatre
 date / `movement.marchHoursPerDay` 6.0 h from FM 101-10), with day length from the Spencer 1971 / NOAA
 formula. Measured at 20 seeds against `f991a6e`: 18/13/21 unchanged; Gulf War 85% -> 90%, 9 -> 8 days;
 France 1940 75% -> 70%, ratio x3.88 -> x5.10. Every backtest theatre has at least 7.7 h of daylight, so
-the factor is 1 throughout. That removes one of the two single-constant flips QA found, so the robust
-count is probably 17 (inferred, not re-run by QA); the gate verdict stands.
+the factor is 1 throughout. That removes one of the two single-constant flips QA found. QA round 6
+re-measured the robust count: it stays 16, because France 1940 is fragile too (see that section).
 
 ## Release checks (Phase 4)
 
@@ -662,3 +662,30 @@ descriptions or colours.
 
 None of the fixes moved the backtest: 18/13/21 with every case line identical at `dd0d666`. Every preset winner is
 unchanged; C4 shortened two preset wars (rome-117-vs-spain, rome-vs-france-equalized).
+
+## QA round 6: break contact (REJECTED)
+
+Hypothesis from round 5: Carrhae and Mohi fail because a side that breaks contact is scored as
+beaten. The trace at `a35d728` holds for Mohi and is half the story for Carrhae: the Parthians also rout
+at the era break, and no horse-archer standoff exists. The mechanism was built behind a toggle
+(`19cd622`) and reverted (the commit after it); `git revert` of that revert brings it back.
+
+| 20 seeds, 24 cases | Off (`a35d728`) | On |
+| --- | --- | --- |
+| Winner / ratio / duration | 18/13/21 | 19/14/21 |
+| Reasons: right or partly right | 18 | 19 (RIGHT 6, PARTLY 13, WRONG 0) |
+| Robust on 618 of 623 grade-D constants, low and high | 16 (Blenheim, France fail) | 16 (Blenheim, France, Mohi fail) |
+| Also counting grade-D era breakpoints | 14 | 14 |
+| Gate (18 robust) | not met | not met |
+
+- Mohi went 15% -> 95%, but break-off alone gives 35%; the morale-scale side of the change gives 80%, and
+  in 13 of 20 seeds nobody withdraws. It falls to 55% at the low end of the new grade-D constant.
+- Carrhae stays 0%: the Parthians break off and return in 20 of 20 seeds, and still lose.
+- In war mode foot formations qualify against foot-only enemies; no test caught that.
+
+Two corrections to the record, from this round's stricter screen (every grade-D constant at 20 seeds,
+where round 5 screened at 10):
+- The gate count is 16 at this commit, not "probably 17". The Gulf War flip is gone, but France 1940
+  drops below 60% on 9 grade-D constants. Reproduced by hand for two of them:
+  `attrition.starvationMultiplier` at 5 and `attrition.diseaseDaily.7` at 0.008.
+- Round 5's 16 was overstated. France already flipped at `6936ffc`, so that figure was at most 15.
