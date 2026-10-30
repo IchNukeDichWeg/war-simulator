@@ -12,7 +12,7 @@ import type { Snapshot, UnitRole } from '../src/types/schema';
 import { normalizeScenario } from '../src/ui/scenarioDefaults';
 import { decodeScenario, encodeScenario } from '../src/ui/scenarioIO';
 import type { Scenario } from '../src/types/scenario';
-import { basicScenario, fixtureData } from './fixtures/snapshots.fixture';
+import { absurdScenario, basicScenario, fixtureData, perfScenario } from './fixtures/snapshots.fixture';
 import { data } from './engine/helpers';
 
 const PROTO_KEYS = ['voronoiControl', 'terrainOverride', 'noProduction', 'polluted'];
@@ -155,5 +155,70 @@ describe('C5: share links unpack to a bounded size', () => {
     const s = structuredClone(presets[0]);
     mut(s);
     expect(() => normalizeScenario(s)).toThrow(new RegExp(field.replace(/[[\]]/g, '\\$&')));
+  });
+});
+
+describe('W1: loaded scenarios are type-checked', () => {
+  const presets = JSON.parse(readFileSync('public/data/presets.json', 'utf8')) as Scenario[];
+  const base = () => structuredClone(presets[6]) as any;   // germany-vs-france-1940
+
+  it.each([
+    ['rules.nuclear', (s: any) => { s.rules.nuclear = 'false'; }],
+    ['victory.capitalCaptured', (s: any) => { s.victory.capitalCaptured = 'no'; }],
+    ['victory.timeLimitDays', (s: any) => { s.victory.timeLimitDays = 'abc'; }],
+    ['techMode', (s: any) => { s.techMode = 'bogus'; }],
+    ['equalizedTech', (s: any) => { s.techMode = 'equalized'; s.equalizedTech = 'abc'; }],
+    ['sides[0].commitment.germany-1939', (s: any) => { s.sides[0].commitment = { 'germany-1939': 'lots' }; }],
+    ['sides[0].startPositions', (s: any) => { s.sides[0].startPositions = 'x'; }],
+    ['excluded[0]', (s: any) => { s.excluded = [{}, 5, null]; }],
+    ['startMonth', (s: any) => { s.startMonth = 'abc'; }],
+    ['seed', (s: any) => { s.seed = 'x'; }],
+    ['theater.bbox', (s: any) => { s.theater.bbox = [1, 2, 3]; }],
+    ['rules', (s: any) => { s.rules = 5; }],
+    ['sides[1].members[0]', (s: any) => { s.sides[1].members = [7]; }],
+    ['overrides[0].snapshotId', (s: any) => { s.overrides = [{ path: 'tech.weapons.mid', value: 1 }]; }],
+  ])('a wrong type at %s is refused, naming the field', (field, mut) => {
+    const s = base();
+    mut(s);
+    expect(() => normalizeScenario(s)).toThrow(new RegExp('^' + field.replace(/[[\].]/g, '\\$&') + ' '));
+  });
+
+  it('commitment, startMonth and the time limit are clamped to their ranges', () => {
+    const s = base();
+    s.sides[0].commitment = { 'germany-1939': 5 };
+    s.sides[1].commitment = { 'france-1939': -1 };
+    s.startMonth = 13;
+    s.victory.timeLimitDays = 1e9;
+    s.equalizedTech = 12;
+    let n = normalizeScenario(s);
+    expect(n.sides[0].commitment).toEqual({ 'germany-1939': 1 });
+    expect(n.sides[1].commitment).toEqual({ 'france-1939': 0 });
+    expect(n.startMonth).toBe(12);
+    expect(n.victory.timeLimitDays).toBe(36500);
+    expect(n.equalizedTech).toBe(10);
+    s.startMonth = -4; s.victory.timeLimitDays = -1;
+    n = normalizeScenario(s);
+    expect([n.startMonth, n.victory.timeLimitDays]).toEqual([1, 1]);
+    s.startMonth = 2.5;
+    expect(normalizeScenario(s).startMonth).toBe(3);
+  });
+
+  it('only known fields are copied', () => {
+    const s = JSON.parse('{"__proto__":{"polluted":1},"extra":1,' + JSON.stringify(base()).slice(1));
+    const n = normalizeScenario(s) as any;
+    expect(Object.prototype.hasOwnProperty.call(n, '__proto__')).toBe(false);
+    expect(n.extra).toBeUndefined();
+    expect(({} as any).polluted).toBeUndefined();
+  });
+
+  it('every preset, the dev fixture preset and the test fixtures load unchanged', async () => {
+    const { devFixtures } = await import('../src/ui/devFixtures/fixtures');
+    const all = [...presets, ...JSON.parse(readFileSync('data/presets.json', 'utf8')), ...devFixtures().presets, basicScenario(), absurdScenario(), perfScenario()];
+    for (const p of all) {
+      const n = normalizeScenario(structuredClone(p));
+      expect(n, p.id).toMatchObject(JSON.parse(JSON.stringify(p)));
+      // a file saved from the loaded scenario loads back to the same scenario
+      expect(normalizeScenario(JSON.parse(JSON.stringify(n, null, 2)))).toEqual(n);
+    }
   });
 });
