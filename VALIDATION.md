@@ -596,3 +596,32 @@ formula. Measured at 20 seeds against `f991a6e`: 18/13/21 unchanged; Gulf War 85
 France 1940 75% -> 70%, ratio x3.88 -> x5.10. Every backtest theatre has at least 7.7 h of daylight, so
 the factor is 1 throughout. That removes one of the two single-constant flips QA found, so the robust
 count is probably 17 (inferred, not re-run by QA); the gate verdict stands.
+
+## Release checks (Phase 4)
+
+Measured at `232484f` (Phase 3 in, lazy loading in) on an Apple M5 Pro, macOS, Node 26.5.0, by a
+builder who did not write the engine. The backtest at that commit is unchanged: 18/13/21.
+
+| Check | Result |
+| --- | --- |
+| `tsc --noEmit` | pass, 1.3 s |
+| `vitest run` | 42/42 in 12 files, 2.3 s |
+| `data-pipeline/validate.ts` | 1,234 snapshots, 0 errors, 1 warning (Athens -480 personnel share) |
+| `vite build` | pass; main chunk 1,449 kB (417 kB gzip), over Vite's 500 kB warning; `dist/` 32 MB, 30 MB of it data |
+| 12 presets x 2 seeds, headless | 24/24 finish; 0 NaN, 0 negative, 0 conservation failures after every day; 52 s total |
+| Dev server, headless Chrome (`--headless=new`, Metal) | 0 console errors or warnings; map and units render; preset starts in 609 ms |
+| Sim speed | 1x: 1.00 days/s; max: 29.66 days/s against a 30 days/s target |
+| Frame rate, 10 s with the sim running | 60.0 fps at 1x and at max, p95 16.8 ms, no frame over 50 ms |
+
+The frame rate is at the 60 Hz ceiling headless Chrome paces to, so it shows no dropped frames on this
+machine, not headroom, and says nothing about a slower GPU.
+
+Preset outcomes worth knowing (not failures of the checks):
+- `usa-vs-china-2026`, `usa-spain-vs-russia-2026` and `japan-vs-usa-1941` end on the time limit
+  as draws on both seeds. Why was not diagnosed; the sides are separated by sea and the engine's
+  amphibious moves need sea control above 0.6 (ENGINE.md section 6).
+- `mongols-vs-rome` ends after 120 days without battle: the two armies never meet in the theatre.
+- `allies-vs-axis-minus-two` flips between seeds (Allies on day 649, Axis on day 149).
+- `macedon-vs-persia-timeslice` flips between seeds (Persia by territory on day 167, Macedon by
+  collapse on day 239). Alexander won historically; the Gaugamela backtest case itself passes, so
+  the campaign-scale preset and the battle case disagree. Not diagnosed.
