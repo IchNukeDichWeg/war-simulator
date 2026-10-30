@@ -77,3 +77,14 @@ Every open choice made while building, with a one-line reason. Newest at the bot
 - **Nuclear losses are a ranked reason, scored like disease and attrition** (share of the personnel each side fielded). They are losses outside battle, so they take the same scale; a log ratio of raw counts was not used because it would rank Russia's 124k nuclear casualties (6% of its force, a war the USA won by routs) above every other factor. Russia vs USA 2026 nuclear, seed 2: US 883k nuclear casualties (47% of fielded), reason "Nuclear strikes" 7% for Russia, third of Russia's reasons.
 - **Editor fields the engine does not read are tagged, not wired.** Twelve Est fields are never read (urbanization, GDP, GDP per capita, military spending share, industrial share, food surplus, road km, major ports, merchant tonnage, draft animals, support personnel, mobilization ratio) and four only in a narrow case (population, rail km, active personnel, area); the Editor tags them with a tooltip (`src/ui/engineUse.ts`, checked by running the engine with each unused field at 0 and 1e12). None is wired in, because ENGINE.md models none of these quantities from the field and wiring one would need a new, unsourced constant. Home defense, which the red team listed, is read: it applies to a defender on its own starting territory, and their probe raised it only for the attacker.
 - **Palestine's capital is Ramallah, the administrative seat.** The World Bank, the auto-base source for capitals, lists none for PSE (lat/lon 0), and the generator fell back to 0,0. Natural Earth, the source of its places, marks Ramallah and Gaza City as Palestine's region capitals and files Jerusalem under Israel, so the snapshot's sources do not claim Jerusalem. Natural Earth files Palestine as PSX, not PSE, which had also emptied its places; regenerating with the alias changes only palestine-2026 (capital and two places). `validate.ts` now rejects any capital or place at exactly 0,0; only palestine-2026 tripped it.
+
+## Release
+- **No code licence is chosen; that is the owner's call.** A licence grants rights in the owner's
+  name, which no agent should do on its own. The constraint for whoever picks one:
+  `public/data/borders.json` and the Phase 3 snapshots are derived from historical-basemaps
+  (GPL-3.0). Shipping the app with that data needs a GPL-3.0-compatible licence for the bundle, or
+  the derived data kept out of it. README.md says no licence is granted yet.
+- **Engine inputs are validated at the loader, not inside `createSim`.** Every path into the app
+  (share link, loaded file, editor) passes the loader's type checks and caps. Scripts that call the
+  engine directly are trusted, as `scripts/` is; the red team showed that a wrong type there can
+  still crash a run.
