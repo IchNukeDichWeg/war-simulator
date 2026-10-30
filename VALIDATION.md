@@ -458,3 +458,60 @@ Findings that changed the plan (measured, 20 seeds):
   flips no gate case.
 
 Invariants: all 48 case runs and 24 preset runs are clean.
+
+### Run 5: engine round 4, doctrine evidence rule, climate (engine `25de49e`), 20 seeds
+
+On the numbers: winner 18/24, loss ratio 13/24, duration 21/24. I measured this myself in a clean
+worktree at `25de49e`.
+
+| Commit | Change | Result (measured against the commit before) |
+| --- | --- | --- |
+| `73fa63c` | Weather drawn from the theatre's climate-zone table (zone C fallback until the grid) | 19/17/22 |
+| `1150d3f` | Attack staffing is local and in battle-model combat power; an attack a member cannot fill is not launched | 19/17/21 |
+| `ffbf817` | The doctrine moves the break point both ways: break = threshold x bp_era(u) / bp_era(mid) + cohesion shift, withdraw at 0.9 of it | 17/11/20 |
+| `c68ea96` | Doctrine quartiles need battlefield evidence of withdrawal (6 profiles to the era mid) | 17/14/21 |
+| `b9c77a3` | Snapshots and case sides use their specific doctrine profile (Israel idf-1967 and others) | 17/14/21 |
+| `27c49c5` | Köppen-Geiger zone grid (Beck et al. 2018): Gulf, Iraq, Egypt and Sinai cases BW, Stalingrad, Cannae and Zama BS, Falklands E | 18/13/21 |
+| `25de49e` | AI force ratios from modelRules.aiForceRatio (attrition 2.5/3/5 B, manoeuvre 1/1.5/2.5 C), own per-seed stream | 18/13/21 |
+
+The symmetric break point cost most. It is kept: the old cap hid every "holds" doctrine and let only
+brittle ones act. Gulf War February snow: 0 of 175 days with the grid, against 50 of 186 (26.9%) on
+the Berlin table.
+
+Sweeps at `25de49e` (every member at one quantile):
+
+| Quantile | Breakpoint | Force ratio |
+| --- | --- | --- |
+| low | 18/15/20 | 18/12/21 |
+| mid | 18/14/22 | 18/13/21 |
+| high | 16/12/24 | 18/13/22 |
+
+| case | hist winner wins | loss ratio vs hist | days model / hist |
+| --- | --- | --- | --- |
+| adrianople-378 | **10%** | x0.26 | 2.8 / 0.25 |
+| agincourt-1415 | 100% | **x0.28** | 1.6 / 0.13 |
+| austerlitz-1805 | 100% | x1.22 | 1.1 / 0.35 |
+| blenheim-1704 | 65% | x1.41 | 1.7 / 0.35 |
+| breitenfeld-1631 | 100% | x1.24 | 1.3 / 0.37 |
+| cannae--216 | 100% | x0.78 | 1.2 / 0.4 |
+| carrhae--53 | **0%** | x20.06 | 1.3 / 1 |
+| el-alamein-1942 | 100% | x1.03 | **3.4 / 13** |
+| falklands-1982 | 100% | x0.43 | 12 / 25 |
+| france-1940 | 75% | **x3.88** | 57 / 43 |
+| gaugamela--331 | 95% | x2.77 | 1.6 / 0.4 |
+| gettysburg-1863 | 100% | x2.05 | 2.6 / 2.4 |
+| gulf-war-1991 | 85% | **x3.19** | 9 / 4.17 |
+| hastings-1066 | 85% | x0.81 | 2.2 / 0.35 |
+| iraq-2003 | 100% | **x0.15** | 19 / 21 |
+| kursk-1943 | 100% | **x3.62** | 6.7 / 12 |
+| marathon--490 | **0%** | x12.99 | 1.2 / 0.15 |
+| mohi-1241 | **15%** | x12.96 | 1.6 / 0.35 |
+| six-day-war-1967 | **0%** | x2.05 | 10 / 4 |
+| stalingrad-1942 | 100% | **x0.12** | **24 / 75** |
+| tannenberg-1914 | 100% | x2.32 | **1.3 / 5** |
+| waterloo-1815 | 100% | x1.76 | 1.6 / 0.4 |
+| yom-kippur-sinai-1973 | **25%** | x0.55 | 38 / 18 |
+| zama--202 | 100% | **x3.12** | 1.6 / 0.35 |
+
+Bold = fails its criterion. The gate (18 right-reason winners, none flipped by a single grade-D
+constant) is now at most met on raw count and needs QA round 5.
