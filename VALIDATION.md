@@ -715,9 +715,9 @@ found D correct for each, which is the only support it has. Read the all-8 line 
 sensitivity: Blenheim and France lean on guessed values.
 
 Final state at `3b053d3`: **18/13/22**, three constants applied. QA measured `ece72e4`, with
-`cavalry_light.8` still applied; the later revert did not change the criteria counts. Its robust count
-of **16** (14 counting grade-D era breakpoints) was not re-screened after the revert. It should hold
-(inferred), since at its old values that constant flipped only France, which already fails.
+`cavalry_light.8` still applied. Re-screened after the revert with `scripts/robustness.ts`
+(`validation/robustness-20.jsonl`): the same flips as QA and the same **16** robust winners, 14 counting
+grade-D era breakpoints.
 
 | Check at `ece72e4` | Result |
 | --- | --- |
