@@ -625,3 +625,40 @@ Preset outcomes worth knowing (not failures of the checks):
 - `macedon-vs-persia-timeslice` flips between seeds (Persia by territory on day 167, Macedon by
   collapse on day 239). Alexander won historically; the Gaugamela backtest case itself passes, so
   the campaign-scale preset and the battle case disagree. Not diagnosed.
+
+## Red team
+
+An adversarial pass by an agent that wrote none of the code, at `6936ffc`: share links, loaded
+files, editor values, matchups across eras, the UI in headless Chrome, and the data. Full report with
+repro scripts: kept outside the repository with the QA scratch files; the findings and their
+status are below. Re-tested by the same red team at `2202ec3`.
+
+Clean at both passes: determinism (same seed, in-process and across processes, snapshot/restore
+replay, step chunking: bit-identical); no NaN, negative personnel or conservation break in the 12
+presets, 89 cross-era matchups and the edge cases; all 12 presets run in the UI and match the headless
+results; 60 fps with the 6,000-unit stress layer (0.5 ms unit CPU per frame); no XSS through names,
+descriptions or colours.
+
+| Finding | What happened | Fix | Re-test |
+| --- | --- | --- | --- |
+| C1 | A share-link override path `__proto__.x` polluted the engine worker's prototype and broke every later run in the tab | `1be5c9d` path whitelist, own properties only | FIXED |
+| C2 | A force count of 1e9 grew formations without bound; 1e15 aborted V8 | `b589e77` per-role caps (10x the largest researched value), 6,000 formations per member | FIXED |
+| C3 | Negative counts accepted; conservation off by 2.5M | `b589e77` values must be finite and at least 0 | FIXED |
+| C4 | An enemy capital inside the attacker's historical borders counted as captured on day 1 (Egypt 1274 BCE beat Israel 2026 in 20/20 seeds) | `a69810b` overlapping land starts contested, capture needs an enemy formation on or next to the capital | FIXED; two states with the same capital city still fight it out on day 1, now in a real battle |
+| C5 | A 174 KB link that inflated to 128 MB froze the tab | `e6f6ec5` streaming decompression capped at 16 KiB, length caps | FIXED |
+| W1 | Wrong types in a link (`nuclear: "false"`) switched nuclear on or crashed the engine | `f1d9fbd` type checks and clamps in the loader | FIXED in the loader; scripts calling the engine directly are unguarded |
+| W2 | No WebGL2 blanked the whole app | `68ca596` map error boundary | FIXED |
+| W3 | Editor fields with no effect | `fd3d493` tagged "not used by the engine" | FIXED; three fields the red team listed matter only in long or nuclear wars |
+| W5 | Zero-personnel states never fell | `a09c46f` capital cell starts with its owner; an empty side's places open to the first enemy | FIXED (Andorra day 5) |
+| W7 | Nuclear casualties missing from the reasons | `f7e3795` nuclear strikes factor; `dd0d666` always listed when they happened | PARTLY at re-test (a small share fell under the 1% display cut), then fixed |
+| W8 | Palestine's capital at 0,0 | `2202ec3` Ramallah; validation rejects 0,0 | FIXED |
+| W9 | Keyframes would reach 0.9-2.1 GB on the longest runs | `1763633` at most 64, thinned | FIXED; seeks match a fresh run |
+| W4 | The USA needs about 90 days and 6,000 casualties to take the Vatican's 135 guards | not fixed: supply exhaustion at the end of the line | limits page |
+| W6 | Rome 117 lost its capital to a landing without a battle | not fixed: the defending AI does not garrison against a landing | limits page |
+| N1 (re-test) | Only force counts were capped: trainedReserves 1e15 gave 861 trillion personnel | `6806c3f` every editable field capped at 10x the largest snapshot value | fixed after the re-test, not re-tested |
+| N2 (re-test) | Share URL copied links above about 240 edits that the app refused | `ef4423f` Share checks the loader's limit, Save falls back to compact JSON | fixed after the re-test; unit-tested, not checked in a browser |
+| Same vs same | A snapshot against itself: side B wins on day 3 | not fixed; the loader accepts it | open |
+| L1-L5 | Narrow nuclear trigger and no deterrence; neutral territory transparent; time-slice equals native; reasons ordered winner-first; zero-army microstates | limits | limits page |
+
+None of the fixes moved the backtest: 18/13/21 with every case line identical at `dd0d666`. Every preset winner is
+unchanged; C4 shortened two preset wars (rome-117-vs-spain, rome-vs-france-equalized).
