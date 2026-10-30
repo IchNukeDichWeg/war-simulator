@@ -361,3 +361,60 @@ winner but shortens the Gulf from 10 to 8 median days and France from 42 to 37).
 
 Invariants: all 48 case runs and 24 preset runs are clean. Land battles on sea cells: 0. Wins by a
 side with no personnel: 0. Formations with no crew in battle: 0.
+
+### Run 4: engine fix round 3 and the doctrine re-basing (engine `8d0e4bf`, data `7338fe9`), 20 seeds
+
+On the numbers: winner 20/24, loss ratio 15/24, duration 21/24. I measured this myself in a clean
+worktree at `7338fe9` after a rebuild. It matches the engine agent's 20/15/21 at `8d0e4bf`.
+
+Engine round 3 commits (agent's measurements, clean worktrees, against the commit before each):
+
+| Commit | Fix | Without doctrine re-basing | With it |
+| --- | --- | --- | --- |
+| `65493a9` | Run 3 | 20/14/22 | 21/13/20 |
+| `008853e` | Battle breakpoint = CDB90 loser share at the break for the era, one quantile drawn per seed | 20/17/21 | 20/15/20 |
+| `110446a` | Leftovers on a hold side defend (no-op) | 20/17/21 | 20/15/20 |
+| `8e1a1e8` | A hold side takes no enemy places as objectives | 20/18/21 | 20/16/20 |
+| `0c8ca1a` | Pursuit: artillery is not a pursuer | 21/15/22 | 21/14/20 |
+| `69b3d1a` | Pursuit: air power in the same units as ground weight | | 20/15/20 |
+| `a7049e7` | Surprise only on day 1 | | 20/15/20 |
+| `52e3020` | Capital-loss shock only for a real capital, never a case base | | 20/15/20 |
+| `8d0e4bf` | No attack slot the side cannot staff to its doctrine's ratio | | 20/15/21 |
+
+Correction: the commit message of `0c8ca1a` credits it with 21/14/20. That run already included the
+doctrine re-basing (`a61c9ba`), which landed in the shared tree mid-run. The corrected figures, in
+`7dce88a`: without the re-basing 20/18/21 -> 21/15/22, with it 20/16/20 -> 21/14/20.
+
+Breakpoint sweep at `008853e`, before the re-basing (every member at one quantile): low 21/15/19,
+mid 20/17/20, high 21/16/23.
+
+Attribution. To separate the doctrine data from the engine fixes, I re-ran HEAD with the doctrine
+files from before `a61c9ba` (clean worktree, 20 seeds). That gives 19/16/22.
+
+| case | Run 3 | HEAD, old doctrines | HEAD (Run 4) | moved by |
+| --- | --- | --- | --- | --- |
+| adrianople-378 | 40% x0.11 | 45% x0.12 | **80% x0.57** | doctrine |
+| carrhae--53 | 15% x20.36 | 35% x19.65 | 50% x15.42 | both |
+| el-alamein-1942 | 100% x1.13 4.9d | 100% x1.03 3.4d | **55%** x0.95 2.5d | doctrine (british-ww2 0.2 -> 0.059) |
+| falklands-1982 | 100% x0.86 14d | 100% x0.41 9d | 100% **x0.18** 8d | both |
+| gulf-war-1991 | x4.87 9d | x3.79 7d | x3.08 7d | engine |
+| marathon--490 | 0% x19.58 | 0% x20.04 | **60% x3.88** | doctrine |
+| six-day-war-1967 | 0% x3.33 | 0% x1.28 | 0% x1.28 | engine |
+| stalingrad-1942 | 6 days | 32 days | 32 days | engine (pursuit fixes) |
+| waterloo-1815 | x3.08 | x1.91 | x1.86 | engine |
+| yom-kippur-sinai-1973 | 100% x0.44 | **0%** x2.23 38d | 0% x2.37 38d | engine (surprise day 1, staffing rule) |
+
+Read with care:
+- **El Alamein** now fails the winner criterion only because of the doctrine data. british-ww2 went
+  to the World Wars low quartile (0.059) for a sourced casualty-conserving doctrine. Whether
+  casualty conservation belongs in the loss at withdrawal or in the willingness to attack is a
+  question for QA round 4. The value is not changed because El Alamein moved.
+- **Yom Kippur** loses its WRONG-reason pass. Israel fields 1 to 3 formations and can never staff an
+  attack under the staffing rule, so it never counterattacks. That matches neither 1973 nor the
+  rule's intent for a small, high-quality force. QA round 4 checks whether the staffing need counts
+  quality.
+- **Presets.** The staffing rule turns four preset runs into stand-off draws:
+  allies-vs-axis-minus-two (both seeds), usa-vs-china-2026 (seed 1), and mongols-vs-rome (120 days
+  with no battle). rome-vs-france-equalized goes to Rome. Invariants are clean in all 24 preset runs.
+- Stalingrad now runs 31 to 32 days with the pocket cut off from day 10. Soviet losses are still
+  about 41k against 486k, so the ratio fails.
