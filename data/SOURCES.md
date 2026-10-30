@@ -38,7 +38,7 @@ families, their licenses, and the derivation methods.
   in 2021 PPP are rebased with `derived:ppp-rebase-2011`.
 - Modern values: state the reference year in `note` ("asOf 2024").
 - Borders: several refs can be joined with ` + ` to union polygons
-  (`hb:1938:Germany + hb:1938:Bohemia-Moravia`). Overlapping polygons count once on the map.
+  (`hb:1200:Hungary + hb:1200:Croatia`, as hungary-1241 uses). Overlapping polygons count once on the map.
 - Personnel: `activePersonnel` is the standing, household or salaried force under arms at the
   snapshot date. Feudal, militia and conscript levies that must be called up go in
   `trainedReserves` (the engine calls them up after its mobilization delay); the untrained pool
