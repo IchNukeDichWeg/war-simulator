@@ -15,7 +15,7 @@ import { FLAG_RIVER, T } from './terrainClasses';
 import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS } from './constants';
+import { DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS, UNARMED_FORTRESS_OPEN } from './constants';
 import { dayOfYear, daylightHours } from './daylight';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
@@ -110,13 +110,17 @@ export function slotOf(ctx: Ctx, side: number, cell: number): number {
   return -1;
 }
 
-/** An enemy fortified place not yet reduced by siege: cannot be entered. */
+/** An enemy fortified place not yet reduced by siege, whose state has forces: cannot be entered. */
 export function isProtectedEnemyPlace(ctx: Ctx, side: number, c: number): boolean {
-  const { S, st } = ctx;
+  const { S, st, sc } = ctx;
   const p = S.placeAt[c];
   if (p < 0) return false;
   const ctl = st.control[c];
-  return ctl !== 255 && ctl !== side && S.places[p].fortified && st.siege[c] < 1;
+  // UNARMED_FORTRESS_OPEN: the walls of a state with no formation anywhere (Andorra, Costa Rica)
+  // hold no one off, so its places fall to the first enemy formation that reaches them
+  const pl = S.places[p];
+  return ctl !== 255 && ctl !== side && pl.fortified && st.siege[c] < 1
+    && (!UNARMED_FORTRESS_OPEN || sc.occ[ctl][c] > 0 || sc.armed[pl.member] > 0);
 }
 
 /** Slowest role rate (km/day) of formation f; 0 if it has no mobile roles. */

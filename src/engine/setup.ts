@@ -15,6 +15,7 @@ import {
   RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
   FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS, BREAKPOINT_FROM_MODEL_RULES,
   REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT, CONTESTED_START_OVERLAP,
+  CAPITAL_CELL_OWN_AT_START,
 } from './constants';
 import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
 import { overridePathProblem, overrideValueProblem } from './overridePath';
@@ -669,14 +670,17 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       for (const [, i] of cand) if (owner0[i] < 0 && !contested[i]) { owner0[i] = mr.idx; n++; }
       warnings.push(`${mr.name}: no border polygon; territory approximated as a disc of ${Math.round(areaKm2).toLocaleString('en-US')} km2 (r ${Math.round(rKm)} km) around the capital, ${n} cells.`);
     }
-    // A capital cell the enemy claims (its polygon reaches over it, or the cell centre falls just
-    // outside the own polygon) is still the own side's at the start; a shared cell stays contested.
+    // A capital cell is its own side's at the start even when the enemy's polygon covers it or,
+    // with CAPITAL_CELL_OWN_AT_START, when no polygon does (Andorra la Vella: the state is smaller
+    // than a cell, so the cell centre lies outside its polygon; a neutral capital is neither an AI
+    // objective nor capturable, and Andorra vs Spain sat out 120 days to a draw). A shared cell
+    // stays contested.
     if (CONTESTED_START_OVERLAP) for (const mr of members) {
       const c = capCellOf[mr.idx];
       if (c < 0) continue;
       const other = capZone[1 - mr.side][c] >= 0 && capCellOf[capZone[1 - mr.side][c]] === c;
       if (other) { owner0[c] = -1; contested[c] = 1; }
-      else if (contested[c] || (owner0[c] >= 0 && members[owner0[c]].side !== mr.side)) { owner0[c] = mr.idx; contested[c] = 0; }
+      else if ((CAPITAL_CELL_OWN_AT_START && owner0[c] < 0) || contested[c] || (owner0[c] >= 0 && members[owner0[c]].side !== mr.side)) { owner0[c] = mr.idx; contested[c] = 0; }
     }
     for (let i = 0; i < grid.n; i++) if (owner0[i] >= 0) control0[i] = members[owner0[i]].side;
   }
@@ -961,6 +965,15 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     }
     return best;
   }) as [number, number];
+  // capital capture is judged on the lead member's capital; off the map it can never fall
+  // (Iceland vs the UK in a theater that stops short of Reykjavik drew after 240 days)
+  if (!battleMode && scenario.victory?.capitalCaptured) {
+    for (const side of [0, 1] as const) {
+      const mr = members[lead[side]];
+      const nm = mr?.snap.capital?.name;
+      if (mr && mr.capitalCell < 0) warnings.push(`${mr.name}: capital${nm ? ` ${nm}` : ''} is outside the theater; this side cannot lose by capital capture.`);
+    }
+  }
   const friction: [number, number] = [0, 1].map((side) => 1 + m.c2.coalitionFriction.mid * Math.max(0, sideMembers[side].length - 1)) as [number, number];
 
   const refRate: [number, number] = [0, 1].map((side) => {

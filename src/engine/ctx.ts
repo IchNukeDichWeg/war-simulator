@@ -27,6 +27,7 @@ export interface Scratch {
   invSpeed: [Float32Array, Float32Array];
   extra: [Float32Array, Float32Array];
   occ: [Int32Array, Int32Array];        // formations per side per cell (alive, on map)
+  armed: Int32Array;                    // alive formations per member, on the map or on their way
   head: [Int32Array, Int32Array];       // linked list heads per side per cell
   nextInCell: Int32Array;
   battleAt: Int32Array;
@@ -66,6 +67,7 @@ export function makeScratch(S: Setup, cap: number): Scratch {
     invSpeed: [new Float32Array(n), new Float32Array(n)],
     extra: [new Float32Array(n), new Float32Array(n)],
     occ: [new Int32Array(n), new Int32Array(n)],
+    armed: new Int32Array(S.members.length),
     head: [new Int32Array(n), new Int32Array(n)],
     nextInCell: new Int32Array(Math.max(1, cap)),
     battleAt: new Int32Array(n).fill(-1),
@@ -114,7 +116,9 @@ export function rebuildOccupancy(ctx: Ctx): void {
   ensureScratchCap(sc, F.cap);
   sc.occ[0].fill(0); sc.occ[1].fill(0);
   sc.head[0].fill(-1); sc.head[1].fill(-1);
+  sc.armed.fill(0);
   for (let f = F.n - 1; f >= 0; f--) {
+    if (F.alive[f]) sc.armed[F.member[f]]++;
     if (!F.alive[f] || !F.onMap[f]) continue;
     const s = F.side[f], c = F.cell[f];
     sc.occ[s][c]++;

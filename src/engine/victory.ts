@@ -16,7 +16,7 @@ import {
  * cell next to formations of one side only follows them (zone of control);
  * enemy cells cut off from every enemy supply source and touching own ground
  * fall one ring per day (pockets surrender). Unreduced enemy fortresses only
- * fall to siege.
+ * fall to siege, unless their state has no formation left (UNARMED_FORTRESS_OPEN).
  */
 export function controlPhase(ctx: Ctx): void {
   const { S, st, sc } = ctx;

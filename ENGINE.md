@@ -51,7 +51,8 @@ assumptions.
    cell and its ring of 8 neighbours belong to the side whose capital it is
    (the ring is the zone of control its garrison exerts on day 1), and a
    capital cell stays its own side's even when only the enemy's polygon covers
-   it. When both sides' capitals fall in one cell (Rome, Tenochtitlan and
+   it, or when no polygon does (`CAPITAL_CELL_OWN_AT_START`: Andorra is
+   smaller than a cell, so no cell centre falls in its polygon). When both sides' capitals fall in one cell (Rome, Tenochtitlan and
    Mexico City), that cell is contested. Members deploy at their own places in
    own or contested land, so a shared capital starts with both garrisons in it.
    (`CONTESTED_START_OVERLAP`; OFF: the nearer capital takes every overlap
@@ -507,7 +508,9 @@ fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
 
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
-`daysToReduce` or stormed; the capital counts as captured only once an enemy
+`daysToReduce` or stormed, unless its state has no formation alive anywhere
+(`UNARMED_FORTRESS_OPEN`: an unarmed state's places fall to the first enemy
+formation that reaches them, so Andorra, Iceland and Costa Rica can be taken); the capital counts as captured only once an enemy
 formation has been on it or next to it since the enemy took it, so a capital
 that passes by encirclement alone with no enemy force near does not,
 `CAPITAL_CAPTURE_NEEDS_REACH`), territory share, army collapse (personnel below

@@ -437,3 +437,22 @@ export const CONTESTED_START_OVERLAP = true;
  *  Iceland, Reykjavik is reduced and taken from the next cell on day 45. Backtest 18/13/21
  *  unchanged. */
 export const CAPITAL_CAPTURE_NEEDS_REACH = true;
+/** A capital cell inside the theater is its own member's at the start even when no border polygon
+ *  covers it (needs CONTESTED_START_OVERLAP). A state smaller than a cell (Andorra) had a neutral
+ *  capital: no AI objective (only enemy-held places are) and never "held by the enemy", so the war
+ *  could not end by capital capture (red team W5). Measured (20 seeds, alone): Andorra vs Spain 2026
+ *  draw 20/20 on day 120 -> Spain 20/20 on day 89 after a siege of the empty town. Backtest
+ *  (voronoi start control) unaffected; presets unchanged. */
+export const CAPITAL_CELL_OWN_AT_START = true;
+/** A fortified place is protected (cannot be entered, falls only to siege) only while the member
+ *  it belongs to has a formation alive somewhere, or one stands on it. Before, an unarmed state's
+ *  capital still needed daysToReduce (Nicaragua vs an empty San Jose: about 0.002/day, and the
+ *  besieger fell back to resupply every few days, red team W5). Measured (20 seeds, with
+ *  CAPITAL_CELL_OWN_AT_START): Andorra vs Spain Spain day 89 -> day 5; Iceland vs UK 2026 (theater
+ *  reaching Reykjavik) UK day 38-45 -> 17-24; Costa Rica vs Nicaragua 2026 (theater reaching San
+ *  Jose) Nicaragua 17/20 at day 228-466, 3 Costa Rica -> Nicaragua 20/20, days 20-133 (median 78;
+ *  Costa Rica's recruits garrison it later). Rejected: open every place with no formation ON it.
+ *  USA took an empty Beijing on day 67 and NATO an empty Moscow, both seeds, and the Gulf War
+ *  winner fell 90% -> 55%: a state with an army defends its cities beyond its field formations.
+ *  This rule: backtest 18/13/21 unchanged, presets unchanged. */
+export const UNARMED_FORTRESS_OPEN = true;
