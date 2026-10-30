@@ -514,6 +514,836 @@
       "snow": 0.22
     }
   },
+  "weatherOddsByZone": {
+    "A": {
+      "spring": {
+        "clear": {
+          "low": 0.474,
+          "mid": 0.65,
+          "high": 0.715,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "SPEC FOR THE ENGINE (movement.weatherOddsByZone). Replaces the single Berlin table (movement.weatherOdds) with one table per climate zone. Zones: A tropical, BW desert, BS steppe, C temperate, D cold/continental, E polar = Koppen-Geiger main groups with B split into BW and BS, C/D boundary at coldest month 0 C, as in Beck et al. 2018. Lookup: zone of a theater = the majority zone over its land cells in the Beck et al. 2018 present-day (1980-2016) Koppen-Geiger map at 0.5 deg (Beck_KG_V1_present_0p5.tif, 360 x 720, uint8; numeric codes per the legend.txt shipped in the archive; doi:10.1038/sdata.2018.214, data doi:10.6084/m9.figshare.6396959, CC BY 4.0; paper fetched at https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6207062/), collapsing symbols A* -> A, BW* -> BW, BS* -> BS, C* -> C, D* -> D, E* -> E. One table per theater because the engine rolls one weather per day for the whole theater (sim.ts). Fallback when the map is not available: zone C (equal to today's Berlin table). Categories: clear, rain, mud, snow, the same four as movement.weatherOdds and WEATHERS; seasons are LOCAL (seasonOf already shifts southern theaters by six months), so a table is indexed exactly like movement.weatherOdds[season]. Use .mid; mids of each season sum to 1 (the engine normalises anyway). Derivation derived:weather-from-normals (data/SOURCES.md): per season, snow = S/N, rain = (P/N) x (1 - snow), mud = k x rain, clear = 1 - rain - mud - snow, N = days in the season, P = days with precipitation >= 1 mm, S = snow days (cover where reported), k = mud/rain of the old Berlin table (spring 0.517, summer 0.167, autumn 0.6, winter 0.652; educated guess, so every mud leaf is grade D). mid = the zone's primary station, low/high = min/max over the zone's stations. Zone A. Primary Bangkok Metropolis WMO 48455 (Aw). Monthly Jan-Dec series used: Bangkok Metropolis 48455 (Aw, primary) P 1.9 1.9 3.4 5.4 12.4 13.4 14.1 15.6 18 14.4 3.8 1; Singapore Changi 48698 (Af) P 10.7 6.5 9.4 11.3 11.2 10.4 10.4 11.1 9.8 12 15.4 16.3; Darwin Airport 94120 (Aw, southern hemisphere, months shifted 6 to local seasons) P 19.6 18.2 16.8 7.6 1.7 0.2 0.1 0.2 1.5 5.5 10.1 15. P = days with precipitation >= 1 mm, WMO 1991-2020 normals (https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/ Region-2 Thailand, Region-5 Singapore and Australia CSV sheets, fetched). Snow 0: days with Tmin < 0 C are 0 in every month at Changi and Darwin (same sheets) and Bangkok's coldest monthly mean is 27.3 C. Zone A, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Bangkok 0.650, Singapore 0.474, Darwin 0.715."
+        },
+        "rain": {
+          "low": 0.188,
+          "mid": 0.23,
+          "high": 0.347,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Bangkok 0.230, Singapore 0.347, Darwin 0.188."
+        },
+        "mud": {
+          "low": 0.097,
+          "mid": 0.119,
+          "high": 0.179,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Bangkok 0.119, Singapore 0.179, Darwin 0.097."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, spring, snow = S/N from fetched normals. Per station: Bangkok 0.000, Singapore 0.000, Darwin 0.000."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.317,
+          "mid": 0.453,
+          "high": 0.595,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Bangkok 0.453, Singapore 0.595, Darwin 0.317."
+        },
+        "rain": {
+          "low": 0.347,
+          "mid": 0.468,
+          "high": 0.585,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Bangkok 0.468, Singapore 0.347, Darwin 0.585."
+        },
+        "mud": {
+          "low": 0.058,
+          "mid": 0.078,
+          "high": 0.098,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Bangkok 0.078, Singapore 0.058, Darwin 0.098."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, summer, snow = S/N from fetched normals. Per station: Bangkok 0.000, Singapore 0.000, Darwin 0.000."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.346,
+          "mid": 0.364,
+          "high": 0.546,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Bangkok 0.364, Singapore 0.346, Darwin 0.546."
+        },
+        "rain": {
+          "low": 0.284,
+          "mid": 0.398,
+          "high": 0.409,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Bangkok 0.398, Singapore 0.409, Darwin 0.284."
+        },
+        "mud": {
+          "low": 0.17,
+          "mid": 0.239,
+          "high": 0.245,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Bangkok 0.239, Singapore 0.245, Darwin 0.170."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, autumn, snow = S/N from fetched normals. Per station: Bangkok 0.000, Singapore 0.000, Darwin 0.000."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.387,
+          "mid": 0.912,
+          "high": 0.991,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Bangkok 0.912, Singapore 0.387, Darwin 0.991."
+        },
+        "rain": {
+          "low": 0.005,
+          "mid": 0.053,
+          "high": 0.371,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Bangkok 0.053, Singapore 0.371, Darwin 0.005."
+        },
+        "mud": {
+          "low": 0.004,
+          "mid": 0.035,
+          "high": 0.242,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Bangkok 0.035, Singapore 0.242, Darwin 0.004."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone A, winter, snow = S/N from fetched normals. Per station: Bangkok 0.000, Singapore 0.000, Darwin 0.000."
+        }
+      }
+    },
+    "BW": {
+      "spring": {
+        "clear": {
+          "low": 0.886,
+          "mid": 0.886,
+          "high": 0.949,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW. Primary Riyadh Old WMO 40438 (BWh). Monthly Jan-Dec series used: Riyadh Old 40438 (BWh, primary) P 2.1 1 2.7 3.4 0.8 0 0 0.1 0 0.3 1.7 1.9; Cairo AP 62366 (BWh) P 1.3 2.03 1.17 1.3 0.6 0.57 0.67 1.03 0.73 0.13 0.63 0.83 (its June-September day counts sit beside 0 mm monthly totals, an inconsistency in the sheet, so Cairo is used only for the range); Phoenix Sky Harbor 72278 (BWh, summer monsoon) P 2.7 3.1 2.4 1.2 0.7 0.1 2.7 3.2 1.8 1.8 1.5 2.8. P = days >= 1 mm, WMO 1991-2020 normals (https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/ Region-2 SaudiArabia, Region-1 Egypt, Region-4 UnitedStates, fetched). Snow 0: Tmin < 0 C days are 0 at Riyadh in every month and at most 0.3/month at Phoenix. Cold deserts (BWk: Gobi, Taklamakan, high Iran) have winter snow that these hot-desert stations miss; not covered. Zone BW, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Riyadh 0.886, Cairo 0.949, Phoenix 0.929."
+        },
+        "rain": {
+          "low": 0.033,
+          "mid": 0.075,
+          "high": 0.075,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Riyadh 0.075, Cairo 0.033, Phoenix 0.047."
+        },
+        "mud": {
+          "low": 0.017,
+          "mid": 0.039,
+          "high": 0.039,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Riyadh 0.039, Cairo 0.017, Phoenix 0.024."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, spring, snow = S/N from fetched normals. Per station: Riyadh 0.000, Cairo 0.000, Phoenix 0.000."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.924,
+          "mid": 0.999,
+          "high": 0.999,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Riyadh 0.999, Cairo 0.971, Phoenix 0.924."
+        },
+        "rain": {
+          "low": 0.001,
+          "mid": 0.001,
+          "high": 0.065,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Riyadh 0.001, Cairo 0.025, Phoenix 0.065."
+        },
+        "mud": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.011,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Riyadh 0.000, Cairo 0.004, Phoenix 0.011."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, summer, snow = S/N from fetched normals. Per station: Riyadh 0.000, Cairo 0.000, Phoenix 0.000."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.91,
+          "mid": 0.965,
+          "high": 0.974,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Riyadh 0.965, Cairo 0.974, Phoenix 0.910."
+        },
+        "rain": {
+          "low": 0.016,
+          "mid": 0.022,
+          "high": 0.056,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Riyadh 0.022, Cairo 0.016, Phoenix 0.056."
+        },
+        "mud": {
+          "low": 0.01,
+          "mid": 0.013,
+          "high": 0.034,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Riyadh 0.013, Cairo 0.010, Phoenix 0.034."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, autumn, snow = S/N from fetched normals. Per station: Riyadh 0.000, Cairo 0.000, Phoenix 0.000."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.843,
+          "mid": 0.908,
+          "high": 0.924,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Riyadh 0.908, Cairo 0.924, Phoenix 0.843."
+        },
+        "rain": {
+          "low": 0.046,
+          "mid": 0.055,
+          "high": 0.095,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Riyadh 0.055, Cairo 0.046, Phoenix 0.095."
+        },
+        "mud": {
+          "low": 0.03,
+          "mid": 0.036,
+          "high": 0.062,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Riyadh 0.036, Cairo 0.030, Phoenix 0.062."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BW, winter, snow = S/N from fetched normals. Per station: Riyadh 0.000, Cairo 0.000, Phoenix 0.000."
+        }
+      }
+    },
+    "BS": {
+      "spring": {
+        "clear": {
+          "low": 0.588,
+          "mid": 0.746,
+          "high": 0.746,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS. Primary Tehran Mehrabad WMO 40754 (BSk). Monthly Jan-Dec series used: Tehran Mehrabad 40754 (BSk/BSh boundary, primary): P 4.8 5.4 5.9 5.2 3.7 0.8 0.5 0.3 0.2 2.5 4.9 5.3 and snow days 5.1 2.9 1.1 0.1 0 0 0 0 0 0 0.4 2.7 from the NOAA NCEI 1991-2020 box at https://en.wikipedia.org/wiki/Tehran (fetched; the WMO sheet for 40754 has no >= 1 mm count); Cheyenne 72564 (BSk) P 2.6 3.8 5 7.3 8.6 7.2 6.9 6.2 5.1 4.6 3.6 3.4, S = days with snow depth > 2 cm 8.4 7.6 4.9 3.7 0.8 0 0 0 0.3 2.1 5.9 9.4 (WMO 1991-2020, https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/ Region-4 UnitedStates, fetched). Tehran snow days are days with snow (falling or lying, definition not stated), so grade C on snow. Zone BS, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Tehran 0.746, Cheyenne 0.588."
+        },
+        "rain": {
+          "low": 0.159,
+          "mid": 0.159,
+          "high": 0.204,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Tehran 0.159, Cheyenne 0.204."
+        },
+        "mud": {
+          "low": 0.082,
+          "mid": 0.082,
+          "high": 0.105,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Tehran 0.082, Cheyenne 0.105."
+        },
+        "snow": {
+          "low": 0.013,
+          "mid": 0.013,
+          "high": 0.102,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, spring, snow = S/N from fetched normals. Per station: Tehran 0.013, Cheyenne 0.102."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.742,
+          "mid": 0.98,
+          "high": 0.98,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Tehran 0.980, Cheyenne 0.742."
+        },
+        "rain": {
+          "low": 0.017,
+          "mid": 0.017,
+          "high": 0.221,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Tehran 0.017, Cheyenne 0.221."
+        },
+        "mud": {
+          "low": 0.003,
+          "mid": 0.003,
+          "high": 0.037,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Tehran 0.003, Cheyenne 0.037."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, summer, snow = S/N from fetched normals. Per station: Tehran 0.000, Cheyenne 0.000."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.696,
+          "mid": 0.863,
+          "high": 0.863,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Tehran 0.863, Cheyenne 0.696."
+        },
+        "rain": {
+          "low": 0.083,
+          "mid": 0.083,
+          "high": 0.133,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Tehran 0.083, Cheyenne 0.133."
+        },
+        "mud": {
+          "low": 0.05,
+          "mid": 0.05,
+          "high": 0.08,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Tehran 0.050, Cheyenne 0.080."
+        },
+        "snow": {
+          "low": 0.004,
+          "mid": 0.004,
+          "high": 0.091,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, autumn, snow = S/N from fetched normals. Per station: Tehran 0.004, Cheyenne 0.091."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.59,
+          "mid": 0.631,
+          "high": 0.631,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Tehran 0.631, Cheyenne 0.590."
+        },
+        "rain": {
+          "low": 0.078,
+          "mid": 0.151,
+          "high": 0.151,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Tehran 0.151, Cheyenne 0.078."
+        },
+        "mud": {
+          "low": 0.051,
+          "mid": 0.099,
+          "high": 0.099,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Tehran 0.099, Cheyenne 0.051."
+        },
+        "snow": {
+          "low": 0.119,
+          "mid": 0.119,
+          "high": 0.281,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone BS, winter, snow = S/N from fetched normals. Per station: Tehran 0.119, Cheyenne 0.281."
+        }
+      }
+    },
+    "C": {
+      "spring": {
+        "clear": {
+          "low": 0.538,
+          "mid": 0.538,
+          "high": 0.673,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C. Primary Berlin-Dahlem (Cfb). Monthly Jan-Dec series used: Berlin-Dahlem (Cfb, primary; continuity with movement.weatherOdds): P = days >= 1 mm, NOAA 1961-1990 10 9 8 9 10 10 9 9 9 8 10 11, S = snow-cover days >= 1 cm, Berlin-Brandenburg DWD 1991-2020 8.4 6.8 2.6 0.2 0 0 0 0 0 0 1.4 4.9 (both from https://en.wikipedia.org/wiki/Berlin climate boxes, fetched; the WMO 1991-2020 Dahlem sheet 10381 repeats its >= 0.1 mm row under >= 1 mm, so it was not used; its snow depth >= 1 cm row 10.6 9.1 3.3 0.4 0 0 0 0 0 0 1.6 4.7 agrees in size); Roma Ciampino (Csa) P 7.4 7.48 6.85 7.42 5.54 3.38 2.16 2.2 6 7.32 8.84 9.44 (NOAA 1991-2020 via https://en.wikipedia.org/wiki/Rome, fetched; Tmax < 0 C days 0 in the WMO sheet 16239, snow 0); Shanghai Baoshan 58362 (Cfa) P 7.8 7.2 9.6 8 7.8 10.4 8.5 10.2 7.3 5.1 6.6 6.1 (WMO 1991-2020, snow depth >= 10 cm days 0, snow 0). Zone C, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Berlin 0.538, Rome 0.673, Shanghai 0.581."
+        },
+        "rain": {
+          "low": 0.215,
+          "mid": 0.285,
+          "high": 0.285,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Berlin 0.285, Rome 0.215, Shanghai 0.276."
+        },
+        "mud": {
+          "low": 0.111,
+          "mid": 0.147,
+          "high": 0.147,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Berlin 0.147, Rome 0.111, Shanghai 0.143."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.03,
+          "high": 0.03,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, spring, snow = S/N from fetched normals. Per station: Berlin 0.030, Rome 0.000, Shanghai 0.000."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.631,
+          "mid": 0.645,
+          "high": 0.902,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Berlin 0.645, Rome 0.902, Shanghai 0.631."
+        },
+        "rain": {
+          "low": 0.084,
+          "mid": 0.304,
+          "high": 0.316,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Berlin 0.304, Rome 0.084, Shanghai 0.316."
+        },
+        "mud": {
+          "low": 0.014,
+          "mid": 0.051,
+          "high": 0.053,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Berlin 0.051, Rome 0.014, Shanghai 0.053."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, summer, snow = S/N from fetched normals. Per station: Berlin 0.000, Rome 0.000, Shanghai 0.000."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.517,
+          "mid": 0.517,
+          "high": 0.666,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Berlin 0.517, Rome 0.610, Shanghai 0.666."
+        },
+        "rain": {
+          "low": 0.209,
+          "mid": 0.292,
+          "high": 0.292,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Berlin 0.292, Rome 0.244, Shanghai 0.209."
+        },
+        "mud": {
+          "low": 0.125,
+          "mid": 0.175,
+          "high": 0.175,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Berlin 0.175, Rome 0.146, Shanghai 0.125."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.015,
+          "high": 0.015,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, autumn, snow = S/N from fetched normals. Per station: Berlin 0.015, Rome 0.000, Shanghai 0.000."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.35,
+          "mid": 0.35,
+          "high": 0.614,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Berlin 0.350, Rome 0.555, Shanghai 0.614."
+        },
+        "rain": {
+          "low": 0.234,
+          "mid": 0.258,
+          "high": 0.269,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Berlin 0.258, Rome 0.269, Shanghai 0.234."
+        },
+        "mud": {
+          "low": 0.152,
+          "mid": 0.168,
+          "high": 0.176,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Berlin 0.168, Rome 0.176, Shanghai 0.152."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.223,
+          "high": 0.223,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone C, winter, snow = S/N from fetched normals. Per station: Berlin 0.223, Rome 0.000, Shanghai 0.000."
+        }
+      }
+    },
+    "D": {
+      "spring": {
+        "clear": {
+          "low": 0.435,
+          "mid": 0.435,
+          "high": 0.74,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D. Primary Moskva WMO 27612 (Dfb). Monthly Jan-Dec series used: Moskva 27612 (Dfb, primary) P 13 11 9 7 10 10 10 9 9 11 10 12 (WMO 1991-2020, https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/ Region-6 RussianFederation, fetched), S = Pogoda.ru.net snow days (days with snowfall) 25 23 15 6 1 0 0 0 0.3 5 17 24 from https://en.wikipedia.org/wiki/Template:Moscow_weatherbox (fetched); mean snow depth 24-35 cm in Jan-Mar there means cover is near-continuous, so the snowfall-day count is a lower bound on snow-covered days (grade C on snow); Harbin 50953 (Dwa) P 1.1 1.2 2.9 4.1 7.5 10.6 10.5 8.9 6.7 4.4 3.1 2.3, S = days with snow depth >= 10 cm 13.7 6.9 2.4 0.1 0 0 0 0 0 0 1.6 8.9 (lower bound on cover; WMO 1991-2020); Fargo Hector 72753 (Dfb) P 4.2 4.2 5 5.6 8.6 9 7.7 6.3 6 6.1 4.5 5.4, S = snow depth > 2 cm 28.8 24.7 17.9 4.7 0.1 0 0 0 0 0.9 8.6 21.5 (WMO 1991-2020). Zone D, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Moscow 0.435, Harbin 0.740, Fargo 0.515."
+        },
+        "rain": {
+          "low": 0.153,
+          "mid": 0.215,
+          "high": 0.215,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Moscow 0.215, Harbin 0.153, Fargo 0.157."
+        },
+        "mud": {
+          "low": 0.079,
+          "mid": 0.111,
+          "high": 0.111,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Moscow 0.111, Harbin 0.079, Fargo 0.081."
+        },
+        "snow": {
+          "low": 0.027,
+          "mid": 0.239,
+          "high": 0.247,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, spring, snow = S/N from fetched normals. Per station: Moscow 0.239, Harbin 0.027, Fargo 0.247."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.619,
+          "mid": 0.632,
+          "high": 0.708,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Moscow 0.632, Harbin 0.619, Fargo 0.708."
+        },
+        "rain": {
+          "low": 0.25,
+          "mid": 0.315,
+          "high": 0.326,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Moscow 0.315, Harbin 0.326, Fargo 0.250."
+        },
+        "mud": {
+          "low": 0.042,
+          "mid": 0.053,
+          "high": 0.054,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Moscow 0.053, Harbin 0.054, Fargo 0.042."
+        },
+        "snow": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.0,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, summer, snow = S/N from fetched normals. Per station: Moscow 0.000, Harbin 0.000, Fargo 0.000."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.357,
+          "mid": 0.357,
+          "high": 0.737,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Moscow 0.357, Harbin 0.737, Fargo 0.634."
+        },
+        "rain": {
+          "low": 0.153,
+          "mid": 0.249,
+          "high": 0.249,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Moscow 0.249, Harbin 0.153, Fargo 0.163."
+        },
+        "mud": {
+          "low": 0.092,
+          "mid": 0.149,
+          "high": 0.149,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Moscow 0.149, Harbin 0.092, Fargo 0.098."
+        },
+        "snow": {
+          "low": 0.018,
+          "mid": 0.245,
+          "high": 0.245,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, autumn, snow = S/N from fetched normals. Per station: Moscow 0.245, Harbin 0.018, Fargo 0.104."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.069,
+          "mid": 0.069,
+          "high": 0.616,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Moscow 0.069, Harbin 0.616, Fargo 0.126."
+        },
+        "rain": {
+          "low": 0.026,
+          "mid": 0.081,
+          "high": 0.081,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Moscow 0.081, Harbin 0.034, Fargo 0.026."
+        },
+        "mud": {
+          "low": 0.017,
+          "mid": 0.053,
+          "high": 0.053,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Moscow 0.053, Harbin 0.022, Fargo 0.017."
+        },
+        "snow": {
+          "low": 0.327,
+          "mid": 0.798,
+          "high": 0.831,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone D, winter, snow = S/N from fetched normals. Per station: Moscow 0.798, Harbin 0.327, Fargo 0.831."
+        }
+      }
+    },
+    "E": {
+      "spring": {
+        "clear": {
+          "low": 0.067,
+          "mid": 0.067,
+          "high": 0.37,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E. Primary Utqiagvik (Barrow) WMO 70026 (ET). Monthly Jan-Dec series used: Utqiagvik/Barrow Post-Rogers AP 70026 (ET, primary) P 1.2 1.8 1.2 1.4 1.9 3.4 5.8 6.7 6.1 5.1 3.4 1.6, S = days with snow depth > 2 cm 31 28.5 31 30 24.3 2.1 0 0.1 4.6 25.6 30 31 (WMO 1991-2020, https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/ Region-4 UnitedStates, fetched); Longyearbyen 1961-1990 (ET) rain days >= 1 mm 2 2 2 3 4 13 17 18 14 5 3 3, snow days >= 1 cm 21 17 19 17 16 7 1 2 11 21 22 22 (https://en.wikipedia.org/wiki/Longyearbyen box, fetched; secondary source nordicvisitor.com, range only). Zone E, spring, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Utqiagvik 0.067, Longyearbyen 0.370."
+        },
+        "rain": {
+          "low": 0.004,
+          "mid": 0.004,
+          "high": 0.043,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, spring, rain = (P/N) x (1 - snow) from fetched normals. Per station: Utqiagvik 0.004, Longyearbyen 0.043."
+        },
+        "mud": {
+          "low": 0.002,
+          "mid": 0.002,
+          "high": 0.022,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, spring, mud = k x rain with k = 0.517 (educated guess, see A.spring.clear). Per station: Utqiagvik 0.002, Longyearbyen 0.022."
+        },
+        "snow": {
+          "low": 0.565,
+          "mid": 0.927,
+          "high": 0.927,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, spring, snow = S/N from fetched normals. Per station: Utqiagvik 0.927, Longyearbyen 0.565."
+        }
+      },
+      "summer": {
+        "clear": {
+          "low": 0.349,
+          "mid": 0.779,
+          "high": 0.779,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, summer, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Utqiagvik 0.779, Longyearbyen 0.349."
+        },
+        "rain": {
+          "low": 0.169,
+          "mid": 0.169,
+          "high": 0.465,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, summer, rain = (P/N) x (1 - snow) from fetched normals. Per station: Utqiagvik 0.169, Longyearbyen 0.465."
+        },
+        "mud": {
+          "low": 0.028,
+          "mid": 0.028,
+          "high": 0.078,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, summer, mud = k x rain with k = 0.167 (educated guess, see A.spring.clear). Per station: Utqiagvik 0.028, Longyearbyen 0.078."
+        },
+        "snow": {
+          "low": 0.024,
+          "mid": 0.024,
+          "high": 0.109,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, summer, snow = S/N from fetched normals. Per station: Utqiagvik 0.024, Longyearbyen 0.109."
+        }
+      },
+      "autumn": {
+        "clear": {
+          "low": 0.249,
+          "mid": 0.252,
+          "high": 0.252,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, autumn, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Utqiagvik 0.252, Longyearbyen 0.249."
+        },
+        "rain": {
+          "low": 0.054,
+          "mid": 0.054,
+          "high": 0.098,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, autumn, rain = (P/N) x (1 - snow) from fetched normals. Per station: Utqiagvik 0.054, Longyearbyen 0.098."
+        },
+        "mud": {
+          "low": 0.033,
+          "mid": 0.033,
+          "high": 0.059,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, autumn, mud = k x rain with k = 0.6 (educated guess, see A.spring.clear). Per station: Utqiagvik 0.033, Longyearbyen 0.059."
+        },
+        "snow": {
+          "low": 0.593,
+          "mid": 0.662,
+          "high": 0.662,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, autumn, snow = S/N from fetched normals. Per station: Utqiagvik 0.662, Longyearbyen 0.593."
+        }
+      },
+      "winter": {
+        "clear": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.292,
+          "grade": "C",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, winter, clear = 1 - rain - mud - snow; grade C because it carries the mud guess. Per station: Utqiagvik 0.000, Longyearbyen 0.292."
+        },
+        "rain": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.026,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, winter, rain = (P/N) x (1 - snow) from fetched normals. Per station: Utqiagvik 0.000, Longyearbyen 0.026."
+        },
+        "mud": {
+          "low": 0.0,
+          "mid": 0.0,
+          "high": 0.017,
+          "grade": "D",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, winter, mud = k x rain with k = 0.652 (educated guess, see A.spring.clear). Per station: Utqiagvik 0.000, Longyearbyen 0.017."
+        },
+        "snow": {
+          "low": 0.665,
+          "mid": 1,
+          "high": 1,
+          "grade": "B",
+          "source": "derived:weather-from-normals",
+          "note": "Zone E, winter, snow = S/N from fetched normals. Per station: Utqiagvik 1.000, Longyearbyen 0.665."
+        }
+      }
+    }
+  },
   "restDayFraction": {
     "low": 0.1,
     "mid": 0.143,

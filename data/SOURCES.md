@@ -19,6 +19,7 @@ families, their licenses, and the derivation methods.
 | Doctrine | Military histories, staff-college and service publications | Cited per profile. |
 | Mechanics constants | Dupuy (Numbers, Predictions and War; Evolution of Weapons and Warfare), Engels (Alexander the Great and the Logistics of the Macedonian Army), van Creveld (Supplying War), Lynn, US Army FM / ATP logistics planning factors | Cited per constant. |
 | Terrain | AWS Terrain Tiles, NASA GIBS (Blue Marble, MODIS land cover), Natural Earth | Open data. |
+| Climate | WMO 1991-2020 climate normals (NOAA NCEI accession 0253808), Beck et al. 2018 Koppen-Geiger map (CC BY 4.0) | Weather odds by climate zone, `derived:weather-from-normals`. |
 | Historical borders | aourednik/historical-basemaps (GPL-3.0) | Approximate by construction. |
 
 ## Citation formats
@@ -168,6 +169,18 @@ not adapted to (Russia, Afghanistan). Note says which applies.
   https://archive.org/details/DTIC_AD0902830, App. E Table 2) rwi = rm on all six non-rugged rows
   and lies 0.1-0.2 below rm on the three rugged rows; low = lowest rm in the class minus 0.2.
   Grade at most C: rm measures the mobility of an attacking force in the QJM, not a march rate.
+- `derived:weather-from-normals` - `movement.weatherOddsByZone` leaves. For each local season
+  (DJF/MAM/JJA/SON, southern stations shifted six months like `seasonOf`) with N days:
+  snow = S/N, rain = (P/N) x (1 - snow), mud = k x rain, clear = 1 - rain - mud - snow, where
+  P = days with precipitation >= 1 mm and S = days with snow (snow cover >= 1-2 cm where the
+  station reports it, else days with snowfall, a lower bound on cover), both from fetched
+  climate normals (WMO 1991-2020 normals, NOAA NCEI accession 0253808,
+  https://www.nodc.noaa.gov/archive/arc0216/0253808/1.1/data/0-data/, or a Wikipedia climate
+  box that cites NOAA or a national service). k = mud/rain of the old Berlin table (spring
+  0.517, summer 0.167, autumn 0.6, winter 0.652) is an educated guess, so mud is always grade D
+  and clear at most C. mid = the zone's primary station, low/high = min/max over the zone's
+  stations. Zone lookup: Beck et al. 2018 Koppen-Geiger 0.5 deg map, doi:10.1038/sdata.2018.214
+  (CC BY 4.0), see the note of `movement.weatherOddsByZone.A.spring.clear`.
 
 ## Generated modern base snapshots
 
