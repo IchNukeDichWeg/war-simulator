@@ -14,7 +14,7 @@ import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
   RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
   FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS, BREAKPOINT_FROM_MODEL_RULES,
-  REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT,
+  REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT, CONTESTED_START_OVERLAP,
 } from './constants';
 import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
 import { overridePathProblem, overrideValueProblem } from './overridePath';
@@ -576,6 +576,10 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
   // ---- 5: initial control ----------------------------------------------------------------------
   const control0 = new Uint8Array(grid.n).fill(255);
   const owner0 = new Int16Array(grid.n).fill(-1);
+  // land both sides' polygons claim: neutral at the start, and either side may deploy on it
+  const contested = new Uint8Array(grid.n);
+  // per side: the member whose border polygon claims the cell (-1 none)
+  const claim: [Int16Array, Int16Array] = [new Int16Array(grid.n).fill(-1), new Int16Array(grid.n).fill(-1)];
   const starts: [Start[], Start[]] = [[], []];
   for (const side of [0, 1] as const) {
     const s = opts.starts?.[side] ?? scenario.sides[side].startPositions?.map((p) => ({ ...p, share: 1 }));
@@ -598,19 +602,50 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       const c = members[mi].snap.capital;
       return c ? haversineKm(c.lat, c.lon, grid.lat[cell], grid.lon[cell]) : 1e9;
     };
-    // Polygons first; members without a polygon (border "none") then claim a disc of their
-    // area around the capital, nearest cells first, never taking a cell another member's
-    // polygon already holds.
+    // Polygons first, per side: within a side, overlapping members' cells go to the nearer
+    // capital. Members without a polygon (border "none") then claim a disc of their area around
+    // the capital, nearest cells first, never taking a cell another member's polygon holds.
     const noPoly: MemberRT[] = [];
     for (const mr of members) {
       const mp = data.borders?.[mr.snapId];
       if (!mp || !mp.length) { noPoly.push(mr); continue; }
+      // OFF: one claim array for both sides, the nearer capital takes any overlap
+      const cl = claim[CONTESTED_START_OVERLAP ? mr.side : 0];
       rasterizeMultiPolygon(grid, mp, (cell) => {
         if (!grid.land[cell]) return;
-        const o = owner0[cell];
+        const o = cl[cell];
         if (o >= 0 && o !== mr.idx && capDist(o, cell) <= capDist(mr.idx, cell)) return;
-        owner0[cell] = mr.idx;
+        cl[cell] = mr.idx;
       });
+    }
+    // Overlap between the sides (Rome 117 over Italy 2026, Egypt 1274 BCE over Israel 2026) is
+    // land both claim, so it starts contested (neutral) and goes to whoever stands on it in
+    // play. Exception: a capital and its ring of 8 neighbours belong to the side whose capital
+    // it is; the ring is the zone of control a garrison there exerts on day 1 (section 12).
+    // Both sides' capitals in one cell (Rome, Tenochtitlan / Mexico City) stay contested.
+    // Before this, the nearer capital won the overlap and a tie went to side 0, so Jerusalem
+    // started Egyptian and Rome Roman, and the capital "fell" on day 1 without a fight.
+    const capZone: [Int16Array, Int16Array] = [new Int16Array(grid.n).fill(-1), new Int16Array(grid.n).fill(-1)];
+    const capCellOf = new Int32Array(members.length).fill(-1);
+    for (const mr of members) {
+      const cap = mr.snap.capital;
+      if (!cap || !inBbox(grid.bbox, cap.lat, cap.lon)) continue;
+      const c = nearestLand(grid, cap.lat, cap.lon, 2);
+      if (c < 0) continue;
+      capCellOf[mr.idx] = c;
+      const z = capZone[mr.side];
+      z[c] = mr.idx;
+      for (let d = 0; d < 8; d++) { const j = grid.nb[c * 8 + d]; if (j >= 0 && grid.land[j] && z[j] < 0) z[j] = mr.idx; }
+    }
+    for (let i = 0; i < grid.n; i++) {
+      const a = claim[0][i], b = claim[1][i];
+      if (!CONTESTED_START_OVERLAP) owner0[i] = a;
+      else if (a >= 0 && b >= 0) {
+        const za = capZone[0][i], zb = capZone[1][i];
+        if (za >= 0 && zb < 0) owner0[i] = za;
+        else if (zb >= 0 && za < 0) owner0[i] = zb;
+        else contested[i] = 1;
+      } else if (a >= 0 || b >= 0) owner0[i] = a >= 0 ? a : b;
     }
     for (const mr of noPoly) {
       const cap = mr.snap.capital;
@@ -631,11 +666,23 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       const capCell = nearestLand(grid, cap.lat, cap.lon, 2);
       if (capCell >= 0 && !cand.some((c) => c[1] === capCell)) cand.unshift([0, capCell]);
       let n = 0;
-      for (const [, i] of cand) if (owner0[i] < 0) { owner0[i] = mr.idx; n++; }
+      for (const [, i] of cand) if (owner0[i] < 0 && !contested[i]) { owner0[i] = mr.idx; n++; }
       warnings.push(`${mr.name}: no border polygon; territory approximated as a disc of ${Math.round(areaKm2).toLocaleString('en-US')} km2 (r ${Math.round(rKm)} km) around the capital, ${n} cells.`);
+    }
+    // A capital cell the enemy claims (its polygon reaches over it, or the cell centre falls just
+    // outside the own polygon) is still the own side's at the start; a shared cell stays contested.
+    if (CONTESTED_START_OVERLAP) for (const mr of members) {
+      const c = capCellOf[mr.idx];
+      if (c < 0) continue;
+      const other = capZone[1 - mr.side][c] >= 0 && capCellOf[capZone[1 - mr.side][c]] === c;
+      if (other) { owner0[c] = -1; contested[c] = 1; }
+      else if (contested[c] || (owner0[c] >= 0 && members[owner0[c]].side !== mr.side)) { owner0[c] = mr.idx; contested[c] = 0; }
     }
     for (let i = 0; i < grid.n; i++) if (owner0[i] >= 0) control0[i] = members[owner0[i]].side;
   }
+  // a member deploys at its own places in its own or in contested land (a contested shared
+  // capital gets both garrisons, and the first battle there decides who holds it)
+  const deployable = (side: number, cell: number) => control0[cell] === side || contested[cell] === 1;
   const startCells: [number, number] = [0, 0];
   for (let i = 0; i < grid.n; i++) {
     if (control0[i] !== 255) startCells[control0[i]]++;
@@ -674,7 +721,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       mr.seaDependent = comp.visited > 0 && comp.visited <= ISLAND_CELL_LIMIT;
     }
     let share = 1;
-    const ownPlaces = places.filter((p) => p.member === mr.idx && control0[p.cell] === mr.side);
+    const ownPlaces = places.filter((p) => p.member === mr.idx && deployable(mr.side, p.cell));
     if (battleMode || capIn) {
       share = 1;
     } else if (cap) {
@@ -772,7 +819,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     if (ss.length && ss.some((x) => x >= 0)) {
       cells = ss; weights = startShares[mr.side];
     } else if (mr.oneWayDays === 0 || mr.entryCell < 0) {
-      const own = places.filter((p) => p.member === mr.idx && control0[p.cell] === mr.side);
+      const own = places.filter((p) => p.member === mr.idx && deployable(mr.side, p.cell));
       if (own.length) {
         const known = own.filter((p) => p.pop > 0).map((p) => p.pop).sort((a, b) => a - b);
         const med = known.length ? known[Math.floor(known.length / 2)] : 1;
@@ -780,7 +827,7 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
         weights = own.map((p) => (p.pop > 0 ? p.pop : med));
       } else {
         const ownCells: number[] = [];
-        for (let i = 0; i < grid.n; i++) if (owner0[i] === mr.idx) ownCells.push(i);
+        for (let i = 0; i < grid.n; i++) if (owner0[i] === mr.idx || (contested[i] && claim[mr.side][i] === mr.idx)) ownCells.push(i);
         if (ownCells.length) {
           const step = Math.max(1, Math.floor(ownCells.length / Math.min(ownCells.length, 16)));
           for (let i = 0; i < ownCells.length; i += step) cells.push(ownCells[i]);

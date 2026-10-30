@@ -106,6 +106,7 @@ export interface MemberState {
   productionDamage: number;     // multiplier from nuclear city strikes
   capitalLost: boolean;
   capitalHeldDays: number;      // days the capital has been held by the enemy
+  capitalReached: boolean;      // an enemy formation has been on or next to the capital since the enemy took it
   breakpoint: number;           // this seed's battle breakpoint (cohesion-shifted)
   retreat: number;              // withdraw threshold: WITHDRAW_SHARE_OF_BREAKPOINT x breakpoint (SYMMETRIC_DOCTRINE_BREAKPOINT)
 }

@@ -418,3 +418,22 @@ export const AI_RATIOS_FROM_MODEL_RULES = true;
  *  1940 75% -> 70%, x3.88 -> x5.10. Presets (24 runs, invariants clean): rome-vs-france-equalized
  *  seed 1 changes winner. */
 export const DAYLIGHT_MARCH_HOURS = true;
+/** Initial control (ENGINE.md section 2.5): land both sides' polygons claim starts contested
+ *  (neutral, either side deploys at its own places there); a capital cell and its 8-neighbour ring
+ *  go to the side whose capital it is, a capital cell both sides share stays contested. OFF: the
+ *  nearer capital takes every overlap and side 0 wins a tie, so a cross-era matchup started with
+ *  the defender's capital enemy-held and ended on day 1 without a battle (red team C4). Measured
+ *  (20 seeds each, with CAPITAL_CAPTURE_NEEDS_REACH): Egypt 1274 BCE vs Israel 2026 Egypt 20/20 on
+ *  day 1 -> Israel 20/20, days 4-13; Rome 117 vs Italy 2026 Rome 20/20 day 1 -> Italy 20/20 day 1
+ *  after a battle in Rome; Aztecs vs Mexico 2026 Aztecs 20/20 day 1 -> Mexico 20/20 day 1 by Aztec
+ *  army collapse. Backtest (voronoi start control, untouched) 18/13/21 unchanged. Presets (12 x 2
+ *  seeds): winners unchanged; rome-117-vs-spain-2026 81/86 -> 76/66 days, rome-vs-france-equalized
+ *  187/150 -> 123/128 days. */
+export const CONTESTED_START_OVERLAP = true;
+/** A capital counts as captured only once an enemy formation has been on it or next to it (the
+ *  besieger whose zone of control takes a reduced fortress) since the enemy took it; a capital that
+ *  passed by encirclement alone does not. ENGINE.md section 12 defines capture as an enemy
+ *  formation holding the cell. Requiring the formation ON the cell was rejected: United Kingdom vs
+ *  Iceland, Reykjavik is reduced and taken from the next cell on day 45. Backtest 18/13/21
+ *  unchanged. */
+export const CAPITAL_CAPTURE_NEEDS_REACH = true;

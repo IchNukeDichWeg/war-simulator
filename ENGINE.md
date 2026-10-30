@@ -43,10 +43,22 @@ assumptions.
    terrain, max relief, any-river) until it fits. Square lat/lon grid with 8
    neighbours; distances are great-circle km between cell centres.
 5. **Initial control.** Each member's border polygon is rasterised onto the
-   theater grid (cell centre in polygon). Unclaimed land is neutral.
+   theater grid (cell centre in polygon). Unclaimed land is neutral. Where
+   members of one side overlap, the cell goes to the nearer capital. Where the
+   two sides' polygons overlap (cross-era matchups: Rome 117 over Italy 2026,
+   Egypt 1274 BCE over Israel 2026), the cell is contested: neutral at the
+   start, and it goes to whoever stands on it in play. Exceptions: a capital
+   cell and its ring of 8 neighbours belong to the side whose capital it is
+   (the ring is the zone of control its garrison exerts on day 1), and a
+   capital cell stays its own side's even when only the enemy's polygon covers
+   it. When both sides' capitals fall in one cell (Rome, Tenochtitlan and
+   Mexico City), that cell is contested. Members deploy at their own places in
+   own or contested land, so a shared capital starts with both garrisons in it.
+   (`CONTESTED_START_OVERLAP`; OFF: the nearer capital takes every overlap
+   and side 0 wins a tie.)
    Members without a polygon (`territory.border` "none") claim the land cells
    within sqrt(`areaKm2`/pi) km of their capital, nearest first, never taking a
-   cell another member's polygon claimed; a setup warning says so. Backtest
+   polygon-claimed or contested cell; a setup warning says so. Backtest
    campaigns split control by nearest start position instead.
 6. **Commitment and power projection.** For each member, the share of its forces
    that can be brought to the theater: 100% if its capital is inside the theater
@@ -495,7 +507,10 @@ fix round 1, seed 1, 76 isolated cells at day 119, 16 with the rule).
 
 Victory conditions per scenario: capital captured (an enemy formation holds the
 capital cell uncontested for 1 day; a fortified capital must be besieged for
-`daysToReduce` or stormed), territory share, army collapse (personnel below
+`daysToReduce` or stormed; the capital counts as captured only once an enemy
+formation has been on it or next to it since the enemy took it, so a capital
+that passes by encirclement alone with no enemy force near does not,
+`CAPITAL_CAPTURE_NEEDS_REACH`), territory share, army collapse (personnel below
 `armyCollapsePersonnelFraction` 0.5 of all fielded, re-derived from ten wars
 outside the backtest set, grade C), or side morale collapse, time limit (draw unless
 one side holds clearly more of the other's territory and strength).

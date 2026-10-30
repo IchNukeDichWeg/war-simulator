@@ -90,6 +90,7 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
       productionDamage: 1,
       capitalLost: false,
       capitalHeldDays: 0,
+      capitalReached: false,
       ...(() => {
         // SYMMETRIC_DOCTRINE_BREAKPOINT: the doctrine's threshold scaled by this seed's era draw is
         // the break, withdrawal comes just before it; OFF: the era draw is the break and the

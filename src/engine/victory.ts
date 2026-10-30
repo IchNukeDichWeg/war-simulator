@@ -8,7 +8,7 @@ import { lossFraction } from './formations';
 import { rule } from './mech';
 import { LC } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -63,7 +63,13 @@ export function controlPhase(ctx: Ctx): void {
   for (const mr of S.members) {
     if (mr.capitalCell < 0) continue;
     const ms = st.members[mr.idx];
-    const held = st.control[mr.capitalCell] === 1 - mr.side && sc.occ[mr.side][mr.capitalCell] === 0;
+    // Captured only once an enemy formation has reached it (stood on it, or next to it as the
+    // besieger whose zone of control takes a reduced fortress): a capital that passed by
+    // encirclement alone, with no enemy force near, takes no city.
+    const enemyHolds = st.control[mr.capitalCell] === 1 - mr.side && sc.occ[mr.side][mr.capitalCell] === 0;
+    if (!enemyHolds) ms.capitalReached = false;
+    else if (sc.claim[1 - mr.side][mr.capitalCell] > 0) ms.capitalReached = true;
+    const held = enemyHolds && (ms.capitalReached || !CAPITAL_CAPTURE_NEEDS_REACH);
     if (held) {
       ms.capitalHeldDays++;
       if (!ms.capitalLost) {
