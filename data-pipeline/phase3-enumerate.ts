@@ -56,6 +56,11 @@ const GENERIC_TOKENS = new Set(('empire kingdom dynasty republic state states of
 const KNOWN_SAME: Record<string, { nationId: string; why: string }> = {
   'hb:1492:Mexihcah (Triple Alliance)': { nationId: 'aztec-empire', why: 'the Triple Alliance is the Aztec Empire (snapshot 1519)' },
   'hb:1930:White Russia': { nationId: 'ussr', why: 'the 1930 basemap labels the whole USSR polygon (19.5M km2) "White Russia"; the 1920 one (129k km2) is Byelorussia and stays' },
+  // The four tetrarchs' shares of one empire. Each is a minority of the Roman border, so the
+  // mutual-overlap rule cannot see them; until the rome-395 audit moved its border to the 400
+  // basemap they were dropped by exact ref, and the committed list depended on that.
+  ...Object.fromEntries(['Diocletianus', 'Maximian', 'Galerius', 'Constantinus'].map((t) => [`hb:300:Rome (${t})`,
+    { nationId: 'rome', why: `the 300 basemap splits the Roman Empire into the tetrarchs' shares; ${t}'s is part of the researched Roman Empire of the iron era (snapshots 117, 395), not a state` }])),
 };
 
 /** Candidate counts are reported at each of these minimum areas (km2). */

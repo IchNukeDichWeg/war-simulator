@@ -14,7 +14,7 @@ Confidence score = mean grade over every numeric value (A=4 ... D=1), shown as t
 
 Every historical-basemaps polity of at least 50,000 km2 without a snapshot, one per polity per era at its largest extent (`data-pipeline/phase3-enumerate.ts`), derived by `data-pipeline/generate-phase3.ts` from `data/reference/phase3-inputs.json`. Low confidence: area, region and year only; methods in data/SOURCES.md "Phase 3 derivation inputs".
 
-- Derived snapshots: **904** of 970 enumerated polity-eras (62 skipped: a same-name snapshot exists in that era)
+- Derived snapshots: **904** of 966 enumerated polity-eras (62 skipped: a same-name snapshot exists in that era)
 - Below 50,000 km2, not derived: 604 polity-eras
 
 | Era | Derived | state | indigenous | colonial | successor | settler | Mean confidence |
