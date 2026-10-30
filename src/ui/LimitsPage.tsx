@@ -1,5 +1,5 @@
-// Honest-limits page. Initial text by the frontend; the orchestrator replaces
-// the section bodies with the final validated content (VALIDATION.md, COVERAGE.md).
+// Honest-limits page. The section bodies summarise VALIDATION.md (backtest, QA, red team),
+// COVERAGE.md and the known limits in data/SOURCES.md; keep them in step with those files.
 import { GradeBadge } from './Grade';
 import { store, useStore } from './store';
 
@@ -57,6 +57,33 @@ export function LimitsPage() {
         </section>
 
         <section>
+          <h3>How it scores against history</h3>
+          <p>24 historical battles from Marathon to Iraq 2003 are rerun over 20 seeds each (VALIDATION.md). The model picks the historical winner in 18 of 24, gets the loss ratio within a factor of 3 in 13 and the duration within a factor of 3 in 21. The pass mark set before building was 18 winners that hold up when any single grade-D constant moves across its range; 16 do, so <b>the validation gate is not met</b>.</p>
+          <ul>
+            <li>Marathon: the Athenians are out-powered in the model and lose. Adrianople: the Gothic cavalry arriving on the flank mid-battle is not modelled.</li>
+            <li>Carrhae and Mohi: the winners broke contact and harassed; the model scores breaking contact as losing.</li>
+            <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
+            <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
+            <li>Loss ratios are the weakest output: 11 of 24 are off by more than a factor of 3.</li>
+            <li>The Blenheim result still turns on one grade-D constant; moving it across its range flips the winner.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Known model gaps</h3>
+          <ul>
+            <li>Nuclear use fires only on lost home territory or a besieged capital. There is no deterrence: nuclear powers invade each other freely, and a collapsing nuclear-armed army does not escalate.</li>
+            <li>Neutral territory is transparent. Armies march across third countries without transit rights.</li>
+            <li>Time-slice mode currently gives the same engine result as native mode.</li>
+            <li>Wars between powers separated by an ocean (USA vs China 2026, Japan vs USA 1941) end as draws on the time limit in every tested seed.</li>
+            <li>Supply at the end of a long line can fall to zero, and modern formations without ammunition and fuel inflict almost nothing: the USA needs about 100 days and thousands of casualties to take the Vatican's 135 guards.</li>
+            <li>The defending AI can leave its capital empty against a seaborne landing, which then falls to a siege without a battle.</li>
+            <li>The ranked reasons list the winner's advantages first, so the top line can be a small factor while a larger one favoured the loser. Read the percentages, not the order.</li>
+            <li>Scrubbing far back in a very long run replays up to 960 days, which can take several seconds.</li>
+          </ul>
+        </section>
+
+        <section>
           <h3>Weakest data</h3>
           <ul>
             <li>Ancient and early medieval army sizes. Chroniclers' figures are unreliable; modern estimates often span a factor of two or more (grade C or D).</li>
@@ -65,6 +92,9 @@ export function LimitsPage() {
             <li>Modern equipment readiness: inventories are public, how much of it works is not.</li>
             <li>Historical borders are approximate polygons from an open dataset and are drawn as such.</li>
             <li>The terrain grid is 0.25 degrees (about 25 km). Battles hinge on features far smaller than one cell.</li>
+            <li>Phase 3 derived snapshots (about 900 polities, labelled in every list) are formulas, not research. Population comes from a modern country's series where the borders match, else from regional density, which leaves some deserts far too populous (the 1945 Libyan provinces, Western Sahara, Arabia 1878) and lets a union that matches one member drop the rest (Denmark-Norway). Horses are absent only before contact; when each people adopted them later is not modelled, and forest-zone African cavalry comes from regional peers.</li>
+            <li>Generated 2026 snapshots of states without research (marked auto-base) take force mix and ratings from regional medians at grade D. Several microstates are recorded with no armed forces and fall without a fight.</li>
+            <li>Some editable values (GDP, urbanization, ports and others) are not used by the engine; the editor marks them.</li>
           </ul>
         </section>
 
