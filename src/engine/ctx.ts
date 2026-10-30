@@ -19,8 +19,6 @@ export interface Battle {
   airLossFrac: [number, number];
   casualties: [number, number];
   winner: 0 | 1 | -1;
-  /** BREAK_CONTACT_INTACT: 1 for a side that left this battle by choice, all of it, undefeated. */
-  brokeOff: [number, number];
   endRound: number;
 }
 

@@ -34,9 +34,6 @@ export interface ModelRules {
     pursuitDisengageShare: EraRule;
     /** Extra loss share of the beaten force's engaged strength from a foot-only pursuit. */
     footPursuitLossFloor: MV;
-    /** Enemy mobile strength, as a share of the withdrawing side's, from which it can pin a mobile
-     *  force that breaks contact (BREAK_CONTACT_INTACT). */
-    breakContactPinRatio: MV;
   };
   river: { riverCrossingDelayDays: EraRule };
   attrition: { returnToDutyDays: EraRule; diseaseDeathShareOfAdmissions: EraRule };

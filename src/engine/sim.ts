@@ -97,10 +97,10 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
         // doctrine only moves the withdrawal, capped below the break
         if (SYMMETRIC_DOCTRINE_BREAKPOINT) {
           const breakpoint = clamp(mr.retreatThreshold * factor(mr.bpMV, bpU) / Math.max(1e-9, mr.bpMV.mid) + mr.bpShift, 0.02, 0.98);
-          return { breakpoint, eraBreak: clamp(factor(mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98), retreat: clamp(WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint, 0.01, 0.95) };
+          return { breakpoint, retreat: clamp(WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint, 0.01, 0.95) };
         }
         const breakpoint = clamp(factor(mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98);
-        return { breakpoint, eraBreak: breakpoint, retreat: clamp(Math.min(mr.retreatThreshold, WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint), 0.01, 0.95) };
+        return { breakpoint, retreat: clamp(Math.min(mr.retreatThreshold, WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint), 0.01, 0.95) };
       })(),
     })),
     losses: [new Float64Array(NLC), new Float64Array(NLC)],

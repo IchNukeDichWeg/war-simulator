@@ -456,27 +456,3 @@ export const CAPITAL_CELL_OWN_AT_START = true;
  *  winner fell 90% -> 55%: a state with an army defends its cities beyond its field formations.
  *  This rule: backtest 18/13/21 unchanged, presets unchanged. */
 export const UNARMED_FORTRESS_OPEN = true;
-/** A formation may leave a battle by choice: its doctrine withdraws before the era's break
- *  (retreatThreshold under the era mid, the behaviour those doctrine notes source), no manoeuvre
- *  role is slower than the enemy's fastest, a way out exists, and the enemy cannot pin it (no air
- *  support, mobile strength under modelRules.battle.breakContactPinRatio of its own). Such a
- *  formation withdraws at its doctrine threshold, but its cohesion goes at the era's break: rout
- *  and the morale scale use max(breakpoint, era draw). If all of a side leaves this way the battle
- *  ends without a loser: no defeat shock, no pursuit, no battle win. It comes back the next day in
- *  battle mode (war mode: the usual retreat and recovery) and the withdrawal re-arms for another
- *  retreat share of loss; engLoss stays cumulative inside a battle, because the era breakpoints are
- *  loser casualty shares of a whole battle. OFF: every withdrawal of a whole side is a defeat.
- *  QA round 5 attributed Carrhae and Mohi to this. Traced at a35d728 (20 seeds): the loser was ahead
- *  on heads lost in the fight in every seed it lost and 35/37 losing sides had no rout; both have
- *  the same top rate as the enemy (56 km/day), so the mobEdge test never fired, and the pursuit that
- *  followed took 7,660 Mongols. Measured (20 seeds, a35d728): 18/13/21 -> 19/14/21, only two cases
- *  move. Mohi 15% -> 95%, x12.96 -> x1.21, 1.6 -> 1.7 days, with 1 draw at the 3-day limit: 4 of 20
- *  seeds actually break off, the rest win because Mongol morale no longer runs out at a
- *  doctrine-lowered break. Carrhae stays 0%, x20.06 -> x18.31, 1.3 -> 2.7 days: the Parthians break
- *  off in 20/20 seeds and then rout at the era break, since the exchange falls to about even on
- *  day 2 and Rome's "holds" 0.25 needs 1.6:1 to reach first. Carrhae needs horse-archer standoff or
- *  a different Roman threshold, not this rule (with roman-imperial at 0.14: 20/20). Pin ratio
- *  low/mid/high: 18/14/21, 19/14/21, 19/14/21; low takes Mohi to 55% (11/7/2), a fail, so Mohi is
- *  not a robust pass. Breakpoint quantile low/mid/high: 17/15/20, 19/15/21, 16/12/24 (was 17/15/20, 18/14/21,
- *  16/12/24); at high Mohi draws 12/20 at its 3-day limit. Presets (24 runs): result hashes identical, no formation qualifies. */
-export const BREAK_CONTACT_INTACT = true;
