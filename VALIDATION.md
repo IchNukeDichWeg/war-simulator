@@ -689,3 +689,52 @@ where round 5 screened at 10):
   drops below 60% on 9 grade-D constants. Reproduced by hand for two of them:
   `attrition.starvationMultiplier` at 5 and `attrition.diseaseDaily.7` at 0.008.
 - Round 5's 16 was overstated. France already flipped at `6936ffc`, so that figure was at most 15.
+
+## QA round 7: sourcing the constants that decide Blenheim and France
+
+QA round 6 named 10 grade-D constants that flip Blenheim or France 1940. A researcher with no access to
+the backtest sourced 8 of them; `armorMatrix.8.8` and `morale.supplyShortfallPenalty` have no source.
+Effect of each proposed mid on the 24 cases at 20 seeds, against 18/13/21:
+
+| Constant | Proposed mid (was) | Grade | Result | Applied |
+| --- | --- | --- | --- | --- |
+| `attrition.diseaseDaily.7` | 0.0025 (0.004) | B | 18/13/22 | yes |
+| `logistics.carriedDaysFood.8` | 6 (5) | C after QA | 18/13/21 | yes |
+| `lethality.tli.cavalry_light.7` | 380 (350) | C | 17/13/21, France 55% | yes |
+| `lethality.tli.cavalry_light.8` | 555 (400) | D after QA | 18/13/21, France 60% | reverted |
+| `attrition.starvationMultiplier` | 2.5 (2.5), high 6 | D | 18/13/21 | no |
+| `lethality.tli.aircraft_strike.8` | 2.3M (2.5M) | D | 18/13/22, France 65% | no |
+| `lethality.armorMatrix.6.5` | 0.96 (1.0) | D | 17/13/21, Blenheim 55% | no |
+| `combat.specialEffects.massedArtillery` | 1.4 (1.2) | D | 17/13/22, France 50% | no |
+| All 8 together | | | 16/13/22 | no |
+
+The rule for what went in: a value is replaced only if the evidence raises it above grade D, since a
+guess does not replace a guess. **That rule was chosen after these results were seen**, and it keeps out
+the two values that hurt most, so it is not a neutral one. QA read all four derivations it kept out and
+found D correct for each, which is the only support it has. Read the all-8 line as the honest
+sensitivity: Blenheim and France lean on guessed values.
+
+Final state at `3b053d3`: **18/13/22**, three constants applied. QA measured `ece72e4`, with
+`cavalry_light.8` still applied; the later revert did not change the criteria counts. Its robust count
+of **16** (14 counting grade-D era breakpoints) was not re-screened after the revert. It should hold
+(inferred), since at its old values that constant flipped only France, which already fails.
+
+| Check at `ece72e4` | Result |
+| --- | --- |
+| Reasons | Stalingrad PARTLY (24 -> 27 days, duration now passes, from `diseaseDaily.7` alone); France PARTLY, thin; Blenheim RIGHT, thin |
+| Fails the robust screen | Blenheim (`armorMatrix.6.5` 0.95, 50%), France (`starvationMultiplier` 5, 40%) |
+| Also fails with era breakpoints | Hastings, Gulf War |
+| **Gate (18 robust)** | **not met** |
+
+Corrections and limits from this round:
+- The message of `ece72e4` says France went from 60 to 50 days. That is a bimodal median artefact: France
+  got slower.
+- France still drops to 35% at the sourced high of `diseaseDaily.7`. That constant is grade B now, so the
+  screen no longer counts it.
+- `cavalry_light.7` (380) now exceeds `cavalry_heavy.7` (370), which is still grade D on the old method.
+- `diseaseDaily.7` now sits under `diseaseDaily.8` (0.0028), so the series is not monotonic with tech.
+- Twenty seeds cannot resolve a 60% line. At 400 seeds France is 81% and Blenheim 74%, against 70% and 65%
+  at 20. At 400 seeds Blenheim survives its constant (63.1 +/- 3.3), while France fails
+  `aircraft_strike.8` low as well (52.8). The screen stays at 20 seeds so that the count compares with
+  earlier rounds; a change of instrument would be its own campaign.
+

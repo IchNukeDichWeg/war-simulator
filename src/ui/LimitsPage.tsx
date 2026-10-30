@@ -65,7 +65,7 @@ export function LimitsPage() {
             <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
             <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
             <li>Loss ratios are the weakest output: 11 of 24 are off by more than a factor of 3.</li>
-            <li>Blenheim turns on one grade-D constant and France 1940 on nine (attrition and disease rates among them): moving one across its range flips the winner. Counting the grade-D era breakpoints too, 14 winners hold up, not 16.</li>
+            <li>Blenheim and France 1940 each flip when one grade-D constant moves across its range, and applying all the researched replacements for those guesses, including ones still graded D, takes both below the winner line. Counting the grade-D era breakpoints too, 14 winners hold up, not 16. At 20 seeds per battle a winner near the 60% line is partly noise.</li>
           </ul>
         </section>
 
