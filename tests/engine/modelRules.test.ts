@@ -4,6 +4,7 @@ import { eraOfYear, rule, ruleMV, validateMechanics } from '../../src/engine/mec
 import { fixtureMechanics, mv } from '../fixtures/mechanics.fixture';
 import type { EraRule, MV } from '../../src/types/mechanics';
 import { createSim } from '../../src/engine/sim';
+import { WITHDRAW_SHARE_OF_BREAKPOINT } from '../../src/engine/constants';
 import { basicScenario } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
 
@@ -42,17 +43,23 @@ describe('battle breakpoint draw', () => {
     }
     return { ...d, mechanics: m };
   };
-  const bps = (sim: ReturnType<typeof createSim>) => sim.ctx.st.members.map((ms, i) => ms.breakpoint - sim.setup.members[i].bpShift);
-  it('a fixed quantile gives low, mid and high', () => {
+  // SYMMETRIC_DOCTRINE_BREAKPOINT: break = doctrine retreatThreshold x bp_era(u) / bp_era(mid) + cohesion shift
+  const bps = (sim: ReturnType<typeof createSim>) => sim.ctx.st.members.map((ms, i) => (ms.breakpoint - sim.setup.members[i].bpShift) / sim.setup.members[i].retreatThreshold);
+  it('a fixed quantile scales the doctrine threshold by low, mid and high over mid', () => {
     const d = withRange();
     for (const [q, v] of [[0, 0.1], [0.5, 0.2], [1, 0.4]] as const) {
-      for (const b of bps(createSim(d, basicScenario(3), { breakpointQuantile: q }))) expect(b).toBeCloseTo(v, 12);
+      for (const b of bps(createSim(d, basicScenario(3), { breakpointQuantile: q }))) expect(b).toBeCloseTo(v / 0.2, 12);
     }
+  });
+  it('withdrawal comes at WITHDRAW_SHARE_OF_BREAKPOINT of the break, also for a high threshold', () => {
+    const d = withRange();
+    const sim = createSim(d, basicScenario(3), { breakpointQuantile: 1 });
+    for (const ms of sim.ctx.st.members) expect(ms.retreat).toBeCloseTo(WITHDRAW_SHARE_OF_BREAKPOINT * ms.breakpoint, 12);
   });
   it('the per-seed draw stays in range, repeats per seed and varies across seeds', () => {
     const d = withRange();
     const draws = [1, 2, 3, 4, 5, 6].map((s) => bps(createSim(d, basicScenario(s)))[0]);
-    for (const b of draws) { expect(b).toBeGreaterThanOrEqual(0.1); expect(b).toBeLessThanOrEqual(0.4); }
+    for (const b of draws) { expect(b).toBeGreaterThanOrEqual(0.5 - 1e-12); expect(b).toBeLessThanOrEqual(2 + 1e-12); }
     expect(bps(createSim(d, basicScenario(4)))[0]).toBe(draws[3]);
     expect(new Set(draws).size).toBeGreaterThan(1);
   });

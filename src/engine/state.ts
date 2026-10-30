@@ -107,7 +107,7 @@ export interface MemberState {
   capitalLost: boolean;
   capitalHeldDays: number;      // days the capital has been held by the enemy
   breakpoint: number;           // this seed's battle breakpoint (cohesion-shifted)
-  retreat: number;              // withdraw threshold: min(doctrine retreatThreshold, 0.9 x breakpoint)
+  retreat: number;              // withdraw threshold: WITHDRAW_SHARE_OF_BREAKPOINT x breakpoint (SYMMETRIC_DOCTRINE_BREAKPOINT)
 }
 
 export interface BattleRec { lat: number; lon: number; intensity: number }

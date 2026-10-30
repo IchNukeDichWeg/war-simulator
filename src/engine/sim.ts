@@ -13,7 +13,7 @@ import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './
 import { spawnFormation } from './formations';
 import { NR } from './roles';
 import { haversineKm } from './grid';
-import { AI_MAX_OBJECTIVES, RETURN_RING_DAYS } from './constants';
+import { AI_MAX_OBJECTIVES, RETURN_RING_DAYS, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT } from './constants';
 import { productionPhase } from './production';
 import { aiPhase } from './ai';
 import { movementPhase } from './movement';
@@ -83,8 +83,15 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
       capitalLost: false,
       capitalHeldDays: 0,
       ...(() => {
+        // SYMMETRIC_DOCTRINE_BREAKPOINT: the doctrine's threshold scaled by this seed's era draw is
+        // the break, withdrawal comes just before it; OFF: the era draw is the break and the
+        // doctrine only moves the withdrawal, capped below the break
+        if (SYMMETRIC_DOCTRINE_BREAKPOINT) {
+          const breakpoint = clamp(mr.retreatThreshold * factor(mr.bpMV, bpU) / Math.max(1e-9, mr.bpMV.mid) + mr.bpShift, 0.02, 0.98);
+          return { breakpoint, retreat: clamp(WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint, 0.01, 0.95) };
+        }
         const breakpoint = clamp(factor(mr.bpMV, bpU) + mr.bpShift, 0.02, 0.98);
-        return { breakpoint, retreat: clamp(Math.min(mr.retreatThreshold, 0.9 * breakpoint), 0.01, 0.95) };
+        return { breakpoint, retreat: clamp(Math.min(mr.retreatThreshold, WITHDRAW_SHARE_OF_BREAKPOINT * breakpoint), 0.01, 0.95) };
       })(),
     })),
     losses: [new Float64Array(NLC), new Float64Array(NLC)],

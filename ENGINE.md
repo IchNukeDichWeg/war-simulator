@@ -144,9 +144,16 @@ and field fortification are QJM alternatives, so the largest applies
 (`BattleSide.prepared`, default false, `PREPARED_FROM_CASE`); in war mode a
 defender that stood still for a day is prepared. Measured together: winner
 12 -> 14, loss ratio 13 -> 16, duration 21 -> 22 of 24.
-The withdraw threshold is min(`retreatThreshold`, 0.9 x effective breakpoint)
-with effective breakpoint = breakpoint + `cohesionBreakpointShift` x
-(cohesion - 0.5), so withdrawal always comes before the rout. The breakpoint
+As built (`SYMMETRIC_DOCTRINE_BREAKPOINT`): a formation's effective breakpoint
+is the doctrine `retreatThreshold` x bp_era(u) / bp_era(mid) +
+`cohesionBreakpointShift` x (cohesion - 0.5), and it withdraws in good order at
+`WITHDRAW_SHARE_OF_BREAKPOINT` (0.9) of that, just before the rout. The
+doctrine thresholds are quartiles of the era breakpoint MV, so a high-quartile
+("holds") doctrine now breaks later and a low-quartile one earlier; a neutral
+doctrine breaks at the era mid. OFF: the withdraw threshold is
+min(`retreatThreshold`, 0.9 x effective breakpoint) with effective breakpoint =
+era breakpoint + the cohesion shift, which made every threshold above 0.9 x the
+breakpoint inert. The era breakpoint
 (`BREAKPOINT_FROM_MODEL_RULES`) is `modelRules.breakpoint.loserCasualtyShareAtBreak`
 for the member's era (`napoleonic` for 1789-1849): the loser's casualty share
 when it broke, from CDB90 with the 24 backtest battles removed (gunpowder to
@@ -181,7 +188,7 @@ Losses are capped at 50% of engaged strength per round, spread over roles in
 proportion to their exposure. A seeded noise factor (lognormal per round,
 sigma `modelRules.battle.outcomeNoiseSigma` 0.25 from Helmbold's residuals,
 0.15 before; `RULES_FROM_MODEL_RULES`) represents friction and chance. Morale falls with losses. A formation
-whose cumulative battle loss reaches the doctrine `retreatThreshold` withdraws
+whose cumulative battle loss reaches its withdraw threshold withdraws
 in good order; one reaching the breakpoint (shifted by cohesion) routs: it
 suffers `pursuitLossFraction` x (winner mounted/mobile share) extra losses, of
 which `captureFraction` are prisoners, and flees toward supply. When every

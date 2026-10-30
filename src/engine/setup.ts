@@ -14,7 +14,7 @@ import {
   ATTRITION_FROM_MODEL_RULES, ISLAND_CELL_LIMIT, MAX_FORMATIONS_PER_MEMBER, MAX_URBAN_SOURCES_PER_MEMBER, MISSION_COMMAND_DELAY_FACTOR,
   RETURN_RING_DAYS, RETURN_TO_DUTY_DAYS, RULES_FROM_MODEL_RULES, BATTLE_NOISE_SIGMA, COLLAPSE_PERSONNEL_FRACTION, COLLAPSE_MORALE,
   FOG_STRENGTH_ERROR, BLOCKADE_SEA_CONTROL, RIVER_DELAY_DAYS, BREAKPOINT_FROM_MODEL_RULES,
-  REGIONAL_WEATHER,
+  REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT,
 } from './constants';
 import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
 
@@ -427,10 +427,10 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
     if (!doctrine) {
       doctrine = {
         id: 'engine-neutral', name: 'Neutral (no doctrine data)', appliesTo: [], era: [snap.era], archetype: true, grade: 'D',
-        weights: { aggression: 0.5, maneuver: 0.5, flanking: 0.5, siegePreference: 0.5, reserveUse: 0.2, scouting: 0.5, retreatThreshold: bp * 0.75, combinedArms: 0.5, initiative: 0.5, logisticsDiscipline: 0.5 },
+        weights: { aggression: 0.5, maneuver: 0.5, flanking: 0.5, siegePreference: 0.5, reserveUse: 0.2, scouting: 0.5, retreatThreshold: SYMMETRIC_DOCTRINE_BREAKPOINT ? bp : bp * 0.75, combinedArms: 0.5, initiative: 0.5, logisticsDiscipline: 0.5 },
         weightNotes: {}, specials: [], summary: 'Neutral weights used because no doctrine profile is available.', whyItWorked: 'n/a', whereItFailed: 'n/a', sources: [],
       };
-      warnings.push(`${snap.name}: no doctrine profiles loaded; using neutral weights (retreat at 75% of the breakpoint).`);
+      warnings.push(`${snap.name}: no doctrine profiles loaded; using neutral weights (${SYMMETRIC_DOCTRINE_BREAKPOINT ? 'break at the era breakpoint' : 'retreat at 75% of the breakpoint'}).`);
     }
     const w = doctrine.weights;
     const tli = new Float64Array(NR), qF = new Float64Array(NR), tF = new Float64Array(NR), range = new Float64Array(NR), rate = new Float64Array(NR), rangeClass = new Float64Array(NR);
@@ -526,12 +526,13 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       startCells: 0,
       propulsion: propulsionOf(tech.ships),
     };
-    // Effective breakpoint = era breakpoint shifted by cohesion; a formation withdraws in good
-    // order at min(doctrine retreatThreshold, 0.9 x effective breakpoint), so withdrawal always
-    // comes before the rout even where a doctrine's threshold sits above the breakpoint.
+    // Effective breakpoint at the era mid (the per-seed values are in MemberState, sim.ts):
+    // SYMMETRIC_DOCTRINE_BREAKPOINT: the doctrine retreatThreshold shifted by cohesion, withdrawal
+    // in good order at WITHDRAW_SHARE_OF_BREAKPOINT of it. OFF: the era breakpoint shifted by
+    // cohesion, withdrawal at min(retreatThreshold, that share of the breakpoint).
     mr.bpShift = m.combat.cohesionBreakpointShift.mid * (mr.cohesion - 0.5);
-    mr.breakpoint = clamp(bp + mr.bpShift, 0.02, 0.98);
-    mr.retreat = clamp(Math.min(w.retreatThreshold, 0.9 * mr.breakpoint), 0.01, 0.95);
+    mr.breakpoint = clamp((SYMMETRIC_DOCTRINE_BREAKPOINT ? w.retreatThreshold : bp) + mr.bpShift, 0.02, 0.98);
+    mr.retreat = clamp(SYMMETRIC_DOCTRINE_BREAKPOINT ? WITHDRAW_SHARE_OF_BREAKPOINT * mr.breakpoint : Math.min(w.retreatThreshold, WITHDRAW_SHARE_OF_BREAKPOINT * mr.breakpoint), 0.01, 0.95);
     members.push(mr);
     sideMembers[side].push(idx);
   }

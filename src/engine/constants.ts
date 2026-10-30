@@ -365,3 +365,19 @@ export const REGIONAL_WEATHER = true;
  *  macedon-vs-persia both seeds and rome-vs-france-equalized seed 2 flip to the defender;
  *  mongols-vs-rome, usa-vs-china, usa-spain-vs-russia and japan-vs-usa stay draws. */
 export const AI_LOCAL_COMBAT_POWER_STAFFING = true;
+/** A formation withdraws in good order at this share of its breakpoint, just before the rout. The
+ *  relation the engine always used (the 0.9 cap on the doctrine threshold), now named. */
+export const WITHDRAW_SHARE_OF_BREAKPOINT = 0.9;
+/** The doctrine moves the break point both ways: breakpoint = doctrine retreatThreshold x
+ *  bp_era(u) / bp_era(mid) + the cohesion shift, u being the per-seed breakpoint quantile, and
+ *  withdrawal at WITHDRAW_SHARE_OF_BREAKPOINT of it. Before, the era draw was the break and the
+ *  doctrine only set the withdrawal, capped at 0.9 x the break, so every high-quartile ("holds")
+ *  threshold was inert (QA round 4). A neutral doctrine (no profile) breaks at the era mid.
+ *  Measured (20 seeds, clean 1150d3f, doctrine data as committed there): 19/17/21 -> 17/11/20.
+ *  Low-quartile doctrines now rout where they used to withdraw: Gulf War 95% -> 50% (coalition
+ *  coldwar-western breaks at 4.5%), El Alamein 55% -> 10% (british-ww2 5.9%), Mohi 80% -> 15%
+ *  (mongol-steppe 8%), Carrhae 45% -> 0%, France 1940 x1.85 -> x4.05; Adrianople 90% -> 10%
+ *  (roman-imperial holds to 25%); Marathon 50% -> 85%. Fixed quantile low/mid/high: 17/15/19,
+ *  18/13/20, 16/10/24 (was 20/18/19, 21/18/21, 20/16/21). Presets (24 runs, invariants clean):
+ *  rome-vs-france-equalized seed 1 and macedon-vs-persia seed 1 change winner. */
+export const SYMMETRIC_DOCTRINE_BREAKPOINT = true;
