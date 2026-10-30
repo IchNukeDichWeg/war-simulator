@@ -17,6 +17,7 @@ import {
   REGIONAL_WEATHER, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT,
 } from './constants';
 import { CLIMATE_FALLBACK, CLIMATE_H, CLIMATE_W, theaterZone } from './climate';
+import { overridePathProblem } from './overridePath';
 
 export const TECH_CATS: TechCategory[] = ['weapons', 'armor', 'ships', 'fortification', 'logistics', 'communications', 'isr', 'air', 'cyber'];
 export const SEASONS: Season[] = ['spring', 'summer', 'autumn', 'winter'];
@@ -191,10 +192,12 @@ export interface Setup {
 const est = (x: number, note = 'engine default') => ({ low: x, mid: x, high: x, grade: 'D' as const, source: 'derived:engine-default', note });
 
 function setPath(obj: any, path: string, value: number): boolean {
+  if (overridePathProblem(path)) return false;
   const keys = path.split('.');
   let o = obj;
   for (let i = 0; i < keys.length - 1; i++) {
-    if (o[keys[i]] == null || typeof o[keys[i]] !== 'object') {
+    // own properties only, so nothing inherited is ever walked into (red team C1)
+    if (!Object.hasOwn(o, keys[i]) || o[keys[i]] == null || typeof o[keys[i]] !== 'object') {
       if (keys[i - 1] === 'forces') o[keys[i]] = { count: est(0), quality: est(0.5), training: est(0.5) };
       else o[keys[i]] = {};
     }
@@ -307,6 +310,8 @@ export function buildSetup(data: EngineData, scenario: Scenario, opts: SimOption
       }
       for (const ov of scenario.overrides ?? []) {
         if (ov.snapshotId !== id) continue;
+        const bad = overridePathProblem(ov.path);
+        if (bad) { warnings.push(`Override on ${id} ignored: ${bad}.`); continue; }
         if (!setPath(snap, ov.path, ov.value)) warnings.push(`Override ${ov.path} on ${id} could not be applied.`);
       }
       if (scenario.techMode === 'equalized') {

@@ -1,4 +1,6 @@
 import { DEFAULT_RULES, DEFAULT_VICTORY, type Scenario } from '../types/scenario';
+import type { Override } from '../types/schema';
+import { overridePathProblem } from '../engine/overridePath';
 
 export type BBox = [number, number, number, number];
 
@@ -38,6 +40,16 @@ export function defaultScenario(): Scenario {
   };
 }
 
+/** Refuse a link or file whose override would write outside the editable fields
+ *  (red team C1: "__proto__.x" polluted the engine worker). The engine refuses it too. */
+function checkOverridePaths(ovs: Override[]): Override[] {
+  ovs.forEach((v, i) => {
+    const bad = overridePathProblem(v.path);
+    if (bad) throw new Error(`overrides[${i}].path: ${bad}`);
+  });
+  return ovs;
+}
+
 /** Fill gaps in an uploaded / decoded scenario with defaults and reject the unusable. */
 export function normalizeScenario(x: unknown): Scenario {
   if (!x || typeof x !== 'object') throw new Error('not a scenario object');
@@ -60,7 +72,7 @@ export function normalizeScenario(x: unknown): Scenario {
     theater: okBox ? { name: o.theater?.name ?? 'Custom', bbox: bbox as BBox } : d.theater,
     rules: { ...d.rules, ...(o.rules ?? {}) },
     victory: { ...d.victory, ...(o.victory ?? {}) },
-    overrides: Array.isArray(o.overrides) ? o.overrides.filter((v) => v && typeof v.path === 'string' && Number.isFinite(v.value)) : [],
+    overrides: Array.isArray(o.overrides) ? checkOverridePaths(o.overrides.filter((v) => v && typeof v.path === 'string' && Number.isFinite(v.value))) : [],
     seed: Number.isFinite(o.seed) ? (o.seed as number) : 1,
   };
 }
