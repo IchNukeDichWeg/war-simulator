@@ -106,11 +106,11 @@
   },
   "trainedReserves": {
    "low": 1000,
-   "mid": 3000,
+   "mid": 2000,
    "high": 5000,
    "grade": "D",
    "source": "derived:educated-guess",
-   "note": "Educated guess: oldest and youngest year classes left for guard duty; in 480 nearly everyone else was already serving."
+   "note": "Educated guess: oldest and youngest year classes left for guard duty; in 480 nearly everyone else was already serving. audit 2026-10-30: mid 3,000 -> 2,000 so that active (47,000) + reserves fit inside mobilizable (49,400); this is an educated guess either way."
   },
   "supportPersonnel": {
    "low": 30600,
@@ -142,9 +142,9 @@
      "low": 6000,
      "mid": 8000,
      "high": 10000,
-     "grade": "C",
+     "grade": "D",
      "source": "isbn:0856685917",
-     "note": "Herodotus 9.28: 8,000 Athenian hoplites at Plataea (479); ~9,000-10,000 at Marathon (490, later sources). Lazenby 1993 accepts figures of this order. In 480 many served as epibatai (10 per trireme) instead."
+     "note": "Herodotus 9.28: 8,000 Athenian hoplites at Plataea (479); ~9,000-10,000 at Marathon (490, later sources). Lazenby 1993 accepts figures of this order. In 480 many served as epibatai (10 per trireme) instead. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
     },
     "quality": {
      "low": 0.65,
@@ -168,9 +168,9 @@
      "low": 300,
      "mid": 700,
      "high": 1600,
-     "grade": "C",
+     "grade": "D",
      "source": "isbn:0856685917",
-     "note": "Athenian archers fought at Plataea (Herodotus 9.22, 9.60); triremes carried 4 archers each (180 x 4 = 720). Thucydides 2.13.8 gives 1,600 archers for 431 (upper bound)."
+     "note": "Athenian archers fought at Plataea (Herodotus 9.22, 9.60); triremes carried 4 archers each (180 x 4 = 720). Thucydides 2.13.8 gives 1,600 archers for 431 (upper bound). audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
     },
     "quality": {
      "low": 0.4,
@@ -220,9 +220,9 @@
      "low": 180,
      "mid": 200,
      "high": 200,
-     "grade": "C",
+     "grade": "D",
      "source": "isbn:0856685917",
-     "note": "Herodotus 8.1: 127 Athenian ships at Artemisium + 20 lent to Chalcis, later 53 more (=200); 8.44: 180 at Salamis. The Themistoklean programme of the 480s provided most of them (Ath. Pol. 22.7, cited by Hansen 2006 p. 16 n. 19). Ship counts are better attested than army sizes."
+     "note": "Herodotus 8.1: 127 Athenian ships at Artemisium + 20 lent to Chalcis, later 53 more (=200); 8.44: 180 at Salamis. The Themistoklean programme of the 480s provided most of them (Ath. Pol. 22.7, cited by Hansen 2006 p. 16 n. 19). Ship counts are better attested than army sizes. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
     },
     "quality": {
      "low": 0.65,
@@ -285,12 +285,12 @@
    "note": "Close to anchor 3 (bronze cuirass): bronze/linen hoplite panoply."
   },
   "ships": {
-   "low": 2.9,
-   "mid": 3.0,
+   "low": 2.64,
+   "mid": 2.84,
    "high": 3.0,
    "grade": "C",
    "source": "derived:tech-anchor",
-   "note": "Anchor 3: triremes."
+   "note": "Anchor 3: triremes. audit 2026-10-30: mid 3.0 -> 2.84, capped at the SOURCES.md tech anchor interpolated for -480 (2.836); the mid may not exceed the anchor for its year."
   },
   "fortification": {
    "low": 2.3,
@@ -375,12 +375,12 @@
    "note": "Educated guess: silver mining at Laurion, ceramics, shipbuilding and crafts."
   },
   "foodSurplus": {
-   "low": 0,
-   "mid": 0,
-   "high": 0.05,
-   "grade": "C",
+   "low": 0.0,
+   "mid": 0.06,
+   "high": 0.25,
+   "grade": "D",
    "source": "https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf",
-   "note": "Hansen 2006 p. 55 n. 125: Attika in normal years could sustain ~100,000 people, so a population of ~190,000 depended on grain imports; no domestic surplus."
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). s from the cited source: Hansen 2006 p. 55 n. 125, Attika \"in normal years could sustain a population of ca. 100,000\"; with this snapshot's ~190,000 people s = ~0.53 (Moreno, cited there, 52,000-106,000: s 0.27-0.56). a: no fetched occupational figure; ~0.5 (0.42-0.6) assumed, bounded by the urban share (~0.3) and Hansen's point that most of the population lived from farming. Mid 1 - 0.50/0.53 = 0.06; high a 0.42, s 0.56 = 0.25; low 0 where a >= s (the farms only feed the farm population; towns and fleet live on imported grain). Grade D. audit 2026-10-30: was 0/0/0.05 (read as no domestic surplus); recomputed with the formula, which gives a similar value because s is low."
   },
   "annualCohort": {
    "low": 1330,

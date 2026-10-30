@@ -496,12 +496,12 @@
    "note": "Anchor: 7.5-8. Evidence: wireless in tanks and HQs, no company-level radio yet; Dowding system landlines"
   },
   "isr": {
-   "low": 7.9,
-   "mid": 8.0,
+   "low": 7.69,
+   "mid": 7.89,
    "high": 8.2,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor: ISR 8 = radar. Evidence: Chain Home radar network operational along the east and south coasts in 1939; photo reconnaissance"
+   "note": "Anchor: ISR 8 = radar. Evidence: Chain Home radar network operational along the east and south coasts in 1939; photo reconnaissance audit 2026-10-30: mid 8.0 -> 7.89, capped at the SOURCES.md tech anchor interpolated for 1939 (7.895); the mid may not exceed the anchor for its year."
   },
   "air": {
    "low": 7.6,
@@ -554,12 +554,12 @@
    "note": "Educated guess: industry, mining and construction ~40% of UK output in the late 1930s; Harrison 1998 describes the UK as the most industrialised and least self-sufficient great power. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
   },
   "foodSurplus": {
-   "low": 0.0,
-   "mid": 0.0,
-   "high": 0.02,
+   "low": 0.77,
+   "mid": 0.82,
+   "high": 0.85,
    "grade": "C",
-   "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
-   "note": "The UK imported most of its food (Harrison 1998: Britain depended on imported food and fuels); no domestic surplus. Field cannot go negative, so 0."
+   "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID, United Kingdom agriculture share of employment 1935 = 6.8%, 1937 = 6.1%, 1938 = 5.9%. s: \"At the beginning of the war Britain produced 33 percent of the calories its people consumed\" (44% by 1945), https://en.wikipedia.org/wiki/Feeding_Britain_in_the_Second_World_War. Mid 1 - 0.059/0.33 = 0.82. Low a 0.068, s 0.30 = 0.77; high a 0.055, s 0.36 = 0.85. Grade C: two sources combined. Import dependence: two thirds of calories imported (Harrison 1998: Britain relied heavily on imported food and fuels). audit 2026-10-30: was 0.0/0.0/0.02 (read as a trade balance); recomputed with the formula and the fetched s."
   },
   "annualCohort": {
    "low": 330000,
@@ -665,9 +665,9 @@
    "low": 300,
    "mid": 400,
    "high": 500,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:0-521-21730-X",
-   "note": "van Creveld, Supplying War ch. 5-6: motorised supply columns of 1939-41 sustained operations ~300-500 km beyond railheads; the BEF was fully motorised."
+   "note": "van Creveld, Supplying War ch. 5-6: motorised supply columns of 1939-41 sustained operations ~300-500 km beyond railheads; the BEF was fully motorised. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "draftAnimals": {
    "low": 800000,

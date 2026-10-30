@@ -112,11 +112,11 @@
   },
   "urbanization": {
    "low": 0.286,
-   "mid": 0.57,
+   "mid": 0.565,
    "high": 0.6,
    "grade": "B",
-   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
-   "note": "HYDE via OWID: United States 1940 = 60.0% urban (high); 1940 census urban definition ~56.5% (general literature) for the mid. Low = COW upop/tpop 1941 = 38,183/133,402 = 0.286 (cities over 100,000)."
+   "source": "https://en.wikipedia.org/wiki/Urbanization_in_the_United_States",
+   "note": "Cited page: 1940 census 56.5% urban (mid; 1930 56.1%). High: HYDE via OWID United States 1940 = 60.0% (https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true). Low = COW upop/tpop 1941 = 38,183/133,402 = 0.286 (cities over 100,000). audit 2026-10-30: mid 56.5% was general literature; now read from the fetched page."
   }
  },
  "military": {
@@ -466,11 +466,11 @@
   },
   "ships": {
    "low": 7.8,
-   "mid": 8.0,
+   "mid": 7.95,
    "high": 8.2,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor: 8 (carriers, radar, submarines). Evidence: 7 fleet carriers, CXAM/SC radar, fleet submarines, fast new battleships"
+   "note": "Anchor: 8 (carriers, radar, submarines). Evidence: 7 fleet carriers, CXAM/SC radar, fleet submarines, fast new battleships audit 2026-10-30: mid 8.0 -> 7.95, capped at the SOURCES.md tech anchor interpolated for 1941 (7.947); the mid may not exceed the anchor for its year."
   },
   "fortification": {
    "low": 7.2,
@@ -481,28 +481,28 @@
    "note": "Anchor: between 7 and 8. Evidence: coast defences of harbours and the Panama Canal; Corregidor"
   },
   "logistics": {
-   "low": 8.0,
-   "mid": 8.2,
+   "low": 7.75,
+   "mid": 7.95,
    "high": 8.4,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor: 8 (motor transport, rail). Evidence: largest truck industry in the world, dense rail and road networks, ocean shipping"
+   "note": "Anchor: 8 (motor transport, rail). Evidence: largest truck industry in the world, dense rail and road networks, ocean shipping audit 2026-10-30: mid 8.2 -> 7.95, capped at the SOURCES.md tech anchor interpolated for 1941 (7.947); the mid may not exceed the anchor for its year."
   },
   "communications": {
    "low": 7.8,
-   "mid": 8.0,
+   "mid": 7.95,
    "high": 8.2,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor: 8 (radio at company level). Evidence: SCR-536 handie-talkie and SCR-300 coming, FM tank radios; Navy radio good"
+   "note": "Anchor: 8 (radio at company level). Evidence: SCR-536 handie-talkie and SCR-300 coming, FM tank radios; Navy radio good audit 2026-10-30: mid 8.0 -> 7.95, capped at the SOURCES.md tech anchor interpolated for 1941 (7.947); the mid may not exceed the anchor for its year."
   },
   "isr": {
    "low": 7.8,
-   "mid": 8.0,
+   "mid": 7.95,
    "high": 8.2,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor: ISR 8 = radar. Evidence: SCR-270 radar detected the Pearl Harbor strike; signals intelligence (MAGIC)"
+   "note": "Anchor: ISR 8 = radar. Evidence: SCR-270 radar detected the Pearl Harbor strike; signals intelligence (MAGIC) audit 2026-10-30: mid 8.0 -> 7.95, capped at the SOURCES.md tech anchor interpolated for 1941 (7.947); the mid may not exceed the anchor for its year."
   },
   "air": {
    "low": 7.7,
@@ -555,12 +555,12 @@
    "note": "Educated guess: manufacturing, mining and construction ~30-38% of US output around 1940. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
   },
   "foodSurplus": {
-   "low": 0.15,
-   "mid": 0.2,
-   "high": 0.3,
-   "grade": "D",
-   "source": "derived:educated-guess",
-   "note": "Educated guess: the US was a large net food exporter and supplied the UK and USSR with food under Lend-Lease. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+   "low": 0.84,
+   "mid": 0.86,
+   "high": 0.87,
+   "grade": "B",
+   "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID, United States agriculture share of employment 1940 = 15.8%, 1941 = 14.2%, 1942 = 12.8%. s = 1 assumed (net food exporter, so this slightly understates). Mid 1 - 0.142 = 0.86; low 1 - 0.158 = 0.84; high 1 - 0.128 = 0.87. audit 2026-10-30: was 0.15/0.2/0.3 (educated guess); recomputed with the formula."
   },
   "annualCohort": {
    "low": 1050000,
@@ -634,9 +634,9 @@
    "low": 370000,
    "mid": 376000,
    "high": 385000,
-   "grade": "C",
+   "grade": "D",
    "source": "https://en.wikipedia.org/wiki/History_of_rail_transport_in_the_United_States",
-   "note": "Route mileage peaked at 254,251 miles (409,177 km) in 1916 (cited page) and had declined to roughly 233,000 miles (~376,000 km) by 1940 through abandonments (Historical Statistics figure, not fetched)."
+   "note": "Route mileage peaked at 254,251 miles (409,177 km) in 1916 (cited page) and had declined to roughly 233,000 miles (~376,000 km) by 1940 through abandonments (Historical Statistics figure, not fetched). audit 2026-10-30: grade C -> D: the 1940 mileage is not from a fetched source."
   },
   "majorPorts": {
    "low": 12,
@@ -658,9 +658,9 @@
    "low": 400,
    "mid": 450,
    "high": 600,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:0-521-21730-X",
-   "note": "van Creveld, Supplying War ch. 7 (1944 Allied advance): the fully motorised US Army sustained ~400-500 km beyond railheads/ports with truck convoys; 1941 capacity lower but structurally similar."
+   "note": "van Creveld, Supplying War ch. 7 (1944 Allied advance): the fully motorised US Army sustained ~400-500 km beyond railheads/ports with truck convoys; 1941 capacity lower but structurally similar. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "draftAnimals": {
    "low": 12000000,

@@ -98,14 +98,14 @@
     }
   ],
   "territory": {
-    "border": "hb:1815:Ottoman Empire",
+    "border": "hb:1880:Ottoman Empire",
     "areaKm2": {
-      "low": 2260000,
+      "low": 2600000,
       "mid": 2900000,
       "high": 3300000,
       "grade": "C",
-      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1815.geojson",
-      "note": "world_1815 polygon \"Ottoman Empire\" = 2.26M km2 on the sphere; it includes the Danubian principalities and lacks parts of Arabia and Libya. Directly ruled lands in 1877 (Rumelia, Bosnia, Anatolia, Syria, Iraq, Hejaz, Yemen, Tripolitania) ~2.6-3.2M km2."
+      "source": "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1880.geojson",
+      "note": "Border hb:1880:Ottoman Empire (world_1878 draws the same polygon) = 3.16M km2 on the sphere. It differs from the 1877 empire: it lacks Bulgaria and Eastern Rumelia (separate Bulgaria feature), Bosnia-Herzegovina (separate feature), Macedonia and Albania (drawn inside Greece) and Tripolitania, and it includes Tunisia (nominal suzerainty only). Directly ruled lands in 1877 (Rumelia, Bosnia, Anatolia, Syria, Iraq, Hejaz, Yemen, Tripolitania) ~2.6-3.2M km2. audit 2026-10-30: border was hb:1815, which put Athens, Bucharest and Belgrade inside; 1880 is the nearest basemap that does not."
     }
   },
   "demography": {
@@ -353,11 +353,11 @@
   "tech": {
     "weapons": {
       "low": 6.7,
-      "mid": 6.8,
+      "mid": 6.72,
       "high": 6.9,
       "grade": "C",
       "source": "derived:tech-anchor",
-      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: Peabody-Martini and Krupp breech-loaders outranged the Russian Krnka (page)"
+      "note": "Anchor: between 6 (1805) and 7 (1905). Evidence: Peabody-Martini and Krupp breech-loaders outranged the Russian Krnka (page) audit 2026-10-30: mid 6.8 -> 6.72, capped at the SOURCES.md tech anchor interpolated for 1877 (6.720); the mid may not exceed the anchor for its year."
     },
     "armor": {
       "low": 6.1,
@@ -564,5 +564,5 @@
       "note": "1.2 row: fortress system and Muslim population support; Balkan Christians hostile."
     }
   },
-  "notes": "Snapshot = Ottoman Empire in April 1877 (Russian declaration of war). Territory and population = directly ruled provinces (Rumelia, Bosnia, Anatolia, Arab provinces, Tripolitania); Egypt, Romania, Serbia and Montenegro excluded; includes is empty. Border uses world_1815 (nearest file at or before 1877), which includes the Danubian principalities. Personnel: nizam and mobilised redif = active; remaining redif and mustahfiz = trainedReserves; irregulars as infantry_light. Strengths from the Russo-Turkish War page (Allen and Muratoff; Olender) and the Ottoman Navy page; rail, merchant fleet and population split are reconstructions (grade C/D)."
+  "notes": "Snapshot = Ottoman Empire in April 1877 (Russian declaration of war). Territory and population = directly ruled provinces (Rumelia, Bosnia, Anatolia, Arab provinces, Tripolitania); Egypt, Romania, Serbia and Montenegro excluded; includes is empty. Border uses world_1880 (world_1878 draws the same polygon), which lacks Bulgaria, Bosnia and Macedonia-Albania (drawn as separate features or inside Greece) and Tripolitania, and includes Tunisia. (audit 2026-10-30) Personnel: nizam and mobilised redif = active; remaining redif and mustahfiz = trainedReserves; irregulars as infantry_light. Strengths from the Russo-Turkish War page (Allen and Muratoff; Olender) and the Ottoman Navy page; rail, merchant fleet and population split are reconstructions (grade C/D)."
 }

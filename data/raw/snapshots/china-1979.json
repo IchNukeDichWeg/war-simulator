@@ -107,12 +107,12 @@
   },
   "demography": {
     "population": {
-      "low": 969300000,
-      "mid": 975000000,
+      "low": 969005000,
+      "mid": 969300000,
       "high": 985500000,
       "grade": "B",
-      "source": "https://correlatesofwar.org/wp-content/uploads/NMCv7.zip",
-      "note": "COW NMC v7 tpop 1979 = 985,467k (high). OWID population CSV China 1979 = 969.3M (low). Official year-end 1979 figure ~975M used as mid (from memory)."
+      "source": "https://ourworldindata.org/grapher/population.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "OWID population CSV China 1979 = 969.3M (mid). Low: year-end 1979 969,005,000 (https://en.wikipedia.org/wiki/Demographics_of_China, table of births and deaths since 1949). High: COW NMC v7 tpop 1979 = 985,467k (https://correlatesofwar.org/wp-content/uploads/NMCv7.zip). audit 2026-10-30: mid was ~975M from memory; now the fetched OWID value."
     },
     "urbanization": {
       "low": 0.13,
@@ -157,12 +157,12 @@
       "note": "Educated guess: people's war doctrine with a huge militia; Korean War and civil-war peaks were ~5-6M under arms of ~550M (~0.01), so the total-war ratio is a judgement."
     },
     "mobilizable": {
-      "low": 48465000.0,
-      "mid": 78000000.0,
+      "low": 48450250.0,
+      "mid": 77544000.0,
       "high": 118260000.0,
       "grade": "C",
       "source": "derived:mobilizable-from-ratio",
-      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high). audit 2026-10-30: low and mid recomputed for the new population."
     },
     "forces": {
       "infantry_line": {
@@ -613,12 +613,12 @@
       "note": "Maddison Project 2023 (OWID CSV) China 1979 = 1,859 (2011 int$)."
     },
     "gdp": {
-      "low": 1647810000000,
-      "mid": 1812525000000,
+      "low": 1647308500000,
+      "mid": 1801928700000,
       "high": 1971000000000,
       "grade": "C",
       "source": "derived:gdp-from-pc",
-      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$. audit 2026-10-30: low and mid recomputed for the new population (969,005,000 x 1,700; 969,300,000 x 1,859)."
     },
     "milSpendShare": {
       "low": 0.05,

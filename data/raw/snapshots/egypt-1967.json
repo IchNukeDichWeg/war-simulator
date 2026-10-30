@@ -617,12 +617,12 @@
       "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Egypt 1967 = 53.7% (1989 Apr vintage 53.8%). Egypt was a wheat importer; that does not lower this value. Share 53.7% (range 50.0-57.0%) -> 0.463 (0.43-0.5)."
     },
     "annualCohort": {
-      "low": 600000,
-      "mid": 645700,
-      "high": 700000,
+      "low": 300000,
+      "mid": 330300,
+      "high": 360000,
       "grade": "B",
       "source": "derived:cohort-from-agegroup",
-      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (16,144,385 x 10.23% + 16,051,975 x 9.82%) / 5 = 645,700 persons (both sexes; only men conscripted, about half)."
+      "note": "World Bank SP.POP.1519.MA.5Y and SP.POP.TOTL.MA.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json): 16,144,385 x 10.23% / 5 = ~330,300 males per year; only men were conscripted. audit 2026-10-30: males only, the conscript-pool convention of all other snapshots (derived:cohort-from-agegroup applied to the male term only); was 645,700 for both sexes."
     },
     "production": {
       "artillery": {

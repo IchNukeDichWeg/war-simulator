@@ -150,20 +150,20 @@
       "note": "Educated guess. Gunners, artillery train and fleet crews (gallivats and grabs)."
     },
     "mobilizationRatio": {
-      "low": 0.004,
-      "mid": 0.006,
-      "high": 0.008,
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.035,
       "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess. Silladar cavalry raised by contract from Deccan peasant-soldiers."
+      "source": "derived:regional-analogy",
+      "note": "Regional analogy: Mughal Empire 1690 snapshot, Barua (2005 p. 47) via https://en.wikipedia.org/wiki/Army_of_the_Mughal_Empire: the Ain-i-Akbari count of 4 million armed men equalled ~3% of the Indian population in 1600 (armed peasantry of the same Deccan and north Indian military labour market from which the Maratha silladars were raised). Low 0.02, high 0.035 as in that snapshot. audit 2026-10-30: was 0.004/0.006/0.008 (educated guess, a fifth of the regional peer); replaced by the regional analogy."
     },
     "mobilizable": {
-      "low": 180000,
-      "mid": 360000,
-      "high": 640000,
+      "low": 900000.0,
+      "mid": 1800000.0,
+      "high": 2800000,
       "grade": "D",
       "source": "derived:mobilizable-from-ratio",
-      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high). audit 2026-10-30: recomputed for the new mobilizationRatio."
     },
     "forces": {
       "cavalry_light": {

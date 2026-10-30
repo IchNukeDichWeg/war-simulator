@@ -129,9 +129,9 @@
       "low": 2400000,
       "mid": 3000000,
       "high": 4000000,
-      "grade": "C",
+      "grade": "D",
       "source": "isbn:0-253-33745-3",
-      "note": "Menning, Bayonets before Bullets (1992) ch. 6: reserve (zapas) of ~2.5-3M trained men, plus trained opolchenie of the first category. The war mobilised 1,365,000 in all (Russo-Japanese War page)."
+      "note": "Menning, Bayonets before Bullets (1992) ch. 6: reserve (zapas) of ~2.5-3M trained men, plus trained opolchenie of the first category. The war mobilised 1,365,000 in all (Russo-Japanese War page). audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
     },
     "supportPersonnel": {
       "low": 240000,
@@ -293,9 +293,9 @@
           "low": 105,
           "mid": 115,
           "high": 125,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:0-85177-133-5",
-          "note": "Battleships, cruisers and destroyers. Conway's 1860-1905: ~20-22 battleships in service (7 at Port Arthur, Baltic and Black Sea squadrons, 4 Borodinos completing), 3 coast-defence battleships, ~8 armoured and ~15 protected cruisers = 35/45/55; plus ~70 destroyers. Port Arthur sortie of 10 August 1904: 6 battleships, 4 cruisers, 14 destroyers (page). Role split per SOURCES.md naval role boundaries: torpedo-boat destroyers moved from ships_minor."
+          "note": "Battleships, cruisers and destroyers. Conway's 1860-1905: ~20-22 battleships in service (7 at Port Arthur, Baltic and Black Sea squadrons, 4 Borodinos completing), 3 coast-defence battleships, ~8 armoured and ~15 protected cruisers = 35/45/55; plus ~70 destroyers. Port Arthur sortie of 10 August 1904: 6 battleships, 4 cruisers, 14 destroyers (page). Role split per SOURCES.md naval role boundaries: torpedo-boat destroyers moved from ships_minor. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.52,
@@ -319,9 +319,9 @@
           "low": 70,
           "mid": 110,
           "high": 180,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:0-85177-133-5",
-          "note": "Torpedo boats (~100) and gunboats. The ~70 destroyers moved to ships_major (was 140/180/250), role split per SOURCES.md naval role boundaries."
+          "note": "Torpedo boats (~100) and gunboats. The ~70 destroyers moved to ships_major (was 140/180/250), role split per SOURCES.md naval role boundaries. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.5,
@@ -468,20 +468,20 @@
   },
   "economy": {
     "gdpPerCapita": {
-      "low": 1152,
-      "mid": 1500,
-      "high": 2185,
-      "grade": "C",
+      "low": 1935,
+      "mid": 2185,
+      "high": 2254,
+      "grade": "B",
       "source": "https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database.csv?v=1&csvType=full&useColumnShortNames=true",
-      "note": "Maddison Project 2023 (OWID): Russia 1904 = 1,152; USSR-area series 1904 = 2,185. The two series disagree; mid between."
+      "note": "Maddison Project 2023 (OWID CSV), USSR-territory series: 1904 = 2,185 (mid), 1905 = 1,935 (low), 1913 = 2,254 (high), the same series russian-empire-1914 uses (1914 = 2,152). The separate Russia series (1904 = 1,152) is inconsistent with the USSR aggregate and not used. audit 2026-10-30: was 1,152/1,500/2,185 (midpoint of two series), which made a series-switch jump to 1914."
     },
     "gdp": {
-      "low": 158976000000,
-      "mid": 211500000000,
-      "high": 312455000000,
+      "low": 267030000000,
+      "mid": 308085000000,
+      "high": 322322000000,
       "grade": "C",
       "source": "derived:gdp-from-pc",
-      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$. audit 2026-10-30: recomputed for the new gdpPerCapita."
     },
     "milSpendShare": {
       "low": 0.035,
@@ -547,9 +547,9 @@
       "low": 49711,
       "mid": 55000,
       "high": 60000,
-      "grade": "B",
+      "grade": "C",
       "source": "derived:snapshot-composite",
-      "note": "CHAT (https://data.nber.org/chat/chat.dta) railline Russia 1904 = 49,711 km; add Finnish railways (~3,000 km) and the Chinese Eastern Railway (~2,400 km), which CHAT appears to exclude."
+      "note": "CHAT (https://data.nber.org/chat/chat.dta) railline Russia 1904 = 49,711 km; add Finnish railways (~3,000 km) and the Chinese Eastern Railway (~2,400 km), which CHAT appears to exclude. audit 2026-10-30: grade B -> C: derived:snapshot-composite is at most C."
     },
     "majorPorts": {
       "low": 8,

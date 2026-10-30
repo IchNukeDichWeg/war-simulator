@@ -273,9 +273,9 @@
           "low": 1100,
           "mid": 1300,
           "high": 1600,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:0-521-58436-1",
-          "note": "Wawro, The Franco-Prussian War (2003) ch. 3: the Army of the Rhine had ~924 field guns and ~190 mitrailleuses; with depots and other commands ~1,300 field pieces."
+          "note": "Wawro, The Franco-Prussian War (2003) ch. 3: the Army of the Rhine had ~924 field guns and ~190 mitrailleuses; with depots and other commands ~1,300 field pieces. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.35,
@@ -299,9 +299,9 @@
           "low": 40,
           "mid": 50,
           "high": 60,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:0-85177-133-5",
-          "note": "Conway's 1860-1905: ~16-17 seagoing ironclad frigates, ~7 ironclad corvettes, ~20 coast-defence ironclads and floating batteries, plus wooden screw frigates. Second-largest fleet in the world."
+          "note": "Conway's 1860-1905: ~16-17 seagoing ironclad frigates, ~7 ironclad corvettes, ~20 coast-defence ironclads and floating batteries, plus wooden screw frigates. Second-largest fleet in the world. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.7,
@@ -480,12 +480,12 @@
       "note": "Educated guess: Toutain/Marczewski accounts put industry near 30% of French product around 1870."
     },
     "foodSurplus": {
-      "low": 0.25,
-      "mid": 0.35,
-      "high": 0.45,
-      "grade": "D",
-      "source": "derived:educated-guess",
-      "note": "Educated guess: about half the workforce in farming; near self-sufficient in grain."
+      "low": 0.47,
+      "mid": 0.5,
+      "high": 0.53,
+      "grade": "B",
+      "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+      "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID, France agriculture share of employment 1866 = 51.0%, 1886 = 47.0%; interpolated 1870 = ~50.2%. s = 1 assumed: near self-sufficient in grain. Mid 1 - 0.50 = 0.50; range a 0.47-0.53. audit 2026-10-30: was 0.25/0.35/0.45, which contradicted the note's own farm share of about half; recomputed with the formula."
     },
     "annualCohort": {
       "low": 361000.0,

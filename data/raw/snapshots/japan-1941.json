@@ -97,14 +97,14 @@
   }
  ],
  "territory": {
-  "border": "hb:1938:Empire of Japan",
+  "border": "hb:1945:Japan (USA) + hb:1945:Korea (USA) + hb:1945:Korea (USSR) + hb:1945:Taiwan",
   "areaKm2": {
    "low": 675000,
    "mid": 675000,
    "high": 681000,
    "grade": "A",
    "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
-   "note": "LoN Year-Book 1938/39 Table 2: Japan proper 382, Korea 221, Formosa 36, Karafuto 36 thousand km2 = 675k. NOTE: the world_1938 'Empire of Japan' feature (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) merges Korea with Manchukuo and computes to ~1.79M km2; the area here does NOT follow the polygon. High adds the Kwantung lease (~3,500) and the South Seas Mandate (~2,100)."
+   "note": "LoN Year-Book 1938/39 Table 2: Japan proper 382, Korea 221, Formosa 36, Karafuto 36 thousand km2 = 675k. High adds the Kwantung lease (~3,500) and the South Seas Mandate (~2,100). Border: the world_1945 occupation-zone polygons Japan (USA), Korea (USA), Korea (USSR) and Taiwan (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1945.geojson) together measure ~620,000 km2 on the sphere; they omit Karafuto and the Kurils (Soviet in 1945) but, unlike the world_1938 Empire of Japan feature (~1.79M km2), exclude Manchukuo. audit 2026-10-30: border changed from hb:1938:Empire of Japan, which merged Korea with Manchukuo."
   }
  },
  "demography": {
@@ -561,12 +561,12 @@
    "note": "Educated guess: industry ~40% of output in Japan proper after the 1930s heavy-industry drive; Korea and Taiwan were mainly agrarian, lowering the empire share. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
   },
   "foodSurplus": {
-   "low": 0.0,
-   "mid": 0.03,
-   "high": 0.08,
+   "low": 0.4,
+   "mid": 0.46,
+   "high": 0.53,
    "grade": "D",
-   "source": "derived:educated-guess",
-   "note": "Educated guess: Japan proper depended on rice from Korea and Taiwan; counting them, the empire was roughly self-sufficient in staples with little surplus. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+   "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID, Japan (proper) agriculture share of employment 1930 = 50.6%, 1940 = 46.7%. The snapshot includes Korea and Taiwan (~30M of 102.9M), which were more agrarian; no fetched occupational figure, ~0.7 assumed for them, giving a ~0.54 for the empire. No calorie self-sufficiency figure for 1941 could be fetched, so s = 1 is assumed: within the empire colonial rice fed Japan proper, but soybeans and some wheat came from Manchukuo and abroad, so the value is somewhat overstated. Mid 1 - 0.54 = 0.46. High = Japan proper alone (1 - 0.467 = 0.53); low allows colonial a ~0.8 and s < 1. Grade D: colonial share assumed. audit 2026-10-30: was 0.0/0.03/0.08 (read as a trade balance); recomputed with the formula."
   },
   "annualCohort": {
    "low": 620000,
@@ -662,19 +662,19 @@
   },
   "merchantTonnage": {
    "low": 6500000,
-   "mid": 9000000,
-   "high": 9600000,
-   "grade": "B",
-   "source": "https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf",
-   "note": "LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938): Japan 5,007k gross tons; ~6.0M GRT by December 1941 (general literature). x1.5 to deadweight (x1.3-1.6)."
+   "mid": 9580000,
+   "high": 10200000,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Allied_submarines_in_the_Pacific_War",
+   "note": "Cited page: Japanese merchant fleet 6,384,000 tons at 7 December 1941 (table; unit not stated, taken as GRT) and \"capable of 6,400,000 long tons\". x1.5 to deadweight (x1.3-1.6) = 9.58M (mid), high 6.4M x 1.6. Low: LoN Year-Book 1938/39 Table 113 (Lloyd's Register, June 1938), 5,007k gross tons x 1.3 (https://www.istmat.org/files/uploads/49915/09_strany_mira_-_transport_torgovlya_platyozhnyy_balans.pdf). audit 2026-10-30: mid was ~6.0M GRT from general literature; now the fetched December 1941 figure, grade C because the unit is not stated."
   },
   "supplyRangeKm": {
    "low": 200,
    "mid": 300,
    "high": 400,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:0-521-21730-X",
-   "note": "van Creveld, Supplying War (general argument on motor transport radius from railheads); the IJA was mostly horse-drawn and supplied overseas by sea, so effective range depended on shipping rather than trucks."
+   "note": "van Creveld, Supplying War (general argument on motor transport radius from railheads); the IJA was mostly horse-drawn and supplied overseas by sea, so effective range depended on shipping rather than trucks. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "draftAnimals": {
    "low": 1500000,
@@ -783,5 +783,5 @@
    "note": "1.2 row: islands with mountainous terrain, fortified naval bases and total population support (high 1.3 for the sea moat); no continental strategic depth."
   }
  },
- "notes": "Snapshot date 7-8 December 1941 (Pearl Harbor, Malaya, Philippines). COUNTED as integral parts: Japan proper, Korea (Chosen), Taiwan (Formosa) and Karafuto (population ~102.9M, area 675,000 km2). NOT counted: Manchukuo (separate puppet state, Kwantung Army forces stationed there ARE counted as Japanese forces), the Kwantung lease, the South Seas Mandate, occupied China, French Indochina. includes is empty because Korea and Taiwan had no separate state in 1941. The hb:1938:Empire of Japan polygon merges Korea and Manchukuo (~1.79M km2), so the polygon is larger than the counted territory. Forces are the whole armed forces (~27 divisions in China, 13 in Manchuria at the start of the war per Jowett). Weakest values: artillery, AA, tank inventory, army aircraft split, roads and draft animals. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5."
+ "notes": "Snapshot date 7-8 December 1941 (Pearl Harbor, Malaya, Philippines). COUNTED as integral parts: Japan proper, Korea (Chosen), Taiwan (Formosa) and Karafuto (population ~102.9M, area 675,000 km2). NOT counted: Manchukuo (separate puppet state, Kwantung Army forces stationed there ARE counted as Japanese forces), the Kwantung lease, the South Seas Mandate, occupied China, French Indochina. includes is empty because Korea and Taiwan had no separate state in 1941. The border unions the world_1945 Japan, Korea and Taiwan polygons (~620,000 km2): Manchukuo is excluded, Karafuto is missing. (audit 2026-10-30) Forces are the whole armed forces (~27 divisions in China, 13 in Manchuria at the start of the war per Jowett). Weakest values: artillery, AA, tank inventory, army aircraft split, roads and draft animals. Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, torpedo boats and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5. audit 2026-10-30: border changed to the world_1945 Japan, Korea and Taiwan polygons, which exclude Manchukuo (the world_1938 Empire of Japan feature included it); Karafuto is missing from them."
 }

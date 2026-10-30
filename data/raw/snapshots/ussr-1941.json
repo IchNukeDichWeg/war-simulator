@@ -96,14 +96,14 @@
   }
  ],
  "territory": {
-  "border": "hb:1938:USSR",
+  "border": "hb:1945:USSR",
   "areaKm2": {
    "low": 21126000,
    "mid": 21176000,
    "high": 21650000,
    "grade": "A",
    "source": "https://www.istmat.org/files/uploads/49915/05_strany_mira_-_territoriya_i_naselenie.pdf",
-   "note": "LoN Year-Book 1938/39 Table 2: USSR in Europe and Asia 21,176 thousand km2 (pre-1939 frontier). The world_1938 USSR polygon (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1938.geojson) computes to ~21.13M km2. The 1939-40 annexations (Baltic states, eastern Poland, Bessarabia/N. Bukovina, Karelian Isthmus, ~0.45-0.5M km2) were Soviet in June 1941 but lie outside the polygon; high includes them (educated)."
+   "note": "LoN Year-Book 1938/39 Table 2: USSR in Europe and Asia 21,176 thousand km2 (pre-1939 frontier, mid). The 1939-40 annexations (Baltic states, eastern Poland, Bessarabia/N. Bukovina, Karelian Isthmus, ~0.45-0.5M km2) were Soviet in June 1941; high includes them (educated). Border: the world_1945 USSR polygon (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_1945.geojson, ~21.75M km2) contains the annexations (Riga, Lviv, Chisinau, Vyborg inside) but also Tuva (1944), Kaliningrad, southern Sakhalin, the Kurils and Transcarpathia (1945), none Soviet in June 1941. audit 2026-10-30: border changed from hb:1938:USSR, which left out the annexed lands counted in the population."
   }
  },
  "demography": {
@@ -117,11 +117,11 @@
   },
   "urbanization": {
    "low": 0.165,
-   "mid": 0.33,
+   "mid": 0.328,
    "high": 0.353,
    "grade": "B",
-   "source": "https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true",
-   "note": "HYDE via OWID: Russia 1940 = 35.3% urban (high; the USSR as a whole was less urban). Mid ~0.33 matches the 1939 census urban share (~33%, general literature, not fetched). Low = COW upop/tpop 1941 = 32,546/196,659 = 0.165 (cities over 100,000)."
+   "source": "https://en.wikipedia.org/wiki/1939_Soviet_census",
+   "note": "Cited page: 1939 census 170.5M, of which 55.9M urban = 32.8% (mid; pre-annexation territory). High: HYDE via OWID Russia 1940 = 35.3% urban (https://ourworldindata.org/grapher/urbanization-last-500-years.csv?v=1&csvType=full&useColumnShortNames=true; the USSR as a whole was less urban). Low = COW upop/tpop 1941 = 32,546/196,659 = 0.165 (cities over 100,000). audit 2026-10-30: mid was 0.33 from general literature; now the fetched census share."
   }
  },
  "military": {
@@ -137,9 +137,9 @@
    "low": 3500000,
    "mid": 5000000,
    "high": 6500000,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:1-85367-280-7",
-   "note": "Krivosheev 1997 (Soviet Casualties and Combat Losses, mobilisation section; page not verified): mobilisation decreed 22 June 1941 called the 1905-1918 classes and brought in ~5.3M reservists by 1 July. Harrison 1998 Table 1-5 average 1941 strength 7,100k is consistent. Grade C."
+   "note": "Krivosheev 1997 (Soviet Casualties and Combat Losses, mobilisation section; page not verified): mobilisation decreed 22 June 1941 called the 1905-1918 classes and brought in ~5.3M reservists by 1 July. Harrison 1998 Table 1-5 average 1941 strength 7,100k is consistent. Grade C. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "supportPersonnel": {
    "low": 3600000,
@@ -570,12 +570,12 @@
    "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
   },
   "milSpendShare": {
-   "low": 0.15,
-   "mid": 0.17,
-   "high": 0.28,
+   "low": 0.17,
+   "mid": 0.28,
+   "high": 0.61,
    "grade": "B",
    "source": "https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf",
-   "note": "Harrison 1998 Table 1-8 (USSR, % of GNP at 1937 factor cost): 17% in 1940, 28% in 1941, 61% in 1942."
+   "note": "Harrison 1998 Table 1-8 (USSR, % of GNP at 1937 factor cost): 17% in 1940 (low, last peacetime year), 28% in 1941 (mid, the war year), 61% in 1942 (high, the war footing reached within a year). audit 2026-10-30: was 0.15/0.17/0.28 (peacetime mid); war-date snapshot takes the wartime share as mid (SOURCES.md milSpendShare rule)."
   },
   "industrialShare": {
    "low": 0.3,
@@ -586,12 +586,12 @@
    "note": "Educated guess: after the Five-Year Plans industry was ~30-40% of GNP; Harrison 1998 stresses the USSR's low-productivity agriculture still employing most workers. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
   },
   "foodSurplus": {
-   "low": 0.03,
-   "mid": 0.08,
-   "high": 0.15,
-   "grade": "D",
-   "source": "derived:educated-guess",
-   "note": "Educated guess: collectivised agriculture fed the country with little margin (grain exports small after 1933); loss of Ukraine in 1941 turned it into deficit. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+   "low": 0.28,
+   "mid": 0.33,
+   "high": 0.4,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/1939_Soviet_census",
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). Cited page: 1939 census population 170.5M of which 55.9M urban, so 67% rural; rural share used as an upper bound for a: 1 - 0.67 = 0.33 (mid), same basis as ussr-1944. s = 1: Harrison 1998 (https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf, p. 10) calls the USSR \"virtually self-sufficient before the war\". Low allows a larger farm share in the 1939-40 annexed territories. The loss of Ukraine after June 1941 is outside the snapshot date. audit 2026-10-30: was 0.03/0.08/0.15 (educated guess about margins); recomputed with the formula."
   },
   "annualCohort": {
    "low": 1500000,
@@ -697,9 +697,9 @@
    "low": 200,
    "mid": 250,
    "high": 350,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:0-521-21730-X",
-   "note": "van Creveld ch. 5 (Barbarossa logistics): forces beyond ~300 km from railheads could not be supplied by the motor transport of 1941; the Red Army had only 272,600 vehicles (Askey) and depended on rail."
+   "note": "van Creveld ch. 5 (Barbarossa logistics): forces beyond ~300 km from railheads could not be supplied by the motor transport of 1941; the Red Army had only 272,600 vehicles (Askey) and depended on rail. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "draftAnimals": {
    "low": 17000000,
@@ -754,5 +754,5 @@
    "note": "1.3 row: familiar terrain, fortified cities, population support, deep strategic depth and a harsh winter and rasputitsa invaders were not adapted to."
   }
  },
- "notes": "Snapshot date 22 June 1941 (Operation Barbarossa). Population (196.7M), forces, rail and GDP are for the June 1941 USSR INCLUDING the 1939-40 annexations (Baltic states, eastern Poland, Bessarabia, Karelian Isthmus, ~20-23M people), but the requested border hb:1938:USSR is the pre-1939 frontier, so these lands lie outside the polygon; a world_1945 polygon would match better. Mongolia (MPR) not included. Force counts are for the whole USSR (Askey, operationbarbarossa.net); the five western districts held 2,691,674 men, 12,842 tanks, 8,336 combat aircraft and 23,633 guns (sum of Askey's district figures), which a battle agent should use for the frontier battles. P-role personnel are reconstructions from division counts (grade C). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, patrol ships and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5."
+ "notes": "Snapshot date 22 June 1941 (Operation Barbarossa). Population (196.7M), forces, rail and GDP are for the June 1941 USSR INCLUDING the 1939-40 annexations (Baltic states, eastern Poland, Bessarabia, Karelian Isthmus, ~20-23M people), and the border hb:1945:USSR contains them (it also contains Kaliningrad, southern Sakhalin, the Kurils, Transcarpathia and Tuva, Soviet only from 1944-45). (audit 2026-10-30) Mongolia (MPR) not included. Force counts are for the whole USSR (Askey, operationbarbarossa.net); the five western districts held 2,691,674 men, 12,842 tanks, 8,336 combat aircraft and 23,633 guns (sum of Askey's district figures), which a battle agent should use for the frontier battles. P-role personnel are reconstructions from division counts (grade C). Ship convention per SOURCES.md naval role boundaries: battleships, carriers, cruisers and destroyers = ships_major, patrol ships and smaller craft = ships_minor (role split per SOURCES.md naval role boundaries). Merchant tonnage converted to deadweight at x1.5. audit 2026-10-30: border changed to hb:1945:USSR, which includes the 1939-40 annexations counted in the population (plus Kaliningrad, southern Sakhalin, the Kurils and Transcarpathia, gained in 1945)."
 }

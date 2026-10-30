@@ -610,12 +610,12 @@
       "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Israel 1967 = 10.9%. Share 10.9% (range 9.0-13.0%) -> 0.891 (0.87-0.91)."
     },
     "annualCohort": {
-      "low": 52000,
-      "mid": 58000,
-      "high": 62000,
+      "low": 26000,
+      "mid": 29700,
+      "high": 32000,
       "grade": "B",
       "source": "derived:cohort-from-agegroup",
-      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (1,373,628 x 10.80% + 1,371,372 x 10.47%) / 5 = 58,400 persons (men and women; both were conscripted)."
+      "note": "World Bank SP.POP.1519.MA.5Y and SP.POP.TOTL.MA.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json): 1,373,628 x 10.80% / 5 = ~29,700 males per year. Women were also conscripted (1,371,372 x 10.47% / 5 = ~28,700 more a year); they are left out so the field compares across nations. audit 2026-10-30: males only, the conscript-pool convention of all other snapshots (derived:cohort-from-agegroup applied to the male term only); was 58,000 for both sexes."
     },
     "production": {
       "artillery": {

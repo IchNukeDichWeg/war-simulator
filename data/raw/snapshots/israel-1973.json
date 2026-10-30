@@ -585,11 +585,11 @@
     },
     "air": {
       "low": 8.6,
-      "mid": 8.8,
+      "mid": 8.71,
       "high": 9.0,
       "grade": "C",
       "source": "derived:tech-anchor",
-      "note": "Anchor: air 9 = 1985. Evidence: F-4E with radar-guided AAMs and ECM pods; A-4 Skyhawk subsonic."
+      "note": "Anchor: air 9 = 1985. Evidence: F-4E with radar-guided AAMs and ECM pods; A-4 Skyhawk subsonic. audit 2026-10-30: mid 8.8 -> 8.71, capped at the SOURCES.md tech anchor interpolated for 1973 (8.714); the mid may not exceed the anchor for its year."
     },
     "cyber": {
       "low": 0,
@@ -642,12 +642,12 @@
       "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) Israel 1973 = 8.5%. Share 8.5% (range 7.0-10.0%) -> 0.915 (0.9-0.93)."
     },
     "annualCohort": {
-      "low": 58000,
-      "mid": 64900,
-      "high": 70000,
+      "low": 29500,
+      "mid": 33100,
+      "high": 36000,
       "grade": "B",
       "source": "derived:cohort-from-agegroup",
-      "note": "derived:cohort-from-agegroup with World Bank SP.POP.1519.MA.5Y / FE.5Y and SP.POP.TOTL.MA.IN / FE.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json). (1,634,642 x 10.12% + 1,643,358 x 9.68%) / 5 = 64,900 persons (men and women conscripted)."
+      "note": "World Bank SP.POP.1519.MA.5Y and SP.POP.TOTL.MA.IN (https://api.worldbank.org/v2/country/ISR;EGY/indicator/SP.POP.1519.MA.5Y?date=1967:1973&format=json): 1,634,642 x 10.12% / 5 = ~33,100 males per year. Women were also conscripted (1,643,358 x 9.68% / 5 = ~31,800 more a year); they are left out so the field compares across nations. audit 2026-10-30: males only, the conscript-pool convention of all other snapshots (derived:cohort-from-agegroup applied to the male term only); was 64,900 for both sexes."
     },
     "production": {
       "artillery": {

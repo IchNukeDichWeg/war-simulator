@@ -294,9 +294,9 @@
           "low": 40,
           "mid": 60,
           "high": 100,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:978-0-14-102690-9",
-          "note": "Ships of the line in commission, mid-1815. Rodger, Command of the Ocean (2004) app.: ~100 of the line in sea service at the 1813-14 peak, many paid off after April 1814 and only partly recommissioned in the Hundred Days; frigates counted as minor, as in france-1805."
+          "note": "Ships of the line in commission, mid-1815. Rodger, Command of the Ocean (2004) app.: ~100 of the line in sea service at the 1813-14 peak, many paid off after April 1814 and only partly recommissioned in the Hundred Days; frigates counted as minor, as in france-1805. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.7,
@@ -320,9 +320,9 @@
           "low": 300,
           "mid": 400,
           "high": 500,
-          "grade": "C",
+          "grade": "D",
           "source": "isbn:978-0-14-102690-9",
-          "note": "Frigates, sloops, brigs and cutters in commission 1814-15 (Rodger appendix: ~600 vessels of all classes at the peak, reduced in 1814-15)."
+          "note": "Frigates, sloops, brigs and cutters in commission 1814-15 (Rodger appendix: ~600 vessels of all classes at the peak, reduced in 1814-15). audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
         },
         "quality": {
           "low": 0.7,
@@ -386,11 +386,11 @@
     },
     "ships": {
       "low": 6.0,
-      "mid": 6.2,
+      "mid": 6.1,
       "high": 6.3,
       "grade": "C",
       "source": "derived:tech-anchor",
-      "note": "Anchor: 6 (74-gun ships of the line). Evidence: the largest coppered battle fleet; still all sail"
+      "note": "Anchor: 6 (74-gun ships of the line). Evidence: the largest coppered battle fleet; still all sail audit 2026-10-30: mid 6.2 -> 6.1, capped at the SOURCES.md tech anchor interpolated for 1815 (6.100); the mid may not exceed the anchor for its year."
     },
     "fortification": {
       "low": 5.9,
@@ -402,11 +402,11 @@
     },
     "logistics": {
       "low": 6.0,
-      "mid": 6.2,
+      "mid": 6.1,
       "high": 6.3,
       "grade": "C",
       "source": "derived:tech-anchor",
-      "note": "Anchor: 6 (magazines + requisition). Evidence: commissariat paid for supplies and sea lift kept Wellington supplied in Iberia"
+      "note": "Anchor: 6 (magazines + requisition). Evidence: commissariat paid for supplies and sea lift kept Wellington supplied in Iberia audit 2026-10-30: mid 6.2 -> 6.1, capped at the SOURCES.md tech anchor interpolated for 1815 (6.100); the mid may not exceed the anchor for its year."
     },
     "communications": {
       "low": 5.9,
@@ -475,12 +475,12 @@
       "note": "Educated guess: Deane and Cole style national accounts put manufacturing, mining and building near 30% of British income around 1811-1821; Ireland lowers the UK share."
     },
     "foodSurplus": {
-      "low": 0.3,
-      "mid": 0.4,
-      "high": 0.5,
+      "low": 0.55,
+      "mid": 0.61,
+      "high": 0.73,
       "grade": "D",
       "source": "derived:educated-guess",
-      "note": "Educated guess: only about a third of the British labour force in farming feeds the towns; grain imports small but growing; Ireland exports food."
+      "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID (https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true), United Kingdom agriculture share of employment 1801 = 30.8%, 1841 = 21.1%, interpolated ~27% for 1815 (\"about a third\" for Britain). The snapshot includes Ireland (~6M of 19.3M), more agrarian; ~0.65 assumed for it (not fetched), giving a ~0.39. s = 1 assumed: grain imports small, Ireland exported food. Mid 1 - 0.39 = 0.61; low a 0.45; high 0.73 if the OWID series already includes Ireland. Grade D. audit 2026-10-30: was 0.3/0.4/0.5, which contradicted the note's own farm share; recomputed with the formula."
     },
     "annualCohort": {
       "low": 179000.0,

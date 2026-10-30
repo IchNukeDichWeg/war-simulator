@@ -580,12 +580,12 @@
    "note": "Educated guess: industry ~30% of Italian output in the late 1930s; agriculture still ~40% of employment. 1940 steel output 2.1Mt vs Britain's 13Mt (https://en.wikipedia.org/wiki/Military_history_of_Italy_during_World_War_II). (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
   },
   "foodSurplus": {
-   "low": 0.0,
-   "mid": 0.03,
-   "high": 0.08,
-   "grade": "D",
-   "source": "derived:educated-guess",
-   "note": "Educated guess: the 'battle for grain' made Italy near self-sufficient in wheat, but fats and feed were imported; little surplus. (context page: https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ww2overview1998.pdf)"
+   "low": 0.47,
+   "mid": 0.52,
+   "high": 0.55,
+   "grade": "C",
+   "source": "https://en.wikipedia.org/wiki/Economy_of_fascist_Italy",
+   "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). Cited page: \"Agriculture still employed 48% of the working population in 1936 (56% in 1921)\" (a = 0.48). No calorie self-sufficiency figure could be fetched, so s = 1 is assumed; this overstates the value somewhat (wheat near self-sufficient after the battle for grain, fats and feed imported). Mid 1 - 0.48 = 0.52. High a 0.45; low allows a 0.50 and s ~0.95. audit 2026-10-30: was 0.0/0.03/0.08 (read as a trade balance); recomputed with the formula."
   },
   "annualCohort": {
    "low": 360000,
@@ -691,9 +691,9 @@
    "low": 150,
    "mid": 200,
    "high": 300,
-   "grade": "C",
+   "grade": "D",
    "source": "isbn:0-521-21730-X",
-   "note": "van Creveld, Supplying War ch. 6 (North Africa): Axis forces could not be sustained much beyond ~300 miles from Tripoli/Benghazi; the Italian army was short of trucks, so mid 200 km."
+   "note": "van Creveld, Supplying War ch. 6 (North Africa): Axis forces could not be sustained much beyond ~300 miles from Tripoli/Benghazi; the Italian army was short of trucks, so mid 200 km. audit 2026-10-30: grade C -> D: cited by ISBN only, with no fetched copy of the book (SOURCES.md grading rule)."
   },
   "draftAnimals": {
    "low": 1600000,

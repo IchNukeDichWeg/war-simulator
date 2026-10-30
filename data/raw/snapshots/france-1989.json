@@ -645,12 +645,12 @@
       "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) France 1989 = 5.7%. Share 5.7% (range 4.5-7.0%) -> 0.943 (0.93-0.955)."
     },
     "annualCohort": {
-      "low": 880000,
-      "mid": 926000,
-      "high": 960000,
-      "grade": "C",
+      "low": 440000,
+      "mid": 460000,
+      "high": 480000,
+      "grade": "B",
       "source": "derived:cohort-from-agegroup",
-      "note": "World Bank SP.POP.1519.MA.5Y FRA 1989 = 8.17% of males aged 15-19 (male population 28,165,411); applied to both sexes of the metropolitan population 56.7M (female share assumed equal) / 5 = ~926,000 persons per year (~460,000 males; MB: 240,100 conscripts under arms)."
+      "note": "World Bank SP.POP.1519.MA.5Y FRA 1989 = 8.17% of males aged 15-19; SP.POP.TOTL.MA.IN FRA 1989 = 28,165,411 (https://api.worldbank.org/v2/country/FRA/indicator/SP.POP.TOTL.MA.IN?date=1989&format=json). 28,165,411 x 8.17% / 5 = ~460,000 males per year (MB: 240,100 conscripts under arms). audit 2026-10-30: males only, the conscript-pool convention of all other snapshots (derived:cohort-from-agegroup applied to the male term only); was 926,000 for both sexes with an assumed female share."
     },
     "production": {
       "artillery": {

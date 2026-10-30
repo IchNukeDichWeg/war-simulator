@@ -361,11 +361,11 @@
     },
     "ships": {
       "low": 7.2,
-      "mid": 7.4,
+      "mid": 7.24,
       "high": 7.6,
       "grade": "C",
       "source": "derived:tech-anchor",
-      "note": "Anchor: 7 (dreadnoughts). Evidence: Queen Elizabeth class (15-in, oil-fired) completing; director firing; the world's largest navy"
+      "note": "Anchor: 7 (dreadnoughts). Evidence: Queen Elizabeth class (15-in, oil-fired) completing; director firing; the world's largest navy audit 2026-10-30: mid 7.4 -> 7.24, capped at the SOURCES.md tech anchor interpolated for 1914 (7.237); the mid may not exceed the anchor for its year."
     },
     "fortification": {
       "low": 6.7,
@@ -450,12 +450,12 @@
       "note": "Industry and mining ~40-45% of GDP; agriculture only ~7% of output (Broadberry and Howlett in Broadberry and Harrison 2005, ch. 7). Grade C."
     },
     "foodSurplus": {
-      "low": 0.87,
-      "mid": 0.88,
-      "high": 0.9,
-      "grade": "B",
+      "low": 0.65,
+      "mid": 0.7,
+      "high": 0.74,
+      "grade": "C",
       "source": "https://ourworldindata.org/grapher/employment-by-economic-sector.csv?v=1&csvType=full&useColumnShortNames=true",
-      "note": "Formula: foodSurplus = 1 - agricultural share of employment. Herrendorf et al. via OWID: United Kingdom agriculture share of employment 1911 = 11.8%, 1920 = 8.6%. 1 - 0.118 = 0.88 (mid). Britain imported most of its wheat and much of its meat (B&H overview: 'Britain would quickly starve' was the contemporary expectation); import dependence does not lower this value."
+      "note": "Formula: foodSurplus = 1 - a / s (a = agricultural share of employment, s = calorie self-sufficiency). a: Herrendorf et al. via OWID, United Kingdom agriculture share of employment 1911 = 11.8%, 1920 = 8.6%. s: \"Before the War about 60 percent of the energy value of the British diet was derived from foodstuffs that were imported\" (Gazeley and Newell 2010, IZA DP 5297, p. 11, https://repec.iza.org/dp5297.pdf); 58% of calories in 1913 (Offer, as summarised in https://www.habselstree.org.uk/boys/wp-content/uploads/sites/2/2024/06/OP65StJohnFoodSupplyandWorldWarOne.pdf); 64% (https://shipwreckedmariners.org.uk/wp-content/uploads/2018/08/Why-Britain-Wasnt-Starved-into-Surrender-in-WW1.pdf). Mid 1 - 0.118/0.40 = 0.70. Low a 0.125, s 0.36 = 0.65; high a 0.11, s 0.42 = 0.74. Grade C: two sources combined. Import dependence: ~60% of calories imported, four fifths of wheat. audit 2026-10-30: was 0.87/0.88/0.9 (s = 1 assumed); fetched s applied."
     },
     "annualCohort": {
       "low": 400000,

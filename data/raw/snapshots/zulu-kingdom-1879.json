@@ -115,19 +115,19 @@
     },
     "mobilizationRatio": {
       "low": 0.14,
-      "mid": 0.15,
+      "mid": 0.17,
       "high": 0.2,
       "grade": "C",
       "source": "derived:snapshot-composite",
-      "note": "Every man was enrolled in an age-set ibutho; 35,000-60,000 warriors (Anglo-Zulu War page) of 250,000-400,000 people = 14-20%."
+      "note": "Every man was enrolled in an age-set ibutho; 35,000-60,000 warriors (Anglo-Zulu War page) of 250,000-400,000 people = 14-20%. audit 2026-10-30: mid 0.15 -> 0.17, inside the cited 14-20% range, so that active (40,000) + trainedReserves (10,000) fit inside mobilizable."
     },
     "mobilizable": {
       "low": 35000.0,
-      "mid": 45000.0,
+      "mid": 51000,
       "high": 80000.0,
       "grade": "C",
       "source": "derived:mobilizable-from-ratio",
-      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high). audit 2026-10-30: mid recomputed for the new ratio (300,000 x 0.17)."
     },
     "forces": {
       "infantry_line": {

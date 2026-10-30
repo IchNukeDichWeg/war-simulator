@@ -100,14 +100,14 @@
   }
  ],
  "territory": {
-  "border": "hb:300:Rome (Constantinus) + hb:300:Rome (Maximian) + hb:300:Rome (Galerius) + hb:300:Rome (Diocletianus)",
+  "border": "hb:400:Western Roman Empire + hb:400:Eastern Roman Empire",
   "areaKm2": {
    "low": 4000000,
-   "mid": 4300000,
+   "mid": 4190000,
    "high": 4500000,
    "grade": "B",
    "source": "https://seshat-db.com/core/polity/71",
-   "note": "Seshat codes 4.0-4.5 million km2 for 285-394 CE. The four tetrarchic polygons of historical-basemaps world_300 (Rome (Constantinus) 750,347 + Rome (Maximian) 1,458,182 + Rome (Galerius) 590,456 + Rome (Diocletianus) 1,500,666 km2, computed on the sphere) total 4.30 million km2 (mid)."
+   "note": "Seshat codes 4.0-4.5 million km2 for 285-394 CE (https://seshat-db.com/core/polity/71). Border: the world_400 Western Roman Empire (2,361,040 km2) and Eastern Roman Empire (1,829,503 km2) polygons (https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_400.geojson, computed on the sphere) total 4.19 million km2 (mid); northern Britain beyond York is outside them. audit 2026-10-30: border changed from the four world_300 tetrarchy polygons (95 years off, 4.30M km2) to world_400 (5 years off); mid follows the new polygon."
   }
  },
  "demography": {
@@ -431,11 +431,11 @@
   },
   "fortification": {
    "low": 3.4,
-   "mid": 3.6,
+   "mid": 3.45,
    "high": 3.8,
    "grade": "B",
    "source": "derived:tech-anchor",
-   "note": "Anchor 3 exceeded toward anchor 4: late Roman walls with projecting towers, thick curtain walls and city circuits (Aurelian Walls rebuilt), quadriburgia on the frontiers. The Theodosian Land Walls of Constantinople came after 404."
+   "note": "Anchor 3 exceeded toward anchor 4: late Roman walls with projecting towers, thick curtain walls and city circuits (Aurelian Walls rebuilt), quadriburgia on the frontiers. The Theodosian Land Walls of Constantinople came after 404. audit 2026-10-30: mid 3.6 -> 3.45, capped at the SOURCES.md tech anchor interpolated for 395 (3.448); the mid may not exceed the anchor for its year."
   },
   "logistics": {
    "low": 3.2,
@@ -611,6 +611,6 @@
    "note": "Rubric 1.2: fortified cities and frontier forts, local supply via the annona; weakened by Gothic federates already inside the empire and limited popular support for a conscript army."
   }
  },
- "notes": "Snapshot = 17 January 395, death of Theodosius I at Milan, the last ruler of the united empire; the empire was divided between Arcadius (East) and Honorius (West, under Stilicho) immediately afterwards. Capital set to Constantinople (Theodosius' main residence); Milan held the western court. Border: historical-basemaps world_300 (latest file at or before 395) shows the tetrarchy, so the four tetrarchic polygons are unioned; world_400 has the East/West split but post-dates the snapshot. Army figures are Notitia Dignitatum reconstructions (Jones 1964); the Notitia lists units, not men, so every total rests on assumed unit establishments, and it is a paper strength. Treadgold (Byzantium and Its Army, ch. 2) and Elton (Warfare in Roman Europe AD 350-425) give similar orders of magnitude but were not fetched. Agathias' 645,000 is an ancient figure shown only as the high bound. The infantry/cavalry split is the weakest part of the force table. Federates are counted as trainedReserves, not active forces.",
+ "notes": "Snapshot = 17 January 395, death of Theodosius I at Milan, the last ruler of the united empire; the empire was divided between Arcadius (East) and Honorius (West, under Stilicho) immediately afterwards. Capital set to Constantinople (Theodosius' main residence); Milan held the western court. Border: historical-basemaps world_400 Western and Eastern Roman Empire polygons (5 years after the snapshot, matching the division of 395). (audit 2026-10-30) Army figures are Notitia Dignitatum reconstructions (Jones 1964); the Notitia lists units, not men, so every total rests on assumed unit establishments, and it is a paper strength. Treadgold (Byzantium and Its Army, ch. 2) and Elton (Warfare in Roman Europe AD 350-425) give similar orders of magnitude but were not fetched. Agathias' 645,000 is an ancient figure shown only as the high bound. The infantry/cavalry split is the weakest part of the force table. Federates are counted as trainedReserves, not active forces.",
  "era": "iron"
 }

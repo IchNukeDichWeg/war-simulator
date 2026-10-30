@@ -644,12 +644,12 @@
       "note": "Formula: foodSurplus = 1 - agricultural share of the labour force (share of food output not eaten by the farm population; no calorie self-sufficiency adjustment). World Bank WDI Database Archives (version 1999 Apr), SL.AGR.TOTL.ZS \"Labor force in agriculture (% of total)\" (ILO-based) United Kingdom 1982 = 2.5%. The UK was a net food importer; that does not lower this value. Share 2.5% (range 1.5-3.5%) -> 0.975 (0.965-0.985)."
     },
     "annualCohort": {
-      "low": 940000,
-      "mid": 994000,
-      "high": 1040000,
-      "grade": "C",
+      "low": 460000,
+      "mid": 484100,
+      "high": 505000,
+      "grade": "B",
       "source": "derived:cohort-from-agegroup",
-      "note": "World Bank SP.POP.1519.MA.5Y GBR 1982 = 8.83% of males aged 15-19; applied to total population 56.3M (female share assumed equal) / 5 = ~994,000 persons per year (~500,000 males)."
+      "note": "World Bank SP.POP.1519.MA.5Y GBR 1982 = 8.83% of males aged 15-19; SP.POP.TOTL.MA.IN GBR 1982 = 27,395,187 (https://api.worldbank.org/v2/country/GBR/indicator/SP.POP.TOTL.MA.IN?date=1982&format=json). 27,395,187 x 8.83% / 5 = ~484,100 males per year. audit 2026-10-30: males only, the conscript-pool convention of all other snapshots (derived:cohort-from-agegroup applied to the male term only); was 994,000 for both sexes with an assumed female share."
     },
     "production": {
       "artillery": {
