@@ -835,11 +835,25 @@ The doctrine-scaled break is held inside the era low..high before the cohesion s
 
 - **Gained at base:** Adrianople 10% -> 65%, with its ratio x0.26 -> x0.49, and the Gulf War's ratio x3.00 ->
   x2.65. Gulf War winner 90% -> 100%, France 70% -> 80%, Mohi 15% -> 30%, still failing.
-- **Adrianople is not settled.** The 40-seed counterfactual had it at 19 of 40, under the line, so 65% over
-  20 seeds may not hold at 200.
+- **Adrianople does not hold.** 65% over 20 seeds was noise: 43.5% +/- 6.9 over 200 (below).
 - **At quantile 1** the Gulf War and Adrianople pass, Hastings still fails, and **Zama falls under the line
   at 20 seeds**. Over 40 seeds it is 29 of 40, so it may be noise. The clamp has a cost here: at quantile 1
   Rome (0.25) and Carthage (0.14 x 1.79) both pin at 0.25, so the doctrine edge disappears.
 - **Presets:** 24 runs, no winner changes, invariants clean.
 - **Inherent limit:** a clamp cannot widen a range. A doctrine at the era high gets no margin above it at any
   quantile, so doctrines at the bound behave alike near the top of the draw.
+
+**Base at 200 seeds, clamp on** (`validation/robustness-clamp-200.jsonl`, stopped by hand at 18 of 1,177
+evaluations, so this is a base reading and not a screen). Winners stay **18 of 24**, the same 18 as before
+the clamp:
+
+| Case | Before the clamp | Clamp on |
+| --- | --- | --- |
+| Gulf War | 83.5% +/- 5.1 | 100.0% +/- 1.0 |
+| France 1940 | 81.5% +/- 5.4 | 87.0% +/- 4.7 |
+| Hastings | 85.0% +/- 4.9 | 85.0% +/- 4.9 |
+| Mohi | 38.0% +/- 6.7 | 55.0% +/- 6.9, under the line |
+| Adrianople | 6.5% | 43.5% +/- 6.9, under the line |
+
+The 19 at 20 seeds is therefore 18 at 200. The "robust 18 of 18" that partial run printed means nothing yet:
+only 18 of the 1,177 evaluations had run. The gate reading stands until the campaign finishes.

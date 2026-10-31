@@ -60,7 +60,7 @@ export function LimitsPage() {
           <h3>How it scores against history</h3>
           <p>24 historical battles from Marathon to Iraq 2003 are rerun over 20 seeds each (VALIDATION.md). The model picks the historical winner in 19 of 24, gets the loss ratio within a factor of 3 in 15 and the duration within a factor of 3 in 22. The pass mark set before building was 18 winners that hold up when any single grade-D constant moves across its range. The last screen, 200 seeds before the era clamp was added, found 17, and it has not been rerun, so <b>the validation gate is not met</b>.</p>
           <ul>
-            <li>Marathon: the Athenians are out-powered in the model and lose. Adrianople passes narrowly, at 65% over 20 seeds, and the Gothic cavalry arriving on the flank mid-battle is not modelled.</li>
+            <li>Marathon: the Athenians are out-powered in the model and lose. Adrianople reaches 65% over 20 seeds but 43.5% over 200, so it is not a pass; the Gothic cavalry arriving on the flank mid-battle is not modelled.</li>
             <li>Carrhae and Mohi: the winners broke contact and harassed. A break-contact rule was built and rejected: it left Carrhae lost, since horse-archer standoff is not modelled, and won Mohi for the wrong reason.</li>
             <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
             <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
