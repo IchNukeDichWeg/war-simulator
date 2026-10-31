@@ -65,7 +65,7 @@ export function LimitsPage() {
             <li>Six-Day War: no pre-emptive air strike, so the Arab air forces survive day one.</li>
             <li>Yom Kippur (Sinai): no crossing at the seam between two armies, so the counter-crossing never happens.</li>
             <li>Loss ratios are the weakest output: 9 of 24 are off by more than a factor of 3.</li>
-            <li>France 1940 is the one winner that fails on a single grade-D constant at 200 seeds per battle, by half a point: starvation at its high. Hastings runs out of time at the high era breakpoint. Applying every researched replacement for the guessed values, including ones still graded D, takes Blenheim and France below the winner line.</li>
+            <li>France 1940 is the one winner that fails on a single grade-D constant at 200 seeds per battle, by half a point: starvation at its high. Those 200-seed counts predate the lower medieval break high. Applying every researched replacement for the guessed values, including ones still graded D, takes Blenheim and France below the winner line.</li>
           </ul>
         </section>
 

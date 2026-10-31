@@ -96,3 +96,6 @@ Every open choice made while building, with a one-line reason. Newest at the bot
   low..high as a hard limit, because Iraq's 0.462 at the high draw was above any value the data
   supports. The time limit stays as it is: raising it would hide slow runs rather than correct a
   value. The clamp was chosen after seeing the failure it fixes, so it gets a new campaign.
+- **The medieval break high is the iron maximum, 0.25, not 0.41.** The medieval rate is already the
+  Krentz value, and 0.41 was a median of totals dominated by the rout, which gave 4.10 days to break
+  at parity against a 3-day limit. This is an analogy chosen after the failure, so it stays grade D.

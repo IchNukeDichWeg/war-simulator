@@ -925,4 +925,18 @@ columns):
 The rate column uses the top of the sourced range and also moves Cannae, Carrhae, Marathon and Zama, because
 tech 3 is the classical rate, so it reaches well past the medieval data. Lowering the medieval high to 0.25 changes only what the
 mismatch explains. That value is the Krentz maximum already used for iron, so it is an analogy and stays grade
-D. It is chosen after seeing this failure and no new source supports it. None of the three is applied.
+D. It is chosen after seeing this failure and no new source supports it. The first is applied below.
+
+## Medieval break high 0.41 -> 0.25
+
+Instrument: the 20-seed backtest against 3948672, then 24 preset runs. The data hash changes, so the 200-seed
+figures above do not describe this data and the gate reading stands until a new campaign runs: **not met**.
+
+| Backtest | Before | After |
+| --- | --- | --- |
+| Random draw | 19/15/22 | 19/15/22 |
+| Quantile 0 | 17/15/20 | 17/15/20 |
+| Quantile 1 | 17/15/24 | **18**/15/24 |
+
+Hastings 85% -> 100%, and it now passes at quantile 1. Mohi 30% -> 35%, its loss ratio x11.83 -> x15.35.
+Agincourt x0.28 -> x0.29. No other case moves. Presets: 24 runs, no winner changes, invariants clean.
