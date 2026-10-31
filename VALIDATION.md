@@ -876,3 +876,53 @@ The 19 at 20 seeds is therefore 18 at 200.
 
 The gate needs 18 and has 16 to 17. France alone would not close it on the strict reading: Hastings at the
 high breakpoint would still stand. Mohi at 55.0% +/- 6.9 is under the line but not clear of it either.
+
+## Diagnosis: Hastings' battle speed
+
+Instrument: 40 seeds per line at ecd9a4c, same seeds across columns, with mechanics overridden on a copy
+from a scratch script. Not pooled with any campaign, and no engine or data value changed. Mohi and
+Adrianople readings at this count are within noise of the line.
+
+**The time to break is set by two numbers.** A side loses baseDailyCasualtyRate x R^alpha per day, and alpha
+is 0.30, so the force ratio barely moves it. At R = 1 the days to break are breakpoint / rate:
+
+| Era | Rate | Break mid | Break high | Days at mid | Days at high |
+| --- | --- | --- | --- | --- | --- |
+| Iron | 0.10 | 0.14 | 0.25 | 1.40 | 2.50 |
+| **Medieval** | 0.10 | 0.20 | 0.41 | **2.00** | **4.10** |
+| Gunpowder | 0.20 | 0.26 | 0.356 | 1.30 | 1.78 |
+| Napoleonic | 0.16 | 0.231 | 0.333 | 1.44 | 2.08 |
+
+The trace agrees. The English lose 0.11 to 0.13 of strength a day, so at quantile 1 they stand at 0.31 to
+0.34 when the 3-day limit fires, short of the withdrawal at 0.369.
+
+**The cause is a mismatch in the medieval data.** Both values are stated as stand-ins. The rate was "kept at
+the Krentz-based ancient value" for want of a medieval series, but the break was not: its high of 0.41 is the
+median of medieval totals that its own note says are dominated by the rout. So an iron-era killing rate
+meets a rout-inclusive break, grade D, which gives the slowest break of any era before 1850, bronze
+included (3.33 at its high): 4.10 days at parity against a 3-day limit.
+
+**The headline x5 overstates it, and the backtest hides it.** The duration check counts anything under a day as
+1 day, so Hastings' 1.8 against 0.35 passes as x1.8. Without that floor 10 of the 13 battles of a day or less
+are over x3 at the mid quantile (20 seeds). But history is in calendar days and the model runs 10 rounds a
+battle day. If a round is an hour (inferred from `battleHoursPerDay`, not measured), Hastings is 19 rounds
+against about 8.4 hours, roughly x2.3.
+
+**Counterfactuals** (winner hits of 40, median days; cases not shown are unchanged in the first two change
+columns):
+
+| Case | Now | Medieval high 0.25 | Medieval range = iron | Rate 0.17, tech 3-4 |
+| --- | --- | --- | --- | --- |
+| Hastings | 35, 1.9 | 40, 1.7 | 40, 1.9 | 40, 1.2 |
+| Hastings at quantile 1 | 0, 3.0 | 40, 2.2 | 40, 2.2 | 40, 2.3 |
+| Agincourt at quantile 1 | 39, 2.7 | 40, 1.5 | 40, 1.5 | 40, 2.1 |
+| Mohi | 19, 1.3 | 20, 1.1 | 25, 1.2 | 28, 0.7 |
+| Mohi at quantile 1 | 2, 2.5 | 8, 1.5 | 40, 1.6 | 13, 1.6 |
+| Adrianople | 19, 2.3 | 19, 2.3 | 19, 2.3 | 23, 1.4 |
+| Gaugamela | 39, 1.4 | 39, 1.4 | 39, 1.4 | 34, 0.8 |
+| Winners at the line | 18 | 18 | 19 | 19 |
+
+The rate column uses the top of the sourced range and also moves Cannae, Carrhae, Marathon and Zama, because
+tech 3 is the classical rate, so it reaches well past the medieval data. Lowering the medieval high to 0.25 changes only what the
+mismatch explains. That value is the Krentz maximum already used for iron, so it is an analogy and stays grade
+D. It is chosen after seeing this failure and no new source supports it. None of the three is applied.
