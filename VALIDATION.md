@@ -843,9 +843,9 @@ The doctrine-scaled break is held inside the era low..high before the cohesion s
 - **Inherent limit:** a clamp cannot widen a range. A doctrine at the era high gets no margin above it at any
   quantile, so doctrines at the bound behave alike near the top of the draw.
 
-**Base at 200 seeds, clamp on** (`validation/robustness-clamp-200.jsonl`, stopped by hand at 18 of 1,177
-evaluations, so this is a base reading and not a screen). Winners stay **18 of 24**, the same 18 as before
-the clamp:
+**Campaign at 200 seeds, clamp on** (`validation/robustness-clamp-200.jsonl`, 1,177 evaluations, 0 errors,
+data hash 05fd7676dd1481b8, stopped at 18 and resumed, code at 3948672). Not pooled with
+`robustness-200.jsonl`. Winners stay **18 of 24**, the same 18 as before the clamp:
 
 | Case | Before the clamp | Clamp on |
 | --- | --- | --- |
@@ -855,5 +855,24 @@ the clamp:
 | Mohi | 38.0% +/- 6.7 | 55.0% +/- 6.9, under the line |
 | Adrianople | 6.5% | 43.5% +/- 6.9, under the line |
 
-The 19 at 20 seeds is therefore 18 at 200. The "robust 18 of 18" that partial run printed means nothing yet:
-only 18 of the 1,177 evaluations had run. The gate reading stands until the campaign finishes.
+The 19 at 20 seeds is therefore 18 at 200.
+
+| | Before the clamp | Clamp on |
+| --- | --- | --- |
+| Winners at base | 18 | 18 |
+| Robust, grade-D constants | 17 | **17** |
+| Robust, also era breakpoints | 15 | **16** |
+| Gate (18 robust) | not met | **not met** |
+
+- **Gulf War is fixed:** 100% at both breakpoint ends, and its lowest reading anywhere is 99.0%.
+- **Zama holds:** 71.0% at quantile 1, so the 20-seed flip was noise.
+- **France 1940 misses by half a point:** `starvationMultiplier` high 59.5% +/- 6.8, up from 48.0%. That is
+  under the line but not clear of it, so whether it truly fails is unresolved at this count. It counts as
+  a miss under the rule. `aircraft_strike.8` low no longer flips, 51.5% -> 64.0%.
+- **Hastings remains the clear failure:** 0% at quantile 1, still time-limit endings. The medieval
+  breakpoint is itself grade D, so on a strict reading of "no single grade-D constant" this is a flip
+  too, and the count of 16 is the honest one.
+- **Next closest:** Blenheim 63.5% on `armorMatrix.6.5` low, unchanged.
+
+The gate needs 18 and has 16 to 17. France alone would not close it on the strict reading: Hastings at the
+high breakpoint would still stand. Mohi at 55.0% +/- 6.9 is under the line but not clear of it either.
