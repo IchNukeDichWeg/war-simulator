@@ -29,14 +29,16 @@
   --c-text: light-dark(#18202d, #e6ebf2);
   --c-text-strong: light-dark(#05080d, #ffffff);
   --c-text-muted: light-dark(#556072, #95a0b2);
-  --c-text-faint: light-dark(#8691a1, #6b7587);
+  --c-text-faint: light-dark(#626d7f, #848ea0);  /* placeholders, small labels: AA 4.5:1 on surface and surface-2 */
   /* colour: brand and actions */
-  --c-accent: light-dark(#8a5c00, #f0cc63);      /* brass: brand, active tab, edited values; readable as text */
+  /* accent: text or lines only (AA: light >= 5.6:1 on every light surface incl. --c-selected, dark >= 7.9:1).
+     For a filled accent background use --c-accent-fill with --c-on-accent text (11:1), never --c-accent. */
+  --c-accent: light-dark(#7a5200, #f0cc63);      /* brass: brand, active tab, edited values */
   --c-accent-fill: light-dark(#f0c552, #f0cc63); /* accent as a background */
   --c-on-accent: #17130a;                        /* text on --c-accent-fill */
   --c-accent-soft: light-dark(rgba(196, 140, 10, 0.12), rgba(240, 204, 99, 0.12));
-  --c-primary: light-dark(#2563eb, #3b82f6);
-  --c-primary-hover: light-dark(#1d4fd0, #5793f8);
+  --c-primary: light-dark(#2563eb, #2f6fe0);     /* white text on it: 5.2:1 light, 4.7:1 dark */
+  --c-primary-hover: light-dark(#1d4fd0, #2560d0);
   --c-on-primary: #ffffff;
   --c-selected: light-dark(#dce8ff, #1d3557);    /* pressed toggle buttons */
   --c-selected-border: light-dark(#5b8def, #4f8fe6);
@@ -262,7 +264,7 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 /* state dot: hollow when off, filled when on, so pressed is not told by colour alone */
 .maptools-list button::before { content: ''; width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--c-text-faint); flex: none; }
 .maptools-list button.on { background: var(--c-overlay); border-color: var(--c-selected-border); color: var(--c-text-strong); }
-.maptools-list button.on::before { background: var(--c-accent-fill); box-shadow: none; }
+.maptools-list button.on::before { background: var(--c-accent); box-shadow: none; }
 .maptools-list button:hover:not(:disabled) { background: var(--c-overlay-strong); color: var(--c-text); }
 .maptools select { border-radius: var(--r-pill); min-height: 26px; }
 .maptools-toggle { display: none; align-items: center; gap: var(--sp-3); min-height: 32px; padding: 0 var(--sp-5); border-radius: var(--r-pill); font-weight: var(--fw-semibold); }
