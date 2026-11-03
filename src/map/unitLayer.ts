@@ -145,18 +145,27 @@ void main() {
   }
   float status = v_a.y < 0.0 ? 0.0 : v_b.y;
   float routing = status == 3.0 ? 1.0 : 0.0;
-  float alphaMul = routing > 0.5 ? 0.55 + 0.35 * step(0.5, fract(u_time * 2.0 + phase)) : 1.0;
+  // Status is carried by shape and pattern, not by red or blinking: side colours
+  // are user-picked and often red themselves, and a blinking unit drew the eye
+  // away from the battles. Routing = greyed fill + dark hatch (compact: hollow
+  // ring), low supply = dashed border, engaged = orange border.
+  float alphaMul = routing > 0.5 ? 0.85 : 1.0;
+  vec3 grey = vec3(0.55, 0.56, 0.58);
   if (u_lod > 0.5) {
-    // compact marker: side-coloured disc, dark outline for contrast on any
-    // imagery; engaged = orange outline, routing = red outline
+    // compact marker: side-coloured disc, dark outline for contrast on any imagery
     float d = length(v_local) - v_size;
     float supplyC = clamp(v_b.x, 0.0, 1.0);
     vec3 fill = mix(side, vec3(0.42, 0.36, 0.30), (1.0 - supplyC) * 0.6);
     float bw = 1.2;
     vec3 bcol = vec3(0.05, 0.06, 0.08);
-    if (status == 2.0) { bcol = vec3(1.0, 0.6, 0.1); bw = 1.7; }
-    if (routing > 0.5) { bcol = vec3(0.95, 0.15, 0.12); bw = 1.7; }
-    vec4 acc = over(vec4(0.0), fill, 1.0 - smoothstep(-u_aa * 0.5, u_aa * 0.5, d));
+    if (status == 2.0) { bcol = vec3(1.0, 0.6, 0.1); bw = 1.8; }
+    vec4 acc = vec4(0.0);
+    if (routing > 0.5) {
+      // hollow ring in the side colour
+      acc = over(acc, mix(side, grey, 0.35), 1.0 - smoothstep(1.1, 1.1 + u_aa, abs(d + 1.6)));
+    } else {
+      acc = over(acc, fill, 1.0 - smoothstep(-u_aa * 0.5, u_aa * 0.5, d));
+    }
     acc = over(acc, bcol, 1.0 - smoothstep(bw * 0.5, bw * 0.5 + u_aa, abs(d)));
     acc *= alphaMul;
     if (acc.a < 0.01) discard;
@@ -167,7 +176,7 @@ void main() {
     vec2 uv = (v_local + 1.0) * 0.5;
     float m = atlasAt(ARROW, uv).a;
     if (m < 0.02) discard;
-    vec3 col = mix(side, vec3(1.0), 0.55);
+    vec3 col = mix(routing > 0.5 ? grey : side, vec3(1.0), 0.55);
     float a = m * 0.95 * alphaMul;
     o = vec4(col * a, a);
     return;
@@ -185,6 +194,7 @@ void main() {
     vec3 starved = vec3(0.42, 0.36, 0.30);
     vec3 fill = mix(side, starved, (1.0 - supply) * 0.75);
     if (status == 6.0) fill = mix(fill, vec3(0.6, 0.8, 1.0), 0.35);
+    if (routing > 0.5) fill = mix(fill, grey, 0.6);
     acc = over(acc, fill, inside * 0.92);
     vec2 g;
     if (band > 1.5) g = (p - fc + vec2(15.0, 9.0)) / vec2(30.0, 18.0);
@@ -194,17 +204,18 @@ void main() {
       acc = over(acc, vec3(0.04, 0.05, 0.07), gm * inside * 0.95);
     }
     if (routing > 0.5) {
-      float hatch = step(0.5, fract((p.x + p.y) * 0.18));
-      acc = over(acc, vec3(0.9, 0.1, 0.1), hatch * inside * 0.45);
+      float hatch = step(0.6, fract((p.x - p.y) * 0.16));
+      acc = over(acc, vec3(0.05, 0.05, 0.07), hatch * inside * 0.55);
     }
   }
-  // border
-  float bw = status == 5.0 ? 2.4 : 1.4;
+  // border: garrison thick, low supply dashed, besieging violet, engaged orange
+  float bw = status == 5.0 ? 2.4 : status == 2.0 ? 2.0 : 1.4;
   float border = 1.0 - smoothstep(bw * 0.5, bw * 0.5 + u_aa, abs(d));
+  if (supply < 0.33) border *= step(0.45, fract((p.x + p.y) * 0.14));
   vec3 bcol = vec3(0.92);
-  if (supply < 0.33) bcol = vec3(0.95, 0.25, 0.2);
   if (status == 4.0) bcol = vec3(0.75, 0.5, 1.0);
-  if (status == 2.0) bcol = mix(vec3(1.0, 0.55, 0.0), vec3(1.0, 0.95, 0.5), 0.5 + 0.5 * sin(u_time * 8.0 + phase * 6.28));
+  if (status == 2.0) bcol = mix(vec3(1.0, 0.5, 0.0), vec3(1.0, 0.8, 0.35), 0.5 + 0.5 * sin(u_time * 4.0 + phase * 6.28));
+  acc = over(acc, vec3(0.05, 0.06, 0.08), (1.0 - smoothstep(bw * 0.5 + 1.0, bw * 0.5 + 1.0 + u_aa, abs(d))) * 0.6);
   acc = over(acc, bcol, border);
   // strength bar: y [-12,-8]
   if (p.y > -12.5 && p.y < -7.5 && abs(p.x) < 15.5) {
@@ -349,7 +360,7 @@ export class UnitLayer implements CustomLayerInterface {
       const pers = units[o + U.personnel];
       a[j + 12] = pers > 0 ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, 1 + SIZE_PER_DOUBLING * (Math.log2(pers) - logMean))) : 1;
       a[j + 13] = 0; a[j + 14] = 0; a[j + 15] = 0;
-      if (status === UnitStatus.Engaged || status === UnitStatus.Routing) anim = true;
+      if (status === UnitStatus.Engaged) anim = true;
       k++;
     }
     this.unitInstances = k;
