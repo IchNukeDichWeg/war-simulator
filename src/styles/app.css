@@ -414,14 +414,22 @@ table.stats td, table.stats th { padding: var(--sp-1) var(--sp-2); border-bottom
 .progress span { position: absolute; inset: 0; text-align: center; font-size: var(--fs-xs); line-height: 18px; }
 
 /* ---------- honest limits ---------- */
-.limits-overlay { position: fixed; inset: 0; background: var(--c-scrim); z-index: var(--z-modal); display: flex; justify-content: center; overflow-y: auto; padding: 30px var(--sp-5); }
-.limits { position: relative; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-lg); max-width: 760px; width: 100%; padding: 20px 28px; height: max-content; box-shadow: var(--shadow-lg); }
-.limits h2 { margin-top: 0; color: var(--c-accent); }
-.limits h3 { margin-bottom: var(--sp-2); }
-.limits .lead { font-size: 14px; }
-.limits li { margin: 3px 0; }
-.limits .close { position: absolute; top: 14px; right: 14px; }
-.grade-dist { display: flex; gap: var(--sp-6); flex-wrap: wrap; }
+.limits-overlay { position: fixed; inset: 0; background: var(--c-scrim); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); z-index: var(--z-modal); display: flex; justify-content: center; overflow-y: auto; padding: 40px var(--sp-5); }
+.limits { position: relative; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-lg); max-width: 760px; width: 100%; padding: var(--sp-7) var(--sp-8) var(--sp-8); height: max-content; box-shadow: var(--shadow-lg); line-height: 1.55; }
+.limits h2 { margin: 0 0 var(--sp-4); padding-right: 96px; font-size: var(--fs-2xl); color: var(--c-text-strong); letter-spacing: -0.01em; }
+.limits h2::before { content: ''; display: block; width: 32px; height: 3px; margin-bottom: var(--sp-5); border-radius: var(--r-pill); background: var(--c-accent-fill); }
+.limits h3 { margin: 0 0 var(--sp-3); font-size: var(--fs-lg); color: var(--c-text-strong); }
+.limits section { margin-top: var(--sp-6); padding-top: var(--sp-6); border-top: 1px solid var(--c-border-subtle); }
+.limits .lead { margin: 0; font-size: 14px; color: var(--c-text); }
+.limits ul { margin: 0; padding-left: 20px; }
+.limits li { margin: var(--sp-2) 0; }
+.limits li::marker { color: var(--c-text-faint); }
+.limits p { margin: var(--sp-3) 0; }
+.limits .close { position: absolute; top: var(--sp-6); right: var(--sp-6); display: inline-flex; align-items: center; gap: var(--sp-3); min-height: 30px; padding: 0 var(--sp-5); }
+.grade-bar { display: flex; height: 8px; margin: var(--sp-4) 0 var(--sp-5); border-radius: var(--r-pill); overflow: hidden; gap: 2px; background: var(--c-track); }
+.grade-bar > span { min-width: 2px; background: var(--g); }
+.grade-dist { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); }
+.grade-dist > div { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4) var(--sp-5); background: var(--c-sunken); border: 1px solid var(--c-border-subtle); border-radius: var(--r-md); font-variant-numeric: tabular-nums; }
 
 /* map layer chips fold behind the Layers button when the map area is narrow */
 @container center (max-width: 640px) {

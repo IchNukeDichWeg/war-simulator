@@ -1,7 +1,11 @@
 // Honest-limits page. The section bodies summarise VALIDATION.md (backtest, QA, red team),
 // COVERAGE.md and the known limits in data/SOURCES.md; keep them in step with those files.
+import { useEffect, useRef } from 'react';
 import { GradeBadge } from './Grade';
+import { Icon } from './Icon';
 import { store, useStore } from './store';
+
+const close = () => store.set({ showLimits: false });
 
 export function LimitsPage() {
   const data = useStore((s) => s.data);
@@ -16,21 +20,43 @@ export function LimitsPage() {
   }
   const total = counts.A + counts.B + counts.C + counts.D;
 
+  // modal dialog: focus the close button on open, keep Tab inside, Escape closes, focus returns on close
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const prev = document.activeElement as HTMLElement | null;
+    ref.current?.querySelector<HTMLElement>('.close')?.focus();
+    return () => prev?.focus?.();
+  }, []);
+  const onKey = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') { e.stopPropagation(); close(); return; }
+    if (e.key !== 'Tab' || !ref.current) return;
+    const f = ref.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+    if (f.length === 0) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  };
+
   return (
-    <div className="limits-overlay" onClick={(e) => { if (e.target === e.currentTarget) store.set({ showLimits: false }); }}>
-      <article className="limits">
-        <button className="close" onClick={() => store.set({ showLimits: false })}>Close</button>
-        <h2>Honest limits</h2>
+    <div className="limits-overlay" onClick={(e) => { if (e.target === e.currentTarget) close(); }}>
+      <article className="limits" ref={ref} role="dialog" aria-modal="true" aria-labelledby="limits-title" onKeyDown={onKey}>
+        <button className="close" onClick={close}><Icon name="close" size={14} />Close</button>
+        <h2 id="limits-title">Honest limits</h2>
         <p className="lead">This app is a model. It produces scenarios under stated assumptions, not predictions of what would happen. Every number carries a confidence grade, and the results inherit the weakest of them.</p>
 
         <section>
           <h3>Confidence grades in the loaded data</h3>
           {total === 0 ? <p className="muted">No snapshot data is loaded in this build, so there is nothing to grade yet.</p> : (
-            <div className="grade-dist">
-              {(['A', 'B', 'C', 'D'] as const).map((g) => (
-                <div key={g}><GradeBadge g={g} /> {counts[g].toLocaleString('en-US')} values ({((100 * counts[g]) / total).toFixed(1)}%)</div>
-              ))}
-            </div>
+            <>
+              <div className="grade-bar" aria-hidden="true">
+                {(['A', 'B', 'C', 'D'] as const).map((g) => <span key={g} className={`grade-${g}`} style={{ flexGrow: counts[g] }} />)}
+              </div>
+              <div className="grade-dist">
+                {(['A', 'B', 'C', 'D'] as const).map((g) => (
+                  <div key={g}><GradeBadge g={g} size="lg" /> {counts[g].toLocaleString('en-US')} values ({((100 * counts[g]) / total).toFixed(1)}%)</div>
+                ))}
+              </div>
+            </>
           )}
           {data && data.phase3.length > 0 && <p className="small">{data.phase3.length.toLocaleString('en-US')} more snapshots are <b>Phase 3 derived</b>: not researched, every value a formula over the polity's border polygon and regional inputs, overall confidence {[...new Set(data.phase3.map((e) => e.confidence))].sort().join('/')}. Their values count above only once their era is loaded (on first use).</p>}
           <p className="small"><GradeBadge g="A" /> documented or officially reported. <GradeBadge g="B" /> scholarly estimate with a range. <GradeBadge g="C" /> reconstructed from analogies or indirect evidence. <GradeBadge g="D" /> educated guess, flagged as such. <GradeBadge g="M" /> model output: computed by the simulation, not sourced.</p>
