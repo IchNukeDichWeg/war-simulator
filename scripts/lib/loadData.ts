@@ -5,6 +5,7 @@ import type { EngineData } from '../../src/engine/protocol';
 import type { BattleCase } from '../../src/types/mechanics';
 import type { Scenario } from '../../src/types/scenario';
 import type { Snapshot } from '../../src/types/schema';
+import { mergeSnapshotText } from '../../src/ui/snapshotText';
 
 export function dataDir(argv: string[]): string {
   const i = argv.indexOf('--data');
@@ -33,7 +34,9 @@ export function loadEngineData(dir: string): EngineData {
   const cb = existsSync(cf) ? readFileSync(cf) : null;
   const climate = cb ? (cb.buffer.slice(cb.byteOffset, cb.byteOffset + cb.byteLength) as ArrayBuffer) : undefined;
   return {
-    snapshots: [...readJson<Snapshot[]>(dir, 'snapshots.json'), ...phase3Snapshots(dir)],
+    // snapshot-notes.json holds the note/source prose split off snapshots.json by the build; a
+    // data directory from before that split has none and its snapshots.json is already whole.
+    snapshots: [...mergeSnapshotText(readJson<Snapshot[]>(dir, 'snapshots.json'), readJson(dir, 'snapshot-notes.json', {})), ...phase3Snapshots(dir)],
     doctrines: readJson(dir, 'doctrines.json', []),
     mechanics: readJson(dir, 'mechanics.json'),
     borders: readJson(dir, 'borders.json', {}),

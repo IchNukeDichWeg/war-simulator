@@ -1,5 +1,7 @@
 // Builds the runtime data from validated research output.
-//   data/raw/snapshots/*.json -> public/data/snapshots.json (researched + auto-base), data/nations.json, public/data/nations.json
+//   data/raw/snapshots/*.json -> public/data/snapshots.json (researched + auto-base, without the note/source
+//                                prose) + snapshot-notes.json (that prose by id, src/ui/snapshotText.ts),
+//                                data/nations.json, public/data/nations.json
 //                                public/data/snapshots-phase3-<era>.json + snapshots-phase3-index.json (tag phase3,
 //                                lazy-loaded by the UI per era; the index makes them searchable before loading)
 //   border refs              -> public/data/borders.json (simplified MultiPolygons) + terrainMix
@@ -21,6 +23,7 @@ import { ROOT, Progress, cachedFetch } from './lib/util';
 import { MultiPolygon, bboxOf, multiAreaKm2, pointInMulti, simplifyMulti, toMulti } from './lib/geo';
 import { confidence, listJson, validateAll } from './validate';
 import { packTerrain } from '../src/ui/terrainPack';
+import { splitSnapshotText } from '../src/ui/snapshotText';
 import { ERAS } from './schema';
 
 const DATA = join(ROOT, 'data');
@@ -152,7 +155,10 @@ async function main() {
   // Phase 3 snapshots (tag phase3) are split per era so the first load stays small; the
   // index carries what search and browse need plus the confidence label.
   const isP3 = (s: Snapshot) => s.tags.includes('phase3');
-  write('snapshots.json', snapshots.filter((s) => !isP3(s)));
+  // The prose goes to its own file so the first screen does not wait for it (snapshotText.ts).
+  const { core, text } = splitSnapshotText(snapshots.filter((s) => !isP3(s)));
+  write('snapshots.json', core);
+  write('snapshot-notes.json', text);
   const p3 = snapshots.filter(isP3);
   const eraFiles = new Set<string>();
   for (const era of ERAS) {

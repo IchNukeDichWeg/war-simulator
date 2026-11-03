@@ -5,6 +5,7 @@ import type { Mechanics } from '../types/mechanics';
 import type { Scenario } from '../types/scenario';
 import { CLIMATE_H, CLIMATE_W } from '../engine/climate';
 import { TERRAIN_BYTES, gunzipBody, unpackTerrain } from './terrainPack';
+import { mergeSnapshotText, type TextTree } from './snapshotText';
 
 /** One line of public/data/snapshots-phase3-index.json: a Phase 3 derived snapshot that is
  *  searchable before its era file (snapshots-phase3-<era>.json) is loaded. */
@@ -127,8 +128,9 @@ export function loadData(): Promise<AppData> {
 async function loadAll(): Promise<AppData> {
   const missing: string[] = [];
   // battles.json (110 kB) is not fetched: only the headless backtest reads the battle cases.
-  const [snapshots, phase3, nations, doctrines, mechanics, coalitions, presets, borders, terrain, climate] = await Promise.all([
+  const [snapshots, notes, phase3, nations, doctrines, mechanics, coalitions, presets, borders, terrain, climate] = await Promise.all([
     getJson<Snapshot[]>('snapshots.json', missing),
+    getJson<Record<string, TextTree>>('snapshot-notes.json', missing),
     getJson<Phase3Entry[]>('snapshots-phase3-index.json', missing),
     getJson<Nation[]>('nations.json', missing),
     getJson<DoctrineProfile[]>('doctrines.json', missing),
@@ -142,7 +144,7 @@ async function loadAll(): Promise<AppData> {
   const mech = isMechanics(mechanics) ? mechanics : null;
   if (!mech && !missing.includes('mechanics.json')) missing.push('mechanics.json');
   const d: AppData = {
-    snapshots: Array.isArray(snapshots) ? snapshots : [],
+    snapshots: Array.isArray(snapshots) ? mergeSnapshotText(snapshots, notes && typeof notes === 'object' ? notes : {}) : [],
     phase3: Array.isArray(phase3) ? phase3 : [],
     phase3ById: new Map(),
     phase3Loaded: [],
