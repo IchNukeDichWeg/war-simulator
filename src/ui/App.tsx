@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MapView } from '../map/MapView';
 import { loadData } from './data';
 import { ErrorBoundary } from './ErrorBoundary';
+import { Icon } from './Icon';
 import { LimitsPage } from './LimitsPage';
 import { Editor } from './panels/Editor';
 import { MapToolbar } from './panels/MapToolbar';
@@ -16,6 +17,45 @@ import { store, toast, useStore, type LeftTab } from './store';
 const NONE: string[] = [];
 
 export const BANNER = 'Model output, not a prediction: every number carries a confidence grade.';
+
+// Theme: 'auto' follows the OS through color-scheme: light dark; light or dark pins it via
+// html[data-theme]. Stored per browser only, so it never travels in a shared scenario.
+type ThemePref = 'auto' | 'light' | 'dark';
+const THEME_KEY = 'mews.theme';
+const THEME_NEXT: Record<ThemePref, ThemePref> = { auto: 'light', light: 'dark', dark: 'auto' };
+const THEME_LABEL: Record<ThemePref, string> = { auto: 'match system', light: 'light', dark: 'dark' };
+// header colour per theme, for the browser chrome on phones
+const THEME_COLOR = { light: '#ffffff', dark: '#131923' };
+
+function readThemePref(): ThemePref {
+  try { const v = localStorage.getItem(THEME_KEY); return v === 'light' || v === 'dark' ? v : 'auto'; } catch { return 'auto'; }
+}
+function applyTheme(p: ThemePref) {
+  const root = document.documentElement;
+  if (p === 'auto') delete root.dataset.theme; else root.dataset.theme = p;
+  // pinned theme overrides both media-scoped theme-color tags; auto restores each one
+  document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]').forEach((m) => {
+    const own = (m.getAttribute('media') ?? '').includes('light') ? 'light' : 'dark';
+    m.content = THEME_COLOR[p === 'auto' ? own : p];
+  });
+}
+// before first render, so a pinned theme does not flash the system one
+applyTheme(readThemePref());
+
+function ThemeToggle() {
+  const [pref, setPref] = useState(readThemePref);
+  useEffect(() => {
+    applyTheme(pref);
+    try { if (pref === 'auto') localStorage.removeItem(THEME_KEY); else localStorage.setItem(THEME_KEY, pref); } catch { /* private mode: not remembered */ }
+  }, [pref]);
+  const next = THEME_NEXT[pref];
+  const label = `Theme: ${THEME_LABEL[pref]}. Switch to ${THEME_LABEL[next]}.`;
+  return (
+    <button className="icon-btn theme-toggle" onClick={() => setPref(next)} aria-label={label} title={label}>
+      <Icon name={pref === 'auto' ? 'auto' : pref === 'light' ? 'sun' : 'moon'} />
+    </button>
+  );
+}
 
 async function share() {
   try {
@@ -39,6 +79,7 @@ function TopBar() {
         <button onClick={() => uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message))} title="Load scenario JSON">Load</button>
         <button onClick={share} title="Copy a URL that contains this scenario">Share URL</button>
         <button onClick={() => store.set({ showLimits: true })}>Honest limits</button>
+        <ThemeToggle />
       </div>
       {loaded && missing.length > 0 && (
         <div className="data-status" title={`Missing or empty: ${missing.join(', ')}`}>data incomplete: {missing.length} file{missing.length > 1 ? 's' : ''}</div>

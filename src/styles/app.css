@@ -1,66 +1,72 @@
 /* ==========================================================================
-   Design tokens. Every colour, size and radius below comes from here, so a
-   theme only has to redefine the --c-* block. Panel CSS owned elsewhere
-   should use these names too (listed in the token block, grouped by kind).
+   Design tokens. Every colour, size and radius below comes from here. Panel
+   CSS owned elsewhere should use these names too.
+   Colours are light-dark(light, dark) pairs: they follow the OS setting
+   (color-scheme: light dark) until the header toggle pins one through
+   html[data-theme]. Use them as-is; never branch on the theme in panel CSS.
    The short legacy names (--bg, --fg, --line, --gA ...) are kept as aliases
    because existing panels and inline styles still use them.
    ========================================================================== */
+:root { color-scheme: light dark; }
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-theme='dark'] { color-scheme: dark; }
 :root {
-  /* colour: surfaces, darkest to lightest */
-  --c-bg: #0b0f16;            /* page, behind everything */
-  --c-sunken: #0e131b;        /* inset areas inside a panel (event cards, compare box) */
-  --c-surface: #131923;       /* header, side panels */
-  --c-surface-2: #1a212d;     /* inputs, buttons, cards */
-  --c-surface-3: #222b3a;     /* hover on surface-2 */
-  --c-overlay: rgba(14, 19, 27, 0.86);        /* controls floating over the map */
-  --c-overlay-strong: rgba(14, 19, 27, 0.95); /* tooltips over the map */
-  --c-scrim: rgba(3, 6, 10, 0.62);            /* behind a modal */
+  /* colour: surfaces, back to front */
+  --c-bg: light-dark(#e9edf2, #0b0f16);          /* page, behind everything */
+  --c-sunken: light-dark(#f4f6f9, #0e131b);      /* inset areas inside a panel (event cards, compare box) */
+  --c-surface: light-dark(#ffffff, #131923);     /* header, side panels */
+  --c-surface-2: light-dark(#f2f4f7, #1a212d);   /* inputs, buttons, cards */
+  --c-surface-3: light-dark(#e6eaf0, #222b3a);   /* hover on surface-2 */
+  --c-overlay: light-dark(rgba(255, 255, 255, 0.9), rgba(14, 19, 27, 0.86));         /* controls floating over the map */
+  --c-overlay-strong: light-dark(rgba(255, 255, 255, 0.97), rgba(14, 19, 27, 0.95)); /* tooltips over the map */
+  --c-scrim: light-dark(rgba(15, 23, 42, 0.45), rgba(3, 6, 10, 0.62));               /* behind a modal */
+  --c-shadow: light-dark(rgba(15, 23, 42, 0.14), rgba(0, 0, 0, 0.42));
   /* colour: lines */
-  --c-border: #2c3544;
-  --c-border-subtle: #1e2531; /* row separators */
-  --c-border-strong: #4a5568; /* hover */
+  --c-border: light-dark(#d0d7e1, #2c3544);
+  --c-border-subtle: light-dark(#e4e8ee, #1e2531); /* row separators */
+  --c-border-strong: light-dark(#97a3b4, #4a5568); /* hover */
   /* colour: text */
-  --c-text: #e6ebf2;
-  --c-text-strong: #ffffff;
-  --c-text-muted: #95a0b2;
-  --c-text-faint: #6b7587;
+  --c-text: light-dark(#18202d, #e6ebf2);
+  --c-text-strong: light-dark(#05080d, #ffffff);
+  --c-text-muted: light-dark(#556072, #95a0b2);
+  --c-text-faint: light-dark(#8691a1, #6b7587);
   /* colour: brand and actions */
-  --c-accent: #f0cc63;        /* brass: brand, active tab, edited values; readable as text */
-  --c-accent-fill: #f0cc63;   /* accent as a background */
-  --c-on-accent: #17130a;     /* text on --c-accent-fill */
-  --c-accent-soft: rgba(240, 204, 99, 0.12);
-  --c-primary: #3b82f6;
-  --c-primary-hover: #5793f8;
+  --c-accent: light-dark(#8a5c00, #f0cc63);      /* brass: brand, active tab, edited values; readable as text */
+  --c-accent-fill: light-dark(#f0c552, #f0cc63); /* accent as a background */
+  --c-on-accent: #17130a;                        /* text on --c-accent-fill */
+  --c-accent-soft: light-dark(rgba(196, 140, 10, 0.12), rgba(240, 204, 99, 0.12));
+  --c-primary: light-dark(#2563eb, #3b82f6);
+  --c-primary-hover: light-dark(#1d4fd0, #5793f8);
   --c-on-primary: #ffffff;
-  --c-selected: #1d3557;      /* pressed toggle buttons */
-  --c-selected-border: #4f8fe6;
-  --c-row-selected: #182437;  /* selected list row */
-  --c-link: #6aa8ff;
+  --c-selected: light-dark(#dce8ff, #1d3557);    /* pressed toggle buttons */
+  --c-selected-border: light-dark(#5b8def, #4f8fe6);
+  --c-row-selected: light-dark(#eaf1ff, #182437); /* selected list row */
+  --c-link: light-dark(#1d5fd0, #6aa8ff);
   /* colour: status */
-  --c-ok: #3fb950;
-  --c-warn: #f0883e;
-  --c-warn-bg: #36220f;
-  --c-warn-text: #ffd8b0;
-  --c-bad: #f85149;
-  --c-bad-bg: #3a1214;
-  --c-bad-strong: #7a1d1d;    /* solid alarm fill (fixture banner, nuclear hud) */
-  --c-bad-text: #ffd7d5;
-  --c-info-bg: #15233a;
-  --c-info-border: #2b4a72;
-  --c-edited-bg: #2a2410;
-  --c-track: #222a36;         /* empty part of bars and progress */
-  --c-banner-bg: #231a06;
-  --c-banner-border: #5c4612;
-  --c-banner-text: #f0cc63;
+  --c-ok: light-dark(#1a7f37, #3fb950);
+  --c-warn: light-dark(#b54708, #f0883e);
+  --c-warn-bg: light-dark(#fff3e5, #36220f);
+  --c-warn-text: light-dark(#7a2e0b, #ffd8b0);
+  --c-bad: light-dark(#cf222e, #f85149);
+  --c-bad-bg: light-dark(#ffebe9, #3a1214);
+  --c-bad-strong: light-dark(#b42318, #7a1d1d);  /* solid alarm fill (fixture banner) */
+  --c-bad-text: light-dark(#ffffff, #ffd7d5);    /* text on --c-bad-strong */
+  --c-info-bg: light-dark(#edf4ff, #15233a);
+  --c-info-border: light-dark(#b3cbf2, #2b4a72);
+  --c-edited-bg: light-dark(#fff6d8, #2a2410);
+  --c-track: light-dark(#dde3ea, #222a36);       /* empty part of bars and progress */
+  --c-banner-bg: light-dark(#fff4d4, #231a06);
+  --c-banner-border: light-dark(#e3bf5a, #5c4612);
+  --c-banner-text: light-dark(#5e4100, #f0cc63);
   /* colour: confidence grades (A best .. D worst, M = model output) */
-  --c-grade-a: #3fb950;
-  --c-grade-b: #58a6ff;
-  --c-grade-c: #d29922;
-  --c-grade-d: #f85149;
-  --c-grade-m: #a371f7;
-  --c-on-grade: #0b0f16;
+  --c-grade-a: light-dark(#1a7f37, #3fb950);
+  --c-grade-b: light-dark(#0969da, #58a6ff);
+  --c-grade-c: light-dark(#9a6700, #d29922);
+  --c-grade-d: light-dark(#cf222e, #f85149);
+  --c-grade-m: light-dark(#8250df, #a371f7);
+  --c-on-grade: light-dark(#ffffff, #0b0f16);    /* text on a grade fill */
   /* focus */
-  --c-focus: #7fb2ff;
+  --c-focus: light-dark(#2563eb, #7fb2ff);
   --focus-ring: 0 0 0 2px var(--c-bg), 0 0 0 4px var(--c-focus);
 
   /* spacing scale (px): 1=2 2=4 3=6 4=8 5=12 6=16 7=24 8=32 */
@@ -97,9 +103,9 @@
   --r-pill: 999px;
 
   /* elevation */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.38);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 2px var(--c-shadow);
+  --shadow-md: 0 4px 14px var(--c-shadow);
+  --shadow-lg: 0 16px 48px var(--c-shadow);
 
   /* motion */
   --dur-fast: 120ms;
@@ -131,7 +137,6 @@
   --gD: var(--c-grade-d);
   --gM: var(--c-grade-m);
 
-  color-scheme: dark;
   font: var(--fs-md) / var(--lh-base) var(--font-sans);
   color: var(--c-text);
   background: var(--c-bg);
@@ -179,6 +184,10 @@ input, select, textarea { padding: 4px 7px; min-width: 0; }
 input:hover:not(:disabled), select:hover:not(:disabled), textarea:hover:not(:disabled) { border-color: var(--c-border-strong); }
 input:focus, select:focus, textarea:focus { border-color: var(--c-focus); }
 input::placeholder, textarea::placeholder { color: var(--c-text-faint); }
+/* icon-only buttons: the accessible name lives in aria-label */
+.icon { display: block; flex: none; }
+button .icon { display: inline-block; vertical-align: -3px; }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; min-width: var(--control-h); min-height: var(--control-h); padding: 0; }
 input[type='search'], .filters input, .editor > select, .scenario input[list], .scenario select, .scenario textarea { width: 100%; }
 input[type='range'] { -webkit-appearance: none; appearance: none; height: 18px; padding: 0; width: 100%; accent-color: var(--c-accent); background: transparent; border: none; cursor: pointer; }
 input[type='range']:disabled { opacity: 0.45; cursor: default; }
@@ -238,6 +247,10 @@ aside.right { width: var(--panel-w); display: flex; flex-direction: column; bord
 .maplibregl-ctrl-group { background: var(--c-surface-2); }
 .maplibregl-ctrl-group button + button { border-top-color: var(--c-border); }
 .maplibregl-ctrl button .maplibregl-ctrl-icon { filter: invert(0.9); }
+:root[data-theme='light'] .maplibregl-ctrl button .maplibregl-ctrl-icon { filter: none; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) .maplibregl-ctrl button .maplibregl-ctrl-icon { filter: none; }
+}
 .maplibregl-ctrl-bottom-left { bottom: 72px; }
 .maplibregl-ctrl-bottom-right { bottom: 0; }
 /* one-line attribution so it never grows under the time bar; scroll sideways to read all sources */
