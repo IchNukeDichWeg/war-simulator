@@ -1,23 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { Reason, SideStats, SimEvent } from '../../engine/protocol';
+import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { cancelMonteCarlo, eventLog, history, runMonteCarlo } from '../engine';
-import { fmt, fmtSpeed, pct, signed, signedPts } from '../format';
-import { GradeBadge } from '../Grade';
+import { capitalize, fmt, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
-
-function useSides() {
-  const sc = useStore((s) => s.scenario);
-  const runNames = useStore((s) => s.run.sideNames);
-  const status = useStore((s) => s.run.status);
-  const names: [string, string] = status === 'idle' ? [sc.sides[0].name, sc.sides[1].name] : runNames;
-  const colors: [string, string] = [sc.sides[0].color, sc.sides[1].color];
-  return { names, colors };
-}
-
-const ModelTag = () => <span className="model-tag" title="Simulation output, not sourced data">model output <GradeBadge g="M" /></span>;
+import { ModelTag, Reasons, useSides } from './RunShared';
 
 function StatsTable({ stats }: { stats: [SideStats, SideStats] }) {
   const { names, colors } = useSides();
@@ -260,39 +249,53 @@ function Events() {
   );
 }
 
-function Reasons({ reasons, names, colors }: { reasons: Reason[]; names: [string, string]; colors: [string, string] }) {
-  return (
-    <ol className="reasons">
-      {reasons.map((r, i) => (
-        <li key={i}>
-          <div className="reason-head">
-            <b>{r.factor}</b> <span className="muted small">favoured</span> <span style={{ color: colors[r.side] }}>{names[r.side]}</span>
-            <span className="reason-w">{Math.round(r.weight * 100)}%</span>
-          </div>
-          <div className="bar"><div style={{ width: `${Math.round(r.weight * 100)}%`, background: colors[r.side] }} /></div>
-          <div className="small">{r.detail}</div>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
 function Result() {
   const result = useStore((s) => s.run.result);
-  const { names, colors } = useSides();
-  if (!result) return <div className="panel-body muted">The result appears here when the run ends (a victory condition fires or the time limit is reached).</div>;
+  const status = useStore((s) => s.run.status);
+  const date = useStore((s) => (s.run.result && s.run.day === s.run.result.endDay ? s.run.date : ''));
+  const { names, colors: raw } = useSides();
+  const colors = useLegibleColors(raw);
+  if (!result) {
+    return <div className="panel-body muted">{status === 'running' || status === 'starting'
+      ? 'The run is still going. The result appears here when a victory condition fires or the time limit is reached.'
+      : 'The result appears here when a run ends (a victory condition fires or the time limit is reached).'}</div>;
+  }
   const w = result.winner;
+  const st = result.stats;
+  const start = (s: 0 | 1) => history.personnel[s][0];
+  const lossRatio = st[1].casualties > 0 && st[0].casualties > 0 ? st[0].casualties / st[1].casualties : null;
   return (
     <div className="panel-body">
-      <div className="result-head" style={{ borderColor: w === 'draw' ? '#8b949e' : colors[w] }}>
-        <div className="small muted">Result after {result.endDay} days <ModelTag /></div>
-        <div className="winner">{w === 'draw' ? 'Draw' : `${names[w]} wins`}</div>
-        <div className="small">{result.endReason} | seed {result.seed}</div>
+      <div className={`rp-outcome${w === 'draw' ? ' draw' : ''}`} style={{ borderColor: w === 'draw' ? undefined : colors[w] }}>
+        <div className="rp-outcome-kicker">Outcome of this run <ModelTag /></div>
+        <div className="rp-outcome-winner" style={{ color: w === 'draw' ? undefined : colors[w] }}>{w === 'draw' ? 'Draw' : `${names[w]} wins`}</div>
+        <div className="rp-outcome-reason"><span className="rp-muted">Ended by:</span> {capitalize(result.endReason)}</div>
+        <div className="rp-muted small">After {fmtDays(result.endDay)}{date ? ` (${date.replace(/^Day \d+,\s*/, '')})` : ''} | seed {result.seed}</div>
       </div>
-      <StatsTable stats={result.stats} />
-      <h4>Why (ranked)</h4>
-      <Reasons reasons={result.reasons} names={names} colors={colors} />
-      <p className="small muted">One run of a stochastic model. Use Monte Carlo to see how often this outcome happens.</p>
+      <div className="rp-final">
+        {([0, 1] as const).map((s) => (
+          <div key={s} className="rp-final-side" style={{ borderTopColor: colors[s] }}>
+            <div className="rp-final-name" style={{ color: colors[s] }}>{names[s]}</div>
+            <div><b>{fmt(st[s].personnel)}</b> <span className="rp-muted small">left{start(s) > 0 ? `, ${pct(st[s].personnel / start(s))} of start` : ''}</span></div>
+            <div><b>{fmt(st[s].casualties)}</b> <span className="rp-muted small">casualties</span></div>
+            <div className="small">morale {pct(st[s].morale)} | territory {pct(st[s].territory)}</div>
+          </div>
+        ))}
+      </div>
+      {lossRatio != null && (
+        <div className="rp-muted small">Loss ratio {names[0]} : {names[1]} = {lossRatio >= 1 ? `${fmt(lossRatio)} : 1` : `1 : ${fmt(1 / lossRatio)}`} (killed, wounded and captured)</div>
+      )}
+      <h4>Why: top reasons, ranked</h4>
+      <Reasons reasons={result.reasons} names={names} colors={colors} top={3} />
+      <div className="rp-note">
+        One seeded run of a stochastic model, not a prediction: another seed can end differently.
+        {' '}<button className="rp-textbtn" onClick={() => store.set({ rightTab: 'montecarlo' })}>Open Monte Carlo</button> to see how often this outcome happens.
+      </div>
+      <details className="rp-details">
+        <summary>All final statistics</summary>
+        <StatsTable stats={result.stats} />
+        <LossCauses stats={result.stats} />
+      </details>
     </div>
   );
 }
