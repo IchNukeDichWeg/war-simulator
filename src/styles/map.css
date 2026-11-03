@@ -30,3 +30,44 @@
 }
 .map-card-close:hover { color: var(--map-fg); }
 .map-card-note { color: var(--map-muted); font-size: 11.5px; max-width: 220px; }
+
+/* legend: bottom-left, above the scale bar and the run controls */
+.map-legend {
+  position: absolute; left: 8px; bottom: 118px; z-index: 3;
+  --lg-a: #c33; --lg-b: #36c;
+  font-size: 11.5px; color: var(--map-fg);
+}
+.map-legend-toggle {
+  background: var(--map-panel-a); color: var(--map-fg); border: 1px solid var(--map-line);
+  border-radius: 5px; padding: 3px 9px; font: inherit; font-weight: 600; cursor: pointer;
+}
+.map-legend-body {
+  display: none; margin-top: 4px; padding: 6px 8px; max-height: min(60vh, 420px); overflow: auto;
+  background: var(--map-panel-a); border: 1px solid var(--map-line); border-radius: 6px; min-width: 230px;
+}
+.map-legend.open .map-legend-body { display: block; }
+.map-legend-sides { padding-bottom: 4px; margin-bottom: 4px; border-bottom: 1px solid var(--map-line); font-weight: 600; }
+.map-legend-row { display: flex; align-items: center; gap: 8px; line-height: 1.25; padding: 2px 0; }
+.map-legend-row > i { flex: none; width: 26px; height: 16px; position: relative; box-sizing: border-box; }
+
+/* swatches: mirror the unit shader (src/map/unitLayer.ts) */
+.lg-unit { --c: #8a5a4c; background: var(--c); border: 1.5px solid #ebebeb; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.55); height: 13px !important; }
+.map-legend-row > i.lg-bar { margin-bottom: 5px; }
+.lg-bar::after { content: ''; position: absolute; left: -1px; bottom: -6px; width: 70%; height: 3px; background: #4cc25a; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7); }
+.lg-stack::after {
+  content: '3'; position: absolute; right: -7px; top: -7px; padding: 0 3px;
+  background: #101216; color: #fff; border: 1px solid #ebebeb; border-radius: 6px;
+  font: 700 8px/10px ui-sans-serif, system-ui, sans-serif;
+}
+.lg-routing { background: repeating-linear-gradient(-45deg, #8d8d90 0 3px, #2a2a2e 3px 5px); }
+.lg-engaged { border: 2px solid #ff8c1a; }
+.lg-supply { border: 1.5px dashed #ebebeb; background: #7a5c4c; }
+.lg-garrison { border-width: 3px; }
+.lg-siege { border-color: #bf80ff; }
+.lg-dot { width: 12px !important; height: 12px !important; margin: 0 7px; border-radius: 50%; background: var(--lg-a); border: 1.5px solid #0d0f14; }
+.lg-battle { width: 16px !important; height: 16px !important; margin: 0 5px; border-radius: 50%; background: #141010; border: 1.5px solid #ff8019; }
+.lg-battle::before, .lg-battle::after { content: ''; position: absolute; left: 6px; top: 1px; width: 1.6px; height: 11px; background: #ffdb8c; transform: rotate(45deg); }
+.lg-battle::after { transform: rotate(-45deg); }
+.lg-front { height: 8px !important; background: linear-gradient(var(--lg-a) 0 3px, var(--lg-b) 3px 6px, transparent 6px); box-shadow: 0 0 0 1.5px #0b0d12; border-radius: 2px; }
+.lg-supplyline { height: 2px !important; background: repeating-linear-gradient(90deg, var(--lg-a) 0 3px, transparent 3px 6px); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35); }
+.lg-theater { height: 2px !important; background: repeating-linear-gradient(90deg, #f2d16b 0 6px, transparent 6px 10px); }

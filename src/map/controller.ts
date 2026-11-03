@@ -15,6 +15,7 @@ import { yearLabel } from '../ui/data';
 import { ROLE_LABEL, ROLE_ORDER, STATUS_LABEL } from '../ui/roles';
 import type { LayerToggles, MapMode } from '../ui/store';
 import { bboxFeature, controlImage, frontFeatures, labelPoint, pointFeatures, supplyFeatures, terrainImage, type Coords4 } from './overlays';
+import { MapLegend } from './legend';
 import { StressSim } from './stress';
 import { FOG_RADIUS_KM, UnitLayer, type Battle } from './unitLayer';
 
@@ -113,6 +114,7 @@ export class MapController {
   private tip: HTMLDivElement;
   /** Pinned info card of the clicked formation; refreshed every frame. */
   private card: HTMLDivElement;
+  private legend: MapLegend;
   private hoverRaf = 0;
   private draftCorner: [number, number] | null = null;
   onBBox: (b: [number, number, number, number]) => void = () => {};
@@ -146,6 +148,7 @@ export class MapController {
     this.map.on('mousemove', (e) => this.onMove(e.point.x, e.point.y, e.lngLat.lng, e.lngLat.lat));
     this.map.on('mouseout', () => { this.tip.style.display = 'none'; this.units.setHover(null); });
     this.map.on('click', (e) => this.onClick(e.lngLat.lng, e.lngLat.lat, e.point.x, e.point.y));
+    this.legend = new MapLegend(container);
     this.card = document.createElement('div');
     this.card.className = 'map-tip map-card';
     this.card.style.display = 'none';
@@ -165,7 +168,7 @@ export class MapController {
     cancelAnimationFrame(this.stressRaf);
     // map.remove() clears only MapLibre's own DOM; without this a remount (React
     // StrictMode mounts twice in dev) left stale overlays from the first mount
-    for (const el of [this.hud, this.tip, this.card]) el.remove();
+    for (const el of [this.hud, this.tip, this.card, this.legend.el]) el.remove();
     this.map.remove();
   }
 
@@ -205,6 +208,7 @@ export class MapController {
   update(s: MapState, force = false) {
     const prev = this.state;
     this.state = s;
+    this.legend.setSides(s.scenario.sides.map((x) => ({ name: x.name, color: x.color })));
     if (!this.loaded) return;
     const m = this.map;
     const L = s.layers;
