@@ -396,7 +396,9 @@ export class MapController {
     this.units.setHover(i < 0 ? null : u[i * UNIT_STRIDE + U.id]);
     this.map.getCanvas().style.cursor = this.state?.mapMode.kind !== 'none' ? 'crosshair' : i >= 0 ? 'pointer' : '';
     if (i < 0) { this.tip.style.display = 'none'; return; }
-    this.fillUnitRows(this.tip, i, false);
+    const members = this.units.stackMembers(i);
+    if (members.length > 1) this.fillStackRows(this.tip, members);
+    else this.fillUnitRows(this.tip, i, false);
     this.tip.style.left = `${x + 14}px`;
     this.tip.style.top = `${y + 14}px`;
     this.tip.style.display = '';
@@ -446,6 +448,49 @@ export class MapController {
     }
   }
 
+  /** Summary of a stack (formations of one side on one spot): totals, weighted
+   *  averages, the commonest types and statuses. Click selects the biggest. */
+  private fillStackRows(el: HTMLElement, members: number[]) {
+    const u = this.units.units;
+    const side = u[members[0] * UNIT_STRIDE + U.side] | 0;
+    const names = this.state?.scenario.sides.map((s) => s.name) ?? ['Side A', 'Side B'];
+    let pers = 0, str = 0, sup = 0, mor = 0;
+    const roles = new Map<string, number>(), stats = new Map<string, number>();
+    for (const i of members) {
+      const o = i * UNIT_STRIDE;
+      const p = Math.max(0, u[o + U.personnel]);
+      pers += p; str += u[o + U.strength] * p; sup += u[o + U.supply]; mor += u[o + U.morale] * p;
+      const role = ROLE_LABEL[ROLE_ORDER[u[o + U.role] | 0] ?? 'infantry_line'];
+      roles.set(role, (roles.get(role) ?? 0) + 1);
+      const st = STATUS_LABEL[u[o + U.status] | 0] ?? '?';
+      stats.set(st, (stats.get(st) ?? 0) + 1);
+    }
+    const top = (m: Map<string, number>, n: number) =>
+      [...m.entries()].sort((a, b) => b[1] - a[1]).slice(0, n).map(([k, v]) => `${v} ${k.toLowerCase()}`).join(', ') + (m.size > n ? ', ...' : '');
+    const pct = (v: number) => `${Math.round(v * 100)}%`;
+    const rows: [string, string][] = [
+      ['Side', names[side] ?? String(side)],
+      ['Types', top(roles, 2)],
+      ['Personnel', Math.round(pers).toLocaleString('en-US')],
+      ['Strength (weighted)', pct(pers > 0 ? str / pers : 0)],
+      ['Supply (mean)', pct(sup / members.length)],
+      ['Morale (weighted)', pct(pers > 0 ? mor / pers : 0)],
+      ['Status', top(stats, 2)],
+    ];
+    el.innerHTML = '';
+    const h = document.createElement('div');
+    h.className = 'tip-head';
+    h.textContent = `${members.length} formations on this spot (model state)`;
+    el.appendChild(h);
+    for (const [k, v] of rows) {
+      const r = document.createElement('div');
+      r.innerHTML = '<span></span><b></b>';
+      (r.firstChild as HTMLElement).textContent = k;
+      (r.lastChild as HTMLElement).textContent = v;
+      el.appendChild(r);
+    }
+  }
+
   /** Selects a formation by id (null clears). The card follows it across frames. */
   select(id: number | null) {
     this.units.setSelected(id);
@@ -457,7 +502,17 @@ export class MapController {
     if (id === null) { this.card.style.display = 'none'; return; }
     const i = this.units.selectedUnit;
     this.card.style.display = '';
-    if (i >= 0) { this.fillUnitRows(this.card, i, true); return; }
+    if (i >= 0) {
+      this.fillUnitRows(this.card, i, true);
+      const n = this.units.stackMembers(i).length;
+      if (n > 1) {
+        const p = document.createElement('div');
+        p.className = 'map-card-note';
+        p.textContent = `Shares its position with ${n - 1} other formation${n > 2 ? 's' : ''} of its side.`;
+        this.card.appendChild(p);
+      }
+      return;
+    }
     // destroyed this turn, or hidden by fog of war: say so instead of freezing stale numbers
     this.card.innerHTML = '';
     const h = document.createElement('div');

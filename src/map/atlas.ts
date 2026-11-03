@@ -1,7 +1,8 @@
 // Generated icon atlas for the unit layer. White glyphs on transparent, drawn
 // once with Canvas 2D at startup (no image assets, no licensing questions).
 // Layout: 8 x 8 cells of CELL px. Icon index = band * 19 + roleIndex; the
-// heading arrow lives in the last cell, the battle swords in the one before.
+// heading arrow lives in the last cell, the battle swords in the one before,
+// stack-count digits in the five cells after the role icons.
 import { ROLE_ORDER } from '../ui/roles';
 import type { UnitRole } from '../types/schema';
 
@@ -11,6 +12,9 @@ export const ATLAS_SIZE = CELL * ATLAS_COLS;
 export const ARROW_INDEX = ATLAS_COLS * ATLAS_COLS - 1;
 /** Crossed swords for battle markers (the conventional map sign for a battle). */
 export const BATTLE_INDEX = ARROW_INDEX - 1;
+/** Digits 0-9 for stack count badges, two per cell (left and right half),
+ *  in the five cells after the last role icon (3 bands x 19 roles = 57). */
+export const DIGIT_INDEX = 3 * ROLE_ORDER.length;
 export const ROLES_PER_BAND = ROLE_ORDER.length;
 
 type Ctx = CanvasRenderingContext2D;
@@ -261,5 +265,14 @@ export function buildAtlas(): HTMLCanvasElement {
   });
   draw(ARROW_INDEX, arrow);
   draw(BATTLE_INDEX, swords);
+  for (let d = 0; d < 10; d += 2) {
+    draw(DIGIT_INDEX + d / 2, (cx) => {
+      cx.font = 'bold 50px ui-sans-serif, system-ui, Helvetica, Arial, sans-serif';
+      cx.textAlign = 'center';
+      cx.textBaseline = 'middle';
+      cx.fillText(String(d), CELL / 4, CELL / 2 + 3);
+      cx.fillText(String(d + 1), (3 * CELL) / 4, CELL / 2 + 3);
+    });
+  }
   return cv;
 }

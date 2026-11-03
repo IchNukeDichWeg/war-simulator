@@ -6,10 +6,10 @@
 // Mercator-only (the map is created with mercator projection).
 import type { CustomLayerInterface, CustomRenderMethodInput, Map as MlMap } from 'maplibre-gl';
 import { U, UNIT_STRIDE, UnitStatus } from '../engine/protocol';
-import { ARROW_INDEX, ATLAS_COLS, BATTLE_INDEX, ROLES_PER_BAND, buildAtlas } from './atlas';
+import { ARROW_INDEX, ATLAS_COLS, BATTLE_INDEX, DIGIT_INDEX, ROLES_PER_BAND, buildAtlas } from './atlas';
 import { eraBand } from '../ui/roles';
 
-/** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase | size 0 0 0 */
+/** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase | size count 0 0 */
 const INST = 16;
 /** Symbol scale per doubling of personnel over the frame's geometric mean, and its clamp.
  *  Log scale because formations span 1,000 to 100,000+ men; relative to the
@@ -65,6 +65,7 @@ flat out vec4 v_b;
 flat out float v_part;
 flat out float v_size;
 flat out float v_hl;
+flat out float v_count;
 const vec2 C[6] = vec2[6](vec2(-1,-1), vec2(1,-1), vec2(1,1), vec2(-1,-1), vec2(1,1), vec2(-1,1));
 void main() {
   int part = gl_VertexID / 6;
@@ -75,7 +76,10 @@ void main() {
   // 2 = selected, 1 = hovered: the quad grows to make room for the ring
   float hl = gl_InstanceID == u_sel ? 2.0 : gl_InstanceID == u_hover ? 1.0 : 0.0;
   v_hl = hl;
+  v_count = a_c.y;
   float pad = hl > 0.5 ? 4.0 : 0.0;
+  // stacks carry a count badge on the frame's top-right corner: grow the quad to hold it
+  vec2 badgePad = a_c.y > 1.5 ? vec2(12.0, 5.0) : vec2(0.0);
   // compact markers are sized in CSS px (u_dpr), full symbols grow with zoom (u_px)
   float px = u_lod > 0.5 ? u_dpr : u_px;
   vec2 off;
@@ -88,10 +92,10 @@ void main() {
   } else if (u_lod > 0.5) {
     // compact: a disc of radius 4.5 CSS px x size, quad padded for the outline
     v_size = 4.5 * a_c.x;
-    off = c * (v_size + 2.5 + pad);
+    off = c * (v_size + (a_c.y > 1.5 ? 4.0 : 2.5) + pad);
     v_local = off;
   } else if (part == 0) {
-    off = c * (vec2(16.0, 13.0) + pad);
+    off = c * (vec2(16.0, 13.0) + max(vec2(pad), badgePad));
     v_local = off;
     off *= a_c.x;
   } else {
@@ -119,11 +123,13 @@ flat in vec4 v_b;
 flat in float v_part;
 flat in float v_size;
 flat in float v_hl;
+flat in float v_count;
 out vec4 o;
 const float COLS = ${ATLAS_COLS.toFixed(1)};
 const float RPB = ${ROLES_PER_BAND.toFixed(1)};
 const float ARROW = ${ARROW_INDEX.toFixed(1)};
 const float BATTLE = ${BATTLE_INDEX.toFixed(1)};
+const float DIGITS = ${DIGIT_INDEX.toFixed(1)};
 vec4 atlasAt(float idx, vec2 uv) {
   float col = mod(idx, COLS);
   float row = floor(idx / COLS);
@@ -136,6 +142,29 @@ float sdBox(vec2 p, vec2 b, float r) {
 }
 // premultiplied source-over: paint colour c with coverage a on top of dst
 vec4 over(vec4 dst, vec3 c, float a) { return vec4(c * a + dst.rgb * (1.0 - a), a + dst.a * (1.0 - a)); }
+// stack count badge: dark pill with up to three digits centred on bc (999 caps it)
+vec4 badge(vec4 acc, vec2 p, vec2 bc) {
+  float cnt = min(v_count, 999.0);
+  float nd = cnt >= 100.0 ? 3.0 : cnt >= 10.0 ? 2.0 : 1.0;
+  float hw = nd * 3.3 + 2.2, hh = 5.6;
+  float bd = sdBox(p - bc, vec2(hw, hh), hh);
+  acc = over(acc, vec3(0.06, 0.07, 0.09), (1.0 - smoothstep(-u_aa * 0.5, u_aa * 0.5, bd)) * 0.95);
+  acc = over(acc, vec3(0.92), 1.0 - smoothstep(0.5, 0.5 + u_aa, abs(bd)));
+  float x0 = bc.x - nd * 3.3;
+  float fx = (p.x - x0) / 6.6;
+  float di = floor(fx);
+  float fy = (p.y - bc.y) / 11.0 + 0.5;
+  if (di >= 0.0 && di < nd && fy > 0.0 && fy < 1.0) {
+    float dv = mod(floor(cnt / pow(10.0, nd - 1.0 - di) + 0.001), 10.0);
+    // each digit cell is 32 px wide in a 64 px atlas cell; widen the sample a little so glyphs are not clipped
+    float u = ((fx - di) - 0.5) * 1.15 + 0.5;
+    if (u > 0.0 && u < 1.0) {
+      float m = atlasAt(DIGITS + floor(dv / 2.0), vec2((mod(dv, 2.0) + u) * 0.5, fy)).a;
+      acc = over(acc, vec3(1.0), m);
+    }
+  }
+  return acc;
+}
 // hover / selection ring around a shape whose signed distance is d (dark-cased so it holds on any imagery)
 vec4 ring(vec4 acc, float d) {
   if (v_hl < 0.5) return acc;
@@ -188,8 +217,10 @@ void main() {
       acc = over(acc, fill, 1.0 - smoothstep(-u_aa * 0.5, u_aa * 0.5, d));
     }
     acc = over(acc, bcol, 1.0 - smoothstep(bw * 0.5, bw * 0.5 + u_aa, abs(d)));
+    // a stack of formations gets a second, light outline
+    if (v_count > 1.5) acc = over(acc, vec3(0.92), 1.0 - smoothstep(0.55, 0.55 + u_aa, abs(d - 2.3)));
     acc *= alphaMul;
-    acc = ring(acc, d);
+    acc = ring(acc, d + (v_count > 1.5 ? 1.5 : 0.0));
     if (acc.a < 0.01) discard;
     o = acc;
     return;
@@ -250,6 +281,7 @@ void main() {
   }
   acc *= alphaMul;
   acc = ring(acc, sdBox(p, vec2(15.5, 12.0), r)); // around frame and strength bar
+  if (v_count > 1.5) acc = badge(acc, p, vec2(14.0, 12.0));
   if (acc.a < 0.01) discard;
   o = acc;
 }`;
@@ -314,8 +346,17 @@ export class UnitLayer implements CustomLayerInterface {
   /** CPU ms of the last overlap estimate, for the perf overlay. */
   lodCpuMs = 0;
   private unitInstances = 0;
-  /** Instance -> index into `units`, for picking. */
+  /** Instance -> index into `units` of the stack's representative, for picking. */
   private instUnit = new Int32Array(1024);
+  /** Unit -> instance (-1 = not drawn), and the next member of its stack (-1 = last). */
+  private unitInst = new Int32Array(1024);
+  private nextInStack = new Int32Array(1024);
+  private hashKeys = new Int32Array(0);
+  private hashVal = new Int32Array(0);
+  private hashGen = new Uint32Array(0);
+  private hashStamp = 0;
+  private stackPers = new Float64Array(1024);
+  private selUnit = -1;
   /** Hovered / selected formation ids (NaN = none) and their instance indices this frame (-1 = not drawn). */
   private hoverId = NaN;
   private selId = NaN;
@@ -352,58 +393,109 @@ export class UnitLayer implements CustomLayerInterface {
     const tPrev = this.currentT();
     const newIdx = interpMs > 0 ? new Map<number, number>() : oldIdx;
     if (interpMs <= 0) newIdx.clear();
-    let logSum = 0, logN = 0;
+    const a = this.inst;
+    if (this.instUnit.length < n) {
+      const len = Math.max(n, this.instUnit.length * 2);
+      this.instUnit = new Int32Array(len); this.unitInst = new Int32Array(len); this.nextInStack = new Int32Array(len);
+    }
+    const iu = this.instUnit, ui = this.unitInst, nx = this.nextInStack;
+    this.hoverK = -1; this.selK = -1; this.selUnit = -1;
+    // Pass 1: formations of one side on the same spot (the engine puts them on
+    // cell centres, so the match is exact) become one stack and one instance.
+    // In a real run 94 formations sat on 6 positions; drawn one by one, 59 of
+    // them were a single symbol with nothing to say so.
+    // Open-addressing table keyed on (lon, lat) to 0.001 deg and side; a JS Map
+    // with float keys made setUnits 0.77 ms for 6000 units, this keeps it near 0.3.
+    let cap = this.hashKeys.length;
+    if (cap < n * 2) {
+      cap = 1024;
+      while (cap < n * 2) cap <<= 1;
+      this.hashKeys = new Int32Array(cap * 3); this.hashVal = new Int32Array(cap); this.hashGen = new Uint32Array(cap);
+    }
+    cap = this.hashVal.length;
+    const mask = cap - 1, hk = this.hashKeys, hv = this.hashVal, hg = this.hashGen;
+    const gen = ++this.hashStamp;
+    let k = 0;
     for (let i = 0; i < n; i++) {
       const o = i * UNIT_STRIDE;
-      const p = units[o + U.personnel];
-      if (units[o + U.status] === UnitStatus.Destroyed || !vis[i] || !(p > 0)) continue;
-      logSum += Math.log2(p); logN++;
+      ui[i] = -1;
+      if (units[o + U.status] === UnitStatus.Destroyed || !vis[i]) continue;
+      const qx = Math.round(units[o + U.lon] * 1000), qy = Math.round(units[o + U.lat] * 1000), sd = units[o + U.side] | 0;
+      let h = (Math.imul(qx, 73856093) ^ Math.imul(qy, 19349663) ^ Math.imul(sd + 1, 83492791)) & mask;
+      let g = -1;
+      while (hg[h] === gen) {
+        if (hk[h * 3] === qx && hk[h * 3 + 1] === qy && hk[h * 3 + 2] === sd) { g = hv[h]; break; }
+        h = (h + 1) & mask;
+      }
+      if (g < 0) {
+        hg[h] = gen; hk[h * 3] = qx; hk[h * 3 + 1] = qy; hk[h * 3 + 2] = sd; hv[h] = k;
+        iu[k] = i; nx[i] = -1; ui[i] = k; k++;
+        continue;
+      }
+      // representative = biggest formation (its icon and heading stand for the stack)
+      const head = iu[g];
+      nx[i] = head; ui[i] = g;
+      if (units[o + U.personnel] > units[head * UNIT_STRIDE + U.personnel]) iu[g] = i;
+      else { nx[i] = nx[head]; nx[head] = i; }
+    }
+    const nStacks = k;
+    // Pass 2: aggregate each stack and pack its instance
+    let logSum = 0, logN = 0;
+    const persOf = this.stackPers.length >= nStacks ? this.stackPers : (this.stackPers = new Float64Array(Math.max(nStacks, 1024)));
+    for (let s = 0; s < nStacks; s++) {
+      let p = 0;
+      for (let i = iu[s]; i >= 0; i = nx[i]) p += Math.max(0, units[i * UNIT_STRIDE + U.personnel]);
+      persOf[s] = p;
+      if (p > 0) { logSum += Math.log2(p); logN++; }
     }
     const logMean = logN ? logSum / logN : 0;
-    const a = this.inst;
-    if (this.instUnit.length < n) this.instUnit = new Int32Array(Math.max(n, this.instUnit.length * 2));
-    const iu = this.instUnit;
-    this.hoverK = -1; this.selK = -1;
-    let k = 0;
     let anim = battles.length > 0;
-    for (let i = 0; i < n; i++) {
-      const o = i * UNIT_STRIDE;
-      const status = units[o + U.status];
-      if (status === UnitStatus.Destroyed || !vis[i]) continue;
+    for (k = 0; k < nStacks; k++) {
+      const rep = iu[k];
+      const o = rep * UNIT_STRIDE;
+      let cnt = 0, pers = 0, strW = 0, sup = 0, routing = 0, engaged = false;
+      for (let i = rep; i >= 0; i = nx[i]) {
+        const q = i * UNIT_STRIDE;
+        const p = Math.max(0, units[q + U.personnel]);
+        cnt++; pers += p; strW += units[q + U.strength] * (p || 1); sup += units[q + U.supply];
+        const st = units[q + U.status];
+        if (st === UnitStatus.Engaged) engaged = true;
+        if (st === UnitStatus.Routing) routing++;
+        const uid = units[q + U.id];
+        if (uid === this.hoverId) this.hoverK = k;
+        if (uid === this.selId) { this.selK = k; this.selUnit = i; }
+        if (old) newIdx.set(uid, k);
+      }
+      // a stack is engaged if any member is, routing only if most members are
+      const status = engaged ? UnitStatus.Engaged : routing * 2 > cnt ? UnitStatus.Routing : cnt > 1 && units[o + U.status] === UnitStatus.Routing ? UnitStatus.Moving : units[o + U.status];
       const x = mercX(units[o + U.lon]);
       const y = mercY(units[o + U.lat]);
       const j = k * INST;
       let px = x, py = y;
       if (old) {
-        const id = units[o + U.id];
-        const pi = oldIdx.get(id);
+        // previous position: the representative's, else any member's
+        let pi = oldIdx.get(units[o + U.id]);
+        for (let i = rep; pi === undefined && i >= 0; i = nx[i]) pi = oldIdx.get(units[i * UNIT_STRIDE + U.id]);
         if (pi !== undefined) {
           const q = pi * INST;
           px = old[q] + (old[q + 2] - old[q]) * tPrev;
           py = old[q + 1] + (old[q + 3] - old[q + 1]) * tPrev;
         }
-        newIdx.set(id, k);
       }
       a[j] = px; a[j + 1] = py; a[j + 2] = x; a[j + 3] = y;
       a[j + 4] = units[o + U.side];
       a[j + 5] = eraBand(units[o + U.techEra]) * ROLES_PER_BAND + Math.max(0, Math.min(ROLES_PER_BAND - 1, units[o + U.role] | 0));
-      a[j + 6] = units[o + U.strength];
+      a[j + 6] = pers > 0 ? strW / pers : units[o + U.strength];
       const h = units[o + U.heading];
       a[j + 7] = Number.isFinite(h) && status !== UnitStatus.Idle && status !== UnitStatus.Garrison
         ? (HEADING_CONVENTION === 'math' ? h : Math.PI / 2 - h) : 999;
-      a[j + 8] = units[o + U.supply];
+      a[j + 8] = sup / cnt;
       a[j + 9] = status;
       a[j + 10] = 0;
       a[j + 11] = ((units[o + U.id] * 0.6180339) % 1 + 1) % 1;
-      const pers = units[o + U.personnel];
-      a[j + 12] = pers > 0 ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, 1 + SIZE_PER_DOUBLING * (Math.log2(pers) - logMean))) : 1;
-      a[j + 13] = 0; a[j + 14] = 0; a[j + 15] = 0;
+      a[j + 12] = persOf[k] > 0 ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, 1 + SIZE_PER_DOUBLING * (Math.log2(persOf[k]) - logMean))) : 1;
+      a[j + 13] = cnt; a[j + 14] = 0; a[j + 15] = 0;
       if (status === UnitStatus.Engaged) anim = true;
-      iu[k] = i;
-      const uid = units[o + U.id];
-      if (uid === this.hoverId) this.hoverK = k;
-      if (uid === this.selId) this.selK = k;
-      k++;
     }
     this.unitInstances = k;
     this.lodDirty = true;
@@ -429,22 +521,40 @@ export class UnitLayer implements CustomLayerInterface {
   }
 
   /** Highlights a formation by id (null = none). Survives new frames. */
-  setHover(id: number | null) { this.hoverId = id ?? NaN; this.hoverK = this.findInstance(this.hoverId); this.map?.triggerRepaint(); }
-  setSelected(id: number | null) { this.selId = id ?? NaN; this.selK = this.findInstance(this.selId); this.map?.triggerRepaint(); }
+  setHover(id: number | null) { this.hoverId = id ?? NaN; this.hoverK = this.instOf(this.findUnit(this.hoverId)); this.map?.triggerRepaint(); }
+  setSelected(id: number | null) {
+    this.selId = id ?? NaN;
+    this.selUnit = this.findUnit(this.selId);
+    this.selK = this.instOf(this.selUnit);
+    this.map?.triggerRepaint();
+  }
   get selectedId(): number | null { return Number.isNaN(this.selId) ? null : this.selId; }
   /** Index into `units` of the selected formation if it is drawn this frame, else -1. */
-  get selectedUnit(): number { return this.selK >= 0 ? this.instUnit[this.selK] : -1; }
+  get selectedUnit(): number { return this.selK >= 0 ? this.selUnit : -1; }
 
-  private findInstance(id: number): number {
+  /** Indices into `units` of every formation drawn in the same stack as unit i
+   *  (representative first), or [] if i is not drawn. */
+  stackMembers(i: number): number[] {
+    const k = this.instOf(i);
+    if (k < 0) return [];
+    const out: number[] = [];
+    for (let j = this.instUnit[k]; j >= 0; j = this.nextInStack[j]) out.push(j);
+    return out;
+  }
+
+  private instOf(i: number): number { return i >= 0 && i < this.units.length / UNIT_STRIDE ? this.unitInst[i] : -1; }
+
+  private findUnit(id: number): number {
     if (Number.isNaN(id)) return -1;
-    for (let k = 0; k < this.unitInstances; k++) if (this.units[this.instUnit[k] * UNIT_STRIDE + U.id] === id) return k;
+    const u = this.units, n = u.length / UNIT_STRIDE;
+    for (let i = 0; i < n; i++) if (u[i * UNIT_STRIDE + U.id] === id) return i;
     return -1;
   }
 
   clear() {
     this.count = 0;
     this.unitInstances = 0;
-    this.hoverK = -1; this.selK = -1;
+    this.hoverK = -1; this.selK = -1; this.selUnit = -1;
     this.lodDirty = true;
     this.units = new Float32Array(0);
     this.lastIdx.clear();
