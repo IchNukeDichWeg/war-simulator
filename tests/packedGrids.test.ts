@@ -1,5 +1,6 @@
-// The browser loads terrain/grid.pack.gz, the engine in Node reads terrain/grid.bin. They must hold
-// the same grid, or the app would simulate on other terrain than the backtest.
+// The browser loads terrain/grid.pack.gz and climate/zones.bin.gz, the engine in Node reads
+// grid.bin and zones.bin. They must hold the same grids, or the app would simulate on other
+// terrain or weather than the backtest.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gunzipSync } from 'node:zlib';
@@ -29,5 +30,12 @@ describe('terrain/grid.pack.gz', () => {
     expect(Buffer.from(inflated).equals(Buffer.from(packTerrain(raw)))).toBe(true);
     const plain = packTerrain(raw);
     expect(await gunzipBody(ab(plain))).toEqual(plain);
+  });
+});
+
+describe('climate/zones.bin.gz', () => {
+  it('inflates to zones.bin byte for byte (stale: run npx tsx data-pipeline/build.ts)', () => {
+    const dir = join(ROOT, 'public', 'data', 'climate');
+    expect(gunzipSync(readFileSync(join(dir, 'zones.bin.gz'))).equals(readFileSync(join(dir, 'zones.bin')))).toBe(true);
   });
 });

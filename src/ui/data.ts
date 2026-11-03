@@ -70,25 +70,27 @@ async function getJson<T>(file: string, missing: string[]): Promise<T | null> {
   }
 }
 
-/** terrain/grid.pack.gz (src/ui/terrainPack.ts): 2.28 MB instead of 6.22 MB on the wire, and
- *  hosts do not gzip .bin files on the fly. Null when the browser lacks DecompressionStream or
- *  the file is missing or bad; getTerrain then falls back to the raw grid.bin. */
-async function getPackedTerrain(): Promise<ArrayBuffer | null> {
+/** A gzipped binary the build writes next to its raw file, inflated to exactly `bytes` bytes.
+ *  Hosts do not gzip .bin files on the fly, so the raw files went over the wire whole. Null when
+ *  the browser lacks DecompressionStream or the file is missing or bad; the caller then falls
+ *  back to the raw file. */
+async function getGzip(file: string, bytes: number): Promise<Uint8Array | null> {
   if (typeof DecompressionStream === 'undefined') return null;
   try {
-    const r = await fetch(BASE + 'terrain/grid.pack.gz');
+    const r = await fetch(BASE + file);
     const ct = r.headers.get('content-type') ?? '';
     if (!r.ok || ct.includes('text/html')) return null;
-    const packed = await gunzipBody(await r.arrayBuffer());
-    return packed.length === TERRAIN_BYTES ? unpackTerrain(packed) : null;
+    const b = await gunzipBody(await r.arrayBuffer());
+    return b.length === bytes ? b : null;
   } catch {
     return null;
   }
 }
 
+/** terrain/grid.pack.gz (src/ui/terrainPack.ts): 2.28 MB instead of 6.22 MB on the wire. */
 async function getTerrain(missing: string[]): Promise<ArrayBuffer | null> {
-  const packed = await getPackedTerrain();
-  if (packed) return packed;
+  const packed = await getGzip('terrain/grid.pack.gz', TERRAIN_BYTES);
+  if (packed) return unpackTerrain(packed);
   try {
     const r = await fetch(BASE + 'terrain/grid.bin');
     const ct = r.headers.get('content-type') ?? '';
@@ -102,7 +104,10 @@ async function getTerrain(missing: string[]): Promise<ArrayBuffer | null> {
   }
 }
 
+/** climate/zones.bin.gz: 10 kB instead of 259 kB on the wire (one zone byte per cell, long runs). */
 async function getClimate(missing: string[]): Promise<ArrayBuffer | null> {
+  const gz = await getGzip('climate/zones.bin.gz', CLIMATE_W * CLIMATE_H);
+  if (gz) return gz.slice().buffer;
   try {
     const r = await fetch(BASE + 'climate/zones.bin');
     const ct = r.headers.get('content-type') ?? '';
@@ -190,7 +195,7 @@ async function loadAll(): Promise<AppData> {
   return d;
 }
 
-/** What the engine needs beyond the first screen, plus the snapshot prose: 3.46 of the 4.42 MB
+/** What the engine needs beyond the first screen, plus the snapshot prose: 3.21 of the 4.17 MB
  *  of data on the wire (vite preview, gzip on, headless Chrome at an emulated 40 Mbit/s). Moving
  *  them after the first screen brought it from 1.35 s to 0.45-0.54 s; all data is in by 1.3-1.5 s. */
 export interface EngineAssets {

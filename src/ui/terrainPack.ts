@@ -4,7 +4,7 @@
 // bytes, so the slowly varying high bytes sit together, then gzips it. Measured on the shipped
 // grid (6,220,800 bytes): gzip -9 alone 2,883,373, byte-split + gzip -9 2,278,168, brotli on the
 // split 2,129,539 (not used: DecompressionStream has no brotli in every browser). Row deltas on
-// top of the split made it larger (2,313,757). The transform is lossless; tests/terrainPack.test.ts
+// top of the split made it larger (2,313,757). The transform is lossless; tests/packedGrids.test.ts
 // checks that the shipped pack unpacks to grid.bin byte for byte.
 import { GRID_H, GRID_W } from '../engine/terrainClasses';
 

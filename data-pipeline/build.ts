@@ -11,6 +11,7 @@
 //   data/coalitions.json, data/presets.json -> public/data/
 //   public/data/terrain/grid.bin -> public/data/terrain/grid.pack.gz (what the browser fetches,
 //                                  src/ui/terrainPack.ts; Node keeps reading grid.bin)
+//   public/data/climate/zones.bin -> public/data/climate/zones.bin.gz (same, plain gzip)
 // Files that fail validation are skipped with a message, so one bad research
 // file never breaks the app. Usage: tsx data-pipeline/build.ts
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
@@ -119,6 +120,8 @@ async function main() {
   const gridBin = readFileSync(join(PUB, 'terrain', 'grid.bin'));
   const grid = new Uint8Array(gridBin.buffer, gridBin.byteOffset, GRID_W * GRID_H);
   writeFileSync(join(PUB, 'terrain', 'grid.pack.gz'), gzipSync(packTerrain(gridBin), { level: 9 }));
+  const zones = join(PUB, 'climate', 'zones.bin');
+  if (existsSync(zones)) writeFileSync(zones + '.gz', gzipSync(readFileSync(zones), { level: 9 }));
   const snapshots = readAll<Snapshot>('raw/snapshots', bad).sort((a, b) => a.id.localeCompare(b.id));
   const borders: Record<string, MultiPolygon> = {};
   const prog = new Progress('borders', Math.max(1, snapshots.length));
