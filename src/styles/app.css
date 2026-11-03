@@ -240,11 +240,16 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 .tabs .collapse:hover:not(:disabled) { background: var(--c-surface-2); border: none; color: var(--c-text); }
 .tabpanel { display: flex; flex-direction: column; flex: 1; min-height: 0; }
 .panel-body { flex: 1; overflow-y: auto; padding: var(--sp-5); min-height: 0; }
-.panel-body.empty p { margin: 0 0 var(--sp-4); }
+.panel-body.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: var(--sp-8) var(--sp-7); }
+.panel-body.empty p { margin: 0 0 var(--sp-4); max-width: 34ch; }
+.empty-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: var(--sp-5); border-radius: 50%; background: var(--c-surface-2); color: var(--c-text-muted); }
 .row { display: flex; gap: var(--sp-3); align-items: center; flex-wrap: wrap; margin: var(--sp-3) 0; }
 .field { display: flex; flex-direction: column; gap: var(--sp-2); margin: var(--sp-3) 0; }
 .notice { background: var(--c-info-bg); border: 1px solid var(--c-info-border); border-radius: var(--r-md); padding: var(--sp-3) var(--sp-4); margin: var(--sp-4) 0; font-size: var(--fs-sm); }
 .notice.warn { background: var(--c-warn-bg); border-color: var(--c-warn); color: var(--c-warn-text); }
+.notice-icon { display: flex; align-items: flex-start; gap: var(--sp-4); }
+.notice-icon .icon { margin-top: 1px; color: var(--c-warn); }
+.btn-icon-text { display: inline-flex; align-items: center; gap: var(--sp-3); }
 .problems { color: var(--c-warn); font-size: var(--fs-sm); padding-left: 18px; }
 
 /* ---------- map area ---------- */
@@ -377,9 +382,18 @@ fieldset.side legend { display: flex; gap: var(--sp-2); align-items: center; pad
 .reset { font-size: var(--fs-xs); padding: 0 var(--sp-3); margin-left: auto; min-height: 0; }
 
 /* ---------- presets ---------- */
-.presets { list-style: none; padding: 0; margin: 0; }
-.presets li { border-bottom: 1px solid var(--c-border); padding: var(--sp-4) 0; }
-.presets p { margin: var(--sp-1) 0 var(--sp-2); }
+.presets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--sp-4); }
+.presets li { padding: var(--sp-5) var(--sp-5) var(--sp-4); background: var(--c-sunken); border: 1px solid var(--c-border-subtle); border-radius: var(--r-md); transition: border-color var(--dur-fast) var(--ease); }
+.presets li:hover { border-color: var(--c-border); }
+.presets p { margin: var(--sp-2) 0 var(--sp-4); line-height: var(--lh-base); }
+.preset-name { display: block; font-size: 14px; font-weight: var(--fw-semibold); color: var(--c-text-strong); }
+.preset-sides { display: flex; flex-direction: column; gap: var(--sp-2); }
+.preset-side { display: flex; align-items: baseline; gap: var(--sp-3); }
+.preset-side .dot { flex: none; transform: translateY(-1px); }
+.preset-side-name { font-weight: var(--fw-semibold); }
+.preset-meta { margin-top: var(--sp-1); }
+.preset-actions { justify-content: flex-end; margin: var(--sp-4) 0 0; }
+.preset-actions button { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--control-h); padding: 0 var(--sp-5); }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: 0; }
 
 /* ---------- run panel ---------- */

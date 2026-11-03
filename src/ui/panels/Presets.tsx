@@ -5,6 +5,7 @@ import { ensureSnapshots } from '../lazy';
 import { store, toast, useStore } from '../store';
 import type { Scenario } from '../../types/scenario';
 import { EmptyData } from './EmptyData';
+import { Icon } from '../Icon';
 
 /** Resolves once every member snapshot is loaded (Phase 3 members load their era file). */
 export function loadScenario(s: Scenario, msg = 'Scenario loaded'): Promise<boolean> {
@@ -23,18 +24,18 @@ export function Presets() {
     <div className="panel-body">
       <ul className="presets">
         {data.presets.map((p) => (
-          <li key={p.id}>
-            <b>{p.name}</b>
+          <li key={p.id} className="preset-card">
+            <b className="preset-name">{p.name}</b>
             {p.description && <p className="small muted">{p.description}</p>}
-            <div className="small">
+            <div className="small preset-sides">
               {p.sides.map((s, i) => (
-                <div key={i}><span className="dot" style={{ background: s.color }} /> {s.name}: {s.members.slice(0, 4).map(name).join(', ')}{s.members.length > 4 ? ` +${s.members.length - 4}` : ''}</div>
+                <div key={i} className="preset-side"><span className="dot" style={{ background: s.color }} /> <span><span className="preset-side-name">{s.name}</span>: {s.members.slice(0, 4).map(name).join(', ')}{s.members.length > 4 ? ` +${s.members.length - 4}` : ''}</span></div>
               ))}
-              <div className="muted">{p.theater.name} | {p.techMode}{p.excluded.length ? ` | excludes ${p.excluded.join(', ')}` : ''}</div>
+              <div className="muted preset-meta">{p.theater.name} | {p.techMode}{p.excluded.length ? ` | excludes ${p.excluded.join(', ')}` : ''}</div>
             </div>
-            <div className="row">
-              <button onClick={() => loadScenario(p, `Loaded preset: ${p.name}`)}>Load</button>
-              <button className="primary" onClick={() => { void loadScenario(p, `Running preset: ${p.name}`).then(() => startRun(store.get().scenario, 3)); }}>Run</button>
+            <div className="row preset-actions">
+              <button aria-label={`Load preset ${p.name}`} onClick={() => loadScenario(p, `Loaded preset: ${p.name}`)}>Load</button>
+              <button className="primary" aria-label={`Run preset ${p.name}`} onClick={() => { void loadScenario(p, `Running preset: ${p.name}`).then(() => startRun(store.get().scenario, 3)); }}><Icon name="play" size={12} />Run</button>
             </div>
           </li>
         ))}
