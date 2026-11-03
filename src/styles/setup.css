@@ -80,3 +80,23 @@ button.link {
 .sd-notes p { margin: 4px 0 0; white-space: pre-wrap; max-height: 180px; overflow-y: auto; }
 .sd-actions { display: flex; flex-wrap: wrap; gap: 4px; }
 .sd-actions button { font-size: 11.5px; max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+
+/* ---- side picker (combobox) ---- */
+.cb { position: relative; }
+.cb input { width: 100%; }
+.cb-pop {
+  position: absolute; z-index: 20; left: 0; right: 0; top: calc(100% + 2px); max-height: 330px; overflow-y: auto;
+  background: var(--bg2, #161b22); border: 1px solid var(--line, #30363d); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  list-style: none; margin: 0; padding: 2px 0;
+}
+.cb-opt { display: flex; flex-direction: column; gap: 1px; padding: 4px 8px; cursor: pointer; border-left: 3px solid transparent; }
+.cb-opt.kind-researched { border-left-color: var(--gA, #3fb950); }
+.cb-opt.kind-auto { border-left-color: var(--gB, #58a6ff); }
+.cb-opt.kind-derived { border-left-color: var(--warn, #f0883e); border-left-style: dashed; }
+.cb-opt.active { background: var(--bg-hover, #1f2a3a); }
+.cb-opt.taken { opacity: 0.55; }
+.cb-foot { padding: 4px 8px; font-size: 11px; color: var(--muted, #8b949e); border-top: 1px solid var(--line, #30363d); }
+.cb-empty { padding: 6px 8px; font-size: 11.5px; color: var(--muted, #8b949e); }
+button.member-link { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--fg, #e6edf3); text-decoration: none; text-align: left; }
+button.member-link:hover { text-decoration: underline; }
+.members .kind-badge { flex: none; }
