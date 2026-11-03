@@ -1,0 +1,461 @@
+{
+  "id": "empire-of-ghana-1068",
+  "nationId": "empire-of-ghana",
+  "includes": [],
+  "name": "Empire of Ghana (Wagadu)",
+  "year": 1068,
+  "era": "medieval",
+  "region": "subsaharan_africa",
+  "phase": "decline",
+  "tags": [
+    "empire",
+    "kingdom",
+    "Sahel",
+    "gold trade",
+    "Soninke",
+    "Wagadu"
+  ],
+  "capital": {
+    "name": "Koumbi Saleh (probable site)",
+    "lat": 15.76,
+    "lon": -8.0,
+    "kind": "capital"
+  },
+  "places": [
+    {
+      "name": "Walata",
+      "lat": 17.28,
+      "lon": -7.03,
+      "kind": "city"
+    },
+    {
+      "name": "Diara (Nioro du Sahel)",
+      "lat": 15.23,
+      "lon": -9.59,
+      "kind": "city"
+    },
+    {
+      "name": "Bambuk goldfields",
+      "lat": 13.0,
+      "lon": -11.0,
+      "kind": "city"
+    },
+    {
+      "name": "Upper Senegal crossing (Kayes)",
+      "lat": 14.45,
+      "lon": -11.44,
+      "kind": "chokepoint"
+    },
+    {
+      "name": "Awdaghust road (lost to the Almoravids 1054)",
+      "lat": 17.43,
+      "lon": -10.42,
+      "kind": "chokepoint"
+    }
+  ],
+  "territory": {
+    "border": "hb:1000:Ghana",
+    "areaKm2": {
+      "low": 202000,
+      "mid": 650000,
+      "high": 650000,
+      "grade": "C",
+      "source": "https://en.wikipedia.org/wiki/Ghana_Empire",
+      "note": "The infobox gives 650,000 km2 for 1000 (J.P. Martin 2023, The Mali Empire). The world_1000 Ghana polygon measures 202,000 km2 (low). The page notes that written sources are vague about the extent; oral traditions name Gajaaga, Soso and the Hodh among subject areas."
+    }
+  },
+  "demography": {
+    "population": {
+      "low": 500000,
+      "mid": 1000000,
+      "high": 1600000,
+      "grade": "D",
+      "source": "derived:snapshot-composite",
+      "note": "No scholarly estimate for Ghana was found. HYDE via OWID (https://ourworldindata.org/grapher/population): Mali 722,000 (1000) and 776,150 (1100), Mauritania 172,000 and 184,900, Senegal 121,508 and 151,885, about 1.1 million in 1068 for the three modern countries, most of it outside Ghana or in desert; low assumes Ghana held half. High: the Seshat density of the Mali Empire (4-5 million over 1.7-1.9 million km2, as in mali-empire-1330, about 2.5 per km2) x 650,000 km2 = 1.6 million. Mid between."
+    },
+    "urbanization": {
+      "low": 0.02,
+      "mid": 0.03,
+      "high": 0.05,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Koumbi Saleh held 15,000-20,000 by Mauny's estimate (https://en.wikipedia.org/wiki/Koumbi_Saleh), with Walata and other caravan towns; a rural Sahel population."
+    }
+  },
+  "military": {
+    "activePersonnel": {
+      "low": 3000,
+      "mid": 7500,
+      "high": 15000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Royal household troops, slave soldiers and the provincial garrisons of the king. al-Bakri (1067/1068): \"The king of Ghana, when he calls up his army, can put 200,000 men into the field, more than 40,000 of them archers\" (Hopkins trans., Corpus of Early Arabic Sources for West African History, 1981, pp. 78-87, via https://jjcweb.jjay.cuny.edu/history/worldspring09/paperdemo/albakri.html) describes the full levy, not a standing force, and exceeds the plausible population share; it is noted here and not used."
+    },
+    "trainedReserves": {
+      "low": 20000,
+      "mid": 50000,
+      "high": 100000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Clan and vassal levies called up for war. The high end is half of al-Bakri's 200,000 and still above the mobilizable mid."
+    },
+    "supportPersonnel": {
+      "low": 200,
+      "mid": 500,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Smiths, herders of the royal horses and caravan staff."
+    },
+    "mobilizationRatio": {
+      "low": 0.05,
+      "mid": 0.08,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. General levy of free Soninke men and vassal contingents; al-Bakri's call-up of 200,000 would be 12-40% of the population range, beyond any plausible ratio, so it is not used."
+    },
+    "mobilizable": {
+      "low": 25000,
+      "mid": 80000,
+      "high": 160000,
+      "grade": "D",
+      "source": "derived:mobilizable-from-ratio",
+      "note": "population x mobilizationRatio (low x low, mid x mid, high x high)."
+    },
+    "forces": {
+      "missile_infantry": {
+        "count": {
+          "low": 1000,
+          "mid": 2500,
+          "high": 6000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Archers, the arm al-Bakri singles out (40,000 of 200,000, i.e. one in five of the levy)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: self bows, no armour"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5"
+        }
+      },
+      "infantry_line": {
+        "count": {
+          "low": 1000,
+          "mid": 2500,
+          "high": 5000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Spearmen; the army was infantry-heavy (https://en.wikipedia.org/wiki/Ghana_Empire)."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.4,
+          "high": 0.5,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: iron spears, shields"
+        },
+        "training": {
+          "low": 0.4,
+          "mid": 0.5,
+          "high": 0.6,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5"
+        }
+      },
+      "infantry_light": {
+        "count": {
+          "low": 300,
+          "mid": 800,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Javelin men and raiders."
+        },
+        "quality": {
+          "low": 0.3,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5"
+        },
+        "training": {
+          "low": 0.35,
+          "mid": 0.45,
+          "high": 0.55,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.25-0.5"
+        }
+      },
+      "cavalry_light": {
+        "count": {
+          "low": 300,
+          "mid": 800,
+          "high": 2000,
+          "grade": "D",
+          "source": "derived:educated-guess",
+          "note": "Educated guess. Horsemen used mainly for raids (https://en.wikipedia.org/wiki/Ghana_Empire); al-Bakri notes the horses of Ghana are very small (https://jjcweb.jjay.cuny.edu/history/worldspring09/paperdemo/albakri.html)."
+        },
+        "quality": {
+          "low": 0.25,
+          "mid": 0.35,
+          "high": 0.45,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: quality 0.25-0.5. Evidence: small horses"
+        },
+        "training": {
+          "low": 0.45,
+          "mid": 0.55,
+          "high": 0.65,
+          "grade": "C",
+          "source": "derived:rating-rubric",
+          "note": "Rubric row: training 0.5"
+        }
+      }
+    },
+    "commandQuality": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: commandQuality 0.25-0.5. Evidence: Awdaghust fell to the Almoravids in 1054 (https://en.wikipedia.org/wiki/Ghana_Empire)"
+    },
+    "cohesion": {
+      "low": 0.3,
+      "mid": 0.4,
+      "high": 0.5,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: cohesion 0.25-0.5. Evidence: clan levies and tributary vassals; in 1083 Ghana asked the Almoravids for help against Tadmekka and Silla (https://en.wikipedia.org/wiki/Ghana_Empire)"
+    },
+    "morale": {
+      "low": 0.35,
+      "mid": 0.45,
+      "high": 0.55,
+      "grade": "C",
+      "source": "derived:rating-rubric",
+      "note": "Rubric row: morale 0.5 minus. Evidence: a kingdom in decline under Almoravid pressure, though Conrad and Fisher (1982, same page) argue the 1076 conquest never happened"
+    }
+  },
+  "tech": {
+    "weapons": {
+      "low": 2.5,
+      "mid": 2.8,
+      "high": 3.1,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 3 (iron weapons) minus. Evidence: iron spears, swords and bows; ironworking is credited with the state's formation (Munson 1980, Levtzion 1973, via https://en.wikipedia.org/wiki/Ghana_Empire); no crossbow or trebuchet."
+    },
+    "armor": {
+      "low": 1.8,
+      "mid": 2.2,
+      "high": 2.6,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 2. Evidence: shields, quilted and leather protection; as the Mali snapshot."
+    },
+    "ships": {
+      "low": 0.8,
+      "mid": 1.0,
+      "high": 1.4,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1 (river boats). Evidence: canoes on the upper Senegal; no navy."
+    },
+    "fortification": {
+      "low": 1.4,
+      "mid": 1.8,
+      "high": 2.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2. Evidence: the royal town al-Ghaba had a stone wall (al-Bakri via https://en.wikipedia.org/wiki/Ghana_Empire)."
+    },
+    "logistics": {
+      "low": 1.2,
+      "mid": 1.6,
+      "high": 2.0,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2. Evidence: porters, donkeys and camel caravans; no roads."
+    },
+    "communications": {
+      "low": 1.4,
+      "mid": 1.8,
+      "high": 2.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2. Evidence: royal messengers."
+    },
+    "isr": {
+      "low": 1.4,
+      "mid": 1.8,
+      "high": 2.2,
+      "grade": "C",
+      "source": "derived:tech-anchor",
+      "note": "Anchor 1-2. Evidence: scouts."
+    },
+    "air": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No aircraft before 1903."
+    },
+    "cyber": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No computer networks before ~1990."
+    }
+  },
+  "economy": {
+    "gdpPerCapita": {
+      "low": 500,
+      "mid": 650,
+      "high": 850,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No Maddison estimate for West Africa before 1950. Subsistence millet farming near the bare-bones line, lifted by the trans-Saharan gold and salt trade; set a little below the 700 of the mali-empire-1330 snapshot."
+    },
+    "gdp": {
+      "low": 250000000,
+      "mid": 650000000,
+      "high": 1360000000,
+      "grade": "D",
+      "source": "derived:gdp-from-pc",
+      "note": "population x gdpPerCapita (low x low, mid x mid, high x high), 2011 int$."
+    },
+    "milSpendShare": {
+      "low": 0.03,
+      "mid": 0.05,
+      "high": 0.08,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Salt duties (one dinar on imported and two on exported salt, al-Bakri via https://en.wikipedia.org/wiki/Ghana_Empire) and the royal claim to gold nuggets paid the household troops."
+    },
+    "industrialShare": {
+      "low": 0.04,
+      "mid": 0.07,
+      "high": 0.1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Iron smelting and smithing, gold working, weaving."
+    },
+    "foodSurplus": {
+      "low": 0.06,
+      "mid": 0.1,
+      "high": 0.15,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Rainfed millet and sorghum in the Sahel; Koumbi Saleh relied on its hinterland."
+    },
+    "annualCohort": {
+      "low": 4750,
+      "mid": 9500,
+      "high": 15200,
+      "grade": "C",
+      "source": "derived:mech-composite",
+      "note": "population x 0.0095: Hansen 2006 (https://ancientportsantiques.com/wp-content/uploads/Documents/PLACES/GreeceContinental/Athens-Hansen2006.pdf, p. 34) puts a year class of 18-19-year-olds at ca. 1.9% of all males in a pre-modern age structure, i.e. ~0.95% of total population reaching military age per year (males only). Same model as the classical and medieval snapshots."
+    },
+    "production": {}
+  },
+  "logistics": {
+    "roadKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 300,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. No engineered roads; caravan tracks."
+    },
+    "railKm": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No railways before 1825."
+    },
+    "majorPorts": {
+      "low": 0,
+      "mid": 0,
+      "high": 1,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Landlocked; at most a river landing on the upper Senegal."
+    },
+    "merchantTonnage": {
+      "low": 0,
+      "mid": 0,
+      "high": 1000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. River canoes at most; trade went by camel across the Sahara."
+    },
+    "supplyRangeKm": {
+      "low": 80,
+      "mid": 150,
+      "high": 250,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Foot armies in the Sahel, limited by wells and the rainy season."
+    },
+    "draftAnimals": {
+      "low": 20000,
+      "mid": 60000,
+      "high": 150000,
+      "grade": "D",
+      "source": "derived:educated-guess",
+      "note": "Educated guess. Donkeys, camels in the north and small horses."
+    }
+  },
+  "strategic": {
+    "nuclearWarheads": {
+      "low": 0,
+      "mid": 0,
+      "high": 0,
+      "grade": "A",
+      "source": "derived:absent-in-era",
+      "note": "No nuclear weapons before 1945."
+    },
+    "basesAbroad": []
+  },
+  "doctrineId": "archetype-feudal-host",
+  "geography": {
+    "climate": "BSh",
+    "chokepoints": [
+      "Saharan caravan routes via Awdaghust and Walata",
+      "Upper Senegal crossings",
+      "Wells of the Hodh"
+    ],
+    "homeDefense": {
+      "low": 1.1,
+      "mid": 1.2,
+      "high": 1.3,
+      "grade": "C",
+      "source": "derived:home-defense",
+      "note": "Rubric 1.2-1.3: Sahel distances, few wells and a rainy season the Saharan invader is not adapted to; no deep fortified network."
+    }
+  },
+  "notes": "Snapshot = 1067/1068, the date of al-Bakri's description, under Tunka Manin (king from 1063), after the Almoravids took Awdaghust (1054) and before the disputed 1076 events. Population is the weakest value: no scholarly estimate was found, so it is bracketed by HYDE country totals and the Seshat density of the later Mali Empire (grade D). Every force count is an educated guess; al-Bakri's 200,000 men and 40,000 archers is an informant's report of the full levy and is not used as a count. Border: world_1000 Ghana is the file at or before the year (202,000 km2, the core between the upper Senegal and the Inner Niger Delta); areaKm2 uses the published 650,000 km2. The identification of Koumbi Saleh as the capital is disputed (https://en.wikipedia.org/wiki/Ghana_Empire)."
+}
