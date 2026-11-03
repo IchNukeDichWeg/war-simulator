@@ -323,9 +323,10 @@ export class MapController {
         const stats = {
           fps: Math.round(fps * 10) / 10, cpuMs: Math.round((cpuSum / frames) * 100) / 100,
           units: this.stress.n, instances: this.units.instanceCount, drawCalls: this.units.drawCalls, history: [...hist],
+          lod: this.units.lod, lodCpuMs: Math.round(this.units.lodCpuMs * 100) / 100,
         };
         (window as unknown as { __stress: unknown }).__stress = stats;
-        this.hud.textContent = `STRESS TEST (synthetic) | ${stats.units} units | ${stats.fps.toFixed(1)} fps | unit CPU ${stats.cpuMs.toFixed(2)} ms/frame | ${stats.drawCalls} draw call`;
+        this.hud.textContent = `STRESS TEST (synthetic) | ${stats.units} units | ${stats.fps.toFixed(1)} fps | unit CPU ${stats.cpuMs.toFixed(2)} ms/frame | ${stats.drawCalls} draw call | ${stats.lod ? 'compact' : 'full'} symbols`;
         frames = 0; cpuSum = 0; windowStart = now;
       }
       this.stressRaf = requestAnimationFrame(tick);

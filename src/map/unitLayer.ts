@@ -32,12 +32,25 @@ export const FOG_RADIUS_KM = 120;
  *  Pro, 3280x2700 canvas; 684/s at 680x850), i.e. the display rate on a real
  *  screen. 20 Hz keeps the pulse smooth and measured 19 renders/s. */
 const PULSE_MS = 50;
+/** Level-of-detail switch. A screen cell is one full symbol's footprint (CSS px
+ *  at zoom scale 1); a unit counts as overlapping when its cell is already taken.
+ *  Compact discs from 25% overlapping (and at least 12 units), back to full
+ *  symbols below 12% (or fewer than 6): a handful of stacked formations stays
+ *  readable as symbols, a crowded theatre does not. */
+const LOD_CELL_W = 30;
+const LOD_CELL_H = 24;
+const LOD_ENTER_SHARE = 0.25;
+const LOD_ENTER_MIN = 12;
+const LOD_LEAVE_SHARE = 0.12;
+const LOD_LEAVE_MIN = 6;
 
 const VS = `#version 300 es
 precision highp float;
 uniform mat4 u_matrix;
 uniform vec2 u_viewport;
 uniform float u_px;
+uniform float u_dpr;
+uniform float u_lod;
 uniform float u_t;
 uniform float u_bearing;
 layout(location=0) in vec4 a_pos;
@@ -56,12 +69,19 @@ void main() {
   vec2 merc = mix(a_pos.xy, a_pos.zw, u_t);
   vec4 clip = u_matrix * vec4(merc, 0.0, 1.0);
   v_a = a_a; v_b = a_b; v_part = float(part); v_size = 0.0;
+  // compact markers are sized in CSS px (u_dpr), full symbols grow with zoom (u_px)
+  float px = u_lod > 0.5 ? u_dpr : u_px;
   vec2 off;
   if (a_b.z > 0.5) {
     if (part == 1) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
-    float r = 14.0 + 16.0 * clamp(a_b.w, 0.0, 1.0);
+    float r = u_lod > 0.5 ? 7.0 + 9.0 * clamp(a_b.w, 0.0, 1.0) : 14.0 + 16.0 * clamp(a_b.w, 0.0, 1.0);
     v_size = r;
     off = c * r;
+    v_local = off;
+  } else if (u_lod > 0.5) {
+    // compact: a disc of radius 4.5 CSS px x size, quad padded for the outline
+    v_size = 4.5 * a_c.x;
+    off = c * (v_size + 2.5);
     v_local = off;
   } else if (part == 0) {
     off = c * vec2(16.0, 13.0);
@@ -76,7 +96,7 @@ void main() {
     off = (dir * 23.0 + dir * c.x * 7.0 + perp * c.y * 7.0) * a_c.x;
     v_local = c;
   }
-  gl_Position = clip + vec4(off * u_px * 2.0 / u_viewport * clip.w, 0.0, 0.0);
+  gl_Position = clip + vec4(off * px * 2.0 / u_viewport * clip.w, 0.0, 0.0);
 }`;
 
 const FS = `#version 300 es
@@ -85,6 +105,7 @@ uniform sampler2D u_atlas;
 uniform vec3 u_side[2];
 uniform float u_time;
 uniform float u_aa;
+uniform float u_lod;
 in vec2 v_local;
 flat in vec4 v_a;
 flat in vec4 v_b;
@@ -125,6 +146,23 @@ void main() {
   float status = v_a.y < 0.0 ? 0.0 : v_b.y;
   float routing = status == 3.0 ? 1.0 : 0.0;
   float alphaMul = routing > 0.5 ? 0.55 + 0.35 * step(0.5, fract(u_time * 2.0 + phase)) : 1.0;
+  if (u_lod > 0.5) {
+    // compact marker: side-coloured disc, dark outline for contrast on any
+    // imagery; engaged = orange outline, routing = red outline
+    float d = length(v_local) - v_size;
+    float supplyC = clamp(v_b.x, 0.0, 1.0);
+    vec3 fill = mix(side, vec3(0.42, 0.36, 0.30), (1.0 - supplyC) * 0.6);
+    float bw = 1.2;
+    vec3 bcol = vec3(0.05, 0.06, 0.08);
+    if (status == 2.0) { bcol = vec3(1.0, 0.6, 0.1); bw = 1.7; }
+    if (routing > 0.5) { bcol = vec3(0.95, 0.15, 0.12); bw = 1.7; }
+    vec4 acc = over(vec4(0.0), fill, 1.0 - smoothstep(-u_aa * 0.5, u_aa * 0.5, d));
+    acc = over(acc, bcol, 1.0 - smoothstep(bw * 0.5, bw * 0.5 + u_aa, abs(d)));
+    acc *= alphaMul;
+    if (acc.a < 0.01) discard;
+    o = acc;
+    return;
+  }
   if (v_part > 0.5) {
     vec2 uv = (v_local + 1.0) * 0.5;
     float m = atlasAt(ARROW, uv).a;
@@ -234,6 +272,17 @@ export class UnitLayer implements CustomLayerInterface {
   /** CPU ms spent in the last setUnits (fog + packing), for the perf overlay. */
   lastCpuMs = 0;
   drawCalls = 0;
+  /** Level of detail: 0 = full symbols, 1 = compact discs. Chosen per frame from
+   *  how many on-screen symbols would overlap (see updateLod). */
+  lod: 0 | 1 = 0;
+  /** Forces a level of detail (debug and measurement); null = automatic. */
+  lodOverride: 0 | 1 | null = null;
+  /** CPU ms of the last overlap estimate, for the perf overlay. */
+  lodCpuMs = 0;
+  private unitInstances = 0;
+  private lodDirty = true;
+  private lastMatrix = new Float64Array(16);
+  private lodGrid = new Uint8Array(0);
 
   setSideColors(a: string, b: string) {
     this.sideRgb.set([...hexToRgb(a), ...hexToRgb(b)]);
@@ -303,6 +352,8 @@ export class UnitLayer implements CustomLayerInterface {
       if (status === UnitStatus.Engaged || status === UnitStatus.Routing) anim = true;
       k++;
     }
+    this.unitInstances = k;
+    this.lodDirty = true;
     for (const b of battles) {
       const j = k * INST;
       const x = mercX(b.lon), y = mercY(b.lat);
@@ -326,6 +377,8 @@ export class UnitLayer implements CustomLayerInterface {
 
   clear() {
     this.count = 0;
+    this.unitInstances = 0;
+    this.lodDirty = true;
     this.units = new Float32Array(0);
     this.lastIdx.clear();
     this.dirty = true;
@@ -348,7 +401,7 @@ export class UnitLayer implements CustomLayerInterface {
     gl.linkProgram(p);
     if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error('unit program: ' + gl.getProgramInfoLog(p));
     this.prog = p;
-    for (const u of ['u_matrix', 'u_viewport', 'u_px', 'u_t', 'u_bearing', 'u_atlas', 'u_side', 'u_time', 'u_aa']) this.loc[u] = gl.getUniformLocation(p, u);
+    for (const u of ['u_matrix', 'u_viewport', 'u_px', 'u_dpr', 'u_lod', 'u_t', 'u_bearing', 'u_atlas', 'u_side', 'u_time', 'u_aa']) this.loc[u] = gl.getUniformLocation(p, u);
 
     this.vao = gl.createVertexArray();
     this.buf = gl.createBuffer();
@@ -404,9 +457,15 @@ export class UnitLayer implements CustomLayerInterface {
     g.uniform2f(this.loc.u_viewport, g.drawingBufferWidth, g.drawingBufferHeight);
     const zoom = this.map.getZoom();
     const scale = Math.max(0.62, Math.min(1.25, 0.62 + (zoom - 2.5) * 0.14));
-    const px = scale * (g.drawingBufferWidth / this.map.getCanvas().clientWidth || 1);
+    const canvas = this.map.getCanvas();
+    const dpr = g.drawingBufferWidth / canvas.clientWidth || 1;
+    const px = scale * dpr;
+    this.updateLod(m, canvas.clientWidth, canvas.clientHeight, scale);
+    const compact = this.lod === 1;
     g.uniform1f(this.loc.u_px, px);
-    g.uniform1f(this.loc.u_aa, 1 / Math.max(0.5, px));
+    g.uniform1f(this.loc.u_dpr, dpr);
+    g.uniform1f(this.loc.u_lod, this.lod);
+    g.uniform1f(this.loc.u_aa, 1 / Math.max(0.5, compact ? dpr : px));
     const t = this.currentT();
     g.uniform1f(this.loc.u_t, t);
     g.uniform1f(this.loc.u_bearing, (this.map.getBearing() * Math.PI) / 180);
@@ -419,13 +478,53 @@ export class UnitLayer implements CustomLayerInterface {
     g.disable(g.STENCIL_TEST);
     g.enable(g.BLEND);
     g.blendFunc(g.ONE, g.ONE_MINUS_SRC_ALPHA);
-    g.drawArraysInstanced(g.TRIANGLES, 0, 12, this.count);
+    // compact markers have no heading arrow: 6 vertices per instance instead of 12
+    g.drawArraysInstanced(g.TRIANGLES, 0, compact ? 6 : 12, this.count);
     this.drawCalls = 1;
     g.bindVertexArray(null);
     if (t < 1) this.map.triggerRepaint();
     else if (this.animate && !this.pulseTimer) {
       this.pulseTimer = setTimeout(() => { this.pulseTimer = 0; this.map?.triggerRepaint(); }, PULSE_MS);
     }
+  }
+
+  /** Picks the level of detail from the share of on-screen full symbols that
+   *  would land in an already occupied symbol-sized screen cell. Recomputed only
+   *  when the camera or the units changed. Full symbols that pile on each other
+   *  are unreadable (a 6000-unit theatre at zoom 3 was a solid block of frames)
+   *  and the overdraw is the unit layer's main GPU cost; discs keep the shape of
+   *  each side's mass and the fronts. Hysteresis stops flicker at the boundary. */
+  private updateLod(m: ArrayLike<number>, w: number, h: number, scale: number) {
+    if (this.lodOverride !== null) { this.lod = this.lodOverride; return; }
+    let same = !this.lodDirty;
+    for (let i = 0; i < 16 && same; i++) if (this.lastMatrix[i] !== m[i]) same = false;
+    if (same) return;
+    const t0 = performance.now();
+    for (let i = 0; i < 16; i++) this.lastMatrix[i] = m[i];
+    this.lodDirty = false;
+    const cw = LOD_CELL_W * scale, ch = LOD_CELL_H * scale;
+    const cols = Math.max(1, Math.ceil(w / cw)), rows = Math.max(1, Math.ceil(h / ch));
+    if (this.lodGrid.length < cols * rows) this.lodGrid = new Uint8Array(cols * rows * 2);
+    const grid = this.lodGrid;
+    grid.fill(0, 0, cols * rows);
+    const a = this.inst;
+    let seen = 0, dup = 0;
+    for (let k = 0; k < this.unitInstances; k++) {
+      const j = k * INST;
+      const x = a[j + 2], y = a[j + 3];
+      const cw4 = m[3] * x + m[7] * y + m[15];
+      if (cw4 <= 0) continue;
+      const sx = ((m[0] * x + m[4] * y + m[12]) / cw4 * 0.5 + 0.5) * w;
+      const sy = (0.5 - (m[1] * x + m[5] * y + m[13]) / cw4 * 0.5) * h;
+      if (sx < 0 || sy < 0 || sx >= w || sy >= h) continue;
+      const c = ((sy / ch) | 0) * cols + ((sx / cw) | 0);
+      seen++;
+      if (grid[c]) dup++; else grid[c] = 1;
+    }
+    const share = seen ? dup / seen : 0;
+    if (this.lod === 0 && dup >= LOD_ENTER_MIN && share > LOD_ENTER_SHARE) this.lod = 1;
+    else if (this.lod === 1 && (dup < LOD_LEAVE_MIN || share < LOD_LEAVE_SHARE)) this.lod = 0;
+    this.lodCpuMs = performance.now() - t0;
   }
 
   /** Nearest visible unit to a screen point within maxPx, or -1. */
