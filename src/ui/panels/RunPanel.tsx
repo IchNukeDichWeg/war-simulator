@@ -2,10 +2,11 @@ import { useMemo, useState } from 'react';
 import type { Reason, SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { cancelMonteCarlo, eventLog, history, runMonteCarlo } from '../engine';
-import { fmt, pct } from '../format';
+import { fmt, fmtSpeed, pct, signed, signedPts } from '../format';
 import { GradeBadge } from '../Grade';
+import { deltaOver, share } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
-import { SideChart, SideLegend } from './Charts';
+import { SideChart, SideLegend, useLegibleColors } from './Charts';
 
 function useSides() {
   const sc = useStore((s) => s.scenario);
@@ -50,9 +51,113 @@ function LossCauses({ stats }: { stats: [SideStats, SideStats] }) {
   );
 }
 
+/** Days over which the dashboard trend arrows are measured. */
+const TREND_DAYS = 7;
+
+function RunStatus() {
+  const run = useStore((s) => s.run);
+  const limit = useStore((s) => s.scenario.victory.timeLimitDays);
+  const result = run.result;
+  const { names } = useSides();
+  const state = run.status === 'starting' ? 'Starting'
+    : run.status === 'ended' ? (result ? (result.winner === 'draw' ? 'Ended: draw' : `Ended: ${names[result.winner]} won`) : 'Ended')
+    : run.speed > 0 ? `Running, ${fmtSpeed(run.speed)}` : 'Paused';
+  const cls = run.status === 'ended' ? 'ended' : run.status === 'running' && run.speed > 0 ? 'running' : 'paused';
+  const reached = Math.min(1, run.day / Math.max(1, limit));
+  return (
+    <div className="rp-status">
+      <div className="rp-status-row">
+        <div>
+          <div className="rp-day">Day {run.day.toLocaleString('en-US')}</div>
+          <div className="rp-muted small">{run.date ? run.date.replace(/^Day \d+,\s*/, '') : '-'}{run.theater ? ` | grid ${run.theater.cols}x${run.theater.rows} at ${run.theater.cellDeg} deg` : ''}</div>
+        </div>
+        <span className={`rp-pill rp-pill-${cls}`}>{state}</span>
+      </div>
+      <div className="rp-limit" title={`Time limit ${limit} days: the run ends then if no other victory condition fires first`}>
+        <div style={{ width: `${reached * 100}%` }} />
+      </div>
+      <div className="rp-muted small rp-status-foot">
+        <span>{run.day} of {limit} days (time limit)</span>
+        <ModelTag />
+      </div>
+    </div>
+  );
+}
+
+function Trend({ d, fmtD, goodUp }: { d: number | null; fmtD: (v: number) => string; goodUp?: boolean }) {
+  if (d == null) return null;
+  const dir = Math.abs(d) < 1e-9 ? 'flat' : d > 0 ? 'up' : 'down';
+  const tone = dir === 'flat' || goodUp == null ? '' : (dir === 'up') === goodUp ? ' rp-good' : ' rp-bad';
+  return <span className={`rp-trend${tone}`} title={`Change over the last ${TREND_DAYS} days`}>{dir === 'up' ? '▲' : dir === 'down' ? '▼' : '▬'} {fmtD(d)}</span>;
+}
+
+interface VsSpec {
+  label: string;
+  hint: string;
+  series: [number[], number[]];
+  /** ratio: the bar splits the two sides' values; level: each side's own 0..1 level. */
+  mode: 'ratio' | 'level';
+  value: (v: number) => string;
+  delta: (v: number) => string;
+  goodUp: boolean;
+  sub?: (s: 0 | 1, v: number) => string | null;
+}
+
+function VsRow({ spec, colors }: { spec: VsSpec; colors: [string, string] }) {
+  const n = history.day.length - 1;
+  if (n < 0) return null;
+  const v: [number, number] = [spec.series[0][n], spec.series[1][n]];
+  const d = [0, 1].map((s) => deltaOver(history.day, spec.series[s], TREND_DAYS));
+  const side = (s: 0 | 1) => (
+    <div className={`rp-vs-side rp-vs-${s}`}>
+      <b>{spec.value(v[s])}</b>
+      <Trend d={d[s]} fmtD={spec.delta} goodUp={spec.goodUp} />
+      {spec.sub && <span className="rp-muted small">{spec.sub(s, v[s])}</span>}
+    </div>
+  );
+  return (
+    <div className="rp-vs" title={spec.hint}>
+      <div className="rp-vs-label">{spec.label}</div>
+      {side(0)}
+      {spec.mode === 'ratio'
+        ? <div className="rp-split" aria-hidden><div style={{ width: `${share(v[0], v[1]) * 100}%`, background: colors[0] }} /><div style={{ flex: 1, background: colors[1] }} /></div>
+        : <div className="rp-levels" aria-hidden>
+            <div className="rp-level"><div style={{ width: `${Math.max(0, Math.min(1, v[0])) * 100}%`, background: colors[0] }} /></div>
+            <div className="rp-level"><div style={{ width: `${Math.max(0, Math.min(1, v[1])) * 100}%`, background: colors[1] }} /></div>
+          </div>}
+      {side(1)}
+    </div>
+  );
+}
+
+function Dashboard({ names, colors }: { names: [string, string]; colors: [string, string] }) {
+  useStore((s) => s.run.historyVersion);
+  const start = (s: 0 | 1) => history.personnel[s][0];
+  const specs: VsSpec[] = [
+    { label: 'Strength', hint: 'Personnel in the theater now; the bar splits the two sides', series: history.personnel, mode: 'ratio', value: (v) => fmt(v), delta: (v) => signed(v), goodUp: true,
+      sub: (s, v) => (start(s) > 0 ? `${pct(v / start(s))} of start` : null) },
+    { label: 'Casualties', hint: 'Cumulative killed, wounded and captured; the bar splits the two sides', series: history.casualties, mode: 'ratio', value: (v) => fmt(v), delta: (v) => signed(v), goodUp: false },
+    { label: 'Morale', hint: 'Strength-weighted average morale, 0-100%', series: history.morale, mode: 'level', value: pct, delta: signedPts, goodUp: true },
+    { label: 'Territory', hint: 'Share of the theater\'s land cells each side controls', series: history.territory, mode: 'level', value: pct, delta: signedPts, goodUp: true },
+  ];
+  return (
+    <div className="rp-dash">
+      <div className="rp-vs rp-vs-head">
+        <div />
+        <div className="rp-vs-side rp-vs-0" style={{ color: colors[0] }}>{names[0]}</div>
+        <div />
+        <div className="rp-vs-side rp-vs-1" style={{ color: colors[1] }}>{names[1]}</div>
+      </div>
+      {specs.map((s) => <VsRow key={s.label} spec={s} colors={colors} />)}
+      <div className="rp-muted small">Arrows: change over the last {TREND_DAYS} simulated days.</div>
+    </div>
+  );
+}
+
 function Live() {
   const run = useStore((s) => s.run);
-  const { names, colors } = useSides();
+  const { names, colors: raw } = useSides();
+  const colors = useLegibleColors(raw);
   if (run.status === 'idle') {
     return <div className="panel-body muted">No run yet. Build a scenario (or load a preset) and press <b>Run war</b>. Charts, the event log and the result appear here.</div>;
   }
@@ -60,19 +165,26 @@ function Live() {
   const v = run.historyVersion;
   return (
     <div className="panel-body">
-      <div className="run-head">
-        <b>{run.date || `Day ${run.day}`}</b> <span className="muted">day {run.day}{run.theater ? ` | grid ${run.theater.cols}x${run.theater.rows} @ ${run.theater.cellDeg} deg` : ''}</span>
-        <ModelTag />
-      </div>
+      <RunStatus />
+      {run.status === 'ended' && run.result && (
+        <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See the result and the reasons</button>
+      )}
       {run.warnings.length > 0 && <ul className="warnings">{run.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
-      {run.stats && <StatsTable stats={run.stats} />}
-      <SideLegend names={names} colors={colors} />
-      <SideChart title="Strength" unit="personnel" days={history.day} series={history.personnel} names={names} colors={colors} version={v} sync="live" />
-      <SideChart title="Casualties (cumulative)" unit="personnel" days={history.day} series={history.casualties} names={names} colors={colors} version={v} sync="live" />
-      <SideChart title="Supply" unit="% of needs met" days={history.day} series={history.supply} names={names} colors={colors} version={v} percent sync="live" />
-      <SideChart title="Morale" unit="% (avg)" days={history.day} series={history.morale} names={names} colors={colors} version={v} percent sync="live" />
-      <SideChart title="Territory held" unit="% of land" days={history.day} series={history.territory} names={names} colors={colors} version={v} percent sync="live" />
-      {run.stats && <LossCauses stats={run.stats} />}
+      {history.day.length > 0 && <Dashboard names={names} colors={colors} />}
+      <h4>Over time</h4>
+      <SideLegend names={names} colors={raw} />
+      <SideChart title="Strength" unit="personnel" days={history.day} series={history.personnel} names={names} colors={raw} version={v} sync="live" />
+      <SideChart title="Casualties (cumulative)" unit="personnel" days={history.day} series={history.casualties} names={names} colors={raw} version={v} sync="live" />
+      <SideChart title="Morale" unit="% (avg)" days={history.day} series={history.morale} names={names} colors={raw} version={v} percent sync="live" />
+      <SideChart title="Territory held" unit="% of land" days={history.day} series={history.territory} names={names} colors={raw} version={v} percent sync="live" />
+      <SideChart title="Supply" unit="% of needs met" days={history.day} series={history.supply} names={names} colors={raw} version={v} percent sync="live" />
+      {run.stats && (
+        <details className="rp-details">
+          <summary>All statistics today</summary>
+          <StatsTable stats={run.stats} />
+          <LossCauses stats={run.stats} />
+        </details>
+      )}
     </div>
   );
 }
