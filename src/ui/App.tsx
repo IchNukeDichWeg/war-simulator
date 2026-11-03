@@ -214,7 +214,7 @@ export function App() {
         <section className="center">
           <ErrorBoundary name="map" fallback={(err) => (
             <div className="map-fallback">
-              <div className="notice warn">
+              <div className="notice warn" role="alert">
                 {/webgl/i.test(err.message) ? 'The map needs WebGL2, which this browser does not provide.' : `The map failed: ${err.message}`}
                 {' '}The other panels work without it.
               </div>
@@ -224,7 +224,7 @@ export function App() {
           </ErrorBoundary>
           <MapToolbar />
           {mapMode.kind !== 'none' && (
-            <div className="mode-hint">
+            <div className="mode-hint" role="status">
               {mapMode.kind === 'bbox' ? 'Click two opposite corners of the theater. Esc cancels.' : `Click to add start points for side ${mapMode.side === 0 ? 'A' : 'B'}. Esc ends.`}
             </div>
           )}
@@ -232,9 +232,12 @@ export function App() {
         </section>
         <ErrorBoundary name="run"><RunPanel /></ErrorBoundary>
       </main>
-      <footer className="banner">{BANNER}</footer>
+      <footer className="banner"><Icon name="info" size={14} /><span>{BANNER}</span></footer>
       <PaneNav pane={pane} choose={choose} />
-      {toastMsg && <div className="toast">{toastMsg}</div>}
+      {/* always mounted, so screen readers announce each new message */}
+      <div className="toast-region" role="status" aria-live="polite" aria-atomic="true">
+        {toastMsg && <div className="toast" key={toastMsg}>{toastMsg}</div>}
+      </div>
       {showLimits && <ErrorBoundary name="limits"><LimitsPage /></ErrorBoundary>}
     </div>
   );
