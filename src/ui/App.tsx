@@ -66,44 +66,91 @@ async function share() {
   } catch (e) { toast('Could not build share link: ' + (e as Error).message); }
 }
 
+function BrandMark() {
+  return (
+    <svg className="brand-mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 1.5 3.5 4.75v6.5c0 5.4 3.6 9.7 8.5 11.25 4.9-1.55 8.5-5.85 8.5-11.25v-6.5z" fill="currentColor" />
+      <path d="M8 7.5l8 8M16 7.5l-8 8M7 14.5l2.5 2.5M17 14.5 14.5 17" stroke="var(--c-on-accent)" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function TopBar() {
   const name = useStore((s) => s.scenario.name);
   const missing = useStore((s) => s.data?.missing) ?? NONE;
   const loaded = useStore((s) => !!s.data);
   return (
     <header className="top">
-      <div className="brand">Multi-Era War Simulator</div>
-      <div className="scn-name" title="Current scenario">{name}</div>
-      <div className="actions">
-        <button onClick={() => { try { downloadScenario(store.get().scenario); } catch (e) { toast('Could not save: ' + (e as Error).message); } }} title="Download scenario JSON">Save</button>
-        <button onClick={() => uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message))} title="Load scenario JSON">Load</button>
-        <button onClick={share} title="Copy a URL that contains this scenario">Share URL</button>
-        <button onClick={() => store.set({ showLimits: true })}>Honest limits</button>
-        <ThemeToggle />
+      <div className="brand">
+        <BrandMark />
+        <span className="brand-name">Multi-Era War Simulator</span>
+      </div>
+      <div className="scn-name" title={`Current scenario: ${name}`}>
+        <span className="scn-label">Scenario</span>
+        <span className="scn-title">{name}</span>
       </div>
       {loaded && missing.length > 0 && (
         <div className="data-status" title={`Missing or empty: ${missing.join(', ')}`}>data incomplete: {missing.length} file{missing.length > 1 ? 's' : ''}</div>
       )}
+      <div className="actions">
+        <button className="hdr-btn" onClick={() => { try { downloadScenario(store.get().scenario); } catch (e) { toast('Could not save: ' + (e as Error).message); } }} title="Download scenario JSON">
+          <Icon name="download" /><span className="lbl">Save</span>
+        </button>
+        <button className="hdr-btn" onClick={() => uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message))} title="Load scenario JSON">
+          <Icon name="upload" /><span className="lbl">Load</span>
+        </button>
+        <button className="hdr-btn" onClick={share} title="Copy a URL that contains this scenario">
+          <Icon name="link" /><span className="lbl">Share URL</span>
+        </button>
+        <span className="actions-sep" aria-hidden="true" />
+        <button className="hdr-btn limits-btn" onClick={() => store.set({ showLimits: true })} title="What the model can and cannot say" aria-haspopup="dialog">
+          <Icon name="info" /><span className="lbl">Honest limits</span>
+        </button>
+        <ThemeToggle />
+      </div>
     </header>
   );
 }
 
+const LEFT_TABS: [LeftTab, string][] = [['scenario', 'Scenario'], ['nations', 'Nations'], ['editor', 'Editor'], ['presets', 'Presets']];
+
 function LeftPanel() {
   const tab = useStore((s) => s.leftTab);
   const open = useStore((s) => s.leftOpen);
-  const tabs: [LeftTab, string][] = [['scenario', 'Scenario'], ['nations', 'Nations'], ['editor', 'Editor'], ['presets', 'Presets']];
+  // WAI-ARIA tabs: arrow keys move between tabs, Home/End jump, Tab leaves the strip
+  const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const i = LEFT_TABS.findIndex(([k]) => k === tab);
+    const n = LEFT_TABS.length;
+    const j = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? (i + 1) % n
+      : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? (i + n - 1) % n
+      : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1;
+    if (j < 0) return;
+    e.preventDefault();
+    store.set({ leftTab: LEFT_TABS[j][0], leftOpen: true });
+    document.getElementById(`ltab-${LEFT_TABS[j][0]}`)?.focus();
+  };
   return (
-    <aside className={`left${open ? '' : ' closed'}`}>
+    <aside className={`left${open ? '' : ' closed'}`} aria-label="Scenario setup">
       <nav className="tabs">
-        {tabs.map(([k, l]) => <button key={k} className={tab === k ? 'on' : ''} onClick={() => store.set({ leftTab: k, leftOpen: true })}>{l}</button>)}
-        <button className="collapse" title={open ? 'Collapse' : 'Expand'} onClick={() => store.set({ leftOpen: !open })}>{open ? '<' : '>'}</button>
+        <div className="tablist" role="tablist" aria-label="Setup panels" aria-orientation={open ? 'horizontal' : 'vertical'} onKeyDown={onKey}>
+          {LEFT_TABS.map(([k, l]) => (
+            <button key={k} id={`ltab-${k}`} role="tab" aria-selected={open && tab === k} aria-controls="left-tabpanel" tabIndex={tab === k ? 0 : -1}
+              className={tab === k ? 'on' : ''} onClick={() => store.set({ leftTab: k, leftOpen: true })}>{l}</button>
+          ))}
+        </div>
+        <button className="collapse icon-btn" aria-expanded={open} aria-label={open ? 'Collapse setup panel' : 'Expand setup panel'} title={open ? 'Collapse' : 'Expand'}
+          onClick={() => store.set({ leftOpen: !open })}><Icon name={open ? 'chevronLeft' : 'chevronRight'} /></button>
       </nav>
-      <ErrorBoundary name={tab}>
-        {open && tab === 'scenario' && <ScenarioBuilder />}
-        {open && tab === 'nations' && <NationBrowser />}
-        {open && tab === 'editor' && <Editor />}
-        {open && tab === 'presets' && <Presets />}
-      </ErrorBoundary>
+      {open && (
+        <div className="tabpanel" role="tabpanel" id="left-tabpanel" aria-labelledby={`ltab-${tab}`}>
+          <ErrorBoundary name={tab}>
+            {tab === 'scenario' && <ScenarioBuilder />}
+            {tab === 'nations' && <NationBrowser />}
+            {tab === 'editor' && <Editor />}
+            {tab === 'presets' && <Presets />}
+          </ErrorBoundary>
+        </div>
+      )}
     </aside>
   );
 }
