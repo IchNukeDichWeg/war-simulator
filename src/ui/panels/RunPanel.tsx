@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Reason, SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { cancelMonteCarlo, eventLog, history, runMonteCarlo } from '../engine';
 import { fmt, fmtSpeed, pct, signed, signedPts } from '../format';
 import { GradeBadge } from '../Grade';
-import { deltaOver, share } from '../runStats';
+import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 
@@ -189,40 +189,72 @@ function Live() {
   );
 }
 
-const KINDS: SimEvent['kind'][] = ['battle', 'rout', 'siege', 'capture', 'supply', 'naval', 'air', 'mobilization', 'arrival', 'nuclear', 'weather', 'end'];
+// Event filter survives switching tabs (the Events view unmounts); reset per page load only.
+const eventFilterMemo: { groups: EventGroup[]; side: EventFilter['side']; query: string } = { groups: [], side: '', query: '' };
 
 function Events() {
   const ver = useStore((s) => s.run.eventsVersion);
-  const { names, colors } = useSides();
-  const [kind, setKind] = useState<string>('');
-  const [side, setSide] = useState<string>('');
-  const list = useMemo(() => {
-    const out: SimEvent[] = [];
-    for (let i = eventLog.length - 1; i >= 0 && out.length < 400; i--) {
-      const e = eventLog[i];
-      if (kind && e.kind !== kind) continue;
-      if (side !== '' && String(e.side) !== side) continue;
-      out.push(e);
-    }
-    return out;
+  const { names, colors: raw } = useSides();
+  const colors = useLegibleColors(raw);
+  const [groups, setGroups] = useState<EventGroup[]>(eventFilterMemo.groups);
+  const [side, setSide] = useState<EventFilter['side']>(eventFilterMemo.side);
+  const [query, setQuery] = useState(eventFilterMemo.query);
+  const [picked, setPicked] = useState<SimEvent | null>(null);
+  useEffect(() => { Object.assign(eventFilterMemo, { groups, side, query }); }, [groups, side, query]);
+  const { list, matched, counts } = useMemo(() => {
+    const r = filterEvents(eventLog, { groups: new Set(groups), side, query });
+    return { ...r, counts: groupCounts(eventLog) };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ver, kind, side]);
+  }, [ver, groups, side, query]);
+  const toggle = (g: EventGroup) => setGroups((cur) => (cur.includes(g) ? cur.filter((x) => x !== g) : [...cur, g]));
+  const go = (e: SimEvent) => {
+    setPicked(e);
+    if (e.lat != null && e.lon != null) flyBus.emit({ lon: e.lon, lat: e.lat });
+  };
+  const filtered = groups.length > 0 || side !== '' || query.trim() !== '';
   return (
     <div className="panel-body">
-      <div className="row">
-        <select value={kind} onChange={(e) => setKind(e.target.value)}><option value="">All kinds</option>{KINDS.map((k) => <option key={k}>{k}</option>)}</select>
-        <select value={side} onChange={(e) => setSide(e.target.value)}><option value="">Both sides</option><option value="0">{names[0]}</option><option value="1">{names[1]}</option></select>
-        <span className="muted small">{eventLog.length} events</span>
-      </div>
-      {list.length === 0 && <p className="muted">No events yet.</p>}
-      <ul className="events">
-        {list.map((e, i) => (
-          <li key={i} className={`ev ev-${e.kind}`} onClick={() => e.lat != null && e.lon != null && flyBus.emit({ lon: e.lon, lat: e.lat })}
-            style={{ borderLeftColor: e.side === -1 ? '#8b949e' : colors[e.side] }}>
-            <div><span className="ev-day">d{e.day}</span> <span className="ev-kind">{e.kind}</span> {e.text}</div>
-            {e.why && <div className="ev-why">why: {e.why}</div>}
-          </li>
+      <div className="rp-chips" role="group" aria-label="Event types">
+        <button className={`rp-chip${groups.length === 0 ? ' on' : ''}`} aria-pressed={groups.length === 0} onClick={() => setGroups([])}>All <span>{eventLog.length}</span></button>
+        {EVENT_GROUPS.filter((g) => counts[g.id] > 0 || groups.includes(g.id) || g.id === 'battles' || g.id === 'captures' || g.id === 'collapses').map((g) => (
+          <button key={g.id} className={`rp-chip${groups.includes(g.id) ? ' on' : ''}`} aria-pressed={groups.includes(g.id)} onClick={() => toggle(g.id)} title={`Event kinds: ${g.kinds.join(', ')}`}>
+            {g.label} <span>{counts[g.id]}</span>
+          </button>
         ))}
+      </div>
+      <div className="rp-evtools">
+        <div className="rp-seg" role="group" aria-label="Side">
+          {([['', 'Both'], ['0', names[0]], ['1', names[1]]] as [EventFilter['side'], string][]).map(([v, l]) => (
+            <button key={v} className={side === v ? 'on' : ''} aria-pressed={side === v} onClick={() => setSide(v)} style={v !== '' ? { borderBottomColor: colors[+v] } : undefined}>{l}</button>
+          ))}
+        </div>
+        <input type="search" placeholder="Search event text" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Search events" />
+      </div>
+      <div className="rp-muted small rp-evcount">
+        {filtered ? `${matched} of ${eventLog.length} events match` : `${eventLog.length} events`}
+        {matched > list.length ? `, newest ${list.length} shown` : ''}. Click an event with a pin to pan the map to it.
+        {filtered && <button className="rp-textbtn" onClick={() => { setGroups([]); setSide(''); setQuery(''); }}>Clear filters</button>}
+      </div>
+      {list.length === 0 && <p className="muted">{eventLog.length === 0 ? 'No events yet.' : 'No events match the filters.'}</p>}
+      <ul className="rp-events">
+        {list.map((e, i) => {
+          const located = e.lat != null && e.lon != null;
+          return (
+            <li key={`${e.day}-${i}`}>
+              <button className={`rp-ev rp-ev-${groupOf(e.kind) ?? 'other'}${picked === e ? ' picked' : ''}${located ? ' located' : ''}`} onClick={() => go(e)}
+                style={{ borderLeftColor: e.side === -1 ? 'var(--muted, #8b949e)' : colors[e.side] }}
+                title={located ? `Pan the map to ${e.lat!.toFixed(2)}, ${e.lon!.toFixed(2)}` : 'No map location for this event'}>
+                <span className="rp-ev-meta">
+                  <span className="rp-ev-day">day {e.day}</span>
+                  <span className="rp-ev-kind">{e.kind}</span>
+                  {located && <svg className="rp-ev-pin" width="10" height="12" viewBox="0 0 10 12" aria-label="has map location"><path d="M5 0a4 4 0 0 0-4 4c0 3 4 8 4 8s4-5 4-8a4 4 0 0 0-4-4zm0 5.5A1.5 1.5 0 1 1 5 2.5a1.5 1.5 0 0 1 0 3z" fill="currentColor" /></svg>}
+                </span>
+                <span className="rp-ev-text">{e.text}</span>
+                {e.why && <span className="rp-ev-why">Why: {e.why}</span>}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

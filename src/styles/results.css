@@ -44,3 +44,30 @@
 .rp-level > div { height: 100%; }
 .rp-details { margin-top: 10px; }
 .rp-details summary { cursor: pointer; font-size: 12px; color: var(--muted, #8b949e); }
+
+/* ---------------------------------------------------------------- events */
+.rp-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+.rp-chip { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line, #30363d); background: transparent; color: var(--fg, #e6edf3); cursor: pointer; }
+.rp-chip span { color: var(--muted, #8b949e); font-variant-numeric: tabular-nums; margin-left: 2px; }
+.rp-chip.on { border-color: var(--accent, #f2d16b); background: var(--bg3, #1c2230); color: var(--accent, #f2d16b); }
+.rp-evtools { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+.rp-seg { display: flex; min-width: 0; }
+.rp-seg button { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11.5px; border-radius: 0; border-bottom: 2px solid transparent; }
+.rp-seg button:first-child { border-radius: 5px 0 0 5px; flex: 0 0 auto; }
+.rp-seg button:last-child { border-radius: 0 5px 5px 0; }
+.rp-seg button.on { background: var(--bg3, #1c2230); color: var(--fg, #e6edf3); font-weight: 600; }
+.rp-evcount { margin: 2px 0 6px; }
+.rp-textbtn { background: none; border: none; padding: 0 0 0 6px; color: var(--primary, #2f81f7); cursor: pointer; font-size: inherit; text-decoration: underline; }
+.rp-events { list-style: none; padding: 0; margin: 0; }
+.rp-ev { display: flex; flex-direction: column; gap: 1px; width: 100%; text-align: left; font: inherit; color: var(--fg, #e6edf3); background: var(--bg, #0d1117); border: 1px solid transparent; border-left: 3px solid var(--muted, #8b949e); border-radius: 0 4px 4px 0; padding: 4px 7px; margin: 3px 0; cursor: default; }
+.rp-ev.located { cursor: pointer; }
+.rp-ev.located:hover, .rp-ev:focus-visible { border-color: var(--line, #30363d); border-left-width: 3px; }
+.rp-ev.picked { border-color: var(--accent, #f2d16b); border-left-width: 3px; }
+.rp-ev-meta { display: flex; gap: 8px; align-items: center; font-size: 10.5px; }
+.rp-ev-day { color: var(--muted, #8b949e); font-variant-numeric: tabular-nums; }
+.rp-ev-kind { text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent, #f2d16b); }
+.rp-ev-pin { color: var(--muted, #8b949e); margin-left: auto; }
+.rp-ev-text { font-size: 12.5px; }
+.rp-ev-why { font-size: 11.5px; color: var(--muted, #8b949e); }
+.rp-ev-collapses .rp-ev-text, .rp-ev-nuclear .rp-ev-text { font-weight: 600; }
+.rp-ev-nuclear { background: color-mix(in srgb, var(--bad, #f85149) 14%, var(--bg, #0d1117)); }
