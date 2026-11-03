@@ -16,6 +16,14 @@ const HEADING_CONVENTION: 'math' | 'compass' = 'math';
 /** Display-only fog radius (km) around own formations. Not a model parameter:
  *  the engine applies its own scouting rules when the scenario's fog rule is on. */
 export const FOG_RADIUS_KM = 120;
+/** Repaint interval (ms) for purely decorative animation (battle pulse, engaged
+ *  border) once movement interpolation has finished. MapLibre has no partial
+ *  redraw, so every unit-layer repaint re-renders the whole map, terrain and
+ *  rasters included. Requesting one per display frame made a paused run with
+ *  any battle on screen render 215 times/s in an uncapped headless Chrome (M5
+ *  Pro, 3280x2700 canvas; 684/s at 680x850), i.e. the display rate on a real
+ *  screen. 20 Hz keeps the pulse smooth and measured 19 renders/s. */
+const PULSE_MS = 50;
 
 const VS = `#version 300 es
 precision highp float;
@@ -207,6 +215,7 @@ export class UnitLayer implements CustomLayerInterface {
   private t0 = 0;
   private interpMs = 0;
   private animate = false;
+  private pulseTimer: ReturnType<typeof setTimeout> | 0 = 0;
   private sideRgb = new Float32Array([0.85, 0.3, 0.3, 0.3, 0.55, 0.9]);
   private lastIdx = new Map<number, number>();
   /** Raw units of the last update, for hover picking. */
@@ -348,6 +357,8 @@ export class UnitLayer implements CustomLayerInterface {
     if (this.buf) gl.deleteBuffer(this.buf);
     if (this.vao) gl.deleteVertexArray(this.vao);
     if (this.tex) gl.deleteTexture(this.tex);
+    if (this.pulseTimer) clearTimeout(this.pulseTimer);
+    this.pulseTimer = 0;
     this.map = null;
   }
 
@@ -389,7 +400,10 @@ export class UnitLayer implements CustomLayerInterface {
     g.drawArraysInstanced(g.TRIANGLES, 0, 12, this.count);
     this.drawCalls = 1;
     g.bindVertexArray(null);
-    if (t < 1 || this.animate) this.map.triggerRepaint();
+    if (t < 1) this.map.triggerRepaint();
+    else if (this.animate && !this.pulseTimer) {
+      this.pulseTimer = setTimeout(() => { this.pulseTimer = 0; this.map?.triggerRepaint(); }, PULSE_MS);
+    }
   }
 
   /** Nearest visible unit to a screen point within maxPx, or -1. */
