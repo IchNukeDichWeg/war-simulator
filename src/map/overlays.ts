@@ -104,6 +104,101 @@ export function supplyFeatures(lines: [number[][], number[][]] | undefined, colo
   return { type: 'FeatureCollection', features };
 }
 
+/** Front line: the boundary between side-0 and side-1 cells of the control grid
+ *  (neutral and sea cells are not front). Marching squares on cell centres, so
+ *  the line runs diagonally through mixed blocks instead of stair-stepping
+ *  along cell edges; segments are chained and Chaikin-smoothed twice. Every
+ *  line is oriented with side 0 on its LEFT, so a negative line-offset puts a
+ *  stroke on side 0's side and a positive one on side 1's. */
+export function frontFeatures(control: Uint8Array, th: TheaterInfo): FC {
+  const { cols, rows, cellDeg } = th;
+  const west = th.bbox[0], north = th.bbox[3];
+  // points in half-cell units: cell (r, c) centre = (2r+1, 2c+1); key = y * K + x
+  const K = 2 * cols + 4;
+  const segs: number[] = []; // flat [fromKey, toKey]
+  const at = (r: number, c: number) => control[r * cols + c];
+  const cross = (px: number, py: number, qx: number, qy: number, sx: number, sy: number) =>
+    // y grows southward in grid units, so flip it to get the geographic left
+    (qx - px) * (-(sy - py)) - (-(qy - py)) * (sx - px);
+  const emit = (p: number, q: number, s: number) => {
+    const px = p % K, py = (p / K) | 0, qx = q % K, qy = (q / K) | 0, sx = s % K, sy = (s / K) | 0;
+    if (cross(px, py, qx, qy, sx, sy) > 0) segs.push(p, q); else segs.push(q, p);
+  };
+  for (let r = 0; r + 1 < rows; r++) {
+    for (let c = 0; c + 1 < cols; c++) {
+      const v = [at(r, c), at(r, c + 1), at(r + 1, c + 1), at(r + 1, c)]; // TL TR BR BL
+      if (v.every((x) => x === v[0])) continue;
+      // corner positions (half-cell units) in the same order
+      const cy = [2 * r + 1, 2 * r + 1, 2 * r + 3, 2 * r + 3];
+      const cx = [2 * c + 1, 2 * c + 3, 2 * c + 3, 2 * c + 1];
+      const mids: number[] = [], own0: number[] = [];
+      for (let e = 0; e < 4; e++) {
+        const a = v[e], b = v[(e + 1) & 3];
+        if (!((a === 0 && b === 1) || (a === 1 && b === 0))) continue;
+        const n = (e + 1) & 3;
+        mids.push(((cy[e] + cy[n]) / 2) * K + (cx[e] + cx[n]) / 2);
+        const z = a === 0 ? e : n;
+        own0.push(cy[z] * K + cx[z]);
+      }
+      if (mids.length === 2) emit(mids[0], mids[1], own0[0]);
+      else if (mids.length === 4) { emit(mids[0], mids[3], own0[0]); emit(mids[1], mids[2], own0[2]); }
+      else if (mids.length > 0) {
+        // the front meets neutral ground or sea inside this block: run each crossing to the block centre
+        const ctr = (2 * r + 2) * K + (2 * c + 2);
+        for (let i = 0; i < mids.length; i++) emit(mids[i], ctr, own0[i]);
+      }
+    }
+  }
+  // chain oriented segments end-to-start
+  const m = segs.length / 2;
+  const out = new Map<number, number[]>();
+  const indeg = new Map<number, number>();
+  for (let i = 0; i < m; i++) {
+    const a = segs[2 * i], b = segs[2 * i + 1];
+    let l = out.get(a); if (!l) out.set(a, (l = [])); l.push(i);
+    indeg.set(b, (indeg.get(b) ?? 0) + 1);
+  }
+  const used = new Uint8Array(m);
+  const chains: number[][] = [];
+  const walk = (i: number) => {
+    const keys = [segs[2 * i]];
+    let cur = i;
+    for (;;) {
+      used[cur] = 1;
+      const end = segs[2 * cur + 1];
+      keys.push(end);
+      const next = out.get(end)?.find((j) => !used[j]);
+      if (next === undefined) break;
+      cur = next;
+    }
+    chains.push(keys);
+  };
+  for (let i = 0; i < m; i++) if (!used[i] && !indeg.get(segs[2 * i])) walk(i);
+  for (let i = 0; i < m; i++) if (!used[i]) walk(i);
+  const toLL = (k: number): [number, number] => {
+    const x = k % K, y = Math.floor(k / K);
+    return [west + (x / 2) * cellDeg, north - (y / 2) * cellDeg];
+  };
+  const features: Feature[] = [];
+  for (const keys of chains) {
+    let pts = keys.map(toLL);
+    for (let it = 0; it < 2 && pts.length > 2; it++) pts = chaikin(pts);
+    features.push({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: pts } });
+  }
+  return { type: 'FeatureCollection', features };
+}
+
+/** One Chaikin corner-cutting pass; keeps both endpoints. */
+function chaikin(p: [number, number][]): [number, number][] {
+  const out: [number, number][] = [p[0]];
+  for (let i = 0; i + 1 < p.length; i++) {
+    const [ax, ay] = p[i], [bx, by] = p[i + 1];
+    out.push([0.75 * ax + 0.25 * bx, 0.75 * ay + 0.25 * by], [0.25 * ax + 0.75 * bx, 0.25 * ay + 0.75 * by]);
+  }
+  out.push(p[p.length - 1]);
+  return out;
+}
+
 export function pointFeatures(pts: { lat: number; lon: number; color: string; label?: string }[]): FC {
   return {
     type: 'FeatureCollection',

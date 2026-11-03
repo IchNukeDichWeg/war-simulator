@@ -14,7 +14,7 @@ import type { AppData } from '../ui/data';
 import { yearLabel } from '../ui/data';
 import { ROLE_LABEL, ROLE_ORDER, STATUS_LABEL } from '../ui/roles';
 import type { LayerToggles, MapMode } from '../ui/store';
-import { bboxFeature, controlImage, labelPoint, pointFeatures, supplyFeatures, terrainImage, type Coords4 } from './overlays';
+import { bboxFeature, controlImage, frontFeatures, labelPoint, pointFeatures, supplyFeatures, terrainImage, type Coords4 } from './overlays';
 import { StressSim } from './stress';
 import { FOG_RADIUS_KM, UnitLayer, type Battle } from './unitLayer';
 
@@ -78,6 +78,12 @@ function style(): StyleSpecification {
       },
     ],
   };
+}
+
+/** The front line has no toolbar toggle yet: on unless the store carries
+ *  `layers.front === false` (an optional field the shell can add later). */
+function showFront(L: LayerToggles): boolean {
+  return (L as LayerToggles & { front?: boolean }).front !== false;
 }
 
 export interface MapState {
@@ -174,6 +180,13 @@ export class MapController {
     m.addLayer({ id: 'borders-fill', type: 'fill', source: 'borders', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 0.1 } });
     m.addLayer({ id: 'borders-line', type: 'line', source: 'borders', paint: { 'line-color': ['get', 'color'], 'line-width': 1.6, 'line-dasharray': [3, 2], 'line-opacity': 0.9 } });
     m.addLayer({ id: 'control', type: 'raster', source: 'control', layout: { visibility: 'none' }, paint: { 'raster-opacity': 0.32, 'raster-resampling': 'nearest', 'raster-fade-duration': 0 } });
+    // front line: dark casing, then each side's colour on its own side of the line
+    // (frontFeatures orients side 0 on the left; negative line-offset = left)
+    const fw = (a: number, b: number) => ['interpolate', ['linear'], ['zoom'], 3, a, 8, b] as unknown as number;
+    m.addSource('front', { type: 'geojson', data: EMPTY_FC });
+    m.addLayer({ id: 'front-casing', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#0b0d12', 'line-width': fw(5, 9), 'line-opacity': 0.7 } });
+    m.addLayer({ id: 'front-0', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#c33', 'line-width': fw(1.8, 3.2), 'line-offset': fw(-1.1, -1.9) } });
+    m.addLayer({ id: 'front-1', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#36c', 'line-width': fw(1.8, 3.2), 'line-offset': fw(1.1, 1.9) } });
     m.addLayer({ id: 'theater', type: 'line', source: 'theater', paint: { 'line-color': '#f2d16b', 'line-width': 1.5, 'line-dasharray': [4, 3], 'line-opacity': 0.85 } });
     m.addLayer({ id: 'draft', type: 'line', source: 'draft', paint: { 'line-color': '#ffffff', 'line-width': 2, 'line-dasharray': [2, 2] } });
     m.addLayer({ id: 'supply-casing', type: 'line', source: 'supply', paint: { 'line-color': '#000', 'line-width': 3.5, 'line-opacity': 0.35 } });
@@ -211,7 +224,14 @@ export class MapController {
     if (prev && prev.layers.tilt !== L.tilt) m.easeTo({ pitch: L.tilt ? 55 : 0, bearing: L.tilt ? m.getBearing() : 0, duration: 700 });
 
     const colors: [string, string] = [s.scenario.sides[0].color, s.scenario.sides[1].color];
-    if (force || colors.join() !== this.colorKey) { this.colorKey = colors.join(); this.units.setSideColors(colors[0], colors[1]); }
+    if (force || colors.join() !== this.colorKey) {
+      this.colorKey = colors.join();
+      this.units.setSideColors(colors[0], colors[1]);
+      m.setPaintProperty('front-0', 'line-color', colors[0]);
+      m.setPaintProperty('front-1', 'line-color', colors[1]);
+    }
+    const front = showFront(L);
+    vis('front-casing', front); vis('front-0', front); vis('front-1', front);
 
     // theater box: the engine's box while running, else the scenario's
     const bbox = s.theater?.bbox ?? s.scenario.theater.bbox;
@@ -297,6 +317,7 @@ export class MapController {
     if (f.control && th && f.control.length >= th.cols * th.rows) {
       const { canvas, coords } = controlImage(f.control, th, colors);
       (this.map.getSource('control') as ImageSource).updateImage({ url: canvas.toDataURL(), coordinates: coords });
+      (this.map.getSource('front') as GeoJSONSource).setData(frontFeatures(f.control, th));
       this.hasControl = true;
       this.map.setLayoutProperty('control', 'visibility', L.control ? 'visible' : 'none');
     }
@@ -310,6 +331,7 @@ export class MapController {
     this.select(null);
     if (!this.loaded) return;
     (this.map.getSource('supply') as GeoJSONSource).setData(EMPTY_FC);
+    (this.map.getSource('front') as GeoJSONSource).setData(EMPTY_FC);
     this.map.setLayoutProperty('control', 'visibility', 'none');
   }
 
