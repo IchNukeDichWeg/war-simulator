@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { Scenario, SideSpec, TechMode } from '../../types/scenario';
-import type { Snapshot } from '../../types/schema';
 import { yearLabel, yearOf, type AppData } from '../data';
-import { DerivedBadge } from '../Grade';
 import { ensureSnapshots } from '../lazy';
+import { buildItems, type SearchItem } from '../nationSearch';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
 import { THEATERS, type BBox } from '../scenarioDefaults';
 import { setScenario, store, toast, useStore } from '../store';
+import { KindBadge } from './SnapshotDetail';
+import { SnapshotSearch } from './SnapshotSearch';
+import { showInNations } from './snapActions';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 /** Fallback anchor labels from data/SOURCES.md when mechanics.json has no techLevels yet. */
 const TECH_ANCHORS = ['before 3000 BCE', '2500 BCE', '1400 BCE', '300 BCE', '1250', '1600', '1805', '1905', '1943', '1985', '2026'];
-
-function snapLabel(s: Snapshot) { return `${s.name} (${yearLabel(s.year)})`; }
 
 function updSide(i: 0 | 1, f: (s: SideSpec) => SideSpec) {
   setScenario((sc) => {
@@ -22,25 +22,7 @@ function updSide(i: 0 | 1, f: (s: SideSpec) => SideSpec) {
   });
 }
 
-function SnapshotPicker({ data, onPick, placeholder }: { data: AppData; onPick: (id: string) => void; placeholder: string }) {
-  const [v, setV] = useState('');
-  const listId = 'snaps-dl';
-  return (
-    <>
-      <input list={listId} value={v} placeholder={placeholder} onChange={(e) => {
-        const val = e.target.value;
-        const m = val.match(/\[([^\]]+)\]$/);
-        if (m && (data.snapById.has(m[1]) || data.phase3ById.has(m[1]))) { onPick(m[1]); setV(''); } else setV(val);
-      }} />
-      <datalist id={listId}>
-        {data.snapshots.filter((s) => !data.phase3ById.has(s.id)).map((s) => <option key={s.id} value={`${snapLabel(s)} [${s.id}]`} />)}
-        {data.phase3.map((e) => <option key={e.id} value={`${e.name} (${yearLabel(e.year)}), Phase 3 derived, confidence ${e.confidence} [${e.id}]`} />)}
-      </datalist>
-    </>
-  );
-}
-
-function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) {
+function SideEditor({ i, data, sc, itemById }: { i: 0 | 1; data: AppData; sc: Scenario; itemById: Map<string, SearchItem> }) {
   const side = sc.sides[i];
   const mapMode = useStore((s) => s.mapMode);
   const [year, setYear] = useState('');
@@ -82,13 +64,17 @@ function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) 
           const s = data.snapById.get(id);
           const nat = s ? data.nationById.get(s.nationId) : undefined;
           const excluded = s && (sc.excluded.includes(s.nationId));
+          const it = itemById.get(id);
           return (
             <li key={id} className={excluded ? 'excluded' : ''}>
-              <span className="member-name" title={id}>{s ? s.name : data.phase3ById.has(id) ? <span className="muted">loading {id}...</span> : <span className="warn">unknown: {id}</span>}</span>
-              {data.phase3ById.has(id) && <DerivedBadge grade={data.phase3ById.get(id)!.confidence} />}
+              <span className="member-name" title={id}>{s
+                ? <button className="link member-link" title="Show the key numbers and sources in the Nations tab" onClick={() => showInNations(`${s.name} ${yearLabel(s.year)}`, id)}>{s.name}</button>
+                : data.phase3ById.has(id) ? <span className="muted">loading {id}...</span> : <span className="warn">unknown: {id}</span>}</span>
+              {/* researched is the default; auto-base and derived members are flagged */}
+              {it && it.kind !== 'researched' && <KindBadge kind={it.kind} grade={it.confidence} compact />}
               {nat && nat.snapshotIds.length > 1 ? (
-                <select title="Time-slice: pick another year of this nation" value={id} onChange={(e) => { const v = e.target.value; ensureSnapshots([v]).then(() => updSide(i, (x) => ({ ...x, members: x.members.map((m) => (m === id ? v : m)) }))); }}>
-                  {nat.snapshotIds.map((sid) => { const oy = yearOf(data, sid); return <option key={sid} value={sid}>{oy != null ? yearLabel(oy) : sid}</option>; })}
+                <select title="Time-slice: pick another year of this nation (derived = Phase 3, low confidence)" value={id} onChange={(e) => { const v = e.target.value; ensureSnapshots([v]).then(() => updSide(i, (x) => ({ ...x, members: x.members.map((m) => (m === id ? v : m)) }))); }}>
+                  {nat.snapshotIds.map((sid) => { const oy = yearOf(data, sid); return <option key={sid} value={sid}>{oy != null ? yearLabel(oy) : sid}{data.phase3ById.has(sid) ? ' derived' : ''}</option>; })}
                 </select>
               ) : s ? <span className="muted">{yearLabel(s.year)}</span> : null}
               <button className="x" title="Remove" onClick={() => updSide(i, (x) => ({ ...x, members: x.members.filter((m) => m !== id) }))}>x</button>
@@ -96,7 +82,8 @@ function SideEditor({ i, data, sc }: { i: 0 | 1; data: AppData; sc: Scenario }) 
           );
         })}
       </ul>
-      <SnapshotPicker data={data} placeholder="Add nation snapshot..." onPick={(id) => addIds([id])} />
+      <SnapshotSearch data={data} placeholder="Add a nation: name, tag or year..." onPick={(id) => addIds([id])}
+        taken={(id) => { const k = sc.sides.findIndex((x) => x.members.includes(id)); return k >= 0 ? sc.sides[k].name : null; }} />
       {data.coalitions.length > 0 && (
         <select value="" onChange={(e) => { const c = data.coalitions.find((x) => x.id === e.target.value); if (c) addIds(c.members); }}>
           <option value="">Add coalition preset...</option>
@@ -159,6 +146,7 @@ export function ScenarioBuilder() {
   const mapMode = useStore((s) => s.mapMode);
   const runStatus = useStore((s) => s.run.status);
   const [mcRuns, setMcRuns] = useState(100);
+  const itemById = useMemo(() => new Map(data ? buildItems(data).map((x) => [x.id, x]) : []), [data]);
   if (!data) return <div className="panel-body muted">Loading data...</div>;
   const problems = scenarioProblems(sc);
   const anchors = data.mechanics?.techLevels?.length ? data.mechanics.techLevels.map((t) => t.label) : TECH_ANCHORS;
@@ -173,8 +161,8 @@ export function ScenarioBuilder() {
       </div>
 
       {data.snapshots.length === 0 && <div className="notice">No nation data loaded yet; sides cannot be filled until <code>snapshots.json</code> exists.</div>}
-      <SideEditor i={0} data={data} sc={sc} />
-      <SideEditor i={1} data={data} sc={sc} />
+      <SideEditor i={0} data={data} sc={sc} itemById={itemById} />
+      <SideEditor i={1} data={data} sc={sc} itemById={itemById} />
 
       <h4>Excluded nations</h4>
       <ExcludedEditor data={data} sc={sc} />
