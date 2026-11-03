@@ -34,7 +34,6 @@ export interface AppData {
   doctrines: DoctrineProfile[];
   mechanics: Mechanics | null;
   coalitions: Coalition[];
-  battles: unknown[];
   presets: Scenario[];
   borders: Record<string, number[][][][]>;
   terrain: ArrayBuffer | null;
@@ -109,14 +108,14 @@ export function loadData(): Promise<AppData> {
 
 async function loadAll(): Promise<AppData> {
   const missing: string[] = [];
-  const [snapshots, phase3, nations, doctrines, mechanics, coalitions, battles, presets, borders, terrain, climate] = await Promise.all([
+  // battles.json (110 kB) is not fetched: only the headless backtest reads the battle cases.
+  const [snapshots, phase3, nations, doctrines, mechanics, coalitions, presets, borders, terrain, climate] = await Promise.all([
     getJson<Snapshot[]>('snapshots.json', missing),
     getJson<Phase3Entry[]>('snapshots-phase3-index.json', missing),
     getJson<Nation[]>('nations.json', missing),
     getJson<DoctrineProfile[]>('doctrines.json', missing),
     getJson<unknown>('mechanics.json', missing),
     getJson<Coalition[]>('coalitions.json', missing),
-    getJson<unknown[]>('battles.json', missing),
     getJson<Scenario[]>('presets.json', missing),
     getJson<Record<string, number[][][][]>>('borders.json', missing),
     getTerrain(missing),
@@ -133,7 +132,6 @@ async function loadAll(): Promise<AppData> {
     doctrines: Array.isArray(doctrines) ? doctrines : [],
     mechanics: mech,
     coalitions: Array.isArray(coalitions) ? coalitions : [],
-    battles: Array.isArray(battles) ? battles : [],
     presets: Array.isArray(presets) ? presets : [],
     borders: borders && typeof borders === 'object' ? borders : {},
     terrain,
