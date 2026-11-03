@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { MapView } from '../map/MapView';
 import { loadData } from './data';
+import { ensureEngineAssets } from './lazy';
 import { ErrorBoundary } from './ErrorBoundary';
 import { LimitsPage } from './LimitsPage';
 import { Editor } from './panels/Editor';
@@ -78,6 +79,7 @@ export function App() {
     loadData().then(async (data) => {
       if (!alive) return;
       store.set({ data });
+      void ensureEngineAssets();
       try {
         const fromHash = await scenarioFromHash();
         if (fromHash) { loadScenario(fromHash, 'Scenario loaded from link'); return; }
