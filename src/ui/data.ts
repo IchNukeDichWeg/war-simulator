@@ -3,8 +3,8 @@
 import type { Coalition, DoctrineProfile, EraId, Grade, Nation, RegionId, Snapshot } from '../types/schema';
 import type { Mechanics } from '../types/mechanics';
 import type { Scenario } from '../types/scenario';
-import { GRID_H, GRID_W } from '../engine/terrainClasses';
 import { CLIMATE_H, CLIMATE_W } from '../engine/climate';
+import { TERRAIN_BYTES, gunzipBody, unpackTerrain } from './terrainPack';
 
 /** One line of public/data/snapshots-phase3-index.json: a Phase 3 derived snapshot that is
  *  searchable before its era file (snapshots-phase3-<era>.json) is loaded. */
@@ -64,13 +64,31 @@ async function getJson<T>(file: string, missing: string[]): Promise<T | null> {
   }
 }
 
+/** terrain/grid.pack.gz (src/ui/terrainPack.ts): 2.28 MB instead of 6.22 MB on the wire, and
+ *  hosts do not gzip .bin files on the fly. Null when the browser lacks DecompressionStream or
+ *  the file is missing or bad; getTerrain then falls back to the raw grid.bin. */
+async function getPackedTerrain(): Promise<ArrayBuffer | null> {
+  if (typeof DecompressionStream === 'undefined') return null;
+  try {
+    const r = await fetch(BASE + 'terrain/grid.pack.gz');
+    const ct = r.headers.get('content-type') ?? '';
+    if (!r.ok || ct.includes('text/html')) return null;
+    const packed = await gunzipBody(await r.arrayBuffer());
+    return packed.length === TERRAIN_BYTES ? unpackTerrain(packed) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function getTerrain(missing: string[]): Promise<ArrayBuffer | null> {
+  const packed = await getPackedTerrain();
+  if (packed) return packed;
   try {
     const r = await fetch(BASE + 'terrain/grid.bin');
     const ct = r.headers.get('content-type') ?? '';
     if (!r.ok || ct.includes('text/html')) { missing.push('terrain/grid.bin'); return null; }
     const b = await r.arrayBuffer();
-    if (b.byteLength !== GRID_W * GRID_H * 6) { missing.push('terrain/grid.bin'); return null; }
+    if (b.byteLength !== TERRAIN_BYTES) { missing.push('terrain/grid.bin'); return null; }
     return b;
   } catch {
     missing.push('terrain/grid.bin');

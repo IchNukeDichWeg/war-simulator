@@ -7,16 +7,20 @@
 //   data/mechanics/*.json    -> public/data/mechanics.json
 //   data/battles/*.json      -> public/data/battles.json
 //   data/coalitions.json, data/presets.json -> public/data/
+//   public/data/terrain/grid.bin -> public/data/terrain/grid.pack.gz (what the browser fetches,
+//                                  src/ui/terrainPack.ts; Node keeps reading grid.bin)
 // Files that fail validation are skipped with a message, so one bad research
 // file never breaks the app. Usage: tsx data-pipeline/build.ts
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
 import type { Nation, Snapshot } from '../src/types/schema';
 import type { Phase3Entry } from '../src/ui/data';
 import { GRID_H, GRID_RES, GRID_W, TERRAIN_CLASSES } from '../src/engine/terrainClasses';
 import { ROOT, Progress, cachedFetch } from './lib/util';
 import { MultiPolygon, bboxOf, multiAreaKm2, pointInMulti, simplifyMulti, toMulti } from './lib/geo';
 import { confidence, listJson, validateAll } from './validate';
+import { packTerrain } from '../src/ui/terrainPack';
 import { ERAS } from './schema';
 
 const DATA = join(ROOT, 'data');
@@ -109,7 +113,9 @@ async function main() {
   console.log('validated', counts, `${bad.size} files skipped`);
   mkdirSync(PUB, { recursive: true });
 
-  const grid = new Uint8Array(readFileSync(join(PUB, 'terrain', 'grid.bin')).buffer, 0, GRID_W * GRID_H);
+  const gridBin = readFileSync(join(PUB, 'terrain', 'grid.bin'));
+  const grid = new Uint8Array(gridBin.buffer, gridBin.byteOffset, GRID_W * GRID_H);
+  writeFileSync(join(PUB, 'terrain', 'grid.pack.gz'), gzipSync(packTerrain(gridBin), { level: 9 }));
   const snapshots = readAll<Snapshot>('raw/snapshots', bad).sort((a, b) => a.id.localeCompare(b.id));
   const borders: Record<string, MultiPolygon> = {};
   const prog = new Progress('borders', Math.max(1, snapshots.length));
