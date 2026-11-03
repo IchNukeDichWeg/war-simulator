@@ -24,8 +24,14 @@ export function fmtDays(n: number | null | undefined): string {
   return base;
 }
 
+/** A head count: whole people below 100 ("23", not "22.8"), otherwise like fmt ("1,127", "412k"). */
+export function fmtCount(n: number | null | undefined): string {
+  if (n == null || !Number.isFinite(n)) return '-';
+  return Math.abs(n) < 99.5 ? String(Math.round(n) || 0) : fmt(n);
+}
+
 /** Signed value with an explicit + for gains: "+1.2k", "-340", "0". */
-export function signed(n: number | null | undefined, f: (v: number) => string = fmt): string {
+export function signed(n: number | null | undefined, f: (v: number) => string = fmtCount): string {
   if (n == null || !Number.isFinite(n)) return '-';
   if (n === 0) return f(0);
   return n > 0 ? `+${f(n)}` : `-${f(-n)}`;

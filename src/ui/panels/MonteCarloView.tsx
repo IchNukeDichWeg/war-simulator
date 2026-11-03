@@ -5,7 +5,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { MonteCarloResult } from '../../engine/protocol';
 import { cancelMonteCarlo, mcScenario, mcStartedAt, runMonteCarlo } from '../engine';
-import { fmt, fmtDays } from '../format';
+import { fmtCount, fmtDays } from '../format';
 import { endReasonBreakdown, histogram, outcomeCounts, wilson } from '../runStats';
 import { useStore } from '../store';
 import { useLegibleColors } from './Charts';
@@ -150,8 +150,8 @@ export function MonteCarloView() {
           <Duration r={r} />
           <h4>Losses per side (p10 / p50 / p90)</h4>
           <div className="rp-mc-block">
-            <RangeRow label={names[0]} color={colors[0]} p={r.casualties[0]} max={casMax} f={fmt} />
-            <RangeRow label={names[1]} color={colors[1]} p={r.casualties[1]} max={casMax} f={fmt} />
+            <RangeRow label={names[0]} color={colors[0]} p={r.casualties[0]} max={casMax} f={fmtCount} />
+            <RangeRow label={names[1]} color={colors[1]} p={r.casualties[1]} max={casMax} f={fmtCount} />
             <div className="rp-muted small">Personnel lost: killed, wounded and captured plus disease, starvation, exposure and desertion. Bar: 10th to 90th percentile of runs; tick: median.</div>
           </div>
           <h4>How the runs ended</h4>

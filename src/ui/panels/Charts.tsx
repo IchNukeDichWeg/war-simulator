@@ -3,7 +3,7 @@ import uPlot from 'uplot';
 import 'uplot/dist/uPlot.min.css';
 import '../../styles/results.css';
 import { ensureContrast } from '../color';
-import { fmt } from '../format';
+import { fmt, fmtCount } from '../format';
 import { useTheme } from '../theme';
 
 interface Props {
@@ -44,7 +44,7 @@ export function SideChart({ title, unit, days, series, names, colors, version, p
   useEffect(() => {
     if (!box.current) return;
     const el = box.current;
-    const val = (_u: uPlot, v: number | null) => (v == null ? '-' : percent ? `${Math.round(v * 100)}%` : fmt(v));
+    const val = (_u: uPlot, v: number | null) => (v == null ? '-' : percent ? `${Math.round(v * 100)}%` : fmtCount(v));
     const axis = {
       stroke: theme.muted,
       grid: { stroke: theme.line, width: 1 },
@@ -102,7 +102,7 @@ export function SideChart({ title, unit, days, series, names, colors, version, p
 
   const last = days.length - 1;
   const i = idx != null && idx >= 0 && idx <= last ? idx : last;
-  const show = (v: number | undefined) => (v == null ? '-' : percent ? `${Math.round(v * 100)}%` : fmt(v));
+  const show = (v: number | undefined) => (v == null ? '-' : percent ? `${Math.round(v * 100)}%` : fmtCount(v));
   return (
     <figure className="rp-chart">
       <figcaption className="rp-chart-title">

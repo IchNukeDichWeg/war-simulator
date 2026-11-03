@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { eventLog, history } from '../engine';
-import { capitalize, fmt, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
+import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
@@ -12,9 +12,9 @@ import { ModelTag, Reasons, useSides } from './RunShared';
 function StatsTable({ stats }: { stats: [SideStats, SideStats] }) {
   const { names, colors } = useSides();
   const rows: [string, (s: SideStats) => string][] = [
-    ['Personnel', (s) => fmt(s.personnel)],
+    ['Personnel', (s) => fmtCount(s.personnel)],
     ['Platforms', (s) => fmt(s.platforms)],
-    ['Casualties', (s) => fmt(s.casualties)],
+    ['Casualties', (s) => fmtCount(s.casualties)],
     ['Supply', (s) => pct(s.supply)],
     ['Morale', (s) => pct(s.morale)],
     ['Territory', (s) => pct(s.territory)],
@@ -36,7 +36,7 @@ function LossCauses({ stats }: { stats: [SideStats, SideStats] }) {
   return (
     <table className="stats small">
       <thead><tr><th>Losses by cause</th><th /><th /></tr></thead>
-      <tbody>{nz.map((c) => <tr key={c}><td className="muted">{c}</td><td>{fmt(stats[0].lossesByCause[c])}</td><td>{fmt(stats[1].lossesByCause[c])}</td></tr>)}</tbody>
+      <tbody>{nz.map((c) => <tr key={c}><td className="muted">{c}</td><td>{fmtCount(stats[0].lossesByCause[c])}</td><td>{fmtCount(stats[1].lossesByCause[c])}</td></tr>)}</tbody>
     </table>
   );
 }
@@ -74,9 +74,9 @@ function RunStatus() {
   );
 }
 
-function Trend({ d, fmtD, goodUp }: { d: number | null; fmtD: (v: number) => string; goodUp?: boolean }) {
+function Trend({ d, fmtD, goodUp, eps }: { d: number | null; fmtD: (v: number) => string; goodUp?: boolean; eps: number }) {
   if (d == null) return null;
-  const dir = Math.abs(d) < 1e-9 ? 'flat' : d > 0 ? 'up' : 'down';
+  const dir = Math.abs(d) < eps ? 'flat' : d > 0 ? 'up' : 'down';
   const tone = dir === 'flat' || goodUp == null ? '' : (dir === 'up') === goodUp ? ' rp-good' : ' rp-bad';
   return <span className={`rp-trend${tone}`} title={`Change over the last ${TREND_DAYS} days`}>{dir === 'up' ? '▲' : dir === 'down' ? '▼' : '▬'} {fmtD(d)}</span>;
 }
@@ -90,6 +90,8 @@ interface VsSpec {
   value: (v: number) => string;
   delta: (v: number) => string;
   goodUp: boolean;
+  /** Changes smaller than this show as flat (they would print as 0). */
+  eps: number;
   sub?: (s: 0 | 1, v: number) => string | null;
 }
 
@@ -101,7 +103,7 @@ function VsRow({ spec, colors }: { spec: VsSpec; colors: [string, string] }) {
   const side = (s: 0 | 1) => (
     <div className={`rp-vs-side rp-vs-${s}`}>
       <b>{spec.value(v[s])}</b>
-      <Trend d={d[s]} fmtD={spec.delta} goodUp={spec.goodUp} />
+      <Trend d={d[s]} fmtD={spec.delta} goodUp={spec.goodUp} eps={spec.eps} />
       {spec.sub && <span className="rp-muted small">{spec.sub(s, v[s])}</span>}
     </div>
   );
@@ -124,11 +126,11 @@ function Dashboard({ names, colors }: { names: [string, string]; colors: [string
   useStore((s) => s.run.historyVersion);
   const start = (s: 0 | 1) => history.personnel[s][0];
   const specs: VsSpec[] = [
-    { label: 'Strength', hint: 'Personnel in the theater now; the bar splits the two sides', series: history.personnel, mode: 'ratio', value: (v) => fmt(v), delta: (v) => signed(v), goodUp: true,
+    { label: 'Strength', hint: 'Personnel in the theater now; the bar splits the two sides', series: history.personnel, mode: 'ratio', value: fmtCount, delta: (v) => signed(v), goodUp: true, eps: 0.5,
       sub: (s, v) => (start(s) > 0 ? `${pct(v / start(s))} of start` : null) },
-    { label: 'Casualties', hint: 'Cumulative killed, wounded and captured; the bar splits the two sides', series: history.casualties, mode: 'ratio', value: (v) => fmt(v), delta: (v) => signed(v), goodUp: false },
-    { label: 'Morale', hint: 'Strength-weighted average morale, 0-100%', series: history.morale, mode: 'level', value: pct, delta: signedPts, goodUp: true },
-    { label: 'Territory', hint: 'Share of the theater\'s land cells each side controls', series: history.territory, mode: 'level', value: pct, delta: signedPts, goodUp: true },
+    { label: 'Casualties', hint: 'Cumulative killed, wounded and captured; the bar splits the two sides', series: history.casualties, mode: 'ratio', value: fmtCount, delta: (v) => signed(v), goodUp: false, eps: 0.5 },
+    { label: 'Morale', hint: 'Strength-weighted average morale, 0-100%', series: history.morale, mode: 'level', value: pct, delta: signedPts, goodUp: true, eps: 0.005 },
+    { label: 'Territory', hint: 'Share of the theater\'s land cells each side controls', series: history.territory, mode: 'level', value: pct, delta: signedPts, goodUp: true, eps: 0.005 },
   ];
   return (
     <div className="rp-dash">
@@ -277,8 +279,8 @@ function Result() {
         {([0, 1] as const).map((s) => (
           <div key={s} className="rp-final-side" style={{ borderTopColor: colors[s] }}>
             <div className="rp-final-name" style={{ color: colors[s] }}>{names[s]}</div>
-            <div><b>{fmt(st[s].personnel)}</b> <span className="rp-muted small">left{start(s) > 0 ? `, ${pct(st[s].personnel / start(s))} of start` : ''}</span></div>
-            <div><b>{fmt(st[s].casualties)}</b> <span className="rp-muted small">casualties</span></div>
+            <div><b>{fmtCount(st[s].personnel)}</b> <span className="rp-muted small">left{start(s) > 0 ? `, ${pct(st[s].personnel / start(s))} of start` : ''}</span></div>
+            <div><b>{fmtCount(st[s].casualties)}</b> <span className="rp-muted small">casualties</span></div>
             <div className="small">morale {pct(st[s].morale)} | territory {pct(st[s].territory)}</div>
           </div>
         ))}

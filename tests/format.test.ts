@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { capitalize, fmt, fmtDays, fmtSpeed, pct, signed, signedPts } from '../src/ui/format';
+import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../src/ui/format';
 
 describe('run panel formatting', () => {
   it('keeps the existing number format', () => {
@@ -17,6 +17,16 @@ describe('run panel formatting', () => {
     expect(fmtDays(800)).toBe('800 days (about 2.2 years)');
     expect(fmtDays(12.6)).toBe('13 days');
     expect(fmtDays(undefined)).toBe('-');
+  });
+
+  it('formats head counts as whole people', () => {
+    expect(fmtCount(22.8)).toBe('23');
+    expect(fmtCount(0.3)).toBe('0');
+    expect(fmtCount(-0.3)).toBe('0');
+    expect(fmtCount(1127)).toBe('1,127');
+    expect(fmtCount(412345)).toBe('412k');
+    expect(fmtCount(undefined)).toBe('-');
+    expect(signed(10.3)).toBe('+10');
   });
 
   it('signs changes explicitly', () => {
