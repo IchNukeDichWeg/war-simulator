@@ -97,7 +97,17 @@ function isMechanics(m: unknown): m is Mechanics {
   return !!m && typeof m === 'object' && 'lethality' in (m as object) && 'combat' in (m as object);
 }
 
-export async function loadData(): Promise<AppData> {
+let loading: Promise<AppData> | null = null;
+
+/** Load the runtime data once per page. Memoized because React StrictMode runs App's effect
+ *  twice in dev and both fetch sets were in flight at once, so the HTTP cache did not help:
+ *  32.7 MB of data per dev page load instead of 16.3 MB (headless Chrome over CDP, cache off). */
+export function loadData(): Promise<AppData> {
+  loading ??= loadAll();
+  return loading;
+}
+
+async function loadAll(): Promise<AppData> {
   const missing: string[] = [];
   const [snapshots, phase3, nations, doctrines, mechanics, coalitions, battles, presets, borders, terrain, climate] = await Promise.all([
     getJson<Snapshot[]>('snapshots.json', missing),
