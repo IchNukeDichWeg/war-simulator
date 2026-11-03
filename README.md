@@ -44,21 +44,44 @@ npm run build      # tsc --noEmit, then vite build into dist/
 npm run preview    # serves dist/ on http://localhost:4173
 ```
 
-The build takes about 2 s. `dist/` is about 32 MB, of which 30 MB is the runtime data copied from
-`public/data/`; the JavaScript is one 1.45 MB main chunk (417 kB gzipped), a 102 kB engine worker
-and the MapLibre worker. Vite warns about the chunk size; that is expected. The build uses relative
-paths (`base: './'`), so `dist/` can be served from any subdirectory.
+The build takes about 2 s. `dist/` is about 31 MB, of which 29 MB is the runtime data copied from
+`public/data/`. The JavaScript is an app chunk (170 kB, 63 kB gzipped), a React chunk (219 kB, 68 kB
+gzipped) and a MapLibre chunk (1.08 MB, 293 kB gzipped), plus a 107 kB engine worker and the
+MapLibre worker. The vendor chunks keep their hashes when only app code changes, so a return visit
+after such a change refetches about 63 kB. Vite warns about the MapLibre chunk size; that is
+expected. The build uses relative paths (`base: './'`), so `dist/` can be served from any
+subdirectory.
+
+### How the app loads its data
+
+The first screen (nation lists, presets, the map with the preset's borders) waits only for
+`snapshots.json`, `snapshots-phase3-index.json`, `nations.json`, `mechanics.json`,
+`coalitions.json`, `presets.json` and `borders.json`. Right after it the app fetches what only a
+run needs: `doctrines.json`, `terrain/grid.pack.gz`, `climate/zones.bin.gz` and
+`snapshot-notes.json` (the note and source prose the build splits off `snapshots.json` and merges
+back before the engine sees the snapshots). A run or Monte Carlo started before those are in waits
+for them. Phase 3 snapshots load per era on first use. `battles.json` is not fetched; only the
+backtest reads it. The `.gz` grids are inflated with `DecompressionStream`; without it, or when a
+`.gz` is missing, the app falls back to `terrain/grid.bin` and `climate/zones.bin`.
+
+Measured with `vite preview` (which gzips JSON) in headless Chrome at an emulated 40 Mbit/s and
+20 ms round trip, cache off: before this layout the first screen took 2.5 s and 8.44 MB of data;
+now 0.49-0.55 s and 0.96 MB, with every data file in by 1.3-1.4 s (4.17 MB in all). Under
+`npm run dev` (no compression) the data before the first screen went from 32.7 MB (every file was
+fetched twice under React StrictMode) to 4.7 MB.
 
 ## Tests
 
 ```sh
-npm test           # vitest run: 12 files, 42 tests, about 3 s
+npm test           # vitest run: 20 files, 160 tests, about 6 s
 npm run typecheck  # tsc --noEmit, about 1 s
 ```
 
 The tests cover engine invariants (no NaN, no negative strength, personnel conservation), determinism,
-the worker protocol, performance budgets, the historical battle cases, and a guard that fails when
-`public/data/battles.json` or `mechanics.json` is stale against `data/`.
+the worker protocol, performance budgets, the historical battle cases, and guards that fail when
+`public/data/battles.json` or `mechanics.json` is stale against `data/`, when `terrain/grid.pack.gz`
+or `climate/zones.bin.gz` no longer inflate to `grid.bin` and `zones.bin`, or when `snapshots.json`
+and `snapshot-notes.json` are not one consistent split.
 
 ## Data pipeline
 
@@ -81,7 +104,7 @@ Phase 3 and build steps, the climate grid feeds Phase 3):
 | 5 | `npm run data:phase3-enumerate` | Phase 3 step 1: lists historical-basemaps polities that have no snapshot. Writes `data/reference/phase3-polities.json`. | Yes: the historical-basemaps world files (shared with step 7) | 0.9 s |
 | 6 | `npm run data:phase3` | Phase 3 step 2: derives a low-confidence `phase3` snapshot per enumerated polity. Writes `data/raw/snapshots/`. | Yes: OWID population CSV and Natural Earth countries, 4.7 MB | 1.4 s |
 | 7 | `npm run data:validate` | Schema and cross-field checks over everything in `data/`. Exits non-zero on any error. `npm run data:validate -- --quiet` prints only the summary. | No | 0.5 s |
-| 8 | `npm run data:build` | Builds `public/data/` (snapshots, per-era Phase 3 files, borders, doctrines, mechanics, battles, presets, coalitions). Files that fail validation are skipped with a message. | Yes: historical-basemaps world files and Natural Earth countries | 51 s (border simplification of about 1,240 polygons) |
+| 8 | `npm run data:build` | Builds `public/data/` (snapshots without their prose plus `snapshot-notes.json`, per-era Phase 3 files, borders, doctrines, mechanics, battles, presets, coalitions, and the gzipped grids `terrain/grid.pack.gz` and `climate/zones.bin.gz` the browser loads). Files that fail validation are skipped with a message. Run it after steps 1 and 2 too, or the gzipped grids go stale. | Yes: historical-basemaps world files and Natural Earth countries | 51 s (border simplification of about 1,240 polygons) |
 | 9 | `npm run data:coverage` | Rewrites `COVERAGE.md` from `data/raw/snapshots/`. | No | 1.0 s |
 
 Warm-cache times were measured on an Apple M5 Pro, Node 26.5.0, on a copy of the repository. First-run

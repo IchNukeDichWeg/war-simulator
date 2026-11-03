@@ -1,5 +1,7 @@
 // Builds the runtime data from validated research output.
-//   data/raw/snapshots/*.json -> public/data/snapshots.json (researched + auto-base), data/nations.json, public/data/nations.json
+//   data/raw/snapshots/*.json -> public/data/snapshots.json (researched + auto-base, without the note/source
+//                                prose) + snapshot-notes.json (that prose by id, src/ui/snapshotText.ts),
+//                                data/nations.json, public/data/nations.json
 //                                public/data/snapshots-phase3-<era>.json + snapshots-phase3-index.json (tag phase3,
 //                                lazy-loaded by the UI per era; the index makes them searchable before loading)
 //   border refs              -> public/data/borders.json (simplified MultiPolygons) + terrainMix
@@ -7,16 +9,22 @@
 //   data/mechanics/*.json    -> public/data/mechanics.json
 //   data/battles/*.json      -> public/data/battles.json
 //   data/coalitions.json, data/presets.json -> public/data/
+//   public/data/terrain/grid.bin -> public/data/terrain/grid.pack.gz (what the browser fetches,
+//                                  src/ui/terrainPack.ts; Node keeps reading grid.bin)
+//   public/data/climate/zones.bin -> public/data/climate/zones.bin.gz (same, plain gzip)
 // Files that fail validation are skipped with a message, so one bad research
 // file never breaks the app. Usage: tsx data-pipeline/build.ts
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
 import type { Nation, Snapshot } from '../src/types/schema';
 import type { Phase3Entry } from '../src/ui/data';
 import { GRID_H, GRID_RES, GRID_W, TERRAIN_CLASSES } from '../src/engine/terrainClasses';
 import { ROOT, Progress, cachedFetch } from './lib/util';
 import { MultiPolygon, bboxOf, multiAreaKm2, pointInMulti, simplifyMulti, toMulti } from './lib/geo';
 import { confidence, listJson, validateAll } from './validate';
+import { packTerrain } from '../src/ui/terrainPack';
+import { splitSnapshotText } from '../src/ui/snapshotText';
 import { ERAS } from './schema';
 
 const DATA = join(ROOT, 'data');
@@ -109,7 +117,11 @@ async function main() {
   console.log('validated', counts, `${bad.size} files skipped`);
   mkdirSync(PUB, { recursive: true });
 
-  const grid = new Uint8Array(readFileSync(join(PUB, 'terrain', 'grid.bin')).buffer, 0, GRID_W * GRID_H);
+  const gridBin = readFileSync(join(PUB, 'terrain', 'grid.bin'));
+  const grid = new Uint8Array(gridBin.buffer, gridBin.byteOffset, GRID_W * GRID_H);
+  writeFileSync(join(PUB, 'terrain', 'grid.pack.gz'), gzipSync(packTerrain(gridBin), { level: 9 }));
+  const zones = join(PUB, 'climate', 'zones.bin');
+  if (existsSync(zones)) writeFileSync(zones + '.gz', gzipSync(readFileSync(zones), { level: 9 }));
   const snapshots = readAll<Snapshot>('raw/snapshots', bad).sort((a, b) => a.id.localeCompare(b.id));
   const borders: Record<string, MultiPolygon> = {};
   const prog = new Progress('borders', Math.max(1, snapshots.length));
@@ -146,7 +158,10 @@ async function main() {
   // Phase 3 snapshots (tag phase3) are split per era so the first load stays small; the
   // index carries what search and browse need plus the confidence label.
   const isP3 = (s: Snapshot) => s.tags.includes('phase3');
-  write('snapshots.json', snapshots.filter((s) => !isP3(s)));
+  // The prose goes to its own file so the first screen does not wait for it (snapshotText.ts).
+  const { core, text } = splitSnapshotText(snapshots.filter((s) => !isP3(s)));
+  write('snapshots.json', core);
+  write('snapshot-notes.json', text);
   const p3 = snapshots.filter(isP3);
   const eraFiles = new Set<string>();
   for (const era of ERAS) {

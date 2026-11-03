@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { MapView } from '../map/MapView';
 import { flyBus } from './bus';
 import { loadData } from './data';
+import { ensureEngineAssets } from './lazy';
 import { ErrorBoundary } from './ErrorBoundary';
 import { Icon, type IconName } from './Icon';
 import { LimitsPage } from './LimitsPage';
@@ -194,6 +195,7 @@ export function App() {
     loadData().then(async (data) => {
       if (!alive) return;
       store.set({ data });
+      void ensureEngineAssets();
       try {
         const fromHash = await scenarioFromHash();
         if (fromHash) { loadScenario(fromHash, 'Scenario loaded from link'); return; }

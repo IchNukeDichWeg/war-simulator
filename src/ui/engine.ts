@@ -6,6 +6,7 @@ import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { fitBus, frameBus, resetBus } from './bus';
 import { initialRun, setMc, setRun, store, toast } from './store';
+import { engineAssetsReady } from './lazy';
 
 export const REAL_TIME = 1 / 86400;
 
@@ -191,6 +192,7 @@ export function scenarioProblems(s: Scenario): string[] {
 export function startRun(s: Scenario, speed = 1) {
   const probs = scenarioProblems(s);
   if (probs.length) { toast(probs[0]); return; }
+  if (!engineAssetsReady('run', () => startRun(s, speed), () => store.get().run.status === 'starting')) { setRun({ status: 'starting' }); return; }
   clearHistory();
   resetBus.emit();
   setRun({ ...initialRun, status: 'starting', speed, historyVersion: store.get().run.historyVersion + 1 });
@@ -238,6 +240,7 @@ export let mcStartedAt = 0;
 export function runMonteCarlo(s: Scenario, runs: number) {
   const probs = scenarioProblems(s);
   if (probs.length) { toast(probs[0]); return; }
+  if (!engineAssetsReady('mc', () => runMonteCarlo(s, runs), () => store.get().mc.status === 'running' && !mcWorker)) { setMc({ status: 'running', done: 0, total: runs, result: null, error: null }); return; }
   const data = engineDataFrom(store.get().data);
   if (typeof data === 'string') { setMc({ status: 'error', error: data }); return; }
   mcWorker?.terminate();
