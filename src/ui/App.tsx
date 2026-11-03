@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { MapView } from '../map/MapView';
+import { flyBus } from './bus';
 import { loadData } from './data';
 import { ErrorBoundary } from './ErrorBoundary';
-import { Icon } from './Icon';
+import { Icon, type IconName } from './Icon';
 import { LimitsPage } from './LimitsPage';
 import { Editor } from './panels/Editor';
 import { MapToolbar } from './panels/MapToolbar';
@@ -155,11 +156,38 @@ function LeftPanel() {
   );
 }
 
+// Under 900 px only one of setup, map and results is shown at a time; the side panels become
+// full-size drawers over the map (CSS keys off main[data-pane]). Wider screens ignore it.
+type Pane = 'setup' | 'map' | 'results';
+const PANES: [Pane, string, IconName][] = [['setup', 'Setup', 'sliders'], ['map', 'Map', 'map'], ['results', 'Results', 'chart']];
+
+function PaneNav({ pane, choose }: { pane: Pane; choose: (p: Pane) => void }) {
+  const hasResult = useStore((s) => !!s.run.result);
+  return (
+    <nav className="pane-nav" aria-label="Panels">
+      {PANES.map(([k, l, icon]) => (
+        <button key={k} className={pane === k ? 'on' : ''} aria-pressed={pane === k} onClick={() => choose(k)}>
+          <Icon name={icon} size={18} />
+          <span>{l}</span>
+          {k === 'results' && hasResult && <span className="pane-dot" title="Result ready" />}
+        </button>
+      ))}
+    </nav>
+  );
+}
+
 export function App() {
   const showLimits = useStore((s) => s.showLimits);
   const toastMsg = useStore((s) => s.toast);
   const fixtures = useStore((s) => !!s.data?.fixtures);
   const mapMode = useStore((s) => s.mapMode);
+  const runStatus = useStore((s) => s.run.status);
+  const [pane, setPane] = useState<Pane>('map');
+  const choose = (p: Pane) => { setPane(p); if (p === 'setup') store.set({ leftOpen: true }); };
+  // jump to the map when something there needs the user: a run starting, a click-on-map mode, a fly-to
+  useEffect(() => { if (runStatus === 'starting') setPane('map'); }, [runStatus]);
+  useEffect(() => { if (mapMode.kind !== 'none') setPane('map'); }, [mapMode.kind]);
+  useEffect(() => flyBus.on(() => setPane('map')), []);
 
   useEffect(() => {
     let alive = true;
@@ -181,7 +209,7 @@ export function App() {
     <div className="app">
       <TopBar />
       {fixtures && <div className="fixture-banner">DEV FIXTURES: synthetic placeholder data for UI development. Not real data, not runnable.</div>}
-      <main>
+      <main data-pane={pane}>
         <LeftPanel />
         <section className="center">
           <ErrorBoundary name="map" fallback={(err) => (
@@ -205,6 +233,7 @@ export function App() {
         <ErrorBoundary name="run"><RunPanel /></ErrorBoundary>
       </main>
       <footer className="banner">{BANNER}</footer>
+      <PaneNav pane={pane} choose={choose} />
       {toastMsg && <div className="toast">{toastMsg}</div>}
       {showLimits && <ErrorBoundary name="limits"><LimitsPage /></ErrorBoundary>}
     </div>
