@@ -163,6 +163,9 @@ export class MapController {
   destroy() {
     window.removeEventListener('keydown', this.onKey);
     cancelAnimationFrame(this.stressRaf);
+    // map.remove() clears only MapLibre's own DOM; without this a remount (React
+    // StrictMode mounts twice in dev) left stale overlays from the first mount
+    for (const el of [this.hud, this.tip, this.card]) el.remove();
     this.map.remove();
   }
 
