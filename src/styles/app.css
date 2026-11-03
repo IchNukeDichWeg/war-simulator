@@ -253,7 +253,7 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 .maptools { position: absolute; top: var(--sp-4); left: var(--sp-4); right: 60px; display: flex; flex-wrap: wrap; gap: var(--sp-2); pointer-events: none; }
 .maptools > * { pointer-events: auto; background: var(--c-overlay); backdrop-filter: blur(4px); font-size: var(--fs-sm); }
 .mode-hint { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); background: var(--c-accent-fill); color: var(--c-on-accent); padding: var(--sp-2) 10px; border-radius: var(--r-pill); font-weight: var(--fw-semibold); box-shadow: var(--shadow-md); }
-.map-hud { position: absolute; bottom: 80px; right: var(--sp-4); background: rgba(110, 27, 27, 0.9); color: #fff; padding: var(--sp-2) var(--sp-4); border-radius: var(--r-sm); font: var(--fs-sm) var(--font-mono); z-index: var(--z-map-ui); }
+.map-hud { position: absolute; bottom: 104px; right: var(--sp-4); background: rgba(110, 27, 27, 0.9); color: #fff; padding: var(--sp-2) var(--sp-4); border-radius: var(--r-sm); font: var(--fs-sm) var(--font-mono); z-index: var(--z-map-ui); }
 .map-tip { position: absolute; z-index: 4; pointer-events: none; background: var(--c-overlay-strong); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: var(--sp-3) var(--sp-4); font-size: var(--fs-sm); min-width: 180px; box-shadow: var(--shadow-md); }
 .map-tip > div { display: flex; justify-content: space-between; gap: var(--sp-5); }
 .map-tip .tip-head { color: var(--c-accent); font-weight: var(--fw-semibold); margin-bottom: var(--sp-1); }
@@ -270,7 +270,7 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme='dark']) .maplibregl-ctrl button .maplibregl-ctrl-icon { filter: none; }
 }
-.maplibregl-ctrl-bottom-left { bottom: 72px; }
+.maplibregl-ctrl-bottom-left { bottom: 100px; } /* clears the time bar when it wraps to two rows */
 .maplibregl-ctrl-bottom-right { bottom: 0; }
 /* one-line attribution so it never grows under the time bar; scroll sideways to read all sources */
 .maplibregl-ctrl-bottom-right { left: 0; }
@@ -278,10 +278,22 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 .maplibregl-ctrl-attrib-inner { white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
 .map-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: var(--sp-7); }
 
-.timebar { position: absolute; left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-7); display: flex; align-items: center; gap: var(--sp-2); background: var(--c-overlay); backdrop-filter: blur(6px); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 5px var(--sp-4); flex-wrap: wrap; box-shadow: var(--shadow-md); }
+.timebar { position: absolute; left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-7); display: flex; align-items: center; gap: var(--sp-3) var(--sp-5); background: var(--c-overlay); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--c-border); border-radius: var(--r-lg); padding: var(--sp-3) var(--sp-4); flex-wrap: wrap; box-shadow: var(--shadow-md); }
+.tb-controls { display: flex; align-items: center; gap: var(--sp-2); flex: none; }
+.tb-run { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: var(--control-h); padding: 0 var(--sp-5); }
+.timebar .icon-btn { min-width: var(--control-h); }
+/* segmented control: one bordered group, the pressed segment filled */
+.seg { display: inline-flex; padding: var(--sp-1); gap: var(--sp-1); background: var(--c-surface-2); border: 1px solid var(--c-border); border-radius: var(--r-md); }
+.seg button { min-height: 22px; padding: 0 var(--sp-4); border: none; border-radius: var(--r-sm); background: transparent; color: var(--c-text-muted); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.seg button:hover:not(:disabled) { background: var(--c-surface-3); border: none; color: var(--c-text); }
+.seg button.on, .seg button.on:hover:not(:disabled) { background: var(--c-surface); color: var(--c-text-strong); box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--c-selected-border); }
+.tb-scrub { display: flex; align-items: center; gap: var(--sp-5); flex: 1 1 260px; min-width: 0; }
 .scrub { position: relative; flex: 1; min-width: 120px; display: flex; align-items: center; }
-.scrub-reached { position: absolute; left: 0; bottom: -3px; height: 2px; background: var(--c-accent); opacity: 0.6; pointer-events: none; }
-.daylabel { font-variant-numeric: tabular-nums; min-width: 150px; text-align: right; color: var(--c-accent); }
+/* played part of the track in accent; --pct is set inline by the time bar */
+.scrub input[type='range']::-webkit-slider-runnable-track { background: linear-gradient(to right, var(--c-accent-fill) var(--pct, 0%), var(--c-border-strong) var(--pct, 0%)); }
+.scrub input[type='range']::-moz-range-track { background: var(--c-border-strong); }
+.scrub-reached { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--c-accent); opacity: 0.6; pointer-events: none; border-radius: var(--r-pill); }
+.daylabel { flex: none; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; color: var(--c-accent); font-weight: var(--fw-medium); }
 
 footer.banner { padding: 3px var(--sp-5); background: var(--c-banner-bg); color: var(--c-banner-text); border-top: 1px solid var(--c-banner-border); font-size: var(--fs-sm); text-align: center; font-weight: var(--fw-semibold); }
 .toast { position: fixed; bottom: 36px; left: 50%; transform: translateX(-50%); background: var(--c-selected); border: 1px solid var(--c-selected-border); color: var(--c-text-strong); padding: var(--sp-3) 14px; border-radius: var(--r-md); z-index: var(--z-toast); max-width: 70vw; box-shadow: var(--shadow-md); }
