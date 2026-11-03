@@ -1,0 +1,14 @@
+/* Run panel views (Live, Events, Result, Monte Carlo). Every colour is a theme token with the
+   dark palette as fallback, so a light theme that redefines the tokens restyles this file too.
+   Classes are prefixed rp- so they do not collide with app.css. */
+
+.rp-muted { color: var(--muted, #8b949e); }
+
+/* ---------------------------------------------------------------- charts */
+.rp-chart { margin: 8px 0 4px; }
+.rp-chart-title { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 11.5px; color: var(--fg, #e6edf3); font-weight: 600; }
+.rp-chart-last { font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rp-chart-plot { min-height: 40px; }
+.rp-chart-plot .u-axis { color: var(--muted, #8b949e); }
+.rp-legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 11.5px; color: var(--fg, #e6edf3); margin: 4px 0; }
+.rp-legend span { display: inline-flex; align-items: center; gap: 5px; }

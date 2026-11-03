@@ -5,7 +5,7 @@ import { cancelMonteCarlo, eventLog, history, runMonteCarlo } from '../engine';
 import { fmt, pct } from '../format';
 import { GradeBadge } from '../Grade';
 import { store, useStore, type RightTab } from '../store';
-import { SideChart } from './Charts';
+import { SideChart, SideLegend } from './Charts';
 
 function useSides() {
   const sc = useStore((s) => s.scenario);
@@ -66,11 +66,12 @@ function Live() {
       </div>
       {run.warnings.length > 0 && <ul className="warnings">{run.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
       {run.stats && <StatsTable stats={run.stats} />}
-      <SideChart title="Strength (personnel)" days={history.day} series={history.personnel} names={names} colors={colors} version={v} />
-      <SideChart title="Casualties (cumulative)" days={history.day} series={history.casualties} names={names} colors={colors} version={v} />
-      <SideChart title="Supply (fraction of needs met)" days={history.day} series={history.supply} names={names} colors={colors} version={v} percent />
-      <SideChart title="Morale" days={history.day} series={history.morale} names={names} colors={colors} version={v} percent />
-      <SideChart title="Territory held" days={history.day} series={history.territory} names={names} colors={colors} version={v} percent />
+      <SideLegend names={names} colors={colors} />
+      <SideChart title="Strength" unit="personnel" days={history.day} series={history.personnel} names={names} colors={colors} version={v} sync="live" />
+      <SideChart title="Casualties (cumulative)" unit="personnel" days={history.day} series={history.casualties} names={names} colors={colors} version={v} sync="live" />
+      <SideChart title="Supply" unit="% of needs met" days={history.day} series={history.supply} names={names} colors={colors} version={v} percent sync="live" />
+      <SideChart title="Morale" unit="% (avg)" days={history.day} series={history.morale} names={names} colors={colors} version={v} percent sync="live" />
+      <SideChart title="Territory held" unit="% of land" days={history.day} series={history.territory} names={names} colors={colors} version={v} percent sync="live" />
       {run.stats && <LossCauses stats={run.stats} />}
     </div>
   );
