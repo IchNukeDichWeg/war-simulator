@@ -105,6 +105,8 @@ export class MapController {
   private stressRaf = 0;
   private hud: HTMLDivElement;
   private tip: HTMLDivElement;
+  /** Pinned info card of the clicked formation; refreshed every frame. */
+  private card: HTMLDivElement;
   private hoverRaf = 0;
   private draftCorner: [number, number] | null = null;
   onBBox: (b: [number, number, number, number]) => void = () => {};
@@ -136,8 +138,13 @@ export class MapController {
 
     this.map.on('load', () => this.onLoad());
     this.map.on('mousemove', (e) => this.onMove(e.point.x, e.point.y, e.lngLat.lng, e.lngLat.lat));
-    this.map.on('mouseout', () => { this.tip.style.display = 'none'; });
-    this.map.on('click', (e) => this.onClick(e.lngLat.lng, e.lngLat.lat));
+    this.map.on('mouseout', () => { this.tip.style.display = 'none'; this.units.setHover(null); });
+    this.map.on('click', (e) => this.onClick(e.lngLat.lng, e.lngLat.lat, e.point.x, e.point.y));
+    this.card = document.createElement('div');
+    this.card.className = 'map-tip map-card';
+    this.card.style.display = 'none';
+    container.appendChild(this.card);
+    window.addEventListener('keydown', this.onKey);
     this.map.on('error', (e) => {
       // tile failures (offline, 404 at the edge of a source) must not spam the console
       const msg = String((e as unknown as { error?: { message?: string } }).error?.message ?? '');
@@ -145,7 +152,10 @@ export class MapController {
     });
   }
 
+  private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.select(null); };
+
   destroy() {
+    window.removeEventListener('keydown', this.onKey);
     cancelAnimationFrame(this.stressRaf);
     this.map.remove();
   }
@@ -281,6 +291,7 @@ export class MapController {
     if (!this.loaded || !this.state || this.stress) return;
     const L = this.state.layers;
     this.units.setUnits(f.units, f.battles, { enabled: L.fog, side: L.fogSide, radiusKm: FOG_RADIUS_KM }, interpMs);
+    if (this.units.selectedId !== null) this.updateCard();
     const colors: [string, string] = [this.state.scenario.sides[0].color, this.state.scenario.sides[1].color];
     const th = this.state.theater;
     if (f.control && th && f.control.length >= th.cols * th.rows) {
@@ -296,6 +307,7 @@ export class MapController {
     this.lastFrame = null;
     this.hasControl = false;
     this.units.clear();
+    this.select(null);
     if (!this.loaded) return;
     (this.map.getSource('supply') as GeoJSONSource).setData(EMPTY_FC);
     this.map.setLayoutProperty('control', 'visibility', 'none');
@@ -315,6 +327,7 @@ export class MapController {
       this.units.setUnits(this.stress.units, this.stress.battles, { enabled: L.fog, side: L.fogSide, radiusKm: FOG_RADIUS_KM }, 0);
       cpuSum += performance.now() - t;
       frames++;
+      if (frames % 10 === 0 && this.units.selectedId !== null) this.updateCard();
       const now = performance.now();
       if (now - windowStart >= 1000) {
         const fps = (frames * 1000) / (now - windowStart);
@@ -357,14 +370,25 @@ export class MapController {
 
   private hover(x: number, y: number) {
     const i = this.units.pick(this.map, x, y);
+    const u = this.units.units;
+    this.units.setHover(i < 0 ? null : u[i * UNIT_STRIDE + U.id]);
+    this.map.getCanvas().style.cursor = this.state?.mapMode.kind !== 'none' ? 'crosshair' : i >= 0 ? 'pointer' : '';
     if (i < 0) { this.tip.style.display = 'none'; return; }
+    this.fillUnitRows(this.tip, i, false);
+    this.tip.style.left = `${x + 14}px`;
+    this.tip.style.top = `${y + 14}px`;
+    this.tip.style.display = '';
+  }
+
+  /** Header + key/value rows of formation i into el (tooltip and selection card share it). */
+  private fillUnitRows(el: HTMLElement, i: number, card: boolean) {
     const u = this.units.units;
     const o = i * UNIT_STRIDE;
     const side = u[o + U.side] | 0;
     const role = ROLE_ORDER[u[o + U.role] | 0] ?? 'infantry_line';
     const names = this.state?.scenario.sides.map((s) => s.name) ?? ['Side A', 'Side B'];
     const pct = (v: number) => `${Math.round(v * 100)}%`;
-    this.tip.innerHTML = '';
+    el.innerHTML = '';
     const rows: [string, string][] = [
       ['Side', names[side] ?? String(side)],
       ['Type', ROLE_LABEL[role]],
@@ -378,22 +402,63 @@ export class MapController {
     const h = document.createElement('div');
     h.className = 'tip-head';
     h.textContent = `Formation #${u[o + U.id]} (model state)`;
-    this.tip.appendChild(h);
+    if (card) {
+      const sw = document.createElement('i');
+      sw.className = 'map-card-swatch';
+      sw.style.background = this.state?.scenario.sides[side]?.color ?? '#888';
+      h.prepend(sw);
+      const x = document.createElement('button');
+      x.className = 'map-card-close';
+      x.title = 'Deselect (Esc)';
+      x.textContent = 'x';
+      x.onclick = () => this.select(null);
+      h.appendChild(x);
+    }
+    el.appendChild(h);
     for (const [k, v] of rows) {
       const r = document.createElement('div');
       r.innerHTML = '<span></span><b></b>';
       (r.firstChild as HTMLElement).textContent = k;
       (r.lastChild as HTMLElement).textContent = v;
-      this.tip.appendChild(r);
+      el.appendChild(r);
     }
-    this.tip.style.left = `${x + 14}px`;
-    this.tip.style.top = `${y + 14}px`;
-    this.tip.style.display = '';
   }
 
-  private onClick(lon: number, lat: number) {
+  /** Selects a formation by id (null clears). The card follows it across frames. */
+  select(id: number | null) {
+    this.units.setSelected(id);
+    this.updateCard();
+  }
+
+  private updateCard() {
+    const id = this.units.selectedId;
+    if (id === null) { this.card.style.display = 'none'; return; }
+    const i = this.units.selectedUnit;
+    this.card.style.display = '';
+    if (i >= 0) { this.fillUnitRows(this.card, i, true); return; }
+    // destroyed this turn, or hidden by fog of war: say so instead of freezing stale numbers
+    this.card.innerHTML = '';
+    const h = document.createElement('div');
+    h.className = 'tip-head';
+    h.textContent = `Formation #${id}`;
+    const x = document.createElement('button');
+    x.className = 'map-card-close';
+    x.textContent = 'x';
+    x.onclick = () => this.select(null);
+    h.appendChild(x);
+    const p = document.createElement('div');
+    p.className = 'map-card-note';
+    p.textContent = 'Not on the map now (destroyed or not visible).';
+    this.card.append(h, p);
+  }
+
+  private onClick(lon: number, lat: number, x: number, y: number) {
     const mode = this.state?.mapMode;
-    if (!mode || mode.kind === 'none') return;
+    if (!mode || mode.kind === 'none') {
+      const i = this.units.pick(this.map, x, y);
+      this.select(i < 0 ? null : this.units.units[i * UNIT_STRIDE + U.id]);
+      return;
+    }
     if (mode.kind === 'bbox') {
       if (!this.draftCorner) { this.draftCorner = [lon, lat]; return; }
       const [x0, y0] = this.draftCorner;

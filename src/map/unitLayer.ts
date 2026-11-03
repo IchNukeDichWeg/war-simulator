@@ -53,6 +53,8 @@ uniform float u_dpr;
 uniform float u_lod;
 uniform float u_t;
 uniform float u_bearing;
+uniform int u_hover;
+uniform int u_sel;
 layout(location=0) in vec4 a_pos;
 layout(location=1) in vec4 a_a;
 layout(location=2) in vec4 a_b;
@@ -62,6 +64,7 @@ flat out vec4 v_a;
 flat out vec4 v_b;
 flat out float v_part;
 flat out float v_size;
+flat out float v_hl;
 const vec2 C[6] = vec2[6](vec2(-1,-1), vec2(1,-1), vec2(1,1), vec2(-1,-1), vec2(1,1), vec2(-1,1));
 void main() {
   int part = gl_VertexID / 6;
@@ -69,6 +72,10 @@ void main() {
   vec2 merc = mix(a_pos.xy, a_pos.zw, u_t);
   vec4 clip = u_matrix * vec4(merc, 0.0, 1.0);
   v_a = a_a; v_b = a_b; v_part = float(part); v_size = 0.0;
+  // 2 = selected, 1 = hovered: the quad grows to make room for the ring
+  float hl = gl_InstanceID == u_sel ? 2.0 : gl_InstanceID == u_hover ? 1.0 : 0.0;
+  v_hl = hl;
+  float pad = hl > 0.5 ? 4.0 : 0.0;
   // compact markers are sized in CSS px (u_dpr), full symbols grow with zoom (u_px)
   float px = u_lod > 0.5 ? u_dpr : u_px;
   vec2 off;
@@ -81,10 +88,10 @@ void main() {
   } else if (u_lod > 0.5) {
     // compact: a disc of radius 4.5 CSS px x size, quad padded for the outline
     v_size = 4.5 * a_c.x;
-    off = c * (v_size + 2.5);
+    off = c * (v_size + 2.5 + pad);
     v_local = off;
   } else if (part == 0) {
-    off = c * vec2(16.0, 13.0);
+    off = c * (vec2(16.0, 13.0) + pad);
     v_local = off;
     off *= a_c.x;
   } else {
@@ -111,6 +118,7 @@ flat in vec4 v_a;
 flat in vec4 v_b;
 flat in float v_part;
 flat in float v_size;
+flat in float v_hl;
 out vec4 o;
 const float COLS = ${ATLAS_COLS.toFixed(1)};
 const float RPB = ${ROLES_PER_BAND.toFixed(1)};
@@ -128,6 +136,13 @@ float sdBox(vec2 p, vec2 b, float r) {
 }
 // premultiplied source-over: paint colour c with coverage a on top of dst
 vec4 over(vec4 dst, vec3 c, float a) { return vec4(c * a + dst.rgb * (1.0 - a), a + dst.a * (1.0 - a)); }
+// hover / selection ring around a shape whose signed distance is d (dark-cased so it holds on any imagery)
+vec4 ring(vec4 acc, float d) {
+  if (v_hl < 0.5) return acc;
+  vec3 c = v_hl > 1.5 ? vec3(0.95, 0.82, 0.42) : vec3(1.0);
+  acc = over(acc, vec3(0.0), (1.0 - smoothstep(1.9, 1.9 + u_aa, abs(d - 3.0))) * 0.7);
+  return over(acc, c, 1.0 - smoothstep(0.9, 0.9 + u_aa, abs(d - 3.0)));
+}
 void main() {
   vec3 side = u_side[int(v_a.x + 0.5)];
   float phase = v_b.w;
@@ -174,6 +189,7 @@ void main() {
     }
     acc = over(acc, bcol, 1.0 - smoothstep(bw * 0.5, bw * 0.5 + u_aa, abs(d)));
     acc *= alphaMul;
+    acc = ring(acc, d);
     if (acc.a < 0.01) discard;
     o = acc;
     return;
@@ -233,6 +249,7 @@ void main() {
     acc = over(acc, bar, inBar * filled);
   }
   acc *= alphaMul;
+  acc = ring(acc, sdBox(p, vec2(15.5, 12.0), r)); // around frame and strength bar
   if (acc.a < 0.01) discard;
   o = acc;
 }`;
@@ -297,6 +314,18 @@ export class UnitLayer implements CustomLayerInterface {
   /** CPU ms of the last overlap estimate, for the perf overlay. */
   lodCpuMs = 0;
   private unitInstances = 0;
+  /** Instance -> index into `units`, for picking. */
+  private instUnit = new Int32Array(1024);
+  /** Hovered / selected formation ids (NaN = none) and their instance indices this frame (-1 = not drawn). */
+  private hoverId = NaN;
+  private selId = NaN;
+  private hoverK = -1;
+  private selK = -1;
+  private lastScale = 1;
+  private cssW = 0;
+  private cssH = 0;
+  private hasMatrix = false;
+  private pickMatrix = new Float64Array(16);
   private lodDirty = true;
   private lastMatrix = new Float64Array(16);
   private lodGrid = new Uint8Array(0);
@@ -332,6 +361,9 @@ export class UnitLayer implements CustomLayerInterface {
     }
     const logMean = logN ? logSum / logN : 0;
     const a = this.inst;
+    if (this.instUnit.length < n) this.instUnit = new Int32Array(Math.max(n, this.instUnit.length * 2));
+    const iu = this.instUnit;
+    this.hoverK = -1; this.selK = -1;
     let k = 0;
     let anim = battles.length > 0;
     for (let i = 0; i < n; i++) {
@@ -367,6 +399,10 @@ export class UnitLayer implements CustomLayerInterface {
       a[j + 12] = pers > 0 ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, 1 + SIZE_PER_DOUBLING * (Math.log2(pers) - logMean))) : 1;
       a[j + 13] = 0; a[j + 14] = 0; a[j + 15] = 0;
       if (status === UnitStatus.Engaged) anim = true;
+      iu[k] = i;
+      const uid = units[o + U.id];
+      if (uid === this.hoverId) this.hoverK = k;
+      if (uid === this.selId) this.selK = k;
       k++;
     }
     this.unitInstances = k;
@@ -392,9 +428,23 @@ export class UnitLayer implements CustomLayerInterface {
     this.map?.triggerRepaint();
   }
 
+  /** Highlights a formation by id (null = none). Survives new frames. */
+  setHover(id: number | null) { this.hoverId = id ?? NaN; this.hoverK = this.findInstance(this.hoverId); this.map?.triggerRepaint(); }
+  setSelected(id: number | null) { this.selId = id ?? NaN; this.selK = this.findInstance(this.selId); this.map?.triggerRepaint(); }
+  get selectedId(): number | null { return Number.isNaN(this.selId) ? null : this.selId; }
+  /** Index into `units` of the selected formation if it is drawn this frame, else -1. */
+  get selectedUnit(): number { return this.selK >= 0 ? this.instUnit[this.selK] : -1; }
+
+  private findInstance(id: number): number {
+    if (Number.isNaN(id)) return -1;
+    for (let k = 0; k < this.unitInstances; k++) if (this.units[this.instUnit[k] * UNIT_STRIDE + U.id] === id) return k;
+    return -1;
+  }
+
   clear() {
     this.count = 0;
     this.unitInstances = 0;
+    this.hoverK = -1; this.selK = -1;
     this.lodDirty = true;
     this.units = new Float32Array(0);
     this.lastIdx.clear();
@@ -418,7 +468,7 @@ export class UnitLayer implements CustomLayerInterface {
     gl.linkProgram(p);
     if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error('unit program: ' + gl.getProgramInfoLog(p));
     this.prog = p;
-    for (const u of ['u_matrix', 'u_viewport', 'u_px', 'u_dpr', 'u_lod', 'u_t', 'u_bearing', 'u_atlas', 'u_side', 'u_time', 'u_aa']) this.loc[u] = gl.getUniformLocation(p, u);
+    for (const u of ['u_matrix', 'u_viewport', 'u_px', 'u_dpr', 'u_lod', 'u_t', 'u_bearing', 'u_atlas', 'u_side', 'u_time', 'u_aa', 'u_hover', 'u_sel']) this.loc[u] = gl.getUniformLocation(p, u);
 
     this.vao = gl.createVertexArray();
     this.buf = gl.createBuffer();
@@ -478,7 +528,11 @@ export class UnitLayer implements CustomLayerInterface {
     const dpr = g.drawingBufferWidth / canvas.clientWidth || 1;
     const px = scale * dpr;
     this.updateLod(m, canvas.clientWidth, canvas.clientHeight, scale);
+    this.lastScale = scale; this.cssW = canvas.clientWidth; this.cssH = canvas.clientHeight; this.hasMatrix = true;
+    for (let i = 0; i < 16; i++) this.pickMatrix[i] = m[i];
     const compact = this.lod === 1;
+    g.uniform1i(this.loc.u_hover, this.hoverK);
+    g.uniform1i(this.loc.u_sel, this.selK);
     g.uniform1f(this.loc.u_px, px);
     g.uniform1f(this.loc.u_dpr, dpr);
     g.uniform1f(this.loc.u_lod, this.lod);
@@ -544,22 +598,27 @@ export class UnitLayer implements CustomLayerInterface {
     this.lodCpuMs = performance.now() - t0;
   }
 
-  /** Nearest visible unit to a screen point within maxPx, or -1. */
-  pick(map: MlMap, x: number, y: number, maxPx = 16): number {
-    const u = this.units;
-    const n = Math.floor(u.length / UNIT_STRIDE);
-    let best = -1, bd = maxPx * maxPx;
-    const b = map.getBounds();
-    for (let i = 0; i < n; i++) {
-      if (!this.visible[i]) continue;
-      const o = i * UNIT_STRIDE;
-      const lon = u[o + U.lon], lat = u[o + U.lat];
-      if (lat < b.getSouth() || lat > b.getNorth() || lon < b.getWest() || lon > b.getEast()) continue;
-      const p = map.project([lon, lat]);
-      const d = (p.x - x) ** 2 + (p.y - y) ** 2;
-      if (d < bd) { bd = d; best = i; }
+  /** Index into `units` of the drawn formation nearest a screen point (CSS px),
+   *  or -1. Works on the instance buffer with the last frame's matrix, so it
+   *  hits where the symbol is drawn mid-interpolation and skips destroyed and
+   *  fogged units. maxPx defaults to the symbol's own half-size. */
+  pick(_map: MlMap | null, x: number, y: number, maxPx?: number): number {
+    if (!this.hasMatrix) return -1;
+    const m = this.pickMatrix, a = this.inst, w = this.cssW, h = this.cssH;
+    const r = maxPx ?? (this.lod === 1 ? 8 : 18 * this.lastScale);
+    const t = this.currentT();
+    let best = -1, bd = r * r;
+    for (let k = 0; k < this.unitInstances; k++) {
+      const j = k * INST;
+      const mx = a[j] + (a[j + 2] - a[j]) * t, my = a[j + 1] + (a[j + 3] - a[j + 1]) * t;
+      const cw = m[3] * mx + m[7] * my + m[15];
+      if (cw <= 0) continue;
+      const sx = ((m[0] * mx + m[4] * my + m[12]) / cw * 0.5 + 0.5) * w;
+      const sy = (0.5 - (m[1] * mx + m[5] * my + m[13]) / cw * 0.5) * h;
+      const d = (sx - x) ** 2 + (sy - y) ** 2;
+      if (d <= bd) { bd = d; best = k; } // <= : later instances draw on top, so prefer them
     }
-    return best;
+    return best < 0 ? -1 : this.instUnit[best];
   }
 }
 

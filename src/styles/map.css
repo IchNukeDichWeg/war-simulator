@@ -1,0 +1,32 @@
+/* Map-owned overlays (imported by src/map/MapView.tsx). Colours come from the
+   app shell's tokens with dark fallbacks, so a light shell theme carries over
+   without touching this file. Text that sits on imagery gets a halo: the
+   basemap is satellite in every theme, so panel colour alone cannot carry it. */
+.map {
+  --map-panel: var(--bg2, #161b22);
+  --map-panel-a: rgba(13, 17, 23, 0.92);
+  --map-fg: var(--fg, #e6edf3);
+  --map-muted: var(--muted, #8b949e);
+  --map-line: var(--line, #30363d);
+  --map-accent: var(--accent, #f2d16b);
+}
+
+/* pinned card of the selected formation; shares the .map-tip row layout.
+   Two-class selectors: the shell's .map-tip may load after this file. */
+.map .map-card {
+  pointer-events: auto;
+  left: auto !important;
+  top: auto !important;
+  right: 8px;
+  bottom: 118px;
+  min-width: 210px;
+  border-color: var(--map-accent);
+}
+.map-card .tip-head { display: flex; align-items: center; gap: 6px; }
+.map-card-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.map-card-close {
+  margin-left: auto; border: 0; background: transparent; color: var(--map-muted);
+  font: inherit; line-height: 1; padding: 0 2px; cursor: pointer;
+}
+.map-card-close:hover { color: var(--map-fg); }
+.map-card-note { color: var(--map-muted); font-size: 11.5px; max-width: 220px; }
