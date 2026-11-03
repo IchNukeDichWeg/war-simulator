@@ -8,9 +8,11 @@ const GRADE_TEXT: Record<Grade, string> = {
   D: 'D: educated guess, flagged as such',
 };
 
-export function GradeBadge({ g }: { g: Grade | 'M' }) {
+/** Confidence grade chip. Data grades are filled; M (model output) is outlined, since it is not data.
+ *  role="img" with a label so screen readers say what the letter means, not just "A". */
+export function GradeBadge({ g, size }: { g: Grade | 'M'; size?: 'lg' }) {
   const title = g === 'M' ? 'M: model output (simulation result, not data)' : GRADE_TEXT[g];
-  return <span className={`grade grade-${g}`} title={title}>{g}</span>;
+  return <span className={`grade grade-${g}${size ? ` grade-${size}` : ''}`} title={title} role="img" aria-label={`Confidence grade ${title}`}>{g}</span>;
 }
 
 export function SourceLink({ src }: { src: string }) {
