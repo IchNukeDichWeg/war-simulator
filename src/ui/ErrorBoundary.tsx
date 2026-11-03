@@ -1,4 +1,5 @@
 import { Component, type ReactNode } from 'react';
+import { Icon } from './Icon';
 
 /** `fallback` replaces the default "panel failed" notice (the map uses it for a missing WebGL). */
 export class ErrorBoundary extends Component<{ children: ReactNode; name: string; fallback?: (err: Error) => ReactNode }, { err: Error | null }> {
@@ -10,8 +11,8 @@ export class ErrorBoundary extends Component<{ children: ReactNode; name: string
       if (this.props.fallback) return this.props.fallback(this.state.err);
       return (
         <div className="panel-body">
-          <div className="notice warn">This panel failed: {this.state.err.message}</div>
-          <button onClick={() => this.setState({ err: null })}>Retry</button>
+          <div className="notice warn notice-icon" role="alert"><Icon name="alert" /><span>This panel failed: {this.state.err.message}</span></div>
+          <button className="btn-icon-text" onClick={() => this.setState({ err: null })}><Icon name="refresh" size={14} />Retry</button>
         </div>
       );
     }

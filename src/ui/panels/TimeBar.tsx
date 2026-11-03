@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { REAL_TIME, seek, setSpeed, startRun, stepDays, stopRun } from '../engine';
+import { Icon } from '../Icon';
 import { store, useStore } from '../store';
 
 const SPEEDS: [number, string, string][] = [
@@ -25,25 +26,35 @@ export function TimeBar() {
   }, []);
   const active = run.status === 'running' || run.status === 'ended';
   const max = Math.max(limit, run.maxDay, 1);
+  const shown = scrub ?? run.day;
+  const dayText = scrub != null ? `seek to day ${scrub}` : run.status === 'starting' ? 'starting...' : active ? `${run.date || ''} (day ${run.day})` : 'not running';
   return (
-    <div className="timebar">
-      {run.status === 'idle' || run.status === 'error'
-        ? <button className="primary" onClick={() => startRun(store.get().scenario, 3)}>Run war</button>
-        : <button onClick={stopRun} title="Stop and clear this run">Stop</button>}
-      <button disabled={!active} className={run.speed === 0 ? 'on' : ''} onClick={() => setSpeed(0)} title="Pause (space)">Pause</button>
-      {SPEEDS.map(([v, l, t]) => (
-        <button key={l} disabled={!active} className={run.speed === v ? 'on' : ''} title={t} onClick={() => setSpeed(v)}>{l}</button>
-      ))}
-      <button disabled={!active} onClick={() => stepDays(1)} title="Step one day (.)">+1 day</button>
-      <div className="scrub">
-        <input type="range" min={0} max={max} step={1} disabled={!active}
-          value={scrub ?? run.day}
-          onChange={(e) => setScrub(+e.target.value)}
-          onPointerUp={() => { if (scrub != null) { setSpeed(0); seek(scrub); } setScrub(null); }}
-          onKeyUp={() => { if (scrub != null) { setSpeed(0); seek(scrub); } setScrub(null); }} />
-        <div className="scrub-reached" style={{ width: `${(100 * run.maxDay) / max}%` }} />
+    <div className="timebar" role="group" aria-label="Simulation playback">
+      <div className="tb-controls">
+        {run.status === 'idle' || run.status === 'error'
+          ? <button className="primary tb-run" onClick={() => startRun(store.get().scenario, 3)}><Icon name="play" size={14} />Run war</button>
+          : <button className="tb-run" onClick={stopRun} title="Stop and clear this run"><Icon name="stop" size={14} />Stop</button>}
+        <button disabled={!active} className={`icon-btn${active && run.speed === 0 ? ' on' : ''}`} aria-pressed={active && run.speed === 0} onClick={() => setSpeed(0)} title="Pause (space)" aria-label="Pause (space)"><Icon name="pause" size={14} /></button>
+        <div className="seg" role="group" aria-label="Speed">
+          {SPEEDS.map(([v, l, t]) => (
+            <button key={l} disabled={!active} className={active && run.speed === v ? 'on' : ''} aria-pressed={active && run.speed === v} title={t} onClick={() => setSpeed(v)}>{l}</button>
+          ))}
+        </div>
+        <button disabled={!active} className="icon-btn" onClick={() => stepDays(1)} title="Step one day (.)" aria-label="Step one day (.)"><Icon name="step" size={14} /></button>
       </div>
-      <span className="daylabel">{scrub != null ? `seek to day ${scrub}` : run.status === 'starting' ? 'starting...' : active ? `${run.date || ''} (day ${run.day})` : 'not running'}</span>
+      <div className="tb-scrub">
+        <div className="scrub">
+          <input type="range" min={0} max={max} step={1} disabled={!active}
+            aria-label="Simulation day" aria-valuetext={dayText}
+            style={{ '--pct': `${(100 * shown) / max}%` } as React.CSSProperties}
+            value={shown}
+            onChange={(e) => setScrub(+e.target.value)}
+            onPointerUp={() => { if (scrub != null) { setSpeed(0); seek(scrub); } setScrub(null); }}
+            onKeyUp={() => { if (scrub != null) { setSpeed(0); seek(scrub); } setScrub(null); }} />
+          <div className="scrub-reached" style={{ width: `${(100 * run.maxDay) / max}%` }} />
+        </div>
+        <span className="daylabel">{dayText}</span>
+      </div>
     </div>
   );
 }
