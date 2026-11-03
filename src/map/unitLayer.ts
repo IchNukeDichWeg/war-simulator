@@ -2,14 +2,22 @@
 // for every formation and battle marker. Each instance draws two quads
 // (body + heading arrow), selected in the vertex shader by gl_VertexID, so
 // 6000 units = 6000 instances x 12 vertices in a single drawArraysInstanced.
+// Symbol size follows personnel (log scale, relative to the frame).
 // Mercator-only (the map is created with mercator projection).
 import type { CustomLayerInterface, CustomRenderMethodInput, Map as MlMap } from 'maplibre-gl';
 import { U, UNIT_STRIDE, UnitStatus } from '../engine/protocol';
 import { ARROW_INDEX, ATLAS_COLS, ROLES_PER_BAND, buildAtlas } from './atlas';
 import { eraBand } from '../ui/roles';
 
-/** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase */
-const INST = 12;
+/** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase | size 0 0 0 */
+const INST = 16;
+/** Symbol scale per doubling of personnel over the frame's geometric mean, and its clamp.
+ *  Log scale because formations span 1,000 to 100,000+ men; relative to the
+ *  frame so a corps reads bigger than a brigade in any era without a table.
+ *  The clamp keeps the smallest glyph legible and the largest off its neighbours. */
+const SIZE_PER_DOUBLING = 0.15;
+const SIZE_MIN = 0.8;
+const SIZE_MAX = 1.3;
 /** U.heading is read as a math angle in lon/lat space (0 = east, +pi/2 = north).
  *  If the engine uses compass bearings, flip this to 'compass'. */
 const HEADING_CONVENTION: 'math' | 'compass' = 'math';
@@ -35,6 +43,7 @@ uniform float u_bearing;
 layout(location=0) in vec4 a_pos;
 layout(location=1) in vec4 a_a;
 layout(location=2) in vec4 a_b;
+layout(location=3) in vec4 a_c;
 out vec2 v_local;
 flat out vec4 v_a;
 flat out vec4 v_b;
@@ -57,13 +66,14 @@ void main() {
   } else if (part == 0) {
     off = c * vec2(16.0, 13.0);
     v_local = off;
+    off *= a_c.x;
   } else {
     float h = a_a.w;
     if (h > 100.0) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
     float ang = h + u_bearing;
     vec2 dir = vec2(cos(ang), sin(ang));
     vec2 perp = vec2(-dir.y, dir.x);
-    off = dir * 23.0 + dir * c.x * 7.0 + perp * c.y * 7.0;
+    off = (dir * 23.0 + dir * c.x * 7.0 + perp * c.y * 7.0) * a_c.x;
     v_local = c;
   }
   gl_Position = clip + vec4(off * u_px * 2.0 / u_viewport * clip.w, 0.0, 0.0);
@@ -247,6 +257,14 @@ export class UnitLayer implements CustomLayerInterface {
     const tPrev = this.currentT();
     const newIdx = interpMs > 0 ? new Map<number, number>() : oldIdx;
     if (interpMs <= 0) newIdx.clear();
+    let logSum = 0, logN = 0;
+    for (let i = 0; i < n; i++) {
+      const o = i * UNIT_STRIDE;
+      const p = units[o + U.personnel];
+      if (units[o + U.status] === UnitStatus.Destroyed || !vis[i] || !(p > 0)) continue;
+      logSum += Math.log2(p); logN++;
+    }
+    const logMean = logN ? logSum / logN : 0;
     const a = this.inst;
     let k = 0;
     let anim = battles.length > 0;
@@ -279,6 +297,9 @@ export class UnitLayer implements CustomLayerInterface {
       a[j + 9] = status;
       a[j + 10] = 0;
       a[j + 11] = ((units[o + U.id] * 0.6180339) % 1 + 1) % 1;
+      const pers = units[o + U.personnel];
+      a[j + 12] = pers > 0 ? Math.max(SIZE_MIN, Math.min(SIZE_MAX, 1 + SIZE_PER_DOUBLING * (Math.log2(pers) - logMean))) : 1;
+      a[j + 13] = 0; a[j + 14] = 0; a[j + 15] = 0;
       if (status === UnitStatus.Engaged || status === UnitStatus.Routing) anim = true;
       k++;
     }
@@ -288,6 +309,7 @@ export class UnitLayer implements CustomLayerInterface {
       a[j] = x; a[j + 1] = y; a[j + 2] = x; a[j + 3] = y;
       a[j + 4] = 0; a[j + 5] = -1; a[j + 6] = 1; a[j + 7] = 999;
       a[j + 8] = 1; a[j + 9] = 0; a[j + 10] = 1; a[j + 11] = Math.max(0, Math.min(1, b.intensity));
+      a[j + 12] = 1; a[j + 13] = 0; a[j + 14] = 0; a[j + 15] = 0;
       k++;
     }
     this.count = k;
@@ -333,7 +355,7 @@ export class UnitLayer implements CustomLayerInterface {
     gl.bindVertexArray(this.vao);
     gl.bindBuffer(gl.ARRAY_BUFFER, this.buf);
     gl.bufferData(gl.ARRAY_BUFFER, this.inst.byteLength, gl.DYNAMIC_DRAW);
-    for (let l = 0; l < 3; l++) {
+    for (let l = 0; l < 4; l++) {
       gl.enableVertexAttribArray(l);
       gl.vertexAttribPointer(l, 4, gl.FLOAT, false, INST * 4, l * 16);
       gl.vertexAttribDivisor(l, 1);
