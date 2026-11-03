@@ -100,3 +100,28 @@ button.link {
 button.member-link { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--fg, #e6edf3); text-decoration: none; text-align: left; }
 button.member-link:hover { text-decoration: underline; }
 .members .kind-badge { flex: none; }
+
+/* ---- Editor: what changed ---- */
+.ov-summary { border: 1px solid var(--accent, #f2d16b); border-radius: 6px; padding: 6px 8px; margin: 6px 0 8px; background: var(--edited-bg, #1d1a0e); }
+.ov-summary h5 { margin: 0 0 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent, #f2d16b); display: flex; justify-content: space-between; align-items: center; }
+.ov-list { list-style: none; margin: 0; padding: 0; font-size: 11.5px; }
+.ov-list li { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'where x' 'change x'; gap: 0 6px; align-items: center; padding: 3px 0; border-top: 1px solid var(--line, #30363d); }
+.ov-list li > .ov-where { grid-area: where; }
+.ov-list li > .ov-change { grid-area: change; }
+.ov-list li > button.x { grid-area: x; }
+.ov-list li:first-child { border-top: none; }
+.ov-where { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-where button.link { display: block; width: 100%; color: var(--fg, #e6edf3); text-decoration: none; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-where button.link:hover { text-decoration: underline; }
+.ov-change { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ov-from { color: var(--muted, #8b949e); text-decoration: line-through; }
+.ov-to { color: var(--accent, #f2d16b); font-weight: 600; }
+.ov-delta { font-size: 10.5px; padding: 0 4px; border-radius: 3px; background: var(--bg3, #1c2230); font-variant-numeric: tabular-nums; }
+.ov-delta.up { color: var(--gA, #3fb950); }
+.ov-delta.down { color: var(--bad, #f85149); }
+.ov-out { color: var(--warn, #f0883e); }
+.ed-diff { grid-area: diff; font-size: 11.5px; display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+.ed-row.edited { grid-template-areas: 'label input' 'diff diff' 'meta meta' 'src src'; }
+.ed-pick { display: flex; flex-direction: column; gap: 6px; }
+.ed-pick select { width: 100%; }
+.ov-list li.cur .ov-where button.link { color: var(--accent, #f2d16b); }
