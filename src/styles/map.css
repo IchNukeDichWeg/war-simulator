@@ -4,12 +4,20 @@
    basemap is satellite in every theme, so panel colour alone cannot carry it. */
 .map {
   --map-panel: var(--bg2, #161b22);
-  --map-panel-a: rgba(13, 17, 23, 0.92);
+  /* translucent panel in the shell's own panel colour, so text in --fg stays
+     legible if the shell switches to a light theme */
+  --map-panel-a: color-mix(in srgb, var(--map-panel) 92%, transparent);
+  /* halo for text drawn straight on imagery: opposite of the text colour */
+  --map-halo: color-mix(in srgb, var(--bg, #0d1117) 85%, transparent);
   --map-fg: var(--fg, #e6edf3);
   --map-muted: var(--muted, #8b949e);
   --map-line: var(--line, #30363d);
   --map-accent: var(--accent, #f2d16b);
 }
+
+/* border labels sit on imagery: a halo keeps them readable over snow, desert
+   and sea alike, whatever the label panel colour */
+.map .border-label b, .map .border-label span { text-shadow: 0 0 2px var(--map-halo), 0 0 4px var(--map-halo); }
 
 /* pinned card of the selected formation; shares the .map-tip row layout.
    Two-class selectors: the shell's .map-tip may load after this file. */
