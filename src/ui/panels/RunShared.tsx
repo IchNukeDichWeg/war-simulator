@@ -17,8 +17,13 @@ export function useSides() {
 
 export const ModelTag = () => <span className="model-tag" title="Simulation output, not sourced data">model output <GradeBadge g="M" /></span>;
 
-/** Ranked reasons from the engine's explain step; weights are shares of the explanation. */
-export function Reasons({ reasons, names, colors, top }: { reasons: Reason[]; names: [string, string]; colors: [string, string]; top?: number }) {
+const SHARE_TITLE = 'Share of the explanation across all factors (factors under 1% are not listed)';
+
+/** Ranked reasons from the engine's explain step; weights are shares of the explanation unless
+ *  the caller says otherwise (Monte Carlo weights are the share of runs a factor ranked first). */
+export function Reasons({ reasons, names, colors, top, weightTitle = SHARE_TITLE, weightNote = '' }: {
+  reasons: Reason[]; names: [string, string]; colors: [string, string]; top?: number; weightTitle?: string; weightNote?: string;
+}) {
   const [all, setAll] = useState(false);
   const shown = top && !all ? reasons.slice(0, top) : reasons;
   return (
@@ -30,7 +35,7 @@ export function Reasons({ reasons, names, colors, top }: { reasons: Reason[]; na
               <span className="rp-reason-rank">{i + 1}</span>
               <b>{r.factor}</b>
               <span className="rp-muted small">favoured <span style={{ color: colors[r.side] }}>{names[r.side]}</span></span>
-              <span className="rp-reason-w" title="Share of the explanation across all factors (factors under 1% are not listed)">{Math.round(r.weight * 100)}%</span>
+              <span className="rp-reason-w" title={weightTitle}>{Math.round(r.weight * 100)}%{weightNote && <span className="rp-muted small"> {weightNote}</span>}</span>
             </div>
             <div className="rp-reason-bar"><div style={{ width: `${Math.max(1, Math.round(r.weight * 100))}%`, background: colors[r.side] }} /></div>
             <div className="small rp-reason-detail">{r.detail}</div>

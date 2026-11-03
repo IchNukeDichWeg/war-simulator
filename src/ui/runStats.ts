@@ -76,6 +76,71 @@ export function groupCounts(log: readonly SimEvent[]): Record<EventGroup, number
   return out;
 }
 
+// ------------------------------------------------------------------ Monte Carlo
+
+/**
+ * Wilson score interval for k successes in n trials (z = 1.96 gives 95%). Chosen over the
+ * normal (Wald) interval because it stays inside [0, 1] and is still sensible at k = 0 or
+ * k = n, which happens often here (a one-sided matchup wins every run). It covers only the
+ * sampling error of a finite number of runs, not the model's or the data's uncertainty.
+ */
+export function wilson(k: number, n: number, z = 1.96): { p: number; lo: number; hi: number } {
+  if (!(n > 0)) return { p: 0, lo: 0, hi: 1 };
+  const kk = Math.max(0, Math.min(n, k));
+  const p = kk / n;
+  const z2 = z * z;
+  const den = 1 + z2 / n;
+  const mid = (p + z2 / (2 * n)) / den;
+  const half = (z / den) * Math.sqrt((p * (1 - p)) / n + z2 / (4 * n * n));
+  return { p, lo: Math.max(0, mid - half), hi: Math.min(1, mid + half) };
+}
+
+/** Wins per outcome [side 0, side 1, draw]: counted from the per-run results when they are all
+ *  there, else recovered from the rounded probabilities. */
+export function outcomeCounts(mc: { runs: number; winProb: [number, number, number]; results?: { winner: 0 | 1 | 'draw' }[] }): [number, number, number] {
+  if (mc.results && mc.results.length === mc.runs) {
+    const c: [number, number, number] = [0, 0, 0];
+    for (const r of mc.results) c[r.winner === 'draw' ? 2 : r.winner]++;
+    return c;
+  }
+  return mc.winProb.map((p) => Math.round(p * mc.runs)) as [number, number, number];
+}
+
+/** Equal-width histogram over [min, max]; integer data gets integer-aligned bins. */
+export function histogram(values: readonly number[], maxBins = 12): { lo: number; width: number; counts: number[] } {
+  const xs = values.filter(Number.isFinite);
+  if (xs.length === 0) return { lo: 0, width: 1, counts: [] };
+  let lo = Infinity, hi = -Infinity;
+  for (const x of xs) { if (x < lo) lo = x; if (x > hi) hi = x; }
+  const integer = xs.every(Number.isInteger);
+  const span = hi - lo;
+  if (span === 0) return { lo, width: 1, counts: [xs.length] };
+  let width = span / maxBins;
+  if (integer) width = Math.max(1, Math.ceil((span + 1) / maxBins));
+  const bins = integer ? Math.ceil((span + 1) / width) : maxBins;
+  const counts = new Array(bins).fill(0);
+  for (const x of xs) counts[Math.min(bins - 1, Math.floor((x - lo) / width))]++;
+  return { lo, width, counts };
+}
+
+/** Runs grouped by how they ended: end reasons that differ only in their numbers ("holds 45% of
+ *  ..." and "holds 52% of ...") form one group shown with the numbers masked as N; a group whose
+ *  runs all gave the same text keeps it verbatim. Most common first, ties by text. */
+export function endReasonBreakdown(results: readonly { endReason: string; winner: 0 | 1 | 'draw' }[], top = 5): { reason: string; winner: 0 | 1 | 'draw'; count: number }[] {
+  const m = new Map<string, { masked: string; exact: string | null; winner: 0 | 1 | 'draw'; count: number }>();
+  for (const r of results) {
+    const masked = r.endReason.replace(/\d+(\.\d+)?/g, 'N');
+    const k = `${r.winner}|${masked}`;
+    const e = m.get(k);
+    if (!e) m.set(k, { masked, exact: r.endReason, winner: r.winner, count: 1 });
+    else { e.count++; if (e.exact !== r.endReason) e.exact = null; }
+  }
+  return [...m.values()]
+    .map((e) => ({ reason: e.exact ?? e.masked, winner: e.winner, count: e.count }))
+    .sort((a, b) => b.count - a.count || a.reason.localeCompare(b.reason))
+    .slice(0, top);
+}
+
 /** a / (a + b), or 0.5 when both are zero (a split bar then sits in the middle). */
 export function share(a: number, b: number): number {
   const t = a + b;

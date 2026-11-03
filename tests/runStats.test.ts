@@ -1,6 +1,72 @@
 import { describe, expect, it } from 'vitest';
 import type { SimEvent } from '../src/engine/protocol';
-import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, indexAtOrBefore, share } from '../src/ui/runStats';
+import { deltaOver, endReasonBreakdown, EVENT_GROUPS, filterEvents, groupCounts, groupOf, histogram, indexAtOrBefore, outcomeCounts, share, wilson } from '../src/ui/runStats';
+
+describe('Monte Carlo summaries', () => {
+  it('matches published Wilson 95% intervals', () => {
+    // reference values: Newcombe (1998), Table I, and the closed form at z = 1.96
+    const a = wilson(50, 100);
+    expect(a.p).toBe(0.5);
+    expect(a.lo).toBeCloseTo(0.4038, 4);
+    expect(a.hi).toBeCloseTo(0.5962, 4);
+    const b = wilson(81, 263);
+    expect(b.lo).toBeCloseTo(0.2553, 4);
+    expect(b.hi).toBeCloseTo(0.3662, 4);
+  });
+
+  it('stays inside [0, 1] and is non-degenerate at 0 and n successes', () => {
+    const z = wilson(0, 10);
+    expect(z.lo).toBe(0);
+    expect(z.hi).toBeCloseTo(0.2775, 4);
+    const all = wilson(10, 10);
+    expect(all.hi).toBe(1);
+    expect(all.lo).toBeCloseTo(0.7225, 4);
+  });
+
+  it('narrows with more runs (four times the runs roughly halves it)', () => {
+    const w = (n: number) => { const r = wilson(n / 2, n); return r.hi - r.lo; };
+    expect(w(800) / w(200)).toBeCloseTo(0.5, 1);
+  });
+
+  it('handles an empty batch without NaN', () => {
+    expect(wilson(0, 0)).toEqual({ p: 0, lo: 0, hi: 1 });
+  });
+
+  it('counts outcomes from the runs, or from the probabilities when runs are missing', () => {
+    const results = [{ winner: 0 as const }, { winner: 1 as const }, { winner: 0 as const }, { winner: 'draw' as const }];
+    expect(outcomeCounts({ runs: 4, winProb: [0.5, 0.25, 0.25], results })).toEqual([2, 1, 1]);
+    expect(outcomeCounts({ runs: 200, winProb: [0.6, 0.3, 0.1], results: [] })).toEqual([120, 60, 20]);
+  });
+
+  it('bins integer days into integer-aligned bins that hold every run', () => {
+    const days = [10, 11, 12, 15, 20, 20, 39];
+    const h = histogram(days, 6);
+    expect(h.lo).toBe(10);
+    expect(Number.isInteger(h.width)).toBe(true);
+    expect(h.counts.reduce((a, b) => a + b, 0)).toBe(days.length);
+    expect(h.lo + h.width * h.counts.length - 1).toBeGreaterThanOrEqual(39);
+    expect(histogram([5, 5, 5]).counts).toEqual([3]);
+    expect(histogram([]).counts).toEqual([]);
+  });
+
+  it('groups end reasons that differ only in their numbers', () => {
+    const rs = [
+      { winner: 0 as const, endReason: "time limit; holds 45% of the enemy's territory vs 10%" },
+      { winner: 0 as const, endReason: "time limit; holds 52% of the enemy's territory vs 3%" },
+      { winner: 1 as const, endReason: 'Rome broke' },
+      { winner: 'draw' as const, endReason: 'time limit' },
+    ];
+    const b = endReasonBreakdown(rs);
+    expect(b[0]).toEqual({ winner: 0, reason: "time limit; holds N% of the enemy's territory vs N%", count: 2 });
+    expect(b).toHaveLength(3);
+  });
+
+  it('keeps a reason verbatim when every run in its group gave the same text', () => {
+    const same = 'Rome\'s army collapsed (personnel below 50% of all it fielded)';
+    const b = endReasonBreakdown([{ winner: 1 as const, endReason: same }, { winner: 1 as const, endReason: same }]);
+    expect(b).toEqual([{ winner: 1, reason: same, count: 2 }]);
+  });
+});
 
 const ev = (day: number, kind: SimEvent['kind'], side: SimEvent['side'], text: string, why?: string): SimEvent => ({ day, kind, side, text, why });
 

@@ -229,6 +229,11 @@ export function stopRun() {
 
 // ------------------------------------------------------------- monte carlo
 let mcWorker: Worker | null = null;
+/** The scenario object the current or last batch ran on; the view compares it by identity with
+ *  the store's scenario (every edit makes a new object) to flag a stale result. */
+export let mcScenario: Scenario | null = null;
+/** performance.now() when the current batch started, for the progress ETA. */
+export let mcStartedAt = 0;
 
 export function runMonteCarlo(s: Scenario, runs: number) {
   const probs = scenarioProblems(s);
@@ -236,6 +241,8 @@ export function runMonteCarlo(s: Scenario, runs: number) {
   const data = engineDataFrom(store.get().data);
   if (typeof data === 'string') { setMc({ status: 'error', error: data }); return; }
   mcWorker?.terminate();
+  mcScenario = s;
+  mcStartedAt = performance.now();
   setMc({ status: 'running', done: 0, total: runs, result: null, error: null });
   const fail = (msg: string) => { setMc({ status: 'error', error: msg }); mcWorker?.terminate(); mcWorker = null; };
   const w = spawn((m) => {

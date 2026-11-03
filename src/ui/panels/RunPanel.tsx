@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
-import { cancelMonteCarlo, eventLog, history, runMonteCarlo } from '../engine';
+import { eventLog, history } from '../engine';
 import { capitalize, fmt, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
+import { MonteCarloView } from './MonteCarloView';
 import { ModelTag, Reasons, useSides } from './RunShared';
 
 function StatsTable({ stats }: { stats: [SideStats, SideStats] }) {
@@ -300,56 +301,6 @@ function Result() {
   );
 }
 
-function Pcts({ p, f = fmt }: { p: { p10: number; p50: number; p90: number }; f?: (v: number) => string }) {
-  return <span>{f(p.p10)} / <b>{f(p.p50)}</b> / {f(p.p90)}</span>;
-}
-
-function MonteCarlo() {
-  const mc = useStore((s) => s.mc);
-  const sc = useStore((s) => s.scenario);
-  const { names, colors } = useSides();
-  const [runs, setRuns] = useState(200);
-  const r = mc.result;
-  return (
-    <div className="panel-body">
-      <div className="row">
-        <label>Runs <input className="narrow" type="number" min={2} max={5000} value={runs} onChange={(e) => setRuns(Math.max(2, Math.min(5000, Math.trunc(+e.target.value) || 2)))} /></label>
-        {mc.status === 'running'
-          ? <button onClick={cancelMonteCarlo}>Cancel</button>
-          : <button className="primary" onClick={() => runMonteCarlo(sc, runs)}>Run Monte Carlo</button>}
-      </div>
-      <p className="small muted">Runs the current scenario N times with different seeds (seed, seed+1, ...) in a separate worker.</p>
-      {mc.status === 'running' && (
-        <div className="progress"><div style={{ width: `${(100 * mc.done) / Math.max(1, mc.total)}%` }} /><span>{mc.done} / {mc.total}</span></div>
-      )}
-      {mc.status === 'error' && <div className="notice warn">{mc.error}</div>}
-      {r && (
-        <>
-          <h4>Win probability over {r.runs} runs <ModelTag /></h4>
-          {([0, 1, 2] as const).map((i) => (
-            <div key={i} className="wp">
-              <span>{i === 2 ? 'Draw' : names[i]}</span>
-              <div className="bar"><div style={{ width: `${r.winProb[i] * 100}%`, background: i === 2 ? '#8b949e' : colors[i] }} /></div>
-              <b>{(r.winProb[i] * 100).toFixed(1)}%</b>
-            </div>
-          ))}
-          <table className="stats small">
-            <thead><tr><th>p10 / p50 / p90</th><th /></tr></thead>
-            <tbody>
-              <tr><td className="muted">War length (days)</td><td><Pcts p={r.endDay} f={(v) => String(Math.round(v))} /></td></tr>
-              <tr><td className="muted">Casualties {names[0]}</td><td><Pcts p={r.casualties[0]} /></td></tr>
-              <tr><td className="muted">Casualties {names[1]}</td><td><Pcts p={r.casualties[1]} /></td></tr>
-            </tbody>
-          </table>
-          <h4>Most common reasons</h4>
-          <Reasons reasons={r.topReasons} names={names} colors={colors} />
-          <p className="small muted">Spread reflects the model's randomness (seeds) only, not uncertainty in the input data. Edit values within their low-high range to probe that.</p>
-        </>
-      )}
-    </div>
-  );
-}
-
 export function RunPanel() {
   const tab = useStore((s) => s.rightTab);
   const hasResult = useStore((s) => !!s.run.result);
@@ -363,7 +314,7 @@ export function RunPanel() {
       {tab === 'live' && <Live />}
       {tab === 'events' && <Events />}
       {tab === 'result' && <Result />}
-      {tab === 'montecarlo' && <MonteCarlo />}
+      {tab === 'montecarlo' && <MonteCarloView />}
     </aside>
   );
 }
