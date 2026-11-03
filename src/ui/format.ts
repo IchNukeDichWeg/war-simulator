@@ -13,3 +13,44 @@ export function fmt(n: number | null | undefined, digits = 3): string {
 }
 export const pct = (v: number | null | undefined) => (v == null || !Number.isFinite(v) ? '-' : `${Math.round(v * 100)}%`);
 export const isUrl = (s: string) => /^https?:\/\//.test(s);
+
+/** "1 day", "34 days", "120 days (about 4 months)", "800 days (about 2.2 years)". */
+export function fmtDays(n: number | null | undefined): string {
+  if (n == null || !Number.isFinite(n)) return '-';
+  const d = Math.round(n);
+  const base = `${d.toLocaleString('en-US')} ${d === 1 ? 'day' : 'days'}`;
+  if (d >= 730) return `${base} (about ${(d / 365.25).toFixed(1)} years)`;
+  if (d >= 60) return `${base} (about ${Math.round(d / 30.44)} months)`;
+  return base;
+}
+
+/** A head count: whole people below 100 ("23", not "22.8"), otherwise like fmt ("1,127", "412k"). */
+export function fmtCount(n: number | null | undefined): string {
+  if (n == null || !Number.isFinite(n)) return '-';
+  return Math.abs(n) < 99.5 ? String(Math.round(n) || 0) : fmt(n);
+}
+
+/** Signed value with an explicit + for gains: "+1.2k", "-340", "0". */
+export function signed(n: number | null | undefined, f: (v: number) => string = fmtCount): string {
+  if (n == null || !Number.isFinite(n)) return '-';
+  if (n === 0) return f(0);
+  return n > 0 ? `+${f(n)}` : `-${f(-n)}`;
+}
+
+/** Signed change of a 0..1 fraction in percentage points: "+3 pts", "-12 pts", "0 pts". */
+export function signedPts(n: number | null | undefined): string {
+  if (n == null || !Number.isFinite(n)) return '-';
+  const p = Math.round(n * 100);
+  return `${p > 0 ? '+' : p < 0 ? '-' : ''}${Math.abs(p)} pts`;
+}
+
+/** Playback speed label; 1/86400 days per second is real time. */
+export function fmtSpeed(daysPerSecond: number): string {
+  if (!(daysPerSecond > 0)) return 'paused';
+  if (Math.abs(daysPerSecond - 1 / 86400) < 1e-9) return 'real time';
+  const n = Number.isInteger(daysPerSecond) ? daysPerSecond.toLocaleString('en-US') : fmt(daysPerSecond);
+  return `${n} ${daysPerSecond === 1 ? 'day' : 'days'}/s`;
+}
+
+/** First letter upper-cased, for engine strings like "time limit" used as a headline. */
+export const capitalize = (s: string) => (s ? s[0].toUpperCase() + s.slice(1) : s);
