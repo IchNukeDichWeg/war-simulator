@@ -6,7 +6,7 @@
 // Mercator-only (the map is created with mercator projection).
 import type { CustomLayerInterface, CustomRenderMethodInput, Map as MlMap } from 'maplibre-gl';
 import { U, UNIT_STRIDE, UnitStatus } from '../engine/protocol';
-import { ARROW_INDEX, ATLAS_COLS, ROLES_PER_BAND, buildAtlas } from './atlas';
+import { ARROW_INDEX, ATLAS_COLS, BATTLE_INDEX, ROLES_PER_BAND, buildAtlas } from './atlas';
 import { eraBand } from '../ui/roles';
 
 /** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase | size 0 0 0 */
@@ -74,7 +74,7 @@ void main() {
   vec2 off;
   if (a_b.z > 0.5) {
     if (part == 1) { gl_Position = vec4(2.0, 2.0, 2.0, 1.0); return; }
-    float r = u_lod > 0.5 ? 7.0 + 9.0 * clamp(a_b.w, 0.0, 1.0) : 14.0 + 16.0 * clamp(a_b.w, 0.0, 1.0);
+    float r = u_lod > 0.5 ? 10.0 + 10.0 * clamp(a_b.w, 0.0, 1.0) : 14.0 + 16.0 * clamp(a_b.w, 0.0, 1.0);
     v_size = r;
     off = c * r;
     v_local = off;
@@ -115,6 +115,7 @@ out vec4 o;
 const float COLS = ${ATLAS_COLS.toFixed(1)};
 const float RPB = ${ROLES_PER_BAND.toFixed(1)};
 const float ARROW = ${ARROW_INDEX.toFixed(1)};
+const float BATTLE = ${BATTLE_INDEX.toFixed(1)};
 vec4 atlasAt(float idx, vec2 uv) {
   float col = mod(idx, COLS);
   float row = floor(idx / COLS);
@@ -131,16 +132,21 @@ void main() {
   vec3 side = u_side[int(v_a.x + 0.5)];
   float phase = v_b.w;
   if (v_b.z > 0.5) {
-    // battle marker: pulsing ring + core
+    // battle marker: dark disc with crossed swords, orange rim, and a ring
+    // pulsing outward whose reach grows with the battle's intensity
     float d = length(v_local);
+    float cr = u_lod > 0.5 ? 6.5 : 9.0;
     float k = fract(u_time * 0.7 + phase * 3.1);
-    float rr = v_size * (0.35 + 0.65 * k);
+    float rr = cr + (v_size - cr) * k;
     float ring = (1.0 - smoothstep(1.2, 1.2 + u_aa * 2.0, abs(d - rr))) * (1.0 - k);
-    float core = 1.0 - smoothstep(4.5, 4.5 + u_aa, d);
-    vec3 col = mix(vec3(1.0, 0.45, 0.1), vec3(1.0, 0.9, 0.4), core);
-    float a = max(ring * 0.9, core * 0.95);
-    if (a < 0.01) discard;
-    o = vec4(col * a, a);
+    vec4 acc = over(vec4(0.0), vec3(1.0, 0.45, 0.1), ring * 0.9);
+    float disc = 1.0 - smoothstep(cr - u_aa * 0.5, cr + u_aa * 0.5, d);
+    acc = over(acc, vec3(0.08, 0.06, 0.05), disc * 0.92);
+    vec2 g = v_local / (cr * 1.2) * 0.5 + 0.5;
+    if (g.x > 0.0 && g.x < 1.0 && g.y > 0.0 && g.y < 1.0) acc = over(acc, vec3(1.0, 0.86, 0.55), atlasAt(BATTLE, g).a * disc);
+    acc = over(acc, vec3(1.0, 0.5, 0.1), 1.0 - smoothstep(0.8, 0.8 + u_aa, abs(d - cr)));
+    if (acc.a < 0.01) discard;
+    o = acc;
     return;
   }
   float status = v_a.y < 0.0 ? 0.0 : v_b.y;
