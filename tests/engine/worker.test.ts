@@ -55,6 +55,25 @@ describe('worker protocol (Controller)', () => {
     expect(h.msgs[0].type).toBe('error');
   });
 
+  // Review finding: a start whose setup threw left the previous war in place, so the speed
+  // message that follows every start resumed the old run.
+  it('a failed start drops the previous run', () => {
+    const h = harness();
+    h.ctl.handle({ type: 'init', data: data() });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(5) });
+    h.ctl.handle({ type: 'step', days: 10 });
+    const bad = basicScenario(5);
+    bad.sides[1] = { ...bad.sides[1], members: ['no-such-snapshot'] };
+    h.ctl.handle({ type: 'start', scenario: bad });
+    expect(h.msgs.at(-1)!.type).toBe('error');
+    const before = h.frames().length;
+    h.ctl.handle({ type: 'speed', daysPerSecond: 30 });
+    h.timers.advance(2000);
+    expect(h.frames().length).toBe(before);
+    h.ctl.handle({ type: 'step', days: 1 });
+    expect(h.msgs.at(-1)).toMatchObject({ type: 'error', message: 'no scenario started' });
+  });
+
   it('seek replays to exactly the state of an uninterrupted run', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });

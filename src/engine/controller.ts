@@ -66,13 +66,16 @@ export class Controller {
   private start(scenario: Scenario): void {
     this.stopLoop();
     this.dps = 0;
-    const setup = buildSetup(this.requireData(), scenario);
-    this.sim = simFromSetup(setup, scenario.seed);
+    // drop the old war before building: if the setup throws, the speed message that follows
+    // every start must not resume it
+    this.sim = null;
     this.keyframes.clear();
     this.keyframeEvery = KEYFRAME_DAYS;
-    this.keyframes.set(0, this.sim.snapshot());
     this.maxDay = 0;
     this.endSent = false;
+    const setup = buildSetup(this.requireData(), scenario);
+    this.sim = simFromSetup(setup, scenario.seed);
+    this.keyframes.set(0, this.sim.snapshot());
     this.post({ type: 'started', theater: setup.theater, sideNames: setup.sideNames, warnings: setup.warnings });
     this.sendFrame(true);
   }
