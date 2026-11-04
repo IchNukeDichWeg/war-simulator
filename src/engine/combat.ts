@@ -11,7 +11,7 @@ import {
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
-  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY, ATTACK_JOINS_DEFENDERS_BATTLE } from './constants';
+  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY, ATTACK_JOINS_DEFENDERS_BATTLE, SEA_BYSTANDERS_OUT } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -20,12 +20,16 @@ import { lossFraction } from './formations';
 function joinCell(ctx: Ctx, b: Battle, c: number, inBattleCell: boolean, sideOnly: number): void {
   const { st, sc } = ctx;
   const F = st.F;
+  // SEA_BYSTANDERS_OUT: from a neighbouring sea cell only a formation landing on the battle cell
+  // joins; the rest are afloat and meet the enemy through naval interception only
+  const afloat = SEA_BYSTANDERS_OUT && EMBARKED_NAVAL_ONLY && !inBattleCell && !ctx.S.grid.land[c];
   for (const s of [0, 1] as const) {
     if (sideOnly >= 0 && s !== sideOnly) continue;
     for (let f = sc.head[s][c]; f >= 0; f = sc.nextInCell[f]) {
       if (!F.alive[f] || F.battle[f] >= 0) continue;
       const mode = F.mode[f];
       if (!inBattleCell && (mode === Mode.Rout || mode === Mode.Retreat)) continue;
+      if (afloat && !(mode === Mode.Attack && F.next[f] === b.cell)) continue;
       F.battle[f] = b.id;
       b.parts[s].push(f);
     }

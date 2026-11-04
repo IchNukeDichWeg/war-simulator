@@ -168,3 +168,25 @@ describe('ATTACK_JOINS_DEFENDERS_BATTLE', () => {
     expect(b[0].parts[0]).toContain(A);
   });
 });
+
+describe('SEA_BYSTANDERS_OUT', () => {
+  it('a land battle on the shore draws the formation landing on it, not the one merely afloat next to it', () => {
+    const sim = createSim(withNations(inland, seaside), fixtureScenario(inland, seaside, [55, 0, 65, 10]));
+    const ctx = sim.ctx, F = ctx.st.F, g = sim.setup.grid;
+    const shore = cellAt(g, 5.125, 59.875), seaE = cellAt(g, 5.125, 60.125), seaNE = cellAt(g, 5.375, 60.125);
+    const pick = (side: number, k: number) => [...Array(F.n).keys()].filter((f) => F.side[f] === side && F.alive[f] && F.onMap[f])[k];
+    const I = pick(0, 0), S = pick(1, 0), E = pick(1, 1), L = pick(1, 2);
+    for (let f = 0; f < F.n; f++) if (![I, S, E, L].includes(f)) F.alive[f] = 0;
+    F.cell[I] = shore; F.cell[S] = shore; F.cell[E] = seaE; F.cell[L] = seaNE;
+    F.mode[I] = Mode.Attack; F.mode[S] = Mode.Defend;
+    F.mode[E] = Mode.Hold; F.next[E] = -1;                 // afloat, going nowhere near the shore
+    F.mode[L] = Mode.Attack; F.next[L] = shore;           // landing on the battle cell
+    detectBattles(ctx);
+    const b = ctx.sc.battles;
+    expect(b.length).toBe(1);
+    expect(b[0].cell).toBe(shore);
+    expect(b[0].parts[1]).toContain(L);
+    expect(b[0].parts[1]).not.toContain(E);
+    expect(F.battle[E]).toBe(-1);
+  });
+});

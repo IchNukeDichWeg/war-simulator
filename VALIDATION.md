@@ -1161,3 +1161,37 @@ cell and in no battle; counts at this commit, after the earlier fixes): Germany 
 The other presets of the screen are unchanged.
 
 Verdict: **KEPT-ON-NULL.** The regression test fails with the toggle OFF.
+
+### Embarked formations are not land-battle bystanders (`SEA_BYSTANDERS_OUT`)
+
+`joinCell` drew every formation in a neighbouring cell into a land battle, including formations afloat on a
+neighbouring sea cell, which then took land-battle losses: against `EMBARKED_NAVAL_ONLY`, which says embarked
+formations meet the enemy only through naval interception. ON, from a neighbouring sea cell only a formation
+landing on the battle cell (Attack mode, next cell = the battle cell) joins.
+
+Oracle (the reviewer's `seabattle2.ts`, seed 1, 150 days; embarked battle participants that are not landing
+on the battle cell, and their battle-day losses):
+
+| Preset | OFF | ON |
+| --- | --- | --- |
+| USA + Spain vs Russia 2026 | 16, 964 lost (landings 83) | 0 (landings 148) |
+| Athens vs USA 2026 | 8, 34 lost | 2, 8 lost |
+| Rome vs France equalized | 2, 891 lost | 2, 891 lost |
+
+The ones left are deliberate attacks the oracle's stricter test (also on the battle's attacking side) does
+not count as landings: in Rome vs France the formations land on a cell the enemy is attacking; in Athens vs
+USA they attack a cell whose defenders fight next door and join that battle (`ATTACK_JOINS_DEFENDERS_BATTLE`).
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, byte-identical |
+| Persia vs Greeks (-480) | 7/3/0, day 273 | 6/4/0, day 326 |
+| Rome vs France equalized | 9/1/0 | 8/2/0 |
+| Macedon vs Persia | 2/7/1 | 2/8/0 |
+| Assyria vs Kush | 9/0/1 | 10/0/0 |
+| Argentina vs UK 1982 | 2/7/1, day 151 | 2/7/1, day 83 |
+
+Each winner change is one seed of ten, inside the noise of a 10-seed screen. The other presets are unchanged.
+
+Verdict: **KEPT-ON-NULL.** The regression test (a shore battle with one formation landing and one afloat
+next to it) fails with the toggle OFF.

@@ -270,6 +270,17 @@ export const CORNER_LAND_LINKS_CUT = true;
  *  ratio x3.21 -> x3.27. Presets (10-seed screen, 23 presets): Persia vs Greeks 7/2/1 -> 7/3/0,
  *  India 1971 day 127 -> 143; the rest unchanged. KEPT-ON-NULL. */
 export const ATTACK_JOINS_DEFENDERS_BATTLE = true;
+/** With EMBARKED_NAVAL_ONLY, a land battle draws from a neighbouring SEA cell only the formations
+ *  landing on the battle cell (Attack mode, next cell = battle cell). OFF: every embarked
+ *  formation next to a land battle joined it as a bystander and took land-battle losses, against
+ *  EMBARKED_NAVAL_ONLY. Oracle (seed 1, 150 days, embarked battle participants that are not
+ *  landing on the battle cell): USA + Spain vs Russia 16 (964 lost) -> 0, Athens vs USA 8 (34
+ *  lost) -> 2 (8 lost; they attack a cell whose defenders fight there,
+ *  ATTACK_JOINS_DEFENDERS_BATTLE). Measured (20 seeds): 19/15/22, backtest byte-identical. Presets (10-seed screen, 23
+ *  presets): Persia vs Greeks 7/3/0 -> 6/4/0, rome-vs-france-equalized 9/1/0 -> 8/2/0, Macedon vs
+ *  Persia 2/7/1 -> 2/8/0, Assyria vs Kush 9/0/1 -> 10/0/0, Argentina vs UK day 151 -> 83; single-
+ *  seed moves, inside a 10-seed screen's noise. KEPT-ON-NULL. */
+export const SEA_BYSTANDERS_OUT = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)
