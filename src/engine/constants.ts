@@ -289,6 +289,21 @@ export const PRECISION_MIN_TECH = 8;
  *  x0.18 -> x0.09; Falklands morale-collapse seeds 1.6k -> 6.5k Argentine (median unchanged 8.1k, set
  *  by personnel-collapse seeds that have nothing left on the map). Kept ON: the share is sourced. */
 export const COLLAPSE_SURRENDER = true;
+/** Army collapse judged per member: a coalition side collapses only when every member that
+ *  carries a real share of it has fallen below armyCollapsePersonnelFraction of what it fielded.
+ *  OFF: the side's pooled personnel against its pooled fielded total, so the largest member
+ *  decided for all (Germany 1944 vs Spain and Switzerland: the Swiss were 82% of the side and
+ *  their collapse ended Spain's war too). One-member sides are judged the same either way.
+ *  Measured (20 seeds): backtest 19/15/22 both ways, blind (no case has a coalition). Coalition
+ *  presets A/B/draw OFF -> ON: Allies vs Axis 0/20/0 -> 0/2/18 (France breaks day 135, Germany
+ *  257, Italy 518, Britain fights on), Persia vs Greeks 19/1/0 -> 14/5/1, Central Powers vs
+ *  Entente 2/6/12 -> 0/5/15; Napoleon, NATO 1989 and USA+Spain vs Russia unchanged.
+ *  KEPT-ON-NULL: the backtest cannot see it, the preset shifts go the historical way. */
+export const MEMBER_COLLAPSE = true;
+/** Members fielding less than this share of their side's total cannot keep a broken coalition in
+ *  the war (a 500-man contingent would otherwise hold it open to the time limit). A judgment
+ *  value, not sourced. */
+export const MEMBER_COLLAPSE_MIN_SHARE = 0.1;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the

@@ -109,6 +109,8 @@ export interface MemberState {
   capitalReached: boolean;      // an enemy formation has been on or next to the capital since the enemy took it
   breakpoint: number;           // this seed's battle breakpoint (cohesion-shifted)
   retreat: number;              // withdraw threshold: WITHDRAW_SHARE_OF_BREAKPOINT x breakpoint (SYMMETRIC_DOCTRINE_BREAKPOINT)
+  fielded: number;              // personnel at the start plus every arrival, as the side's startPersonnel + arrivals
+  broken: boolean;              // fell below the army-collapse share of `fielded` (MEMBER_COLLAPSE)
 }
 
 export interface BattleRec { lat: number; lon: number; intensity: number }

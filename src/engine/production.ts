@@ -16,6 +16,7 @@ function addPersonnelToDepot(ctx: Ctx, mi: number, amount: number): void {
   const d = ctx.st.members[mi].depot;
   for (let r = 0; r < NR; r++) if (IS_P[r]) d[r] += amount * mr.pMix[r];
   ctx.st.arrivals[mr.side] += amount;
+  ctx.st.members[mi].fielded += amount;
 }
 
 /** Spawn cell for member mi today: first spawn cell not held or occupied by the enemy. */
@@ -150,6 +151,7 @@ export function productionPhase(ctx: Ctx): void {
         const frac = r.day - Math.floor(r.day);
         if (SUBDAY_REINFORCEMENTS && frac > 0) { F.joinDay[nf] = day; F.joinRound[nf] = Math.min(S.H - 1, Math.ceil(frac * S.H)); }
         st.arrivals[side] += p;
+        st.members[mi].fielded += p;
         addEvent(ctx, side, 'arrival', `${S.sideNames[side]} reinforcements arrived (${Math.round(p).toLocaleString('en-US')} troops).`, undefined, cell);
       }
     }

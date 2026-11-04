@@ -6,9 +6,9 @@ import { isProtectedEnemyPlace, enterCell } from './movement';
 import { depotPersonnel } from './production';
 import { lossFraction } from './formations';
 import { rule } from './mech';
-import { LC } from './roles';
+import { IS_P, LC, NR } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, MEMBER_COLLAPSE, MEMBER_COLLAPSE_MIN_SHARE, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -137,6 +137,33 @@ function surrenderArmy(ctx: Ctx, side: number): void {
   }
 }
 
+/** MEMBER_COLLAPSE: mark members of `side` that fell below the collapse share of what they
+ *  fielded (once, with an event while allies fight on) and say whether the side as a whole has
+ *  collapsed: every member with a real share broken. Null when the side has no such member. */
+function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
+  const { S, st } = ctx;
+  const F = st.F;
+  const now = new Float64Array(S.members.length);
+  for (let f = 0; f < F.n; f++) if (F.alive[f] && F.side[f] === side) now[F.member[f]] += F.personnel[f];
+  let total = 0;
+  for (const mr of S.members) if (mr.side === side) total += st.members[mr.idx].fielded;
+  if (!(total > 0)) return null;
+  let counted = 0, standing = 0;
+  for (const mr of S.members) {
+    const ms = st.members[mr.idx];
+    if (mr.side !== side || ms.fielded < MEMBER_COLLAPSE_MIN_SHARE * total) continue;
+    counted++;
+    let p = now[mr.idx];
+    for (let r = 0; r < NR; r++) if (IS_P[r]) p += ms.depot[r];
+    if (!ms.broken && p < S.rules.collapsePersonnel * ms.fielded) {
+      ms.broken = true;
+      addEvent(ctx, (1 - side) as 0 | 1, 'rout', `${mr.name}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded).`, 'Its allies fight on.');
+    }
+    if (!ms.broken) standing++;
+  }
+  return counted === 0 ? null : standing === 0;
+}
+
 export function victoryPhase(ctx: Ctx): void {
   const { S, st, sc } = ctx;
   const V = S.scenario.victory;
@@ -174,8 +201,14 @@ export function victoryPhase(ctx: Ctx): void {
     if (V.armyCollapse) {
       const base = st.startPersonnel[o] + st.arrivals[o];
       const baseW = st.startW[o] + st.addedW[o];
-      const fell = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
-      if (fell && (base > 0 || baseW > 0)) wins[s] = `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
+      const pooled = base > 0 ? no.personnel < S.rules.collapsePersonnel * base : baseW > 0 && no.w < S.rules.collapsePersonnel * baseW;
+      const coalition = MEMBER_COLLAPSE && S.members.filter((mr) => mr.side === o).length > 1;
+      const each = coalition ? membersCollapsed(ctx, o) : null;
+      const fell = each ?? pooled;
+      if (fell && (base > 0 || baseW > 0)) {
+        wins[s] = each ? `${S.sideNames[o]}'s army collapsed (every member below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`
+          : `${S.sideNames[o]}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded)`;
+      }
       // morale collapse needs a real fall: below the threshold AND at least one lost battle's morale
       // shock below where the side started (Iraq 1991 starts at 0.20; a side starting at the
       // threshold must not "collapse" after a trivial dip)

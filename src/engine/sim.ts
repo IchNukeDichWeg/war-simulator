@@ -91,6 +91,8 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
       capitalLost: false,
       capitalHeldDays: 0,
       capitalReached: false,
+      fielded: 0,
+      broken: false,
       ...(() => {
         // SYMMETRIC_DOCTRINE_BREAKPOINT: the doctrine's threshold scaled by this seed's era draw is
         // the break, withdrawal comes just before it; OFF: the era draw is the break and the
@@ -136,6 +138,7 @@ export function simFromSetup(S: Setup, seed: number): Sim {
   const F = st.F;
   for (let f = 0; f < F.n; f++) {
     st.startPersonnel[F.side[f]] += F.personnel[f];
+    st.members[F.member[f]].fielded += F.personnel[f];
     st.startW[F.side[f]] += F.curW[f];
     st.startMorale[F.side[f]] += F.morale[f] * F.curW[f];
   }

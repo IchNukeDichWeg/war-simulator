@@ -983,3 +983,43 @@ breakpoints: **gate met** on the campaign plus this recheck. On the campaign alo
 campaign's rule counts an unresolved reading as a miss. Blenheim clears the line by 0.2 points of margin, the
 thinnest of the 18. Mohi stays the one passing case that is not robust, and its own base reading (60.0%) is
 on the line.
+
+## Army collapse per coalition member (`MEMBER_COLLAPSE`)
+
+Campaign army collapse compared a side's pooled personnel with its pooled fielded total, so the largest
+member decided for the whole side: in Germany 1944 against Spain and Switzerland the Swiss were 82% of the
+side, and their collapse ended the war while Spain stood at full strength. ON, a coalition side collapses only
+when every member fielding at least `MEMBER_COLLAPSE_MIN_SHARE` (10%, a judgment value) of the side's total is
+below 50% of what it fielded. A broken member gets a `rout` event and its allies fight on.
+
+Instrument 1: `scripts/backtest.ts --seeds 20`, ON against OFF at 281320d plus this change.
+
+| | Winner / ratio / duration of 24 |
+| --- | --- |
+| OFF | 19 / 15 / 22 |
+| ON | 19 / 15 / 22, every case identical |
+
+The backtest has no coalition side, so it is blind to this change. It only confirms that one-member sides
+are untouched.
+
+Instrument 2: the six coalition presets, 20 seeds each, A wins / B wins / draws. This is a second instrument,
+not pooled with the backtest, and it has no historical score: it shows what moved, not whether it is right.
+
+| Preset | OFF | ON |
+| --- | --- | --- |
+| Allies vs Axis | 0/20/0, Allies collapse, median day 163 | 0/2/18, time-limit draws |
+| Persia vs Greeks (-480) | 19/1/0, median day 266 | 14/5/1, median day 325 |
+| Central Powers vs Entente 1914 | 2/6/12 | 0/5/15 |
+| Napoleon vs Third Coalition | 0/20/0 | 0/20/0 |
+| NATO vs Warsaw Pact 1989 | 19/1/0 | 19/1/0 |
+| USA + Spain vs Russia 2026 | 0/0/20 | 0/0/20 |
+
+Allies vs Axis ON, default seed: France breaks on day 135, Germany on day 257, Italy on day 518, and the war
+runs to the 730-day limit with Britain still in it. OFF, the French collapse pulled the pooled Allied
+personnel under the line and ended the war for Britain too. Germany 1944 against Spain and Switzerland, seeds
+1-3: OFF Germany wins on days 80, 92, 122; ON Germany wins on days 146 and 371, and seed 2 runs to the limit
+with Spain at 98%.
+
+Verdict: **KEPT-ON-NULL.** The backtest cannot measure it, and the preset shifts go the historical way
+(a coalition outlasting its first member to break). `tests/engine/memberCollapse.test.ts` pins the rule and
+fails with the toggle OFF.
