@@ -1291,3 +1291,22 @@ Verdict: **KEPT-ON-NULL**, a correctness fix that moves no count. `tests/engine/
 days 0, 1 and 1.5 (fails with the toggle OFF). Seen on the way, not fixed here: the Stalingrad day-23 Soviet
 group does not spawn in seed 1 either way, because `productionPhase` skips a reinforcement whose spawn cells
 are all enemy-held and never retries it.
+
+### A broken member can recover (`MEMBER_COLLAPSE_RECOVERS`)
+
+`MEMBER_COLLAPSE` set a member's `broken` flag once and never cleared it, so a member that reserves and
+recruits brought back over the line (the reviewer saw 5% -> 52% of fielded) still counted as broken, and its
+coalition could be ended with that member standing. ON, standing is judged afresh each day; a separate
+once-only flag keeps the collapse event to one per member.
+
+Oracle (seed 1, OFF, highest share of fielded held while counted broken): Germany 51% in Allies vs Axis,
+East Germany 50% in NATO 1989, Russia 50% in Central Powers vs Entente (one targeted run), France 50% in
+Allies vs Axis and in NATO 1989. The recoveries seen hover at the line.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, every case identical |
+| Allies vs Axis, Persia vs Greeks, USA + Spain vs Russia, Napoleon, NATO 1989 | | identical seed for seed |
+
+Verdict: **KEPT-ON-NULL**, a correctness fix neither instrument can see. `tests/engine/memberCollapse.test.ts`
+pins a recovered member keeping its side in the war, with one event (fails with the toggle OFF).

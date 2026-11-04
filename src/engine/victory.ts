@@ -8,7 +8,7 @@ import { lossFraction } from './formations';
 import { rule } from './mech';
 import { IS_P, LC, NR } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, MEMBER_COLLAPSE, MEMBER_COLLAPSE_MIN_SHARE, MEMBER_MORALE_COLLAPSE, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, MEMBER_COLLAPSE, MEMBER_COLLAPSE_MIN_SHARE, MEMBER_COLLAPSE_RECOVERS, MEMBER_MORALE_COLLAPSE, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -155,8 +155,13 @@ function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
     counted++;
     let p = now[mr.idx];
     for (let r = 0; r < NR; r++) if (IS_P[r]) p += ms.depot[r];
-    if (!ms.broken && p < S.rules.collapsePersonnel * ms.fielded) {
-      ms.broken = true;
+    // MEMBER_COLLAPSE_RECOVERS: standing is judged afresh each day (reserves and recruits can bring a
+    // broken member back over the line); the event fires once
+    const below = p < S.rules.collapsePersonnel * ms.fielded;
+    if (MEMBER_COLLAPSE_RECOVERS) ms.broken = below;
+    else if (below) ms.broken = true;
+    if (ms.broken && !ms.brokeOnce) {
+      ms.brokeOnce = true;
       addEvent(ctx, (1 - side) as 0 | 1, 'rout', `${mr.name}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded).`, 'Its allies fight on.');
     }
     if (!ms.broken) standing++;

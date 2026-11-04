@@ -94,6 +94,23 @@ describe('army collapse per coalition member', () => {
     expect(r.endReason).toContain('every member');
   });
 
+  it('lets a broken member that recovered stand again, with one collapse event (MEMBER_COLLAPSE_RECOVERS)', () => {
+    const sim = coalition(ally(15000));
+    const F = sim.ctx.st.F;
+    const saved = Float64Array.from(F.personnel.subarray(0, F.n));
+    wipe(sim, 'Eastland');
+    victoryPhase(sim.ctx);
+    // reserves and recruits bring Eastland back over the line
+    const ei = sim.ctx.S.members.findIndex((m) => m.name === 'Eastland');
+    for (let f = 0; f < F.n; f++) if (F.member[f] === ei) F.personnel[f] = saved[f];
+    victoryPhase(sim.ctx);
+    expect(sim.ctx.st.members[ei].broken).toBe(false);
+    wipe(sim, 'Southland');
+    victoryPhase(sim.ctx);
+    expect(sim.ended()).toBe(false);
+    expect(sim.ctx.st.events.filter((e) => e.kind === 'rout' && e.text.startsWith("Eastland's army collapsed")).length).toBe(1);
+  });
+
   it('does not let a token contingent hold a broken coalition open', () => {
     // 2,000 of about 62,000 fielded: under MEMBER_COLLAPSE_MIN_SHARE
     const sim = coalition(ally(2000));

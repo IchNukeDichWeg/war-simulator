@@ -399,6 +399,16 @@ export const SEA_LIFT_AFTER_SEED_WAVES = true;
  *  both ways), Yom Kippur losses 468 -> 466; Falklands, Iraq 2003 and Stalingrad identical (their
  *  whole-day groups come after the median end or not at all). KEPT-ON-NULL: correctness fix. */
 export const REINFORCEMENT_ELAPSED_DAYS = true;
+/** A member's broken state (MEMBER_COLLAPSE) is judged afresh each day, so a member that reserves
+ *  or recruits bring back over the collapse share stands again; its collapse event still fires
+ *  once. OFF: broken was sticky, so a member that recovered (5% -> 52% of fielded) still counted
+ *  as broken and could end its coalition's war. Seed-1 oracle OFF: members counted broken while back
+ *  at up to 50-51% of fielded (Germany in allies-vs-axis, East Germany in NATO 1989, Russia in
+ *  central-powers). Measured (20 seeds): backtest 19/15/22 identical (no coalition). Presets
+ *  (10-seed screen, allies-vs-axis, persia-vs-greeks, usa-spain-vs-russia, napoleon, NATO 1989):
+ *  identical seed for seed. KEPT-ON-NULL: correctness fix; the recoveries seen hover at the line
+ *  and none decided a war in the screen. */
+export const MEMBER_COLLAPSE_RECOVERS = true;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the
