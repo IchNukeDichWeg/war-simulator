@@ -75,6 +75,9 @@ function checkStrings(o: Partial<Scenario>): void {
 const TECH_MODES: readonly TechMode[] = ['native', 'equalized', 'timeslice'];
 /** The time-limit input allows 1..36500 days (ScenarioBuilder); a link used to carry any number. */
 export const MAX_TIME_LIMIT_DAYS = 36500;
+/** Seeds are 32-bit: Monte Carlo run i uses (seed + i) >>> 0, and from 2^53 up seed + i equals
+ *  seed in floating point, so every run drew the same war and the odds read 100%. */
+export const MAX_SEED = 2 ** 32 - 1;
 
 const show = (v: unknown): string => (typeof v === 'string' ? JSON.stringify(v.slice(0, 40)) : v === null ? 'null' : Array.isArray(v) ? 'a list' : typeof v === 'object' ? 'an object' : String(v));
 function bad(field: string, want: string, v: unknown): never {
@@ -203,7 +206,7 @@ export function normalizeScenario(x: unknown): Scenario {
       armyCollapse: bool(v.armyCollapse, 'victory.armyCollapse', d.victory.armyCollapse),
       timeLimitDays: num(v.timeLimitDays, 'victory.timeLimitDays', d.victory.timeLimitDays, 1, MAX_TIME_LIMIT_DAYS, true),
     },
-    seed: num(o.seed, 'seed', 1, -Infinity, Infinity),
+    seed: num(o.seed, 'seed', 1, 0, MAX_SEED, true),
     overrides: overrides(o.overrides),
   };
   // tech level both sides fight at in equalized mode; the slider spans 0..10

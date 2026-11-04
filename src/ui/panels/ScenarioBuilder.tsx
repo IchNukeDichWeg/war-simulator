@@ -4,7 +4,7 @@ import { yearLabel, yearOf, type AppData } from '../data';
 import { ensureSnapshots } from '../lazy';
 import { buildItems, type SearchItem } from '../nationSearch';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
-import { MAX_TIME_LIMIT_DAYS, THEATERS, type BBox } from '../scenarioDefaults';
+import { MAX_SEED, MAX_TIME_LIMIT_DAYS, THEATERS, type BBox } from '../scenarioDefaults';
 import { setScenario, store, toast, useStore } from '../store';
 import { fitChoices } from '../theaterFit';
 import { KindBadge } from './SnapshotDetail';
@@ -390,7 +390,7 @@ export function ScenarioBuilder() {
           </label>
           <div className="sb-label" id="sb-seed">Random seed</div>
           <div className="row">
-            <NumberField className="seed" aria-labelledby="sb-seed" min={Number.MIN_SAFE_INTEGER} max={Number.MAX_SAFE_INTEGER} integer value={sc.seed} onCommit={(v) => setScenario((s) => ({ ...s, seed: v }))} />
+            <NumberField className="seed" aria-labelledby="sb-seed" min={0} max={MAX_SEED} integer value={sc.seed} onCommit={(v) => setScenario((s) => ({ ...s, seed: v }))} />
             <button onClick={() => setScenario((s) => ({ ...s, seed: Math.floor(Math.random() * 2 ** 31) }))}>New seed</button>
           </div>
           <div className="muted small">The same seed and setup give the same war.</div>

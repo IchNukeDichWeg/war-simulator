@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import type { Scenario } from '../src/types/scenario';
-import { normalizeScenario, SIDE_COLORS } from '../src/ui/scenarioDefaults';
+import { MAX_SEED, normalizeScenario, SIDE_COLORS } from '../src/ui/scenarioDefaults';
 
 // Pre-release review findings on what a share link or file may carry. Each case loads a real
 // preset with one field changed, the way a hand-edited link would.
@@ -40,6 +40,20 @@ describe('side colours on load', () => {
       n = normalizeScenario(s);
       expect(n.sides[1].color, c).toBe(SIDE_COLORS[1]);
     }
+  });
+});
+
+describe('seed on load', () => {
+  it('is an integer within 32 bits', () => {
+    // seeds of 2^53 and up made every Monte Carlo run use one seed ((seed + i) >>> 0), so Odds showed 100%
+    const s = preset('germany-vs-france-1940');
+    for (const [seed, want] of [[2 ** 53, MAX_SEED], [1e300, MAX_SEED], [-5, 0], [3.7, 4], [MAX_SEED, MAX_SEED], [1, 1]]) {
+      s.seed = seed;
+      expect(normalizeScenario(s).seed, String(seed)).toBe(want);
+    }
+    expect(MAX_SEED).toBe(2 ** 32 - 1);
+    // distinct seeds per run all the way up
+    expect(new Set([0, 1, 2].map((i) => (MAX_SEED + i) >>> 0)).size).toBe(3);
   });
 });
 
