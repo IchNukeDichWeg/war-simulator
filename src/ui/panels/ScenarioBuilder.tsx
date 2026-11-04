@@ -1,10 +1,10 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type InputHTMLAttributes, type ReactNode } from 'react';
 import { DEFAULT_RULES, DEFAULT_VICTORY, type Scenario, type SideSpec, type TechMode } from '../../types/scenario';
 import { yearLabel, yearOf, type AppData } from '../data';
 import { ensureSnapshots } from '../lazy';
 import { buildItems, type SearchItem } from '../nationSearch';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
-import { THEATERS, type BBox } from '../scenarioDefaults';
+import { MAX_TIME_LIMIT_DAYS, THEATERS, type BBox } from '../scenarioDefaults';
 import { setScenario, store, toast, useStore } from '../store';
 import { fitChoices } from '../theaterFit';
 import { KindBadge } from './SnapshotDetail';
@@ -62,6 +62,42 @@ function Section({ id, title, summary, warn, idle = 'defaults', children }: { id
       </summary>
       <div className="sb-body">{children}</div>
     </details>
+  );
+}
+
+/** A number box's text as a value clamped to [min, max] (rounded when `integer`), or null when
+ *  it is not a number and the box goes back to the stored value. */
+export function parseNumberText(text: string, min: number, max: number, integer = false): number | null {
+  const t = text.trim();
+  if (t === '') return null;
+  const v = Number(t);
+  if (!Number.isFinite(v)) return null;
+  const c = Math.min(max, Math.max(min, v));
+  return integer ? Math.round(c) : c;
+}
+
+/** A number box that keeps its own text and commits on blur or Enter (Escape reverts), like the
+ *  Editor's cells. Committing every keystroke through a clamp snapped a cleared box to its
+ *  minimum (time limit 1, then typing 500 gave 1500) and left a leading zero in view ("07"). */
+function NumberField({ value, min, max, integer, onCommit, ...rest }: { value: number; min: number; max: number; integer?: boolean; onCommit: (v: number) => void }
+  & Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'onBlur' | 'onKeyDown' | 'min' | 'max' | 'type'>) {
+  const shown = String(value);
+  const [txt, setTxt] = useState(shown);
+  useEffect(() => setTxt(shown), [shown]);
+  // blur() inside the Escape handler runs onBlur before the reverted text renders
+  const cancel = useRef(false);
+  const commit = () => {
+    const v = cancel.current ? null : parseNumberText(txt, min, max, integer);
+    cancel.current = false;
+    if (v === null || v === value) { setTxt(shown); return; }
+    onCommit(v);
+  };
+  return (
+    <input {...rest} type="number" min={min} max={max} value={txt} onChange={(e) => setTxt(e.target.value)} onBlur={commit}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') e.currentTarget.blur();
+        if (e.key === 'Escape') { cancel.current = true; e.currentTarget.blur(); }
+      }} />
   );
 }
 
@@ -331,7 +367,7 @@ export function ScenarioBuilder() {
             <input type="range" min={0} max={1} step={0.05} value={sc.victory.territoryShare} onChange={(e) => setScenario((s) => ({ ...s, victory: { ...s.victory, territoryShare: +e.target.value } }))} />
           </label>
           <label className="field">Time limit (days)
-            <input type="number" min={1} max={36500} value={sc.victory.timeLimitDays} onChange={(e) => setScenario((s) => ({ ...s, victory: { ...s.victory, timeLimitDays: Math.max(1, Math.trunc(+e.target.value) || 1) } }))} />
+            <NumberField min={1} max={MAX_TIME_LIMIT_DAYS} integer value={sc.victory.timeLimitDays} onCommit={(v) => setScenario((s) => ({ ...s, victory: { ...s.victory, timeLimitDays: v } }))} />
           </label>
         </Section>
 
@@ -349,7 +385,7 @@ export function ScenarioBuilder() {
           </label>
           <div className="sb-label" id="sb-seed">Random seed</div>
           <div className="row">
-            <input className="seed" type="number" aria-labelledby="sb-seed" value={sc.seed} onChange={(e) => setScenario((s) => ({ ...s, seed: Math.trunc(+e.target.value) || 0 }))} />
+            <NumberField className="seed" aria-labelledby="sb-seed" min={Number.MIN_SAFE_INTEGER} max={Number.MAX_SAFE_INTEGER} integer value={sc.seed} onCommit={(v) => setScenario((s) => ({ ...s, seed: v }))} />
             <button onClick={() => setScenario((s) => ({ ...s, seed: Math.floor(Math.random() * 2 ** 31) }))}>New seed</button>
           </div>
           <div className="muted small">The same seed and setup give the same war.</div>
@@ -391,8 +427,7 @@ export function ScenarioBuilder() {
             <option value="custom">Custom...</option>
           </select>
           {mcCustom && (
-            <input className="narrow" type="number" min={2} max={5000} aria-label="Custom number of runs (2 to 5,000)" value={mcRuns}
-              onChange={(e) => setMcRuns(Math.max(2, Math.min(5000, Math.trunc(+e.target.value) || 2)))} />
+            <NumberField className="narrow" min={2} max={5000} integer aria-label="Custom number of runs (2 to 5,000)" value={mcRuns} onCommit={setMcRuns} />
           )}
         </div>
       </div>
