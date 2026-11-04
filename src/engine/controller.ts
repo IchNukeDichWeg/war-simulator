@@ -76,7 +76,7 @@ export class Controller {
     const setup = buildSetup(this.requireData(), scenario);
     this.sim = simFromSetup(setup, scenario.seed);
     this.keyframes.set(0, this.sim.snapshot());
-    this.post({ type: 'started', theater: setup.theater, sideNames: setup.sideNames, warnings: setup.warnings });
+    this.post({ type: 'started', theater: setup.theater, sideNames: setup.sideNames, warnings: this.sim.warnings });
     this.sendFrame(true);
   }
 

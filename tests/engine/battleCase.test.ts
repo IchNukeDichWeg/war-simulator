@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { runBattleCase } from '../../src/engine/battleCase';
+import { battleCaseScenario, runBattleCase } from '../../src/engine/battleCase';
+import { buildSetup } from '../../src/engine/setup';
+import { simFromSetup } from '../../src/engine/sim';
 import type { BattleCase } from '../../src/types/mechanics';
 import { data } from './helpers';
 
@@ -57,5 +59,17 @@ describe('campaign objectives', () => {
     const res = runBattleCase(data(), fixtureCampaign({ name: 'Pocket', lat: 5, lon: 3.8, kind: 'destroy', radiusKm: 60 }), 1);
     expect(res.warnings.some((w) => /no enemy formation within/.test(w))).toBe(false);
     if (/objective/.test(res.result.endReason)) expect(res.result.endReason).toMatch(/destroyed the enemy force/);
+  });
+  // Review finding: each sim pushed its start warning into the shared Setup, so a Monte Carlo
+  // batch (one Setup, many sims) grew the list by one per run.
+  it('a sim start warning stays with that sim, not the shared setup', () => {
+    const empty = fixtureCampaign({ name: 'Nobody', lat: 5, lon: 2.2, kind: 'destroy', radiusKm: 10 });
+    const { data: d2, scenario, opts } = battleCaseScenario(data(), empty, 1);
+    const setup = buildSetup(d2, scenario, opts);
+    const n = setup.warnings.length;
+    const a = simFromSetup(setup, 1), b = simFromSetup(setup, 2);
+    expect(setup.warnings.length).toBe(n);
+    for (const s of [a, b]) expect(s.warnings.filter((w) => /no enemy formation within 10 km/.test(w)).length).toBe(1);
+    expect(runBattleCase(data(), empty, 1).warnings.some((w) => /no enemy formation within 10 km/.test(w))).toBe(true);
   });
 });

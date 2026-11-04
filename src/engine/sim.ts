@@ -29,6 +29,8 @@ import { SEASONS } from './setup';
 
 export interface Sim {
   readonly setup: Setup;
+  /** The setup's warnings plus this sim's own start warnings (a Setup is shared by a Monte Carlo batch). */
+  readonly warnings: string[];
   readonly ctx: Ctx;
   day(): number;
   ended(): boolean;
@@ -143,6 +145,8 @@ export function simFromSetup(S: Setup, seed: number): Sim {
     st.startMorale[F.side[f]] += F.morale[f] * F.curW[f];
   }
   for (const s of [0, 1] as const) st.startMorale[s] = st.startW[s] > 0 ? st.startMorale[s] / st.startW[s] : 0;
+  // own list, not S.warnings: one Setup serves every sim of a Monte Carlo batch
+  const warnings = [...S.warnings];
   // 'destroy' objective: the target force is the enemy standing within the radius at the start
   for (const s of [0, 1] as const) {
     const oc = S.objectiveCells[s], rk = S.objectiveRadiusKm[s];
@@ -152,7 +156,7 @@ export function simFromSetup(S: Setup, seed: number): Sim {
       if (F.side[f] === s || !F.alive[f] || !F.onMap[f]) continue;
       if (haversineKm(g.lat[oc], g.lon[oc], g.lat[F.cell[f]], g.lon[F.cell[f]]) <= rk) st.destroyTargets[s].push(f);
     }
-    if (!st.destroyTargets[s].length) S.warnings.push(`${S.sideNames[s]}: no enemy formation within ${rk} km of its destroy objective at the start; it cannot be won.`);
+    if (!st.destroyTargets[s].length) warnings.push(`${S.sideNames[s]}: no enemy formation within ${rk} km of its destroy objective at the start; it cannot be won.`);
   }
   rebuildOccupancy(ctx);
   for (const w of S.warnings) void w;
@@ -205,6 +209,7 @@ export function simFromSetup(S: Setup, seed: number): Sim {
 
   return {
     setup: S,
+    warnings,
     ctx,
     day: () => st.day,
     ended: () => st.ended,

@@ -186,6 +186,6 @@ export function runBattleCase(data: EngineData, bc: BattleCase, seed: number, ex
     durationDays: r.endDay,
     losses: [r.stats[0].casualties, r.stats[1].casualties],
     result: r,
-    warnings: [...warnings, ...sim.setup.warnings],
+    warnings: [...warnings, ...sim.warnings],
   };
 }
