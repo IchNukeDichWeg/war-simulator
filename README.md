@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.jpg" alt="Germany vs France 1940 on day 75: the front line, units, supply lines and live statistics" width="100%">
+  <img src="docs/screenshot.jpg" alt="Germany vs France 1940 on day 70: the front line, units, supply lines and live statistics" width="100%">
 </p>
 
 > [!NOTE]
