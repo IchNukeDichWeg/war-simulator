@@ -8,6 +8,7 @@ import type { CustomLayerInterface, CustomRenderMethodInput, Map as MlMap } from
 import { U, UNIT_STRIDE, UnitStatus } from '../engine/protocol';
 import { ARROW_INDEX, ATLAS_COLS, BATTLE_INDEX, DIGIT_INDEX, ROLES_PER_BAND, buildAtlas } from './atlas';
 import { eraBand } from '../ui/roles';
+import { UNIT_SCALE, getSettings } from '../ui/settings';
 
 /** Floats per GPU instance: prevX prevY x y | side icon strength heading | supply status kind phase | size count 0 0 */
 const INST = 16;
@@ -633,7 +634,8 @@ export class UnitLayer implements CustomLayerInterface {
     g.uniformMatrix4fv(this.loc.u_matrix, false, m instanceof Float32Array ? m : Float32Array.from(m));
     g.uniform2f(this.loc.u_viewport, g.drawingBufferWidth, g.drawingBufferHeight);
     const zoom = this.map.getZoom();
-    const scale = Math.max(0.62, Math.min(1.25, 0.62 + (zoom - 2.5) * 0.14));
+    // the viewer's unit size setting scales the zoom curve (display only)
+    const scale = Math.max(0.62, Math.min(1.25, 0.62 + (zoom - 2.5) * 0.14)) * UNIT_SCALE[getSettings().unitSize];
     const canvas = this.map.getCanvas();
     const dpr = g.drawingBufferWidth / canvas.clientWidth || 1;
     const px = scale * dpr;

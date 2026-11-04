@@ -5,6 +5,7 @@ import { ensureSnapshots } from '../lazy';
 import { store, toast, useStore, type LeftTab } from '../store';
 import type { Scenario, TechMode } from '../../types/scenario';
 import { EmptyData } from './EmptyData';
+import { getSettings } from '../settings';
 import { Icon } from '../Icon';
 
 /** Resolves once every member snapshot is loaded (Phase 3 members load their era file).
@@ -30,7 +31,7 @@ function yearsOf(d: AppData, p: Scenario): string {
   return a === b ? a : a && b ? `${a} vs ${b}` : a || b;
 }
 
-const runPreset = (p: Scenario) => { void loadScenario(p, `Running ${p.name}`, null).then(() => startRun(store.get().scenario, 3)); };
+const runPreset = (p: Scenario) => { void loadScenario(p, `Running ${p.name}`, null).then(() => startRun(store.get().scenario, getSettings().startSpeed)); };
 
 export function Presets() {
   const data = useStore((s) => s.data);

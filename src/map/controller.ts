@@ -14,6 +14,7 @@ import type { AppData } from '../ui/data';
 import { yearLabel } from '../ui/data';
 import { ROLE_LABEL, ROLE_ORDER, STATUS_LABEL } from '../ui/roles';
 import type { LayerToggles, MapMode } from '../ui/store';
+import { BASEMAP_PAINT, getSettings, subscribeSettings } from '../ui/settings';
 import { bboxFeature, controlImage, frontFeatures, labelPoint, pointFeatures, supplyFeatures, terrainImage, type Coords4 } from './overlays';
 import { MapLegend } from './legend';
 import { StressSim } from './stress';
@@ -34,6 +35,12 @@ export const ATTR = {
 const EMPTY_FC = { type: 'FeatureCollection' as const, features: [] };
 const TRANSPARENT_PX = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 const PLACEHOLDER_COORDS: Coords4 = [[0, 1], [1, 1], [1, 0], [0, 0]];
+
+/** Relief paint for the viewer's basemap setting. */
+function bmPaint() {
+  const p = BASEMAP_PAINT[getSettings().basemap];
+  return { 'raster-saturation': p.saturation, 'raster-contrast': p.contrast, 'raster-brightness-max': p.brightnessMax };
+}
 
 function style(): StyleSpecification {
   return {
@@ -60,7 +67,7 @@ function style(): StyleSpecification {
     },
     layers: [
       { id: 'bg', type: 'background', paint: { 'background-color': '#0a1220' } },
-      { id: 'bm', type: 'raster', source: 'bm', paint: { 'raster-saturation': -0.1, 'raster-contrast': 0.05, 'raster-fade-duration': 150 } },
+      { id: 'bm', type: 'raster', source: 'bm', paint: { ...bmPaint(), 'raster-fade-duration': 150 } },
       { id: 'lc', type: 'raster', source: 'lc', layout: { visibility: 'none' }, paint: { 'raster-opacity': 0.5 } },
       {
         id: 'hillshade', type: 'hillshade', source: 'demHs',
@@ -121,6 +128,16 @@ export class MapController {
   private legend: MapLegend;
   private hoverRaf = 0;
   private draftCorner: [number, number] | null = null;
+  // basemap and unit size follow the settings panel without a reload
+  private offSettings = subscribeSettings(() => {
+    if (this.map.getLayer('bm')) {
+      const p = bmPaint();
+      this.map.setPaintProperty('bm', 'raster-saturation', p['raster-saturation']);
+      this.map.setPaintProperty('bm', 'raster-contrast', p['raster-contrast']);
+      this.map.setPaintProperty('bm', 'raster-brightness-max', p['raster-brightness-max']);
+    }
+    this.map.triggerRepaint();
+  });
   onBBox: (b: [number, number, number, number]) => void = () => {};
   onStart: (side: 0 | 1, lat: number, lon: number) => void = () => {};
 
@@ -180,6 +197,7 @@ export class MapController {
   private onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') this.select(null); };
 
   destroy() {
+    this.offSettings();
     window.removeEventListener('keydown', this.onKey);
     cancelAnimationFrame(this.stressRaf);
     // map.remove() clears only MapLibre's own DOM; without this a remount (React

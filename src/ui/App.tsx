@@ -13,6 +13,7 @@ import { NationBrowser } from './panels/NationBrowser';
 import { loadScenario, Presets } from './panels/Presets';
 import { RunPanel } from './panels/RunPanel';
 import { ScenarioBuilder } from './panels/ScenarioBuilder';
+import { SettingsMenu } from './panels/SettingsMenu';
 import { TimeBar } from './panels/TimeBar';
 import { downloadScenario, scenarioFromHash, shareUrl, uploadScenario } from './scenarioIO';
 import { store, toast, useStore, type LeftTab } from './store';
@@ -155,6 +156,7 @@ function TopBar() {
         <button className="hdr-btn" onClick={() => store.set({ showLimits: true })} title="Honest limits: what the model can and cannot say" aria-haspopup="dialog">
           <Icon name="info" /><span className="lbl">About the model</span>
         </button>
+        <SettingsMenu />
         <ThemeToggle />
       </div>
     </header>

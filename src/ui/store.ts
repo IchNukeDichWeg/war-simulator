@@ -7,6 +7,7 @@ import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
 import { followAroundName, refitTheater } from './theaterFit';
 import { followNames } from './scenarioNames';
+import { readSavedLayers, saveLayers } from './settings';
 
 export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
 export type RightTab = 'live' | 'events' | 'result' | 'montecarlo';
@@ -98,6 +99,11 @@ export const initialRun: RunState = {
   speed: 0, day: 0, maxDay: 0, date: '', stats: null, result: null, historyVersion: 0, eventsVersion: 0,
 };
 
+const DEFAULT_LAYERS: LayerToggles = {
+  tilt: false, terrain3d: false, hillshade: true, landcover: false, rivers: true, borders: true,
+  control: true, front: true, supply: true, fog: false, fogSide: 0, engineTerrain: false, stress: false,
+};
+
 export const store = createStore<UiState>({
   data: null,
   dataError: null,
@@ -110,10 +116,7 @@ export const store = createStore<UiState>({
   editorSnapshot: null,
   compare: [null, null],
   mapMode: { kind: 'none' },
-  layers: {
-    tilt: false, terrain3d: false, hillshade: true, landcover: false, rivers: true, borders: true,
-    control: true, front: true, supply: true, fog: false, fogSide: 0, engineTerrain: false, stress: false,
-  },
+  layers: readSavedLayers(DEFAULT_LAYERS) ?? DEFAULT_LAYERS,
   run: initialRun,
   mc: { status: 'idle', done: 0, total: 0, result: null, error: null },
   toast: null,
@@ -138,7 +141,10 @@ export function setScenario(f: (s: Scenario) => Scenario) {
 }
 export function setRun(p: Partial<RunState>) { store.set((s) => ({ run: { ...s.run, ...p } })); }
 export function setMc(p: Partial<McState>) { store.set((s) => ({ mc: { ...s.mc, ...p } })); }
-export function setLayers(p: Partial<LayerToggles>) { store.set((s) => ({ layers: { ...s.layers, ...p } })); }
+export function setLayers(p: Partial<LayerToggles>) {
+  store.set((s) => ({ layers: { ...s.layers, ...p } }));
+  saveLayers(store.get().layers);
+}
 
 let toastTimer: ReturnType<typeof setTimeout> | undefined;
 export function toast(msg: string) {

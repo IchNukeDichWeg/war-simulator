@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { REAL_TIME, seek, setSpeed, startRun, stepDays, stopRun } from '../engine';
 import { Icon } from '../Icon';
+import { getSettings } from '../settings';
 import { store, useStore } from '../store';
 
 // Three named speeds cover what a visitor needs; the exact-rate menu keeps every rate the engine offers.
@@ -34,7 +35,7 @@ export function TimeBar() {
       // modal (it scrolls the Honest-limits page); playback only gets it from the bare page.
       if ((e.target as HTMLElement)?.closest?.('input,textarea,select,button,a,[role=tab],[role=dialog],[contenteditable]')) return;
       if (document.querySelector('[aria-modal="true"]')) return;
-      if (e.code === 'Space' && store.get().run.status === 'running') { e.preventDefault(); setSpeed(store.get().run.speed > 0 ? 0 : 3); }
+      if (e.code === 'Space' && store.get().run.status === 'running') { e.preventDefault(); setSpeed(store.get().run.speed > 0 ? 0 : getSettings().startSpeed); }
       if (e.key === '.' && store.get().run.status === 'running') stepDays(1);
     };
     window.addEventListener('keydown', onKey);
@@ -47,7 +48,7 @@ export function TimeBar() {
   if (run.status === 'idle' || run.status === 'error') {
     return (
       <div className="timebar idle" role="group" aria-label="Simulation playback">
-        <button className="primary tb-run" onClick={() => startRun(store.get().scenario, 3)}><Icon name="play" size={14} />Run war</button>
+        <button className="primary tb-run" onClick={() => startRun(store.get().scenario, getSettings().startSpeed)}><Icon name="play" size={14} />Run war</button>
         <span className="tb-hint">{run.status === 'error' ? 'The run failed. Press Run war to try again.' : 'Press Run war to start'}</span>
       </div>
     );

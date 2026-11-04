@@ -5,6 +5,7 @@ import { ensureSnapshots } from '../lazy';
 import { buildItems, type SearchItem } from '../nationSearch';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
 import { MAX_SEED, MAX_TIME_LIMIT_DAYS, THEATERS, type BBox } from '../scenarioDefaults';
+import { getSettings } from '../settings';
 import { setScenario, store, toast, useStore } from '../store';
 import { fitChoices } from '../theaterFit';
 import { KindBadge } from './SnapshotDetail';
@@ -417,7 +418,7 @@ export function ScenarioBuilder() {
       {sc.rules.nuclear && <div className="notice warn">Nuclear use is ON. The escalation model is a documented simplification (ENGINE.md); treat any result as illustrative only.</div>}
       {problems.length > 0 && <ul className="problems">{problems.map((p, k) => <li key={k}>{p}</li>)}</ul>}
       <div className="sticky-actions">
-        <button className="primary run-main" disabled={problems.length > 0 || runStatus === 'starting'} onClick={() => startRun(sc, 3)}>Run war</button>
+        <button className="primary run-main" disabled={problems.length > 0 || runStatus === 'starting'} onClick={() => startRun(sc, getSettings().startSpeed)}>Run war</button>
         <div className="mc-row">
           <button className="mc-run" disabled={problems.length > 0} title="Play the same war many times with different random seeds and see how often each side wins"
             onClick={() => { runMonteCarlo(sc, mcRuns); store.set({ rightTab: 'montecarlo' }); }}>
