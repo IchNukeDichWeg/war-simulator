@@ -1066,3 +1066,29 @@ vs USA 1941, Athens vs USA 2026, North vs South Korea 1950, USA vs China 2026.
 
 Verdict: **KEPT-ON-NULL.** A correctness fix the backtest counts cannot see.
 `tests/engine/combatMovementFixes.test.ts` fails with the toggle OFF.
+
+### Sea lift checked when a formation embarks (`SEA_LIFT_CHECKED_ON_ENTRY`)
+
+Lift was checked only when a formation first chose a sea cell. A formation that chose it on an earlier day
+(the cached next cell, with partial progress), or before other formations embarked the same day, boarded
+whatever was already afloat: Han vs Xiongnu day 8, lift 114,000, afloat 161,070. ON, the land-to-sea step
+itself is refused while the side's afloat load plus the formation's would exceed the lift, and the
+formation waits at the shore.
+
+Oracle (a manual day stepper, 23 presets without Central Powers, seed 1, 200 days; side-days on which a
+formation boarded and the afloat load after movement exceeded the lift movement saw): OFF 10 side-days in 6
+presets (Persia vs Greeks 4, worst x1.60; Han vs Xiongnu x1.41; Rome vs France x1.40; Napoleon x1.21; USA +
+Spain vs Russia x1.02; NATO x1.00); ON 0. The afloat load can still pass the lift at the end of a day when
+ships are lost at sea after the formations embarked; they are not put back ashore.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, byte-identical (no case goes to sea) |
+| Rome vs France equalized | 8/2/0 | 9/1/0 |
+| Persia vs Greeks (-480) | 7/3/0, day 322 | 7/3/0, day 303 |
+| Han vs Xiongnu | 10/0/0, day 85 | 10/0/0, day 90 |
+
+The other 20 presets of the screen keep their winners and median days.
+
+Verdict: **KEPT-ON-NULL.** A correctness fix the backtest cannot see. The regression test fails with the
+toggle OFF.

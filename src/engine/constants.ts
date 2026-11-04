@@ -234,6 +234,16 @@ export const EMBARKED_NAVAL_ONLY = true;
  *  10/0/0, Argentina vs UK 2/6/2 -> 2/7/1, the other 8 unchanged. KEPT-ON-NULL: correctness fix
  *  the counts cannot see. */
 export const AIR_INTERDICTION_BY_HOLDER = true;
+/** Sea lift is checked at the step that embarks (land to sea), against what is already afloat.
+ *  OFF: only when the sea cell was first chosen, so a formation that chose it on an earlier day,
+ *  or before others embarked the same day, boarded whatever was afloat (han-vs-xiongnu day 8: lift
+ *  114,000, afloat 161,070). Oracle (23 presets, seed 1, 200 days, side-days on which a formation
+ *  boarded past the lift): 10 in 6 presets, worst x1.60 -> 0. Afloat load can still exceed lift
+ *  after ships are lost at sea; those already embarked stay. Measured (20 seeds): 19/15/22,
+ *  backtest byte-identical (no case goes to sea). Presets (10-seed screen, 23 presets):
+ *  rome-vs-france-equalized 8/2/0 -> 9/1/0, Persia vs Greeks median day 322 -> 303, Han vs
+ *  Xiongnu 85 -> 90, the rest unchanged in winners. KEPT-ON-NULL: correctness fix. */
+export const SEA_LIFT_CHECKED_ON_ENTRY = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)

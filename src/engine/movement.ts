@@ -15,7 +15,9 @@ import { FLAG_RIVER, T } from './terrainClasses';
 import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
-import { DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS, UNARMED_FORTRESS_OPEN } from './constants';
+import {
+  DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_CHECKED_ON_ENTRY, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS,
+  UNARMED_FORTRESS_OPEN } from './constants';
 import { dayOfYear, daylightHours } from './daylight';
 import { SEASONS, WEATHERS } from './setup';
 import { dijkstra } from './grid';
@@ -337,6 +339,13 @@ export function movementPhase(ctx: Ctx): void {
         const river = (g.flags[nx] & FLAG_RIVER) && S.placeAt[nx] < 0 ? S.members[F.member[f]].riverDelayDays * full : 0;
         // at sea the formation moves at sea speed whatever its land rate
         F.edge[f] = !g.land[nx] ? (km * formationRate(ctx, f)) / seaRate : t > 0 ? km / t + river : Infinity;
+      }
+      // SEA_LIFT_CHECKED_ON_ENTRY: lift is checked at the step that embarks, not only when the
+      // sea cell was chosen; a cached next cell (chosen on an earlier day, or before other
+      // formations embarked) waits at the shore while the shipping is full
+      if (SEA_LIFT_CHECKED_ON_ENTRY && g.land[cur] && !g.land[nx] && sc.embarked[side] + seaLoad(ctx, f) > lift[side]) {
+        F.next[f] = -1; F.prog[f] = 0;
+        break;
       }
       // contact: an enemy formation or an unreduced enemy fortress ahead stops the move
       if (sc.occ[enemy][nx] > 0 || isProtectedEnemyPlace(ctx, side, nx)) {
