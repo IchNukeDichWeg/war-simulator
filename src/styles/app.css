@@ -264,19 +264,32 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 /* ---------- map area ---------- */
 .center { position: relative; flex: 1; min-width: 0; container: center / inline-size; } /* map-area queries below key off its width, not the window */
 .map { position: absolute; inset: 0; }
-.maptools { position: absolute; top: var(--sp-4); left: var(--sp-4); right: 60px; pointer-events: none; }
-.maptools-list { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.maptools { position: absolute; top: var(--sp-4); left: var(--sp-4); right: 60px; z-index: calc(var(--z-map-ui) + 2); display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--sp-2); pointer-events: none; } /* above the legend and the time bar, so the open panel is never covered */
 .maptools button, .maptools select { pointer-events: auto; background: var(--c-overlay); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-size: var(--fs-sm); box-shadow: var(--shadow-sm); }
-.maptools-list button { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: 26px; padding: 0 var(--sp-5) 0 var(--sp-4); border-radius: var(--r-pill); color: var(--c-text-muted); }
-/* state dot: hollow when off, filled when on, so pressed is not told by colour alone */
-.maptools-list button::before { content: ''; width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--c-text-faint); flex: none; }
-.maptools-list button.on { background: var(--c-overlay); border-color: var(--c-selected-border); color: var(--c-text-strong); }
-.maptools-list button.on::before { background: var(--c-accent); box-shadow: none; }
-.maptools-list button:hover:not(:disabled) { background: var(--c-overlay-strong); color: var(--c-text); }
-.maptools select { border-radius: var(--r-pill); min-height: 26px; }
-.maptools-toggle { display: none; align-items: center; gap: var(--sp-3); min-height: 32px; padding: 0 var(--sp-5); border-radius: var(--r-pill); font-weight: var(--fw-semibold); }
+.maptools-toggle { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: 30px; padding: 0 var(--sp-5); border-radius: var(--r-pill); font-weight: var(--fw-semibold); }
 .maptools-toggle .count { min-width: 18px; padding: 0 var(--sp-2); border-radius: var(--r-pill); background: var(--c-selected); color: var(--c-text-strong); font-size: var(--fs-2xs); line-height: 16px; text-align: center; }
 .maptools-toggle[aria-expanded='true'] { border-color: var(--c-selected-border); }
+.maptools-quick { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.maptools-quick button { display: inline-flex; align-items: center; gap: var(--sp-3); min-height: 30px; padding: 0 var(--sp-5) 0 var(--sp-4); border-radius: var(--r-pill); color: var(--c-text-muted); }
+/* state dot: hollow when off, filled when on, so pressed is not told by colour alone */
+.maptools-quick button::before { content: ''; width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--c-text-faint); flex: none; }
+.maptools-quick button.on { background: var(--c-overlay); border-color: var(--c-selected-border); color: var(--c-text-strong); }
+.maptools-quick button.on::before { background: var(--c-accent); box-shadow: none; }
+.maptools-quick button:hover:not(:disabled) { background: var(--c-overlay-strong); color: var(--c-text); }
+.maptools select { border-radius: var(--r-pill); min-height: 30px; }
+/* grouped layer panel under the Layers button; the quick chips move out of its way while it is open */
+.maptools.open .maptools-quick { display: none; }
+.maptools-panel { position: absolute; top: calc(100% + var(--sp-3)); left: 0; width: min(300px, 100%); max-height: min(520px, calc(100dvh - 240px)); overflow-y: auto; pointer-events: auto; display: grid; gap: var(--sp-4); padding: var(--sp-4) var(--sp-5); background: var(--c-overlay-strong); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--c-border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); font-size: var(--fs-md); }
+.maptools-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-4); }
+.maptools-group h3 { grid-column: 1 / -1; margin: 0 0 var(--sp-1); font-size: var(--fs-xs); font-weight: var(--fw-semibold); letter-spacing: 0.05em; text-transform: uppercase; color: var(--c-text-muted); }
+.maptools-item { display: flex; align-items: center; gap: var(--sp-3); min-height: 30px; cursor: pointer; color: var(--c-text); }
+.maptools-item input { margin: 0; flex: none; }
+.maptools-sub { grid-column: 1 / -1; padding: var(--sp-1) 0 0 22px; }
+.maptools-sub select { width: 100%; min-height: 28px; border-radius: var(--r-sm); box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.maptools-dev { border-top: 1px solid var(--c-border); padding-top: var(--sp-3); }
+.maptools-dev summary { cursor: pointer; font-size: var(--fs-xs); color: var(--c-text-muted); padding: var(--sp-1) 0; }
+.maptools-dev[open] { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-4); }
+.maptools-dev[open] summary { grid-column: 1 / -1; }
 .mode-hint { position: absolute; top: 44px; left: 50%; transform: translateX(-50%); background: var(--c-accent-fill); color: var(--c-on-accent); padding: var(--sp-2) 10px; border-radius: var(--r-pill); font-weight: var(--fw-semibold); box-shadow: var(--shadow-md); }
 .map-hud { position: absolute; bottom: 104px; right: var(--sp-4); background: rgba(110, 27, 27, 0.9); color: #fff; padding: var(--sp-2) var(--sp-4); border-radius: var(--r-sm); font: var(--fs-sm) var(--font-mono); z-index: var(--z-map-ui); }
 .map-tip { position: absolute; z-index: 4; pointer-events: none; background: var(--c-overlay-strong); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: var(--sp-3) var(--sp-4); font-size: var(--fs-sm); min-width: 180px; box-shadow: var(--shadow-md); }
@@ -457,15 +470,11 @@ table.stats td, table.stats th { padding: var(--sp-1) var(--sp-2); border-bottom
 .grade-dist { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--sp-3); }
 .grade-dist > div { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4) var(--sp-5); background: var(--c-sunken); border: 1px solid var(--c-border-subtle); border-radius: var(--r-md); font-variant-numeric: tabular-nums; }
 
-/* map layer chips fold behind the Layers button when the map area is narrow */
+/* narrow map area: only the Layers button, so the chips never crowd the zoom controls */
 @container center (max-width: 640px) {
   .maptools { right: 52px; }
-  .maptools-toggle { display: inline-flex; }
-  .maptools-list { display: none; }
-  .maptools.open .maptools-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-1) var(--sp-2); width: min(320px, 100%); margin-top: var(--sp-3); padding: var(--sp-3); pointer-events: auto; background: var(--c-overlay-strong); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--c-border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
-  .maptools.open .maptools-list button { min-height: 34px; justify-content: flex-start; border-color: transparent; background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
-  .maptools.open .maptools-list button.on { background: var(--c-selected); }
-  .maptools.open .maptools-list select { grid-column: 1 / -1; min-height: 34px; }
+  .maptools-quick { display: none; }
+  .maptools-item { min-height: 36px; }
 }
 
 /* ---------- responsive ---------- */
