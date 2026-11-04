@@ -54,13 +54,17 @@ export function NationBrowser() {
   // A new query or filter, and coming back to the tab, start at the top with the search box in
   // view. An open detail stays open only if it is on the first page: keeping one far down (Rome
   // at row ~900 of the A to Z list) used to scroll the panel 60,000 px past the search box.
+  // Keyed on the query and filters, not on `list`: the list is rebuilt whenever the data changes
+  // (a Phase 3 era loading after a derived row is opened), and that collapsed it to one page and
+  // closed the detail the user had just opened. `ready` reruns it once when the data first arrives.
+  const ready = !!data;
   const keyMoved = useRef(false);
   useEffect(() => {
     const i = openId ? list.findIndex((r) => r.item.id === openId) : -1;
     if (openId && (i < 0 || i >= PAGE)) setOpenId(null);
     setLimit(PAGE);
     setActive(i >= 0 && i < PAGE ? i : 0);
-  }, [list]);
+  }, [ready, dq, era, region, kind, minGrade]);
   // only arrow and page keys follow the highlight; a list change never scrolls
   useEffect(() => {
     if (!keyMoved.current) return;
