@@ -153,7 +153,11 @@ function Dashboard({ names, colors }: { names: [string, string]; colors: [string
 // "More charts" stays open across tab switches (the Live view unmounts); reset per page load only.
 const liveMemo = { moreCharts: false };
 
-const span = (d: number) => (d < 365 ? `${d} days` : `${Math.round((d / 365) * 10) / 10} years`);
+/** A time limit in words; singular when the rounded value is 1 ("1 year", not "1 years"). */
+export function span(d: number): string {
+  const [n, unit] = d < 365 ? [d, 'day'] : [Math.round((d / 365) * 10) / 10, 'year'];
+  return `${n} ${unit}${n === 1 ? '' : 's'}`;
+}
 
 /** A war stopped by its time limit can run again with double the limit. A fresh run with the
  *  same seed, not a continuation: the limit also sets how much sea lift the setup plans, so
