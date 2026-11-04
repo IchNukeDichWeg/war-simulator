@@ -35,7 +35,7 @@ npm run dev
 ```
 
 Opens on http://localhost:5173 (Vite's default; pass `-- --port N` to change it). Pick a scenario
-from the **Presets** tab and press **Run**, or build one in the **Scenario** tab.
+from the **Quick start** tab and press **Run**, or build one in the **Setup** tab.
 
 ## Build and preview
 
@@ -45,10 +45,10 @@ npm run preview    # serves dist/ on http://localhost:4173
 ```
 
 The build takes about 2 s. `dist/` is about 31 MB, of which 29 MB is the runtime data copied from
-`public/data/`. The JavaScript is an app chunk (242 kB, 87 kB gzipped), a React chunk (219 kB, 68 kB
+`public/data/`. The JavaScript is an app chunk (264 kB, 93 kB gzipped), a React chunk (219 kB, 68 kB
 gzipped) and a MapLibre chunk (1.08 MB, 293 kB gzipped), plus a 107 kB engine worker and the
 MapLibre worker. The vendor chunks keep their hashes when only app code changes, so a return visit
-after such a change refetches about 87 kB. Vite warns about the MapLibre chunk size; that is
+after such a change refetches about 93 kB. Vite warns about the MapLibre chunk size; that is
 expected. The build uses relative paths (`base: './'`), so `dist/` can be served from any
 subdirectory.
 
@@ -222,7 +222,7 @@ Terrain comes from NASA GIBS MODIS land cover and Natural Earth (public domain) 
 
 ## Known limits
 
-Read the in-app **Honest limits** page (button in the top bar) before drawing conclusions from a run:
+Read the in-app **Honest limits** page (**About the model** in the top bar) before drawing conclusions from a run:
 it lists the confidence grades of the loaded data, what the model can and cannot say, and the weakest
 data. [VALIDATION.md](VALIDATION.md) records where the engine misses the historical battles and by
 how much.
