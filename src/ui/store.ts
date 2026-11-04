@@ -6,6 +6,7 @@ import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
 import { FITTED_THEATER, refitTheater } from './theaterFit';
+import { followNames } from './scenarioNames';
 
 export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
 export type RightTab = 'live' | 'events' | 'result' | 'montecarlo';
@@ -116,6 +117,7 @@ export function useStore<U>(sel: (s: UiState) => U): U {
 export function setScenario(f: (s: Scenario) => Scenario) {
   const st = store.get();
   let sc = f(st.scenario);
+  if (st.data) sc = followNames(st.scenario, sc, st.data);
   const box = st.data ? refitTheater(st.scenario, sc, st.data.snapById) : null;
   if (box) sc = { ...sc, theater: { name: FITTED_THEATER, bbox: box } };
   store.set({ scenario: sc, scenarioDirty: true });
