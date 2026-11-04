@@ -5,6 +5,7 @@ import type { MonteCarloResult, RunResult, SideStats, TheaterInfo } from '../eng
 import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
+import { FITTED_THEATER, refitTheater } from './theaterFit';
 
 export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
 export type RightTab = 'live' | 'events' | 'result' | 'montecarlo';
@@ -113,7 +114,12 @@ export function useStore<U>(sel: (s: UiState) => U): U {
 }
 
 export function setScenario(f: (s: Scenario) => Scenario) {
-  store.set((st) => ({ scenario: f(st.scenario), scenarioDirty: true }));
+  const st = store.get();
+  let sc = f(st.scenario);
+  const box = st.data ? refitTheater(st.scenario, sc, st.data.snapById) : null;
+  if (box) sc = { ...sc, theater: { name: FITTED_THEATER, bbox: box } };
+  store.set({ scenario: sc, scenarioDirty: true });
+  if (box) toast('War area moved so every capital is inside it. Pick another under "Where" to change it.');
 }
 export function setRun(p: Partial<RunState>) { store.set((s) => ({ run: { ...s.run, ...p } })); }
 export function setMc(p: Partial<McState>) { store.set((s) => ({ mc: { ...s.mc, ...p } })); }

@@ -6,6 +6,8 @@ import { buildItems, type SearchItem } from '../nationSearch';
 import { runMonteCarlo, scenarioProblems, startRun } from '../engine';
 import { THEATERS, type BBox } from '../scenarioDefaults';
 import { setScenario, store, toast, useStore } from '../store';
+import { fitTheater, FITTED_THEATER } from '../theaterFit';
+import type { Snapshot } from '../../types/schema';
 import { KindBadge } from './SnapshotDetail';
 import { SnapshotSearch } from './SnapshotSearch';
 import { showInNations } from './snapActions';
@@ -231,6 +233,7 @@ export function ScenarioBuilder() {
   const setBBox = (b: BBox, name: string) => setScenario((s) => ({ ...s, theater: { name, bbox: b } }));
   const drawing = mapMode.kind === 'bbox';
   const sum = summaries(sc, anchors);
+  const fitted = fitTheater(sc.sides.flatMap((x) => x.members).map((m) => data.snapById.get(m)).filter((s): s is Snapshot => !!s));
 
   return (
     <div className="panel-body scenario">
@@ -243,6 +246,8 @@ export function ScenarioBuilder() {
 
       <h4>Where: {sc.theater.name}</h4>
       <div className="chips" role="group" aria-label="Theater">
+        <button className={sc.theater.name === FITTED_THEATER ? 'on' : ''} aria-pressed={sc.theater.name === FITTED_THEATER} title="A box around both sides' capitals and nearby cities"
+          disabled={!fitted} onClick={() => fitted && setBBox(fitted, FITTED_THEATER)}>Around the sides</button>
         {THEATERS.map((t) => (
           <button key={t.name} className={sc.theater.name === t.name ? 'on' : ''} aria-pressed={sc.theater.name === t.name} onClick={() => setBBox([...t.bbox] as BBox, t.name)}>{t.name}</button>
         ))}
