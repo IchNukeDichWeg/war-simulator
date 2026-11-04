@@ -372,10 +372,10 @@ export function movementPhase(ctx: Ctx): void {
       if (!g.land[F.cell[f]]) F.status[f] = UnitStatus.Embarked;
       else if (mode === Mode.Rout) F.status[f] = UnitStatus.Routing;
       else F.status[f] = UnitStatus.Moving;
-    } else {
-      if (F.stillDays[f] < 65535) F.stillDays[f]++;
     }
   }
+  // one count per still day for every formation that did not move, including the ones that
+  // left the loop early (no field, dispersal)
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || !F.onMap[f] || F.moved[f]) continue;
     if (F.stillDays[f] < 65535) F.stillDays[f]++;
