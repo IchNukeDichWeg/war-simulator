@@ -24,7 +24,7 @@ maplibregl.setWorkerUrl(mlWorkerUrl);
 const GIBS = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best';
 export const ATTR = {
   gibs: 'Imagery: <a href="https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api" target="_blank" rel="noopener">NASA EOSDIS GIBS</a> Blue Marble Shaded Relief + Bathymetry (public domain)',
-  dem: 'Elevation: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">AWS Terrain Tiles</a> (Mapzen; SRTM, GMTED2010, ETOPO1 et al.)',
+  dem: 'Elevation: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener">AWS Terrain Tiles</a> (Mapzen; SRTM, GMTED2010, ETOPO1 et al., <a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md" target="_blank" rel="noopener">full list</a>)',
   modis: 'Land cover: NASA GIBS MODIS Combined IGBP Land Cover Type, 2022 (public domain)',
   ne: 'Rivers: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> (public domain)',
   kg: 'Climate zones (weather odds): Beck et al. 2018, <a href="https://doi.org/10.1038/sdata.2018.214" target="_blank" rel="noopener">Present and future K&ouml;ppen-Geiger climate classification maps at 1-km resolution</a> (CC BY 4.0)',
