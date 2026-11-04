@@ -9,16 +9,16 @@ families, their licenses, and the derivation methods.
 | Domain | Preferred sources | Notes |
 | --- | --- | --- |
 | Modern population, GDP, urbanization, land area, rail | World Bank Open Data API (CC BY 4.0) | Grade A. Pulled by `data-pipeline/fetch-worldbank.ts`. |
-| Modern armed forces personnel, military spending | World Bank (IISS-sourced personnel, SIPRI-sourced spending), SIPRI Milex | Grade A/B. |
+| Modern armed forces personnel, military spending | World Bank (IISS-sourced personnel, SIPRI-sourced spending), SIPRI Milex | Grade A/B. The SIPRI values (World Bank `MS.MIL.XPND.*`) stay under [SIPRI's terms](https://www.sipri.org/about/terms-and-conditions), not the repository licence. World Bank road length (`IS.ROD.TOTL.KM`) is IRF data that may not be redistributed and is not used. |
 | Modern equipment counts | National defence ministries, IISS Military Balance as quoted in Wikipedia articles with the edition named | Grade B. Ranking sites (Global Firepower etc.) only as cross-check, never primary. |
 | Nuclear warheads | FAS Status of World Nuclear Forces, SIPRI Yearbook | Grade B (official figures are rare). |
-| Historical population | Seshat Global History Databank, McEvedy & Jones (1978) via secondary citations, HYDE 3.2 | Grade B/C. |
-| Historical GDP per capita | Maddison Project Database 2023 | Grade B, C before 1000 CE. |
+| Historical population | Seshat Global History Databank (CC BY-SA 4.0), McEvedy & Jones (1978) via secondary citations, HYDE 3.2 | Grade B/C. This project used data from the Seshat Databank (https://seshat-db.com) under the Creative Commons Attribution-ShareAlike 4.0 International License. |
+| Historical GDP per capita | Maddison Project Database 2023 (Bolt and van Zanden 2024, CC BY 4.0) | Grade B, C before 1000 CE. |
 | Historical army sizes | Peer-reviewed / well-regarded military histories | Ancient chroniclers' figures are unreliable and flagged in `note`. |
 | 19th-20th c. military | Correlates of War National Material Capabilities v6 | Grade A/B. |
 | Doctrine | Military histories, staff-college and service publications | Cited per profile. |
 | Mechanics constants | Dupuy (Numbers, Predictions and War; Evolution of Weapons and Warfare), Engels (Alexander the Great and the Logistics of the Macedonian Army), van Creveld (Supplying War), Lynn, US Army FM / ATP logistics planning factors | Cited per constant. |
-| Terrain | AWS Terrain Tiles, NASA GIBS (Blue Marble, MODIS land cover), Natural Earth | Open data. |
+| Terrain | AWS Terrain Tiles, NASA GIBS (Blue Marble, MODIS land cover), Natural Earth | Open data. Terrain Tiles require the attribution in [tilezen/joerd](https://github.com/tilezen/joerd/blob/master/docs/attribution.md), reproduced in the README. |
 | Climate | WMO 1991-2020 climate normals (NOAA NCEI accession 0253808), Beck et al. 2018 Koppen-Geiger map (CC BY 4.0) | Weather odds by climate zone, `derived:weather-from-normals`. |
 | Historical borders | aourednik/historical-basemaps (GPL-3.0) | Approximate by construction. |
 
