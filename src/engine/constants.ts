@@ -253,6 +253,15 @@ export const SEA_LIFT_CHECKED_ON_ENTRY = true;
  *  (10-seed screen, 23 presets) identical. Polar-night armies still do not MARCH (0 march hours);
  *  a night-march floor would need a sourced figure. KEPT-ON-NULL: correctness fix. */
 export const ATTACK_CONTACT_WITHOUT_BUDGET = true;
+/** A diagonal link between two land cells that touch only at a corner (both shared side
+ *  neighbours water) is no link for flow fields, supply and AI distances (dijkstra), the march
+ *  step (chooseNext) and dispersal. OFF: armies walked across straits one cell wide without
+ *  sea lift (Fehmarn Belt, Oresund, Tsugaru). Oracle (seed 1, 150 days, moves between land
+ *  masses joined only at a corner, without going to sea): USA + Spain vs Russia 441 -> 0 (108 -> 0
+ *  with naval off), every other preset 0. Measured (20 seeds): 19/15/22, backtest byte-identical.
+ *  Presets (10-seed screen, 23 presets): Persia vs Greeks 7/3/0 -> 7/2/1 (day 303 -> 271), Assyria
+ *  vs Kush 8/2/0 -> 9/0/1, India 1971 day 123 -> 127; the rest unchanged. KEPT-ON-NULL. */
+export const CORNER_LAND_LINKS_CUT = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)

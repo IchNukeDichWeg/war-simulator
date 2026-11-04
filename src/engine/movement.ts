@@ -16,7 +16,7 @@ import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
 import {
-  ATTACK_CONTACT_WITHOUT_BUDGET, DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_CHECKED_ON_ENTRY, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS,
+  ATTACK_CONTACT_WITHOUT_BUDGET, CORNER_LAND_LINKS_CUT, DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_CHECKED_ON_ENTRY, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS,
   UNARMED_FORTRESS_OPEN } from './constants';
 import { dayOfYear, daylightHours } from './daylight';
 import { SEASONS, WEATHERS } from './setup';
@@ -210,7 +210,7 @@ function chooseNext(ctx: Ctx, f: number, field: Float32Array, attack: boolean, r
   let best = -1, bs = Infinity;
   for (let d = 0; d < 8; d++) {
     const j = g.nb[cur * 8 + d];
-    if (j < 0) continue;
+    if (j < 0 || (CORNER_LAND_LINKS_CUT && g.corner[cur * 8 + d])) continue;
     // embarking needs free lift; already at sea, moving on at sea is fine
     if (!g.land[j] && (g.land[cur] ? sc.embarked[side] + seaLoad(ctx, f) > lift : lift <= 0)) continue;
     const v = field[j];
@@ -242,6 +242,7 @@ function disperse(ctx: Ctx, f: number, budget: number): void {
   for (let d = 0; d < 8; d++) {
     const j = g.nb[cur * 8 + d];
     if (j < 0 || !g.land[j] || sc.occ[enemy][j] > 0 || st.control[j] === enemy) continue;
+    if (CORNER_LAND_LINKS_CUT && g.corner[cur * 8 + d]) continue;
     const o = sc.occ[side][j];
     if (o > bo || (o === bo && st.forage[j] <= bf)) continue;
     const t = S.terrMove[g.cls[j]] * (isRoad(ctx, side, j) ? S.m.movement.roadBonus.mid : 1);

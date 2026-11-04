@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { createSim, runToEnd } from '../../src/engine/sim';
 import { battleCaseScenario } from '../../src/engine/battleCase';
 import { rebuildOccupancy } from '../../src/engine/ctx';
-import { cellAt } from '../../src/engine/grid';
+import { buildGrid, cellAt, dijkstra, globalTerrain, Heap } from '../../src/engine/grid';
+import { GRID_H, GRID_W, T, cellIndex } from '../../src/engine/terrainClasses';
 import { dailyBudget, movementPhase, seaLift, seaLoad } from '../../src/engine/movement';
 import type { BattleCase } from '../../src/types/mechanics';
 import { loadEngineData } from '../../scripts/lib/loadData';
@@ -112,5 +113,35 @@ describe('ATTACK_CONTACT_WITHOUT_BUDGET', () => {
     expect(dailyBudget(sim.ctx, att)).toBe(0);
     expect(sim.ctx.sc.battles.length).toBeGreaterThan(0);
     expect(runToEnd(sim).endReason).not.toContain('no contact');
+  });
+});
+
+describe('CORNER_LAND_LINKS_CUT', () => {
+  // two 2 x 2 land blocks that touch only at a corner: (0.5..1, 0..0.5) and (0..0.5, 0.5..1)
+  function cornerTerrain(): ArrayBuffer {
+    const N = GRID_W * GRID_H;
+    const buf = new ArrayBuffer(N * 6);
+    new Uint8Array(buf, 0, N).fill(T.water);
+    const cls = new Uint8Array(buf, 0, N);
+    for (const [lat, lon] of [[0.875, 0.125], [0.875, 0.375], [0.625, 0.125], [0.625, 0.375],
+      [0.375, 0.625], [0.375, 0.875], [0.125, 0.625], [0.125, 0.875]]) cls[cellIndex(lat, lon)] = T.plains;
+    return buf;
+  }
+  const g = buildGrid(globalTerrain(cornerTerrain()), [0, 0, 1, 1]);
+  const a = cellAt(g, 0.625, 0.375), b = cellAt(g, 0.375, 0.625);
+  it('marks the corner link both ways, and only it', () => {
+    let marked = 0;
+    for (let i = 0; i < g.n * 8; i++) marked += g.corner[i];
+    expect(marked).toBe(2);
+    expect(g.corner[a * 8 + 3]).toBe(1);   // SE
+    expect(g.corner[b * 8 + 7]).toBe(1);   // NW
+  });
+  it('a land-only flow field does not reach the other block across the corner', () => {
+    const inv = new Float32Array(g.n);
+    for (let c = 0; c < g.n; c++) inv[c] = g.land[c] ? 1 : Infinity;
+    const dist = new Float32Array(g.n);
+    dijkstra(g, new Heap(16), inv, null, [cellAt(g, 0.875, 0.125)], null, dist, null);
+    expect(dist[a]).toBeLessThan(Infinity);
+    expect(dist[b]).toBe(Infinity);
   });
 });

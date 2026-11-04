@@ -3,7 +3,7 @@
 // same orientation as the global grid. 8-neighbour square lat/lon grid,
 // distances are great-circle km between cell centres.
 import { FLAG_COAST, FLAG_RIVER, GRID_H, GRID_RES, GRID_W, T, TERRAIN_CLASSES } from './terrainClasses';
-import { MAX_THEATER_CELLS } from './constants';
+import { CORNER_LAND_LINKS_CUT, MAX_THEATER_CELLS } from './constants';
 
 const R_EARTH = 6371;
 const DEG = Math.PI / 180;
@@ -50,6 +50,9 @@ export interface Grid {
   land: Uint8Array;
   nb: Int32Array;          // n*8 neighbour index or -1
   nbKm: Float32Array;      // n*8 distance in km
+  /** n*8: 1 where a diagonal link joins two land cells that touch only at a corner (both shared
+   *  side neighbours water), a strait no army walks across (CORNER_LAND_LINKS_CUT). */
+  corner: Uint8Array;
   landCount: number;
 }
 
@@ -114,6 +117,7 @@ export function buildGrid(g: GlobalTerrain, bbox: [number, number, number, numbe
   }
   const nb = new Int32Array(n * 8).fill(-1);
   const nbKm = new Float32Array(n * 8);
+  const corner = new Uint8Array(n * 8);
   let landCount = 0;
   for (let R = 0; R < rows; R++) {
     for (let C = 0; C < cols; C++) {
@@ -126,6 +130,8 @@ export function buildGrid(g: GlobalTerrain, bbox: [number, number, number, numbe
         nb[i * 8 + d] = j;
         nbKm[i * 8 + d] = haversineKm(lat[i], lon[i], lat[j], lon[j]);
         if (land[i] && !land[j] && (d & 1) === 0) flags[i] |= FLAG_COAST;
+        // diagonal: the two side neighbours are (R + DR, C) and (R, C + DC), both inside the grid
+        if ((d & 1) === 1 && land[i] && land[j] && !land[rr * cols + C] && !land[R * cols + cc]) corner[i * 8 + d] = 1;
       }
     }
   }
@@ -133,7 +139,7 @@ export function buildGrid(g: GlobalTerrain, bbox: [number, number, number, numbe
     cols, rows, n, k, cellDeg, west, north,
     // east > 180 when the theater crosses the antimeridian; never east < west
     bbox: [west, north - rows * cellDeg, west + cols * cellDeg, north],
-    cls, flags, relief, lat, lon, area, land, nb, nbKm, landCount,
+    cls, flags, relief, lat, lon, area, land, nb, nbKm, corner, landCount,
   };
 }
 
@@ -285,6 +291,7 @@ export function dijkstra(grid: Grid, heap: Heap, invSpeed: Float32Array, extra: 
     if (k0 < dist[c]) { dist[c] = k0; if (src) src[c] = s; heap.push(k0, c); }
   }
   const nb = grid.nb, nbKm = grid.nbKm;
+  const corner = CORNER_LAND_LINKS_CUT ? grid.corner : null;
   while (heap.size > 0) {
     const a = heap.pop();
     const da = heap.lastKey;
@@ -293,7 +300,7 @@ export function dijkstra(grid: Grid, heap: Heap, invSpeed: Float32Array, extra: 
     const base = a * 8;
     for (let d = 0; d < 8; d++) {
       const b = nb[base + d];
-      if (b < 0) continue;
+      if (b < 0 || (corner && corner[base + d])) continue;
       const inv = invSpeed[b];
       if (inv === Infinity) continue;
       const nd = Math.fround(da + nbKm[base + d] * inv + (extra ? extra[b] : 0));

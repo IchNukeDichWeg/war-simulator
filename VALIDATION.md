@@ -1116,3 +1116,27 @@ Backtest 19 / 15 / 22 and the 10-seed preset screen (23 presets) are byte-identi
 polar night every formation has a budget.
 
 Verdict: **KEPT-ON-NULL.** The regression test (the two polar-night cases) fails with the toggle OFF.
+
+### No walking across a corner of water (`CORNER_LAND_LINKS_CUT`)
+
+The theater grid links each cell to its 8 neighbours, including a diagonal between two land cells whose
+two shared side neighbours are both water. Armies walked across such one-cell straits without sea lift
+(Fehmarn Belt, Oresund, Tsugaru), even with naval rules off. `buildGrid` now marks those links
+(`Grid.corner`), and ON they are no link for `dijkstra` (flow fields, supply distance, the AI's reach),
+`chooseNext` and dispersal.
+
+Oracle (the reviewer's `diag.ts`, seed 1, 150 days; moves from one land mass to another joined only at a
+corner, without going to sea): USA + Spain vs Russia 2026 441 -> 0 (naval rules off: 108 -> 0); the other
+17 presets with corner links have 0 either way.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, byte-identical |
+| Persia vs Greeks (-480) | 7/3/0, day 303 | 7/2/1, day 271 |
+| Assyria vs Kush | 8/2/0 | 9/0/1 |
+| India vs Pakistan 1971 | 10/0/0, day 123 | 10/0/0, day 127 |
+| NATO vs Warsaw Pact 1989 | 10/0/0, day 37 | 10/0/0, day 36 |
+
+USA + Spain vs Russia stays 0/0/10 at the time limit. The other presets of the screen are unchanged.
+
+Verdict: **KEPT-ON-NULL.** The regression test (two blocks touching at a corner) fails with the toggle OFF.
