@@ -1,7 +1,8 @@
 // Generated icon atlas for the unit layer. White glyphs on transparent, drawn
 // once with Canvas 2D at startup (no image assets, no licensing questions).
 // Layout: 8 x 8 cells of CELL px. Icon index = band * 19 + roleIndex; the
-// heading arrow lives in the last cell.
+// heading arrow lives in the last cell, the battle swords in the one before,
+// stack-count digits in the five cells after the role icons.
 import { ROLE_ORDER } from '../ui/roles';
 import type { UnitRole } from '../types/schema';
 
@@ -9,6 +10,11 @@ export const CELL = 64;
 export const ATLAS_COLS = 8;
 export const ATLAS_SIZE = CELL * ATLAS_COLS;
 export const ARROW_INDEX = ATLAS_COLS * ATLAS_COLS - 1;
+/** Crossed swords for battle markers (the conventional map sign for a battle). */
+export const BATTLE_INDEX = ARROW_INDEX - 1;
+/** Digits 0-9 for stack count badges, two per cell (left and right half),
+ *  in the five cells after the last role icon (3 bands x 19 roles = 57). */
+export const DIGIT_INDEX = 3 * ROLE_ORDER.length;
 export const ROLES_PER_BAND = ROLE_ORDER.length;
 
 type Ctx = CanvasRenderingContext2D;
@@ -225,6 +231,17 @@ function arrow(c: Ctx) {
   poly(c, [60, 32, 30, 10, 30, 24, 4, 24, 4, 40, 30, 40, 30, 54]);
 }
 
+function swords(c: Ctx) {
+  const sword = () => {
+    c.lineWidth = 5; line(c, [12, 52, 50, 14]);            // blade
+    poly(c, [50, 14, 56, 8, 52, 18]);                        // point
+    c.lineWidth = 5; line(c, [10, 40, 24, 54]);              // cross-guard
+    c.lineWidth = 6; line(c, [12, 52, 6, 58]);               // grip
+  };
+  sword();
+  c.save(); c.translate(64, 0); c.scale(-1, 1); sword(); c.restore();
+}
+
 export function buildAtlas(): HTMLCanvasElement {
   const cv = document.createElement('canvas');
   cv.width = cv.height = ATLAS_SIZE;
@@ -247,5 +264,15 @@ export function buildAtlas(): HTMLCanvasElement {
     draw(2 * ROLES_PER_BAND + r, (cx) => nato(cx, role));
   });
   draw(ARROW_INDEX, arrow);
+  draw(BATTLE_INDEX, swords);
+  for (let d = 0; d < 10; d += 2) {
+    draw(DIGIT_INDEX + d / 2, (cx) => {
+      cx.font = 'bold 50px ui-sans-serif, system-ui, Helvetica, Arial, sans-serif';
+      cx.textAlign = 'center';
+      cx.textBaseline = 'middle';
+      cx.fillText(String(d), CELL / 4, CELL / 2 + 3);
+      cx.fillText(String(d + 1), (3 * CELL) / 4, CELL / 2 + 3);
+    });
+  }
   return cv;
 }

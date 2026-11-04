@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import '../styles/map.css';
 import { MapController } from './controller';
 import { fitBus, flyBus, frameBus, resetBus } from '../ui/bus';
 import { setScenario, store, toast } from '../ui/store';
