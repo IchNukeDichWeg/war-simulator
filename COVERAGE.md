@@ -62,7 +62,7 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | industrial | 181 | 19 | D (1.35) |
 | worldwars | 159 | 25 | D (1.31) |
 | coldwar | 134 | 22 | D (1.31) |
-| modern | 200 | 81 | C (1.98) |
+| modern | 200 | 81 | C (1.97) |
 
 ## Snapshots
 
@@ -1123,58 +1123,58 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Republic of Belarus (`belarus-2026`) | 2026 | modern | europe | researched | 12% | 52% | 23% | 13% | B |
 | Kingdom of Belgium (`belgium-2026`) | 2026 | modern | europe | researched | 11% | 63% | 15% | 11% | B |
 | Belize (`belize-2026`) | 2026 | modern | latin_america | auto-base | 12% | 10% | 4% | 73% | D |
-| Benin (`benin-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 9% | 3% | 77% | D |
+| Benin (`benin-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 78% | D |
 | Bhutan (`bhutan-2026`) | 2026 | modern | south_asia | auto-base | 13% | 13% | 5% | 70% | D |
 | Bolivia (`bolivia-2026`) | 2026 | modern | latin_america | auto-base | 9% | 8% | 3% | 80% | D |
 | Bosnia and Herzegovina (`bosnia-and-herzegovina-2026`) | 2026 | modern | europe | auto-base | 13% | 9% | 4% | 75% | D |
-| Botswana (`botswana-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 9% | 3% | 77% | D |
+| Botswana (`botswana-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 78% | D |
 | Federative Republic of Brazil (`brazil-2026`) | 2026 | modern | latin_america | researched | 9% | 62% | 16% | 13% | B |
 | Brunei (`brunei-2026`) | 2026 | modern | southeast_asia | auto-base | 9% | 8% | 3% | 80% | D |
 | Bulgaria (`bulgaria-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 80% | D |
-| Burkina Faso (`burkina-faso-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 9% | 3% | 77% | D |
-| Burundi (`burundi-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 78% | D |
-| Cabo Verde (`cabo-verde-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 71% | D |
+| Burkina Faso (`burkina-faso-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 78% | D |
+| Burundi (`burundi-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 8% | 3% | 80% | D |
+| Cabo Verde (`cabo-verde-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 73% | D |
 | Cambodia (`cambodia-2026`) | 2026 | modern | southeast_asia | auto-base | 10% | 7% | 3% | 79% | D |
-| Cameroon (`cameroon-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
+| Cameroon (`cameroon-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
 | Canada (`canada-2026`) | 2026 | modern | north_america | researched | 10% | 66% | 15% | 10% | B |
-| Central African Republic (`central-african-republic-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 73% | D |
-| Chad (`chad-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 79% | D |
+| Central African Republic (`central-african-republic-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 75% | D |
+| Chad (`chad-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 7% | 3% | 81% | D |
 | Republic of Chile (`chile-2026`) | 2026 | modern | latin_america | researched | 8% | 67% | 16% | 9% | B |
 | People's Republic of China (`china-2026`) | 2026 | modern | east_asia | researched | 5% | 57% | 17% | 21% | C |
 | Republic of Colombia (`colombia-2026`) | 2026 | modern | latin_america | researched | 8% | 64% | 18% | 10% | B |
-| Comoros (`comoros-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 13% | 5% | 70% | D |
+| Comoros (`comoros-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 10% | 5% | 73% | D |
 | Costa Rica (`costa-rica-2026`) | 2026 | modern | latin_america | auto-base | 21% | 21% | 6% | 53% | C |
-| Cote d'Ivoire (`cote-divoire-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
+| Cote d'Ivoire (`cote-divoire-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
 | Croatia (`croatia-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 80% | D |
 | Republic of Cuba (`cuba-2026`) | 2026 | modern | latin_america | researched | 7% | 54% | 25% | 13% | B |
 | Cyprus (`cyprus-2026`) | 2026 | modern | europe | auto-base | 10% | 8% | 3% | 79% | D |
 | Czech Republic (`czechia-2026`) | 2026 | modern | europe | researched | 12% | 58% | 15% | 15% | B |
 | Denmark (`denmark-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 81% | D |
-| Djibouti (`djibouti-2026`) | 2026 | modern | mena | auto-base | 14% | 12% | 4% | 69% | D |
+| Djibouti (`djibouti-2026`) | 2026 | modern | mena | auto-base | 14% | 10% | 4% | 71% | D |
 | Dominica (`dominica-2026`) | 2026 | modern | latin_america | auto-base | 15% | 21% | 3% | 62% | C |
 | Dominican Republic (`dominican-republic-2026`) | 2026 | modern | latin_america | auto-base | 9% | 7% | 3% | 81% | D |
 | Democratic Republic of the Congo (`dr-congo-2026`) | 2026 | modern | subsaharan_africa | researched | 11% | 3% | 72% | 14% | C |
 | Ecuador (`ecuador-2026`) | 2026 | modern | latin_america | auto-base | 10% | 7% | 3% | 81% | D |
 | Arab Republic of Egypt (`egypt-2026`) | 2026 | modern | mena | researched | 8% | 67% | 14% | 11% | B |
 | El Salvador (`el-salvador-2026`) | 2026 | modern | latin_america | auto-base | 11% | 8% | 3% | 78% | D |
-| Equatorial Guinea (`equatorial-guinea-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 10% | 3% | 76% | D |
+| Equatorial Guinea (`equatorial-guinea-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
 | State of Eritrea (`eritrea-2026`) | 2026 | modern | subsaharan_africa | researched | 7% | 10% | 69% | 15% | C |
 | Estonia (`estonia-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 79% | D |
-| Eswatini (`eswatini-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 12% | 4% | 71% | D |
-| Federal Democratic Republic of Ethiopia (`ethiopia-2026`) | 2026 | modern | subsaharan_africa | researched | 12% | 10% | 65% | 13% | C |
+| Eswatini (`eswatini-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 10% | 4% | 73% | D |
+| Federal Democratic Republic of Ethiopia (`ethiopia-2026`) | 2026 | modern | subsaharan_africa | researched | 12% | 9% | 67% | 13% | C |
 | Fiji (`fiji-2026`) | 2026 | modern | oceania | auto-base | 13% | 11% | 4% | 72% | D |
 | Republic of Finland (`finland-2026`) | 2026 | modern | europe | researched | 11% | 65% | 14% | 11% | B |
 | French Republic (`france-2026`) | 2026 | modern | europe | researched | 22% | 55% | 12% | 12% | B |
-| Gabon (`gabon-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
-| Gambia (`gambia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 71% | D |
+| Gabon (`gabon-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
+| Gambia (`gambia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 73% | D |
 | Georgia (`georgia-2026`) | 2026 | modern | europe | researched | 11% | 18% | 57% | 13% | C |
 | Federal Republic of Germany (`germany-2026`) | 2026 | modern | europe | researched | 9% | 62% | 16% | 13% | B |
-| Ghana (`ghana-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
+| Ghana (`ghana-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
 | Hellenic Republic (`greece-2026`) | 2026 | modern | europe | researched | 9% | 70% | 14% | 7% | B |
 | Grenada (`grenada-2026`) | 2026 | modern | latin_america | auto-base | 15% | 21% | 3% | 62% | C |
 | Guatemala (`guatemala-2026`) | 2026 | modern | latin_america | auto-base | 11% | 8% | 3% | 78% | D |
-| Guinea (`guinea-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 79% | D |
-| Guinea Bissau (`guinea-bissau-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 71% | D |
+| Guinea (`guinea-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 7% | 3% | 81% | D |
+| Guinea Bissau (`guinea-bissau-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 73% | D |
 | Guyana (`guyana-2026`) | 2026 | modern | latin_america | auto-base | 10% | 8% | 3% | 79% | D |
 | Haiti (`haiti-2026`) | 2026 | modern | latin_america | auto-base | 12% | 10% | 4% | 73% | D |
 | Honduras (`honduras-2026`) | 2026 | modern | latin_america | auto-base | 9% | 8% | 3% | 80% | D |
@@ -1193,27 +1193,27 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Republic of Kazakhstan (`kazakhstan-2026`) | 2026 | modern | central_asia | researched | 10% | 18% | 61% | 11% | C |
 | Republic of Kenya (`kenya-2026`) | 2026 | modern | subsaharan_africa | researched | 11% | 19% | 63% | 8% | C |
 | Kiribati (`kiribati-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 3% | 62% | C |
-| Kosovo (`kosovo-2026`) | 2026 | modern | europe | auto-base | 9% | 7% | 2% | 82% | D |
+| Kosovo (`kosovo-2026`) | 2026 | modern | europe | auto-base | 9% | 7% | 4% | 80% | D |
 | State of Kuwait (`kuwait-2026`) | 2026 | modern | mena | researched | 9% | 61% | 22% | 8% | B |
 | Kyrgyzstan (`kyrgyzstan-2026`) | 2026 | modern | central_asia | auto-base | 11% | 8% | 3% | 78% | D |
 | Laos (`laos-2026`) | 2026 | modern | southeast_asia | auto-base | 14% | 12% | 5% | 70% | D |
 | Latvia (`latvia-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 79% | D |
 | Lebanon (`lebanon-2026`) | 2026 | modern | mena | auto-base | 11% | 8% | 3% | 78% | D |
-| Lesotho (`lesotho-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 73% | D |
-| Liberia (`liberia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 73% | D |
+| Lesotho (`lesotho-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 75% | D |
+| Liberia (`liberia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 75% | D |
 | Libya (divided: GNU Tripoli and LNA/HoR east) (`libya-2026`) | 2026 | modern | mena | researched | 8% | 9% | 63% | 20% | C |
 | Liechtenstein (`liechtenstein-2026`) | 2026 | modern | europe | auto-base | 15% | 15% | 3% | 68% | C |
 | Lithuania (`lithuania-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 80% | D |
 | Luxembourg (`luxembourg-2026`) | 2026 | modern | europe | auto-base | 11% | 8% | 3% | 78% | D |
-| Madagascar (`madagascar-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 3% | 74% | D |
-| Malawi (`malawi-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 10% | 3% | 75% | D |
+| Madagascar (`madagascar-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 9% | 3% | 76% | D |
+| Malawi (`malawi-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 77% | D |
 | Malaysia (`malaysia-2026`) | 2026 | modern | southeast_asia | researched | 8% | 56% | 24% | 13% | B |
 | Maldives (`maldives-2026`) | 2026 | modern | south_asia | auto-base | 13% | 13% | 5% | 70% | D |
-| Mali (`mali-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 9% | 3% | 77% | D |
+| Mali (`mali-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 78% | D |
 | Malta (`malta-2026`) | 2026 | modern | mena | auto-base | 11% | 9% | 4% | 76% | D |
 | Marshall Islands (`marshall-islands-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 3% | 62% | C |
-| Mauritania (`mauritania-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
-| Mauritius (`mauritius-2026`) | 2026 | modern | subsaharan_africa | auto-base | 18% | 24% | 6% | 53% | C |
+| Mauritania (`mauritania-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
+| Mauritius (`mauritius-2026`) | 2026 | modern | subsaharan_africa | auto-base | 18% | 21% | 6% | 56% | C |
 | United Mexican States (`mexico-2026`) | 2026 | modern | north_america | researched | 9% | 60% | 18% | 13% | B |
 | Micronesia (`micronesia-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 3% | 62% | C |
 | Moldova (`moldova-2026`) | 2026 | modern | europe | auto-base | 13% | 10% | 4% | 73% | D |
@@ -1221,15 +1221,15 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Mongolia (`mongolia-2026`) | 2026 | modern | central_asia | auto-base | 11% | 8% | 3% | 77% | D |
 | Montenegro (`montenegro-2026`) | 2026 | modern | europe | auto-base | 13% | 9% | 4% | 75% | D |
 | Kingdom of Morocco (`morocco-2026`) | 2026 | modern | mena | researched | 10% | 68% | 15% | 7% | B |
-| Mozambique (`mozambique-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
+| Mozambique (`mozambique-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
 | Republic of the Union of Myanmar (`myanmar-2026`) | 2026 | modern | southeast_asia | researched | 6% | 45% | 26% | 23% | C |
-| Namibia (`namibia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 79% | D |
+| Namibia (`namibia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 7% | 3% | 81% | D |
 | Nauru (`nauru-2026`) | 2026 | modern | oceania | auto-base | 12% | 21% | 3% | 65% | C |
 | Nepal (`nepal-2026`) | 2026 | modern | south_asia | auto-base | 9% | 8% | 3% | 80% | D |
 | Kingdom of the Netherlands (`netherlands-2026`) | 2026 | modern | europe | researched | 10% | 69% | 11% | 10% | B |
 | New Zealand (`new-zealand-2026`) | 2026 | modern | oceania | researched | 12% | 60% | 14% | 14% | B |
 | Nicaragua (`nicaragua-2026`) | 2026 | modern | latin_america | auto-base | 12% | 10% | 4% | 75% | D |
-| Niger (`niger-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 78% | D |
+| Niger (`niger-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 8% | 3% | 80% | D |
 | Federal Republic of Nigeria (`nigeria-2026`) | 2026 | modern | subsaharan_africa | researched | 10% | 17% | 66% | 7% | C |
 | Democratic People's Republic of Korea (`north-korea-2026`) | 2026 | modern | east_asia | researched | 4% | 39% | 33% | 24% | C |
 | North Macedonia (`north-macedonia-2026`) | 2026 | modern | europe | auto-base | 13% | 9% | 4% | 75% | D |
@@ -1246,26 +1246,26 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Republic of Poland (`poland-2026`) | 2026 | modern | europe | researched | 9% | 59% | 19% | 13% | B |
 | Portuguese Republic (`portugal-2026`) | 2026 | modern | europe | researched | 10% | 65% | 14% | 11% | B |
 | State of Qatar (`qatar-2026`) | 2026 | modern | mena | researched | 8% | 59% | 23% | 9% | B |
-| Republic of the Congo (`republic-of-the-congo-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 9% | 3% | 77% | D |
+| Republic of the Congo (`republic-of-the-congo-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 78% | D |
 | Romania (`romania-2026`) | 2026 | modern | europe | researched | 10% | 60% | 19% | 10% | B |
 | Russian Federation (`russia-2026`) | 2026 | modern | europe | researched | 6% | 18% | 59% | 17% | C |
-| Rwanda (`rwanda-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 78% | D |
+| Rwanda (`rwanda-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 8% | 3% | 80% | D |
 | Saint Kitts and Nevis (`saint-kitts-and-nevis-2026`) | 2026 | modern | latin_america | auto-base | 15% | 21% | 3% | 62% | C |
 | Saint Lucia (`saint-lucia-2026`) | 2026 | modern | latin_america | auto-base | 15% | 21% | 6% | 59% | C |
 | Saint Vincent and the Grenadines (`saint-vincent-and-the-grenadines-2026`) | 2026 | modern | latin_america | auto-base | 15% | 21% | 6% | 59% | C |
 | Samoa (`samoa-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 6% | 59% | C |
 | San Marino (`san-marino-2026`) | 2026 | modern | europe | auto-base | 13% | 10% | 3% | 75% | D |
-| Sao Tome and Principe (`sao-tome-and-principe-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 15% | 5% | 68% | D |
+| Sao Tome and Principe (`sao-tome-and-principe-2026`) | 2026 | modern | subsaharan_africa | auto-base | 13% | 13% | 5% | 70% | D |
 | Kingdom of Saudi Arabia (`saudi-arabia-2026`) | 2026 | modern | mena | researched | 8% | 65% | 16% | 11% | B |
-| Senegal (`senegal-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
+| Senegal (`senegal-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
 | Republic of Serbia (`serbia-2026`) | 2026 | modern | europe | researched | 12% | 61% | 17% | 11% | B |
-| Seychelles (`seychelles-2026`) | 2026 | modern | subsaharan_africa | auto-base | 14% | 14% | 2% | 70% | D |
-| Sierra Leone (`sierra-leone-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 12% | 4% | 73% | D |
+| Seychelles (`seychelles-2026`) | 2026 | modern | subsaharan_africa | auto-base | 14% | 12% | 2% | 72% | D |
+| Sierra Leone (`sierra-leone-2026`) | 2026 | modern | subsaharan_africa | auto-base | 12% | 10% | 4% | 75% | D |
 | Republic of Singapore (`singapore-2026`) | 2026 | modern | southeast_asia | researched | 6% | 56% | 25% | 13% | B |
 | Slovakia (`slovakia-2026`) | 2026 | modern | europe | auto-base | 11% | 8% | 3% | 78% | D |
 | Slovenia (`slovenia-2026`) | 2026 | modern | europe | auto-base | 10% | 7% | 3% | 79% | D |
 | Solomon Islands (`solomon-islands-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 6% | 59% | C |
-| Somalia (`somalia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 78% | D |
+| Somalia (`somalia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 8% | 3% | 80% | D |
 | Republic of South Africa (`south-africa-2026`) | 2026 | modern | subsaharan_africa | researched | 9% | 19% | 63% | 9% | C |
 | Republic of Korea (`south-korea-2026`) | 2026 | modern | east_asia | researched | 7% | 49% | 23% | 21% | C |
 | South Sudan (`south-sudan-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 5% | 3% | 82% | D |
@@ -1281,10 +1281,10 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | United Republic of Tanzania (`tanzania-2026`) | 2026 | modern | subsaharan_africa | researched | 11% | 21% | 61% | 7% | C |
 | Kingdom of Thailand (`thailand-2026`) | 2026 | modern | southeast_asia | researched | 8% | 49% | 29% | 15% | C |
 | Timor-Leste (`timor-leste-2026`) | 2026 | modern | southeast_asia | auto-base | 12% | 10% | 4% | 73% | D |
-| Togo (`togo-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 9% | 3% | 78% | D |
+| Togo (`togo-2026`) | 2026 | modern | subsaharan_africa | auto-base | 9% | 8% | 3% | 80% | D |
 | Tonga (`tonga-2026`) | 2026 | modern | oceania | auto-base | 13% | 10% | 5% | 73% | D |
 | Trinidad and Tobago (`trinidad-and-tobago-2026`) | 2026 | modern | latin_america | auto-base | 10% | 8% | 3% | 79% | D |
-| Tunisia (`tunisia-2026`) | 2026 | modern | mena | auto-base | 11% | 9% | 3% | 77% | D |
+| Tunisia (`tunisia-2026`) | 2026 | modern | mena | auto-base | 11% | 8% | 3% | 78% | D |
 | Republic of Turkiye (`turkey-2026`) | 2026 | modern | europe | researched | 8% | 60% | 18% | 13% | B |
 | Turkmenistan (`turkmenistan-2026`) | 2026 | modern | central_asia | auto-base | 12% | 9% | 3% | 76% | D |
 | Tuvalu (`tuvalu-2026`) | 2026 | modern | oceania | auto-base | 15% | 21% | 3% | 62% | C |
@@ -1300,5 +1300,5 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Bolivarian Republic of Venezuela (`venezuela-2026`) | 2026 | modern | latin_america | researched | 7% | 63% | 20% | 11% | B |
 | Socialist Republic of Vietnam (`vietnam-2026`) | 2026 | modern | southeast_asia | researched | 7% | 47% | 30% | 16% | C |
 | Republic of Yemen (divided: Houthi north and PLC government) (`yemen-2026`) | 2026 | modern | mena | researched | 6% | 7% | 59% | 28% | C |
-| Zambia (`zambia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 9% | 3% | 78% | D |
-| Zimbabwe (`zimbabwe-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 10% | 3% | 75% | D |
+| Zambia (`zambia-2026`) | 2026 | modern | subsaharan_africa | auto-base | 10% | 7% | 3% | 79% | D |
+| Zimbabwe (`zimbabwe-2026`) | 2026 | modern | subsaharan_africa | auto-base | 11% | 8% | 3% | 77% | D |
