@@ -375,6 +375,20 @@ export const MEMBER_COLLAPSE_MIN_SHARE = 0.1;
  *  185 and 245, Soviets on the map); allies-vs-axis, persia-vs-greeks, usa-spain-vs-russia and
  *  napoleon identical seed for seed. KEPT-ON-NULL: correctness fix the backtest cannot see. */
 export const MEMBER_MORALE_COLLAPSE = true;
+/** A sea-entry member's depot troops (reserves, recruits, returns) take the next lift only one round
+ *  trip after its last day-0 seed wave lands. OFF: the depot lift clock started at 0, so the seed
+ *  waves and a full depot lift used the same ships (NATO 1989 US: 260k landed on day 9, then a
+ *  second full 394,800 lift on day 12 with a 16.2-day round trip). Seed-1 oracle OFF -> ON: US lands
+ *  d9 260k, d12 394.8k -> d9 260k, d26 394.8k; UK 1982 d17 39k, d24 143.6k -> d17 39k, d51 143.6k.
+ *  Simplification: a seed wave below the lift does not top up its ships with depot troops (the US
+ *  wave used 260k of 394.8k); a shared per-voyage capacity is the upgrade path.
+ *  Measured (20 seeds): backtest 19/15/22 identical (no case enters by sea). Presets (10-seed
+ *  screen) OFF -> ON: argentina-vs-uk-1982 2/6/2 -> 5/2/3 (UK wins 6 -> 2: the 143.6k second lift
+ *  lands day 51, not 24), nato-vs-warsaw-pact-1989 9/1/0 -> 9/0/1, usa-vs-china-2026 0/0/10 ->
+ *  0/1/9; athens-vs-usa and usa-spain-vs-russia same winners, allies-vs-axis and napoleon identical.
+ *  KEPT-ON-NULL: the double booking is plain accounting; the Falklands preset moving away from
+ *  history is flagged for the owner, not tuned away. */
+export const SEA_LIFT_AFTER_SEED_WAVES = true;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the

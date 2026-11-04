@@ -13,7 +13,7 @@ import { makeScratch, rebuildOccupancy, addEvent, seasonIdx, type Ctx } from './
 import { spawnFormation } from './formations';
 import { NR } from './roles';
 import { haversineKm } from './grid';
-import { AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RATIOS_FROM_MODEL_RULES, RETURN_RING_DAYS, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT } from './constants';
+import { AI_MASS_RATIO_ATTRITION, AI_MASS_RATIO_MANEUVER, AI_MAX_OBJECTIVES, AI_RATIOS_FROM_MODEL_RULES, RETURN_RING_DAYS, SEA_LIFT_AFTER_SEED_WAVES, SYMMETRIC_DOCTRINE_BREAKPOINT, WITHDRAW_SHARE_OF_BREAKPOINT } from './constants';
 import { productionPhase } from './production';
 import { aiPhase } from './ai';
 import { movementPhase } from './movement';
@@ -112,7 +112,14 @@ function initState(S: Setup, seed: number): { st: SimState; rng: Rng } {
     arrivals: [0, 0],
     returned: [0, 0],
     hospital: [0, 0],
-    nextLiftDay: S.members.map(() => 0),
+    // SEA_LIFT_AFTER_SEED_WAVES: the day-0 army's seed waves already used the lift, so depot troops
+    // ship one round trip after the last wave lands, not on day 0
+    nextLiftDay: S.members.map((mr) => {
+      if (!SEA_LIFT_AFTER_SEED_WAVES || !mr.entryBySea || !(mr.lift > 0)) return 0;
+      let last = -1;
+      for (const sd of S.seeds) if (sd.member === mr.idx) last = Math.max(last, sd.arriveDay);
+      return last < 0 ? 0 : last + Math.max(1, Math.ceil(mr.roundTripDays));
+    }),
     startPersonnel: [0, 0],
     startW: [0, 0],
     startMorale: [0, 0],

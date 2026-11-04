@@ -1232,3 +1232,36 @@ it is a different rule from the one already used for personnel.
 The five NATO seeds that ended on days 16-37 now run to days 61-245; four end by personnel collapse of every
 member, one by morale with the Soviets on the map. Verdict: **KEPT-ON-NULL**, a correctness fix the backtest
 cannot see. `tests/engine/memberCollapse.test.ts` pins it (two of its cases fail with the toggle OFF).
+
+### Sea lift shared by the seed waves and the depot (`SEA_LIFT_AFTER_SEED_WAVES`)
+
+A sea-entry member's day-0 army ships in seed waves, one lift per round trip. Its depot (reserves, recruits,
+hospital returns) shipped on a clock of its own that started at day 0, so the same ships were booked twice.
+ON, the depot's first lift is one round trip after the last seed wave lands.
+
+Oracle (seed 1, personnel landed per day):
+
+| Member | OFF | ON |
+| --- | --- | --- |
+| United States, NATO 1989 (lift 394,800, round trip 16.2 days) | d9 260,000; d12 394,800; d29 394,800 | d9 260,000; d26 394,800 |
+| United Kingdom, Argentina vs UK 1982 (lift 143,640, round trip 33.8 days) | d17 39,000; d24 143,640 | d17 39,000; d51 143,640 |
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, every case identical (no case enters by sea) |
+| Argentina vs UK 1982 | 2/6/2 | **5/2/3** |
+| NATO vs Warsaw Pact 1989 | 9/1/0 | 9/0/1 |
+| USA vs China 2026 | 0/0/10 | 0/1/9 |
+| Athens vs USA 2026, USA + Spain vs Russia 2026 | | same winners, casualties move |
+| Allies vs Axis, Napoleon vs Third Coalition | | identical seed for seed |
+
+**Flag for the owner: Argentina vs UK 1982 moves away from history.** The British won 6 of 10 seeds OFF,
+mostly by Argentine morale collapse around day 57, after the 143,640-man second lift landed on day 24. ON
+that lift lands on day 51 and the British win 2 of 10; Argentina wins 5 by British morale collapse on days
+108-274, and 3 run to the time limit. The OFF result rested on a lift the Royal Navy did not have twice, so
+the fix stays. What is left is a preset question (the British force, its lift, or the theater), not an
+engine one. Named simplification: a seed wave below the lift does not top up its ships with depot troops
+(the US wave used 260,000 of 394,800); a per-voyage shared capacity is the upgrade path.
+
+Verdict: **KEPT-ON-NULL**. `tests/engine/campaignCore.test.ts` pins the lift day and that a full depot waits
+for it.
