@@ -1,0 +1,39 @@
+/* Monte Carlo tab: headline, split bar, key facts and the start controls (MonteCarloView.tsx).
+   The detailed charts behind the Details disclosure keep their rules in results.css. Colours
+   are theme tokens from app.css, so both themes work without branching here. */
+
+.rp-mc-intro h4 { margin-top: 0; }
+.rp-mc-intro p { margin: 0 0 var(--sp-4); color: var(--c-text); }
+
+.rp-mc-head { border: 1px solid var(--c-border); border-radius: var(--r-md); background: var(--c-sunken); padding: var(--sp-4) var(--sp-5) var(--sp-5); }
+.rp-mc-kicker { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-4); font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-text-muted); }
+.rp-mc-lead { font-size: var(--fs-xl); font-weight: var(--fw-bold); line-height: var(--lh-tight); color: var(--c-text-strong); margin: var(--sp-2) 0 var(--sp-4); overflow-wrap: anywhere; }
+.rp-mc-margin { font-size: var(--fs-md); font-weight: var(--fw-medium); color: var(--c-text-muted); white-space: nowrap; }
+.rp-mc-split { display: flex; height: 14px; border-radius: var(--r-sm); overflow: hidden; background: var(--c-track); }
+.rp-mc-split > div { height: 100%; min-width: 2px; }
+.rp-mc-split > div + div { border-left: 1px solid var(--c-sunken); }
+.rp-mc-legend { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); margin: var(--sp-3) 0 var(--sp-2); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.rp-mc-legend span { display: inline-flex; align-items: center; gap: var(--sp-2); min-width: 0; }
+.rp-mc-legend i { flex: none; width: 9px; height: 9px; border-radius: 2px; }
+.rp-mc-legend .mid { color: var(--c-text-muted); }
+
+.rp-mc-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-4); margin: var(--sp-5) 0; }
+.rp-mc-facts > div { min-width: 0; border-top: 1px solid var(--c-border); padding-top: var(--sp-3); }
+.rp-mc-facts > div.wide { grid-column: 1 / -1; }
+.rp-mc-facts dt { font-size: var(--fs-xs); color: var(--c-text-muted); margin-bottom: var(--sp-1); }
+.rp-mc-facts dd { margin: 0; display: flex; flex-direction: column; gap: var(--sp-1); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.rp-mc-facts dd > b { font-size: var(--fs-lg); color: var(--c-text-strong); }
+.rp-mc-loss { display: flex; justify-content: space-between; gap: var(--sp-3); }
+.rp-mc-loss > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.rp-mc-runs-label { font-size: var(--fs-sm); color: var(--c-text-muted); }
+.rp-mc-problems { margin: var(--sp-2) 0 0; padding-left: var(--sp-6); }
+.rp-mc-opts { margin-top: var(--sp-2); }
+.rp-mc-opts label { display: flex; align-items: center; gap: var(--sp-3); margin-top: var(--sp-3); font-size: var(--fs-sm); }
+.rp-mc-details { margin-top: var(--sp-5); }
+.rp-mc-details > summary { font-weight: var(--fw-semibold); }
+
+/* a narrow panel (side panel at 300 px, phones): facts stack in one column */
+@media (max-width: 420px) {
+  .rp-mc-facts { grid-template-columns: minmax(0, 1fr); }
+}
