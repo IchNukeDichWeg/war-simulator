@@ -39,23 +39,34 @@
 .map-card-close:hover { color: var(--map-fg); }
 .map-card-note { color: var(--map-muted); font-size: 11.5px; max-width: 220px; }
 
-/* legend: bottom-left, above the scale bar and the run controls */
+/* map key: bottom-left, above the scale bar and the run controls */
 .map-legend {
   position: absolute; left: 8px; bottom: 118px; z-index: 3;
   --lg-a: #c33; --lg-b: #36c;
-  font-size: 11.5px; color: var(--map-fg);
+  font-size: 12.5px; color: var(--map-fg);
+  /* the body opens upward, above its button, so the button never jumps */
+  display: flex; flex-direction: column-reverse; align-items: flex-start;
 }
 .map-legend-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
   background: var(--map-panel-a); color: var(--map-fg); border: 1px solid var(--map-line);
-  border-radius: 5px; padding: 3px 9px; font: inherit; font-weight: 600; cursor: pointer;
+  border-radius: 999px; padding: 4px 11px; font: inherit; font-weight: 600; cursor: pointer;
 }
+/* chevron says which way it folds; drawn in CSS so the label stays plain text */
+.map-legend-toggle::after {
+  content: ''; width: 6px; height: 6px; margin-top: 3px; border: solid currentColor; border-width: 0 1.5px 1.5px 0;
+  transform: rotate(-135deg); opacity: 0.7;
+}
+.map-legend.open .map-legend-toggle::after { transform: rotate(45deg); margin-top: -3px; }
 .map-legend-body {
-  display: none; margin-top: 4px; padding: 6px 8px; max-height: min(60vh, 420px); overflow: auto;
-  background: var(--map-panel-a); border: 1px solid var(--map-line); border-radius: 6px; min-width: 230px;
+  display: none; margin-bottom: 6px; padding: 8px 10px; max-height: min(55vh, 460px); overflow: auto;
+  background: var(--map-panel-a); border: 1px solid var(--map-line); border-radius: 8px;
+  width: min(270px, calc(100vw - 32px)); box-sizing: border-box;
 }
 .map-legend.open .map-legend-body { display: block; }
-.map-legend-sides { padding-bottom: 4px; margin-bottom: 4px; border-bottom: 1px solid var(--map-line); font-weight: 600; }
-.map-legend-row { display: flex; align-items: center; gap: 8px; line-height: 1.25; padding: 2px 0; }
+.map-legend-section + .map-legend-section { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--map-line); }
+.map-legend-head { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--map-muted); margin-bottom: 2px; }
+.map-legend-row { display: flex; align-items: center; gap: 9px; line-height: 1.3; padding: 3px 0; }
 .map-legend-row > i { flex: none; width: 26px; height: 16px; position: relative; box-sizing: border-box; }
 
 /* swatches: mirror the unit shader (src/map/unitLayer.ts) */
@@ -76,6 +87,7 @@
 .lg-battle { width: 16px !important; height: 16px !important; margin: 0 5px; border-radius: 50%; background: #141010; border: 1.5px solid #ff8019; }
 .lg-battle::before, .lg-battle::after { content: ''; position: absolute; left: 6px; top: 1px; width: 1.6px; height: 11px; background: #ffdb8c; transform: rotate(45deg); }
 .lg-battle::after { transform: rotate(-45deg); }
+.lg-area { background: linear-gradient(90deg, color-mix(in srgb, var(--lg-a) 45%, transparent) 50%, color-mix(in srgb, var(--lg-b) 45%, transparent) 50%); border-radius: 2px; }
 .lg-front { height: 8px !important; background: linear-gradient(var(--lg-a) 0 3px, var(--lg-b) 3px 6px, transparent 6px); box-shadow: 0 0 0 1.5px #0b0d12; border-radius: 2px; }
 .lg-supplyline { height: 2px !important; background: repeating-linear-gradient(90deg, var(--lg-a) 0 3px, transparent 3px 6px); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35); }
 .lg-theater { height: 2px !important; background: repeating-linear-gradient(90deg, #f2d16b 0 6px, transparent 6px 10px); }
