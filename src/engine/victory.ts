@@ -138,7 +138,7 @@ function surrenderArmy(ctx: Ctx, side: number): void {
 }
 
 /** MEMBER_COLLAPSE: mark members of `side` that fell below the collapse share of what they
- *  fielded (once, with an event while allies fight on) and say whether the side as a whole has
+ *  fielded (with a once-only event) and say whether the side as a whole has
  *  collapsed: every member with a real share broken. Null when the side has no such member. */
 function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
   const { S, st } = ctx;
@@ -149,6 +149,7 @@ function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
   for (const mr of S.members) if (mr.side === side) total += st.members[mr.idx].fielded;
   if (!(total > 0)) return null;
   let counted = 0, standing = 0;
+  const fresh: string[] = [];
   for (const mr of S.members) {
     const ms = st.members[mr.idx];
     if (mr.side !== side || ms.fielded < MEMBER_COLLAPSE_MIN_SHARE * total) continue;
@@ -160,12 +161,12 @@ function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
     const below = p < S.rules.collapsePersonnel * ms.fielded;
     if (MEMBER_COLLAPSE_RECOVERS) ms.broken = below;
     else if (below) ms.broken = true;
-    if (ms.broken && !ms.brokeOnce) {
-      ms.brokeOnce = true;
-      addEvent(ctx, (1 - side) as 0 | 1, 'rout', `${mr.name}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded).`, 'Its allies fight on.');
-    }
+    if (ms.broken && !ms.brokeOnce) { ms.brokeOnce = true; fresh.push(mr.name); }
     if (!ms.broken) standing++;
   }
+  // "allies fight on" only while another counted member stands: on the day the last one breaks
+  // the war ends instead
+  for (const name of fresh) addEvent(ctx, (1 - side) as 0 | 1, 'rout', `${name}'s army collapsed (personnel below ${Math.round(S.rules.collapsePersonnel * 100)}% of all it fielded).`, standing > 0 ? 'Its allies fight on.' : undefined);
   return counted === 0 ? null : standing === 0;
 }
 

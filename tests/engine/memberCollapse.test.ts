@@ -92,6 +92,10 @@ describe('army collapse per coalition member', () => {
     const r = sim.result()!;
     expect(r.winner).toBe(0);
     expect(r.endReason).toContain('every member');
+    // "allies fight on" only while one still stands, not on the day the last member breaks
+    const rout = (name: string) => sim.ctx.st.events.find((e) => e.kind === 'rout' && e.text.startsWith(`${name}'s army collapsed`))!;
+    expect(rout('Eastland').why).toBe('Its allies fight on.');
+    expect(rout('Southland').why).toBeUndefined();
   });
 
   it('lets a broken member that recovered stand again, with one collapse event (MEMBER_COLLAPSE_RECOVERS)', () => {

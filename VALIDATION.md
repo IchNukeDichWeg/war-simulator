@@ -1310,3 +1310,9 @@ Allies vs Axis and in NATO 1989. The recoveries seen hover at the line.
 
 Verdict: **KEPT-ON-NULL**, a correctness fix neither instrument can see. `tests/engine/memberCollapse.test.ts`
 pins a recovered member keeping its side in the war, with one event (fails with the toggle OFF).
+
+### Member collapse event text (no toggle)
+
+The `rout` event for a broken member always said "Its allies fight on.", including on the day the last
+counted member broke and the war ended. It now says so only while another counted member still stands. Text
+only: backtest 19 / 15 / 22 identical, and the five coalition presets of the screen identical seed for seed.
