@@ -16,6 +16,16 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 const TECH_ANCHORS = ['before 3000 BCE', '2500 BCE', '1400 BCE', '300 BCE', '1250', '1600', '1805', '1905', '1943', '1985', '2026'];
 /** Monte Carlo run counts offered in the select; "Custom" opens a 2..5000 number box. */
 const MC_CHOICES = [100, 500, 1000];
+/** Plain labels for the three tech modes; the stored values stay native / equalized / timeslice. */
+const TECH_MODES: [TechMode, string][] = [['native', "Each side's own era"], ['equalized', 'Same tech level for both'], ['timeslice', 'Pick a year per nation']];
+/** Rule toggles other than nuclear (which asks first): key, label, hover hint. */
+const RULES: [Exclude<keyof Scenario['rules'], 'nuclear'>, string, string][] = [
+  ['naval', 'Naval combat', 'Fleets fight for sea control, blockade ports and carry supply by sea'],
+  ['air', 'Air power', 'Fighters contest the sky; bombers support battles and cut supply'],
+  ['weather', 'Weather', 'Mud and snow slow movement; the start month sets the season'],
+  ['supply', 'Supply lines', 'Armies need food, fodder and fuel; cut-off armies weaken'],
+  ['fogOfWar', 'Fog of war', 'Each side only sees enemies within scouting range'],
+];
 
 function updSide(i: 0 | 1, f: (s: SideSpec) => SideSpec) {
   setScenario((sc) => {
@@ -207,26 +217,26 @@ export function ScenarioBuilder() {
       </div>
 
       <h4>Technology</h4>
-      <div className="radio-row">
-        {([['native', 'Native (own era)'], ['equalized', 'Era-equalized'], ['timeslice', 'Time-slice']] as [TechMode, string][]).map(([m, l]) => (
-          <label key={m}><input type="radio" checked={sc.techMode === m} onChange={() => setScenario((s) => ({ ...s, techMode: m }))} /> {l}</label>
+      <div className="radio-row" role="radiogroup" aria-label="Technology">
+        {TECH_MODES.map(([m, l]) => (
+          <label key={m}><input type="radio" name="tech-mode" checked={sc.techMode === m} onChange={() => setScenario((s) => ({ ...s, techMode: m }))} /> {l}</label>
         ))}
       </div>
       {sc.techMode === 'equalized' && (
         <div className="field">
-          <input type="range" min={0} max={10} step={0.5} value={sc.equalizedTech ?? 8} onChange={(e) => setScenario((s) => ({ ...s, equalizedTech: +e.target.value }))} />
-          <div className="small">Both sides fight at tech {sc.equalizedTech ?? 8} ({anchors[Math.round(sc.equalizedTech ?? 8)] ?? ''}). Population, economy, geography and doctrine stay their own; roles that do not exist at that level are converted.</div>
+          <input type="range" min={0} max={10} step={0.5} aria-label="Tech level for both sides" value={sc.equalizedTech ?? 8} onChange={(e) => setScenario((s) => ({ ...s, equalizedTech: +e.target.value }))} />
+          <div className="small">Both sides fight at tech level {sc.equalizedTech ?? 8} (about {anchors[Math.round(sc.equalizedTech ?? 8)] ?? ''}). Population, economy, geography and doctrine stay their own; unit types that do not exist at that level are converted.</div>
         </div>
       )}
-      {sc.techMode === 'timeslice' && <div className="small muted">Pick a year per member (dropdown next to each member) or per side with "Set side year".</div>}
-      {sc.techMode === 'native' && <div className="small muted">Each side keeps its own era's technology, doctrine and logistics. Lopsided results are shown with their reasons.</div>}
+      {sc.techMode === 'timeslice' && <div className="small muted">Pick a year with the dropdown next to each nation, or set a whole side's year with "Set side year".</div>}
+      {sc.techMode === 'native' && <div className="small muted">Each side keeps the weapons, tactics and logistics of its own time. Lopsided results are shown with their reasons.</div>}
 
       <h4>Rules</h4>
       <div className="toggles">
-        {(['naval', 'air', 'weather', 'supply', 'fogOfWar'] as const).map((k) => (
-          <Toggle key={k} label={k === 'fogOfWar' ? 'fog of war' : k} checked={sc.rules[k]} onChange={(v) => setScenario((s) => ({ ...s, rules: { ...s.rules, [k]: v } }))} />
+        {RULES.map(([k, l, hint]) => (
+          <Toggle key={k} label={l} hint={hint} checked={sc.rules[k]} onChange={(v) => setScenario((s) => ({ ...s, rules: { ...s.rules, [k]: v } }))} />
         ))}
-        <Toggle label="nuclear" checked={sc.rules.nuclear} hint="Off by default" onChange={(v) => {
+        <Toggle label="Nuclear weapons" checked={sc.rules.nuclear} hint="Off by default. Asks before turning on." onChange={(v) => {
           if (v && !confirm('Enable nuclear weapons?\n\nThe engine then uses the documented escalation model in ENGINE.md. Results of nuclear use are extremely uncertain and dominate every other factor.')) return;
           setScenario((s) => ({ ...s, rules: { ...s.rules, nuclear: v } }));
         }} />
@@ -235,10 +245,10 @@ export function ScenarioBuilder() {
 
       <h4>Victory conditions</h4>
       <div className="toggles">
-        <Toggle label="capital captured" checked={sc.victory.capitalCaptured} onChange={(v) => setScenario((s) => ({ ...s, victory: { ...s.victory, capitalCaptured: v } }))} />
-        <Toggle label="army collapse" checked={sc.victory.armyCollapse} onChange={(v) => setScenario((s) => ({ ...s, victory: { ...s.victory, armyCollapse: v } }))} />
+        <Toggle label="Capital captured" hint="A side wins when it takes the enemy capital" checked={sc.victory.capitalCaptured} onChange={(v) => setScenario((s) => ({ ...s, victory: { ...s.victory, capitalCaptured: v } }))} />
+        <Toggle label="Enemy army collapses" hint="A side wins when the enemy army breaks" checked={sc.victory.armyCollapse} onChange={(v) => setScenario((s) => ({ ...s, victory: { ...s.victory, armyCollapse: v } }))} />
       </div>
-      <label className="field">Territory share held: {sc.victory.territoryShare === 0 ? 'off' : `${Math.round(sc.victory.territoryShare * 100)}%`}
+      <label className="field">Hold this share of enemy land: {sc.victory.territoryShare === 0 ? 'off' : `${Math.round(sc.victory.territoryShare * 100)}%`}
         <input type="range" min={0} max={1} step={0.05} value={sc.victory.territoryShare} onChange={(e) => setScenario((s) => ({ ...s, victory: { ...s.victory, territoryShare: +e.target.value } }))} />
       </label>
       <label className="field">Time limit (days)
