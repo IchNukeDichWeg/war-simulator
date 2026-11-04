@@ -17,6 +17,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { gzipSync } from 'node:zlib';
+import { createHash } from 'node:crypto';
 import type { Nation, Snapshot } from '../src/types/schema';
 import type { Phase3Entry } from '../src/ui/data';
 import { GRID_H, GRID_RES, GRID_W, TERRAIN_CLASSES } from '../src/engine/terrainClasses';
@@ -89,14 +90,16 @@ function readAll<T>(dir: string, bad: Set<string>): T[] {
   return listJson(dir).filter((f) => !bad.has(f)).map((f) => JSON.parse(readFileSync(f, 'utf8')) as T);
 }
 
-/** public/data/mechanics.json content: one section per data/mechanics file (version = build date). */
+/** public/data/mechanics.json content: one section per data/mechanics file. The version is a hash
+ *  of that content: the build date changed a committed file on every rebuild of unchanged data. */
 export function buildMechanics(bad: Set<string>): Record<string, unknown> {
-  const mechanics: Record<string, unknown> = { version: new Date().toISOString().slice(0, 10) };
+  const mechanics: Record<string, unknown> = { version: '' };
   for (const f of listJson('mechanics')) {
     if (bad.has(f)) continue;
     const key = f.split('/').pop()!.replace('.json', '');
     mechanics[key] = JSON.parse(readFileSync(f, 'utf8'));
   }
+  mechanics.version = createHash('sha256').update(JSON.stringify(mechanics)).digest('hex').slice(0, 12);
   return mechanics;
 }
 

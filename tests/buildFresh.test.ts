@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { buildBattles, buildMechanics, invalidFiles } from '../data-pipeline/build';
+import { listJson } from '../data-pipeline/validate';
 import { ROOT } from '../data-pipeline/lib/util';
 
 const pub = (name: string) => JSON.parse(readFileSync(join(ROOT, 'public', 'data', name), 'utf8'));
@@ -15,9 +16,15 @@ describe('public/data is built from the current data/', () => {
     expect(pub('battles.json')).toEqual(buildBattles(bad));
   });
   it('mechanics.json is not stale (run: npx tsx data-pipeline/build.ts)', () => {
-    const { version: _a, ...built } = buildMechanics(bad);
-    const { version: _b, ...shipped } = pub('mechanics.json');
-    void _a; void _b;
-    expect(shipped).toEqual(built);
+    // the version is a content hash, so it is compared too
+    expect(pub('mechanics.json')).toEqual(buildMechanics(bad));
+  });
+  // copied through by the build: an edit in data/ without a rebuild shipped the old copy
+  it.each(['presets.json', 'coalitions.json'])('%s is not stale (run: npx tsx data-pipeline/build.ts)', (name) => {
+    expect(pub(name)).toEqual(JSON.parse(readFileSync(join(ROOT, 'data', name), 'utf8')));
+  });
+  it('doctrines.json is not stale (run: npx tsx data-pipeline/build.ts)', () => {
+    const built = listJson('doctrine').filter((f) => !bad.has(f)).map((f) => JSON.parse(readFileSync(f, 'utf8')));
+    expect(pub('doctrines.json')).toEqual(built);
   });
 });
