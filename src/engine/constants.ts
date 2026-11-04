@@ -387,8 +387,10 @@ export const MEMBER_MORALE_COLLAPSE = true;
  *  lands day 51, not 24), nato-vs-warsaw-pact-1989 9/1/0 -> 9/0/1, usa-vs-china-2026 0/0/10 ->
  *  0/1/9; athens-vs-usa and usa-spain-vs-russia same winners, allies-vs-axis and napoleon identical.
  *  KEPT-ON-NULL: the double booking is plain accounting; the Falklands preset moving away from
- *  history is flagged for the owner, not tuned away. */
-export const SEA_LIFT_AFTER_SEED_WAVES = true;
+ *  history is flagged for the owner, not tuned away.
+ *  OFF for v0.1.0 by owner decision: the fix stays measured and tested, but the release keeps the
+ *  Falklands preset's 2/6/2 until the preset itself (force, lift or theater) is revisited. */
+export const SEA_LIFT_AFTER_SEED_WAVES = false;
 /** Backtest reinforcement days count days elapsed since the battle began: one at r.day arrives on
  *  sim day floor(r.day) + 1, at round ceil(fraction x battleHoursPerDay) (SUBDAY_REINFORCEMENTS).
  *  OFF: sim day ceil(r.day), so a whole-number day arrived a day early at round 0 (Gettysburg's 1.0

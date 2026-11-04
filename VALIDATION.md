@@ -1266,6 +1266,12 @@ engine one. Named simplification: a seed wave below the lift does not top up its
 Verdict: **KEPT-ON-NULL**. `tests/engine/campaignCore.test.ts` pins the lift day and that a full depot waits
 for it.
 
+**Shipped OFF in v0.1.0 by owner decision.** The release keeps the Falklands preset's British win until the
+preset itself is revisited. With all other pre-release fixes merged and this toggle OFF (10-seed screen,
+seeds from each preset's own): Argentina vs UK 1982 2/7/1, median day 83; NATO vs Warsaw Pact 1989 8/2/0;
+USA vs China 2026 0/0/10. Backtest 19 / 15 / 22. The test now pins whichever behaviour the constant
+selects.
+
 ### Backtest reinforcements count elapsed days (`REINFORCEMENT_ELAPSED_DAYS`)
 
 A case's reinforcement day counts days elapsed since the battle began, but the engine spawned it on sim day

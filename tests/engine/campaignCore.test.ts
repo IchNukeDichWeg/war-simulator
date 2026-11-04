@@ -4,6 +4,7 @@ import { createSim, simFromSetup } from '../../src/engine/sim';
 import { battleCaseScenario } from '../../src/engine/battleCase';
 import type { BattleCase } from '../../src/types/mechanics';
 import { IS_P, NR, RI } from '../../src/engine/roles';
+import { SEA_LIFT_AFTER_SEED_WAVES } from '../../src/engine/constants';
 import { NATIONS, fixtureScenario } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
 
@@ -74,8 +75,10 @@ describe('strength merged into a formation counts as added (ADDED_W_ON_MERGE)', 
 
 describe('sea lift shared by the seed waves and the depot (SEA_LIFT_AFTER_SEED_WAVES)', () => {
   // NATO 1989: the US landed 260k on day 9 from its seed waves, then shipped a second full lift
-  // of depot troops on day 12 although the round trip is 16.2 days
-  it('ships depot troops only one round trip after the last seed wave', () => {
+  // of depot troops on day 12 although the round trip is 16.2 days. The toggle ships OFF for v0.1.0
+  // (owner decision, Argentina vs UK 1982), so the test pins whichever behaviour the constant selects.
+  it(SEA_LIFT_AFTER_SEED_WAVES ? 'ships depot troops only one round trip after the last seed wave'
+    : 'ships depot troops on their own clock from day 0 while the toggle is off', () => {
     const S = buildSetup(data(), fixtureScenario(NATIONS.westland, NATIONS.eastland, [0, 0, 10, 10]));
     const mr = S.members[1];
     mr.entryBySea = true;
@@ -85,7 +88,7 @@ describe('sea lift shared by the seed waves and the depot (SEA_LIFT_AFTER_SEED_W
     const sim = simFromSetup(S, 1);
     const { st } = sim.ctx;
     // last seed wave on day 0, round trip 10 days
-    expect(st.nextLiftDay[mr.idx]).toBe(10);
+    expect(st.nextLiftDay[mr.idx]).toBe(SEA_LIFT_AFTER_SEED_WAVES ? 10 : 0);
     expect(st.nextLiftDay[0]).toBe(0);
     // a full formation of depot troops waits for the lift
     const F = st.F;
@@ -94,6 +97,7 @@ describe('sea lift shared by the seed waves and the depot (SEA_LIFT_AFTER_SEED_W
     sim.step(9);
     let spawned = 0;
     for (let f = before; f < F.n; f++) if (F.member[f] === mr.idx) spawned++;
+    if (!SEA_LIFT_AFTER_SEED_WAVES) { expect(spawned).toBeGreaterThan(0); return; }
     expect(spawned).toBe(0);
     sim.step(1);
     for (let f = before; f < F.n; f++) if (F.member[f] === mr.idx) spawned++;
