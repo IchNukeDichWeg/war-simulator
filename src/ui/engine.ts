@@ -272,6 +272,17 @@ export function stopRun() {
   setRun({ ...initialRun, historyVersion: store.get().run.historyVersion + 1 });
 }
 
+/** Same members on each side and the same theater box: a Setup edit that keeps the war. */
+const sameWar = (a: Scenario, b: Scenario) =>
+  a.sides.every((s, i) => s.members.join('\n') === b.sides[i].members.join('\n')) && a.theater.bbox.join() === b.theater.bbox.join();
+
+// An ended run leaves the map once Setup holds another war: its units and box would otherwise
+// stay under the new matchup, recoloured. Edits that keep the war (limit, rules, seed) keep it.
+store.subscribe(() => {
+  const s = store.get();
+  if (s.run.status === 'ended' && runScenario && s.scenario !== runScenario && !sameWar(runScenario, s.scenario)) stopRun();
+});
+
 // ------------------------------------------------------------- monte carlo
 let mcWorker: Worker | null = null;
 /** The scenario object the current or last batch ran on; the view compares it by identity with

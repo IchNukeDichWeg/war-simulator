@@ -180,4 +180,23 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(starts().at(-1)).toMatchObject({ seed: 11, victory: { timeLimitDays: 80 } });
     expect(e.store.get().scenario).toBe(edited);
   });
+
+  // Review finding: an ended run stayed on the map (units and box of the old war, recoloured)
+  // after the user loaded another matchup.
+  it('loading another matchup clears an ended run; edits to the same war keep it', async () => {
+    const e = await load();
+    const ran = { ...e.sc, victory: { ...e.sc.victory, timeLimitDays: 20 } };
+    e.store.set({ scenario: ran });
+    e.startRun(ran, 0);
+    live().pump();
+    e.stepDays(40); live().pump();
+    expect(e.store.get().run.status).toBe('ended');
+    e.store.set({ scenario: { ...ran, seed: 5, victory: { ...ran.victory, timeLimitDays: 400 } } });
+    expect(e.store.get().run.status).toBe('ended');
+    const other = data().snapshots.find((s) => !ran.sides.some((d) => d.members.includes(s.id)))!;
+    e.store.set({ scenario: { ...ran, sides: [ran.sides[0], { ...ran.sides[1], members: [other.id] }] } });
+    expect(e.store.get().run.status).toBe('idle');
+    expect(e.store.get().run.theater).toBeNull();
+    expect(e.history.day).toEqual([]);
+  });
 });
