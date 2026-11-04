@@ -17,7 +17,10 @@ export function TimeBar() {
   const [scrub, setScrub] = useState<number | null>(null);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement)?.closest('input,textarea,select')) return;
+      // Space belongs to the focused control (it presses buttons, switches tabs) and to an open
+      // modal (it scrolls the Honest-limits page); playback only gets it from the bare page.
+      if ((e.target as HTMLElement)?.closest?.('input,textarea,select,button,a,[role=tab],[role=dialog],[contenteditable]')) return;
+      if (document.querySelector('[aria-modal="true"]')) return;
       if (e.code === 'Space' && store.get().run.status === 'running') { e.preventDefault(); setSpeed(store.get().run.speed > 0 ? 0 : 3); }
       if (e.key === '.' && store.get().run.status === 'running') stepDays(1);
     };
