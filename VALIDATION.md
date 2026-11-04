@@ -1337,3 +1337,14 @@ were never over either way.
 Verdict: **KEPT-ON-NULL**, an accounting fix too small to move an outcome in the screen.
 `tests/engine/campaignCore.test.ts` merges a large platform depot and checks the bound (fails with the
 toggle OFF).
+
+### Hospital returns are not new fielded personnel (no toggle)
+
+With `HOSPITAL_ADMISSIONS_RETURN` OFF, hospital returns enter the depot as arrivals, and that path also raised
+the member's `fielded`, so `MEMBER_COLLAPSE` counted the same men twice in what a member fielded. Returns no
+longer add to `fielded` (they stay arrivals, which that OFF path's personnel conservation needs). Oracle with
+the toggle OFF, Germany vs France 1940, default seed: summed `fielded` 2,869,763 / 2,466,144 -> 2,570,000 /
+2,220,000, the difference being exactly the returns (299,763 / 246,144). The path only runs with that toggle
+OFF, so committed settings cannot change: backtest 19 / 15 / 22 identical, and the six presets of the
+`ADDED_W_ON_MERGE` screen identical seed for seed. No test: the path cannot be reached with committed
+constants.

@@ -10,13 +10,16 @@ import { refreshFormation, spawnFormation } from './formations';
 import { haversineKm } from './grid';
 import { UnitStatus } from './protocol';
 
-function addPersonnelToDepot(ctx: Ctx, mi: number, amount: number): void {
+/** New personnel into member mi's depot, booked as arrivals. `fielded` is false for hospital returns
+ *  (HOSPITAL_ADMISSIONS_RETURN OFF): the same people coming back, already counted in what the member
+ *  fielded, so MEMBER_COLLAPSE does not count them twice. */
+function addPersonnelToDepot(ctx: Ctx, mi: number, amount: number, fielded = true): void {
   if (!(amount > 0)) return;
   const mr = ctx.S.members[mi];
   const d = ctx.st.members[mi].depot;
   for (let r = 0; r < NR; r++) if (IS_P[r]) d[r] += amount * mr.pMix[r];
   ctx.st.arrivals[mr.side] += amount;
-  ctx.st.members[mi].fielded += amount;
+  if (fielded) ctx.st.members[mi].fielded += amount;
 }
 
 /** Spawn cell for member mi today: first spawn cell not held or occupied by the enemy. */
@@ -194,7 +197,7 @@ export function productionPhase(ctx: Ctx): void {
         // back from hospital: the same people, not new arrivals
         for (let r = 0; r < NR; r++) if (IS_P[r]) ms.depot[r] += ret * mr.pMix[r];
         st.hospital[mr.side] -= ret;
-      } else addPersonnelToDepot(ctx, mr.idx, ret);
+      } else addPersonnelToDepot(ctx, mr.idx, ret, false);
       st.returned[mr.side] += ret;
       ms.returns[slot] = 0;
     }
