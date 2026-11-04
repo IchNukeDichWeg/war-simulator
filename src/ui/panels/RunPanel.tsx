@@ -9,6 +9,8 @@ import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 import { MonteCarloView } from './MonteCarloView';
 import { ModelTag, Reasons, useSides } from './RunShared';
+// after the panel imports so its rules land after results.css (which Charts imports)
+import '../../styles/run.css';
 
 function StatsTable({ stats }: { stats: [SideStats, SideStats] }) {
   const { names, colors } = useSides();
@@ -280,22 +282,40 @@ function Result() {
   const { names, colors: raw } = useSides();
   const colors = useLegibleColors(raw);
   if (!result) {
-    return <div className="panel-body muted">{status === 'running' || status === 'starting'
-      ? 'The run is still going. The result appears here when a victory condition fires or the time limit is reached.'
-      : 'The result appears here when a run ends (a victory condition fires or the time limit is reached).'}</div>;
+    const going = status === 'running' || status === 'starting';
+    return (
+      <div className="panel-body empty">
+        <div className="empty-icon"><Icon name="chart" size={22} /></div>
+        <p><b>{going ? 'The war is still going.' : 'No result yet.'}</b></p>
+        <p className="muted">{going
+          ? 'Who won and why shows here as soon as one side wins or the time limit is reached.'
+          : 'Run a war and this tab shows who won and why.'}</p>
+      </div>
+    );
   }
   const w = result.winner;
   const st = result.stats;
   const start = (s: 0 | 1) => history.personnel[s][0];
   const lossRatio = st[1].casualties > 0 && st[0].casualties > 0 ? st[0].casualties / st[1].casualties : null;
+  const days = Math.round(result.endDay);
+  const after = `after ${days.toLocaleString('en-US')} ${days === 1 ? 'day' : 'days'}`;
+  // fmtDays adds "(about N months)" past 60 days; shown under the headline, not in it
+  const about = fmtDays(result.endDay).match(/\((.*)\)$/)?.[1];
   return (
     <div className="panel-body">
-      <div className={`rp-outcome${w === 'draw' ? ' draw' : ''}`} style={{ borderColor: w === 'draw' ? undefined : colors[w] }}>
-        <div className="rp-outcome-kicker">Outcome of this run <ModelTag /></div>
-        <div className="rp-outcome-winner" style={{ color: w === 'draw' ? undefined : colors[w] }}>{w === 'draw' ? 'Draw' : `${names[w]} wins`}</div>
-        <div className="rp-outcome-reason"><span className="rp-muted">Ended by:</span> {capitalize(result.endReason)}</div>
-        <div className="rp-muted small">After {fmtDays(result.endDay)}{date ? ` (${date.replace(/^Day \d+,\s*/, '')})` : ''} | seed {result.seed}</div>
+      <div className={`rp-outcome${w === 'draw' ? ' draw' : ''}`} style={w === 'draw' ? undefined : { borderColor: colors[w], background: `color-mix(in srgb, ${colors[w]} 10%, var(--bg, #0d1117))` }}>
+        <div className="rp-outcome-kicker">Result of this run <ModelTag /></div>
+        <h3 className="rp-outcome-winner" style={{ color: w === 'draw' ? undefined : colors[w] }}>{w === 'draw' ? `Draw ${after}` : `${names[w]} wins ${after}`}</h3>
+        <div className="rp-outcome-reason"><span className="rp-muted">How it ended:</span> {capitalize(result.endReason)}</div>
+        <div className="rp-muted small">{[about, date ? date.replace(/^Day \d+,\s*/, '') : '', `seed ${result.seed}`].filter(Boolean).join(' | ')}</div>
       </div>
+      <h4>{w === 'draw' ? 'What shaped the result' : `Why ${names[w]} won`}</h4>
+      <Reasons reasons={result.reasons} names={names} colors={colors} top={3} plain />
+      <div className="rp-note">
+        This is one possible outcome: the model has chance in it, so another run can end differently.
+        {' '}<button className="rp-textbtn" onClick={() => store.set({ rightTab: 'montecarlo' })}>See the odds</button> by running the same war many times (Monte Carlo).
+      </div>
+      <h4>Final numbers</h4>
       <div className="rp-final">
         {([0, 1] as const).map((s) => (
           <div key={s} className="rp-final-side" style={{ borderTopColor: colors[s] }}>
@@ -309,12 +329,6 @@ function Result() {
       {lossRatio != null && (
         <div className="rp-muted small">Loss ratio {names[0]} : {names[1]} = {lossRatio >= 1 ? `${fmt(lossRatio)} : 1` : `1 : ${fmt(1 / lossRatio)}`} (killed, wounded and captured)</div>
       )}
-      <h4>Why: top reasons, ranked</h4>
-      <Reasons reasons={result.reasons} names={names} colors={colors} top={3} />
-      <div className="rp-note">
-        One seeded run of a stochastic model, not a prediction: another seed can end differently.
-        {' '}<button className="rp-textbtn" onClick={() => store.set({ rightTab: 'montecarlo' })}>Open Monte Carlo</button> to see how often this outcome happens.
-      </div>
       <details className="rp-details">
         <summary>All final statistics</summary>
         <StatsTable stats={result.stats} />
