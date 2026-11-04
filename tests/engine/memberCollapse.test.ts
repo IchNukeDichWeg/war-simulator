@@ -35,6 +35,51 @@ function wipe(sim: Sim, name: string): void {
   for (let r = 0; r < NR; r++) st.members[mi].depot[r] = 0;
 }
 
+/** Set the morale of every formation of one member. */
+function demoralize(sim: Sim, name: string, morale = 0): void {
+  const { S, st } = sim.ctx;
+  const mi = S.members.findIndex((m) => m.name === name);
+  const F = st.F;
+  for (let f = 0; f < F.n; f++) if (F.member[f] === mi) F.morale[f] = morale;
+}
+
+/** Take one member's formations off the map, still to arrive (a main army sailing in). */
+function offMap(sim: Sim, name: string, arriveDay: number): void {
+  const { S, st } = sim.ctx;
+  const mi = S.members.findIndex((m) => m.name === name);
+  const F = st.F;
+  for (let f = 0; f < F.n; f++) if (F.member[f] === mi) { F.onMap[f] = 0; F.arriveDay[f] = arriveDay; }
+}
+
+describe('morale collapse per coalition member (MEMBER_MORALE_COLLAPSE)', () => {
+  it('does not let a vanguard member end the war before the main member arrives', () => {
+    // NATO 1989: East Germany alone on the map broke the Warsaw Pact while 750k Soviets were en route
+    const sim = coalition(ally(15000));
+    offMap(sim, 'Southland', 40);
+    demoralize(sim, 'Eastland');
+    victoryPhase(sim.ctx);
+    expect(sim.ended()).toBe(false);
+  });
+
+  it('keeps the side in while one member on the map holds its morale', () => {
+    // 8,000 of about 68,000: counted, but too small to hold the pooled morale above the line
+    const sim = coalition(ally(8000));
+    demoralize(sim, 'Eastland');
+    victoryPhase(sim.ctx);
+    expect(sim.ended()).toBe(false);
+  });
+
+  it('ends the war once every counted member has fallen', () => {
+    const sim = coalition(ally(15000));
+    demoralize(sim, 'Eastland');
+    demoralize(sim, 'Southland');
+    victoryPhase(sim.ctx);
+    const r = sim.result()!;
+    expect(r.winner).toBe(0);
+    expect(r.endReason).toContain('morale collapsed');
+  });
+});
+
 describe('army collapse per coalition member', () => {
   it('keeps the side in the war while a member with a real share still stands', () => {
     const sim = coalition(ally(15000));

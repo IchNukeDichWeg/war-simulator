@@ -1195,3 +1195,40 @@ Each winner change is one seed of ten, inside the noise of a 10-seed screen. The
 
 Verdict: **KEPT-ON-NULL.** The regression test (a shore battle with one formation landing and one afloat
 next to it) fails with the toggle OFF.
+
+## Pre-release engine fixes: campaign core
+
+Seven reviewer-verified bugs in victory, production and sea lift, one commit each. Behaviour changes sit
+behind their own toggle in `constants.ts`; pure accounting and text fixes have none and are shown to leave
+every result identical.
+
+Instruments, fixed before any result was looked at:
+
+1. Backtest: `scripts/backtest.ts --seeds 20`, toggle OFF against ON on the same commit. Baseline before
+   this section: winner 19/24, loss ratio 15/24, duration 22/24.
+2. Preset screen: 10 seeds per affected preset with the real data (preset seed + 0..9), A wins / B wins /
+   draws, median end day, end reasons, and every seed's outcome diffed OFF against ON. A second instrument,
+   not pooled with the backtest. Ten seeds make it a kill filter, not a precise number.
+   `central-powers-vs-entente-1914` (about 22 s a run) is left out unless a fix targets it.
+
+### Morale collapse per coalition member (`MEMBER_MORALE_COLLAPSE`)
+
+Army collapse on personnel has been judged per member since `MEMBER_COLLAPSE`, but morale collapse still
+used the pooled morale of the side's formations on the map. A member whose army was still marching or
+sailing in did not count at all, so a vanguard ended its coalition's war: in NATO vs Warsaw Pact 1989 the
+Warsaw Pact's morale "collapsed" on days 16-37 with only East Germany on the map, while 750k Soviets were
+due on day 42. ON, the pooled test must still pass, and in addition every member that `MEMBER_COLLAPSE`
+counts must have fallen: broken on personnel, or its own on-map morale below the line. A member with
+nothing on the map that is not broken stands. The alternative, skipping the morale test while any counted
+member still has forces to come, was not taken: it would let a small late wave hold a beaten side open, and
+it is a different rule from the one already used for personnel.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, every case identical (no coalition case) |
+| NATO vs Warsaw Pact 1989 | 9/1/0, median day 37, 7 morale-collapse ends | 9/1/0, median day 156, 2 morale-collapse ends (days 185, 245) |
+| Allies vs Axis, Persia vs Greeks, USA + Spain vs Russia, Napoleon | | identical seed for seed |
+
+The five NATO seeds that ended on days 16-37 now run to days 61-245; four end by personnel collapse of every
+member, one by morale with the Soviets on the map. Verdict: **KEPT-ON-NULL**, a correctness fix the backtest
+cannot see. `tests/engine/memberCollapse.test.ts` pins it (two of its cases fail with the toggle OFF).

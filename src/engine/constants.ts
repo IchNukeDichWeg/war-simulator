@@ -362,6 +362,19 @@ export const MEMBER_COLLAPSE = true;
  *  the war (a 500-man contingent would otherwise hold it open to the time limit). A judgment
  *  value, not sourced. */
 export const MEMBER_COLLAPSE_MIN_SHARE = 0.1;
+/** Morale collapse judged per member too (needs MEMBER_COLLAPSE): a coalition side's morale breaks
+ *  only when the pooled morale of its formations on the map is below the line AND every member
+ *  MEMBER_COLLAPSE counts has fallen, on personnel or with its own on-map morale below the line. A
+ *  member with nothing on the map yet that is not broken stands. OFF: the pooled on-map morale
+ *  alone, so a vanguard member ended its coalition's war before the main member arrived (NATO 1989:
+ *  "Warsaw Pact's morale collapsed" on days 16-37 with only East Germany on the map, 750k Soviets
+ *  landing on day 42). Per member rather than "skip while forces are still coming": it is the same
+ *  test MEMBER_COLLAPSE applies to personnel, and it does not hold a side open for a token wave.
+ *  Measured (20 seeds): backtest 19/15/22 identical, blind (no coalition). Presets (10-seed screen)
+ *  OFF -> ON: NATO 1989 9/1/0 both ways, median day 37 -> 156, morale-collapse ends 7 -> 2 (days
+ *  185 and 245, Soviets on the map); allies-vs-axis, persia-vs-greeks, usa-spain-vs-russia and
+ *  napoleon identical seed for seed. KEPT-ON-NULL: correctness fix the backtest cannot see. */
+export const MEMBER_MORALE_COLLAPSE = true;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the

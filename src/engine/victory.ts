@@ -8,7 +8,7 @@ import { lossFraction } from './formations';
 import { rule } from './mech';
 import { IS_P, LC, NR } from './roles';
 import {
-  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, MEMBER_COLLAPSE, MEMBER_COLLAPSE_MIN_SHARE, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
+  BATTLE_MODE_NO_CONTACT_DAYS, CAPITAL_CAPTURE_NEEDS_REACH, CAPITAL_SHOCK_REAL_ONLY, COLLAPSE_NEEDS_REAL_FALL, COLLAPSE_SURRENDER, CREWED_FORMATIONS, ENCIRCLED_FLIP_NEEDS_SUPPLY, MEMBER_COLLAPSE, MEMBER_COLLAPSE_MIN_SHARE, MEMBER_MORALE_COLLAPSE, OBJECTIVE_KIND_EXPLICIT, STALEMATE_DAYS, TIME_LIMIT_TERRITORY_MARGIN,
 } from './constants';
 
 /**
@@ -164,6 +164,29 @@ function membersCollapsed(ctx: Ctx, side: 0 | 1): boolean | null {
   return counted === 0 ? null : standing === 0;
 }
 
+/** MEMBER_MORALE_COLLAPSE: whether every member of `side` that carries a real share (the members
+ *  MEMBER_COLLAPSE counts) has fallen: broken on personnel, or its formations on the map below the
+ *  morale line. A member with nothing on the map yet that is not broken still stands (its army is
+ *  marching or sailing in). True when the side has no such member. */
+function membersMoraleFallen(ctx: Ctx, side: 0 | 1, line: number): boolean {
+  const { S, st } = ctx;
+  const F = st.F;
+  const w = new Float64Array(S.members.length), mw = new Float64Array(S.members.length);
+  for (let f = 0; f < F.n; f++) {
+    if (!F.alive[f] || !F.onMap[f] || F.side[f] !== side) continue;
+    w[F.member[f]] += F.curW[f];
+    mw[F.member[f]] += F.morale[f] * F.curW[f];
+  }
+  let total = 0;
+  for (const mr of S.members) if (mr.side === side) total += st.members[mr.idx].fielded;
+  for (const mr of S.members) {
+    const ms = st.members[mr.idx];
+    if (mr.side !== side || ms.fielded < MEMBER_COLLAPSE_MIN_SHARE * total || ms.broken) continue;
+    if (!(w[mr.idx] > 0) || mw[mr.idx] / w[mr.idx] >= line) return false;
+  }
+  return true;
+}
+
 export function victoryPhase(ctx: Ctx): void {
   const { S, st, sc } = ctx;
   const V = S.scenario.victory;
@@ -211,10 +234,17 @@ export function victoryPhase(ctx: Ctx): void {
       }
       // morale collapse needs a real fall: below the threshold AND at least one lost battle's morale
       // shock below where the side started (Iraq 1991 starts at 0.20; a side starting at the
-      // threshold must not "collapse" after a trivial dip)
-      else if (no.formations > 0 && no.morale < (COLLAPSE_NEEDS_REAL_FALL
-        ? Math.min(S.rules.collapseMorale, st.startMorale[o] - S.m.morale.defeatShock.mid)
-        : Math.min(S.rules.collapseMorale, st.startMorale[o]))) wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
+      // threshold must not "collapse" after a trivial dip). A coalition's morale breaks only when
+      // every counted member has fallen (MEMBER_MORALE_COLLAPSE): the pooled figure covers only
+      // what is on the map, so a vanguard member could end the war before the main army landed.
+      else {
+        const line = COLLAPSE_NEEDS_REAL_FALL
+          ? Math.min(S.rules.collapseMorale, st.startMorale[o] - S.m.morale.defeatShock.mid)
+          : Math.min(S.rules.collapseMorale, st.startMorale[o]);
+        if (no.formations > 0 && no.morale < line && !(coalition && MEMBER_MORALE_COLLAPSE && !membersMoraleFallen(ctx, o, line))) {
+          wins[s] = `${S.sideNames[o]}'s morale collapsed (${no.morale.toFixed(2)})`;
+        }
+      }
       collapsed[s] = wins[s] !== null;
     }
     if (!wins[s] && V.capitalCaptured) {
