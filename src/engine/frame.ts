@@ -12,16 +12,21 @@ export function sideStats(ctx: Ctx, side: 0 | 1): SideStats {
   const { S, st } = ctx;
   const F = st.F;
   let personnel = 0, platforms = 0, supW = 0, sup = 0, mor = 0, morW = 0;
+  // formations still marching in: the readout falls back to them while none is on the map, so an
+  // army arriving overland (Rome vs Spain: 90 formations, on the map from day 29) shows its 75%
+  // morale instead of 0%. Display only: victory and the explanations read the formations directly.
+  let offSup = 0, offMor = 0, offW = 0;
   for (let f = 0; f < F.n; f++) {
     if (!F.alive[f] || F.side[f] !== side) continue;
     personnel += F.personnel[f];
     const o = f * NR;
     for (let r = 0; r < NR; r++) if (!IS_P[r]) platforms += F.counts[o + r];
-    if (!F.onMap[f]) continue;
     const w = Math.max(F.curW[f], 1e-9);
+    if (!F.onMap[f]) { offSup += F.supply[f] * w; offMor += F.morale[f] * w; offW += w; continue; }
     sup += F.supply[f] * w; supW += w;
     mor += F.morale[f] * w; morW += w;
   }
+  if (supW === 0 && offW > 0) { sup = offSup; supW = offW; mor = offMor; morW = offW; }
   personnel += depotPersonnel(ctx, side);
   platforms += depotPlatforms(ctx, side);
   for (const r of AIR_ROLES) platforms += st.air[side][r];
