@@ -133,7 +133,7 @@ function side(v: unknown, i: number, d: SideSpec): SideSpec {
 function overrides(v: unknown): Override[] {
   if (v === undefined) return [];
   if (!Array.isArray(v)) bad('overrides', 'a list', v);
-  return v.map((x, i) => {
+  const out = v.map((x, i): Override => {
     const f = `overrides[${i}]`;
     if (!isObj(x)) bad(f, 'an object', x);
     const snapshotId = typeof x.snapshotId === 'string' ? x.snapshotId : bad(`${f}.snapshotId`, 'a snapshot id', x.snapshotId);
@@ -143,6 +143,11 @@ function overrides(v: unknown): Override[] {
     if (valueProblem) throw new Error(`${f}.value: ${valueProblem}`);
     return { snapshotId, path: x.path as string, value: x.value as number };
   });
+  // One edit per field, the last one as the engine applies them in order: duplicates gave the
+  // Editor's change list two rows with one React key.
+  const key = (o: Override) => `${o.snapshotId} ${o.path}`;
+  const last = new Map(out.map((o, i) => [key(o), i]));
+  return out.filter((o, i) => last.get(key(o)) === i);
 }
 
 /** Check an uploaded / decoded scenario field by field, fill missing fields with defaults

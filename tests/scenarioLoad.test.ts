@@ -26,3 +26,19 @@ describe('theater box on load', () => {
     expect(normalizeScenario(s).theater.bbox).toEqual([0, -90, 10, 90]);
   });
 });
+
+describe('overrides on load', () => {
+  it('keeps only the last of several edits to one field', () => {
+    // two rows for one field gave the Editor's change list duplicate React keys
+    const s = preset('germany-vs-france-1940');
+    s.overrides = [
+      { snapshotId: 'germany-1939', path: 'tech.weapons.mid', value: 3 },
+      { snapshotId: 'france-1939', path: 'tech.weapons.mid', value: 5 },
+      { snapshotId: 'germany-1939', path: 'tech.weapons.mid', value: 4 },
+    ];
+    expect(normalizeScenario(s).overrides).toEqual([
+      { snapshotId: 'france-1939', path: 'tech.weapons.mid', value: 5 },
+      { snapshotId: 'germany-1939', path: 'tech.weapons.mid', value: 4 },
+    ]);
+  });
+});
