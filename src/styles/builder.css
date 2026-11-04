@@ -1,0 +1,47 @@
+/* Scenario setup form (ScenarioBuilder). Uses the app.css tokens only. */
+
+.scenario h4.sb-first { margin-top: var(--sp-2); }
+
+/* ---- Side A vs Side B ---- */
+.side-count { margin-left: auto; padding-left: var(--sp-3); white-space: nowrap; }
+.vs { display: flex; align-items: center; gap: var(--sp-4); margin: calc(-1 * var(--sp-2)) 0; color: var(--c-text-muted); }
+.vs::before, .vs::after { content: ''; flex: 1; height: 1px; background: var(--c-border-subtle); }
+.vs span { font-size: var(--fs-xs); font-weight: var(--fw-bold); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---- closed-by-default sections; the summary line names every non-default value ---- */
+.sb-sections { margin-top: var(--sp-6); border-bottom: 1px solid var(--c-border-subtle); }
+.sb-section { border-top: 1px solid var(--c-border-subtle); }
+.sb-section > summary { display: flex; align-items: baseline; gap: var(--sp-4); padding: var(--sp-4) var(--sp-1); cursor: pointer; list-style: none; border-radius: var(--r-xs); }
+.sb-section > summary::-webkit-details-marker { display: none; }
+/* chevron: points right when closed, down when open */
+.sb-section > summary::before {
+  content: ''; flex: none; align-self: center; width: 6px; height: 6px; margin: 0 var(--sp-1) 0 var(--sp-2);
+  border-right: 1.5px solid var(--c-text-muted); border-bottom: 1.5px solid var(--c-text-muted);
+  transform: rotate(-45deg); transition: transform var(--dur-fast) var(--ease);
+}
+.sb-section[open] > summary::before { transform: rotate(45deg); }
+.sb-section > summary:hover .sb-title { color: var(--c-text-strong); }
+.sb-title { flex: none; font-weight: var(--fw-semibold); }
+.sb-sum { margin-left: auto; min-width: 0; text-align: right; font-size: var(--fs-sm); color: var(--c-text-faint); }
+.sb-sum.changed { color: var(--c-accent); font-weight: var(--fw-medium); }
+.sb-sum.warn { color: var(--c-warn); }
+.sb-body { padding: 0 var(--sp-1) var(--sp-5); }
+.sb-body > .field:first-child, .sb-body > .radio-row:first-child, .sb-body > .toggles:first-child { margin-top: 0; }
+.sb-label { margin: var(--sp-5) 0 var(--sp-2); font-size: var(--fs-sm); }
+.sb-body input.seed { width: 120px; }
+.sb-body .field > input[type='number'] { align-self: flex-start; width: 96px; }
+.radio-row { flex-direction: column; }
+
+/* the per-side "More options" sits inside the side card, a little quieter */
+.side .sb-sections, .side .sb-section { border-bottom: none; }
+.side .sb-section { margin-top: var(--sp-4); border-top-style: dashed; }
+.side .sb-section > summary { padding: var(--sp-3) var(--sp-1); font-size: var(--fs-sm); }
+.side .sb-title { font-weight: var(--fw-medium); color: var(--c-text-muted); }
+.side .sb-body { padding-bottom: 0; }
+
+/* ---- run area: one primary action, Monte Carlo as the secondary one ---- */
+.sticky-actions .run-main { width: 100%; min-height: 36px; font-size: var(--fs-lg); }
+.mc-row { display: flex; flex-wrap: wrap; gap: var(--sp-3); align-items: center; margin-top: var(--sp-3); }
+.mc-row .mc-run { flex: 1 1 auto; }
+.mc-run .muted { font-weight: 400; }
+.scenario .mc-row select { width: auto; }

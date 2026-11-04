@@ -373,9 +373,10 @@ footer.banner .icon { flex: none; }
 
 /* ---------- scenario builder ---------- */
 /* min-width 0: a fieldset defaults to min-content, so a long nation name in a select stretched the box past a phone-width panel */
-fieldset.side { border: 1px solid; border-radius: var(--r-md); margin: var(--sp-4) 0; padding: var(--sp-2) var(--sp-4) var(--sp-4); min-width: 0; }
-fieldset.side legend { display: flex; gap: var(--sp-2); align-items: center; padding: 0 var(--sp-2); }
-.side-name { font-weight: var(--fw-semibold); width: 160px; }
+/* the side colour is set inline as the border colour; the thick left edge tags the card as that side */
+fieldset.side { border: 1px solid; border-left-width: 4px; border-radius: var(--r-md); margin: var(--sp-4) 0; padding: var(--sp-2) var(--sp-4) var(--sp-4); min-width: 0; }
+fieldset.side legend { display: flex; gap: var(--sp-3); align-items: center; padding: 0 var(--sp-2); width: calc(100% - var(--sp-2)); max-width: 100%; }
+.side-name { font-weight: var(--fw-semibold); flex: 1 1 auto; min-width: 0; max-width: 200px; }
 .title-input { font-size: var(--fs-lg); font-weight: var(--fw-semibold); width: 100%; }
 .members { list-style: none; padding: 0; margin: var(--sp-2) 0; }
 .members li { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-1) 0; }
@@ -389,7 +390,7 @@ fieldset.side legend { display: flex; gap: var(--sp-2); align-items: center; pad
 .bbox input { width: 100%; }
 .radio-row, .toggles { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); }
 .toggle { display: inline-flex; gap: var(--sp-2); align-items: center; }
-.sticky-actions { position: sticky; bottom: -12px; background: var(--c-surface); padding: var(--sp-4) 0; border-top: 1px solid var(--c-border); margin-top: var(--sp-5); }
+.sticky-actions { position: sticky; bottom: -12px; z-index: 1; background: var(--c-surface); padding: var(--sp-4) 0; border-top: 1px solid var(--c-border); margin-top: var(--sp-5); }
 
 /* ---------- editor ---------- */
 .editor details { border-top: 1px solid var(--c-border); padding: var(--sp-2) 0; }
