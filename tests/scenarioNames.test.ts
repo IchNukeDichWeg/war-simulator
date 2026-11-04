@@ -8,6 +8,8 @@ const snaps = [
   ['rome-117', 'rome', 'Roman Empire (Trajan)', 117], ['rome-395', 'rome', 'Roman Empire (Theodosius I)', 395],
   ['spain-2026', 'spain', 'Kingdom of Spain', 2026], ['switzerland-2026', 'switzerland', 'Swiss Confederation', 2026],
   ['germany-1939', 'germany', 'German Reich', 1939], ['italy-1940', 'italy', 'Kingdom of Italy', 1940],
+  ['rome-476', 'rome', 'Roman Empire (Romulus Augustulus)', 476], ['germany-1914', 'germany', 'German Empire', 1914],
+  ['gdr-1970', 'gdr', 'German Democratic Republic', 1970],
   ['athens--480', 'athens', 'Athens', -480], ['sparta--480', 'sparta', 'Sparta', -480], ['thebes--480', 'thebes', 'Thebes', -480],
 ].map(([id, nationId, name, year]) => ({ id, nationId, name, year }) as unknown as Snapshot);
 const d = { snapById: new Map(snaps.map((s) => [s.id, s])), nationById: new Map<string, Nation>() };
@@ -57,5 +59,16 @@ describe('names follow the members', () => {
     const before = scn('Roman Empire (117) vs Spain (2026)', ['Roman Empire', ['rome-117']], ['Spain', ['spain-2026']]);
     const typed = scn('Roman Empire (117) vs Spain (2026)', ['Rom', ['rome-117']], ['Spain', ['spain-2026']]);
     expect(followNames(before, typed, d)).toBe(typed);
+  });
+
+  it("edits the changed side's part of the title, not the first match", () => {
+    // both sides named the same: changing side B's year used to edit side A's "(117)"
+    const twin = scn('Roman Empire (117) vs Roman Empire (395)', ['Roman Empire', ['rome-117']], ['Roman Empire', ['rome-395']]);
+    expect(followNames(twin, scn(twin.name, ['Roman Empire', ['rome-117']], ['Roman Empire', ['rome-476']]), d).name)
+      .toBe('Roman Empire (117) vs Roman Empire (476)');
+    // side B's name inside side A's: "Germany" first matched in "East Germany"
+    const east = scn('East Germany (1970) vs Germany (1939)', ['East Germany', ['gdr-1970']], ['Germany', ['germany-1939']]);
+    expect(followNames(east, scn(east.name, ['East Germany', ['gdr-1970']], ['Germany', ['germany-1914']]), d).name)
+      .toBe('East Germany (1970) vs Germany (1914)');
   });
 });

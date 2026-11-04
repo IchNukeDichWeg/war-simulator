@@ -54,12 +54,19 @@ export function followNames(before: Scenario, after: Scenario, d: Lookup): Scena
   if (name.trim() === '' || name === DEFAULT_TITLE) {
     if (sides.every((s) => s.members.length > 0)) name = sides.map((s) => s.name + yearOf(s.members, d)).join(' vs ');
   } else {
-    // swap each changed side's name, and its "(year)" if the title carries one, in place
+    // swap each changed side's name, and its "(year)" if the title carries one, in place. In an
+    // "A vs B" title only side i's half is searched: the first match anywhere used to edit the
+    // wrong side when both share a name ("Roman Empire (117) vs Roman Empire (395)") or one
+    // name contains the other ("Germany" inside "East Germany").
+    const parts = name.split(' vs ');
     for (const i of [0, 1]) {
       if (!changed[i]) continue;
-      const old = before.sides[i].name;
-      name = name.replace(new RegExp(`${esc(old)}( \\((\\d+( BCE)?)\\))?`), (_, yr) => sides[i].name + (yr ? yearOf(sides[i].members, d) || yr : ''));
+      const re = new RegExp(`${esc(before.sides[i].name)}( \\((\\d+( BCE)?)\\))?`);
+      const swap = (text: string) => text.replace(re, (_, yr) => sides[i].name + (yr ? yearOf(sides[i].members, d) || yr : ''));
+      if (parts.length === 2) parts[i] = swap(parts[i]);
+      else name = swap(name);
     }
+    if (parts.length === 2) name = parts.join(' vs ');
   }
   return name === after.name && sides.every((s, i) => s === after.sides[i]) ? after : { ...after, sides, name };
 }
