@@ -17,6 +17,7 @@
 </p>
 
 <p align="center">
+  <a href="https://ichnukedichweg.github.io/war-simulator/"><b>Live demo</b></a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="#features">Features</a> ·
   <a href="#how-it-works">How it works</a> ·
@@ -33,6 +34,9 @@
 > grade (A to D), and the engine is checked against 24 historical battles in [VALIDATION.md](VALIDATION.md).
 
 ## Quick start
+
+Try it in the browser at **[ichnukedichweg.github.io/war-simulator](https://ichnukedichweg.github.io/war-simulator/)**,
+deployed from each release tag. To run it locally:
 
 You need **Node.js 22.12 or newer** and a browser with WebGL. The simulation data ships with the
 repository; the map imagery and elevation tiles load from NASA GIBS and AWS Terrain Tiles at runtime.
@@ -96,7 +100,7 @@ npm run preview    # serve dist/ on http://localhost:4173
 ```
 
 The build uses relative paths (`base: './'`), so `dist/` can be served from any subdirectory, such as
-GitHub Pages. `dist/` is about 31 MB, of which 29 MB is the runtime data from `public/data/`. Vite warns
+GitHub Pages, where `.github/workflows/pages.yml` deploys it on every `v*` tag. `dist/` is about 31 MB, of which 29 MB is the runtime data from `public/data/`. Vite warns
 about the size of the MapLibre chunk; that is expected.
 
 <details>
