@@ -67,6 +67,8 @@ open **Setup**, choose the nations for each side, the year of each, the theater 
   supply, and the event log of the decisive moments.
 - **Save and share.** Export a scenario to a file or a link, and edit any value of a snapshot in the
   **Editor**.
+- **Your view.** Light or dark theme, a relief, muted or dark basemap, three unit sizes, the speed a
+  run starts at, and map layers that stay as you left them. All of it is kept in your browser only.
 
 ## How it works
 
@@ -87,7 +89,7 @@ from a run. The model reference is in [ENGINE.md](ENGINE.md), the design choices
 ## Development
 
 ```sh
-npm test           # vitest: 30 files, 237 tests, about 8 s
+npm test           # vitest: 39 files, 288 tests, about 10 s
 npm run typecheck  # tsc --noEmit
 npm run build      # typecheck, then vite build into dist/
 npm run preview    # serve dist/ on http://localhost:4173
