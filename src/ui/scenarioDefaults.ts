@@ -106,10 +106,16 @@ function obj(v: unknown, field: string): Record<string, unknown> {
   return isObj(v) ? v : bad(field, 'an object', v);
 }
 
+/** A side colour lands in CSS `background` (legend, map card, Monte Carlo view): any text let a
+ *  link carry url(//host/a.gif) and make every viewer's browser fetch from that host. Only
+ *  #rrggbb, what the colour picker writes, is kept; anything else takes the side's default. */
+const HEX_COLOR = /^#[0-9a-f]{6}$/i;
+
 function side(v: unknown, i: number, d: SideSpec): SideSpec {
   const f = `sides[${i}]`;
   if (!isObj(v)) bad(f, 'an object', v);
-  const out: SideSpec = { name: str(v.name, `${f}.name`, d.name), color: str(v.color, `${f}.color`, d.color), members: strList(v.members, `${f}.members`) };
+  const color = str(v.color, `${f}.color`, d.color);
+  const out: SideSpec = { name: str(v.name, `${f}.name`, d.name), color: HEX_COLOR.test(color) ? color : d.color, members: strList(v.members, `${f}.members`) };
   if (v.commitment !== undefined) {
     // share of a member's forces sent to this theater, 0..1 (the engine clamps the same way)
     out.commitment = Object.fromEntries(Object.entries(obj(v.commitment, `${f}.commitment`)).map(([k, x]) => [k, num(x, `${f}.commitment.${k}`, 1, 0, 1)]));
