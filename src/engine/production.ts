@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, MAX_FORMATIONS_PER_MEMBER, RECRUIT_BATCH_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, MAX_FORMATIONS_PER_MEMBER, RECRUIT_BATCH_DAYS, REINFORCEMENT_ELAPSED_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { refreshFormation, spawnFormation } from './formations';
 import { haversineKm } from './grid';
@@ -135,7 +135,9 @@ export function productionPhase(ctx: Ctx): void {
   if (reinf) {
     for (const side of [0, 1] as const) {
       for (const r of reinf[side] ?? []) {
-        if (Math.ceil(r.day) !== day) continue;
+        // r.day counts days elapsed since the battle began, so 1.0 is the start of sim day 2
+        // (REINFORCEMENT_ELAPSED_DAYS); ceil put it at round 0 of day 1 and never fired day 0
+        if ((REINFORCEMENT_ELAPSED_DAYS ? Math.floor(r.day) + 1 : Math.ceil(r.day)) !== day) continue;
         const mi = S.lead[side];
         const counts = new Float64Array(NR);
         let p = 0;

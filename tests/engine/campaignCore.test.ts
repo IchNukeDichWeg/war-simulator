@@ -1,11 +1,47 @@
 import { describe, expect, it } from 'vitest';
 import { buildSetup } from '../../src/engine/setup';
-import { simFromSetup } from '../../src/engine/sim';
+import { createSim, simFromSetup } from '../../src/engine/sim';
+import { battleCaseScenario } from '../../src/engine/battleCase';
+import type { BattleCase } from '../../src/types/mechanics';
 import { IS_P, NR } from '../../src/engine/roles';
 import { NATIONS, fixtureScenario } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
 
 // Campaign-core accounting: sea lift, reinforcement timing, member collapse bookkeeping.
+
+const r = (mid: number) => ({ low: mid, mid, high: mid });
+const tech6 = { weapons: 6, armor: 6, logistics: 6, communications: 6, fortification: 6, ships: 6, isr: 6 };
+// TEST FIXTURE, not data: a small campaign whose attacker gets reinforcements at elapsed days 0, 1, 1.5
+const reinforcedCampaign: BattleCase = {
+  id: 'fixture-reinforced', name: 'Fixture reinforced campaign', year: 1800, kind: 'campaign',
+  location: { lat: 5, lon: 3, radiusKm: 150 }, bbox: [1.5, 4, 4.5, 6], terrain: 'plains', season: 'summer',
+  sides: [
+    { name: 'West', posture: 'attack', forces: { infantry_line: r(30000), artillery: r(60) }, tech: tech6,
+      startPositions: [{ lat: 5, lon: 2.2, share: 1 }],
+      reinforcements: [0, 1, 1.5].map((day, i) => ({ day, forces: { infantry_line: r(1000 * (i + 1)) } })) },
+    { name: 'East', posture: 'defend', forces: { infantry_line: r(20000), artillery: r(40) }, tech: tech6,
+      startPositions: [{ lat: 5, lon: 3.8, share: 1 }] },
+  ],
+  outcome: { winner: 0, durationDays: r(20), losses: [r(2000), r(5000)], note: 'TEST FIXTURE, not data' },
+  sources: [], grade: 'D',
+};
+
+describe('backtest reinforcements count elapsed days (REINFORCEMENT_ELAPSED_DAYS)', () => {
+  // Gettysburg's day-1.0 group arrived at round 0 of sim day 1, ahead of the 0.3 group
+  it('arrive on sim day floor(day) + 1 at the round of the fraction', () => {
+    const { data: d, scenario, opts } = battleCaseScenario(data(), reinforcedCampaign, 1);
+    const sim = createSim(d, scenario, opts);
+    const F = sim.ctx.st.F;
+    const seen: string[] = [];
+    for (let k = 0; k < 2 && !sim.ended(); k++) {
+      const before = F.n;
+      sim.step(1);
+      for (let f = before; f < F.n; f++) seen.push(`${Math.round(F.startPersonnel[f])}@${sim.day()}r${F.joinDay[f] === sim.day() ? F.joinRound[f] : 0}`);
+    }
+    const H = sim.setup.H;
+    expect(seen).toEqual(['1000@1r0', '2000@2r0', `3000@2r${Math.ceil(0.5 * H)}`]);
+  });
+});
 
 describe('sea lift shared by the seed waves and the depot (SEA_LIFT_AFTER_SEED_WAVES)', () => {
   // NATO 1989: the US landed 260k on day 9 from its seed waves, then shipped a second full lift

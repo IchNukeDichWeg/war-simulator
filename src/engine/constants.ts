@@ -389,6 +389,16 @@ export const MEMBER_MORALE_COLLAPSE = true;
  *  KEPT-ON-NULL: the double booking is plain accounting; the Falklands preset moving away from
  *  history is flagged for the owner, not tuned away. */
 export const SEA_LIFT_AFTER_SEED_WAVES = true;
+/** Backtest reinforcement days count days elapsed since the battle began: one at r.day arrives on
+ *  sim day floor(r.day) + 1, at round ceil(fraction x battleHoursPerDay) (SUBDAY_REINFORCEMENTS).
+ *  OFF: sim day ceil(r.day), so a whole-number day arrived a day early at round 0 (Gettysburg's 1.0
+ *  group on day 1, ahead of the 0.3 group) and day 0 never arrived. Seed-1 oracle: Gettysburg Union
+ *  14,500 (day 1.0) d1 round 0 -> d2 round 0, Yom Kippur Israeli groups (days 2, 7) d2/d7 -> d3/d8;
+ *  the fractional days (0.3, 0.9, 1.5 ...) arrive as before. Measured (20 seeds): 19/15/22 ->
+ *  19/15/22. Gettysburg x2.03 -> x1.93 and 2.5 -> 2.6 days (hist 2.4), Kursk x3.55 -> x3.65 (fails
+ *  both ways), Yom Kippur losses 468 -> 466; Falklands, Iraq 2003 and Stalingrad identical (their
+ *  whole-day groups come after the median end or not at all). KEPT-ON-NULL: correctness fix. */
+export const REINFORCEMENT_ELAPSED_DAYS = true;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the

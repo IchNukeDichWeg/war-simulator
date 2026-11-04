@@ -1265,3 +1265,29 @@ engine one. Named simplification: a seed wave below the lift does not top up its
 
 Verdict: **KEPT-ON-NULL**. `tests/engine/campaignCore.test.ts` pins the lift day and that a full depot waits
 for it.
+
+### Backtest reinforcements count elapsed days (`REINFORCEMENT_ELAPSED_DAYS`)
+
+A case's reinforcement day counts days elapsed since the battle began, but the engine spawned it on sim day
+`ceil(day)`. A whole-number day therefore arrived a full day early at round 0: Gettysburg's day-1.0 Union
+group joined on the first day ahead of the day-0.3 group, and a day-0 group never arrived (sim days start
+at 1). ON, a group arrives on sim day `floor(day) + 1` and joins at the round of its fraction, as
+`SUBDAY_REINFORCEMENTS` already did for fractional days.
+
+Oracle (seed 1, sim day and join round of each group): Gettysburg Union 14,500 (day 1.0) d1 r0 -> d2 r0;
+Yom Kippur Israeli 9,000 and 8,000 (days 2 and 7) d2/d7 -> d3/d8; every fractional group unchanged. Kursk
+(day 6), Falklands (day 11), Iraq 2003 and Stalingrad (day 23) end or skip the group before it matters in
+seed 1.
+
+| Case | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22 |
+| Gettysburg | x2.03, 2.5 days | x1.93, 2.6 days (hist 2.4) |
+| Kursk | x3.55 | x3.65 (fails both ways) |
+| Yom Kippur | losses 1,518 / 468 | 1,518 / 466 |
+| Falklands, Iraq 2003, Stalingrad, all others | | identical |
+
+Verdict: **KEPT-ON-NULL**, a correctness fix that moves no count. `tests/engine/campaignCore.test.ts` pins
+days 0, 1 and 1.5 (fails with the toggle OFF). Seen on the way, not fixed here: the Stalingrad day-23 Soviet
+group does not spawn in seed 1 either way, because `productionPhase` skips a reinforcement whose spawn cells
+are all enemy-held and never retries it.
