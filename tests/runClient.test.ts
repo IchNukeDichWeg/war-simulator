@@ -199,4 +199,17 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(e.store.get().run.theater).toBeNull();
     expect(e.history.day).toEqual([]);
   });
+
+  // Review finding: the Odds tab labelled a batch with the live run's side names, which may
+  // belong to a different war.
+  it('a Monte Carlo batch keeps its own side names', async () => {
+    const e = await load();
+    e.runMonteCarlo(e.sc, 2);
+    const renamed = { ...e.sc, sides: [{ ...e.sc.sides[0], name: 'Other A' }, { ...e.sc.sides[1], name: 'Other B' }] as typeof e.sc.sides };
+    e.store.set({ scenario: renamed });
+    e.startRun(renamed, 0);
+    FakeWorker.all.at(-1)!.pump();
+    expect(e.store.get().run.sideNames).toEqual(['Other A', 'Other B']);
+    expect(e.mcSideNames()).toEqual([e.sc.sides[0].name, e.sc.sides[1].name]);
+  });
 });

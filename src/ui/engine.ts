@@ -288,6 +288,8 @@ let mcWorker: Worker | null = null;
 /** The scenario object the current or last batch ran on; the view compares it by identity with
  *  the store's scenario (every edit makes a new object) to flag a stale result. */
 export let mcScenario: Scenario | null = null;
+/** Side names of the current or last batch, for the Odds tab: the live run may be another war. */
+export const mcSideNames = (): [string, string] | null => (mcScenario ? [mcScenario.sides[0].name, mcScenario.sides[1].name] : null);
 /** performance.now() when the current batch started, for the progress ETA. */
 export let mcStartedAt = 0;
 

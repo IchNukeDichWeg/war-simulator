@@ -6,7 +6,7 @@
 // summaries of the per-run results.
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { MonteCarloResult } from '../../engine/protocol';
-import { cancelMonteCarlo, mcScenario, mcStartedAt, runMonteCarlo, scenarioProblems } from '../engine';
+import { cancelMonteCarlo, mcScenario, mcSideNames, mcStartedAt, runMonteCarlo, scenarioProblems } from '../engine';
 import { fmtCount, fmtDays } from '../format';
 import { endReasonBreakdown, histogram, outcomeCounts, wilson } from '../runStats';
 import { store, useStore } from '../store';
@@ -248,7 +248,9 @@ function Controls({ runs, setRuns, running, hasResult }: { runs: number; setRuns
 export function MonteCarloView() {
   const mc = useStore((s) => s.mc);
   const sc = useStore((s) => s.scenario);
-  const { names, colors: raw } = useSides();
+  const { names: current, colors: raw } = useSides();
+  // the batch's own sides: useSides gives the live run's, which may be a different war
+  const names = mcSideNames() ?? current;
   const colors = useLegibleColors(raw);
   const [runs, setRuns] = useState(RUN_PRESETS[0]);
   const r = mc.result;
