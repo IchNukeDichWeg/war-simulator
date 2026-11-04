@@ -52,19 +52,35 @@ export function withMid(o: unknown, path: string[], mid: number): unknown {
 
 /** Same pass rule as scripts/backtest.ts: winner at least 60% (historical draw: no side above 60%). */
 function share(d: EngineData, bc: BattleCase, seeds: number, extra: Partial<SimOptions>): number {
-  const wins = [0, 0, 0];
-  for (let s = 0; s < seeds; s++) {
-    const r = runBattleCase(d, bc, 1 + s, extra);
+  return shareOf(bc, tally(d, bc, 1, seeds, extra), seeds);
+}
+
+/** Wins of side 0, side 1 and draws over seeds first .. first+count-1. */
+export function tally(d: EngineData, bc: BattleCase, first: number, count: number, extra: Partial<SimOptions>): [number, number, number] {
+  const wins: [number, number, number] = [0, 0, 0];
+  for (let s = first; s < first + count; s++) {
+    const r = runBattleCase(d, bc, s, extra);
     wins[r.winner === 'draw' ? 2 : r.winner]++;
   }
+  return wins;
+}
+
+/** Historical-winner share from a tally over n seeds. */
+export function shareOf(bc: BattleCase, wins: [number, number, number], n: number): number {
   const hw = bc.outcome.winner;
   // a historical draw passes while no side is above 60%; shifted so the one line applies to both
-  return hw === 'draw' ? 1.2 - Math.max(wins[0], wins[1]) / seeds : wins[hw] / seeds;
+  return hw === 'draw' ? 1.2 - Math.max(wins[0], wins[1]) / n : wins[hw] / n;
+}
+
+/** The data and run options one task changes: a constant moved to its low or high, or the era
+ *  breakpoints pinned at one end. */
+export function taskInputs(task: Task, data: EngineData): { d: EngineData; extra: Partial<SimOptions> } {
+  const d = task.kind === 'constant' ? { ...data, mechanics: withMid(data.mechanics, task.path, task.value) as EngineData['mechanics'] } : data;
+  return { d, extra: task.kind === 'breakpoint' ? { breakpointQuantile: task.quantile } : {} };
 }
 
 export function evaluate(task: Task, data: EngineData, cases: BattleCase[], seeds: number): Result {
-  const d = task.kind === 'constant' ? { ...data, mechanics: withMid(data.mechanics, task.path, task.value) as EngineData['mechanics'] } : data;
-  const extra = task.kind === 'breakpoint' ? { breakpointQuantile: task.quantile } : {};
+  const { d, extra } = taskInputs(task, data);
   const pct: Record<string, number> = {};
   try {
     for (const bc of cases) pct[bc.id] = share(d, bc, seeds, extra);
