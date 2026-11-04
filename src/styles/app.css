@@ -332,6 +332,11 @@ aside.left.closed .tabs button.on { border-left-color: var(--c-accent-fill); }
 .scrub input[type='range']::-moz-range-track { background: var(--c-border-strong); }
 .scrub-reached { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--c-accent); opacity: 0.6; pointer-events: none; border-radius: var(--r-pill); }
 .daylabel { flex: none; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; color: var(--c-accent); font-weight: var(--fw-medium); }
+/* before a run: just the Run button and a hint, hugging its content instead of spanning the map */
+.timebar.idle { right: auto; max-width: calc(100% - 2 * var(--sp-4)); flex-wrap: nowrap; }
+.tb-hint { color: var(--c-text-muted); font-size: var(--fs-sm); min-width: 0; }
+.seg button { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.tb-exact { min-height: var(--control-h); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
 
 footer.banner { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-5); background: var(--c-banner-bg); color: var(--c-banner-text); border-top: 1px solid var(--c-banner-border); font-size: var(--fs-sm); text-align: center; font-weight: var(--fw-semibold); }
 footer.banner .icon { flex: none; }
@@ -525,8 +530,11 @@ table.stats td, table.stats th { padding: var(--sp-1) var(--sp-2); border-bottom
 @container center (max-width: 560px) {
   .timebar { left: var(--sp-3); right: var(--sp-3); padding: var(--sp-3); gap: var(--sp-3); }
   .tb-controls { width: 100%; justify-content: space-between; }
-  .seg button { padding: 0 var(--sp-2); }
+  .timebar.idle { max-width: calc(100% - 2 * var(--sp-3)); }
+  .seg button { padding: 0 var(--sp-3); }
+  .seg .tb-lbl { display: none; } /* Pause keeps its icon and its aria-label */
   .tb-run { padding: 0 var(--sp-4); }
+  .tb-exact { max-width: 92px; }
   .tb-scrub { flex-basis: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
