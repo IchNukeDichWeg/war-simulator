@@ -356,7 +356,8 @@ footer.banner .icon { flex: none; }
 .compare-row { border-top: 1px solid var(--c-border-subtle); }
 
 /* ---------- scenario builder ---------- */
-fieldset.side { border: 1px solid; border-radius: var(--r-md); margin: var(--sp-4) 0; padding: var(--sp-2) var(--sp-4) var(--sp-4); }
+/* min-width 0: a fieldset defaults to min-content, so a long nation name in a select stretched the box past a phone-width panel */
+fieldset.side { border: 1px solid; border-radius: var(--r-md); margin: var(--sp-4) 0; padding: var(--sp-2) var(--sp-4) var(--sp-4); min-width: 0; }
 fieldset.side legend { display: flex; gap: var(--sp-2); align-items: center; padding: 0 var(--sp-2); }
 .side-name { font-weight: var(--fw-semibold); width: 160px; }
 .title-input { font-size: var(--fs-lg); font-weight: var(--fw-semibold); width: 100%; }
