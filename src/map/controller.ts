@@ -250,7 +250,10 @@ export class MapController {
     }
 
     // historical borders of the selected snapshots
-    const bKey = JSON.stringify([s.scenario.sides.map((x) => [x.members, x.color]), !!s.data]);
+    // Borders may arrive after the rest of the data (deferred load), so the key
+    // carries whether each member's polygons are present, not just !!s.data:
+    // otherwise late borders would never be drawn.
+    const bKey = JSON.stringify([s.scenario.sides.map((x) => [x.members, x.color, x.members.map((id) => !!s.data?.borders?.[id])]), !!s.data]);
     if (force || bKey !== this.bordersKey) { this.bordersKey = bKey; this.drawBorders(s); }
 
     // engine terrain classes over the theater
@@ -284,7 +287,7 @@ export class MapController {
     if (d) {
       s.scenario.sides.forEach((side) => {
         for (const id of side.members) {
-          const mp = d.borders[id];
+          const mp = d.borders?.[id]; // absent until a deferred borders load lands
           if (!mp || !mp.length) continue;
           features.push({ type: 'Feature', properties: { color: side.color, id }, geometry: { type: 'MultiPolygon', coordinates: mp } });
           const p = labelPoint(mp);
