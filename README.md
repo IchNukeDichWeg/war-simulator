@@ -54,11 +54,11 @@ subdirectory.
 
 ### How the app loads its data
 
-The first screen (nation lists, presets, the map with the preset's borders) waits only for
+The first screen (nation lists, presets, the map) waits only for
 `snapshots.json`, `snapshots-phase3-index.json`, `nations.json`, `mechanics.json`,
-`coalitions.json`, `presets.json` and `borders.json`. Right after it the app fetches what only a
-run needs: `doctrines.json`, `terrain/grid.pack.gz`, `climate/zones.bin.gz` and
-`snapshot-notes.json` (the note and source prose the build splits off `snapshots.json` and merges
+`coalitions.json` and `presets.json`. Right after it the app fetches what only a run needs, and
+the borders: `doctrines.json`, `terrain/grid.pack.gz`, `climate/zones.bin.gz`, `borders.json` (the
+map draws the preset's borders when it lands) and `snapshot-notes.json` (the note and source prose the build splits off `snapshots.json` and merges
 back before the engine sees the snapshots). A run or Monte Carlo started before those are in waits
 for them. Phase 3 snapshots load per era on first use. `battles.json` is not fetched; only the
 backtest reads it. The `.gz` grids are inflated with `DecompressionStream`; without it, or when a
@@ -69,6 +69,9 @@ Measured with `vite preview` (which gzips JSON) in headless Chrome at an emulate
 now 0.49-0.55 s and 0.96 MB, with every data file in by 1.3-1.4 s (4.17 MB in all). Under
 `npm run dev` (no compression) the data before the first screen went from 32.7 MB (every file was
 fetched twice under React StrictMode) to 4.7 MB.
+Those figures were taken with `borders.json` still on the first screen. Moving it after the first
+screen should take the first screen's data to about 0.40 MB (0.96 MB less its 558 kB gzipped);
+that is arithmetic, not re-measured.
 
 ## Tests
 

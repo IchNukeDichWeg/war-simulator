@@ -137,19 +137,18 @@ export function loadData(): Promise<AppData> {
 
 // The first screen (lists, presets, the map with the preset's borders) waits only for the files
 // loadAll fetches. The engine-only files come after it (fetchEngineAssets, src/ui/lazy.ts), and a
-// run started earlier waits for them. borders.json stays on the first load: the map draws the
-// preset's borders and only redraws them when the scenario's members change.
+// run started earlier waits for them. borders.json (558 kB gzipped) is one of those: the map
+// redraws when a member's polygons arrive, so the preset's borders appear once it lands.
 async function loadAll(): Promise<AppData> {
   const missing: string[] = [];
   // battles.json (110 kB) is not fetched: only the headless backtest reads the battle cases.
-  const [snapshots, phase3, nations, mechanics, coalitions, presets, borders] = await Promise.all([
+  const [snapshots, phase3, nations, mechanics, coalitions, presets] = await Promise.all([
     getJson<Snapshot[]>('snapshots.json', missing),
     getJson<Phase3Entry[]>('snapshots-phase3-index.json', missing),
     getJson<Nation[]>('nations.json', missing),
     getJson<unknown>('mechanics.json', missing),
     getJson<Coalition[]>('coalitions.json', missing),
     getJson<Scenario[]>('presets.json', missing),
-    getJson<Record<string, number[][][][]>>('borders.json', missing),
   ]);
   const mech = isMechanics(mechanics) ? mechanics : null;
   if (!mech && !missing.includes('mechanics.json')) missing.push('mechanics.json');
@@ -163,7 +162,7 @@ async function loadAll(): Promise<AppData> {
     mechanics: mech,
     coalitions: Array.isArray(coalitions) ? coalitions : [],
     presets: Array.isArray(presets) ? presets : [],
-    borders: borders && typeof borders === 'object' ? borders : {},
+    borders: {},
     terrain: null,
     climate: null,
     assetsLoaded: false,
@@ -203,20 +202,23 @@ export interface EngineAssets {
   terrain: ArrayBuffer | null;
   climate: ArrayBuffer | null;
   notes: Record<string, TextTree>;
+  borders: Record<string, number[][][][]>;
 }
 
 export async function fetchEngineAssets(missing: string[]): Promise<EngineAssets> {
-  const [doctrines, terrain, climate, notes] = await Promise.all([
+  const [doctrines, terrain, climate, notes, borders] = await Promise.all([
     getJson<DoctrineProfile[]>('doctrines.json', missing),
     getTerrain(missing),
     getClimate(missing),
     getJson<Record<string, TextTree>>('snapshot-notes.json', missing),
+    getJson<Record<string, number[][][][]>>('borders.json', missing),
   ]);
   return {
     doctrines: Array.isArray(doctrines) ? doctrines : [],
     terrain,
     climate,
     notes: notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {},
+    borders: borders && typeof borders === 'object' && !Array.isArray(borders) ? borders : {},
   };
 }
 
@@ -224,7 +226,7 @@ export async function fetchEngineAssets(missing: string[]): Promise<EngineAssets
  *  place, so the engine gets the same snapshots as before the split (snapshotText.ts). */
 export function mergeEngineAssets(d: AppData, a: EngineAssets, missing: string[]): AppData {
   mergeSnapshotText(d.snapshots, a.notes);
-  return { ...d, doctrines: a.doctrines, terrain: a.terrain, climate: a.climate, assetsLoaded: true, missing: [...d.missing, ...missing] };
+  return { ...d, doctrines: a.doctrines, terrain: a.terrain, climate: a.climate, borders: a.borders, assetsLoaded: true, missing: [...d.missing, ...missing] };
 }
 
 /** Fetch one era of Phase 3 snapshots. Throws when the file is missing. */

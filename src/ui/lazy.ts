@@ -17,7 +17,7 @@ export function ensureEngineAssets(): Promise<void> {
     const missing: string[] = [];
     let a;
     try { a = await fetchEngineAssets(missing); }
-    catch { a = { doctrines: [], terrain: null, climate: null, notes: {} }; missing.push('engine assets'); }
+    catch { a = { doctrines: [], terrain: null, climate: null, notes: {}, borders: {} }; missing.push('engine assets'); }
     const d = store.get().data;
     if (d) store.set({ data: mergeEngineAssets(d, a, missing) });
   })();
