@@ -723,7 +723,7 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Sikh Empire (Lahore Durbar) (`sikh-empire-1845`) | 1845 | industrial | south_asia | researched | 9% | 15% | 48% | 28% | C |
 | Confederate States (`confederate-states-1863`) | 1863 | industrial | north_america | researched | 6% | 2% | 69% | 24% | C |
 | United States (Union) (`usa-1863`) | 1863 | industrial | north_america | researched | 6% | 2% | 71% | 21% | C |
-| Republic of Paraguay (Francisco Solano Lopez) (`paraguay-1864`) | 1864 | industrial | latin_america | researched | 6% | 6% | 59% | 29% | C |
+| Republic of Paraguay (Francisco Solano Lopez) (`paraguay-1864`) | 1864 | industrial | latin_america | researched | 6% | 6% | 57% | 31% | C |
 | Austrian Empire (`habsburg-austria-1866`) | 1866 | industrial | europe | researched | 5% | 5% | 72% | 18% | C |
 | Kingdom of Prussia (`prussia-1866`) | 1866 | industrial | europe | researched | 5% | 5% | 70% | 19% | C |
 | French Empire (`france-1870`) | 1870 | industrial | europe | researched | 5% | 12% | 65% | 18% | C |
@@ -932,7 +932,7 @@ Basemap features excluded as non-state labels (distinct NAMEs over all basemap y
 | Australia (`australia-hb-1938`) | 1938 | worldwars | oceania | phase 3 (derived) | 3% | 4% | 1% | 92% | D |
 | Cambodia (`cambodia-hb-1938`) | 1938 | worldwars | southeast_asia | phase 3 (derived) | 3% | 4% | 1% | 91% | D |
 | Congo (France) (`congo-france-1938`) | 1938 | worldwars | subsaharan_africa | phase 3 (derived) | 3% | 2% | 5% | 91% | D |
-| Czechoslovak Republic (`czechoslovakia-1938`) | 1938 | worldwars | europe | researched | 3% | 21% | 56% | 19% | C |
+| Czechoslovak Republic (`czechoslovakia-1938`) | 1938 | worldwars | europe | researched | 3% | 11% | 66% | 19% | C |
 | Denmark (`denmark-hb-1938`) | 1938 | worldwars | europe | phase 3 (derived) | 3% | 4% | 1% | 92% | D |
 | Ecuador (`ecuador-hb-1938`) | 1938 | worldwars | latin_america | phase 3 (derived) | 3% | 1% | 1% | 94% | D |
 | Eritrea (Italy) (`eritrea-italy-1938`) | 1938 | worldwars | subsaharan_africa | phase 3 (derived) | 3% | 2% | 5% | 91% | D |
