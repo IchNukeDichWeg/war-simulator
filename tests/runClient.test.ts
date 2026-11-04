@@ -98,4 +98,25 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(e.store.get().run.day).toBe(0);
     expect(e.store.get().run.maxDay).toBe(0);
   });
+
+  // Review finding: the throttled run-panel flush (pendingRun and its timer) outlived startRun
+  // and stopRun, so the old run's day and maxDay landed on the new or stopped run.
+  it('a pending run-panel flush does not outlive the run', async () => {
+    const wait = () => new Promise((r) => setTimeout(r, 150));
+    const e = await load();
+    e.startRun(e.sc, 0);
+    live().pump();
+    e.stepDays(50); live().pump();       // within the throttle: day 50 waits in the flush
+    e.startRun(e.sc, 0);
+    live().pump();
+    await wait();
+    expect(e.store.get().run.day).toBe(0);
+    expect(e.store.get().run.maxDay).toBe(0);
+    e.stepDays(50); live().pump();
+    e.stopRun();
+    await wait();
+    expect(e.store.get().run.status).toBe('idle');
+    expect(e.store.get().run.day).toBe(0);
+    expect(e.store.get().run.maxDay).toBe(0);
+  });
 });

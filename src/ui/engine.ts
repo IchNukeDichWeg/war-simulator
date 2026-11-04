@@ -97,6 +97,12 @@ function flushRun() {
   setRun({ ...pendingRun, historyVersion: s.historyVersion + 1, eventsVersion: s.eventsVersion + 1 });
   pendingRun = {};
 }
+/** Forget a flush still waiting for the throttle: it holds the old run's day and maxDay. */
+function dropPendingFlush() {
+  clearTimeout(flushTimer);
+  flushTimer = undefined;
+  pendingRun = {};
+}
 function scheduleFlush() {
   const since = performance.now() - lastFlush;
   if (since > 120) flushRun();
@@ -197,6 +203,7 @@ export function startRun(s: Scenario, speed = 1) {
   if (probs.length) { toast(probs[0]); return; }
   if (!engineAssetsReady('run', s, () => startRun(s, speed), () => store.get().run.status === 'starting', () => setRun({ status: 'idle' }))) { setRun({ status: 'starting' }); return; }
   clearHistory();
+  dropPendingFlush();
   resetBus.emit();
   setRun({ ...initialRun, status: 'starting', speed, historyVersion: store.get().run.historyVersion + 1 });
   if (!ensureLive()) return;
@@ -229,6 +236,7 @@ export function stopRun() {
   liveReady = false;
   queue = [];
   clearHistory();
+  dropPendingFlush();
   resetBus.emit();
   setRun({ ...initialRun, historyVersion: store.get().run.historyVersion + 1 });
 }
