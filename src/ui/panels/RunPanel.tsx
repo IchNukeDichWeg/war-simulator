@@ -247,10 +247,12 @@ function Events() {
       </div>
       <div className="rp-muted small rp-evcount">
         {filtered ? `${matched} of ${eventLog.length} events match` : `${eventLog.length} events`}
-        {matched > list.length ? `, newest ${list.length} shown` : ''}. Click an event with a pin to pan the map to it.
+        {matched > list.length ? `, newest ${list.length} shown` : ''}. Click an event with a pin to see it on the map.
         {filtered && <button className="rp-textbtn" onClick={() => { setGroups([]); setSide(''); setQuery(''); }}>Clear filters</button>}
       </div>
-      {list.length === 0 && <p className="muted">{eventLog.length === 0 ? 'No events yet.' : 'No events match the filters.'}</p>}
+      {list.length === 0 && <p className="muted">{eventLog.length === 0
+        ? 'No events yet. Battles, captured cities and other turning points are listed here as the war plays out.'
+        : 'No events match these filters. Clear the filters to see them all.'}</p>}
       <ul className="rp-events">
         {list.map((e, i) => {
           const located = e.lat != null && e.lon != null;
@@ -338,20 +340,53 @@ function Result() {
   );
 }
 
+/** Tab id, label, tooltip. "Odds" is the Monte Carlo view: the label says what it answers. */
+const RIGHT_TABS: [RightTab, string, string][] = [
+  ['live', 'Live', 'How the war is going right now'],
+  ['events', 'Events', 'Battles, captures and other moments of the war'],
+  ['result', 'Result', 'Who won and why'],
+  ['montecarlo', 'Odds', 'Monte Carlo: run the same war many times to see how often each side wins'],
+];
+
 export function RunPanel() {
   const tab = useStore((s) => s.rightTab);
   const hasResult = useStore((s) => !!s.run.result);
   const mcRunning = useStore((s) => s.mc.status === 'running');
-  const tabs: [RightTab, string][] = [['live', 'Live'], ['events', 'Events'], ['result', hasResult ? 'Result *' : 'Result'], ['montecarlo', mcRunning ? 'Monte Carlo ...' : 'Monte Carlo']];
+  // WAI-ARIA tabs, same keys as the setup panel: arrows move, Home/End jump, Tab leaves the strip
+  const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const i = RIGHT_TABS.findIndex(([k]) => k === tab);
+    const n = RIGHT_TABS.length;
+    const j = e.key === 'ArrowRight' ? (i + 1) % n : e.key === 'ArrowLeft' ? (i + n - 1) % n
+      : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1;
+    if (j < 0) return;
+    e.preventDefault();
+    store.set({ rightTab: RIGHT_TABS[j][0] });
+    document.getElementById(`rtab-${RIGHT_TABS[j][0]}`)?.focus();
+  };
   return (
-    <aside className="right">
+    <aside className="right" aria-label="War progress and results">
       <nav className="tabs">
-        {tabs.map(([k, l]) => <button key={k} className={tab === k ? 'on' : ''} onClick={() => store.set({ rightTab: k })}>{l}</button>)}
+        <div className="tablist" role="tablist" aria-label="Run views" onKeyDown={onKey}>
+          {RIGHT_TABS.map(([k, l, hint]) => {
+            const ready = k === 'result' && hasResult;
+            const busy = k === 'montecarlo' && mcRunning;
+            return (
+              <button key={k} id={`rtab-${k}`} role="tab" aria-selected={tab === k} aria-controls="right-tabpanel" tabIndex={tab === k ? 0 : -1}
+                className={tab === k ? 'on' : ''} title={hint} onClick={() => store.set({ rightTab: k })}>
+                {l}{busy && ' ...'}
+                {ready && <span className="rp-tab-dot" aria-hidden />}
+                {(ready || busy) && <span className="sr-only">{ready ? ' (ready)' : ' (running)'}</span>}
+              </button>
+            );
+          })}
+        </div>
       </nav>
-      {tab === 'live' && <Live />}
-      {tab === 'events' && <Events />}
-      {tab === 'result' && <Result />}
-      {tab === 'montecarlo' && <MonteCarloView />}
+      <div className="tabpanel" role="tabpanel" id="right-tabpanel" aria-labelledby={`rtab-${tab}`}>
+        {tab === 'live' && <Live />}
+        {tab === 'events' && <Events />}
+        {tab === 'result' && <Result />}
+        {tab === 'montecarlo' && <MonteCarloView />}
+      </div>
     </aside>
   );
 }
