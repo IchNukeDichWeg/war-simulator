@@ -3,7 +3,7 @@ import { buildSetup } from '../../src/engine/setup';
 import { createSim, simFromSetup } from '../../src/engine/sim';
 import { battleCaseScenario } from '../../src/engine/battleCase';
 import type { BattleCase } from '../../src/types/mechanics';
-import { IS_P, NR } from '../../src/engine/roles';
+import { IS_P, NR, RI } from '../../src/engine/roles';
 import { NATIONS, fixtureScenario } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
 
@@ -40,6 +40,35 @@ describe('backtest reinforcements count elapsed days (REINFORCEMENT_ELAPSED_DAYS
     }
     const H = sim.setup.H;
     expect(seen).toEqual(['1000@1r0', '2000@2r0', `3000@2r${Math.ceil(0.5 * H)}`]);
+  });
+});
+
+describe('strength merged into a formation counts as added (ADDED_W_ON_MERGE)', () => {
+  // argentina-vs-uk-1982: depot platforms merged into crewed formations raised curW without addedW,
+  // so a side held up to x1.005 of all the strength it ever fielded
+  it('never lets a side hold more strength than it started with plus what was added', () => {
+    const sim = createSim(data(), fixtureScenario(NATIONS.westland, NATIONS.eastland, [0, 0, 10, 10]));
+    const { st, S } = sim.ctx;
+    const mi = S.members.findIndex((m) => m.name === 'Westland');
+    const ms = st.members[mi];
+    // platforms only: no reserves, recruits or hospital returns, so the depot merges instead of spawning
+    ms.reservesDue = 0; ms.mobilizableLeft = 0; ms.recruitQueue.length = 0;
+    ms.depot[RI.artillery] = 50000;
+    const F = st.F;
+    const n0 = F.n;
+    let worst = 0;
+    while (st.day < 30 && !sim.ended()) {
+      ms.returns.fill(0);
+      for (let r = 0; r < NR; r++) if (IS_P[r]) ms.depot[r] = 0;
+      sim.step(1);
+      let w = 0;
+      for (let f = 0; f < F.n; f++) if (F.alive[f] && F.side[f] === 0) w += F.curW[f];
+      worst = Math.max(worst, w / (st.startW[0] + st.addedW[0]));
+    }
+    expect(st.day).toBe(30);
+    expect(ms.depot[RI.artillery]).toBe(0);
+    for (let f = n0; f < F.n; f++) expect(F.member[f]).not.toBe(mi);
+    expect(worst).toBeLessThanOrEqual(1 + 1e-9);
   });
 });
 

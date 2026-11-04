@@ -409,6 +409,15 @@ export const REINFORCEMENT_ELAPSED_DAYS = true;
  *  identical seed for seed. KEPT-ON-NULL: correctness fix; the recoveries seen hover at the line
  *  and none decided a war in the screen. */
 export const MEMBER_COLLAPSE_RECOVERS = true;
+/** Strength added to an existing formation (depot platforms merged into a crewed formation, a draft
+ *  joining one at MAX_FORMATIONS_PER_MEMBER) counts in addedW, as a spawned formation's does. OFF:
+ *  curW rose with no matching addedW, so a side's strength share now / (startW + addedW) could
+ *  exceed 1 (argentina-vs-uk-1982 worst x1.005), which skews the time-limit strength test.
+ *  Daily invariant oracle (default seed): argentina-vs-uk-1982 9 days above 1, worst x1.0053 -> 0.
+ *  Measured (20 seeds): backtest 19/15/22 identical. Presets (10-seed screen: argentina-vs-uk,
+ *  allies-vs-axis, usa-vs-china, usa-spain-vs-russia, mongols-vs-rome, japan-vs-usa, the ones that
+ *  end on time or stalemate): identical seed for seed. KEPT-ON-NULL: accounting fix. */
+export const ADDED_W_ON_MERGE = true;
 /** Battle breakpoint = modelRules.breakpoint.loserCasualtyShareAtBreak for the member's era
  *  (napoleonic sub-key for 1789-1849; CDB90 with the 24 backtest battles removed, Krentz and Sabin
  *  for iron), shifted by cohesion as before. Each seed draws one quantile u (its own stream, so the

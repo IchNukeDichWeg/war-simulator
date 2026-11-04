@@ -1316,3 +1316,24 @@ pins a recovered member keeping its side in the war, with one event (fails with 
 The `rout` event for a broken member always said "Its allies fight on.", including on the day the last
 counted member broke and the war ended. It now says so only while another counted member still stands. Text
 only: backtest 19 / 15 / 22 identical, and the five coalition presets of the screen identical seed for seed.
+
+### Strength merged into a formation counts as added (`ADDED_W_ON_MERGE`)
+
+Two production paths raised a formation's power weight without adding it to the side's `addedW`: depot
+platforms merged into a crewed formation (`CREWED_FORMATIONS`), and a draft joining a formation once the
+member is at `MAX_FORMATIONS_PER_MEMBER`. A side could then hold more strength than it started with plus
+everything added, and the time-limit test compares exactly that share. ON, both paths add the increase to
+`addedW`, as a spawned formation does.
+
+Oracle (default seed, daily check of on-map plus off-map W against `startW + addedW`): Argentina vs UK 1982
+over on 9 days, worst x1.0053 -> never over. Germany vs France 1940, India vs Pakistan 1971 and Allies vs Axis
+were never over either way.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22, every case identical |
+| Argentina vs UK, Allies vs Axis, USA vs China, USA + Spain vs Russia, Mongols vs Rome, Japan vs USA (the presets that end on time or stalemate) | | identical seed for seed |
+
+Verdict: **KEPT-ON-NULL**, an accounting fix too small to move an outcome in the screen.
+`tests/engine/campaignCore.test.ts` merges a large platform depot and checks the bound (fails with the
+toggle OFF).

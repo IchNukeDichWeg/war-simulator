@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { addEvent } from './ctx';
 import { IS_AIR, IS_LAND, IS_NAVAL, IS_P, NR, RI } from './roles';
-import { CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, MAX_FORMATIONS_PER_MEMBER, RECRUIT_BATCH_DAYS, REINFORCEMENT_ELAPSED_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
+import { ADDED_W_ON_MERGE, CREWED_FORMATIONS, HOSPITAL_ADMISSIONS_RETURN, MAX_FORMATIONS_PER_MEMBER, RECRUIT_BATCH_DAYS, REINFORCEMENT_ELAPSED_DAYS, RETURN_RING_DAYS, SUBDAY_REINFORCEMENTS } from './constants';
 import { blockaded } from './naval';
 import { refreshFormation, spawnFormation } from './formations';
 import { haversineKm } from './grid';
@@ -58,8 +58,11 @@ function mergePlatforms(ctx: Ctx, mi: number): void {
   if (best < 0) return;
   const F = ctx.st.F;
   const o = best * NR;
+  const w0 = F.curW[best];
   for (let r = 0; r < NR; r++) if (IS_LAND[r] && !IS_P[r] && d[r] > 0) { F.counts[o + r] += d[r]; d[r] = 0; }
   refreshFormation(ctx, best);
+  // ADDED_W_ON_MERGE: strength added to a formation counts in addedW, as a spawned one does
+  if (ADDED_W_ON_MERGE) ctx.st.addedW[F.side[best]] += F.curW[best] - w0;
 }
 
 function flushDepot(ctx: Ctx, mi: number, force: boolean): void {
@@ -92,8 +95,10 @@ function flushDepot(ctx: Ctx, mi: number, force: boolean): void {
   const join = room <= 0 ? nearestCrewed(ctx, mi) : -1;
   if (join >= 0) {
     const F = st.F, o = join * NR;
+    const w0 = F.curW[join];
     for (let r = 0; r < NR; r++) if (IS_LAND[r]) F.counts[o + r] += d[r] * share;
     refreshFormation(ctx, join);
+    if (ADDED_W_ON_MERGE) st.addedW[mr.side] += F.curW[join] - w0;
     for (let r = 0; r < NR; r++) if (IS_LAND[r]) d[r] -= d[r] * share;
     return;
   }
