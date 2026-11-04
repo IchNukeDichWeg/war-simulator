@@ -51,15 +51,21 @@ export function NationBrowser() {
   const counts = useMemo(() => kindCounts(items, dq, filters), [items, dq, era, region, minGrade]);
   const unfiltered = useMemo(() => (list.length === 0 && (era || region || kind || minGrade) ? searchSnapshots(items, dq).length : 0), [list, items, dq, era, region, kind, minGrade]);
 
-  // a new query or filter starts at the top; an open detail that still matches stays open
+  // A new query or filter, and coming back to the tab, start at the top with the search box in
+  // view. An open detail stays open only if it is on the first page: keeping one far down (Rome
+  // at row ~900 of the A to Z list) used to scroll the panel 60,000 px past the search box.
+  const keyMoved = useRef(false);
   useEffect(() => {
     const i = openId ? list.findIndex((r) => r.item.id === openId) : -1;
-    setLimit(Math.max(PAGE, i + 1));
-    setActive(i >= 0 ? i : 0);
+    if (openId && (i < 0 || i >= PAGE)) setOpenId(null);
+    setLimit(PAGE);
+    setActive(i >= 0 && i < PAGE ? i : 0);
   }, [list]);
+  // only arrow and page keys follow the highlight; a list change never scrolls
   useEffect(() => {
-    const el = listRef.current?.querySelector<HTMLElement>(`[data-i="${active}"]`);
-    el?.scrollIntoView({ block: 'nearest' });
+    if (!keyMoved.current) return;
+    keyMoved.current = false;
+    listRef.current?.querySelector<HTMLElement>(`[data-i="${active}"]`)?.scrollIntoView({ block: 'nearest' });
   }, [active]);
 
   if (!data) return <div className="panel-body muted">Loading data...</div>;
@@ -72,6 +78,7 @@ export function NationBrowser() {
   const move = (to: number) => {
     const i = Math.max(0, Math.min(list.length - 1, to));
     if (i >= limit) setLimit(i + PAGE);
+    keyMoved.current = true;
     setActive(i);
   };
 
