@@ -18,6 +18,7 @@ export interface LayerToggles {
   rivers: boolean;
   borders: boolean;
   control: boolean;
+  front: boolean;
   supply: boolean;
   fog: boolean;
   fogSide: 0 | 1;
@@ -100,7 +101,7 @@ export const store = createStore<UiState>({
   mapMode: { kind: 'none' },
   layers: {
     tilt: false, terrain3d: false, hillshade: true, landcover: false, rivers: true, borders: true,
-    control: true, supply: true, fog: false, fogSide: 0, engineTerrain: false, stress: false,
+    control: true, front: true, supply: true, fog: false, fogSide: 0, engineTerrain: false, stress: false,
   },
   run: initialRun,
   mc: { status: 'idle', done: 0, total: 0, result: null, error: null },

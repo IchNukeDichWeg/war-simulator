@@ -81,10 +81,9 @@ function style(): StyleSpecification {
   };
 }
 
-/** The front line has no toolbar toggle yet: on unless the store carries
- *  `layers.front === false` (an optional field the shell can add later). */
+/** Front line toggle; a store without the field (older saved state) shows it. */
 function showFront(L: LayerToggles): boolean {
-  return (L as LayerToggles & { front?: boolean }).front !== false;
+  return L.front !== false;
 }
 
 export interface MapState {

@@ -11,6 +11,7 @@ const ITEMS: [keyof LayerToggles, string, string][] = [
   ['borders', 'Borders', 'Historical borders of the selected snapshots (approximate)'],
   ['engineTerrain', 'Model terrain', "The engine's 0.25 degree terrain classes over the theater"],
   ['control', 'Control', 'Territory control from the engine'],
+  ['front', 'Front line', 'Front line traced from the engine control grid'],
   ['supply', 'Supply lines', 'Supply lines from the engine'],
   ['fog', 'Fog of war', 'Hide enemy formations outside own formations’ sight radius (display only)'],
   ['stress', 'Stress 6000', 'Dev: 6000 synthetic moving units with an FPS counter'],
