@@ -30,7 +30,9 @@ import { ERAS } from './schema';
 
 const DATA = join(ROOT, 'data');
 const PUB = join(ROOT, 'public', 'data');
-const HB = 'https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson';
+// pinned to the upstream commit the shipped borders were built from: on master the world files
+// keep changing (five differed by 2026-11), so a clean clone rebuilt different borders
+const HB = 'https://raw.githubusercontent.com/aourednik/historical-basemaps/7bed003529d66488532c3a3256568b9725602bbf/geojson';
 const NE = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson';
 // 0.05 deg (~5 km) keeps borders recognisable at theater zoom while keeping borders.json small.
 const SIMPLIFY_DEG = 0.05;

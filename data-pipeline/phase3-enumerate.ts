@@ -22,7 +22,9 @@ import { MultiPolygon, bboxOf, multiAreaKm2, ringAreaKm2, toMulti } from './lib/
 import { ROOT, Progress, cachedFetch } from './lib/util';
 import { listJson } from './validate';
 
-const HB = 'https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson';
+// pinned to the upstream commit the shipped borders were built from: on master the world files
+// keep changing (five differed by 2026-11), so a clean clone rebuilt different borders
+const HB = 'https://raw.githubusercontent.com/aourednik/historical-basemaps/7bed003529d66488532c3a3256568b9725602bbf/geojson';
 const OUT = join(ROOT, 'data', 'reference', 'phase3-polities.json');
 
 /** The basemap years listed in data/RESEARCH_BRIEF.md (territory.border rule): 49 files.
