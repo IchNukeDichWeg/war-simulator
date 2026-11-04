@@ -223,6 +223,17 @@ export const CREWED_FORMATIONS = true;
  *  per-voyage exposure. QA round 2: allies-vs-axis-minus-two had 15 land battles on sea cells (65k
  *  casualties), usa-vs-china-2026 173 (33k). */
 export const EMBARKED_NAVAL_ONLY = true;
+
+// Pre-release engine fixes: combat and movement (VALIDATION.md section of that name).
+/** Interdiction is flown by the side that HOLDS the air (or whose enemy has no fighters).
+ *  OFF: the old test, which gave it to the side whose ENEMY held the air, so the supply cut
+ *  (logistics: enemy holds the air AND interdicts) never fired in a real air war: Germany 1940
+ *  held the air 90 of 90 days and flew no interdiction, France flew it every day. Measured (20
+ *  seeds): 19/15/22 unchanged; only France 1940 moves, 80% -> 95%, x3.68 -> x3.21, 48 -> 53 days.
+ *  Presets (10-seed screen, 11 air presets): Allies vs Axis 0/2/8 -> 0/0/10, NATO 1989 9/1/0 ->
+ *  10/0/0, Argentina vs UK 2/6/2 -> 2/7/1, the other 8 unchanged. KEPT-ON-NULL: correctness fix
+ *  the counts cannot see. */
+export const AIR_INTERDICTION_BY_HOLDER = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)

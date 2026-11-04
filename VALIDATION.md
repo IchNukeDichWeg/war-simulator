@@ -1023,3 +1023,46 @@ with Spain at 98%.
 Verdict: **KEPT-ON-NULL.** The backtest cannot measure it, and the preset shifts go the historical way
 (a coalition outlasting its first member to break). `tests/engine/memberCollapse.test.ts` pins the rule and
 fails with the toggle OFF.
+
+## Pre-release engine fixes: combat and movement
+
+Six reviewer-verified engine bugs, each fixed behind its own toggle in `constants.ts` (block "Pre-release
+engine fixes: combat and movement") and measured ON against OFF on the same commit before the next one.
+A seventh, the double count of `stillDays`, is a no-op (the only reader checks `>= 1`): backtest output
+byte-identical, no toggle.
+
+Instrument 1: `scripts/backtest.ts --seeds 20`, winner / loss ratio / duration of 24. Baseline at
+26d5545: 19 / 15 / 22.
+
+Instrument 2: a preset screen, 10 seeds per preset (seeds `preset.seed + 0..9`), A wins / B wins / draws
+and the median end day, with the real data. Only the presets the fix can reach are run; Central Powers vs
+Entente 1914 is left out (22 s per run). This is a 10-seed screen: a kill filter, not a measurement. It has
+no historical score and is not pooled with the backtest.
+
+Instrument 3: a per-bug oracle, the reviewer's repro script, run before and after. It shows the defect is
+gone; it says nothing about strength.
+
+### Interdiction by the side that holds the air (`AIR_INTERDICTION_BY_HOLDER`)
+
+`air.ts` gave interdiction to the side whose ENEMY held the air, and `logistics.ts` cuts supply only when the
+enemy holds the air AND interdicts, so the cut never fired in a real air war. ON, the side that holds the air
+(or whose enemy has no fighters up) flies it.
+
+Oracle (seed 1, 120 days, days holding the air with strike aircraft / of those with zero interdiction):
+Germany 1940 90 / 90 -> 90 / 0; USA + Spain vs Russia 120 / 120 -> 120 / 0; NATO 1989 59 / 59 -> 59 / 0;
+India 1971 96 / 96 -> 80 / 0; Allies vs Axis 29 / 29 -> 29 / 0; Japan vs USA 61 / 61 -> 61 / 0; Argentina vs
+UK 57 / 57 -> 57 / 0.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22; only France 1940 moves: 80% -> 95%, x3.68 -> x3.21, 48 -> 53 days |
+| Allies vs Axis | 0/2/8 | 0/0/10 |
+| NATO vs Warsaw Pact 1989 | 9/1/0 | 10/0/0 |
+| Argentina vs UK 1982 | 2/6/2 | 2/7/1 |
+| India vs Pakistan 1971 | 10/0/0, day 128 | 10/0/0, day 123 |
+
+Unchanged (10-seed screen): Rome 117 vs Spain 2026, Germany vs France 1940, USA + Spain vs Russia 2026, Japan
+vs USA 1941, Athens vs USA 2026, North vs South Korea 1950, USA vs China 2026.
+
+Verdict: **KEPT-ON-NULL.** A correctness fix the backtest counts cannot see.
+`tests/engine/combatMovementFixes.test.ts` fails with the toggle OFF.

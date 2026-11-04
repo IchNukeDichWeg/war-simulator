@@ -4,7 +4,7 @@
 import type { Ctx } from './ctx';
 import { byTech, clamp, matrix } from './mech';
 import { RI, ROLES, STRIKE_ROLES, NR } from './roles';
-import { AIR_BATTLE_SHARE, AIR_MIN_TECH } from './constants';
+import { AIR_BATTLE_SHARE, AIR_INTERDICTION_BY_HOLDER, AIR_MIN_TECH } from './constants';
 import { haversineKm } from './grid';
 
 function lossFrac(ctx: Ctx, side: 0 | 1): number {
@@ -71,8 +71,9 @@ export function airPhase(ctx: Ctx): void {
     if (strike <= 0) continue;
     const perSortieTli = tliSum / strike;
     const total = strike * sorties[s];
-    const contested = !st.airHolds[1 - s];
-    if (!contested || fp[1 - s] <= 0) st.interdiction[s] = total * (1 - AIR_BATTLE_SHARE);
+    // interdiction needs the air: this side holds it, or the enemy has no fighters up
+    const holds = AIR_INTERDICTION_BY_HOLDER ? st.airHolds[s] : st.airHolds[1 - s];
+    if (holds || fp[1 - s] <= 0) st.interdiction[s] = total * (1 - AIR_BATTLE_SHARE);
     // battle support within combat radius of own bases
     const radius = byTech(m.combatRadiusKm, pt.air);
     const bases: number[] = [];
