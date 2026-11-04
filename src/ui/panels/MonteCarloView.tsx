@@ -214,12 +214,23 @@ function EndReasons({ r, names, colors }: { r: MonteCarloResult; names: [string,
   );
 }
 
+/** The custom run count as typed, clamped to 2..5000; `fallback` while the field holds no number. */
+export function clampRuns(text: string, fallback: number): number {
+  const n = Math.trunc(Number(text));
+  return text.trim() === '' || !Number.isFinite(n) ? fallback : Math.max(2, Math.min(5000, n));
+}
+
 /** Run count choice and the start button (Cancel while a batch runs). */
 function Controls({ runs, setRuns, running, hasResult }: { runs: number; setRuns: (n: number) => void; running: boolean; hasResult: boolean }) {
   const sc = useStore((s) => s.scenario);
   useStore((s) => s.data); // scenarioProblems reads the loaded snapshots
   const problems = scenarioProblems(sc);
   const probId = useId();
+  // the field keeps what is typed and clamps on blur, Enter or run: clamping every keystroke
+  // turned the "1" of "150" into 2, so typing 150 gave 250
+  const [text, setText] = useState(String(runs));
+  useEffect(() => setText(String(runs)), [runs]);
+  const commit = () => { const n = clampRuns(text, runs); setRuns(n); setText(String(n)); return n; };
   if (running) return <div className="rp-mc-controls"><button onClick={cancelMonteCarlo}>Cancel</button></div>;
   return (
     <>
@@ -229,7 +240,7 @@ function Controls({ runs, setRuns, running, hasResult }: { runs: number; setRuns
           {RUN_PRESETS.map((n) => <button key={n} className={runs === n ? 'on' : ''} aria-pressed={runs === n} onClick={() => setRuns(n)}>{n}</button>)}
         </div>
         <button className="primary" disabled={problems.length > 0} aria-describedby={problems.length ? probId : undefined}
-          onClick={() => runMonteCarlo(store.get().scenario, runs)}>{hasResult ? `Run again (${runs})` : `Run ${runs} times`}</button>
+          onClick={() => runMonteCarlo(store.get().scenario, commit())}>{hasResult ? `Run again (${runs})` : `Run ${runs} times`}</button>
       </div>
       {problems.length > 0 && (
         <div className="notice warn" id={probId}>
@@ -238,7 +249,8 @@ function Controls({ runs, setRuns, running, hasResult }: { runs: number; setRuns
       )}
       <details className="rp-details rp-mc-opts">
         <summary>Run options</summary>
-        <label>Custom number of runs <input className="narrow" type="number" min={2} max={5000} value={runs} onChange={(e) => setRuns(Math.max(2, Math.min(5000, Math.trunc(+e.target.value) || 2)))} /></label>
+        <label>Custom number of runs <input className="narrow" type="number" min={2} max={5000} value={text} onChange={(e) => setText(e.target.value)}
+          onBlur={commit} onKeyDown={(e) => { if (e.key === 'Enter') commit(); }} /></label>
         <p className="small rp-muted">Runs the current scenario {runs} times with seeds {sc.seed}, {sc.seed + 1}, ... in a separate worker. {runs} runs pin a win probability to about +/-{Math.round(precisionAt(runs) * 100)} pts (95%); four times the runs halves that.</p>
       </details>
     </>
