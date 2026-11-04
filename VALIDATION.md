@@ -962,3 +962,24 @@ with the clamp campaign.
 
 The gate needs 18 and has 17. The two misses are France 1940 (half a point, unresolved at this count) and
 Mohi (clear flips). France alone would close it if its miss turned out to be noise.
+
+## Recheck of the readings the campaign could not resolve
+
+Instrument: `scripts/recheck.ts`, one case under one campaign key, 2,000 fresh seeds (201-2200, after the
+campaign's 1-200), same data hash 186ac37f73095b68, at fe0fe0f. This is a second instrument, not pooled with
+the campaign. Oracle: on seeds 1-200 it reproduces the campaign's France reading exactly (59.5%, 119/74/7).
+
+Every robust-candidate reading within its margin of the line is rechecked, on both sides, so that rechecking
+only the low reading cannot pull the count up. Mohi is left out: it has four flips clear of the line.
+
+| Case | Key | Campaign (200) | Recheck (2,000) |
+| --- | --- | --- | --- |
+| France 1940 | `attrition.starvationMultiplier` high | 59.5% +/- 6.8 | **63.1% +/- 2.1**, holds |
+| France 1940 | `lethality.tli.aircraft_strike.8` low | 64.0% +/- 6.7 | 67.1% +/- 2.1, holds |
+| Blenheim | `lethality.armorMatrix.6.5` low | 63.5% +/- 6.7 | 62.3% +/- 2.1, holds |
+
+France's miss was noise. With it, the robust count is **18 of 19** on grade-D constants and on the era
+breakpoints: **gate met** on the campaign plus this recheck. On the campaign alone it stays 17, because the
+campaign's rule counts an unresolved reading as a miss. Blenheim clears the line by 0.2 points of margin, the
+thinnest of the 18. Mohi stays the one passing case that is not robust, and its own base reading (60.0%) is
+on the line.
