@@ -8,7 +8,7 @@ type Item = [keyof LayerToggles, string, string];
 const WAR: Item[] = [
   ['control', 'Control', 'Shade the land each side holds in its colour'],
   ['front', 'Front line', 'Line where the two sides meet'],
-  ['supply', 'Supply lines', 'Dotted lines from each army back to its supply'],
+  ['supply', 'Supply lines', "Dotted supply routes in each side's colour"],
   ['fog', 'Fog of war', 'Show only the enemy units your own units can see (display only)'],
 ];
 const MAP: Item[] = [
