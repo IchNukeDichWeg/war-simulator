@@ -52,10 +52,10 @@ describe('C1: override paths cannot reach a prototype', () => {
     const msgs: FromWorker[] = [];
     const ctl = new Controller((m) => msgs.push(m));
     ctl.handle({ type: 'init', data: data() });
-    const clean = () => { ctl.handle({ type: 'start', scenario: basicScenario(3) }); ctl.handle({ type: 'step', days: 40 }); return msgs.filter((m) => m.type === 'frame').at(-1); };
+    const clean = () => { ctl.handle({ type: 'start', scenario: basicScenario(3), runId: 1 }); ctl.handle({ type: 'step', days: 40 }); return msgs.filter((m) => m.type === 'frame').at(-1); };
     const before = JSON.stringify(clean());
     for (const path of ['__proto__.voronoiControl', '__proto__.terrainOverride', '__proto__.noProduction']) {
-      ctl.handle({ type: 'start', scenario: { ...basicScenario(3), overrides: [{ snapshotId: 'westland-1900', path, value: path.endsWith('Override') ? 0 : 1 }] } });
+      ctl.handle({ type: 'start', scenario: { ...basicScenario(3), overrides: [{ snapshotId: 'westland-1900', path, value: path.endsWith('Override') ? 0 : 1 }] }, runId: 1 });
     }
     expect(protoClean()).toBe(true);
     expect(JSON.stringify(clean())).toBe(before);

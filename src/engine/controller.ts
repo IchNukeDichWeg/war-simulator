@@ -1,7 +1,7 @@
 // Worker-side controller: implements the ToWorker/FromWorker protocol on top of
 // the sim. Kept free of worker globals so tests and node can drive it with a
 // fake post function and timers.
-import type { EngineData, FromWorker, RunResult, ToWorker } from './protocol';
+import type { EngineData, FromWorker, FromWorkerBody, RunResult, ToWorker } from './protocol';
 import type { Scenario } from '../types/scenario';
 import { buildSetup, type Setup } from './setup';
 import { simFromSetup, runToEnd, type Sim } from './sim';
@@ -37,8 +37,14 @@ export class Controller {
   private timer: unknown = null;
   private endSent = false;
   private mcToken = 0;
+  private runId = 0;
 
-  constructor(private post: (msg: FromWorker, transfer?: Transferable[]) => void, private timers: Timers = defaultTimers) {}
+  constructor(private postRaw: (msg: FromWorker, transfer?: Transferable[]) => void, private timers: Timers = defaultTimers) {}
+
+  /** Tag with the current run so the UI can drop what an older run still had in flight. */
+  private post(msg: FromWorkerBody, transfer?: Transferable[]): void {
+    this.postRaw({ ...msg, runId: this.runId }, transfer);
+  }
 
   handle(msg: ToWorker): void {
     try {
@@ -47,7 +53,7 @@ export class Controller {
           this.data = msg.data;
           this.post({ type: 'ready' });
           break;
-        case 'start': this.start(msg.scenario); break;
+        case 'start': this.runId = msg.runId; this.start(msg.scenario); break;
         case 'speed': this.setSpeed(msg.daysPerSecond); break;
         case 'step': this.stepDays(msg.days); break;
         case 'seek': this.seek(msg.day); break;

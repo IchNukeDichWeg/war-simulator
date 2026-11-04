@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Controller, type Timers } from '../../src/engine/controller';
-import type { Frame, FromWorker } from '../../src/engine/protocol';
+import type { FromWorker } from '../../src/engine/protocol';
 import { KEYFRAME_DAYS, MAX_KEYFRAMES } from '../../src/engine/constants';
 import { createSim } from '../../src/engine/sim';
 import { basicScenario } from '../fixtures/snapshots.fixture';
@@ -32,7 +32,7 @@ function harness() {
   const msgs: FromWorker[] = [];
   const timers = new FakeTimers();
   const ctl = new Controller((m) => msgs.push(m), timers);
-  const frames = () => msgs.filter((m): m is { type: 'frame'; frame: Frame } => m.type === 'frame').map((m) => m.frame);
+  const frames = () => msgs.filter((m): m is Extract<FromWorker, { type: 'frame' }> => m.type === 'frame').map((m) => m.frame);
   return { msgs, timers, ctl, frames };
 }
 
@@ -40,8 +40,8 @@ describe('worker protocol (Controller)', () => {
   it('answers init with ready and start with started + a frame with control', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
-    expect(h.msgs[0]).toEqual({ type: 'ready' });
-    h.ctl.handle({ type: 'start', scenario: basicScenario(5) });
+    expect(h.msgs[0]).toEqual({ type: 'ready', runId: 0 });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(5), runId: 1 });
     expect(h.msgs[1].type).toBe('started');
     const f = h.frames()[0];
     expect(f.day).toBe(0);
@@ -51,7 +51,7 @@ describe('worker protocol (Controller)', () => {
 
   it('errors on start before init', () => {
     const h = harness();
-    h.ctl.handle({ type: 'start', scenario: basicScenario(5) });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(5), runId: 1 });
     expect(h.msgs[0].type).toBe('error');
   });
 
@@ -60,11 +60,11 @@ describe('worker protocol (Controller)', () => {
   it('a failed start drops the previous run', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
-    h.ctl.handle({ type: 'start', scenario: basicScenario(5) });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(5), runId: 1 });
     h.ctl.handle({ type: 'step', days: 10 });
     const bad = basicScenario(5);
     bad.sides[1] = { ...bad.sides[1], members: ['no-such-snapshot'] };
-    h.ctl.handle({ type: 'start', scenario: bad });
+    h.ctl.handle({ type: 'start', scenario: bad, runId: 1 });
     expect(h.msgs.at(-1)!.type).toBe('error');
     const before = h.frames().length;
     h.ctl.handle({ type: 'speed', daysPerSecond: 30 });
@@ -77,7 +77,7 @@ describe('worker protocol (Controller)', () => {
   it('seek replays to exactly the state of an uninterrupted run', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
-    h.ctl.handle({ type: 'start', scenario: basicScenario(11) });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(11), runId: 1 });
     h.ctl.handle({ type: 'step', days: 100 });
     const at100 = h.frames().at(-1)!;
     // back to a day between keyframes, then forward again past the last one
@@ -107,7 +107,7 @@ describe('worker protocol (Controller)', () => {
     expect(between(31, 100).length).toBeGreaterThan(0);
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
-    h.ctl.handle({ type: 'start', scenario: sc });
+    h.ctl.handle({ type: 'start', scenario: sc, runId: 1 });
     h.ctl.handle({ type: 'step', days: 30 });
     // past anything simulated yet
     h.ctl.handle({ type: 'seek', day: 100 });
@@ -121,7 +121,7 @@ describe('worker protocol (Controller)', () => {
   it('real-time speed paces by the clock with fractional accumulation and at most 30 frames/s', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
-    h.ctl.handle({ type: 'start', scenario: basicScenario(5) });
+    h.ctl.handle({ type: 'start', scenario: basicScenario(5), runId: 1 });
     const before = h.frames().length;
     h.ctl.handle({ type: 'speed', daysPerSecond: 2.5 });
     h.timers.advance(2010);                      // 2 s plus slack for float tick times
@@ -153,7 +153,7 @@ describe('replay keyframes on a long run (red team W9)', () => {
     const days = KEYFRAME_DAYS * (MAX_KEYFRAMES + 6);   // past the first thinning
     const sc = { ...basicScenario(11), victory: { capitalCaptured: false, territoryShare: 0, armyCollapse: false, timeLimitDays: days + 10 } };
     h.ctl.handle({ type: 'init', data: data() });
-    h.ctl.handle({ type: 'start', scenario: sc });
+    h.ctl.handle({ type: 'start', scenario: sc, runId: 1 });
     h.ctl.handle({ type: 'step', days });
     const ctl = h.ctl as unknown as { keyframes: Map<number, unknown>; sim: ReturnType<typeof createSim> };
     expect(ctl.sim.day()).toBe(days);

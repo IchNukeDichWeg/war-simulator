@@ -82,6 +82,8 @@ let frameGapMs = 250;
 let flushTimer: ReturnType<typeof setTimeout> | undefined;
 let lastFlush = 0;
 let pendingRun: Partial<typeof initialRun> = {};
+/** Id of the latest start; frames and the end of an older run may still be in flight and are dropped. */
+let runId = 0;
 
 function post(msg: ToWorker) {
   if (live && liveReady) live.postMessage(msg);
@@ -131,6 +133,7 @@ function onFrame(f: Frame) {
 }
 
 function onLive(m: FromWorker) {
+  if (m.type !== 'ready' && m.runId !== runId) return;
   switch (m.type) {
     case 'ready':
       liveReady = true;
@@ -138,7 +141,7 @@ function onLive(m: FromWorker) {
       queue = [];
       break;
     case 'started':
-      setRun({ status: 'running', theater: m.theater, sideNames: m.sideNames, warnings: m.warnings });
+      setRun({ status: 'running', theater: m.theater, sideNames: m.sideNames, warnings: m.warnings, result: null, maxDay: 0 });
       fitBus.emit(m.theater.bbox);
       break;
     case 'frame':
@@ -197,7 +200,7 @@ export function startRun(s: Scenario, speed = 1) {
   resetBus.emit();
   setRun({ ...initialRun, status: 'starting', speed, historyVersion: store.get().run.historyVersion + 1 });
   if (!ensureLive()) return;
-  post({ type: 'start', scenario: s });
+  post({ type: 'start', scenario: s, runId: ++runId });
   post({ type: 'speed', daysPerSecond: speed });
   store.set({ rightTab: 'live' });
 }
@@ -220,6 +223,7 @@ export function seek(day: number) {
 }
 
 export function stopRun() {
+  runId++;
   live?.terminate();
   live = null;
   liveReady = false;

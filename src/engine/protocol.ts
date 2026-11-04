@@ -104,13 +104,17 @@ export interface MonteCarloResult {
 
 export type ToWorker =
   | { type: 'init'; data: EngineData }
-  | { type: 'start'; scenario: Scenario }
+  | { type: 'start'; scenario: Scenario; runId: number }
   | { type: 'speed'; daysPerSecond: number }   // 0 = paused
   | { type: 'step'; days: number }
   | { type: 'seek'; day: number }              // replay: deterministic re-simulation from keyframes
   | { type: 'montecarlo'; scenario: Scenario; runs: number };
 
-export type FromWorker =
+/** Every message carries the runId of the latest `start` (0 before any): frames and the end
+ *  of a previous run can still be in flight when the UI starts the next one. */
+export type FromWorker = FromWorkerBody & { runId: number };
+
+export type FromWorkerBody =
   | { type: 'ready' }
   | { type: 'started'; theater: TheaterInfo; sideNames: [string, string]; warnings: string[] }
   | { type: 'frame'; frame: Frame }

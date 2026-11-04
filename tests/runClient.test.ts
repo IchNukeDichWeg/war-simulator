@@ -75,4 +75,27 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(e.eventLog).toEqual(ref.frame(true).events);
     expect(e.history.day).toEqual([0, 30, 47, 100]);
   });
+
+  // Review finding: frames and the end of the old run, still in flight when a new run started,
+  // were applied to the new run (its result shown, its maxDay kept, the Result tab forced).
+  it('drops messages the previous run had in flight', async () => {
+    const e = await load();
+    const short = { ...e.sc, victory: { ...e.sc.victory, timeLimitDays: 20 } };
+    e.startRun(short, 0);
+    live().pump();
+    e.stepDays(40);
+    live().work();                       // the old run's frame and end are now in flight
+    expect(live().toUi.some((m) => m.type === 'end')).toBe(true);
+    e.startRun(e.sc, 0);
+    live().deliver();                    // they arrive after the new start was sent
+    live().pump();
+    const run = e.store.get().run;
+    expect(run.status).toBe('running');
+    expect(run.result).toBeNull();
+    expect(e.store.get().rightTab).toBe('live');
+    expect(e.history.day).toEqual([0]);
+    await new Promise((r) => setTimeout(r, 150));   // the run panel flush is throttled
+    expect(e.store.get().run.day).toBe(0);
+    expect(e.store.get().run.maxDay).toBe(0);
+  });
 });
