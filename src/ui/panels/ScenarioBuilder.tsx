@@ -9,10 +9,13 @@ import { setScenario, store, toast, useStore } from '../store';
 import { KindBadge } from './SnapshotDetail';
 import { SnapshotSearch } from './SnapshotSearch';
 import { showInNations } from './snapActions';
+import '../../styles/builder.css';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 /** Fallback anchor labels from data/SOURCES.md when mechanics.json has no techLevels yet. */
 const TECH_ANCHORS = ['before 3000 BCE', '2500 BCE', '1400 BCE', '300 BCE', '1250', '1600', '1805', '1905', '1943', '1985', '2026'];
+/** Monte Carlo run counts offered in the select; "Custom" opens a 2..5000 number box. */
+const MC_CHOICES = [100, 500, 1000];
 
 function updSide(i: 0 | 1, f: (s: SideSpec) => SideSpec) {
   setScenario((sc) => {
@@ -146,6 +149,7 @@ export function ScenarioBuilder() {
   const mapMode = useStore((s) => s.mapMode);
   const runStatus = useStore((s) => s.run.status);
   const [mcRuns, setMcRuns] = useState(100);
+  const [mcCustom, setMcCustom] = useState(false);
   const itemById = useMemo(() => new Map(data ? buildItems(data).map((x) => [x.id, x]) : []), [data]);
   if (!data) return <div className="panel-body muted">Loading data...</div>;
   const problems = scenarioProblems(sc);
@@ -243,10 +247,26 @@ export function ScenarioBuilder() {
 
       {sc.overrides.length > 0 && <div className="notice">{sc.overrides.length} edited value{sc.overrides.length > 1 ? 's' : ''} in this scenario (Editor tab).</div>}
       {problems.length > 0 && <ul className="problems">{problems.map((p) => <li key={p}>{p}</li>)}</ul>}
-      <div className="row sticky-actions">
-        <button className="primary" disabled={problems.length > 0 || runStatus === 'starting'} onClick={() => startRun(sc, 3)}>Run war</button>
-        <input className="narrow" type="number" min={2} max={5000} value={mcRuns} onChange={(e) => setMcRuns(Math.max(2, Math.min(5000, Math.trunc(+e.target.value) || 2)))} title="Monte Carlo runs" />
-        <button disabled={problems.length > 0} onClick={() => { runMonteCarlo(sc, mcRuns); store.set({ rightTab: 'montecarlo' }); }}>Monte Carlo x{mcRuns}</button>
+      <div className="sticky-actions">
+        <button className="primary run-main" disabled={problems.length > 0 || runStatus === 'starting'} onClick={() => startRun(sc, 3)}>Run war</button>
+        <div className="mc-row">
+          <button className="mc-run" disabled={problems.length > 0} title="Play the same war many times with different random seeds and see how often each side wins"
+            onClick={() => { runMonteCarlo(sc, mcRuns); store.set({ rightTab: 'montecarlo' }); }}>
+            Run {mcRuns.toLocaleString('en-US')} times <span className="muted">(Monte Carlo)</span>
+          </button>
+          <select aria-label="Number of Monte Carlo runs" value={mcCustom ? 'custom' : String(mcRuns)} onChange={(e) => {
+            const v = e.target.value;
+            setMcCustom(v === 'custom');
+            if (v !== 'custom') setMcRuns(+v);
+          }}>
+            {MC_CHOICES.map((n) => <option key={n} value={n}>{n.toLocaleString('en-US')} runs</option>)}
+            <option value="custom">Custom...</option>
+          </select>
+          {mcCustom && (
+            <input className="narrow" type="number" min={2} max={5000} aria-label="Custom number of runs (2 to 5,000)" value={mcRuns}
+              onChange={(e) => setMcRuns(Math.max(2, Math.min(5000, Math.trunc(+e.target.value) || 2)))} />
+          )}
+        </div>
       </div>
     </div>
   );
