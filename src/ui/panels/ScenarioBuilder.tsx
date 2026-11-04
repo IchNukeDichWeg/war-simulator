@@ -315,12 +315,17 @@ export function ScenarioBuilder() {
 
       <h4>Where: {sc.theater.name}</h4>
       <div className="chips" role="group" aria-label="Theater">
-        {fits.map((f) => (
-          <button key={f.name} className={sc.theater.name === f.name ? 'on' : ''} aria-pressed={sc.theater.name === f.name} onClick={() => setBBox(f.bbox, f.name)}
-            title={f.around === null ? "A box around both sides' capitals and nearby cities" : `The war is fought around ${sc.sides[f.around].name}; ${sc.sides[1 - f.around].name} comes in by land or sea`}>
-            {f.around === null ? 'Around the sides' : f.name}
-          </button>
-        ))}
+        {fits.map((f) => {
+          // keyed and matched by side, not name: two far-apart sides with one name gave two
+          // chips with one key, both lit; the box tells them apart
+          const on = sc.theater.name === f.name && (f.around === null || sc.theater.bbox.join() === f.bbox.join());
+          return (
+            <button key={f.around ?? 'both'} className={on ? 'on' : ''} aria-pressed={on} onClick={() => setBBox(f.bbox, f.name)}
+              title={f.around === null ? "A box around both sides' capitals and nearby cities" : `The war is fought around ${sc.sides[f.around].name}; ${sc.sides[1 - f.around].name} comes in by land or sea`}>
+              {f.around === null ? 'Around the sides' : f.name}
+            </button>
+          );
+        })}
         {THEATERS.map((t) => (
           <button key={t.name} className={sc.theater.name === t.name ? 'on' : ''} aria-pressed={sc.theater.name === t.name} onClick={() => setBBox([...t.bbox] as BBox, t.name)}>{t.name}</button>
         ))}

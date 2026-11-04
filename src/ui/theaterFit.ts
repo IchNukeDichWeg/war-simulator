@@ -84,6 +84,25 @@ export function fitSides(sides: [Snapshot[], Snapshot[]], names: [string, string
 const sideSnaps = (sc: Scenario, snapById: Map<string, Snapshot>) =>
   sc.sides.map((x) => x.members.map((m) => snapById.get(m)).filter((s): s is Snapshot => !!s)) as [Snapshot[], Snapshot[]];
 
+/** The side whose "Around <name>" box this is, or null. When both sides share a name, the box
+ *  tells them apart (the fit around one side's members), else side A. */
+export function aroundSide(sc: Scenario, snapById: Map<string, Snapshot>): 0 | 1 | null {
+  const at = ([0, 1] as const).filter((i) => sc.theater.name === aroundName(sc.sides[i].name));
+  if (at.length < 2) return at[0] ?? null;
+  const snaps = sideSnaps(sc, snapById);
+  return at.find((i) => fitTheater(snaps[i])?.join() === sc.theater.bbox.join()) ?? 0;
+}
+
+/** After an edit that renamed the side an "Around <name>" box is around, the box under the new
+ *  name: the Where heading kept the old name, and the chip for that side no longer lit up. */
+export function followAroundName(before: Scenario, after: Scenario, snapById: Map<string, Snapshot>): Scenario {
+  if (after.theater.name !== before.theater.name) return after;
+  const at = aroundSide(before, snapById);
+  if (at === null) return after;
+  const name = aroundName(after.sides[at].name);
+  return name === after.theater.name ? after : { ...after, theater: { ...after.theater, name } };
+}
+
 /** After an edit, the war area to switch to, or null to keep the current one. It moves only
  *  when a member that was not in the scenario before has its capital outside the box, so a box
  *  the user chose (or a preset that keeps a capital outside on purpose) survives year changes
@@ -98,7 +117,7 @@ export function refitTheater(before: Scenario, after: Scenario, snapById: Map<st
   const box = after.theater.bbox as BBox;
   if (!added.some((m) => { const s = snapById.get(m); return s && !inside(s.capital, box); })) return null;
   const names = after.sides.map((x) => x.name) as [string, string];
-  const prefer = ([0, 1] as const).find((i) => before.theater.name === aroundName(before.sides[i].name));
+  const prefer = aroundSide(before, snapById) ?? undefined;
   const fit = fitSides(sideSnaps(after, snapById), names, prefer, m);
   // the far side's capital is outside by design: nothing to move
   return fit && (fit.bbox.join() !== box.join() || fit.name !== after.theater.name) ? fit : null;

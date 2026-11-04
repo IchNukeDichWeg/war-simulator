@@ -5,7 +5,7 @@ import type { MonteCarloResult, RunResult, SideStats, TheaterInfo } from '../eng
 import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
-import { refitTheater } from './theaterFit';
+import { followAroundName, refitTheater } from './theaterFit';
 import { followNames } from './scenarioNames';
 
 export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
@@ -126,7 +126,7 @@ export function useStore<U>(sel: (s: UiState) => U): U {
 export function setScenario(f: (s: Scenario) => Scenario) {
   const st = store.get();
   let sc = f(st.scenario);
-  if (st.data) sc = followNames(st.scenario, sc, st.data);
+  if (st.data) sc = followAroundName(st.scenario, followNames(st.scenario, sc, st.data), st.data.snapById);
   const fit = st.data ? refitTheater(st.scenario, sc, st.data.snapById, st.data.mechanics) : null;
   if (fit) sc = { ...sc, theater: { name: fit.name, bbox: fit.bbox } };
   store.set({ scenario: sc, scenarioDirty: true });

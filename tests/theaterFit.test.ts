@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { Snapshot } from '../src/types/schema';
 import type { Scenario } from '../src/types/scenario';
 import { defaultScenario, type BBox } from '../src/ui/scenarioDefaults';
-import { aroundName, fitChoices, fitSides, fitTheater, FITTED_THEATER, refitTheater } from '../src/ui/theaterFit';
+import { aroundName, aroundSide, fitChoices, fitSides, fitTheater, FITTED_THEATER, followAroundName, refitTheater } from '../src/ui/theaterFit';
 
 const snap = (id: string, lon: number, lat: number, places: [number, number][] = []) => ({
   id, capital: { name: id, lon, lat }, places: places.map(([o, a], i) => ({ name: `${id}${i}`, lon: o, lat: a })),
@@ -86,6 +86,32 @@ describe('theater fit', () => {
     expect(refitTheater(aroundA, added, byId)).toBeNull();
     // close capitals keep a single box around both
     expect(fitChoices(scn(['rome'], ['swiss']), byId).map((f) => f.around)).toEqual([null]);
+  });
+
+  it('knows which side an "Around" box is around, and follows a rename', () => {
+    const named = (a: string, b: string, around: 0 | 1) => {
+      const s = scn(['usa'], ['china']);
+      s.sides[0].name = a; s.sides[1].name = b;
+      s.theater = { name: aroundName(around ? b : a), bbox: fitTheater([around ? china : usa])! };
+      return s;
+    };
+    const rename = (s: Scenario, i: 0 | 1, name: string) => {
+      const sides = [...s.sides] as Scenario['sides'];
+      sides[i] = { ...sides[i], name };
+      return { ...s, sides };
+    };
+    const plain = named('United States', 'China', 1);
+    expect(aroundSide(plain, byId)).toBe(1);
+    // the heading used to keep saying "Around China" after side B was renamed
+    expect(followAroundName(plain, rename(plain, 1, 'PRC'), byId).theater.name).toBe(aroundName('PRC'));
+    expect(followAroundName(plain, rename(plain, 0, 'USA'), byId).theater.name).toBe(aroundName('China'));
+    // two sides with one name: the box tells them apart
+    const twin = named('Empire', 'Empire', 1);
+    expect(aroundSide(twin, byId)).toBe(1);
+    expect(followAroundName(twin, rename(twin, 1, 'Qing'), byId).theater.name).toBe(aroundName('Qing'));
+    expect(followAroundName(twin, rename(twin, 0, 'Union'), byId).theater.name).toBe(aroundName('Empire'));
+    // a box not around a side is left alone
+    expect(aroundSide(scn(['rome'], ['swiss']), byId)).toBeNull();
   });
 
   it('puts the war at the home of the side with clearly less ocean-going lift', () => {
