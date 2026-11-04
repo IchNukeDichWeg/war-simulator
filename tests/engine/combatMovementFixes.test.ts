@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { createSim } from '../../src/engine/sim';
+import { createSim, runToEnd } from '../../src/engine/sim';
+import { battleCaseScenario } from '../../src/engine/battleCase';
 import { rebuildOccupancy } from '../../src/engine/ctx';
 import { cellAt } from '../../src/engine/grid';
-import { movementPhase, seaLift, seaLoad } from '../../src/engine/movement';
+import { dailyBudget, movementPhase, seaLift, seaLoad } from '../../src/engine/movement';
+import type { BattleCase } from '../../src/types/mechanics';
+import { loadEngineData } from '../../scripts/lib/loadData';
 import { RI } from '../../src/engine/roles';
 import { Mode } from '../../src/engine/state';
 import type { EngineData } from '../../src/engine/protocol';
@@ -84,5 +87,30 @@ describe('SEA_LIFT_CHECKED_ON_ENTRY', () => {
     expect(F.cell[b]).toBe(shore);
     expect(F.next[b]).toBe(-1);
     expect(ctx.sc.embarked[1]).toBeLessThanOrEqual(seaLift(ctx, 1));
+  });
+});
+
+describe('ATTACK_CONTACT_WITHOUT_BUDGET', () => {
+  // the reviewer's repro on the real data: a battle case at lat 69.5 in January, 0 h of daylight
+  const real = loadEngineData(new URL('../../public/data', import.meta.url).pathname);
+  const r = (mid: number) => ({ low: mid, mid, high: mid });
+  const T7 = { weapons: 7, armor: 7, logistics: 7, communications: 7, fortification: 7, ships: 7, isr: 7 };
+  const polar = (lat: number, season: 'winter' | 'summer'): BattleCase => ({
+    id: 'polar', name: 'polar', year: 1941, kind: 'battle', location: { lat, lon: 31, radiusKm: 10 }, terrain: 'forest', season,
+    sides: [
+      { name: 'A', posture: 'attack', forces: { infantry_line: r(20000) }, tech: T7 },
+      { name: 'B', posture: 'defend', forces: { infantry_line: r(5000) }, tech: T7 },
+    ],
+    outcome: { winner: 0, durationDays: r(1), losses: [r(1), r(1)], note: '' }, sources: [], grade: 'D',
+  } as unknown as BattleCase);
+  it.each([[69.5, 'winter'], [-75, 'winter']] as const)('an attacker next to the enemy in polar night attacks (lat %s %s)', (lat, season) => {
+    const x = battleCaseScenario(real, polar(lat, season), 1);
+    const sim = createSim(x.data, x.scenario, x.opts);
+    sim.step(1);
+    const F = sim.ctx.st.F;
+    const att = [...Array(F.n).keys()].find((f) => F.side[f] === 0)!;
+    expect(dailyBudget(sim.ctx, att)).toBe(0);
+    expect(sim.ctx.sc.battles.length).toBeGreaterThan(0);
+    expect(runToEnd(sim).endReason).not.toContain('no contact');
   });
 });

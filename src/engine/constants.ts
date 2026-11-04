@@ -244,6 +244,15 @@ export const AIR_INTERDICTION_BY_HOLDER = true;
  *  rome-vs-france-equalized 8/2/0 -> 9/1/0, Persia vs Greeks median day 322 -> 303, Han vs
  *  Xiongnu 85 -> 90, the rest unchanged in winners. KEPT-ON-NULL: correctness fix. */
 export const SEA_LIFT_CHECKED_ON_ENTRY = true;
+/** An attacking formation with no march budget (polar night: 0 h of daylight, so the
+ *  DAYLIGHT_MARCH_HOURS factor is 0) still picks the cell it attacks, so an enemy next to it is
+ *  engaged; it does not move. OFF: chooseNext never ran, and an attacker adjacent to the enemy at
+ *  lat 69.5 in January ended as a no-contact draw. Oracle (reviewer's polar battle case): lat
+ *  69.5 January and lat -75 July draw "no contact" on day 3 -> attacker wins on day 0.6. Away
+ *  from the poles a formation always has a budget, so: backtest 19/15/22 byte-identical, presets
+ *  (10-seed screen, 23 presets) identical. Polar-night armies still do not MARCH (0 march hours);
+ *  a night-march floor would need a sourced figure. KEPT-ON-NULL: correctness fix. */
+export const ATTACK_CONTACT_WITHOUT_BUDGET = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)

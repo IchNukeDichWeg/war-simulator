@@ -1092,3 +1092,27 @@ The other 20 presets of the screen keep their winners and median days.
 
 Verdict: **KEPT-ON-NULL.** A correctness fix the backtest cannot see. The regression test fails with the
 toggle OFF.
+
+### Contact in polar night (`ATTACK_CONTACT_WITHOUT_BUDGET`)
+
+With 0 h of daylight the `DAYLIGHT_MARCH_HOURS` factor is 0, so the daily budget is 0, the march loop never
+ran `chooseNext`, and an attacking formation never named the cell it attacks: an attacker standing next to
+the enemy at lat 69.5 in January ended as a no-contact draw. ON, an attacking formation with no budget still
+picks its next cell (so contact and the attack are detected); it does not move.
+
+Only the contact is fixed. Armies in polar night still do not march (0 march hours): a floor such as civil
+twilight leaves lat 80 at 0 in midwinter, and a night-march floor would need a sourced figure. That is left
+to the owner.
+
+Oracle (the reviewer's polar battle case, 20,000 attackers next to 5,000 defenders, seed 1):
+
+| Case | OFF | ON |
+| --- | --- | --- |
+| lat 69.5, January | budget 0, no battle, draw "no contact" day 3 | budget 0, battle on day 1, attacker wins day 0.6 |
+| lat -75, July | budget 0, no battle, draw "no contact" day 3 | budget 0, battle on day 1, attacker wins day 0.6 |
+| lat 69.5 July, lat 65 January, lat 80 January, lat -75 January | unchanged | unchanged |
+
+Backtest 19 / 15 / 22 and the 10-seed preset screen (23 presets) are byte-identical ON and OFF: away from
+polar night every formation has a budget.
+
+Verdict: **KEPT-ON-NULL.** The regression test (the two polar-night cases) fails with the toggle OFF.

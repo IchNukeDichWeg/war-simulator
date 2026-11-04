@@ -16,7 +16,7 @@ import { IS_P, NR, RI } from './roles';
 import { Mode } from './state';
 import { UnitStatus } from './protocol';
 import {
-  DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_CHECKED_ON_ENTRY, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS,
+  ATTACK_CONTACT_WITHOUT_BUDGET, DAYLIGHT_MARCH_HOURS, ROAD_MIN_TECH, SEA_LIFT_CHECKED_ON_ENTRY, SEA_LIFT_TONNAGE, SEA_MOVEMENT, STACK_PENALTY_CELLS,
   UNARMED_FORTRESS_OPEN } from './constants';
 import { dayOfYear, daylightHours } from './daylight';
 import { SEASONS, WEATHERS } from './setup';
@@ -324,6 +324,12 @@ export function movementPhase(ctx: Ctx): void {
     const full = dailyBudget(ctx, f);
     let budget = full;
     let steps = 0;
+    // ATTACK_CONTACT_WITHOUT_BUDGET: with no march hours (polar night) an attacking formation
+    // still picks the cell it attacks, so an enemy next to it is engaged; it does not move
+    if (ATTACK_CONTACT_WITHOUT_BUDGET && attack && !(budget > 1e-9)) {
+      const nx = F.next[f];
+      if (nx < 0 || !(field[nx] < field[F.cell[f]])) { F.next[f] = chooseNext(ctx, f, field, attack, rout, lift[side]); F.prog[f] = 0; }
+    }
     while (budget > 1e-9 && steps < 64) {
       steps++;
       const cur = F.cell[f];
