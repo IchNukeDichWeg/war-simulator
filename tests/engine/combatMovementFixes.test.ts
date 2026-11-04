@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { createSim, runToEnd } from '../../src/engine/sim';
 import { battleCaseScenario } from '../../src/engine/battleCase';
 import { rebuildOccupancy } from '../../src/engine/ctx';
+import { detectBattles } from '../../src/engine/combat';
 import { buildGrid, cellAt, dijkstra, globalTerrain, Heap } from '../../src/engine/grid';
 import { GRID_H, GRID_W, T, cellIndex } from '../../src/engine/terrainClasses';
 import { dailyBudget, movementPhase, seaLift, seaLoad } from '../../src/engine/movement';
@@ -10,7 +11,7 @@ import { loadEngineData } from '../../scripts/lib/loadData';
 import { RI } from '../../src/engine/roles';
 import { Mode } from '../../src/engine/state';
 import type { EngineData } from '../../src/engine/protocol';
-import { NATIONS, fixtureScenario, makeSnapshot, type NationSpec } from '../fixtures/snapshots.fixture';
+import { NATIONS, basicScenario, fixtureScenario, makeSnapshot, type NationSpec } from '../fixtures/snapshots.fixture';
 import { data } from './helpers';
 
 // Regression tests for the pre-release combat and movement fixes (VALIDATION.md, "Pre-release
@@ -143,5 +144,27 @@ describe('CORNER_LAND_LINKS_CUT', () => {
     dijkstra(g, new Heap(16), inv, null, [cellAt(g, 0.875, 0.125)], null, dist, null);
     expect(dist[a]).toBeLessThan(Infinity);
     expect(dist[b]).toBe(Infinity);
+  });
+});
+
+describe('ATTACK_JOINS_DEFENDERS_BATTLE', () => {
+  it('an attack on a cell whose defenders fight next door joins that battle', () => {
+    const sim = createSim(data(), basicScenario());
+    const ctx = sim.ctx, F = ctx.st.F, g = sim.setup.grid;
+    const u = cellAt(g, 7.125, 2.125), t = cellAt(g, 7.125, 2.375), v = cellAt(g, 7.125, 2.625);
+    const pick = (side: number, k: number) => [...Array(F.n).keys()].filter((f) => F.side[f] === side && F.alive[f] && F.onMap[f])[k];
+    const X = pick(0, 0), A = pick(0, 1), Y = pick(1, 0), D = pick(1, 1);
+    for (let f = 0; f < F.n; f++) if (![X, A, Y, D].includes(f)) F.alive[f] = 0;
+    // a battle at u (X against Y); D next door at t is drawn into it; A attacks t from v
+    F.cell[X] = u; F.cell[Y] = u; F.cell[D] = t; F.cell[A] = v;
+    F.mode[X] = Mode.Attack; F.mode[Y] = Mode.Defend; F.mode[D] = Mode.Defend;
+    F.mode[A] = Mode.Attack; F.next[A] = t;
+    detectBattles(ctx);
+    const b = ctx.sc.battles;
+    expect(b.length).toBe(1);
+    expect(b[0].cell).toBe(u);
+    expect(F.battle[D]).toBe(b[0].id);
+    expect(F.battle[A]).toBe(b[0].id);
+    expect(b[0].parts[0]).toContain(A);
   });
 });

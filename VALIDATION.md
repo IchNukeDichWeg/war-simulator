@@ -1140,3 +1140,24 @@ corner, without going to sea): USA + Spain vs Russia 2026 441 -> 0 (naval rules 
 USA + Spain vs Russia stays 0/0/10 at the time limit. The other presets of the screen are unchanged.
 
 Verdict: **KEPT-ON-NULL.** The regression test (two blocks touching at a corner) fails with the toggle OFF.
+
+### An attack joins the battle its defenders are already in (`ATTACK_JOINS_DEFENDERS_BATTLE`)
+
+When every defender of the attacked cell had already been drawn into a battle next door (as a neighbour),
+`createBattle` found no free defender and returned nothing, and the attack was dropped: no battle, no move.
+ON, the attacker joins the battle those defenders are fighting.
+
+Oracle (the reviewer's `dropped.ts`, seed 1, 150 days, attack formation-days blocked by an enemy-held next
+cell and in no battle; counts at this commit, after the earlier fixes): Germany vs France 1940 23, NATO 1989
+15, Allies vs Axis 6, Athens vs USA 1 -> 0 in every preset.
+
+| Instrument | OFF | ON |
+| --- | --- | --- |
+| Backtest | 19 / 15 / 22 | 19 / 15 / 22; only France 1940 moves: x3.21 -> x3.27 |
+| Persia vs Greeks (-480) | 7/2/1, day 271 | 7/3/0, day 273 |
+| India vs Pakistan 1971 | 10/0/0, day 127 | 10/0/0, day 143 |
+| NATO vs Warsaw Pact 1989 | 10/0/0, day 36 | 10/0/0, day 37 |
+
+The other presets of the screen are unchanged.
+
+Verdict: **KEPT-ON-NULL.** The regression test fails with the toggle OFF.

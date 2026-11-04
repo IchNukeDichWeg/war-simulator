@@ -11,7 +11,7 @@ import {
   PHALANX_FLANK_THRESHOLD, PRECISION_MIN_TECH, SUPPLY_FACTOR_MIN_TECH, MORALE_ON_ENGAGED_BASIS, PURSUE_WITHDRAWING,
   DEFENSE_ALTERNATIVES_MAX, ASSAULT_ONLY_REAL_FORTS, PREPARED_FROM_CASE, FIELD_FORT_NEEDS_CASE_PREP, BEATEN_LEAVE_CELL,
   RANGE_INTEGER_CLASS, RIVER_FROM_CASE, SIMULTANEOUS_BREAK_BY_SEVERITY, SUBDAY_REINFORCEMENTS, EXPLAIN_LOCAL_POWER, PURSUIT_FROM_MODEL_RULES, SURRENDER_SHARE_FROM_MODEL_RULES, CREWED_FORMATIONS, EMBARKED_NAVAL_ONLY,
-  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY } from './constants';
+  PURSUIT_MANOEUVRE_ROLES_ONLY, PURSUIT_AIR_SAME_UNITS, SURPRISE_DAY_ONE_ONLY, ATTACK_JOINS_DEFENDERS_BATTLE } from './constants';
 import { isProtectedEnemyPlace } from './movement';
 import { lossFraction } from './formations';
 
@@ -94,8 +94,15 @@ export function detectBattles(ctx: Ctx): void {
       const b = sc.battles[bi];
       F.battle[f] = b.id;
       b.parts[s].push(f);
-    } else {
-      createBattle(ctx, t, s);
+    } else if (!createBattle(ctx, t, s) && ATTACK_JOINS_DEFENDERS_BATTLE) {
+      // the defenders of t are all fighting in a neighbouring battle already: the attack joins it
+      for (let h = sc.head[1 - s][t]; h >= 0; h = sc.nextInCell[h]) {
+        if (!F.alive[h] || F.battle[h] < 0) continue;
+        const b = sc.battles[F.battle[h]];
+        F.battle[f] = b.id;
+        b.parts[s].push(f);
+        break;
+      }
     }
   }
 }

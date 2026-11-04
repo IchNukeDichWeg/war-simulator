@@ -262,6 +262,14 @@ export const ATTACK_CONTACT_WITHOUT_BUDGET = true;
  *  Presets (10-seed screen, 23 presets): Persia vs Greeks 7/3/0 -> 7/2/1 (day 303 -> 271), Assyria
  *  vs Kush 8/2/0 -> 9/0/1, India 1971 day 123 -> 127; the rest unchanged. KEPT-ON-NULL. */
 export const CORNER_LAND_LINKS_CUT = true;
+/** An attack on a cell whose defenders are all fighting in a neighbouring battle already joins
+ *  that battle. OFF: no battle could be created there (no free defender), and the attack was
+ *  dropped without a battle or a move. Oracle (seed 1, 150 days, attack formation-days blocked
+ *  by an enemy-held cell and in no battle): Germany vs France 1940 23, NATO 1989 15, Allies vs
+ *  Axis 6, Athens vs USA 1 -> 0 everywhere. Measured (20 seeds): 19/15/22 unchanged; France 1940
+ *  ratio x3.21 -> x3.27. Presets (10-seed screen, 23 presets): Persia vs Greeks 7/2/1 -> 7/3/0,
+ *  India 1971 day 127 -> 143; the rest unchanged. KEPT-ON-NULL. */
+export const ATTACK_JOINS_DEFENDERS_BATTLE = true;
 /** Army morale collapse needs a real fall: side morale below min(armyCollapseMorale, start morale
  *  minus morale.defeatShock), i.e. at least one lost battle's morale shock below where the side
  *  began. Before, a side only had to dip below its start, so Iraq 1991 (start 0.20, threshold 0.20)
