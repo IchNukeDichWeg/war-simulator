@@ -45,10 +45,10 @@ npm run preview    # serves dist/ on http://localhost:4173
 ```
 
 The build takes about 2 s. `dist/` is about 31 MB, of which 29 MB is the runtime data copied from
-`public/data/`. The JavaScript is an app chunk (170 kB, 63 kB gzipped), a React chunk (219 kB, 68 kB
+`public/data/`. The JavaScript is an app chunk (242 kB, 87 kB gzipped), a React chunk (219 kB, 68 kB
 gzipped) and a MapLibre chunk (1.08 MB, 293 kB gzipped), plus a 107 kB engine worker and the
 MapLibre worker. The vendor chunks keep their hashes when only app code changes, so a return visit
-after such a change refetches about 63 kB. Vite warns about the MapLibre chunk size; that is
+after such a change refetches about 87 kB. Vite warns about the MapLibre chunk size; that is
 expected. The build uses relative paths (`base: './'`), so `dist/` can be served from any
 subdirectory.
 
@@ -76,7 +76,7 @@ that is arithmetic, not re-measured.
 ## Tests
 
 ```sh
-npm test           # vitest run: 20 files, 160 tests, about 6 s
+npm test           # vitest run: 27 files, 223 tests, about 6 s
 npm run typecheck  # tsc --noEmit, about 1 s
 ```
 
