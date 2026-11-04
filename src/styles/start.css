@@ -1,4 +1,15 @@
-/* First-visit path: the Quick start tab (ready matchups). Tokens come from app.css. */
+/* First-visit path: the header's save menu and the Quick start tab (ready matchups).
+   Tokens come from app.css. */
+
+/* ---------- header save menu ---------- */
+.hdr-menu { position: relative; }
+.hdr-caret { display: inline-flex; margin-left: calc(-1 * var(--sp-2)); transform: rotate(90deg); transition: transform var(--dur-fast) var(--ease); }
+.hdr-btn[aria-expanded='true'] { background: var(--c-surface-2); border-color: var(--c-border); color: var(--c-text); }
+.hdr-btn[aria-expanded='true'] .hdr-caret { transform: rotate(-90deg); }
+.hdr-menu-list { position: absolute; top: calc(100% + var(--sp-2)); right: 0; display: flex; flex-direction: column; min-width: 190px; padding: var(--sp-2); background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--r-md); box-shadow: var(--shadow-md); }
+.hdr-menu-list button { display: flex; align-items: center; gap: var(--sp-4); min-height: 32px; padding: 0 var(--sp-4); border-color: transparent; background: transparent; color: var(--c-text); text-align: left; }
+.hdr-menu-list button:hover:not(:disabled), .hdr-menu-list button:focus-visible { background: var(--c-surface-2); border-color: transparent; }
+.hdr-menu-list .icon { flex: none; color: var(--c-text-muted); }
 
 /* ---------- Quick start ---------- */
 .start-intro { margin: 0 0 var(--sp-6); }

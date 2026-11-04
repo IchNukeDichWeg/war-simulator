@@ -6,7 +6,6 @@ import { store, toast, useStore, type LeftTab } from '../store';
 import type { Scenario, TechMode } from '../../types/scenario';
 import { EmptyData } from './EmptyData';
 import { Icon } from '../Icon';
-import '../../styles/start.css';
 
 /** Resolves once every member snapshot is loaded (Phase 3 members load their era file).
  *  `tab` is the left tab to show afterwards; null keeps the current one (Run from Quick start). */

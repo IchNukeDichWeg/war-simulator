@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MapView } from '../map/MapView';
 import { flyBus } from './bus';
 import { loadData } from './data';
@@ -15,6 +15,7 @@ import { ScenarioBuilder } from './panels/ScenarioBuilder';
 import { TimeBar } from './panels/TimeBar';
 import { downloadScenario, scenarioFromHash, shareUrl, uploadScenario } from './scenarioIO';
 import { store, toast, useStore, type LeftTab } from './store';
+import '../styles/start.css';
 
 const NONE: string[] = [];
 
@@ -77,6 +78,60 @@ function BrandMark() {
   );
 }
 
+// Save, load and share live in one menu so the header stays quiet for a first visit.
+// WAI-ARIA menu button: Enter, Space or ArrowDown opens on the first item, arrows move,
+// Escape closes and returns focus to the button, Tab or a click outside just closes.
+const SAVE_ITEMS: { icon: IconName; label: string; hint: string; run: () => void }[] = [
+  { icon: 'download', label: 'Save to file', hint: 'Download this scenario as a JSON file',
+    run: () => { try { downloadScenario(store.get().scenario); } catch (e) { toast('Could not save: ' + (e as Error).message); } } },
+  { icon: 'upload', label: 'Load from file', hint: 'Open a scenario JSON file',
+    run: () => { uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message)); } },
+  { icon: 'link', label: 'Copy share link', hint: 'Copy a URL that contains this scenario', run: () => { void share(); } },
+];
+
+function SaveMenu() {
+  const [open, setOpen] = useState(false);
+  const wrap = useRef<HTMLDivElement>(null);
+  const btn = useRef<HTMLButtonElement>(null);
+  const items = () => [...(wrap.current?.querySelectorAll<HTMLElement>('[role="menuitem"]') ?? [])];
+  useEffect(() => {
+    if (!open) return;
+    items()[0]?.focus();
+    const away = (e: PointerEvent) => { if (!wrap.current?.contains(e.target as Node)) setOpen(false); };
+    document.addEventListener('pointerdown', away);
+    return () => document.removeEventListener('pointerdown', away);
+  }, [open]);
+  const closeToButton = () => { setOpen(false); btn.current?.focus(); };
+  const onMenuKey = (e: React.KeyboardEvent) => {
+    const els = items();
+    const i = els.indexOf(document.activeElement as HTMLElement);
+    const n = els.length;
+    const j = e.key === 'ArrowDown' ? (i + 1) % n : e.key === 'ArrowUp' ? (i + n - 1) % n
+      : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1;
+    if (j >= 0) { e.preventDefault(); els[j]?.focus(); }
+    else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeToButton(); }
+    else if (e.key === 'Tab') setOpen(false);
+  };
+  return (
+    <div className="hdr-menu" ref={wrap}>
+      <button ref={btn} className="hdr-btn" id="save-menu-btn" aria-haspopup="menu" aria-expanded={open} aria-controls={open ? 'save-menu' : undefined}
+        title="Save, load or share this scenario" onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => { if (e.key === 'ArrowDown' && !open) { e.preventDefault(); setOpen(true); } }}>
+        <Icon name="download" /><span className="lbl">Save &amp; share</span><span className="hdr-caret"><Icon name="chevronRight" size={14} /></span>
+      </button>
+      {open && (
+        <div className="hdr-menu-list" id="save-menu" role="menu" aria-labelledby="save-menu-btn" onKeyDown={onMenuKey}>
+          {SAVE_ITEMS.map((it) => (
+            <button key={it.label} role="menuitem" tabIndex={-1} title={it.hint} onClick={() => { it.run(); closeToButton(); }}>
+              <Icon name={it.icon} />{it.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function TopBar() {
   const name = useStore((s) => s.scenario.name);
   const missing = useStore((s) => s.data?.missing) ?? NONE;
@@ -95,18 +150,9 @@ function TopBar() {
         <div className="data-status" title={`Missing or empty: ${missing.join(', ')}`}>data incomplete: {missing.length} file{missing.length > 1 ? 's' : ''}</div>
       )}
       <div className="actions">
-        <button className="hdr-btn" onClick={() => { try { downloadScenario(store.get().scenario); } catch (e) { toast('Could not save: ' + (e as Error).message); } }} title="Download scenario JSON">
-          <Icon name="download" /><span className="lbl">Save</span>
-        </button>
-        <button className="hdr-btn" onClick={() => uploadScenario().then((s) => loadScenario(s, 'Scenario file loaded')).catch((e) => toast('Load failed: ' + (e as Error).message))} title="Load scenario JSON">
-          <Icon name="upload" /><span className="lbl">Load</span>
-        </button>
-        <button className="hdr-btn" onClick={share} title="Copy a URL that contains this scenario">
-          <Icon name="link" /><span className="lbl">Share URL</span>
-        </button>
-        <span className="actions-sep" aria-hidden="true" />
-        <button className="hdr-btn limits-btn" onClick={() => store.set({ showLimits: true })} title="What the model can and cannot say" aria-haspopup="dialog">
-          <Icon name="info" /><span className="lbl">Honest limits</span>
+        <SaveMenu />
+        <button className="hdr-btn" onClick={() => store.set({ showLimits: true })} title="Honest limits: what the model can and cannot say" aria-haspopup="dialog">
+          <Icon name="info" /><span className="lbl">About the model</span>
         </button>
         <ThemeToggle />
       </div>
