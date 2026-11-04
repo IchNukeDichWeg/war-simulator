@@ -10,7 +10,7 @@ import { Icon } from '../Icon';
 /** Resolves once every member snapshot is loaded (Phase 3 members load their era file). */
 export function loadScenario(s: Scenario, msg = 'Scenario loaded'): Promise<boolean> {
   const sc = normalizeScenario(structuredClone(s));
-  store.set({ scenario: sc, scenarioDirty: false, leftTab: 'scenario', mapMode: { kind: 'none' } });
+  store.set({ scenario: sc, scenarioDirty: false, leftTab: 'setup', mapMode: { kind: 'none' } });
   toast(msg);
   return ensureSnapshots(sc.sides.flatMap((x) => x.members));
 }

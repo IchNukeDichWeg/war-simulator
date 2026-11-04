@@ -114,7 +114,8 @@ function TopBar() {
   );
 }
 
-const LEFT_TABS: [LeftTab, string][] = [['scenario', 'Scenario'], ['nations', 'Nations'], ['editor', 'Editor'], ['presets', 'Presets']];
+// Quick start comes first: a ready matchup is the shortest path to a running war
+const LEFT_TABS: [LeftTab, string][] = [['start', 'Quick start'], ['setup', 'Setup'], ['nations', 'Nations'], ['editor', 'Editor']];
 
 function LeftPanel() {
   const tab = useStore((s) => s.leftTab);
@@ -146,10 +147,10 @@ function LeftPanel() {
       {open && (
         <div className="tabpanel" role="tabpanel" id="left-tabpanel" aria-labelledby={`ltab-${tab}`}>
           <ErrorBoundary name={tab}>
-            {tab === 'scenario' && <ScenarioBuilder />}
+            {tab === 'start' && <Presets />}
+            {tab === 'setup' && <ScenarioBuilder />}
             {tab === 'nations' && <NationBrowser />}
             {tab === 'editor' && <Editor />}
-            {tab === 'presets' && <Presets />}
           </ErrorBoundary>
         </div>
       )}

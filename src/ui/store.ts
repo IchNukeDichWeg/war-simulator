@@ -6,7 +6,7 @@ import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
 
-export type LeftTab = 'scenario' | 'nations' | 'editor' | 'presets';
+export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
 export type RightTab = 'live' | 'events' | 'result' | 'montecarlo';
 export type MapMode = { kind: 'none' } | { kind: 'bbox'; first?: [number, number] } | { kind: 'start'; side: 0 | 1 };
 
@@ -92,7 +92,7 @@ export const store = createStore<UiState>({
   data: null,
   scenario: defaultScenario(),
   scenarioDirty: false,
-  leftTab: 'scenario',
+  leftTab: 'start',
   rightTab: 'live',
   leftOpen: true,
   showLimits: false,
