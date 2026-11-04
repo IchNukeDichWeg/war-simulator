@@ -393,9 +393,9 @@ export function ScenarioBuilder() {
           <div className="bbox">
             {BOX_LABELS.map((k, j) => (
               <label key={k}>{k}
-                <input type="number" step={0.25} value={sc.theater.bbox[j]} onChange={(e) => {
-                  const v = parseFloat(e.target.value);
-                  if (!Number.isFinite(v)) return;
+                {/* latitudes stop at the poles (the map throws past them); longitude may pass 180
+                    as the Pacific preset's east = 210 does, within one turn either way */}
+                <NumberField step={0.25} min={j % 2 ? -90 : -360} max={j % 2 ? 90 : 360} value={sc.theater.bbox[j]} onCommit={(v) => {
                   const b = [...sc.theater.bbox] as BBox;
                   b[j] = v;
                   setBBox(b, 'Custom');

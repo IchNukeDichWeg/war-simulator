@@ -160,6 +160,10 @@ export function normalizeScenario(x: unknown): Scenario {
     const t = obj(o.theater, 'theater');
     const bbox = t.bbox;
     if (!Array.isArray(bbox) || bbox.length !== 4 || !bbox.every((v) => typeof v === 'number' && Number.isFinite(v))) bad('theater.bbox', 'four numbers [west, south, east, north]', bbox);
+    // A latitude beyond a pole loaded fine and then threw "Invalid LngLat latitude" in the map's
+    // fit. Longitude is left free: the Pacific preset runs to east = 210 across the antimeridian.
+    const [, south, , north] = bbox as number[];
+    if (!(south >= -90 && south < north && north <= 90)) throw new Error(`theater.bbox must have -90 <= south < north <= 90, not south ${south}, north ${north}`);
     theater = { name: str(t.name, 'theater.name', 'Custom'), bbox: [...bbox] as BBox };
   }
   const r = obj(o.rules, 'rules');

@@ -35,6 +35,17 @@ describe('scenario problems', () => {
     // two years of one nation are two snapshots, and allowed
     expect(scenarioProblems(scn(['rome-117'], ['rome-395']))).toEqual([]);
   });
+
+  it('flags a theater box beyond the poles; a box past 180 east is fine', () => {
+    withData();
+    const s = scn(['rome-117'], ['spain-2026']);
+    s.theater.bbox = [0, -100, 10, 10];
+    expect(scenarioProblems(s).join(' ')).toMatch(/pole/);
+    s.theater.bbox = [0, 10, 10, 95];
+    expect(scenarioProblems(s).join(' ')).toMatch(/pole/);
+    s.theater.bbox = [100, -15, 210, 55];
+    expect(scenarioProblems(s)).toEqual([]);
+  });
 });
 
 describe('swapping a member for another year', () => {

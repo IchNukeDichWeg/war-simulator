@@ -217,6 +217,8 @@ export function scenarioProblems(s: Scenario): string[] {
   });
   const [w, so, e, n] = s.theater.bbox;
   if (!(e > w && n > so)) p.push('Theater box is empty (east must exceed west, north must exceed south).');
+  // the same limit the loader applies; longitude may pass 180 (the Pacific preset's east is 210)
+  if (so < -90 || n > 90) p.push('Theater box reaches past a pole (south and north must lie within -90 to 90).');
   return p;
 }
 

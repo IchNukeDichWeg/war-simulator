@@ -324,7 +324,9 @@ export class MapController {
 
   fit(b: [number, number, number, number] | number[]) {
     const [w, s, e, n] = b;
-    this.map.fitBounds([[w, Math.max(-80, s)], [e, Math.min(82, n)]], { padding: 40, duration: 900 });
+    // both edges clamped: a south above 90 or a north below -90 threw "Invalid LngLat latitude"
+    const lat = (v: number) => Math.min(82, Math.max(-80, v));
+    this.map.fitBounds([[w, lat(s)], [e, lat(n)]], { padding: 40, duration: 900 });
   }
 
   flyTo(lon: number, lat: number, zoom?: number) {
