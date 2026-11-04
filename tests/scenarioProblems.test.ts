@@ -36,6 +36,16 @@ describe('scenario problems', () => {
     expect(scenarioProblems(scn(['rome-117'], ['rome-395']))).toEqual([]);
   });
 
+  it('flags a side whose members are all excluded', () => {
+    // the engine threw "Side ... has no valid members"
+    withData();
+    const s = scn(['rome-117', 'france-1939'], ['spain-2026']);
+    s.excluded = ['rome'];
+    expect(scenarioProblems(s)).toEqual([]);
+    s.excluded = ['rome', 'france'];
+    expect(scenarioProblems(s).join(' ')).toMatch(/Rome.*excluded/);
+  });
+
   it('flags a theater box beyond the poles; a box past 180 east is fine', () => {
     withData();
     const s = scn(['rome-117'], ['spain-2026']);

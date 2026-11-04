@@ -206,6 +206,9 @@ export function scenarioProblems(s: Scenario): string[] {
   s.sides.forEach((side, i) => {
     if (side.members.length === 0) p.push(`${side.name || `Side ${i + 1}`} has no members.`);
     for (const m of side.members) if (d && !d.snapById.has(m)) p.push(`Unknown snapshot "${m}" on ${side.name}.`);
+    // the engine skips excluded nations and threw "Side ... has no valid members" when that was all of them
+    const kept = side.members.filter((m) => { const sn = d?.snapById.get(m); return !sn || !s.excluded.includes(sn.nationId); });
+    if (side.members.length > 0 && kept.length === 0) p.push(`${side.name || `Side ${i + 1}`} has no members left: every one is excluded.`);
   });
   // One snapshot on both sides made the engine fight a nation against itself (the run ended on
   // day 2); listed twice on one side it is a duplicate the engine silently drops.
