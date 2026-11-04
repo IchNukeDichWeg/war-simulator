@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
+import { Icon } from '../Icon';
 import { eventLog, history } from '../engine';
 import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
@@ -59,7 +60,7 @@ function RunStatus() {
       <div className="rp-status-row">
         <div>
           <div className="rp-day">Day {run.day.toLocaleString('en-US')}</div>
-          <div className="rp-muted small">{run.date ? run.date.replace(/^Day \d+,\s*/, '') : '-'}{run.theater ? ` | grid ${run.theater.cols}x${run.theater.rows} at ${run.theater.cellDeg} deg` : ''}</div>
+          <div className="rp-muted small">{run.date ? run.date.replace(/^Day \d+,\s*/, '') : '-'}</div>
         </div>
         <span className={`rp-pill rp-pill-${cls}`}>{state}</span>
       </div>
@@ -141,40 +142,60 @@ function Dashboard({ names, colors }: { names: [string, string]; colors: [string
         <div className="rp-vs-side rp-vs-1" style={{ color: colors[1] }}>{names[1]}</div>
       </div>
       {specs.map((s) => <VsRow key={s.label} spec={s} colors={colors} />)}
-      <div className="rp-muted small">Arrows: change over the last {TREND_DAYS} simulated days.</div>
+      <div className="rp-muted small">Arrows show the change over the last {TREND_DAYS} days.</div>
     </div>
   );
 }
+
+// "More charts" stays open across tab switches (the Live view unmounts); reset per page load only.
+const liveMemo = { moreCharts: false };
 
 function Live() {
   const run = useStore((s) => s.run);
   const { names, colors: raw } = useSides();
   const colors = useLegibleColors(raw);
+  const [more, setMore] = useState(liveMemo.moreCharts);
   if (run.status === 'idle') {
-    return <div className="panel-body muted">No run yet. Build a scenario (or load a preset) and press <b>Run war</b>. Charts, the event log and the result appear here.</div>;
+    return (
+      <div className="panel-body empty">
+        <div className="empty-icon"><Icon name="play" size={22} /></div>
+        <p><b>No war running yet.</b></p>
+        <p className="muted">Pick a matchup in Quick start or Setup, then press <b>Run war</b> to watch it here.</p>
+      </div>
+    );
   }
   if (run.status === 'error') return <div className="panel-body"><div className="notice warn">{run.engineError}</div></div>;
   const v = run.historyVersion;
+  const chart = (title: string, unit: string, series: [number[], number[]], percent = false) => (
+    <SideChart title={title} unit={unit} days={history.day} series={series} names={names} colors={raw} version={v} percent={percent} sync="live" />
+  );
   return (
     <div className="panel-body">
       <RunStatus />
       {run.status === 'ended' && run.result && (
-        <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See the result and the reasons</button>
+        <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See who won and why</button>
       )}
       {run.warnings.length > 0 && <ul className="warnings">{run.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
       {history.day.length > 0 && <Dashboard names={names} colors={colors} />}
       <h4>Over time</h4>
       <SideLegend names={names} colors={raw} />
-      <SideChart title="Strength" unit="personnel" days={history.day} series={history.personnel} names={names} colors={raw} version={v} sync="live" />
-      <SideChart title="Casualties (cumulative)" unit="personnel" days={history.day} series={history.casualties} names={names} colors={raw} version={v} sync="live" />
-      <SideChart title="Morale" unit="% (avg)" days={history.day} series={history.morale} names={names} colors={raw} version={v} percent sync="live" />
-      <SideChart title="Territory held" unit="% of land" days={history.day} series={history.territory} names={names} colors={raw} version={v} percent sync="live" />
-      <SideChart title="Supply" unit="% of needs met" days={history.day} series={history.supply} names={names} colors={raw} version={v} percent sync="live" />
+      {chart('Strength', 'personnel', history.personnel)}
+      {chart('Territory held', '% of land', history.territory, true)}
+      {/* charts mount only while open: a closed <details> has no width for uPlot to size to */}
+      <details className="rp-details" open={more} onToggle={(e) => { const o = e.currentTarget.open; liveMemo.moreCharts = o; setMore(o); }}>
+        <summary>More charts (casualties, morale, supply)</summary>
+        {more && <>
+          {chart('Casualties (cumulative)', 'personnel', history.casualties)}
+          {chart('Morale', '% (avg)', history.morale, true)}
+          {chart('Supply', '% of needs met', history.supply, true)}
+        </>}
+      </details>
       {run.stats && (
         <details className="rp-details">
           <summary>All statistics today</summary>
           <StatsTable stats={run.stats} />
           <LossCauses stats={run.stats} />
+          {run.theater && <div className="rp-muted small">Map grid {run.theater.cols}x{run.theater.rows} cells, {run.theater.cellDeg} deg each.</div>}
         </details>
       )}
     </div>
