@@ -5,7 +5,7 @@ import type { MonteCarloResult, RunResult, SideStats, TheaterInfo } from '../eng
 import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { defaultScenario } from './scenarioDefaults';
-import { FITTED_THEATER, refitTheater } from './theaterFit';
+import { refitTheater } from './theaterFit';
 import { followNames } from './scenarioNames';
 
 export type LeftTab = 'start' | 'setup' | 'nations' | 'editor';
@@ -118,10 +118,14 @@ export function setScenario(f: (s: Scenario) => Scenario) {
   const st = store.get();
   let sc = f(st.scenario);
   if (st.data) sc = followNames(st.scenario, sc, st.data);
-  const box = st.data ? refitTheater(st.scenario, sc, st.data.snapById) : null;
-  if (box) sc = { ...sc, theater: { name: FITTED_THEATER, bbox: box } };
+  const fit = st.data ? refitTheater(st.scenario, sc, st.data.snapById, st.data.mechanics) : null;
+  if (fit) sc = { ...sc, theater: { name: fit.name, bbox: fit.bbox } };
   store.set({ scenario: sc, scenarioDirty: true });
-  if (box) toast('War area moved so every capital is inside it. Pick another under "Where" to change it.');
+  if (fit) {
+    toast(fit.around === null
+      ? 'War area moved so every capital is inside it. Pick another under "Where" to change it.'
+      : `The capitals are an ocean or a continent apart, so the war is fought around ${sc.sides[fit.around].name}; ${sc.sides[1 - fit.around].name} comes in by land or sea. Switch under "Where".`);
+  }
 }
 export function setRun(p: Partial<RunState>) { store.set((s) => ({ run: { ...s.run, ...p } })); }
 export function setMc(p: Partial<McState>) { store.set((s) => ({ mc: { ...s.mc, ...p } })); }
