@@ -1,6 +1,6 @@
 // Pure helpers behind the run panel (live dashboard, event log, result, Monte Carlo). No DOM,
 // no store: unit-tested in tests/runStats.test.ts. Nothing here feeds back into the engine.
-import type { SimEvent } from '../engine/protocol';
+import type { LossCause, SimEvent } from '../engine/protocol';
 
 /** Index of the latest sample at or before `day` (days ascending); -1 when none. */
 export function indexAtOrBefore(days: readonly number[], day: number): number {
@@ -145,4 +145,25 @@ export function endReasonBreakdown(results: readonly { endReason: string; winner
 export function share(a: number, b: number): number {
   const t = a + b;
   return t > 0 && Number.isFinite(t) ? a / t : 0.5;
+}
+
+/** Causes inflicted by the enemy. The rest (disease, starvation, exposure, desertion) a side
+ *  suffers on its own, so a loss ratio over all casualties credits the enemy with a starving
+ *  army's deaths (Rome against the Swiss read 1,683 : 1 with almost no fighting). */
+export const BATTLE_CAUSES: readonly LossCause[] = ['combat', 'pursuit', 'captured', 'air', 'naval', 'nuclear'];
+
+export function splitLosses(by: Partial<Record<LossCause, number>> | undefined): { battle: number; other: number } {
+  let battle = 0, other = 0;
+  for (const [k, v] of Object.entries(by ?? {})) {
+    if (BATTLE_CAUSES.includes(k as LossCause)) battle += v ?? 0; else other += v ?? 0;
+  }
+  return { battle, other };
+}
+
+/** Largest value so far. "% of start" overflowed when a side's army entered the theater in
+ *  stages (the Swiss read 2,954% of a day-one strength of 5k); the peak cannot be exceeded. */
+export function peakOf(series: readonly number[]): number {
+  let m = 0;
+  for (const v of series) if (v > m) m = v;
+  return m;
 }

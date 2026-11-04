@@ -4,7 +4,7 @@ import { flyBus } from '../bus';
 import { Icon } from '../Icon';
 import { eventLog, history } from '../engine';
 import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
-import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
+import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, peakOf, share, splitLosses, type EventFilter, type EventGroup } from '../runStats';
 import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 import { MonteCarloView } from './MonteCarloView';
@@ -127,10 +127,10 @@ function VsRow({ spec, colors }: { spec: VsSpec; colors: [string, string] }) {
 
 function Dashboard({ names, colors }: { names: [string, string]; colors: [string, string] }) {
   useStore((s) => s.run.historyVersion);
-  const start = (s: 0 | 1) => history.personnel[s][0];
+  const peak = (s: 0 | 1) => peakOf(history.personnel[s]);
   const specs: VsSpec[] = [
     { label: 'Strength', hint: 'Personnel in the theater now; the bar splits the two sides', series: history.personnel, mode: 'ratio', value: fmtCount, delta: (v) => signed(v), goodUp: true, eps: 0.5,
-      sub: (s, v) => (start(s) > 0 ? `${pct(v / start(s))} of start` : null) },
+      sub: (s, v) => (peak(s) > 0 ? `${pct(v / peak(s))} of its peak` : null) },
     { label: 'Casualties', hint: 'Cumulative killed, wounded and captured; the bar splits the two sides', series: history.casualties, mode: 'ratio', value: fmtCount, delta: (v) => signed(v), goodUp: false, eps: 0.5 },
     { label: 'Morale', hint: 'Strength-weighted average morale, 0-100%', series: history.morale, mode: 'level', value: pct, delta: signedPts, goodUp: true, eps: 0.005 },
     { label: 'Territory', hint: 'Share of the theater\'s land cells each side controls', series: history.territory, mode: 'level', value: pct, delta: signedPts, goodUp: true, eps: 0.005 },
@@ -297,8 +297,9 @@ function Result() {
   }
   const w = result.winner;
   const st = result.stats;
-  const start = (s: 0 | 1) => history.personnel[s][0];
-  const lossRatio = st[1].casualties > 0 && st[0].casualties > 0 ? st[0].casualties / st[1].casualties : null;
+  const peak = (s: 0 | 1) => Math.max(peakOf(history.personnel[s]), st[s].personnel);
+  const loss = [splitLosses(st[0].lossesByCause), splitLosses(st[1].lossesByCause)] as const;
+  const lossRatio = loss[1].battle > 0 && loss[0].battle > 0 ? loss[0].battle / loss[1].battle : null;
   const days = Math.round(result.endDay);
   const after = `after ${days.toLocaleString('en-US')} ${days === 1 ? 'day' : 'days'}`;
   // fmtDays adds "(about N months)" past 60 days; shown under the headline, not in it
@@ -322,14 +323,18 @@ function Result() {
         {([0, 1] as const).map((s) => (
           <div key={s} className="rp-final-side" style={{ borderTopColor: colors[s] }}>
             <div className="rp-final-name" style={{ color: colors[s] }}>{names[s]}</div>
-            <div><b>{fmtCount(st[s].personnel)}</b> <span className="rp-muted small">left{start(s) > 0 ? `, ${pct(st[s].personnel / start(s))} of start` : ''}</span></div>
+            <div><b>{fmtCount(st[s].personnel)}</b> <span className="rp-muted small">left{peak(s) > 0 ? `, ${pct(st[s].personnel / peak(s))} of its peak` : ''}</span></div>
             <div><b>{fmtCount(st[s].casualties)}</b> <span className="rp-muted small">casualties</span></div>
+            {loss[s].other > 0.1 * st[s].casualties && <div className="rp-muted small">{fmtCount(loss[s].other)} of them from starvation, disease, exposure or desertion</div>}
             <div className="small">morale {pct(st[s].morale)} | territory {pct(st[s].territory)}</div>
           </div>
         ))}
       </div>
       {lossRatio != null && (
-        <div className="rp-muted small">Loss ratio {names[0]} : {names[1]} = {lossRatio >= 1 ? `${fmt(lossRatio)} : 1` : `1 : ${fmt(1 / lossRatio)}`} (killed, wounded and captured)</div>
+        <div className="rp-muted small">Battle loss ratio {names[0]} : {names[1]} = {lossRatio >= 1 ? `${fmt(lossRatio)} : 1` : `1 : ${fmt(1 / lossRatio)}`} (killed, wounded and captured by the enemy)</div>
+      )}
+      {lossRatio == null && (loss[0].battle > 0 || loss[1].battle > 0) && (
+        <div className="rp-muted small">{names[loss[0].battle > 0 ? 1 : 0]} lost no one to the enemy.</div>
       )}
       <details className="rp-details">
         <summary>All final statistics</summary>

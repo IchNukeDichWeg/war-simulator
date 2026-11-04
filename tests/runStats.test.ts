@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { SimEvent } from '../src/engine/protocol';
-import { deltaOver, endReasonBreakdown, EVENT_GROUPS, filterEvents, groupCounts, groupOf, histogram, indexAtOrBefore, outcomeCounts, share, wilson } from '../src/ui/runStats';
+import { deltaOver, endReasonBreakdown, EVENT_GROUPS, filterEvents, groupCounts, groupOf, histogram, indexAtOrBefore, outcomeCounts, peakOf, share, splitLosses, wilson } from '../src/ui/runStats';
 
 describe('Monte Carlo summaries', () => {
   it('matches published Wilson 95% intervals', () => {
@@ -163,5 +163,21 @@ describe('live dashboard helpers', () => {
     expect(share(3, 1)).toBe(0.75);
     expect(share(0, 0)).toBe(0.5);
     expect(share(0, 5)).toBe(0);
+  });
+});
+
+describe('result numbers', () => {
+  it('counts only enemy-inflicted causes as battle losses', () => {
+    // Rome against the Swiss: almost all of its 336k casualties were starvation
+    const r = splitLosses({ combat: 150, pursuit: 30, captured: 20, air: 0, naval: 0, nuclear: 0, disease: 1000, starvation: 330_000, exposure: 4000, desertion: 800 });
+    expect(r).toEqual({ battle: 200, other: 335_800 });
+    expect(splitLosses(undefined)).toEqual({ battle: 0, other: 0 });
+  });
+
+  it('measures strength against the peak, which an army entering in stages cannot exceed', () => {
+    const swiss = [5010, 40_000, 148_000, 147_800];
+    expect(peakOf(swiss)).toBe(148_000);
+    expect(swiss.every((v) => v / peakOf(swiss) <= 1)).toBe(true);
+    expect(peakOf([])).toBe(0);
   });
 });
