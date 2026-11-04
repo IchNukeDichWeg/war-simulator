@@ -1,6 +1,8 @@
 // Pulls the World Bank indicators used for modern snapshots into
 // data/raw/worldbank.json (most recent non-empty value per country, with year).
-// World Bank Open Data, CC BY 4.0. Usage: tsx data-pipeline/fetch-worldbank.ts
+// World Bank Open Data, CC BY 4.0, except the SIPRI military-expenditure series (MS.MIL.XPND.*),
+// which stay under SIPRI's terms. Road length (IS.ROD.TOTL.KM, IRF data that may not be
+// redistributed) is not fetched. Usage: tsx data-pipeline/fetch-worldbank.ts
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT, Progress, cachedFetch } from './lib/util';
@@ -14,7 +16,6 @@ export const INDICATORS: Record<string, string> = {
   milexPctGdp: 'MS.MIL.XPND.GD.ZS',
   industryPct: 'NV.IND.TOTL.ZS',
   railKm: 'IS.RRS.TOTL.KM',
-  roadKm: 'IS.ROD.TOTL.KM',
   landKm2: 'AG.LND.TOTL.K2',
   male1519Pct: 'SP.POP.1519.MA.5Y',
   female1519Pct: 'SP.POP.1519.FE.5Y',
@@ -58,7 +59,7 @@ async function main() {
   }
   const out = Object.values(countries).sort((a, b) => a.iso3.localeCompare(b.iso3));
   writeFileSync(join(ROOT, 'data', 'raw', 'worldbank.json'), JSON.stringify({
-    source: 'World Bank Open Data API (CC BY 4.0), most recent non-empty value per indicator',
+    source: 'World Bank Open Data API (CC BY 4.0; MS.MIL.XPND.* are SIPRI data under SIPRI terms), most recent non-empty value per indicator',
     indicators: INDICATORS,
     countries: out,
   }, null, 1));

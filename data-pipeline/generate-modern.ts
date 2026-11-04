@@ -187,7 +187,9 @@ async function main() {
       ? est(mp.value * m1519.value / 100 / 5, 0.05, 'B', 'derived:cohort-from-agegroup', `World Bank SP.POP.1519.MA.5Y x SP.POP.TOTL.MA.IN / 100 / 5, asOf ${m1519.year}. Males only (conscript-pool convention)`)
       : est(P * ana((s) => s.economy.annualCohort.mid / s.demography.population.mid), 0.4, 'D', 'derived:regional-analogy', `no World Bank age structure; males reaching military age per capita from ${anaNote}`);
 
-    const road = wbE('roadKm', 'IS.ROD.TOTL.KM', 0.1, 'B') ?? est(area.mid * ana((s) => s.logistics.roadKm.mid / Math.max(1, s.territory.areaKm2.mid)), 0.6, 'D', 'derived:regional-analogy', `road density per km2 from ${anaNote}`);
+    // World Bank IS.ROD.TOTL.KM is IRF data whose terms forbid redistribution, so roads come from
+    // the regional analogy only (the engine does not read roadKm; see src/ui/engineUse.ts)
+    const road = est(area.mid * ana((s) => s.logistics.roadKm.mid / Math.max(1, s.territory.areaKm2.mid)), 0.6, 'D', 'derived:regional-analogy', `road density per km2 from ${anaNote}`);
     const rail = wbE('railKm', 'IS.RRS.TOTL.KM', 0.05, 'A') ?? est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank rail data; many of these states have little or no rail. Assumed 0.');
     const nPorts = border ? ports.filter((p) => p.properties.scalerank <= 8 && pointInMulti(p.geometry.coordinates[0], p.geometry.coordinates[1], border)).length : 0;
     const portsE = est(nPorts, 0.3, 'B', 'derived:ports-from-naturalearth', 'Natural Earth 10m ports inside the border polygon');
