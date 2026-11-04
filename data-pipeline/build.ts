@@ -131,7 +131,10 @@ async function main() {
   for (const s of snapshots) {
     const mp = s.territory.border === 'none' ? null : await resolveBorder(s.territory.border);
     if (mp && mp.length) {
-      borders[s.id] = simplifyMulti(mp, SIMPLIFY_DEG);
+      // simplification erases micro-states (Monaco, Nauru, Tuvalu, Vatican City, Maldives shipped
+      // an empty polygon and the engine fell back to a disc): keep the full ring when it does
+      const simple = simplifyMulti(mp, SIMPLIFY_DEG);
+      borders[s.id] = simple.length ? simple : mp;
       s.geography.terrainMix = terrainMix(mp, grid);
       const area = multiAreaKm2(mp), claimed = s.territory.areaKm2.mid;
       if (claimed > 0 && Math.abs(Math.log(area / claimed)) > Math.log(2)) {
