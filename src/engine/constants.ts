@@ -368,7 +368,7 @@ export const MEMBER_COLLAPSE_MIN_SHARE = 0.1;
  *  member with nothing on the map yet that is not broken stands. OFF: the pooled on-map morale
  *  alone, so a vanguard member ended its coalition's war before the main member arrived (NATO 1989:
  *  "Warsaw Pact's morale collapsed" on days 16-37 with only East Germany on the map, 750k Soviets
- *  landing on day 42). Per member rather than "skip while forces are still coming": it is the same
+ *  marching in on day 42). Per member rather than "skip while forces are still coming": it is the same
  *  test MEMBER_COLLAPSE applies to personnel, and it does not hold a side open for a token wave.
  *  Measured (20 seeds): backtest 19/15/22 identical, blind (no coalition). Presets (10-seed screen)
  *  OFF -> ON: NATO 1989 9/1/0 both ways, median day 37 -> 156, morale-collapse ends 7 -> 2 (days
