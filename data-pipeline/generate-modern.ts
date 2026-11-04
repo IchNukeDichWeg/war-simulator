@@ -14,10 +14,14 @@ import type { Est, ForceEntry, Grade, RegionId, Snapshot, TechCategory, UnitRole
 import { PERSONNEL_ROLES } from '../src/types/schema';
 import { FLAG_COAST, GRID_H, GRID_RES, GRID_W } from '../src/engine/terrainClasses';
 import { ROOT, cachedFetch } from './lib/util';
-import { bboxOf, pointInMulti } from './lib/geo';
+import { bboxOf, multiAreaKm2, pointInMulti } from './lib/geo';
 import { resolveBorder } from './build';
 import { TECH_CATEGORIES, UNIT_ROLES } from './schema';
 import type { WbCountry } from './fetch-worldbank';
+
+/** World Bank codes Natural Earth spells differently: Kosovo is XKX at the World Bank and KOS in
+ *  Natural Earth, so the lookup missed and kosovo-2026 shipped with no border and an area of 0. */
+const NE_A3: Record<string, string> = { XKX: 'KOS' };
 
 const SNAP_DIR = join(ROOT, 'data', 'raw', 'snapshots');
 const WB_URL = 'https://data.worldbank.org/indicator/';
@@ -113,8 +117,10 @@ async function main() {
     const P = pop.mid;
     const urban = wbE('urbanPct', 'SP.URB.TOTL.IN.ZS', 0.05, 'A', 0.01) ?? est(ana((s) => s.demography.urbanization.mid), 0.3, 'D', 'derived:regional-analogy', anaNote);
     clampFraction(urban);
-    const border = await resolveBorder(`ne:${st.iso3}`);
-    const area = wbE('landKm2', 'AG.LND.TOTL.K2', 0.02, 'A') ?? est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank land area; see border polygon');
+    const neRef = `ne:${NE_A3[st.iso3] ?? st.iso3}`;
+    const border = await resolveBorder(neRef);
+    const area = wbE('landKm2', 'AG.LND.TOTL.K2', 0.02, 'A')
+      ?? (border ? est(multiAreaKm2(border), 0.05, 'C', 'derived:area-from-border', `no World Bank land area; area of the ${neRef} polygon`) : est(0, 0, 'D', 'derived:regional-analogy', 'no World Bank land area and no border polygon'));
 
     // Personnel
     // The list wins over the World Bank: its MS.MIL.TOTL.P1 counts these states' police
@@ -207,7 +213,7 @@ async function main() {
       region: reg, phase: 'current', tags: ['auto-base', 'modern-state', st.status],
       capital: capitalOf(st, c, places),
       places,
-      territory: { border: border ? `ne:${st.iso3}` : 'none', areaKm2: area },
+      territory: { border: border ? neRef : 'none', areaKm2: area },
       demography: { population: pop, urbanization: urban },
       military: {
         activePersonnel: active, trainedReserves: noArmy ? est(0, 0, 'B', NO_ARMY, 'no armed forces') : reserves,
