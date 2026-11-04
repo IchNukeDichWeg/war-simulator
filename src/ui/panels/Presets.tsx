@@ -57,7 +57,7 @@ export function Presets() {
                 {years && <span className="preset-years">{years}</span>}
                 <span>{TECH[p.techMode] ?? p.techMode}</span>
               </div>
-              <div className="preset-theater">{p.theater.name}{p.excluded.length > 0 ? `, excludes ${p.excluded.join(', ')}` : ''}</div>
+              <div className="preset-theater">{p.theater.name}{p.excluded.length > 0 ? `, without ${p.excluded.map((n) => data.nationById.get(n)?.name ?? n).join(', ')}` : ''}</div>
               <div className="preset-sides small">
                 {p.sides.map((s, i) => (
                   <span key={i} className="preset-side">
