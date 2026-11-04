@@ -10,9 +10,10 @@ import {
 import { ROLE_LABEL, ROLE_ORDER } from '../roles';
 import { store, useStore } from '../store';
 import { EmptyData } from './EmptyData';
-import { KindBadge, SnapshotDetail } from './SnapshotDetail';
+import { KindBadge, SIDE_LETTER, SnapshotDetail } from './SnapshotDetail';
 import { addToSide, browser } from './snapActions';
 import '../../styles/setup.css';
+import '../../styles/nations.css';
 
 // moved to nationSearch.ts / snapActions.ts; re-exported for existing imports
 export { ERA_LABEL, REGION_LABEL } from '../nationSearch';
@@ -33,6 +34,8 @@ export function NationBrowser() {
   const [openId, setOpenId] = useState<string | null>(browser.openId);
   const [active, setActive] = useState(0);
   const [limit, setLimit] = useState(PAGE);
+  // era, region, grade and kind filters fold away; open when one is already set
+  const [showFilters, setShowFilters] = useState(!!(browser.era || browser.region || browser.kind || browser.minGrade));
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -97,42 +100,50 @@ export function NationBrowser() {
     ['derived', 'Derived', counts.derived],
   ];
 
+  const nOn = [era, region, kind, minGrade].filter(Boolean).length;
   return (
     <div className="panel-body nb" onKeyDown={onKey}>
       <div className="nb-filters">
         <input
           ref={inputRef} type="search" className="nb-search" value={q} onChange={(e) => setQ(e.target.value)}
-          placeholder={`Search ${total.toLocaleString('en-US')} snapshots: name, tag, region, year`}
+          placeholder="Find a nation: name, year, region or tag"
           role="combobox" aria-expanded="true" aria-controls="nb-list" aria-activedescendant={list[active] ? `nb-${list[active].item.id}` : undefined}
-          aria-label="Search nation snapshots"
+          aria-label="Search nation snapshots" aria-describedby="nb-keys"
         />
-        <div className="nb-row2">
-          <select value={era} onChange={(e) => setEra(e.target.value as EraId | '')} aria-label="Era">
-            <option value="">All eras</option>
-            {(Object.keys(ERA_SPANS) as EraId[]).map((x) => <option key={x} value={x}>{ERA_LABEL[x]} ({yearLabel(ERA_SPANS[x][0])} to {yearLabel(Math.min(ERA_SPANS[x][1], 2026))})</option>)}
-          </select>
-          <select value={region} onChange={(e) => setRegion(e.target.value as RegionId | '')} aria-label="Region">
-            <option value="">All regions</option>
-            {(Object.keys(REGION_LABEL) as RegionId[]).map((r) => <option key={r} value={r}>{REGION_LABEL[r]}</option>)}
-          </select>
-          <select value={minGrade} onChange={(e) => setMinGrade(e.target.value as Grade | '')} aria-label="Minimum confidence" title="Overall confidence: the mean grade over every value of the snapshot">
-            <option value="">Any grade</option>
-            {GRADES.slice(0, 3).map((g) => <option key={g} value={g}>{g === 'A' ? 'Grade A' : `${g} or better`}</option>)}
-          </select>
-        </div>
-        <div className="nb-seg" role="radiogroup" aria-label="Data kind">
-            {kinds.map(([k, l, n]) => (
-              <button key={k || 'all'} role="radio" aria-checked={kind === k} className={`${kind === k ? 'on' : ''}${k ? ` seg-${k}` : ''}`} onClick={() => setKind(k)}
-                title={k === 'derived' ? 'Phase 3 derived: formula-based, low confidence, loaded per era on use' : k === 'auto' ? 'Auto-base 2026: World Bank figures plus regional analogues' : k === 'researched' ? 'Researched: every value cites a source' : 'Every kind'}>
-                {l} <span className="nb-n">{n}</span>
-              </button>
-            ))}
-        </div>
         <div className="nb-status small">
-          <span>{list.length === total ? `${total.toLocaleString('en-US')} snapshots` : `${list.length.toLocaleString('en-US')} of ${total.toLocaleString('en-US')}`}{q.trim() ? ', best match first' : ', A to Z'}</span>
-          {(anyFilter || q) && <button className="link" onClick={() => { setQ(''); clearFilters(); inputRef.current?.focus(); }}>Clear</button>}
+          <span>{list.length === total ? `${total.toLocaleString('en-US')} nation snapshots` : `${list.length.toLocaleString('en-US')} of ${total.toLocaleString('en-US')}`}{q.trim() ? ', best match first' : ', A to Z'}</span>
+          <span className="nb-status-btns">
+            {(anyFilter || q) && <button className="link" onClick={() => { setQ(''); clearFilters(); inputRef.current?.focus(); }}>Clear</button>}
+            <button className={`nb-ftoggle${nOn ? ' on' : ''}`} aria-expanded={showFilters} aria-controls="nb-fbox" onClick={() => setShowFilters((v) => !v)}>
+              Filters{nOn ? ` (${nOn})` : ''}
+            </button>
+          </span>
         </div>
-        <div className="nb-keys muted small" title={`Alt+A adds to ${members[0].name}, Alt+B to ${members[1].name}`}>Keys: Up/Down move, Enter details, Alt+A / Alt+B add to a side, Esc clears</div>
+        <div id="nb-fbox" className="nb-fbox" hidden={!showFilters}>
+          <div className="nb-row2">
+            <select value={era} onChange={(e) => setEra(e.target.value as EraId | '')} aria-label="Era">
+              <option value="">All eras</option>
+              {(Object.keys(ERA_SPANS) as EraId[]).map((x) => <option key={x} value={x}>{ERA_LABEL[x]} ({yearLabel(ERA_SPANS[x][0])} to {yearLabel(Math.min(ERA_SPANS[x][1], 2026))})</option>)}
+            </select>
+            <select value={region} onChange={(e) => setRegion(e.target.value as RegionId | '')} aria-label="Region">
+              <option value="">All regions</option>
+              {(Object.keys(REGION_LABEL) as RegionId[]).map((r) => <option key={r} value={r}>{REGION_LABEL[r]}</option>)}
+            </select>
+          </div>
+          <select value={minGrade} onChange={(e) => setMinGrade(e.target.value as Grade | '')} aria-label="Minimum confidence" title="Overall confidence: the mean grade over every value of the snapshot">
+            <option value="">Any confidence grade</option>
+            {GRADES.slice(0, 3).map((g) => <option key={g} value={g}>{g === 'A' ? 'Grade A only' : `Grade ${g} or better`}</option>)}
+          </select>
+          <div className="nb-seg" role="radiogroup" aria-label="Data kind">
+              {kinds.map(([k, l, n]) => (
+                <button key={k || 'all'} role="radio" aria-checked={kind === k} className={`${kind === k ? 'on' : ''}${k ? ` seg-${k}` : ''}`} onClick={() => setKind(k)}
+                  title={k === 'derived' ? 'Phase 3 derived: formula-based, low confidence, loaded per era on use' : k === 'auto' ? 'Auto-base 2026: World Bank figures plus regional analogues' : k === 'researched' ? 'Researched: every value cites a source' : 'Every kind'}>
+                  {l} <span className="nb-n">{n}</span>
+                </button>
+              ))}
+          </div>
+        </div>
+        <div id="nb-keys" className="nb-keys muted small" hidden={!showFilters}>Keys: Up/Down move, Enter opens, Alt+A / Alt+B add to side A / B, Esc clears</div>
       </div>
 
       {compare[0] && compare[1] && <Compare a={data.snapById.get(compare[0])} b={data.snapById.get(compare[1])} grade={(id) => data.phase3ById.get(id)?.confidence} />}
@@ -159,21 +170,25 @@ export function NationBrowser() {
                     <div className="nb-l1">
                       <span className="nb-name" title={s.id}>{s.name}</span>
                       <span className="nb-year">{yearLabel(s.year)}</span>
-                      {side >= 0 && <span className="nb-side" style={{ borderColor: members[side].color, color: members[side].color }} title={`On ${members[side].name}`}>{members[side].name}</span>}
+                      {/* overall confidence; researched is the default kind, the others are named on line 3 */}
+                      <span className="nb-grade" title="Overall confidence: the mean grade over every value"><GradeBadge g={s.confidence} /></span>
                     </div>
+                    <div className="nb-l2 small muted">{ERA_LABEL[s.era]} · {REGION_LABEL[s.region] ?? s.region}</div>
                     <div className="nb-l2 small">
-                      <span className="muted">{ERA_LABEL[s.era]} · {REGION_LABEL[s.region] ?? s.region}</span>
-                    </div>
-                    <div className="nb-l2 small">
-                      <KindBadge kind={s.kind} grade={s.confidence} compact />
-                      <span title="Population (mid)">pop <b>{fmt(s.population)}</b></span>
-                      <span title="Active military personnel (mid) and its grade">active <b>{fmt(s.active)}</b>{s.activeGrade && <> <GradeBadge g={s.activeGrade} /></>}</span>
+                      {s.kind !== 'researched' && <KindBadge kind={s.kind} grade={s.confidence} compact />}
+                      <span title="Active military personnel (mid) and its grade">army <b>{fmt(s.active)}</b>{s.activeGrade && <> <GradeBadge g={s.activeGrade} /></>}</span>
+                      <span title="Population (mid)" className="muted"><b>{fmt(s.population)}</b> people</span>
+                      {side >= 0 && <span className="nb-side" style={{ borderColor: members[side].color, color: members[side].color }} title={`On side ${SIDE_LETTER[side]}: ${members[side].name}`}>side {SIDE_LETTER[side]}</span>}
                     </div>
                   </div>
-                  <div className="nb-actions" onClick={(e) => e.stopPropagation()}>
-                    <button title={`Add to ${members[0].name} (Alt+A)`} disabled={side >= 0} onClick={() => addToSide(0, s.id)}>+A</button>
-                    <button title={`Add to ${members[1].name} (Alt+B)`} disabled={side >= 0} onClick={() => addToSide(1, s.id)}>+B</button>
-                  </div>
+                  {side < 0 && (
+                    <div className="nb-actions" onClick={(e) => e.stopPropagation()}>
+                      {([0, 1] as const).map((k) => (
+                        <button key={k} style={{ borderLeftColor: members[k].color }} aria-label={`Add ${s.name} ${yearLabel(s.year)} to side ${SIDE_LETTER[k]}, ${members[k].name}`}
+                          title={`Add to side ${SIDE_LETTER[k]}: ${members[k].name} (Alt+${SIDE_LETTER[k]})`} onClick={() => addToSide(k, s.id)}>+ {SIDE_LETTER[k]}</button>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 {open && <SnapshotDetail id={s.id} header={false} />}
               </li>

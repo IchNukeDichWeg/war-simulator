@@ -6,11 +6,23 @@ import type { SnapKind } from '../nationSearch';
 import { setScenario, store, toast } from '../store';
 
 export function addMember(side: 0 | 1, id: string) {
+  let added = '';
   setScenario((sc) => {
     if (sc.sides.some((s) => s.members.includes(id))) { toast('Already in the scenario.'); return sc; }
     const sides = [...sc.sides] as typeof sc.sides;
     sides[side] = { ...sides[side], members: [...sides[side].members, id] };
+    added = sides[side].name;
     return { ...sc, sides };
+  });
+  // the button that was pressed disables itself, so say where the nation went
+  if (added) toast(`Added ${store.get().data?.snapById.get(id)?.name ?? id} to ${added}.`);
+}
+
+/** Take a snapshot off whichever side has it. */
+export function removeMember(id: string) {
+  setScenario((sc) => {
+    if (!sc.sides.some((s) => s.members.includes(id))) return sc;
+    return { ...sc, sides: sc.sides.map((s) => ({ ...s, members: s.members.filter((m) => m !== id) })) as typeof sc.sides };
   });
 }
 
