@@ -155,11 +155,14 @@ function onLive(m: FromWorker) {
     case 'frame':
       onFrame(m.frame);
       break;
-    case 'end':
+    case 'end': {
+      // a replay reaching the end again after a seek back: the user already saw this result
+      const first = !store.get().run.result;
       flushRun();
       setRun({ status: 'ended', result: m.result, speed: 0 });
-      store.set({ rightTab: 'result' });
+      if (first) store.set({ rightTab: 'result' });
       break;
+    }
     case 'error':
       setRun({ status: 'error', engineError: m.message });
       toast('Engine error: ' + m.message);
@@ -235,7 +238,11 @@ export function stepDays(days: number) {
 
 export function seek(day: number) {
   if (!live) return;
-  post({ type: 'seek', day: Math.max(0, Math.round(day)) });
+  const d = Math.max(0, Math.round(day));
+  const { status, result } = store.get().run;
+  // back before the end the war is open again, paused, so the pill, Space and '.' work
+  if (status === 'ended' && result && d < result.endDay) setRun({ status: 'running', speed: 0 });
+  post({ type: 'seek', day: d });
 }
 
 export function stopRun() {

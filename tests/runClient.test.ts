@@ -137,4 +137,22 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(run.status).toBe('running');
     expect(run.warnings.filter((w) => /Unknown snapshot/.test(w))).toEqual([]);
   });
+
+  // Review finding: seeking back from an ended run kept status 'ended' (pill "Ended", Space and
+  // '.' dead), and finishing again forced the Result tab a second time.
+  it('seeking back before the end reopens the run; ending again leaves the tab alone', async () => {
+    const e = await load();
+    e.startRun({ ...e.sc, victory: { ...e.sc.victory, timeLimitDays: 20 } }, 0);
+    live().pump();
+    e.stepDays(40); live().pump();
+    expect(e.store.get().run.status).toBe('ended');
+    expect(e.store.get().rightTab).toBe('result');
+    e.store.set({ rightTab: 'live' });
+    e.seek(10); live().pump();
+    expect(e.store.get().run.status).toBe('running');
+    expect(e.store.get().run.speed).toBe(0);
+    e.stepDays(40); live().pump();
+    expect(e.store.get().run.status).toBe('ended');
+    expect(e.store.get().rightTab).toBe('live');
+  });
 });
