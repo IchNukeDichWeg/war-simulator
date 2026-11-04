@@ -22,3 +22,8 @@ when shipping from memory.
 - Build the web bundle and zip it: `npm run build`, then `cd dist && zip -qr ../war-simulator-v<x.y.z>-web.zip .`.
 - `gh release create v<x.y.z> war-simulator-v<x.y.z>-web.zip --title "v<x.y.z>" --notes-file docs/releases/v<x.y.z>.md`.
 - Check that the Pages deploy for the tag finished and the live page loads a preset.
+
+One-time setup, already done: Pages builds from GitHub Actions, and the `github-pages` environment
+allows `v*` tags as well as `main` (Settings, Environments). Without the tag rule the deploy job is
+rejected with "not allowed to deploy to github-pages due to environment protection rules".
+The social preview card, `docs/social-preview.png`, is uploaded by hand in Settings, General.
