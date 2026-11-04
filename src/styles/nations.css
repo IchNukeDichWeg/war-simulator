@@ -1,0 +1,49 @@
+/* Nations tab, snapshot detail, the snapshot dropdown and the Editor's change list: the
+   newcomer layout. Loaded after setup.css by the panels that use it, so rules here refine
+   the ones there. */
+
+/* ---- Nations tab: search, status, folded filters ---- */
+.nb-status-btns { display: inline-flex; align-items: baseline; gap: var(--sp-4); }
+.nb-ftoggle { font-size: var(--fs-xs); padding: 1px var(--sp-4); min-height: 0; }
+.nb-fbox { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--r-md); background: var(--c-sunken); }
+.nb-fbox[hidden], .nb-keys[hidden] { display: none; }
+.nb-fbox > select { width: 100%; }
+
+/* ---- Nations tab: result rows ---- */
+.nb-l1 .nb-grade { margin-left: auto; flex: none; }
+/* the panel can be under 250 px wide: a long name wraps rather than losing its distinguishing tail */
+.nb-l1 .nb-name { white-space: normal; overflow-wrap: anywhere; }
+.nb-l2 .nb-side { margin-left: auto; }
+.nb-actions button { min-width: 34px; border-left-width: 3px; }
+
+/* ---- snapshot detail: key facts, side buttons, details ---- */
+.sd-facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin: 0; }
+.sd-facts > div { padding: var(--sp-2) var(--sp-3); border-radius: var(--r-sm); background: var(--c-surface-2); min-width: 0; }
+.sd-facts > div.wide { grid-column: 1 / -1; }
+.sd-facts dt { font-size: var(--fs-2xs); color: var(--c-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.sd-facts dd { margin: 0; font-size: var(--fs-lg); font-weight: var(--fw-semibold); font-variant-numeric: tabular-nums; }
+.sd-facts > div.wide dd { font-size: var(--fs-md); }
+.sd-add { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.sd-add-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; padding: var(--sp-3) var(--sp-4); border-left-width: 4px; min-width: 0; }
+.sd-add-btn > span:first-child { font-weight: var(--fw-semibold); }
+.sd-add-name { font-size: var(--fs-xs); color: var(--c-text-muted); font-weight: 400; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.sd-onside { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); border-radius: var(--r-sm); background: var(--c-surface-2); }
+.sd-actions button { font-size: var(--fs-xs); max-width: none; }
+.sd-more summary { cursor: pointer; color: var(--c-text-muted); font-size: var(--fs-sm); padding: var(--sp-1) 0; }
+.sd-more-body { display: flex; flex-direction: column; gap: var(--sp-3); padding-top: var(--sp-3); }
+
+/* ---- snapshot dropdown (setup form, Editor) ---- */
+.cb-l1 { display: flex; align-items: baseline; gap: var(--sp-3); min-width: 0; }
+.cb-name { font-weight: var(--fw-semibold); min-width: 0; overflow-wrap: anywhere; }
+.cb-tags { display: inline-flex; align-items: center; gap: var(--sp-2); margin-left: auto; flex: none; }
+.cb-tags .nb-side { margin-left: 0; }
+.cb-l2 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---- Editor: intro and change list ---- */
+.ed-intro { margin: 0 0 var(--sp-4); }
+.ov-summary h5 button { font-size: var(--fs-xs); min-height: 0; padding: 1px var(--sp-4); text-transform: none; letter-spacing: 0; }
+.ov-list li > button.ov-reset { grid-area: x; font-size: var(--fs-xs); min-height: 0; padding: 1px var(--sp-4); }
+.ov-empty { margin: 0; font-size: var(--fs-sm); }
+.ov-summary.empty { border-style: dashed; border-color: var(--c-border); background: transparent; }
+.ov-summary.empty h5 { color: var(--c-text-muted); }
+.ed-help summary { cursor: pointer; color: var(--c-text-muted); font-weight: 400; }

@@ -13,6 +13,7 @@ import { EmptyData } from './EmptyData';
 import { KindBadge } from './SnapshotDetail';
 import { SnapshotSearch } from './SnapshotSearch';
 import '../../styles/setup.css';
+import '../../styles/nations.css';
 
 interface Field { path: string; est: Est; group: string; label: string }
 
@@ -95,7 +96,7 @@ function EditCell({ f, snapId, ov }: { f: Field; snapId: string; ov?: Override }
       <div className="ed-meta">
         <GradeBadge g={f.est.grade} />
         <span className="ed-range" title="researched low / mid / high">{fmt(f.est.low)} <b>{fmt(f.est.mid)}</b> {fmt(f.est.high)}</span>
-        {ov && <button className="reset" title={`Reset to researched value ${f.est.mid}`} onClick={() => setOverride(snapId, f.path + '.mid', null)}>reset</button>}
+        {ov && <button className="reset" title={`Reset to researched value ${f.est.mid}`} aria-label={`Reset ${f.label} to the researched value`} onClick={() => setOverride(snapId, f.path + '.mid', null)}>Reset</button>}
       </div>
       <div className="ed-src small"><SourceLink src={f.est.source} />{f.est.note && <span className="muted"> {f.est.note}</span>}</div>
       {out && <div className="small warn">Outside the researched range; the run uses it anyway.</div>}
@@ -106,27 +107,36 @@ function EditCell({ f, snapId, ov }: { f: Field; snapId: string; ov?: Override }
 /** Every edit in the scenario, across snapshots: what it was, what it is, by how much. */
 function ChangeList({ data, overrides, current, onJump }: { data: AppData; overrides: Override[]; current: string | null; onJump: (id: string, label: string) => void }) {
   const rows = overrides.map((o) => describeOverride(o, data.snapById.get(o.snapshotId)));
+  if (rows.length === 0) {
+    return (
+      <div className="ov-summary empty">
+        <h5><span>Your changes (0)</span></h5>
+        <p className="ov-empty muted">No values changed yet. Pick a nation below and type a new number.</p>
+      </div>
+    );
+  }
   return (
     <div className="ov-summary">
       <h5>
-        <span>Changes in this scenario ({rows.length})</span>
-        <button className="link" title="Remove every edit from the scenario" onClick={() => {
-          if (confirm(`Reset all ${rows.length} edited value${rows.length === 1 ? '' : 's'} to the researched values?`)) setScenario((s) => ({ ...s, overrides: [] }));
-        }}>reset all</button>
+        <span>Your changes ({rows.length})</span>
+        <button title="Remove every change from the scenario" onClick={() => {
+          if (confirm(`Reset all ${rows.length} changed value${rows.length === 1 ? '' : 's'} to the researched values?`)) setScenario((s) => ({ ...s, overrides: [] }));
+        }}>Reset all</button>
       </h5>
       <ul className="ov-list">
         {rows.map((r) => {
           const s = data.snapById.get(r.ov.snapshotId);
+          const who = s ? `${s.name} ${yearLabel(s.year)}` : r.ov.snapshotId;
           return (
             <li key={`${r.ov.snapshotId} ${r.ov.path}`} className={r.ov.snapshotId === current ? 'cur' : ''}>
               <span className="ov-where" title={`${r.ov.snapshotId} ${r.ov.path}`}>
                 <button className="link" onClick={() => onJump(r.ov.snapshotId, r.label)}>
-                  <b>{r.label}</b> <span className="muted">{s ? `${s.name} ${yearLabel(s.year)}` : r.ov.snapshotId}</span>
+                  <b>{r.label}</b> <span className="muted">{who}</span>
                 </button>
                 {!r.base && <span className="muted"> {s ? '(field not in this snapshot)' : '(not loaded)'}</span>}
               </span>
               <Change r={r} />
-              <button className="x" title="Reset to the researched value" onClick={() => setOverride(r.ov.snapshotId, r.ov.path, null)}>x</button>
+              <button className="ov-reset" title="Reset to the researched value" aria-label={`Reset ${r.label} of ${who} to the researched value`} onClick={() => setOverride(r.ov.snapshotId, r.ov.path, null)}>Reset</button>
             </li>
           );
         })}
@@ -162,6 +172,9 @@ export function Editor() {
 
   return (
     <div className="panel-body editor">
+      <p className="ed-intro">Change any number of a nation for this scenario only. Changes are saved in the scenario and its share link; the researched data stays as it is.</p>
+      <ChangeList data={data} overrides={sc.overrides} current={snapId} onJump={(id, l) => { store.set({ editorSnapshot: id }); setFilter(l); setOnlyEdited(false); }} />
+      <h4>Edit a nation</h4>
       <div className="ed-pick">
         <select value={snapId ?? ''} onChange={(e) => store.set({ editorSnapshot: e.target.value || null })} aria-label="Snapshot to edit">
           <option value="">{members.length ? 'Choose a snapshot of this scenario...' : 'No members yet: search below...'}</option>
@@ -175,8 +188,7 @@ export function Editor() {
         </select>
         <SnapshotSearch data={data} placeholder="Find any snapshot to edit..." onPick={(id) => { choose(id); void ensureSnapshots([id]); }} />
       </div>
-      {sc.overrides.length > 0 && <ChangeList data={data} overrides={sc.overrides} current={snapId} onJump={(id, l) => { store.set({ editorSnapshot: id }); setFilter(l); setOnlyEdited(false); }} />}
-      {!snapId && <p className="muted">Every numeric field of a snapshot is editable here. Edits are stored in the scenario (and its share URL) as overrides; the researched value stays visible with its range, grade and source, and every change is listed above with the researched value it replaces. Fields tagged "not used by the engine" are researched context only; "partly used" fields matter only in the case their tooltip names.</p>}
+      {!snapId && <p className="muted">Pick a nation of this scenario, or find any snapshot. Every number is editable; next to it the researched value stays visible with its range, grade and source, and "Your changes" lists each edit with the value it replaces. Fields tagged "not used by the engine" are researched context only; "partly used" fields matter only in the case their tooltip names.</p>}
       {snapId && !snap && <p className="muted">{p3 ? `Loading ${label(snapId)}...` : `Snapshot ${snapId} is not in the data.`}</p>}
       {snap && (
         <>
@@ -188,7 +200,7 @@ export function Editor() {
           <div className="row">
             <input type="search" placeholder="Filter fields" value={filter} onChange={(e) => setFilter(e.target.value)} />
             <label className="toggle"><input type="checkbox" checked={onlyEdited} onChange={(e) => setOnlyEdited(e.target.checked)} /> edited only</label>
-            <button disabled={ovs.size === 0} onClick={() => setScenario((s) => ({ ...s, overrides: s.overrides.filter((o) => o.snapshotId !== snapId) }))}>Reset all ({ovs.size})</button>
+            <button disabled={ovs.size === 0} title="Reset every changed value of this nation" onClick={() => setScenario((s) => ({ ...s, overrides: s.overrides.filter((o) => o.snapshotId !== snapId) }))}>Reset this nation ({ovs.size})</button>
           </div>
           {!members.includes(snap.id) && <div className="notice">This snapshot is not in the current scenario; edits are stored but only matter once it is added to a side.</div>}
           {shown.length === 0 && <p className="muted small">No field matches "{filter}"{onlyEdited ? ' among the edited ones' : ''}.</p>}

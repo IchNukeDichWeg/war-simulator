@@ -1,10 +1,12 @@
 import { useId, useMemo, useState, type KeyboardEvent } from 'react';
 import { yearLabel, type AppData } from '../data';
 import { fmt } from '../format';
+import { GradeBadge } from '../Grade';
 import { ERA_LABEL, REGION_LABEL, buildItems, searchSnapshots } from '../nationSearch';
 import { KindBadge } from './SnapshotDetail';
 import { showInNations } from './snapActions';
 import '../../styles/setup.css';
+import '../../styles/nations.css';
 
 const SHOWN = 8;
 
@@ -27,7 +29,7 @@ export function SnapshotSearch({ data, onPick, placeholder, taken }: {
 
   const pick = (id: string) => { onPick(id); setQ(''); setActive(0); };
   const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); setActive((a) => Math.min(shown.length - 1, a + 1)); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); setActive((a) => Math.max(0, Math.min(shown.length - 1, a + 1))); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); setActive((a) => Math.max(0, a - 1)); }
     else if (e.key === 'Enter' && show && shown[active]) { e.preventDefault(); pick(shown[active].item.id); }
     else if (e.key === 'Escape') { if (show) { e.preventDefault(); setOpen(false); } else if (q) { e.preventDefault(); setQ(''); } }
@@ -48,14 +50,22 @@ export function SnapshotSearch({ data, onPick, placeholder, taken }: {
           {shown.map(({ item: s }, i) => {
             const t = taken?.(s.id) ?? null;
             return (
-              <li key={s.id} id={`${listId}-${i}`} role="option" aria-selected={i === active}
+              <li key={s.id} id={`${listId}-${i}`} role="option" aria-selected={i === active} title={t ? `Already on ${t}` : undefined}
                 className={`cb-opt kind-${s.kind}${i === active ? ' active' : ''}${t ? ' taken' : ''}`}
                 onMouseDown={(e) => e.preventDefault()} onMouseEnter={() => setActive(i)} onClick={() => pick(s.id)}>
-                <div className="nb-l1"><span className="nb-name">{s.name}</span><span className="nb-year">{yearLabel(s.year)}</span>{t && <span className="nb-side">{t}</span>}</div>
-                <div className="nb-l2 small">
-                  <KindBadge kind={s.kind} grade={s.confidence} compact />
-                  <span className="muted">{ERA_LABEL[s.era]} · {REGION_LABEL[s.region] ?? s.region}</span>
-                  <span>pop <b>{fmt(s.population)}</b> active <b>{fmt(s.active)}</b></span>
+                <div className="cb-l1">
+                  <span className="cb-name">{s.name}</span>
+                  <span className="nb-year">{yearLabel(s.year)}</span>
+                  <span className="cb-tags">
+                    {t && <span className="nb-side">{t}</span>}
+                    {/* researched is the default kind, so it shows only its grade; the others are named */}
+                    {s.kind === 'researched'
+                      ? <span className="cb-grade" title="Researched: every value cites a source. Overall confidence: the mean grade over every value."><GradeBadge g={s.confidence} /></span>
+                      : <KindBadge kind={s.kind} grade={s.confidence} compact />}
+                  </span>
+                </div>
+                <div className="cb-l2 small muted">
+                  army {fmt(s.active)} · {ERA_LABEL[s.era]} · {REGION_LABEL[s.region] ?? s.region}
                 </div>
               </li>
             );
