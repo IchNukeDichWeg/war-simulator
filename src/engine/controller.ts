@@ -157,14 +157,17 @@ export class Controller {
     const sim = this.sim;
     if (!sim) throw new Error('no scenario started');
     const target = Math.max(0, Math.floor(day));
-    if (target < sim.day() || target <= this.maxDay) {
+    const from = sim.day();
+    if (target < from || target <= this.maxDay) {
       let best = 0;
       for (const k of this.keyframes.keys()) if (k <= target && k > best) best = k;
       sim.restore(this.keyframes.get(best)!);
       this.endSent = false;
     }
     while (sim.day() < target && !sim.ended()) this.stepOne();
-    sim.resetCursor(sim.day());
+    // forward: the UI has every event up to `from`, so send the skipped days' events too.
+    // Backward: from the target on; the UI cuts its log there and keeps that day's events.
+    sim.resetCursor(target > from ? from + 1 : target);
     this.sendFrame(true);
   }
 

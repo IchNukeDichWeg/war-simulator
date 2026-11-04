@@ -96,6 +96,28 @@ describe('worker protocol (Controller)', () => {
     expect(again.stats).toEqual(at100.stats);
   });
 
+  // Review finding: a forward seek reset the event cursor to the target day, so the events of
+  // the skipped days never reached the UI.
+  it('a forward seek delivers the events of the skipped days once', () => {
+    const sc = basicScenario(11);
+    const ref = createSim(data(), sc);
+    ref.step(100);
+    const all = ref.frame(true).events;
+    const between = (lo: number, hi: number) => all.filter((e) => e.day >= lo && e.day <= hi);
+    expect(between(31, 100).length).toBeGreaterThan(0);
+    const h = harness();
+    h.ctl.handle({ type: 'init', data: data() });
+    h.ctl.handle({ type: 'start', scenario: sc });
+    h.ctl.handle({ type: 'step', days: 30 });
+    // past anything simulated yet
+    h.ctl.handle({ type: 'seek', day: 100 });
+    expect(h.frames().at(-1)!.events).toEqual(between(31, 100));
+    // back, then forward again inside the simulated range
+    h.ctl.handle({ type: 'seek', day: 47 });
+    h.ctl.handle({ type: 'seek', day: 100 });
+    expect(h.frames().at(-1)!.events).toEqual(between(48, 100));
+  });
+
   it('real-time speed paces by the clock with fractional accumulation and at most 30 frames/s', () => {
     const h = harness();
     h.ctl.handle({ type: 'init', data: data() });
