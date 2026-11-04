@@ -17,6 +17,13 @@ const EXACT: [number, string][] = [
   [30, '30 days/s'],
 ];
 
+/** "Day 76, summer". The frame date already starts with "Day 76,", so it is stripped the way
+ *  RunStatus does instead of repeating the day after it. */
+export function dayLabel(day: number, date: string): string {
+  const season = date.replace(/^Day \d+,\s*/, '');
+  return season ? `Day ${day}, ${season}` : `Day ${day}`;
+}
+
 export function TimeBar() {
   const run = useStore((s) => s.run);
   const limit = useStore((s) => s.scenario.victory.timeLimitDays);
@@ -35,7 +42,7 @@ export function TimeBar() {
   }, []);
   const max = Math.max(limit, run.maxDay, 1);
   const shown = scrub ?? run.day;
-  const dayText = scrub != null ? `seek to day ${scrub}` : `${run.date || ''} (day ${run.day})`;
+  const dayText = scrub != null ? `seek to day ${scrub}` : dayLabel(run.day, run.date);
   // before a run there is nothing to play back: only the Run button and a hint
   if (run.status === 'idle' || run.status === 'error') {
     return (
