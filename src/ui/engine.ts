@@ -75,6 +75,8 @@ function spawn(onMsg: (m: FromWorker) => void, onFail: (msg: string) => void): W
 
 // ---------------------------------------------------------------- live run
 let live: Worker | null = null;
+/** The store data the live worker was initialised with. */
+let liveData: AppData | null = null;
 let liveReady = false;
 let queue: ToWorker[] = [];
 let lastFrameAt = 0;
@@ -171,18 +173,25 @@ function failLive(msg: string) {
   setRun({ status: 'error', engineError: msg });
   live?.terminate();
   live = null;
+  liveData = null;
   liveReady = false;
   queue = [];
 }
 
 function ensureLive(): boolean {
-  if (live) return true;
-  const data = engineDataFrom(store.get().data);
+  const d = store.get().data;
+  // merging Phase 3 eras or the engine assets makes a new data object: the worker needs it too,
+  // else it skips the new snapshots as unknown
+  if (live && d === liveData) return true;
+  const data = engineDataFrom(d);
   if (typeof data === 'string') { setRun({ status: 'error', engineError: data }); return false; }
-  live = spawn(onLive, failLive);
-  if (!live) return false;
-  liveReady = false;
-  live.postMessage({ type: 'init', data } satisfies ToWorker);
+  if (!live) {
+    live = spawn(onLive, failLive);
+    if (!live) return false;
+    liveReady = false;
+    live.postMessage({ type: 'init', data } satisfies ToWorker);
+  } else post({ type: 'init', data });   // the worker handles it before the start that follows
+  liveData = d;
   return true;
 }
 
@@ -233,6 +242,7 @@ export function stopRun() {
   runId++;
   live?.terminate();
   live = null;
+  liveData = null;
   liveReady = false;
   queue = [];
   clearHistory();

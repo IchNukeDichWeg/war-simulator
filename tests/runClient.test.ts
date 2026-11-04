@@ -119,4 +119,22 @@ describe('run client (src/ui/engine.ts)', () => {
     expect(e.store.get().run.day).toBe(0);
     expect(e.store.get().run.maxDay).toBe(0);
   });
+
+  // Review finding: the live worker got its data once; snapshots merged into the store later
+  // (Phase 3 era files) were unknown to it and silently skipped.
+  it('a run after new snapshots were merged in sees them', async () => {
+    const e = await load();
+    e.startRun(e.sc, 0);
+    live().pump();
+    const orig = data().snapshots.find((s) => s.id === e.sc.sides[1].members[0])!;
+    const late = { ...orig, id: `${orig.id}-late` };
+    e.store.set({ data: appData([late]) });
+    const sc2 = { ...e.sc, sides: [e.sc.sides[0], { ...e.sc.sides[1], members: [late.id] }] as typeof e.sc.sides };
+    e.startRun(sc2, 0);
+    live().pump();
+    const run = e.store.get().run;
+    expect(run.engineError).toBeNull();
+    expect(run.status).toBe('running');
+    expect(run.warnings.filter((w) => /Unknown snapshot/.test(w))).toEqual([]);
+  });
 });
