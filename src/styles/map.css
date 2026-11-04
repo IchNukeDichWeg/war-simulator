@@ -41,7 +41,8 @@
 
 /* map key: bottom-left, above the scale bar and the run controls */
 .map-legend {
-  position: absolute; left: 8px; bottom: 118px; z-index: 3;
+  /* the scale bar sits at 110-132 px from the bottom (ctrl-bottom-left 100px + its 10px margin) */
+  position: absolute; left: 8px; bottom: 140px; z-index: 3;
   --lg-a: #c33; --lg-b: #36c;
   font-size: 12.5px; color: var(--map-fg);
   /* the body opens upward, above its button, so the button never jumps */
