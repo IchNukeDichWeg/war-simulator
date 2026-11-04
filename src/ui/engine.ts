@@ -5,7 +5,7 @@ import type { EngineData, Frame, FromWorker, SimEvent, ToWorker } from '../engin
 import type { Scenario } from '../types/scenario';
 import type { AppData } from './data';
 import { fitBus, frameBus, resetBus } from './bus';
-import { initialRun, setMc, setRun, store, toast } from './store';
+import { initialRun, setMc, setRun, setScenario, store, toast } from './store';
 import { engineAssetsReady } from './lazy';
 
 export const REAL_TIME = 1 / 86400;
@@ -84,6 +84,8 @@ let frameGapMs = 250;
 let flushTimer: ReturnType<typeof setTimeout> | undefined;
 let lastFlush = 0;
 let pendingRun: Partial<typeof initialRun> = {};
+/** The scenario the current or last run started with; the store's scenario may have been edited since. */
+export let runScenario: Scenario | null = null;
 /** Id of the latest start; frames and the end of an older run may still be in flight and are dropped. */
 let runId = 0;
 
@@ -214,6 +216,7 @@ export function startRun(s: Scenario, speed = 1) {
   const probs = scenarioProblems(s);
   if (probs.length) { toast(probs[0]); return; }
   if (!engineAssetsReady('run', s, () => startRun(s, speed), () => store.get().run.status === 'starting', () => setRun({ status: 'idle' }))) { setRun({ status: 'starting' }); return; }
+  runScenario = s;
   clearHistory();
   dropPendingFlush();
   resetBus.emit();
@@ -222,6 +225,16 @@ export function startRun(s: Scenario, speed = 1) {
   post({ type: 'start', scenario: s, runId: ++runId });
   post({ type: 'speed', daysPerSecond: speed });
   store.set({ rightTab: 'live' });
+}
+
+/** Run the last war again, same seed, with a longer time limit. Setup takes the new limit when it
+ *  still holds that war; edits made there since the run are left alone and not run. */
+export function rerunLonger(timeLimitDays: number, speed: number) {
+  const ran = runScenario;
+  if (!ran) return;
+  const longer = (s: Scenario): Scenario => ({ ...s, victory: { ...s.victory, timeLimitDays } });
+  if (store.get().scenario === ran) { setScenario(longer); startRun(store.get().scenario, speed); }
+  else startRun(longer(ran), speed);
 }
 
 export function setSpeed(daysPerSecond: number) {
@@ -247,6 +260,7 @@ export function seek(day: number) {
 
 export function stopRun() {
   runId++;
+  runScenario = null;
   live?.terminate();
   live = null;
   liveData = null;

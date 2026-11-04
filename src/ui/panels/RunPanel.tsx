@@ -2,11 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { Icon } from '../Icon';
-import { eventLog, history, startRun } from '../engine';
+import { eventLog, history, rerunLonger, runScenario } from '../engine';
 import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, peakOf, share, splitLosses, type EventFilter, type EventGroup } from '../runStats';
 import { MAX_TIME_LIMIT_DAYS } from '../scenarioDefaults';
-import { setScenario, store, useStore, type RightTab } from '../store';
+import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 import { MonteCarloView } from './MonteCarloView';
 import { ModelTag, Reasons, useSides } from './RunShared';
@@ -160,13 +160,11 @@ const span = (d: number) => (d < 365 ? `${d} days` : `${Math.round((d / 365) * 1
  *  continuing the ended run would differ from a run that had the longer limit from day 0. */
 function LongerRun() {
   const result = useStore((s) => s.run.result);
-  const limit = useStore((s) => s.scenario.victory.timeLimitDays);
-  if (!result || !/^time limit/.test(result.endReason) || limit >= MAX_TIME_LIMIT_DAYS) return null;
+  // the war that ran, not the Setup scenario: it may have been edited since
+  const limit = runScenario?.victory.timeLimitDays;
+  if (!result || limit == null || !/^time limit/.test(result.endReason) || limit >= MAX_TIME_LIMIT_DAYS) return null;
   const next = Math.min(MAX_TIME_LIMIT_DAYS, limit * 2);
-  const go = () => {
-    setScenario((s) => ({ ...s, victory: { ...s.victory, timeLimitDays: next } }));
-    startRun(store.get().scenario, 30);
-  };
+  const go = () => rerunLonger(next, 30);
   return (
     <div className="rp-note">
       The war was stopped by its time limit of {span(limit)}, not decided.{' '}

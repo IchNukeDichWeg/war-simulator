@@ -53,7 +53,7 @@ async function load() {
   const eng = await import('../src/ui/engine');
   const sc = basicScenario(11);
   st.store.set({ data: appData(), scenario: sc });
-  return { ...st, ...eng, sc };
+  return { ...st, ...eng, eng, sc };   // eng: live bindings such as runScenario
 }
 
 describe('run client (src/ui/engine.ts)', () => {
@@ -154,5 +154,30 @@ describe('run client (src/ui/engine.ts)', () => {
     e.stepDays(40); live().pump();
     expect(e.store.get().run.status).toBe('ended');
     expect(e.store.get().rightTab).toBe('live');
+  });
+
+  // Review finding: "Run it again for N years" read the Setup scenario's limit and reran the
+  // Setup scenario, even after the user had edited it since the run.
+  it('running a war again for longer uses the war that ran', async () => {
+    const e = await load();
+    const ran = { ...e.sc, victory: { ...e.sc.victory, timeLimitDays: 20 } };
+    e.store.set({ scenario: ran });
+    e.startRun(ran, 0);
+    live().pump();
+    e.stepDays(40); live().pump();
+    const starts = () => live().sent.filter((m) => m.type === 'start').map((m) => (m as { scenario: typeof ran }).scenario);
+    // Setup still holds that war: it takes the longer limit
+    e.rerunLonger(40, 0);
+    expect(starts().at(-1)).toMatchObject({ seed: 11, victory: { timeLimitDays: 40 } });
+    expect(e.store.get().scenario.victory.timeLimitDays).toBe(40);
+    live().pump();
+    e.stepDays(50); live().pump();
+    // Setup edited since the run: the war that ran goes again, the edits stay in Setup
+    const edited = { ...e.store.get().scenario, seed: 99, victory: { ...ran.victory, timeLimitDays: 100 } };
+    e.store.set({ scenario: edited });
+    expect(e.eng.runScenario?.victory.timeLimitDays).toBe(40);
+    e.rerunLonger(80, 0);
+    expect(starts().at(-1)).toMatchObject({ seed: 11, victory: { timeLimitDays: 80 } });
+    expect(e.store.get().scenario).toBe(edited);
   });
 });
