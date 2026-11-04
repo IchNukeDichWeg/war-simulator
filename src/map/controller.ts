@@ -111,8 +111,13 @@ export class MapController {
   private stressRaf = 0;
   private hud: HTMLDivElement;
   private tip: HTMLDivElement;
-  /** Pinned info card of the clicked formation; refreshed every frame. */
+  /** Pinned info card of the clicked formation; refreshed every frame. Its header (swatch, title,
+   *  close button) is built once: rebuilt per refresh, the close button was replaced between
+   *  mousedown and mouseup and the click was lost. */
   private card: HTMLDivElement;
+  private cardHead: HTMLDivElement;
+  private cardSwatch: HTMLElement;
+  private cardTitle: Text;
   private legend: MapLegend;
   private hoverRaf = 0;
   private draftCorner: [number, number] | null = null;
@@ -151,6 +156,18 @@ export class MapController {
     this.card = document.createElement('div');
     this.card.className = 'map-tip map-card';
     this.card.style.display = 'none';
+    this.cardHead = document.createElement('div');
+    this.cardHead.className = 'tip-head';
+    this.cardSwatch = document.createElement('i');
+    this.cardSwatch.className = 'map-card-swatch';
+    this.cardTitle = document.createTextNode('');
+    const close = document.createElement('button');
+    close.className = 'map-card-close';
+    close.title = 'Deselect (Esc)';
+    close.textContent = 'x';
+    close.onclick = () => this.select(null);
+    this.cardHead.append(this.cardSwatch, this.cardTitle, close);
+    this.card.appendChild(this.cardHead);
     container.appendChild(this.card);
     window.addEventListener('keydown', this.onKey);
     this.map.on('error', (e) => {
@@ -407,22 +424,32 @@ export class MapController {
     if (i < 0) { this.tip.style.display = 'none'; return; }
     const members = this.units.stackMembers(i);
     if (members.length > 1) this.fillStackRows(this.tip, members);
-    else this.fillUnitRows(this.tip, i, false);
+    else {
+      this.tip.innerHTML = '';
+      const h = document.createElement('div');
+      h.className = 'tip-head';
+      h.textContent = this.unitTitle(i);
+      this.tip.appendChild(h);
+      this.appendRows(this.tip, this.unitRows(i));
+    }
     this.tip.style.left = `${x + 14}px`;
     this.tip.style.top = `${y + 14}px`;
     this.tip.style.display = '';
   }
 
-  /** Header + key/value rows of formation i into el (tooltip and selection card share it). */
-  private fillUnitRows(el: HTMLElement, i: number, card: boolean) {
+  private unitTitle(i: number) {
+    return `Formation #${this.units.units[i * UNIT_STRIDE + U.id]} (model state)`;
+  }
+
+  /** Key/value rows of formation i (tooltip and selection card share them). */
+  private unitRows(i: number): [string, string][] {
     const u = this.units.units;
     const o = i * UNIT_STRIDE;
     const side = u[o + U.side] | 0;
     const role = ROLE_ORDER[u[o + U.role] | 0] ?? 'infantry_line';
     const names = this.state?.scenario.sides.map((s) => s.name) ?? ['Side A', 'Side B'];
     const pct = (v: number) => `${Math.round(v * 100)}%`;
-    el.innerHTML = '';
-    const rows: [string, string][] = [
+    return [
       ['Side', names[side] ?? String(side)],
       ['Type', ROLE_LABEL[role]],
       ['Personnel', Math.round(u[o + U.personnel]).toLocaleString('en-US')],
@@ -432,22 +459,9 @@ export class MapController {
       ['Status', STATUS_LABEL[u[o + U.status] | 0] ?? '?'],
       ['Tech (weapons)', u[o + U.techEra].toFixed(1)],
     ];
-    const h = document.createElement('div');
-    h.className = 'tip-head';
-    h.textContent = `Formation #${u[o + U.id]} (model state)`;
-    if (card) {
-      const sw = document.createElement('i');
-      sw.className = 'map-card-swatch';
-      sw.style.background = this.state?.scenario.sides[side]?.color ?? '#888';
-      h.prepend(sw);
-      const x = document.createElement('button');
-      x.className = 'map-card-close';
-      x.title = 'Deselect (Esc)';
-      x.textContent = 'x';
-      x.onclick = () => this.select(null);
-      h.appendChild(x);
-    }
-    el.appendChild(h);
+  }
+
+  private appendRows(el: HTMLElement, rows: [string, string][]) {
     for (const [k, v] of rows) {
       const r = document.createElement('div');
       r.innerHTML = '<span></span><b></b>';
@@ -511,8 +525,13 @@ export class MapController {
     if (id === null) { this.card.style.display = 'none'; return; }
     const i = this.units.selectedUnit;
     this.card.style.display = '';
+    while (this.card.lastChild && this.card.lastChild !== this.cardHead) this.card.lastChild.remove();
     if (i >= 0) {
-      this.fillUnitRows(this.card, i, true);
+      const side = this.units.units[i * UNIT_STRIDE + U.side] | 0;
+      this.cardSwatch.style.display = '';
+      this.cardSwatch.style.background = this.state?.scenario.sides[side]?.color ?? '#888';
+      this.cardTitle.data = this.unitTitle(i);
+      this.appendRows(this.card, this.unitRows(i));
       const n = this.units.stackMembers(i).length;
       if (n > 1) {
         const p = document.createElement('div');
@@ -523,19 +542,12 @@ export class MapController {
       return;
     }
     // destroyed this turn, or hidden by fog of war: say so instead of freezing stale numbers
-    this.card.innerHTML = '';
-    const h = document.createElement('div');
-    h.className = 'tip-head';
-    h.textContent = `Formation #${id}`;
-    const x = document.createElement('button');
-    x.className = 'map-card-close';
-    x.textContent = 'x';
-    x.onclick = () => this.select(null);
-    h.appendChild(x);
+    this.cardSwatch.style.display = 'none';
+    this.cardTitle.data = `Formation #${id}`;
     const p = document.createElement('div');
     p.className = 'map-card-note';
     p.textContent = 'Not on the map now (destroyed or not visible).';
-    this.card.append(h, p);
+    this.card.appendChild(p);
   }
 
   private onClick(lon: number, lat: number, x: number, y: number) {
