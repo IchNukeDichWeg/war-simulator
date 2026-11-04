@@ -940,3 +940,25 @@ figures above do not describe this data and the gate reading stands until a new 
 
 Hastings 85% -> 100%, and it now passes at quantile 1. Mohi 30% -> 35%, its loss ratio x11.83 -> x15.35.
 Agincourt x0.28 -> x0.29. No other case moves. Presets: 24 runs, no winner changes, invariants clean.
+
+**Campaign at 200 seeds, medieval high 0.25** (`validation/robustness-medieval-200.jsonl`, 1,177 evaluations,
+data hash 186ac37f73095b68, engine as of 50770cc, run at bb3146a, 1h08m with 9 workers on this Mac). Not pooled
+with the clamp campaign.
+
+| | Clamp on | Medieval high 0.25 |
+| --- | --- | --- |
+| Winners at base | 18 | **19** |
+| Robust, grade-D constants | 17 | 17 |
+| Robust, also era breakpoints | 16 | **17** |
+| Gate (18 robust) | not met | **not met** |
+
+- **Hastings is fixed:** 85.0% -> 100.0% +/- 1.0, and no constant or breakpoint flips it.
+- **Mohi is the new winner, by a hair:** 55.0% -> 60.0% +/- 6.8, on the line and not clear of it. It is
+  not robust: four flips are clear of the line, the worst `breakpoint=1` at 23.0% +/- 5.8, then
+  `isrPerLevel` low 47.0%, `tli.cavalry_light.4` low 49.0%, `feignedRetreatPursuerLoss` low 50.5%.
+- **France 1940 is unchanged:** `starvationMultiplier` high 59.5% +/- 6.8, the same reading as before,
+  under the line but not clear of it. It counts as a miss under the rule.
+- Adrianople stays at 43.5%. Blenheim 74.0%, its lowest single reading not under 60%.
+
+The gate needs 18 and has 17. The two misses are France 1940 (half a point, unresolved at this count) and
+Mohi (clear flips). France alone would close it if its miss turned out to be noise.
