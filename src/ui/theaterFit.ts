@@ -87,10 +87,14 @@ const sideSnaps = (sc: Scenario, snapById: Map<string, Snapshot>) =>
 /** After an edit, the war area to switch to, or null to keep the current one. It moves only
  *  when a member that was not in the scenario before has its capital outside the box, so a box
  *  the user chose (or a preset that keeps a capital outside on purpose) survives year changes
- *  and additions that fit. A box already around one side stays around that side. */
+ *  and additions that fit. A box already around one side stays around that side.
+ *  "Not in the scenario before" is by nation, not snapshot: another year of a nation already
+ *  there is not new, so a preset's deliberate box (the South Atlantic for Argentina vs UK 1982,
+ *  the Western Pacific for US vs China 2026) survives picking another year of the far side. */
 export function refitTheater(before: Scenario, after: Scenario, snapById: Map<string, Snapshot>, m: Mechanics | null = null): Fit | null {
-  const old = new Set(before.sides.flatMap((x) => x.members));
-  const added = after.sides.flatMap((x) => x.members).filter((m) => !old.has(m));
+  const nation = (id: string) => snapById.get(id)?.nationId ?? id;
+  const old = new Set(before.sides.flatMap((x) => x.members).map(nation));
+  const added = after.sides.flatMap((x) => x.members).filter((m) => !old.has(nation(m)));
   const box = after.theater.bbox as BBox;
   if (!added.some((m) => { const s = snapById.get(m); return s && !inside(s.capital, box); })) return null;
   const names = after.sides.map((x) => x.name) as [string, string];

@@ -56,6 +56,22 @@ describe('theater fit', () => {
     expect(refitTheater(scn(['rome'], ['swiss']), scn(['rome'], []), byId)).toBeNull();
   });
 
+  it('keeps the box when an existing nation only changes its year', () => {
+    // Argentina vs UK 1982: London is outside the South Atlantic box on purpose. Picking another
+    // UK year used to count as a new member and moved the war away from the Falklands.
+    const inNation = (s: Snapshot, id: string, nationId: string) => ({ ...s, id, nationId }) as Snapshot;
+    const arg = inNation(snap('', -58.38, -34.6), 'argentina-1982', 'argentina');
+    const uk82 = inNation(snap('', -0.13, 51.5), 'uk-1982', 'uk');
+    const uk41 = inNation(snap('', -0.13, 51.5), 'uk-1941', 'uk');
+    const ids = new Map([arg, uk82, uk41].map((s) => [s.id, s]));
+    const falklands: BBox = [-72, -56, -50, -38];
+    const before = scn(['argentina-1982'], ['uk-1982'], falklands);
+    expect(refitTheater(before, scn(['argentina-1982'], ['uk-1941'], falklands), ids)).toBeNull();
+    // a different nation with its capital outside still moves it
+    const withSwiss = new Map([...ids, ['swiss', swiss]]);
+    expect(refitTheater(before, scn(['argentina-1982'], ['uk-1941', 'swiss'], falklands), withSwiss)).not.toBeNull();
+  });
+
   it('puts the war around one side when the capitals are an ocean apart', () => {
     // Washington to Beijing: one box over both ran across the Atlantic and Eurasia
     const sc = scn(['usa'], ['china']);
