@@ -73,6 +73,23 @@ function updSide(i: 0 | 1, f: (s: SideSpec) => SideSpec) {
   });
 }
 
+/** Side i's members with each id swapped for pick(id), except where the new id is already in
+ *  the scenario (on either side, or picked for an earlier member here): that member keeps its id
+ *  and the new id is listed in `refused`. The year picker and "Set side year" used to swap
+ *  without this check, which put one snapshot on both sides and fought a nation against itself. */
+export function swapMembers(sides: Scenario['sides'], i: 0 | 1, pick: (id: string) => string): { members: string[]; refused: string[] } {
+  const taken = new Set(sides.flatMap((x) => x.members));
+  const refused: string[] = [];
+  const members = sides[i].members.map((id) => {
+    const to = pick(id);
+    if (to === id) return id;
+    if (taken.has(to)) { refused.push(to); return id; }
+    taken.add(to);
+    return to;
+  });
+  return { members, refused };
+}
+
 function SideEditor({ i, data, sc, itemById }: { i: 0 | 1; data: AppData; sc: Scenario; itemById: Map<string, SearchItem> }) {
   const side = sc.sides[i];
   const letter = SIDE_LETTER[i];
@@ -86,23 +103,38 @@ function SideEditor({ i, data, sc, itemById }: { i: 0 | 1; data: AppData; sc: Sc
     const known = store.get().data?.snapById ?? data.snapById;
     return { ...s, members: [...s.members, ...ids.filter((id) => !taken.has(id) && known.has(id))] };
   }));
+  // Swap members for other years of their nation, refusing (with a toast) a year already in the
+  // scenario, as addIds does for a new member. setScenario runs `f` at once, so `refused` is set.
+  const swap = (pick: (id: string) => string) => {
+    let refused: string[] = [];
+    setScenario((sc) => {
+      const r = swapMembers(sc.sides, i, pick);
+      refused = r.refused;
+      if (r.members.every((m, k) => m === sc.sides[i].members[k])) return sc;
+      const sides = [...sc.sides] as Scenario['sides'];
+      sides[i] = { ...sides[i], members: r.members };
+      return { ...sc, sides };
+    });
+    if (refused.length) {
+      const d = store.get().data ?? data;
+      const label = (id: string) => { const s = d.snapById.get(id); return s ? `${s.name} (${yearLabel(s.year)})` : id; };
+      toast(`Already in this scenario, so not swapped in: ${refused.map(label).join(', ')}.`);
+    }
+  };
   const snapToYear = () => {
     const y = parseInt(year, 10);
     if (!Number.isFinite(y)) { toast('Enter a year (negative for BCE).'); return; }
-    updSide(i, (s) => ({
-      ...s,
-      members: s.members.map((id) => {
-        const snap = data.snapById.get(id);
-        const nat = snap && data.nationById.get(snap.nationId);
-        if (!nat) return id;
-        let best = id, bd = Infinity;
-        for (const sid of nat.snapshotIds) {
-          const oy = yearOf(data, sid);
-          if (oy != null && Math.abs(oy - y) < bd) { bd = Math.abs(oy - y); best = sid; }
-        }
-        return best;
-      }),
-    }));
+    swap((id) => {
+      const snap = data.snapById.get(id);
+      const nat = snap && data.nationById.get(snap.nationId);
+      if (!nat) return id;
+      let best = id, bd = Infinity;
+      for (const sid of nat.snapshotIds) {
+        const oy = yearOf(data, sid);
+        if (oy != null && Math.abs(oy - y) < bd) { bd = Math.abs(oy - y); best = sid; }
+      }
+      return best;
+    });
     void ensureSnapshots(store.get().scenario.sides[i].members);
   };
   return (
@@ -114,20 +146,22 @@ function SideEditor({ i, data, sc, itemById }: { i: 0 | 1; data: AppData; sc: Sc
       </legend>
       {side.members.length === 0 && <div className="muted small">No nations yet. Search below, or add them from the Nations tab.</div>}
       <ul className="members">
-        {side.members.map((id) => {
+        {side.members.map((id, k) => {
           const s = data.snapById.get(id);
           const nat = s ? data.nationById.get(s.nationId) : undefined;
           const excluded = s && (sc.excluded.includes(s.nationId));
           const it = itemById.get(id);
+          // a loaded link may still list an id twice (Run is blocked until it is removed); keep keys unique
+          const dup = side.members.indexOf(id) !== k;
           return (
-            <li key={id} className={excluded ? 'excluded' : ''}>
+            <li key={dup ? `${id}#${k}` : id} className={excluded ? 'excluded' : ''}>
               <span className="member-name" title={id}>{s
                 ? <button className="link member-link" title="Show the key numbers and sources in the Nations tab" onClick={() => showInNations(`${s.name} ${yearLabel(s.year)}`, id)}>{s.name}</button>
                 : data.phase3ById.has(id) ? <span className="muted">loading {id}...</span> : <span className="warn">unknown: {id}</span>}</span>
               {/* researched is the default; auto-base and derived members are flagged */}
               {it && it.kind !== 'researched' && <KindBadge kind={it.kind} grade={it.confidence} compact />}
               {nat && nat.snapshotIds.length > 1 ? (
-                <select title="Pick another year of this nation (derived = Phase 3, low confidence)" aria-label={`Year of ${s?.name ?? id}`} value={id} onChange={(e) => { const v = e.target.value; ensureSnapshots([v]).then(() => updSide(i, (x) => ({ ...x, members: x.members.map((m) => (m === id ? v : m)) }))); }}>
+                <select title="Pick another year of this nation (derived = Phase 3, low confidence)" aria-label={`Year of ${s?.name ?? id}`} value={id} onChange={(e) => { const v = e.target.value; void ensureSnapshots([v]).then(() => swap((m) => (m === id ? v : m))); }}>
                   {nat.snapshotIds.map((sid) => { const oy = yearOf(data, sid); return <option key={sid} value={sid}>{oy != null ? yearLabel(oy) : sid}{data.phase3ById.has(sid) ? ' derived' : ''}</option>; })}
                 </select>
               ) : s ? <span className="muted">{yearLabel(s.year)}</span> : null}
@@ -340,7 +374,7 @@ export function ScenarioBuilder() {
 
       {sc.overrides.length > 0 && <div className="notice">{sc.overrides.length} edited value{sc.overrides.length > 1 ? 's' : ''} in this scenario (Editor tab).</div>}
       {sc.rules.nuclear && <div className="notice warn">Nuclear use is ON. The escalation model is a documented simplification (ENGINE.md); treat any result as illustrative only.</div>}
-      {problems.length > 0 && <ul className="problems">{problems.map((p) => <li key={p}>{p}</li>)}</ul>}
+      {problems.length > 0 && <ul className="problems">{problems.map((p, k) => <li key={k}>{p}</li>)}</ul>}
       <div className="sticky-actions">
         <button className="primary run-main" disabled={problems.length > 0 || runStatus === 'starting'} onClick={() => startRun(sc, 3)}>Run war</button>
         <div className="mc-row">

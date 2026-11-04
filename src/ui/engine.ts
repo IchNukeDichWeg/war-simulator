@@ -207,6 +207,14 @@ export function scenarioProblems(s: Scenario): string[] {
     if (side.members.length === 0) p.push(`${side.name || `Side ${i + 1}`} has no members.`);
     for (const m of side.members) if (d && !d.snapById.has(m)) p.push(`Unknown snapshot "${m}" on ${side.name}.`);
   });
+  // One snapshot on both sides made the engine fight a nation against itself (the run ended on
+  // day 2); listed twice on one side it is a duplicate the engine silently drops.
+  const [a, b] = s.sides.map((x) => x.members);
+  for (const m of new Set(a)) if (b.includes(m)) p.push(`"${m}" is on both sides; a nation cannot fight itself.`);
+  s.sides.forEach((side, i) => {
+    const twice = new Set(side.members.filter((m, k) => side.members.indexOf(m) !== k));
+    for (const m of twice) p.push(`"${m}" is listed twice on ${side.name || `Side ${i + 1}`}.`);
+  });
   const [w, so, e, n] = s.theater.bbox;
   if (!(e > w && n > so)) p.push('Theater box is empty (east must exceed west, north must exceed south).');
   return p;
