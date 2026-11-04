@@ -1,0 +1,25 @@
+name: Data correction
+description: A number, border or source in a nation snapshot looks wrong
+labels: [data]
+body:
+  - type: input
+    id: snapshot
+    attributes:
+      label: Snapshot id
+      placeholder: france-1940
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field
+      placeholder: military.forces.armor.count
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should be, and the source
+      description: A fetched URL, or a book as isbn plus page. See data/SOURCES.md for what counts as a source.
+    validations:
+      required: true
