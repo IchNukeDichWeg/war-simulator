@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
+import { Icon } from '../Icon';
 import { eventLog, history } from '../engine';
 import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, share, type EventFilter, type EventGroup } from '../runStats';
@@ -8,6 +9,8 @@ import { store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 import { MonteCarloView } from './MonteCarloView';
 import { ModelTag, Reasons, useSides } from './RunShared';
+// after the panel imports so its rules land after results.css (which Charts imports)
+import '../../styles/run.css';
 
 function StatsTable({ stats }: { stats: [SideStats, SideStats] }) {
   const { names, colors } = useSides();
@@ -59,7 +62,7 @@ function RunStatus() {
       <div className="rp-status-row">
         <div>
           <div className="rp-day">Day {run.day.toLocaleString('en-US')}</div>
-          <div className="rp-muted small">{run.date ? run.date.replace(/^Day \d+,\s*/, '') : '-'}{run.theater ? ` | grid ${run.theater.cols}x${run.theater.rows} at ${run.theater.cellDeg} deg` : ''}</div>
+          <div className="rp-muted small">{run.date ? run.date.replace(/^Day \d+,\s*/, '') : '-'}</div>
         </div>
         <span className={`rp-pill rp-pill-${cls}`}>{state}</span>
       </div>
@@ -141,40 +144,60 @@ function Dashboard({ names, colors }: { names: [string, string]; colors: [string
         <div className="rp-vs-side rp-vs-1" style={{ color: colors[1] }}>{names[1]}</div>
       </div>
       {specs.map((s) => <VsRow key={s.label} spec={s} colors={colors} />)}
-      <div className="rp-muted small">Arrows: change over the last {TREND_DAYS} simulated days.</div>
+      <div className="rp-muted small">Arrows show the change over the last {TREND_DAYS} days.</div>
     </div>
   );
 }
+
+// "More charts" stays open across tab switches (the Live view unmounts); reset per page load only.
+const liveMemo = { moreCharts: false };
 
 function Live() {
   const run = useStore((s) => s.run);
   const { names, colors: raw } = useSides();
   const colors = useLegibleColors(raw);
+  const [more, setMore] = useState(liveMemo.moreCharts);
   if (run.status === 'idle') {
-    return <div className="panel-body muted">No run yet. Build a scenario (or load a preset) and press <b>Run war</b>. Charts, the event log and the result appear here.</div>;
+    return (
+      <div className="panel-body empty">
+        <div className="empty-icon"><Icon name="play" size={22} /></div>
+        <p><b>No war running yet.</b></p>
+        <p className="muted">Pick a matchup in Quick start or Setup, then press <b>Run war</b> to watch it here.</p>
+      </div>
+    );
   }
   if (run.status === 'error') return <div className="panel-body"><div className="notice warn">{run.engineError}</div></div>;
   const v = run.historyVersion;
+  const chart = (title: string, unit: string, series: [number[], number[]], percent = false) => (
+    <SideChart title={title} unit={unit} days={history.day} series={series} names={names} colors={raw} version={v} percent={percent} sync="live" />
+  );
   return (
     <div className="panel-body">
       <RunStatus />
       {run.status === 'ended' && run.result && (
-        <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See the result and the reasons</button>
+        <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See who won and why</button>
       )}
       {run.warnings.length > 0 && <ul className="warnings">{run.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
       {history.day.length > 0 && <Dashboard names={names} colors={colors} />}
       <h4>Over time</h4>
       <SideLegend names={names} colors={raw} />
-      <SideChart title="Strength" unit="personnel" days={history.day} series={history.personnel} names={names} colors={raw} version={v} sync="live" />
-      <SideChart title="Casualties (cumulative)" unit="personnel" days={history.day} series={history.casualties} names={names} colors={raw} version={v} sync="live" />
-      <SideChart title="Morale" unit="% (avg)" days={history.day} series={history.morale} names={names} colors={raw} version={v} percent sync="live" />
-      <SideChart title="Territory held" unit="% of land" days={history.day} series={history.territory} names={names} colors={raw} version={v} percent sync="live" />
-      <SideChart title="Supply" unit="% of needs met" days={history.day} series={history.supply} names={names} colors={raw} version={v} percent sync="live" />
+      {chart('Strength', 'personnel', history.personnel)}
+      {chart('Territory held', '% of land', history.territory, true)}
+      {/* charts mount only while open: a closed <details> has no width for uPlot to size to */}
+      <details className="rp-details" open={more} onToggle={(e) => { const o = e.currentTarget.open; liveMemo.moreCharts = o; setMore(o); }}>
+        <summary>More charts (casualties, morale, supply)</summary>
+        {more && <>
+          {chart('Casualties (cumulative)', 'personnel', history.casualties)}
+          {chart('Morale', '% (avg)', history.morale, true)}
+          {chart('Supply', '% of needs met', history.supply, true)}
+        </>}
+      </details>
       {run.stats && (
         <details className="rp-details">
           <summary>All statistics today</summary>
           <StatsTable stats={run.stats} />
           <LossCauses stats={run.stats} />
+          {run.theater && <div className="rp-muted small">Map grid {run.theater.cols}x{run.theater.rows} cells, {run.theater.cellDeg} deg each.</div>}
         </details>
       )}
     </div>
@@ -224,10 +247,12 @@ function Events() {
       </div>
       <div className="rp-muted small rp-evcount">
         {filtered ? `${matched} of ${eventLog.length} events match` : `${eventLog.length} events`}
-        {matched > list.length ? `, newest ${list.length} shown` : ''}. Click an event with a pin to pan the map to it.
+        {matched > list.length ? `, newest ${list.length} shown` : ''}. Click an event with a pin to see it on the map.
         {filtered && <button className="rp-textbtn" onClick={() => { setGroups([]); setSide(''); setQuery(''); }}>Clear filters</button>}
       </div>
-      {list.length === 0 && <p className="muted">{eventLog.length === 0 ? 'No events yet.' : 'No events match the filters.'}</p>}
+      {list.length === 0 && <p className="muted">{eventLog.length === 0
+        ? 'No events yet. Battles, captured cities and other turning points are listed here as the war plays out.'
+        : 'No events match these filters. Clear the filters to see them all.'}</p>}
       <ul className="rp-events">
         {list.map((e, i) => {
           const located = e.lat != null && e.lon != null;
@@ -259,22 +284,40 @@ function Result() {
   const { names, colors: raw } = useSides();
   const colors = useLegibleColors(raw);
   if (!result) {
-    return <div className="panel-body muted">{status === 'running' || status === 'starting'
-      ? 'The run is still going. The result appears here when a victory condition fires or the time limit is reached.'
-      : 'The result appears here when a run ends (a victory condition fires or the time limit is reached).'}</div>;
+    const going = status === 'running' || status === 'starting';
+    return (
+      <div className="panel-body empty">
+        <div className="empty-icon"><Icon name="chart" size={22} /></div>
+        <p><b>{going ? 'The war is still going.' : 'No result yet.'}</b></p>
+        <p className="muted">{going
+          ? 'Who won and why shows here as soon as one side wins or the time limit is reached.'
+          : 'Run a war and this tab shows who won and why.'}</p>
+      </div>
+    );
   }
   const w = result.winner;
   const st = result.stats;
   const start = (s: 0 | 1) => history.personnel[s][0];
   const lossRatio = st[1].casualties > 0 && st[0].casualties > 0 ? st[0].casualties / st[1].casualties : null;
+  const days = Math.round(result.endDay);
+  const after = `after ${days.toLocaleString('en-US')} ${days === 1 ? 'day' : 'days'}`;
+  // fmtDays adds "(about N months)" past 60 days; shown under the headline, not in it
+  const about = fmtDays(result.endDay).match(/\((.*)\)$/)?.[1];
   return (
     <div className="panel-body">
-      <div className={`rp-outcome${w === 'draw' ? ' draw' : ''}`} style={{ borderColor: w === 'draw' ? undefined : colors[w] }}>
-        <div className="rp-outcome-kicker">Outcome of this run <ModelTag /></div>
-        <div className="rp-outcome-winner" style={{ color: w === 'draw' ? undefined : colors[w] }}>{w === 'draw' ? 'Draw' : `${names[w]} wins`}</div>
-        <div className="rp-outcome-reason"><span className="rp-muted">Ended by:</span> {capitalize(result.endReason)}</div>
-        <div className="rp-muted small">After {fmtDays(result.endDay)}{date ? ` (${date.replace(/^Day \d+,\s*/, '')})` : ''} | seed {result.seed}</div>
+      <div className={`rp-outcome${w === 'draw' ? ' draw' : ''}`} style={w === 'draw' ? undefined : { borderColor: colors[w], background: `color-mix(in srgb, ${colors[w]} 10%, var(--bg, #0d1117))` }}>
+        <div className="rp-outcome-kicker">Result of this run <ModelTag /></div>
+        <h3 className="rp-outcome-winner" style={{ color: w === 'draw' ? undefined : colors[w] }}>{w === 'draw' ? `Draw ${after}` : `${names[w]} wins ${after}`}</h3>
+        <div className="rp-outcome-reason"><span className="rp-muted">How it ended:</span> {capitalize(result.endReason)}</div>
+        <div className="rp-muted small">{[about, date ? date.replace(/^Day \d+,\s*/, '') : '', `seed ${result.seed}`].filter(Boolean).join(' | ')}</div>
       </div>
+      <h4>{w === 'draw' ? 'What shaped the result' : `Why ${names[w]} won`}</h4>
+      <Reasons reasons={result.reasons} names={names} colors={colors} top={3} plain />
+      <div className="rp-note">
+        This is one possible outcome: the model has chance in it, so another run can end differently.
+        {' '}<button className="rp-textbtn" onClick={() => store.set({ rightTab: 'montecarlo' })}>See the odds</button> by running the same war many times (Monte Carlo).
+      </div>
+      <h4>Final numbers</h4>
       <div className="rp-final">
         {([0, 1] as const).map((s) => (
           <div key={s} className="rp-final-side" style={{ borderTopColor: colors[s] }}>
@@ -288,12 +331,6 @@ function Result() {
       {lossRatio != null && (
         <div className="rp-muted small">Loss ratio {names[0]} : {names[1]} = {lossRatio >= 1 ? `${fmt(lossRatio)} : 1` : `1 : ${fmt(1 / lossRatio)}`} (killed, wounded and captured)</div>
       )}
-      <h4>Why: top reasons, ranked</h4>
-      <Reasons reasons={result.reasons} names={names} colors={colors} top={3} />
-      <div className="rp-note">
-        One seeded run of a stochastic model, not a prediction: another seed can end differently.
-        {' '}<button className="rp-textbtn" onClick={() => store.set({ rightTab: 'montecarlo' })}>Open Monte Carlo</button> to see how often this outcome happens.
-      </div>
       <details className="rp-details">
         <summary>All final statistics</summary>
         <StatsTable stats={result.stats} />
@@ -303,20 +340,53 @@ function Result() {
   );
 }
 
+/** Tab id, label, tooltip. "Odds" is the Monte Carlo view: the label says what it answers. */
+const RIGHT_TABS: [RightTab, string, string][] = [
+  ['live', 'Live', 'How the war is going right now'],
+  ['events', 'Events', 'Battles, captures and other moments of the war'],
+  ['result', 'Result', 'Who won and why'],
+  ['montecarlo', 'Odds', 'Monte Carlo: run the same war many times to see how often each side wins'],
+];
+
 export function RunPanel() {
   const tab = useStore((s) => s.rightTab);
   const hasResult = useStore((s) => !!s.run.result);
   const mcRunning = useStore((s) => s.mc.status === 'running');
-  const tabs: [RightTab, string][] = [['live', 'Live'], ['events', 'Events'], ['result', hasResult ? 'Result *' : 'Result'], ['montecarlo', mcRunning ? 'Monte Carlo ...' : 'Monte Carlo']];
+  // WAI-ARIA tabs, same keys as the setup panel: arrows move, Home/End jump, Tab leaves the strip
+  const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const i = RIGHT_TABS.findIndex(([k]) => k === tab);
+    const n = RIGHT_TABS.length;
+    const j = e.key === 'ArrowRight' ? (i + 1) % n : e.key === 'ArrowLeft' ? (i + n - 1) % n
+      : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1;
+    if (j < 0) return;
+    e.preventDefault();
+    store.set({ rightTab: RIGHT_TABS[j][0] });
+    document.getElementById(`rtab-${RIGHT_TABS[j][0]}`)?.focus();
+  };
   return (
-    <aside className="right">
+    <aside className="right" aria-label="War progress and results">
       <nav className="tabs">
-        {tabs.map(([k, l]) => <button key={k} className={tab === k ? 'on' : ''} onClick={() => store.set({ rightTab: k })}>{l}</button>)}
+        <div className="tablist" role="tablist" aria-label="Run views" onKeyDown={onKey}>
+          {RIGHT_TABS.map(([k, l, hint]) => {
+            const ready = k === 'result' && hasResult;
+            const busy = k === 'montecarlo' && mcRunning;
+            return (
+              <button key={k} id={`rtab-${k}`} role="tab" aria-selected={tab === k} aria-controls="right-tabpanel" tabIndex={tab === k ? 0 : -1}
+                className={tab === k ? 'on' : ''} title={hint} onClick={() => store.set({ rightTab: k })}>
+                {l}{busy && ' ...'}
+                {ready && <span className="rp-tab-dot" aria-hidden />}
+                {(ready || busy) && <span className="sr-only">{ready ? ' (ready)' : ' (running)'}</span>}
+              </button>
+            );
+          })}
+        </div>
       </nav>
-      {tab === 'live' && <Live />}
-      {tab === 'events' && <Events />}
-      {tab === 'result' && <Result />}
-      {tab === 'montecarlo' && <MonteCarloView />}
+      <div className="tabpanel" role="tabpanel" id="right-tabpanel" aria-labelledby={`rtab-${tab}`}>
+        {tab === 'live' && <Live />}
+        {tab === 'events' && <Events />}
+        {tab === 'result' && <Result />}
+        {tab === 'montecarlo' && <MonteCarloView />}
+      </div>
     </aside>
   );
 }
