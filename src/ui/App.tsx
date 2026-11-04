@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { MapView } from '../map/MapView';
 import { flyBus } from './bus';
 import { loadData } from './data';
-import { ensureEngineAssets } from './lazy';
+import { ensureEngineAssets, ensureSnapshots } from './lazy';
+import { normalizeScenario } from './scenarioDefaults';
 import { ErrorBoundary } from './ErrorBoundary';
 import { Icon, type IconName } from './Icon';
 import { LimitsPage } from './LimitsPage';
@@ -166,6 +167,7 @@ const LEFT_TABS: [LeftTab, string][] = [['start', 'Quick start'], ['setup', 'Set
 function LeftPanel() {
   const tab = useStore((s) => s.leftTab);
   const open = useStore((s) => s.leftOpen);
+  const dataError = useStore((s) => s.dataError);
   // WAI-ARIA tabs: arrow keys move between tabs, Home/End jump, Tab leaves the strip
   const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const i = LEFT_TABS.findIndex(([k]) => k === tab);
@@ -192,12 +194,18 @@ function LeftPanel() {
       </nav>
       {open && (
         <div className="tabpanel" role="tabpanel" id="left-tabpanel" aria-labelledby={`ltab-${tab}`}>
-          <ErrorBoundary name={tab}>
-            {tab === 'start' && <Presets />}
-            {tab === 'setup' && <ScenarioBuilder />}
-            {tab === 'nations' && <NationBrowser />}
-            {tab === 'editor' && <Editor />}
-          </ErrorBoundary>
+          {dataError ? (
+            <div className="panel-body">
+              <div className="notice warn" role="alert">The data could not be loaded: {dataError}. Nothing can be shown or run until it loads; reload the page to try again.</div>
+            </div>
+          ) : (
+            <ErrorBoundary name={tab}>
+              {tab === 'start' && <Presets />}
+              {tab === 'setup' && <ScenarioBuilder />}
+              {tab === 'nations' && <NationBrowser />}
+              {tab === 'editor' && <Editor />}
+            </ErrorBoundary>
+          )}
         </div>
       )}
     </aside>
@@ -248,8 +256,17 @@ export function App() {
         if (fromHash) { loadScenario(fromHash, 'Scenario loaded from link'); return; }
       } catch (e) { toast('Share link could not be read: ' + (e as Error).message); }
       if (data.presets.length > 0 && store.get().scenario.sides.every((s) => s.members.length === 0)) {
-        store.set({ scenario: structuredClone(data.presets[0]) });
+        // the same check and era loading as Customize (loadScenario), without its toast and tab
+        // switch: a raw clone let a bad presets.json entry reach the map and crash it
+        try {
+          const sc = normalizeScenario(structuredClone(data.presets[0]));
+          store.set({ scenario: sc });
+          void ensureSnapshots(sc.sides.flatMap((x) => x.members));
+        } catch (e) { toast('The first preset could not be loaded: ' + (e as Error).message); }
       }
+    }).catch((e: unknown) => {
+      // a malformed data file used to leave "Loading data..." up for good with an unhandled rejection
+      if (alive) store.set({ dataError: e instanceof Error ? e.message : String(e) });
     });
     return () => { alive = false; };
   }, []);

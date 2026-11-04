@@ -54,6 +54,8 @@ export interface McState {
 
 export interface UiState {
   data: AppData | null;
+  /** Why the data could not be loaded at all; the setup panel shows it instead of "Loading data...". */
+  dataError: string | null;
   scenario: Scenario;
   scenarioDirty: boolean;
   leftTab: LeftTab;
@@ -79,7 +81,13 @@ function createStore<T extends object>(init: T) {
     set(patch: Partial<T> | ((s: T) => Partial<T>)) {
       const p = typeof patch === 'function' ? patch(state) : patch;
       state = { ...state, ...p };
-      ls.forEach((l) => l());
+      // One throwing listener used to skip every later one, React's subscriptions included, so
+      // parts of the UI stayed on stale state. Each runs on its own; a failure is still reported.
+      ls.forEach((l) => {
+        try { l(); } catch (e) {
+          if (typeof reportError === 'function') reportError(e); else console.error(e);
+        }
+      });
     },
     subscribe(l: Listener) { ls.add(l); return () => { ls.delete(l); }; },
   };
@@ -92,6 +100,7 @@ export const initialRun: RunState = {
 
 export const store = createStore<UiState>({
   data: null,
+  dataError: null,
   scenario: defaultScenario(),
   scenarioDirty: false,
   leftTab: 'start',
