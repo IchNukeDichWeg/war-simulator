@@ -2,10 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import type { SideStats, SimEvent } from '../../engine/protocol';
 import { flyBus } from '../bus';
 import { Icon } from '../Icon';
-import { eventLog, history } from '../engine';
+import { eventLog, history, startRun } from '../engine';
 import { capitalize, fmt, fmtCount, fmtDays, fmtSpeed, pct, signed, signedPts } from '../format';
 import { deltaOver, EVENT_GROUPS, filterEvents, groupCounts, groupOf, peakOf, share, splitLosses, type EventFilter, type EventGroup } from '../runStats';
-import { store, useStore, type RightTab } from '../store';
+import { MAX_TIME_LIMIT_DAYS } from '../scenarioDefaults';
+import { setScenario, store, useStore, type RightTab } from '../store';
 import { SideChart, SideLegend, useLegibleColors } from './Charts';
 import { MonteCarloView } from './MonteCarloView';
 import { ModelTag, Reasons, useSides } from './RunShared';
@@ -152,6 +153,29 @@ function Dashboard({ names, colors }: { names: [string, string]; colors: [string
 // "More charts" stays open across tab switches (the Live view unmounts); reset per page load only.
 const liveMemo = { moreCharts: false };
 
+const span = (d: number) => (d < 365 ? `${d} days` : `${Math.round((d / 365) * 10) / 10} years`);
+
+/** A war stopped by its time limit can run again with double the limit. A fresh run with the
+ *  same seed, not a continuation: the limit also sets how much sea lift the setup plans, so
+ *  continuing the ended run would differ from a run that had the longer limit from day 0. */
+function LongerRun() {
+  const result = useStore((s) => s.run.result);
+  const limit = useStore((s) => s.scenario.victory.timeLimitDays);
+  if (!result || !/^time limit/.test(result.endReason) || limit >= MAX_TIME_LIMIT_DAYS) return null;
+  const next = Math.min(MAX_TIME_LIMIT_DAYS, limit * 2);
+  const go = () => {
+    setScenario((s) => ({ ...s, victory: { ...s.victory, timeLimitDays: next } }));
+    startRun(store.get().scenario, 30);
+  };
+  return (
+    <div className="rp-note">
+      The war was stopped by its time limit of {span(limit)}, not decided.{' '}
+      <button className="rp-textbtn" onClick={go}>Run it again for {span(next)}</button> with the same seed, played fast.
+      Any other limit: Setup, Victory conditions.
+    </div>
+  );
+}
+
 function Live() {
   const run = useStore((s) => s.run);
   const { names, colors: raw } = useSides();
@@ -177,6 +201,7 @@ function Live() {
       {run.status === 'ended' && run.result && (
         <button className="rp-linkbtn" onClick={() => store.set({ rightTab: 'result' })}>See who won and why</button>
       )}
+      <LongerRun />
       {run.warnings.length > 0 && <ul className="warnings">{run.warnings.map((w) => <li key={w}>{w}</li>)}</ul>}
       {history.day.length > 0 && <Dashboard names={names} colors={colors} />}
       <h4>Over time</h4>
@@ -312,6 +337,7 @@ function Result() {
         <div className="rp-outcome-reason"><span className="rp-muted">How it ended:</span> {capitalize(result.endReason)}</div>
         <div className="rp-muted small">{[about, date ? date.replace(/^Day \d+,\s*/, '') : '', `seed ${result.seed}`].filter(Boolean).join(' | ')}</div>
       </div>
+      <LongerRun />
       <h4>{w === 'draw' ? 'What shaped the result' : `Why ${names[w]} won`}</h4>
       <Reasons reasons={result.reasons} names={names} colors={colors} top={3} plain />
       <div className="rp-note">
